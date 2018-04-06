@@ -1,0 +1,18 @@
+{
+  "exclude": [
+    "node_modules", "vendor"
+  ],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,	// <-- This is needed (based on settings from `vue-class-component` example tsconfig.json)
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "es5",
+      "es6",
+      "es2015.promise"
+    ]
+  }
+}

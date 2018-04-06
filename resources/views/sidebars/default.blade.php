@@ -12,6 +12,9 @@
         <a href="#">Dashboard</a>
       </li>
       <li>
+        <a href="/designer">Designer</a>
+      </li>
+      <li>
         <a href="#">Shortcuts</a>
       </li>
       <li>

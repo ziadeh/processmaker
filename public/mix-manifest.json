@@ -6,5 +6,7 @@
   "/js/all.js": "/js/all.js",
   "/js/font-awesome.5.0.6.js": "/js/font-awesome.5.0.6.js",
   "/js/vendor.js": "/js/vendor.js",
-  "/js/manifest.js": "/js/manifest.js"
+  "/js/manifest.js": "/js/manifest.js",
+  "/css/vendorDesigner.css": "/css/vendorDesigner.css",
+  "/js/designer.js": "/js/designer.js"
 }

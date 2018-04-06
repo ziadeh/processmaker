@@ -16,22 +16,31 @@
     "jquery": "^3.1.1",
     "laravel-mix": "0.*",
     "lodash": "^4.17.5",
+    "superagent": "^3.8.2",
     "vue": "^2.5.16",
     "vuetable-2": "^1.7.5"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free-brands": "^5.0.8",
     "@fortawesome/fontawesome-free-solid": "^5.0.8",
+    "@types/node": "^9.6.2",
     "bootstrap": "^4.0.0",
     "bootstrap-vue": "^2.0.0-rc.2",
+    "bpmn-moddle": "^5.1.1",
     "fontawesome": "^4.7.2",
+    "imports-loader": "^0.8.0",
+    "json-walker": "^1.0.16",
     "laravel-echo": "^1.3.5",
     "laravel-echo-server": "^1.3.6",
     "npm-font-open-sans": "^1.1.0",
     "popper.js": "^1.14.1",
     "pusher-js": "^4.2.2",
+    "snapsvg": "^0.5.1",
     "tooltip.js": "^1.2.0",
+    "ts-loader": "^2.1.0",
+    "typescript": "^2.3.4",
     "v-tooltip": "^2.0.0-rc.31",
-    "vue-events": "^3.1.0"
+    "vue-events": "^3.1.0",
+    "vue-resource": "^1.5.0"
   }
 }

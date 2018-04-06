@@ -28,3 +28,36 @@ mix.js([
     .sass('resources/assets/sass/base.scss', 'public/css')
     .sass('resources/assets/sass/layouts-app.scss', 'public/css')
     .copy('node_modules/font-awesome/css/font-awesome.css', 'public/css');
+
+
+
+
+
+
+
+
+mix.js('resources/assets/designer/js/designer.js', 'public/js')
+    //.sass('resources/assets/designer/sass/designer.scss', 'public/css')
+    .webpackConfig({
+        module: {
+            rules: [
+                {
+                    test: /\.tsx?$/,
+                    loader: 'ts-loader',
+                    exclude: /node_modules/,
+                },
+            ],
+        },
+        resolve: {
+            extensions: ['*', '.js', '.jsx', '.vue', '.ts', '.tsx'],
+        }
+    });
+
+mix.styles([
+    'resources/assets/css/custom.css',
+    'resources/assets/css/styles_pm4.css',
+    'resources/assets/designer/css/bpmn.css'
+], 'public/css/vendorDesigner.css');
+
+mix.copy('resources/assets/designer/fonts', 'public/fonts/bpmn');
+mix.copy('resources/assets/designer/images', 'public/images');
