@@ -11,37 +11,11 @@ const { mix } = require('laravel-mix');
  |
 
 */
-mix.js([
-  'resources/assets/js/app-layout.js',
-  'resources/assets/js/app.js'
-  ],
-  'public/js').extract([
-    'jquery',
-    'vue',
-    'bootstrap-vue',
-    'pusher-js',
-    'popper.js',
-    'laravel-echo',
-    'fontawesome',
-    'axios'
-  ])
-    .sass('resources/assets/sass/base.scss', 'public/css')
-    .sass('resources/assets/sass/layouts-app.scss', 'public/css')
-    .copy('node_modules/font-awesome/css/font-awesome.css', 'public/css');
-
 mix.js('resources/assets/js/app.js', 'public/js')
-   .extract(['vue','jquery','bootstrap-vue','axios','popper.js','lodash','bootstrap'])
-   .sass('resources/assets/sass/layouts-app.scss', 'public/css')
-   .sass('resources/assets/sass/app.scss', 'public/css');
-
-
-
-
-
-
-
-
-mix.js('resources/assets/designer/js/designer.js', 'public/js')
+  .extract(['vue','jquery','bootstrap-vue','axios','popper.js','lodash','bootstrap'])
+  .sass('resources/assets/sass/layouts-app.scss', 'public/css')
+  .sass('resources/assets/sass/app.scss', 'public/css')
+  .js('resources/assets/designer/js/designer.js', 'public/js')
     //.sass('resources/assets/designer/sass/designer.scss', 'public/css')
     .webpackConfig({
         module: {
