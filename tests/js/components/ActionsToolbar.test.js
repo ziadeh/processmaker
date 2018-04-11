@@ -12,17 +12,17 @@ describe('ActionsToolbar', () => {
       }
   })
   it('should emit zoomIn when zoomIn button is clicked', () => {
-    wrapper.find('button').trigger('click')
+    wrapper.find('#zoomIn').trigger('click')
     expect(window.Event.$emit.mock.calls.length).toBe(1)
     expect(window.Event.$emit.mock.calls[0][0]).toBe("zoomIn")
   })
   it('should emit zoomReset when zoomReset button is clicked', () => {
-    wrapper.find('button').trigger('click')
+    wrapper.find('#zoomReset').trigger('click')
     expect(window.Event.$emit.mock.calls.length).toBe(1)
     expect(window.Event.$emit.mock.calls[0][0]).toBe("zoomReset")
   })
   it('should emit zoomOut when zoomOut button is clicked', () => {
-    wrapper.find('button').trigger('click')
+    wrapper.find('#zoomOut').trigger('click')
     expect(window.Event.$emit.mock.calls.length).toBe(1)
     expect(window.Event.$emit.mock.calls[0][0]).toBe("zoomOut")
   })
