@@ -12,10 +12,13 @@ describe('Toolbar', () => {
       }
   })
   it('should emit dragend when a tag is dragged', () => {
-    let el = wrapper.findAll('a')
-    for (var i = 0; i < el.length; i ++){
-      el[i].trigger('dragend')
-      expect(window.Event.$emit.mock.calls.length).toBe(1)
+    let anchors = wrapper.findAll('a')
+    for (var i = 0; i < anchors.length; i ++){
+      window.Event = {
+        $emit: jest.fn()
+      }
+      anchors.trigger('dragend')
+      expect(window.Event.$emit.mock.calls.length).toBe(5)
       expect(window.Event.$emit.mock.calls[0][0]).toBe("dragend")
   }})
 
