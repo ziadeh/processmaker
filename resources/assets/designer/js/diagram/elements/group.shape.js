@@ -2,15 +2,15 @@
  * Task Shape class
  */
 export class GroupShape {
-    constructor(canvas, svgLoader) {
+    constructor (canvas, svgLoader) {
         this.canvas = canvas;
         this.svgLoader = svgLoader;
         this.attr = {
-            fill: 'none',
-            stroke: '#000',
+            fill: "none",
+            stroke: "#000",
             strokeWidth: 2,
-            strokeDasharray: '3px,7px',
-            strokeLinecap: 'square'
+            strokeDasharray: "3px,7px",
+            strokeLinecap: "square"
         };
         this.shape = this.canvas.group();
         this.shape.drag();
@@ -18,7 +18,7 @@ export class GroupShape {
         this.outputConnectors = new Map();
     }
 
-    config(options) {
+    config (options) {
         this.options = options;
         this.id = options.act_uid;
         this.x = +options.bou_x;
@@ -29,7 +29,7 @@ export class GroupShape {
         this.attr = options.attr || this.attr;
     }
 
-    render(){
+    render () {
         this.shape.add(this.canvas.rect(
             this.x,
             this.y,
@@ -41,26 +41,26 @@ export class GroupShape {
         this.addDecorators();
     }
 
-    addDecorators(){
+    addDecorators () {
         this.addTextDecorator();
     }
 
-    addTextDecorator() {
+    addTextDecorator () {
         this.shape.add(this.canvas.multitext(
             this.x + (this.scaleX / 2),
             this.y + 20,
             this.options.art_name,
             this.scaleY,
-            {'font-size': '13px', 'text-align': 'center'}
+            {"font-size": "13px", "text-align": "center"}
         ));
     }
 
-    getNativeShape() {
+    getNativeShape () {
         return this.shape;
     }
-    setDirections(conn) {
-        conn.getShape().inputDirection = 'LEFT';
-        conn.getShape().outputDirection = 'RIGHT';
+    setDirections (conn) {
+        conn.getShape().inputDirection = "LEFT";
+        conn.getShape().outputDirection = "RIGHT";
     }
     registerOutputConn (id, conn) {
         this.outputConnectors.set(id, conn);
@@ -71,43 +71,43 @@ export class GroupShape {
      * @param posx
      * @param posy
      */
-    refreshAllConnections(nativeShape){
-        let conn, dX, dY;
+    refreshAllConnections (nativeShape) {
+        let conn,
+            dX,
+            dY;
         const shapeBox = nativeShape.getBBox();
 
+        this.outputConnectors.forEach((value, key) => {
+            conn = value;
 
-        this.outputConnectors.forEach(function(value, key) {
-            conn =  value;
-
-            if (conn.shape.outputDirection === 'RIGHT'){
-                dX= shapeBox.width;
-                dY= shapeBox.height/2;
+            if (conn.shape.outputDirection === "RIGHT") {
+                dX = shapeBox.width;
+                dY = shapeBox.height / 2;
             }
 
             let linesArray = conn.shape.router;
             let n = linesArray.length;
 
-            conn.shape.options.method = 'manhathan';
+            conn.shape.options.method = "manhathan";
             conn.shape.config(conn.shape.options);
 
-            conn.shape.redraw( shapeBox.x + dX ,  shapeBox.y + dY, linesArray[n-1].x, linesArray[n-1].y);
+            conn.shape.redraw(shapeBox.x + dX, shapeBox.y + dY, linesArray[n - 1].x, linesArray[n - 1].y);
         });
 
-        this.inputConnectors.forEach(function(value, key) {
-            conn =  value;
-            if (conn.shape.inputDirection === 'LEFT'){
-                dX= 0;
-                dY= shapeBox.height/2;
+        this.inputConnectors.forEach((value, key) => {
+            conn = value;
+            if (conn.shape.inputDirection === "LEFT") {
+                dX = 0;
+                dY = shapeBox.height / 2;
             }
 
             let linesArray = conn.shape.router;
             let n = linesArray.length;
 
-            conn.shape.options.method = 'manhathan';
+            conn.shape.options.method = "manhathan";
             conn.shape.config(conn.shape.options);
 
-            conn.shape.redraw(linesArray[0].x, linesArray[0].y, shapeBox.x + dX ,  shapeBox.y + dY);
-
-        })
+            conn.shape.redraw(linesArray[0].x, linesArray[0].y, shapeBox.x + dX, shapeBox.y + dY);
+        });
     }
 }

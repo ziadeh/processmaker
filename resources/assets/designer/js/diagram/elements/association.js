@@ -2,18 +2,18 @@
  * Flow
  */
 export class Association {
-    constructor(options, shape) {
+    constructor (options, shape) {
         this.shape = shape;
-        options.lineType = 'dotted';
-        options.arrowType = 'none';
+        options.lineType = "dotted";
+        options.arrowType = "none";
         this.shape.config(options);
     }
 
-    render() {
+    render () {
         this.shape.render();
     }
 
-    getShape() {
+    getShape () {
         return this.shape;
     }
 }

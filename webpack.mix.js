@@ -16,13 +16,13 @@ mix.js('resources/assets/js/app.js', 'public/js')
   .sass('resources/assets/sass/layouts-app.scss', 'public/css')
   .sass('resources/assets/sass/app.scss', 'public/css')
   .js('resources/assets/designer/js/designer.js', 'public/js')
-    //.sass('resources/assets/designer/sass/designer.scss', 'public/css')
+   .sass('resources/assets/designer/sass/designer.scss', 'public/css')
     .webpackConfig({
         module: {
             rules: [
                 {
                     test: /\.tsx?$/,
-                    loader: 'ts-loader',
+                    //loader: 'ts-loader',
                     exclude: /node_modules/,
                 },
             ],

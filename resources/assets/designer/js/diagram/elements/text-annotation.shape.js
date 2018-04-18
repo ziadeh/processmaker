@@ -1,5 +1,5 @@
 export class TextAnnotationShape {
-    constructor(canvas, svgLoader) {
+    constructor (canvas, svgLoader) {
         this.canvas = canvas;
         this.svgLoader = svgLoader;
         this.shape = canvas.g();
@@ -7,11 +7,11 @@ export class TextAnnotationShape {
         this.outputConnectors = new Map();
     }
 
-    config(options) {
+    config (options) {
         this.options = options;
     }
 
-    render() {
+    render () {
         const x = +this.options.bou_x,
             y = +this.options.bou_y,
             width = +this.options.bou_width,
@@ -27,7 +27,7 @@ export class TextAnnotationShape {
             y,
             this.options.art_name,
             width + 20,
-            {'font-size': '13px', 'font-family': 'Arial, Helvetica, sans-serif'}
+            {"font-size": "13px", "font-family": "Arial, Helvetica, sans-serif"}
         );
         this.shape.add(sampleText);
 
@@ -43,32 +43,32 @@ export class TextAnnotationShape {
         );
 
         box.attr({
-            fill: 'none',
-            stroke: '#000',
+            fill: "none",
+            stroke: "#000",
             strokeWidth: 1
         });
         const offset = y - sampleText.getBBox().y + (height - sampleText.getBBox().height) / 2;
         this.shape.add(box);
-        box.transform('t0 ' + Math.floor(-(offset)).toString());
-        this.shape.transform('t0 ' + Math.floor(+(offset)).toString());
+        box.transform(`t0 ${Math.floor(-(offset)).toString()}`);
+        this.shape.transform(`t0 ${Math.floor(+(offset)).toString()}`);
         this.shape.drag();
     }
 
-    getNativeShape() {
+    getNativeShape () {
         return this.shape;
     }
 
-    registerInputConn(id, conn) {
+    registerInputConn (id, conn) {
         this.inputConnectors.set(id, conn);
         this.setDirections(conn);
     }
 
-    setDirections(conn) {
-        conn.getShape().inputDirection = 'LEFT';
-        conn.getShape().outputDirection = 'RIGHT';
+    setDirections (conn) {
+        conn.getShape().inputDirection = "LEFT";
+        conn.getShape().outputDirection = "RIGHT";
     }
 
-    registerOutputConn(id, conn) {
+    registerOutputConn (id, conn) {
         this.outputConnectors.set(id, conn);
         this.setDirections(conn);
     }
@@ -78,15 +78,16 @@ export class TextAnnotationShape {
      * @param posx
      * @param posy
      */
-    refreshAllConnections(nativeShape) {
-        let conn, dX, dY;
+    refreshAllConnections (nativeShape) {
+        let conn,
+            dX,
+            dY;
         const shapeBox = nativeShape.getBBox();
 
-
-        this.outputConnectors.forEach(function (value, key) {
+        this.outputConnectors.forEach((value, key) => {
             conn = value;
 
-            if (conn.shape.outputDirection === 'RIGHT') {
+            if (conn.shape.outputDirection === "RIGHT") {
                 dX = shapeBox.width;
                 dY = shapeBox.height / 2;
             }
@@ -94,15 +95,15 @@ export class TextAnnotationShape {
             let linesArray = conn.shape.router;
             let n = linesArray.length;
 
-            conn.shape.options.method = 'manhathan';
+            conn.shape.options.method = "manhathan";
             conn.shape.config(conn.shape.options);
 
             conn.shape.redraw(shapeBox.x + dX, shapeBox.y + dY, linesArray[n - 1].x, linesArray[n - 1].y);
         });
 
-        this.inputConnectors.forEach(function (value, key) {
+        this.inputConnectors.forEach((value, key) => {
             conn = value;
-            if (conn.shape.inputDirection === 'LEFT') {
+            if (conn.shape.inputDirection === "LEFT") {
                 dX = 0;
                 dY = shapeBox.height / 2;
             }
@@ -110,11 +111,10 @@ export class TextAnnotationShape {
             let linesArray = conn.shape.router;
             let n = linesArray.length;
 
-            conn.shape.options.method = 'manhathan';
+            conn.shape.options.method = "manhathan";
             conn.shape.config(conn.shape.options);
 
             conn.shape.redraw(linesArray[0].x, linesArray[0].y, shapeBox.x + dX, shapeBox.y + dY);
-
-        })
+        });
     }
 }

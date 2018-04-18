@@ -2,7 +2,7 @@
  * StartEvent
  */
 export class Group {
-    constructor(options, shape) {
+    constructor (options, shape) {
         this.type = options.evn_type;
         this.name = options.evn_name;
         this.options = options;
@@ -10,11 +10,11 @@ export class Group {
         this.shape.config(options);
     }
 
-    render() {
+    render () {
         this.shape.render();
     }
 
-    getShape() {
+    getShape () {
         return this.shape;
     }
 }

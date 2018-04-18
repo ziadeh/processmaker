@@ -2,16 +2,16 @@
  * LineShape
  */
 export class LineShape {
-       constructor(canvas) {
+    constructor (canvas) {
         this.canvas = canvas;
         this.shape = false;
     }
 
-    config(options) {
+    config (options) {
         this.options = Object.assign({}, options);
         this.options.attr = {
-            fill: 'none',
-            stroke: '#000',
+            fill: "none",
+            stroke: "#000",
             strokeWidth: 1
         };
 
@@ -27,28 +27,28 @@ export class LineShape {
         return this;
     }
 
-    processLineType() {
-        if (this.options.lineType === 'dotted') {
-            this.options.attr.strokeDasharray = '1px,2px';
-            this.options.attr.strokeLinecap = 'round';
+    processLineType () {
+        if (this.options.lineType === "dotted") {
+            this.options.attr.strokeDasharray = "1px,2px";
+            this.options.attr.strokeLinecap = "round";
         }
-        if (this.options.lineType === 'dashed') {
-            this.options.attr.strokeDasharray = '3px,5px';
-            this.options.attr.strokeLinecap = 'round';
+        if (this.options.lineType === "dashed") {
+            this.options.attr.strokeDasharray = "3px,5px";
+            this.options.attr.strokeLinecap = "round";
         }
     }
 
-    addMarkerStart(marker) {
+    addMarkerStart (marker) {
         this.options.attr.markerStart = marker;
         return this;
     }
 
-    addMarkerEnd(marker) {
+    addMarkerEnd (marker) {
         this.options.attr.markerEnd = marker;
         return this;
     }
 
-    createShape(){
+    createShape () {
         if (!this.shape) {
             this.shape = this.canvas
                 .polyline(this.options.linePoints)
@@ -57,14 +57,14 @@ export class LineShape {
         return this.shape;
     }
 
-    getShape(){
+    getShape () {
         return this.createShape();
     }
-    redraw(){
+    redraw () {
         this.shape.remove();
         this.shape = this.canvas
-        .polyline(this.options.linePoints)
-        .attr(this.options.attr);
+            .polyline(this.options.linePoints)
+            .attr(this.options.attr);
         return this.shape;
     }
 }

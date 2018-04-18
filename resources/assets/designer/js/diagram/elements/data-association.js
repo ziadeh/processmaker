@@ -2,18 +2,18 @@
  * Flow
  */
 export class DataAssociation {
-    constructor(options, shape) {
+    constructor (options, shape) {
         this.shape = shape;
-        options.lineType = 'dotted';
-        options.arrowType = 'simple';
+        options.lineType = "dotted";
+        options.arrowType = "simple";
         this.shape.config(options);
     }
 
-    render() {
+    render () {
         this.shape.render();
     }
 
-    getShape() {
+    getShape () {
         return this.shape;
     }
 }

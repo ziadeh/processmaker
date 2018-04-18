@@ -28,18 +28,14 @@ import {
     GroupShape,
     Diagram,
     DiagramShape,
-    DiagramService,
-} from './elements';
+    DiagramService
+} from "./elements";
 
-import {ConnectorShape} from './elements/connector/connector.shape';
+import {ConnectorShape} from "./elements/connector/connector.shape";
 
 import {isNullOrUndefined} from "util";
 
-import $ from "jquery";
-
 export class DiagramSvg {
-
-
     constructor(canvas, svgLoader) {
         this.canvas = canvas;
         this.svgLoader = svgLoader;
@@ -68,10 +64,12 @@ export class DiagramSvg {
      * @param first
      * @param second
      */
-  extend(first, second) {
+    extend(first, second) {
         const result = {};
         for (const id in first) {
-            result[id] = first[id];
+            if (id) {
+                result[id] = first[id];
+            }
         }
         for (const id in second) {
             if (!result.hasOwnProperty(id)) {
@@ -82,21 +80,22 @@ export class DiagramSvg {
     }
 
     createShape(type, options) {
-        let shape, defaultOptions = {
-            $type: type,
-            id: options.id,
-            name: options.bpmnElement && options.bpmnElement.name ? options.bpmnElement.name: options.name ? options.name : '',
-            uid: null,
-            type: null,
-            moddleElement: options
-        };
+        let shape,
+            defaultOptions = {
+                $type: type,
+                id: options.id,
+                name: options.bpmnElement && options.bpmnElement.name ? options.bpmnElement.name : options.name ? options.name : "",
+                uid: null,
+                type: null,
+                moddleElement: options
+            };
         defaultOptions = this.extend(defaultOptions, options);
 
         // TODO Improve uid selector, too much duplicated or multiplicated lines... (ø_ø)!
         switch (type) {
-            case 'bpmn:StartEvent':
-                defaultOptions['type'] = type;
-                defaultOptions['id'] = options.id;
+            case "bpmn:StartEvent":
+                defaultOptions.type = type;
+                defaultOptions.id = options.id;
                 shape = new StartEvent(
                     defaultOptions,
                     new EventShape(
@@ -106,9 +105,9 @@ export class DiagramSvg {
                 );
                 shape.render();
                 break;
-            case 'bpmn:EndEvent':
-                defaultOptions['type'] = type;
-                defaultOptions['id'] = options.id;
+            case "bpmn:EndEvent":
+                defaultOptions.type = type;
+                defaultOptions.id = options.id;
                 shape = new EndEvent(
                     defaultOptions,
                     new EventShape(
@@ -118,9 +117,9 @@ export class DiagramSvg {
                 );
                 shape.render();
                 break;
-            case 'bpmn:BoundaryEvent':
-                defaultOptions['type'] = type;
-                defaultOptions['id'] = options.id;
+            case "bpmn:BoundaryEvent":
+                defaultOptions.type = type;
+                defaultOptions.id = options.id;
                 shape = new EndEvent(
                     defaultOptions,
                     new EventShape(
@@ -130,9 +129,9 @@ export class DiagramSvg {
                 );
                 shape.render();
                 break;
-            case 'bpmn:IntermediateThrowEvent':
-                defaultOptions['type'] = type;
-                defaultOptions['id'] = options.id;
+            case "bpmn:IntermediateThrowEvent":
+                defaultOptions.type = type;
+                defaultOptions.id = options.id;
                 shape = new IntermediateEvent(
                     defaultOptions,
                     new EventShape(
@@ -143,9 +142,9 @@ export class DiagramSvg {
                 shape.render();
                 break;
 
-            case 'bpmn:IntermediateCatchEvent':
-                defaultOptions['type'] = type;
-                defaultOptions['id'] = options.id;
+            case "bpmn:IntermediateCatchEvent":
+                defaultOptions.type = type;
+                defaultOptions.id = options.id;
                 shape = new IntermediateEvent(
                     defaultOptions,
                     new EventShape(
@@ -156,13 +155,13 @@ export class DiagramSvg {
                 shape.render();
                 break;
 
-            case 'bpmn:ScriptTask':
-            case 'bpmn:ServiceTask':
-            case 'bpmn:UserTask':
-            case 'bpmn:Task':
-                defaultOptions['type'] = (!isNullOrUndefined(options.act_task_type) && options.act_task_type !== '')
+            case "bpmn:ScriptTask":
+            case "bpmn:ServiceTask":
+            case "bpmn:UserTask":
+            case "bpmn:Task":
+                defaultOptions.type = (!isNullOrUndefined(options.act_task_type) && options.act_task_type !== "")
                     ? options.act_task_type : type;
-                defaultOptions['id'] = options.id;
+                defaultOptions.id = options.id;
                 shape = new Task(
                     defaultOptions,
                     new TaskShape(
@@ -172,9 +171,9 @@ export class DiagramSvg {
                 );
                 shape.render();
                 break;
-            case 'bpmn:SubProcess':
-                defaultOptions['type'] = type;
-                defaultOptions['uid'] = options.act_uid;
+            case "bpmn:SubProcess":
+                defaultOptions.type = type;
+                defaultOptions.uid = options.act_uid;
                 shape = new SubProcess(
                     defaultOptions,
                     new TaskShape(
@@ -184,17 +183,16 @@ export class DiagramSvg {
                 );
                 shape.render();
                 break;
-            case 'bpmn:SequenceFlow':
-                defaultOptions['type'] = type;
-                defaultOptions['uid'] = options.flo_uid;
-                defaultOptions['method'] = 'user';
+            case "bpmn:SequenceFlow":
+                defaultOptions.type = type;
+                defaultOptions.uid = options.flo_uid;
+                defaultOptions.method = "user";
                 shape = new Flow(
                     defaultOptions,
                     new ConnectorShape(
                         this.canvas,
                         this.svgLoader
                     )
-
                 );
                 let sourceId = defaultOptions.moddleElement.bpmnElement.sourceRef.id;
                 let targetId = defaultOptions.moddleElement.bpmnElement.targetRef.id;
@@ -202,9 +200,9 @@ export class DiagramSvg {
                 this.elementRegistry.get(targetId).getShape().registerInputConn(shape.getShape().options.id, shape);
                 shape.render();
                 break;
-            case 'bpmn:MessageFlow':
-                defaultOptions['type'] = type;
-                defaultOptions['id'] = options.id;
+            case "bpmn:MessageFlow":
+                defaultOptions.type = type;
+                defaultOptions.id = options.id;
                 shape = new Message(
                     defaultOptions,
                     new ConnectorShape(
@@ -218,9 +216,9 @@ export class DiagramSvg {
                 this.elementRegistry.get(targetId).getShape().registerInputConn(shape.getShape().options.id, shape);
                 shape.render();
                 break;
-            case 'ASSOCIATION':
-                defaultOptions['type'] = type;
-                defaultOptions['uid'] = options.flo_uid;
+            case "ASSOCIATION":
+                defaultOptions.type = type;
+                defaultOptions.uid = options.flo_uid;
                 shape = new Association(
                     defaultOptions,
                     new ConnectorShape(
@@ -230,9 +228,9 @@ export class DiagramSvg {
                 );
                 shape.render();
                 break;
-            case 'DATAASSOCIATION':
-                defaultOptions['type'] = type;
-                defaultOptions['uid'] = options.flo_uid;
+            case "DATAASSOCIATION":
+                defaultOptions.type = type;
+                defaultOptions.uid = options.flo_uid;
                 shape = new DataAssociation(
                     defaultOptions,
                     new ConnectorShape(
@@ -241,13 +239,13 @@ export class DiagramSvg {
                     )
                 );
                 shape.render();
-                break;//bpmn:ExclusiveGateway
-            case 'bpmn:ExclusiveGateway':
-            case 'bpmn:EventBasedGateway':
-            case 'bpmn:InclusiveGateway':
-            case 'bpmn:ParallelGateway':
-                defaultOptions['type'] = type;
-                defaultOptions['id'] = options.id;
+                break;// bpmn:ExclusiveGateway
+            case "bpmn:ExclusiveGateway":
+            case "bpmn:EventBasedGateway":
+            case "bpmn:InclusiveGateway":
+            case "bpmn:ParallelGateway":
+                defaultOptions.type = type;
+                defaultOptions.id = options.id;
                 shape = new Gateway(
                     defaultOptions,
                     new GatewayShape(
@@ -257,9 +255,9 @@ export class DiagramSvg {
                 );
                 shape.render();
                 break;
-            case 'TEXT_ANNOTATION':
-                defaultOptions['type'] = type;
-                defaultOptions['uid'] = options.art_uid;
+            case "TEXT_ANNOTATION":
+                defaultOptions.type = type;
+                defaultOptions.uid = options.art_uid;
                 shape = new TextAnnotation(
                     defaultOptions,
                     new TextAnnotationShape(
@@ -270,9 +268,9 @@ export class DiagramSvg {
 
                 shape.render();
                 break;
-            case 'bpmn:DataStoreReference':
-                defaultOptions['type'] = type;
-                defaultOptions['uid'] = options.dat_uid;
+            case "bpmn:DataStoreReference":
+                defaultOptions.type = type;
+                defaultOptions.uid = options.dat_uid;
                 shape = new DataStore(
                     defaultOptions,
                     new DataStoreShape(
@@ -283,9 +281,9 @@ export class DiagramSvg {
 
                 shape.render();
                 break;
-            case 'bpmn:DataObjectReference':
-                defaultOptions['type'] = type;
-                defaultOptions['uid'] = options.dat_uid;
+            case "bpmn:DataObjectReference":
+                defaultOptions.type = type;
+                defaultOptions.uid = options.dat_uid;
                 shape = new DataObject(
                     defaultOptions,
                     new DataObjectShape(
@@ -297,9 +295,9 @@ export class DiagramSvg {
                 shape.render();
                 break;
 
-            case 'bpmn:Participant':
-                defaultOptions['type'] = type;
-                defaultOptions['uid'] = options.lns_uid;
+            case "bpmn:Participant":
+                defaultOptions.type = type;
+                defaultOptions.uid = options.lns_uid;
                 shape = new Pool(
                     defaultOptions,
                     new PoolShape(
@@ -311,9 +309,9 @@ export class DiagramSvg {
                 shape.render();
                 break;
 
-            case 'GROUP':
-                defaultOptions['type'] = type;
-                defaultOptions['uid'] = options.art_uid;
+            case "GROUP":
+                defaultOptions.type = type;
+                defaultOptions.uid = options.art_uid;
                 shape = new Group(
                     defaultOptions,
                     new GroupShape(
@@ -324,9 +322,9 @@ export class DiagramSvg {
 
                 shape.render();
                 break;
-            case 'BLACKBOX_POOL':
-                defaultOptions['type'] = type;
-                defaultOptions['uid'] = options.par_uid;
+            case "BLACKBOX_POOL":
+                defaultOptions.type = type;
+                defaultOptions.uid = options.par_uid;
                 shape = new BlackboxPool(
                     defaultOptions,
                     new BlackboxPoolShape(
@@ -337,9 +335,9 @@ export class DiagramSvg {
 
                 shape.render();
                 break;
-            case 'bpmn:Lane':
-                defaultOptions['type'] = type;
-                defaultOptions['id'] = options.id;
+            case "bpmn:Lane":
+                defaultOptions.type = type;
+                defaultOptions.id = options.id;
                 shape = new Lane(
                     defaultOptions,
                     new LaneShape(
@@ -349,8 +347,8 @@ export class DiagramSvg {
                 );
                 shape.render();
                 break;
-            default :
-                //shape = this.UnknownShape(defaultOptions, this.canvas);
+            default:
+                // shape = this.UnknownShape(defaultOptions, this.canvas);
                 break;
         }
         if (shape) {
@@ -359,72 +357,69 @@ export class DiagramSvg {
 
             const shapeCanvas = this.canvas;
             nativeShape.click((event) => {
-
                 this.shapeSelected = true;
                 const shapeBox = nativeShape.getBBox();
-                console.log('shapeBox:', shapeBox);
+                console.log("shapeBox:", shapeBox);
                 event.bpmn_element = {
-                    'id': defaultOptions.id,
-                    'type': defaultOptions.type
+                    id: defaultOptions.id,
+                    type: defaultOptions.type
                 };
-                console.log('Type: ' + defaultOptions.type + ' Id: ' + defaultOptions.id);
+                console.log(`Type: ${defaultOptions.type} Id: ${defaultOptions.id}`);
                 if (this.selection) {
                     this.selection.remove();
                 }
 
                 this.selection = shapeCanvas.rect(shapeBox.x - 5, shapeBox.y - 5, shapeBox.width + 10, shapeBox.height + 10, 5).attr({
-                    fill: 'none',
-                    stroke: '#1fb64b',
+                    fill: "none",
+                    stroke: "#1fb64b",
                     strokeWidth: 2,
-                    strokeDasharray: '3px,7px',
-                    strokeLinecap: 'square'
+                    strokeDasharray: "3px,7px",
+                    strokeLinecap: "square"
                 });
                 this.diagram.getShape().getNativeShape().add(this.selection);
-
             });
             nativeShape.dblclick((event) => {
-                console.log('dblclick handler for connect purposes');
-                //save pre connect shape
+                console.log("dblclick handler for connect purposes");
+                // save pre connect shape
                 if (shapeCanvas.preConnectionShape) {
                     console.log(shapeCanvas.preConnectionShape);
                     console.log(shape);
                     this.connect(shapeCanvas.preConnectionShape, shape);
                     shapeCanvas.preConnectionShape = false;
                     shapeCanvas.preConnectionShape = null;
-                    console.log('-----------------');
+                    console.log("-----------------");
                 } else {
                     shapeCanvas.preConnectionShape = shape;
                 }
-
-            })
+            });
             let positions = {};
             nativeShape.drag(
                 (dx, dy, posx, posy) => {
                     // console.log(shape);
-                    nativeShape.attr( { cx: posx , cy: posy } );
+                    nativeShape.attr({cx: posx, cy: posy});
 
                     shape.getShape().refreshAllConnections(nativeShape);
 
                     positions = {
-                        'sessionId': $('#sessionId').val(),
-                        'id': defaultOptions.id,
-                        'type': defaultOptions.type,
-                        'x': dx,
-                        'y': dy,
-                        'transform': nativeShape.data('origTransform') + (nativeShape.data('origTransform') ? "T" : "t") + [dx, dy]
+                        sessionId: $("#sessionId").val(),
+                        id: defaultOptions.id,
+                        type: defaultOptions.type,
+                        x: dx,
+                        y: dy,
+                        transform: nativeShape.data("origTransform") + (nativeShape.data("origTransform") ? "T" : "t") + [dx, dy]
                     };
                 },
                 () => {
-                    console.log('on drag start');
-                    nativeShape.data('origTransform', nativeShape.transform().local);
+                    console.log("on drag start");
+                    nativeShape.data("origTransform", nativeShape.transform().local);
                 },
                 () => {
-                    console.log('on drag end');
+                    console.log("on drag end");
                     this.sendMessageChannel(positions);
                 }
             );
 
-            this.registerElement(defaultOptions['id'], shape);
+            this.registerElement(defaultOptions.id, shape);
             return shape;
         }
     }
@@ -433,8 +428,8 @@ export class DiagramSvg {
      * Create a connector
      * @constructor
      */
-    CreateConnectors (){
-        //Todo create connector
+    CreateConnectors() {
+        // Todo create connector
     }
 
     UnknownShape(options, canvas) {
@@ -445,17 +440,17 @@ export class DiagramSvg {
     }
 
     draw(data) {
-        let jw = require('json-walker');
+        let jw = require("json-walker");
         const diagrams = new Promise((resolve, reject) => {
-            jw.findArraysByKey('diagrams', data, function(err, results){
+            jw.findArraysByKey("diagrams", data, (err, results) => {
                 resolve(results);
             });
         });
         diagrams.then((res) => {
             const planeElement = new Promise((resolve, reject) => {
-                jw.findArraysByKey('planeElement', res[0], function(err, modified){
+                jw.findArraysByKey("planeElement", res[0], (err, modified) => {
                     resolve(modified);
-                    console.log('finished');
+                    console.log("finished");
                 });
             });
             planeElement.then((res) => {
@@ -465,16 +460,16 @@ export class DiagramSvg {
                         let flows = ["bpmn:SequenceFlow", "bpmn:MessageFlow"];
                         if (flows.indexOf(moddleElement.bpmnElement.$type) < 0) {
                             console.log(moddleElement);
-                                this.createShape(
-                                    moddleElement.bpmnElement.$type,
-                                    this.extend(moddleElement.bpmnElement, moddleElement.bounds)
-                                );
+                            this.createShape(
+                                moddleElement.bpmnElement.$type,
+                                this.extend(moddleElement.bpmnElement, moddleElement.bounds)
+                            );
                         }
                     }
                     for (let element in res[item]) {
                         let moddleElement = res[item][element];
                         let flows = ["bpmn:SequenceFlow", "bpmn:MessageFlow"];
-                        if (flows.indexOf(moddleElement.bpmnElement.$type) >= 0 ) {
+                        if (flows.indexOf(moddleElement.bpmnElement.$type) >= 0) {
                             console.log(moddleElement);
                             this.createShape(
                                 moddleElement.bpmnElement.$type, moddleElement
@@ -513,38 +508,37 @@ export class DiagramSvg {
         //         }
         //     });
         // });
-
     }
 
     normalizeData(diagram, elementData) {
-        const data =  Object.assign({}, elementData)
+        const data = Object.assign({}, elementData);
         const fixedData = this.getOffset(diagram, data);
-        data.bou_x = fixedData['x'];
-        data.bou_y = fixedData['y'];
+        data.bou_x = fixedData.x;
+        data.bou_y = fixedData.y;
         return data;
     }
 
     getOffset(diagram, elementData) {
         const aliases = {
-            'bpmnLane': {'type': 'lanes', 'id_field': 'lan_uid'},
-            'bpmnPool': {'type': 'laneset', 'id_field': 'lns_uid'},
+            bpmnLane: {type: "lanes", id_field: "lan_uid"},
+            bpmnPool: {type: "laneset", id_field: "lns_uid"}
         };
         const offset = {};
-        if (elementData.bou_container !== 'bpmnDiagram') {
+        if (elementData.bou_container !== "bpmnDiagram") {
             const data = this.getOffset(
                 diagram,
                 this.searchElement(
                     diagram,
-                    aliases[elementData.bou_container]['type'],
-                    aliases[elementData.bou_container]['id_field'],
+                    aliases[elementData.bou_container].type,
+                    aliases[elementData.bou_container].id_field,
                     elementData.bou_element
                 )
             );
-            offset['x'] = +elementData.bou_x + data['x'] + 1;
-            offset['y'] = +elementData.bou_y + data['y'] + 1;
+            offset.x = +elementData.bou_x + data.x + 1;
+            offset.y = +elementData.bou_y + data.y + 1;
         } else {
-            offset['x'] = parseInt(elementData.bou_x, 10);
-            offset['y'] = parseInt(elementData.bou_y, 10);
+            offset.x = parseInt(elementData.bou_x, 10);
+            offset.y = parseInt(elementData.bou_y, 10);
         }
         return offset;
     }
@@ -559,20 +553,20 @@ export class DiagramSvg {
 
     processAction(action) {
         switch (action) {
-            case 'zoom-in':
+            case "zoom-in":
                 this.diagram.zoomIn();
                 break;
-            case 'zoom-out':
+            case "zoom-out":
                 this.diagram.zoomOut();
                 break;
-            case 'zoom-reset':
+            case "zoom-reset":
                 this.diagram.zoomReset();
                 break;
-            case 'clear-canvas':
+            case "clear-canvas":
                 this.clearCanvas();
                 break;
             default:
-                console.log('unknown action');
+                console.log("unknown action");
                 break;
         }
     }
@@ -589,7 +583,7 @@ export class DiagramSvg {
         return this.diagram;
     }
 
-    registerElement(id, shape){
+    registerElement(id, shape) {
         this.diagram.add(shape);
         this.elementRegistry.set(id, shape);
     }
@@ -603,20 +597,21 @@ export class DiagramSvg {
         // element.x = dataElement.x;
         // element.y = dataElement.y;
         console.log(dataElement);
-        //let vue = require('vue');
-        this.$http.cnn('post', '/element-designer', dataElement, function (response) {
+        // let vue = require('vue');
+        this.$http.cnn("post", "/element-designer", dataElement, (response) => {
             console.log(response);
         });
         // vue.http.post('/element-designer', element).then(response => {
         //         console.log(response);
         // });
     }
+
     connect(srcShape, destShape) {
         let defaultOptions = {};
-        defaultOptions['type'] = 'bpmn:SequenceFlow';
-        defaultOptions['id'] =  'SequenceFlow_' + Math.floor((Math.random() * 100) + 1);
-        defaultOptions['method'] = 'manhathan';
-        defaultOptions['label'] = {
+        defaultOptions.type = "bpmn:SequenceFlow";
+        defaultOptions.id = `SequenceFlow_${Math.floor((Math.random() * 100) + 1)}`;
+        defaultOptions.method = "manhathan";
+        defaultOptions.label = {
             bounds: {
                 width: 0,
                 height: 0,
@@ -633,15 +628,15 @@ export class DiagramSvg {
         );
         let shapeBox = srcShape.getShape().shape.getBBox();
         const x1 = shapeBox.x + shapeBox.width;
-        const y1 = shapeBox.y +  shapeBox.height/2;
+        const y1 = shapeBox.y + shapeBox.height / 2;
 
         shapeBox = destShape.getShape().shape.getBBox();
         const x2 = shapeBox.x;
-        const y2 = shapeBox.y + shapeBox.height/2;
+        const y2 = shapeBox.y + shapeBox.height / 2;
 
-        srcShape.getShape().registerOutputConn(defaultOptions['uid'], shape);
-        destShape.getShape().registerInputConn(defaultOptions['uid'], shape);
-        shape.getShape().renderManhathan(x1,y1,x2,y2);
+        srcShape.getShape().registerOutputConn(defaultOptions.uid, shape);
+        destShape.getShape().registerInputConn(defaultOptions.uid, shape);
+        shape.getShape().renderManhathan(x1, y1, x2, y2);
         this.diagram.add(shape);
     }
 

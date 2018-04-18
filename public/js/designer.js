@@ -1,16 +1,6 @@
-webpackJsonp([1],[
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */
+webpackJsonp([2],{
+
+/***/ 15:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -639,189 +629,8 @@ function merge(target) {
 
 
 /***/ }),
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = parseName;
-/**
- * Parses a namespaced attribute name of the form (ns:)localName to an object,
- * given a default prefix to assume in case no explicit namespace is given.
- *
- * @param {String} name
- * @param {String} [defaultPrefix] the default prefix to take, if none is present.
- *
- * @return {Object} the parsed name
- */
-function parseName(name, defaultPrefix) {
-  var parts = name.split(/:/),
-      localName, prefix;
-
-  // no prefix (i.e. only local name)
-  if (parts.length === 1) {
-    localName = name;
-    prefix = defaultPrefix;
-  } else
-  // prefix + local name
-  if (parts.length === 2) {
-    localName = parts[1];
-    prefix = parts[0];
-  } else {
-    throw new Error('expected <prefix:localName> or <localName>, got ' + name);
-  }
-
-  name = (prefix ? prefix + ':' : '') + localName;
-
-  return {
-    name: name,
-    prefix: prefix,
-    localName: localName
-  };
-}
-
-/***/ }),
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */
-/***/ (function(module, exports) {
-
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  scopeId,
-  cssModules
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  // inject cssModules
-  if (cssModules) {
-    var computed = Object.create(options.computed || null)
-    Object.keys(cssModules).forEach(function (key) {
-      var module = cssModules[key]
-      computed[key] = function () { return module }
-    })
-    options.computed = computed
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["b"] = coerceType;
-/* harmony export (immutable) */ __webpack_exports__["c"] = isBuiltIn;
-/* harmony export (immutable) */ __webpack_exports__["a"] = isSimple;
-/**
- * Built-in moddle types
- */
-var BUILTINS = {
-  String: true,
-  Boolean: true,
-  Integer: true,
-  Real: true,
-  Element: true
-};
-
-/**
- * Converters for built in types from string representations
- */
-var TYPE_CONVERTERS = {
-  String: function(s) { return s; },
-  Boolean: function(s) { return s === 'true'; },
-  Integer: function(s) { return parseInt(s, 10); },
-  Real: function(s) { return parseFloat(s, 10); }
-};
-
-/**
- * Convert a type to its real representation
- */
-function coerceType(type, value) {
-
-  var converter = TYPE_CONVERTERS[type];
-
-  if (converter) {
-    return converter(value);
-  } else {
-    return value;
-  }
-}
-
-/**
- * Return whether the given type is built-in
- */
-function isBuiltIn(type) {
-  return !!BUILTINS[type];
-}
-
-/**
- * Return whether the given type is simple
- */
-function isSimple(type) {
-  return !!TYPE_CONVERTERS[type];
-}
-
-/***/ }),
-/* 41 */,
-/* 42 */
+/***/ 16:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -840,7 +649,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(315)
+var listToStyles = __webpack_require__(194)
 
 /*
 type StyleObject = {
@@ -1042,24 +851,49 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */
+
+/***/ 194:
+/***/ (function(module, exports) {
+
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+module.exports = function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
+
+/***/ }),
+
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__arrow_connector_marker__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__round_connector_marker__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__line_shape__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__svg_loader__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__manhathan_route__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__arrow_connector_marker__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__round_connector_marker__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__line_shape__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__manhathan_route__ = __webpack_require__(204);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnectorShape; });
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -1068,7 +902,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -1089,15 +922,15 @@ var ConnectorShape = function (_ManhathanRouter) {
         _this.canvas = canvas;
         _this.svgLoader = svgLoader;
         _this.shape = canvas.g();
-        _this.method = 'manhathan';
+        _this.method = "manhathan";
         _this.line = new __WEBPACK_IMPORTED_MODULE_2__line_shape__["a" /* LineShape */](_this.canvas);
-        _this.inputDirection = 'LEFT';
-        _this.outputDirection = 'RIGHT';
+        _this.inputDirection = "LEFT";
+        _this.outputDirection = "RIGHT";
         return _this;
     }
 
     _createClass(ConnectorShape, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.options = options;
             if (this.options.label && this.options.label.bounds) {
@@ -1110,7 +943,7 @@ var ConnectorShape = function (_ManhathanRouter) {
             this.method = options.method;
         }
     }, {
-        key: 'redraw',
+        key: "redraw",
         value: function redraw(posx1, posy1, posx2, posy2) {
             this.options.linePoints = [];
             this.router = this.createRoute(posx1, posy1, posx2, posy2);
@@ -1142,17 +975,17 @@ var ConnectorShape = function (_ManhathanRouter) {
             }
 
             this.line.config(this.options);
-            if (this.options.arrowType !== 'none') {
+            if (this.options.arrowType !== "none") {
                 this.line.addMarkerEnd(new __WEBPACK_IMPORTED_MODULE_0__arrow_connector_marker__["a" /* ArrowConnectorMarker */](this.canvas).config({
                     type: this.options.arrowType
                 }).getMarker());
             }
 
-            if (this.options.originConnector === 'round') {
+            if (this.options.originConnector === "round") {
                 this.line.addMarkerStart(new __WEBPACK_IMPORTED_MODULE_1__round_connector_marker__["a" /* RoundConnectorMarker */](this.canvas).config(this.options).getMarker());
             }
             if (this.options.label.bounds) {
-                var textDecorator = this.getDecorator('TEXT', {
+                var textDecorator = this.getDecorator("TEXT", {
                     text: this.options.name,
                     x: this.options.label.bounds.x,
                     y: this.options.label.bounds.y
@@ -1171,7 +1004,7 @@ var ConnectorShape = function (_ManhathanRouter) {
          */
 
     }, {
-        key: 'renderManhathan',
+        key: "renderManhathan",
         value: function renderManhathan(posx1, posy1, posx2, posy2) {
             this.options.linePoints = [];
             this.router = this.createRoute(posx1, posy1, posx2, posy2);
@@ -1203,17 +1036,17 @@ var ConnectorShape = function (_ManhathanRouter) {
             }
 
             this.line.config(this.options);
-            if (this.options.arrowType !== 'none') {
+            if (this.options.arrowType !== "none") {
                 this.line.addMarkerEnd(new __WEBPACK_IMPORTED_MODULE_0__arrow_connector_marker__["a" /* ArrowConnectorMarker */](this.canvas).config({
                     type: this.options.arrowType
                 }).getMarker());
             }
 
-            if (this.options.originConnector === 'round') {
+            if (this.options.originConnector === "round") {
                 this.line.addMarkerStart(new __WEBPACK_IMPORTED_MODULE_1__round_connector_marker__["a" /* RoundConnectorMarker */](this.canvas).config(this.options).getMarker());
             }
 
-            var textDecorator = this.getDecorator('TEXT', {
+            var textDecorator = this.getDecorator("TEXT", {
                 text: this.options.name,
                 x: this.options.label.bounds.x,
                 y: this.options.label.bounds.y
@@ -1222,7 +1055,7 @@ var ConnectorShape = function (_ManhathanRouter) {
             this.shape.add(this.line.getShape(), textDecorator);
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             this.options.linePoints = [];
             this.router = this.options.waypoint;
@@ -1254,18 +1087,18 @@ var ConnectorShape = function (_ManhathanRouter) {
             }
 
             this.line.config(this.options);
-            if (this.options.arrowType !== 'none') {
+            if (this.options.arrowType !== "none") {
                 this.line.addMarkerEnd(new __WEBPACK_IMPORTED_MODULE_0__arrow_connector_marker__["a" /* ArrowConnectorMarker */](this.canvas).config({
                     type: this.options.arrowType
                 }).getMarker());
             }
 
-            if (this.options.originConnector === 'round') {
+            if (this.options.originConnector === "round") {
                 this.line.addMarkerStart(new __WEBPACK_IMPORTED_MODULE_1__round_connector_marker__["a" /* RoundConnectorMarker */](this.canvas).config(this.options).getMarker());
             }
 
             if (this.options.label && this.options.label.bounds) {
-                var textDecorator = this.getDecorator('TEXT', {
+                var textDecorator = this.getDecorator("TEXT", {
                     text: this.options.name,
                     x: this.options.label.bounds.x,
                     y: this.options.label.bounds.y
@@ -1276,15 +1109,15 @@ var ConnectorShape = function (_ManhathanRouter) {
             }
         }
     }, {
-        key: 'getDecorator',
+        key: "getDecorator",
         value: function getDecorator(type, options) {
             var decorator = void 0;
             switch (type) {
-                case 'TEXT':
-                    decorator = this.canvas.text(+options.x, +options.y, options.text).attr({ 'font-size': '13px', 'font-family': 'Arial, Helvetica, sans-serif' });
+                case "TEXT":
+                    decorator = this.canvas.text(+options.x, +options.y, options.text).attr({ "font-size": "13px", "font-family": "Arial, Helvetica, sans-serif" });
                     var tx = (+this.options.flo_x1 - +this.options.flo_x2) / -2 - decorator.getBBox().width / 2;
                     var ty = (+this.options.flo_y1 - +this.options.flo_y2) / -2 + decorator.getBBox().height;
-                    decorator.transform('t ' + tx + ', ' + ty);
+                    decorator.transform("t " + tx + ", " + ty);
                     break;
                 default:
                     decorator = this.canvas.group();
@@ -1293,26 +1126,27 @@ var ConnectorShape = function (_ManhathanRouter) {
             return decorator;
         }
     }, {
-        key: 'getNativeShape',
+        key: "getNativeShape",
         value: function getNativeShape() {
             return this.shape;
         }
     }, {
-        key: 'setMethod',
+        key: "setMethod",
         value: function setMethod(method) {
             return this.method = method;
         }
     }]);
 
     return ConnectorShape;
-}(__WEBPACK_IMPORTED_MODULE_4__manhathan_route__["a" /* ManhathanRouter */]);
+}(__WEBPACK_IMPORTED_MODULE_3__manhathan_route__["a" /* ManhathanRouter */]);
 
 /***/ }),
-/* 53 */
+
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__point__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__point__ = __webpack_require__(205);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ManhathanRouter; });
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -1328,9 +1162,9 @@ var ManhathanRouter = function () {
     }
 
     _createClass(ManhathanRouter, [{
-        key: 'createRoute',
+        key: "createRoute",
         value: function createRoute(posx1, posy1, posx2, posy2) {
-            //fake  example values
+            // fake  example values
             /*********************/
             var points = [];
             var fromPt = new __WEBPACK_IMPORTED_MODULE_0__point__["a" /* Point */](posx1, posy1);
@@ -1340,15 +1174,25 @@ var ManhathanRouter = function () {
             var toDir = 3;
 
             var connection = null;
-            //fake  example values
+            // fake  example values
             /*********************/
             this.route(connection, toPt, toDir, fromPt, fromDir, points);
             return points;
         }
     }, {
-        key: 'route',
+        key: "route",
         value: function route(conn, fromPt, fromDir, toPt, toDir, points) {
-            var TOL, TOLxTOL, UP, RIGHT, DOWN, LEFT, xDiff, yDiff, nPoint, dir, pos;
+            var TOL = void 0,
+                TOLxTOL = void 0,
+                UP = void 0,
+                RIGHT = void 0,
+                DOWN = void 0,
+                LEFT = void 0,
+                xDiff = void 0,
+                yDiff = void 0,
+                nPoint = void 0,
+                dir = void 0,
+                pos = void 0;
 
             TOL = 0.1;
             TOLxTOL = 0.01;
@@ -1467,7 +1311,8 @@ var ManhathanRouter = function () {
 }();
 
 /***/ }),
-/* 54 */
+
+/***/ 205:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1482,16 +1327,16 @@ var Point = function () {
 
         this.x = xCoordinate;
         this.y = yCoordinate;
-        this.type = 'Point';
+        this.type = "Point";
     }
 
     _createClass(Point, [{
-        key: 'getX',
+        key: "getX",
         value: function getX() {
             return this.x;
         }
     }, {
-        key: 'getY',
+        key: "getY",
         value: function getY() {
             return this.y;
         }
@@ -1501,69 +1346,8 @@ var Point = function () {
 }();
 
 /***/ }),
-/* 55 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SVGLoader; });
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * SVGLoader
- */
-var SVGLoader = function () {
-    function SVGLoader(renderer, canvas) {
-        _classCallCheck(this, SVGLoader);
-
-        this.renderer = renderer;
-        this.canvas = canvas;
-    }
-
-    _createClass(SVGLoader, [{
-        key: "loadElement",
-        value: function loadElement(path, options) {
-            return this.canvas.path(path).transform(options.scale + ", " + options.x + ", " + options.y).attr(options.attr);
-        }
-    }]);
-
-    return SVGLoader;
-}();
-
-/***/ }),
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */
+/***/ 247:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1595,16 +1379,18 @@ function serializeAsProperty(element) {
 }
 
 /***/ }),
-/* 88 */
+
+/***/ 248:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_moddle__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_moddle__ = __webpack_require__(488);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__lib_moddle__["a"]; });
 
 
 /***/ }),
-/* 89 */
+
+/***/ 249:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1626,77 +1412,34 @@ module.exports = isObject;
 
 
 /***/ }),
-/* 90 */
+
+/***/ 251:
 /***/ (function(module, exports, __webpack_require__) {
 
+window.Snap = __webpack_require__(477);
+__webpack_require__(534);
+window.bpmnModdle = __webpack_require__(429);
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-//require('./bootstrap');
-//window.Vue = require('vue');
-__webpack_require__(311);
-window.BpmnModdle = __webpack_require__(256);
-window.moddle = new BpmnModdle.default();
+window.moddle = new window.bpmnModdle.default();
 window.Event = new Vue();
-window.Snap = __webpack_require__(272);
 
-var token = document.head.querySelector('meta[name="csrf-token"]');
+Vue.component("designer", __webpack_require__(516));
+Vue.component("toolbar", __webpack_require__(517));
+Vue.component("uploader-file", __webpack_require__(518));
+Vue.component("actions", __webpack_require__(515));
 
-if (token) {
-    Vue.http.interceptors.push(function (request, next) {
-        request.headers.set('X-CSRF-TOKEN', token.content);
-        next();
-    });
-}
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('designer', __webpack_require__(304));
-Vue.component('toolbar', __webpack_require__(305));
-Vue.component('uploader-file', __webpack_require__(306));
-Vue.component('actions', __webpack_require__(303));
-
-var appDesigner = new Vue({
-    el: '#appDesigner',
+new Vue({
+    el: "#appDesigner",
     methods: {
         exportPMIO: function exportPMIO() {
-            Event.$emit('uploadPMIO', {});
+            Event.$emit("uploadPMIO", {});
         }
     }
 });
 
 /***/ }),
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */
+
+/***/ 279:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1725,53 +1468,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 114 */
+
+/***/ 280:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__diagram_moddle_svg__ = __webpack_require__(151);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__diagram_svg_loader__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__diagram_snap_plugins_multitext_plugin__ = __webpack_require__(299);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__diagram_moddle_svg__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__diagram_svgLoader__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__diagram_snap_plugins_multitext_plugin__ = __webpack_require__(542);
 //
 //
 //
@@ -1790,9 +1495,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     svgCanvas: {},
     data: function data() {
         return {
-            //xmlData: '<?xml version="1.0" encoding="UTF-8"?><bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">  <bpmn:process id="Process_1" isExecutable="false">    <bpmn:startEvent id="StartEvent_1">      <bpmn:outgoing>SequenceFlow_036ay68</bpmn:outgoing>    </bpmn:startEvent>    <bpmn:task id="Task_0myplzs">      <bpmn:incoming>SequenceFlow_036ay68</bpmn:incoming>      <bpmn:outgoing>SequenceFlow_1jvkln4</bpmn:outgoing>    </bpmn:task>    <bpmn:sequenceFlow id="SequenceFlow_036ay68" sourceRef="StartEvent_1" targetRef="Task_0myplzs" />    <bpmn:task id="Task_0uw4l5w">      <bpmn:incoming>SequenceFlow_1jvkln4</bpmn:incoming>      <bpmn:outgoing>SequenceFlow_1p9jnkt</bpmn:outgoing>    </bpmn:task>    <bpmn:sequenceFlow id="SequenceFlow_1jvkln4" sourceRef="Task_0myplzs" targetRef="Task_0uw4l5w" />    <bpmn:exclusiveGateway id="ExclusiveGateway_15798xt">      <bpmn:incoming>SequenceFlow_1p9jnkt</bpmn:incoming>      <bpmn:outgoing>SequenceFlow_173mgt4</bpmn:outgoing>      <bpmn:outgoing>SequenceFlow_0d81nou</bpmn:outgoing>    </bpmn:exclusiveGateway>    <bpmn:sequenceFlow id="SequenceFlow_1p9jnkt" sourceRef="Task_0uw4l5w" targetRef="ExclusiveGateway_15798xt" />    <bpmn:task id="Task_1j0nzd8">      <bpmn:incoming>SequenceFlow_173mgt4</bpmn:incoming>      <bpmn:outgoing>SequenceFlow_1bvyywa</bpmn:outgoing>    </bpmn:task>    <bpmn:sequenceFlow id="SequenceFlow_173mgt4" sourceRef="ExclusiveGateway_15798xt" targetRef="Task_1j0nzd8" />    <bpmn:endEvent id="EndEvent_0ovfy2l">      <bpmn:incoming>SequenceFlow_0d81nou</bpmn:incoming>    </bpmn:endEvent>    <bpmn:sequenceFlow id="SequenceFlow_0d81nou" sourceRef="ExclusiveGateway_15798xt" targetRef="EndEvent_0ovfy2l" />    <bpmn:endEvent id="EndEvent_06tw9c9">      <bpmn:incoming>SequenceFlow_1bvyywa</bpmn:incoming>    </bpmn:endEvent>    <bpmn:sequenceFlow id="SequenceFlow_1bvyywa" sourceRef="Task_1j0nzd8" targetRef="EndEvent_06tw9c9" />  </bpmn:process>  <bpmndi:BPMNDiagram id="BPMNDiagram_1">    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1"><dc:Bounds x="173" y="102" width="36" height="36" />      </bpmndi:BPMNShape>      <bpmndi:BPMNShape id="Task_0myplzs_di" bpmnElement="Task_0myplzs"><dc:Bounds x="286" y="72" width="100" height="80" />      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_036ay68_di" bpmnElement="SequenceFlow_036ay68"><di:waypoint xsi:type="dc:Point" x="209" y="120" /><di:waypoint xsi:type="dc:Point" x="248" y="120" /><di:waypoint xsi:type="dc:Point" x="248" y="112" /><di:waypoint xsi:type="dc:Point" x="286" y="112" /><bpmndi:BPMNLabel>  <dc:Bounds x="263" y="110" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>      <bpmndi:BPMNShape id="Task_0uw4l5w_di" bpmnElement="Task_0uw4l5w"><dc:Bounds x="501" y="57" width="100" height="80" />      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_1jvkln4_di" bpmnElement="SequenceFlow_1jvkln4"><di:waypoint xsi:type="dc:Point" x="386" y="112" /><di:waypoint xsi:type="dc:Point" x="444" y="112" /><di:waypoint xsi:type="dc:Point" x="444" y="97" /><di:waypoint xsi:type="dc:Point" x="501" y="97" /><bpmndi:BPMNLabel>  <dc:Bounds x="459" y="98.5" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>      <bpmndi:BPMNShape id="ExclusiveGateway_15798xt_di" bpmnElement="ExclusiveGateway_15798xt" isMarkerVisible="true"><dc:Bounds x="654" y="72" width="50" height="50" /><bpmndi:BPMNLabel>  <dc:Bounds x="679" y="126" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_1p9jnkt_di" bpmnElement="SequenceFlow_1p9jnkt"><di:waypoint xsi:type="dc:Point" x="601" y="97" /><di:waypoint xsi:type="dc:Point" x="654" y="97" /><bpmndi:BPMNLabel>  <dc:Bounds x="627.5" y="76" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>      <bpmndi:BPMNShape id="Task_1j0nzd8_di" bpmnElement="Task_1j0nzd8"><dc:Bounds x="717" y="2" width="100" height="80" />      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_173mgt4_di" bpmnElement="SequenceFlow_173mgt4"><di:waypoint xsi:type="dc:Point" x="679" y="72" /><di:waypoint xsi:type="dc:Point" x="679" y="42" /><di:waypoint xsi:type="dc:Point" x="717" y="42" /><bpmndi:BPMNLabel>  <dc:Bounds x="694" y="51" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>      <bpmndi:BPMNShape id="EndEvent_0ovfy2l_di" bpmnElement="EndEvent_0ovfy2l"><dc:Bounds x="749" y="148" width="36" height="36" /><bpmndi:BPMNLabel>  <dc:Bounds x="767" y="188" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_0d81nou_di" bpmnElement="SequenceFlow_0d81nou"><di:waypoint xsi:type="dc:Point" x="679" y="122" /><di:waypoint xsi:type="dc:Point" x="679" y="166" /><di:waypoint xsi:type="dc:Point" x="749" y="166" /><bpmndi:BPMNLabel>  <dc:Bounds x="694" y="138" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>      <bpmndi:BPMNShape id="EndEvent_06tw9c9_di" bpmnElement="EndEvent_06tw9c9"><dc:Bounds x="871" y="24" width="36" height="36" /><bpmndi:BPMNLabel>  <dc:Bounds x="889" y="64" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_1bvyywa_di" bpmnElement="SequenceFlow_1bvyywa"><di:waypoint xsi:type="dc:Point" x="817" y="42" /><di:waypoint xsi:type="dc:Point" x="871" y="42" /><bpmndi:BPMNLabel>  <dc:Bounds x="844" y="21" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>    </bpmndi:BPMNPlane>  </bpmndi:BPMNDiagram></bpmn:definitions>',
+            xmlData: '<?xml version="1.0" encoding="UTF-8"?><bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">  <bpmn:process id="Process_1" isExecutable="false">    <bpmn:startEvent id="StartEvent_1">      <bpmn:outgoing>SequenceFlow_036ay68</bpmn:outgoing>    </bpmn:startEvent>    <bpmn:task id="Task_0myplzs">      <bpmn:incoming>SequenceFlow_036ay68</bpmn:incoming>      <bpmn:outgoing>SequenceFlow_1jvkln4</bpmn:outgoing>    </bpmn:task>    <bpmn:sequenceFlow id="SequenceFlow_036ay68" sourceRef="StartEvent_1" targetRef="Task_0myplzs" />    <bpmn:task id="Task_0uw4l5w">      <bpmn:incoming>SequenceFlow_1jvkln4</bpmn:incoming>      <bpmn:outgoing>SequenceFlow_1p9jnkt</bpmn:outgoing>    </bpmn:task>    <bpmn:sequenceFlow id="SequenceFlow_1jvkln4" sourceRef="Task_0myplzs" targetRef="Task_0uw4l5w" />    <bpmn:exclusiveGateway id="ExclusiveGateway_15798xt">      <bpmn:incoming>SequenceFlow_1p9jnkt</bpmn:incoming>      <bpmn:outgoing>SequenceFlow_173mgt4</bpmn:outgoing>      <bpmn:outgoing>SequenceFlow_0d81nou</bpmn:outgoing>    </bpmn:exclusiveGateway>    <bpmn:sequenceFlow id="SequenceFlow_1p9jnkt" sourceRef="Task_0uw4l5w" targetRef="ExclusiveGateway_15798xt" />    <bpmn:task id="Task_1j0nzd8">      <bpmn:incoming>SequenceFlow_173mgt4</bpmn:incoming>      <bpmn:outgoing>SequenceFlow_1bvyywa</bpmn:outgoing>    </bpmn:task>    <bpmn:sequenceFlow id="SequenceFlow_173mgt4" sourceRef="ExclusiveGateway_15798xt" targetRef="Task_1j0nzd8" />    <bpmn:endEvent id="EndEvent_0ovfy2l">      <bpmn:incoming>SequenceFlow_0d81nou</bpmn:incoming>    </bpmn:endEvent>    <bpmn:sequenceFlow id="SequenceFlow_0d81nou" sourceRef="ExclusiveGateway_15798xt" targetRef="EndEvent_0ovfy2l" />    <bpmn:endEvent id="EndEvent_06tw9c9">      <bpmn:incoming>SequenceFlow_1bvyywa</bpmn:incoming>    </bpmn:endEvent>    <bpmn:sequenceFlow id="SequenceFlow_1bvyywa" sourceRef="Task_1j0nzd8" targetRef="EndEvent_06tw9c9" />  </bpmn:process>  <bpmndi:BPMNDiagram id="BPMNDiagram_1">    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1"><dc:Bounds x="173" y="102" width="36" height="36" />      </bpmndi:BPMNShape>      <bpmndi:BPMNShape id="Task_0myplzs_di" bpmnElement="Task_0myplzs"><dc:Bounds x="286" y="72" width="100" height="80" />      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_036ay68_di" bpmnElement="SequenceFlow_036ay68"><di:waypoint xsi:type="dc:Point" x="209" y="120" /><di:waypoint xsi:type="dc:Point" x="248" y="120" /><di:waypoint xsi:type="dc:Point" x="248" y="112" /><di:waypoint xsi:type="dc:Point" x="286" y="112" /><bpmndi:BPMNLabel>  <dc:Bounds x="263" y="110" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>      <bpmndi:BPMNShape id="Task_0uw4l5w_di" bpmnElement="Task_0uw4l5w"><dc:Bounds x="501" y="57" width="100" height="80" />      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_1jvkln4_di" bpmnElement="SequenceFlow_1jvkln4"><di:waypoint xsi:type="dc:Point" x="386" y="112" /><di:waypoint xsi:type="dc:Point" x="444" y="112" /><di:waypoint xsi:type="dc:Point" x="444" y="97" /><di:waypoint xsi:type="dc:Point" x="501" y="97" /><bpmndi:BPMNLabel>  <dc:Bounds x="459" y="98.5" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>      <bpmndi:BPMNShape id="ExclusiveGateway_15798xt_di" bpmnElement="ExclusiveGateway_15798xt" isMarkerVisible="true"><dc:Bounds x="654" y="72" width="50" height="50" /><bpmndi:BPMNLabel>  <dc:Bounds x="679" y="126" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_1p9jnkt_di" bpmnElement="SequenceFlow_1p9jnkt"><di:waypoint xsi:type="dc:Point" x="601" y="97" /><di:waypoint xsi:type="dc:Point" x="654" y="97" /><bpmndi:BPMNLabel>  <dc:Bounds x="627.5" y="76" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>      <bpmndi:BPMNShape id="Task_1j0nzd8_di" bpmnElement="Task_1j0nzd8"><dc:Bounds x="717" y="2" width="100" height="80" />      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_173mgt4_di" bpmnElement="SequenceFlow_173mgt4"><di:waypoint xsi:type="dc:Point" x="679" y="72" /><di:waypoint xsi:type="dc:Point" x="679" y="42" /><di:waypoint xsi:type="dc:Point" x="717" y="42" /><bpmndi:BPMNLabel>  <dc:Bounds x="694" y="51" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>      <bpmndi:BPMNShape id="EndEvent_0ovfy2l_di" bpmnElement="EndEvent_0ovfy2l"><dc:Bounds x="749" y="148" width="36" height="36" /><bpmndi:BPMNLabel>  <dc:Bounds x="767" y="188" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_0d81nou_di" bpmnElement="SequenceFlow_0d81nou"><di:waypoint xsi:type="dc:Point" x="679" y="122" /><di:waypoint xsi:type="dc:Point" x="679" y="166" /><di:waypoint xsi:type="dc:Point" x="749" y="166" /><bpmndi:BPMNLabel>  <dc:Bounds x="694" y="138" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>      <bpmndi:BPMNShape id="EndEvent_06tw9c9_di" bpmnElement="EndEvent_06tw9c9"><dc:Bounds x="871" y="24" width="36" height="36" /><bpmndi:BPMNLabel>  <dc:Bounds x="889" y="64" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_1bvyywa_di" bpmnElement="SequenceFlow_1bvyywa"><di:waypoint xsi:type="dc:Point" x="817" y="42" /><di:waypoint xsi:type="dc:Point" x="871" y="42" /><bpmndi:BPMNLabel>  <dc:Bounds x="844" y="21" width="0" height="12" /></bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>    </bpmndi:BPMNPlane>  </bpmndi:BPMNDiagram></bpmn:definitions>',
             //xmlData: '<?xml version="1.0" encoding="UTF-8"?><bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">  <bpmn:collaboration id="Collaboration_0g96llt">    <bpmn:participant id="Participant_0sc70pi" name="fgfsdgfds" processRef="Process_0o8o82m" />  </bpmn:collaboration>  <bpmn:process id="Process_0o8o82m">    <bpmn:intermediateThrowEvent id="IntermediateThrowEvent_0h8xaea" />    <bpmn:dataObjectReference id="DataObjectReference_0ago5jo" dataObjectRef="DataObject_027n7ys" />    <bpmn:dataObject id="DataObject_027n7ys" />    <bpmn:dataStoreReference id="DataStoreReference_0op13vj" />  </bpmn:process>  <bpmndi:BPMNDiagram id="BPMNDiagram_1">    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0g96llt">      <bpmndi:BPMNShape id="Participant_0sc70pi_di" bpmnElement="Participant_0sc70pi">        <dc:Bounds x="13.839160839160797" y="31" width="600" height="250" />      </bpmndi:BPMNShape>      <bpmndi:BPMNShape id="IntermediateThrowEvent_0h8xaea_di" bpmnElement="IntermediateThrowEvent_0h8xaea">        <dc:Bounds x="63.8391608391608" y="57.51248751248751" width="36" height="36" />        <bpmndi:BPMNLabel>          <dc:Bounds x="81.8391608391608" y="97.51248751248751" width="0" height="12" />        </bpmndi:BPMNLabel>      </bpmndi:BPMNShape>      <bpmndi:BPMNShape id="DataObjectReference_0ago5jo_di" bpmnElement="DataObjectReference_0ago5jo">        <dc:Bounds x="151.8391608391608" y="51" width="36" height="50" />        <bpmndi:BPMNLabel>          <dc:Bounds x="169.8391608391608" y="105" width="0" height="12" />        </bpmndi:BPMNLabel>      </bpmndi:BPMNShape>      <bpmndi:BPMNShape id="DataStoreReference_0op13vj_di" bpmnElement="DataStoreReference_0op13vj">        <dc:Bounds x="229.8391608391608" y="51" width="50" height="50" />        <bpmndi:BPMNLabel>          <dc:Bounds x="254.8391608391608" y="105" width="0" height="12" />        </bpmndi:BPMNLabel>      </bpmndi:BPMNShape>    </bpmndi:BPMNPlane>  </bpmndi:BPMNDiagram></bpmn:definitions>',
-            xmlData: '<?xml version="1.0" encoding="UTF-8"?><bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">  <bpmn:process id="Process_1" isExecutable="false">    <bpmn:startEvent id="StartEvent_1">      <bpmn:outgoing>SequenceFlow_0od9xnl</bpmn:outgoing>    </bpmn:startEvent>    <bpmn:task id="Task_1fwbo70">      <bpmn:incoming>SequenceFlow_0od9xnl</bpmn:incoming>      <bpmn:outgoing>SequenceFlow_1mss75q</bpmn:outgoing>    </bpmn:task>    <bpmn:sequenceFlow id="SequenceFlow_0od9xnl" name="test" sourceRef="StartEvent_1" targetRef="Task_1fwbo70" />    <bpmn:endEvent id="EndEvent_07eowtv">      <bpmn:incoming>SequenceFlow_1mss75q</bpmn:incoming>    </bpmn:endEvent>    <bpmn:sequenceFlow id="SequenceFlow_1mss75q" sourceRef="Task_1fwbo70" targetRef="EndEvent_07eowtv" />  </bpmn:process>  <bpmndi:BPMNDiagram id="BPMNDiagram_1">    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">        <dc:Bounds x="173" y="102" width="36" height="36" />      </bpmndi:BPMNShape>      <bpmndi:BPMNShape id="Task_1fwbo70_di" bpmnElement="Task_1fwbo70">        <dc:Bounds x="338" y="80" width="100" height="80" />      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_0od9xnl_di" bpmnElement="SequenceFlow_0od9xnl">        <di:waypoint xsi:type="dc:Point" x="209" y="120" />        <di:waypoint xsi:type="dc:Point" x="338" y="120" />        <bpmndi:BPMNLabel>          <dc:Bounds x="263" y="99" width="21" height="12" />        </bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>      <bpmndi:BPMNShape id="EndEvent_07eowtv_di" bpmnElement="EndEvent_07eowtv">        <dc:Bounds x="549" y="102" width="36" height="36" />        <bpmndi:BPMNLabel>          <dc:Bounds x="567" y="142" width="0" height="12" />        </bpmndi:BPMNLabel>      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_1mss75q_di" bpmnElement="SequenceFlow_1mss75q">        <di:waypoint xsi:type="dc:Point" x="438" y="120" />        <di:waypoint xsi:type="dc:Point" x="549" y="120" />        <bpmndi:BPMNLabel>          <dc:Bounds x="493.5" y="99" width="0" height="12" />        </bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>    </bpmndi:BPMNPlane>  </bpmndi:BPMNDiagram></bpmn:definitions>',
+            //xmlData: '<?xml version="1.0" encoding="UTF-8"?><bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">  <bpmn:process id="Process_1" isExecutable="false">    <bpmn:startEvent id="StartEvent_1">      <bpmn:outgoing>SequenceFlow_0od9xnl</bpmn:outgoing>    </bpmn:startEvent>    <bpmn:task id="Task_1fwbo70">      <bpmn:incoming>SequenceFlow_0od9xnl</bpmn:incoming>      <bpmn:outgoing>SequenceFlow_1mss75q</bpmn:outgoing>    </bpmn:task>    <bpmn:sequenceFlow id="SequenceFlow_0od9xnl" name="test" sourceRef="StartEvent_1" targetRef="Task_1fwbo70" />    <bpmn:endEvent id="EndEvent_07eowtv">      <bpmn:incoming>SequenceFlow_1mss75q</bpmn:incoming>    </bpmn:endEvent>    <bpmn:sequenceFlow id="SequenceFlow_1mss75q" sourceRef="Task_1fwbo70" targetRef="EndEvent_07eowtv" />  </bpmn:process>  <bpmndi:BPMNDiagram id="BPMNDiagram_1">    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">        <dc:Bounds x="173" y="102" width="36" height="36" />      </bpmndi:BPMNShape>      <bpmndi:BPMNShape id="Task_1fwbo70_di" bpmnElement="Task_1fwbo70">        <dc:Bounds x="338" y="80" width="100" height="80" />      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_0od9xnl_di" bpmnElement="SequenceFlow_0od9xnl">        <di:waypoint xsi:type="dc:Point" x="209" y="120" />        <di:waypoint xsi:type="dc:Point" x="338" y="120" />        <bpmndi:BPMNLabel>          <dc:Bounds x="263" y="99" width="21" height="12" />        </bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>      <bpmndi:BPMNShape id="EndEvent_07eowtv_di" bpmnElement="EndEvent_07eowtv">        <dc:Bounds x="549" y="102" width="36" height="36" />        <bpmndi:BPMNLabel>          <dc:Bounds x="567" y="142" width="0" height="12" />        </bpmndi:BPMNLabel>      </bpmndi:BPMNShape>      <bpmndi:BPMNEdge id="SequenceFlow_1mss75q_di" bpmnElement="SequenceFlow_1mss75q">        <di:waypoint xsi:type="dc:Point" x="438" y="120" />        <di:waypoint xsi:type="dc:Point" x="549" y="120" />        <bpmndi:BPMNLabel>          <dc:Bounds x="493.5" y="99" width="0" height="12" />        </bpmndi:BPMNLabel>      </bpmndi:BPMNEdge>    </bpmndi:BPMNPlane>  </bpmndi:BPMNDiagram></bpmn:definitions>',
             definitions: {}
         };
     },
@@ -1884,7 +1589,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.diagramSvg;
         },
         exportPMIO: function exportPMIO() {
-            var request = __webpack_require__(293);
+            var request = __webpack_require__(500);
             var data = {};
             data.attributes = {
                 bpmn: this.xmlData
@@ -1902,226 +1607,226 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             width: '5000px',
             height: '5000px'
         });
-
-        this.diagramSvg = new __WEBPACK_IMPORTED_MODULE_0__diagram_moddle_svg__["a" /* DiagramSvg */](this.svgCanvas, new __WEBPACK_IMPORTED_MODULE_1__diagram_svg_loader__["a" /* SVGLoader */](Snap, this.svgCanvas));
-
+        this.diagramSvg = new __WEBPACK_IMPORTED_MODULE_0__diagram_moddle_svg__["a" /* DiagramSvg */](this.svgCanvas, new __WEBPACK_IMPORTED_MODULE_1__diagram_svgLoader__["a" /* SVGLoader */](this.svgCanvas));
         this.diagramCoordinates = {
             x: document.getElementById('svg').getBoundingClientRect().left,
             y: document.getElementById('svg').getBoundingClientRect().top
         };
-
         this.loadXML();
-        var data = {
-            "prj_uid": "372080569592c404f5dde57093455423",
-            "prj_name": "Test",
-            "prj_description": "",
-            "prj_target_namespace": null,
-            "prj_expresion_language": null,
-            "prj_type_language": null,
-            "prj_exporter": null,
-            "prj_exporter_version": null,
-            "prj_create_date": "2017-05-29 15:37:52",
-            "prj_update_date": "2017-05-29 11:38:19",
-            "prj_author": "00000000000000000000000000000001",
-            "prj_author_version": null,
-            "prj_original_source": null,
-            "diagrams": [{
-                "dia_uid": "269518920592c4050246b49040344066",
-                "prj_uid": "372080569592c404f5dde57093455423",
-                "dia_name": "Test",
-                "dia_is_closable": 0,
-                "pro_uid": "946953380592c405071cbf1027927851",
-                "activities": [{
-                    "act_uid": "124698833592c406c4b0cc1026408625",
-                    "act_name": "Task 2",
-                    "act_type": "TASK",
-                    "act_is_for_compensation": "0",
-                    "act_start_quantity": "1",
-                    "act_completion_quantity": "0",
-                    "act_task_type": "EMPTY",
-                    "act_implementation": "",
-                    "act_instantiate": "0",
-                    "act_script_type": "",
-                    "act_script": "",
-                    "act_loop_type": "EMPTY",
-                    "act_test_before": "0",
-                    "act_loop_maximum": "0",
-                    "act_loop_condition": "0",
-                    "act_loop_cardinality": "0",
-                    "act_loop_behavior": "0",
-                    "act_is_adhoc": "0",
-                    "act_is_collapsed": "0",
-                    "act_completion_condition": "0",
-                    "act_ordering": "0",
-                    "act_cancel_remaining_instances": "1",
-                    "act_protocol": "0",
-                    "act_method": "0",
-                    "act_is_global": "0",
-                    "act_referer": "0",
-                    "act_default_flow": "0",
-                    "act_master_diagram": "0",
-                    "bou_element": "638724345592c405abe1058017041790",
-                    "bou_x": "363",
-                    "bou_y": "70",
-                    "bou_width": "150",
-                    "bou_height": "75",
-                    "bou_container": "bpmnDiagram"
-                }, {
-                    "act_uid": "720497925592c406b9448a5055485729",
-                    "act_name": "Task 1",
-                    "act_type": "TASK",
-                    "act_is_for_compensation": "0",
-                    "act_start_quantity": "1",
-                    "act_completion_quantity": "0",
-                    "act_task_type": "EMPTY",
-                    "act_implementation": "",
-                    "act_instantiate": "0",
-                    "act_script_type": "",
-                    "act_script": "",
-                    "act_loop_type": "EMPTY",
-                    "act_test_before": "0",
-                    "act_loop_maximum": "0",
-                    "act_loop_condition": "0",
-                    "act_loop_cardinality": "0",
-                    "act_loop_behavior": "0",
-                    "act_is_adhoc": "0",
-                    "act_is_collapsed": "0",
-                    "act_completion_condition": "0",
-                    "act_ordering": "0",
-                    "act_cancel_remaining_instances": "1",
-                    "act_protocol": "0",
-                    "act_method": "0",
-                    "act_is_global": "0",
-                    "act_referer": "0",
-                    "act_default_flow": "0",
-                    "act_master_diagram": "0",
-                    "bou_element": "638724345592c405abe1058017041790",
-                    "bou_x": "166",
-                    "bou_y": "70",
-                    "bou_width": "150",
-                    "bou_height": "75",
-                    "bou_container": "bpmnDiagram"
-                }],
-                "events": [{
-                    "evn_uid": "256381233592c406cae2026029888464",
-                    "evn_name": "",
-                    "evn_type": "START",
-                    "evn_marker": "EMPTY",
-                    "evn_is_interrupting": "1",
-                    "evn_cancel_activity": "0",
-                    "evn_activity_ref": null,
-                    "evn_wait_for_completion": "0",
-                    "evn_error_name": null,
-                    "evn_error_code": null,
-                    "evn_escalation_name": null,
-                    "evn_escalation_code": null,
-                    "evn_message": "LEAD",
-                    "evn_operation_name": null,
-                    "evn_operation_implementation_ref": null,
-                    "evn_time_date": null,
-                    "evn_time_cycle": null,
-                    "evn_time_duration": null,
-                    "evn_behavior": "CATCH",
-                    "bou_element": "638724345592c405abe1058017041790",
-                    "bou_x": "88",
-                    "bou_y": "91",
-                    "bou_width": "33",
-                    "bou_height": "33",
-                    "bou_container": "bpmnDiagram"
-                }, {
-                    "evn_uid": "632067129592c406cc59362027725874",
-                    "evn_name": "",
-                    "evn_type": "END",
-                    "evn_marker": "EMPTY",
-                    "evn_is_interrupting": "1",
-                    "evn_cancel_activity": "0",
-                    "evn_activity_ref": null,
-                    "evn_wait_for_completion": "0",
-                    "evn_error_name": null,
-                    "evn_error_code": null,
-                    "evn_escalation_name": null,
-                    "evn_escalation_code": null,
-                    "evn_message": "",
-                    "evn_operation_name": null,
-                    "evn_operation_implementation_ref": null,
-                    "evn_time_date": null,
-                    "evn_time_cycle": null,
-                    "evn_time_duration": null,
-                    "evn_behavior": "THROW",
-                    "bou_element": "638724345592c405abe1058017041790",
-                    "bou_x": "557",
-                    "bou_y": "91",
-                    "bou_width": "33",
-                    "bou_height": "33",
-                    "bou_container": "bpmnDiagram"
-                }],
-                "gateways": [],
-                "flows": [{
-                    "flo_uid": "180462119592c406d2f3d38004898877",
-                    "flo_type": "SEQUENCE",
-                    "flo_name": " ",
-                    "flo_element_origin": "720497925592c406b9448a5055485729",
-                    "flo_element_origin_type": "bpmnActivity",
-                    "flo_element_dest": "124698833592c406c4b0cc1026408625",
-                    "flo_element_dest_type": "bpmnActivity",
-                    "flo_is_inmediate": "1",
-                    "flo_condition": "",
-                    "flo_x1": "317",
-                    "flo_y1": "108",
-                    "flo_x2": "363",
-                    "flo_y2": "108",
-                    "flo_state": [{ "x": 317, "y": 108 }, { "x": 363, "y": 108 }],
-                    "flo_position": "1"
-                }, {
-                    "flo_uid": "205528518592c406d2f5635096221855",
-                    "flo_type": "SEQUENCE",
-                    "flo_name": " ",
-                    "flo_element_origin": "124698833592c406c4b0cc1026408625",
-                    "flo_element_origin_type": "bpmnActivity",
-                    "flo_element_dest": "632067129592c406cc59362027725874",
-                    "flo_element_dest_type": "bpmnEvent",
-                    "flo_is_inmediate": "1",
-                    "flo_condition": "",
-                    "flo_x1": "514",
-                    "flo_y1": "108",
-                    "flo_x2": "557",
-                    "flo_y2": "108",
-                    "flo_state": [{ "x": 514, "y": 108 }, { "x": 557, "y": 108 }],
-                    "flo_position": "1"
-                }, {
-                    "flo_uid": "427596475592c406d2f2196069782540",
-                    "flo_type": "SEQUENCE",
-                    "flo_name": " ",
-                    "flo_element_origin": "256381233592c406cae2026029888464",
-                    "flo_element_origin_type": "bpmnEvent",
-                    "flo_element_dest": "720497925592c406b9448a5055485729",
-                    "flo_element_dest_type": "bpmnActivity",
-                    "flo_is_inmediate": "1",
-                    "flo_condition": "",
-                    "flo_x1": "121",
-                    "flo_y1": "108",
-                    "flo_x2": "166",
-                    "flo_y2": "108",
-                    "flo_state": [{ "x": 121, "y": 108 }, { "x": 166, "y": 108 }],
-                    "flo_position": "1"
-                }],
-                "artifacts": [],
-                "laneset": [],
-                "lanes": [],
-                "data": [],
-                "participants": []
-            }],
-            "usr_setting_designer": { "enabled_grid": false }
-        };
-        //            this.diagramSvg.draw(data.diagrams[0]);
-        //            console.log(this.diagramSvg.elementRegistry); // 124698833592c406c4b0cc1026408625
-        //            const element = this.diagramSvg.getElementById('124698833592c406c4b0cc1026408625').getShape().getNativeShape();
-        //            element.drag();
+
+        /*
+         let data = {
+         "prj_uid": "372080569592c404f5dde57093455423",
+         "prj_name": "Test",
+         "prj_description": "",
+         "prj_target_namespace": null,
+         "prj_expresion_language": null,
+         "prj_type_language": null,
+         "prj_exporter": null,
+         "prj_exporter_version": null,
+         "prj_create_date": "2017-05-29 15:37:52",
+         "prj_update_date": "2017-05-29 11:38:19",
+         "prj_author": "00000000000000000000000000000001",
+         "prj_author_version": null,
+         "prj_original_source": null,
+         "diagrams": [{
+         "dia_uid": "269518920592c4050246b49040344066",
+         "prj_uid": "372080569592c404f5dde57093455423",
+         "dia_name": "Test",
+         "dia_is_closable": 0,
+         "pro_uid": "946953380592c405071cbf1027927851",
+         "activities": [{
+         "act_uid": "124698833592c406c4b0cc1026408625",
+         "act_name": "Task 2",
+         "act_type": "TASK",
+         "act_is_for_compensation": "0",
+         "act_start_quantity": "1",
+         "act_completion_quantity": "0",
+         "act_task_type": "EMPTY",
+         "act_implementation": "",
+         "act_instantiate": "0",
+         "act_script_type": "",
+         "act_script": "",
+         "act_loop_type": "EMPTY",
+         "act_test_before": "0",
+         "act_loop_maximum": "0",
+         "act_loop_condition": "0",
+         "act_loop_cardinality": "0",
+         "act_loop_behavior": "0",
+         "act_is_adhoc": "0",
+         "act_is_collapsed": "0",
+         "act_completion_condition": "0",
+         "act_ordering": "0",
+         "act_cancel_remaining_instances": "1",
+         "act_protocol": "0",
+         "act_method": "0",
+         "act_is_global": "0",
+         "act_referer": "0",
+         "act_default_flow": "0",
+         "act_master_diagram": "0",
+         "bou_element": "638724345592c405abe1058017041790",
+         "bou_x": "363",
+         "bou_y": "70",
+         "bou_width": "150",
+         "bou_height": "75",
+         "bou_container": "bpmnDiagram"
+         }, {
+         "act_uid": "720497925592c406b9448a5055485729",
+         "act_name": "Task 1",
+         "act_type": "TASK",
+         "act_is_for_compensation": "0",
+         "act_start_quantity": "1",
+         "act_completion_quantity": "0",
+         "act_task_type": "EMPTY",
+         "act_implementation": "",
+         "act_instantiate": "0",
+         "act_script_type": "",
+         "act_script": "",
+         "act_loop_type": "EMPTY",
+         "act_test_before": "0",
+         "act_loop_maximum": "0",
+         "act_loop_condition": "0",
+         "act_loop_cardinality": "0",
+         "act_loop_behavior": "0",
+         "act_is_adhoc": "0",
+         "act_is_collapsed": "0",
+         "act_completion_condition": "0",
+         "act_ordering": "0",
+         "act_cancel_remaining_instances": "1",
+         "act_protocol": "0",
+         "act_method": "0",
+         "act_is_global": "0",
+         "act_referer": "0",
+         "act_default_flow": "0",
+         "act_master_diagram": "0",
+         "bou_element": "638724345592c405abe1058017041790",
+         "bou_x": "166",
+         "bou_y": "70",
+         "bou_width": "150",
+         "bou_height": "75",
+         "bou_container": "bpmnDiagram"
+         }],
+         "events": [{
+         "evn_uid": "256381233592c406cae2026029888464",
+         "evn_name": "",
+         "evn_type": "START",
+         "evn_marker": "EMPTY",
+         "evn_is_interrupting": "1",
+         "evn_cancel_activity": "0",
+         "evn_activity_ref": null,
+         "evn_wait_for_completion": "0",
+         "evn_error_name": null,
+         "evn_error_code": null,
+         "evn_escalation_name": null,
+         "evn_escalation_code": null,
+         "evn_message": "LEAD",
+         "evn_operation_name": null,
+         "evn_operation_implementation_ref": null,
+         "evn_time_date": null,
+         "evn_time_cycle": null,
+         "evn_time_duration": null,
+         "evn_behavior": "CATCH",
+         "bou_element": "638724345592c405abe1058017041790",
+         "bou_x": "88",
+         "bou_y": "91",
+         "bou_width": "33",
+         "bou_height": "33",
+         "bou_container": "bpmnDiagram"
+         }, {
+         "evn_uid": "632067129592c406cc59362027725874",
+         "evn_name": "",
+         "evn_type": "END",
+         "evn_marker": "EMPTY",
+         "evn_is_interrupting": "1",
+         "evn_cancel_activity": "0",
+         "evn_activity_ref": null,
+         "evn_wait_for_completion": "0",
+         "evn_error_name": null,
+         "evn_error_code": null,
+         "evn_escalation_name": null,
+         "evn_escalation_code": null,
+         "evn_message": "",
+         "evn_operation_name": null,
+         "evn_operation_implementation_ref": null,
+         "evn_time_date": null,
+         "evn_time_cycle": null,
+         "evn_time_duration": null,
+         "evn_behavior": "THROW",
+         "bou_element": "638724345592c405abe1058017041790",
+         "bou_x": "557",
+         "bou_y": "91",
+         "bou_width": "33",
+         "bou_height": "33",
+         "bou_container": "bpmnDiagram"
+         }],
+         "gateways": [],
+         "flows": [{
+         "flo_uid": "180462119592c406d2f3d38004898877",
+         "flo_type": "SEQUENCE",
+         "flo_name": " ",
+         "flo_element_origin": "720497925592c406b9448a5055485729",
+         "flo_element_origin_type": "bpmnActivity",
+         "flo_element_dest": "124698833592c406c4b0cc1026408625",
+         "flo_element_dest_type": "bpmnActivity",
+         "flo_is_inmediate": "1",
+         "flo_condition": "",
+         "flo_x1": "317",
+         "flo_y1": "108",
+         "flo_x2": "363",
+         "flo_y2": "108",
+         "flo_state": [{"x": 317, "y": 108}, {"x": 363, "y": 108}],
+         "flo_position": "1"
+         }, {
+         "flo_uid": "205528518592c406d2f5635096221855",
+         "flo_type": "SEQUENCE",
+         "flo_name": " ",
+         "flo_element_origin": "124698833592c406c4b0cc1026408625",
+         "flo_element_origin_type": "bpmnActivity",
+         "flo_element_dest": "632067129592c406cc59362027725874",
+         "flo_element_dest_type": "bpmnEvent",
+         "flo_is_inmediate": "1",
+         "flo_condition": "",
+         "flo_x1": "514",
+         "flo_y1": "108",
+         "flo_x2": "557",
+         "flo_y2": "108",
+         "flo_state": [{"x": 514, "y": 108}, {"x": 557, "y": 108}],
+         "flo_position": "1"
+         }, {
+         "flo_uid": "427596475592c406d2f2196069782540",
+         "flo_type": "SEQUENCE",
+         "flo_name": " ",
+         "flo_element_origin": "256381233592c406cae2026029888464",
+         "flo_element_origin_type": "bpmnEvent",
+         "flo_element_dest": "720497925592c406b9448a5055485729",
+         "flo_element_dest_type": "bpmnActivity",
+         "flo_is_inmediate": "1",
+         "flo_condition": "",
+         "flo_x1": "121",
+         "flo_y1": "108",
+         "flo_x2": "166",
+         "flo_y2": "108",
+         "flo_state": [{"x": 121, "y": 108}, {"x": 166, "y": 108}],
+         "flo_position": "1"
+         }],
+         "artifacts": [],
+         "laneset": [],
+         "lanes": [],
+         "data": [],
+         "participants": []
+         }],
+         "usr_setting_designer": {"enabled_grid": false}
+         };
+         this.diagramSvg.draw(data.diagrams[0]);
+         console.log(this.diagramSvg.elementRegistry); // 124698833592c406c4b0cc1026408625
+         const element = this.diagramSvg.getElementById('124698833592c406c4b0cc1026408625').getShape().getNativeShape();
+         element.drag();*/
     }
 });
 
 /***/ }),
-/* 115 */
+
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2141,17 +1846,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     methods: {
         createElement: function createElement(value) {
-            Event.$emit('dragend', value);
+            Event.$emit("dragend", value);
         }
     }
 });
 
 /***/ }),
-/* 116 */
+
+/***/ 282:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2201,14 +1928,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 117 */
+
+/***/ 287:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiagramService; });
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
 
 var DiagramService = function () {
     function DiagramService() {
@@ -2216,15 +1948,14 @@ var DiagramService = function () {
     }
 
     _createClass(DiagramService, [{
-        key: 'getData',
+        key: "getData",
         value: function getData() {
             return this.diagram;
         }
     }, {
-        key: 'cnn',
+        key: "cnn",
         value: function cnn(method, uri, form, successCallback, errorCallback) {
-            var vue = __webpack_require__(28);
-            vue.http[method](uri, form).then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_0_vue___default.a.http[method](uri, form).then(function (response) {
                 if (successCallback) {
                     successCallback(response);
                 }
@@ -2240,7 +1971,8 @@ var DiagramService = function () {
 }();
 
 /***/ }),
-/* 118 */
+
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2264,12 +1996,12 @@ var ArrowConnectorMarker = function () {
     }
 
     _createClass(ArrowConnectorMarker, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.options = Object.assign({}, options);
             this.options.attr = {
-                fill: '#000',
-                stroke: '#000',
+                fill: "#000",
+                stroke: "#000",
                 strokeWidth: 1
             };
             this.options.line = [5, 0, 17, 5, 5, 10];
@@ -2277,7 +2009,7 @@ var ArrowConnectorMarker = function () {
             return this;
         }
     }, {
-        key: 'createShape',
+        key: "createShape",
         value: function createShape() {
             this.generateMarkerOptions();
             if (!this.shape) {
@@ -2286,23 +2018,23 @@ var ArrowConnectorMarker = function () {
             return this.shape;
         }
     }, {
-        key: 'generateMarkerOptions',
+        key: "generateMarkerOptions",
         value: function generateMarkerOptions() {
             switch (this.options.type) {
-                case 'simple':
-                    this.options.attr.fill = 'none';
+                case "simple":
+                    this.options.attr.fill = "none";
                     break;
-                case 'filled':
-                    this.options.attr.fill = '#000';
+                case "filled":
+                    this.options.attr.fill = "#000";
                     break;
-                case 'filled-white':
-                    this.options.attr.fill = '#FFF';
+                case "filled-white":
+                    this.options.attr.fill = "#FFF";
                     this.options.line = [5, 0, 17, 5, 5, 10, 5, 0];
                     break;
             }
         }
     }, {
-        key: 'getMarker',
+        key: "getMarker",
         value: function getMarker() {
             if (!this.marker) {
                 var _createShape;
@@ -2317,7 +2049,8 @@ var ArrowConnectorMarker = function () {
 }();
 
 /***/ }),
-/* 119 */
+
+/***/ 289:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2334,18 +2067,18 @@ var Association = function () {
         _classCallCheck(this, Association);
 
         this.shape = shape;
-        options.lineType = 'dotted';
-        options.arrowType = 'none';
+        options.lineType = "dotted";
+        options.arrowType = "none";
         this.shape.config(options);
     }
 
     _createClass(Association, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.render();
         }
     }, {
-        key: 'getShape',
+        key: "getShape",
         value: function getShape() {
             return this.shape;
         }
@@ -2355,7 +2088,8 @@ var Association = function () {
 }();
 
 /***/ }),
-/* 120 */
+
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2394,7 +2128,8 @@ var BlackboxPool = function () {
 }();
 
 /***/ }),
-/* 121 */
+
+/***/ 291:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2414,15 +2149,15 @@ var BlackboxPoolShape = function () {
         this.svgLoader = svgLoader;
         this.rounded = 5;
         this.attr = {
-            fill: '#FFF',
-            stroke: '#000',
+            fill: "#FFF",
+            stroke: "#000",
             strokeWidth: 2
         };
         this.shape = this.canvas.group();
     }
 
     _createClass(BlackboxPoolShape, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.options = options;
             this.id = options.act_uid;
@@ -2434,7 +2169,7 @@ var BlackboxPoolShape = function () {
             this.attr = options.attr || this.attr;
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.add(this.canvas.rect(this.x, this.y, this.scaleX, this.scaleY, this.rounded).attr(this.attr));
 
@@ -2442,27 +2177,27 @@ var BlackboxPoolShape = function () {
             this.shape.drag();
         }
     }, {
-        key: 'addDecorators',
+        key: "addDecorators",
         value: function addDecorators() {
             this.addLineDecorator();
             this.addTextDecorator();
         }
     }, {
-        key: 'addLineDecorator',
+        key: "addLineDecorator",
         value: function addLineDecorator() {
-            this.shape.add(this.canvas.polyline(this.x + 42 + ' ' + this.y + ' ' + (this.x + 42) + ' ' + (this.y + this.scaleY)).attr({
-                fill: 'none',
-                stroke: '#000',
+            this.shape.add(this.canvas.polyline(this.x + 42 + " " + this.y + " " + (this.x + 42) + " " + (this.y + this.scaleY)).attr({
+                fill: "none",
+                stroke: "#000",
                 strokeWidth: 2
             }));
         }
     }, {
-        key: 'addTextDecorator',
+        key: "addTextDecorator",
         value: function addTextDecorator() {
-            this.shape.add(this.canvas.multitext(this.x - 30, this.y + this.scaleY / 2, this.options.par_name, this.scaleY, { 'font-size': '13px', 'font-family': 'Arial, Helvetica, sans-serif' }).transform('r270'));
+            this.shape.add(this.canvas.multitext(this.x - 30, this.y + this.scaleY / 2, this.options.par_name, this.scaleY, { "font-size": "13px", "font-family": "Arial, Helvetica, sans-serif" }).transform("r270"));
         }
     }, {
-        key: 'getNativeShape',
+        key: "getNativeShape",
         value: function getNativeShape() {
             return this.shape;
         }
@@ -2472,7 +2207,8 @@ var BlackboxPoolShape = function () {
 }();
 
 /***/ }),
-/* 122 */
+
+/***/ 292:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2489,18 +2225,18 @@ var DataAssociation = function () {
         _classCallCheck(this, DataAssociation);
 
         this.shape = shape;
-        options.lineType = 'dotted';
-        options.arrowType = 'simple';
+        options.lineType = "dotted";
+        options.arrowType = "simple";
         this.shape.config(options);
     }
 
     _createClass(DataAssociation, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.render();
         }
     }, {
-        key: 'getShape',
+        key: "getShape",
         value: function getShape() {
             return this.shape;
         }
@@ -2510,7 +2246,8 @@ var DataAssociation = function () {
 }();
 
 /***/ }),
-/* 123 */
+
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2544,7 +2281,8 @@ var DataObject = function () {
 }();
 
 /***/ }),
-/* 124 */
+
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2567,8 +2305,8 @@ var DataObjectShape = function () {
         this.y = 100;
         this.scale = 40;
         this.attr = {
-            fill: '#B4DCCB',
-            stroke: '#018A4F',
+            fill: "#B4DCCB",
+            stroke: "#018A4F",
             strokeWidth: 2
         };
         this.animateOptions = { r: this.scale };
@@ -2578,7 +2316,7 @@ var DataObjectShape = function () {
     }
 
     _createClass(DataObjectShape, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.x = +options.x - 4;
             this.y = +options.y - 3;
@@ -2590,32 +2328,40 @@ var DataObjectShape = function () {
             this.animationTime = options.animationTime || this.animationTime;
         }
     }, {
-        key: 'getBase',
+        key: "getBase",
         value: function getBase(type, marker) {
             var x = this.x;
             var y = this.y;
-            var baseConfig = { path: 'm250 174l0 2c0 1 0 1 0 1l0 649 500 0 0-486c0 0 0 0 0 0l0-1 0-1c-1 0-1 0-1 0l-166-162 0-2-2 0-236 0-92 0z m5 5l323 0 0 163 167 0 0 479-490 0z m328 4l158 154-158 0z', options: { x: x, y: y, scale: 's0.07', attr: {
-                        stroke: '#000',
+            var baseConfig = {
+                path: "m250 174l0 2c0 1 0 1 0 1l0 649 500 0 0-486c0 0 0 0 0 0l0-1 0-1c-1 0-1 0-1 0l-166-162 0-2-2 0-236 0-92 0z m5 5l323 0 0 163 167 0 0 479-490 0z m328 4l158 154-158 0z",
+                options: {
+                    x: x,
+                    y: y,
+                    scale: "s0.07",
+                    attr: {
+                        stroke: "#000",
                         strokeWidth: 0
-                    } } };
+                    }
+                }
+            };
 
             var base = this.svgLoader.loadElement(baseConfig.path, baseConfig.options);
             var offsetX = Math.round(x - base.getBBox().x);
             var offsetY = Math.round(y - base.getBBox().y);
-            base.transform('s0.07, ' + (x + offsetX + 4) + ', ' + (y + offsetY + 2));
+            base.transform("s0.07, " + (x + offsetX + 4) + ", " + (y + offsetY + 2));
 
             this.shape.add(base);
         }
     }, {
-        key: 'getDecorator',
+        key: "getDecorator",
         value: function getDecorator(type, options) {
             var decorator = void 0;
             switch (type) {
-                case 'TEXT':
-                    decorator = this.canvas.text(options.x, options.y, options.text).attr({ 'font-size': '13px', 'font-family': 'Arial, Helvetica, sans-serif' });
+                case "TEXT":
+                    decorator = this.canvas.text(options.x, options.y, options.text).attr({ "font-size": "13px", "font-family": "Arial, Helvetica, sans-serif" });
                     var tx = (+this.options.bou_width - decorator.getBBox().width) / 2 + 2;
                     var ty = +this.options.bou_height + 20;
-                    decorator.transform('t ' + tx + ', ' + ty);
+                    decorator.transform("t " + tx + ", " + ty);
                     break;
                 default:
                     decorator = this.canvas.group();
@@ -2624,11 +2370,11 @@ var DataObjectShape = function () {
             return decorator;
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
-            this.shape.add(this.canvas.rect(this.x, this.y, this.scale, this.scale).attr({ 'fill': '#FFF' }));
+            this.shape.add(this.canvas.rect(this.x, this.y, this.scale, this.scale).attr({ fill: "#FFF" }));
             this.getBase(this.options.type, this.options.marker);
-            var textDecorator = this.getDecorator('TEXT', {
+            var textDecorator = this.getDecorator("TEXT", {
                 text: this.options.dat_name,
                 x: this.x,
                 y: this.y
@@ -2637,7 +2383,7 @@ var DataObjectShape = function () {
             this.shape.drag();
         }
     }, {
-        key: 'getNativeShape',
+        key: "getNativeShape",
         value: function getNativeShape() {
             return this.shape;
         }
@@ -2648,7 +2394,7 @@ var DataObjectShape = function () {
          */
 
     }, {
-        key: 'refreshAllConnections',
+        key: "refreshAllConnections",
         value: function refreshAllConnections(nativeShape) {
             var conn = void 0,
                 dX = void 0,
@@ -2658,7 +2404,7 @@ var DataObjectShape = function () {
             this.outputConnectors.forEach(function (value, key) {
                 conn = value;
 
-                if (conn.shape.outputDirection === 'RIGHT') {
+                if (conn.shape.outputDirection === "RIGHT") {
                     dX = shapeBox.width;
                     dY = shapeBox.height / 2;
                 }
@@ -2666,7 +2412,7 @@ var DataObjectShape = function () {
                 var linesArray = conn.shape.router;
                 var n = linesArray.length;
 
-                conn.shape.options.method = 'manhathan';
+                conn.shape.options.method = "manhathan";
                 conn.shape.config(conn.shape.options);
 
                 conn.shape.redraw(shapeBox.x + dX, shapeBox.y + dY, linesArray[n - 1].x, linesArray[n - 1].y);
@@ -2674,7 +2420,7 @@ var DataObjectShape = function () {
 
             this.inputConnectors.forEach(function (value, key) {
                 conn = value;
-                if (conn.shape.inputDirection === 'LEFT') {
+                if (conn.shape.inputDirection === "LEFT") {
                     dX = 0;
                     dY = shapeBox.height / 2;
                 }
@@ -2682,26 +2428,26 @@ var DataObjectShape = function () {
                 var linesArray = conn.shape.router;
                 var n = linesArray.length;
 
-                conn.shape.options.method = 'manhathan';
+                conn.shape.options.method = "manhathan";
                 conn.shape.config(conn.shape.options);
 
                 conn.shape.redraw(linesArray[0].x, linesArray[0].y, shapeBox.x + dX, shapeBox.y + dY);
             });
         }
     }, {
-        key: 'registerInputConn',
+        key: "registerInputConn",
         value: function registerInputConn(id, conn) {
             this.inputConnectors.set(id, conn);
             this.setDirections(conn);
         }
     }, {
-        key: 'setDirections',
+        key: "setDirections",
         value: function setDirections(conn) {
-            conn.getShape().inputDirection = 'LEFT';
-            conn.getShape().outputDirection = 'RIGHT';
+            conn.getShape().inputDirection = "LEFT";
+            conn.getShape().outputDirection = "RIGHT";
         }
     }, {
-        key: 'registerOutputConn',
+        key: "registerOutputConn",
         value: function registerOutputConn(id, conn) {
             this.outputConnectors.set(id, conn);
             this.setDirections(conn);
@@ -2712,7 +2458,8 @@ var DataObjectShape = function () {
 }();
 
 /***/ }),
-/* 125 */
+
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2746,7 +2493,8 @@ var DataStore = function () {
 }();
 
 /***/ }),
-/* 126 */
+
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2769,8 +2517,8 @@ var DataStoreShape = function () {
         this.y = 100;
         this.scale = 40;
         this.attr = {
-            fill: '#B4DCCB',
-            stroke: '#018A4F',
+            fill: "#B4DCCB",
+            stroke: "#018A4F",
             strokeWidth: 2
         };
         this.animateOptions = { r: this.scale };
@@ -2778,7 +2526,7 @@ var DataStoreShape = function () {
     }
 
     _createClass(DataStoreShape, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.x = +options.x - 4;
             this.y = +options.y - 3;
@@ -2790,31 +2538,39 @@ var DataStoreShape = function () {
             this.animationTime = options.animationTime || this.animationTime;
         }
     }, {
-        key: 'getBase',
+        key: "getBase",
         value: function getBase(type, marker) {
             var x = this.x;
             var y = this.y;
-            var baseConfig = { path: 'm500 184c-78 0-156 7-216 20-30 7-56 15-75 25-18 10-31 21-34 35 0 0 0 1 0 1l0 0 0 0 0 73c0 0 0 0 0 0l0 73c0 0 0 0 0 0l0 324 0 0c3 14 16 26 34 36 19 10 45 18 75 25 60 13 138 19 216 19 78 0 156-6 216-19 30-7 56-15 75-25 19-10 31-22 34-36l0 0 0-324c0 0 0 0 0 0l0-73c0 0 0 0 0 0l0-73c0 0 0 0 0 0l0 0 0 0c0 0 0-1 0-1-3-14-16-25-34-35-19-10-45-18-75-25-60-13-138-20-216-20z m0 5c78 0 156 7 215 20 30 6 55 15 73 24 18 10 29 21 32 32-3 12-14 23-32 32-18 10-43 18-73 24-59 13-137 20-215 20-78 0-156-7-215-20-30-6-55-14-73-24-18-9-29-20-32-32 3-11 14-22 32-32 18-9 43-18 73-24 39-8 86-14 135-17 26-2 53-3 80-3z m-320 88c6 10 16 18 29 25 19 10 45 18 75 24 60 13 138 20 216 20 78 0 156-7 216-20 30-6 56-14 75-24 13-7 23-15 29-25l0 61c-2 12-13 23-32 32-18 10-43 18-73 24-59 13-137 20-215 20-78 0-156-7-215-20-30-6-55-14-73-24-18-9-29-20-32-32z m0 73c6 10 16 18 29 25 19 10 45 18 75 24 60 13 138 20 216 20 78 0 156-7 216-20 30-6 56-14 75-24 13-7 23-15 29-25l0 61c-2 12-13 23-32 32-18 10-43 18-73 25-59 12-137 19-215 19-78 0-156-7-215-19-30-7-55-15-73-25-18-9-29-20-32-32z m0 73c6 10 16 18 29 25 19 10 45 18 75 24 60 14 138 20 216 20 78 0 156-6 216-20 30-6 56-14 75-24 13-7 23-15 29-25l0 311c-2 12-13 23-32 33-18 9-43 17-73 24-59 13-137 19-215 19-78 0-156-6-215-19-30-7-55-15-73-24-18-10-29-21-32-33z', options: { x: x, y: y, scale: 's0.07', attr: {
-                        stroke: '#000',
+            var baseConfig = {
+                path: "m500 184c-78 0-156 7-216 20-30 7-56 15-75 25-18 10-31 21-34 35 0 0 0 1 0 1l0 0 0 0 0 73c0 0 0 0 0 0l0 73c0 0 0 0 0 0l0 324 0 0c3 14 16 26 34 36 19 10 45 18 75 25 60 13 138 19 216 19 78 0 156-6 216-19 30-7 56-15 75-25 19-10 31-22 34-36l0 0 0-324c0 0 0 0 0 0l0-73c0 0 0 0 0 0l0-73c0 0 0 0 0 0l0 0 0 0c0 0 0-1 0-1-3-14-16-25-34-35-19-10-45-18-75-25-60-13-138-20-216-20z m0 5c78 0 156 7 215 20 30 6 55 15 73 24 18 10 29 21 32 32-3 12-14 23-32 32-18 10-43 18-73 24-59 13-137 20-215 20-78 0-156-7-215-20-30-6-55-14-73-24-18-9-29-20-32-32 3-11 14-22 32-32 18-9 43-18 73-24 39-8 86-14 135-17 26-2 53-3 80-3z m-320 88c6 10 16 18 29 25 19 10 45 18 75 24 60 13 138 20 216 20 78 0 156-7 216-20 30-6 56-14 75-24 13-7 23-15 29-25l0 61c-2 12-13 23-32 32-18 10-43 18-73 24-59 13-137 20-215 20-78 0-156-7-215-20-30-6-55-14-73-24-18-9-29-20-32-32z m0 73c6 10 16 18 29 25 19 10 45 18 75 24 60 13 138 20 216 20 78 0 156-7 216-20 30-6 56-14 75-24 13-7 23-15 29-25l0 61c-2 12-13 23-32 32-18 10-43 18-73 25-59 12-137 19-215 19-78 0-156-7-215-19-30-7-55-15-73-25-18-9-29-20-32-32z m0 73c6 10 16 18 29 25 19 10 45 18 75 24 60 14 138 20 216 20 78 0 156-6 216-20 30-6 56-14 75-24 13-7 23-15 29-25l0 311c-2 12-13 23-32 33-18 9-43 17-73 24-59 13-137 19-215 19-78 0-156-6-215-19-30-7-55-15-73-24-18-10-29-21-32-33z",
+                options: {
+                    x: x,
+                    y: y,
+                    scale: "s0.07",
+                    attr: {
+                        stroke: "#000",
                         strokeWidth: 0
-                    } } };
+                    }
+                }
+            };
             var base = this.svgLoader.loadElement(baseConfig.path, baseConfig.options);
             var offsetX = Math.round(x - base.getBBox().x);
             var offsetY = Math.round(y - base.getBBox().y);
-            base.transform('S0.07, ' + (x + offsetX + 4) + ', ' + (y + offsetY + 2));
+            base.transform("S0.07, " + (x + offsetX + 4) + ", " + (y + offsetY + 2));
 
             this.shape.add(base);
         }
     }, {
-        key: 'getDecorator',
+        key: "getDecorator",
         value: function getDecorator(type, options) {
             var decorator = void 0;
             switch (type) {
-                case 'TEXT':
-                    decorator = this.canvas.text(options.x, options.y, options.text).attr({ 'font-size': '13px', 'font-family': 'Arial, Helvetica, sans-serif' });
+                case "TEXT":
+                    decorator = this.canvas.text(options.x, options.y, options.text).attr({ "font-size": "13px", "font-family": "Arial, Helvetica, sans-serif" });
                     var tx = (+this.options.width - decorator.getBBox().width) / 2 + 2;
                     var ty = +this.options.height + 20;
-                    decorator.transform('t ' + tx + ', ' + ty);
+                    decorator.transform("t " + tx + ", " + ty);
                     break;
                 default:
                     decorator = this.canvas.group();
@@ -2823,11 +2579,11 @@ var DataStoreShape = function () {
             return decorator;
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
-            this.shape.add(this.canvas.rect(this.x, this.y, this.scale, this.scale).attr({ 'fill': '#FFF' }));
+            this.shape.add(this.canvas.rect(this.x, this.y, this.scale, this.scale).attr({ fill: "#FFF" }));
             this.getBase(this.options.type, this.options.marker);
-            var textDecorator = this.getDecorator('TEXT', {
+            var textDecorator = this.getDecorator("TEXT", {
                 text: this.options.name,
                 x: this.x,
                 y: this.y
@@ -2836,7 +2592,7 @@ var DataStoreShape = function () {
             this.shape.drag();
         }
     }, {
-        key: 'getNativeShape',
+        key: "getNativeShape",
         value: function getNativeShape() {
             return this.shape;
         }
@@ -2846,7 +2602,8 @@ var DataStoreShape = function () {
 }();
 
 /***/ }),
-/* 127 */
+
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2862,39 +2619,39 @@ var Diagram = function () {
     function Diagram(options, shape) {
         _classCallCheck(this, Diagram);
 
-        this.type = 'diagram';
+        this.type = "diagram";
         this.options = options;
         this.shape = shape;
         this.shape.config(options);
     }
 
     _createClass(Diagram, [{
-        key: 'zoomIn',
+        key: "zoomIn",
         value: function zoomIn() {
             this.shape.zoomIn();
         }
     }, {
-        key: 'zoomOut',
+        key: "zoomOut",
         value: function zoomOut() {
             this.shape.zoomOut();
         }
     }, {
-        key: 'zoomReset',
+        key: "zoomReset",
         value: function zoomReset() {
             this.shape.zoomReset();
         }
     }, {
-        key: 'add',
+        key: "add",
         value: function add(element) {
             this.shape.add(element.getShape());
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.render();
         }
     }, {
-        key: 'getShape',
+        key: "getShape",
         value: function getShape() {
             return this.shape;
         }
@@ -2904,7 +2661,8 @@ var Diagram = function () {
 }();
 
 /***/ }),
-/* 128 */
+
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2971,7 +2729,8 @@ var DiagramShape = function () {
 }();
 
 /***/ }),
-/* 129 */
+
+/***/ 299:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2988,13 +2747,13 @@ var EndEvent = function () {
         _classCallCheck(this, EndEvent);
 
         this.type = options.type;
-        this.name = options.name || '';
+        this.name = options.name || "";
         options.attr = {
-            fill: '#EEC0C0',
-            stroke: '#C62D2D',
+            fill: "#EEC0C0",
+            stroke: "#C62D2D",
             strokeWidth: 3
         };
-        options.marker = 'EMPTY';
+        options.marker = "EMPTY";
         this.options = options;
         this.shape = shape;
         this.shape.config(options);
@@ -3003,22 +2762,22 @@ var EndEvent = function () {
     }
 
     _createClass(EndEvent, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.render();
         }
     }, {
-        key: 'getShape',
+        key: "getShape",
         value: function getShape() {
             return this.shape;
         }
     }, {
-        key: 'registerInputConn',
+        key: "registerInputConn",
         value: function registerInputConn(id, conn) {
             this.inputConnectors.set(id, conn);
         }
     }, {
-        key: 'registerOutputConn',
+        key: "registerOutputConn",
         value: function registerOutputConn(id, conn) {
             this.outputConnectors.set(id, conn);
         }
@@ -3028,7 +2787,8 @@ var EndEvent = function () {
 }();
 
 /***/ }),
-/* 130 */
+
+/***/ 300:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3051,8 +2811,8 @@ var EventShape = function () {
         this.y = 100;
         this.scale = 40;
         this.attr = {
-            fill: '#B4DCCB',
-            stroke: '#018A4F',
+            fill: "#B4DCCB",
+            stroke: "#018A4F",
             strokeWidth: 2
         };
         this.animateOptions = { r: this.scale };
@@ -3062,7 +2822,7 @@ var EventShape = function () {
     }
 
     _createClass(EventShape, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.x = +options.x - 4;
             this.y = +options.y - 4;
@@ -3075,170 +2835,409 @@ var EventShape = function () {
             this.animationTime = options.animationTime || this.animationTime;
         }
     }, {
-        key: 'getBase',
+        key: "getBase",
         value: function getBase(type, marker) {
             var x = this.x + this.x * 0.043;
             var y = this.y + this.y * 0.043;
             var bases = {
-                'bpmn:StartEvent': {
-                    'EMPTY': { path: 'm496 48c-176 0-345 113-412 276-70 161-34 362 89 487 119 128 314 175 477 115 169-58 294-224 301-403 12-176-92-351-250-428-62-31-132-47-201-47-1 0-3 0-4 0z m12 49c173 1 335 126 380 293 47 159-17 344-155 439-143 105-354 97-489-18-136-109-185-309-115-468 60-147 212-248 371-246 3 0 6 0 8 0z',
-                        options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                "bpmn:StartEvent": {
+                    EMPTY: {
+                        path: "m496 48c-176 0-345 113-412 276-70 161-34 362 89 487 119 128 314 175 477 115 169-58 294-224 301-403 12-176-92-351-250-428-62-31-132-47-201-47-1 0-3 0-4 0z m12 49c173 1 335 126 380 293 47 159-17 344-155 439-143 105-354 97-489-18-136-109-185-309-115-468 60-147 212-248 371-246 3 0 6 0 8 0z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                                //id: this.options.id
-                            } } },
-                    'bpmn:MessageEventDefinition': { path: 'm500 48c-178-2-349 112-416 276-70 161-34 362 89 487 119 128 314 175 477 115 169-58 294-224 301-403 12-176-92-351-250-428-62-31-132-47-201-47z m0 49c175-3 342 123 388 293 47 159-17 344-155 439-143 105-354 97-489-18-136-109-185-309-115-468 60-147 212-248 371-246z m-205 247c0 104 0 208 0 312 137 0 273 0 410 0 0-104 0-208 0-312-137 0-273 0-410 0z m91 49c76 0 152 0 228 0-40 24-81 79-121 85-36-29-71-57-107-85z m270 28c0 62 0 124 0 186-104 0-208 0-312 0 0-62 0-124 0-186 52 42 104 83 156 125 52-42 104-83 156-125z',
-                        options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                                // id: this.options.id
+                            }
+                        }
+                    },
+                    "bpmn:MessageEventDefinition": {
+                        path: "m500 48c-178-2-349 112-416 276-70 161-34 362 89 487 119 128 314 175 477 115 169-58 294-224 301-403 12-176-92-351-250-428-62-31-132-47-201-47z m0 49c175-3 342 123 388 293 47 159-17 344-155 439-143 105-354 97-489-18-136-109-185-309-115-468 60-147 212-248 371-246z m-205 247c0 104 0 208 0 312 137 0 273 0 410 0 0-104 0-208 0-312-137 0-273 0-410 0z m91 49c76 0 152 0 228 0-40 24-81 79-121 85-36-29-71-57-107-85z m270 28c0 62 0 124 0 186-104 0-208 0-312 0 0-62 0-124 0-186 52 42 104 83 156 125 52-42 104-83 156-125z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'SIGNALCATCH': { path: 'm500 48c-178-2-349 112-416 276-70 161-34 362 89 487 119 128 314 175 477 115 169-58 294-224 301-403 12-176-92-351-250-428-62-31-132-47-201-47z m0 49c175-3 342 123 388 293 47 159-17 344-155 439-143 105-354 97-489-18-136-109-185-309-115-468 60-147 212-248 371-246z m0 191c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z m0 51c50 90 100 180 151 270-101 0-201 0-302 0 51-90 101-180 151-270z',
-                        options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    SIGNALCATCH: {
+                        path: "m500 48c-178-2-349 112-416 276-70 161-34 362 89 487 119 128 314 175 477 115 169-58 294-224 301-403 12-176-92-351-250-428-62-31-132-47-201-47z m0 49c175-3 342 123 388 293 47 159-17 344-155 439-143 105-354 97-489-18-136-109-185-309-115-468 60-147 212-248 371-246z m0 191c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z m0 51c50 90 100 180 151 270-101 0-201 0-302 0 51-90 101-180 151-270z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'CONDITIONAL': { path: 'm500 48c-249 0-452 203-452 452 0 249 203 452 452 452 249 0 452-203 452-452 0-249-203-452-452-452z m0 49c223 0 403 180 403 403 0 223-180 403-403 403-223 0-403-180-403-403 0-223 180-403 403-403z m-151 213l0 12 0 368 50 0 202 0 50 0 0-380-302 0z m24 24l254 0 0 332-26 0-202 0-26 0 0-332z m26 37l0 25 202 0 0-25-202 0z m0 74l0 24 202 0 0-24-202 0z m0 85l0 24 202 0 0-24-202 0z m0 77l0 24 202 0 0-24-202 0z',
-                        options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    CONDITIONAL: {
+                        path: "m500 48c-249 0-452 203-452 452 0 249 203 452 452 452 249 0 452-203 452-452 0-249-203-452-452-452z m0 49c223 0 403 180 403 403 0 223-180 403-403 403-223 0-403-180-403-403 0-223 180-403 403-403z m-151 213l0 12 0 368 50 0 202 0 50 0 0-380-302 0z m24 24l254 0 0 332-26 0-202 0-26 0 0-332z m26 37l0 25 202 0 0-25-202 0z m0 74l0 24 202 0 0-24-202 0z m0 85l0 24 202 0 0-24-202 0z m0 77l0 24 202 0 0-24-202 0z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'TIMER': { path: 'm500 48c-249 0-452 203-452 452 0 249 203 452 452 452 249 0 452-203 452-452 0-249-203-452-452-452z m0 49c223 0 403 180 403 403 0 223-180 403-403 403-223 0-403-180-403-403 0-223 180-403 403-403z m-4 189c-84 0-164 55-194 133-33 76-15 170 43 229 56 60 149 82 226 54 81-28 141-108 143-194 5-83-46-166-121-201-29-14-61-21-93-21-1 0-3 0-4 0z m8 39c76 0 148 57 166 131 20 73-14 156-79 194-67 42-160 31-215-26-58-56-68-152-24-219 32-49 89-81 148-80 1 0 2 0 4 0z m51 49c-19 36-39 71-58 107-18 2-23 29-6 36 11 8 20-5 30-4l89 0 0-25-89 0c18-34 37-68 56-102-7-4-14-8-22-12z',
-                        options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    TIMER: {
+                        path: "m500 48c-249 0-452 203-452 452 0 249 203 452 452 452 249 0 452-203 452-452 0-249-203-452-452-452z m0 49c223 0 403 180 403 403 0 223-180 403-403 403-223 0-403-180-403-403 0-223 180-403 403-403z m-4 189c-84 0-164 55-194 133-33 76-15 170 43 229 56 60 149 82 226 54 81-28 141-108 143-194 5-83-46-166-121-201-29-14-61-21-93-21-1 0-3 0-4 0z m8 39c76 0 148 57 166 131 20 73-14 156-79 194-67 42-160 31-215-26-58-56-68-152-24-219 32-49 89-81 148-80 1 0 2 0 4 0z m51 49c-19 36-39 71-58 107-18 2-23 29-6 36 11 8 20-5 30-4l89 0 0-25-89 0c18-34 37-68 56-102-7-4-14-8-22-12z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } }
+                            }
+                        }
+                    }
                 },
-                'bpmn:EndEvent': {
-                    'EMPTY': { path: 'm496 48c-203-1-394 153-437 351-41 174 33 368 181 470 143 103 348 111 497 15 150-91 238-275 210-449-26-181-170-339-350-376-33-7-67-11-101-11z m10 142c150-1 287 123 302 271 19 142-72 291-210 334-134 45-296-13-366-138-77-129-45-313 78-403 56-43 126-66 196-64z',
-                        options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                "bpmn:EndEvent": {
+                    EMPTY: {
+                        path: "m496 48c-203-1-394 153-437 351-41 174 33 368 181 470 143 103 348 111 497 15 150-91 238-275 210-449-26-181-170-339-350-376-33-7-67-11-101-11z m10 142c150-1 287 123 302 271 19 142-72 291-210 334-134 45-296-13-366-138-77-129-45-313 78-403 56-43 126-66 196-64z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                                //id: this.options.id
-                            } } },
-                    'EMAIL': { path: 'm491 48c-219 0-420 183-440 400-22 186 82 380 253 459 158 77 361 53 492-67 134-115 192-312 133-480-55-172-220-303-401-311-13-1-25-1-37-1z m9 142c161-5 308 137 310 298 7 147-103 292-250 317-142 28-300-54-350-192-53-136 2-309 132-380 47-28 103-43 158-43z m-167 154c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z',
-                        options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                                // id: this.options.id
+                            }
+                        }
+                    },
+                    EMAIL: {
+                        path: "m491 48c-219 0-420 183-440 400-22 186 82 380 253 459 158 77 361 53 492-67 134-115 192-312 133-480-55-172-220-303-401-311-13-1-25-1-37-1z m9 142c161-5 308 137 310 298 7 147-103 292-250 317-142 28-300-54-350-192-53-136 2-309 132-380 47-28 103-43 158-43z m-167 154c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'MESSAGETHROW': { path: 'm491 48c-219 0-420 183-440 400-22 186 82 380 253 459 158 77 361 53 492-67 134-115 192-312 133-480-55-172-220-303-401-311-13-1-25-1-37-1z m9 142c161-5 308 137 310 298 7 147-103 292-250 317-142 28-300-54-350-192-53-136 2-309 132-380 47-28 103-43 158-43z m-167 154c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z',
-                        options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    MESSAGETHROW: {
+                        path: "m491 48c-219 0-420 183-440 400-22 186 82 380 253 459 158 77 361 53 492-67 134-115 192-312 133-480-55-172-220-303-401-311-13-1-25-1-37-1z m9 142c161-5 308 137 310 298 7 147-103 292-250 317-142 28-300-54-350-192-53-136 2-309 132-380 47-28 103-43 158-43z m-167 154c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'ERRORTHROW': { path: 'm491 48c-219 0-420 183-440 400-22 186 82 380 253 459 158 77 361 53 492-67 134-115 192-312 133-480-55-172-220-303-401-311-13-1-25-1-37-1z m9 142c161-5 308 137 310 298 7 147-103 292-250 317-142 28-300-54-350-192-53-136 2-309 132-380 47-28 103-43 158-43z m173 117c-34 70-68 139-102 209-43-56-86-111-128-166-39 114-77 228-116 342 43-55 87-111 130-167 45 51 89 103 134 154 27-124 55-248 82-372z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    ERRORTHROW: {
+                        path: "m491 48c-219 0-420 183-440 400-22 186 82 380 253 459 158 77 361 53 492-67 134-115 192-312 133-480-55-172-220-303-401-311-13-1-25-1-37-1z m9 142c161-5 308 137 310 298 7 147-103 292-250 317-142 28-300-54-350-192-53-136 2-309 132-380 47-28 103-43 158-43z m173 117c-34 70-68 139-102 209-43-56-86-111-128-166-39 114-77 228-116 342 43-55 87-111 130-167 45 51 89 103 134 154 27-124 55-248 82-372z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'bpmn:TerminateEventDefinition': { path: 'm491 48c-219 0-420 183-440 400-22 186 82 380 253 459 158 77 361 53 492-67 134-115 192-312 133-480-55-172-220-303-401-311-13-1-25-1-37-1z m9 142c161-5 308 137 310 298 7 147-103 292-250 317-142 28-300-54-350-192-53-136 2-309 132-380 47-28 103-43 158-43z m0 81c-149-6-268 156-219 297 38 143 229 210 349 121 126-79 133-281 13-369-40-32-92-50-143-49z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    "bpmn:TerminateEventDefinition": {
+                        path: "m491 48c-219 0-420 183-440 400-22 186 82 380 253 459 158 77 361 53 492-67 134-115 192-312 133-480-55-172-220-303-401-311-13-1-25-1-37-1z m9 142c161-5 308 137 310 298 7 147-103 292-250 317-142 28-300-54-350-192-53-136 2-309 132-380 47-28 103-43 158-43z m0 81c-149-6-268 156-219 297 38 143 229 210 349 121 126-79 133-281 13-369-40-32-92-50-143-49z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'SIGNALTHROW': { path: 'm491 48c-219 0-420 183-440 400-22 186 82 380 253 459 158 77 361 53 492-67 134-115 192-312 133-480-55-172-220-303-401-311-13-1-25-1-37-1z m9 142c161-5 308 137 310 298 7 147-103 292-250 317-142 28-300-54-350-192-53-136 2-309 132-380 47-28 103-43 158-43z m0 98c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    SIGNALTHROW: {
+                        path: "m491 48c-219 0-420 183-440 400-22 186 82 380 253 459 158 77 361 53 492-67 134-115 192-312 133-480-55-172-220-303-401-311-13-1-25-1-37-1z m9 142c161-5 308 137 310 298 7 147-103 292-250 317-142 28-300-54-350-192-53-136 2-309 132-380 47-28 103-43 158-43z m0 98c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } }
+                            }
+                        }
+                    }
                 },
-                'bpmn:IntermediateThrowEvent': {
-                    'bpmn:MessageEventDefinition': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-167 155c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z', options: {
-                            x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                "bpmn:IntermediateThrowEvent": {
+                    "bpmn:MessageEventDefinition": {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-167 155c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'EMAIL': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-167 155c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    EMAIL: {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-167 155c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'TIMER': { path: 'm499 48c-1 0-2 0-3 0-202-1-391 150-436 346-42 173 28 368 174 471 145 107 354 116 506 18 149-93 235-276 207-450-26-176-164-330-338-371-36-9-73-14-110-14z m-5 49c3 0 7 0 10 0 187-2 362 146 392 331 32 167-54 348-205 427-154 85-363 54-483-77-124-127-147-338-53-488 71-116 203-192 339-193z m8 44c-3 0-7 0-10 0-172 0-330 143-349 314-22 161 79 328 233 382 145 55 322 3 413-124 98-129 92-326-17-447-67-77-167-125-270-125z m-2 48c2 0 4 0 6 0 153 0 292 129 304 281 16 145-84 293-225 330-137 40-296-27-361-154-69-129-33-305 86-392 54-42 122-65 190-65z m-4 97c-84 0-164 55-194 133-33 76-15 170 43 229 56 60 149 82 226 54 81-28 141-108 143-194 5-83-46-166-121-201-29-14-61-21-93-21-1 0-3 0-4 0z m8 39c76 0 148 57 166 131 20 73-14 156-79 194-67 42-160 31-215-26-58-56-68-152-24-219 32-49 89-81 148-80 1 0 2 0 4 0z m51 49c-19 36-39 71-58 107-18 2-23 29-6 36 11 8 20-5 30-4l89 0 0-25-89 0c18-34 37-68 56-102-7-4-14-8-22-12z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    TIMER: {
+                        path: "m499 48c-1 0-2 0-3 0-202-1-391 150-436 346-42 173 28 368 174 471 145 107 354 116 506 18 149-93 235-276 207-450-26-176-164-330-338-371-36-9-73-14-110-14z m-5 49c3 0 7 0 10 0 187-2 362 146 392 331 32 167-54 348-205 427-154 85-363 54-483-77-124-127-147-338-53-488 71-116 203-192 339-193z m8 44c-3 0-7 0-10 0-172 0-330 143-349 314-22 161 79 328 233 382 145 55 322 3 413-124 98-129 92-326-17-447-67-77-167-125-270-125z m-2 48c2 0 4 0 6 0 153 0 292 129 304 281 16 145-84 293-225 330-137 40-296-27-361-154-69-129-33-305 86-392 54-42 122-65 190-65z m-4 97c-84 0-164 55-194 133-33 76-15 170 43 229 56 60 149 82 226 54 81-28 141-108 143-194 5-83-46-166-121-201-29-14-61-21-93-21-1 0-3 0-4 0z m8 39c76 0 148 57 166 131 20 73-14 156-79 194-67 42-160 31-215-26-58-56-68-152-24-219 32-49 89-81 148-80 1 0 2 0 4 0z m51 49c-19 36-39 71-58 107-18 2-23 29-6 36 11 8 20-5 30-4l89 0 0-25-89 0c18-34 37-68 56-102-7-4-14-8-22-12z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'SIGNALCATCH': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m0 99c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z m0 51c50 90 100 180 151 270-101 0-201 0-302 0 51-90 101-180 151-270z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    SIGNALCATCH: {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m0 99c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z m0 51c50 90 100 180 151 270-101 0-201 0-302 0 51-90 101-180 151-270z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'MESSAGECATCH': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-205 155c0 104 0 208 0 312 137 0 273 0 410 0 0-104 0-208 0-312-137 0-273 0-410 0z m91 49c76 0 152 0 228 0-40 24-81 79-121 85-36-29-71-57-107-85z m270 28c0 62 0 124 0 186-104 0-208 0-312 0 0-62 0-124 0-186 52 42 104 83 156 125 52-42 104-83 156-125z', options: {
-                            x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    MESSAGECATCH: {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-205 155c0 104 0 208 0 312 137 0 273 0 410 0 0-104 0-208 0-312-137 0-273 0-410 0z m91 49c76 0 152 0 228 0-40 24-81 79-121 85-36-29-71-57-107-85z m270 28c0 62 0 124 0 186-104 0-208 0-312 0 0-62 0-124 0-186 52 42 104 83 156 125 52-42 104-83 156-125z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'CONDITIONAL': { path: 'm499 48c-1 0-2 0-3 0-202-1-391 150-436 346-42 173 28 368 174 471 145 107 354 116 506 18 149-93 235-276 207-450-26-176-164-330-338-371-36-9-73-14-110-14z m-5 49c3 0 7 0 10 0 187-2 362 146 392 331 32 167-54 348-205 427-154 85-363 54-483-77-124-127-147-338-53-488 71-116 203-192 339-193z m8 44c-3 0-7 0-10 0-172 0-330 143-349 314-22 161 79 328 233 382 145 55 322 3 413-124 98-129 92-326-17-447-67-77-167-125-270-125z m-2 48c2 0 4 0 6 0 153 0 292 129 304 281 16 145-84 293-225 330-137 40-296-27-361-154-69-129-33-305 86-392 54-42 122-65 190-65z m-151 121l0 12 0 368 50 0 202 0 50 0 0-380-302 0z m24 24l254 0 0 332-26 0-202 0-26 0 0-332z m26 37l0 25 202 0 0-25-202 0z m0 74l0 24 202 0 0-24-202 0z m0 85l0 24 202 0 0-24-202 0z m0 77l0 24 202 0 0-24-202 0z', options: {
-                            x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    CONDITIONAL: {
+                        path: "m499 48c-1 0-2 0-3 0-202-1-391 150-436 346-42 173 28 368 174 471 145 107 354 116 506 18 149-93 235-276 207-450-26-176-164-330-338-371-36-9-73-14-110-14z m-5 49c3 0 7 0 10 0 187-2 362 146 392 331 32 167-54 348-205 427-154 85-363 54-483-77-124-127-147-338-53-488 71-116 203-192 339-193z m8 44c-3 0-7 0-10 0-172 0-330 143-349 314-22 161 79 328 233 382 145 55 322 3 413-124 98-129 92-326-17-447-67-77-167-125-270-125z m-2 48c2 0 4 0 6 0 153 0 292 129 304 281 16 145-84 293-225 330-137 40-296-27-361-154-69-129-33-305 86-392 54-42 122-65 190-65z m-151 121l0 12 0 368 50 0 202 0 50 0 0-380-302 0z m24 24l254 0 0 332-26 0-202 0-26 0 0-332z m26 37l0 25 202 0 0-25-202 0z m0 74l0 24 202 0 0-24-202 0z m0 85l0 24 202 0 0-24-202 0z m0 77l0 24 202 0 0-24-202 0z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'SIGNALTHROW': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m0 99c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    SIGNALTHROW: {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m0 99c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } }
+                            }
+                        }
+                    }
                 },
-                'bpmn:IntermediateCatchEvent': {
-                    'EMPTY': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-167 155c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z', options: {
-                            x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                "bpmn:IntermediateCatchEvent": {
+                    EMPTY: {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-167 155c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'EMAIL': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-167 155c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    EMAIL: {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-167 155c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'bpmn:TimerEventDefinition': { path: 'm499 48c-1 0-2 0-3 0-202-1-391 150-436 346-42 173 28 368 174 471 145 107 354 116 506 18 149-93 235-276 207-450-26-176-164-330-338-371-36-9-73-14-110-14z m-5 49c3 0 7 0 10 0 187-2 362 146 392 331 32 167-54 348-205 427-154 85-363 54-483-77-124-127-147-338-53-488 71-116 203-192 339-193z m8 44c-3 0-7 0-10 0-172 0-330 143-349 314-22 161 79 328 233 382 145 55 322 3 413-124 98-129 92-326-17-447-67-77-167-125-270-125z m-2 48c2 0 4 0 6 0 153 0 292 129 304 281 16 145-84 293-225 330-137 40-296-27-361-154-69-129-33-305 86-392 54-42 122-65 190-65z m-4 97c-84 0-164 55-194 133-33 76-15 170 43 229 56 60 149 82 226 54 81-28 141-108 143-194 5-83-46-166-121-201-29-14-61-21-93-21-1 0-3 0-4 0z m8 39c76 0 148 57 166 131 20 73-14 156-79 194-67 42-160 31-215-26-58-56-68-152-24-219 32-49 89-81 148-80 1 0 2 0 4 0z m51 49c-19 36-39 71-58 107-18 2-23 29-6 36 11 8 20-5 30-4l89 0 0-25-89 0c18-34 37-68 56-102-7-4-14-8-22-12z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    "bpmn:TimerEventDefinition": {
+                        path: "m499 48c-1 0-2 0-3 0-202-1-391 150-436 346-42 173 28 368 174 471 145 107 354 116 506 18 149-93 235-276 207-450-26-176-164-330-338-371-36-9-73-14-110-14z m-5 49c3 0 7 0 10 0 187-2 362 146 392 331 32 167-54 348-205 427-154 85-363 54-483-77-124-127-147-338-53-488 71-116 203-192 339-193z m8 44c-3 0-7 0-10 0-172 0-330 143-349 314-22 161 79 328 233 382 145 55 322 3 413-124 98-129 92-326-17-447-67-77-167-125-270-125z m-2 48c2 0 4 0 6 0 153 0 292 129 304 281 16 145-84 293-225 330-137 40-296-27-361-154-69-129-33-305 86-392 54-42 122-65 190-65z m-4 97c-84 0-164 55-194 133-33 76-15 170 43 229 56 60 149 82 226 54 81-28 141-108 143-194 5-83-46-166-121-201-29-14-61-21-93-21-1 0-3 0-4 0z m8 39c76 0 148 57 166 131 20 73-14 156-79 194-67 42-160 31-215-26-58-56-68-152-24-219 32-49 89-81 148-80 1 0 2 0 4 0z m51 49c-19 36-39 71-58 107-18 2-23 29-6 36 11 8 20-5 30-4l89 0 0-25-89 0c18-34 37-68 56-102-7-4-14-8-22-12z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'SIGNALCATCH': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m0 99c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z m0 51c50 90 100 180 151 270-101 0-201 0-302 0 51-90 101-180 151-270z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    SIGNALCATCH: {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m0 99c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z m0 51c50 90 100 180 151 270-101 0-201 0-302 0 51-90 101-180 151-270z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'bpmn:MessageEventDefinition': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-205 155c0 104 0 208 0 312 137 0 273 0 410 0 0-104 0-208 0-312-137 0-273 0-410 0z m91 49c76 0 152 0 228 0-40 24-81 79-121 85-36-29-71-57-107-85z m270 28c0 62 0 124 0 186-104 0-208 0-312 0 0-62 0-124 0-186 52 42 104 83 156 125 52-42 104-83 156-125z', options: {
-                            x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    "bpmn:MessageEventDefinition": {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-205 155c0 104 0 208 0 312 137 0 273 0 410 0 0-104 0-208 0-312-137 0-273 0-410 0z m91 49c76 0 152 0 228 0-40 24-81 79-121 85-36-29-71-57-107-85z m270 28c0 62 0 124 0 186-104 0-208 0-312 0 0-62 0-124 0-186 52 42 104 83 156 125 52-42 104-83 156-125z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'CONDITIONAL': { path: 'm499 48c-1 0-2 0-3 0-202-1-391 150-436 346-42 173 28 368 174 471 145 107 354 116 506 18 149-93 235-276 207-450-26-176-164-330-338-371-36-9-73-14-110-14z m-5 49c3 0 7 0 10 0 187-2 362 146 392 331 32 167-54 348-205 427-154 85-363 54-483-77-124-127-147-338-53-488 71-116 203-192 339-193z m8 44c-3 0-7 0-10 0-172 0-330 143-349 314-22 161 79 328 233 382 145 55 322 3 413-124 98-129 92-326-17-447-67-77-167-125-270-125z m-2 48c2 0 4 0 6 0 153 0 292 129 304 281 16 145-84 293-225 330-137 40-296-27-361-154-69-129-33-305 86-392 54-42 122-65 190-65z m-151 121l0 12 0 368 50 0 202 0 50 0 0-380-302 0z m24 24l254 0 0 332-26 0-202 0-26 0 0-332z m26 37l0 25 202 0 0-25-202 0z m0 74l0 24 202 0 0-24-202 0z m0 85l0 24 202 0 0-24-202 0z m0 77l0 24 202 0 0-24-202 0z', options: {
-                            x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    CONDITIONAL: {
+                        path: "m499 48c-1 0-2 0-3 0-202-1-391 150-436 346-42 173 28 368 174 471 145 107 354 116 506 18 149-93 235-276 207-450-26-176-164-330-338-371-36-9-73-14-110-14z m-5 49c3 0 7 0 10 0 187-2 362 146 392 331 32 167-54 348-205 427-154 85-363 54-483-77-124-127-147-338-53-488 71-116 203-192 339-193z m8 44c-3 0-7 0-10 0-172 0-330 143-349 314-22 161 79 328 233 382 145 55 322 3 413-124 98-129 92-326-17-447-67-77-167-125-270-125z m-2 48c2 0 4 0 6 0 153 0 292 129 304 281 16 145-84 293-225 330-137 40-296-27-361-154-69-129-33-305 86-392 54-42 122-65 190-65z m-151 121l0 12 0 368 50 0 202 0 50 0 0-380-302 0z m24 24l254 0 0 332-26 0-202 0-26 0 0-332z m26 37l0 25 202 0 0-25-202 0z m0 74l0 24 202 0 0-24-202 0z m0 85l0 24 202 0 0-24-202 0z m0 77l0 24 202 0 0-24-202 0z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'SIGNALTHROW': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m0 99c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    SIGNALTHROW: {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m0 99c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } }
+                            }
+                        }
+                    }
                 },
-                'bpmn:BoundaryEvent': {
-                    'bpmn:MessageEventDefinition': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-167 155c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z', options: {
-                            x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                "bpmn:BoundaryEvent": {
+                    "bpmn:MessageEventDefinition": {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-167 155c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'EMAIL': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-167 155c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    EMAIL: {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-167 155c57 46 114 92 171 138 56-46 113-92 170-138-114 0-227 0-341 0z m-38 32c0 93 0 187 0 280 137 0 273 0 410 0 0-91 0-183 0-274-67 54-134 109-201 163-70-56-139-113-209-169z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'bpmn:TimerEventDefinition': { path: 'm499 48c-1 0-2 0-3 0-202-1-391 150-436 346-42 173 28 368 174 471 145 107 354 116 506 18 149-93 235-276 207-450-26-176-164-330-338-371-36-9-73-14-110-14z m-5 49c3 0 7 0 10 0 187-2 362 146 392 331 32 167-54 348-205 427-154 85-363 54-483-77-124-127-147-338-53-488 71-116 203-192 339-193z m8 44c-3 0-7 0-10 0-172 0-330 143-349 314-22 161 79 328 233 382 145 55 322 3 413-124 98-129 92-326-17-447-67-77-167-125-270-125z m-2 48c2 0 4 0 6 0 153 0 292 129 304 281 16 145-84 293-225 330-137 40-296-27-361-154-69-129-33-305 86-392 54-42 122-65 190-65z m-4 97c-84 0-164 55-194 133-33 76-15 170 43 229 56 60 149 82 226 54 81-28 141-108 143-194 5-83-46-166-121-201-29-14-61-21-93-21-1 0-3 0-4 0z m8 39c76 0 148 57 166 131 20 73-14 156-79 194-67 42-160 31-215-26-58-56-68-152-24-219 32-49 89-81 148-80 1 0 2 0 4 0z m51 49c-19 36-39 71-58 107-18 2-23 29-6 36 11 8 20-5 30-4l89 0 0-25-89 0c18-34 37-68 56-102-7-4-14-8-22-12z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    "bpmn:TimerEventDefinition": {
+                        path: "m499 48c-1 0-2 0-3 0-202-1-391 150-436 346-42 173 28 368 174 471 145 107 354 116 506 18 149-93 235-276 207-450-26-176-164-330-338-371-36-9-73-14-110-14z m-5 49c3 0 7 0 10 0 187-2 362 146 392 331 32 167-54 348-205 427-154 85-363 54-483-77-124-127-147-338-53-488 71-116 203-192 339-193z m8 44c-3 0-7 0-10 0-172 0-330 143-349 314-22 161 79 328 233 382 145 55 322 3 413-124 98-129 92-326-17-447-67-77-167-125-270-125z m-2 48c2 0 4 0 6 0 153 0 292 129 304 281 16 145-84 293-225 330-137 40-296-27-361-154-69-129-33-305 86-392 54-42 122-65 190-65z m-4 97c-84 0-164 55-194 133-33 76-15 170 43 229 56 60 149 82 226 54 81-28 141-108 143-194 5-83-46-166-121-201-29-14-61-21-93-21-1 0-3 0-4 0z m8 39c76 0 148 57 166 131 20 73-14 156-79 194-67 42-160 31-215-26-58-56-68-152-24-219 32-49 89-81 148-80 1 0 2 0 4 0z m51 49c-19 36-39 71-58 107-18 2-23 29-6 36 11 8 20-5 30-4l89 0 0-25-89 0c18-34 37-68 56-102-7-4-14-8-22-12z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'SIGNALCATCH': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m0 99c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z m0 51c50 90 100 180 151 270-101 0-201 0-302 0 51-90 101-180 151-270z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    SIGNALCATCH: {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m0 99c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z m0 51c50 90 100 180 151 270-101 0-201 0-302 0 51-90 101-180 151-270z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'MESSAGECATCH': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-205 155c0 104 0 208 0 312 137 0 273 0 410 0 0-104 0-208 0-312-137 0-273 0-410 0z m91 49c76 0 152 0 228 0-40 24-81 79-121 85-36-29-71-57-107-85z m270 28c0 62 0 124 0 186-104 0-208 0-312 0 0-62 0-124 0-186 52 42 104 83 156 125 52-42 104-83 156-125z', options: {
-                            x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    MESSAGECATCH: {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m-205 155c0 104 0 208 0 312 137 0 273 0 410 0 0-104 0-208 0-312-137 0-273 0-410 0z m91 49c76 0 152 0 228 0-40 24-81 79-121 85-36-29-71-57-107-85z m270 28c0 62 0 124 0 186-104 0-208 0-312 0 0-62 0-124 0-186 52 42 104 83 156 125 52-42 104-83 156-125z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'CONDITIONAL': { path: 'm499 48c-1 0-2 0-3 0-202-1-391 150-436 346-42 173 28 368 174 471 145 107 354 116 506 18 149-93 235-276 207-450-26-176-164-330-338-371-36-9-73-14-110-14z m-5 49c3 0 7 0 10 0 187-2 362 146 392 331 32 167-54 348-205 427-154 85-363 54-483-77-124-127-147-338-53-488 71-116 203-192 339-193z m8 44c-3 0-7 0-10 0-172 0-330 143-349 314-22 161 79 328 233 382 145 55 322 3 413-124 98-129 92-326-17-447-67-77-167-125-270-125z m-2 48c2 0 4 0 6 0 153 0 292 129 304 281 16 145-84 293-225 330-137 40-296-27-361-154-69-129-33-305 86-392 54-42 122-65 190-65z m-151 121l0 12 0 368 50 0 202 0 50 0 0-380-302 0z m24 24l254 0 0 332-26 0-202 0-26 0 0-332z m26 37l0 25 202 0 0-25-202 0z m0 74l0 24 202 0 0-24-202 0z m0 85l0 24 202 0 0-24-202 0z m0 77l0 24 202 0 0-24-202 0z', options: {
-                            x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    CONDITIONAL: {
+                        path: "m499 48c-1 0-2 0-3 0-202-1-391 150-436 346-42 173 28 368 174 471 145 107 354 116 506 18 149-93 235-276 207-450-26-176-164-330-338-371-36-9-73-14-110-14z m-5 49c3 0 7 0 10 0 187-2 362 146 392 331 32 167-54 348-205 427-154 85-363 54-483-77-124-127-147-338-53-488 71-116 203-192 339-193z m8 44c-3 0-7 0-10 0-172 0-330 143-349 314-22 161 79 328 233 382 145 55 322 3 413-124 98-129 92-326-17-447-67-77-167-125-270-125z m-2 48c2 0 4 0 6 0 153 0 292 129 304 281 16 145-84 293-225 330-137 40-296-27-361-154-69-129-33-305 86-392 54-42 122-65 190-65z m-151 121l0 12 0 368 50 0 202 0 50 0 0-380-302 0z m24 24l254 0 0 332-26 0-202 0-26 0 0-332z m26 37l0 25 202 0 0-25-202 0z m0 74l0 24 202 0 0-24-202 0z m0 85l0 24 202 0 0-24-202 0z m0 77l0 24 202 0 0-24-202 0z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } },
-                    'SIGNALTHROW': { path: 'm499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m0 99c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z', options: { x: x, y: y, scale: 's0.04', attr: {
-                                stroke: '#000',
+                            }
+                        }
+                    },
+                    SIGNALTHROW: {
+                        path: "m499 48c-220-4-425 177-448 396-24 185 78 380 247 461 160 80 368 56 501-66 134-118 190-318 128-486-57-167-217-293-393-303-12-1-23-2-35-2z m-5 49c202-7 391 161 407 362 19 178-92 361-262 420-166 61-368 2-468-145-103-144-99-356 18-490 74-90 188-146 305-147z m8 44c-186-6-358 158-361 344-9 169 116 334 283 367 155 33 328-46 397-190 71-140 39-327-83-430-64-57-150-91-236-91z m-2 48c164-4 314 144 311 308 3 152-119 297-272 312-143 19-295-73-336-213-43-134 14-295 138-364 48-28 103-43 159-43z m0 99c-64 115-128 230-192 345 128 0 256 0 384 0-64-115-128-230-192-345z",
+                        options: {
+                            x: x,
+                            y: y,
+                            scale: "s0.04",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
-                            } } }
+                            }
+                        }
+                    }
                 }
             };
-            var rec = this.canvas.rect(this.x, this.y, this.scale, this.scale).attr({ 'fill': '#fff' });
+            var rec = this.canvas.rect(this.x, this.y, this.scale, this.scale).attr({ fill: "#fff" });
             var border = this.svgLoader.loadElement(bases[type][marker].path, bases[type][marker].options);
 
             var group = this.canvas.group(rec, border);
@@ -3258,10 +3257,10 @@ var EventShape = function () {
             // );
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             this.getBase(this.options.type, this.options.eventDefinitions ? this.options.eventDefinitions[0].$type : this.options.marker);
-            var textDecorator = this.getDecorator('TEXT', {
+            var textDecorator = this.getDecorator("TEXT", {
                 text: this.options.name,
                 x: this.x,
                 y: this.y
@@ -3271,15 +3270,15 @@ var EventShape = function () {
             this.shape.drag();
         }
     }, {
-        key: 'getDecorator',
+        key: "getDecorator",
         value: function getDecorator(type, options) {
             var decorator = void 0;
             switch (type) {
-                case 'TEXT':
+                case "TEXT":
                     decorator = this.canvas.multitext(options.x, options.y, options.text, 70, {});
                     var tx = +(this.options.width - decorator.getBBox().width) / 2;
                     var ty = +this.options.width;
-                    decorator.transform('t ' + tx + ', ' + ty);
+                    decorator.transform("t " + tx + ", " + ty);
                     break;
                 default:
                     decorator = this.canvas.group();
@@ -3288,24 +3287,24 @@ var EventShape = function () {
             return decorator;
         }
     }, {
-        key: 'getNativeShape',
+        key: "getNativeShape",
         value: function getNativeShape() {
             return this.shape;
         }
     }, {
-        key: 'registerInputConn',
+        key: "registerInputConn",
         value: function registerInputConn(id, conn) {
             this.inputConnectors.set(id, conn);
             this.setDirections(conn);
         }
     }, {
-        key: 'setDirections',
+        key: "setDirections",
         value: function setDirections(conn) {
-            conn.getShape().inputDirection = 'LEFT';
-            conn.getShape().outputDirection = 'RIGHT';
+            conn.getShape().inputDirection = "LEFT";
+            conn.getShape().outputDirection = "RIGHT";
         }
     }, {
-        key: 'registerOutputConn',
+        key: "registerOutputConn",
         value: function registerOutputConn(id, conn) {
             this.outputConnectors.set(id, conn);
             this.setDirections(conn);
@@ -3317,7 +3316,7 @@ var EventShape = function () {
          */
 
     }, {
-        key: 'refreshAllConnections',
+        key: "refreshAllConnections",
         value: function refreshAllConnections(nativeShape) {
             var conn = void 0,
                 dX = void 0,
@@ -3327,7 +3326,7 @@ var EventShape = function () {
             this.outputConnectors.forEach(function (value, key) {
                 conn = value;
 
-                if (conn.shape.outputDirection === 'RIGHT') {
+                if (conn.shape.outputDirection === "RIGHT") {
                     dX = shapeBox.width;
                     dY = shapeBox.height / 2;
                 }
@@ -3335,7 +3334,7 @@ var EventShape = function () {
                 var linesArray = conn.shape.router;
                 var n = linesArray.length;
 
-                conn.shape.options.method = 'manhathan';
+                conn.shape.options.method = "manhathan";
                 conn.shape.config(conn.shape.options);
 
                 conn.shape.redraw(shapeBox.x + dX, shapeBox.y + dY, linesArray[n - 1].x, linesArray[n - 1].y);
@@ -3343,7 +3342,7 @@ var EventShape = function () {
 
             this.inputConnectors.forEach(function (value, key) {
                 conn = value;
-                if (conn.shape.inputDirection === 'LEFT') {
+                if (conn.shape.inputDirection === "LEFT") {
                     dX = 0;
                     dY = shapeBox.height / 2;
                 }
@@ -3351,7 +3350,7 @@ var EventShape = function () {
                 var linesArray = conn.shape.router;
                 var n = linesArray.length;
 
-                conn.shape.options.method = 'manhathan';
+                conn.shape.options.method = "manhathan";
                 conn.shape.config(conn.shape.options);
 
                 conn.shape.redraw(linesArray[0].x, linesArray[0].y, shapeBox.x + dX, shapeBox.y + dY);
@@ -3363,7 +3362,8 @@ var EventShape = function () {
 }();
 
 /***/ }),
-/* 131 */
+
+/***/ 301:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3380,23 +3380,23 @@ var Flow = function () {
         _classCallCheck(this, Flow);
 
         this.shape = shape;
-        options.lineType = 'solid';
-        options.arrowType = 'filled';
+        options.lineType = "solid";
+        options.arrowType = "filled";
         this.shape.config(options);
     }
 
     _createClass(Flow, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.render();
         }
     }, {
-        key: 'getShape',
+        key: "getShape",
         value: function getShape() {
             return this.shape;
         }
     }, {
-        key: 'redraw',
+        key: "redraw",
         value: function redraw(posx1, posy1, posx2, posy2) {
             this.shape.redraw(posx1, posy1, posx2, posy2);
         }
@@ -3406,7 +3406,8 @@ var Flow = function () {
 }();
 
 /***/ }),
-/* 132 */
+
+/***/ 302:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3426,8 +3427,8 @@ var Gateway = function () {
         this.name = options.name;
         this.options = options;
         options.attr = {
-            fill: '#B4DCCB',
-            stroke: '#018A4F',
+            fill: "#B4DCCB",
+            stroke: "#018A4F",
             strokeWidth: 2
         };
         this.shape = shape;
@@ -3435,12 +3436,12 @@ var Gateway = function () {
     }
 
     _createClass(Gateway, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.render();
         }
     }, {
-        key: 'getShape',
+        key: "getShape",
         value: function getShape() {
             return this.shape;
         }
@@ -3450,7 +3451,8 @@ var Gateway = function () {
 }();
 
 /***/ }),
-/* 133 */
+
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3471,8 +3473,8 @@ var GatewayShape = function () {
         this.scaleY = 40;
         this.svgLoader = svgLoader;
         this.attr = {
-            fill: '#FFF',
-            stroke: '#000',
+            fill: "#FFF",
+            stroke: "#000",
             strokeWidth: 2
         };
         this.inputConnectors = new Map();
@@ -3480,7 +3482,7 @@ var GatewayShape = function () {
     }
 
     _createClass(GatewayShape, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.options = options;
             this.x = +options.x + 6;
@@ -3490,7 +3492,7 @@ var GatewayShape = function () {
             this.edgeLength = Math.sqrt(Math.pow(this.scaleX / 2, 2) + Math.pow(this.scaleY / 2, 2));
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             var mx = +this.x + this.edgeLength / 2,
                 my = +this.y + this.edgeLength / 2;
@@ -3500,39 +3502,39 @@ var GatewayShape = function () {
                 y: my
             });
 
-            var textDecorator = this.getDecorator('TEXT', {
+            var textDecorator = this.getDecorator("TEXT", {
                 gat_name: this.options.gat_name,
                 x: this.x,
                 y: this.y
             });
 
-            var base = this.canvas.rect(this.x, this.y, this.edgeLength, this.edgeLength).attr(this.attr).transform('r45,' + mx + ',' + my);
+            var base = this.canvas.rect(this.x, this.y, this.edgeLength, this.edgeLength).attr(this.attr).transform("r45," + mx + "," + my);
 
             this.shape = this.canvas.group(base, textDecorator, typeDecorator);
             this.shape.drag();
         }
     }, {
-        key: 'getDecorator',
+        key: "getDecorator",
         value: function getDecorator(type, options) {
             var decorator = void 0;
             switch (type) {
-                case 'bpmn:InclusiveGateway':
+                case "bpmn:InclusiveGateway":
                     decorator = this.canvas.circle(+options.x, +options.y, 8).attr(this.attr);
                     break;
-                case 'bpmn:EventBasedGateway':
+                case "bpmn:EventBasedGateway":
                     decorator = this.canvas.group(this.canvas.circle(+options.x, +options.y, 13).attr(this.attr), this.canvas.circle(+options.x, +options.y, 10).attr(this.attr), this.canvas.path("m " + (options.x - 6) + "," + (options.y - 3) + " 6.1854545454545455,-4.123636363636363 6.1854545454545455,4.123636363636363 -2.0618181818181816,8.247272727272726 -8.247272727272726,0 z")).attr(this.attr);
                     break;
-                case 'bpmn:ExclusiveGateway':
+                case "bpmn:ExclusiveGateway":
                     decorator = this.canvas.group(this.canvas.polyline([+options.x - 8, +options.y - 8, +options.x + 8, +options.y + 8]), this.canvas.polyline([+options.x - 8, +options.y + 8, +options.x + 8, +options.y - 8])).attr(this.attr);
                     break;
-                case 'bpmn:ParallelGateway':
+                case "bpmn:ParallelGateway":
                     decorator = this.canvas.group(this.canvas.polyline([+options.x - 12, +options.y, +options.x + 12, +options.y]), this.canvas.polyline([+options.x, +options.y - 12, +options.x, +options.y + 12])).attr(this.attr);
                     break;
-                case 'TEXT':
+                case "TEXT":
                     decorator = this.canvas.text(options.x, options.y, options.gat_name);
                     var tx = (this.scaleX - decorator.getBBox().width) / 2 - 6;
                     var ty = +this.scaleY + 15;
-                    decorator.transform('t ' + tx + ', ' + ty);
+                    decorator.transform("t " + tx + ", " + ty);
                     break;
                 default:
                     decorator = this.canvas.group();
@@ -3541,24 +3543,24 @@ var GatewayShape = function () {
             return decorator;
         }
     }, {
-        key: 'getNativeShape',
+        key: "getNativeShape",
         value: function getNativeShape() {
             return this.shape;
         }
     }, {
-        key: 'registerInputConn',
+        key: "registerInputConn",
         value: function registerInputConn(id, conn) {
             this.inputConnectors.set(id, conn);
             this.setDirections(conn);
         }
     }, {
-        key: 'setDirections',
+        key: "setDirections",
         value: function setDirections(conn) {
-            conn.getShape().inputDirection = 'LEFT';
-            conn.getShape().outputDirection = 'RIGHT';
+            conn.getShape().inputDirection = "LEFT";
+            conn.getShape().outputDirection = "RIGHT";
         }
     }, {
-        key: 'registerOutputConn',
+        key: "registerOutputConn",
         value: function registerOutputConn(id, conn) {
             this.outputConnectors.set(id, conn);
             this.setDirections(conn);
@@ -3570,7 +3572,7 @@ var GatewayShape = function () {
          */
 
     }, {
-        key: 'refreshAllConnections',
+        key: "refreshAllConnections",
         value: function refreshAllConnections(nativeShape) {
             var conn = void 0,
                 dX = void 0,
@@ -3580,7 +3582,7 @@ var GatewayShape = function () {
             this.outputConnectors.forEach(function (value, key) {
                 conn = value;
 
-                if (conn.shape.outputDirection === 'RIGHT') {
+                if (conn.shape.outputDirection === "RIGHT") {
                     dX = shapeBox.width;
                     dY = shapeBox.height / 2;
                 }
@@ -3588,7 +3590,7 @@ var GatewayShape = function () {
                 var linesArray = conn.shape.router;
                 var n = linesArray.length;
 
-                conn.shape.options.method = 'manhathan';
+                conn.shape.options.method = "manhathan";
                 conn.shape.config(conn.shape.options);
 
                 conn.shape.redraw(shapeBox.x + dX, shapeBox.y + dY, linesArray[n - 1].x, linesArray[n - 1].y);
@@ -3596,7 +3598,7 @@ var GatewayShape = function () {
 
             this.inputConnectors.forEach(function (value, key) {
                 conn = value;
-                if (conn.shape.inputDirection === 'LEFT') {
+                if (conn.shape.inputDirection === "LEFT") {
                     dX = 0;
                     dY = shapeBox.height / 2;
                 }
@@ -3604,7 +3606,7 @@ var GatewayShape = function () {
                 var linesArray = conn.shape.router;
                 var n = linesArray.length;
 
-                conn.shape.options.method = 'manhathan';
+                conn.shape.options.method = "manhathan";
                 conn.shape.config(conn.shape.options);
 
                 conn.shape.redraw(linesArray[0].x, linesArray[0].y, shapeBox.x + dX, shapeBox.y + dY);
@@ -3616,7 +3618,8 @@ var GatewayShape = function () {
 }();
 
 /***/ }),
-/* 134 */
+
+/***/ 304:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3655,7 +3658,8 @@ var Group = function () {
 }();
 
 /***/ }),
-/* 135 */
+
+/***/ 305:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3674,11 +3678,11 @@ var GroupShape = function () {
         this.canvas = canvas;
         this.svgLoader = svgLoader;
         this.attr = {
-            fill: 'none',
-            stroke: '#000',
+            fill: "none",
+            stroke: "#000",
             strokeWidth: 2,
-            strokeDasharray: '3px,7px',
-            strokeLinecap: 'square'
+            strokeDasharray: "3px,7px",
+            strokeLinecap: "square"
         };
         this.shape = this.canvas.group();
         this.shape.drag();
@@ -3687,7 +3691,7 @@ var GroupShape = function () {
     }
 
     _createClass(GroupShape, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.options = options;
             this.id = options.act_uid;
@@ -3699,35 +3703,35 @@ var GroupShape = function () {
             this.attr = options.attr || this.attr;
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.add(this.canvas.rect(this.x, this.y, this.scaleX, this.scaleY, this.rounded).attr(this.attr));
 
             this.addDecorators();
         }
     }, {
-        key: 'addDecorators',
+        key: "addDecorators",
         value: function addDecorators() {
             this.addTextDecorator();
         }
     }, {
-        key: 'addTextDecorator',
+        key: "addTextDecorator",
         value: function addTextDecorator() {
-            this.shape.add(this.canvas.multitext(this.x + this.scaleX / 2, this.y + 20, this.options.art_name, this.scaleY, { 'font-size': '13px', 'text-align': 'center' }));
+            this.shape.add(this.canvas.multitext(this.x + this.scaleX / 2, this.y + 20, this.options.art_name, this.scaleY, { "font-size": "13px", "text-align": "center" }));
         }
     }, {
-        key: 'getNativeShape',
+        key: "getNativeShape",
         value: function getNativeShape() {
             return this.shape;
         }
     }, {
-        key: 'setDirections',
+        key: "setDirections",
         value: function setDirections(conn) {
-            conn.getShape().inputDirection = 'LEFT';
-            conn.getShape().outputDirection = 'RIGHT';
+            conn.getShape().inputDirection = "LEFT";
+            conn.getShape().outputDirection = "RIGHT";
         }
     }, {
-        key: 'registerOutputConn',
+        key: "registerOutputConn",
         value: function registerOutputConn(id, conn) {
             this.outputConnectors.set(id, conn);
             this.setDirections(conn);
@@ -3739,7 +3743,7 @@ var GroupShape = function () {
          */
 
     }, {
-        key: 'refreshAllConnections',
+        key: "refreshAllConnections",
         value: function refreshAllConnections(nativeShape) {
             var conn = void 0,
                 dX = void 0,
@@ -3749,7 +3753,7 @@ var GroupShape = function () {
             this.outputConnectors.forEach(function (value, key) {
                 conn = value;
 
-                if (conn.shape.outputDirection === 'RIGHT') {
+                if (conn.shape.outputDirection === "RIGHT") {
                     dX = shapeBox.width;
                     dY = shapeBox.height / 2;
                 }
@@ -3757,7 +3761,7 @@ var GroupShape = function () {
                 var linesArray = conn.shape.router;
                 var n = linesArray.length;
 
-                conn.shape.options.method = 'manhathan';
+                conn.shape.options.method = "manhathan";
                 conn.shape.config(conn.shape.options);
 
                 conn.shape.redraw(shapeBox.x + dX, shapeBox.y + dY, linesArray[n - 1].x, linesArray[n - 1].y);
@@ -3765,7 +3769,7 @@ var GroupShape = function () {
 
             this.inputConnectors.forEach(function (value, key) {
                 conn = value;
-                if (conn.shape.inputDirection === 'LEFT') {
+                if (conn.shape.inputDirection === "LEFT") {
                     dX = 0;
                     dY = shapeBox.height / 2;
                 }
@@ -3773,7 +3777,7 @@ var GroupShape = function () {
                 var linesArray = conn.shape.router;
                 var n = linesArray.length;
 
-                conn.shape.options.method = 'manhathan';
+                conn.shape.options.method = "manhathan";
                 conn.shape.config(conn.shape.options);
 
                 conn.shape.redraw(linesArray[0].x, linesArray[0].y, shapeBox.x + dX, shapeBox.y + dY);
@@ -3785,75 +3789,76 @@ var GroupShape = function () {
 }();
 
 /***/ }),
-/* 136 */
+
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__start_event__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__start_event__ = __webpack_require__(315);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__start_event__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__end_event__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__end_event__ = __webpack_require__(299);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_1__end_event__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__intermediate_event__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__intermediate_event__ = __webpack_require__(307);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_2__intermediate_event__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__event_shape__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__event_shape__ = __webpack_require__(300);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_3__event_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__flow__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__flow__ = __webpack_require__(301);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_4__flow__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__association__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__association__ = __webpack_require__(289);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_5__association__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__data_association__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__data_association__ = __webpack_require__(292);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return __WEBPACK_IMPORTED_MODULE_6__data_association__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__message__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__message__ = __webpack_require__(311);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_7__message__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__connector_point__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__connector_point__ = __webpack_require__(205);
 /* unused harmony reexport Point */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__connector_manhathan_route__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__connector_manhathan_route__ = __webpack_require__(204);
 /* unused harmony reexport ManhathanRouter */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__connector_connector_shape__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__connector_connector_shape__ = __webpack_require__(203);
 /* unused harmony reexport ConnectorShape */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__gateway__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__gateway__ = __webpack_require__(302);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return __WEBPACK_IMPORTED_MODULE_11__gateway__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__gateway_shape__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__gateway_shape__ = __webpack_require__(303);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return __WEBPACK_IMPORTED_MODULE_12__gateway_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__sub_process__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__sub_process__ = __webpack_require__(316);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_13__sub_process__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__task__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__task__ = __webpack_require__(317);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_14__task__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__task_shape__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__task_shape__ = __webpack_require__(318);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_15__task_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__text_annotation__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__text_annotation__ = __webpack_require__(319);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return __WEBPACK_IMPORTED_MODULE_16__text_annotation__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__text_annotation_shape__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__text_annotation_shape__ = __webpack_require__(320);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return __WEBPACK_IMPORTED_MODULE_17__text_annotation_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__data_store__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__data_store__ = __webpack_require__(295);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return __WEBPACK_IMPORTED_MODULE_18__data_store__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__data_store_shape__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__data_store_shape__ = __webpack_require__(296);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return __WEBPACK_IMPORTED_MODULE_19__data_store_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__data_object__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__data_object__ = __webpack_require__(293);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return __WEBPACK_IMPORTED_MODULE_20__data_object__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__data_object_shape__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__data_object_shape__ = __webpack_require__(294);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return __WEBPACK_IMPORTED_MODULE_21__data_object_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pool__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pool__ = __webpack_require__(312);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return __WEBPACK_IMPORTED_MODULE_22__pool__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pool_shape__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pool_shape__ = __webpack_require__(313);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return __WEBPACK_IMPORTED_MODULE_23__pool_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__blackbox_pool__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__blackbox_pool__ = __webpack_require__(290);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return __WEBPACK_IMPORTED_MODULE_24__blackbox_pool__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__blackbox_pool_shape__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__blackbox_pool_shape__ = __webpack_require__(291);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return __WEBPACK_IMPORTED_MODULE_25__blackbox_pool_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__lane__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__lane__ = __webpack_require__(308);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return __WEBPACK_IMPORTED_MODULE_26__lane__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__lane_shape__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__lane_shape__ = __webpack_require__(309);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return __WEBPACK_IMPORTED_MODULE_27__lane_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__group__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__group__ = __webpack_require__(304);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return __WEBPACK_IMPORTED_MODULE_28__group__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__group_shape__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__group_shape__ = __webpack_require__(305);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return __WEBPACK_IMPORTED_MODULE_29__group_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__diagram__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__diagram__ = __webpack_require__(297);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_30__diagram__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__diagram_shape__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__diagram_shape__ = __webpack_require__(298);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_31__diagram_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__diagram_service__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__diagram_service__ = __webpack_require__(287);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_32__diagram_service__["a"]; });
 
 
@@ -3890,7 +3895,8 @@ var GroupShape = function () {
 
 
 /***/ }),
-/* 137 */
+
+/***/ 307:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3910,22 +3916,22 @@ var IntermediateEvent = function () {
         this.name = options.name;
         this.options = options;
         options.attr = {
-            fill: '#B4DCCB',
-            stroke: '#018A4F',
+            fill: "#B4DCCB",
+            stroke: "#018A4F",
             strokeWidth: 2
         };
-        options.marker = 'MESSAGETHROW';
+        options.marker = "MESSAGETHROW";
         this.shape = shape;
         this.shape.config(options);
     }
 
     _createClass(IntermediateEvent, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.render();
         }
     }, {
-        key: 'getShape',
+        key: "getShape",
         value: function getShape() {
             return this.shape;
         }
@@ -3935,7 +3941,8 @@ var IntermediateEvent = function () {
 }();
 
 /***/ }),
-/* 138 */
+
+/***/ 308:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3951,7 +3958,7 @@ var Lane = function () {
     function Lane(options, shape) {
         _classCallCheck(this, Lane);
 
-        this.type = 'bpmn:Lane';
+        this.type = "bpmn:Lane";
         this.name = options.name;
         this.options = options;
         this.shape = shape;
@@ -3959,12 +3966,12 @@ var Lane = function () {
     }
 
     _createClass(Lane, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.render();
         }
     }, {
-        key: 'getShape',
+        key: "getShape",
         value: function getShape() {
             return this.shape;
         }
@@ -3974,7 +3981,8 @@ var Lane = function () {
 }();
 
 /***/ }),
-/* 139 */
+
+/***/ 309:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3993,8 +4001,8 @@ var LaneShape = function () {
         this.canvas = canvas;
         this.svgLoader = svgLoader;
         this.attr = {
-            fill: '#FFF',
-            stroke: '#000',
+            fill: "#FFF",
+            stroke: "#000",
             strokeWidth: 2
         };
         this.shape = this.canvas.group();
@@ -4002,7 +4010,7 @@ var LaneShape = function () {
     }
 
     _createClass(LaneShape, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.options = options;
             this.id = options.id;
@@ -4014,42 +4022,42 @@ var LaneShape = function () {
             this.isFirst = options.isFirst || false;
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
-            this.shape.add(this.canvas.rect(this.x, this.y, this.scaleX, this.scaleY).attr({ 'fill': '#fff' }));
+            this.shape.add(this.canvas.rect(this.x, this.y, this.scaleX, this.scaleY).attr({ fill: "#fff" }));
             this.addDecorators();
         }
     }, {
-        key: 'addDecorators',
+        key: "addDecorators",
         value: function addDecorators() {
             this.addLineDecorator();
             this.addTextDecorator();
         }
     }, {
-        key: 'addLineDecorator',
+        key: "addLineDecorator",
         value: function addLineDecorator() {
             var strokeWidth = 2;
             if (this.isFirst) {
                 strokeWidth = 0;
             }
-            this.shape.add(this.canvas.polyline(this.x + ' ' + (this.y + this.scaleY - 2) + ' ' + (this.x + this.scaleX) + ' ' + (this.y + this.scaleY - 2)).attr({
-                fill: 'none',
-                stroke: '#000',
+            this.shape.add(this.canvas.polyline(this.x + " " + (this.y + this.scaleY - 2) + " " + (this.x + this.scaleX) + " " + (this.y + this.scaleY - 2)).attr({
+                fill: "none",
+                stroke: "#000",
                 strokeWidth: strokeWidth
             }));
         }
     }, {
-        key: 'addTextDecorator',
+        key: "addTextDecorator",
         value: function addTextDecorator() {
-            var text = this.canvas.text(this.x, this.y, this.options.name, { 'font-size': '13px', 'font-family': 'Arial, Helvetica, sans-serif' });
+            var text = this.canvas.text(this.x, this.y, this.options.name, { "font-size": "13px", "font-family": "Arial, Helvetica, sans-serif" });
             var textBox = text.getBBox();
             var tx = textBox.height + (42 - textBox.height) / 2;
             var ty = textBox.width + (this.scaleY - textBox.width) / 2;
-            text.transform('r270 ' + this.x + ', ' + this.y + ' t' + -ty + ', ' + tx);
+            text.transform("r270 " + this.x + ", " + this.y + " t" + -ty + ", " + tx);
             this.shape.add(text);
         }
     }, {
-        key: 'getNativeShape',
+        key: "getNativeShape",
         value: function getNativeShape() {
             return this.shape;
         }
@@ -4059,7 +4067,8 @@ var LaneShape = function () {
 }();
 
 /***/ }),
-/* 140 */
+
+/***/ 310:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4080,12 +4089,12 @@ var LineShape = function () {
     }
 
     _createClass(LineShape, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.options = Object.assign({}, options);
             this.options.attr = {
-                fill: 'none',
-                stroke: '#000',
+                fill: "none",
+                stroke: "#000",
                 strokeWidth: 1
             };
 
@@ -4101,31 +4110,31 @@ var LineShape = function () {
             return this;
         }
     }, {
-        key: 'processLineType',
+        key: "processLineType",
         value: function processLineType() {
-            if (this.options.lineType === 'dotted') {
-                this.options.attr.strokeDasharray = '1px,2px';
-                this.options.attr.strokeLinecap = 'round';
+            if (this.options.lineType === "dotted") {
+                this.options.attr.strokeDasharray = "1px,2px";
+                this.options.attr.strokeLinecap = "round";
             }
-            if (this.options.lineType === 'dashed') {
-                this.options.attr.strokeDasharray = '3px,5px';
-                this.options.attr.strokeLinecap = 'round';
+            if (this.options.lineType === "dashed") {
+                this.options.attr.strokeDasharray = "3px,5px";
+                this.options.attr.strokeLinecap = "round";
             }
         }
     }, {
-        key: 'addMarkerStart',
+        key: "addMarkerStart",
         value: function addMarkerStart(marker) {
             this.options.attr.markerStart = marker;
             return this;
         }
     }, {
-        key: 'addMarkerEnd',
+        key: "addMarkerEnd",
         value: function addMarkerEnd(marker) {
             this.options.attr.markerEnd = marker;
             return this;
         }
     }, {
-        key: 'createShape',
+        key: "createShape",
         value: function createShape() {
             if (!this.shape) {
                 this.shape = this.canvas.polyline(this.options.linePoints).attr(this.options.attr);
@@ -4133,12 +4142,12 @@ var LineShape = function () {
             return this.shape;
         }
     }, {
-        key: 'getShape',
+        key: "getShape",
         value: function getShape() {
             return this.createShape();
         }
     }, {
-        key: 'redraw',
+        key: "redraw",
         value: function redraw() {
             this.shape.remove();
             this.shape = this.canvas.polyline(this.options.linePoints).attr(this.options.attr);
@@ -4150,7 +4159,8 @@ var LineShape = function () {
 }();
 
 /***/ }),
-/* 141 */
+
+/***/ 311:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4167,19 +4177,19 @@ var Message = function () {
         _classCallCheck(this, Message);
 
         this.shape = shape;
-        options.lineType = 'dashed';
-        options.arrowType = 'filled-white';
-        options.originConnector = 'round';
+        options.lineType = "dashed";
+        options.arrowType = "filled-white";
+        options.originConnector = "round";
         this.shape.config(options);
     }
 
     _createClass(Message, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.render();
         }
     }, {
-        key: 'getShape',
+        key: "getShape",
         value: function getShape() {
             return this.shape;
         }
@@ -4189,7 +4199,8 @@ var Message = function () {
 }();
 
 /***/ }),
-/* 142 */
+
+/***/ 312:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4205,7 +4216,7 @@ var Pool = function () {
     function Pool(options, shape) {
         _classCallCheck(this, Pool);
 
-        this.type = 'POOL';
+        this.type = "POOL";
         this.name = options.name;
         this.options = options;
         this.shape = shape;
@@ -4213,12 +4224,12 @@ var Pool = function () {
     }
 
     _createClass(Pool, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.render();
         }
     }, {
-        key: 'getShape',
+        key: "getShape",
         value: function getShape() {
             return this.shape;
         }
@@ -4228,7 +4239,8 @@ var Pool = function () {
 }();
 
 /***/ }),
-/* 143 */
+
+/***/ 313:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4248,15 +4260,15 @@ var PoolShape = function () {
         this.svgLoader = svgLoader;
         this.rounded = 5;
         this.attr = {
-            fill: '#FFF',
-            stroke: '#000',
+            fill: "#FFF",
+            stroke: "#000",
             strokeWidth: 2
         };
         this.shape = this.canvas.group();
     }
 
     _createClass(PoolShape, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.options = options;
             this.id = options.act_uid;
@@ -4268,7 +4280,7 @@ var PoolShape = function () {
             this.attr = options.attr || this.attr;
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.add(this.canvas.rect(this.x, this.y, this.scaleX, this.scaleY, this.rounded).attr(this.attr));
 
@@ -4276,32 +4288,32 @@ var PoolShape = function () {
             this.shape.drag();
         }
     }, {
-        key: 'addDecorators',
+        key: "addDecorators",
         value: function addDecorators() {
             this.addLineDecorator();
             this.addTextDecorator();
         }
     }, {
-        key: 'addLineDecorator',
+        key: "addLineDecorator",
         value: function addLineDecorator() {
-            this.shape.add(this.canvas.polyline(this.x + 42 + ' ' + this.y + ' ' + (this.x + 42) + ' ' + (this.y + this.scaleY)).attr({
-                fill: 'none',
-                stroke: '#000',
+            this.shape.add(this.canvas.polyline(this.x + 42 + " " + this.y + " " + (this.x + 42) + " " + (this.y + this.scaleY)).attr({
+                fill: "none",
+                stroke: "#000",
                 strokeWidth: 2
             }));
         }
     }, {
-        key: 'addTextDecorator',
+        key: "addTextDecorator",
         value: function addTextDecorator() {
-            var text = this.canvas.text(this.x, this.y, this.options.name, { 'font-size': '13px', 'font-family': 'Arial, Helvetica, sans-serif' });
+            var text = this.canvas.text(this.x, this.y, this.options.name, { "font-size": "13px", "font-family": "Arial, Helvetica, sans-serif" });
             var textBox = text.getBBox();
             var tx = textBox.height + (42 - textBox.height) / 2;
             var ty = textBox.width + (this.scaleY - textBox.width) / 2;
-            text.transform('r270 ' + this.x + ', ' + this.y + ' t' + -ty + ', ' + tx);
+            text.transform("r270 " + this.x + ", " + this.y + " t" + -ty + ", " + tx);
             this.shape.add(text);
         }
     }, {
-        key: 'getNativeShape',
+        key: "getNativeShape",
         value: function getNativeShape() {
             return this.shape;
         }
@@ -4311,7 +4323,8 @@ var PoolShape = function () {
 }();
 
 /***/ }),
-/* 144 */
+
+/***/ 314:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4333,17 +4346,17 @@ var RoundConnectorMarker = function () {
     }
 
     _createClass(RoundConnectorMarker, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.options = Object.assign({}, options);
             return this;
         }
     }, {
-        key: 'getMarker',
+        key: "getMarker",
         value: function getMarker() {
             return this.canvas.circle(5, 5, 5).attr({
-                fill: '#FFF',
-                stroke: '#000',
+                fill: "#FFF",
+                stroke: "#000",
                 strokeWidth: 1
             }).marker(0, 0, 100, 100, 1, 5);
         }
@@ -4353,7 +4366,8 @@ var RoundConnectorMarker = function () {
 }();
 
 /***/ }),
-/* 145 */
+
+/***/ 315:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4370,25 +4384,25 @@ var StartEvent = function () {
         _classCallCheck(this, StartEvent);
 
         this.type = options.type;
-        this.name = options.name || '';
+        this.name = options.name || "";
         this.options = options;
         options.attr = {
-            fill: '#B4DCCB',
-            stroke: '#018A4F',
+            fill: "#B4DCCB",
+            stroke: "#018A4F",
             strokeWidth: 2
         };
-        options.marker = 'EMPTY';
+        options.marker = "EMPTY";
         this.shape = shape;
         this.shape.config(options);
     }
 
     _createClass(StartEvent, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.render();
         }
     }, {
-        key: 'getShape',
+        key: "getShape",
         value: function getShape() {
             return this.shape;
         }
@@ -4398,7 +4412,8 @@ var StartEvent = function () {
 }();
 
 /***/ }),
-/* 146 */
+
+/***/ 316:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4416,23 +4431,23 @@ var SubProcess = function () {
 
         this.options = options;
         this.options.attr = {
-            fill: '#FFF',
-            stroke: '#000',
+            fill: "#FFF",
+            stroke: "#000",
             strokeWidth: 3
         };
-        this.options.act_loop_type = 'COLLAPSED';
-        this.options.act_task_type = 'EMPTY';
+        this.options.act_loop_type = "COLLAPSED";
+        this.options.act_task_type = "EMPTY";
         this.shape = shape;
         this.shape.config(options);
     }
 
     _createClass(SubProcess, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.render();
         }
     }, {
-        key: 'getShape',
+        key: "getShape",
         value: function getShape() {
             return this.shape;
         }
@@ -4442,7 +4457,8 @@ var SubProcess = function () {
 }();
 
 /***/ }),
-/* 147 */
+
+/***/ 317:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4479,7 +4495,8 @@ var Task = function () {
 }();
 
 /***/ }),
-/* 148 */
+
+/***/ 318:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4501,8 +4518,8 @@ var TaskShape = function () {
         this.svgLoader = svgLoader;
         this.rounded = 10;
         this.attr = {
-            fill: '#FFF',
-            stroke: '#000',
+            fill: "#FFF",
+            stroke: "#000",
             strokeWidth: 2
         };
         this.shape = this.canvas.group();
@@ -4511,7 +4528,7 @@ var TaskShape = function () {
     }
 
     _createClass(TaskShape, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.options = options;
             this.id = options.id;
@@ -4524,11 +4541,11 @@ var TaskShape = function () {
             this.attr.id = options.id;
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             this.shape.add(this.canvas.rect(this.x, this.y, this.scaleX, this.scaleY, this.rounded).attr(this.attr));
 
-            var text = this.canvas.multitext(this.x, this.y, this.options.name, this.scaleX, { 'font-size': '13px', 'font-family': 'Arial, Helvetica, sans-serif' });
+            var text = this.canvas.multitext(this.x, this.y, this.options.name, this.scaleX, { "font-size": "13px", "font-family": "Arial, Helvetica, sans-serif" });
             var textBox = text.getBBox();
             text.attr({
                 x: this.x + (this.scaleX - textBox.w) / 2,
@@ -4539,76 +4556,98 @@ var TaskShape = function () {
             this.shape.drag();
         }
     }, {
-        key: 'addDecorators',
+        key: "addDecorators",
         value: function addDecorators() {
-            this.addTypeDecorator(this.options.$type || 'EMPTY'); //(this.options.act_task_type);
-            this.addMarkerDecorator(this.options.act_loop_type || 'EMPTY'); //(this.options.act_loop_type);
+            this.addTypeDecorator(this.options.$type || "EMPTY"); // (this.options.act_task_type);
+            this.addMarkerDecorator(this.options.act_loop_type || "EMPTY"); // (this.options.act_loop_type);
         }
     }, {
-        key: 'addTypeDecorator',
+        key: "addTypeDecorator",
         value: function addTypeDecorator(type) {
             var x = this.x + this.x * 0.037;
             var y = this.y + this.y * 0.037;
-            if (type !== 'bpmn:Task') {
+            if (type !== "bpmn:Task") {
                 var types = {
-                    'bpmn:UserTask': {
-                        path: 'm492 206l-5 1c-84 0-140 60-140 139 0 39 29 74 58 100-16 5-54 19-93 41-23 12-45 27-62 44-16 17-28 37-29 58l0 0 0 204 98 0c1 1 2 1 3 0l457 0 0-204c0-19-12-37-29-53-18-17-41-32-64-45-42-24-83-40-99-46 28-26 48-60 48-99 0-79-58-140-143-140z m-38 82c13 0 27 3 40 10 59 31 121 43 132 34 1 4 1 9 1 14 0 38-21 73-50 97l-6 5 7 2c6 2 35 13 69 29-2 70-70 127-154 127-84 0-151-55-153-125 35-17 67-28 74-30l7-2-6-5c-29-25-60-60-60-98 0-5 0-10 1-15 10-8 52-42 98-43z m198 194c10 5 20 10 30 16 23 13 46 28 62 43 17 16 27 33 27 48l0 196-90 0 0-144-8 0 0 144-349 0 0-144c0-6-8-6-8 0l0 144-87 0 0-196c1-18 11-36 27-52 16-16 38-31 60-43 6-4 12-7 19-10 3 72 73 127 158 127 86 0 156-57 159-129z',
+                    "bpmn:UserTask": {
+                        path: "m492 206l-5 1c-84 0-140 60-140 139 0 39 29 74 58 100-16 5-54 19-93 41-23 12-45 27-62 44-16 17-28 37-29 58l0 0 0 204 98 0c1 1 2 1 3 0l457 0 0-204c0-19-12-37-29-53-18-17-41-32-64-45-42-24-83-40-99-46 28-26 48-60 48-99 0-79-58-140-143-140z m-38 82c13 0 27 3 40 10 59 31 121 43 132 34 1 4 1 9 1 14 0 38-21 73-50 97l-6 5 7 2c6 2 35 13 69 29-2 70-70 127-154 127-84 0-151-55-153-125 35-17 67-28 74-30l7-2-6-5c-29-25-60-60-60-98 0-5 0-10 1-15 10-8 52-42 98-43z m198 194c10 5 20 10 30 16 23 13 46 28 62 43 17 16 27 33 27 48l0 196-90 0 0-144-8 0 0 144-349 0 0-144c0-6-8-6-8 0l0 144-87 0 0-196c1-18 11-36 27-52 16-16 38-31 60-43 6-4 12-7 19-10 3 72 73 127 158 127 86 0 156-57 159-129z",
                         options: {
-                            x: x - 4, y: y - 4, scale: 's0.035', attr: {
-                                stroke: '#000',
+                            x: x - 4,
+                            y: y - 4,
+                            scale: "s0.035",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 30
                             }
                         }
                     },
-                    'SENDTASK': {
-                        path: 'm112 206l388 214 388-214-776 0z m0 105l0 483 776 0 0-483-388 193-388-193z', options: {
-                            x: x, y: y - 3, scale: 's0.035', attr: {
-                                stroke: '#000',
+                    SENDTASK: {
+                        path: "m112 206l388 214 388-214-776 0z m0 105l0 483 776 0 0-483-388 193-388-193z",
+                        options: {
+                            x: x,
+                            y: y - 3,
+                            scale: "s0.035",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 30
                             }
                         }
                     },
-                    'RECEIVETASK': {
-                        path: 'm115 206c0 0 0 0-1 0 0 0 0 0 0 0-1 1-2 2-2 3l0 582c0 1 1 2 3 2l771 0c1 0 2-1 2-2l0-582c0-1-1-2-2-3 0 0 0 0 0 0 0 0 0 0 0 0l-481 0z m9 5l753 0-377 228z m-7 2l382 231c1 0 2 0 2 0l382-231 0 575-766 0z',
+                    RECEIVETASK: {
+                        path: "m115 206c0 0 0 0-1 0 0 0 0 0 0 0-1 1-2 2-2 3l0 582c0 1 1 2 3 2l771 0c1 0 2-1 2-2l0-582c0-1-1-2-2-3 0 0 0 0 0 0 0 0 0 0 0 0l-481 0z m9 5l753 0-377 228z m-7 2l382 231c1 0 2 0 2 0l382-231 0 575-766 0z",
                         options: {
-                            x: x, y: y - 3, scale: 's0.035', attr: {
-                                stroke: '#000',
+                            x: x,
+                            y: y - 3,
+                            scale: "s0.035",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 30
                             }
                         }
                     },
-                    'bpmn:ServiceTask': {
-                        path: 'm396 204l0 3 0 49c-11 3-21 6-32 10l0 0 0 0c-10 5-20 10-29 16l-38-37-53 53 38 37c-12 19-21 40-25 61l-53 0 0 76 53 0c2 10 6 21 10 31 4 11 10 20 16 29l-39 38 54 53 37-36 0 15 33-1c8 3 15 6 23 8 1 7 4 14 7 22l0 33 2 0c4 0 8 1 12 1l-36 35 54 53 38-38c19 12 40 20 62 25l0 54 2 0c24 0 71 0 71 0l0 0 2 0 0-2 0-52c11-3 22-6 32-10l0 0 0 0c10-5 20-10 29-16l39 38 53-54-38-37c12-19 20-40 25-62l52 0 0-75-53 0c-2-10-5-21-10-31l0 0c-4-11-10-20-16-29l37-37-54-53-36 36 0-16-3 0-29 0c-8-3-15-5-22-7-2-7-5-14-7-22l0-31-17 0c0 0 0 0 0 0l36-37-54-53-36 37c-19-12-40-21-61-25l0-52-76 0z m5 5l66 0 0 51 2 0c22 5 44 13 63 26l2 1 35-36 47 46-36 36 1 1-53 0 0 0 0 33c-31-42-87-60-137-39-59 24-86 91-61 149l0 0c8 21 22 37 39 49l-34 0 0 0 0 54-37 36-47-46 38-37-1-2c-6-9-12-19-16-30l0 0c-5-11-8-22-10-32l-1-2-52 0 0-66 52 0 0-2c5-22 13-44 26-63l1-1-37-37 47-46 36 36 2-1c9-6 19-12 30-16l0 0c11-5 22-8 33-10l2-1 0-51z m32 115c38 0 74 19 95 52l0 10c-11 2-22 6-32 10l0 0 0 0c-11 4-20 10-29 16l-38-37-53 53 37 37c-12 19-20 39-25 61l-9 0c-20-11-36-29-45-51l0 0c-23-55 3-119 58-142l0 0c14-6 28-8 41-9z m100 15l57 0 9 0 0 27 0 0-1 24 2 0c3 1 6 1 8 2l1 0c8 2 15 4 22 7l0 0c11 4 21 9 30 15l1 1c1 0 1 0 2 1l1 1 36-36 47 46-36 36 1 2c7 9 12 19 17 30l0 0c4 10 7 21 10 32l0 2 52 0 0 65-51 1-1 2c-4 22-13 43-26 63l-1 1 38 37-46 47-38-37-2 1c-9 6-19 12-30 16-11 5-22 8-33 10l-2 1 0 53c-4 0-43 0-65 0l0-53-2 0c-23-5-45-14-64-26l-1-1-38 37-47-46 36-35 3 0-1-2 0 0-1-1-1-1c-1-2-2-4-3-6-3-4-5-8-7-12-1-1-1-2-1-2 0-1-1-2-1-2 0-1-1-1-1-2 0-1-1-1-1-2 0-1 0-1-1-2 0-1 0-1-1-2l0 0 0 0c0-1 0-1 0-2l-1-1 0 0c-3-7-5-14-7-21l0-1 0 0c0 0 0 0 0 0-1-3-1-5-2-7l0-3 0 0 0 0-2 0-12 0-10 0-29 1 0-9 0-57 52 0 1-2c4-22 13-44 26-63l1-2-37-36 46-46 37 36 2-1c9-6 19-12 30-16l0 0c11-5 22-8 33-11l2 0 0-6 0-2 0-43z m70 41c1 2 2 4 2 6 0 0-1 0-2 0l0 0 0-6z m57 19l0 9c-5-3-11-6-16-9l16 0z m-93 50c-1 0-2 0-3 0l0 0c0 0 0 0 0 0l0 0 0 0c-1 0-1 0-1 0l0 0c-2 0-3 0-5 0l0 0c0 0 0 1 0 1l0 0c-12 0-24 3-36 8-39 16-64 52-69 91l0 0c0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0c0 1 0 2 0 3l0 0c0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0l0 0c-1 2-1 5-1 8l0 0c0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0l0 0c0 3 0 5 0 8l0 0c0 0 0 0 0 0 0 0 0 0 0 0l0 0c1 3 1 5 1 8l0 0c0 0 0 0 0 1l0 0c1 1 1 2 1 3l0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0 0 1 0 1 0 1l0 0c0 0 0 0 0 0l0 0c0 1 0 2 1 3l0 0c0 0 0 0 0 0 0 0 0 1 0 1l0 0c0 1 0 2 1 4l0 0c0 0 0 0 0 0 0 0 0 0 0 0l0 0c0 1 0 2 1 3l0 0 0 0c0 1 0 1 0 1l0 0c1 3 1 5 2 7 1 1 1 1 1 2l0 0c0 0 0 0 0 0l0 0c1 1 1 2 1 3l0 0c1 1 1 2 2 3 0 0 0 0 0 0 0 1 0 1 0 1 1 3 2 5 4 7 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 28 49 90 71 144 49 58-25 85-92 61-149-11-25-29-44-51-56l0 0c0 0 0 0 0 0l0 0 0 0c-1-1-2-1-3-1l0 0c0-1 0-1 0-1l0 0c-2 0-3-1-4-1l0 0c0 0 0 0 0 0l0 0c-1-1-2-1-3-2l0 0c0 0 0 0 0 0l0 0 0 0c-1 0-2-1-3-1l0 0c0 0-1 0-1 0l0 0c-1-1-2-1-3-1l0 0c0-1 0-1-1-1l0 0c-1 0-1 0-2 0l0 0c-1-1-1-1-1-1l0 0c-2 0-5-1-7-2l0 0c0 0 0 0 0 0l0 0 0 0c-1 0-2 0-3 0l0 0c0 0-1 0-1-1l0 0c-1 0-2 0-3 0l0 0c-1 0-1 0-1 0l0 0 0 0c-1 0-2-1-3-1l0 0c0 0 0 0-1 0l0 0c-1 0-2 0-3 0l0 0c0 0 0 0 0 0l0 0c-1 0-2 0-3-1l0 0c-1 0-1 0-1 0l0 0c-1 0-3 0-4 0 0 0 0 0 0 0l0 0 0 0c-1 0-2 0-3 0z m0 5l0 0c1 0 2 0 3 0l0 0c0 0 0 0 1 0l0 0c1 0 1 0 2 0l0 0c1 0 1 0 1 0l0 0c1 1 2 1 3 1l0 0c1 0 1 0 1 0l0 0c1 0 2 0 3 0l0 0c0 0 0 0 1 0l0 0c0 0 1 1 2 1l0 0c1 0 1 0 1 0l0 0c1 0 2 0 3 0l0 0c0 0 0 0 1 1l0 0c1 0 2 0 2 0l0 0c1 0 1 0 1 0l0 0c2 1 4 1 6 2l0 0c1 0 1 0 1 0l0 0c1 1 2 1 3 1l0 0c0 0 0 0 0 0l0 0c1 1 2 1 4 1l0 0c0 0 0 1 0 1l0 0 0 0c1 0 2 0 3 1l0 0c0 0 0 0 0 0l0 0c1 0 2 1 3 1l0 0c0 0 0 0 0 0l0 0c1 1 2 1 3 2l0 0c0 0 1 0 1 0l0 0c1 0 2 1 2 1l0 0c1 0 1 1 1 1l0 0c21 11 38 29 48 53 23 55-3 119-58 142l0 0c-52 22-111 1-138-47 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0l0 0c-1-2-2-5-3-7 0 0 0 0 0 0 0 0 0 0 0 0-1 0-1-1-1-1 0 0 0 0 0 0 0-1-1-2-1-3 0 0 0 0 0 0-1-1-1-2-1-3-1 0-1-1-1-1 0 0 0 0 0 0-1-3-2-5-2-7l0 0c0-1 0-1 0-1 0 0 0 0 0 0-1-1-1-2-1-3l0 0c0 0 0 0 0 0 0 0 0-1 0-1 0 0 0 0 0 0 0 0 0 0 0 0l0 0c-1-1-1-2-1-3l0 0c0 0 0-1 0-1-1-1-1-2-1-3l0 0c0 0 0 0 0 0 0 0 0 0 0-1 0 0 0 0 0 0l0 0c0-1-1-2-1-3l0 0c0 0 0 0 0 0 0 0 0-1 0-1l0 0c0-2 0-5-1-7l0 0c0 0 0 0 0 0 0 0 0 0 0-1l0 0c0-2 0-5 0-7l0 0c0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0l0 0c0-3 0-5 1-8l0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0l0 0c0-1 0-3 0-4l0 0c0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0l0 0c5-37 29-72 66-87l0 0c11-5 23-8 34-8l0 0c0-1 0-1 1-1l0 0c1 0 2 0 4 0l0 0c0 0 1 0 1 0l0 0c1 0 2 0 3 0z m-178 147l0 0c0 1 0 1 0 2-2-1-3-1-5-2l5 0z m14 41c3 6 6 12 10 18-4 0-7-1-10-1l0-17z',
+                    "bpmn:ServiceTask": {
+                        path: "m396 204l0 3 0 49c-11 3-21 6-32 10l0 0 0 0c-10 5-20 10-29 16l-38-37-53 53 38 37c-12 19-21 40-25 61l-53 0 0 76 53 0c2 10 6 21 10 31 4 11 10 20 16 29l-39 38 54 53 37-36 0 15 33-1c8 3 15 6 23 8 1 7 4 14 7 22l0 33 2 0c4 0 8 1 12 1l-36 35 54 53 38-38c19 12 40 20 62 25l0 54 2 0c24 0 71 0 71 0l0 0 2 0 0-2 0-52c11-3 22-6 32-10l0 0 0 0c10-5 20-10 29-16l39 38 53-54-38-37c12-19 20-40 25-62l52 0 0-75-53 0c-2-10-5-21-10-31l0 0c-4-11-10-20-16-29l37-37-54-53-36 36 0-16-3 0-29 0c-8-3-15-5-22-7-2-7-5-14-7-22l0-31-17 0c0 0 0 0 0 0l36-37-54-53-36 37c-19-12-40-21-61-25l0-52-76 0z m5 5l66 0 0 51 2 0c22 5 44 13 63 26l2 1 35-36 47 46-36 36 1 1-53 0 0 0 0 33c-31-42-87-60-137-39-59 24-86 91-61 149l0 0c8 21 22 37 39 49l-34 0 0 0 0 54-37 36-47-46 38-37-1-2c-6-9-12-19-16-30l0 0c-5-11-8-22-10-32l-1-2-52 0 0-66 52 0 0-2c5-22 13-44 26-63l1-1-37-37 47-46 36 36 2-1c9-6 19-12 30-16l0 0c11-5 22-8 33-10l2-1 0-51z m32 115c38 0 74 19 95 52l0 10c-11 2-22 6-32 10l0 0 0 0c-11 4-20 10-29 16l-38-37-53 53 37 37c-12 19-20 39-25 61l-9 0c-20-11-36-29-45-51l0 0c-23-55 3-119 58-142l0 0c14-6 28-8 41-9z m100 15l57 0 9 0 0 27 0 0-1 24 2 0c3 1 6 1 8 2l1 0c8 2 15 4 22 7l0 0c11 4 21 9 30 15l1 1c1 0 1 0 2 1l1 1 36-36 47 46-36 36 1 2c7 9 12 19 17 30l0 0c4 10 7 21 10 32l0 2 52 0 0 65-51 1-1 2c-4 22-13 43-26 63l-1 1 38 37-46 47-38-37-2 1c-9 6-19 12-30 16-11 5-22 8-33 10l-2 1 0 53c-4 0-43 0-65 0l0-53-2 0c-23-5-45-14-64-26l-1-1-38 37-47-46 36-35 3 0-1-2 0 0-1-1-1-1c-1-2-2-4-3-6-3-4-5-8-7-12-1-1-1-2-1-2 0-1-1-2-1-2 0-1-1-1-1-2 0-1-1-1-1-2 0-1 0-1-1-2 0-1 0-1-1-2l0 0 0 0c0-1 0-1 0-2l-1-1 0 0c-3-7-5-14-7-21l0-1 0 0c0 0 0 0 0 0-1-3-1-5-2-7l0-3 0 0 0 0-2 0-12 0-10 0-29 1 0-9 0-57 52 0 1-2c4-22 13-44 26-63l1-2-37-36 46-46 37 36 2-1c9-6 19-12 30-16l0 0c11-5 22-8 33-11l2 0 0-6 0-2 0-43z m70 41c1 2 2 4 2 6 0 0-1 0-2 0l0 0 0-6z m57 19l0 9c-5-3-11-6-16-9l16 0z m-93 50c-1 0-2 0-3 0l0 0c0 0 0 0 0 0l0 0 0 0c-1 0-1 0-1 0l0 0c-2 0-3 0-5 0l0 0c0 0 0 1 0 1l0 0c-12 0-24 3-36 8-39 16-64 52-69 91l0 0c0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0l0 0c0 0 0 0 0 0l0 0c0 1 0 2 0 3l0 0c0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0l0 0c-1 2-1 5-1 8l0 0c0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0l0 0c0 3 0 5 0 8l0 0c0 0 0 0 0 0 0 0 0 0 0 0l0 0c1 3 1 5 1 8l0 0c0 0 0 0 0 1l0 0c1 1 1 2 1 3l0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0 0 1 0 1 0 1l0 0c0 0 0 0 0 0l0 0c0 1 0 2 1 3l0 0c0 0 0 0 0 0 0 0 0 1 0 1l0 0c0 1 0 2 1 4l0 0c0 0 0 0 0 0 0 0 0 0 0 0l0 0c0 1 0 2 1 3l0 0 0 0c0 1 0 1 0 1l0 0c1 3 1 5 2 7 1 1 1 1 1 2l0 0c0 0 0 0 0 0l0 0c1 1 1 2 1 3l0 0c1 1 1 2 2 3 0 0 0 0 0 0 0 1 0 1 0 1 1 3 2 5 4 7 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 28 49 90 71 144 49 58-25 85-92 61-149-11-25-29-44-51-56l0 0c0 0 0 0 0 0l0 0 0 0c-1-1-2-1-3-1l0 0c0-1 0-1 0-1l0 0c-2 0-3-1-4-1l0 0c0 0 0 0 0 0l0 0c-1-1-2-1-3-2l0 0c0 0 0 0 0 0l0 0 0 0c-1 0-2-1-3-1l0 0c0 0-1 0-1 0l0 0c-1-1-2-1-3-1l0 0c0-1 0-1-1-1l0 0c-1 0-1 0-2 0l0 0c-1-1-1-1-1-1l0 0c-2 0-5-1-7-2l0 0c0 0 0 0 0 0l0 0 0 0c-1 0-2 0-3 0l0 0c0 0-1 0-1-1l0 0c-1 0-2 0-3 0l0 0c-1 0-1 0-1 0l0 0 0 0c-1 0-2-1-3-1l0 0c0 0 0 0-1 0l0 0c-1 0-2 0-3 0l0 0c0 0 0 0 0 0l0 0c-1 0-2 0-3-1l0 0c-1 0-1 0-1 0l0 0c-1 0-3 0-4 0 0 0 0 0 0 0l0 0 0 0c-1 0-2 0-3 0z m0 5l0 0c1 0 2 0 3 0l0 0c0 0 0 0 1 0l0 0c1 0 1 0 2 0l0 0c1 0 1 0 1 0l0 0c1 1 2 1 3 1l0 0c1 0 1 0 1 0l0 0c1 0 2 0 3 0l0 0c0 0 0 0 1 0l0 0c0 0 1 1 2 1l0 0c1 0 1 0 1 0l0 0c1 0 2 0 3 0l0 0c0 0 0 0 1 1l0 0c1 0 2 0 2 0l0 0c1 0 1 0 1 0l0 0c2 1 4 1 6 2l0 0c1 0 1 0 1 0l0 0c1 1 2 1 3 1l0 0c0 0 0 0 0 0l0 0c1 1 2 1 4 1l0 0c0 0 0 1 0 1l0 0 0 0c1 0 2 0 3 1l0 0c0 0 0 0 0 0l0 0c1 0 2 1 3 1l0 0c0 0 0 0 0 0l0 0c1 1 2 1 3 2l0 0c0 0 1 0 1 0l0 0c1 0 2 1 2 1l0 0c1 0 1 1 1 1l0 0c21 11 38 29 48 53 23 55-3 119-58 142l0 0c-52 22-111 1-138-47 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0l0 0c-1-2-2-5-3-7 0 0 0 0 0 0 0 0 0 0 0 0-1 0-1-1-1-1 0 0 0 0 0 0 0-1-1-2-1-3 0 0 0 0 0 0-1-1-1-2-1-3-1 0-1-1-1-1 0 0 0 0 0 0-1-3-2-5-2-7l0 0c0-1 0-1 0-1 0 0 0 0 0 0-1-1-1-2-1-3l0 0c0 0 0 0 0 0 0 0 0-1 0-1 0 0 0 0 0 0 0 0 0 0 0 0l0 0c-1-1-1-2-1-3l0 0c0 0 0-1 0-1-1-1-1-2-1-3l0 0c0 0 0 0 0 0 0 0 0 0 0-1 0 0 0 0 0 0l0 0c0-1-1-2-1-3l0 0c0 0 0 0 0 0 0 0 0-1 0-1l0 0c0-2 0-5-1-7l0 0c0 0 0 0 0 0 0 0 0 0 0-1l0 0c0-2 0-5 0-7l0 0c0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0l0 0c0-3 0-5 1-8l0 0c0 0 0 0 0 0l0 0c0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0l0 0c0-1 0-3 0-4l0 0c0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0l0 0c5-37 29-72 66-87l0 0c11-5 23-8 34-8l0 0c0-1 0-1 1-1l0 0c1 0 2 0 4 0l0 0c0 0 1 0 1 0l0 0c1 0 2 0 3 0z m-178 147l0 0c0 1 0 1 0 2-2-1-3-1-5-2l5 0z m14 41c3 6 6 12 10 18-4 0-7-1-10-1l0-17z",
                         options: {
-                            x: x - 3, y: y - 3, scale: 's0.035', attr: {
-                                stroke: '#000',
+                            x: x - 3,
+                            y: y - 3,
+                            scale: "s0.035",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 20
                             }
                         }
                     },
-                    'bpmn:ScriptTask': {
-                        path: 'm385 206l-2 1c-57 34-96 65-121 94-24 29-35 56-35 81-1 51 39 93 78 133 39 40 78 78 82 119 2 21-4 43-23 67-20 25-53 52-104 82l-19 10 389 0 2 0c52-31 86-58 107-85 21-26 28-51 26-75-5-47-47-86-86-126-39-40-75-80-74-125 0-22 9-46 32-74 24-27 62-57 118-91l18-11-388 0z m3 12l344 0c-48 30-81 57-103 83-25 29-36 56-36 81-1 51 39 93 78 133 39 40 78 78 82 119 2 21-4 43-23 67-19 24-52 51-103 81l-344 0c43-26 71-51 90-74 21-26 28-51 25-75-5-47-46-86-85-126-39-40-75-80-75-125 1-22 10-46 33-74 23-27 61-57 117-90z m-50 102c-8 0-8 11 0 11l205 0c8 0 8-11 0-11l-46 0-159 0z m20 115c-7 0-7 12 0 12l188 0c7 0 7-12 0-12l-188 0z m63 116c-8 0-8 11 0 11l208 0c8 0 8-11 0-11l-208 0z m41 115c-7 0-7 12 0 12l208 0c8 0 8-12 0-12l-208 0z',
+                    "bpmn:ScriptTask": {
+                        path: "m385 206l-2 1c-57 34-96 65-121 94-24 29-35 56-35 81-1 51 39 93 78 133 39 40 78 78 82 119 2 21-4 43-23 67-20 25-53 52-104 82l-19 10 389 0 2 0c52-31 86-58 107-85 21-26 28-51 26-75-5-47-47-86-86-126-39-40-75-80-74-125 0-22 9-46 32-74 24-27 62-57 118-91l18-11-388 0z m3 12l344 0c-48 30-81 57-103 83-25 29-36 56-36 81-1 51 39 93 78 133 39 40 78 78 82 119 2 21-4 43-23 67-19 24-52 51-103 81l-344 0c43-26 71-51 90-74 21-26 28-51 25-75-5-47-46-86-85-126-39-40-75-80-75-125 1-22 10-46 33-74 23-27 61-57 117-90z m-50 102c-8 0-8 11 0 11l205 0c8 0 8-11 0-11l-46 0-159 0z m20 115c-7 0-7 12 0 12l188 0c7 0 7-12 0-12l-188 0z m63 116c-8 0-8 11 0 11l208 0c8 0 8-11 0-11l-208 0z m41 115c-7 0-7 12 0 12l208 0c8 0 8-12 0-12l-208 0z",
                         options: {
-                            x: x - 3, y: y - 3, scale: 's0.035', attr: {
-                                stroke: '#000',
+                            x: x - 3,
+                            y: y - 3,
+                            scale: "s0.035",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 20
                             }
                         }
                     },
-                    'MANUALTASK': {
-                        path: 'm460 206c-7 0-15 3-22 8l0 0 0 0c-47 30-209 143-245 167-29 20-49 50-61 87l0 0 0 0c-12 38-10 82-10 120l0 0 0 0c0 28 1 51 8 79 0 0 0 0 0 0 0 0 0 0 0 0 10 42 28 73 54 94 25 21 59 32 97 32 147 1 293 1 439 0l0 0 0 0c12 0 22-3 29-10 7-7 11-18 11-33l0 0c0-15-3-26-11-32-7-6-17-9-29-9l0 0c-55 0-184 0-189 0l0-21 252 0c13 0 23-2 31-6 8-5 14-14 16-25 4-18 1-32-7-41-8-10-21-14-38-14l0 0c-77 0-249 0-254 0l0-19c5 0 271 0 302 0 16 0 28-5 35-13 7-9 10-21 10-37 0-15-4-27-11-34-8-8-20-11-34-11l0 0c-93 0-298 0-302 0l0-19c5 0 159 0 226 0l0 0 0 0c15 0 26-5 34-13 8-9 12-21 12-37l0 0 0 0c0-15-4-27-12-36-8-8-20-13-34-13l0 0c-55 0-141 0-214 1-36 0-70 0-94 0-13 0-23 0-30-1-4 0-7 0-9 0-1 0-2 0-2 0-1 0-1 0-1 0 0 0 0 0-1-1 0 0 1-1 0 0 6-7 22-23 38-39 16-16 32-32 39-40l0 0c15-20 17-48 5-66l0 0c-7-11-15-16-24-17-1 0-2-1-4-1z m0 5c1 0 2 1 3 1 7 1 14 5 21 15l0 0 0 0c10 16 9 41-5 60l0 0 0 0c-6 7-22 23-39 39-16 17-32 32-38 39-1 2-1 5 0 6 1 2 2 3 4 4 0 0 1 0 2 0 0 0 1 0 2 0 2 0 5 0 9 0 7 1 17 1 30 1 24 0 58 0 94 0 73-1 159-1 214-1l0 0 0 0c13 0 23 4 30 12 7 7 11 18 11 33 0 14-4 25-11 33-6 7-16 11-30 11-68 0-228 0-228 0l-3 0 0 29 3 0c0 0 210 0 304 0 14 0 24 3 30 9 7 7 10 17 10 31 0 15-3 26-9 34-6 7-16 11-31 11-31 0-304 0-304 0l-3 0 0 29 3 0c0 0 178 0 256 0l0 0 0 0c16 0 27 4 34 12 7 8 10 20 6 37l0 0 0 0c-2 11-6 17-13 21-7 4-17 6-29 6l-257 0 0 3 0 28 3 0c0 0 135 0 191 0l0 0c12 0 20 3 26 8 6 5 9 14 9 28l0 0 0 0c0 14-4 23-9 29-6 6-15 9-26 9-146 1-292 1-439 0l0 0 0 0c-38 0-69-10-94-31-25-20-43-50-53-91l0 0 0 0c-6-28-7-50-7-78l0 0c0-38-1-82 10-118 12-36 31-65 59-85 36-24 198-137 244-167l0 0c7-4 14-7 20-7z',
+                    MANUALTASK: {
+                        path: "m460 206c-7 0-15 3-22 8l0 0 0 0c-47 30-209 143-245 167-29 20-49 50-61 87l0 0 0 0c-12 38-10 82-10 120l0 0 0 0c0 28 1 51 8 79 0 0 0 0 0 0 0 0 0 0 0 0 10 42 28 73 54 94 25 21 59 32 97 32 147 1 293 1 439 0l0 0 0 0c12 0 22-3 29-10 7-7 11-18 11-33l0 0c0-15-3-26-11-32-7-6-17-9-29-9l0 0c-55 0-184 0-189 0l0-21 252 0c13 0 23-2 31-6 8-5 14-14 16-25 4-18 1-32-7-41-8-10-21-14-38-14l0 0c-77 0-249 0-254 0l0-19c5 0 271 0 302 0 16 0 28-5 35-13 7-9 10-21 10-37 0-15-4-27-11-34-8-8-20-11-34-11l0 0c-93 0-298 0-302 0l0-19c5 0 159 0 226 0l0 0 0 0c15 0 26-5 34-13 8-9 12-21 12-37l0 0 0 0c0-15-4-27-12-36-8-8-20-13-34-13l0 0c-55 0-141 0-214 1-36 0-70 0-94 0-13 0-23 0-30-1-4 0-7 0-9 0-1 0-2 0-2 0-1 0-1 0-1 0 0 0 0 0-1-1 0 0 1-1 0 0 6-7 22-23 38-39 16-16 32-32 39-40l0 0c15-20 17-48 5-66l0 0c-7-11-15-16-24-17-1 0-2-1-4-1z m0 5c1 0 2 1 3 1 7 1 14 5 21 15l0 0 0 0c10 16 9 41-5 60l0 0 0 0c-6 7-22 23-39 39-16 17-32 32-38 39-1 2-1 5 0 6 1 2 2 3 4 4 0 0 1 0 2 0 0 0 1 0 2 0 2 0 5 0 9 0 7 1 17 1 30 1 24 0 58 0 94 0 73-1 159-1 214-1l0 0 0 0c13 0 23 4 30 12 7 7 11 18 11 33 0 14-4 25-11 33-6 7-16 11-30 11-68 0-228 0-228 0l-3 0 0 29 3 0c0 0 210 0 304 0 14 0 24 3 30 9 7 7 10 17 10 31 0 15-3 26-9 34-6 7-16 11-31 11-31 0-304 0-304 0l-3 0 0 29 3 0c0 0 178 0 256 0l0 0 0 0c16 0 27 4 34 12 7 8 10 20 6 37l0 0 0 0c-2 11-6 17-13 21-7 4-17 6-29 6l-257 0 0 3 0 28 3 0c0 0 135 0 191 0l0 0c12 0 20 3 26 8 6 5 9 14 9 28l0 0 0 0c0 14-4 23-9 29-6 6-15 9-26 9-146 1-292 1-439 0l0 0 0 0c-38 0-69-10-94-31-25-20-43-50-53-91l0 0 0 0c-6-28-7-50-7-78l0 0c0-38-1-82 10-118 12-36 31-65 59-85 36-24 198-137 244-167l0 0c7-4 14-7 20-7z",
                         options: {
-                            x: x, y: y - 3, scale: 's0.035', attr: {
-                                stroke: '#000',
+                            x: x,
+                            y: y - 3,
+                            scale: "s0.035",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 20
                             }
                         }
                     },
-                    'BUSINESSRULE': {
-                        path: 'm104 206l0 294 0 32 0 5 0 256 194 0 5 0 593 0 0-293 0-294-792 0z m5 194l189 0 0 132-189 0 0-32 0-100z m194 0l588 0 0 100 0 32-588 0 0-132z m-194 137l189 0 0 251-189 0 0-251z m194 0l588 0 0 251-588 0 0-251z',
+                    BUSINESSRULE: {
+                        path: "m104 206l0 294 0 32 0 5 0 256 194 0 5 0 593 0 0-293 0-294-792 0z m5 194l189 0 0 132-189 0 0-32 0-100z m194 0l588 0 0 100 0 32-588 0 0-132z m-194 137l189 0 0 251-189 0 0-251z m194 0l588 0 0 251-588 0 0-251z",
                         options: {
-                            x: x, y: y - 3, scale: 's0.035', attr: {
-                                stroke: '#000',
+                            x: x,
+                            y: y - 3,
+                            scale: "s0.035",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 20
                             }
                         }
@@ -4619,45 +4658,57 @@ var TaskShape = function () {
             }
         }
     }, {
-        key: 'addMarkerDecorator',
+        key: "addMarkerDecorator",
         value: function addMarkerDecorator(marker) {
             var x = this.x + this.x * 0.031 + this.scaleX / 2 - 15;
             var y = this.y + this.y * 0.031 + this.scaleY - 27;
 
-            if (marker !== 'EMPTY') {
+            if (marker !== "EMPTY") {
                 var markers = {
-                    'LOOP': {
-                        path: 'm500 178c-175 0-317 141-317 314 0 87 36 165 93 222 27 27 60 49 96 65l-184 32-5 1 2 10 5-1 190-33 5-1 0-3 0 1-37-200 0-5-10 2 1 4 33 182c-33-15-63-36-89-61-56-55-90-131-90-215 0-168 137-304 307-304 170 0 307 136 307 304 0 168-137 304-307 304l-5 0 0 10 5 0c175 0 317-141 317-314 0-173-142-314-317-314z',
+                    LOOP: {
+                        path: "m500 178c-175 0-317 141-317 314 0 87 36 165 93 222 27 27 60 49 96 65l-184 32-5 1 2 10 5-1 190-33 5-1 0-3 0 1-37-200 0-5-10 2 1 4 33 182c-33-15-63-36-89-61-56-55-90-131-90-215 0-168 137-304 307-304 170 0 307 136 307 304 0 168-137 304-307 304l-5 0 0 10 5 0c175 0 317-141 317-314 0-173-142-314-317-314z",
                         options: {
-                            x: x, y: y, scale: 's0.03', attr: {
-                                stroke: '#000',
+                            x: x,
+                            y: y,
+                            scale: "s0.03",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 30
                             }
                         }
                     },
-                    'SEQUENTIAL': {
-                        path: 'm150 178l0 130 700 0 0-130-700 0z m0 257l0 130 700 0 0-130-700 0z m0 257l0 130 700 0 0-130-700 0z',
+                    SEQUENTIAL: {
+                        path: "m150 178l0 130 700 0 0-130-700 0z m0 257l0 130 700 0 0-130-700 0z m0 257l0 130 700 0 0-130-700 0z",
                         options: {
-                            x: x, y: y, scale: 's0.03', attr: {
-                                stroke: '#000',
+                            x: x,
+                            y: y,
+                            scale: "s0.03",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
                             }
                         }
                     },
-                    'PARALLEL': {
-                        path: 'm178 150l0 700 130 0 0-700-130 0z m257 0l0 700 130 0 0-700-130 0z m257 0l0 700 130 0 0-700-130 0z',
+                    PARALLEL: {
+                        path: "m178 150l0 700 130 0 0-700-130 0z m257 0l0 700 130 0 0-700-130 0z m257 0l0 700 130 0 0-700-130 0z",
                         options: {
-                            x: x, y: y, scale: 's0.03', attr: {
-                                stroke: '#000',
+                            x: x,
+                            y: y,
+                            scale: "s0.03",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 0
                             }
                         }
                     },
-                    'COLLAPSED': {
-                        path: 'm115 115l0 5 0 765 770 0 0-770-770 0z m10 10l750 0 0 750-750 0 0-750z m355 75l0 280-280 0 0 40 280 0 0 280 40 0 0-280 280 0 0-40-280 0 0-280-40 0z',
+                    COLLAPSED: {
+                        path: "m115 115l0 5 0 765 770 0 0-770-770 0z m10 10l750 0 0 750-750 0 0-750z m355 75l0 280-280 0 0 40 280 0 0 280 40 0 0-280 280 0 0-40-280 0 0-280-40 0z",
                         options: {
-                            x: x, y: y, scale: 's0.03', attr: {
-                                stroke: '#000',
+                            x: x,
+                            y: y,
+                            scale: "s0.03",
+                            attr: {
+                                stroke: "#000",
                                 strokeWidth: 20
                             }
                         }
@@ -4668,27 +4719,27 @@ var TaskShape = function () {
             }
         }
     }, {
-        key: 'getNativeShape',
+        key: "getNativeShape",
         value: function getNativeShape() {
             return this.shape;
         }
     }, {
-        key: 'registerInputConn',
+        key: "registerInputConn",
         value: function registerInputConn(id, conn) {
             this.inputConnectors.set(id, conn);
             this.setDirections(conn);
         }
     }, {
-        key: 'registerOutputConn',
+        key: "registerOutputConn",
         value: function registerOutputConn(id, conn) {
             this.outputConnectors.set(id, conn);
             this.setDirections(conn);
         }
     }, {
-        key: 'setDirections',
+        key: "setDirections",
         value: function setDirections(conn) {
-            conn.getShape().inputDirection = 'LEFT';
-            conn.getShape().outputDirection = 'RIGHT';
+            conn.getShape().inputDirection = "LEFT";
+            conn.getShape().outputDirection = "RIGHT";
         }
 
         /**
@@ -4698,7 +4749,7 @@ var TaskShape = function () {
          */
 
     }, {
-        key: 'refreshAllConnections',
+        key: "refreshAllConnections",
         value: function refreshAllConnections(nativeShape) {
             var conn = void 0,
                 dX = void 0,
@@ -4708,7 +4759,7 @@ var TaskShape = function () {
             this.outputConnectors.forEach(function (value, key) {
                 conn = value;
 
-                if (conn.shape.outputDirection === 'RIGHT') {
+                if (conn.shape.outputDirection === "RIGHT") {
                     dX = shapeBox.width;
                     dY = shapeBox.height / 2;
                 }
@@ -4716,7 +4767,7 @@ var TaskShape = function () {
                 var linesArray = conn.shape.router;
                 var n = linesArray.length;
 
-                conn.shape.options.method = 'manhathan';
+                conn.shape.options.method = "manhathan";
                 conn.shape.config(conn.shape.options);
 
                 conn.shape.redraw(shapeBox.x + dX, shapeBox.y + dY, linesArray[n - 1].x, linesArray[n - 1].y);
@@ -4724,7 +4775,7 @@ var TaskShape = function () {
 
             this.inputConnectors.forEach(function (value, key) {
                 conn = value;
-                if (conn.shape.inputDirection === 'LEFT') {
+                if (conn.shape.inputDirection === "LEFT") {
                     dX = 0;
                     dY = shapeBox.height / 2;
                 }
@@ -4732,7 +4783,7 @@ var TaskShape = function () {
                 var linesArray = conn.shape.router;
                 var n = linesArray.length;
 
-                conn.shape.options.method = 'manhathan';
+                conn.shape.options.method = "manhathan";
                 conn.shape.config(conn.shape.options);
 
                 conn.shape.redraw(linesArray[0].x, linesArray[0].y, shapeBox.x + dX, shapeBox.y + dY);
@@ -4744,7 +4795,8 @@ var TaskShape = function () {
 }();
 
 /***/ }),
-/* 149 */
+
+/***/ 319:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4778,7 +4830,50 @@ var TextAnnotation = function () {
 }();
 
 /***/ }),
-/* 150 */
+
+/***/ 32:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = parseName;
+/**
+ * Parses a namespaced attribute name of the form (ns:)localName to an object,
+ * given a default prefix to assume in case no explicit namespace is given.
+ *
+ * @param {String} name
+ * @param {String} [defaultPrefix] the default prefix to take, if none is present.
+ *
+ * @return {Object} the parsed name
+ */
+function parseName(name, defaultPrefix) {
+  var parts = name.split(/:/),
+      localName, prefix;
+
+  // no prefix (i.e. only local name)
+  if (parts.length === 1) {
+    localName = name;
+    prefix = defaultPrefix;
+  } else
+  // prefix + local name
+  if (parts.length === 2) {
+    localName = parts[1];
+    prefix = parts[0];
+  } else {
+    throw new Error('expected <prefix:localName> or <localName>, got ' + name);
+  }
+
+  name = (prefix ? prefix + ':' : '') + localName;
+
+  return {
+    name: name,
+    prefix: prefix,
+    localName: localName
+  };
+}
+
+/***/ }),
+
+/***/ 320:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4799,12 +4894,12 @@ var TextAnnotationShape = function () {
     }
 
     _createClass(TextAnnotationShape, [{
-        key: 'config',
+        key: "config",
         value: function config(options) {
             this.options = options;
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             var x = +this.options.bou_x,
                 y = +this.options.bou_y,
@@ -4816,41 +4911,41 @@ var TextAnnotationShape = function () {
                 boxWidth = 30,
                 boxHeight = height;
 
-            var sampleText = this.canvas.multitext(x, y, this.options.art_name, width + 20, { 'font-size': '13px', 'font-family': 'Arial, Helvetica, sans-serif' });
+            var sampleText = this.canvas.multitext(x, y, this.options.art_name, width + 20, { "font-size": "13px", "font-family": "Arial, Helvetica, sans-serif" });
             this.shape.add(sampleText);
 
             var box = this.canvas.polyline(boxX, boxY, boxX - boxWidth, boxY, boxX - boxWidth, boxY + boxHeight, boxX, boxY + boxHeight);
 
             box.attr({
-                fill: 'none',
-                stroke: '#000',
+                fill: "none",
+                stroke: "#000",
                 strokeWidth: 1
             });
             var offset = y - sampleText.getBBox().y + (height - sampleText.getBBox().height) / 2;
             this.shape.add(box);
-            box.transform('t0 ' + Math.floor(-offset).toString());
-            this.shape.transform('t0 ' + Math.floor(+offset).toString());
+            box.transform("t0 " + Math.floor(-offset).toString());
+            this.shape.transform("t0 " + Math.floor(+offset).toString());
             this.shape.drag();
         }
     }, {
-        key: 'getNativeShape',
+        key: "getNativeShape",
         value: function getNativeShape() {
             return this.shape;
         }
     }, {
-        key: 'registerInputConn',
+        key: "registerInputConn",
         value: function registerInputConn(id, conn) {
             this.inputConnectors.set(id, conn);
             this.setDirections(conn);
         }
     }, {
-        key: 'setDirections',
+        key: "setDirections",
         value: function setDirections(conn) {
-            conn.getShape().inputDirection = 'LEFT';
-            conn.getShape().outputDirection = 'RIGHT';
+            conn.getShape().inputDirection = "LEFT";
+            conn.getShape().outputDirection = "RIGHT";
         }
     }, {
-        key: 'registerOutputConn',
+        key: "registerOutputConn",
         value: function registerOutputConn(id, conn) {
             this.outputConnectors.set(id, conn);
             this.setDirections(conn);
@@ -4863,7 +4958,7 @@ var TextAnnotationShape = function () {
          */
 
     }, {
-        key: 'refreshAllConnections',
+        key: "refreshAllConnections",
         value: function refreshAllConnections(nativeShape) {
             var conn = void 0,
                 dX = void 0,
@@ -4873,7 +4968,7 @@ var TextAnnotationShape = function () {
             this.outputConnectors.forEach(function (value, key) {
                 conn = value;
 
-                if (conn.shape.outputDirection === 'RIGHT') {
+                if (conn.shape.outputDirection === "RIGHT") {
                     dX = shapeBox.width;
                     dY = shapeBox.height / 2;
                 }
@@ -4881,7 +4976,7 @@ var TextAnnotationShape = function () {
                 var linesArray = conn.shape.router;
                 var n = linesArray.length;
 
-                conn.shape.options.method = 'manhathan';
+                conn.shape.options.method = "manhathan";
                 conn.shape.config(conn.shape.options);
 
                 conn.shape.redraw(shapeBox.x + dX, shapeBox.y + dY, linesArray[n - 1].x, linesArray[n - 1].y);
@@ -4889,7 +4984,7 @@ var TextAnnotationShape = function () {
 
             this.inputConnectors.forEach(function (value, key) {
                 conn = value;
-                if (conn.shape.inputDirection === 'LEFT') {
+                if (conn.shape.inputDirection === "LEFT") {
                     dX = 0;
                     dY = shapeBox.height / 2;
                 }
@@ -4897,7 +4992,7 @@ var TextAnnotationShape = function () {
                 var linesArray = conn.shape.router;
                 var n = linesArray.length;
 
-                conn.shape.options.method = 'manhathan';
+                conn.shape.options.method = "manhathan";
                 conn.shape.config(conn.shape.options);
 
                 conn.shape.redraw(linesArray[0].x, linesArray[0].y, shapeBox.x + dX, shapeBox.y + dY);
@@ -4909,22 +5004,19 @@ var TextAnnotationShape = function () {
 }();
 
 /***/ }),
-/* 151 */
+
+/***/ 321:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__elements__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__elements_connector_connector_shape__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_util__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__elements__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__elements_connector_connector_shape__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_util__ = __webpack_require__(508);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_util__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiagramSvg; });
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-
 
 
 
@@ -4962,11 +5054,13 @@ var DiagramSvg = function () {
 
 
     _createClass(DiagramSvg, [{
-        key: 'extend',
+        key: "extend",
         value: function extend(first, second) {
             var result = {};
             for (var id in first) {
-                result[id] = first[id];
+                if (id) {
+                    result[id] = first[id];
+                }
             }
             for (var _id in second) {
                 if (!result.hasOwnProperty(_id)) {
@@ -4976,7 +5070,7 @@ var DiagramSvg = function () {
             return result;
         }
     }, {
-        key: 'createShape',
+        key: "createShape",
         value: function createShape(type, options) {
             var _this2 = this;
 
@@ -4984,7 +5078,7 @@ var DiagramSvg = function () {
                 defaultOptions = {
                 $type: type,
                 id: options.id,
-                name: options.bpmnElement && options.bpmnElement.name ? options.bpmnElement.name : options.name ? options.name : '',
+                name: options.bpmnElement && options.bpmnElement.name ? options.bpmnElement.name : options.name ? options.name : "",
                 uid: null,
                 type: null,
                 moddleElement: options
@@ -4993,57 +5087,57 @@ var DiagramSvg = function () {
 
             // TODO Improve uid selector, too much duplicated or multiplicated lines... (ø_ø)!
             switch (type) {
-                case 'bpmn:StartEvent':
-                    defaultOptions['type'] = type;
-                    defaultOptions['id'] = options.id;
+                case "bpmn:StartEvent":
+                    defaultOptions.type = type;
+                    defaultOptions.id = options.id;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["d" /* StartEvent */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["e" /* EventShape */](this.canvas, this.svgLoader));
                     shape.render();
                     break;
-                case 'bpmn:EndEvent':
-                    defaultOptions['type'] = type;
-                    defaultOptions['id'] = options.id;
+                case "bpmn:EndEvent":
+                    defaultOptions.type = type;
+                    defaultOptions.id = options.id;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["f" /* EndEvent */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["e" /* EventShape */](this.canvas, this.svgLoader));
                     shape.render();
                     break;
-                case 'bpmn:BoundaryEvent':
-                    defaultOptions['type'] = type;
-                    defaultOptions['id'] = options.id;
+                case "bpmn:BoundaryEvent":
+                    defaultOptions.type = type;
+                    defaultOptions.id = options.id;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["f" /* EndEvent */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["e" /* EventShape */](this.canvas, this.svgLoader));
                     shape.render();
                     break;
-                case 'bpmn:IntermediateThrowEvent':
-                    defaultOptions['type'] = type;
-                    defaultOptions['id'] = options.id;
+                case "bpmn:IntermediateThrowEvent":
+                    defaultOptions.type = type;
+                    defaultOptions.id = options.id;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["g" /* IntermediateEvent */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["e" /* EventShape */](this.canvas, this.svgLoader));
                     shape.render();
                     break;
 
-                case 'bpmn:IntermediateCatchEvent':
-                    defaultOptions['type'] = type;
-                    defaultOptions['id'] = options.id;
+                case "bpmn:IntermediateCatchEvent":
+                    defaultOptions.type = type;
+                    defaultOptions.id = options.id;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["g" /* IntermediateEvent */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["e" /* EventShape */](this.canvas, this.svgLoader));
                     shape.render();
                     break;
 
-                case 'bpmn:ScriptTask':
-                case 'bpmn:ServiceTask':
-                case 'bpmn:UserTask':
-                case 'bpmn:Task':
-                    defaultOptions['type'] = !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_util__["isNullOrUndefined"])(options.act_task_type) && options.act_task_type !== '' ? options.act_task_type : type;
-                    defaultOptions['id'] = options.id;
+                case "bpmn:ScriptTask":
+                case "bpmn:ServiceTask":
+                case "bpmn:UserTask":
+                case "bpmn:Task":
+                    defaultOptions.type = !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_util__["isNullOrUndefined"])(options.act_task_type) && options.act_task_type !== "" ? options.act_task_type : type;
+                    defaultOptions.id = options.id;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["h" /* Task */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["i" /* TaskShape */](this.canvas, this.svgLoader));
                     shape.render();
                     break;
-                case 'bpmn:SubProcess':
-                    defaultOptions['type'] = type;
-                    defaultOptions['uid'] = options.act_uid;
+                case "bpmn:SubProcess":
+                    defaultOptions.type = type;
+                    defaultOptions.uid = options.act_uid;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["j" /* SubProcess */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["i" /* TaskShape */](this.canvas, this.svgLoader));
                     shape.render();
                     break;
-                case 'bpmn:SequenceFlow':
-                    defaultOptions['type'] = type;
-                    defaultOptions['uid'] = options.flo_uid;
-                    defaultOptions['method'] = 'user';
+                case "bpmn:SequenceFlow":
+                    defaultOptions.type = type;
+                    defaultOptions.uid = options.flo_uid;
+                    defaultOptions.method = "user";
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["k" /* Flow */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_1__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
                     var sourceId = defaultOptions.moddleElement.bpmnElement.sourceRef.id;
                     var targetId = defaultOptions.moddleElement.bpmnElement.targetRef.id;
@@ -5051,9 +5145,9 @@ var DiagramSvg = function () {
                     this.elementRegistry.get(targetId).getShape().registerInputConn(shape.getShape().options.id, shape);
                     shape.render();
                     break;
-                case 'bpmn:MessageFlow':
-                    defaultOptions['type'] = type;
-                    defaultOptions['id'] = options.id;
+                case "bpmn:MessageFlow":
+                    defaultOptions.type = type;
+                    defaultOptions.id = options.id;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["l" /* Message */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_1__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
                     sourceId = defaultOptions.moddleElement.bpmnElement.sourceRef.id;
                     targetId = defaultOptions.moddleElement.bpmnElement.targetRef.id;
@@ -5061,79 +5155,79 @@ var DiagramSvg = function () {
                     this.elementRegistry.get(targetId).getShape().registerInputConn(shape.getShape().options.id, shape);
                     shape.render();
                     break;
-                case 'ASSOCIATION':
-                    defaultOptions['type'] = type;
-                    defaultOptions['uid'] = options.flo_uid;
+                case "ASSOCIATION":
+                    defaultOptions.type = type;
+                    defaultOptions.uid = options.flo_uid;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["m" /* Association */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_1__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
                     shape.render();
                     break;
-                case 'DATAASSOCIATION':
-                    defaultOptions['type'] = type;
-                    defaultOptions['uid'] = options.flo_uid;
+                case "DATAASSOCIATION":
+                    defaultOptions.type = type;
+                    defaultOptions.uid = options.flo_uid;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["n" /* DataAssociation */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_1__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
                     shape.render();
-                    break; //bpmn:ExclusiveGateway
-                case 'bpmn:ExclusiveGateway':
-                case 'bpmn:EventBasedGateway':
-                case 'bpmn:InclusiveGateway':
-                case 'bpmn:ParallelGateway':
-                    defaultOptions['type'] = type;
-                    defaultOptions['id'] = options.id;
+                    break; // bpmn:ExclusiveGateway
+                case "bpmn:ExclusiveGateway":
+                case "bpmn:EventBasedGateway":
+                case "bpmn:InclusiveGateway":
+                case "bpmn:ParallelGateway":
+                    defaultOptions.type = type;
+                    defaultOptions.id = options.id;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["o" /* Gateway */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["p" /* GatewayShape */](this.canvas, this.svgLoader));
                     shape.render();
                     break;
-                case 'TEXT_ANNOTATION':
-                    defaultOptions['type'] = type;
-                    defaultOptions['uid'] = options.art_uid;
+                case "TEXT_ANNOTATION":
+                    defaultOptions.type = type;
+                    defaultOptions.uid = options.art_uid;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["q" /* TextAnnotation */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["r" /* TextAnnotationShape */](this.canvas, this.svgLoader));
 
                     shape.render();
                     break;
-                case 'bpmn:DataStoreReference':
-                    defaultOptions['type'] = type;
-                    defaultOptions['uid'] = options.dat_uid;
+                case "bpmn:DataStoreReference":
+                    defaultOptions.type = type;
+                    defaultOptions.uid = options.dat_uid;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["s" /* DataStore */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["t" /* DataStoreShape */](this.canvas, this.svgLoader));
 
                     shape.render();
                     break;
-                case 'bpmn:DataObjectReference':
-                    defaultOptions['type'] = type;
-                    defaultOptions['uid'] = options.dat_uid;
+                case "bpmn:DataObjectReference":
+                    defaultOptions.type = type;
+                    defaultOptions.uid = options.dat_uid;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["u" /* DataObject */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["v" /* DataObjectShape */](this.canvas, this.svgLoader));
 
                     shape.render();
                     break;
 
-                case 'bpmn:Participant':
-                    defaultOptions['type'] = type;
-                    defaultOptions['uid'] = options.lns_uid;
+                case "bpmn:Participant":
+                    defaultOptions.type = type;
+                    defaultOptions.uid = options.lns_uid;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["w" /* Pool */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["x" /* PoolShape */](this.canvas, this.svgLoader));
 
                     shape.render();
                     break;
 
-                case 'GROUP':
-                    defaultOptions['type'] = type;
-                    defaultOptions['uid'] = options.art_uid;
+                case "GROUP":
+                    defaultOptions.type = type;
+                    defaultOptions.uid = options.art_uid;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["y" /* Group */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["z" /* GroupShape */](this.canvas, this.svgLoader));
 
                     shape.render();
                     break;
-                case 'BLACKBOX_POOL':
-                    defaultOptions['type'] = type;
-                    defaultOptions['uid'] = options.par_uid;
+                case "BLACKBOX_POOL":
+                    defaultOptions.type = type;
+                    defaultOptions.uid = options.par_uid;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["A" /* BlackboxPool */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["B" /* BlackboxPoolShape */](this.canvas, this.svgLoader));
 
                     shape.render();
                     break;
-                case 'bpmn:Lane':
-                    defaultOptions['type'] = type;
-                    defaultOptions['id'] = options.id;
+                case "bpmn:Lane":
+                    defaultOptions.type = type;
+                    defaultOptions.id = options.id;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["C" /* Lane */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["D" /* LaneShape */](this.canvas, this.svgLoader));
                     shape.render();
                     break;
                 default:
-                    //shape = this.UnknownShape(defaultOptions, this.canvas);
+                    // shape = this.UnknownShape(defaultOptions, this.canvas);
                     break;
             }
             if (shape) {
@@ -5142,38 +5236,37 @@ var DiagramSvg = function () {
 
                 var shapeCanvas = this.canvas;
                 nativeShape.click(function (event) {
-
                     _this2.shapeSelected = true;
                     var shapeBox = nativeShape.getBBox();
-                    console.log('shapeBox:', shapeBox);
+                    console.log("shapeBox:", shapeBox);
                     event.bpmn_element = {
-                        'id': defaultOptions.id,
-                        'type': defaultOptions.type
+                        id: defaultOptions.id,
+                        type: defaultOptions.type
                     };
-                    console.log('Type: ' + defaultOptions.type + ' Id: ' + defaultOptions.id);
+                    console.log("Type: " + defaultOptions.type + " Id: " + defaultOptions.id);
                     if (_this2.selection) {
                         _this2.selection.remove();
                     }
 
                     _this2.selection = shapeCanvas.rect(shapeBox.x - 5, shapeBox.y - 5, shapeBox.width + 10, shapeBox.height + 10, 5).attr({
-                        fill: 'none',
-                        stroke: '#1fb64b',
+                        fill: "none",
+                        stroke: "#1fb64b",
                         strokeWidth: 2,
-                        strokeDasharray: '3px,7px',
-                        strokeLinecap: 'square'
+                        strokeDasharray: "3px,7px",
+                        strokeLinecap: "square"
                     });
                     _this2.diagram.getShape().getNativeShape().add(_this2.selection);
                 });
                 nativeShape.dblclick(function (event) {
-                    console.log('dblclick handler for connect purposes');
-                    //save pre connect shape
+                    console.log("dblclick handler for connect purposes");
+                    // save pre connect shape
                     if (shapeCanvas.preConnectionShape) {
                         console.log(shapeCanvas.preConnectionShape);
                         console.log(shape);
                         _this2.connect(shapeCanvas.preConnectionShape, shape);
                         shapeCanvas.preConnectionShape = false;
                         shapeCanvas.preConnectionShape = null;
-                        console.log('-----------------');
+                        console.log("-----------------");
                     } else {
                         shapeCanvas.preConnectionShape = shape;
                     }
@@ -5186,22 +5279,22 @@ var DiagramSvg = function () {
                     shape.getShape().refreshAllConnections(nativeShape);
 
                     positions = {
-                        'sessionId': __WEBPACK_IMPORTED_MODULE_3_jquery___default()('#sessionId').val(),
-                        'id': defaultOptions.id,
-                        'type': defaultOptions.type,
-                        'x': dx,
-                        'y': dy,
-                        'transform': nativeShape.data('origTransform') + (nativeShape.data('origTransform') ? "T" : "t") + [dx, dy]
+                        sessionId: $("#sessionId").val(),
+                        id: defaultOptions.id,
+                        type: defaultOptions.type,
+                        x: dx,
+                        y: dy,
+                        transform: nativeShape.data("origTransform") + (nativeShape.data("origTransform") ? "T" : "t") + [dx, dy]
                     };
                 }, function () {
-                    console.log('on drag start');
-                    nativeShape.data('origTransform', nativeShape.transform().local);
+                    console.log("on drag start");
+                    nativeShape.data("origTransform", nativeShape.transform().local);
                 }, function () {
-                    console.log('on drag end');
+                    console.log("on drag end");
                     _this2.sendMessageChannel(positions);
                 });
 
-                this.registerElement(defaultOptions['id'], shape);
+                this.registerElement(defaultOptions.id, shape);
                 return shape;
             }
         }
@@ -5212,12 +5305,12 @@ var DiagramSvg = function () {
          */
 
     }, {
-        key: 'CreateConnectors',
+        key: "CreateConnectors",
         value: function CreateConnectors() {
-            //Todo create connector
+            // Todo create connector
         }
     }, {
-        key: 'UnknownShape',
+        key: "UnknownShape",
         value: function UnknownShape(options, canvas) {
             var shape = {
                 shape: canvas.group()
@@ -5225,21 +5318,21 @@ var DiagramSvg = function () {
             return shape;
         }
     }, {
-        key: 'draw',
+        key: "draw",
         value: function draw(data) {
             var _this3 = this;
 
-            var jw = __webpack_require__(273);
+            var jw = __webpack_require__(478);
             var diagrams = new Promise(function (resolve, reject) {
-                jw.findArraysByKey('diagrams', data, function (err, results) {
+                jw.findArraysByKey("diagrams", data, function (err, results) {
                     resolve(results);
                 });
             });
             diagrams.then(function (res) {
                 var planeElement = new Promise(function (resolve, reject) {
-                    jw.findArraysByKey('planeElement', res[0], function (err, modified) {
+                    jw.findArraysByKey("planeElement", res[0], function (err, modified) {
                         resolve(modified);
-                        console.log('finished');
+                        console.log("finished");
                     });
                 });
                 planeElement.then(function (res) {
@@ -5293,34 +5386,34 @@ var DiagramSvg = function () {
             // });
         }
     }, {
-        key: 'normalizeData',
+        key: "normalizeData",
         value: function normalizeData(diagram, elementData) {
             var data = Object.assign({}, elementData);
             var fixedData = this.getOffset(diagram, data);
-            data.bou_x = fixedData['x'];
-            data.bou_y = fixedData['y'];
+            data.bou_x = fixedData.x;
+            data.bou_y = fixedData.y;
             return data;
         }
     }, {
-        key: 'getOffset',
+        key: "getOffset",
         value: function getOffset(diagram, elementData) {
             var aliases = {
-                'bpmnLane': { 'type': 'lanes', 'id_field': 'lan_uid' },
-                'bpmnPool': { 'type': 'laneset', 'id_field': 'lns_uid' }
+                bpmnLane: { type: "lanes", id_field: "lan_uid" },
+                bpmnPool: { type: "laneset", id_field: "lns_uid" }
             };
             var offset = {};
-            if (elementData.bou_container !== 'bpmnDiagram') {
-                var data = this.getOffset(diagram, this.searchElement(diagram, aliases[elementData.bou_container]['type'], aliases[elementData.bou_container]['id_field'], elementData.bou_element));
-                offset['x'] = +elementData.bou_x + data['x'] + 1;
-                offset['y'] = +elementData.bou_y + data['y'] + 1;
+            if (elementData.bou_container !== "bpmnDiagram") {
+                var data = this.getOffset(diagram, this.searchElement(diagram, aliases[elementData.bou_container].type, aliases[elementData.bou_container].id_field, elementData.bou_element));
+                offset.x = +elementData.bou_x + data.x + 1;
+                offset.y = +elementData.bou_y + data.y + 1;
             } else {
-                offset['x'] = parseInt(elementData.bou_x, 10);
-                offset['y'] = parseInt(elementData.bou_y, 10);
+                offset.x = parseInt(elementData.bou_x, 10);
+                offset.y = parseInt(elementData.bou_y, 10);
             }
             return offset;
         }
     }, {
-        key: 'searchElement',
+        key: "searchElement",
         value: function searchElement(diagram, type, idField, id) {
             var _iteratorNormalCompletion = true;
             var _didIteratorError = false;
@@ -5350,61 +5443,61 @@ var DiagramSvg = function () {
             }
         }
     }, {
-        key: 'processAction',
+        key: "processAction",
         value: function processAction(action) {
             switch (action) {
-                case 'zoom-in':
+                case "zoom-in":
                     this.diagram.zoomIn();
                     break;
-                case 'zoom-out':
+                case "zoom-out":
                     this.diagram.zoomOut();
                     break;
-                case 'zoom-reset':
+                case "zoom-reset":
                     this.diagram.zoomReset();
                     break;
-                case 'clear-canvas':
+                case "clear-canvas":
                     this.clearCanvas();
                     break;
                 default:
-                    console.log('unknown action');
+                    console.log("unknown action");
                     break;
             }
         }
     }, {
-        key: 'getDiagramDataURL',
+        key: "getDiagramDataURL",
         value: function getDiagramDataURL() {
             return this.canvas.toDataURL();
         }
     }, {
-        key: 'getDiagramBBox',
+        key: "getDiagramBBox",
         value: function getDiagramBBox() {
             return this.canvas.getBBox();
         }
     }, {
-        key: 'getDiagramShape',
+        key: "getDiagramShape",
         value: function getDiagramShape() {
             return this.diagram;
         }
     }, {
-        key: 'registerElement',
+        key: "registerElement",
         value: function registerElement(id, shape) {
             this.diagram.add(shape);
             this.elementRegistry.set(id, shape);
         }
     }, {
-        key: 'getElementById',
+        key: "getElementById",
         value: function getElementById(id) {
             return this.elementRegistry.get(id);
         }
     }, {
-        key: 'sendMessageChannel',
+        key: "sendMessageChannel",
         value: function sendMessageChannel(dataElement) {
             // let element = dataElement.bpmn_element;
             // element.x = dataElement.x;
             // element.y = dataElement.y;
             console.log(dataElement);
-            //let vue = require('vue');
-            this.$http.cnn('post', '/element-designer', dataElement, function (response) {
+            // let vue = require('vue');
+            this.$http.cnn("post", "/element-designer", dataElement, function (response) {
                 console.log(response);
             });
             // vue.http.post('/element-designer', element).then(response => {
@@ -5412,13 +5505,13 @@ var DiagramSvg = function () {
             // });
         }
     }, {
-        key: 'connect',
+        key: "connect",
         value: function connect(srcShape, destShape) {
             var defaultOptions = {};
-            defaultOptions['type'] = 'bpmn:SequenceFlow';
-            defaultOptions['id'] = 'SequenceFlow_' + Math.floor(Math.random() * 100 + 1);
-            defaultOptions['method'] = 'manhathan';
-            defaultOptions['label'] = {
+            defaultOptions.type = "bpmn:SequenceFlow";
+            defaultOptions.id = "SequenceFlow_" + Math.floor(Math.random() * 100 + 1);
+            defaultOptions.method = "manhathan";
+            defaultOptions.label = {
                 bounds: {
                     width: 0,
                     height: 0,
@@ -5435,13 +5528,13 @@ var DiagramSvg = function () {
             var x2 = shapeBox.x;
             var y2 = shapeBox.y + shapeBox.height / 2;
 
-            srcShape.getShape().registerOutputConn(defaultOptions['uid'], shape);
-            destShape.getShape().registerInputConn(defaultOptions['uid'], shape);
+            srcShape.getShape().registerOutputConn(defaultOptions.uid, shape);
+            destShape.getShape().registerInputConn(defaultOptions.uid, shape);
             shape.getShape().renderManhathan(x1, y1, x2, y2);
             this.diagram.add(shape);
         }
     }, {
-        key: 'clearCanvas',
+        key: "clearCanvas",
         value: function clearCanvas() {
             this.canvas.clear();
             this.elementRegistry = new Map();
@@ -5453,127 +5546,67 @@ var DiagramSvg = function () {
 }();
 
 /***/ }),
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */
+
+/***/ 322:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SVGLoader; });
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * SVGLoader
+ */
+var SVGLoader = function () {
+  /**
+   * Constructor of this class
+   * @param canvas
+   */
+  function SVGLoader(canvas) {
+    _classCallCheck(this, SVGLoader);
+
+    this.canvas = canvas;
+  }
+
+  /**
+   * Load element in canvas
+   * @param path
+   * @param options
+   */
+
+
+  _createClass(SVGLoader, [{
+    key: "loadElement",
+    value: function loadElement(path, options) {
+      return this.canvas.path(path).transform(options.scale + ", " + options.x + ", " + options.y).attr(options.attr);
+    }
+  }]);
+
+  return SVGLoader;
+}();
+
+/***/ }),
+
+/***/ 429:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_simple__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_simple__ = __webpack_require__(431);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return __WEBPACK_IMPORTED_MODULE_0__lib_simple__["a"]; });
 
 
 /***/ }),
-/* 257 */
+
+/***/ 430:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moddle__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moddle_xml__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moddle__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moddle_xml__ = __webpack_require__(482);
 /* harmony export (immutable) */ __webpack_exports__["a"] = BpmnModdle;
 
 
@@ -5657,21 +5690,22 @@ BpmnModdle.prototype.toXML = function(element, options, done) {
 
 
 /***/ }),
-/* 258 */
+
+/***/ 431:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bpmn_moddle__ = __webpack_require__(257);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__resources_bpmn_json_bpmn_json__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bpmn_moddle__ = __webpack_require__(430);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__resources_bpmn_json_bpmn_json__ = __webpack_require__(433);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__resources_bpmn_json_bpmn_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__resources_bpmn_json_bpmn_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resources_bpmn_json_bpmndi_json__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resources_bpmn_json_bpmndi_json__ = __webpack_require__(434);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resources_bpmn_json_bpmndi_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__resources_bpmn_json_bpmndi_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__resources_bpmn_json_dc_json__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__resources_bpmn_json_dc_json__ = __webpack_require__(435);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__resources_bpmn_json_dc_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__resources_bpmn_json_dc_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__resources_bpmn_json_di_json__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__resources_bpmn_json_di_json__ = __webpack_require__(436);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__resources_bpmn_json_di_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__resources_bpmn_json_di_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__resources_bpmn_io_json_bioc_json__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__resources_bpmn_io_json_bioc_json__ = __webpack_require__(432);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__resources_bpmn_io_json_bioc_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__resources_bpmn_io_json_bioc_json__);
 
 
@@ -5699,37 +5733,43 @@ var packages = {
 
 
 /***/ }),
-/* 259 */
+
+/***/ 432:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"bpmn.io colors for BPMN","uri":"http://bpmn.io/schema/bpmn/biocolor/1.0","prefix":"bioc","types":[{"name":"ColoredShape","extends":["bpmndi:BPMNShape"],"properties":[{"name":"stroke","isAttr":true,"type":"String"},{"name":"fill","isAttr":true,"type":"String"}]},{"name":"ColoredEdge","extends":["bpmndi:BPMNEdge"],"properties":[{"name":"stroke","isAttr":true,"type":"String"},{"name":"fill","isAttr":true,"type":"String"}]}],"enumerations":[],"associations":[]}
 
 /***/ }),
-/* 260 */
+
+/***/ 433:
 /***/ (function(module, exports) {
 
-module.exports = {"name":"BPMN20","uri":"http://www.omg.org/spec/BPMN/20100524/MODEL","associations":[],"types":[{"name":"Interface","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"operations","type":"Operation","isMany":true},{"name":"implementationRef","type":"String","isAttr":true}]},{"name":"Operation","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"inMessageRef","type":"Message","isReference":true},{"name":"outMessageRef","type":"Message","isReference":true},{"name":"errorRef","type":"Error","isMany":true,"isReference":true},{"name":"implementationRef","type":"String","isAttr":true}]},{"name":"EndPoint","superClass":["RootElement"]},{"name":"Auditing","superClass":["BaseElement"]},{"name":"GlobalTask","superClass":["CallableElement"],"properties":[{"name":"resources","type":"ResourceRole","isMany":true}]},{"name":"Monitoring","superClass":["BaseElement"]},{"name":"Performer","superClass":["ResourceRole"]},{"name":"Process","superClass":["FlowElementsContainer","CallableElement"],"properties":[{"name":"processType","type":"ProcessType","isAttr":true},{"name":"isClosed","isAttr":true,"type":"Boolean"},{"name":"auditing","type":"Auditing"},{"name":"monitoring","type":"Monitoring"},{"name":"properties","type":"Property","isMany":true},{"name":"laneSets","type":"LaneSet","isMany":true,"replaces":"FlowElementsContainer#laneSets"},{"name":"flowElements","type":"FlowElement","isMany":true,"replaces":"FlowElementsContainer#flowElements"},{"name":"artifacts","type":"Artifact","isMany":true},{"name":"resources","type":"ResourceRole","isMany":true},{"name":"correlationSubscriptions","type":"CorrelationSubscription","isMany":true},{"name":"supports","type":"Process","isMany":true,"isReference":true},{"name":"definitionalCollaborationRef","type":"Collaboration","isAttr":true,"isReference":true},{"name":"isExecutable","isAttr":true,"type":"Boolean"}]},{"name":"LaneSet","superClass":["BaseElement"],"properties":[{"name":"lanes","type":"Lane","isMany":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"Lane","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"partitionElementRef","type":"BaseElement","isAttr":true,"isReference":true},{"name":"partitionElement","type":"BaseElement"},{"name":"flowNodeRef","type":"FlowNode","isMany":true,"isReference":true},{"name":"childLaneSet","type":"LaneSet","xml":{"serialize":"xsi:type"}}]},{"name":"GlobalManualTask","superClass":["GlobalTask"]},{"name":"ManualTask","superClass":["Task"]},{"name":"UserTask","superClass":["Task"],"properties":[{"name":"renderings","type":"Rendering","isMany":true},{"name":"implementation","isAttr":true,"type":"String"}]},{"name":"Rendering","superClass":["BaseElement"]},{"name":"HumanPerformer","superClass":["Performer"]},{"name":"PotentialOwner","superClass":["HumanPerformer"]},{"name":"GlobalUserTask","superClass":["GlobalTask"],"properties":[{"name":"implementation","isAttr":true,"type":"String"},{"name":"renderings","type":"Rendering","isMany":true}]},{"name":"Gateway","isAbstract":true,"superClass":["FlowNode"],"properties":[{"name":"gatewayDirection","type":"GatewayDirection","default":"Unspecified","isAttr":true}]},{"name":"EventBasedGateway","superClass":["Gateway"],"properties":[{"name":"instantiate","default":false,"isAttr":true,"type":"Boolean"},{"name":"eventGatewayType","type":"EventBasedGatewayType","isAttr":true,"default":"Exclusive"}]},{"name":"ComplexGateway","superClass":["Gateway"],"properties":[{"name":"activationCondition","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"default","type":"SequenceFlow","isAttr":true,"isReference":true}]},{"name":"ExclusiveGateway","superClass":["Gateway"],"properties":[{"name":"default","type":"SequenceFlow","isAttr":true,"isReference":true}]},{"name":"InclusiveGateway","superClass":["Gateway"],"properties":[{"name":"default","type":"SequenceFlow","isAttr":true,"isReference":true}]},{"name":"ParallelGateway","superClass":["Gateway"]},{"name":"RootElement","isAbstract":true,"superClass":["BaseElement"]},{"name":"Relationship","superClass":["BaseElement"],"properties":[{"name":"type","isAttr":true,"type":"String"},{"name":"direction","type":"RelationshipDirection","isAttr":true},{"name":"source","isMany":true,"isReference":true,"type":"Element"},{"name":"target","isMany":true,"isReference":true,"type":"Element"}]},{"name":"BaseElement","isAbstract":true,"properties":[{"name":"id","isAttr":true,"type":"String","isId":true},{"name":"documentation","type":"Documentation","isMany":true},{"name":"extensionDefinitions","type":"ExtensionDefinition","isMany":true,"isReference":true},{"name":"extensionElements","type":"ExtensionElements"}]},{"name":"Extension","properties":[{"name":"mustUnderstand","default":false,"isAttr":true,"type":"Boolean"},{"name":"definition","type":"ExtensionDefinition","isAttr":true,"isReference":true}]},{"name":"ExtensionDefinition","properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"extensionAttributeDefinitions","type":"ExtensionAttributeDefinition","isMany":true}]},{"name":"ExtensionAttributeDefinition","properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"type","isAttr":true,"type":"String"},{"name":"isReference","default":false,"isAttr":true,"type":"Boolean"},{"name":"extensionDefinition","type":"ExtensionDefinition","isAttr":true,"isReference":true}]},{"name":"ExtensionElements","properties":[{"name":"valueRef","isAttr":true,"isReference":true,"type":"Element"},{"name":"values","type":"Element","isMany":true},{"name":"extensionAttributeDefinition","type":"ExtensionAttributeDefinition","isAttr":true,"isReference":true}]},{"name":"Documentation","superClass":["BaseElement"],"properties":[{"name":"text","type":"String","isBody":true},{"name":"textFormat","default":"text/plain","isAttr":true,"type":"String"}]},{"name":"Event","isAbstract":true,"superClass":["FlowNode","InteractionNode"],"properties":[{"name":"properties","type":"Property","isMany":true}]},{"name":"IntermediateCatchEvent","superClass":["CatchEvent"]},{"name":"IntermediateThrowEvent","superClass":["ThrowEvent"]},{"name":"EndEvent","superClass":["ThrowEvent"]},{"name":"StartEvent","superClass":["CatchEvent"],"properties":[{"name":"isInterrupting","default":true,"isAttr":true,"type":"Boolean"}]},{"name":"ThrowEvent","isAbstract":true,"superClass":["Event"],"properties":[{"name":"dataInputs","type":"DataInput","isMany":true},{"name":"dataInputAssociations","type":"DataInputAssociation","isMany":true},{"name":"inputSet","type":"InputSet"},{"name":"eventDefinitions","type":"EventDefinition","isMany":true},{"name":"eventDefinitionRef","type":"EventDefinition","isMany":true,"isReference":true}]},{"name":"CatchEvent","isAbstract":true,"superClass":["Event"],"properties":[{"name":"parallelMultiple","isAttr":true,"type":"Boolean","default":false},{"name":"dataOutputs","type":"DataOutput","isMany":true},{"name":"dataOutputAssociations","type":"DataOutputAssociation","isMany":true},{"name":"outputSet","type":"OutputSet"},{"name":"eventDefinitions","type":"EventDefinition","isMany":true},{"name":"eventDefinitionRef","type":"EventDefinition","isMany":true,"isReference":true}]},{"name":"BoundaryEvent","superClass":["CatchEvent"],"properties":[{"name":"cancelActivity","default":true,"isAttr":true,"type":"Boolean"},{"name":"attachedToRef","type":"Activity","isAttr":true,"isReference":true}]},{"name":"EventDefinition","isAbstract":true,"superClass":["RootElement"]},{"name":"CancelEventDefinition","superClass":["EventDefinition"]},{"name":"ErrorEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"errorRef","type":"Error","isAttr":true,"isReference":true}]},{"name":"TerminateEventDefinition","superClass":["EventDefinition"]},{"name":"EscalationEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"escalationRef","type":"Escalation","isAttr":true,"isReference":true}]},{"name":"Escalation","properties":[{"name":"structureRef","type":"ItemDefinition","isAttr":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"},{"name":"escalationCode","isAttr":true,"type":"String"}],"superClass":["RootElement"]},{"name":"CompensateEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"waitForCompletion","isAttr":true,"type":"Boolean","default":true},{"name":"activityRef","type":"Activity","isAttr":true,"isReference":true}]},{"name":"TimerEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"timeDate","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"timeCycle","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"timeDuration","type":"Expression","xml":{"serialize":"xsi:type"}}]},{"name":"LinkEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"target","type":"LinkEventDefinition","isAttr":true,"isReference":true},{"name":"source","type":"LinkEventDefinition","isMany":true,"isReference":true}]},{"name":"MessageEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"messageRef","type":"Message","isAttr":true,"isReference":true},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true}]},{"name":"ConditionalEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"condition","type":"Expression","xml":{"serialize":"xsi:type"}}]},{"name":"SignalEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"signalRef","type":"Signal","isAttr":true,"isReference":true}]},{"name":"Signal","superClass":["RootElement"],"properties":[{"name":"structureRef","type":"ItemDefinition","isAttr":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"ImplicitThrowEvent","superClass":["ThrowEvent"]},{"name":"DataState","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"}]},{"name":"ItemAwareElement","superClass":["BaseElement"],"properties":[{"name":"itemSubjectRef","type":"ItemDefinition","isAttr":true,"isReference":true},{"name":"dataState","type":"DataState"}]},{"name":"DataAssociation","superClass":["BaseElement"],"properties":[{"name":"assignment","type":"Assignment","isMany":true},{"name":"sourceRef","type":"ItemAwareElement","isMany":true,"isReference":true},{"name":"targetRef","type":"ItemAwareElement","isReference":true},{"name":"transformation","type":"FormalExpression","xml":{"serialize":"property"}}]},{"name":"DataInput","superClass":["ItemAwareElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"isCollection","default":false,"isAttr":true,"type":"Boolean"},{"name":"inputSetRef","type":"InputSet","isVirtual":true,"isMany":true,"isReference":true},{"name":"inputSetWithOptional","type":"InputSet","isVirtual":true,"isMany":true,"isReference":true},{"name":"inputSetWithWhileExecuting","type":"InputSet","isVirtual":true,"isMany":true,"isReference":true}]},{"name":"DataOutput","superClass":["ItemAwareElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"isCollection","default":false,"isAttr":true,"type":"Boolean"},{"name":"outputSetRef","type":"OutputSet","isVirtual":true,"isMany":true,"isReference":true},{"name":"outputSetWithOptional","type":"OutputSet","isVirtual":true,"isMany":true,"isReference":true},{"name":"outputSetWithWhileExecuting","type":"OutputSet","isVirtual":true,"isMany":true,"isReference":true}]},{"name":"InputSet","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"dataInputRefs","type":"DataInput","isMany":true,"isReference":true},{"name":"optionalInputRefs","type":"DataInput","isMany":true,"isReference":true},{"name":"whileExecutingInputRefs","type":"DataInput","isMany":true,"isReference":true},{"name":"outputSetRefs","type":"OutputSet","isMany":true,"isReference":true}]},{"name":"OutputSet","superClass":["BaseElement"],"properties":[{"name":"dataOutputRefs","type":"DataOutput","isMany":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"},{"name":"inputSetRefs","type":"InputSet","isMany":true,"isReference":true},{"name":"optionalOutputRefs","type":"DataOutput","isMany":true,"isReference":true},{"name":"whileExecutingOutputRefs","type":"DataOutput","isMany":true,"isReference":true}]},{"name":"Property","superClass":["ItemAwareElement"],"properties":[{"name":"name","isAttr":true,"type":"String"}]},{"name":"DataInputAssociation","superClass":["DataAssociation"]},{"name":"DataOutputAssociation","superClass":["DataAssociation"]},{"name":"InputOutputSpecification","superClass":["BaseElement"],"properties":[{"name":"dataInputs","type":"DataInput","isMany":true},{"name":"dataOutputs","type":"DataOutput","isMany":true},{"name":"inputSets","type":"InputSet","isMany":true},{"name":"outputSets","type":"OutputSet","isMany":true}]},{"name":"DataObject","superClass":["FlowElement","ItemAwareElement"],"properties":[{"name":"isCollection","default":false,"isAttr":true,"type":"Boolean"}]},{"name":"InputOutputBinding","properties":[{"name":"inputDataRef","type":"InputSet","isAttr":true,"isReference":true},{"name":"outputDataRef","type":"OutputSet","isAttr":true,"isReference":true},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true}]},{"name":"Assignment","superClass":["BaseElement"],"properties":[{"name":"from","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"to","type":"Expression","xml":{"serialize":"xsi:type"}}]},{"name":"DataStore","superClass":["RootElement","ItemAwareElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"capacity","isAttr":true,"type":"Integer"},{"name":"isUnlimited","default":true,"isAttr":true,"type":"Boolean"}]},{"name":"DataStoreReference","superClass":["ItemAwareElement","FlowElement"],"properties":[{"name":"dataStoreRef","type":"DataStore","isAttr":true,"isReference":true}]},{"name":"DataObjectReference","superClass":["ItemAwareElement","FlowElement"],"properties":[{"name":"dataObjectRef","type":"DataObject","isAttr":true,"isReference":true}]},{"name":"ConversationLink","superClass":["BaseElement"],"properties":[{"name":"sourceRef","type":"InteractionNode","isAttr":true,"isReference":true},{"name":"targetRef","type":"InteractionNode","isAttr":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"ConversationAssociation","superClass":["BaseElement"],"properties":[{"name":"innerConversationNodeRef","type":"ConversationNode","isAttr":true,"isReference":true},{"name":"outerConversationNodeRef","type":"ConversationNode","isAttr":true,"isReference":true}]},{"name":"CallConversation","superClass":["ConversationNode"],"properties":[{"name":"calledCollaborationRef","type":"Collaboration","isAttr":true,"isReference":true},{"name":"participantAssociations","type":"ParticipantAssociation","isMany":true}]},{"name":"Conversation","superClass":["ConversationNode"]},{"name":"SubConversation","superClass":["ConversationNode"],"properties":[{"name":"conversationNodes","type":"ConversationNode","isMany":true}]},{"name":"ConversationNode","isAbstract":true,"superClass":["InteractionNode","BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"participantRefs","type":"Participant","isMany":true,"isReference":true},{"name":"messageFlowRefs","type":"MessageFlow","isMany":true,"isReference":true},{"name":"correlationKeys","type":"CorrelationKey","isMany":true}]},{"name":"GlobalConversation","superClass":["Collaboration"]},{"name":"PartnerEntity","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"participantRef","type":"Participant","isMany":true,"isReference":true}]},{"name":"PartnerRole","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"participantRef","type":"Participant","isMany":true,"isReference":true}]},{"name":"CorrelationProperty","superClass":["RootElement"],"properties":[{"name":"correlationPropertyRetrievalExpression","type":"CorrelationPropertyRetrievalExpression","isMany":true},{"name":"name","isAttr":true,"type":"String"},{"name":"type","type":"ItemDefinition","isAttr":true,"isReference":true}]},{"name":"Error","superClass":["RootElement"],"properties":[{"name":"structureRef","type":"ItemDefinition","isAttr":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"},{"name":"errorCode","isAttr":true,"type":"String"}]},{"name":"CorrelationKey","superClass":["BaseElement"],"properties":[{"name":"correlationPropertyRef","type":"CorrelationProperty","isMany":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"Expression","superClass":["BaseElement"],"isAbstract":false,"properties":[{"name":"body","type":"String","isBody":true}]},{"name":"FormalExpression","superClass":["Expression"],"properties":[{"name":"language","isAttr":true,"type":"String"},{"name":"evaluatesToTypeRef","type":"ItemDefinition","isAttr":true,"isReference":true}]},{"name":"Message","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"itemRef","type":"ItemDefinition","isAttr":true,"isReference":true}]},{"name":"ItemDefinition","superClass":["RootElement"],"properties":[{"name":"itemKind","type":"ItemKind","isAttr":true},{"name":"structureRef","type":"String","isAttr":true},{"name":"isCollection","default":false,"isAttr":true,"type":"Boolean"},{"name":"import","type":"Import","isAttr":true,"isReference":true}]},{"name":"FlowElement","isAbstract":true,"superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"auditing","type":"Auditing"},{"name":"monitoring","type":"Monitoring"},{"name":"categoryValueRef","type":"CategoryValue","isMany":true,"isReference":true}]},{"name":"SequenceFlow","superClass":["FlowElement"],"properties":[{"name":"isImmediate","isAttr":true,"type":"Boolean"},{"name":"conditionExpression","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"sourceRef","type":"FlowNode","isAttr":true,"isReference":true},{"name":"targetRef","type":"FlowNode","isAttr":true,"isReference":true}]},{"name":"FlowElementsContainer","isAbstract":true,"superClass":["BaseElement"],"properties":[{"name":"laneSets","type":"LaneSet","isMany":true},{"name":"flowElements","type":"FlowElement","isMany":true}]},{"name":"CallableElement","isAbstract":true,"superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"ioSpecification","type":"InputOutputSpecification","xml":{"serialize":"property"}},{"name":"supportedInterfaceRef","type":"Interface","isMany":true,"isReference":true},{"name":"ioBinding","type":"InputOutputBinding","isMany":true,"xml":{"serialize":"property"}}]},{"name":"FlowNode","isAbstract":true,"superClass":["FlowElement"],"properties":[{"name":"incoming","type":"SequenceFlow","isMany":true,"isReference":true},{"name":"outgoing","type":"SequenceFlow","isMany":true,"isReference":true},{"name":"lanes","type":"Lane","isVirtual":true,"isMany":true,"isReference":true}]},{"name":"CorrelationPropertyRetrievalExpression","superClass":["BaseElement"],"properties":[{"name":"messagePath","type":"FormalExpression"},{"name":"messageRef","type":"Message","isAttr":true,"isReference":true}]},{"name":"CorrelationPropertyBinding","superClass":["BaseElement"],"properties":[{"name":"dataPath","type":"FormalExpression"},{"name":"correlationPropertyRef","type":"CorrelationProperty","isAttr":true,"isReference":true}]},{"name":"Resource","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"resourceParameters","type":"ResourceParameter","isMany":true}]},{"name":"ResourceParameter","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"isRequired","isAttr":true,"type":"Boolean"},{"name":"type","type":"ItemDefinition","isAttr":true,"isReference":true}]},{"name":"CorrelationSubscription","superClass":["BaseElement"],"properties":[{"name":"correlationKeyRef","type":"CorrelationKey","isAttr":true,"isReference":true},{"name":"correlationPropertyBinding","type":"CorrelationPropertyBinding","isMany":true}]},{"name":"MessageFlow","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"sourceRef","type":"InteractionNode","isAttr":true,"isReference":true},{"name":"targetRef","type":"InteractionNode","isAttr":true,"isReference":true},{"name":"messageRef","type":"Message","isAttr":true,"isReference":true}]},{"name":"MessageFlowAssociation","superClass":["BaseElement"],"properties":[{"name":"innerMessageFlowRef","type":"MessageFlow","isAttr":true,"isReference":true},{"name":"outerMessageFlowRef","type":"MessageFlow","isAttr":true,"isReference":true}]},{"name":"InteractionNode","isAbstract":true,"properties":[{"name":"incomingConversationLinks","type":"ConversationLink","isVirtual":true,"isMany":true,"isReference":true},{"name":"outgoingConversationLinks","type":"ConversationLink","isVirtual":true,"isMany":true,"isReference":true}]},{"name":"Participant","superClass":["InteractionNode","BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"interfaceRef","type":"Interface","isMany":true,"isReference":true},{"name":"participantMultiplicity","type":"ParticipantMultiplicity"},{"name":"endPointRefs","type":"EndPoint","isMany":true,"isReference":true},{"name":"processRef","type":"Process","isAttr":true,"isReference":true}]},{"name":"ParticipantAssociation","superClass":["BaseElement"],"properties":[{"name":"innerParticipantRef","type":"Participant","isAttr":true,"isReference":true},{"name":"outerParticipantRef","type":"Participant","isAttr":true,"isReference":true}]},{"name":"ParticipantMultiplicity","properties":[{"name":"minimum","default":0,"isAttr":true,"type":"Integer"},{"name":"maximum","default":1,"isAttr":true,"type":"Integer"}]},{"name":"Collaboration","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"isClosed","isAttr":true,"type":"Boolean"},{"name":"participants","type":"Participant","isMany":true},{"name":"messageFlows","type":"MessageFlow","isMany":true},{"name":"artifacts","type":"Artifact","isMany":true},{"name":"conversations","type":"ConversationNode","isMany":true},{"name":"conversationAssociations","type":"ConversationAssociation"},{"name":"participantAssociations","type":"ParticipantAssociation","isMany":true},{"name":"messageFlowAssociations","type":"MessageFlowAssociation","isMany":true},{"name":"correlationKeys","type":"CorrelationKey","isMany":true},{"name":"choreographyRef","type":"Choreography","isMany":true,"isReference":true},{"name":"conversationLinks","type":"ConversationLink","isMany":true}]},{"name":"ChoreographyActivity","isAbstract":true,"superClass":["FlowNode"],"properties":[{"name":"participantRefs","type":"Participant","isMany":true,"isReference":true},{"name":"initiatingParticipantRef","type":"Participant","isAttr":true,"isReference":true},{"name":"correlationKeys","type":"CorrelationKey","isMany":true},{"name":"loopType","type":"ChoreographyLoopType","default":"None","isAttr":true}]},{"name":"CallChoreography","superClass":["ChoreographyActivity"],"properties":[{"name":"calledChoreographyRef","type":"Choreography","isAttr":true,"isReference":true},{"name":"participantAssociations","type":"ParticipantAssociation","isMany":true}]},{"name":"SubChoreography","superClass":["ChoreographyActivity","FlowElementsContainer"],"properties":[{"name":"artifacts","type":"Artifact","isMany":true}]},{"name":"ChoreographyTask","superClass":["ChoreographyActivity"],"properties":[{"name":"messageFlowRef","type":"MessageFlow","isMany":true,"isReference":true}]},{"name":"Choreography","superClass":["FlowElementsContainer","Collaboration"]},{"name":"GlobalChoreographyTask","superClass":["Choreography"],"properties":[{"name":"initiatingParticipantRef","type":"Participant","isAttr":true,"isReference":true}]},{"name":"TextAnnotation","superClass":["Artifact"],"properties":[{"name":"text","type":"String"},{"name":"textFormat","default":"text/plain","isAttr":true,"type":"String"}]},{"name":"Group","superClass":["Artifact"],"properties":[{"name":"categoryValueRef","type":"CategoryValue","isAttr":true,"isReference":true}]},{"name":"Association","superClass":["Artifact"],"properties":[{"name":"associationDirection","type":"AssociationDirection","isAttr":true},{"name":"sourceRef","type":"BaseElement","isAttr":true,"isReference":true},{"name":"targetRef","type":"BaseElement","isAttr":true,"isReference":true}]},{"name":"Category","superClass":["RootElement"],"properties":[{"name":"categoryValue","type":"CategoryValue","isMany":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"Artifact","isAbstract":true,"superClass":["BaseElement"]},{"name":"CategoryValue","superClass":["BaseElement"],"properties":[{"name":"categorizedFlowElements","type":"FlowElement","isVirtual":true,"isMany":true,"isReference":true},{"name":"value","isAttr":true,"type":"String"}]},{"name":"Activity","isAbstract":true,"superClass":["FlowNode"],"properties":[{"name":"isForCompensation","default":false,"isAttr":true,"type":"Boolean"},{"name":"default","type":"SequenceFlow","isAttr":true,"isReference":true},{"name":"ioSpecification","type":"InputOutputSpecification","xml":{"serialize":"property"}},{"name":"boundaryEventRefs","type":"BoundaryEvent","isMany":true,"isReference":true},{"name":"properties","type":"Property","isMany":true},{"name":"dataInputAssociations","type":"DataInputAssociation","isMany":true},{"name":"dataOutputAssociations","type":"DataOutputAssociation","isMany":true},{"name":"startQuantity","default":1,"isAttr":true,"type":"Integer"},{"name":"resources","type":"ResourceRole","isMany":true},{"name":"completionQuantity","default":1,"isAttr":true,"type":"Integer"},{"name":"loopCharacteristics","type":"LoopCharacteristics"}]},{"name":"ServiceTask","superClass":["Task"],"properties":[{"name":"implementation","isAttr":true,"type":"String"},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true}]},{"name":"SubProcess","superClass":["Activity","FlowElementsContainer","InteractionNode"],"properties":[{"name":"triggeredByEvent","default":false,"isAttr":true,"type":"Boolean"},{"name":"artifacts","type":"Artifact","isMany":true}]},{"name":"LoopCharacteristics","isAbstract":true,"superClass":["BaseElement"]},{"name":"MultiInstanceLoopCharacteristics","superClass":["LoopCharacteristics"],"properties":[{"name":"isSequential","default":false,"isAttr":true,"type":"Boolean"},{"name":"behavior","type":"MultiInstanceBehavior","default":"All","isAttr":true},{"name":"loopCardinality","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"loopDataInputRef","type":"ItemAwareElement","isReference":true},{"name":"loopDataOutputRef","type":"ItemAwareElement","isReference":true},{"name":"inputDataItem","type":"DataInput","xml":{"serialize":"property"}},{"name":"outputDataItem","type":"DataOutput","xml":{"serialize":"property"}},{"name":"complexBehaviorDefinition","type":"ComplexBehaviorDefinition","isMany":true},{"name":"completionCondition","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"oneBehaviorEventRef","type":"EventDefinition","isAttr":true,"isReference":true},{"name":"noneBehaviorEventRef","type":"EventDefinition","isAttr":true,"isReference":true}]},{"name":"StandardLoopCharacteristics","superClass":["LoopCharacteristics"],"properties":[{"name":"testBefore","default":false,"isAttr":true,"type":"Boolean"},{"name":"loopCondition","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"loopMaximum","type":"Expression","xml":{"serialize":"xsi:type"}}]},{"name":"CallActivity","superClass":["Activity"],"properties":[{"name":"calledElement","type":"String","isAttr":true}]},{"name":"Task","superClass":["Activity","InteractionNode"]},{"name":"SendTask","superClass":["Task"],"properties":[{"name":"implementation","isAttr":true,"type":"String"},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true},{"name":"messageRef","type":"Message","isAttr":true,"isReference":true}]},{"name":"ReceiveTask","superClass":["Task"],"properties":[{"name":"implementation","isAttr":true,"type":"String"},{"name":"instantiate","default":false,"isAttr":true,"type":"Boolean"},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true},{"name":"messageRef","type":"Message","isAttr":true,"isReference":true}]},{"name":"ScriptTask","superClass":["Task"],"properties":[{"name":"scriptFormat","isAttr":true,"type":"String"},{"name":"script","type":"String"}]},{"name":"BusinessRuleTask","superClass":["Task"],"properties":[{"name":"implementation","isAttr":true,"type":"String"}]},{"name":"AdHocSubProcess","superClass":["SubProcess"],"properties":[{"name":"completionCondition","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"ordering","type":"AdHocOrdering","isAttr":true},{"name":"cancelRemainingInstances","default":true,"isAttr":true,"type":"Boolean"}]},{"name":"Transaction","superClass":["SubProcess"],"properties":[{"name":"protocol","isAttr":true,"type":"String"},{"name":"method","isAttr":true,"type":"String"}]},{"name":"GlobalScriptTask","superClass":["GlobalTask"],"properties":[{"name":"scriptLanguage","isAttr":true,"type":"String"},{"name":"script","isAttr":true,"type":"String"}]},{"name":"GlobalBusinessRuleTask","superClass":["GlobalTask"],"properties":[{"name":"implementation","isAttr":true,"type":"String"}]},{"name":"ComplexBehaviorDefinition","superClass":["BaseElement"],"properties":[{"name":"condition","type":"FormalExpression"},{"name":"event","type":"ImplicitThrowEvent"}]},{"name":"ResourceRole","superClass":["BaseElement"],"properties":[{"name":"resourceRef","type":"Resource","isReference":true},{"name":"resourceParameterBindings","type":"ResourceParameterBinding","isMany":true},{"name":"resourceAssignmentExpression","type":"ResourceAssignmentExpression"},{"name":"name","isAttr":true,"type":"String"}]},{"name":"ResourceParameterBinding","properties":[{"name":"expression","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"parameterRef","type":"ResourceParameter","isAttr":true,"isReference":true}]},{"name":"ResourceAssignmentExpression","properties":[{"name":"expression","type":"Expression","xml":{"serialize":"xsi:type"}}],"superClass":["BaseElement"]},{"name":"Import","properties":[{"name":"importType","isAttr":true,"type":"String"},{"name":"location","isAttr":true,"type":"String"},{"name":"namespace","isAttr":true,"type":"String"}]},{"name":"Definitions","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"targetNamespace","isAttr":true,"type":"String"},{"name":"expressionLanguage","default":"http://www.w3.org/1999/XPath","isAttr":true,"type":"String"},{"name":"typeLanguage","default":"http://www.w3.org/2001/XMLSchema","isAttr":true,"type":"String"},{"name":"imports","type":"Import","isMany":true},{"name":"extensions","type":"Extension","isMany":true},{"name":"rootElements","type":"RootElement","isMany":true},{"name":"diagrams","isMany":true,"type":"bpmndi:BPMNDiagram"},{"name":"exporter","isAttr":true,"type":"String"},{"name":"relationships","type":"Relationship","isMany":true},{"name":"exporterVersion","isAttr":true,"type":"String"}]}],"enumerations":[{"name":"ProcessType","literalValues":[{"name":"None"},{"name":"Public"},{"name":"Private"}]},{"name":"GatewayDirection","literalValues":[{"name":"Unspecified"},{"name":"Converging"},{"name":"Diverging"},{"name":"Mixed"}]},{"name":"EventBasedGatewayType","literalValues":[{"name":"Parallel"},{"name":"Exclusive"}]},{"name":"RelationshipDirection","literalValues":[{"name":"None"},{"name":"Forward"},{"name":"Backward"},{"name":"Both"}]},{"name":"ItemKind","literalValues":[{"name":"Physical"},{"name":"Information"}]},{"name":"ChoreographyLoopType","literalValues":[{"name":"None"},{"name":"Standard"},{"name":"MultiInstanceSequential"},{"name":"MultiInstanceParallel"}]},{"name":"AssociationDirection","literalValues":[{"name":"None"},{"name":"One"},{"name":"Both"}]},{"name":"MultiInstanceBehavior","literalValues":[{"name":"None"},{"name":"One"},{"name":"All"},{"name":"Complex"}]},{"name":"AdHocOrdering","literalValues":[{"name":"Parallel"},{"name":"Sequential"}]}],"prefix":"bpmn","xml":{"tagAlias":"lowerCase","typePrefix":"t"}}
+module.exports = {"name":"BPMN20","uri":"http://www.omg.org/spec/BPMN/20100524/MODEL","associations":[],"types":[{"name":"Interface","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"operations","type":"Operation","isMany":true},{"name":"implementationRef","type":"String","isAttr":true}]},{"name":"Operation","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"inMessageRef","type":"Message","isReference":true},{"name":"outMessageRef","type":"Message","isReference":true},{"name":"errorRef","type":"Error","isMany":true,"isReference":true},{"name":"implementationRef","type":"String","isAttr":true}]},{"name":"EndPoint","superClass":["RootElement"]},{"name":"Auditing","superClass":["BaseElement"]},{"name":"GlobalTask","superClass":["CallableElement"],"properties":[{"name":"resources","type":"ResourceRole","isMany":true}]},{"name":"Monitoring","superClass":["BaseElement"]},{"name":"Performer","superClass":["ResourceRole"]},{"name":"Process","superClass":["FlowElementsContainer","CallableElement"],"properties":[{"name":"processType","type":"ProcessType","isAttr":true},{"name":"isClosed","isAttr":true,"type":"Boolean"},{"name":"auditing","type":"Auditing"},{"name":"monitoring","type":"Monitoring"},{"name":"properties","type":"Property","isMany":true},{"name":"laneSets","type":"LaneSet","isMany":true,"replaces":"FlowElementsContainer#laneSets"},{"name":"flowElements","type":"FlowElement","isMany":true,"replaces":"FlowElementsContainer#flowElements"},{"name":"artifacts","type":"Artifact","isMany":true},{"name":"resources","type":"ResourceRole","isMany":true},{"name":"correlationSubscriptions","type":"CorrelationSubscription","isMany":true},{"name":"supports","type":"Process","isMany":true,"isReference":true},{"name":"definitionalCollaborationRef","type":"Collaboration","isAttr":true,"isReference":true},{"name":"isExecutable","isAttr":true,"type":"Boolean"}]},{"name":"LaneSet","superClass":["BaseElement"],"properties":[{"name":"lanes","type":"Lane","isMany":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"Lane","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"partitionElementRef","type":"BaseElement","isAttr":true,"isReference":true},{"name":"partitionElement","type":"BaseElement"},{"name":"flowNodeRef","type":"FlowNode","isMany":true,"isReference":true},{"name":"childLaneSet","type":"LaneSet","xml":{"serialize":"xsi:type"}}]},{"name":"GlobalManualTask","superClass":["GlobalTask"]},{"name":"ManualTask","superClass":["Task"]},{"name":"UserTask","superClass":["Task"],"properties":[{"name":"renderings","type":"Rendering","isMany":true},{"name":"implementation","isAttr":true,"type":"String"}]},{"name":"Rendering","superClass":["BaseElement"]},{"name":"HumanPerformer","superClass":["Performer"]},{"name":"PotentialOwner","superClass":["HumanPerformer"]},{"name":"GlobalUserTask","superClass":["GlobalTask"],"properties":[{"name":"implementation","isAttr":true,"type":"String"},{"name":"renderings","type":"Rendering","isMany":true}]},{"name":"Gateway","isAbstract":true,"superClass":["FlowNode"],"properties":[{"name":"gatewayDirection","type":"GatewayDirection","default":"Unspecified","isAttr":true}]},{"name":"EventBasedGateway","superClass":["Gateway"],"properties":[{"name":"instantiate","default":false,"isAttr":true,"type":"Boolean"},{"name":"eventGatewayType","type":"EventBasedGatewayType","isAttr":true,"default":"Exclusive"}]},{"name":"ComplexGateway","superClass":["Gateway"],"properties":[{"name":"activationCondition","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"default","type":"SequenceFlow","isAttr":true,"isReference":true}]},{"name":"ExclusiveGateway","superClass":["Gateway"],"properties":[{"name":"default","type":"SequenceFlow","isAttr":true,"isReference":true}]},{"name":"InclusiveGateway","superClass":["Gateway"],"properties":[{"name":"default","type":"SequenceFlow","isAttr":true,"isReference":true}]},{"name":"ParallelGateway","superClass":["Gateway"]},{"name":"RootElement","isAbstract":true,"superClass":["BaseElement"]},{"name":"Relationship","superClass":["BaseElement"],"properties":[{"name":"type","isAttr":true,"type":"String"},{"name":"direction","type":"RelationshipDirection","isAttr":true},{"name":"source","isMany":true,"isReference":true,"type":"Element"},{"name":"target","isMany":true,"isReference":true,"type":"Element"}]},{"name":"BaseElement","isAbstract":true,"properties":[{"name":"id","isAttr":true,"type":"String","isId":true},{"name":"documentation","type":"Documentation","isMany":true},{"name":"extensionDefinitions","type":"ExtensionDefinition","isMany":true,"isReference":true},{"name":"extensionElements","type":"ExtensionElements"}]},{"name":"Extension","properties":[{"name":"mustUnderstand","default":false,"isAttr":true,"type":"Boolean"},{"name":"definition","type":"ExtensionDefinition","isAttr":true,"isReference":true}]},{"name":"ExtensionDefinition","properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"extensionAttributeDefinitions","type":"ExtensionAttributeDefinition","isMany":true}]},{"name":"ExtensionAttributeDefinition","properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"type","isAttr":true,"type":"String"},{"name":"isReference","default":false,"isAttr":true,"type":"Boolean"},{"name":"extensionDefinition","type":"ExtensionDefinition","isAttr":true,"isReference":true}]},{"name":"ExtensionElements","properties":[{"name":"valueRef","isAttr":true,"isReference":true,"type":"Element"},{"name":"values","type":"Element","isMany":true},{"name":"extensionAttributeDefinition","type":"ExtensionAttributeDefinition","isAttr":true,"isReference":true}]},{"name":"Documentation","superClass":["BaseElement"],"properties":[{"name":"text","type":"String","isBody":true},{"name":"textFormat","default":"text/plain","isAttr":true,"type":"String"}]},{"name":"Event","isAbstract":true,"superClass":["FlowNode","InteractionNode"],"properties":[{"name":"properties","type":"Property","isMany":true}]},{"name":"IntermediateCatchEvent","superClass":["CatchEvent"]},{"name":"IntermediateThrowEvent","superClass":["ThrowEvent"]},{"name":"EndEvent","superClass":["ThrowEvent"]},{"name":"StartEvent","superClass":["CatchEvent"],"properties":[{"name":"isInterrupting","default":true,"isAttr":true,"type":"Boolean"}]},{"name":"ThrowEvent","isAbstract":true,"superClass":["Event"],"properties":[{"name":"dataInputs","type":"DataInput","isMany":true},{"name":"dataInputAssociations","type":"DataInputAssociation","isMany":true},{"name":"inputSet","type":"InputSet"},{"name":"eventDefinitions","type":"EventDefinition","isMany":true},{"name":"eventDefinitionRef","type":"EventDefinition","isMany":true,"isReference":true}]},{"name":"CatchEvent","isAbstract":true,"superClass":["Event"],"properties":[{"name":"parallelMultiple","isAttr":true,"type":"Boolean","default":false},{"name":"dataOutputs","type":"DataOutput","isMany":true},{"name":"dataOutputAssociations","type":"DataOutputAssociation","isMany":true},{"name":"outputSet","type":"OutputSet"},{"name":"eventDefinitions","type":"EventDefinition","isMany":true},{"name":"eventDefinitionRef","type":"EventDefinition","isMany":true,"isReference":true}]},{"name":"BoundaryEvent","superClass":["CatchEvent"],"properties":[{"name":"cancelActivity","default":true,"isAttr":true,"type":"Boolean"},{"name":"attachedToRef","type":"Activity","isAttr":true,"isReference":true}]},{"name":"EventDefinition","isAbstract":true,"superClass":["RootElement"]},{"name":"CancelEventDefinition","superClass":["EventDefinition"]},{"name":"ErrorEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"errorRef","type":"Error","isAttr":true,"isReference":true}]},{"name":"TerminateEventDefinition","superClass":["EventDefinition"]},{"name":"EscalationEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"escalationRef","type":"Escalation","isAttr":true,"isReference":true}]},{"name":"Escalation","properties":[{"name":"structureRef","type":"ItemDefinition","isAttr":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"},{"name":"escalationCode","isAttr":true,"type":"String"}],"superClass":["RootElement"]},{"name":"CompensateEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"waitForCompletion","isAttr":true,"type":"Boolean","default":true},{"name":"activityRef","type":"Activity","isAttr":true,"isReference":true}]},{"name":"TimerEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"timeDate","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"timeCycle","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"timeDuration","type":"Expression","xml":{"serialize":"xsi:type"}}]},{"name":"LinkEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"target","type":"LinkEventDefinition","isAttr":true,"isReference":true},{"name":"source","type":"LinkEventDefinition","isMany":true,"isReference":true}]},{"name":"MessageEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"messageRef","type":"Message","isAttr":true,"isReference":true},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true}]},{"name":"ConditionalEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"condition","type":"Expression","xml":{"serialize":"xsi:type"}}]},{"name":"SignalEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"signalRef","type":"Signal","isAttr":true,"isReference":true}]},{"name":"Signal","superClass":["RootElement"],"properties":[{"name":"structureRef","type":"ItemDefinition","isAttr":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"ImplicitThrowEvent","superClass":["ThrowEvent"]},{"name":"DataState","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"}]},{"name":"ItemAwareElement","superClass":["BaseElement"],"properties":[{"name":"itemSubjectRef","type":"ItemDefinition","isAttr":true,"isReference":true},{"name":"dataState","type":"DataState"}]},{"name":"DataAssociation","superClass":["BaseElement"],"properties":[{"name":"assignment","type":"Assignment","isMany":true},{"name":"sourceRef","type":"ItemAwareElement","isMany":true,"isReference":true},{"name":"targetRef","type":"ItemAwareElement","isReference":true},{"name":"transformation","type":"FormalExpression","xml":{"serialize":"property"}}]},{"name":"DataInput","superClass":["ItemAwareElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"isCollection","default":false,"isAttr":true,"type":"Boolean"},{"name":"inputSetRef","type":"InputSet","isVirtual":true,"isMany":true,"isReference":true},{"name":"inputSetWithOptional","type":"InputSet","isVirtual":true,"isMany":true,"isReference":true},{"name":"inputSetWithWhileExecuting","type":"InputSet","isVirtual":true,"isMany":true,"isReference":true}]},{"name":"DataOutput","superClass":["ItemAwareElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"isCollection","default":false,"isAttr":true,"type":"Boolean"},{"name":"outputSetRef","type":"OutputSet","isVirtual":true,"isMany":true,"isReference":true},{"name":"outputSetWithOptional","type":"OutputSet","isVirtual":true,"isMany":true,"isReference":true},{"name":"outputSetWithWhileExecuting","type":"OutputSet","isVirtual":true,"isMany":true,"isReference":true}]},{"name":"InputSet","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"dataInputRefs","type":"DataInput","isMany":true,"isReference":true},{"name":"optionalInputRefs","type":"DataInput","isMany":true,"isReference":true},{"name":"whileExecutingInputRefs","type":"DataInput","isMany":true,"isReference":true},{"name":"outputSetRefs","type":"OutputSet","isMany":true,"isReference":true}]},{"name":"OutputSet","superClass":["BaseElement"],"properties":[{"name":"dataOutputRefs","type":"DataOutput","isMany":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"},{"name":"inputSetRefs","type":"InputSet","isMany":true,"isReference":true},{"name":"optionalOutputRefs","type":"DataOutput","isMany":true,"isReference":true},{"name":"whileExecutingOutputRefs","type":"DataOutput","isMany":true,"isReference":true}]},{"name":"Property","superClass":["ItemAwareElement"],"properties":[{"name":"name","isAttr":true,"type":"String"}]},{"name":"DataInputAssociation","superClass":["DataAssociation"]},{"name":"DataOutputAssociation","superClass":["DataAssociation"]},{"name":"InputOutputSpecification","superClass":["BaseElement"],"properties":[{"name":"dataInputs","type":"DataInput","isMany":true},{"name":"dataOutputs","type":"DataOutput","isMany":true},{"name":"inputSets","type":"InputSet","isMany":true},{"name":"outputSets","type":"OutputSet","isMany":true}]},{"name":"DataObject","superClass":["FlowElement","ItemAwareElement"],"properties":[{"name":"isCollection","default":false,"isAttr":true,"type":"Boolean"}]},{"name":"InputOutputBinding","properties":[{"name":"inputDataRef","type":"InputSet","isAttr":true,"isReference":true},{"name":"outputDataRef","type":"OutputSet","isAttr":true,"isReference":true},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true}]},{"name":"Assignment","superClass":["BaseElement"],"properties":[{"name":"from","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"to","type":"Expression","xml":{"serialize":"xsi:type"}}]},{"name":"DataStore","superClass":["RootElement","ItemAwareElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"capacity","isAttr":true,"type":"Integer"},{"name":"isUnlimited","default":true,"isAttr":true,"type":"Boolean"}]},{"name":"DataStoreReference","superClass":["ItemAwareElement","FlowElement"],"properties":[{"name":"dataStoreRef","type":"DataStore","isAttr":true,"isReference":true}]},{"name":"DataObjectReference","superClass":["ItemAwareElement","FlowElement"],"properties":[{"name":"dataObjectRef","type":"DataObject","isAttr":true,"isReference":true}]},{"name":"ConversationLink","superClass":["BaseElement"],"properties":[{"name":"sourceRef","type":"InteractionNode","isAttr":true,"isReference":true},{"name":"targetRef","type":"InteractionNode","isAttr":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"ConversationAssociation","superClass":["BaseElement"],"properties":[{"name":"innerConversationNodeRef","type":"ConversationNode","isAttr":true,"isReference":true},{"name":"outerConversationNodeRef","type":"ConversationNode","isAttr":true,"isReference":true}]},{"name":"CallConversation","superClass":["ConversationNode"],"properties":[{"name":"calledCollaborationRef","type":"Collaboration","isAttr":true,"isReference":true},{"name":"participantAssociations","type":"ParticipantAssociation","isMany":true}]},{"name":"Conversation","superClass":["ConversationNode"]},{"name":"SubConversation","superClass":["ConversationNode"],"properties":[{"name":"conversationNodes","type":"ConversationNode","isMany":true}]},{"name":"ConversationNode","isAbstract":true,"superClass":["InteractionNode","BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"participantRefs","type":"Participant","isMany":true,"isReference":true},{"name":"messageFlowRefs","type":"MessageFlow","isMany":true,"isReference":true},{"name":"correlationKeys","type":"CorrelationKey","isMany":true}]},{"name":"GlobalConversation","superClass":["Collaboration"]},{"name":"PartnerEntity","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"participantRef","type":"Participant","isMany":true,"isReference":true}]},{"name":"PartnerRole","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"participantRef","type":"Participant","isMany":true,"isReference":true}]},{"name":"CorrelationProperty","superClass":["RootElement"],"properties":[{"name":"correlationPropertyRetrievalExpression","type":"CorrelationPropertyRetrievalExpression","isMany":true},{"name":"name","isAttr":true,"type":"String"},{"name":"type","type":"ItemDefinition","isAttr":true,"isReference":true}]},{"name":"Error","superClass":["RootElement"],"properties":[{"name":"structureRef","type":"ItemDefinition","isAttr":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"},{"name":"errorCode","isAttr":true,"type":"String"}]},{"name":"CorrelationKey","superClass":["BaseElement"],"properties":[{"name":"correlationPropertyRef","type":"CorrelationProperty","isMany":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"Expression","superClass":["BaseElement"],"isAbstract":false,"properties":[{"name":"body","type":"String","isBody":true}]},{"name":"FormalExpression","superClass":["Expression"],"properties":[{"name":"language","isAttr":true,"type":"String"},{"name":"evaluatesToTypeRef","type":"ItemDefinition","isAttr":true,"isReference":true}]},{"name":"Message","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"itemRef","type":"ItemDefinition","isAttr":true,"isReference":true}]},{"name":"ItemDefinition","superClass":["RootElement"],"properties":[{"name":"itemKind","type":"ItemKind","isAttr":true},{"name":"structureRef","type":"String","isAttr":true},{"name":"isCollection","default":false,"isAttr":true,"type":"Boolean"},{"name":"import","type":"Import","isAttr":true,"isReference":true}]},{"name":"FlowElement","isAbstract":true,"superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"auditing","type":"Auditing"},{"name":"monitoring","type":"Monitoring"},{"name":"categoryValueRef","type":"CategoryValue","isMany":true,"isReference":true}]},{"name":"SequenceFlow","superClass":["FlowElement"],"properties":[{"name":"isImmediate","isAttr":true,"type":"Boolean"},{"name":"conditionExpression","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"sourceRef","type":"FlowNode","isAttr":true,"isReference":true},{"name":"targetRef","type":"FlowNode","isAttr":true,"isReference":true}]},{"name":"FlowElementsContainer","isAbstract":true,"superClass":["BaseElement"],"properties":[{"name":"laneSets","type":"LaneSet","isMany":true},{"name":"flowElements","type":"FlowElement","isMany":true}]},{"name":"CallableElement","isAbstract":true,"superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"ioSpecification","type":"InputOutputSpecification","xml":{"serialize":"property"}},{"name":"supportedInterfaceRef","type":"Interface","isMany":true,"isReference":true},{"name":"ioBinding","type":"InputOutputBinding","isMany":true,"xml":{"serialize":"property"}}]},{"name":"FlowNode","isAbstract":true,"superClass":["FlowElement"],"properties":[{"name":"incoming","type":"SequenceFlow","isMany":true,"isReference":true},{"name":"outgoing","type":"SequenceFlow","isMany":true,"isReference":true},{"name":"lanes","type":"Lane","isVirtual":true,"isMany":true,"isReference":true}]},{"name":"CorrelationPropertyRetrievalExpression","superClass":["BaseElement"],"properties":[{"name":"messagePath","type":"FormalExpression"},{"name":"messageRef","type":"Message","isAttr":true,"isReference":true}]},{"name":"CorrelationPropertyBinding","superClass":["BaseElement"],"properties":[{"name":"dataPath","type":"FormalExpression"},{"name":"correlationPropertyRef","type":"CorrelationProperty","isAttr":true,"isReference":true}]},{"name":"Resource","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"resourceParameters","type":"ResourceParameter","isMany":true}]},{"name":"ResourceParameter","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"isRequired","isAttr":true,"type":"Boolean"},{"name":"type","type":"ItemDefinition","isAttr":true,"isReference":true}]},{"name":"CorrelationSubscription","superClass":["BaseElement"],"properties":[{"name":"correlationKeyRef","type":"CorrelationKey","isAttr":true,"isReference":true},{"name":"correlationPropertyBinding","type":"CorrelationPropertyBinding","isMany":true}]},{"name":"MessageFlow","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"sourceRef","type":"InteractionNode","isAttr":true,"isReference":true},{"name":"targetRef","type":"InteractionNode","isAttr":true,"isReference":true},{"name":"messageRef","type":"Message","isAttr":true,"isReference":true}]},{"name":"MessageFlowAssociation","superClass":["BaseElement"],"properties":[{"name":"innerMessageFlowRef","type":"MessageFlow","isAttr":true,"isReference":true},{"name":"outerMessageFlowRef","type":"MessageFlow","isAttr":true,"isReference":true}]},{"name":"InteractionNode","isAbstract":true,"properties":[{"name":"incomingConversationLinks","type":"ConversationLink","isVirtual":true,"isMany":true,"isReference":true},{"name":"outgoingConversationLinks","type":"ConversationLink","isVirtual":true,"isMany":true,"isReference":true}]},{"name":"Participant","superClass":["InteractionNode","BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"interfaceRef","type":"Interface","isMany":true,"isReference":true},{"name":"participantMultiplicity","type":"ParticipantMultiplicity"},{"name":"endPointRefs","type":"EndPoint","isMany":true,"isReference":true},{"name":"processRef","type":"Process","isAttr":true,"isReference":true}]},{"name":"ParticipantAssociation","superClass":["BaseElement"],"properties":[{"name":"innerParticipantRef","type":"Participant","isAttr":true,"isReference":true},{"name":"outerParticipantRef","type":"Participant","isAttr":true,"isReference":true}]},{"name":"ParticipantMultiplicity","properties":[{"name":"minimum","default":0,"isAttr":true,"type":"Integer"},{"name":"maximum","default":1,"isAttr":true,"type":"Integer"}],"superClass":["BaseElement"]},{"name":"Collaboration","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"isClosed","isAttr":true,"type":"Boolean"},{"name":"participants","type":"Participant","isMany":true},{"name":"messageFlows","type":"MessageFlow","isMany":true},{"name":"artifacts","type":"Artifact","isMany":true},{"name":"conversations","type":"ConversationNode","isMany":true},{"name":"conversationAssociations","type":"ConversationAssociation"},{"name":"participantAssociations","type":"ParticipantAssociation","isMany":true},{"name":"messageFlowAssociations","type":"MessageFlowAssociation","isMany":true},{"name":"correlationKeys","type":"CorrelationKey","isMany":true},{"name":"choreographyRef","type":"Choreography","isMany":true,"isReference":true},{"name":"conversationLinks","type":"ConversationLink","isMany":true}]},{"name":"ChoreographyActivity","isAbstract":true,"superClass":["FlowNode"],"properties":[{"name":"participantRefs","type":"Participant","isMany":true,"isReference":true},{"name":"initiatingParticipantRef","type":"Participant","isAttr":true,"isReference":true},{"name":"correlationKeys","type":"CorrelationKey","isMany":true},{"name":"loopType","type":"ChoreographyLoopType","default":"None","isAttr":true}]},{"name":"CallChoreography","superClass":["ChoreographyActivity"],"properties":[{"name":"calledChoreographyRef","type":"Choreography","isAttr":true,"isReference":true},{"name":"participantAssociations","type":"ParticipantAssociation","isMany":true}]},{"name":"SubChoreography","superClass":["ChoreographyActivity","FlowElementsContainer"],"properties":[{"name":"artifacts","type":"Artifact","isMany":true}]},{"name":"ChoreographyTask","superClass":["ChoreographyActivity"],"properties":[{"name":"messageFlowRef","type":"MessageFlow","isMany":true,"isReference":true}]},{"name":"Choreography","superClass":["FlowElementsContainer","Collaboration"]},{"name":"GlobalChoreographyTask","superClass":["Choreography"],"properties":[{"name":"initiatingParticipantRef","type":"Participant","isAttr":true,"isReference":true}]},{"name":"TextAnnotation","superClass":["Artifact"],"properties":[{"name":"text","type":"String"},{"name":"textFormat","default":"text/plain","isAttr":true,"type":"String"}]},{"name":"Group","superClass":["Artifact"],"properties":[{"name":"categoryValueRef","type":"CategoryValue","isAttr":true,"isReference":true}]},{"name":"Association","superClass":["Artifact"],"properties":[{"name":"associationDirection","type":"AssociationDirection","isAttr":true},{"name":"sourceRef","type":"BaseElement","isAttr":true,"isReference":true},{"name":"targetRef","type":"BaseElement","isAttr":true,"isReference":true}]},{"name":"Category","superClass":["RootElement"],"properties":[{"name":"categoryValue","type":"CategoryValue","isMany":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"Artifact","isAbstract":true,"superClass":["BaseElement"]},{"name":"CategoryValue","superClass":["BaseElement"],"properties":[{"name":"categorizedFlowElements","type":"FlowElement","isVirtual":true,"isMany":true,"isReference":true},{"name":"value","isAttr":true,"type":"String"}]},{"name":"Activity","isAbstract":true,"superClass":["FlowNode"],"properties":[{"name":"isForCompensation","default":false,"isAttr":true,"type":"Boolean"},{"name":"default","type":"SequenceFlow","isAttr":true,"isReference":true},{"name":"ioSpecification","type":"InputOutputSpecification","xml":{"serialize":"property"}},{"name":"boundaryEventRefs","type":"BoundaryEvent","isMany":true,"isReference":true},{"name":"properties","type":"Property","isMany":true},{"name":"dataInputAssociations","type":"DataInputAssociation","isMany":true},{"name":"dataOutputAssociations","type":"DataOutputAssociation","isMany":true},{"name":"startQuantity","default":1,"isAttr":true,"type":"Integer"},{"name":"resources","type":"ResourceRole","isMany":true},{"name":"completionQuantity","default":1,"isAttr":true,"type":"Integer"},{"name":"loopCharacteristics","type":"LoopCharacteristics"}]},{"name":"ServiceTask","superClass":["Task"],"properties":[{"name":"implementation","isAttr":true,"type":"String"},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true}]},{"name":"SubProcess","superClass":["Activity","FlowElementsContainer","InteractionNode"],"properties":[{"name":"triggeredByEvent","default":false,"isAttr":true,"type":"Boolean"},{"name":"artifacts","type":"Artifact","isMany":true}]},{"name":"LoopCharacteristics","isAbstract":true,"superClass":["BaseElement"]},{"name":"MultiInstanceLoopCharacteristics","superClass":["LoopCharacteristics"],"properties":[{"name":"isSequential","default":false,"isAttr":true,"type":"Boolean"},{"name":"behavior","type":"MultiInstanceBehavior","default":"All","isAttr":true},{"name":"loopCardinality","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"loopDataInputRef","type":"ItemAwareElement","isReference":true},{"name":"loopDataOutputRef","type":"ItemAwareElement","isReference":true},{"name":"inputDataItem","type":"DataInput","xml":{"serialize":"property"}},{"name":"outputDataItem","type":"DataOutput","xml":{"serialize":"property"}},{"name":"complexBehaviorDefinition","type":"ComplexBehaviorDefinition","isMany":true},{"name":"completionCondition","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"oneBehaviorEventRef","type":"EventDefinition","isAttr":true,"isReference":true},{"name":"noneBehaviorEventRef","type":"EventDefinition","isAttr":true,"isReference":true}]},{"name":"StandardLoopCharacteristics","superClass":["LoopCharacteristics"],"properties":[{"name":"testBefore","default":false,"isAttr":true,"type":"Boolean"},{"name":"loopCondition","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"loopMaximum","type":"Expression","xml":{"serialize":"xsi:type"}}]},{"name":"CallActivity","superClass":["Activity"],"properties":[{"name":"calledElement","type":"String","isAttr":true}]},{"name":"Task","superClass":["Activity","InteractionNode"]},{"name":"SendTask","superClass":["Task"],"properties":[{"name":"implementation","isAttr":true,"type":"String"},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true},{"name":"messageRef","type":"Message","isAttr":true,"isReference":true}]},{"name":"ReceiveTask","superClass":["Task"],"properties":[{"name":"implementation","isAttr":true,"type":"String"},{"name":"instantiate","default":false,"isAttr":true,"type":"Boolean"},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true},{"name":"messageRef","type":"Message","isAttr":true,"isReference":true}]},{"name":"ScriptTask","superClass":["Task"],"properties":[{"name":"scriptFormat","isAttr":true,"type":"String"},{"name":"script","type":"String"}]},{"name":"BusinessRuleTask","superClass":["Task"],"properties":[{"name":"implementation","isAttr":true,"type":"String"}]},{"name":"AdHocSubProcess","superClass":["SubProcess"],"properties":[{"name":"completionCondition","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"ordering","type":"AdHocOrdering","isAttr":true},{"name":"cancelRemainingInstances","default":true,"isAttr":true,"type":"Boolean"}]},{"name":"Transaction","superClass":["SubProcess"],"properties":[{"name":"protocol","isAttr":true,"type":"String"},{"name":"method","isAttr":true,"type":"String"}]},{"name":"GlobalScriptTask","superClass":["GlobalTask"],"properties":[{"name":"scriptLanguage","isAttr":true,"type":"String"},{"name":"script","isAttr":true,"type":"String"}]},{"name":"GlobalBusinessRuleTask","superClass":["GlobalTask"],"properties":[{"name":"implementation","isAttr":true,"type":"String"}]},{"name":"ComplexBehaviorDefinition","superClass":["BaseElement"],"properties":[{"name":"condition","type":"FormalExpression"},{"name":"event","type":"ImplicitThrowEvent"}]},{"name":"ResourceRole","superClass":["BaseElement"],"properties":[{"name":"resourceRef","type":"Resource","isReference":true},{"name":"resourceParameterBindings","type":"ResourceParameterBinding","isMany":true},{"name":"resourceAssignmentExpression","type":"ResourceAssignmentExpression"},{"name":"name","isAttr":true,"type":"String"}]},{"name":"ResourceParameterBinding","properties":[{"name":"expression","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"parameterRef","type":"ResourceParameter","isAttr":true,"isReference":true}],"superClass":["BaseElement"]},{"name":"ResourceAssignmentExpression","properties":[{"name":"expression","type":"Expression","xml":{"serialize":"xsi:type"}}],"superClass":["BaseElement"]},{"name":"Import","properties":[{"name":"importType","isAttr":true,"type":"String"},{"name":"location","isAttr":true,"type":"String"},{"name":"namespace","isAttr":true,"type":"String"}]},{"name":"Definitions","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"targetNamespace","isAttr":true,"type":"String"},{"name":"expressionLanguage","default":"http://www.w3.org/1999/XPath","isAttr":true,"type":"String"},{"name":"typeLanguage","default":"http://www.w3.org/2001/XMLSchema","isAttr":true,"type":"String"},{"name":"imports","type":"Import","isMany":true},{"name":"extensions","type":"Extension","isMany":true},{"name":"rootElements","type":"RootElement","isMany":true},{"name":"diagrams","isMany":true,"type":"bpmndi:BPMNDiagram"},{"name":"exporter","isAttr":true,"type":"String"},{"name":"relationships","type":"Relationship","isMany":true},{"name":"exporterVersion","isAttr":true,"type":"String"}]}],"enumerations":[{"name":"ProcessType","literalValues":[{"name":"None"},{"name":"Public"},{"name":"Private"}]},{"name":"GatewayDirection","literalValues":[{"name":"Unspecified"},{"name":"Converging"},{"name":"Diverging"},{"name":"Mixed"}]},{"name":"EventBasedGatewayType","literalValues":[{"name":"Parallel"},{"name":"Exclusive"}]},{"name":"RelationshipDirection","literalValues":[{"name":"None"},{"name":"Forward"},{"name":"Backward"},{"name":"Both"}]},{"name":"ItemKind","literalValues":[{"name":"Physical"},{"name":"Information"}]},{"name":"ChoreographyLoopType","literalValues":[{"name":"None"},{"name":"Standard"},{"name":"MultiInstanceSequential"},{"name":"MultiInstanceParallel"}]},{"name":"AssociationDirection","literalValues":[{"name":"None"},{"name":"One"},{"name":"Both"}]},{"name":"MultiInstanceBehavior","literalValues":[{"name":"None"},{"name":"One"},{"name":"All"},{"name":"Complex"}]},{"name":"AdHocOrdering","literalValues":[{"name":"Parallel"},{"name":"Sequential"}]}],"prefix":"bpmn","xml":{"tagAlias":"lowerCase","typePrefix":"t"}}
 
 /***/ }),
-/* 261 */
+
+/***/ 434:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"BPMNDI","uri":"http://www.omg.org/spec/BPMN/20100524/DI","types":[{"name":"BPMNDiagram","properties":[{"name":"plane","type":"BPMNPlane","redefines":"di:Diagram#rootElement"},{"name":"labelStyle","type":"BPMNLabelStyle","isMany":true}],"superClass":["di:Diagram"]},{"name":"BPMNPlane","properties":[{"name":"bpmnElement","isAttr":true,"isReference":true,"type":"bpmn:BaseElement","redefines":"di:DiagramElement#modelElement"}],"superClass":["di:Plane"]},{"name":"BPMNShape","properties":[{"name":"bpmnElement","isAttr":true,"isReference":true,"type":"bpmn:BaseElement","redefines":"di:DiagramElement#modelElement"},{"name":"isHorizontal","isAttr":true,"type":"Boolean"},{"name":"isExpanded","isAttr":true,"type":"Boolean"},{"name":"isMarkerVisible","isAttr":true,"type":"Boolean"},{"name":"label","type":"BPMNLabel"},{"name":"isMessageVisible","isAttr":true,"type":"Boolean"},{"name":"participantBandKind","type":"ParticipantBandKind","isAttr":true},{"name":"choreographyActivityShape","type":"BPMNShape","isAttr":true,"isReference":true}],"superClass":["di:LabeledShape"]},{"name":"BPMNEdge","properties":[{"name":"label","type":"BPMNLabel"},{"name":"bpmnElement","isAttr":true,"isReference":true,"type":"bpmn:BaseElement","redefines":"di:DiagramElement#modelElement"},{"name":"sourceElement","isAttr":true,"isReference":true,"type":"di:DiagramElement","redefines":"di:Edge#source"},{"name":"targetElement","isAttr":true,"isReference":true,"type":"di:DiagramElement","redefines":"di:Edge#target"},{"name":"messageVisibleKind","type":"MessageVisibleKind","isAttr":true,"default":"initiating"}],"superClass":["di:LabeledEdge"]},{"name":"BPMNLabel","properties":[{"name":"labelStyle","type":"BPMNLabelStyle","isAttr":true,"isReference":true,"redefines":"di:DiagramElement#style"}],"superClass":["di:Label"]},{"name":"BPMNLabelStyle","properties":[{"name":"font","type":"dc:Font"}],"superClass":["di:Style"]}],"enumerations":[{"name":"ParticipantBandKind","literalValues":[{"name":"top_initiating"},{"name":"middle_initiating"},{"name":"bottom_initiating"},{"name":"top_non_initiating"},{"name":"middle_non_initiating"},{"name":"bottom_non_initiating"}]},{"name":"MessageVisibleKind","literalValues":[{"name":"initiating"},{"name":"non_initiating"}]}],"associations":[],"prefix":"bpmndi"}
 
 /***/ }),
-/* 262 */
+
+/***/ 435:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"DC","uri":"http://www.omg.org/spec/DD/20100524/DC","types":[{"name":"Boolean"},{"name":"Integer"},{"name":"Real"},{"name":"String"},{"name":"Font","properties":[{"name":"name","type":"String","isAttr":true},{"name":"size","type":"Real","isAttr":true},{"name":"isBold","type":"Boolean","isAttr":true},{"name":"isItalic","type":"Boolean","isAttr":true},{"name":"isUnderline","type":"Boolean","isAttr":true},{"name":"isStrikeThrough","type":"Boolean","isAttr":true}]},{"name":"Point","properties":[{"name":"x","type":"Real","default":"0","isAttr":true},{"name":"y","type":"Real","default":"0","isAttr":true}]},{"name":"Bounds","properties":[{"name":"x","type":"Real","default":"0","isAttr":true},{"name":"y","type":"Real","default":"0","isAttr":true},{"name":"width","type":"Real","isAttr":true},{"name":"height","type":"Real","isAttr":true}]}],"prefix":"dc","associations":[]}
 
 /***/ }),
-/* 263 */
+
+/***/ 436:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"DI","uri":"http://www.omg.org/spec/DD/20100524/DI","types":[{"name":"DiagramElement","isAbstract":true,"properties":[{"name":"id","type":"String","isAttr":true,"isId":true},{"name":"extension","type":"Extension"},{"name":"owningDiagram","type":"Diagram","isReadOnly":true,"isVirtual":true,"isReference":true},{"name":"owningElement","type":"DiagramElement","isReadOnly":true,"isVirtual":true,"isReference":true},{"name":"modelElement","isReadOnly":true,"isVirtual":true,"isReference":true,"type":"Element"},{"name":"style","type":"Style","isReadOnly":true,"isVirtual":true,"isReference":true},{"name":"ownedElement","type":"DiagramElement","isReadOnly":true,"isVirtual":true,"isMany":true}]},{"name":"Node","isAbstract":true,"superClass":["DiagramElement"]},{"name":"Edge","isAbstract":true,"superClass":["DiagramElement"],"properties":[{"name":"source","type":"DiagramElement","isReadOnly":true,"isVirtual":true,"isReference":true},{"name":"target","type":"DiagramElement","isReadOnly":true,"isVirtual":true,"isReference":true},{"name":"waypoint","isUnique":false,"isMany":true,"type":"dc:Point","xml":{"serialize":"xsi:type"}}]},{"name":"Diagram","isAbstract":true,"properties":[{"name":"id","type":"String","isAttr":true,"isId":true},{"name":"rootElement","type":"DiagramElement","isReadOnly":true,"isVirtual":true},{"name":"name","isAttr":true,"type":"String"},{"name":"documentation","isAttr":true,"type":"String"},{"name":"resolution","isAttr":true,"type":"Real"},{"name":"ownedStyle","type":"Style","isReadOnly":true,"isVirtual":true,"isMany":true}]},{"name":"Shape","isAbstract":true,"superClass":["Node"],"properties":[{"name":"bounds","type":"dc:Bounds"}]},{"name":"Plane","isAbstract":true,"superClass":["Node"],"properties":[{"name":"planeElement","type":"DiagramElement","subsettedProperty":"DiagramElement-ownedElement","isMany":true}]},{"name":"LabeledEdge","isAbstract":true,"superClass":["Edge"],"properties":[{"name":"ownedLabel","type":"Label","isReadOnly":true,"subsettedProperty":"DiagramElement-ownedElement","isVirtual":true,"isMany":true}]},{"name":"LabeledShape","isAbstract":true,"superClass":["Shape"],"properties":[{"name":"ownedLabel","type":"Label","isReadOnly":true,"subsettedProperty":"DiagramElement-ownedElement","isVirtual":true,"isMany":true}]},{"name":"Label","isAbstract":true,"superClass":["Node"],"properties":[{"name":"bounds","type":"dc:Bounds"}]},{"name":"Style","isAbstract":true,"properties":[{"name":"id","type":"String","isAttr":true,"isId":true}]},{"name":"Extension","properties":[{"name":"values","type":"Element","isMany":true}]}],"associations":[],"prefix":"di","xml":{"tagAlias":"lowerCase"}}
 
 /***/ }),
-/* 264 */
+
+/***/ 437:
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -5898,32 +5938,32 @@ Emitter.prototype.hasListeners = function(event){
 
 
 /***/ }),
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */
+
+/***/ 470:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(15)();
+exports = module.exports = __webpack_require__(10)();
 exports.push([module.i, "\n.svg_canvas {\n    background: #FFFFFF;\n}\n", ""]);
 
 /***/ }),
-/* 270 */
+
+/***/ 472:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(15)();
+exports = module.exports = __webpack_require__(10)();
 exports.push([module.i, "\n.dropzone-area { width: 80%; height: 200px; position: relative; border: 2px dashed #CBCBCB;\n}\n.dropzone-area:hover { border: 2px dashed #2E94C4;\n}\n.dropzone-area:hover .dropzone-title { color: #1975A0;\n}\n.dropzone-area input { position: absolute; cursor: pointer; top: 0px; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; opacity: 0;\n}\n.dropzone-text { position: absolute; top: 50%; text-align: center; transform: translate(0, -50%); width: 100%;\n}\n.dropzone-text span { display: block; font-family: Arial, Helvetica; line-height: 1.9;\n}\n.dropzone-title { font-size: 13px; color: #787878; letter-spacing: 0.4px;\n}\n.dropzone-info { font-size: 13px; font-size: 0.8125rem; color: #A8A8A8; letter-spacing: 0.4px;\n}\n.dropzone-button { position: absolute; top: 10px; right: 10px; display: none;\n}\n.dropzone-preview { width: 80%; position: relative;\n}\n.dropzone-preview:hover .dropzone-button { display: block;\n}\n.dropzone-preview img { display: block; height: auto; max-width: 100%;\n}\n", ""]);
 
 /***/ }),
-/* 271 */
+
+/***/ 476:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(15)();
+exports = module.exports = __webpack_require__(10)();
 exports.push([module.i, "\n.actions-toolbar {\n    position: absolute;\n    top: 80px;\n    left: 100px;\n    z-index: 100;\n}\n", ""]);
 
 /***/ }),
-/* 272 */
+
+/***/ 477:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_LOCAL_MODULE_0__;var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*** IMPORTS FROM imports-loader ***/
@@ -14564,7 +14604,8 @@ return Snap;
 }.call(window));
 
 /***/ }),
-/* 273 */
+
+/***/ 478:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14860,34 +14901,33 @@ module.exports.setNumbersByKey = function (tag, json, newval, done) {
 };
 
 /***/ }),
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */
+
+/***/ 482:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_read__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_read__ = __webpack_require__(483);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__lib_read__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_write__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_write__ = __webpack_require__(484);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__lib_write__["a"]; });
 
 
 
 
 /***/ }),
-/* 278 */
+
+/***/ 483:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tiny_stack__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tiny_stack__ = __webpack_require__(505);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tiny_stack___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_tiny_stack__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_saxen__ = __webpack_require__(286);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moddle__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moddle_lib_ns__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moddle_lib_types__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_saxen__ = __webpack_require__(493);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moddle__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moddle_lib_ns__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moddle_lib_types__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common__ = __webpack_require__(247);
 /* unused harmony export Context */
 /* unused harmony export ElementHandler */
 /* harmony export (immutable) */ __webpack_exports__["a"] = Reader;
@@ -15177,7 +15217,9 @@ ElementHandler.prototype.createElement = function(node) {
       Type = this.type,
       descriptor = getModdleDescriptor(Type),
       context = this.context,
-      instance = new Type({});
+      instance = new Type({}),
+      model = this.model,
+      propNameNs;
 
   __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_min_dash__["f" /* forEach */])(attributes, function(value, name) {
 
@@ -15208,6 +15250,21 @@ ElementHandler.prototype.createElement = function(node) {
     } else {
       if (prop) {
         value = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_moddle_lib_types__["b" /* coerceType */])(prop.type, value);
+      } else
+      if (name !== 'xmlns') {
+        propNameNs = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_moddle_lib_ns__["a" /* parseName */])(name, descriptor.ns.prefix);
+
+        // check whether attribute is defined in a well-known namespace
+        // if that is the case we emit a warning to indicate potential misuse
+        if (model.getPackage(propNameNs.prefix)) {
+
+          context.addWarning({
+            message: 'unknown attribute <' + name + '>',
+            element: instance,
+            property: name,
+            value: value
+          });
+        }
       }
 
       instance.set(name, value);
@@ -15248,7 +15305,9 @@ ElementHandler.prototype.getPropertyForNode = function(node) {
 
         elementType = model.getType(elementTypeName);
 
-        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_min_dash__["a" /* assign */])({}, property, { effectiveType: getModdleDescriptor(elementType).name });
+        return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_min_dash__["a" /* assign */])({}, property, {
+          effectiveType: getModdleDescriptor(elementType).name
+        });
       }
     }
 
@@ -15268,7 +15327,9 @@ ElementHandler.prototype.getPropertyForNode = function(node) {
     });
 
     if (property) {
-      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_min_dash__["a" /* assign */])({}, property, { effectiveType: getModdleDescriptor(elementType).name });
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_min_dash__["a" /* assign */])({}, property, {
+        effectiveType: getModdleDescriptor(elementType).name
+      });
     }
   } else {
     // parse unknown element (maybe extension)
@@ -15725,14 +15786,15 @@ Reader.prototype.handler = function(name) {
 };
 
 /***/ }),
-/* 279 */
+
+/***/ 484:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moddle_lib_types__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moddle_lib_ns__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moddle_lib_types__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moddle_lib_ns__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common__ = __webpack_require__(247);
 /* unused harmony export Namespaces */
 /* harmony export (immutable) */ __webpack_exports__["a"] = Writer;
 
@@ -16561,7 +16623,8 @@ function Writer(options) {
 }
 
 /***/ }),
-/* 280 */
+
+/***/ 485:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16580,12 +16643,13 @@ Base.prototype.set = function(name, value) {
 };
 
 /***/ }),
-/* 281 */
+
+/***/ 486:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ns__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ns__ = __webpack_require__(32);
 /* harmony export (immutable) */ __webpack_exports__["a"] = DescriptorBuilder;
 
 
@@ -16815,12 +16879,13 @@ DescriptorBuilder.prototype.addTrait = function(t, inherited) {
 };
 
 /***/ }),
-/* 282 */
+
+/***/ 487:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base__ = __webpack_require__(485);
 /* harmony export (immutable) */ __webpack_exports__["a"] = Factory;
 
 
@@ -16882,15 +16947,16 @@ Factory.prototype.createType = function(descriptor) {
 };
 
 /***/ }),
-/* 283 */
+
+/***/ 488:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__factory__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__registry__ = __webpack_require__(285);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__properties__ = __webpack_require__(284);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ns__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__factory__ = __webpack_require__(487);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__registry__ = __webpack_require__(490);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__properties__ = __webpack_require__(489);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ns__ = __webpack_require__(32);
 /* harmony export (immutable) */ __webpack_exports__["a"] = Moddle;
 
 
@@ -17110,7 +17176,8 @@ Moddle.prototype.getTypeDescriptor = function(type) {
 };
 
 /***/ }),
-/* 284 */
+
+/***/ 489:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17230,14 +17297,15 @@ function defineProperty(target, property, value) {
 }
 
 /***/ }),
-/* 285 */
+
+/***/ 490:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__types__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__descriptor_builder__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ns__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__types__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__descriptor_builder__ = __webpack_require__(486);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ns__ = __webpack_require__(32);
 /* harmony export (immutable) */ __webpack_exports__["a"] = Registry;
 
 
@@ -17446,7 +17514,8 @@ function ensureAvailable(packageMap, pkg, identifierKey) {
 
 
 /***/ }),
-/* 286 */
+
+/***/ 493:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18470,12 +18539,8 @@ function Parser(options) {
 
 
 /***/ }),
-/* 287 */,
-/* 288 */,
-/* 289 */,
-/* 290 */,
-/* 291 */,
-/* 292 */
+
+/***/ 499:
 /***/ (function(module, exports) {
 
 function Agent() {
@@ -18501,7 +18566,8 @@ module.exports = Agent;
 
 
 /***/ }),
-/* 293 */
+
+/***/ 500:
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -18518,11 +18584,11 @@ if (typeof window !== 'undefined') { // Browser window
   root = this;
 }
 
-var Emitter = __webpack_require__(264);
-var RequestBase = __webpack_require__(294);
-var isObject = __webpack_require__(89);
-var ResponseBase = __webpack_require__(295);
-var Agent = __webpack_require__(292);
+var Emitter = __webpack_require__(437);
+var RequestBase = __webpack_require__(501);
+var isObject = __webpack_require__(249);
+var ResponseBase = __webpack_require__(502);
+var Agent = __webpack_require__(499);
 
 /**
  * Noop.
@@ -19427,7 +19493,8 @@ request.put = function(url, data, fn) {
 
 
 /***/ }),
-/* 294 */
+
+/***/ 501:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19436,7 +19503,7 @@ request.put = function(url, data, fn) {
 /**
  * Module of mixed-in functions shared between node and client code
  */
-var isObject = __webpack_require__(89);
+var isObject = __webpack_require__(249);
 
 /**
  * Expose `RequestBase`.
@@ -20128,7 +20195,8 @@ RequestBase.prototype._setTimeouts = function() {
 
 
 /***/ }),
-/* 295 */
+
+/***/ 502:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20138,7 +20206,7 @@ RequestBase.prototype._setTimeouts = function() {
  * Module dependencies.
  */
 
-var utils = __webpack_require__(296);
+var utils = __webpack_require__(503);
 
 /**
  * Expose `ResponseBase`.
@@ -20269,7 +20337,8 @@ ResponseBase.prototype._setStatusProperties = function(status){
 
 
 /***/ }),
-/* 296 */
+
+/***/ 503:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20347,8 +20416,8 @@ exports.cleanHeader = function(header, changesOrigin){
 
 
 /***/ }),
-/* 297 */,
-/* 298 */
+
+/***/ 505:
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -20495,53 +20564,8 @@ else {
 
 
 /***/ }),
-/* 299 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = multitext;
-function multitext(Snap, Element, Paper, glob) {
-    Paper.prototype.multitext = function (x, y, txt, maxWidth, attributes) {
-        var svg = Snap();
-        var abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        var temp = svg.text(0, 0, abc);
-        var letterWidth = temp.getBBox().width / abc.length;
-        temp.attr(attributes);
-        svg.remove();
-        var words = txt.split(' '), lines = [''], linesWidth = [];
-        var widthSoFar = 0, currentLine = 0;
-        for (var i = 0; i < words.length; i++) {
-            var l = words[i].length;
-            if (widthSoFar + (l * letterWidth) > maxWidth) {
-                lines.push('');
-                lines[currentLine] = lines[currentLine].trim();
-                currentLine++;
-                linesWidth.push(widthSoFar);
-                widthSoFar = 0;
-            }
-            widthSoFar += l * letterWidth;
-            lines[currentLine] += words[i] + ' ';
-        }
-        // this last push is required to capture the last line width, improvement required.
-        linesWidth.push(widthSoFar);
-        var t = this.text(x, y, lines).attr(attributes);
-        var lineCounter = 0;
-        t.selectAll('tspan:nth-child(n+1)').forEach(function (element) {
-            var width = linesWidth[lineCounter];
-            var elX = x + (maxWidth - width) / 2;
-            element.attr({
-                dy: '1.2em',
-                x: elX
-            });
-            lineCounter++;
-        });
-        return t;
-    };
-}
-
-
-/***/ }),
-/* 300 */
+/***/ 506:
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
@@ -20570,7 +20594,8 @@ if (typeof Object.create === 'function') {
 
 
 /***/ }),
-/* 301 */
+
+/***/ 507:
 /***/ (function(module, exports) {
 
 module.exports = function isBuffer(arg) {
@@ -20581,7 +20606,8 @@ module.exports = function isBuffer(arg) {
 }
 
 /***/ }),
-/* 302 */
+
+/***/ 508:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -21109,7 +21135,7 @@ function isPrimitive(arg) {
 }
 exports.isPrimitive = isPrimitive;
 
-exports.isBuffer = __webpack_require__(301);
+exports.isBuffer = __webpack_require__(507);
 
 function objectToString(o) {
   return Object.prototype.toString.call(o);
@@ -21153,7 +21179,7 @@ exports.log = function() {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-exports.inherits = __webpack_require__(300);
+exports.inherits = __webpack_require__(506);
 
 exports._extend = function(origin, add) {
   // Don't do anything if add isn't an object
@@ -21171,21 +21197,22 @@ function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12), __webpack_require__(41)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17), __webpack_require__(193)))
 
 /***/ }),
-/* 303 */
+
+/***/ 515:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(314)
+__webpack_require__(541)
 
-var Component = __webpack_require__(27)(
+var Component = __webpack_require__(7)(
   /* script */
-  __webpack_require__(113),
+  __webpack_require__(279),
   /* template */
-  __webpack_require__(309),
+  __webpack_require__(532),
   /* scopeId */
   null,
   /* cssModules */
@@ -21212,18 +21239,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 304 */
+
+/***/ 516:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(312)
+__webpack_require__(535)
 
-var Component = __webpack_require__(27)(
+var Component = __webpack_require__(7)(
   /* script */
-  __webpack_require__(114),
+  __webpack_require__(280),
   /* template */
-  __webpack_require__(307),
+  __webpack_require__(523),
   /* scopeId */
   null,
   /* cssModules */
@@ -21250,14 +21278,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 305 */
+
+/***/ 517:
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(27)(
+var Component = __webpack_require__(7)(
   /* script */
-  __webpack_require__(115),
+  __webpack_require__(281),
   /* template */
-  __webpack_require__(310),
+  __webpack_require__(533),
   /* scopeId */
   null,
   /* cssModules */
@@ -21284,18 +21313,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 306 */
+
+/***/ 518:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(313)
+__webpack_require__(537)
 
-var Component = __webpack_require__(27)(
+var Component = __webpack_require__(7)(
   /* script */
-  __webpack_require__(116),
+  __webpack_require__(282),
   /* template */
-  __webpack_require__(308),
+  __webpack_require__(525),
   /* scopeId */
   null,
   /* cssModules */
@@ -21322,7 +21352,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 307 */
+
+/***/ 523:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21344,7 +21375,8 @@ if (false) {
 }
 
 /***/ }),
-/* 308 */
+
+/***/ 525:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21377,7 +21409,8 @@ if (false) {
 }
 
 /***/ }),
-/* 309 */
+
+/***/ 532:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21386,7 +21419,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('button', {
     staticClass: "btn btn-secondary",
     attrs: {
-      "type": "button"
+      "type": "button",
+      "id": "zoomIn"
     },
     on: {
       "click": function($event) {
@@ -21401,7 +21435,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-secondary",
     attrs: {
-      "type": "button"
+      "type": "button",
+      "id": "zoomReset"
     },
     on: {
       "click": function($event) {
@@ -21416,7 +21451,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-secondary",
     attrs: {
-      "type": "button"
+      "type": "button",
+      "id": "zoomOut"
     },
     on: {
       "click": function($event) {
@@ -21439,7 +21475,8 @@ if (false) {
 }
 
 /***/ }),
-/* 310 */
+
+/***/ 533:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21447,9 +21484,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "menu_section"
   }, [_c('ul', {
     staticClass: "nav side-menu"
-  }, [_c('li', [_c('a', {
+  }, [_c('li', [_c('img', {
     attrs: {
       "id": "bpmn:StartEvent",
+      "src": "images/start-event-none.svg",
+      "height": "35",
       "draggable": "true"
     },
     on: {
@@ -21457,11 +21496,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.createElement($event)
       }
     }
-  }, [_c('i', {
-    staticClass: "bpmn-icon-start-event-none"
-  }), _vm._v(" StartEvent ")])]), _vm._v(" "), _c('li', [_c('a', {
+  })]), _vm._v(" "), _c('li', [_c('img', {
     attrs: {
       "id": "bpmn:IntermediateThrowEvent",
+      "src": "images/intermediate-event-throw-message.svg",
+      "height": "35",
       "draggable": "true"
     },
     on: {
@@ -21469,11 +21508,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.createElement($event)
       }
     }
-  }, [_c('i', {
-    staticClass: "bpmn-icon-start-event-message"
-  }), _vm._v(" Message ")])]), _vm._v(" "), _c('li', [_c('a', {
+  })]), _vm._v(" "), _c('li', [_c('img', {
     attrs: {
       "id": "bpmn:EndEvent",
+      "src": "images/end-event-none.svg",
+      "height": "35",
       "draggable": "true"
     },
     on: {
@@ -21481,11 +21520,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.createElement($event)
       }
     }
-  }, [_c('i', {
-    staticClass: "bpmn-icon-end-event-none"
-  }), _vm._v(" EndEvent ")])]), _vm._v(" "), _c('li', [_c('a', {
+  })]), _vm._v(" "), _c('li', [_c('img', {
     attrs: {
       "id": "bpmn:ExclusiveGateway",
+      "src": "images/gateway-xor.svg",
+      "height": "35",
       "draggable": "true"
     },
     on: {
@@ -21493,11 +21532,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.createElement($event)
       }
     }
-  }, [_c('i', {
-    staticClass: "bpmn-icon-gateway-xor"
-  }), _vm._v(" Exclusive ")])]), _vm._v(" "), _c('li', [_c('a', {
+  })]), _vm._v(" "), _c('li', [_c('img', {
     attrs: {
       "id": "bpmn:Task",
+      "src": "images/task.svg",
+      "height": "40",
       "draggable": "true"
     },
     on: {
@@ -21505,25 +21544,44 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.createElement($event)
       }
     }
-  }, [_c('i', {
-    staticClass: "bpmn-icon-task"
-  }), _vm._v(" Activities ")])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('li', [_c('hr')])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('li', [_c('a', {
+  })]), _vm._v(" "), _c('li', [_c('img', {
     attrs: {
-      "data-toggle": "modal",
-      "data-target": "#myModal"
+      "id": "bpmn:SubProcess",
+      "src": "images/subprocess-collapsed.svg",
+      "height": "40",
+      "draggable": "true"
+    },
+    on: {
+      "dragend": function($event) {
+        _vm.createElement($event)
+      }
     }
-  }, [_c('i', {
-    staticClass: "fa fa-cloud-upload"
-  }), _vm._v(" Upload ")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('li', [_c('a', [_c('i', {
-    staticClass: "fa fa-cloud-download"
-  }), _vm._v(" Download ")])])
-}]}
+  })]), _vm._v(" "), _c('li', [_c('img', {
+    attrs: {
+      "id": "bpmn:DataObjectReference",
+      "src": "images/data-object.svg",
+      "height": "40",
+      "draggable": "true"
+    },
+    on: {
+      "dragend": function($event) {
+        _vm.createElement($event)
+      }
+    }
+  })]), _vm._v(" "), _c('li', [_c('img', {
+    attrs: {
+      "id": "bpmn:DataStoreReference",
+      "src": "images/data-store.svg",
+      "height": "40",
+      "draggable": "true"
+    },
+    on: {
+      "dragend": function($event) {
+        _vm.createElement($event)
+      }
+    }
+  })])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -21533,7 +21591,8 @@ if (false) {
 }
 
 /***/ }),
-/* 311 */
+
+/***/ 534:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22632,7 +22691,7 @@ function xhrClient (request) {
 
 function nodeClient (request) {
 
-    var client = __webpack_require__(317);
+    var client = __webpack_require__(543);
 
     return new PromiseObj(function (resolve) {
 
@@ -23100,17 +23159,18 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 /***/ }),
-/* 312 */
+
+/***/ 535:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(269);
+var content = __webpack_require__(470);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(42)("28c93628", content, false);
+var update = __webpack_require__(16)("28c93628", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -23126,17 +23186,18 @@ if(false) {
 }
 
 /***/ }),
-/* 313 */
+
+/***/ 537:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(270);
+var content = __webpack_require__(472);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(42)("8e729d64", content, false);
+var update = __webpack_require__(16)("8e729d64", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -23152,17 +23213,18 @@ if(false) {
 }
 
 /***/ }),
-/* 314 */
+
+/***/ 541:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(271);
+var content = __webpack_require__(476);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(42)("a9b1b18c", content, false);
+var update = __webpack_require__(16)("a9b1b18c", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -23178,51 +23240,189 @@ if(false) {
 }
 
 /***/ }),
-/* 315 */
-/***/ (function(module, exports) {
 
-/**
- * Translates the list format produced by css-loader into something
- * easier to manipulate.
- */
-module.exports = function listToStyles (parentId, list) {
-  var styles = []
-  var newStyles = {}
-  for (var i = 0; i < list.length; i++) {
-    var item = list[i]
-    var id = item[0]
-    var css = item[1]
-    var media = item[2]
-    var sourceMap = item[3]
-    var part = {
-      id: parentId + ':' + i,
-      css: css,
-      media: media,
-      sourceMap: sourceMap
-    }
-    if (!newStyles[id]) {
-      styles.push(newStyles[id] = { id: id, parts: [part] })
-    } else {
-      newStyles[id].parts.push(part)
-    }
-  }
-  return styles
+/***/ 542:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = multitext;
+function multitext(Snap, Element, Paper, glob) {
+    Paper.prototype.multitext = function (x, y, txt, maxWidth, attributes) {
+        const svg = Snap();
+        const abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const temp = svg.text(0, 0, abc);
+        const letterWidth = temp.getBBox().width / abc.length;
+        temp.attr(attributes);
+        svg.remove();
+
+        const words = txt.split(' '),
+            lines = [''],
+            linesWidth = [];
+        let widthSoFar = 0,
+            currentLine = 0;
+
+        for (let i = 0; i < words.length; i++) {
+            const l = words[i].length;
+            if (widthSoFar + (l * letterWidth) > maxWidth) {
+                lines.push('');
+                lines[currentLine] = lines[currentLine].trim();
+                currentLine++;
+                linesWidth.push(widthSoFar);
+                widthSoFar = 0;
+            }
+            widthSoFar += l * letterWidth;
+            lines[currentLine] += words[i] + ' ';
+        }
+        // this last push is required to capture the last line width, improvement required.
+        linesWidth.push(widthSoFar);
+
+        const t = this.text(x, y, lines).attr(attributes);
+        let lineCounter = 0;
+        t.selectAll('tspan:nth-child(n+1)').forEach((element) => {
+            const width = linesWidth[lineCounter];
+            const elX = x + (maxWidth - width) / 2;
+            element.attr({
+                dy: '1.2em',
+                x: elX
+            });
+            lineCounter++;
+        });
+        return t;
+    };
 }
 
 
 /***/ }),
-/* 316 */,
-/* 317 */
+
+/***/ 543:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 318 */
+
+/***/ 544:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(90);
+module.exports = __webpack_require__(251);
+
+
+/***/ }),
+
+/***/ 69:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["b"] = coerceType;
+/* harmony export (immutable) */ __webpack_exports__["c"] = isBuiltIn;
+/* harmony export (immutable) */ __webpack_exports__["a"] = isSimple;
+/**
+ * Built-in moddle types
+ */
+var BUILTINS = {
+  String: true,
+  Boolean: true,
+  Integer: true,
+  Real: true,
+  Element: true
+};
+
+/**
+ * Converters for built in types from string representations
+ */
+var TYPE_CONVERTERS = {
+  String: function(s) { return s; },
+  Boolean: function(s) { return s === 'true'; },
+  Integer: function(s) { return parseInt(s, 10); },
+  Real: function(s) { return parseFloat(s, 10); }
+};
+
+/**
+ * Convert a type to its real representation
+ */
+function coerceType(type, value) {
+
+  var converter = TYPE_CONVERTERS[type];
+
+  if (converter) {
+    return converter(value);
+  } else {
+    return value;
+  }
+}
+
+/**
+ * Return whether the given type is built-in
+ */
+function isBuiltIn(type) {
+  return !!BUILTINS[type];
+}
+
+/**
+ * Return whether the given type is simple
+ */
+function isSimple(type) {
+  return !!TYPE_CONVERTERS[type];
+}
+
+/***/ }),
+
+/***/ 7:
+/***/ (function(module, exports) {
+
+// this module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  scopeId,
+  cssModules
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  // inject cssModules
+  if (cssModules) {
+    var computed = Object.create(options.computed || null)
+    Object.keys(cssModules).forEach(function (key) {
+      var module = cssModules[key]
+      computed[key] = function () { return module }
+    })
+    options.computed = computed
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
 
 
 /***/ })
-],[318]);
+
+},[544]);

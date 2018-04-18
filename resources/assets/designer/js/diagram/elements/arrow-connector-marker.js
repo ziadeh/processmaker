@@ -2,26 +2,26 @@
 /**
  * ArrowMarker
  */
-export class ArrowConnectorMarker  {
-    constructor(canvas) {
+export class ArrowConnectorMarker {
+    constructor (canvas) {
         this.canvas = canvas;
         this.shape = false;
         this.marker = false;
     }
 
-    config(options) {
+    config (options) {
         this.options = Object.assign({}, options);
         this.options.attr = {
-            fill: '#000',
-            stroke: '#000',
+            fill: "#000",
+            stroke: "#000",
             strokeWidth: 1
         };
-        this.options.line = [5, 0 , 17, 5, 5, 10];
+        this.options.line = [5, 0, 17, 5, 5, 10];
         this.options.marker = [0, 0, 100, 100, 18, 5];
         return this;
     }
 
-    createShape(){
+    createShape () {
         this.generateMarkerOptions();
         if (!this.shape) {
             this.shape = this.canvas
@@ -31,22 +31,22 @@ export class ArrowConnectorMarker  {
         return this.shape;
     }
 
-    generateMarkerOptions() {
+    generateMarkerOptions () {
         switch (this.options.type) {
-            case 'simple':
-                this.options.attr.fill = 'none';
+            case "simple":
+                this.options.attr.fill = "none";
                 break;
-            case 'filled':
-                this.options.attr.fill = '#000';
+            case "filled":
+                this.options.attr.fill = "#000";
                 break;
-            case 'filled-white':
-                this.options.attr.fill = '#FFF';
-                this.options.line = [5, 0 , 17, 5, 5, 10, 5, 0];
+            case "filled-white":
+                this.options.attr.fill = "#FFF";
+                this.options.line = [5, 0, 17, 5, 5, 10, 5, 0];
                 break;
         }
     }
 
-    getMarker(){
+    getMarker () {
         if (!this.marker) {
             this.marker = this
                 .createShape()
@@ -54,5 +54,4 @@ export class ArrowConnectorMarker  {
         }
         return this.marker;
     }
-
 }

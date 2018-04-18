@@ -1,11 +1,12 @@
-import startEvent from "./startEvent"
-import endEvent from "./endEvent"
-import intermediateCatchEvent from "./intermediateCatchEvent"
-import intermediateThrowEvent from "./intermediateThrowEvent"
-import boundaryEvent from "./boundaryEvent"
-import task from "./task"
+import startEvent from "./startEvent";
+import endEvent from "./endEvent";
+import intermediateCatchEvent from "./intermediateCatchEvent";
+import intermediateThrowEvent from "./intermediateThrowEvent";
+import boundaryEvent from "./boundaryEvent";
+import task from "./task";
 
-let Bases = Object.assign({},
+let Bases = Object.assign(
+    {},
     startEvent,
     endEvent,
     intermediateCatchEvent,
@@ -14,7 +15,7 @@ let Bases = Object.assign({},
     task
 );
 
-export default (config) => {
+export default config =>
     /**
      * config = {
      *      type:"TYPE",
@@ -22,8 +23,7 @@ export default (config) => {
      *      options:{}
      * }
      */
-    return {
+    ({
         path: Bases[config.type][config.marker].path,
         options: Object.assign({}, Bases[config.type][config.marker].options, config.options)
-    }
-}
+    });

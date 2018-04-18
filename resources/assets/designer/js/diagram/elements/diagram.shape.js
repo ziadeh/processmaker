@@ -2,7 +2,7 @@
  * StartEventShape
  */
 export class DiagramShape {
-    constructor(canvas, svgLoader) {
+    constructor (canvas, svgLoader) {
         this.canvas = canvas;
         this.shape = this.canvas.g();
         this.zoomToolbar = this.canvas.g();
@@ -10,35 +10,33 @@ export class DiagramShape {
         this.scale = 1;
     }
 
-    config(options) {
+    config (options) {
         this.options = options;
     }
 
-    add(shape) {
-        this.shape.add(
-            shape.getNativeShape()
-        );
+    add (shape) {
+        this.shape.add(shape.getNativeShape());
     }
 
-    render() {
+    render () {
         return this;
     }
 
-    getNativeShape() {
+    getNativeShape () {
         return this.shape;
     }
 
-    zoomReset() {
+    zoomReset () {
         this.scale = 1;
         this.shape.transform(`s${this.scale} 0 0`);
     }
 
-    zoomIn() {
+    zoomIn () {
         this.scale += 0.1;
         this.shape.transform(`s${this.scale} 0 0`);
     }
 
-    zoomOut() {
+    zoomOut () {
         this.scale -= 0.1;
         this.shape.transform(`s${this.scale} 0 0`);
     }

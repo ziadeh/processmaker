@@ -2,17 +2,17 @@
  * Activity class
  */
 export class Task {
-    constructor(options, shape) {
+    constructor (options, shape) {
         this.options = options;
         this.shape = shape;
         this.shape.config(options);
     }
 
-    render() {
+    render () {
         this.shape.render();
     }
 
-    getShape() {
+    getShape () {
         return this.shape;
     }
 }

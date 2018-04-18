@@ -2,19 +2,19 @@
  * Task Shape class
  */
 export class PoolShape {
-    constructor(canvas, svgLoader) {
+    constructor (canvas, svgLoader) {
         this.canvas = canvas;
         this.svgLoader = svgLoader;
         this.rounded = 5;
         this.attr = {
-            fill: '#FFF',
-            stroke: '#000',
+            fill: "#FFF",
+            stroke: "#000",
             strokeWidth: 2
         };
         this.shape = this.canvas.group();
     }
 
-    config(options) {
+    config (options) {
         this.options = options;
         this.id = options.act_uid;
         this.x = +options.x;
@@ -25,7 +25,7 @@ export class PoolShape {
         this.attr = options.attr || this.attr;
     }
 
-    render() {
+    render () {
         this.shape.add(this.canvas.rect(
             this.x,
             this.y,
@@ -38,35 +38,34 @@ export class PoolShape {
         this.shape.drag();
     }
 
-    addDecorators() {
+    addDecorators () {
         this.addLineDecorator();
         this.addTextDecorator();
     }
 
-    addLineDecorator() {
-        this.shape.add(
-            this.canvas.polyline(`${this.x + 42} ${this.y} ${this.x + 42} ${this.y + this.scaleY}`).attr({
-                fill: 'none',
-                stroke: '#000',
-                strokeWidth: 2
-            })
-        );
+    addLineDecorator () {
+        this.shape.add(this.canvas.polyline(`${this.x + 42} ${this.y} ${this.x + 42} ${this.y + this.scaleY}`).attr({
+            fill: "none",
+            stroke: "#000",
+            strokeWidth: 2
+        }));
     }
 
-    addTextDecorator() {
+    addTextDecorator () {
         const text = this.canvas.text(
             this.x,
             this.y,
             this.options.name,
-            {'font-size': '13px', 'font-family': 'Arial, Helvetica, sans-serif'})
+            {"font-size": "13px", "font-family": "Arial, Helvetica, sans-serif"}
+        );
         const textBox = text.getBBox();
         const tx = textBox.height + (42 - textBox.height) / 2;
         const ty = textBox.width + (this.scaleY - textBox.width) / 2;
-        text.transform('r270 ' + this.x + ', ' + this.y + ' t' + -ty + ', ' + tx);
+        text.transform(`r270 ${this.x}, ${this.y} t${-ty}, ${tx}`);
         this.shape.add(text);
     }
 
-    getNativeShape() {
+    getNativeShape () {
         return this.shape;
     }
 }

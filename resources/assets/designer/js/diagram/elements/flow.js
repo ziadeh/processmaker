@@ -2,22 +2,22 @@
  * Flow
  */
 export class Flow {
-    constructor(options, shape) {
+    constructor (options, shape) {
         this.shape = shape;
-        options.lineType = 'solid';
-        options.arrowType = 'filled';
+        options.lineType = "solid";
+        options.arrowType = "filled";
         this.shape.config(options);
     }
 
-    render() {
+    render () {
         this.shape.render();
     }
 
-    getShape() {
+    getShape () {
         return this.shape;
     }
 
-    redraw(posx1, posy1, posx2, posy2) {
+    redraw (posx1, posy1, posx2, posy2) {
         this.shape.redraw(posx1, posy1, posx2, posy2);
     }
 }

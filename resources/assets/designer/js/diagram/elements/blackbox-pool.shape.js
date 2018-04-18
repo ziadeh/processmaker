@@ -1,20 +1,20 @@
 /**
  * Task Shape class
  */
-export class BlackboxPoolShape  {
-    constructor(canvas, svgLoader) {
+export class BlackboxPoolShape {
+    constructor (canvas, svgLoader) {
         this.canvas = canvas;
         this.svgLoader = svgLoader;
         this.rounded = 5;
         this.attr = {
-            fill: '#FFF',
-            stroke: '#000',
+            fill: "#FFF",
+            stroke: "#000",
             strokeWidth: 2
         };
         this.shape = this.canvas.group();
     }
 
-    config(options) {
+    config (options) {
         this.options = options;
         this.id = options.act_uid;
         this.x = +options.bou_x;
@@ -25,7 +25,7 @@ export class BlackboxPoolShape  {
         this.attr = options.attr || this.attr;
     }
 
-    render(){
+    render () {
         this.shape.add(this.canvas.rect(
             this.x,
             this.y,
@@ -38,33 +38,30 @@ export class BlackboxPoolShape  {
         this.shape.drag();
     }
 
-    addDecorators(){
+    addDecorators () {
         this.addLineDecorator();
         this.addTextDecorator();
     }
 
-    addLineDecorator() {
-        this.shape.add(
-            this.canvas.polyline(`${this.x + 42} ${this.y} ${this.x + 42} ${this.y + this.scaleY}`).attr({
-                fill: 'none',
-                stroke: '#000',
-                strokeWidth: 2
-            })
-        );
+    addLineDecorator () {
+        this.shape.add(this.canvas.polyline(`${this.x + 42} ${this.y} ${this.x + 42} ${this.y + this.scaleY}`).attr({
+            fill: "none",
+            stroke: "#000",
+            strokeWidth: 2
+        }));
     }
 
-    addTextDecorator() {
+    addTextDecorator () {
         this.shape.add(this.canvas.multitext(
             this.x - 30,
             this.y + (this.scaleY / 2),
             this.options.par_name,
             this.scaleY,
-            {'font-size': '13px', 'font-family': 'Arial, Helvetica, sans-serif'}
-        ).transform('r270'));
+            {"font-size": "13px", "font-family": "Arial, Helvetica, sans-serif"}
+        ).transform("r270"));
     }
 
-    getNativeShape() {
+    getNativeShape () {
         return this.shape;
     }
-
 }

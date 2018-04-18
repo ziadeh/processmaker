@@ -1,26 +1,24 @@
-import { ArrowConnectorMarker } from '../arrow-connector-marker';
-import { RoundConnectorMarker } from '../round-connector-marker';
-import { LineShape } from '../line.shape';
-import { SVGLoader } from '../../svg-loader';
-import { ManhathanRouter } from './manhathan-route';
+import {ArrowConnectorMarker} from "../arrow-connector-marker";
+import {RoundConnectorMarker} from "../round-connector-marker";
+import {LineShape} from "../line.shape";
+import {ManhathanRouter} from "./manhathan-route";
 
 /**
  * Flow
  */
 export class ConnectorShape extends ManhathanRouter {
-
-    constructor(canvas, svgLoader) {
+    constructor (canvas, svgLoader) {
         super();
         this.canvas = canvas;
         this.svgLoader = svgLoader;
         this.shape = canvas.g();
-        this.method = 'manhathan';
+        this.method = "manhathan";
         this.line = new LineShape(this.canvas);
-        this.inputDirection= 'LEFT';
-        this.outputDirection  = 'RIGHT';
+        this.inputDirection = "LEFT";
+        this.outputDirection = "RIGHT";
     }
 
-    config(options) {
+    config (options) {
         this.options = options;
         if (this.options.label && this.options.label.bounds) {
             this.width = this.options.label.bounds.width || 0;
@@ -31,34 +29,30 @@ export class ConnectorShape extends ManhathanRouter {
         }
         this.method = options.method;
     }
-    redraw (posx1, posy1, posx2, posy2){
+    redraw (posx1, posy1, posx2, posy2) {
         this.options.linePoints = [];
-        this.router  = this.createRoute(posx1, posy1, posx2, posy2);
+        this.router = this.createRoute(posx1, posy1, posx2, posy2);
         // console.log(this.router);
         for (const data of this.router) {
             this.options.linePoints.push(data.x);
             this.options.linePoints.push(data.y);
         }
         this.line.config(this.options);
-        if (this.options.arrowType !== 'none') {
-            this.line.addMarkerEnd(
-                new ArrowConnectorMarker(this.canvas)
-                    .config({
-                        type: this.options.arrowType
-                    }).getMarker()
-            );
+        if (this.options.arrowType !== "none") {
+            this.line.addMarkerEnd(new ArrowConnectorMarker(this.canvas)
+                .config({
+                    type: this.options.arrowType
+                }).getMarker());
         }
 
-        if (this.options.originConnector === 'round') {
-            this.line.addMarkerStart(
-                new RoundConnectorMarker(this.canvas)
-                    .config(this.options)
-                    .getMarker()
-            );
+        if (this.options.originConnector === "round") {
+            this.line.addMarkerStart(new RoundConnectorMarker(this.canvas)
+                .config(this.options)
+                .getMarker());
         }
         if (this.options.label.bounds) {
             const textDecorator = this.getDecorator(
-                'TEXT',
+                "TEXT",
                 {
                     text: this.options.name,
                     x: this.options.label.bounds.x,
@@ -67,9 +61,7 @@ export class ConnectorShape extends ManhathanRouter {
             );
         }
         this.line.redraw();
-        this.shape.add(
-            this.line.getShape()
-        );
+        this.shape.add(this.line.getShape());
     }
 
     /**
@@ -79,34 +71,30 @@ export class ConnectorShape extends ManhathanRouter {
      * @param posx2
      * @param posy2
      */
-    renderManhathan (posx1, posy1, posx2, posy2){
+    renderManhathan (posx1, posy1, posx2, posy2) {
         this.options.linePoints = [];
-        this.router  = this.createRoute(posx1, posy1, posx2, posy2);
+        this.router = this.createRoute(posx1, posy1, posx2, posy2);
 
         for (const data of this.router) {
             this.options.linePoints.push(data.x);
             this.options.linePoints.push(data.y);
         }
         this.line.config(this.options);
-        if (this.options.arrowType !== 'none') {
-            this.line.addMarkerEnd(
-                new ArrowConnectorMarker(this.canvas)
-                    .config({
-                        type: this.options.arrowType
-                    }).getMarker()
-            );
+        if (this.options.arrowType !== "none") {
+            this.line.addMarkerEnd(new ArrowConnectorMarker(this.canvas)
+                .config({
+                    type: this.options.arrowType
+                }).getMarker());
         }
 
-        if (this.options.originConnector === 'round') {
-            this.line.addMarkerStart(
-                new RoundConnectorMarker(this.canvas)
-                    .config(this.options)
-                    .getMarker()
-            );
+        if (this.options.originConnector === "round") {
+            this.line.addMarkerStart(new RoundConnectorMarker(this.canvas)
+                .config(this.options)
+                .getMarker());
         }
 
         const textDecorator = this.getDecorator(
-            'TEXT',
+            "TEXT",
             {
                 text: this.options.name,
                 x: this.options.label.bounds.x,
@@ -120,36 +108,31 @@ export class ConnectorShape extends ManhathanRouter {
         );
     }
 
-
-    render (){
+    render () {
         this.options.linePoints = [];
-        this.router  = this.options.waypoint;
+        this.router = this.options.waypoint;
 
         for (const data of this.router) {
             this.options.linePoints.push(data.x);
             this.options.linePoints.push(data.y);
         }
         this.line.config(this.options);
-        if (this.options.arrowType !== 'none') {
-            this.line.addMarkerEnd(
-                new ArrowConnectorMarker(this.canvas)
-                    .config({
-                        type: this.options.arrowType
-                    }).getMarker()
-            );
+        if (this.options.arrowType !== "none") {
+            this.line.addMarkerEnd(new ArrowConnectorMarker(this.canvas)
+                .config({
+                    type: this.options.arrowType
+                }).getMarker());
         }
 
-        if (this.options.originConnector === 'round') {
-            this.line.addMarkerStart(
-                new RoundConnectorMarker(this.canvas)
-                    .config(this.options)
-                    .getMarker()
-            );
+        if (this.options.originConnector === "round") {
+            this.line.addMarkerStart(new RoundConnectorMarker(this.canvas)
+                .config(this.options)
+                .getMarker());
         }
 
         if (this.options.label && this.options.label.bounds) {
             const textDecorator = this.getDecorator(
-                'TEXT',
+                "TEXT",
                 {
                     text: this.options.name,
                     x: this.options.label.bounds.x,
@@ -161,20 +144,18 @@ export class ConnectorShape extends ManhathanRouter {
                 textDecorator
             );
         } else {
-            this.shape.add(
-                this.line.getShape(),
-            );
+            this.shape.add(this.line.getShape());
         }
     }
 
-    getDecorator(type, options) {
+    getDecorator (type, options) {
         let decorator;
         switch (type) {
-            case 'TEXT':
+            case "TEXT":
                 decorator = this.canvas.text(+options.x, +options.y, options.text)
-                    .attr({'font-size': '13px', 'font-family': 'Arial, Helvetica, sans-serif'});
-                const tx = (+this.options.flo_x1 - +this.options.flo_x2) / - 2 - (decorator.getBBox().width / 2);
-                const ty = (+this.options.flo_y1 - +this.options.flo_y2) / - 2 + (decorator.getBBox().height);
+                    .attr({"font-size": "13px", "font-family": "Arial, Helvetica, sans-serif"});
+                const tx = (+this.options.flo_x1 - +this.options.flo_x2) / -2 - (decorator.getBBox().width / 2);
+                const ty = (+this.options.flo_y1 - +this.options.flo_y2) / -2 + (decorator.getBBox().height);
                 decorator.transform(`t ${tx}, ${ty}`);
                 break;
             default:
@@ -184,10 +165,10 @@ export class ConnectorShape extends ManhathanRouter {
         return decorator;
     }
 
-    getNativeShape() {
+    getNativeShape () {
         return this.shape;
     }
-    setMethod(method) {
+    setMethod (method) {
         return this.method = method;
     }
 }

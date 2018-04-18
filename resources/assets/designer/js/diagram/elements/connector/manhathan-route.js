@@ -1,27 +1,27 @@
-import { Point } from './point';
+import {Point} from "./point";
 
 export class ManhathanRouter {
-    constructor() {
+    constructor () {
         this.mindist = 20;
     }
-    createRoute(posx1, posy1, posx2, posy2) {
-        //fake  example values
+    createRoute (posx1, posy1, posx2, posy2) {
+        // fake  example values
         /*********************/
         let points = [];
         let fromPt = new Point(posx1, posy1);
         let fromDir = 1;
 
-        let toPt =  new Point(posx2, posy2);
+        let toPt = new Point(posx2, posy2);
         let toDir = 3;
 
         let connection = null;
-        //fake  example values
+        // fake  example values
         /*********************/
         this.route(connection, toPt, toDir, fromPt, fromDir, points);
-        return points
+        return points;
     }
-    route(conn, fromPt, fromDir, toPt, toDir, points) {
-        var TOL,
+    route (conn, fromPt, fromDir, toPt, toDir, points) {
+        let TOL,
             TOLxTOL,
             UP,
             RIGHT,
@@ -148,5 +148,4 @@ export class ManhathanRouter {
         this.route(conn, nPoint, dir, toPt, toDir, points);
         points.push(fromPt);
     }
-
 }

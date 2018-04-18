@@ -2,16 +2,15 @@
  * EndEvent
  */
 export class EndEvent {
-
-    constructor(options, shape) {
+    constructor (options, shape) {
         this.type = options.type;
-        this.name = options.name || '';
+        this.name = options.name || "";
         options.attr = {
-            fill: '#EEC0C0',
-            stroke: '#C62D2D',
+            fill: "#EEC0C0",
+            stroke: "#C62D2D",
             strokeWidth: 3
         };
-        options.marker = 'EMPTY';
+        options.marker = "EMPTY";
         this.options = options;
         this.shape = shape;
         this.shape.config(options);
@@ -19,11 +18,11 @@ export class EndEvent {
         this.outputConnectors = new Map();
     }
 
-    render() {
+    render () {
         this.shape.render();
     }
 
-    getShape() {
+    getShape () {
         return this.shape;
     }
     registerInputConn (id, conn) {

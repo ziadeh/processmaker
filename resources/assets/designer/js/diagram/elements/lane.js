@@ -2,20 +2,19 @@
  * StartEvent
  */
 export class Lane {
-
-    constructor(options, shape) {
-        this.type = 'bpmn:Lane';
+    constructor (options, shape) {
+        this.type = "bpmn:Lane";
         this.name = options.name;
         this.options = options;
         this.shape = shape;
         this.shape.config(options);
     }
 
-    render() {
+    render () {
         this.shape.render();
     }
 
-    getShape() {
+    getShape () {
         return this.shape;
     }
 }

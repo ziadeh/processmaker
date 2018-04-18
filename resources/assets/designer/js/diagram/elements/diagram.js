@@ -2,37 +2,34 @@
  * EndEvent
  */
 export class Diagram {
-
-    constructor(options, shape) {
-        this.type = 'diagram';
+    constructor (options, shape) {
+        this.type = "diagram";
         this.options = options;
         this.shape = shape;
         this.shape.config(options);
     }
 
-    zoomIn() {
+    zoomIn () {
         this.shape.zoomIn();
     }
 
-    zoomOut() {
+    zoomOut () {
         this.shape.zoomOut();
     }
 
-    zoomReset() {
+    zoomReset () {
         this.shape.zoomReset();
     }
 
-    add(element) {
-        this.shape.add(
-            element.getShape()
-        );
+    add (element) {
+        this.shape.add(element.getShape());
     }
 
-    render() {
+    render () {
         this.shape.render();
     }
 
-    getShape() {
+    getShape () {
         return this.shape;
     }
 }

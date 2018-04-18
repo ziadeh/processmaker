@@ -1,21 +1,21 @@
-export class DiagramService {
+import Vue from "vue";
 
-    constructor() {
+export class DiagramService {
+    constructor () {
     }
 
-    getData() {
+    getData () {
         return this.diagram;
     }
 
-    cnn(method, uri, form, successCallback, errorCallback) {
-        let vue = require('vue');
-        vue.http[method](uri, form)
-            .then(response => {
+    cnn (method, uri, form, successCallback, errorCallback) {
+        Vue.http[method](uri, form)
+            .then((response) => {
                 if (successCallback) {
                     successCallback(response);
                 }
             })
-            .catch(response => {
+            .catch((response) => {
                 if (errorCallback) {
                     errorCallback(response);
                 }

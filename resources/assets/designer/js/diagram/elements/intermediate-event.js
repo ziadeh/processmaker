@@ -2,25 +2,25 @@
  * IntermediateEvent
  */
 export class IntermediateEvent {
-    constructor(options, shape) {
+    constructor (options, shape) {
         this.type = options.type;
         this.name = options.name;
         this.options = options;
         options.attr = {
-            fill: '#B4DCCB',
-            stroke: '#018A4F',
+            fill: "#B4DCCB",
+            stroke: "#018A4F",
             strokeWidth: 2
         };
-        options.marker = 'MESSAGETHROW';
+        options.marker = "MESSAGETHROW";
         this.shape = shape;
         this.shape.config(options);
     }
 
-    render() {
+    render () {
         this.shape.render();
     }
 
-    getShape() {
+    getShape () {
         return this.shape;
     }
 }

@@ -2,8 +2,7 @@
  * StartEvent
  */
 export class BlackboxPool {
-
-    constructor(options, shape) {
+    constructor (options, shape) {
         this.type = options.evn_type;
         this.name = options.evn_name;
         this.options = options;
@@ -11,11 +10,11 @@ export class BlackboxPool {
         this.shape.config(options);
     }
 
-    render() {
+    render () {
         this.shape.render();
     }
 
-    getShape() {
+    getShape () {
         return this.shape;
     }
 }
