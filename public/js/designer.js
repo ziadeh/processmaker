@@ -649,7 +649,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(194)
+var listToStyles = __webpack_require__(195)
 
 /*
 type StyleObject = {
@@ -852,7 +852,7 @@ function applyToTag (styleElement, obj) {
 
 /***/ }),
 
-/***/ 194:
+/***/ 195:
 /***/ (function(module, exports) {
 
 /**
@@ -890,9 +890,9 @@ module.exports = function listToStyles (parentId, list) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__arrow_connector_marker__ = __webpack_require__(288);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__round_connector_marker__ = __webpack_require__(314);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__line_shape__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__arrow_connector_marker__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__round_connector_marker__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__line_shape__ = __webpack_require__(313);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__manhathan_route__ = __webpack_require__(204);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnectorShape; });
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -1384,7 +1384,7 @@ function serializeAsProperty(element) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_moddle__ = __webpack_require__(488);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_moddle__ = __webpack_require__(491);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__lib_moddle__["a"]; });
 
 
@@ -1416,17 +1416,17 @@ module.exports = isObject;
 /***/ 251:
 /***/ (function(module, exports, __webpack_require__) {
 
-window.Snap = __webpack_require__(477);
-__webpack_require__(534);
-window.bpmnModdle = __webpack_require__(429);
+window.Snap = __webpack_require__(480);
+__webpack_require__(537);
+window.bpmnModdle = __webpack_require__(432);
 
 window.moddle = new window.bpmnModdle.default();
 window.Event = new Vue();
 
-Vue.component("designer", __webpack_require__(516));
-Vue.component("toolbar", __webpack_require__(517));
-Vue.component("uploader-file", __webpack_require__(518));
-Vue.component("actions", __webpack_require__(515));
+Vue.component("designer", __webpack_require__(519));
+Vue.component("toolbar", __webpack_require__(520));
+Vue.component("uploader-file", __webpack_require__(521));
+Vue.component("actions", __webpack_require__(518));
 
 new Vue({
     el: "#appDesigner",
@@ -1474,9 +1474,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__diagram_moddle_svg__ = __webpack_require__(321);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__diagram_svgLoader__ = __webpack_require__(322);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__diagram_snap_plugins_multitext_plugin__ = __webpack_require__(542);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__diagram_moddle_svg__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__diagram_svgLoader__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__diagram_snap_plugins_multitext_plugin__ = __webpack_require__(545);
 //
 //
 //
@@ -1589,7 +1589,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.diagramSvg;
         },
         exportPMIO: function exportPMIO() {
-            var request = __webpack_require__(500);
+            var request = __webpack_require__(503);
             var data = {};
             data.attributes = {
                 bpmn: this.xmlData
@@ -1933,6 +1933,97 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return create; });
+/* eslint-disable import/prefer-default-export */
+var create = {
+    create: {
+        task: function task(x) {
+            return x;
+        },
+        event: function event(x) {
+            return x;
+        }
+    }
+};
+
+/***/ }),
+
+/***/ 288:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__base_createActions__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__create__ = __webpack_require__(287);
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__base_createActions__["a" /* default */])(Object.assign({}, __WEBPACK_IMPORTED_MODULE_1__create__["a" /* create */])));
+
+/***/ }),
+
+/***/ 289:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
+/* harmony export (immutable) */ __webpack_exports__["a"] = createActions;
+
+
+function createActions(actionMap) {
+    var actionNeo = {};
+    debugger;
+    console.log("jonas");
+    __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.map(actionMap, function (value, key, object) {
+        mappingValues(value, key, object, actionNeo, key);
+    });
+    debugger;
+}
+
+//pwd vendra del tipo action/sub1/sub2
+function mappingValues(value, key, object, nObject, pwd) {
+    var root = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.split(pwd, '/');
+    var partialObject = {};
+    if (__WEBPACK_IMPORTED_MODULE_0_lodash___default.a.isFunction(value)) {
+        creationObject(pwd, value, nObject);
+        debugger;
+    } else {
+        __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.map(value, function (val, k, obj) {
+            mappingValues(val, k, obj, nObject, key + "/" + k);
+        });
+    }
+}
+
+function creationObject(pwd, value, nObject) {
+    var nObjectF = nObject;
+    var root = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.split(pwd, '/');
+    var first = void 0;
+    while (root.length > 0) {
+        first = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.head(root);
+        if (!nObjectF[first]) {
+            nObjectF[first] = {};
+        }
+        root = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.drop(root);
+        if (root.length == 0) {
+            nObjectF[first] = function (payload) {
+                return {
+                    type: pwd,
+                    payload: value(payload)
+                };
+            };
+        }
+        nObjectF = nObjectF[first];
+    }
+
+    return nObject;
+}
+
+/***/ }),
+
+/***/ 290:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiagramService; });
@@ -1972,7 +2063,7 @@ var DiagramService = function () {
 
 /***/ }),
 
-/***/ 288:
+/***/ 291:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2050,7 +2141,7 @@ var ArrowConnectorMarker = function () {
 
 /***/ }),
 
-/***/ 289:
+/***/ 292:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2089,7 +2180,7 @@ var Association = function () {
 
 /***/ }),
 
-/***/ 290:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2129,7 +2220,7 @@ var BlackboxPool = function () {
 
 /***/ }),
 
-/***/ 291:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2208,7 +2299,7 @@ var BlackboxPoolShape = function () {
 
 /***/ }),
 
-/***/ 292:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2247,7 +2338,7 @@ var DataAssociation = function () {
 
 /***/ }),
 
-/***/ 293:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2282,7 +2373,7 @@ var DataObject = function () {
 
 /***/ }),
 
-/***/ 294:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2459,7 +2550,7 @@ var DataObjectShape = function () {
 
 /***/ }),
 
-/***/ 295:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2494,7 +2585,7 @@ var DataStore = function () {
 
 /***/ }),
 
-/***/ 296:
+/***/ 299:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2603,7 +2694,7 @@ var DataStoreShape = function () {
 
 /***/ }),
 
-/***/ 297:
+/***/ 300:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2662,7 +2753,7 @@ var Diagram = function () {
 
 /***/ }),
 
-/***/ 298:
+/***/ 301:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2730,7 +2821,7 @@ var DiagramShape = function () {
 
 /***/ }),
 
-/***/ 299:
+/***/ 302:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2788,7 +2879,7 @@ var EndEvent = function () {
 
 /***/ }),
 
-/***/ 300:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3363,7 +3454,7 @@ var EventShape = function () {
 
 /***/ }),
 
-/***/ 301:
+/***/ 304:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3407,7 +3498,7 @@ var Flow = function () {
 
 /***/ }),
 
-/***/ 302:
+/***/ 305:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3452,7 +3543,7 @@ var Gateway = function () {
 
 /***/ }),
 
-/***/ 303:
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3619,7 +3710,7 @@ var GatewayShape = function () {
 
 /***/ }),
 
-/***/ 304:
+/***/ 307:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3659,7 +3750,7 @@ var Group = function () {
 
 /***/ }),
 
-/***/ 305:
+/***/ 308:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3790,25 +3881,25 @@ var GroupShape = function () {
 
 /***/ }),
 
-/***/ 306:
+/***/ 309:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__start_event__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__start_event__ = __webpack_require__(318);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__start_event__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__end_event__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__end_event__ = __webpack_require__(302);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_1__end_event__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__intermediate_event__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__intermediate_event__ = __webpack_require__(310);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_2__intermediate_event__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__event_shape__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__event_shape__ = __webpack_require__(303);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_3__event_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__flow__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__flow__ = __webpack_require__(304);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_4__flow__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__association__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__association__ = __webpack_require__(292);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_5__association__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__data_association__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__data_association__ = __webpack_require__(295);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return __WEBPACK_IMPORTED_MODULE_6__data_association__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__message__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__message__ = __webpack_require__(314);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_7__message__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__connector_point__ = __webpack_require__(205);
 /* unused harmony reexport Point */
@@ -3816,49 +3907,49 @@ var GroupShape = function () {
 /* unused harmony reexport ManhathanRouter */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__connector_connector_shape__ = __webpack_require__(203);
 /* unused harmony reexport ConnectorShape */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__gateway__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__gateway__ = __webpack_require__(305);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return __WEBPACK_IMPORTED_MODULE_11__gateway__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__gateway_shape__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__gateway_shape__ = __webpack_require__(306);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return __WEBPACK_IMPORTED_MODULE_12__gateway_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__sub_process__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__sub_process__ = __webpack_require__(319);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_13__sub_process__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__task__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__task__ = __webpack_require__(320);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_14__task__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__task_shape__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__task_shape__ = __webpack_require__(321);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_15__task_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__text_annotation__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__text_annotation__ = __webpack_require__(322);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return __WEBPACK_IMPORTED_MODULE_16__text_annotation__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__text_annotation_shape__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__text_annotation_shape__ = __webpack_require__(323);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return __WEBPACK_IMPORTED_MODULE_17__text_annotation_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__data_store__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__data_store__ = __webpack_require__(298);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return __WEBPACK_IMPORTED_MODULE_18__data_store__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__data_store_shape__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__data_store_shape__ = __webpack_require__(299);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return __WEBPACK_IMPORTED_MODULE_19__data_store_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__data_object__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__data_object__ = __webpack_require__(296);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return __WEBPACK_IMPORTED_MODULE_20__data_object__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__data_object_shape__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__data_object_shape__ = __webpack_require__(297);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return __WEBPACK_IMPORTED_MODULE_21__data_object_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pool__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pool__ = __webpack_require__(315);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return __WEBPACK_IMPORTED_MODULE_22__pool__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pool_shape__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pool_shape__ = __webpack_require__(316);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "x", function() { return __WEBPACK_IMPORTED_MODULE_23__pool_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__blackbox_pool__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__blackbox_pool__ = __webpack_require__(293);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "A", function() { return __WEBPACK_IMPORTED_MODULE_24__blackbox_pool__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__blackbox_pool_shape__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__blackbox_pool_shape__ = __webpack_require__(294);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return __WEBPACK_IMPORTED_MODULE_25__blackbox_pool_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__lane__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__lane__ = __webpack_require__(311);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "C", function() { return __WEBPACK_IMPORTED_MODULE_26__lane__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__lane_shape__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__lane_shape__ = __webpack_require__(312);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "D", function() { return __WEBPACK_IMPORTED_MODULE_27__lane_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__group__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__group__ = __webpack_require__(307);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "y", function() { return __WEBPACK_IMPORTED_MODULE_28__group__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__group_shape__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__group_shape__ = __webpack_require__(308);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "z", function() { return __WEBPACK_IMPORTED_MODULE_29__group_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__diagram__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__diagram__ = __webpack_require__(300);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_30__diagram__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__diagram_shape__ = __webpack_require__(298);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__diagram_shape__ = __webpack_require__(301);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_31__diagram_shape__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__diagram_service__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__diagram_service__ = __webpack_require__(290);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_32__diagram_service__["a"]; });
 
 
@@ -3896,7 +3987,7 @@ var GroupShape = function () {
 
 /***/ }),
 
-/***/ 307:
+/***/ 310:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3942,7 +4033,7 @@ var IntermediateEvent = function () {
 
 /***/ }),
 
-/***/ 308:
+/***/ 311:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3982,7 +4073,7 @@ var Lane = function () {
 
 /***/ }),
 
-/***/ 309:
+/***/ 312:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4068,7 +4159,7 @@ var LaneShape = function () {
 
 /***/ }),
 
-/***/ 310:
+/***/ 313:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4160,7 +4251,7 @@ var LineShape = function () {
 
 /***/ }),
 
-/***/ 311:
+/***/ 314:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4200,7 +4291,7 @@ var Message = function () {
 
 /***/ }),
 
-/***/ 312:
+/***/ 315:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4240,7 +4331,7 @@ var Pool = function () {
 
 /***/ }),
 
-/***/ 313:
+/***/ 316:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4324,7 +4415,7 @@ var PoolShape = function () {
 
 /***/ }),
 
-/***/ 314:
+/***/ 317:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4367,7 +4458,7 @@ var RoundConnectorMarker = function () {
 
 /***/ }),
 
-/***/ 315:
+/***/ 318:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4413,7 +4504,7 @@ var StartEvent = function () {
 
 /***/ }),
 
-/***/ 316:
+/***/ 319:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4458,7 +4549,49 @@ var SubProcess = function () {
 
 /***/ }),
 
-/***/ 317:
+/***/ 32:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = parseName;
+/**
+ * Parses a namespaced attribute name of the form (ns:)localName to an object,
+ * given a default prefix to assume in case no explicit namespace is given.
+ *
+ * @param {String} name
+ * @param {String} [defaultPrefix] the default prefix to take, if none is present.
+ *
+ * @return {Object} the parsed name
+ */
+function parseName(name, defaultPrefix) {
+  var parts = name.split(/:/),
+      localName, prefix;
+
+  // no prefix (i.e. only local name)
+  if (parts.length === 1) {
+    localName = name;
+    prefix = defaultPrefix;
+  } else
+  // prefix + local name
+  if (parts.length === 2) {
+    localName = parts[1];
+    prefix = parts[0];
+  } else {
+    throw new Error('expected <prefix:localName> or <localName>, got ' + name);
+  }
+
+  name = (prefix ? prefix + ':' : '') + localName;
+
+  return {
+    name: name,
+    prefix: prefix,
+    localName: localName
+  };
+}
+
+/***/ }),
+
+/***/ 320:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4496,7 +4629,7 @@ var Task = function () {
 
 /***/ }),
 
-/***/ 318:
+/***/ 321:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4796,7 +4929,7 @@ var TaskShape = function () {
 
 /***/ }),
 
-/***/ 319:
+/***/ 322:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4831,49 +4964,7 @@ var TextAnnotation = function () {
 
 /***/ }),
 
-/***/ 32:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = parseName;
-/**
- * Parses a namespaced attribute name of the form (ns:)localName to an object,
- * given a default prefix to assume in case no explicit namespace is given.
- *
- * @param {String} name
- * @param {String} [defaultPrefix] the default prefix to take, if none is present.
- *
- * @return {Object} the parsed name
- */
-function parseName(name, defaultPrefix) {
-  var parts = name.split(/:/),
-      localName, prefix;
-
-  // no prefix (i.e. only local name)
-  if (parts.length === 1) {
-    localName = name;
-    prefix = defaultPrefix;
-  } else
-  // prefix + local name
-  if (parts.length === 2) {
-    localName = parts[1];
-    prefix = parts[0];
-  } else {
-    throw new Error('expected <prefix:localName> or <localName>, got ' + name);
-  }
-
-  name = (prefix ? prefix + ':' : '') + localName;
-
-  return {
-    name: name,
-    prefix: prefix,
-    localName: localName
-  };
-}
-
-/***/ }),
-
-/***/ 320:
+/***/ 323:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5005,18 +5096,21 @@ var TextAnnotationShape = function () {
 
 /***/ }),
 
-/***/ 321:
+/***/ 324:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__elements__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__elements_connector_connector_shape__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_util__ = __webpack_require__(508);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_util__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__elements__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_index__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__elements_connector_connector_shape__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_util__ = __webpack_require__(511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_util__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiagramSvg; });
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
 
 
 
@@ -5084,7 +5178,10 @@ var DiagramSvg = function () {
                 moddleElement: options
             };
             defaultOptions = this.extend(defaultOptions, options);
-
+            debugger;
+            console.log("actions");
+            console.log(__WEBPACK_IMPORTED_MODULE_1__actions_index__["a" /* default */]);
+            //dispatch("jonas");
             // TODO Improve uid selector, too much duplicated or multiplicated lines... (ø_ø)!
             switch (type) {
                 case "bpmn:StartEvent":
@@ -5123,7 +5220,7 @@ var DiagramSvg = function () {
                 case "bpmn:ServiceTask":
                 case "bpmn:UserTask":
                 case "bpmn:Task":
-                    defaultOptions.type = !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_util__["isNullOrUndefined"])(options.act_task_type) && options.act_task_type !== "" ? options.act_task_type : type;
+                    defaultOptions.type = !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_util__["isNullOrUndefined"])(options.act_task_type) && options.act_task_type !== "" ? options.act_task_type : type;
                     defaultOptions.id = options.id;
                     shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["h" /* Task */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_0__elements__["i" /* TaskShape */](this.canvas, this.svgLoader));
                     shape.render();
@@ -5138,7 +5235,7 @@ var DiagramSvg = function () {
                     defaultOptions.type = type;
                     defaultOptions.uid = options.flo_uid;
                     defaultOptions.method = "user";
-                    shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["k" /* Flow */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_1__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
+                    shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["k" /* Flow */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_2__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
                     var sourceId = defaultOptions.moddleElement.bpmnElement.sourceRef.id;
                     var targetId = defaultOptions.moddleElement.bpmnElement.targetRef.id;
                     this.elementRegistry.get(sourceId).getShape().registerOutputConn(shape.getShape().options.id, shape);
@@ -5148,7 +5245,7 @@ var DiagramSvg = function () {
                 case "bpmn:MessageFlow":
                     defaultOptions.type = type;
                     defaultOptions.id = options.id;
-                    shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["l" /* Message */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_1__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
+                    shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["l" /* Message */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_2__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
                     sourceId = defaultOptions.moddleElement.bpmnElement.sourceRef.id;
                     targetId = defaultOptions.moddleElement.bpmnElement.targetRef.id;
                     this.elementRegistry.get(sourceId).getShape().registerOutputConn(shape.getShape().options.id, shape);
@@ -5158,13 +5255,13 @@ var DiagramSvg = function () {
                 case "ASSOCIATION":
                     defaultOptions.type = type;
                     defaultOptions.uid = options.flo_uid;
-                    shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["m" /* Association */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_1__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
+                    shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["m" /* Association */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_2__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
                     shape.render();
                     break;
                 case "DATAASSOCIATION":
                     defaultOptions.type = type;
                     defaultOptions.uid = options.flo_uid;
-                    shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["n" /* DataAssociation */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_1__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
+                    shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["n" /* DataAssociation */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_2__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
                     shape.render();
                     break; // bpmn:ExclusiveGateway
                 case "bpmn:ExclusiveGateway":
@@ -5322,7 +5419,7 @@ var DiagramSvg = function () {
         value: function draw(data) {
             var _this3 = this;
 
-            var jw = __webpack_require__(478);
+            var jw = __webpack_require__(481);
             var diagrams = new Promise(function (resolve, reject) {
                 jw.findArraysByKey("diagrams", data, function (err, results) {
                     resolve(results);
@@ -5519,7 +5616,7 @@ var DiagramSvg = function () {
                     y: 0
                 }
             };
-            var shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["k" /* Flow */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_1__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
+            var shape = new __WEBPACK_IMPORTED_MODULE_0__elements__["k" /* Flow */](defaultOptions, new __WEBPACK_IMPORTED_MODULE_2__elements_connector_connector_shape__["a" /* ConnectorShape */](this.canvas, this.svgLoader));
             var shapeBox = srcShape.getShape().shape.getBBox();
             var x1 = shapeBox.x + shapeBox.width;
             var y1 = shapeBox.y + shapeBox.height / 2;
@@ -5547,7 +5644,7 @@ var DiagramSvg = function () {
 
 /***/ }),
 
-/***/ 322:
+/***/ 325:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5589,24 +5686,24 @@ var SVGLoader = function () {
 
 /***/ }),
 
-/***/ 429:
+/***/ 432:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_simple__ = __webpack_require__(431);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_simple__ = __webpack_require__(434);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return __WEBPACK_IMPORTED_MODULE_0__lib_simple__["a"]; });
 
 
 /***/ }),
 
-/***/ 430:
+/***/ 433:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moddle__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moddle_xml__ = __webpack_require__(482);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moddle_xml__ = __webpack_require__(485);
 /* harmony export (immutable) */ __webpack_exports__["a"] = BpmnModdle;
 
 
@@ -5691,21 +5788,21 @@ BpmnModdle.prototype.toXML = function(element, options, done) {
 
 /***/ }),
 
-/***/ 431:
+/***/ 434:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bpmn_moddle__ = __webpack_require__(430);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__resources_bpmn_json_bpmn_json__ = __webpack_require__(433);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bpmn_moddle__ = __webpack_require__(433);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__resources_bpmn_json_bpmn_json__ = __webpack_require__(436);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__resources_bpmn_json_bpmn_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__resources_bpmn_json_bpmn_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resources_bpmn_json_bpmndi_json__ = __webpack_require__(434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resources_bpmn_json_bpmndi_json__ = __webpack_require__(437);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resources_bpmn_json_bpmndi_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__resources_bpmn_json_bpmndi_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__resources_bpmn_json_dc_json__ = __webpack_require__(435);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__resources_bpmn_json_dc_json__ = __webpack_require__(438);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__resources_bpmn_json_dc_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__resources_bpmn_json_dc_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__resources_bpmn_json_di_json__ = __webpack_require__(436);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__resources_bpmn_json_di_json__ = __webpack_require__(439);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__resources_bpmn_json_di_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__resources_bpmn_json_di_json__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__resources_bpmn_io_json_bioc_json__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__resources_bpmn_io_json_bioc_json__ = __webpack_require__(435);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__resources_bpmn_io_json_bioc_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__resources_bpmn_io_json_bioc_json__);
 
 
@@ -5734,42 +5831,42 @@ var packages = {
 
 /***/ }),
 
-/***/ 432:
+/***/ 435:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"bpmn.io colors for BPMN","uri":"http://bpmn.io/schema/bpmn/biocolor/1.0","prefix":"bioc","types":[{"name":"ColoredShape","extends":["bpmndi:BPMNShape"],"properties":[{"name":"stroke","isAttr":true,"type":"String"},{"name":"fill","isAttr":true,"type":"String"}]},{"name":"ColoredEdge","extends":["bpmndi:BPMNEdge"],"properties":[{"name":"stroke","isAttr":true,"type":"String"},{"name":"fill","isAttr":true,"type":"String"}]}],"enumerations":[],"associations":[]}
 
 /***/ }),
 
-/***/ 433:
+/***/ 436:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"BPMN20","uri":"http://www.omg.org/spec/BPMN/20100524/MODEL","associations":[],"types":[{"name":"Interface","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"operations","type":"Operation","isMany":true},{"name":"implementationRef","type":"String","isAttr":true}]},{"name":"Operation","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"inMessageRef","type":"Message","isReference":true},{"name":"outMessageRef","type":"Message","isReference":true},{"name":"errorRef","type":"Error","isMany":true,"isReference":true},{"name":"implementationRef","type":"String","isAttr":true}]},{"name":"EndPoint","superClass":["RootElement"]},{"name":"Auditing","superClass":["BaseElement"]},{"name":"GlobalTask","superClass":["CallableElement"],"properties":[{"name":"resources","type":"ResourceRole","isMany":true}]},{"name":"Monitoring","superClass":["BaseElement"]},{"name":"Performer","superClass":["ResourceRole"]},{"name":"Process","superClass":["FlowElementsContainer","CallableElement"],"properties":[{"name":"processType","type":"ProcessType","isAttr":true},{"name":"isClosed","isAttr":true,"type":"Boolean"},{"name":"auditing","type":"Auditing"},{"name":"monitoring","type":"Monitoring"},{"name":"properties","type":"Property","isMany":true},{"name":"laneSets","type":"LaneSet","isMany":true,"replaces":"FlowElementsContainer#laneSets"},{"name":"flowElements","type":"FlowElement","isMany":true,"replaces":"FlowElementsContainer#flowElements"},{"name":"artifacts","type":"Artifact","isMany":true},{"name":"resources","type":"ResourceRole","isMany":true},{"name":"correlationSubscriptions","type":"CorrelationSubscription","isMany":true},{"name":"supports","type":"Process","isMany":true,"isReference":true},{"name":"definitionalCollaborationRef","type":"Collaboration","isAttr":true,"isReference":true},{"name":"isExecutable","isAttr":true,"type":"Boolean"}]},{"name":"LaneSet","superClass":["BaseElement"],"properties":[{"name":"lanes","type":"Lane","isMany":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"Lane","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"partitionElementRef","type":"BaseElement","isAttr":true,"isReference":true},{"name":"partitionElement","type":"BaseElement"},{"name":"flowNodeRef","type":"FlowNode","isMany":true,"isReference":true},{"name":"childLaneSet","type":"LaneSet","xml":{"serialize":"xsi:type"}}]},{"name":"GlobalManualTask","superClass":["GlobalTask"]},{"name":"ManualTask","superClass":["Task"]},{"name":"UserTask","superClass":["Task"],"properties":[{"name":"renderings","type":"Rendering","isMany":true},{"name":"implementation","isAttr":true,"type":"String"}]},{"name":"Rendering","superClass":["BaseElement"]},{"name":"HumanPerformer","superClass":["Performer"]},{"name":"PotentialOwner","superClass":["HumanPerformer"]},{"name":"GlobalUserTask","superClass":["GlobalTask"],"properties":[{"name":"implementation","isAttr":true,"type":"String"},{"name":"renderings","type":"Rendering","isMany":true}]},{"name":"Gateway","isAbstract":true,"superClass":["FlowNode"],"properties":[{"name":"gatewayDirection","type":"GatewayDirection","default":"Unspecified","isAttr":true}]},{"name":"EventBasedGateway","superClass":["Gateway"],"properties":[{"name":"instantiate","default":false,"isAttr":true,"type":"Boolean"},{"name":"eventGatewayType","type":"EventBasedGatewayType","isAttr":true,"default":"Exclusive"}]},{"name":"ComplexGateway","superClass":["Gateway"],"properties":[{"name":"activationCondition","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"default","type":"SequenceFlow","isAttr":true,"isReference":true}]},{"name":"ExclusiveGateway","superClass":["Gateway"],"properties":[{"name":"default","type":"SequenceFlow","isAttr":true,"isReference":true}]},{"name":"InclusiveGateway","superClass":["Gateway"],"properties":[{"name":"default","type":"SequenceFlow","isAttr":true,"isReference":true}]},{"name":"ParallelGateway","superClass":["Gateway"]},{"name":"RootElement","isAbstract":true,"superClass":["BaseElement"]},{"name":"Relationship","superClass":["BaseElement"],"properties":[{"name":"type","isAttr":true,"type":"String"},{"name":"direction","type":"RelationshipDirection","isAttr":true},{"name":"source","isMany":true,"isReference":true,"type":"Element"},{"name":"target","isMany":true,"isReference":true,"type":"Element"}]},{"name":"BaseElement","isAbstract":true,"properties":[{"name":"id","isAttr":true,"type":"String","isId":true},{"name":"documentation","type":"Documentation","isMany":true},{"name":"extensionDefinitions","type":"ExtensionDefinition","isMany":true,"isReference":true},{"name":"extensionElements","type":"ExtensionElements"}]},{"name":"Extension","properties":[{"name":"mustUnderstand","default":false,"isAttr":true,"type":"Boolean"},{"name":"definition","type":"ExtensionDefinition","isAttr":true,"isReference":true}]},{"name":"ExtensionDefinition","properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"extensionAttributeDefinitions","type":"ExtensionAttributeDefinition","isMany":true}]},{"name":"ExtensionAttributeDefinition","properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"type","isAttr":true,"type":"String"},{"name":"isReference","default":false,"isAttr":true,"type":"Boolean"},{"name":"extensionDefinition","type":"ExtensionDefinition","isAttr":true,"isReference":true}]},{"name":"ExtensionElements","properties":[{"name":"valueRef","isAttr":true,"isReference":true,"type":"Element"},{"name":"values","type":"Element","isMany":true},{"name":"extensionAttributeDefinition","type":"ExtensionAttributeDefinition","isAttr":true,"isReference":true}]},{"name":"Documentation","superClass":["BaseElement"],"properties":[{"name":"text","type":"String","isBody":true},{"name":"textFormat","default":"text/plain","isAttr":true,"type":"String"}]},{"name":"Event","isAbstract":true,"superClass":["FlowNode","InteractionNode"],"properties":[{"name":"properties","type":"Property","isMany":true}]},{"name":"IntermediateCatchEvent","superClass":["CatchEvent"]},{"name":"IntermediateThrowEvent","superClass":["ThrowEvent"]},{"name":"EndEvent","superClass":["ThrowEvent"]},{"name":"StartEvent","superClass":["CatchEvent"],"properties":[{"name":"isInterrupting","default":true,"isAttr":true,"type":"Boolean"}]},{"name":"ThrowEvent","isAbstract":true,"superClass":["Event"],"properties":[{"name":"dataInputs","type":"DataInput","isMany":true},{"name":"dataInputAssociations","type":"DataInputAssociation","isMany":true},{"name":"inputSet","type":"InputSet"},{"name":"eventDefinitions","type":"EventDefinition","isMany":true},{"name":"eventDefinitionRef","type":"EventDefinition","isMany":true,"isReference":true}]},{"name":"CatchEvent","isAbstract":true,"superClass":["Event"],"properties":[{"name":"parallelMultiple","isAttr":true,"type":"Boolean","default":false},{"name":"dataOutputs","type":"DataOutput","isMany":true},{"name":"dataOutputAssociations","type":"DataOutputAssociation","isMany":true},{"name":"outputSet","type":"OutputSet"},{"name":"eventDefinitions","type":"EventDefinition","isMany":true},{"name":"eventDefinitionRef","type":"EventDefinition","isMany":true,"isReference":true}]},{"name":"BoundaryEvent","superClass":["CatchEvent"],"properties":[{"name":"cancelActivity","default":true,"isAttr":true,"type":"Boolean"},{"name":"attachedToRef","type":"Activity","isAttr":true,"isReference":true}]},{"name":"EventDefinition","isAbstract":true,"superClass":["RootElement"]},{"name":"CancelEventDefinition","superClass":["EventDefinition"]},{"name":"ErrorEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"errorRef","type":"Error","isAttr":true,"isReference":true}]},{"name":"TerminateEventDefinition","superClass":["EventDefinition"]},{"name":"EscalationEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"escalationRef","type":"Escalation","isAttr":true,"isReference":true}]},{"name":"Escalation","properties":[{"name":"structureRef","type":"ItemDefinition","isAttr":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"},{"name":"escalationCode","isAttr":true,"type":"String"}],"superClass":["RootElement"]},{"name":"CompensateEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"waitForCompletion","isAttr":true,"type":"Boolean","default":true},{"name":"activityRef","type":"Activity","isAttr":true,"isReference":true}]},{"name":"TimerEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"timeDate","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"timeCycle","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"timeDuration","type":"Expression","xml":{"serialize":"xsi:type"}}]},{"name":"LinkEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"target","type":"LinkEventDefinition","isAttr":true,"isReference":true},{"name":"source","type":"LinkEventDefinition","isMany":true,"isReference":true}]},{"name":"MessageEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"messageRef","type":"Message","isAttr":true,"isReference":true},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true}]},{"name":"ConditionalEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"condition","type":"Expression","xml":{"serialize":"xsi:type"}}]},{"name":"SignalEventDefinition","superClass":["EventDefinition"],"properties":[{"name":"signalRef","type":"Signal","isAttr":true,"isReference":true}]},{"name":"Signal","superClass":["RootElement"],"properties":[{"name":"structureRef","type":"ItemDefinition","isAttr":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"ImplicitThrowEvent","superClass":["ThrowEvent"]},{"name":"DataState","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"}]},{"name":"ItemAwareElement","superClass":["BaseElement"],"properties":[{"name":"itemSubjectRef","type":"ItemDefinition","isAttr":true,"isReference":true},{"name":"dataState","type":"DataState"}]},{"name":"DataAssociation","superClass":["BaseElement"],"properties":[{"name":"assignment","type":"Assignment","isMany":true},{"name":"sourceRef","type":"ItemAwareElement","isMany":true,"isReference":true},{"name":"targetRef","type":"ItemAwareElement","isReference":true},{"name":"transformation","type":"FormalExpression","xml":{"serialize":"property"}}]},{"name":"DataInput","superClass":["ItemAwareElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"isCollection","default":false,"isAttr":true,"type":"Boolean"},{"name":"inputSetRef","type":"InputSet","isVirtual":true,"isMany":true,"isReference":true},{"name":"inputSetWithOptional","type":"InputSet","isVirtual":true,"isMany":true,"isReference":true},{"name":"inputSetWithWhileExecuting","type":"InputSet","isVirtual":true,"isMany":true,"isReference":true}]},{"name":"DataOutput","superClass":["ItemAwareElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"isCollection","default":false,"isAttr":true,"type":"Boolean"},{"name":"outputSetRef","type":"OutputSet","isVirtual":true,"isMany":true,"isReference":true},{"name":"outputSetWithOptional","type":"OutputSet","isVirtual":true,"isMany":true,"isReference":true},{"name":"outputSetWithWhileExecuting","type":"OutputSet","isVirtual":true,"isMany":true,"isReference":true}]},{"name":"InputSet","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"dataInputRefs","type":"DataInput","isMany":true,"isReference":true},{"name":"optionalInputRefs","type":"DataInput","isMany":true,"isReference":true},{"name":"whileExecutingInputRefs","type":"DataInput","isMany":true,"isReference":true},{"name":"outputSetRefs","type":"OutputSet","isMany":true,"isReference":true}]},{"name":"OutputSet","superClass":["BaseElement"],"properties":[{"name":"dataOutputRefs","type":"DataOutput","isMany":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"},{"name":"inputSetRefs","type":"InputSet","isMany":true,"isReference":true},{"name":"optionalOutputRefs","type":"DataOutput","isMany":true,"isReference":true},{"name":"whileExecutingOutputRefs","type":"DataOutput","isMany":true,"isReference":true}]},{"name":"Property","superClass":["ItemAwareElement"],"properties":[{"name":"name","isAttr":true,"type":"String"}]},{"name":"DataInputAssociation","superClass":["DataAssociation"]},{"name":"DataOutputAssociation","superClass":["DataAssociation"]},{"name":"InputOutputSpecification","superClass":["BaseElement"],"properties":[{"name":"dataInputs","type":"DataInput","isMany":true},{"name":"dataOutputs","type":"DataOutput","isMany":true},{"name":"inputSets","type":"InputSet","isMany":true},{"name":"outputSets","type":"OutputSet","isMany":true}]},{"name":"DataObject","superClass":["FlowElement","ItemAwareElement"],"properties":[{"name":"isCollection","default":false,"isAttr":true,"type":"Boolean"}]},{"name":"InputOutputBinding","properties":[{"name":"inputDataRef","type":"InputSet","isAttr":true,"isReference":true},{"name":"outputDataRef","type":"OutputSet","isAttr":true,"isReference":true},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true}]},{"name":"Assignment","superClass":["BaseElement"],"properties":[{"name":"from","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"to","type":"Expression","xml":{"serialize":"xsi:type"}}]},{"name":"DataStore","superClass":["RootElement","ItemAwareElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"capacity","isAttr":true,"type":"Integer"},{"name":"isUnlimited","default":true,"isAttr":true,"type":"Boolean"}]},{"name":"DataStoreReference","superClass":["ItemAwareElement","FlowElement"],"properties":[{"name":"dataStoreRef","type":"DataStore","isAttr":true,"isReference":true}]},{"name":"DataObjectReference","superClass":["ItemAwareElement","FlowElement"],"properties":[{"name":"dataObjectRef","type":"DataObject","isAttr":true,"isReference":true}]},{"name":"ConversationLink","superClass":["BaseElement"],"properties":[{"name":"sourceRef","type":"InteractionNode","isAttr":true,"isReference":true},{"name":"targetRef","type":"InteractionNode","isAttr":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"ConversationAssociation","superClass":["BaseElement"],"properties":[{"name":"innerConversationNodeRef","type":"ConversationNode","isAttr":true,"isReference":true},{"name":"outerConversationNodeRef","type":"ConversationNode","isAttr":true,"isReference":true}]},{"name":"CallConversation","superClass":["ConversationNode"],"properties":[{"name":"calledCollaborationRef","type":"Collaboration","isAttr":true,"isReference":true},{"name":"participantAssociations","type":"ParticipantAssociation","isMany":true}]},{"name":"Conversation","superClass":["ConversationNode"]},{"name":"SubConversation","superClass":["ConversationNode"],"properties":[{"name":"conversationNodes","type":"ConversationNode","isMany":true}]},{"name":"ConversationNode","isAbstract":true,"superClass":["InteractionNode","BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"participantRefs","type":"Participant","isMany":true,"isReference":true},{"name":"messageFlowRefs","type":"MessageFlow","isMany":true,"isReference":true},{"name":"correlationKeys","type":"CorrelationKey","isMany":true}]},{"name":"GlobalConversation","superClass":["Collaboration"]},{"name":"PartnerEntity","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"participantRef","type":"Participant","isMany":true,"isReference":true}]},{"name":"PartnerRole","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"participantRef","type":"Participant","isMany":true,"isReference":true}]},{"name":"CorrelationProperty","superClass":["RootElement"],"properties":[{"name":"correlationPropertyRetrievalExpression","type":"CorrelationPropertyRetrievalExpression","isMany":true},{"name":"name","isAttr":true,"type":"String"},{"name":"type","type":"ItemDefinition","isAttr":true,"isReference":true}]},{"name":"Error","superClass":["RootElement"],"properties":[{"name":"structureRef","type":"ItemDefinition","isAttr":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"},{"name":"errorCode","isAttr":true,"type":"String"}]},{"name":"CorrelationKey","superClass":["BaseElement"],"properties":[{"name":"correlationPropertyRef","type":"CorrelationProperty","isMany":true,"isReference":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"Expression","superClass":["BaseElement"],"isAbstract":false,"properties":[{"name":"body","type":"String","isBody":true}]},{"name":"FormalExpression","superClass":["Expression"],"properties":[{"name":"language","isAttr":true,"type":"String"},{"name":"evaluatesToTypeRef","type":"ItemDefinition","isAttr":true,"isReference":true}]},{"name":"Message","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"itemRef","type":"ItemDefinition","isAttr":true,"isReference":true}]},{"name":"ItemDefinition","superClass":["RootElement"],"properties":[{"name":"itemKind","type":"ItemKind","isAttr":true},{"name":"structureRef","type":"String","isAttr":true},{"name":"isCollection","default":false,"isAttr":true,"type":"Boolean"},{"name":"import","type":"Import","isAttr":true,"isReference":true}]},{"name":"FlowElement","isAbstract":true,"superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"auditing","type":"Auditing"},{"name":"monitoring","type":"Monitoring"},{"name":"categoryValueRef","type":"CategoryValue","isMany":true,"isReference":true}]},{"name":"SequenceFlow","superClass":["FlowElement"],"properties":[{"name":"isImmediate","isAttr":true,"type":"Boolean"},{"name":"conditionExpression","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"sourceRef","type":"FlowNode","isAttr":true,"isReference":true},{"name":"targetRef","type":"FlowNode","isAttr":true,"isReference":true}]},{"name":"FlowElementsContainer","isAbstract":true,"superClass":["BaseElement"],"properties":[{"name":"laneSets","type":"LaneSet","isMany":true},{"name":"flowElements","type":"FlowElement","isMany":true}]},{"name":"CallableElement","isAbstract":true,"superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"ioSpecification","type":"InputOutputSpecification","xml":{"serialize":"property"}},{"name":"supportedInterfaceRef","type":"Interface","isMany":true,"isReference":true},{"name":"ioBinding","type":"InputOutputBinding","isMany":true,"xml":{"serialize":"property"}}]},{"name":"FlowNode","isAbstract":true,"superClass":["FlowElement"],"properties":[{"name":"incoming","type":"SequenceFlow","isMany":true,"isReference":true},{"name":"outgoing","type":"SequenceFlow","isMany":true,"isReference":true},{"name":"lanes","type":"Lane","isVirtual":true,"isMany":true,"isReference":true}]},{"name":"CorrelationPropertyRetrievalExpression","superClass":["BaseElement"],"properties":[{"name":"messagePath","type":"FormalExpression"},{"name":"messageRef","type":"Message","isAttr":true,"isReference":true}]},{"name":"CorrelationPropertyBinding","superClass":["BaseElement"],"properties":[{"name":"dataPath","type":"FormalExpression"},{"name":"correlationPropertyRef","type":"CorrelationProperty","isAttr":true,"isReference":true}]},{"name":"Resource","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"resourceParameters","type":"ResourceParameter","isMany":true}]},{"name":"ResourceParameter","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"isRequired","isAttr":true,"type":"Boolean"},{"name":"type","type":"ItemDefinition","isAttr":true,"isReference":true}]},{"name":"CorrelationSubscription","superClass":["BaseElement"],"properties":[{"name":"correlationKeyRef","type":"CorrelationKey","isAttr":true,"isReference":true},{"name":"correlationPropertyBinding","type":"CorrelationPropertyBinding","isMany":true}]},{"name":"MessageFlow","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"sourceRef","type":"InteractionNode","isAttr":true,"isReference":true},{"name":"targetRef","type":"InteractionNode","isAttr":true,"isReference":true},{"name":"messageRef","type":"Message","isAttr":true,"isReference":true}]},{"name":"MessageFlowAssociation","superClass":["BaseElement"],"properties":[{"name":"innerMessageFlowRef","type":"MessageFlow","isAttr":true,"isReference":true},{"name":"outerMessageFlowRef","type":"MessageFlow","isAttr":true,"isReference":true}]},{"name":"InteractionNode","isAbstract":true,"properties":[{"name":"incomingConversationLinks","type":"ConversationLink","isVirtual":true,"isMany":true,"isReference":true},{"name":"outgoingConversationLinks","type":"ConversationLink","isVirtual":true,"isMany":true,"isReference":true}]},{"name":"Participant","superClass":["InteractionNode","BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"interfaceRef","type":"Interface","isMany":true,"isReference":true},{"name":"participantMultiplicity","type":"ParticipantMultiplicity"},{"name":"endPointRefs","type":"EndPoint","isMany":true,"isReference":true},{"name":"processRef","type":"Process","isAttr":true,"isReference":true}]},{"name":"ParticipantAssociation","superClass":["BaseElement"],"properties":[{"name":"innerParticipantRef","type":"Participant","isAttr":true,"isReference":true},{"name":"outerParticipantRef","type":"Participant","isAttr":true,"isReference":true}]},{"name":"ParticipantMultiplicity","properties":[{"name":"minimum","default":0,"isAttr":true,"type":"Integer"},{"name":"maximum","default":1,"isAttr":true,"type":"Integer"}],"superClass":["BaseElement"]},{"name":"Collaboration","superClass":["RootElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"isClosed","isAttr":true,"type":"Boolean"},{"name":"participants","type":"Participant","isMany":true},{"name":"messageFlows","type":"MessageFlow","isMany":true},{"name":"artifacts","type":"Artifact","isMany":true},{"name":"conversations","type":"ConversationNode","isMany":true},{"name":"conversationAssociations","type":"ConversationAssociation"},{"name":"participantAssociations","type":"ParticipantAssociation","isMany":true},{"name":"messageFlowAssociations","type":"MessageFlowAssociation","isMany":true},{"name":"correlationKeys","type":"CorrelationKey","isMany":true},{"name":"choreographyRef","type":"Choreography","isMany":true,"isReference":true},{"name":"conversationLinks","type":"ConversationLink","isMany":true}]},{"name":"ChoreographyActivity","isAbstract":true,"superClass":["FlowNode"],"properties":[{"name":"participantRefs","type":"Participant","isMany":true,"isReference":true},{"name":"initiatingParticipantRef","type":"Participant","isAttr":true,"isReference":true},{"name":"correlationKeys","type":"CorrelationKey","isMany":true},{"name":"loopType","type":"ChoreographyLoopType","default":"None","isAttr":true}]},{"name":"CallChoreography","superClass":["ChoreographyActivity"],"properties":[{"name":"calledChoreographyRef","type":"Choreography","isAttr":true,"isReference":true},{"name":"participantAssociations","type":"ParticipantAssociation","isMany":true}]},{"name":"SubChoreography","superClass":["ChoreographyActivity","FlowElementsContainer"],"properties":[{"name":"artifacts","type":"Artifact","isMany":true}]},{"name":"ChoreographyTask","superClass":["ChoreographyActivity"],"properties":[{"name":"messageFlowRef","type":"MessageFlow","isMany":true,"isReference":true}]},{"name":"Choreography","superClass":["FlowElementsContainer","Collaboration"]},{"name":"GlobalChoreographyTask","superClass":["Choreography"],"properties":[{"name":"initiatingParticipantRef","type":"Participant","isAttr":true,"isReference":true}]},{"name":"TextAnnotation","superClass":["Artifact"],"properties":[{"name":"text","type":"String"},{"name":"textFormat","default":"text/plain","isAttr":true,"type":"String"}]},{"name":"Group","superClass":["Artifact"],"properties":[{"name":"categoryValueRef","type":"CategoryValue","isAttr":true,"isReference":true}]},{"name":"Association","superClass":["Artifact"],"properties":[{"name":"associationDirection","type":"AssociationDirection","isAttr":true},{"name":"sourceRef","type":"BaseElement","isAttr":true,"isReference":true},{"name":"targetRef","type":"BaseElement","isAttr":true,"isReference":true}]},{"name":"Category","superClass":["RootElement"],"properties":[{"name":"categoryValue","type":"CategoryValue","isMany":true},{"name":"name","isAttr":true,"type":"String"}]},{"name":"Artifact","isAbstract":true,"superClass":["BaseElement"]},{"name":"CategoryValue","superClass":["BaseElement"],"properties":[{"name":"categorizedFlowElements","type":"FlowElement","isVirtual":true,"isMany":true,"isReference":true},{"name":"value","isAttr":true,"type":"String"}]},{"name":"Activity","isAbstract":true,"superClass":["FlowNode"],"properties":[{"name":"isForCompensation","default":false,"isAttr":true,"type":"Boolean"},{"name":"default","type":"SequenceFlow","isAttr":true,"isReference":true},{"name":"ioSpecification","type":"InputOutputSpecification","xml":{"serialize":"property"}},{"name":"boundaryEventRefs","type":"BoundaryEvent","isMany":true,"isReference":true},{"name":"properties","type":"Property","isMany":true},{"name":"dataInputAssociations","type":"DataInputAssociation","isMany":true},{"name":"dataOutputAssociations","type":"DataOutputAssociation","isMany":true},{"name":"startQuantity","default":1,"isAttr":true,"type":"Integer"},{"name":"resources","type":"ResourceRole","isMany":true},{"name":"completionQuantity","default":1,"isAttr":true,"type":"Integer"},{"name":"loopCharacteristics","type":"LoopCharacteristics"}]},{"name":"ServiceTask","superClass":["Task"],"properties":[{"name":"implementation","isAttr":true,"type":"String"},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true}]},{"name":"SubProcess","superClass":["Activity","FlowElementsContainer","InteractionNode"],"properties":[{"name":"triggeredByEvent","default":false,"isAttr":true,"type":"Boolean"},{"name":"artifacts","type":"Artifact","isMany":true}]},{"name":"LoopCharacteristics","isAbstract":true,"superClass":["BaseElement"]},{"name":"MultiInstanceLoopCharacteristics","superClass":["LoopCharacteristics"],"properties":[{"name":"isSequential","default":false,"isAttr":true,"type":"Boolean"},{"name":"behavior","type":"MultiInstanceBehavior","default":"All","isAttr":true},{"name":"loopCardinality","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"loopDataInputRef","type":"ItemAwareElement","isReference":true},{"name":"loopDataOutputRef","type":"ItemAwareElement","isReference":true},{"name":"inputDataItem","type":"DataInput","xml":{"serialize":"property"}},{"name":"outputDataItem","type":"DataOutput","xml":{"serialize":"property"}},{"name":"complexBehaviorDefinition","type":"ComplexBehaviorDefinition","isMany":true},{"name":"completionCondition","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"oneBehaviorEventRef","type":"EventDefinition","isAttr":true,"isReference":true},{"name":"noneBehaviorEventRef","type":"EventDefinition","isAttr":true,"isReference":true}]},{"name":"StandardLoopCharacteristics","superClass":["LoopCharacteristics"],"properties":[{"name":"testBefore","default":false,"isAttr":true,"type":"Boolean"},{"name":"loopCondition","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"loopMaximum","type":"Expression","xml":{"serialize":"xsi:type"}}]},{"name":"CallActivity","superClass":["Activity"],"properties":[{"name":"calledElement","type":"String","isAttr":true}]},{"name":"Task","superClass":["Activity","InteractionNode"]},{"name":"SendTask","superClass":["Task"],"properties":[{"name":"implementation","isAttr":true,"type":"String"},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true},{"name":"messageRef","type":"Message","isAttr":true,"isReference":true}]},{"name":"ReceiveTask","superClass":["Task"],"properties":[{"name":"implementation","isAttr":true,"type":"String"},{"name":"instantiate","default":false,"isAttr":true,"type":"Boolean"},{"name":"operationRef","type":"Operation","isAttr":true,"isReference":true},{"name":"messageRef","type":"Message","isAttr":true,"isReference":true}]},{"name":"ScriptTask","superClass":["Task"],"properties":[{"name":"scriptFormat","isAttr":true,"type":"String"},{"name":"script","type":"String"}]},{"name":"BusinessRuleTask","superClass":["Task"],"properties":[{"name":"implementation","isAttr":true,"type":"String"}]},{"name":"AdHocSubProcess","superClass":["SubProcess"],"properties":[{"name":"completionCondition","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"ordering","type":"AdHocOrdering","isAttr":true},{"name":"cancelRemainingInstances","default":true,"isAttr":true,"type":"Boolean"}]},{"name":"Transaction","superClass":["SubProcess"],"properties":[{"name":"protocol","isAttr":true,"type":"String"},{"name":"method","isAttr":true,"type":"String"}]},{"name":"GlobalScriptTask","superClass":["GlobalTask"],"properties":[{"name":"scriptLanguage","isAttr":true,"type":"String"},{"name":"script","isAttr":true,"type":"String"}]},{"name":"GlobalBusinessRuleTask","superClass":["GlobalTask"],"properties":[{"name":"implementation","isAttr":true,"type":"String"}]},{"name":"ComplexBehaviorDefinition","superClass":["BaseElement"],"properties":[{"name":"condition","type":"FormalExpression"},{"name":"event","type":"ImplicitThrowEvent"}]},{"name":"ResourceRole","superClass":["BaseElement"],"properties":[{"name":"resourceRef","type":"Resource","isReference":true},{"name":"resourceParameterBindings","type":"ResourceParameterBinding","isMany":true},{"name":"resourceAssignmentExpression","type":"ResourceAssignmentExpression"},{"name":"name","isAttr":true,"type":"String"}]},{"name":"ResourceParameterBinding","properties":[{"name":"expression","type":"Expression","xml":{"serialize":"xsi:type"}},{"name":"parameterRef","type":"ResourceParameter","isAttr":true,"isReference":true}],"superClass":["BaseElement"]},{"name":"ResourceAssignmentExpression","properties":[{"name":"expression","type":"Expression","xml":{"serialize":"xsi:type"}}],"superClass":["BaseElement"]},{"name":"Import","properties":[{"name":"importType","isAttr":true,"type":"String"},{"name":"location","isAttr":true,"type":"String"},{"name":"namespace","isAttr":true,"type":"String"}]},{"name":"Definitions","superClass":["BaseElement"],"properties":[{"name":"name","isAttr":true,"type":"String"},{"name":"targetNamespace","isAttr":true,"type":"String"},{"name":"expressionLanguage","default":"http://www.w3.org/1999/XPath","isAttr":true,"type":"String"},{"name":"typeLanguage","default":"http://www.w3.org/2001/XMLSchema","isAttr":true,"type":"String"},{"name":"imports","type":"Import","isMany":true},{"name":"extensions","type":"Extension","isMany":true},{"name":"rootElements","type":"RootElement","isMany":true},{"name":"diagrams","isMany":true,"type":"bpmndi:BPMNDiagram"},{"name":"exporter","isAttr":true,"type":"String"},{"name":"relationships","type":"Relationship","isMany":true},{"name":"exporterVersion","isAttr":true,"type":"String"}]}],"enumerations":[{"name":"ProcessType","literalValues":[{"name":"None"},{"name":"Public"},{"name":"Private"}]},{"name":"GatewayDirection","literalValues":[{"name":"Unspecified"},{"name":"Converging"},{"name":"Diverging"},{"name":"Mixed"}]},{"name":"EventBasedGatewayType","literalValues":[{"name":"Parallel"},{"name":"Exclusive"}]},{"name":"RelationshipDirection","literalValues":[{"name":"None"},{"name":"Forward"},{"name":"Backward"},{"name":"Both"}]},{"name":"ItemKind","literalValues":[{"name":"Physical"},{"name":"Information"}]},{"name":"ChoreographyLoopType","literalValues":[{"name":"None"},{"name":"Standard"},{"name":"MultiInstanceSequential"},{"name":"MultiInstanceParallel"}]},{"name":"AssociationDirection","literalValues":[{"name":"None"},{"name":"One"},{"name":"Both"}]},{"name":"MultiInstanceBehavior","literalValues":[{"name":"None"},{"name":"One"},{"name":"All"},{"name":"Complex"}]},{"name":"AdHocOrdering","literalValues":[{"name":"Parallel"},{"name":"Sequential"}]}],"prefix":"bpmn","xml":{"tagAlias":"lowerCase","typePrefix":"t"}}
 
 /***/ }),
 
-/***/ 434:
+/***/ 437:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"BPMNDI","uri":"http://www.omg.org/spec/BPMN/20100524/DI","types":[{"name":"BPMNDiagram","properties":[{"name":"plane","type":"BPMNPlane","redefines":"di:Diagram#rootElement"},{"name":"labelStyle","type":"BPMNLabelStyle","isMany":true}],"superClass":["di:Diagram"]},{"name":"BPMNPlane","properties":[{"name":"bpmnElement","isAttr":true,"isReference":true,"type":"bpmn:BaseElement","redefines":"di:DiagramElement#modelElement"}],"superClass":["di:Plane"]},{"name":"BPMNShape","properties":[{"name":"bpmnElement","isAttr":true,"isReference":true,"type":"bpmn:BaseElement","redefines":"di:DiagramElement#modelElement"},{"name":"isHorizontal","isAttr":true,"type":"Boolean"},{"name":"isExpanded","isAttr":true,"type":"Boolean"},{"name":"isMarkerVisible","isAttr":true,"type":"Boolean"},{"name":"label","type":"BPMNLabel"},{"name":"isMessageVisible","isAttr":true,"type":"Boolean"},{"name":"participantBandKind","type":"ParticipantBandKind","isAttr":true},{"name":"choreographyActivityShape","type":"BPMNShape","isAttr":true,"isReference":true}],"superClass":["di:LabeledShape"]},{"name":"BPMNEdge","properties":[{"name":"label","type":"BPMNLabel"},{"name":"bpmnElement","isAttr":true,"isReference":true,"type":"bpmn:BaseElement","redefines":"di:DiagramElement#modelElement"},{"name":"sourceElement","isAttr":true,"isReference":true,"type":"di:DiagramElement","redefines":"di:Edge#source"},{"name":"targetElement","isAttr":true,"isReference":true,"type":"di:DiagramElement","redefines":"di:Edge#target"},{"name":"messageVisibleKind","type":"MessageVisibleKind","isAttr":true,"default":"initiating"}],"superClass":["di:LabeledEdge"]},{"name":"BPMNLabel","properties":[{"name":"labelStyle","type":"BPMNLabelStyle","isAttr":true,"isReference":true,"redefines":"di:DiagramElement#style"}],"superClass":["di:Label"]},{"name":"BPMNLabelStyle","properties":[{"name":"font","type":"dc:Font"}],"superClass":["di:Style"]}],"enumerations":[{"name":"ParticipantBandKind","literalValues":[{"name":"top_initiating"},{"name":"middle_initiating"},{"name":"bottom_initiating"},{"name":"top_non_initiating"},{"name":"middle_non_initiating"},{"name":"bottom_non_initiating"}]},{"name":"MessageVisibleKind","literalValues":[{"name":"initiating"},{"name":"non_initiating"}]}],"associations":[],"prefix":"bpmndi"}
 
 /***/ }),
 
-/***/ 435:
+/***/ 438:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"DC","uri":"http://www.omg.org/spec/DD/20100524/DC","types":[{"name":"Boolean"},{"name":"Integer"},{"name":"Real"},{"name":"String"},{"name":"Font","properties":[{"name":"name","type":"String","isAttr":true},{"name":"size","type":"Real","isAttr":true},{"name":"isBold","type":"Boolean","isAttr":true},{"name":"isItalic","type":"Boolean","isAttr":true},{"name":"isUnderline","type":"Boolean","isAttr":true},{"name":"isStrikeThrough","type":"Boolean","isAttr":true}]},{"name":"Point","properties":[{"name":"x","type":"Real","default":"0","isAttr":true},{"name":"y","type":"Real","default":"0","isAttr":true}]},{"name":"Bounds","properties":[{"name":"x","type":"Real","default":"0","isAttr":true},{"name":"y","type":"Real","default":"0","isAttr":true},{"name":"width","type":"Real","isAttr":true},{"name":"height","type":"Real","isAttr":true}]}],"prefix":"dc","associations":[]}
 
 /***/ }),
 
-/***/ 436:
+/***/ 439:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"DI","uri":"http://www.omg.org/spec/DD/20100524/DI","types":[{"name":"DiagramElement","isAbstract":true,"properties":[{"name":"id","type":"String","isAttr":true,"isId":true},{"name":"extension","type":"Extension"},{"name":"owningDiagram","type":"Diagram","isReadOnly":true,"isVirtual":true,"isReference":true},{"name":"owningElement","type":"DiagramElement","isReadOnly":true,"isVirtual":true,"isReference":true},{"name":"modelElement","isReadOnly":true,"isVirtual":true,"isReference":true,"type":"Element"},{"name":"style","type":"Style","isReadOnly":true,"isVirtual":true,"isReference":true},{"name":"ownedElement","type":"DiagramElement","isReadOnly":true,"isVirtual":true,"isMany":true}]},{"name":"Node","isAbstract":true,"superClass":["DiagramElement"]},{"name":"Edge","isAbstract":true,"superClass":["DiagramElement"],"properties":[{"name":"source","type":"DiagramElement","isReadOnly":true,"isVirtual":true,"isReference":true},{"name":"target","type":"DiagramElement","isReadOnly":true,"isVirtual":true,"isReference":true},{"name":"waypoint","isUnique":false,"isMany":true,"type":"dc:Point","xml":{"serialize":"xsi:type"}}]},{"name":"Diagram","isAbstract":true,"properties":[{"name":"id","type":"String","isAttr":true,"isId":true},{"name":"rootElement","type":"DiagramElement","isReadOnly":true,"isVirtual":true},{"name":"name","isAttr":true,"type":"String"},{"name":"documentation","isAttr":true,"type":"String"},{"name":"resolution","isAttr":true,"type":"Real"},{"name":"ownedStyle","type":"Style","isReadOnly":true,"isVirtual":true,"isMany":true}]},{"name":"Shape","isAbstract":true,"superClass":["Node"],"properties":[{"name":"bounds","type":"dc:Bounds"}]},{"name":"Plane","isAbstract":true,"superClass":["Node"],"properties":[{"name":"planeElement","type":"DiagramElement","subsettedProperty":"DiagramElement-ownedElement","isMany":true}]},{"name":"LabeledEdge","isAbstract":true,"superClass":["Edge"],"properties":[{"name":"ownedLabel","type":"Label","isReadOnly":true,"subsettedProperty":"DiagramElement-ownedElement","isVirtual":true,"isMany":true}]},{"name":"LabeledShape","isAbstract":true,"superClass":["Shape"],"properties":[{"name":"ownedLabel","type":"Label","isReadOnly":true,"subsettedProperty":"DiagramElement-ownedElement","isVirtual":true,"isMany":true}]},{"name":"Label","isAbstract":true,"superClass":["Node"],"properties":[{"name":"bounds","type":"dc:Bounds"}]},{"name":"Style","isAbstract":true,"properties":[{"name":"id","type":"String","isAttr":true,"isId":true}]},{"name":"Extension","properties":[{"name":"values","type":"Element","isMany":true}]}],"associations":[],"prefix":"di","xml":{"tagAlias":"lowerCase"}}
 
 /***/ }),
 
-/***/ 437:
+/***/ 440:
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -5939,7 +6036,7 @@ Emitter.prototype.hasListeners = function(event){
 
 /***/ }),
 
-/***/ 470:
+/***/ 473:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(10)();
@@ -5947,7 +6044,7 @@ exports.push([module.i, "\n.svg_canvas {\n    background: #FFFFFF;\n}\n", ""]);
 
 /***/ }),
 
-/***/ 472:
+/***/ 475:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(10)();
@@ -5955,7 +6052,7 @@ exports.push([module.i, "\n.dropzone-area { width: 80%; height: 200px; position:
 
 /***/ }),
 
-/***/ 476:
+/***/ 479:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(10)();
@@ -5963,7 +6060,7 @@ exports.push([module.i, "\n.actions-toolbar {\n    position: absolute;\n    top:
 
 /***/ }),
 
-/***/ 477:
+/***/ 480:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_LOCAL_MODULE_0__;var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*** IMPORTS FROM imports-loader ***/
@@ -14605,7 +14702,7 @@ return Snap;
 
 /***/ }),
 
-/***/ 478:
+/***/ 481:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14902,13 +14999,13 @@ module.exports.setNumbersByKey = function (tag, json, newval, done) {
 
 /***/ }),
 
-/***/ 482:
+/***/ 485:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_read__ = __webpack_require__(483);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_read__ = __webpack_require__(486);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__lib_read__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_write__ = __webpack_require__(484);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__lib_write__ = __webpack_require__(487);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__lib_write__["a"]; });
 
 
@@ -14916,17 +15013,17 @@ module.exports.setNumbersByKey = function (tag, json, newval, done) {
 
 /***/ }),
 
-/***/ 483:
+/***/ 486:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tiny_stack__ = __webpack_require__(505);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tiny_stack__ = __webpack_require__(508);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tiny_stack___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_tiny_stack__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_saxen__ = __webpack_require__(493);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_saxen__ = __webpack_require__(496);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moddle__ = __webpack_require__(248);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_moddle_lib_ns__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moddle_lib_types__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moddle_lib_types__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__common__ = __webpack_require__(247);
 /* unused harmony export Context */
 /* unused harmony export ElementHandler */
@@ -15787,12 +15884,12 @@ Reader.prototype.handler = function(name) {
 
 /***/ }),
 
-/***/ 484:
+/***/ 487:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moddle_lib_types__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moddle_lib_types__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moddle_lib_ns__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common__ = __webpack_require__(247);
 /* unused harmony export Namespaces */
@@ -16624,7 +16721,7 @@ function Writer(options) {
 
 /***/ }),
 
-/***/ 485:
+/***/ 488:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16644,7 +16741,7 @@ Base.prototype.set = function(name, value) {
 
 /***/ }),
 
-/***/ 486:
+/***/ 489:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16880,12 +16977,12 @@ DescriptorBuilder.prototype.addTrait = function(t, inherited) {
 
 /***/ }),
 
-/***/ 487:
+/***/ 490:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base__ = __webpack_require__(485);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__base__ = __webpack_require__(488);
 /* harmony export (immutable) */ __webpack_exports__["a"] = Factory;
 
 
@@ -16948,14 +17045,14 @@ Factory.prototype.createType = function(descriptor) {
 
 /***/ }),
 
-/***/ 488:
+/***/ 491:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__factory__ = __webpack_require__(487);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__registry__ = __webpack_require__(490);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__properties__ = __webpack_require__(489);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__factory__ = __webpack_require__(490);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__registry__ = __webpack_require__(493);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__properties__ = __webpack_require__(492);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ns__ = __webpack_require__(32);
 /* harmony export (immutable) */ __webpack_exports__["a"] = Moddle;
 
@@ -17177,7 +17274,7 @@ Moddle.prototype.getTypeDescriptor = function(type) {
 
 /***/ }),
 
-/***/ 489:
+/***/ 492:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17298,13 +17395,13 @@ function defineProperty(target, property, value) {
 
 /***/ }),
 
-/***/ 490:
+/***/ 493:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_min_dash__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__types__ = __webpack_require__(69);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__descriptor_builder__ = __webpack_require__(486);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__types__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__descriptor_builder__ = __webpack_require__(489);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ns__ = __webpack_require__(32);
 /* harmony export (immutable) */ __webpack_exports__["a"] = Registry;
 
@@ -17515,7 +17612,7 @@ function ensureAvailable(packageMap, pkg, identifierKey) {
 
 /***/ }),
 
-/***/ 493:
+/***/ 496:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18540,7 +18637,7 @@ function Parser(options) {
 
 /***/ }),
 
-/***/ 499:
+/***/ 502:
 /***/ (function(module, exports) {
 
 function Agent() {
@@ -18567,7 +18664,7 @@ module.exports = Agent;
 
 /***/ }),
 
-/***/ 500:
+/***/ 503:
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -18584,11 +18681,11 @@ if (typeof window !== 'undefined') { // Browser window
   root = this;
 }
 
-var Emitter = __webpack_require__(437);
-var RequestBase = __webpack_require__(501);
+var Emitter = __webpack_require__(440);
+var RequestBase = __webpack_require__(504);
 var isObject = __webpack_require__(249);
-var ResponseBase = __webpack_require__(502);
-var Agent = __webpack_require__(499);
+var ResponseBase = __webpack_require__(505);
+var Agent = __webpack_require__(502);
 
 /**
  * Noop.
@@ -19494,7 +19591,7 @@ request.put = function(url, data, fn) {
 
 /***/ }),
 
-/***/ 501:
+/***/ 504:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20196,7 +20293,7 @@ RequestBase.prototype._setTimeouts = function() {
 
 /***/ }),
 
-/***/ 502:
+/***/ 505:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20206,7 +20303,7 @@ RequestBase.prototype._setTimeouts = function() {
  * Module dependencies.
  */
 
-var utils = __webpack_require__(503);
+var utils = __webpack_require__(506);
 
 /**
  * Expose `ResponseBase`.
@@ -20338,7 +20435,7 @@ ResponseBase.prototype._setStatusProperties = function(status){
 
 /***/ }),
 
-/***/ 503:
+/***/ 506:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20417,7 +20514,7 @@ exports.cleanHeader = function(header, changesOrigin){
 
 /***/ }),
 
-/***/ 505:
+/***/ 508:
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -20565,7 +20662,7 @@ else {
 
 /***/ }),
 
-/***/ 506:
+/***/ 509:
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
@@ -20595,7 +20692,7 @@ if (typeof Object.create === 'function') {
 
 /***/ }),
 
-/***/ 507:
+/***/ 510:
 /***/ (function(module, exports) {
 
 module.exports = function isBuffer(arg) {
@@ -20607,7 +20704,7 @@ module.exports = function isBuffer(arg) {
 
 /***/ }),
 
-/***/ 508:
+/***/ 511:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -21135,7 +21232,7 @@ function isPrimitive(arg) {
 }
 exports.isPrimitive = isPrimitive;
 
-exports.isBuffer = __webpack_require__(507);
+exports.isBuffer = __webpack_require__(510);
 
 function objectToString(o) {
   return Object.prototype.toString.call(o);
@@ -21179,7 +21276,7 @@ exports.log = function() {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-exports.inherits = __webpack_require__(506);
+exports.inherits = __webpack_require__(509);
 
 exports._extend = function(origin, add) {
   // Don't do anything if add isn't an object
@@ -21197,22 +21294,22 @@ function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17), __webpack_require__(193)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17), __webpack_require__(194)))
 
 /***/ }),
 
-/***/ 515:
+/***/ 518:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(541)
+__webpack_require__(544)
 
 var Component = __webpack_require__(7)(
   /* script */
   __webpack_require__(279),
   /* template */
-  __webpack_require__(532),
+  __webpack_require__(535),
   /* scopeId */
   null,
   /* cssModules */
@@ -21240,18 +21337,18 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 516:
+/***/ 519:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(535)
+__webpack_require__(538)
 
 var Component = __webpack_require__(7)(
   /* script */
   __webpack_require__(280),
   /* template */
-  __webpack_require__(523),
+  __webpack_require__(526),
   /* scopeId */
   null,
   /* cssModules */
@@ -21279,14 +21376,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 517:
+/***/ 520:
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(7)(
   /* script */
   __webpack_require__(281),
   /* template */
-  __webpack_require__(533),
+  __webpack_require__(536),
   /* scopeId */
   null,
   /* cssModules */
@@ -21314,18 +21411,18 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 518:
+/***/ 521:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(537)
+__webpack_require__(540)
 
 var Component = __webpack_require__(7)(
   /* script */
   __webpack_require__(282),
   /* template */
-  __webpack_require__(525),
+  __webpack_require__(528),
   /* scopeId */
   null,
   /* cssModules */
@@ -21353,7 +21450,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 523:
+/***/ 526:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21376,7 +21473,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 525:
+/***/ 528:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21410,7 +21507,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 532:
+/***/ 535:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21476,7 +21573,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 533:
+/***/ 536:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21592,7 +21689,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 534:
+/***/ 537:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22691,7 +22788,7 @@ function xhrClient (request) {
 
 function nodeClient (request) {
 
-    var client = __webpack_require__(543);
+    var client = __webpack_require__(546);
 
     return new PromiseObj(function (resolve) {
 
@@ -23160,13 +23257,13 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 /***/ }),
 
-/***/ 535:
+/***/ 538:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(470);
+var content = __webpack_require__(473);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -23187,13 +23284,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 537:
+/***/ 540:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(472);
+var content = __webpack_require__(475);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -23214,13 +23311,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 541:
+/***/ 544:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(476);
+var content = __webpack_require__(479);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -23241,7 +23338,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 542:
+/***/ 545:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23294,76 +23391,18 @@ function multitext(Snap, Element, Paper, glob) {
 
 /***/ }),
 
-/***/ 543:
+/***/ 546:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 544:
+/***/ 547:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(251);
 
-
-/***/ }),
-
-/***/ 69:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["b"] = coerceType;
-/* harmony export (immutable) */ __webpack_exports__["c"] = isBuiltIn;
-/* harmony export (immutable) */ __webpack_exports__["a"] = isSimple;
-/**
- * Built-in moddle types
- */
-var BUILTINS = {
-  String: true,
-  Boolean: true,
-  Integer: true,
-  Real: true,
-  Element: true
-};
-
-/**
- * Converters for built in types from string representations
- */
-var TYPE_CONVERTERS = {
-  String: function(s) { return s; },
-  Boolean: function(s) { return s === 'true'; },
-  Integer: function(s) { return parseInt(s, 10); },
-  Real: function(s) { return parseFloat(s, 10); }
-};
-
-/**
- * Convert a type to its real representation
- */
-function coerceType(type, value) {
-
-  var converter = TYPE_CONVERTERS[type];
-
-  if (converter) {
-    return converter(value);
-  } else {
-    return value;
-  }
-}
-
-/**
- * Return whether the given type is built-in
- */
-function isBuiltIn(type) {
-  return !!BUILTINS[type];
-}
-
-/**
- * Return whether the given type is simple
- */
-function isSimple(type) {
-  return !!TYPE_CONVERTERS[type];
-}
 
 /***/ }),
 
@@ -23423,6 +23462,64 @@ module.exports = function normalizeComponent (
 }
 
 
+/***/ }),
+
+/***/ 70:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["b"] = coerceType;
+/* harmony export (immutable) */ __webpack_exports__["c"] = isBuiltIn;
+/* harmony export (immutable) */ __webpack_exports__["a"] = isSimple;
+/**
+ * Built-in moddle types
+ */
+var BUILTINS = {
+  String: true,
+  Boolean: true,
+  Integer: true,
+  Real: true,
+  Element: true
+};
+
+/**
+ * Converters for built in types from string representations
+ */
+var TYPE_CONVERTERS = {
+  String: function(s) { return s; },
+  Boolean: function(s) { return s === 'true'; },
+  Integer: function(s) { return parseInt(s, 10); },
+  Real: function(s) { return parseFloat(s, 10); }
+};
+
+/**
+ * Convert a type to its real representation
+ */
+function coerceType(type, value) {
+
+  var converter = TYPE_CONVERTERS[type];
+
+  if (converter) {
+    return converter(value);
+  } else {
+    return value;
+  }
+}
+
+/**
+ * Return whether the given type is built-in
+ */
+function isBuiltIn(type) {
+  return !!BUILTINS[type];
+}
+
+/**
+ * Return whether the given type is simple
+ */
+function isSimple(type) {
+  return !!TYPE_CONVERTERS[type];
+}
+
 /***/ })
 
-},[544]);
+},[547]);
