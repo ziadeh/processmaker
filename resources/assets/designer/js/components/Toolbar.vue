@@ -35,11 +35,13 @@
 </template>
 
 <script>
-export default {
-    methods: {
-        createElement (value) {
-            Event.$emit("dragend", value);
+    import actions from "../actions/"
+    export default {
+        methods: {
+            createElement (value) {
+                let action = actions.canvas.drag.end(value)
+                Event.$emit(action.type, action.payload)
+            }
         }
-    }
-};
+    };
 </script>

@@ -6,6 +6,8 @@
 
 <script>
     import {DiagramSvg} from '../diagram/moddle-svg';
+    import actions from "../actions/";
+
     import {SVGLoader} from '../diagram/svgLoader';
     import {multitext} from '../diagram/snap.plugins/multitext.plugin';
 
@@ -23,10 +25,10 @@
             }
         },
         created() {
-            Event.$on('dragend', (value) => this.createElement(value));
-            Event.$on('zoomIn', (value) => this.diagramSvg.processAction('zoom-in'));
-            Event.$on('zoomOut', (value) => this.diagramSvg.processAction('zoom-out'));
-            Event.$on('zoomReset', (value) => this.diagramSvg.processAction('zoom-reset'));
+            Event.$on(actions.canvas.drag.end().type, (value) => this.createElement(value));
+            Event.$on(actions.canvas.zoom.in().type, (value) => this.diagramSvg.processAction('zoom-in'));
+            Event.$on(actions.canvas.zoom.out().type, (value) => this.diagramSvg.processAction('zoom-out'));
+            Event.$on(actions.canvas.zoom.reset().type, (value) => this.diagramSvg.processAction('zoom-reset'));
             Event.$on('uploadPMIO', (value) => this.exportPMIO());
             Event.$on('change', (xml) => this.loadXML(xml));
         },
@@ -130,214 +132,6 @@
             }
             this.loadXML()
 
-
-            /*
-             let data = {
-             "prj_uid": "372080569592c404f5dde57093455423",
-             "prj_name": "Test",
-             "prj_description": "",
-             "prj_target_namespace": null,
-             "prj_expresion_language": null,
-             "prj_type_language": null,
-             "prj_exporter": null,
-             "prj_exporter_version": null,
-             "prj_create_date": "2017-05-29 15:37:52",
-             "prj_update_date": "2017-05-29 11:38:19",
-             "prj_author": "00000000000000000000000000000001",
-             "prj_author_version": null,
-             "prj_original_source": null,
-             "diagrams": [{
-             "dia_uid": "269518920592c4050246b49040344066",
-             "prj_uid": "372080569592c404f5dde57093455423",
-             "dia_name": "Test",
-             "dia_is_closable": 0,
-             "pro_uid": "946953380592c405071cbf1027927851",
-             "activities": [{
-             "act_uid": "124698833592c406c4b0cc1026408625",
-             "act_name": "Task 2",
-             "act_type": "TASK",
-             "act_is_for_compensation": "0",
-             "act_start_quantity": "1",
-             "act_completion_quantity": "0",
-             "act_task_type": "EMPTY",
-             "act_implementation": "",
-             "act_instantiate": "0",
-             "act_script_type": "",
-             "act_script": "",
-             "act_loop_type": "EMPTY",
-             "act_test_before": "0",
-             "act_loop_maximum": "0",
-             "act_loop_condition": "0",
-             "act_loop_cardinality": "0",
-             "act_loop_behavior": "0",
-             "act_is_adhoc": "0",
-             "act_is_collapsed": "0",
-             "act_completion_condition": "0",
-             "act_ordering": "0",
-             "act_cancel_remaining_instances": "1",
-             "act_protocol": "0",
-             "act_method": "0",
-             "act_is_global": "0",
-             "act_referer": "0",
-             "act_default_flow": "0",
-             "act_master_diagram": "0",
-             "bou_element": "638724345592c405abe1058017041790",
-             "bou_x": "363",
-             "bou_y": "70",
-             "bou_width": "150",
-             "bou_height": "75",
-             "bou_container": "bpmnDiagram"
-             }, {
-             "act_uid": "720497925592c406b9448a5055485729",
-             "act_name": "Task 1",
-             "act_type": "TASK",
-             "act_is_for_compensation": "0",
-             "act_start_quantity": "1",
-             "act_completion_quantity": "0",
-             "act_task_type": "EMPTY",
-             "act_implementation": "",
-             "act_instantiate": "0",
-             "act_script_type": "",
-             "act_script": "",
-             "act_loop_type": "EMPTY",
-             "act_test_before": "0",
-             "act_loop_maximum": "0",
-             "act_loop_condition": "0",
-             "act_loop_cardinality": "0",
-             "act_loop_behavior": "0",
-             "act_is_adhoc": "0",
-             "act_is_collapsed": "0",
-             "act_completion_condition": "0",
-             "act_ordering": "0",
-             "act_cancel_remaining_instances": "1",
-             "act_protocol": "0",
-             "act_method": "0",
-             "act_is_global": "0",
-             "act_referer": "0",
-             "act_default_flow": "0",
-             "act_master_diagram": "0",
-             "bou_element": "638724345592c405abe1058017041790",
-             "bou_x": "166",
-             "bou_y": "70",
-             "bou_width": "150",
-             "bou_height": "75",
-             "bou_container": "bpmnDiagram"
-             }],
-             "events": [{
-             "evn_uid": "256381233592c406cae2026029888464",
-             "evn_name": "",
-             "evn_type": "START",
-             "evn_marker": "EMPTY",
-             "evn_is_interrupting": "1",
-             "evn_cancel_activity": "0",
-             "evn_activity_ref": null,
-             "evn_wait_for_completion": "0",
-             "evn_error_name": null,
-             "evn_error_code": null,
-             "evn_escalation_name": null,
-             "evn_escalation_code": null,
-             "evn_message": "LEAD",
-             "evn_operation_name": null,
-             "evn_operation_implementation_ref": null,
-             "evn_time_date": null,
-             "evn_time_cycle": null,
-             "evn_time_duration": null,
-             "evn_behavior": "CATCH",
-             "bou_element": "638724345592c405abe1058017041790",
-             "bou_x": "88",
-             "bou_y": "91",
-             "bou_width": "33",
-             "bou_height": "33",
-             "bou_container": "bpmnDiagram"
-             }, {
-             "evn_uid": "632067129592c406cc59362027725874",
-             "evn_name": "",
-             "evn_type": "END",
-             "evn_marker": "EMPTY",
-             "evn_is_interrupting": "1",
-             "evn_cancel_activity": "0",
-             "evn_activity_ref": null,
-             "evn_wait_for_completion": "0",
-             "evn_error_name": null,
-             "evn_error_code": null,
-             "evn_escalation_name": null,
-             "evn_escalation_code": null,
-             "evn_message": "",
-             "evn_operation_name": null,
-             "evn_operation_implementation_ref": null,
-             "evn_time_date": null,
-             "evn_time_cycle": null,
-             "evn_time_duration": null,
-             "evn_behavior": "THROW",
-             "bou_element": "638724345592c405abe1058017041790",
-             "bou_x": "557",
-             "bou_y": "91",
-             "bou_width": "33",
-             "bou_height": "33",
-             "bou_container": "bpmnDiagram"
-             }],
-             "gateways": [],
-             "flows": [{
-             "flo_uid": "180462119592c406d2f3d38004898877",
-             "flo_type": "SEQUENCE",
-             "flo_name": " ",
-             "flo_element_origin": "720497925592c406b9448a5055485729",
-             "flo_element_origin_type": "bpmnActivity",
-             "flo_element_dest": "124698833592c406c4b0cc1026408625",
-             "flo_element_dest_type": "bpmnActivity",
-             "flo_is_inmediate": "1",
-             "flo_condition": "",
-             "flo_x1": "317",
-             "flo_y1": "108",
-             "flo_x2": "363",
-             "flo_y2": "108",
-             "flo_state": [{"x": 317, "y": 108}, {"x": 363, "y": 108}],
-             "flo_position": "1"
-             }, {
-             "flo_uid": "205528518592c406d2f5635096221855",
-             "flo_type": "SEQUENCE",
-             "flo_name": " ",
-             "flo_element_origin": "124698833592c406c4b0cc1026408625",
-             "flo_element_origin_type": "bpmnActivity",
-             "flo_element_dest": "632067129592c406cc59362027725874",
-             "flo_element_dest_type": "bpmnEvent",
-             "flo_is_inmediate": "1",
-             "flo_condition": "",
-             "flo_x1": "514",
-             "flo_y1": "108",
-             "flo_x2": "557",
-             "flo_y2": "108",
-             "flo_state": [{"x": 514, "y": 108}, {"x": 557, "y": 108}],
-             "flo_position": "1"
-             }, {
-             "flo_uid": "427596475592c406d2f2196069782540",
-             "flo_type": "SEQUENCE",
-             "flo_name": " ",
-             "flo_element_origin": "256381233592c406cae2026029888464",
-             "flo_element_origin_type": "bpmnEvent",
-             "flo_element_dest": "720497925592c406b9448a5055485729",
-             "flo_element_dest_type": "bpmnActivity",
-             "flo_is_inmediate": "1",
-             "flo_condition": "",
-             "flo_x1": "121",
-             "flo_y1": "108",
-             "flo_x2": "166",
-             "flo_y2": "108",
-             "flo_state": [{"x": 121, "y": 108}, {"x": 166, "y": 108}],
-             "flo_position": "1"
-             }],
-             "artifacts": [],
-             "laneset": [],
-             "lanes": [],
-             "data": [],
-             "participants": []
-             }],
-             "usr_setting_designer": {"enabled_grid": false}
-             };
-             this.diagramSvg.draw(data.diagrams[0]);
-             console.log(this.diagramSvg.elementRegistry); // 124698833592c406c4b0cc1026408625
-             const element = this.diagramSvg.getElementById('124698833592c406c4b0cc1026408625').getShape().getNativeShape();
-             element.drag();*/
         }
     }
 </script>

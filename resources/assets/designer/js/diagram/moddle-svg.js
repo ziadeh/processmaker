@@ -92,10 +92,6 @@ export class DiagramSvg {
                 moddleElement: options
             };
         defaultOptions = this.extend(defaultOptions, options);
-        debugger;
-        console.log("actions");
-        console.log(actions);
-        //dispatch("jonas");
         // TODO Improve uid selector, too much duplicated or multiplicated lines... (ø_ø)!
         switch (type) {
             case "bpmn:StartEvent":
