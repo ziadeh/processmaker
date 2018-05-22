@@ -67,7 +67,9 @@ class CreatePROCESSTable extends Migration {
 			
 			// Represents the BPMN file that represents this process, if one is available
 			$table->longText('bpmn')->nullable();
- 
+
+			// Foreign key on category, where if category is deleted, category_id is set to null
+			$table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
 		});
 	}
 

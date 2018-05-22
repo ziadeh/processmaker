@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateADDITIONALTABLESTable extends Migration {
+class CreateAdditionalTablesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -15,6 +15,7 @@ class CreateADDITIONALTABLESTable extends Migration {
 		Schema::create('additional_tables', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->timestamps();
 			$table->uuid('uid')->unique();
 			$table->string('name');
 			$table->text('description')->nullable();
