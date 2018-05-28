@@ -2,7 +2,7 @@
 
 <project name="processmaker" default="package">
 
-    <target name="package" depends="prepare"
+    <target name="package" 
             description="Archive working directory into tar.gz file, name could be specified via -Dpackage_name=filename.tar.gz">
         <if>
             <isset property="package_name"/>
@@ -32,7 +32,7 @@
                 <!-- Default of include everything -->
                 <!-- Do note that defaultexcludes removes anything related to general Version Control files and aother files. -->
                 <!-- See: https://www.phing.info/phing/guide/en/output/chunkhtml/FileSet.html -->
-                <include name="**/**">
+                <include name="**/**" />
            </fileset>
         </tar>
     </target>
