@@ -14,7 +14,7 @@
     </form>
 
     <template slot="modal-footer">
-      <b-button class="btn-outline-secondary btn-md">
+      <b-button @click="onCancel" class="btn-outline-secondary btn-md">
         CANCEL
       </b-button>
       <b-button class="btn-secondary text-light btn-md">
@@ -40,6 +40,9 @@ export default {
   methods:{
     onHidden() {
       this.$emit('hidden')
+    },
+    onCancel() {
+      this.$refs.modal.hide()
     }
   },
   mounted() {
