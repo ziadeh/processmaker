@@ -3,12 +3,15 @@ import _ from "lodash";
 import actions from "../actions/index"
 import joint from "jointjs"
 import EventBus from "../lib/event-bus"
-
+/**
+ * Builder Class
+ */
 export class Builder {
     constructor(graph, paper) {
         this.graph = graph
         this.paper = paper
         this.collection = []
+        this.selection = []
         this.creatingFlow = false
     }
 
@@ -53,10 +56,12 @@ export class Builder {
             })
 
             if (res) {
-                that.hideCrown();
-                res.showCrown()
+                that.hideCrown()
+                that.removeSelectionBorder()
                 that.selection = [];
                 that.selection.push(res);
+                res.showCrown()
+                res.createSelectionBorder(res)
             }
 
             return false;
@@ -72,10 +77,10 @@ export class Builder {
         let that = this;
         return (element) => {
             that.hideCrown()
+            that.removeSelectionBorder()
             return false;
         };
     }
-
 
     /**
      * Remove selection border of all shapes selected
@@ -101,14 +106,25 @@ export class Builder {
      * @returns {function(*)}
      */
     removeSelection() {
+        let that = this
         _.forEach(this.selection, (el) => {
-            el.hideCrown();
-            el.remove();
+            _.remove(that.collection, (o) => {
+                return el == o
+            })
+            el.hideCrown()
+            el.removeSelectionBorder()
+            el.remove()
         });
+        this.selection = []
     }
 
+    /**
+     * Listener for the update position from shape in svg canvas
+     * @param element
+     */
     updatePosition(element) {
         this.hideCrown()
+        this.removeSelectionBorder()
         let res = _.find(this.collection, (o) => {
             return element.id === o.shape.id
         })
