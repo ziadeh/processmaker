@@ -12,6 +12,9 @@
 
     let moddle = new bpmn()
     export default {
+        props: [
+            'bpmn'
+        ],
         // Set our own static components but also bring in our dynamic list of modals from above
         data() {
             return {
@@ -36,6 +39,15 @@
                     panTop: null,
                     panLeft: null
                 } // Options for panning in the designer
+            }
+        },
+        watch: {
+            bpmn() {
+                // Watches for BPMN data updates from property
+
+                // Should update the joinjs graph/paper with a parser that iterates
+                // through bpmn, creating the object
+                alert("I SHOULD REDRAW")
             }
         },
         computed: {},

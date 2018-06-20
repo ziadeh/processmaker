@@ -16,6 +16,9 @@
     <a class="nav-link" href="#"><i id="designer-icons" class="fas fa-search-plus"></i></a>
   </li>
   <li class="nav-item ">
+    <a class="nav-link" href="#"><i id="designer-icons" class="fas fa-upload"></i></a>
+  </li>
+  <li class="nav-item ">
     <a class="nav-link" href="#"><i id="designer-icons" class="fas fa-save"></i></a>
   </li>
   <li class="nav-item ">

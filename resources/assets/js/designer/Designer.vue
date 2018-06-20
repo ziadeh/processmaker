@@ -1,16 +1,16 @@
 <template>
-    <div id="designer-container">
-        <component :is="modalComponent" :if="modalComponent" @hidden="onHidden"></component>
-        <toptoolbar ref="toptoolbar"></toptoolbar>
-        <toolbar ref="toolbar"></toolbar>
-        <div id="designer-subcontainer">
-            <div class="canvas-container">
-                <crown ref="crown"></crown>
-                <svgcanvas ref="svgcanvas"></svgcanvas>
-            </div>
-            <designerobjectsmenu></designerobjectsmenu>
-        </div>
+  <div id="designer-container">
+    <component :is="modalComponent" :if="modalComponent" @hidden="onHidden"></component>
+    <toptoolbar ref="toptoolbar"></toptoolbar>
+    <toolbar ref="toolbar"></toolbar>
+    <div id="designer-subcontainer">
+      <div class="canvas-container">
+        <crown ref="crown"></crown>
+        <svgcanvas :bpmn="bpmn" ref="svgcanvas"></svgcanvas>
+      </div>
+      <designerobjectsmenu></designerobjectsmenu>
     </div>
+  </div>
 </template>
 
 
@@ -43,6 +43,9 @@ import modalPublicFileAdd from "./components/modals/modal-public-file-add";
 import modalVariablesAdd from "./components/modals/modal-variables-add";
 import modalMessageTypes from "./components/modals/modal-message-types";
 
+// Import the transformer for BPMN
+import transformer from "./lib/transformer";
+
 // This is out Cron for every shape
 import crown from "./components/crown";
 
@@ -66,55 +69,70 @@ export default {
   },
   data() {
     return {
-      modalComponent: null
-    }
+      modalComponent: null,
+      // Represents our BPMN object
+      bpmn: {},
+      // The XML representation of our BPMN object
+      xml: ""
+    };
   },
   created() {
     // Listen for opening an add dialog
     EventBus.$on("open-add-dialog", this.openAddDialog);
+
   },
   methods: {
+    parse() {
+      // Transform our initial BPMN file (example)
+      transformer.parse((err, data) => {
+        if (err) {
+          alert(err);
+        } else {
+          this.bpmn = data;
+        }
+      });
+    },
     openAddDialog(key) {
       // @todo Replace this with dynamic modal generation once we have all modals in place
       // We're not doing this now so we can have visual alert feedback when a modal isn't implemented
-      switch(key) {
-        case 'permissions':
-          this.modalComponent = 'modal-permissions-add'
+      switch (key) {
+        case "permissions":
+          this.modalComponent = "modal-permissions-add";
           break;
-        case 'variables':
-          this.modalComponent = 'modal-variables-add'
+        case "variables":
+          this.modalComponent = "modal-variables-add";
           break;
-        case 'public-files':
-          this.modalComponent = 'modal-public-file-add'
+        case "public-files":
+          this.modalComponent = "modal-public-file-add";
           break;
-        case 'forms':
-          this.modalComponent = 'modal-forms-add'
+        case "forms":
+          this.modalComponent = "modal-forms-add";
           break;
-        case 'message-types':
-          this.modalComponent = 'modal-message-types'
+        case "message-types":
+          this.modalComponent = "modal-message-types";
           break;
-        case 'database-connections':
-          this.modalComponent = 'modal-create-database-add'
+        case "database-connections":
+          this.modalComponent = "modal-create-database-add";
           break;
-        case 'input-documents':
-          this.modalComponent = 'modal-input-document-add'
+        case "input-documents":
+          this.modalComponent = "modal-input-document-add";
           break;
-        case 'output-documents':
-          this.modalComponent = 'modal-create-output-add'
+        case "output-documents":
+          this.modalComponent = "modal-create-output-add";
           break;
-        case 'triggers':
-          this.modalComponent = 'modal-create-trigger-add'
+        case "triggers":
+          this.modalComponent = "modal-create-trigger-add";
           break;
-        case 'templates':
-          this.modalComponent = 'modal-create-template-add'
+        case "templates":
+          this.modalComponent = "modal-create-template-add";
           break;
         default:
-          alert(key + ' add modal not yet implemented.')
+          alert(key + " add modal not yet implemented.");
       }
     },
-    onHidden(){
-      this.modalComponent = null
-    },
+    onHidden() {
+      this.modalComponent = null;
+    }
   }
 };
 </script>
