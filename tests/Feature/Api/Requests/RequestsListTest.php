@@ -6,10 +6,11 @@ use ProcessMaker\Model\Role;
 use ProcessMaker\Model\User;
 use Tests\Feature\Api\ApiTestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\Feature\Api\SortingTestTrait;
 
 class RequestsListTest extends ApiTestCase
 {
-    use DatabaseTransactions;
+    use DatabaseTransactions, SortingTestTrait;
 
     /**
      * Test to check that the route is protected     
@@ -63,7 +64,6 @@ class RequestsListTest extends ApiTestCase
         $data = json_decode($response->getContent());
         $this->assertEquals($data->meta->current_page, 1);
         $this->assertTrue(count($data->data) > 0);
-
     }
 
     /**
@@ -165,6 +165,28 @@ class RequestsListTest extends ApiTestCase
 
         $this->assertTrue(is_array($data->data));
         
+    }
+
+    /**
+     * Test sorting of requests    
+     */
+    public function testRequestSorting()
+    {
+        $this->login();
+
+        factory(\ProcessMaker\Model\Application::class, 51)->create([
+            'creator_user_id' => $this->user->id
+        ]);
+
+        $this->assertSorting('/api/1.0/requests', [
+            'APP_TITLE',
+            'APP_DESCRIPTION',
+            'APP_STATUS',
+            'APP_CREATE_DATE',
+            'APP_INIT_DATE',
+            'APP_UPDATE_DATE',
+            ]
+        );
     }
     
     private function login()
