@@ -11,7 +11,7 @@
         <div class="form-group">
             <div class="d-flex justify-content-between">
                 <filter-bar></filter-bar>
-                <button type="submit" class="btn btn-secondary"><i class="fas fa-plus fa-md"></i> Create</button>
+                <button type="submit" class="btn btn-primary btn-sm text-uppercase"><i class="fas fa-plus fa-md"></i> Create</button>
             </div>
             <div class="data-table">
                 <vuetable :dataManager="dataManager" :sortOrder="sortOrder" :css="css" :api-mode="false"

@@ -10,8 +10,8 @@
     <div class="mb-5 mt-3 float-right">
       <button type="button" @click="browse" class="btn btn-secondary text-light">
         <i class="fas fa-upload"></i> Browse</button>
-      <button type="button" @click="hideModal" class="btn btn-outline-secondary">Cancel</button>
-      <button type="button" @click="saveAndEmit" class="btn btn-secondary text-light">Continue</button>
+      <button type="button" @click="hideModal" class="btn btn-outline-success btn-sm text-uppercase">Cancel</button>
+      <button type="button" @click="saveAndEmit" class="btn btn-primary btn-sm text-uppercase">Continue</button>
     </div>
   </b-modal>
 </template>
