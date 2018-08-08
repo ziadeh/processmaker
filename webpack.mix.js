@@ -36,7 +36,7 @@ mix.js('resources/assets/js/app-layout.js', 'public/js')
     // See: https://github.com/JeffreyWay/laravel-mix/issues/1118
     .js('resources/assets/js/app.js', 'public/js')
 
-    .extract(['vue', 'jquery', 'bootstrap-vue', 'axios', 'popper.js', 'lodash', 'bootstrap', 'imports-loader?this=>window,fix=>module.exports=0!snapsvg/dist/snap.svg.js'])
+    .extract(['vue', 'jquery', 'bootstrap-vue', 'axios', 'popper.js', 'lodash', 'bootstrap'])
     .copy('resources/assets/img/*', 'public/img')
     .sass('resources/assets/sass/sidebar/sidebar.scss', 'public/css')
     .sass('resources/assets/sass/app.scss', 'public/css')
