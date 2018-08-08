@@ -31,6 +31,14 @@
                             @vuetable-pagination:change-page="onPageChange" ref="pagination"></pagination>
             </div>
         </div>
+        <template slot="modal-footer">
+            <b-button @click="onCancel" class="btn-outline-secondary btn-md">
+                CANCEL
+            </b-button>
+            <b-button class="btn-secondary text-light btn-md">
+                TEST CONNECTION
+            </b-button>
+        </template>
     </b-modal>
 </template>
 
