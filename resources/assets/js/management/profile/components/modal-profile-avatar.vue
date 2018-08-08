@@ -13,6 +13,14 @@
       <button type="button" @click="hideModal" class="btn btn-outline-secondary">Cancel</button>
       <button type="button" @click="saveAndEmit" class="btn btn-secondary text-light">Continue</button>
     </div>
+    <template slot="modal-footer">
+      <b-button @click="onCancel" class="btn-outline-secondary btn-md">
+          CANCEL
+      </b-button>
+      <b-button class="btn-secondary text-light btn-md">
+          TEST CONNECTION
+      </b-button>
+    </template>
   </b-modal>
 </template>
 
