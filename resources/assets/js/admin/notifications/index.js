@@ -16,6 +16,10 @@ new Vue({
       authentication: '',
       serverPort: ''
     }
+  },
+  components: {
+    FormInput,
+    FormCheckbox
   }
 
 });
