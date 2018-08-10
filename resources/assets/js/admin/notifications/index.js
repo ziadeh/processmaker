@@ -6,6 +6,16 @@ import {
 } from '@processmaker/vue-form-elements/src/components'
 
 new Vue({
-  data: {}
+  el: '#notificationSettings',
+  data: {
+    settings: {
+      hostName: '',
+      userName: '',
+      password: '',
+      ssl: false,
+      authentication: '',
+      serverPort: ''
+    }
+  }
 
 });
