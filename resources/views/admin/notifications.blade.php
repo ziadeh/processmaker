@@ -32,13 +32,10 @@
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Use SSL</label>
-    <div class="col-sm-10">
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-    </div>
+    <label for="staticEmail" class="col-sm-2 col-form-label">Checkbox</label>
+      <div class="form-check ml-3">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+      </div>
   </div>
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Authenticaton</label>
