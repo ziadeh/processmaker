@@ -6,52 +6,16 @@
 
 @section('content')
 <div id='notificationSettings'>
-<div class="container bg-light mt-5 p-5">
- <form>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Host name</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="staticEmail">
-    </div>
+  <div class="container bg-light mt-5 p-5">
+    <form>
+      <form-input v-model="settings.hostName" label="Host Name"></form-input>
+      <form-input v-model="settings.userName" label="User Name"></form-input>
+      <form-input v-model="settings.password" label="Password"></form-input>
+      <form-check v-model="settings.ssl" label="SSL"></form-check>
+      <form-input v-model="settings.authentication" label="Authentication"></form-input>
+      <form-input v-model="settings.serverPort" label="Server Port"></form-input>
+    </form>
   </div>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">User name</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="staticEmail">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="staticEmail">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="staticEmail">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Checkbox</label>
-      <div class="form-check ml-3">
-        <input class="form-check-input" type="checkbox" id="gridCheck1">
-      </div>
-  </div>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Authenticaton</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="staticEmail">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Server Port</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="staticEmail">
-    </div>
-  </div>
-</form>
-</div>
 </div>
 @endsection
 
