@@ -6,16 +6,14 @@
 
 @section('content')
 <div id='notificationSettings'>
-  <div class="container bg-light mt-5 p-5">
-    <form>
-      <form-input v-model="settings.hostName" label="Host Name"></form-input>
-      <form-input v-model="settings.userName" label="User Name"></form-input>
-      <form-input v-model="settings.password" label="Password"></form-input>
-      <form-check v-model="settings.ssl" label="SSL"></form-check>
-      <form-input v-model="settings.authentication" label="Authentication"></form-input>
-      <form-input v-model="settings.serverPort" label="Server Port"></form-input>
-    </form>
-  </div>
+  <form>
+    <form-input v-model="settings.hostName" label="Host Name"></form-input>
+    <form-input v-model="settings.userName" label="User Name"></form-input>
+    <form-input v-model="settings.password" label="Password"></form-input>
+    <form-check v-model="settings.ssl" label="SSL"></form-check>
+    <form-input v-model="settings.authentication" label="Authentication"></form-input>
+    <form-input v-model="settings.serverPort" label="Server Port"></form-input>
+  </form>
 </div>
 @endsection
 
