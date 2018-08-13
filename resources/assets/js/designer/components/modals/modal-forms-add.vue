@@ -23,6 +23,7 @@
 <script>
     import FormInput from "@processmaker/vue-form-elements/src/components/FormInput";
     import FormTextArea from "@processmaker/vue-form-elements/src/components/FormTextArea";
+
     export default {
         components: {FormTextArea, FormInput},
         data() {

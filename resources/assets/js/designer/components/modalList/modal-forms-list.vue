@@ -3,7 +3,7 @@
         <div class="form-group">
             <div class="d-flex justify-content-between">
                 <input v-model="filter" class="form-control  col-sm-3" placeholder="Search..." @keyup="fetch">
-                <button type="submit" class="btn btn-secondary"><i class="fas fa-plus fa-md"></i> Create</button>
+                <button type="submit" @click="onCreateForm()" class="btn btn-secondary"><i class="fas fa-plus fa-md"></i> Create</button>
             </div>
             <div class="data-table">
                 <vuetable :dataManager="dataManager" :sortOrder="sortOrder" :css="css" :api-mode="false"
@@ -31,6 +31,7 @@
 <script>
     import dataTableMixin from "../../../components/common/mixins/datatable";
     import Pagination from "../../../components/common/Pagination";
+    import EventBus from '../../lib/event-bus'
 
     export default {
         components: {Pagination},
@@ -69,6 +70,9 @@
             };
         },
         methods: {
+            onCreateForm() {
+                EventBus.$emit('open-add-dialog', 'forms');
+            },
             onHidden() {
                 this.$emit('hidden')
             },
