@@ -4,6 +4,9 @@ namespace ProcessMaker\Model;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\CanResetPassword;
+use Illuminate\Auth\Passwords\CanResetPassword as CanResetPasswordTrait;
+
 use League\OAuth2\Server\Entities\UserEntityInterface;
 use ProcessMaker\Core\System;
 use ProcessMaker\Model\Traits\Uuid;
@@ -14,10 +17,11 @@ use ProcessMaker\Model\Traits\Uuid;
  *
  * @property \ProcessMaker\Model\Role $role
  */
-class User extends Authenticatable implements UserEntityInterface
+class User extends Authenticatable implements UserEntityInterface, CanResetPassword
 {
     use Notifiable;
     use Uuid;
+    use CanResetPasswordTrait;
 
     const TYPE = 'USER';
 
@@ -52,6 +56,10 @@ class User extends Authenticatable implements UserEntityInterface
         'lang',
         'last_login',
         'avatar'
+    ];
+
+    protected $appends = [
+        'fullname'
     ];
 
     /**
@@ -172,5 +180,14 @@ class User extends Authenticatable implements UserEntityInterface
     public function role()
     {
         return $this->belongsTo(Role::class);
+    }
+
+    /**
+     * Get the full name as an attribute.
+     *
+     * @return string
+     */
+    public function getFullnameAttribute() {
+        return $this->getFullName();
     }
 }

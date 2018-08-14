@@ -5,6 +5,7 @@ namespace ProcessMaker\Http\Controllers\Api\Administration;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
 use ProcessMaker\Facades\UserManager;
 use ProcessMaker\Http\Controllers\Controller;
 use ProcessMaker\Model\User;
@@ -31,7 +32,7 @@ class UsersController extends Controller
             'filter' => $request->input('filter', ''),
             'current_page' => $request->input('current_page', 1),
             'per_page' => $request->input('per_page', 10),
-            'sort_by' => $request->input('sort_by', 'username'),
+            'order_by' => $request->input('order_by', 'username'),
             'order_direction' => $request->input('order_direction', 'ASC'),
         ];
         $response = UserManager::index($options);
@@ -52,6 +53,29 @@ class UsersController extends Controller
     }
 
     /**
+     * Create a new user
+     * 
+     * @param Request $request
+     * 
+     * @return ResponseFactory|Response
+     * @throws \Throwable
+     */
+    public function create(Request $request)
+    {
+        $validatedData = $request->validate([
+            'username' => 'required|unique:users,username',
+            'firstname' => 'nullable',
+            'lastname' => 'nullable',
+            'password' => 'required'
+        ]);
+        $validatedData['password'] = Hash::make($validatedData['password']);
+        $created = User::create($validatedData);
+        // We use this to ensure we have all database attributes
+        $created = $created->refresh();
+        return fractal($created, new UserTransformer())->respond();
+    }
+
+    /**
      * Update information user
      *
      * @param User $user
@@ -64,6 +88,19 @@ class UsersController extends Controller
     {
         UserManager::update($user, $request);
         return response([], 200);
+    }
+
+    /**
+     * Fetch an avatar for a user
+     * If the avatar is not uploaded, return a JSON error response, with the user provided
+     */
+    public function avatar(Request $request, User $user)
+    {
+        // Testing, just return an error
+        return response([
+            'message' => 'No avatar was uploaded for the requested user',
+            'user' => fractal($user, new UserTransformer())->toArray()
+        ], 404);
     }
 
 }

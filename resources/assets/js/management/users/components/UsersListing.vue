@@ -66,7 +66,19 @@ export default {
           title: 'Expires On',
           name: 'expires_at',
           sortField: 'expires_at',
-          callback: 'formatDate|l'
+          callback: this.formatDate
+        },
+        {
+          title: 'Created At',
+          name: 'created_at',
+          sortField: 'created_at',
+          callback: this.formatDate
+        },
+         {
+          title: 'Updated At',
+          name: 'updated_at',
+          sortField: 'updated_at',
+          callback: this.formatDate
         },
         {
           name: "__slot:actions",
@@ -117,9 +129,6 @@ export default {
         .then(response => {
           this.data = this.transform(response.data);
           this.loading = false;
-        })
-        .catch(error => {
-          // Undefined behavior currently, show modal?
         });
     }
   }

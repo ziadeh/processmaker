@@ -1,36 +1,46 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('request') }}">{{__('Requests')}}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('task') }}">{{__('Tasks')}}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('process') }}">{{__('Processes')}}</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url('admin') }}">Admin</a>
-      </li>
-    </ul>
+<div id="navbar" v-cloak>
 
-    <component id="navbar-request-button" v-bind:is="'request-modal'"></component>
+  <b-navbar toggleable="md" type="light" variant="light">
+    <confirmation-modal id="confirmModal" v-if='confirmShow' :title="confirmTitle" :message="confirmMessage" :variant="confirmVariant" :callback="confirmCallback" @close="confirmShow=false"></confirmation-modal>
+    <b-alert :show="alertShow" id="alertBox" :variant="alertVariant" @dismissed="alertShow = false" dismissible>@{{alertText}}</b-alert>
 
-    <span class="navbar-text notifications">
-      <i class="fas fa-bell" aria-hidden="true"></i>
-    </span>
+    <b-navbar-nav>
+      @foreach(Menu::get('topnav')->items as $item)
+      <b-nav-item href="{{ $item->url() }}" {{$item->isActive !== false ? 'active': ''}}>{{$item->title}}</b-nav-item>
+      @endforeach
+      </b-navbar-nav>
+      <b-navbar-nav class="ml-auto">
+      <li class="nav-item">
+        <component id="navbar-request-button" v-bind:is="'request-modal'"></component>
+      </li>
 
-    <ul class="navbar-nav">
-      <li class="break"></li>
+      <li class="nav-notification">
+      <notifications id="navbar-notifications-button" v-bind:is="'notifications'" v-bind:messages="messages"></notifications>
+      </li>
+      <li class="seperator"></li>
       <li class="dropdown">
-        <img class="avatar dropdown-toggle " id="navbarDropdown" src="/img/avatar.png" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-           <a class="dropdown-item drop-header"><img class="avatar-small" src="/img/avatar.png">{{__('John Bunton')}}</a>
-           @foreach($dropdown_nav->items as $row)
-              <a class="dropdown-item" href="{{ url($row->link->path['route']) }}"><i class="fas {{$row->attr('icon')}} fa-fw fa-lg"></i>{{$row->title}}</a>
-           @endforeach
-         </div>
+      <img class="avatar dropdown-toggle" id="topnav-avatar" src="/img/avatar.png" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+         <a class="dropdown-item drop-header"><img class="avatar-small" src="/img/avatar.png">{{\Auth::user()->firstname}} {{\Auth::user()->lastname}}</a>
+         @foreach($dropdown_nav->items as $row)
+            <a class="dropdown-item" href="{{ $row->url() }}"><i class="fas {{$row->attr('icon')}} fa-fw fa-lg"></i>{{$row->title}}</a>
+         @endforeach
+       </div>
       </li>
-    </li>
-  </ul>
-</nav>
+    </b-navbar-nav>
+  </b-navbar>
+</div>
+
+<style lang="scss" scoped>
+  .seperator{ 
+    border-left: 1px solid rgb(227,231,236) ;
+    height: 30px;  
+    margin-top: 17px;  
+}
+.nav-item {
+  padding-top: 5px;
+}
+.nav-notification {
+  padding-top: 8px;
+}
+</style>
