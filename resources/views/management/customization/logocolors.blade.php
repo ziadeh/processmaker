@@ -9,23 +9,19 @@
     <h4>UI Customization</h4>
     <h5>Add your company logo</h5>
     <form>
-        <div class="form-group">
-            <div class="d-flex">
-                <input type="text" class="form-control inline-input">
-                <button type="submit" class="btn inline-button text-light">Choose</button>
-            </div>
-            <small id="addCompanyLogo" class="text-mute">Logo size must be 400x100. File format .jpg or .png</small>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+            <div class="">Logo size must be 400x100. File format .jpg or .png</div>
         </div>
 
-        <div class="form-group">
-            <div class="d-flex">
-                <input type="text" class="form-control inline-input">
-                <button type="submit" class="btn inline-button text-light">Choose</button>
-            </div>
-            <small id="addCompanyLogo" class="text-mute">Logo size must be 400x100. File format .jpg or .png</small>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+            <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+            <div class="">Logo size must be 400x100. File format .jpg or .png</div>
         </div>
 
-        <h5>Create a color scheme to customize your UI</h5>
+        <h5 style="mt-5">Create a color scheme to customize your UI</h5>
         <div class="form-group">
             <label>Enter hex color or chose a color for the left navigation bar</label>
             <input type="text" class="form-control inline-input">
@@ -37,12 +33,14 @@
         </div>
         
     </form>
-    
+    <!-- <small class="text-mute">Logo size must be 400x100. File format .jpg or .png</small> -->
+    <!-- <button type="button" aria-label="Close" class="close">x</button>  -->
     
 </div>
 
 @endsection
 <script>
+import { Photoshop } from 'vue-color'
 export default {
     data() {
         return {
@@ -64,5 +62,8 @@ export default {
 
 .text-mute {
     color: #788793;
+}
+.custom-file {
+    height: auto !important;
 }
 </style>
