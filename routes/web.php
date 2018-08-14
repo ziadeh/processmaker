@@ -57,6 +57,10 @@ $this->middleware(['auth', 'apitoken'])->group(function() {
       return view('profile',['title' => 'Dashboard']);
     })->name('profile');
 
+    $this->get('/admin/customize', function(){
+      return view('management/customization/logocolors',['title' => 'Customize']);
+    })->name('customize');
+
     $this->get('/', function() {
         return view('home', ['title' => 'Dashboard']);
     })->name('dash');
