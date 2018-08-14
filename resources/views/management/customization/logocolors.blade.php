@@ -20,6 +20,10 @@
             <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
             <div class="">Logo size must be 400x100. File format .jpg or .png</div>
         </div>
+        <div class="form-group">
+            <input type="file" class="form-control" id="pickLogo">
+            <label class="form-control-label" for="pickLogo"></label>
+        </div>
 
         <h5 style="mt-5">Create a color scheme to customize your UI</h5>
         <div class="form-group">
@@ -65,5 +69,8 @@ export default {
 }
 .custom-file {
     height: auto !important;
+}
+.custom-file-label::after {
+    content: "Choose" !important;
 }
 </style>
