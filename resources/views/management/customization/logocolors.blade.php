@@ -12,18 +12,18 @@
         <div class="custom-file">
             <input type="file" class="custom-file-input" id="validatedCustomFile" required>
             <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-            <div class="">Logo size must be 400x100. File format .jpg or .png</div>
+            <small class="">Logo size must be 400x100. File format .jpg or .png</small>
         </div>
 
         <div class="custom-file">
             <input type="file" class="custom-file-input" id="validatedCustomFile" required>
             <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-            <div class="">Logo size must be 400x100. File format .jpg or .png</div>
+            <small class="">Logo size must be 400x100. File format .jpg or .png</small>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <input type="file" class="form-control" id="pickLogo">
             <label class="form-control-label" for="pickLogo"></label>
-        </div>
+        </div> -->
 
         <h5 style="mt-5">Create a color scheme to customize your UI</h5>
         <div class="form-group">
@@ -44,7 +44,6 @@
 
 @endsection
 <script>
-import { Photoshop } from 'vue-color'
 export default {
     data() {
         return {
