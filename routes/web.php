@@ -10,6 +10,7 @@ Broadcast::routes();
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login');
 $this->get('logout', 'Auth\LoginController@logout')->name('logout');
+$this->post('auth/refresh', 'Auth\RefreshController@refreshSession');
 
 // Password Reset Routes...
 $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -61,13 +62,7 @@ $this->middleware(['auth', 'apitoken'])->group(function() {
       return view('management/customization/logocolors',['title' => 'Customize']);
     })->name('customize');
 
-    $this->get('/', function() {
-        return view('home', ['title' => 'Dashboard']);
-    })->name('dash');
-
-    $this->get('/home', function() {
-        return view('home', ['title' => 'Dashboard']);
-    })->name('home');
+    $this->get('/', 'HomeController@index')->name('home');
 
     Route::group([
         'middleware' => ['permission:PM_USERS']
