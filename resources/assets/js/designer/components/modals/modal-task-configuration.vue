@@ -17,14 +17,14 @@
         <form-checkbox v-model="notifyAfterRouting" label="After routing notify next assignee"></form-checkbox>
         <form-checkbox v-model="notifyToRequestCreator" label="Notify the request creator"></form-checkbox>
 
-        <template slot="modal-footer">
-            <b-button @click="onClose" class="btn-outline-secondary btn-md">
+        <div slot="modal-footer">
+            <b-button @click="onCancel" class="btn btn-outline-success btn-sm text-uppercase">
                 CANCEL
             </b-button>
-            <b-button @click="onSave()" class="btn-secondary text-light btn-md">
+            <b-button class="btn btn-success btn-sm text-uppercase">
                 SAVE
             </b-button>
-        </template>
+        </div>
     </b-modal>
 </template>
 
