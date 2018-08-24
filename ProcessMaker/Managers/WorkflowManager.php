@@ -33,7 +33,7 @@ class WorkflowManager
     {
         //@todo Validate user permissions
         //Log BPMN actions
-        Log::info(sprintf('Schedule start "%s" at "%s"', $event->getId(), $definitions->title));
+        Log::info(sprintf('Schedule start "%s" at "%s"', $event->getId(), $definitions->name));
         //Schedule BPMN Action
         return StartEvent::dispatchNow($definitions, $event, $data);
     }

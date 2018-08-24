@@ -1,9 +1,9 @@
 <template>
     <div class="processes">
-        <div v-for="definition in process.definitions" @click="go(definition)" class="process-card">
+        <div v-for="definition in process.startPoints" @click="go(definition)" class="process-card">
             <div class="inner">
                 <div>
-                    <span class="name" v-html="transformedName"></span>
+                    <span class="name" v-html="transformedName(definition)"></span>
                     <i v-show="spin===definition.id" class="fa fa-spinner fa-spin fa-fw"></i>
                 </div>
                 <div ref="description" class="description" v-html="truncatedDescription"></div>
@@ -21,10 +21,16 @@ export default {
       }
   },
   methods: {
+    transformedName(definition) {
+      const name = this.process.name + (definition.name ? ' - ' + definition.name : '');
+      return name.replace(new RegExp(this.filter, "gi"), match => {
+        return '<span class="filtered">' + match + "</span>";
+      });
+    },
     go(definition) {
       //Start a process
       this.spin = definition.id;
-      window.ProcessMaker.apiClient.post('processes/'+this.process.uid+'/' + definition.id + '/call')
+      window.ProcessMaker.apiClient.post('processes/'+this.process.uid+'/events/' + definition.id + '/trigger')
         .then((response) => {
             this.spin = 0;
             var instance = response.data;
@@ -33,11 +39,6 @@ export default {
     }
   },
   computed: {
-    transformedName() {
-      return this.process.name.replace(new RegExp(this.filter, "gi"), match => {
-        return '<span class="filtered">' + match + "</span>";
-      });
-    },
     truncatedDescription() {
       if (!this.process.description) {
           return '<span class="filtered"></span>';

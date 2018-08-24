@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use ProcessMaker\Model\Traits\Uuid;
 use ProcessMaker\Nayra\Contracts\Storage\BpmnDocumentInterface;
 use Watson\Validating\ValidatingTrait;
+use ProcessMaker\Nayra\Storage\BpmnDocument;
 
 /**
  * Represents a business process definition.
@@ -419,6 +420,11 @@ class Process extends Model
             $this->bpmnDefinitions = app(BpmnDocumentInterface::class, ['process' => $this]);
             if ($this->bpmn) {
                 $this->bpmnDefinitions->loadXML($this->bpmn);
+                //Load the collaborations if exists
+                $collaborations = $this->bpmnDefinitions->getElementsByTagNameNS(BpmnDocument::BPMN_MODEL, 'collaboration');
+                foreach($collaborations as $collaboration) {
+                    $collaboration->getBpmnElementInstance();
+                }
             }
         }
         return $this->bpmnDefinitions;

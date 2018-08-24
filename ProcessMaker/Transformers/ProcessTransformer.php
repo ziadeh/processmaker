@@ -40,18 +40,17 @@ class ProcessTransformer extends TransformerAbstract
         
         //Get start events from process definition
         $processes = $process->getDefinitions()->getElementsByTagName('process');
-        $data['definitions'] = [];
+        $data['startPoints'] = [];
         foreach ($processes as $innerProcess) {
             $startEvents = $innerProcess->getElementsByTagName('startEvent');
-            $definition = [
-                'id' => $innerProcess->getAttribute('id'),
-            ];
             foreach ($startEvents as $startEvent) {
-                $definition['starEvents'][] = [
-                    'id' => $startEvent->getAttribute('id')
-                ];
+                if ($startEvent->getBpmnElementInstance()->getEventDefinitions()->count()===0) {
+                    $data['startPoints'][] = [
+                        'id' => $startEvent->getAttribute('id'),
+                        'name' => $startEvent->getAttribute('name')
+                    ];
+                }
             }
-            $data['definitions'][] = $definition;
         }
         return $data;
     }

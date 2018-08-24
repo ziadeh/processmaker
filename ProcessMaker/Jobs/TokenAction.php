@@ -36,7 +36,6 @@ abstract class TokenAction extends BpmnAction
      */
     public function handle()
     {
-        try {
             //Load the process definition
             $definitions = Definitions::find($this->definitionsId);
             $workflow = $definitions->getDefinitions();
@@ -65,8 +64,5 @@ abstract class TokenAction extends BpmnAction
 
             //Run engine to the next state
             $workflow->getEngine()->runToNextState();
-        } catch (Throwable $t) {
-            Log::error($t->getTraceAsString());
-        }
     }
 }

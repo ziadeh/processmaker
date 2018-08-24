@@ -14,6 +14,9 @@ use ProcessMaker\Nayra\Bpmn\Events\ProcessInstanceCompletedEvent;
 use ProcessMaker\Notifications\ProcessCompletedNotification;
 use ProcessMaker\Nayra\Contracts\Bpmn\TokenInterface;
 use ProcessMaker\Facades\WorkflowManager;
+use ProcessMaker\Nayra\Bpmn\Models\IntermediateThrowEvent;
+use ProcessMaker\Nayra\Bpmn\Models\IntermediateCatchEvent;
+use ProcessMaker\Nayra\Contracts\Bpmn\StartEventInterface;
 
 /**
  * Description of BpmnSubscriber
@@ -106,6 +109,27 @@ class BpmnSubscriber
         Log::info('ScriptTaskActivated: ' . $scriptTask->getId());
         WorkflowManager::runScripTask($scriptTask, $token);
     }
+    
+    public function onTokenCatch(...$args)
+    {
+        $types=[];
+        foreach($args as $a) $types[]= is_object($a) ? get_class($a) : gettype($a);
+        Log::info('Catch something ' . json_encode($types));
+    }
+
+    public function onStartCatch($startEvent, $transition, $tokens)
+    {
+        $types=[];
+        foreach($tokens as $a) $types[]= is_object($a) ? get_class($a) : gettype($a);
+        Log::info('Catch something on start ' . json_encode($types));
+    }
+
+    public function onTokenThrow(...$args)
+    {
+        $types=[];
+        foreach($args as $a) $types[]= is_object($a) ? get_class($a) : gettype($a);
+        Log::info('Throw something'. json_encode($types));
+    }
 
     /**
      * Subscription.
@@ -122,5 +146,8 @@ class BpmnSubscriber
 
         $events->listen(ActivityInterface::EVENT_ACTIVITY_ACTIVATED, static::class . '@onActivityActivated');
         $events->listen(ScriptTaskInterface::EVENT_SCRIPT_TASK_ACTIVATED, static::class . '@onScriptTaskActivated');
+        $events->listen(IntermediateCatchEvent::EVENT_CATCH_TOKEN_CATCH, static::class . '@onTokenCatch');
+        $events->listen(IntermediateThrowEvent::EVENT_EVENT_TRIGGERED, static::class . '@onTokenThrow');
+        $events->listen(StartEventInterface::EVENT_EVENT_TRIGGERED, static::class . '@onStartCatch');
     }
 }

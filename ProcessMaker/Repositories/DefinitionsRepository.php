@@ -9,6 +9,7 @@ use ProcessMaker\Nayra\RepositoryTrait;
 use ProcessMaker\Repositories\ExecutionInstanceRepository;
 use ProcessMaker\Repositories\TokenRepository;
 use ProcessMaker\Model\DataStore;
+use ProcessMaker\Model\MessageEventDefinition;
 
 /**
  * Definitions Repository
@@ -51,5 +52,10 @@ class DefinitionsRepository implements RepositoryInterface
     
     public function createDataStore() {
         return new DataStore();
+    }
+    
+    public function createMessageEventDefinition()
+    {
+        return new MessageEventDefinition();
     }
 }

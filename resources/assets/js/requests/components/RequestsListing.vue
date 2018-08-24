@@ -82,9 +82,11 @@ export default {
       if (!delegations) return assignedTo;
       delegations.forEach(function (delegation) {
         let user = delegation.user;
-        let avatar = user.avatar ? '<img class="avatar" src="' + user.avatar + '">'
-                : '<i class="fas fa-user"></i>';
-        assignedTo +=  avatar + ' ' + user.fullname + '<br>';
+        if (user) {
+          let avatar = user.avatar ? '<img class="avatar" src="' + user.avatar + '">'
+                  : '<i class="fas fa-user"></i>';
+          assignedTo +=  avatar + ' ' + user.fullname + '<br>';
+        }
       });
       return assignedTo;
     },

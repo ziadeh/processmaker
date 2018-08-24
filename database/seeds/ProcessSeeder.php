@@ -23,6 +23,7 @@ class ProcessSeeder extends Seeder
     public function run()
     {
         foreach (glob(database_path('processes') . '/*.bpmn') as $filename) {
+            echo 'Creating: ', $filename, "\n";
             $process = factory(Process::class)->make([
                 'bpmn' => file_get_contents($filename),
             ]);
@@ -44,8 +45,10 @@ class ProcessSeeder extends Seeder
             }
             $process->save();
 
+            $definitions = $process->getDefinitions();
+
             //Create scripts from the BPMN process definition
-            $scriptTasks = $process->getDefinitions()->getElementsByTagName('scriptTask');
+            $scriptTasks = $definitions->getElementsByTagName('scriptTask');
             foreach ($scriptTasks as $scriptTaskNode) {
                 $scriptTask = $scriptTaskNode->getBpmnElementInstance();
                 //Create a row in the Scripts table
@@ -62,46 +65,22 @@ class ProcessSeeder extends Seeder
                     WorkflowServiceProvider::PROCESS_MAKER_NS, 'scriptConfiguration', '{}'
                 );
             }
-            //Update the script references in the BPMN of the process
-            $process->bpmn = $process->getDefinitions()->saveXML();
-            $process->save();
-
-            $definitions = $process->getDefinitions();
 
             //Add forms to the process
-            $json = $this->loadForm('request.json');
-            factory(Form::class)->create([
-                'uid' => $definitions->getActivity('request')->getProperty('formRef'),
-                'title' => $json[0]->name,
-                'content' => $json,
-                'process_id' => $process->id,
-            ]);
-
-            $json = $this->loadForm('approve.json');
-            factory(Form::class)->create([
-                'uid' => $definitions->getActivity('approve')->getProperty('formRef'),
-                'content' => $this->loadForm('approve.json'),
-                'title' => $json[0]->name,
-                'content' => $json,
-                'process_id' => $process->id,
-            ]);
-
-            $json = $this->loadForm('validate.json');
-            factory(Form::class)->create([
-                'uid' => $definitions->getActivity('validate')->getProperty('formRef'),
-                'title' => $json[0]->name,
-                'content' => $json,
-                'process_id' => $process->id,
-            ]);
-            if ($definitions->findElementById('notavailable')) {
-                $json = $this->loadForm('notavailable.json');
-                factory(Form::class)->create([
-                    'uid' => $definitions->getActivity('notavailable')->getProperty('formRef'),
-                    'title' => $json[0]->name,
-                    'content' => $json,
-                    'process_id' => $process->id,
-                ]);
+            $tasks = $definitions->getElementsByTagName('task');
+            foreach($tasks as $task) {
+                $formRef = $task->getAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'formRef');
+                $id = $task->getAttribute('id');
+                if ($formRef) {
+                    $form = $this->createForm($id, $formRef, $process);
+                    $task->setAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'formRef', $form->uid);
+                }
             }
+
+
+            //Update the form and script references in the BPMN of the process
+            $process->bpmn = $definitions->saveXML();
+            $process->save();
 
             echo 'Process created: ', $process->uid, "\n";
         }
@@ -110,13 +89,30 @@ class ProcessSeeder extends Seeder
     /**
      * Load the JSON of a form.
      *
-     * @param string $name
+     * @param string $id
+     * @param string $formRef
+     * @param string $process
      *
      * @return object
      */
-    private function loadForm($name)
-    {
-        return json_decode(file_get_contents(database_path('processes/forms/' . $name)));
+    private function createForm($id, $formRef, $process) {
+
+        if (file_exists(database_path('processes/forms/' . $formRef . '.json'))) {
+            $json = json_decode(file_get_contents(database_path('processes/forms/' . $formRef . '.json')));
+            return factory(Form::class)->create([
+                        'title' => $json[0]->name,
+                        'content' => $json,
+                        'process_id' => $process->id,
+            ]);
+        } elseif (file_exists(database_path('processes/forms/' . $id . '.json'))) {
+            $json = json_decode(file_get_contents(database_path('processes/forms/' . $id . '.json')));
+            return factory(Form::class)->create([
+                        'uid' => $formRef,
+                        'title' => $json[0]->name,
+                        'content' => $json,
+                        'process_id' => $process->id,
+            ]);
+        }
     }
 
     private function languageOfMimeType($mime)

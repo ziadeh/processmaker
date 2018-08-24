@@ -37,7 +37,7 @@ class StartEvent extends BpmnAction
      */
     public function handle()
     {
-        try {
+        //try {
             //Load the process definition
             $definitions = Definitions::find($this->definitionsId);
             $workflow = $definitions->getDefinitions();
@@ -55,9 +55,9 @@ class StartEvent extends BpmnAction
             $workflow->getEngine()->runToNextState();
             
             return $response;
-        } catch (Throwable $t) {
-            Log::error($t->getMessage());
-        }
+        //} catch (Throwable $t) {
+        //    Log::error($t->getMessage());
+        //}
     }
 
     /**
