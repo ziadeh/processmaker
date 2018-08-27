@@ -110,7 +110,7 @@ class BpmnSubscriber
         WorkflowManager::runScripTask($scriptTask, $token);
     }
     
-    public function onTokenCatch(...$args)
+    /*public function onTokenCatch(...$args)
     {
         $types=[];
         foreach($args as $a) $types[]= is_object($a) ? get_class($a) : gettype($a);
@@ -129,7 +129,7 @@ class BpmnSubscriber
         $types=[];
         foreach($args as $a) $types[]= is_object($a) ? get_class($a) : gettype($a);
         Log::info('Throw something'. json_encode($types));
-    }
+    }*/
 
     /**
      * Subscription.
@@ -146,8 +146,8 @@ class BpmnSubscriber
 
         $events->listen(ActivityInterface::EVENT_ACTIVITY_ACTIVATED, static::class . '@onActivityActivated');
         $events->listen(ScriptTaskInterface::EVENT_SCRIPT_TASK_ACTIVATED, static::class . '@onScriptTaskActivated');
-        $events->listen(IntermediateCatchEvent::EVENT_CATCH_TOKEN_CATCH, static::class . '@onTokenCatch');
+        /*$events->listen(IntermediateCatchEvent::EVENT_CATCH_TOKEN_CATCH, static::class . '@onTokenCatch');
         $events->listen(IntermediateThrowEvent::EVENT_EVENT_TRIGGERED, static::class . '@onTokenThrow');
-        $events->listen(StartEventInterface::EVENT_EVENT_TRIGGERED, static::class . '@onStartCatch');
+        $events->listen(StartEventInterface::EVENT_EVENT_TRIGGERED, static::class . '@onStartCatch');*/
     }
 }

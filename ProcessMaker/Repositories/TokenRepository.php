@@ -130,17 +130,43 @@ class TokenRepository implements TokenRepositoryInterface
 
     public function persistCatchEventTokenArrives(CatchEventInterface $intermediateCatchEvent, TokenInterface $token)
     {
-        
+        \Illuminate\Support\Facades\Log::info('persistCatchEventTokenArrives');
+        $token->thread_status = $token->getStatus();
+        $token->element_ref = $intermediateCatchEvent->getId();
+        $token->application_id = $token->getInstance()->id;
+        $token->delegate_date = Carbon::now();
+        //@todo calculate the due date
+        $token->task_due_date = Carbon::now()->addDays(3);
+        $token->started = false;
+        $token->finished = false;
+        $token->delayed = false;
+        $token->type = 'event';
+        $token->saveOrFail();
+        $this->instanceRepository->persistInstanceUpdated($token->getInstance());
     }
 
     public function persistCatchEventTokenConsumed(CatchEventInterface $intermediateCatchEvent, TokenInterface $token)
     {
-        
+        \Illuminate\Support\Facades\Log::info('persistCatchEventTokenConsumed');
+        $token->uid = $token->getId();
+        $token->thread_status = $token->getStatus();
+        $token->element_ref = $intermediateCatchEvent->getId();
+        $token->application_id = $token->getInstance()->id;
+        $token->started = true;
+        $token->finished = true;
+        $token->save();
+        $this->instanceRepository->persistInstanceUpdated($token->getInstance());
     }
 
     public function persistCatchEventTokenPassed(CatchEventInterface $intermediateCatchEvent, TokenInterface $token)
     {
-        
+        \Illuminate\Support\Facades\Log::info('persistCatchEventTokenPassed');
+        $token->uid = $token->getId();
+        $token->thread_status = $token->getStatus();
+        $token->element_ref = $intermediateCatchEvent->getId();
+        $token->application_id = $token->getInstance()->id;
+        $token->save();
+        $this->instanceRepository->persistInstanceUpdated($token->getInstance());
     }
 
     public function persistGatewayTokenArrives(GatewayInterface $exclusiveGateway, TokenInterface $token)
