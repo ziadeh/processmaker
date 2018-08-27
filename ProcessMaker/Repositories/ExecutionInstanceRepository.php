@@ -92,16 +92,35 @@ class ExecutionInstanceRepository implements ExecutionInstanceRepositoryInterfac
         $data = $instance->getDataStore()->getData();
         //Get the process
         $process = $instance->getProcess();
+        //Get db definition of the process
+        $dbProcess = $process->getEngine()->getProcess();
 
         //Save the row
         $instance->uid = $instance->getId();
         $instance->callable = $process->getId();
-        $instance->process_id = $process->getEngine()->getProcess()->id;
+        $instance->process_id = $dbProcess->id;
+        $instance->collaboration = $instance->getCollaborationUid();
         $instance->creator_user_id = 1;
         $instance->APP_TITLE = '';
         $instance->APP_STATUS = Instance::STATUS_DRAFT;
         $instance->APP_INIT_DATE = Carbon::now();
         $instance->APP_DATA = json_encode($data);
+
+        //Save collaboration reference
+        $node = $dbProcess->getDefinitions()->getElementsByTagName('collaboration')->item(0);
+        if ($node) {
+            $collaboration = $node->getBpmnElementInstance();
+            $participantInstances = [];
+            foreach($collaboration->getParticipants() as $participant) {
+                $processInstances = $participant->getProcess()->getInstances();
+                Log::info('===> '.json_encode([$participant->getId(), $participant->getProcess()->getId()]));
+                foreach ($processInstances as $processInstance) {
+                Log::info('...===> '.json_encode([$processInstance->uid]));
+                    $participantInstances[] = $processInstance->uid;
+                }
+            }
+            Log::info('PROCESO CREADO... '.json_encode([$collaboration->getName(), $collaboration->getId(), $participantInstances, $instance->uid]));
+        }
         $instance->save();
     }
 
