@@ -215,7 +215,6 @@ class UsersTest extends TestCase
         ]);
 
         $user = factory(User::class)->create([
-            'uid' => '1234',
             'username' => app()->make('Faker\Generator')->text(10),
             'firstname' => app()->make('Faker\Generator')->text(10),
             'lastname' => app()->make('Faker\Generator')->text(10),
@@ -259,7 +258,6 @@ class UsersTest extends TestCase
     {
         $user = factory(User::class)->create([
             'password' => Hash::make('password'),
-
         ]);
 
         $data = [

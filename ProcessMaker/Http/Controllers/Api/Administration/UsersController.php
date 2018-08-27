@@ -61,17 +61,15 @@ class UsersController extends Controller
      */
     public function create(Request $request)
     {
-        $validatedData = $request->validate([
-            'username' => 'required|unique:users,username',
-            'firstname' => 'nullable',
-            'lastname' => 'nullable',
-            'password' => 'required'
+        $user = new User([
+            'username'  => $request->username,
+            'firstname' => $request->firstname,
+            'lastname'  => $request->lastname,
+            'password'  => Hash::make($request->password),
+            'status'    => User::STATUS_ACTIVE,
         ]);
-        $validatedData['password'] = Hash::make($validatedData['password']);
-        $created = User::create($validatedData);
-        // We use this to ensure we have all database attributes
-        $created = $created->refresh();
-        return fractal($created, new UserTransformer())->respond();
+        $user->save();
+        return fractal($user, new UserTransformer())->respond();
     }
 
     /**
@@ -85,7 +83,6 @@ class UsersController extends Controller
      */
     public function update(User $user, Request $request)
     {
-        $request->validate(User::rules($user));
         $user->username = $request->username;
         $user->firstname = $request->firstname;
         $user->lastname = $request->lastname;
@@ -93,9 +90,7 @@ class UsersController extends Controller
         if($request->password != ""){
             $user->password = Hash::make($request->password);
         }
-
         $user->save();
-
         return fractal($user, new UserTransformer())->respond();
     }
 
