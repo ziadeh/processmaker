@@ -21,12 +21,7 @@ export class Shape {
      * @returns {TaskShape}
      */
     config(options) {
-        this.options = Object.assign({}, this.options, {
-            id: options.id,
-            type: options.type,
-            eventDefinition: options.eventDefinition,
-            attributes: options.attributes
-        })
+        this.options = Object.assign({}, options)
         return this
     }
 
@@ -133,7 +128,7 @@ export class Shape {
      * @returns {string}
      */
     getId() {
-        return this.options.id
+        return this.options.bpmnElement.id
     }
 
     /**

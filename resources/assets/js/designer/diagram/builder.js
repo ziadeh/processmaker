@@ -19,14 +19,31 @@ export class Builder {
 
     createFromBPMN(bpmn) {
         let that = this
-        _.forEach(bpmn.shapes, (el) => {
+        let shapes = []
+        let edges = []
+        _.forEach(bpmn, (el) => {
+            if (el.$type.indexOf("BPMNEdge") > 0) {
+                edges.push(el)
+            } else {
+                shapes.push(el)
+            }
+        })
+
+        _.forEach(shapes, (el) => {
+            let arr = el.bpmnElement.$type.split(":")
+            let type = arr.length > 0 ? arr[1] : arr[0]
+            el.type = type
             that.createShape(el)
-        });
-        _.forEach(bpmn.links, (el) => {
-            let source = this.findInCollectionById(el.sourceRef)
-            let target = this.findInCollectionById(el.targetRef)
-            this.connect(Object.assign({}, {source, target}, el))
-        });
+        })
+
+        _.forEach(edges, (el) => {
+            let source = el.bpmnElement.sourceRef.id
+            let target = el.bpmnElement.targetRef.id
+            let arr = el.bpmnElement.$type.split(":")
+            let type = arr.length > 0 ? arr[1] : arr[0]
+            el.type = type.toLowerCase()
+            that.connect(el)
+        })
     }
 
     /**
@@ -39,17 +56,12 @@ export class Builder {
         let participant
         if (Elements[options.type.toLowerCase()]) {
             switch (options.type) {
-                case "sequenceflow":
-                    this.createFlow(options)
-                    break;
                 case "lane":
-                    participant = this.verifyElementFromPoint({x: options.x, y: options.y}, "participant")
+                    participant = this.verifyElementFromPoint({x: options.bounds.x, y: options.bounds.y}, "participant")
                     participant ? this.collection.push(participant.createLane()) : null
                     break;
-                case "textannotation":
-                    break;
                 default:
-                    participant = this.verifyElementFromPoint({x: options.x, y: options.y}, "participant")
+                    participant = this.verifyElementFromPoint({x: options.bounds.x, y: options.bounds.y}, "participant")
                     element = new Elements[options.type.toLowerCase()](
                         options,
                         this.graph,
@@ -153,19 +165,23 @@ export class Builder {
      */
     connect(options) {
         let flow
-        if (options.source != options.target && Validators.verifyConnectWith(options.source.getType(), options.target.getType())) {
-            flow = new Elements[options.type](options,
-                this.graph,
-                this.paper
-            )
-            flow.render();
-            options.source.updateOptions({
-                outgoing: flow.options.id
-            })
-            options.target.updateOptions({
-                incoming: flow.options.id
-            })
-        }
+        let source = this.findInCollectionById(options.bpmnElement.sourceRef.id)
+        let target = this.findInCollectionById(options.bpmnElement.targetRef.id)
+        //if (options.source != options.target && Validators.verifyConnectWith(options.source.getType(), options.target.getType())) {
+        flow = new Elements[options.type](options,
+            this.graph,
+            this.paper,
+            source,
+            target
+        )
+        flow.render();
+        /*options.source.updateOptions({
+         outgoing: flow.options.id
+         })
+         options.target.updateOptions({
+         incoming: flow.options.id
+         })*/
+        //}
         return flow
     }
 
@@ -211,7 +227,7 @@ export class Builder {
      */
     findInCollectionById(id) {
         return _.find(this.collection, (o) => {
-            return id === o.getOptions("id")
+            return id === o.getId()
         })
     }
 

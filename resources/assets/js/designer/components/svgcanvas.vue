@@ -28,8 +28,12 @@
         },
         watch: {
             bpmn() {
+                let that = this
                 this.builder.clear()
-                this.builder.createFromBPMN(this.bpmnHandler.buildModel(this.bpmn))
+                this.bpmnHandler.buildModel(this.bpmn, (els) => {
+                    debugger
+                    that.builder.createFromBPMN(els)
+                })
             }
         },
         computed: {},
@@ -52,7 +56,7 @@
              * Loads the xml bpmn definition from the current model of the process
              */
             loadFromModel () {
-               this.bpmn = this.bpmnHandler.toXML()
+                this.bpmn = this.bpmnHandler.toXML()
             },
 
             /**
@@ -224,7 +228,7 @@
             this.paper.on('link:mouseenter', this.linkMouseEnter)
             this.paper.on('link:mouseleave', this.linkMouseLeave)
             this.builder = new Builder(this.graph, this.paper)
-            this.builder.createFromBPMN(this.bpmnHandler.buildModel(this.bpmn))
+            //this.builder.createFromBPMN(this.bpmnHandler.buildModel(this.bpmn))
         }
     }
 </script>
