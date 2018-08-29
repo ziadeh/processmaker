@@ -86,7 +86,7 @@
                 modalComponent: null,
                 bpmn: {},
                 selectedElement: {},
-                autoSaveTime: 15000 // miliseconds
+                autoSaveTime: 30000 // miliseconds
             }
         },
         created() {
