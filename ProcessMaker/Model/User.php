@@ -75,20 +75,6 @@ class User extends Authenticatable implements UserEntityInterface, CanResetPassw
         'avatar',
     ];
 
-    protected static function rules($existing_user = null) {
-        $ignore = '';
-        if ($existing_user) {
-            $ignore = ',' . $existing_user->id;
-        }
-        return [
-            'username' => 'required|unique:users,username' . $ignore,
-            'firstname' => 'nullable',
-            'lastname' => 'nullable',
-            'password' => 'required',
-            'status' => 'required|in:ACTIVE,DISABLED',
-        ];
-    }
-
     /**
      * Boot user model.
      *
@@ -103,6 +89,25 @@ class User extends Authenticatable implements UserEntityInterface, CanResetPassw
                 Group::where('uid', Group::ALL_USERS_GROUP)->first()->users()->attach($user);
             }
         );
+    }
+
+    /**
+     * Returns the validation rules for this model.
+     * If this is an update validation rule, pass in the existing
+     * user to avoid unique rules clashing.
+     */
+    protected static function rules($existing_user = null) {
+        $ignore = '';
+        if ($existing_user) {
+            $ignore = ',' . $existing_user->id;
+        }
+        return [
+            'username' => 'required|unique:users,username' . $ignore,
+            'firstname' => 'nullable',
+            'lastname' => 'nullable',
+            'password' => 'required',
+            'status' => 'required|in:ACTIVE,DISABLED',
+        ];
     }
 
     /**
