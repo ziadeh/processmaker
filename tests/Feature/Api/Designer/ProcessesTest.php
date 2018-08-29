@@ -107,16 +107,37 @@ class ProcessesTest extends TestCase
         $faker = Faker::create();
 
         $url = self::API_TEST_PROCESS . '/create';
-        $response = $this->actingAs($user, 'api')->json('POST', $url, [
-            'name' => $faker->sentence(3),
+        $data = [
             'description' => $faker->sentence(3),
             'category_uid' => factory(ProcessCategory::class)->create()->uid
+        ];
+        $response = $this->actingAs($user, 'api')->json('POST', $url, $data);
+        $this->assertEquals(
+            $response->json()['errors']['name'][0],
+            'The name field is required.'
+        );
 
-        ]);
+        $data['name'] = $faker->sentence(3);
+        $response = $this->actingAs($user, 'api')->json('POST', $url, $data);
         //validating the answer is correct.
         $response->assertStatus(201);
         //Check structure of response.
         $response->assertJsonStructure(self::STRUCTURE);
+    }
+    
+    /**
+     * Test updating process status 
+     */
+    public function testUpdate()
+    {
+        $user = $this->authenticateAsAdmin();
+        $process = factory(Process::class)->create(["status" => "ACTIVE"]);
+        $url = self::API_TEST_PROCESS . '/' . $process->uid;
+        $data = ["status" => "INACTIVE"];
+        $response = $this->actingAs($user, 'api')->json('PUT', $url, $data);
+        $response->assertStatus(204);
+        $process->refresh();
+        $this->assertEquals($process->status, Process::STATUS_INACTIVE);
     }
 
     /**

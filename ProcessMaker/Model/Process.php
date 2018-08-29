@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\DB;
 use ProcessMaker\Model\Traits\Uuid;
 use ProcessMaker\Nayra\Contracts\Storage\BpmnDocumentInterface;
-use Watson\Validating\ValidatingTrait;
 
 /**
  * Represents a business process definition.
@@ -67,7 +66,6 @@ use Watson\Validating\ValidatingTrait;
  */
 class Process extends Model
 {
-    use ValidatingTrait;
     use Uuid;
 
     /**
@@ -165,21 +163,23 @@ class Process extends Model
      *
      * @var array $rules
      */
-    protected $rules = [
-        'uid' => 'max:36',
-        'name' => 'required',
-        'process_parent_id' => 'exists:processes',
-        'status' => 'in:' . self::STATUS_ACTIVE . ',' . self::STATUS_INACTIVE,
-        'create_script_id' => 'nullable|exists:scripts,id',
-        'open_script_id' => 'nullable|exists:scripts,id',
-        'deleted_script_id' => 'nullable|max:32',
-        'canceled_script_id' => 'nullable|max:32',
-        'paused_script_id' => 'nullable|max:32',
-        'reassigned_script_id' => 'nullable|max:32',
-        'unpaused_script_id' => 'nullable|max:32',
-        'process_category_id' => 'nullable|exists:process_categories,id',
-        'user_id' => 'exists:users,id',
-    ];
+    protected static function rules() {
+        return [
+            'uid' => 'max:36',
+            'name' => 'required',
+            'process_parent_id' => 'exists:processes',
+            'status' => 'in:' . self::STATUS_ACTIVE . ',' . self::STATUS_INACTIVE,
+            'create_script_id' => 'nullable|exists:scripts,id',
+            'open_script_id' => 'nullable|exists:scripts,id',
+            'deleted_script_id' => 'nullable|max:32',
+            'canceled_script_id' => 'nullable|max:32',
+            'paused_script_id' => 'nullable|max:32',
+            'reassigned_script_id' => 'nullable|max:32',
+            'unpaused_script_id' => 'nullable|max:32',
+            'process_category_id' => 'nullable|exists:process_categories,id',
+            'user_id' => 'exists:users,id',
+        ];
+    }
     
     private $bpmnDefinitions;
 

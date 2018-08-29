@@ -30,7 +30,7 @@ class ProcessManager
             $process->bpmn = $data['bpmn'];
         }
 
-        $process->saveOrFail();
+        $process->save();
 
         $process->refresh();
         $process->category = $process->category()->first();
@@ -50,13 +50,6 @@ class ProcessManager
      */
     public function update(Process $process, $data): Process
     {
-        $this->validate(
-            [
-                'process' => $process,
-            ],
-            [
-            ]
-        );
         $process->fill($data);
         $process->saveOrFail();
         return $process->refresh();

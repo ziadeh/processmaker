@@ -89,20 +89,6 @@ class ProcessesController extends Controller
     }
 
     /**
-     * Stores a new process.
-     *
-     * @param Request $request
-     *
-     * @return array
-     */
-    public function store(Request $request)
-    {
-        $data = $request->json()->all();
-        $response = ProcessManager::store($data);
-        return response($this->format($response), 201);
-    }
-
-    /**
      * Update a process.
      *
      * @param Request $request
@@ -112,6 +98,9 @@ class ProcessesController extends Controller
      */
     public function update(Request $request, Process $process)
     {
+        $request->validate(
+            ["status" => Process::rules()['status']]
+        );
         $data = $request->json()->all();
         $response = ProcessManager::update($process, $data);
         return response('', 204);
@@ -153,6 +142,7 @@ class ProcessesController extends Controller
      */
     public function createProcessTemplate(Request $request)
     {
+        $request->validate(Process::rules());
         $data = $request->json()->all();
         $category = ProcessCategory::where('uid', $data['category_uid'])->first();
 
