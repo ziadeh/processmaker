@@ -71,14 +71,14 @@ export default class BPMNHandler {
         _.each(diagrams, (dia) => {
             let plane = dia.get("plane")
             let planeElement = plane.get("planeElement")
-            el = _.find(planeElement, (v) => {
+            els = _.find(planeElement, (v) => {
                 return v.id == id
             })
-            if (!el) {
+            if (!els) {
                 return false
             }
         })
-        return el
+        return els
     }
 
     getElementsFromDiagrams() {
