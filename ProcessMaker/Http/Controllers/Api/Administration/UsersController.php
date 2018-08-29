@@ -61,14 +61,14 @@ class UsersController extends Controller
      */
     public function create(Request $request)
     {
-        $user = new User([
+        $request->validate(User::rules());
+        $user = User::create([
             'username'  => $request->username,
             'firstname' => $request->firstname,
             'lastname'  => $request->lastname,
             'password'  => Hash::make($request->password),
             'status'    => User::STATUS_ACTIVE,
         ]);
-        $user->save();
         return fractal($user, new UserTransformer())->respond();
     }
 
@@ -83,6 +83,7 @@ class UsersController extends Controller
      */
     public function update(User $user, Request $request)
     {
+        $request->validate(User::rules($user));
         $user->username = $request->username;
         $user->firstname = $request->firstname;
         $user->lastname = $request->lastname;

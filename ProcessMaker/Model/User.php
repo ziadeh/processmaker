@@ -14,7 +14,6 @@ use League\OAuth2\Server\Entities\UserEntityInterface;
 use ProcessMaker\Model\Traits\Uuid;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use Watson\Validating\ValidatingTrait;
 
 /**
  * Represents an Eloquent model of a User
@@ -30,10 +29,6 @@ class User extends Authenticatable implements UserEntityInterface, CanResetPassw
     use CanResetPasswordTrait;
     use HasMediaTrait;
     use HasApiTokens;
-    use ValidatingTrait;
-    
-    protected $injectUniqueIdentifier = true;
-    protected $throwValidationExceptions = true;
 
     const TYPE = 'USER';
     const STATUS_ACTIVE   = 'ACTIVE';
@@ -80,13 +75,19 @@ class User extends Authenticatable implements UserEntityInterface, CanResetPassw
         'avatar',
     ];
 
-    protected $rules = [
-        'username' => 'required|unique:users,username',
-        'firstname' => 'nullable',
-        'lastname' => 'nullable',
-        'password' => 'required',
-        'status' => 'required|in:ACTIVE,DISABLED',
-    ];
+    protected static function rules($existing_user = null) {
+        $ignore = '';
+        if ($existing_user) {
+            $ignore = ',' . $existing_user->id;
+        }
+        return [
+            'username' => 'required|unique:users,username' . $ignore,
+            'firstname' => 'nullable',
+            'lastname' => 'nullable',
+            'password' => 'required',
+            'status' => 'required|in:ACTIVE,DISABLED',
+        ];
+    }
 
     /**
      * Boot user model.

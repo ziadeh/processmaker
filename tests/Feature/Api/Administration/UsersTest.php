@@ -264,7 +264,8 @@ class UsersTest extends TestCase
             'username' => 'testuser',
             'firstname' => 'Test',
             'lastname' => 'User',
-            'password' => 'password'
+            'password' => 'password',
+            'status' => User::STATUS_ACTIVE
         ];
 
         $response = $this->actingAs($user, 'api')->json('post', self::API_TEST_USERS, $data);
