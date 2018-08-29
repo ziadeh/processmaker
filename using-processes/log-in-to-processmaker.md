@@ -1,5 +1,5 @@
 ---
-description: Log in to ProcessMaker provided by your ProcessMaker administrator.
+description: Log in to ProcessMaker using your ProcessMaker credentials.
 ---
 
 # Log In to ProcessMaker
