@@ -281,7 +281,7 @@ class UsersTest extends TestCase
         $response->assertStatus(200);
         $response = $this->actingAs($admin, 'api')->json('put', self::API_TEST_USERS . '/' . $user->uid, [
             'firstname' => $user->firstname,
-            'status' => 'INACTIVE',
+            'status' => User::STATUS_INACTIVE,
             'lastname' => $user->lastname,
             'username' => $user->username,
             'password' => $user->password,

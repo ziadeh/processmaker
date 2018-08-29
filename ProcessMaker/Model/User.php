@@ -32,7 +32,7 @@ class User extends Authenticatable implements UserEntityInterface, CanResetPassw
 
     const TYPE = 'USER';
     const STATUS_ACTIVE   = 'ACTIVE';
-    const STATUS_DISABLED = 'DISABLED';
+    const STATUS_INACTIVE = 'INACTIVE';
 
     //Disk
     public const DISK_PROFILE = 'profile';
@@ -106,7 +106,7 @@ class User extends Authenticatable implements UserEntityInterface, CanResetPassw
             'firstname' => 'nullable',
             'lastname' => 'nullable',
             'password' => 'required',
-            'status' => 'required|in:ACTIVE,DISABLED',
+            'status' => 'required|in:ACTIVE,INACTIVE',
         ];
     }
 
