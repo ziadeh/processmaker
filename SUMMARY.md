@@ -15,6 +15,7 @@
 * [Task Management](using-processes/task-management.md)
 * [Notifications](using-processes/notifications.md)
 * [Profile Settings](using-processes/profile-settings.md)
+* [Log Out](using-processes/log-out.md)
 
 ## Designing Processes
 
