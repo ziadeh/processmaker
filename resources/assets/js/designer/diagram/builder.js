@@ -47,8 +47,9 @@ export class Builder {
 
     /**
      * Create a shape based in type
-     * @param type
+     *
      * @param options
+     * @param createbpmn bool
      */
     createShape(options, createbpmn = false) {
         let element
@@ -60,6 +61,7 @@ export class Builder {
                     participant ? this.collection.push(participant.createLane()) : null
                     break;
                 default:
+                    console.log(options.type);
                     participant = this.verifyElementFromPoint({x: options.bounds.x, y: options.bounds.y}, "participant")
                     element = new Elements[options.type.toLowerCase()](
                         this.root,
@@ -68,6 +70,7 @@ export class Builder {
                     element.render()
                     createbpmn ? element.createBpmn() : null
                     this.collection.push(element)
+                    console.log(element.shape);
                     participant ? participant.getShape().embed(element.shape) : null
                     if (options.type === "participant") {
                         this.collection = _.concat(element.lanes, this.collection);

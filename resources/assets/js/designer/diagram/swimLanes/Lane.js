@@ -4,8 +4,8 @@ import {Shape} from "../Shape"
  * Pool class
  */
 export default class extends Shape {
-    constructor(options, graph, paper, parent) {
-        super(graph, paper)
+    constructor(root, options, paper, parent) {
+        super(root, options)
         this.isContainer = true
         this.type = "lane"
         this.options = {
@@ -20,7 +20,7 @@ export default class extends Shape {
         }
         this.setParent(parent)
         this.config(options)
-        this.configBounds(options.bounds)
+        this.configBounds(root)
     }
 
     /**
@@ -30,6 +30,9 @@ export default class extends Shape {
         this.shape = new JointElements.Lane();
         this.shape.position(this.options.bounds.x, this.options.bounds.y);
         this.shape.resize(this.options.bounds.width, this.options.bounds.height);
-        this.shape.addTo(this.graph);
+        //todo validate
+        if(this.root.graph)  {
+            this.shape.addTo(this.root.graph);
+        }
     }
 }

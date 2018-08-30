@@ -8,8 +8,10 @@ import EventBus from "../../lib/event-bus"
  * Pool class
  */
 export default class extends Shape {
-    constructor(options, graph, paper) {
-        super(graph, paper)
+    constructor(root, options, paper) {
+        console.log(root)
+        console.log(options)
+        super(root, options)
         this.lanes = []
         this.options = {
             id: null,
@@ -31,10 +33,15 @@ export default class extends Shape {
      * Render the Pool Based in options config
      */
     render() {
+        debugger
         this.shape = new JointElements.Participant();
         this.shape.position(this.options.bounds.x, this.options.bounds.y);
         this.shape.resize(this.options.bounds.width, this.options.bounds.height);
-        this.shape.addTo(this.graph);
+        //todo validate
+        if(this.root.graph)  {
+            this.shape.addTo(this.root.graph);
+        }
+
         let lane = this.firstLane()
         lane.render()
         this.shape.embed(lane.shape)
