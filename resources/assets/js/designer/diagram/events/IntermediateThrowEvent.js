@@ -6,8 +6,8 @@ import _ from "lodash"
  * IntermediateThrowEvent class
  */
 export default class {
-    constructor(options, graph, paper) {
-        this.adapter = new IntermediateThrowEvent[options["eventDefinition"]](options, graph, paper)
+    constructor(root, options) {
+        this.adapter = new IntermediateThrowEvent[options["eventDefinition"]](root, options)
     }
 
     render() {

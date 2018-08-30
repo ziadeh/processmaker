@@ -7,9 +7,8 @@ import EventBus from "../../lib/event-bus"
  * Flow class
  */
 export default class {
-    constructor(graph, paper) {
-        this.graph = graph
-        this.paper = paper
+    constructor(root) {
+        this.root = root
         this.shape = null
     }
 
@@ -133,7 +132,7 @@ export default class {
                 boundaryTool, removeButton
             ]
         })
-        let linkView = this.shape.findView(this.paper)
+        let linkView = this.shape.findView(this.root.paper)
         linkView.addTools(toolsView);
         linkView.hideTools()
     }

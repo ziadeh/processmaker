@@ -6,10 +6,10 @@ import _ from "lodash"
  * EndEvent class
  */
 export default class {
-    constructor(options, graph, paper) {
+    constructor(root, options) {
         let def = options["eventDefinition"]
         def = def ? def : "empty"
-        this.adapter = new EndEvent[def](options, graph, paper)
+        this.adapter = new EndEvent[def](root, options)
     }
 
     render() {

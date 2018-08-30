@@ -6,13 +6,10 @@ import _ from "lodash"
  * Shape class
  */
 export class Shape {
-    constructor(graph, paper) {
-        this.graph = graph
-        this.paper = paper
-        this.isContainer = false
+    constructor(root, options) {
+        this.root = root
         this.shape = null
-        this.parent = null
-        this.type = "Shape"
+        this.options = options
     }
 
     /**
@@ -137,7 +134,7 @@ export class Shape {
     resetFlows() {
         let links
         if (this.shape) {
-            links = this.graph.getConnectedLinks(this.shape)
+            links = this.root.graph.getConnectedLinks(this.shape)
             _.each(links, (link) => {
                 link.vertices([])
             })
@@ -151,7 +148,7 @@ export class Shape {
         let links
         let that = this
         if (this.shape) {
-            links = this.graph.getConnectedLinks(this.shape)
+            links = this.root.graph.getConnectedLinks(this.shape)
             _.each(links, (link) => {
                 let linkView = that.paper.findViewByModel(link)
                 let arrVertices = that.getVertices(linkView)

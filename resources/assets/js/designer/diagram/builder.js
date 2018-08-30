@@ -6,9 +6,8 @@ import EventBus from "../lib/event-bus"
 import {Validators} from './flow/Validators'
 
 export class Builder {
-    constructor(graph, paper) {
-        this.graph = graph
-        this.paper = paper
+    constructor(root) {
+        this.root = root
         this.collection = []
 
         this.selection = []
@@ -63,9 +62,8 @@ export class Builder {
                 default:
                     participant = this.verifyElementFromPoint({x: options.bounds.x, y: options.bounds.y}, "participant")
                     element = new Elements[options.type.toLowerCase()](
-                        options,
-                        this.graph,
-                        this.paper
+                        this.root,
+                        options
                     );
                     element.render()
                     createbpmn ? element.createBpmn() : null
@@ -168,9 +166,7 @@ export class Builder {
         let source = this.findInCollectionById(options.bpmnElement.sourceRef.id)
         let target = this.findInCollectionById(options.bpmnElement.targetRef.id)
         //if (options.source != options.target && Validators.verifyConnectWith(options.source.getType(), options.target.getType())) {
-        flow = new Elements[options.type](options,
-            this.graph,
-            this.paper,
+        flow = new Elements[options.type](this.root, options,
             source,
             target
         )
@@ -191,7 +187,7 @@ export class Builder {
      * @param ev
      */
     createFlow(ev) {
-        let elements = this.graph.findModelsFromPoint(ev)
+        let elements = this.root.graph.findModelsFromPoint(ev)
         if (elements.length > 0) {
             let element = elements.pop()
             let target = this.findElementInCollection(element)
@@ -243,7 +239,7 @@ export class Builder {
         this.connectingFlow.target(ev)
         this.connectingFlow.attr('line/stroke-dasharray', '3,5');
         this.connectingFlow.router('normal')
-        this.connectingFlow.addTo(this.graph)
+        this.connectingFlow.addTo(this.root.graph)
     }
 
     updateConnectingFlow(ev) {
@@ -256,7 +252,7 @@ export class Builder {
      * Reset the builder
      */
     clear() {
-        this.graph.clear()
+        this.root.graph.clear()
         this.collection = []
         this.selection = []
     }
@@ -275,7 +271,7 @@ export class Builder {
             cell.toFront();
         }
         if (cell.get('parent')) {
-            this.graph.getCell(cell.get('parent')).unembed(cell);
+            this.root.graph.getCell(cell.get('parent')).unembed(cell);
         }
     }
 
@@ -288,7 +284,7 @@ export class Builder {
      */
     pointerUp(cellView, evt, x, y) {
         let cell = cellView.model;
-        let cellViewsBelow = this.paper.findViewsFromPoint(cellView.getBBox ? cellView.getBBox().center() : cell.getBBox().center());
+        let cellViewsBelow = this.root.paper.findViewsFromPoint(cellView.getBBox ? cellView.getBBox().center() : cell.getBBox().center());
         if (cellViewsBelow.length) {
             // Note that the findViewsFromPoint() returns the view for the `cell` itself.
             let cellViewBelow = _.find(cellViewsBelow, function (c) {
@@ -308,7 +304,7 @@ export class Builder {
     verifyElementFromPoint(point, type) {
         let that = this
         let response = null
-        let elements = this.graph.findModelsFromPoint({x: point.x, y: point.y})
+        let elements = this.root.graph.findModelsFromPoint({x: point.x, y: point.y})
         if (elements.length > 0) {
             _.each(elements, (o) => {
                 let el = that.findElementInCollection(o)

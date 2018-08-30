@@ -6,8 +6,8 @@ import _ from "lodash"
  * IntermediateCatchEvent class
  */
 export default class {
-    constructor(options, graph, paper) {
-        this.adapter = new IntermediateCatchEvent[options["eventDefinition"]](options, graph, paper)
+    constructor(root, options) {
+        this.adapter = new IntermediateCatchEvent[options["eventDefinition"]](root, options)
     }
 
     render() {

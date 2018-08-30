@@ -4,7 +4,8 @@ import Task from "./Task"
  * ScriptTask class
  */
 export default class extends Task {
-    constructor(options, graph, paper) {
-        super(options, graph, paper)
+    constructor(root, options) {
+        super(root, options)
+        this.options = options
     }
 }

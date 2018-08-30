@@ -4,23 +4,9 @@ import {Shape} from "../Shape"
  * CallActivity class
  */
 export default class extends Shape {
-    constructor(options, graph, paper) {
-        super(graph, paper)
-        this.options = {
-            id: null,
-            type: "task",
-            bounds: {
-                x: null,
-                y: null,
-                width: 120,
-                height: 80
-            },
-            incoming: null,
-            outgoing: null,
-            attributes: {}
-        }
-        this.config(options)
-        this.configBounds(options.bounds)
+    constructor(root, options) {
+        super(root)
+        this.options = options
     }
 
     /**
@@ -35,6 +21,6 @@ export default class extends Shape {
                 text: this.options.bpmnElement.name
             }
         })
-        this.shape.addTo(this.graph)
+        this.shape.addTo(this.root.graph)
     }
 }

@@ -4,8 +4,8 @@ import {Shape} from "../../Shape"
  * Message Event Definition class
  */
 export default class extends Shape {
-    constructor(options, graph, paper) {
-        super(graph, paper)
+    constructor(root, options) {
+        super(root)
         this.options = options
     }
 
@@ -21,6 +21,6 @@ export default class extends Shape {
                 text: this.options.bpmnElement.name
             }
         })
-        this.shape.addTo(this.graph)
+        this.shape.addTo(this.root.graph)
     }
 }

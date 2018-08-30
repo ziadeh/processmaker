@@ -12,6 +12,7 @@
     import BPMNHandler from '../BPMNHandler/BPMNHandler'
     import {Elements} from "../diagram/elements"
     import qinu from 'qinu'
+    import defaultProperties from '../diagram/defaultProperties'
 
     export default {
         props: [
@@ -31,7 +32,6 @@
                 let that = this
                 this.builder.clear()
                 this.bpmnHandler.buildModel(this.bpmn, (els) => {
-                    debugger
                     that.builder.createFromBPMN(els)
                 })
             }
@@ -67,20 +67,15 @@
                 let definition = event.target.getAttribute("event")
                 let type = event.target.getAttribute("type")
                 this.updateCoordinates()
-                const defaultOptions = {
-                    id: type + '_' + qinu(),
+                let opt = defaultProperties.create({
                     type: type,
-                    bounds: {
-                        x: event.x - this.diagramCoordinates.x,
-                        y: event.y - this.diagramCoordinates.y
-                    },
-                    attributes: {
-                        name: ""
-                    },
-                    eventDefinition: definition
-                }
+                    x: event.x - this.diagramCoordinates.x,
+                    y: event.y - this.diagramCoordinates.y
+                })
+
+                opt.type = type
                 if (Elements[type.toLowerCase()]) {
-                    this.builder.createShape(defaultOptions, true)
+                    this.builder.createShape(opt, true)
                 } else {
                     ProcessMaker.alert(type.toLowerCase() + " is not supported", "danger")
                 }
@@ -227,7 +222,7 @@
             this.paper.on('cell:pointerup', this.pointerUp)
             this.paper.on('link:mouseenter', this.linkMouseEnter)
             this.paper.on('link:mouseleave', this.linkMouseLeave)
-            this.builder = new Builder(this.graph, this.paper)
+            this.builder = new Builder(this)
             //this.builder.createFromBPMN(this.bpmnHandler.buildModel(this.bpmn))
         }
     }

@@ -4,10 +4,8 @@ import Flow from "./Flow"
  * Flow class
  */
 export default class extends Flow {
-    constructor(options, graph, paper, source, target) {
-        super(graph, paper)
-        this.graph = graph
-        this.paper = paper
+    constructor(root, options, source, target) {
+        super(root)
         this.shape = null
         this.options = options
         this.source = source
@@ -25,7 +23,7 @@ export default class extends Flow {
         this.shape.router('orthogonal', {
             elementPadding: 10
         })
-        this.shape.addTo(this.graph)
+        this.shape.addTo(this.root.graph)
         this.options.id = this.shape.id
         this.createTools()
         this.addEvents()
