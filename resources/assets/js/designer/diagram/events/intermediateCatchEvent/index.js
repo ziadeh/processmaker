@@ -1,5 +1,7 @@
-import messageEventDefinition from "./MessageEventDefinition"
+import MessageEventDefinition from "./MessageEventDefinition"
+import Empty from "./Empty"
 
 export const IntermediateCatchEvent = Object.assign({}, {
-    messageEventDefinition
+    Empty,
+    MessageEventDefinition
 })

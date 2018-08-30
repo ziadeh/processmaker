@@ -2,12 +2,16 @@ import {JointElements} from "../jointElements"
 import {Shape} from "../Shape"
 import {IntermediateThrowEvent} from "./intermediateThrowEvent/"
 import _ from "lodash"
+
 /**
  * IntermediateThrowEvent class
  */
 export default class {
     constructor(root, options) {
-        this.adapter = new IntermediateThrowEvent[options["eventDefinition"]](root, options)
+        //todo review all possible definitions and event by defautl
+        let definition = options.bpmnElement.eventDefinitions[0].$type.split(":")[1]
+        definition = IntermediateThrowEvent[definition] ? definition : 'Empty'
+        this.adapter = new IntermediateThrowEvent[definition](root, options)
     }
 
     render() {

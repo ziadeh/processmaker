@@ -1,7 +1,9 @@
-import timerEventDefinition from "./TimerEventDefinition"
-import messageEventDefinition from "./MessageEventDefinition"
+import TimerEventDefinition from "./TimerEventDefinition"
+import MessageEventDefinition from "./MessageEventDefinition"
+import Empty from "./Empty"
 
 export const IntermediateThrowEvent = Object.assign({}, {
-    timerEventDefinition,
-    messageEventDefinition
+    Empty,
+    TimerEventDefinition,
+    MessageEventDefinition
 })

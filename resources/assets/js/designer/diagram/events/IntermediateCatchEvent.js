@@ -7,7 +7,11 @@ import _ from "lodash"
  */
 export default class {
     constructor(root, options) {
-        this.adapter = new IntermediateCatchEvent[options["eventDefinition"]](root, options)
+        //todo review all possible definitions and event by defautl
+
+        let definition = options.bpmnElement.eventDefinitions[0].$type.split(":")[1]
+        definition = IntermediateCatchEvent[definition] ? definition : 'Empty'
+        this.adapter = new IntermediateCatchEvent[definition](root, options)
     }
 
     render() {

@@ -1,7 +1,7 @@
-import messageEventDefinition from "./MessageEventDefinition"
-import empty from "./Empty"
+import MessageEventDefinition from "./MessageEventDefinition"
+import Empty from "./Empty"
 
 export const EndEvent = Object.assign({}, {
-    messageEventDefinition,
-    empty
+    MessageEventDefinition,
+    Empty
 })

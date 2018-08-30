@@ -70,8 +70,8 @@ export class Builder {
                     element.render()
                     createbpmn ? element.createBpmn() : null
                     this.collection.push(element)
-                    console.log(element.shape);
-                    participant ? participant.getShape().embed(element.shape) : null
+                    console.log(element.getShape());
+                    participant ? participant.getShape().embed(element.getShape()) : null
                     if (options.type === "participant") {
                         this.collection = _.concat(element.lanes, this.collection);
                     }

@@ -2,14 +2,19 @@ import {JointElements} from "../jointElements"
 import {Shape} from "../Shape"
 import {EndEvent} from "./endEvent/"
 import _ from "lodash"
+import {IntermediateCatchEvent} from "./intermediateCatchEvent";
 /**
  * EndEvent class
  */
 export default class {
     constructor(root, options) {
-        let def = options["eventDefinition"]
-        def = def ? def : "empty"
-        this.adapter = new EndEvent[def](root, options)
+        //todo review all possible definitions
+        let definition = 'Empty'
+        if (options.bpmnElement.eventDefinitions) {
+            definition = options.bpmnElement.eventDefinitions[0].$type.split(":")[1].toLocaleLowerCase()
+            definition = EndEvent[definition] ? definition : 'Empty'
+        }
+        this.adapter = new EndEvent[definition](root, options)
     }
 
     render() {

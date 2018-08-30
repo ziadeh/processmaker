@@ -125,7 +125,10 @@ export class Shape {
      * @returns {string}
      */
     getId() {
-        return this.options.bpmnElement.id
+        if (this.options.bpmnElement) {
+            return this.options.bpmnElement.id
+        }
+        return null
     }
 
     /**
