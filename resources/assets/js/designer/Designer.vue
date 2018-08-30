@@ -16,38 +16,40 @@
 
 
 <script>
-    // Import our designer event-bus
-    import EventBus from "./lib/event-bus";
-    // Import our top-level components
-    // Designer is our overall canvas tool
-    import svgcanvas from "./components/svgcanvas";
-    // This is our toolbar palette
-    import toolbar from "./components/toolbar";
-    // This is our top toolbar with process title and process options
-    import toptoolbar from "./components/toptoolbar";
-    // This is our objects menu with nested object-menu items components
-    import designerobjectsmenu from "./components/designer-objects-menu";
-    // @todo Figure out a way to add these modals to the properties of components
-    import modalCreateDatabaseAdd from "./components/modals/modal-create-database-add";
-    import modalCreateOutputAdd from "./components/modals/modal-create-output-add";
-    import modalCreateTemplateAdd from "./components/modals/modal-create-template-add";
-    import modalCreateScriptAdd from "./components/modals/modal-create-script-add";
-    import modalFormsAdd from "./components/modals/modal-forms-add";
-    import modalInputDocumentAdd from "./components/modals/modal-input-document-add";
-    import modalPermissionsAdd from "./components/modals/modal-permissions-add";
-    import modalPublicFileAdd from "./components/modals/modal-public-file-add";
-    import modalVariablesAdd from "./components/modals/modal-variables-add";
-    import modalMessageTypes from "./components/modals/modal-message-types";
-    import modalFormsList from "./components/modals/modal-forms-list"
-    import ModalScriptTask from "./components/modals/modal-script-task";
-    import modalTaskConfiguration from "./components/modals/modal-task-configuration"
+// Import our designer event-bus
+import EventBus from "./lib/event-bus";
+// Import our top-level components
+// Designer is our overall canvas tool
+import svgcanvas from "./components/svgcanvas";
+// This is our toolbar palette
+import toolbar from "./components/toolbar";
+// This is our top toolbar with process title and process options
+import toptoolbar from "./components/toptoolbar";
+// This is our objects menu with nested object-menu items components
+import designerobjectsmenu from "./components/designer-objects-menu";
+// @todo Figure out a way to add these modals to the properties of components
+import modalCreateDatabaseAdd from "./components/modals/modal-create-database-add";
+import modalCreateOutputAdd from "./components/modals/modal-create-output-add";
+import modalCreateTemplateAdd from "./components/modals/modal-create-template-add";
+import modalCreateScriptAdd from "./components/modals/modal-create-script-add";
+import modalFormsAdd from "./components/modals/modal-forms-add";
+import modalInputDocumentAdd from "./components/modals/modal-input-document-add";
+import modalPermissionsAdd from "./components/modals/modal-permissions-add";
+import modalPublicFileAdd from "./components/modals/modal-public-file-add";
+import modalMessageTypes from "./components/modals/modal-message-types";
+import modalFormsList from "./components/modals/modal-forms-list";
+import ModalScriptTask from "./components/modals/modal-script-task";
+import modalTaskConfiguration from "./components/modals/modal-task-configuration";
 
-    //Modal list
-    import modalForms from "./components/modalList/modal-forms-list"
-    import modalOutputDocuments from "./components/modalList/modal-output-documents"
-    import ModalInputDocumentList from "./components/modalList/modal-input-document-list";
-    import ModalScriptsList from "./components/modalList/modal-scripts-list";
+//Modal list
+import modalForms from "./components/modalList/modal-forms-list";
+import modalOutputDocuments from "./components/modalList/modal-output-documents";
+import ModalInputDocumentList from "./components/modalList/modal-input-document-list";
+import ModalScriptsList from "./components/modalList/modal-scripts-list";
 
+// This is out Cron for every shape
+import crown from "./components/crown";
+import actions from "./actions";
 
     // This is out Cron for every shape
     import crown from "./components/crown"
@@ -195,29 +197,29 @@
 </script>
 
 <style lang="scss" scoped>
-    #designer-container {
-        // Width and height is set to 100% to fill the outside container
-        max-height: 100%;
-        min-height: 100%;
-        max-width: 100%;
-        min-width: 100%;
-        flex: 1;
-        // We will flex container the items
-        display: flex;
-        flex-direction: column;
-        background-color: green;
-        #designer-subcontainer {
-            display: flex;
-            flex: 1;
-            flex-direction: row;
-            min-width: 100%;
-            max-width: 100%;
-            min-height: 100%;
-            max-height: 100%;
-            .canvas-container {
-                flex: 1;
-                overflow: auto;
-            }
-        }
+#designer-container {
+  // Width and height is set to 100% to fill the outside container
+  max-height: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  flex: 1;
+  // We will flex container the items
+  display: flex;
+  flex-direction: column;
+  background-color: green;
+  #designer-subcontainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    .canvas-container {
+      flex: 1;
+      overflow: auto;
     }
+  }
+}
 </style>
