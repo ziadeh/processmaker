@@ -12,6 +12,8 @@
 * [Log In to ProcessMaker](using-processes/log-in-to-processmaker.md)
 * [Make a Request](using-processes/make-a-request.md)
 * [View Requests Made of You](using-processes/view-requests-made-of-you.md)
+* [Task Management](using-processes/task-management.md)
+* [Notifications](using-processes/notifications.md)
 
 ## Designing Processes
 
