@@ -14,6 +14,7 @@
 * [View Requests Made of You](using-processes/view-requests-made-of-you.md)
 * [Task Management](using-processes/task-management.md)
 * [Notifications](using-processes/notifications.md)
+* [Profile Settings](using-processes/profile-settings.md)
 
 ## Designing Processes
 
