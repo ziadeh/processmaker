@@ -91,6 +91,19 @@ export default class BPMNHandler {
         })
         return els
     }
+
+    toXML() {
+        let moddle = new BpmnModdle();
+        let that = this
+
+        moddle.toXML(this.definitions, function (err, xmlStrUpdated) {
+            console.log('Save process')
+            console.log(err)
+            console.log(xmlStrUpdated)
+            that.xml = xmlStrUpdated;
+        });
+        return this.xml;
+    }
 }
 
 

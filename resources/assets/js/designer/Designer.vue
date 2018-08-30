@@ -36,27 +36,20 @@
     import modalInputDocumentAdd from "./components/modals/modal-input-document-add";
     import modalPermissionsAdd from "./components/modals/modal-permissions-add";
     import modalPublicFileAdd from "./components/modals/modal-public-file-add";
-    import modalVariablesAdd from "./components/modals/modal-variables-add";
     import modalMessageTypes from "./components/modals/modal-message-types";
-    import modalFormsList from "./components/modals/modal-forms-list"
+    import modalFormsList from "./components/modals/modal-forms-list";
     import ModalScriptTask from "./components/modals/modal-script-task";
-    import modalTaskConfiguration from "./components/modals/modal-task-configuration"
-
+    import modalTaskConfiguration from "./components/modals/modal-task-configuration";
     //Modal list
-    import modalForms from "./components/modalList/modal-forms-list"
-    import modalOutputDocuments from "./components/modalList/modal-output-documents"
+    import modalForms from "./components/modalList/modal-forms-list";
+    import modalOutputDocuments from "./components/modalList/modal-output-documents";
     import ModalInputDocumentList from "./components/modalList/modal-input-document-list";
     import ModalScriptsList from "./components/modalList/modal-scripts-list";
-
-
     // This is out Cron for every shape
-    import crown from "./components/crown"
-    import actions from "./actions"
-
+    import crown from "./components/crown";
+    import actions from "./actions";
     export default {
-        props: [
-            'processUid', 'processTitle'
-        ],
+        props: ["processUid", "processTitle"],
         components: {
             crown,
             designerobjectsmenu,
@@ -69,7 +62,6 @@
             modalInputDocumentAdd,
             modalPermissionsAdd,
             modalPublicFileAdd,
-            modalVariablesAdd,
             modalOutputDocuments,
             modalFormsList,
             modalTaskConfiguration,
@@ -87,7 +79,7 @@
                 bpmn: {},
                 selectedElement: {},
                 autoSaveTime: 15000 // miliseconds
-            }
+            };
         },
         created() {
             // Listen for opening an add dialog
@@ -101,95 +93,94 @@
                 // @todo Replace this with dynamic modal generation once we have all modals in place
                 // We're not doing this now so we can have visual alert feedback when a modal isn't implemented
                 switch (key) {
-                    case 'permissions':
-                        this.modalComponent = 'modal-permissions-add'
+                    case "permissions":
+                        this.modalComponent = "modal-permissions-add";
                         break;
-                    case 'variables':
-                        this.modalComponent = 'modal-variables-add'
+                    case "public-files":
+                        this.modalComponent = "modal-public-file-add";
                         break;
-                    case 'public-files':
-                        this.modalComponent = 'modal-public-file-add'
+                    case "forms":
+                        this.modalComponent = "modal-forms-add";
                         break;
-                    case 'forms':
-                        this.modalComponent = 'modal-forms-add'
+                    case "formslist":
+                        this.modalComponent = "modal-forms-list";
                         break;
-                    case 'formslist':
-                        this.modalComponent = 'modal-forms-list'
+                    case "message-types":
+                        this.modalComponent = "modal-message-types";
                         break;
-                    case 'message-types':
-                        this.modalComponent = 'modal-message-types'
+                    case "database-connections":
+                        this.modalComponent = "modal-create-database-add";
                         break;
-                    case 'database-connections':
-                        this.modalComponent = 'modal-create-database-add'
+                    case "input-documents":
+                        this.modalComponent = "modal-input-document-add";
                         break;
-                    case 'input-documents':
-                        this.modalComponent = 'modal-input-document-add'
+                    case "output-documents":
+                        this.modalComponent = "modal-create-output-add";
                         break;
-                    case 'output-documents':
-                        this.modalComponent = 'modal-create-output-add'
+                    case "scripts":
+                        this.modalComponent = "modal-create-script-add";
                         break;
-                    case 'scripts':
-                        this.modalComponent = 'modal-create-script-add'
+                    case "templates":
+                        this.modalComponent = "modal-create-template-add";
                         break;
-                    case 'templates':
-                        this.modalComponent = 'modal-create-template-add'
+                    case "open":
+                        this.modalComponent = "modal-create-template-add";
                         break;
-                    case 'open':
-                        this.modalComponent = 'modal-create-template-add'
-                        break;
-                    case 'show-element-configuration':
+                    case "show-element-configuration":
                         switch (this.selectedElement.type) {
-                          case 'scripttask':
-                            this.modalComponent = 'modal-script-task'
-                            break;
+                            case "scripttask":
+                                this.modalComponent = "modal-script-task";
+                                break;
                         }
-                    case 'task-configuration':
-                        this.modalComponent = 'modal-task-configuration'
+                    case "task-configuration":
+                        this.modalComponent = "modal-task-configuration";
                         break;
                     default:
-                        alert(key + ' add modal not yet implemented.')
+                        alert(key + " add modal not yet implemented.");
                 }
             },
-            openTitleDialog(key){
+            openTitleDialog(key) {
                 switch (key) {
-                    case 'forms':
-                        this.modalComponent = 'modal-forms';
+                    case "forms":
+                        this.modalComponent = "modal-forms";
                         break;
-                    case 'input-documents':
-                        this.modalComponent = 'modal-input-document-list';
+                    case "input-documents":
+                        this.modalComponent = "modal-input-document-list";
                         break;
-                    case 'output-documents':
-                        this.modalComponent = 'modal-output-documents';
+                    case "output-documents":
+                        this.modalComponent = "modal-output-documents";
                         break;
-                    case 'scripts':
-                        this.modalComponent = 'modal-scripts-list';
+                    case "scripts":
+                        this.modalComponent = "modal-scripts-list";
                         break;
                     default:
-                        alert(key + ' Behavior TBD')
+                        alert(key + " Behavior TBD");
                 }
             },
-            onHidden(){
-                this.modalComponent = null
+            onHidden() {
+                this.modalComponent = null;
             },
-            onScroll(){
-                let action = actions.designer.crown.hide()
-                EventBus.$emit(action.type, action.payload)
+            onScroll() {
+                let action = actions.designer.crown.hide();
+                EventBus.$emit(action.type, action.payload);
             },
-            autoSave(){
+            autoSave() {
                 setInterval(() => {
-                    let action = actions.bpmn.save()
-                    EventBus.$emit(action.type, action.payload)
-                }, this.autoSaveTime)
+                    let action = actions.bpmn.save();
+                    EventBus.$emit(action.type, action.payload);
+                }, this.autoSaveTime);
             }
         },
-        mounted(){
-            ProcessMaker.apiClient.get(`processes/${this.processUid}/bpmn`, {
-                params: {}
-            }).then((response) => {
-                let action = actions.designer.bpmn.update(response.data)
-                EventBus.$emit(action.type, action.payload)
-            })
-            this.autoSave()
+        mounted() {
+            ProcessMaker.apiClient
+                .get(`processes/${this.processUid}/bpmn`, {
+                    params: {}
+                })
+                .then(response => {
+                    let action = actions.designer.bpmn.update(response.data);
+                    EventBus.$emit(action.type, action.payload);
+                });
+            this.autoSave();
         }
     };
 </script>
