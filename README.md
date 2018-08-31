@@ -1,6 +1,6 @@
 ---
-description: Welcome to ProcessMaker 4 product documentation. Let's get started.
+description: Welcome to ProcessMaker 4 Community Edition documentation. Let's get started.
 ---
 
-# ProcessMaker 4 Product Documentation
+# ProcessMaker 4 Community Edition Documentation
 
