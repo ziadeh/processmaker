@@ -9,19 +9,24 @@
 
 ## Using ProcessMaker
 
-* [Log In to ProcessMaker](using-processes/log-in-to-processmaker.md)
+* [Log In](using-processes/log-in-to-processmaker.md)
+* [Profile Settings](using-processes/profile-settings.md)
 * [Make a Request](using-processes/make-a-request.md)
 * [View Requests Made of You](using-processes/view-requests-made-of-you.md)
 * [Task Management](using-processes/task-management.md)
 * [Notifications](using-processes/notifications.md)
-* [Profile Settings](using-processes/profile-settings.md)
 * [Log Out](using-processes/log-out.md)
 
 ## Designing Processes
 
 * [Process Management](designing-processes/viewing-processes/README.md)
   * [Create a Process](designing-processes/viewing-processes/create-a-process.md)
+  * [Import a Process](designing-processes/viewing-processes/import-a-process.md)
+  * [Export a Process](designing-processes/viewing-processes/export-a-process.md)
   * [View the List of Processes](designing-processes/viewing-processes/view-the-list-of-processes.md)
+  * [Search for a Process](designing-processes/viewing-processes/search-for-a-process.md)
+  * [Edit a Process](designing-processes/viewing-processes/edit-a-process.md)
+  * [Archive a Process](designing-processes/viewing-processes/archive-a-process.md)
   * [Delete a Process](designing-processes/viewing-processes/delete-a-process.md)
 * [Process Design](designing-processes/process-design/README.md)
   * [Design Forms](designing-processes/process-design/design-forms.md)
