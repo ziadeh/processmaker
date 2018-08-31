@@ -67,7 +67,7 @@
              */
             remove (ev){
                 let action = actions.designer.shape.remove()
-                EventBus.$emit(action.type, action.payload)
+                ROOT.$emit(action.type, action.payload)
             },
             /**
              * Method for remove the Selected Shape
