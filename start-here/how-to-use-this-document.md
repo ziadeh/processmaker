@@ -12,7 +12,7 @@ Refer to the following sections of this document based on how you use ProcessMak
 
 An IT administrator prepares how to and installs ProcessMaker on-premises. Refer to the **Install ProcessMaker** section that includes the following topics:
 
-* [ProcessMaker prerequisites](../install-processmaker/prerequisites.md)
+* [ProcessMaker prerequisites](../install-processmaker/prerequisites/)
 * [How to install supported stacks](../install-processmaker/installing-stacks.md)
 * [How to install ProcessMaker on-premises](../install-processmaker/install-processmaker-on-premise.md)
 
