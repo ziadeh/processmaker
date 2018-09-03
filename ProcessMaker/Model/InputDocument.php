@@ -166,4 +166,9 @@ class InputDocument extends Model
     {
         return __(self::FORM_NEEDED_TYPE[$value]);
     }
+
+    public function process()
+    {
+        return $this->belongsTo(Process::class);
+    }
 }
