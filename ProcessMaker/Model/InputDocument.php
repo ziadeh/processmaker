@@ -72,22 +72,6 @@ class InputDocument extends Model
         'INPUT'
     ];
 
-//    private static $rules = [
-//        'insert' => [
-//            'uid' => 'max:36',
-//            'title' => 'required|unique:input_documents,title',
-//            'process_id' => 'exists:processes,id',
-//            'versioning' => 'required|boolean'
-//        ],
-//
-//        'update' => [
-//            'uid' => 'max:36',
-//            'title' => 'required|unique:input_documents,title',
-//            'process_id' => 'exists:processes,id',
-//            'versioning' => 'required|boolean'
-//        ]
-//    ];
-
     protected $fillable = [
         'uid',
         'process_id',
@@ -137,17 +121,12 @@ class InputDocument extends Model
     ];
 
     protected $rules = [
+            'uid' => 'max:36',
+            'title' => 'required|unique:input_documents,title',
+            'process_id' => 'exists:processes,id',
+            'versioning' => 'required|boolean'
     ];
 
-//    public static function rules()
-//    {
-//        return $rules = [
-//            'uid' => 'max:36',
-//            'title' => 'required|unique:input_documents,title',
-//            'process_id' => 'exists:processes,id',
-//            'versioning' => 'required|boolean'
-//        ];
-//    }
 
     protected $validationMessages = [
         'title.unique' => 'A Input Document with the same name already exists in this process.',
@@ -197,13 +176,18 @@ class InputDocument extends Model
         return __(self::FORM_NEEDED_TYPE[$value]);
     }
 
+    /**
+     * Process to which the input document belongs to
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function process()
     {
         return $this->belongsTo(Process::class);
     }
 
     /**
-     * Validate extra rules
+     * Additional validation rules
      *
      * @param array $data
      * @param boolean $update
