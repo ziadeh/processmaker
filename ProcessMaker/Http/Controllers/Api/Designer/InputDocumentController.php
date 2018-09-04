@@ -6,7 +6,6 @@ use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use ProcessMaker\Exception\DoesNotBelongToProcessException;
-use ProcessMaker\Facades\InputDocumentManager;
 use ProcessMaker\Model\InputDocument;
 use ProcessMaker\Model\Process;
 use ProcessMaker\Transformers\InputDocumentTransformer;
@@ -30,7 +29,22 @@ class InputDocumentController
             'sort_by' => $request->input('order_by', 'title'),
             'sort_order' => $request->input('order_direction', 'ASC'),
         ];
-        $response = InputDocumentManager::index($process, $options);
+
+        $query = InputDocument::where('process_id', $process->id);
+        $filter = $options['filter'];
+        if (!empty($filter)) {
+            $filter = '%' . $filter . '%';
+            $query->where(function ($query) use ($filter) {
+                $query->Where('title', 'like', $filter)
+                    ->orWhere('description', 'like', $filter)
+                    ->orWhere('versioning', 'like', $filter);
+            });
+        }
+
+        $response = $query->orderBy($options['sort_by'], $options['sort_order'])
+            ->paginate($options['per_page'])
+            ->appends($options);
+
         return fractal($response, new InputDocumentTransformer())->respond();
     }
 
@@ -59,7 +73,7 @@ class InputDocumentController
      */
     public function store(Process $process, Request $request)
     {
-        $data = [
+        $newData = [
             'title' => $request->input('title', ''),
             'description' => $request->input('description', ''),
             'form_needed' => $request->input('form_needed', 'REAL'),
@@ -67,11 +81,15 @@ class InputDocumentController
             'published' => $request->input('published', 'PRIVATE'),
             'versioning' => $request->input('versioning', 0),
             'destination_path' => $request->input('destination_path', ''),
-            'tags' => $request->input('tags', 'INPUT')
+            'tags' => $request->input('tags', 'INPUT'),
+            'process_id' => $process->id
         ];
 
-        $response = InputDocumentManager::save($process, $data);
-        return fractal($response, new InputDocumentTransformer())->respond(201);
+        $inputDocument = new InputDocument();
+        $inputDocument->fill($newData);
+        $inputDocument->saveOrFail();
+
+        return fractal($inputDocument, new InputDocumentTransformer())->respond(201);
     }
 
     /**
@@ -98,7 +116,10 @@ class InputDocumentController
         }
 
         if ($data) {
-            InputDocumentManager::update($process, $inputDocument, $data);
+            $data['process_id'] = $process->id;
+            $inputDocument->fill($data);
+            $inputDocument->saveOrFail();
+
         }
         return response([], 200);
     }
@@ -115,7 +136,7 @@ class InputDocumentController
     public function remove(Process $process, InputDocument $inputDocument)
     {
         $this->belongsToProcess($process, $inputDocument);
-        InputDocumentManager::remove($inputDocument);
+        $inputDocument->delete();
         return response([], 204);
     }
 

@@ -104,10 +104,6 @@ class ProcessMakerServiceProvider extends ServiceProvider
             return new TaskAssigneeManager();
         });
 
-        $this->app->singleton('input_document.manager', function ($app) {
-            return new InputDocumentManager();
-        });
-        
         $this->app->singleton('script.manager', function ($app) {
             return new ScriptManager();
         });

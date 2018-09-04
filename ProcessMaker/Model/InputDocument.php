@@ -3,7 +3,9 @@
 namespace ProcessMaker\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use ProcessMaker\Exception\ValidationException;
 use ProcessMaker\Model\Traits\Uuid;
 use Watson\Validating\ValidatingTrait;
 
@@ -29,7 +31,9 @@ use Watson\Validating\ValidatingTrait;
  */
 class InputDocument extends Model
 {
-    use ValidatingTrait;
+    use ValidatingTrait {
+        isValid as public validatingIsValid;
+    }
     use Uuid;
 
     protected $table = 'input_documents';
@@ -67,6 +71,22 @@ class InputDocument extends Model
     const DOC_TAGS_TYPE = [
         'INPUT'
     ];
+
+//    private static $rules = [
+//        'insert' => [
+//            'uid' => 'max:36',
+//            'title' => 'required|unique:input_documents,title',
+//            'process_id' => 'exists:processes,id',
+//            'versioning' => 'required|boolean'
+//        ],
+//
+//        'update' => [
+//            'uid' => 'max:36',
+//            'title' => 'required|unique:input_documents,title',
+//            'process_id' => 'exists:processes,id',
+//            'versioning' => 'required|boolean'
+//        ]
+//    ];
 
     protected $fillable = [
         'uid',
@@ -117,11 +137,17 @@ class InputDocument extends Model
     ];
 
     protected $rules = [
-        'uid' => 'max:36',
-        'title' => 'required|unique:input_documents,title',
-        'process_id' => 'exists:processes,id',
-        'versioning' => 'required|boolean'
     ];
+
+//    public static function rules()
+//    {
+//        return $rules = [
+//            'uid' => 'max:36',
+//            'title' => 'required|unique:input_documents,title',
+//            'process_id' => 'exists:processes,id',
+//            'versioning' => 'required|boolean'
+//        ];
+//    }
 
     protected $validationMessages = [
         'title.unique' => 'A Input Document with the same name already exists in this process.',
@@ -164,11 +190,47 @@ class InputDocument extends Model
      */
     public function getFormNeededAttribute($value): ?string
     {
+        if (!array_key_exists($value, self::FORM_NEEDED_TYPE)) {
+            return null;
+        }
+
         return __(self::FORM_NEEDED_TYPE[$value]);
     }
 
     public function process()
     {
         return $this->belongsTo(Process::class);
+    }
+
+    /**
+     * Validate extra rules
+     *
+     * @param array $data
+     * @param boolean $update
+     *
+     * @throws ValidationException
+     */
+    public function isValid($update = false)
+    {
+        if (!$this->validatingIsValid()) {
+            return false;
+        }
+
+        /* @var $validator \Illuminate\Validation\Validator */
+        $validator = Validator::make(
+            $this->toArray(),
+            [
+                'form_needed' => 'required|in:' . implode(',', array_values(InputDocument::FORM_NEEDED_TYPE)),
+                'original' => 'required|in:' . implode(',', InputDocument::DOC_ORIGINAL_TYPE),
+                'published' => 'required|in:' . implode(',', InputDocument::DOC_PUBLISHED_TYPE),
+                'tags' => 'required|in:' . implode(',', InputDocument::DOC_TAGS_TYPE)
+            ]
+        );
+
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+
+        return true;
     }
 }
