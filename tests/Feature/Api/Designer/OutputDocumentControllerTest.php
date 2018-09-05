@@ -62,6 +62,13 @@ class OutputDocumentControllerTest extends TestCase
                 'pdf_security_permissions' => $faker->randomElements(OutputDocument::PDF_SECURITY_PERMISSIONS_TYPE, 2, false),
                 'pdf_security_open_password' => 'test open password',
                 'pdf_security_owner_password' => 'test owner password',
+                'landscape' => true,
+                'media' => 'pdf',
+                'left_margin' => 0,
+                'right_margin' => 0,
+                'top_margin' => 0,
+                'bottom_margin' => 0,
+                'pdf_security_enabled' => false
             ]
         ];
 
@@ -79,12 +86,12 @@ class OutputDocumentControllerTest extends TestCase
 
     public function testUpdate()
     {
+        $faker = Faker::create();
+
         // Create a new element for the test
         $outputDocument = factory(OutputDocument::class)->create();
 
         $url = "api/1.0/process/{$outputDocument->process->uid}/output-document/{$outputDocument->uid}";
-
-        $faker = Faker::create();
 
         $updateOutputDocument = [
             'title' => 'test title',
@@ -121,8 +128,6 @@ class OutputDocumentControllerTest extends TestCase
             ->json('DELETE', $url);
 
         $response->assertStatus(204);
-
-        $url = "api/1.0/process/{$outputDocument->process->uid}/output-documents";
 
         // Asserting that the created output document has been deleted
         $this->assertCount(0, OutputDocument::all());

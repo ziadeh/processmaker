@@ -30,7 +30,26 @@ class OutputDocumentController
             'sort_by' => $request->input('order_by', 'title'),
             'sort_order' => $request->input('order_direction', 'ASC'),
         ];
-        $response = OutputDocumentManager::index($process, $options);
+
+        $query = OutputDocument::where('process_id', $process->id);
+        $filter = $options['filter'];
+        if (!empty($filter)) {
+            $filter = '%' . $filter . '%';
+            $query->where(function ($query) use ($filter) {
+                $query->Where('title', 'like', $filter)
+                    ->orWhere('description', 'like', $filter)
+                    ->orWhere('filename', 'like', $filter)
+                    ->orWhere('report_generator', 'like', $filter)
+                    ->orWhere('type', 'like', $filter)
+                    ->orWhere('versioning', 'like', $filter)
+                    ->orWhere('current_revision', 'like', $filter)
+                    ->orWhere('tags', 'like', $filter);
+            });
+        }
+        $response =  $query->orderBy($options['sort_by'], $options['sort_order'])
+            ->paginate($options['per_page'])
+            ->appends($options);
+
         return fractal($response, new OutputDocumentTransformer())->respond();
     }
 
@@ -66,13 +85,18 @@ class OutputDocumentController
             'current_revision' => $request->input('current_revision', 0),
             'open_type' => $request->input('open_type', 0),
             'versioning' => $request->input('versioning', 0),
-            'properties' => $request->input('properties', []),
+            'properties' => $this->addDefaultDocumentProperties($request->input('properties', [])),
+            'process_id' => $process->id
         ];
 
         $data = array_merge($data, $this->formatData($request, ['title', 'description', 'filename', 'template',
             'type', 'tags']));
 
-        $response = OutputDocumentManager::save($process, $data);
+
+        $outputDocument = new OutputDocument();
+        $outputDocument->fill($data);
+        $outputDocument->saveOrFail();
+        $response = $outputDocument->refresh();
         return fractal($response, new OutputDocumentTransformer())->respond(201);
     }
 
@@ -93,7 +117,11 @@ class OutputDocumentController
             'type', 'versioning', 'current_revision', 'tags', 'open_type', 'generate', 'properties']);
 
         if ($data) {
-            OutputDocumentManager::update($process, $outputDocument, $data);
+            $data['process_id'] = $process->id;
+            $data['properties'] = $this->addDefaultDocumentProperties(array_merge($outputDocument->properties, $data['properties']));
+
+            $outputDocument->fill($data);
+            $outputDocument->saveOrFail();
         }
         return response([], 200);
     }
@@ -110,7 +138,7 @@ class OutputDocumentController
     public function remove(Process $process, OutputDocument $outputDocument)
     {
         $this->belongsToProcess($process, $outputDocument);
-        OutputDocumentManager::remove($outputDocument);
+        $outputDocument->delete();
         return response([], 204);
     }
 
@@ -146,6 +174,32 @@ class OutputDocumentController
             }
         }
         return $data;
+    }
+
+
+    /**
+     * Adds default pdf document properties
+     *
+     * @param array $properties
+     *
+     * @return array
+     */
+    private function addDefaultDocumentProperties($properties): array
+    {
+        $properties['landscape'] = isset($properties['landscape']) ? $properties['landscape'] : 0;
+        $properties['media'] = isset($properties['media']) ? $properties['media'] : 'letter';
+        $properties['left_margin'] = isset($properties['left_margin']) ? $properties['left_margin'] : 30;
+        $properties['right_margin'] = isset($properties['right_margin']) ? $properties['right_margin'] : 15;
+        $properties['top_margin'] = isset($properties['top_margin']) ? $properties['top_margin'] : 15;
+        $properties['bottom_margin'] = isset($properties['bottom_margin']) ? $properties['bottom_margin'] : 15;
+        $properties['field_mapping'] = isset($properties['field_mapping']) ? $properties['field_mapping'] : null;
+        $properties['destination_path'] = isset($properties['destination_path']) ? $properties['destination_path'] : null;
+        $properties['pdf_security_enabled'] = isset($properties['pdf_security_enabled']) ? $properties['pdf_security_enabled'] : 0;
+        $properties['pdf_security_open_password'] = isset($properties['pdf_security_open_password']) ? $properties['pdf_security_open_password'] : '';
+        $properties['pdf_security_owner_password'] = isset($properties['pdf_security_owner_password']) ? $properties['pdf_security_owner_password'] : '';
+        $properties['pdf_security_permissions'] = isset($properties['pdf_security_permissions']) ? $properties['pdf_security_permissions'] : null;
+
+        return $properties;
     }
 
 }

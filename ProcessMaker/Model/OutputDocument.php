@@ -3,7 +3,9 @@
 namespace ProcessMaker\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use ProcessMaker\Exception\ValidationException;
 use ProcessMaker\Model\Traits\Uuid;
 use Watson\Validating\ValidatingTrait;
 
@@ -30,7 +32,9 @@ use Watson\Validating\ValidatingTrait;
  */
 class OutputDocument extends Model
 {
-    use ValidatingTrait;
+    use ValidatingTrait {
+        isValid as public validatingIsValid;
+    }
     use Uuid;
 
     protected $injectUniqueIdentifier = true;
@@ -160,4 +164,53 @@ class OutputDocument extends Model
         $this->attributes['properties'] = empty($value) ? null : json_encode($value);
     }
 
+    /**
+     * Process to which the input document belongs to
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function process()
+    {
+        return $this->belongsTo(Process::class);
+    }
+
+    /**
+     * Additional validation rules
+     *
+     * @param array $data
+     * @param boolean $update
+     *
+     * @throws ValidationException
+     */
+    public function isValid()
+    {
+        if (!$this->validatingIsValid()) {
+            return false;
+        }
+
+        //we need this additional validation because can't use a function like implode in the property initializer
+        $validator = Validator::make(
+            $this->toArray(),
+            [
+                'report_generator' => 'required|in:' . implode(',', OutputDocument::DOC_REPORT_GENERATOR_TYPE),
+                'generate' => 'required|in:' . implode(',', OutputDocument::DOC_GENERATE_TYPE),
+                'type' => 'required|in:' . implode(',', OutputDocument::DOC_TYPE),
+                'properties.landscape' => 'required|boolean',
+                'properties.media' => 'required',
+                'properties.left_margin' => 'required|min:0',
+                'properties.right_margin' => 'required|min:0',
+                'properties.top_margin' => 'required|min:0',
+                'properties.bottom_margin' => 'required|min:0',
+                'properties.pdf_security_enabled' => 'required|boolean',
+                'properties.pdf_security_permissions' => 'present|array',
+                'properties.pdf_security_permissions.*' => 'required_without:properties.pdf_security_permissions|in: "",' . implode(',', OutputDocument::PDF_SECURITY_PERMISSIONS_TYPE),
+            ]
+        );
+
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+
+        return true;
+    }
 }

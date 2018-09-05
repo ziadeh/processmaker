@@ -114,8 +114,6 @@ class InputDocumentControllerTest extends TestCase
 
         $response->assertStatus(204);
 
-        $url = "api/1.0/process/{$inputDocument->process->uid}/input-documents";
-
         // Asserting that the created input document has been deleted
         $this->assertCount(0, InputDocument::all());
     }
