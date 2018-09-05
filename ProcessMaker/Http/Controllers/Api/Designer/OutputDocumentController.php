@@ -134,7 +134,7 @@ class OutputDocumentController
      * @return ResponseFactory|Response
      * @throws DoesNotBelongToProcessException
      */
-    public function remove(Process $process, OutputDocument $outputDocument)
+    public function destroy(Process $process, OutputDocument $outputDocument)
     {
         $this->belongsToProcess($process, $outputDocument);
         $outputDocument->delete();

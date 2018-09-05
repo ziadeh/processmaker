@@ -122,18 +122,10 @@ Route::group([
         Route::get('process/{process}/activity/{activity}/available-assignee', 'Designer\AssigneeController@getActivityAvailable');
 
         //Output Document endpoints
-        Route::get('process/{process}/output-documents', 'Designer\OutputDocumentController@index');
-        Route::get('process/{process}/output-document/{outputDocument}', 'Designer\OutputDocumentController@show');
-        Route::post('process/{process}/output-document', 'Designer\OutputDocumentController@store');
-        Route::put('process/{process}/output-document/{outputDocument}', 'Designer\OutputDocumentController@update');
-        Route::delete('process/{process}/output-document/{outputDocument}', 'Designer\OutputDocumentController@remove');
+        Route::resource('process.output-document', 'Designer\OutputDocumentController');
 
         //Input Document endpoints
-        Route::get('process/{process}/input-documents', 'Designer\InputDocumentController@index');
-        Route::get('process/{process}/input-document/{inputDocument}', 'Designer\InputDocumentController@show');
-        Route::post('process/{process}/input-document', 'Designer\InputDocumentController@store');
-        Route::put('process/{process}/input-document/{inputDocument}', 'Designer\InputDocumentController@update');
-        Route::delete('process/{process}/input-document/{inputDocument}', 'Designer\InputDocumentController@remove');
+        Route::resource('process.input-document', 'Designer\InputDocumentController');
 
         //Requests endpoints
         Route::get('requests', 'Requests\RequestsController@index');

@@ -22,7 +22,7 @@ class OutputDocumentControllerTest extends TestCase
         // Create a new element for the test
         $outputDocument = factory(OutputDocument::class)->create();
 
-        $url = "api/1.0/process/{$outputDocument->process->uid}/output-documents";
+        $url = "api/1.0/process/{$outputDocument->process->uid}/output-document";
 
         // Calling and asserting that the created element is listed in the index
         $response = $this->actingAs($this->user, 'api')->json('GET', $url);

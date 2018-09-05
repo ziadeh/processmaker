@@ -23,7 +23,7 @@ class InputDocumentControllerTest extends TestCase
         // Create a new element for the test
         $inputDocument = factory(InputDocument::class)->create();
 
-        $url = "api/1.0/process/{$inputDocument->process->uid}/input-documents";
+        $url = "api/1.0/process/{$inputDocument->process->uid}/input-document";
 
         // Calling and asserting that the created element is listed in the index
         $response = $this->actingAs($this->user, 'api')->json('GET', $url);
