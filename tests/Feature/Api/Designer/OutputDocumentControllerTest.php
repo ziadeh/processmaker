@@ -2,17 +2,16 @@
 
 namespace Tests\Feature\Api\Cases;
 
+use Faker\Factory as Faker;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Input;
-use ProcessMaker\Model\DbSource;
-use ProcessMaker\Model\InputDocument;
+use Illuminate\Support\Facades\Output;
+use ProcessMaker\Model\OutputDocument;
 use ProcessMaker\Model\Process;
-use ProcessMaker\Model\ProcessVariable;
 use ProcessMaker\Model\User;
 use Tests\TestCase;
 
-class InputDocumentControllerTest extends TestCase
+class OutputDocumentControllerTest extends TestCase
 {
     use DatabaseTransactions;
 
@@ -21,9 +20,9 @@ class InputDocumentControllerTest extends TestCase
     public function testIndex()
     {
         // Create a new element for the test
-        $inputDocument = factory(InputDocument::class)->create();
+        $outputDocument = factory(OutputDocument::class)->create();
 
-        $url = "api/1.0/process/{$inputDocument->process->uid}/input-documents";
+        $url = "api/1.0/process/{$outputDocument->process->uid}/output-documents";
 
         // Calling and asserting that the created element is listed in the index
         $response = $this->actingAs($this->user, 'api')->json('GET', $url);
@@ -34,14 +33,14 @@ class InputDocumentControllerTest extends TestCase
     public function testShow()
     {
         // Create a new element for the test
-        $inputDocument = factory(InputDocument::class)->create();
+        $outputDocument = factory(OutputDocument::class)->create();
 
-        $url = "api/1.0/process/{$inputDocument->process->uid}/input-document/{$inputDocument->uid}";
+        $url = "api/1.0/process/{$outputDocument->process->uid}/output-document/{$outputDocument->uid}";
 
         // Calling and asserting that the created element is returned
         $response = $this->actingAs($this->user, 'api')->json('GET', $url);
         $response->assertStatus(200);
-        $response->assertJsonFragment(['uid' => $inputDocument->uid]);
+        $response->assertJsonFragment(['uid' => $outputDocument->uid]);
     }
 
     public function testStore()
@@ -49,64 +48,73 @@ class InputDocumentControllerTest extends TestCase
         // Create a new process for the test
         $process = factory(Process::class)->create();
 
-        $url = "api/1.0/process/{$process->uid}/input-document";
+        $url = "api/1.0/process/{$process->uid}/output-document";
 
-        $newInputDocument = ['title' => 'test title',
-            'description' => 'test description',
-            'form_needed' => 'this value generates error',
-            'original' => InputDocument::DOC_ORIGINAL_TYPE[0],
-            'published' => InputDocument::DOC_PUBLISHED_TYPE[0],
-            'versioning' => 0,
-            'destination_path' => '/test/path',
-            'tags' => InputDocument::DOC_TAGS_TYPE[0]
+        $faker = Faker::create();
+        $newOutputDocument = [
+            'title' => $faker->sentence(3),
+            'description' => $faker->sentence(3),
+            'filename' => $faker->sentence(3),
+            'report_generator' => 'wrong report generator type',
+            'generate' => $faker->randomElement(OutputDocument::DOC_GENERATE_TYPE),
+            'type' => $faker->randomElement(OutputDocument::DOC_TYPE),
+            'properties' => [
+                'pdf_security_permissions' => $faker->randomElements(OutputDocument::PDF_SECURITY_PERMISSIONS_TYPE, 2, false),
+                'pdf_security_open_password' => 'test open password',
+                'pdf_security_owner_password' => 'test owner password',
+            ]
         ];
 
         // Wrong parameters should generate an error
         $response = $this->actingAs($this->user, 'api')
-            ->json('POST', $url, $newInputDocument);
+            ->json('POST', $url, $newOutputDocument);
         $response->assertStatus(422);
 
-        // Correct parameters should create an input document
-        $newInputDocument['form_needed'] = array_keys(InputDocument::FORM_NEEDED_TYPE)[0];
+        // Correct parameters should create an output document
+        $newOutputDocument['report_generator'] = $faker->randomElement(OutputDocument::DOC_REPORT_GENERATOR_TYPE);
         $response = $this->actingAs($this->user, 'api')
-            ->json('POST', $url, $newInputDocument);
+            ->json('POST', $url, $newOutputDocument);
         $response->assertStatus(201);
     }
 
     public function testUpdate()
     {
         // Create a new element for the test
-        $inputDocument = factory(InputDocument::class)->create();
+        $outputDocument = factory(OutputDocument::class)->create();
 
-        $url = "api/1.0/process/{$inputDocument->process->uid}/input-document/{$inputDocument->uid}";
+        $url = "api/1.0/process/{$outputDocument->process->uid}/output-document/{$outputDocument->uid}";
 
-        $updateInputDocument = ['title' => 'test title',
-            'description' => 'test description',
-            'form_needed' => array_keys(InputDocument::FORM_NEEDED_TYPE)[0],
-            'original' => InputDocument::DOC_ORIGINAL_TYPE[0],
-            'published' => InputDocument::DOC_PUBLISHED_TYPE[0],
-            'versioning' => 0,
-            'destination_path' => '/test/path',
-            'tags' => InputDocument::DOC_TAGS_TYPE[0]
+        $faker = Faker::create();
+
+        $updateOutputDocument = [
+            'title' => 'test title',
+            'description' => $faker->sentence(2),
+            'filename' => $faker->sentence(2),
+            'report_generator' => $faker->randomElement(OutputDocument::DOC_REPORT_GENERATOR_TYPE),
+            'generate' => $faker->randomElement(OutputDocument::DOC_GENERATE_TYPE),
+            'type' => $faker->randomElement(OutputDocument::DOC_TYPE),
+            'properties' => [
+                'pdf_security_permissions' => []
+            ]
         ];
 
         // Calling and asserting that the created element is returned
         $response = $this->actingAs($this->user, 'api')
-            ->json('PUT', $url, $updateInputDocument);
+            ->json('PUT', $url, $updateOutputDocument);
 
         $response->assertStatus(200);
 
-        //Asserting that the input document has been modified
-        $modInputDocument = InputDocument::find($inputDocument->id);
-        $this->assertTrue($modInputDocument->title === 'test title');
+        //Asserting that the output document has been modified
+        $modOutputDocument = OutputDocument::find($outputDocument->id);
+        $this->assertTrue($modOutputDocument->title === 'test title');
     }
 
     public function testDelete()
     {
         // Create a new element for the test
-        $inputDocument = factory(InputDocument::class)->create();
+        $outputDocument = factory(OutputDocument::class)->create();
 
-        $url = "api/1.0/process/{$inputDocument->process->uid}/input-document/{$inputDocument->uid}";
+        $url = "api/1.0/process/{$outputDocument->process->uid}/output-document/{$outputDocument->uid}";
 
         // Calling and asserting that the created element is returned
         $response = $this->actingAs($this->user, 'api')
@@ -114,10 +122,10 @@ class InputDocumentControllerTest extends TestCase
 
         $response->assertStatus(204);
 
-        $url = "api/1.0/process/{$inputDocument->process->uid}/input-documents";
+        $url = "api/1.0/process/{$outputDocument->process->uid}/output-documents";
 
-        // Asserting that the created input document has been deleted
-        $this->assertCount(0, InputDocument::all());
+        // Asserting that the created output document has been deleted
+        $this->assertCount(0, OutputDocument::all());
     }
 
     /**
@@ -133,5 +141,4 @@ class InputDocumentControllerTest extends TestCase
         ]);
 
     }
-
 }
