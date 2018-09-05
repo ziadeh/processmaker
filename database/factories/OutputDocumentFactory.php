@@ -24,5 +24,17 @@ $factory->define(OutputDocument::class, function (Faker $faker) {
         'open_type' => $faker->randomElement([0,1]),
         'template' => $faker->randomHtml(2,3),
         'versioning' => $faker->randomElement([0,1]),
+        'properties' => [
+            'pdf_security_permissions' => $faker->randomElements(OutputDocument::PDF_SECURITY_PERMISSIONS_TYPE, 2, false),
+            'pdf_security_open_password' => 'test open password',
+            'pdf_security_owner_password' => 'test owner password',
+            'landscape' => false,
+            'media' => 'pdf',
+            'left_margin' => 0,
+            'right_margin' => 0,
+            'top_margin' => 0,
+            'bottom_margin' => 0,
+            'pdf_security_enabled' => false,
+        ]
     ];
 });

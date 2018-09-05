@@ -108,10 +108,6 @@ class ProcessMakerServiceProvider extends ServiceProvider
             return new ScriptManager();
         });
 
-        $this->app->singleton('output_document.manager', function ($app) {
-            return new OutputDocumentManager();
-        });
-
         $this->app->singleton('task_delegation.manager', function ($app) {
             return new TasksDelegationManager();
         });

@@ -6,7 +6,6 @@ use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use ProcessMaker\Exception\DoesNotBelongToProcessException;
-use ProcessMaker\Facades\OutputDocumentManager;
 use ProcessMaker\Model\OutputDocument;
 use ProcessMaker\Model\Process;
 use ProcessMaker\Transformers\OutputDocumentTransformer;
