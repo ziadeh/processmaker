@@ -108,6 +108,29 @@ jobs:
           name: "Front-End Asset Build"
           command: "npm run dev"
 
+  test:
+    resource_class: xlarge
+    docker:
+      # specify the version you desire here
+      - image: circleci/php:7.2.8-fpm-node-browsers
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      - image: circleci/mysql:5.7
+
+      # Add support for Microsoft SQL Server Testing
+      - image: microsoft/mssql-server-linux:2017-GA
+        environment:
+          # Needed for MS SQL Docker install
+          - ACCEPT_EULA: "Y"
+          - SA_PASSWORD: "P4ssW0rd1!"
+          
+    parallelism: 2
+
+    working_directory: ~/repo
+
+    steps:
       # run tests!
       - run:
           name: "PHPUnit"
@@ -130,6 +153,29 @@ jobs:
       - store_artifacts:
           path: tests/js/coverage
 
+  qa_deploy:
+    resource_class: xlarge
+    docker:
+      # specify the version you desire here
+      - image: circleci/php:7.2.8-fpm-node-browsers
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      - image: circleci/mysql:5.7
+
+      # Add support for Microsoft SQL Server Testing
+      - image: microsoft/mssql-server-linux:2017-GA
+        environment:
+          # Needed for MS SQL Docker install
+          - ACCEPT_EULA: "Y"
+          - SA_PASSWORD: "P4ssW0rd1!"
+          
+    parallelism: 2
+
+    working_directory: ~/repo
+
+    steps:
       # Prepare for packaging for QA environment
 
       - run:
@@ -211,6 +257,44 @@ jobs:
       #      SAUCELABS_PLATFORM: "macOS 10.13"
       #      SAUCELABS_BROWSER_VERSION: "11.0"
 
+  qa_start:
+    resource_class: xlarge
+    docker:
+      # specify the version you desire here
+      - image: circleci/php:7.2.8-fpm-node-browsers
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      - image: circleci/mysql:5.7
+
+      # Add support for Microsoft SQL Server Testing
+      - image: microsoft/mssql-server-linux:2017-GA
+        environment:
+          # Needed for MS SQL Docker install
+          - ACCEPT_EULA: "Y"
+          - SA_PASSWORD: "P4ssW0rd1!"
+          
+    parallelism: 2
+
+    working_directory: ~/repo
+
+    steps:
       - run:
           name: "Final QA Artisan DB Migration"
           command: "ssh -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-pm4builds \"php ~/builds/$BUILD_NAME/artisan migrate:fresh --seed --force\""
+workflow:
+  version: 2
+  build_test_qa:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - qa_deploy:
+          requires:
+            - build
+      - qa_start:
+          requires:
+            - test
+            - qa_deploy
