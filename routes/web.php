@@ -43,11 +43,26 @@ $this->middleware(['auth'])->group(function() {
     })->name('tasks');
 
     $this->get('/requests', function(){
-      return view('requests.index',['title' => __('New Request')]);
+      return view('requests.index',['title' => __('In Progress'), 'status' => '2']);
     })->name('requests');
+    
+    $this->get('/requests/drafts', function(){
+      return view('requests.index',['title' => __('Drafts'), 'status' => '1']);
+    })->name('requests.drafts');
+    
+    $this->get('/requests/completed', function(){
+      return view('requests.index',['title' => __('Completed'), 'status' => '3']);
+    })->name('requests.completed');
+    
+    $this->get('/requests/paused', function(){
+      return view('requests.index',['title' => __('Paused'), 'status' => '0']);
+    })->name('requests.paused');
 
     // For fetching the status of an open request
     $this->get('/requests/{instance}/status', ['uses' => 'Request\StatusController@status'])->name('request-status');
+
+    // To execute actions after a request/task has been processed
+    $this->get('/requests/{instance}/submitted', 'Request\RequestsController@requestSubmitted');
 
     $this->get('/admin', function(){
       return view('admin',['title' => 'Dashboard']);
@@ -64,8 +79,14 @@ $this->middleware(['auth'])->group(function() {
     Route::group([
         'middleware' => ['permission:PM_USERS']
     ], function() {
+      $this->get('/manage/environment-variables', 'Management\EnvironmentVariablesController@index')->name('management-environment-variables');
+    });
+
+
+    Route::group([
+        'middleware' => ['permission:PM_USERS']
+    ], function() {
       $this->get('/manage/users', 'Management\UsersController@index')->name('management-users-index');
-      $this->get('/manage/roles', 'Management\RolesController@index')->name('management-roles-index');
       $this->get('/manage/groups', 'Management\GroupsController@index')->name('management-groups-index');
     });
 
@@ -74,6 +95,8 @@ $this->middleware(['auth'])->group(function() {
     ], function() {
         $this->get('/process/{process}/tasks', 'Designer\TaskController@index')->name('processes-task-index');
         $this->get('/processes', 'Designer\ProcessController@index')->name('processes');
+        $this->get('/processes/categories', 'Designer\ProcessCategoryController@index')
+             ->name('process-categories-index');
     });
 
     $this->get('/designer/{process?}', 'Designer\ProcessController@show')->name('designer-edit-process');

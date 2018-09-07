@@ -4,7 +4,6 @@ namespace ProcessMaker\Transformers;
 
 use League\Fractal\TransformerAbstract;
 use ProcessMaker\Model\Process;
-use ProcessMaker\Model\ProcessCategory;
 
 /**
  * Process transformer, used to prepare the JSON response returned in the

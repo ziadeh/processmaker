@@ -8,7 +8,6 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-use ProcessMaker\Model\Role;
 use ProcessMaker\Model\User;
 use ProcessMaker\Transformers\UserTransformer;
 use Tests\TestCase;
@@ -18,16 +17,25 @@ use Tests\TestCase;
  */
 class UsersTest extends TestCase
 {
+
     use DatabaseTransactions;
 
     const API_TEST_USERS = '/api/1.0/users';
     const API_TEST_PROFILE = '/api/1.0/admin/';
 
+    private function doLogin($username, $password){
+          return $this->call('POST', '/login', [
+            'username' => $username,
+            'password' => $password,
+            '_token' => csrf_token()
+        ]);
+    }
     /**
      * These api endpoints can only work if you are authenticated
      */
     public function testUnauthenticated()
     {
+
         $response = $this->json('GET', self::API_TEST_USERS);
         $response->assertStatus(401);
     }
@@ -37,9 +45,11 @@ class UsersTest extends TestCase
      */
     public function testUnauthorized()
     {
+
+      $this->markTestSkipped('Access control via permissions and roles removed');
+
         $user = factory(User::class)->create([
             'password' => Hash::make('password'),
-            'role_id' => factory(Role::class)->make(),
         ]);
         // No role means it should not be authorized
         $response = $this->actingAs($user, 'api')->json('GET', self::API_TEST_USERS);
@@ -53,7 +63,7 @@ class UsersTest extends TestCase
     {
         $user = factory(User::class)->create([
             'password' => Hash::make('password'),
-            'role_id' => Role::where('code', Role::PROCESSMAKER_ADMIN)->first()->id,
+
         ]);
         // Build a sample of 5 users into the system
         $users = factory(User::class, 5)->create();
@@ -66,7 +76,7 @@ class UsersTest extends TestCase
         // Verify we have a total of 9 results (our 5 plus admin plus our created user)
         $this->assertCount(9, $data['data']);
         $this->assertEquals(9, $data['meta']['total']);
-        // Not testing returned data format as we're assuming the single user fetch validates that 
+        // Not testing returned data format as we're assuming the single user fetch validates that
         // output matches transformer
     }
 
@@ -80,7 +90,7 @@ class UsersTest extends TestCase
             'firstname' => 'Joe',
             'lastname' => 'Biden',
             'password' => Hash::make('password'),
-            'role_id' => Role::where('code', Role::PROCESSMAKER_ADMIN)->first()->id,
+
         ]);
         $response = $this->actingAs($user, 'api')->json('GET', self::API_TEST_USERS . '?filter=' . urlencode('invalid'));
         $response->assertStatus(200);
@@ -101,7 +111,7 @@ class UsersTest extends TestCase
             'firstname' => 'UniqueJoe',
             'lastname' => 'Biden',
             'password' => Hash::make('password'),
-            'role_id' => Role::where('code', Role::PROCESSMAKER_ADMIN)->first()->id,
+
         ]);
         $response = $this->actingAs($user, 'api')->json('GET', self::API_TEST_USERS . '?filter=' . urlencode('UniqueJoe'));
         $response->assertStatus(200);
@@ -122,7 +132,7 @@ class UsersTest extends TestCase
     {
         $user = factory(User::class)->create([
             'password' => Hash::make('password'),
-            'role_id' => Role::where('code', Role::PROCESSMAKER_ADMIN)->first()->id,
+
         ]);
         $response = $this->actingAs($user, 'api')->json('get', self::API_TEST_USERS . '/invaliduid');
         $response->assertStatus(404);
@@ -135,9 +145,9 @@ class UsersTest extends TestCase
     {
         $user = factory(User::class)->create([
             'password' => Hash::make('password'),
-            'role_id' => Role::where('code', Role::PROCESSMAKER_ADMIN)->first()->id,
+
         ]);
-        
+
         $response = $this->actingAs($user, 'api')->json('get', self::API_TEST_USERS . '/' . $user->uid->toString());
         $response->assertStatus(200);
         // Get our expected transformed user
@@ -154,9 +164,9 @@ class UsersTest extends TestCase
         $avatar = Faker::create()->image(Storage::disk('profile')->getAdapter()->getPathPrefix(), 10, 10, null, true);
         $user = factory(User::class)->create([
             'password' => Hash::make('password'),
-            'role_id' => Role::where('code', Role::PROCESSMAKER_ADMIN)->first()->id
+
         ]);
-        
+
 
         $user->addMedia(public_path() . '/img/avatar.png')
             ->preservingOriginal()
@@ -178,9 +188,9 @@ class UsersTest extends TestCase
         $nameAvatar = 'avatar.jpg';
         $user = factory(User::class)->create([
             'password' => Hash::make('password'),
-            'role_id' => Role::where('code', Role::PROCESSMAKER_ADMIN)->first()->id,
+
         ]);
-        
+
 
         $response = $this->actingAs($user, 'api')->json('put', self::API_TEST_PROFILE . 'profile', [
             'avatar' => UploadedFile::fake()->image($nameAvatar)
@@ -209,9 +219,9 @@ class UsersTest extends TestCase
         Storage::disk($diskName);
         $admin = factory(User::class)->create([
             'password' => Hash::make('password'),
-            'role_id' => Role::where('code', Role::PROCESSMAKER_ADMIN)->first()->id,
+
         ]);
-        
+
         $user = factory(User::class)->create([
             'uid' => '1234',
             'username' => app()->make('Faker\Generator')->text(10),
@@ -252,14 +262,44 @@ class UsersTest extends TestCase
         ]);
         $response->assertStatus(302);
     }
+    /**
+     * test user cannot login when inactive
+     */
+     public function testInactiveUserCantLogIn()
+    {
+        $admin = factory(User::class)->create([
+            'password' => Hash::make('password')
+        ]);
+        $this->doLogin($admin->username, 'password');
+        $user = factory(User::class)->create([
+            'uid' => '1234',
+            'username' => app()->make('Faker\Generator')->text(10),
+            'firstname' => app()->make('Faker\Generator')->text(10),
+            'lastname' => app()->make('Faker\Generator')->text(10),
+            'status' => 'ACTIVE'
+        ]);
+        $response = $this->actingAs($admin, 'api')->json('get', self::API_TEST_USERS, []);
+        $response->assertStatus(200);
+        $response = $this->actingAs($admin, 'api')->json('put', self::API_TEST_USERS . '/' . $user->uid, [
+            'firstname' => $user->firstname,
+            'status' => 'INACTIVE',
+            'lastname' => $user->lastname,
+            'username' => $user->username,
+            'password' => $user->password,
+        ]);
+        $response->assertStatus(200);
+        $response=$this->doLogin($user->username,$user->password);
+        //check to be sure user cannot log in with a status of INACTIVE
+        $response->assertRedirect('/');
+    }
 
     public function testCreateUser()
     {
         $user = factory(User::class)->create([
             'password' => Hash::make('password'),
-            'role_id' => Role::where('code', Role::PROCESSMAKER_ADMIN)->first()->id,
+
         ]);
-        
+
         $data = [
             'username' => 'testuser',
             'firstname' => 'Test',
@@ -270,7 +310,7 @@ class UsersTest extends TestCase
         $response = $this->actingAs($user, 'api')->json('post', self::API_TEST_USERS, $data);
         $response->assertStatus(200);
         unset($data['password']);
-        $this->assertDatabaseHas('users', $data);	
+        $this->assertDatabaseHas('users', $data);
         // Also check for duplicate user error
         // Just resubmit with same data
         $data['password'] = 'password';
@@ -292,12 +332,12 @@ class UsersTest extends TestCase
     {
         $admin = factory(User::class)->create([
             'password' => Hash::make('password'),
-            'role_id' => Role::where('code', Role::PROCESSMAKER_ADMIN)->first()->id,
+
         ]);
 
         $user = factory(User::class)->create([
             'password' => Hash::make('password'),
-            'role_id' => Role::where('code', Role::PROCESSMAKER_ADMIN)->first()->id,
+
         ]);
 
         $response = $this->actingAs($admin, 'api')->json('delete', self::API_TEST_USERS . '/' . $user->uid);

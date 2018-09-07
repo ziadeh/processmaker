@@ -31,8 +31,10 @@ return[
     'languages' => 'Languages',
     'email_configuration' => 'Email Configuration',
     'notifications_configuration' => 'Notifications Configuration',
+    'environment_variables' => 'Environment Variables',
     'colors_and_logos' => 'Colors and Logos',
     'app_version_details' => 'App Version Details',
+    'queue_management' => 'Queue Management',
     'configuration' => 'Configuration',
     'appearance' => 'Appearance',
     'customize' => 'Customize',
@@ -45,5 +47,9 @@ return[
     'manage_cache' => 'Manage Cache ',
     'audit_log' => 'Audit Log',
     'schedule_jobs' => 'Schedule Jobs',
+  ],
+  'sidebar_processes' => [
+    'processes' => 'Processes',
+    'categories' => 'Process Categories',
   ]
 ];
