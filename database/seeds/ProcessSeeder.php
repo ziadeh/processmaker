@@ -1,15 +1,18 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ProcessMaker\Model\EnvironmentVariable;
-use ProcessMaker\Model\Form;
-use ProcessMaker\Model\Process;
-use ProcessMaker\Model\Script;
+use ProcessMaker\Models\EnvironmentVariable;
+use ProcessMaker\Models\Form;
+use ProcessMaker\Models\Process;
+use ProcessMaker\Models\Script;
 use ProcessMaker\Providers\WorkflowServiceProvider;
 
 class ProcessSeeder extends Seeder
 {
 
+    /**
+     * Array of [language => mime-type]
+     */
     const mimeTypes = [
         'javascript' => 'application/javascript',
         'lua' => 'application/x-lua',
@@ -57,10 +60,9 @@ class ProcessSeeder extends Seeder
                     'title' => $scriptTask->getName('name') . ' Script',
                     'code' => $scriptTaskNode->getElementsByTagName('script')->item(0)->nodeValue,
                     'language' => $this->languageOfMimeType($scriptTask->getScriptFormat()),
-                    'process_id' => $process->id,
                 ]);
                 $scriptTaskNode->setAttributeNS(
-                    WorkflowServiceProvider::PROCESS_MAKER_NS, 'scriptRef', $script->uid
+                    WorkflowServiceProvider::PROCESS_MAKER_NS, 'scriptRef', $script->uuid_text
                 );
                 $scriptTaskNode->setAttributeNS(
                     WorkflowServiceProvider::PROCESS_MAKER_NS, 'scriptConfiguration', '{}'
@@ -74,7 +76,7 @@ class ProcessSeeder extends Seeder
                 $id = $task->getAttribute('id');
                 if ($formRef) {
                     $form = $this->createForm($id, $formRef, $process);
-                    $task->setAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'formRef', $form->uid);
+                    $task->setAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'formRef', $form->uuid_text);
                 }
             }
 
@@ -101,7 +103,7 @@ class ProcessSeeder extends Seeder
      * @param string $formRef
      * @param string $process
      *
-     * @return object
+     * @return Form
      */
     private function createForm($id, $formRef, $process) {
 
@@ -115,14 +117,20 @@ class ProcessSeeder extends Seeder
         } elseif (file_exists(database_path('processes/forms/' . $id . '.json'))) {
             $json = json_decode(file_get_contents(database_path('processes/forms/' . $id . '.json')));
             return factory(Form::class)->create([
-                        'uid' => $formRef,
+                        'uuid_text' => $formRef,
                         'title' => $json[0]->name,
-                        'content' => $json,
-                        'process_id' => $process->id,
+                        'config' => $json,
             ]);
         }
     }
 
+    /**
+     * Get the language that corresponds to an specific mime-type.
+     *
+     * @param string $mime
+     *
+     * @return string
+     */
     private function languageOfMimeType($mime)
     {
         return in_array($mime, self::mimeTypes) ? array_search($mime, self::mimeTypes) : '';
