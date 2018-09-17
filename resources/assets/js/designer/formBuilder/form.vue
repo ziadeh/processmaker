@@ -1,78 +1,85 @@
 <template>
-<div id="form-container">
-  <div id="form-toolbar">
-    <nav class="navbar navbar-expand-md override">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" @click="mode = 'editor'" href="#">Editor</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" @click="mode = 'preview'" href="#">Preview</a>
-        </li>
-      </ul>
+  <div id="form-container">
+    <div id="form-toolbar">
+      <nav class="navbar navbar-expand-md override">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" @click="mode = 'editor'" href="#">Editor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" @click="mode = 'preview'" href="#">Preview</a>
+          </li>
+        </ul>
 
-      <ul class="navbar-nav  pull-right">
-        <li class="nav-item">
-          <a class="nav-link" @click="saveForm" href="#"><i class="fas fa-save"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" @click="onClose" href="#"><i class="fas fa-times"></i></a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-
-  <vue-form-builder @change="updateConfig" ref="formbuilder" v-show="mode == 'editor'" config="config" />
-  <div id="preview" v-if="mode == 'preview'">
-    <div id="data-input">
-      <div class="card-header">
-        Data Input
-      </div>
-      <div class="alert" :class="{'alert-success': previewInputValid, 'alert-danger': !previewInputValid}">
-        <span v-if="previewInputValid">Valid JSON Data Object</span>
-        <span v-else>Invalid JSON Data Object</span>
-      </div>
-      <form-text-area rows="20" v-model="previewInput"></form-text-area>
-
+        <ul class="navbar-nav  pull-right">
+          <li class="nav-item">
+            <a class="nav-link" @click="saveForm" href="#">
+              <i class="fas fa-save"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" @click="onClose" href="#">
+              <i class="fas fa-times"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
 
-    <div id="renderer-container">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            <vue-form-renderer @submit="previewSubmit" v-model="previewData" v-if="mode == 'preview'" :config="config" />
+    <vue-form-builder @change="updateConfig" ref="formbuilder" :class="{invisible: mode != 'editor'}" config="config" />
+    <div id="preview" :class="{invisible: mode != 'preview'}">
+      <div id="data-input">
+        <div class="card-header">
+          Data Input
+        </div>
+        <div class="alert" :class="{'alert-success': previewInputValid, 'alert-danger': !previewInputValid}">
+          <span v-if="previewInputValid">Valid JSON Data Object</span>
+          <span v-else>Invalid JSON Data Object</span>
+        </div>
+        <form-text-area rows="20" v-model="previewInput"></form-text-area>
+
+      </div>
+
+      <div id="renderer-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <vue-form-renderer ref="renderer" @submit="previewSubmit" v-model="previewData"  :config="config" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="data-preview">
-      <div class="card-header">
-        Data Preview
+      <div id="data-preview">
+        <div class="card-header">
+          Data Preview
+        </div>
+        <vue-json-pretty :data="previewData"></vue-json-pretty>
       </div>
-      <vue-json-pretty :data="previewData"></vue-json-pretty>
     </div>
   </div>
-</div>
 </template>
 
 <script>
 import VueFormBuilder from "@processmaker/vue-form-builder/src/components/vue-form-builder";
 import VueFormRenderer from "@processmaker/vue-form-builder/src/components/vue-form-renderer";
-import VueJsonPretty from 'vue-json-pretty';
-import {
-  FormTextArea
-} from '@processmaker/vue-form-elements/src/components';
+import VueJsonPretty from "vue-json-pretty";
+
+import controlConfig from "@processmaker/vue-form-builder/src/form-builder-controls";
+
+import { FormTextArea } from "@processmaker/vue-form-elements/src/components";
 
 export default {
   data() {
     return {
       mode: "editor",
-      config: [{
-        name: "Default",
-        items: []
-      }],
-      previewData: null,
-      previewInput: null
+      config: [
+        {
+          name: "Default",
+          items: []
+        }
+      ],
+      previewData: {},
+      previewInput: '{}'
     };
   },
   components: {
@@ -85,57 +92,77 @@ export default {
     previewInput() {
       if (this.previewInputValid) {
         // Copy data over
-        this.previewData = JSON.parse(this.previewInput)
+        this.previewData = JSON.parse(this.previewInput);
       } else {
-        this.previewData = null
+        this.previewData = null;
       }
     }
   },
   computed: {
     previewInputValid() {
       try {
-        JSON.parse(this.previewInput)
-        return true
+        JSON.parse(this.previewInput);
+        return true;
       } catch (err) {
-        return false
+        return false;
       }
     }
   },
-  props: [
-    'process',
-    'form'
-  ],
+  props: ["process", "form"],
   mounted() {
-    this.$refs.formbuilder.config = this.form.content ? this.form.content : [{
-      name: "Default",
-      items: []
-    }];
+    this.$refs.formbuilder.config = this.form.content
+      ? this.form.content
+      : [
+          {
+            name: "Default",
+            items: []
+          }
+        ];
+    // Iterate through our initial config set, calling this.addControl
+    for (var i = 0; i < controlConfig.length; i++) {
+      this.addControl(
+        controlConfig[i].control,
+        controlConfig[i].rendererComponent,
+        controlConfig[i].rendererBinding,
+        controlConfig[i].builderComponent,
+        controlConfig[i].builderBinding
+      );
+    }
   },
   methods: {
+    addControl(
+      control,
+      rendererComponent,
+      rendererBinding,
+      builderComponent,
+      builderBinding
+    ) {
+      // Add it to the renderer
+      this.$refs.renderer.$options.components[
+        rendererBinding
+      ] = rendererComponent;
+      // Add it to the form builder
+      this.$refs.formbuilder.addControl(control, builderComponent, builderBinding);
+    },
     updateConfig(newConfig) {
-      this.config = newConfig
+      this.config = newConfig;
     },
     updatePreview(data) {
-      this.previewData = data
+      this.previewData = data;
     },
     previewSubmit() {
-      alert("Preview Form was Submitted")
+      alert("Preview Form was Submitted");
     },
     onClose() {
-      window.location.href = '/designer/' + this.process.uid;
+      window.location.href = "/designer/" + this.process.uid;
     },
     saveForm() {
       ProcessMaker.apiClient
-        .put(
-          'process/' +
-          this.process.uid +
-          '/form/' +
-          this.form.uid, {
-            content: this.config
-          }
-        )
+        .put("process/" + this.process.uid + "/form/" + this.form.uid, {
+          content: this.config
+        })
         .then(response => {
-          ProcessMaker.alert(' Successfully saved', 'success');
+          ProcessMaker.alert(" Successfully saved", "success");
         });
     }
   }
@@ -155,6 +182,10 @@ html {
     height: 100%;
     display: flex;
     flex-direction: column;
+
+    .invisible {
+    display: none;
+    }
 }
 
 #preview {

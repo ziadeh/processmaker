@@ -5,6 +5,7 @@ namespace ProcessMaker\Http\Controllers\Designer;
 use ProcessMaker\Http\Controllers\Controller;
 use ProcessMaker\Model\Form;
 use ProcessMaker\Model\Process;
+use Ramsey\Uuid\Uuid;
 
 class FormController extends Controller
 {
@@ -24,6 +25,20 @@ class FormController extends Controller
             return view('designer.designer', compact('process'));
         }
         return view('designer.form', compact(['process', 'form']));
+    }
+
+
+    /**
+     * Dummy file upload handler.  Creates a fake uuid and returns it with the correct
+     * chunk response to simulate a 100% file upload
+     */
+    public function upload()
+    {
+        return response()->json([
+            'done' => 100,
+            'uid' => Uuid::uuid1()
+        ]);
+
     }
 
 }

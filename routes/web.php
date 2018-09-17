@@ -80,5 +80,6 @@ $this->middleware(['auth'])->group(function() {
 
     $this->get('/designer/{process}/form/{form}', 'Designer\FormController@show')->name('designer-edit-form');
     $this->get('/processes/{process}/script/{script}', 'Designer\ScriptController@show')->name('designer-edit-script');
+    $this->get('/designer/form-builder/upload', 'Designer\FormController@upload')->name('designer-form-builder-upload');
 
 });

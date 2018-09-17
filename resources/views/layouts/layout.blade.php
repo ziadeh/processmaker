@@ -23,6 +23,7 @@
       <meta name="alertVariant" content="{{$type}}">
       <meta name="alertMessage" content="{{$message}}">
     @endif
+    @yield('meta')
 
     <title>{{ $title or __('Welcome') }} - {{__('ProcessMaker')}}</title>
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />

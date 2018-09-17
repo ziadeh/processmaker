@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "88ca6929c14ec2c8cb2fe9aa39e85625",
+    "content-hash": "62de60fb9133ab26b46769dcebbe8b5f",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -2279,6 +2279,59 @@
             "time": "2018-04-15T16:55:05+00:00"
         },
         {
+            "name": "pion/laravel-chunk-upload",
+            "version": "v1.2.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pionl/laravel-chunk-upload.git",
+                "reference": "f556e3e7b94001b7fc76f9688a080b864c908cf6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pionl/laravel-chunk-upload/zipball/f556e3e7b94001b7fc76f9688a080b864c908cf6",
+                "reference": "f556e3e7b94001b7fc76f9688a080b864c908cf6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.*",
+                "illuminate/filesystem": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.*",
+                "illuminate/http": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.*",
+                "illuminate/support": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.*"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.12",
+                "laravel/laravel": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.* || 5.7.*",
+                "mockery/mockery": "^1.1.0",
+                "overtrue/phplint": "^1.1",
+                "phpunit/phpunit": "5.7 || 6.0 || 7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Pion\\Laravel\\ChunkUpload\\Providers\\ChunkUploadServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pion\\Laravel\\ChunkUpload\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Kluska",
+                    "email": "martin@kluska.cz"
+                }
+            ],
+            "description": "Service for chunked upload with several js providers",
+            "time": "2018-09-11T09:26:38+00:00"
+        },
+        {
             "name": "predis/predis",
             "version": "v1.1.1",
             "source": {
@@ -2331,10 +2384,15 @@
         {
             "name": "processmaker/nayra",
             "version": "9999999-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ProcessMaker/nayra.git",
+                "reference": "5a8e39041aa0ff730849ec9459683b896b697a9c"
+            },
             "dist": {
                 "type": "path",
-                "url": "/opt/nayra",
-                "reference": "9c7560e2442c423cc8175e908750944bfbc10fb0",
+                "url": "https://api.github.com/repos/ProcessMaker/nayra/zipball/5a8e39041aa0ff730849ec9459683b896b697a9c",
+                "reference": "5a8e39041aa0ff730849ec9459683b896b697a9c",
                 "shasum": null
             },
             "require-dev": {
