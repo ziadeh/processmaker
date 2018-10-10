@@ -15,9 +15,7 @@ class UserController extends Controller
    */
   public function index()
   {
-    $user = new User;
-    return view('admin.users.index', compact('user'));
-    
+    return view('admin.users.index');
   }
 
   public function store(Request $request)

@@ -18,8 +18,9 @@
                 <input v-model="filter" class="form-control col-sm-3" placeholder="{{__('Search')}}...">
                 </div>
                 <div class="col-md-4 d-flex justify-content-end align-items-center col-sm-12 actions">
-                    <button type="button" href="#" class="btn btn-action text-white" data-toggle="modal" data-target="#create-user-modal"><i class="fas fa-plus"></i> {{__('User')}}</button>
-
+                    <button type="button" href="#" class="btn btn-action text-white" data-toggle="modal" data-target="#create-user-modal">
+                        <i class="fas fa-plus"></i> {{__('User')}}
+                    </button>
                     <div class="modal fade" id="create-user-modal" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -29,9 +30,36 @@
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                
                                 <div class="modal-body">
-                                @include('admin.users.form')
+                                    <div class="form-group">
+                                        {!! Form::label('username', 'Username') !!}
+                                        {!! Form::text('username', null, ['class'=> 'form-control']) !!}
+                                        <small id="emailHelp" class="form-text text-muted">Username must be distinct</small>
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Form::label('firstname', 'First Name') !!}
+                                        {!! Form::text('firstname', null, ['class'=> 'form-control']) !!}
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Form::label('lastname', 'Last Name') !!}
+                                        {!! Form::text('lastname', null, ['class'=> 'form-control']) !!}
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Form::label('email', 'Email') !!}
+                                        {!! Form::text('email', null, ['class'=> 'form-control']) !!}
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Form::label('status', 'Status') !!}
+                                        {!! Form::select('status', ['Active', 'Inactive'], null, ['class' => 'form-control']) !!}
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Form::label('password', 'Password') !!}
+                                        {!! Form::password('password', ['class' => 'form-control']) !!}
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Form::label('password_confirm', 'Confirm Password') !!}
+                                        {!! Form::password('password', ['class' => 'form-control']) !!}
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
