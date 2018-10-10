@@ -42,6 +42,7 @@
                 <div class="form-group">
                     {!! Form::label('username', 'Username') !!}
                     {!! Form::text('username', null, ['class'=> 'form-control', 'v-model' => 'username']) !!}
+                    <div class="invalid-feedback" v-if="addError">Example invalid feedback text</div>
                     <small id="emailHelp" class="form-text text-muted">Username must be distinct</small>
                 </div>
                 <div class="form-group">
@@ -55,6 +56,7 @@
                 <div class="form-group">
                     {!! Form::label('email', 'Email') !!}
                     {!! Form::text('email', null, ['class'=> 'form-control', 'v-model' => 'email']) !!}
+                    <div class="invalid-feedback" v-if="addError">Example invalid feedback text</div>
                 </div>
                 <div class="form-group">
                     {!! Form::label('status', 'Status') !!}
@@ -67,6 +69,10 @@
                 <div class="form-group">
                     {!! Form::label('password_confirm', 'Confirm Password') !!}
                     {!! Form::password('password_confirm', ['class' => 'form-control', 'v-model' => 'password_confirm']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('groups', 'Groups') !!}
+                    {!! Form::select('groups[]', $groups, null, array('multiple'=>'multiple','name'=>'group')) !!}
                 </div>
             </div>
             <div class="modal-footer">
@@ -107,6 +113,9 @@
             .then(response => {
                 $('#addUser').modal('hide');
                 ProcessMaker.alert('User successfully added', 'success');
+            })
+            .catch(error => {
+                console.log(error)
             })
            }
        } 

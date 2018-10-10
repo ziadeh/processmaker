@@ -5,6 +5,7 @@ namespace ProcessMaker\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use ProcessMaker\Http\Controllers\Controller;
 use ProcessMaker\Models\User;
+use ProcessMaker\Models\Group;
 
 class UserController extends Controller
 {
@@ -15,7 +16,15 @@ class UserController extends Controller
    */
   public function index()
   {
-    return view('admin.users.index');
+    $groups = [];
+    $groups_from_DB = Group::all()->toArray();
+    foreach( $groups_from_DB as $group){
+      $group_uuid = $group['uuid'];
+      $group_name = $group['name'];
+      $groups[$group_uuid] = $group_name;
+    };
+    
+    return view('admin.users.index', compact('groups'));
   }
 
   public function store(Request $request)
