@@ -18,64 +18,99 @@
                 <input v-model="filter" class="form-control col-sm-3" placeholder="{{__('Search')}}...">
                 </div>
                 <div class="col-md-4 d-flex justify-content-end align-items-center col-sm-12 actions">
-                    <button type="button" href="#" class="btn btn-action text-white" data-toggle="modal" data-target="#create-user-modal">
+                    <button type="button" href="#" class="btn btn-action text-white" data-toggle="modal" data-target="#addUser">
                         <i class="fas fa-plus"></i> {{__('User')}}
                     </button>
-                    <div class="modal fade" id="create-user-modal" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1>Create New User</h1>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        {!! Form::label('username', 'Username') !!}
-                                        {!! Form::text('username', null, ['class'=> 'form-control']) !!}
-                                        <small id="emailHelp" class="form-text text-muted">Username must be distinct</small>
-                                    </div>
-                                    <div class="form-group">
-                                        {!! Form::label('firstname', 'First Name') !!}
-                                        {!! Form::text('firstname', null, ['class'=> 'form-control']) !!}
-                                    </div>
-                                    <div class="form-group">
-                                        {!! Form::label('lastname', 'Last Name') !!}
-                                        {!! Form::text('lastname', null, ['class'=> 'form-control']) !!}
-                                    </div>
-                                    <div class="form-group">
-                                        {!! Form::label('email', 'Email') !!}
-                                        {!! Form::text('email', null, ['class'=> 'form-control']) !!}
-                                    </div>
-                                    <div class="form-group">
-                                        {!! Form::label('status', 'Status') !!}
-                                        {!! Form::select('status', ['Active', 'Inactive'], null, ['class' => 'form-control']) !!}
-                                    </div>
-                                    <div class="form-group">
-                                        {!! Form::label('password', 'Password') !!}
-                                        {!! Form::password('password', ['class' => 'form-control']) !!}
-                                    </div>
-                                    <div class="form-group">
-                                        {!! Form::label('password_confirm', 'Confirm Password') !!}
-                                        {!! Form::password('password', ['class' => 'form-control']) !!}
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
-                                    <button type="button" onclick="$('#userForm').submit()" class="btn btn-success ml-2">Save</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <users-listing ref="listing" :filter="filter"></users-listing>
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1>Create New User</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    {!! Form::label('username', 'Username') !!}
+                    {!! Form::text('username', null, ['class'=> 'form-control', 'v-model' => 'username']) !!}
+                    <small id="emailHelp" class="form-text text-muted">Username must be distinct</small>
+                </div>
+                <div class="form-group">
+                    {!! Form::label('firstname', 'First Name') !!}
+                    {!! Form::text('firstname', null, ['class'=> 'form-control', 'v-model' => 'firstname']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('lastname', 'Last Name') !!}
+                    {!! Form::text('lastname', null, ['class'=> 'form-control', 'v-model' => 'lastname']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('email', 'Email') !!}
+                    {!! Form::text('email', null, ['class'=> 'form-control', 'v-model' => 'email']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('status', 'Status') !!}
+                    {!! Form::select('status', ['Active', 'Inactive'], null, ['class' => 'form-control', 'v-model' => 'status']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('password', 'Password') !!}
+                    {!! Form::password('password', ['class' => 'form-control', 'v-model' => 'password']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('password_confirm', 'Confirm Password') !!}
+                    {!! Form::password('password_confirm', ['class' => 'form-control', 'v-model' => 'password_confirm']) !!}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success" data-dismiss="modal">Close</button>
+                <button type="button" @click="onSubmit" class="btn btn-success ml-2">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('js')
+
+<script>
+    new Vue ({
+        el: '#addUser',
+        data: {
+           firstname: '',
+           lastname: '',
+            email: '',
+            status: '',
+            password: '',
+            password_confirm: '',
+            username: '',
+        },
+       methods: {
+           onSubmit(){
+               console.log('hiiiiii');
+            ProcessMaker.apiClient.post("/users",  {
+                username: this.username,
+                firstname: this.firstname,
+                lastname: this.lastname,
+                email: this.email,
+                status: this.status,
+                password: this.password,
+                password_confirm: this.password_confirm,
+            })
+            .then(response => {
+                $('#addUser').modal('hide');
+                ProcessMaker.alert('User successfully added', 'success');
+            })
+           }
+       } 
+    })
+</script>
 <script src="{{mix('js/admin/users/index.js')}}"></script>
 @endsection
