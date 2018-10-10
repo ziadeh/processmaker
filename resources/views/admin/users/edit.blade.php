@@ -14,7 +14,43 @@
   <div class="row">
     <div class="col-8">
       <div class="card card-body">
-        @include('admin.users.form')
+        <div class="modal-body">
+          {!! Form::model($user) !!}
+          <div class="form-group">
+            {!! Form::label('username', 'Username') !!}
+            {!! Form::text('username', null, ['class'=> 'form-control']) !!}
+            <small id="emailHelp" class="form-text text-muted">Username must be distinct</small>
+          </div>
+          <div class="form-group">
+              {!! Form::label('firstname', 'First Name') !!}
+              {!! Form::text('firstname', null, ['class'=> 'form-control']) !!}
+          </div>
+          <div class="form-group">
+              {!! Form::label('lastname', 'Last Name') !!}
+              {!! Form::text('lastname', null, ['class'=> 'form-control']) !!}
+          </div>
+          <div class="form-group">
+              {!! Form::label('email', 'Email') !!}
+              {!! Form::text('email', null, ['class'=> 'form-control']) !!}
+          </div>
+          <div class="form-group">
+              {!! Form::label('status', 'Status') !!}
+              {!! Form::select('status', ['Active', 'Inactive'], null, ['class' => 'form-control']) !!}
+          </div>
+          <div class="form-group">
+              {!! Form::label('password', 'Password') !!}
+              {!! Form::password('password', ['class' => 'form-control']) !!}
+          </div>
+          <div class="form-group">
+              {!! Form::label('password_confirm', 'Confirm Password') !!}
+              {!! Form::password('password', ['class' => 'form-control']) !!}
+          </div>
+          <br>
+          <div class="text-right">
+            <button type="button" class="btn btn-outline-success">Close</button>
+            <button type="button" class="btn btn-success ml-2">Save</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-4">
