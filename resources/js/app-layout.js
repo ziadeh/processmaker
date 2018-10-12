@@ -7,8 +7,10 @@ import notifications from './components/requests/notifications'
 import {Navbar} from 'bootstrap-vue/es/components';
 import ConfirmationModal from './components/Confirm';
 import NavbarProfile from "./components/NavbarProfile";
+import Multiselect from 'vue-multiselect';
 
-
+Vue.component('multiselect', Multiselect);
+console.log('in app layout');
 // Assign our navbar component to our global ProcessMaker object
 window.ProcessMaker.navbar = new Vue({
     el: '#navbar',

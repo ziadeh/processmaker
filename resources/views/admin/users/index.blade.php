@@ -27,6 +27,7 @@
             <users-listing ref="listing" :filter="filter"></users-listing>
         </div>
     </div>
+    <create-user></create-user>
 </div>
 
 <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-hidden="true">
@@ -72,7 +73,10 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('groups', 'Groups') !!}
-                    {!! Form::select('groups[]', $groups, null, array('multiple'=>'multiple','name'=>'group')) !!}
+                    <multiselect v-model="value" :options="options"></multiselect>
+                </div>
+                <div>
+                    
                 </div>
             </div>
             <div class="modal-footer">
@@ -87,8 +91,10 @@
 @section('js')
 
 <script>
+console.log('index');
     new Vue ({
         el: '#addUser',
+
         data: {
            firstname: '',
            lastname: '',
@@ -97,10 +103,10 @@
             password: '',
             password_confirm: '',
             username: '',
+            options: {!! json_encode(array_keys($groups)) !!}
         },
        methods: {
            onSubmit(){
-               console.log('hiiiiii');
             ProcessMaker.apiClient.post("/users",  {
                 username: this.username,
                 firstname: this.firstname,
