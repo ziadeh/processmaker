@@ -16,12 +16,12 @@ class UserController extends Controller
    */
   public function index()
   {
-    $groups = [];
+    $groups = array();
     $groups_from_DB = Group::all()->toArray();
     foreach( $groups_from_DB as $group){
       $group_uuid = $group['uuid'];
       $group_name = $group['name'];
-      $groups[$group_uuid] = $group_name;
+      array_push($groups, array('label' => $group_name, 'id' => $group_uuid));
     };
     
     return view('admin.users.index', compact('groups'));

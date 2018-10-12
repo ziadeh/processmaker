@@ -73,7 +73,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('groups', 'Groups') !!}
-                    <multiselect v-model="value" :options="options"></multiselect>
+                    <multiselect :value="group_uuids" :options="options"></multiselect>
                 </div>
                 <div>
                     
@@ -103,7 +103,8 @@ console.log('index');
             password: '',
             password_confirm: '',
             username: '',
-            options: {!! json_encode(array_keys($groups)) !!}
+            options: {!! json_encode($groups) !!},
+            group_uuids: []
         },
        methods: {
            onSubmit(){
@@ -123,7 +124,10 @@ console.log('index');
             .catch(error => {
                 console.log(error)
             })
-           }
+           },
+           customLabel(option) {
+                return ` ${option.title} ${option.desc} `
+            },
        } 
     })
 </script>
