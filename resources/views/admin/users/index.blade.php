@@ -27,7 +27,6 @@
             <users-listing ref="listing" :filter="filter"></users-listing>
         </div>
     </div>
-    <create-user></create-user>
 </div>
 
 <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-hidden="true">
