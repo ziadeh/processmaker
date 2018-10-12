@@ -73,10 +73,16 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('groups', 'Groups') !!}
-                    <multiselect :value="group_uuids" :options="options">
+                    <multiselect 
+                    v-model="value"
+                     
+                    :options="options" 
+                    track-by="title"
+                    :custom-label="customLabel"
+                    >
                         <template slot="tag" slot-scope="props" >
                             <span class="multiselect__tag  d-flex align-items-center" style="width:max-content;"></span>
-                                <span class="option__desc mr-1">@{{ props.option.label }}
+                                <span class="option__desc mr-1">@{{ props.option.id }}
                                 <span class="option__title">@{{ props.option.label }}</span>
                                 </span>
                                 <i aria-hidden="true" tabindex="1" @click="props.remove(props.option)" class="multiselect__tag-icon"></i>
@@ -85,9 +91,8 @@
 
                             <template slot="option" slot-scope="props">
                             <div class="option__desc d-flex align-items-center">
-                                <!-- <img class="option__image mr-1" :src="props.option.img" alt="options"> -->
                                 <span class="option__title mr-1">@{{ props.option.label }}</span>
-                                <span class="option__small">@{{ props.option.label }}</span>
+                                <span class="option__small">@{{ props.option.id }}</span>
                             </div>
                         </template>
 
@@ -113,19 +118,17 @@ console.log('index');
     new Vue ({
         el: '#addUser',
 
-        data(){
-            return{
-                firstname: '',
-           lastname: '',
+        data: {
+            firstname: '',
+            lastname: '',
             email: '',
             status: '',
             password: '',
             password_confirm: '',
             username: '',
             options: {!! json_encode($groups) !!},
-            group_uuids: []
-            }
-           
+            group_uuids: [],
+            value: []
         },
        methods: {
            onSubmit(){
@@ -147,7 +150,7 @@ console.log('index');
             })
            },
            customLabel(option) {
-                return ` ${option.title} ${option.desc} `
+                return ` ${option.label}`
             },
        } 
     })
