@@ -139,8 +139,10 @@
                 })
             })
             .then(response => {
+                console.log(response.data.uuid)
                 $('#addUser').modal('hide');
                 ProcessMaker.alert('User successfully added', 'success');
+                window.location = "/admin/users/" + response.data.uuid 
             })
             .catch(error => {
                 console.log(error)

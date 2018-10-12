@@ -26,13 +26,7 @@ class UserController extends Controller
     
     return view('admin.users.index', compact('groups'));
   }
-
-  public function store(Request $request)
-  {
-    $user = User::create($request->all());
-    return redirect('admin/users/'.$user->uuid_text);
-  }
-
+  
   public function edit(User $user)
   {
     return view('admin.users.edit', compact('user'));
