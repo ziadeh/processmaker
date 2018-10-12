@@ -74,7 +74,7 @@
                 <div class="form-group">
                     {!! Form::label('groups', 'Groups') !!}
                     <multiselect 
-                    v-model="value"
+                    v-model="groups"
                     :options="options" 
                     track-by="label"
                     :custom-label="customLabel"
@@ -83,7 +83,6 @@
                         <template slot="tag" slot-scope="props" >
                             <span class="multiselect__tag  d-flex align-items-center">
                                 <span class="option__title">@{{ props.option.label }}</span>
-                                
                                 <i aria-hidden="true" tabindex="1" @click="props.remove(props.option)" class="multiselect__tag-icon"></i>
                             </span>            
                             </template>         
@@ -91,10 +90,8 @@
                             <template slot="option" slot-scope="props">
                             <div class="option__desc d-flex align-items-center">
                                 <span class="option__title mr-1">@{{ props.option.label }}</span>
-                                <!-- <span class="option__small">@{{ props.option.id }}</span> -->
                             </div>
                         </template>
-
                     </multiselect>
                 </div>
                 <div>
@@ -125,8 +122,7 @@
             password_confirm: '',
             username: '',
             options: {!! json_encode($groups) !!},
-            group_uuids: [],
-            value: []
+            groups: []
         },
        methods: {
            onSubmit(){
@@ -138,6 +134,9 @@
                 status: this.status,
                 password: this.password,
                 password_confirm: this.password_confirm,
+                group_uuids: this.groups.map(function(group){
+                    return group.id
+                })
             })
             .then(response => {
                 $('#addUser').modal('hide');
