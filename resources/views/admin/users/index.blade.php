@@ -81,8 +81,7 @@
                     :multiple="true"
                     >
                         <template slot="tag" slot-scope="props" >
-                            <span class="multiselect__tag  d-flex align-items-center" style="width:max-content;"></span>
-                                <!-- <span class="option__desc mr-1">@{{ props.option.id }} -->
+                            <span class="multiselect__tag  d-flex align-items-center">
                                 <span class="option__title">@{{ props.option.label }}</span>
                                 </span>
                                 <i aria-hidden="true" tabindex="1" @click="props.remove(props.option)" class="multiselect__tag-icon"></i>
