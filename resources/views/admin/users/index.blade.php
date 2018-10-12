@@ -83,7 +83,7 @@
                         <template slot="tag" slot-scope="props" >
                             <span class="multiselect__tag  d-flex align-items-center">
                                 <span class="option__title">@{{ props.option.label }}</span>
-                                </span>
+                                
                                 <i aria-hidden="true" tabindex="1" @click="props.remove(props.option)" class="multiselect__tag-icon"></i>
                             </span>            
                             </template>         
