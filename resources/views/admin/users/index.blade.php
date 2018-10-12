@@ -43,7 +43,7 @@
                 <div class="form-group">
                     {!! Form::label('username', 'Username') !!}
                     {!! Form::text('username', null, ['class'=> 'form-control', 'v-model' => 'username']) !!}
-                    <div class="invalid-feedback" v-if="addError">Example invalid feedback text</div>
+                    <div class="invalid-feedback">Example invalid feedback text</div>
                     <small id="emailHelp" class="form-text text-muted">Username must be distinct</small>
                 </div>
                 <div class="form-group">
@@ -57,7 +57,7 @@
                 <div class="form-group">
                     {!! Form::label('email', 'Email') !!}
                     {!! Form::text('email', null, ['class'=> 'form-control', 'v-model' => 'email']) !!}
-                    <div class="invalid-feedback" v-if="addError">Example invalid feedback text</div>
+                    <div class="invalid-feedback">Example invalid feedback text</div>
                 </div>
                 <div class="form-group">
                     {!! Form::label('status', 'Status') !!}
@@ -75,14 +75,14 @@
                     {!! Form::label('groups', 'Groups') !!}
                     <multiselect 
                     v-model="value"
-                     
                     :options="options" 
-                    track-by="title"
+                    track-by="label"
                     :custom-label="customLabel"
+                    :multiple="true"
                     >
                         <template slot="tag" slot-scope="props" >
                             <span class="multiselect__tag  d-flex align-items-center" style="width:max-content;"></span>
-                                <span class="option__desc mr-1">@{{ props.option.id }}
+                                <!-- <span class="option__desc mr-1">@{{ props.option.id }} -->
                                 <span class="option__title">@{{ props.option.label }}</span>
                                 </span>
                                 <i aria-hidden="true" tabindex="1" @click="props.remove(props.option)" class="multiselect__tag-icon"></i>
@@ -92,7 +92,7 @@
                             <template slot="option" slot-scope="props">
                             <div class="option__desc d-flex align-items-center">
                                 <span class="option__title mr-1">@{{ props.option.label }}</span>
-                                <span class="option__small">@{{ props.option.id }}</span>
+                                <!-- <span class="option__small">@{{ props.option.id }}</span> -->
                             </div>
                         </template>
 
@@ -114,10 +114,9 @@
 @section('js')
 
 <script>
-console.log('index');
+
     new Vue ({
         el: '#addUser',
-
         data: {
             firstname: '',
             lastname: '',
