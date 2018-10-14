@@ -82,11 +82,11 @@ console.log(lastname.value);
         console.log(this.lastname);
         console.log(email.value);
 
-        ProcessMaker.apiClient.put("/users/{{$user->uuid_text}}" , {
-          
+        ProcessMaker.apiClient.put("/users/{{$user->uuid_text}}" , this.data , {
+          'firstname': this.firstname
         })
           .then(response => {
-            // console.log(response.data);
+            console.log(response);
             ProcessMaker.alert('User successfully updated', 'update');
             // location.reload();
         });
