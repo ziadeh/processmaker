@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-8">
       <div class="card card-body">
-        <div class="modal-body">
+        <div class="modal-body" id="editUser">
           {!! Form::model($user) !!}
           <div class="form-group">
             {!! Form::label('username', 'Username') !!}
@@ -23,7 +23,7 @@
           </div>
           <div class="form-group">
               {!! Form::label('firstname', 'First Name') !!}
-              {!! Form::text('firstname', null, ['class'=> 'form-control']) !!}
+              {!! Form::text('firstname', $value = $user->firstname, ['class'=> 'form-control', 'v-bind' => 'firstname']) !!}
           </div>
           <div class="form-group">
               {!! Form::label('lastname', 'Last Name') !!}
@@ -43,12 +43,12 @@
           </div>
           <div class="form-group">
               {!! Form::label('password_confirm', 'Confirm Password') !!}
-              {!! Form::password('password', ['class' => 'form-control']) !!}
+              {!! Form::password('password_confirm', ['class' => 'form-control']) !!}
           </div>
           <br>
           <div class="text-right">
-            <button type="button" class="btn btn-outline-success">Close</button>
-            <button type="button" class="btn btn-success ml-2">Save</button>
+          {!! Form::button('Cancel', ['class'=>'btn btn-outline-success']) !!}
+          {!! Form::button('Update', ['class'=>'btn btn-success ml-2', '@click' => 'onUpdate']) !!}
           </div>
         </div>
       </div>
@@ -63,4 +63,32 @@
 @endsection
 
 @section('js')
+<script>
+  console.log(firstname.value);
+  new Vue ({
+    el: '#editUser', 
+    data: {
+        firstname: ''
+
+    },
+    methods: {
+      onUpdate(){
+        
+        console.log('hello');
+        console.log(firstname.value);
+
+        // ProcessMaker.apiClient.put("/users/" + this.user.uuid_text, {
+        //   firstname : this.firstname,
+        // })
+        //   .then(response => {
+        //     console.log(response.data.firstname)
+        //     ProcessMaker.alert('User successfully updated', 'update');
+        //     location.reload();
+        // });
+      }
+    } 
+  });
+
+
+</script>
 @endsection
