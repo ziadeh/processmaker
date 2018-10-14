@@ -14,28 +14,29 @@
   <div class="row">
     <div class="col-8">
       <div class="card card-body">
+      
         <div class="modal-body" id="editUser">
-          {!! Form::model($user) !!}
+          
           <div class="form-group">
             {!! Form::label('username', 'Username') !!}
-            {!! Form::text('username', null, ['class'=> 'form-control']) !!}
+            {!! Form::text('username', $user->username, ['class'=> 'form-control']) !!}
             <small id="emailHelp" class="form-text text-muted">Username must be distinct</small>
           </div>
           <div class="form-group">
               {!! Form::label('firstname', 'First Name') !!}
-              {!! Form::text('firstname', $value = $user->firstname, ['class'=> 'form-control', 'v-bind' => 'firstname']) !!}
+              {!! Form::text('firstname', $user->firstname, ['class'=> 'form-control']) !!}
           </div>
           <div class="form-group">
               {!! Form::label('lastname', 'Last Name') !!}
-              {!! Form::text('lastname', null, ['class'=> 'form-control']) !!}
+              {!! Form::text('lastname', $user->lastname, ['class'=> 'form-control']) !!}
           </div>
           <div class="form-group">
               {!! Form::label('email', 'Email') !!}
-              {!! Form::text('email', null, ['class'=> 'form-control']) !!}
+              {!! Form::text('email', $user->email, ['class'=> 'form-control', 'v-model' => 'email']) !!}
           </div>
           <div class="form-group">
               {!! Form::label('status', 'Status') !!}
-              {!! Form::select('status', ['Active', 'Inactive'], null, ['class' => 'form-control']) !!}
+              {!! Form::select('status', ['Active', 'Inactive'], $user->status, ['class' => 'form-control', 'v-bind' => 'status']) !!}
           </div>
           <div class="form-group">
               {!! Form::label('password', 'Password') !!}
@@ -64,27 +65,31 @@
 
 @section('js')
 <script>
-  console.log(firstname.value);
+console.log(this.firstname.value);
+console.log(lastname.value);
   new Vue ({
     el: '#editUser', 
     data: {
-        firstname: ''
-
+        firstname: this.firstname.value,
+        lastname: this.lastname.value,
+        email: this.email.value,
+        status: this.status.value,
+        uuid: this.uuid
     },
     methods: {
       onUpdate(){
-        
-        console.log('hello');
         console.log(firstname.value);
+        console.log(this.lastname);
+        console.log(email.value);
 
-        // ProcessMaker.apiClient.put("/users/" + this.user.uuid_text, {
-        //   firstname : this.firstname,
-        // })
-        //   .then(response => {
-        //     console.log(response.data.firstname)
-        //     ProcessMaker.alert('User successfully updated', 'update');
-        //     location.reload();
-        // });
+        ProcessMaker.apiClient.put("/users/{{$user->uuid_text}}" , {
+          
+        })
+          .then(response => {
+            // console.log(response.data);
+            ProcessMaker.alert('User successfully updated', 'update');
+            // location.reload();
+        });
       }
     } 
   });

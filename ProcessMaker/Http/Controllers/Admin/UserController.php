@@ -29,11 +29,26 @@ class UserController extends Controller
   
   public function edit(User $user)
   {
+    $user = User::find($user->uuid_text);
     return view('admin.users.edit', compact('user'));
   }
 
+  public function update(User $user, Request $request)
+  {
+    $user_uuid = User::find($user->uuid_text);
+    $request->validate(User::rules());
+    $user->fill($request->input());
+    return view('admin.users.show', compact('user'));
+  }
+  
+  public function destroy(User $user)
+  {
+      $user->delete();
+      return response([], 204);
+  }
   public function show(User $user)
   {
+    // $user = User::find($user->uuid_text);
     return view('admin.users.show', compact('user'));
   }
 }
