@@ -18,7 +18,7 @@
         {!! Form::open() !!}
           <div class="form-group">
             {!! Form::label('username', 'Username') !!}
-            {!! Form::text('username', $user->username, ['class'=> 'form-control']) !!}
+            {!! Form::text('username', $user->username, ['class'=> 'form-control', 'v-model' => 'username']) !!}
             <small id="emailHelp" class="form-text text-muted">Username must be distinct</small>
           </div>
           <div class="form-group">
@@ -35,7 +35,7 @@
           </div>
           <div class="form-group">
               {!! Form::label('status', 'Status') !!}
-              {!! Form::select('status', ['0' => 'Active', '1' => 'Inactive'], $user->status, ['class' => 'form-control', 'v-model' => 'status']) !!}
+              {!! Form::select('status', [ 'ACTIVE' => 'Active', 'INACTIVE' => 'Inactive'], $user->status, ['class' => 'form-control', 'v-model' => 'status']) !!}
           </div>
           <div class="form-group">
               {!! Form::label('password', 'Password') !!}
@@ -65,14 +65,18 @@
 
 @section('js')
 <script>
-  console.log(status.value);
+
   new Vue ({
     el: '#editUser', 
-    data: {
-        firstname: firstname.value,
-        lastname: lastname.value,
-        email: email.value,
-        status: status.value
+    data() {
+      return {
+        existing: @json($user),
+        username: @json($user->username),
+        firstname: @json($user->firstname),
+        lastname: @json($user->lastname),
+        email: @json($user->email),
+        status: @json($user->status)
+      }
     },
     methods: {
       onUpdate(){
