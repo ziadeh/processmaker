@@ -14,9 +14,8 @@
   <div class="row">
     <div class="col-8">
       <div class="card card-body">
-      
         <div class="modal-body" id="editUser">
-          
+        {!! Form::open() !!}
           <div class="form-group">
             {!! Form::label('username', 'Username') !!}
             {!! Form::text('username', $user->username, ['class'=> 'form-control']) !!}
@@ -24,19 +23,19 @@
           </div>
           <div class="form-group">
               {!! Form::label('firstname', 'First Name') !!}
-              {!! Form::text('firstname', $user->firstname, ['class'=> 'form-control', 'v-bind' => 'firstname']) !!}
+              {!! Form::text('firstname', $user->firstname, ['class'=> 'form-control', 'v-model' => 'firstname']) !!}
           </div>
           <div class="form-group">
               {!! Form::label('lastname', 'Last Name') !!}
-              {!! Form::text('lastname', $user->lastname, ['class'=> 'form-control', 'v-bind' => 'lastname']) !!}
+              {!! Form::text('lastname', $user->lastname, ['class'=> 'form-control', 'v-model' => 'lastname']) !!}
           </div>
           <div class="form-group">
               {!! Form::label('email', 'Email') !!}
-              {!! Form::text('email', $user->email, ['class'=> 'form-control', 'v-bind' => 'email']) !!}
+              {!! Form::text('email', $user->email, ['class'=> 'form-control', 'v-model' => 'email']) !!}
           </div>
           <div class="form-group">
               {!! Form::label('status', 'Status') !!}
-              {!! Form::select('status', ['Active', 'Inactive'], $user->status, ['class' => 'form-control', 'v-bind' => 'status']) !!}
+              {!! Form::select('status', ['0' => 'Active', '1' => 'Inactive'], $user->status, ['class' => 'form-control', 'v-model' => 'status']) !!}
           </div>
           <div class="form-group">
               {!! Form::label('password', 'Password') !!}
@@ -51,6 +50,7 @@
           {!! Form::button('Cancel', ['class'=>'btn btn-outline-success']) !!}
           {!! Form::button('Update', ['class'=>'btn btn-success ml-2', '@click' => 'onUpdate']) !!}
           </div>
+          {!! Form::close() !!}
         </div>
       </div>
     </div>
@@ -65,21 +65,21 @@
 
 @section('js')
 <script>
-console.log(this.firstname.value);
-console.log(lastname.value);
+  console.log(status.value);
   new Vue ({
     el: '#editUser', 
     data: {
-        firstname: '',
-        lastname: '',
-        email: '',
-        status: ''
+        firstname: firstname.value,
+        lastname: lastname.value,
+        email: email.value,
+        status: status.value
     },
     methods: {
       onUpdate(){
-        console.log(firstname.value);
+        console.log(this.firstname);
         console.log(this.lastname);
-        console.log(lastname);
+        console.log(this.status);
+        console.log(this.email);
 
         ProcessMaker.apiClient.put("/users/{{$user->uuid_text}}" , {
           'firstname': this.firstname,
