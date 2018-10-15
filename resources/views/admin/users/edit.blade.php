@@ -24,15 +24,15 @@
           </div>
           <div class="form-group">
               {!! Form::label('firstname', 'First Name') !!}
-              {!! Form::text('firstname', $user->firstname, ['class'=> 'form-control']) !!}
+              {!! Form::text('firstname', $user->firstname, ['class'=> 'form-control', 'v-bind' => 'firstname']) !!}
           </div>
           <div class="form-group">
               {!! Form::label('lastname', 'Last Name') !!}
-              {!! Form::text('lastname', $user->lastname, ['class'=> 'form-control']) !!}
+              {!! Form::text('lastname', $user->lastname, ['class'=> 'form-control', 'v-bind' => 'lastname']) !!}
           </div>
           <div class="form-group">
               {!! Form::label('email', 'Email') !!}
-              {!! Form::text('email', $user->email, ['class'=> 'form-control', 'v-model' => 'email']) !!}
+              {!! Form::text('email', $user->email, ['class'=> 'form-control', 'v-bind' => 'email']) !!}
           </div>
           <div class="form-group">
               {!! Form::label('status', 'Status') !!}
@@ -70,20 +70,20 @@ console.log(lastname.value);
   new Vue ({
     el: '#editUser', 
     data: {
-        firstname: this.firstname.value,
-        lastname: this.lastname.value,
-        email: this.email.value,
-        status: this.status.value,
-        uuid: this.uuid
+        firstname: '',
+        lastname: '',
+        email: '',
+        status: ''
     },
     methods: {
       onUpdate(){
         console.log(firstname.value);
         console.log(this.lastname);
-        console.log(email.value);
+        console.log(lastname);
 
-        ProcessMaker.apiClient.put("/users/{{$user->uuid_text}}" , this.data , {
-          'firstname': this.firstname
+        ProcessMaker.apiClient.put("/users/{{$user->uuid_text}}" , {
+          'firstname': this.firstname,
+          'lastname': this.lastname,
         })
           .then(response => {
             console.log(response);
