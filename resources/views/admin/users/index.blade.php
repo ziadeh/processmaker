@@ -24,7 +24,7 @@
                     
                 </div>
             </div>
-            <users-listing ref="listing" :filter="filter"></users-listing>
+            <users-listing ref="listing" :filter="filter" v-on:reload="reload"></users-listing>
         </div>
     </div>
 </div>
