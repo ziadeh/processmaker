@@ -65,7 +65,6 @@
 
 @section('js')
 <script>
-
   new Vue ({
     el: '#editUser', 
     data() {
@@ -75,7 +74,8 @@
         firstname: @json($user->firstname),
         lastname: @json($user->lastname),
         email: @json($user->email),
-        status: @json($user->status)
+        status: @json($user->status),
+        addError: {},
       }
     },
     methods: {
@@ -84,15 +84,17 @@
         console.log(this.lastname);
         console.log(this.status);
         console.log(this.email);
-
-        ProcessMaker.apiClient.put("/users/{{$user->uuid_text}}" , {
-          'firstname': this.firstname,
-          'lastname': this.lastname,
+        ProcessMaker.apiClient.put("/users/{{$user->uuid_text}}", {
+          firstname: this.firstname,
+          lastname: this.lastname,
+          email: this.email,
+          status: this.status,
         })
           .then(response => {
             console.log(response);
+            console.log('then');
             ProcessMaker.alert('User successfully updated', 'update');
-            // location.reload();
+            window.location = "/users/" + response.data.uuid
         });
       }
     } 
