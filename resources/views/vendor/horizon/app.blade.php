@@ -6,7 +6,7 @@ Menu::get('sidebar_admin')])
  
 @section('content')
 <div style="height: 0; width: 0; position: absolute; display: none;">
-{!! file_get_contents(public_path('/vendor/horizon/img/sprite.svg')) !!}
+{{-- {!! file_get_contents(public_path('/vendor/horizon/img/sprite.svg')) !!} --}}
 </div>
 
 <div class="container page-content" id="users-listing">
