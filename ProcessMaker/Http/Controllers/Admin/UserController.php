@@ -30,7 +30,7 @@ class UserController extends Controller
   
   public function edit(User $user)
   {
-    $user = User::find($user->uuid_text);
+    // $user = User::find($user->uuid_text);
     return view('admin.users.edit', compact('user'));
   }
   

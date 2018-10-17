@@ -92,7 +92,7 @@
             console.log(response);
             console.log('then');
             ProcessMaker.alert('User successfully updated', 'update');
-            window.location = "/users/" + response.data.uuid
+            window.location = "/admin/users/{{$user->uuid_text}}"
         });
       }
     } 
