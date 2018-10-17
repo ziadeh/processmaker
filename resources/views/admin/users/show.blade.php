@@ -13,7 +13,7 @@
       <div class="card card-body">
         <div class="container">
           <div class="row">
-            <div class="col-2 text-center">
+            <div class="text-center">
               @if ($user->getAvatar() != '' )
                 <img class="avatar-lg-circle" src="{{ $user->getAvatar() }}" />
               @else
