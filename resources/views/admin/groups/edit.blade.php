@@ -65,8 +65,14 @@
           description: this.description
         })
         .then(response => {
+<<<<<<< Updated upstream
           ProcessMaker.alert('Group successfully updated', 'success')
           window.location = "/admin/groups/" + response.data.uuid
+=======
+          console.log(response);
+          ProcessMaker.alert('Group successfully updated', 'success');
+          window.location = "/admin/groups/{{$group->uuid_text}}"
+>>>>>>> Stashed changes
         })
         .catch(error => {
           if (error.response.status === 422) {

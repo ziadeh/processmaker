@@ -73,7 +73,8 @@
         lastname: @json($user->lastname),
         email: @json($user->email),
         status: @json($user->status),
-        addError: {},
+        uuid: @json($user->uuid_text),
+        addError: [],
       }
     },
     methods: {
@@ -82,7 +83,7 @@
         console.log(this.lastname);
         console.log(this.status);
         console.log(this.email);
-        ProcessMaker.apiClient.put("/users/{{$user->uuid_text}}", {
+        ProcessMaker.apiClient.put("/users/" + this.uuid , {
           firstname: this.firstname,
           lastname: this.lastname,
           email: this.email,
@@ -93,7 +94,12 @@
             console.log('then');
             ProcessMaker.alert('User successfully updated', 'update');
             window.location = "/admin/users/{{$user->uuid_text}}"
-        });
+        })
+        .catch(error => {
+          if (error.response.status === 422) {
+            this.addError = error.response.data.errors
+          }
+        })
       }
     } 
   });
