@@ -8,9 +8,8 @@ Vue.use(Router);
 
 let router = new Router({
     mode: 'history',
-    base: '/manage/queues',
-    routes: [
-        {
+    base: '/admin/queues',
+    routes: [{
             path: '/',
             redirect: '/dashboard',
         },
@@ -25,26 +24,28 @@ let router = new Router({
         {
             path: '/monitoring/:tag',
             component: require('Horizon/pages/Monitoring/Tag.vue'),
-            children: [
-                {
+            children: [{
                     path: '/',
                     name: 'monitoring.detail.index',
                     component: require('Horizon/pages/Monitoring/Jobs.vue'),
-                    props: {type: 'index'}
+                    props: {
+                        type: 'index'
+                    }
                 },
                 {
                     path: 'failed',
                     name: 'monitoring.detail.failed',
                     component: require('Horizon/pages/Monitoring/Jobs.vue'),
-                    props: {type: 'failed'}
+                    props: {
+                        type: 'failed'
+                    }
                 },
             ],
         },
         {
             path: '/metrics',
             component: require('Horizon/pages/Metrics/Index.vue'),
-            children: [
-                {
+            children: [{
                     path: '/',
                     redirect: 'jobs',
                 },
@@ -84,8 +85,8 @@ let router = new Router({
 
 for (var index = 0; index < router.options.routes.length; index++) {
     let route = router.options.routes[index];
-    if(route.component) {
-        if(route.component.components && route.component.components.Layout) {
+    if (route.component) {
+        if (route.component.components && route.component.components.Layout) {
             // It has a layout, so let's replace it with *our* layout
             route.component.components.Layout = Layout;
         }
