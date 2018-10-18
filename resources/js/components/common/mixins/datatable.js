@@ -27,7 +27,7 @@ export default {
         // Handler to properly format date/time columns according to localized format
         formatDate(value, format) {
             format = format ? format : 'l LTS'
-            if(value) {
+            if (value) {
                 return moment(value).format(format);
             }
             return 'n/a'
@@ -92,7 +92,7 @@ export default {
             // Cancel token which should be stored from axios if you want to cancel the current in progress request
             cancelToken: null,
             css: {
-                tableClass: "table table-hover",
+                tableClass: "table table-hover bg-light text-dark",
                 loadingClass: "loading",
                 detailRowClass: "vuetable-detail-row",
                 handleIcon: "grey sidebar icon",

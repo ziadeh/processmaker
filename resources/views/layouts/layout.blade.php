@@ -28,7 +28,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ mix('css/sidebar.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+    
     @yield('css')
     <script type="text/javascript">
     window.Processmaker = {
@@ -45,7 +45,7 @@
 
 <body>
 <div class="d-flex w-100 mw-100 h-100 mh-100" id="app-container">
-  <div id="sidebar" :class="{expanded: expanded}">
+  <div id="sidebar" :class="{expanded: expanded}" class="bg-primary">
       @yield('sidebar')
   </div>
 
