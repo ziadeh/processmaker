@@ -138,7 +138,7 @@ class Script extends Model
             default:
                 throw new ScriptLanguageNotSupported($language);
         }
-
+$cmd = config('app.bpm_scripts_docker') . " run --help";
         $response = exec($cmd, $output, $returnCode);
         dump($cmd, $response, $output, $returnCode);
         if ($returnCode) {
