@@ -227,7 +227,7 @@ class ScriptsTest extends TestCase
         $url = route('api.script.preview', ['data'=>'{}','code'=>'<?php return ["response"=>1];', 'language'=>'php']);
         $response = $this->apiCall('GET', $url, []);
         $response->assertStatus(200);
-
+dump($response->getContent());
         $response->assertJsonStructure(['output'=>['response']]);
 
     }
