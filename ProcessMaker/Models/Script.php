@@ -134,6 +134,7 @@ class Script extends Model
         }
 
         $response = exec($cmd, $output, $returnCode);
+        dump($cmd, $response, $output, $returnCode);
         if ($returnCode) {
             // Has an error code
             unlink($datafname);
