@@ -108,9 +108,6 @@ class ScriptsTest extends TestCase
      */
     public function testListScriptsWithQueryParameter()
     {
-        $this->markTestSkipped(
-            'This test is broken. Needs to be fixed'
-        );
         $title = 'search script title';
         factory(Script::class)->create([
             'title' => $title,
@@ -223,11 +220,6 @@ class ScriptsTest extends TestCase
     */
     public function testPreviewScript()
     {
-        if (!file_exists(config('app.bpm_scripts_home')) || !file_exists(config('app.bpm_scripts_docker'))) {
-            $this->markTestSkipped(
-                'This test requires docker'
-            );
-        }
         $url = route('api.script.preview', ['data'=>'{}','code'=>'return {response=1}', 'language'=>'lua']);
         $response = $this->apiCall('GET', $url, []);
         $response->assertStatus(200);

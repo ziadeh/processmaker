@@ -60,11 +60,6 @@ class ProcessScriptsTest extends TestCase
      */
     public function testExecuteAProcess()
     {
-        if (!file_exists(config('app.bpm_scripts_home')) || !file_exists(config('app.bpm_scripts_docker'))) {
-            $this->markTestSkipped(
-                'This test requires docker'
-            );
-        }
         //Start a process request
         $route = route('api.process_events.trigger', [$this->process->uuid_text, 'event' => '_2']);
         $data = [];
