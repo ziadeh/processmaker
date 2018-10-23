@@ -88,24 +88,28 @@ class Script extends Model
         $language = $this->language;
         // Create the temporary files to feed into our docker container
         $datafname = tempnam(config('app.bpm_scripts_home'), "data.json");
-        chmod($datafname, 0666);
+
         $tempData = fopen($datafname, 'w');
         fwrite($tempData, json_encode($data));
-
         fclose($tempData);
-        $configfname = tempnam(config('app.bpm_scripts_home'), "config.json");
-        chmod($configfname, 0666);
+        chmod($datafname, 0666);
 
+        $configfname = tempnam(config('app.bpm_scripts_home'), "config.json");
         $tempData = fopen($configfname, 'w');
         fwrite($tempData, json_encode($config));
         fclose($tempData);
-        $scriptfname = tempnam(config('app.bpm_scripts_home'), "script");
-        chmod($scriptfname, 0666);
+        chmod($configfname, 0666);
 
+        $scriptfname = tempnam(config('app.bpm_scripts_home'), "script");
         $tempData = fopen($scriptfname, 'w');
         fwrite($tempData, $code);
         fclose($tempData);
+        chmod($scriptfname, 0666);
+
         $outputfname = tempnam(config('app.bpm_scripts_home'), "output.json");
+        $tempData = fopen($outputfname, 'w');
+        fwrite($tempData, '');
+        fclose($tempData);
         chmod($outputfname, 0666);
 
         $variablesParameter = [];
@@ -121,6 +125,8 @@ class Script extends Model
             $variablesParameter = '';
         }
 
+        dump(file_exists($datafname), file_exists($configfname), file_exists($scriptfname), file_exists($outputfname));
+        dump(file_get_contents($datafname), file_get_contents($configfname), file_get_contents($scriptfname), file_get_contents($outputfname));
         // So we have the files, let's execute the docker container
         switch (strtolower($language)) {
             case 'php':
