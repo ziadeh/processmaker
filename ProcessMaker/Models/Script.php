@@ -88,25 +88,25 @@ class Script extends Model
         $language = $this->language;
         // Create the temporary files to feed into our docker container
         $datafname = tempnam(config('app.bpm_scripts_home'), "data.json");
-        chmod($datafname, 0660);
+        chmod($datafname, 0666);
         $tempData = fopen($datafname, 'w');
         fwrite($tempData, json_encode($data));
 
         fclose($tempData);
         $configfname = tempnam(config('app.bpm_scripts_home'), "config.json");
-        chmod($configfname, 0660);
+        chmod($configfname, 0666);
 
         $tempData = fopen($configfname, 'w');
         fwrite($tempData, json_encode($config));
         fclose($tempData);
         $scriptfname = tempnam(config('app.bpm_scripts_home'), "script");
-        chmod($scriptfname, 0660);
+        chmod($scriptfname, 0666);
 
         $tempData = fopen($scriptfname, 'w');
         fwrite($tempData, $code);
         fclose($tempData);
         $outputfname = tempnam(config('app.bpm_scripts_home'), "output.json");
-        chmod($outputfname, 0660);
+        chmod($outputfname, 0666);
 
         $variablesParameter = [];
         EnvironmentVariable::chunk(50, function ($variables) use (&$variablesParameter) {
