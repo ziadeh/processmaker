@@ -125,7 +125,7 @@ jobs:
       # run tests!
       - run:
           name: "PHPUnit"
-          command: "./vendor/bin/phpunit -d memory_limit=-1 --coverage-html coverage"
+          command: "./vendor/bin/phpunit -d memory_limit=-1 --coverage-html coverage tests/Feature/Api/ScriptsTest.php"
           environment:
             DB_DATABASE: "circle_test"
             RUN_MSSQL_TESTS: "true"
