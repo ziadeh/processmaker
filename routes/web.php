@@ -9,6 +9,7 @@ Route::group(['middleware' => ['auth', 'authorize']], function () {
         Route::resource('groups', 'GroupController')->only(['index', 'edit', 'show']);
         Route::resource('preferences', 'PreferenceController');
         Route::resource('users', 'UserController');
+        Route::view('clients', 'admin.clients.index');
     });
 
     Route::namespace('Process')->prefix('processes')->group(function () {
