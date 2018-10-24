@@ -139,13 +139,16 @@ class Script extends Model
                 throw new ScriptLanguageNotSupported($language);
         }
         
-        $this->runTest('ls -l ' . $datafname);
         $this->runTest('cat ' . $datafname);
-        $this->runTest('ls -l ' . config('app.bpm_scripts_home'));
-        $this->runTest('ipconfig');
+        $this->runTest(config('app.bpm_scripts_docker') . " run " . $variablesParameter
+            . " -v " . $datafname . ":/opt/executor/data.json"
+            //. " -v " . $configfname . ":/opt/executor/config.json"
+            //. " -v " . $scriptfname . ":/opt/executor/script.php"
+            //. " -v " . $outputfname . ":/opt/executor/output.json"
+            . " processmaker/executor:php cat /opt/executor/data.json");
 
-        $response = exec($cmd, $output, $returnCode);
-        dump($cmd, $response, $output, $returnCode);
+        //$response = exec($cmd, $output, $returnCode);
+        //dump($cmd, $response, $output, $returnCode);
         if ($returnCode) {
             // Has an error code
             unlink($datafname);
