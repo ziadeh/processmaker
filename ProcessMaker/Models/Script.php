@@ -87,26 +87,26 @@ class Script extends Model
         $code = $this->code;
         $language = $this->language;
         // Create the temporary files to feed into our docker container
-        $datafname = tempnam(config('app.bpm_scripts_home'), "data.json");
+        $datafname = config('app.bpm_scripts_home'), "data.json");
 
         $tempData = fopen($datafname, 'w');
         fwrite($tempData, json_encode($data));
         fclose($tempData);
         chmod($datafname, 0777);
 
-        $configfname = tempnam(config('app.bpm_scripts_home'), "config.json");
+        $configfname = (config('app.bpm_scripts_home'), "config.json");
         $tempData = fopen($configfname, 'w');
         fwrite($tempData, json_encode($config));
         fclose($tempData);
         chmod($configfname, 0777);
 
-        $scriptfname = tempnam(config('app.bpm_scripts_home'), "script");
+        $scriptfname = (config('app.bpm_scripts_home'), "script");
         $tempData = fopen($scriptfname, 'w');
         fwrite($tempData, $code);
         fclose($tempData);
         chmod($scriptfname, 0777);
 
-        $outputfname = tempnam(config('app.bpm_scripts_home'), "output.json");
+        $outputfname = (config('app.bpm_scripts_home'), "output.json");
         $tempData = fopen($outputfname, 'w');
         fwrite($tempData, '');
         fclose($tempData);
