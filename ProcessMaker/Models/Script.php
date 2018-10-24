@@ -92,25 +92,25 @@ class Script extends Model
         $tempData = fopen($datafname, 'w');
         fwrite($tempData, json_encode($data));
         fclose($tempData);
-        chmod($datafname, 0666);
+        chmod($datafname, 0777);
 
         $configfname = tempnam(config('app.bpm_scripts_home'), "config.json");
         $tempData = fopen($configfname, 'w');
         fwrite($tempData, json_encode($config));
         fclose($tempData);
-        chmod($configfname, 0666);
+        chmod($configfname, 0777);
 
         $scriptfname = tempnam(config('app.bpm_scripts_home'), "script");
         $tempData = fopen($scriptfname, 'w');
         fwrite($tempData, $code);
         fclose($tempData);
-        chmod($scriptfname, 0666);
+        chmod($scriptfname, 0777);
 
         $outputfname = tempnam(config('app.bpm_scripts_home'), "output.json");
         $tempData = fopen($outputfname, 'w');
         fwrite($tempData, '');
         fclose($tempData);
-        chmod($outputfname, 0666);
+        chmod($outputfname, 0777);
 
         $variablesParameter = [];
         EnvironmentVariable::chunk(50, function ($variables) use (&$variablesParameter) {
