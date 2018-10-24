@@ -141,7 +141,8 @@ class Script extends Model
         
         $this->runTest('ls -l ' . $datafname);
         $this->runTest('cat ' . $datafname);
-        $this->runTest('ll ' . config('app.bpm_scripts_home'));
+        $this->runTest('ls -l ' . config('app.bpm_scripts_home'));
+        $this->runTest('dir'));
 
         $response = exec($cmd, $output, $returnCode);
         dump($cmd, $response, $output, $returnCode);
