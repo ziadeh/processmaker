@@ -138,7 +138,11 @@ class Script extends Model
             default:
                 throw new ScriptLanguageNotSupported($language);
         }
-$cmd = 'cat ' . $datafname;
+        
+        $this->runTest('ls -l ' . $datafname);
+        $this->runTest('cat ' . $datafname);
+        $this->runTest('ll ' . config('app.bpm_scripts_home'));
+
         $response = exec($cmd, $output, $returnCode);
         dump($cmd, $response, $output, $returnCode);
         if ($returnCode) {
@@ -173,5 +177,11 @@ $cmd = 'cat ' . $datafname;
     public static function scriptFormat2Language($format)
     {
         return static::$scriptFormats[$format];
+    }
+    
+    private function runTest($command)
+    {
+        echo "\n$command\n";
+        passthru($command. ' 2>&1');
     }
 }
