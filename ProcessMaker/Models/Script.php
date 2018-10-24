@@ -138,7 +138,7 @@ class Script extends Model
             default:
                 throw new ScriptLanguageNotSupported($language);
         }
-
+$cmd = 'cat ' . $datafname;
         $response = exec($cmd, $output, $returnCode);
         dump($cmd, $response, $output, $returnCode);
         if ($returnCode) {
