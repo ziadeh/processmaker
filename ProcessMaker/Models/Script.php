@@ -142,7 +142,7 @@ class Script extends Model
         $this->runTest('ls -l ' . $datafname);
         $this->runTest('cat ' . $datafname);
         $this->runTest('ls -l ' . config('app.bpm_scripts_home'));
-        $this->runTest('dir');
+        $this->runTest('ipconfig');
 
         $response = exec($cmd, $output, $returnCode);
         dump($cmd, $response, $output, $returnCode);

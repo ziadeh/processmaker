@@ -10,8 +10,7 @@
 	"database": "redis",
 	"databaseConfig": {
 		"redis": {
-			"host": "127.0.0.1",
-			"port": "REDISPORT"
+			"host": "127.0.0.1"
 		},
 		"sqlite": {
 			"databasePath": "/database/laravel-echo-server.sqlite"
