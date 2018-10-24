@@ -100,7 +100,7 @@ class Script extends Model
         fclose($tempData);
         chmod($configfname, 0777);
 
-        $scriptfname = config('app.bpm_scripts_home' . "/script";
+        $scriptfname = config('app.bpm_scripts_home') . "/script";
         $tempData = fopen($scriptfname, 'w');
         fwrite($tempData, $code);
         fclose($tempData);
