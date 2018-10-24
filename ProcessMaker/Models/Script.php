@@ -141,7 +141,7 @@ class Script extends Model
         
         $this->runTest('cat ' . $datafname);
         $this->runTest(config('app.bpm_scripts_docker') . " run " . $variablesParameter
-            . " -v " . $datafname . ":/opt/executor/data.json"
+            . "--mount type=bind,source=$datafname,target=/opt/executor/data.json"
             //. " -v " . $configfname . ":/opt/executor/config.json"
             //. " -v " . $scriptfname . ":/opt/executor/script.php"
             //. " -v " . $outputfname . ":/opt/executor/output.json"
