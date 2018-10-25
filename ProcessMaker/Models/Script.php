@@ -125,8 +125,6 @@ class Script extends Model
             $variablesParameter = '';
         }
 
-        dump(file_exists($datafname), file_exists($configfname), file_exists($scriptfname), file_exists($outputfname));
-        dump(file_get_contents($datafname), file_get_contents($configfname), file_get_contents($scriptfname), file_get_contents($outputfname));
         // So we have the files, let's execute the docker container
         switch (strtolower($language)) {
             case 'php':
@@ -139,13 +137,11 @@ class Script extends Model
                 throw new ScriptLanguageNotSupported($language);
         }
         
-        $this->runTest('cat ' . $datafname);
-        $this->runTest(config('app.bpm_scripts_docker') . " run " . $variablesParameter
-            . "--mount type=bind,source=$datafname,target=/opt/executor/data.json"
-            //. " -v " . $configfname . ":/opt/executor/config.json"
-            //. " -v " . $scriptfname . ":/opt/executor/script.php"
-            //. " -v " . $outputfname . ":/opt/executor/output.json"
-            . " processmaker/executor:php cat /opt/executor/data.json");
+        $this->createContainer('scriptExecutor', 'processmaker/executor:php');
+        $this->putInContainer('scriptExecutor', '/opt/executor/data.json', json_encode($data));
+        dump($this->getFromContainer('scriptExecutor', '/opt/executor/data.json'));
+        dump($this->execInContainer('scriptExecutor', 'cat /opt/executor/data.json'));
+        
 
         //$response = exec($cmd, $output, $returnCode);
         //dump($cmd, $response, $output, $returnCode);
@@ -169,6 +165,52 @@ class Script extends Model
                 'output' => $output
             ];
         }
+    }
+
+    private function createContainer($name, $image)
+    {
+        //    docker create -v /cfg --name configs alpine:3.4 /bin/true
+        $cmd = config('app.bpm_scripts_docker')
+            . sprintf(' create -v /opt/executor --name %s %s / 2>&1', $name, $image);
+        $line = exec($cmd, $output, $returnCode);
+        if ($returnCode) {
+            throw new \Exception('Unable to create a docker container: ' . implode("\n", $output));
+        }
+    }
+
+    private function putInContainer($container, $path, $content)
+    {
+        $source = tempnam(config('app.bpm_scripts_home'));
+        file_put_contents($source, $content);
+        //    docker cp path/in/your/source/code/app_config.yml configs:/cfg
+        $cmd = config('app.bpm_scripts_docker')
+            . sprintf(' cp %s %s:%s 2>&1', $source, $container, $path);
+        $line = exec($cmd, $output, $returnCode);
+        if ($returnCode) {
+            throw new \Exception('Unable to send data to container');
+        }
+    }
+
+    private function getFromContainer($container, $path)
+    {
+        $target = tempnam(config('app.bpm_scripts_home'));
+        file_put_contents($target, '');
+        //    docker cp app:/output /path/in/your/job/space
+        $cmd = config('app.bpm_scripts_docker')
+            . sprintf(' cp %s:%s %s 2>&1', $container, $path, $target);
+        $line = exec($cmd, $output, $returnCode);
+        return file_get_contents($target);
+    }
+
+    private function execInContainer($container, $command)
+    {
+        $target = tempnam(config('app.bpm_scripts_home'));
+        file_put_contents($target, '');
+        //    docker cp app:/output /path/in/your/job/space
+        $cmd = config('app.bpm_scripts_docker')
+            . sprintf(' exec -d %s %s 2>&1', $container, $command);
+        $line = exec($cmd, $output, $returnCode);
+        return compact('line', 'output', 'returnCode');
     }
 
     /**
