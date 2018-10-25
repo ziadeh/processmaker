@@ -15,11 +15,11 @@ class ScriptsTest extends TestCase
     const API_TEST_SCRIPT = '/scripts';
 
     const STRUCTURE = [
-        'uuid',
+        'id',
         'title',
-        'description',
         'language',
-        'code'
+        'code',
+        'description'
     ];
 
     /**
@@ -45,9 +45,9 @@ class ScriptsTest extends TestCase
         $url = self::API_TEST_SCRIPT;
         $response = $this->apiCall('POST', $url, [
             'title' => 'Script Title',
-            'description' => $faker->sentence(6),
             'language' => 'php',
             'code' => '123',
+            'description' => 'Description'
         ]);
         //validating the answer is correct.
         //Check structure of response.
@@ -68,7 +68,6 @@ class ScriptsTest extends TestCase
         $url = self::API_TEST_SCRIPT;
         $response = $this->apiCall('POST', $url, [
             'title' => 'Script Title',
-            'description' => $faker->sentence(6),
             'code' => $faker->sentence($faker->randomDigitNotNull)
         ]);
         $response->assertStatus(422);
@@ -135,7 +134,6 @@ class ScriptsTest extends TestCase
         $this->assertEquals(1, $meta['last_page']);
 
         $this->assertEquals($title, $meta['filter']);
-        $this->assertEquals('description', $meta['sort_by']);
         $this->assertEquals('DESC', $meta['sort_order']);
     }
 
@@ -148,7 +146,7 @@ class ScriptsTest extends TestCase
         $script = factory(Script::class)->create();
 
         //load script
-        $url = self::API_TEST_SCRIPT . '/' . $script->uuid_text;
+        $url = self::API_TEST_SCRIPT . '/' . $script->id;
         $response = $this->apiCall('GET', $url);
         //Validate the answer is correct
         $response->assertStatus(200);
@@ -164,14 +162,13 @@ class ScriptsTest extends TestCase
     {
         $faker = Faker::create();
 
-        $script = factory(Script::class)->create(['code' => $faker->sentence(50)])->uuid_text;
+        $script = factory(Script::class)->create(['code' => $faker->sentence(50)])->id;
 
         //The post must have the required parameters
         $url = self::API_TEST_SCRIPT . '/' . $script;
 
         $response = $this->apiCall('PUT', $url, [
             'title' => '',
-            'description' => $faker->sentence(6),
             'language' => 'php',
             'code' => $faker->sentence(3),
         ]);
@@ -188,10 +185,9 @@ class ScriptsTest extends TestCase
         $faker = Faker::create();
         //Post saved success
         $script = factory(Script::class)->create();
-        $url = self::API_TEST_SCRIPT . '/' . $script->uuid_text;
+        $url = self::API_TEST_SCRIPT . '/' . $script->id;
         $response = $this->apiCall('PUT', $url, [
             'title' => $script->title,
-            'description' => $faker->sentence(6),
             'language' => 'lua',
             'code' => $faker->sentence(3),
         ]);
@@ -210,7 +206,7 @@ class ScriptsTest extends TestCase
 
         $script2 = factory(Script::class)->create();
 
-        $url = self::API_TEST_SCRIPT . '/' . $script2->uuid_text;
+        $url = self::API_TEST_SCRIPT . '/' . $script2->id;
         $response = $this->apiCall('PUT', $url, [
             'title' => 'Some title',
         ]);
@@ -230,11 +226,11 @@ class ScriptsTest extends TestCase
             );
         }
         $url = route('api.script.preview', ['data'=>'{}','code'=>'return {response=1}', 'language'=>'lua']);
-        $response = $this->apiCall('GET', $url, []);
+        $response = $this->apiCall('POST', $url, []);
         $response->assertStatus(200);
 
         $url = route('api.script.preview', ['data'=>'{}','code'=>'<?php return ["response"=>1];', 'language'=>'php']);
-        $response = $this->apiCall('GET', $url, []);
+        $response = $this->apiCall('POST', $url, []);
         $response->assertStatus(200);
 
         $response->assertJsonStructure(['output'=>['response']]);
@@ -247,7 +243,7 @@ class ScriptsTest extends TestCase
     public function testPreviewScriptFail()
     {
         $url = self::API_TEST_SCRIPT.'/preview/?data=adkasdlasj&config=&code=adkasdlasj&language=JAVA';
-        $response = $this->apiCall('GET', $url, []);
+        $response = $this->apiCall('POST', $url, []);
         $response->assertStatus(500);
     }
 
@@ -257,7 +253,7 @@ class ScriptsTest extends TestCase
     public function testDeleteScript()
     {
         //Remove script
-        $url = self::API_TEST_SCRIPT . '/' . factory(Script::class)->create()->uuid_text;
+        $url = self::API_TEST_SCRIPT . '/' . factory(Script::class)->create()->id;
         $response = $this->apiCall('DELETE', $url);
         //Validate the answer is correct
         $response->assertStatus(204);
@@ -269,7 +265,7 @@ class ScriptsTest extends TestCase
     public function testDeleteScriptNotExist()
     {
         //Script not exist
-        $url = self::API_TEST_SCRIPT . '/' . factory(Script::class)->make()->uuid_text;
+        $url = self::API_TEST_SCRIPT . '/' . factory(Script::class)->make()->id;
         $response = $this->apiCall('DELETE', $url);
         //Validate the answer is correct
         $response->assertStatus(405);
