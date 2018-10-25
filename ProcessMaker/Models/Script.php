@@ -86,31 +86,6 @@ class Script extends Model
     {
         $code = $this->code;
         $language = $this->language;
-        // Create the temporary files to feed into our docker container
-        $datafname = config('app.bpm_scripts_home'). "/data.json";
-
-        $tempData = fopen($datafname, 'w');
-        fwrite($tempData, json_encode($data));
-        fclose($tempData);
-        chmod($datafname, 0777);
-
-        $configfname = config('app.bpm_scripts_home') . "/config.json";
-        $tempData = fopen($configfname, 'w');
-        fwrite($tempData, json_encode($config));
-        fclose($tempData);
-        chmod($configfname, 0777);
-
-        $scriptfname = config('app.bpm_scripts_home') . "/script";
-        $tempData = fopen($scriptfname, 'w');
-        fwrite($tempData, $code);
-        fclose($tempData);
-        chmod($scriptfname, 0777);
-
-        $outputfname = config('app.bpm_scripts_home') . "/output.json";
-        $tempData = fopen($outputfname, 'w');
-        fwrite($tempData, '');
-        fclose($tempData);
-        chmod($outputfname, 0777);
 
         $variablesParameter = [];
         EnvironmentVariable::chunk(50, function ($variables) use (&$variablesParameter) {
@@ -128,85 +103,121 @@ class Script extends Model
         // So we have the files, let's execute the docker container
         switch (strtolower($language)) {
             case 'php':
-                $cmd = config('app.bpm_scripts_docker') . " run " . $variablesParameter . " -v " . $datafname . ":/opt/executor/data.json -v " . $configfname . ":/opt/executor/config.json -v " . $scriptfname . ":/opt/executor/script.php -v " . $outputfname . ":/opt/executor/output.json processmaker/executor:php cat /opt/executor/data.json 2>&1";
+                $config = [
+                    'image' => 'processmaker/executor:php',
+                    'command' => 'php /opt/executor/bootstrap.php',
+                    'parameters' => $variablesParameter,
+                    'inputs' => [
+                        '/opt/executor/data.json' => json_encode($data),
+                        '/opt/executor/config.json' => json_encode($config),
+                        '/opt/executor/script.php' => $code
+                    ],
+                    'outputs' => [
+                        'response' => '/opt/executor/output.json'
+                    ]
+                ];
                 break;
             case 'lua':
-                $cmd = config('app.bpm_scripts_docker') . " run " . $variablesParameter . " -v " . $datafname . ":/opt/executor/data.json -v " . $configfname . ":/opt/executor/config.json -v " . $scriptfname . ":/opt/executor/script.lua -v " . $outputfname . ":/opt/executor/output.json processmaker/executor:lua pwd 2>&1";
+                $config = [
+                    'image' => 'processmaker/executor:php',
+                    'command' => 'lua5.3 /opt/executor/bootstrap.lua',
+                    'parameters' => $variablesParameter,
+                    'inputs' => [
+                        '/opt/executor/data.json' => json_encode($data),
+                        '/opt/executor/config.json' => json_encode($config),
+                        '/opt/executor/script.php' => $code
+                    ],
+                    'outputs' => [
+                        'response' => '/opt/executor/output.json'
+                    ]
+                ];
                 break;
             default:
                 throw new ScriptLanguageNotSupported($language);
         }
         
-        $this->createContainer('scriptExecutor', 'processmaker/executor:php');
-        $this->putInContainer('scriptExecutor', '/opt/executor/data.json', json_encode($data));
-        dump($this->getFromContainer('scriptExecutor', '/opt/executor/data.json'));
-        dump($this->execInContainer('scriptExecutor', 'cat /opt/executor/data.json'));
-        
+        $response = $this->execDocker($config);
+        $returnCode = $response['returnCode'];
+        $errorContent = $response['output'];
+        $output = $response['outputs']['response'];
 
-        //$response = exec($cmd, $output, $returnCode);
-        //dump($cmd, $response, $output, $returnCode);
         if ($returnCode) {
             // Has an error code
-            unlink($datafname);
-            unlink($configfname);
-            unlink($scriptfname);
-            unlink($outputfname);
             return [
-                'output' => implode($output, "\n")
+                'output' => implode($errorContent, "\n")
             ];
         } else {
             // Success
-            $output = json_decode(file_get_contents($outputfname), true);
-            unlink($datafname);
-            unlink($configfname);
-            unlink($scriptfname);
-            unlink($outputfname);
+            $response = json_decode($output, true);
             return [
-                'output' => $output
+                'output' => $response
             ];
         }
     }
 
-    private function createContainer($name, $image)
+    private function execDocker($options)
     {
-        //    docker create -v /cfg --name configs alpine:3.4 /bin/true
+        $container = $this->createContainer($options['image'],
+            $options['command']);
+        foreach ($options['inputs'] as $path => $data) {
+            $this->putInContainer($container, $path, $data);
+        }
+        $response = $this->startContainer($container);
+        $outputs = [];
+        foreach ($options['outputs'] as $name => $path) {
+            $outputs[$name] = $this->getFromContainer($container, $path);
+        }
+        exec(config('app.bpm_scripts_docker') . ' rm ' . $container);
+        $response['outputs'] = $outputs;
+        return $response;
+    }
+
+    private function createContainer($image, $command, $parameters = '')
+    {
+        $cidfile = tempnam(config('app.bpm_scripts_home'), 'cid');
+        unlink($cidfile);
         $cmd = config('app.bpm_scripts_docker')
-            . sprintf(' run --name %s %s / 2>&1', $name, $image);
+            . sprintf(' create %s --cidfile %s %s %s &', $parameters, $cidfile,
+                $image, $command);
         $line = exec($cmd, $output, $returnCode);
         if ($returnCode) {
-            throw new \Exception('Unable to create a docker container: ' . implode("\n", $output));
+            throw new \Exception('Unable to create a docker container: ' . implode("\n",
+                $output));
         }
+        $cid = file_get_contents($cidfile);
+        unlink($cidfile);
+        return $cid;
     }
 
     private function putInContainer($container, $path, $content)
     {
         $source = tempnam(config('app.bpm_scripts_home'), 'put');
         file_put_contents($source, $content);
-        //    docker cp path/in/your/source/code/app_config.yml configs:/cfg
         $cmd = config('app.bpm_scripts_docker')
             . sprintf(' cp %s %s:%s 2>&1', $source, $container, $path);
         $line = exec($cmd, $output, $returnCode);
+        unlink($source);
         if ($returnCode) {
-            throw new \Exception('Unable to send data to container');
+            throw new \Exception('Unable to send data to container: ' . implode("\n",
+                $output));
         }
     }
 
     private function getFromContainer($container, $path)
     {
         $target = tempnam(config('app.bpm_scripts_home'), 'get');
-        file_put_contents($target, '');
-        //    docker cp app:/output /path/in/your/job/space
         $cmd = config('app.bpm_scripts_docker')
             . sprintf(' cp %s:%s %s 2>&1', $container, $path, $target);
         $line = exec($cmd, $output, $returnCode);
-        return file_get_contents($target);
+        $content = file_get_contents($target);
+        unlink($target);
+        return $content;
     }
 
-    private function execInContainer($container, $command)
+    private function startContainer($container)
     {
-        //    docker cp app:/output /path/in/your/job/space
         $cmd = config('app.bpm_scripts_docker')
-            . sprintf(' exec -d %s %s 2>&1', $container, $command);
+            . sprintf(' start %s -a 2>&1', $container);
         $line = exec($cmd, $output, $returnCode);
         return compact('line', 'output', 'returnCode');
     }

@@ -187,7 +187,7 @@ class ScriptsTest extends TestCase
         $script = factory(Script::class)->create();
         $url = self::API_TEST_SCRIPT . '/' . $script->uuid_text;
         $response = $this->apiCall('PUT', $url, [
-            'title' => $script->title,
+            'title' => 'New title',
             'language' => 'lua',
             'code' => $faker->sentence(3),
         ]);
@@ -227,7 +227,7 @@ class ScriptsTest extends TestCase
         $url = route('api.script.preview', ['data'=>'{}','code'=>'<?php return ["response"=>1];', 'language'=>'php']);
         $response = $this->apiCall('GET', $url, []);
         $response->assertStatus(200);
-dump($response->getContent());
+
         $response->assertJsonStructure(['output'=>['response']]);
 
     }
