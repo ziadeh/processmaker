@@ -171,7 +171,7 @@ class Script extends Model
     {
         //    docker create -v /cfg --name configs alpine:3.4 /bin/true
         $cmd = config('app.bpm_scripts_docker')
-            . sprintf(' create -v /opt/executor --name %s %s / 2>&1', $name, $image);
+            . sprintf(' run --name %s %s / 2>&1', $name, $image);
         $line = exec($cmd, $output, $returnCode);
         if ($returnCode) {
             throw new \Exception('Unable to create a docker container: ' . implode("\n", $output));
