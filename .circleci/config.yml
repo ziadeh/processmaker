@@ -5,7 +5,6 @@
 version: 2
 jobs:
   build:
-    machine: true
     resource_class: xlarge
     docker:
       # specify the version you desire here
