@@ -180,7 +180,7 @@ class Script extends Model
 
     private function putInContainer($container, $path, $content)
     {
-        $source = tempnam(config('app.bpm_scripts_home'));
+        $source = tempnam(config('app.bpm_scripts_home'), 'put');
         file_put_contents($source, $content);
         //    docker cp path/in/your/source/code/app_config.yml configs:/cfg
         $cmd = config('app.bpm_scripts_docker')
@@ -193,7 +193,7 @@ class Script extends Model
 
     private function getFromContainer($container, $path)
     {
-        $target = tempnam(config('app.bpm_scripts_home'));
+        $target = tempnam(config('app.bpm_scripts_home'), 'get');
         file_put_contents($target, '');
         //    docker cp app:/output /path/in/your/job/space
         $cmd = config('app.bpm_scripts_docker')
@@ -204,8 +204,6 @@ class Script extends Model
 
     private function execInContainer($container, $command)
     {
-        $target = tempnam(config('app.bpm_scripts_home'));
-        file_put_contents($target, '');
         //    docker cp app:/output /path/in/your/job/space
         $cmd = config('app.bpm_scripts_docker')
             . sprintf(' exec -d %s %s 2>&1', $container, $command);
