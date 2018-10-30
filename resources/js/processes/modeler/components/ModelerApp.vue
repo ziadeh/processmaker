@@ -25,6 +25,9 @@
 import {Modeler, StatusBar, BaseControls} from "@processmaker/modeler";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
+// Import our custom components
+import ScreenSelector from "./inspector/ScreenSelector"
+
 import {
   faCheckCircle,
   faTimesCircle,
@@ -57,6 +60,11 @@ export default {
       }
   },
   mounted() {
+    // Register our custom component for specific types of tasks
+    this.$refs.modeler.registerInspectorConfig('task', {
+
+    });
+
      this.$refs.modeler.loadXML(window.ProcessMaker.modeler.xml);
   },
   methods: {
