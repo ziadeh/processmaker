@@ -63,8 +63,7 @@ class Screen extends Model
     public static function rules($existing = null)
     {
         $rules = [
-            'title' => 'required|unique:screens,title',
-            'description' => 'required'
+            'title' => 'required|unique:screens,title'
         ];
         if ($existing) {
             // ignore the unique rule for this id
