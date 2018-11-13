@@ -183,8 +183,8 @@ class ScriptController extends Controller
     {
         $request->validate(Script::rules());
         $script = new Script();
-        $script->fill($request->input());
         $script->saveOrFail();
+        $script->versions()->create($request->input());
         return new ScriptResource($script);
     }
 
@@ -224,12 +224,10 @@ class ScriptController extends Controller
      */
     public function update(Script $script, Request $request)
     {
-        $request->validate(Script::rules($script));
-
-        $script->fill($request->input());
-        $script->saveOrFail();
-
-        return response($request, 204);
+        // $request->validate(Script::rules($script));
+        eval(\Psy\sh());
+        $script->versions()->create($request->input());
+        return new ScriptResource($script);
     }
 
     /**

@@ -4,9 +4,11 @@ namespace Tests\Feature\Api;
 
 use Faker\Factory as Faker;
 use ProcessMaker\Models\Script;
+use ProcessMaker\Models\ScriptVersion;
 use ProcessMaker\Models\User;
 use Tests\TestCase;
 use Tests\Feature\Shared\RequestHelper;
+use Psy\CodeCleaner\LeavePsyshAlonePass;
 
 class ScriptsTest extends TestCase
 {
@@ -40,8 +42,7 @@ class ScriptsTest extends TestCase
      */
     public function testCreateScript()
     {
-        $faker = Faker::create();
-        //Post saved correctly
+        factory(Script::class, 5)->create();
         $url = self::API_TEST_SCRIPT;
         $response = $this->apiCall('POST', $url, [
             'title' => 'Script Title',
@@ -49,9 +50,13 @@ class ScriptsTest extends TestCase
             'code' => '123',
             'description' => 'Description'
         ]);
-        //validating the answer is correct.
-        //Check structure of response.
         $response->assertJsonStructure(self::STRUCTURE);
+
+        $script_version = ScriptVersion::latest()->first();
+        $json = $response->json();
+
+        $this->assertEquals($json['version_id'], $script_version->id);
+        $this->assertEquals($json['id'], $script_version->script->id);
     }
 
     /**
@@ -59,8 +64,14 @@ class ScriptsTest extends TestCase
      */
     public function testNotCreateScriptWithTitleExists()
     {
-        factory(Script::class)->create([
+        $script = factory(Script::class)->create();
+        factory(ScriptVersion::class)->create([
+            'title' => 'Old Version Script Title',
+            'script_id' => $script->id,
+        ]);
+        factory(ScriptVersion::class)->create([
             'title' => 'Script Title',
+            'script_id' => $script->id,
         ]);
 
         //Post title duplicated
@@ -72,7 +83,31 @@ class ScriptsTest extends TestCase
             'code' => $faker->sentence($faker->randomDigitNotNull)
         ]);
         $response->assertStatus(422);
-        $response->assertSeeText('The title has already been taken');
+        $response->assertSeeText('This title has already been used.');
+    }
+
+    public function testWhenExistingTitleIsFromAnOldVersion() 
+    {
+        $script = factory(Script::class)->create();
+        factory(ScriptVersion::class)->create([
+            'title' => 'Script Title',
+            'script_id' => $script->id,
+        ]);
+        factory(ScriptVersion::class)->create([
+            'title' => 'New Version Script Title',
+            'created_at' => $script->created_at->addMinute(),
+            'script_id' => $script->id,
+        ]);
+
+        //Post title duplicated
+        $faker = Faker::create();
+        $url = self::API_TEST_SCRIPT;
+        $response = $this->apiCall('POST', $url, [
+            'title' => 'Script Title',
+            'language' => 'php',
+            'code' => $faker->sentence($faker->randomDigitNotNull)
+        ]);
+        $response->assertStatus(201);
     }
     
     /**
@@ -80,7 +115,7 @@ class ScriptsTest extends TestCase
      */
     public function testNotCreateScriptWithKeyExists()
     {
-        factory(Script::class)->create([
+        factory(ScriptVersion::class)->create([
             'key' => 'some-key',
         ]);
 
@@ -205,19 +240,30 @@ class ScriptsTest extends TestCase
     /**
      * Update script in process
      */
-    public function testUpdateScript()
+    public function testUpdateScriptFOO()
     {
+
         $faker = Faker::create();
         //Post saved success
-        $script = factory(Script::class)->create();
+        $script = factory(ScriptVersion::class)->create()->script;
+        $version_count = $script->versions()->count();
+        
         $url = self::API_TEST_SCRIPT . '/' . $script->id;
         $response = $this->apiCall('PUT', $url, [
-            'title' => $script->title,
+            'title' => $script->latestVersion()->title,
             'language' => 'lua',
             'code' => $faker->sentence(3),
         ]);
-        //Validate the answer is correct
         $response->assertStatus(204);
+
+        // Creates a new version
+        $this->assertEquals($script->versions()->count(), $version_count + 1);
+
+        $script_version = ScriptVersion::latest()->first();
+        $json = $response->json();
+
+        $this->assertEquals($json['version_id'], $script_version->id);
+        $this->assertEquals($json['id'], $script_version->script->id);
     }
 
     /**
