@@ -25,18 +25,12 @@ class ProcessPermissionsTest extends TestCase
         $this->user->is_administrator = false;
         $this->user->save();
 
-        (new PermissionSeeder)->run($this->user);
+        (new PermissionSeeder)->run();
 
-        //Permission to use api
-        factory(PermissionAssignment::class)->create([
-            'permission_id' => Permission::byGuardName('requests.edit')->id,
-            'assignable_type' => User::class,
-            'assignable_id' => $this->user->id
-        ]);
-        factory(PermissionAssignment::class)->create([
-            'permission_id' => Permission::byGuardName('requests.cancel')->id,
-            'assignable_type' => User::class,
-            'assignable_id' => $this->user->id
+        $this->user->giveDirectPermission([
+            'processes.edit',
+            'requests.edit',
+            'requests.cancel',
         ]);
     }
 

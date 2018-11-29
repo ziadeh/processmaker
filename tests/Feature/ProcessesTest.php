@@ -22,7 +22,7 @@ class ProcessesTest extends TestCase
     public function testEdit()
     {
         //Seeder Permissions
-        (new \PermissionSeeder())->run($this->user);
+        (new \PermissionSeeder())->run();
 
         $process = factory(Process::class)->create(['name' => 'Test Edit']);
         $response = $this->webGet('processes/' . $process->id . '/edit');

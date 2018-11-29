@@ -65,21 +65,19 @@ class PermissionSeeder extends Seeder
         'show_all_requests'
     ];
 
-    public function run($user = null)
+    public function run()
     {
         $group = factory(Group::class)->create([
             'name' => 'All Permissions',
         ]);
 
-        if (!$user) {
-            $user = User::first()->id;
-        }
-
-        factory(GroupMember::class)->create([
-            'group_id' => $group->id,
-            'member_type' => User::class,
-            'member_id' => User::first()->id,
-        ]);
+        $startProcessesGroup = Group::where('name', 'Start Processes')->firstOrFail();
+        $startProcessesPermissions = [
+            'processes.show',
+            'requests.create',
+            'requests.show',
+            'requests.cancel',
+        ];
 
         foreach ($this->permissions as $permissionString) {
             $permission = factory(Permission::class)->create([
@@ -91,6 +89,14 @@ class PermissionSeeder extends Seeder
                 'assignable_type' => Group::class,
                 'assignable_id' => $group->id,
             ]);
+
+            if (in_array($permissionString, $startProcessesPermissions)) {
+                factory(PermissionAssignment::class)->create([
+                    'permission_id' => $permission->id,
+                    'assignable_type' => Group::class,
+                    'assignable_id' => $startProcessesGroup->id,
+                ]);
+            }
         }
     }
 }

@@ -209,7 +209,6 @@ class ProcessController extends Controller
                 422);
         }
 
-        //$process->fill($request->except('cancelRequest', 'startRequest')->json()->all());
         $process->fill($request->except('cancel_request', 'start_request', 'cancel_request_id', 'start_request_id'));
         $process->saveOrFail();
 

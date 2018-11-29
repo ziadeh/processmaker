@@ -20,7 +20,7 @@ class PermissionsTest extends TestCase
         $this->user->is_administrator = false;
         $this->user->save();
 
-        (new PermissionSeeder)->run($this->user);
+        (new PermissionSeeder)->run();
 
         $create_process_perm = Permission::byGuardName('processes.create');
         $show_process_perm   = Permission::byGuardName('processes.show');

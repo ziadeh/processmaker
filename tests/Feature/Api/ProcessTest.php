@@ -528,7 +528,7 @@ class ProcessTest extends TestCase
     public function testUpdateProcess()
     {
         //Seeder Permissions
-        (new \PermissionSeeder())->run($this->user);
+        (new \PermissionSeeder())->run();
 
         //Test to update name process
         $name = $this->faker->name;
@@ -549,7 +549,7 @@ class ProcessTest extends TestCase
     public function testUpdateProcessWithCategoryNull()
     {
         //Seeder Permissions
-        (new \PermissionSeeder())->run($this->user);
+        (new \PermissionSeeder())->run();
 
         //Test update process category to null
         $this->assertModelUpdate(
@@ -569,7 +569,7 @@ class ProcessTest extends TestCase
     public function testUpdateProcessWithCategory()
     {
         //Seeder Permissions
-        (new \PermissionSeeder())->run($this->user);
+        (new \PermissionSeeder())->run();
 
         //Test update process category
         $this->assertModelUpdate(
@@ -637,7 +637,7 @@ class ProcessTest extends TestCase
     public function testUpdateBPMN()
     {
         //Seeder Permissions
-        (new \PermissionSeeder())->run($this->user);
+        (new \PermissionSeeder())->run();
 
         $process = factory(Process::class)->create([
             'bpmn' => Process::getProcessTemplate('OnlyStartElement.bpmn')

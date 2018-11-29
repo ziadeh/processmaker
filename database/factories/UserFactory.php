@@ -8,7 +8,6 @@ use ProcessMaker\Models\User;
  * Model factory for a User
  */
 $factory->define(User::class, function (Faker $faker) {
-
     return [
         'username' => $faker->unique()->userName,
         'email' => $faker->unique()->email,
