@@ -37,7 +37,6 @@ class ProcessSeeder extends Seeder
         $admin = User::where('username', 'admin')->firstOrFail();
 
         foreach (glob(database_path('processes') . '/*.bpmn') as $filename) {
-            echo 'Creating: ', $filename, "\n";
             $process = factory(Process::class)->make([
                 'bpmn' => file_get_contents($filename),
                 'user_id' => $admin->getKey()
@@ -127,8 +126,6 @@ class ProcessSeeder extends Seeder
             //Update the screen and script references in the BPMN of the process
             $process->bpmn = $definitions->saveXML();
             $process->save();
-
-            echo 'Process created: ', $process->uid, "\n";
 
             //Create environment variables for the default processes
             factory(EnvironmentVariable::class)->create([
