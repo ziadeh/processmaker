@@ -224,7 +224,7 @@ jobs:
 
       - run:
           name: "SauceLabs Browser Tests: Firefox"
-          command: "ssh -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-pm4builds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk\""
+          command: "ssh -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-pm4builds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk --env=dusk\""
           environment:
             SAUCELABS_BROWSER: "firefox"
             SAUCELABS_PLATFORM: "Windows 10"
@@ -232,7 +232,7 @@ jobs:
 
       - run:
           name: "SauceLabs Browser Tests: Edge"
-          command: "ssh -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-pm4builds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk\""
+          command: "ssh -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-pm4builds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk --env=dusk\""
           environment:
             SAUCELABS_BROWSER: "MicrosoftEdge"
             SAUCELABS_PLATFORM: "Windows 10"
@@ -240,7 +240,7 @@ jobs:
 
       - run:
           name: "SauceLabs Browser Tests: Safari"
-          command: "ssh -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-pm4builds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk\""
+          command: "ssh -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-pm4builds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk --env=dusk\""
           environment:
             SAUCELABS_BROWSER: "safari"
             SAUCELABS_PLATFORM: "macOS 10.13"

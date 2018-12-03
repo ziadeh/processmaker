@@ -1,4 +1,5 @@
 <?php
+
 namespace ProcessMaker\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -57,7 +58,7 @@ class Install extends Command
     public function handle()
     {
         // Setup our initial encryption key and set our running laravel app key to it
-        $this->key = 'base64:'.base64_encode(Encrypter::generateKey($this->laravel['config']['app.cipher']));
+        $this->key = 'base64:' . base64_encode(Encrypter::generateKey($this->laravel['config']['app.cipher']));
         config(['app.key' => $this->key]);
 
         // Our initial .env values
@@ -84,7 +85,7 @@ class Install extends Command
         // Determine if .env file exists or not
         // if exists, bail out with an error
         // If file does not exist, begin to generate it
-        if(Storage::disk('install')->exists('.env')) {
+        if (Storage::disk('install')->exists('.env')) {
             $this->error(__("A .env file already exists"));
             $this->error(__("Remove the .env file to perform a new installation"));
             return 255;
@@ -94,20 +95,20 @@ class Install extends Command
         $this->confirm(__("Are you ready to begin?"));
         $this->checkDependencies();
         do {
-        $this->fetchDatabaseCredentials();
-        } while(!$this->testDatabaseConnection());
+            $this->fetchDatabaseCredentials();
+        } while (!$this->testDatabaseConnection());
         // Ask for URL and validate
         $invalid = false;
         do {
-            if($invalid) {
+            if ($invalid) {
                 $this->error(__("The url you provided was invalid. Please provide the scheme, host and path and have no trailing slashes."));
             }
             $this->env['APP_URL'] = $this->ask(__('What is the url of this ProcessMaker Installation? (Ex: https://pm.example.com, no trailing slash)'));
-        } while($invalid = (!filter_var($this->env['APP_URL'],
-                                        FILTER_VALIDATE_URL,
-                                        FILTER_FLAG_SCHEME_REQUIRED |
-                                        FILTER_FLAG_HOST_REQUIRED)
-                    || ($this->env['APP_URL'][strlen($this->env['APP_URL']) - 1] == '/'))
+        } while ($invalid = (!filter_var($this->env['APP_URL'],
+                FILTER_VALIDATE_URL,
+                FILTER_FLAG_SCHEME_REQUIRED |
+                FILTER_FLAG_HOST_REQUIRED)
+            || ($this->env['APP_URL'][strlen($this->env['APP_URL']) - 1] == '/'))
         );
         // Set broadcaster url
         $this->env['BROADCASTER_HOST'] = $this->env['APP_URL'] . ':6001';
@@ -125,11 +126,14 @@ class Install extends Command
         // Now generate the .env file
         $contents = '';
         // Build out the file contents for our .env file
-        foreach($this->env as $key => $value) {
+        foreach ($this->env as $key => $value) {
             $contents .= $key . "=" . $value . "\n";
         }
         // Now store it
         Storage::disk('install')->put('.env', $contents);
+
+        //Generate configuration Testing Laravel Dusk
+        $this->generateConfigurationTestDusk();
 
         // Install migrations
         $this->call('migrate:fresh', [
@@ -145,7 +149,38 @@ class Install extends Command
         return true;
     }
 
+    private function generateConfigurationTestDusk()
+    {
+        $this->env;
 
+        // Our initial .env values
+        $config= [
+            'APP_DEBUG' => TRUE,
+            'APP_NAME' => 'ProcessMaker',
+            'APP_ENV' => 'testing',
+            'APP_KEY' => $this->key,
+            'DB_HOSTNAME' => 'localhost',
+            'DB_CONNECTION' => 'sqlite',
+            'DB_DATABASE' => ':memory:',
+            'APP_URL' => $this->env['APP_URL'],
+            'SAUCELABS_BROWSER_TESTING' => 'false',
+            'SAUCELABS_USERNAME' => 'processmaker',
+            'SAUCELABS_ACCESS_KEY' => 'eb78836b-b7c9-4800-95b4-69ef4be96106',
+            'SAUCELABS_BROWSER' => 'chrome',
+            'SAUCELABS_BROWSER_VERSION' => '67',
+            'SAUCELABS_PLATFORM' => '"Windows 10"',
+        ];
+
+        // Now generate the .env.dusk file
+        $contents = '';
+        // Build out the file contents for our .env file
+        foreach ($config as $key => $value) {
+            $contents .= $key . "=" . $value . "\n";
+        }
+
+        // Now store it
+        Storage::disk('install')->put('.env.dusk', $contents);
+    }
     /**
      * The following checks for required extensions needed by ProcessMaker
      */
@@ -195,7 +230,7 @@ class Install extends Command
         // Attempt to connect
         try {
             $pdo = DB::connection('install')->getPdo();
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             dd($e);
             $this->error(__("Failed to connect to MySQL database. Check your credentials and try again. Note, the database must also exist."));
             return false;
