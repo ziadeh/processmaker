@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use ProcessMaker\Models\EnvironmentVariable;
 use ProcessMaker\Models\Group;
 use ProcessMaker\Models\GroupMember;
 use ProcessMaker\Models\Screen;
@@ -16,7 +15,6 @@ use ProcessMaker\Nayra\Contracts\Bpmn\ScriptTaskInterface;
 
 class ProcessSeeder extends Seeder
 {
-
     /**
      * Array of [language => mime-type]
      */
@@ -35,11 +33,11 @@ class ProcessSeeder extends Seeder
     {
         //load user admin
         $admin = User::where('username', 'admin')->firstOrFail();
-
         foreach (glob(database_path('processes') . '/*.bpmn') as $filename) {
             $process = factory(Process::class)->make([
                 'bpmn' => file_get_contents($filename),
-                'user_id' => $admin->getKey()
+                'user_id' => $admin->getKey(),
+                'status' => 'ACTIVE',
             ]);
             //Load the process title from the the main process of the BPMN definition
             $processes = $process->getDefinitions()->getElementsByTagName('process');
@@ -58,9 +56,7 @@ class ProcessSeeder extends Seeder
                 }
             }
             $process->save();
-
             $definitions = $process->getDefinitions();
-
             //Create scripts from the BPMN process definition
             $scriptTasks = $definitions->getElementsByTagName('scriptTask');
             foreach ($scriptTasks as $scriptTaskNode) {
@@ -78,30 +74,28 @@ class ProcessSeeder extends Seeder
                     WorkflowServiceProvider::PROCESS_MAKER_NS, 'config', '{}'
                 );
             }
-
             //Create/Assign Users to tasks
             $lanes = $definitions->getElementsByTagName('lane');
-            foreach($lanes as $nodeLane) {
+            foreach ($lanes as $nodeLane) {
                 $lane = $nodeLane->getBpmnElementInstance();
                 $user = $this->getUserOrCreate($lane->getName());
-                foreach($lane->getFlowNodes() as $node) {
+                foreach ($lane->getFlowNodes() as $node) {
                     if ($node instanceof ActivityInterface && !($node instanceof ScriptTaskInterface)) {
                         factory(ProcessTaskAssignment::class)->create([
                             'process_id' => $process->getKey(),
                             'process_task_id' => $node->getId(),
                             'assignment_id' => $user->getKey(),
-                            'assignment_type' => 'user',
+                            'assignment_type' => User::class,
                         ]);
                     }
                 }
             }
-
             //Add screens to the process
             $admin = User::where('username', 'admin')->firstOrFail();
             $humanTasks = ['task', 'userTask'];
-            foreach($humanTasks as $humanTask) {
+            foreach ($humanTasks as $humanTask) {
                 $tasks = $definitions->getElementsByTagName($humanTask);
-                foreach($tasks as $task) {
+                foreach ($tasks as $task) {
                     $screenRef = $task->getAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'screenRef');
                     $id = $task->getAttribute('id');
                     if ($screenRef) {
@@ -117,22 +111,14 @@ class ProcessSeeder extends Seeder
                             'process_id' => $process->getKey(),
                             'process_task_id' => $id,
                             'assignment_id' => $admin->getKey(),
-                            'assignment_type' => 'user',
+                            'assignment_type' => User::class,
                         ]);
                     }
                 }
             }
-
             //Update the screen and script references in the BPMN of the process
             $process->bpmn = $definitions->saveXML();
             $process->save();
-
-            //Create environment variables for the default processes
-            factory(EnvironmentVariable::class)->create([
-                'name' => 'hours_of_work',
-                'description' => 'Regular schedule of hours of work for employees',
-                'value' => '8'
-            ]);
         }
     }
 
@@ -145,19 +131,19 @@ class ProcessSeeder extends Seeder
      *
      * @return Screen
      */
-    private function createScreen($id, $screenRef, $process) {
-
+    private function createScreen($id, $screenRef, $process)
+    {
         if (file_exists(database_path('processes/screens/' . $screenRef . '.json'))) {
             $json = json_decode(file_get_contents(database_path('processes/screens/' . $screenRef . '.json')));
             return factory(Screen::class)->create([
-                        'title' => $json[0]->name,
-                        'config' => $json
+                'title' => $json[0]->name,
+                'config' => $json
             ]);
         } elseif (file_exists(database_path('processes/screens/' . $id . '.json'))) {
             $json = json_decode(file_get_contents(database_path('processes/screens/' . $id . '.json')));
             return factory(Screen::class)->create([
-                        'title' => $json[0]->name,
-                        'config' => $json,
+                'title' => $json[0]->name,
+                'config' => $json,
             ]);
         }
     }
@@ -206,7 +192,6 @@ class ProcessSeeder extends Seeder
                 'is_administrator' => true
             ]);
         }
-
         return $user;
     }
 
@@ -226,7 +211,7 @@ class ProcessSeeder extends Seeder
                 'status' => 'ACTIVE'
             ]);
         }
-        factory(GroupMember::class)->create( [
+        factory(GroupMember::class)->create([
             'member_id' => function () use ($name) {
                 return $this->getUserOrCreate($name)->getKey();
             },
