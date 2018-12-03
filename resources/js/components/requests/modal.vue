@@ -1,7 +1,10 @@
 <template>
     <div>
-        <button id="navbar-request-button" class="btn btn-success btn-sm" @click="showRequestModal"><i class="fas fa-plus"></i> Request</button>
-        <b-modal size="lg" id="requests-modal" class="requests-modal" ref="requestModalAdd" title="New Request" hide-footer>
+        <button id="navbar-request-button" class="btn btn-success btn-sm" @click="showRequestModal">
+            <i class="fas fa-plus"></i> Request
+        </button>
+        <b-modal size="lg" id="requests-modal" class="requests-modal" ref="requestModalAdd" title="New Request"
+                 hide-footer>
           <span class="float-right">
                 <div class="input-group">
                   <div class="input-group-prepend">
@@ -30,116 +33,117 @@
 </template>
 
 <script>
-import card from "./card";
-import _ from "lodash";
+    import card from "./card";
+    import _ from "lodash";
 
-export default {
-  components: {
-    "process-card": card
-  },
-  data() {
-    return {
-      filter: "",
-      loading: false,
-      error: false,
-      processes: {
-        // Blank
-      }
-    };
-  },
-  watch: {
-    filter: _.debounce(function() {
-      if (!this.loading) {
-        this.fetch();
-      }
-    }, 250)
-  },
-  methods: {
-    showRequestModal() {
-      if (!this.loaded) {
-        // Perform initial load of requests from backend
-        this.$refs.requestModalAdd.show();
-        this.fetch();
-      }
-    },
-    fetch() {
-      this.loading = true;
-      // Now call our api
-      // Maximum number of requests returned is 200 but should be enough
-      // @todo Determine if we need to paginate or lazy scroll if someone has more than 200 requests
-      window.ProcessMaker.apiClient
-        .get("processes?include=events,category")
-        .then(response => {
-          let data = response.data;
-          // Empty processes
-          this.processes = {};
-          // Now populate our processes array with data for rendering
-          this.populate(data.data);
-          // Do initial filter
-          this.loading = false;
-        })
-        .catch(error => {
-          this.loading = false;
-          this.error = true;
-        });
-    },
-    populate(data) {
-      // Each element in data represents an individual process
-      // We need to pull out the category name, and if it's available in our processes, append it there
-      // if not, create the category in our processes array and then append it
-      for (let process of data) {
-        let category = process.category ? process.category.name : "Uncategorized";
-        // Now determine if we have it defined in our processes list
-        if (typeof this.processes[category] == "undefined") {
-          // Create it
-          this.processes[category] = [];
+    export default {
+        components: {
+            "process-card": card
+        },
+        data() {
+            return {
+                filter: "",
+                loading: false,
+                error: false,
+                processes: {
+                    // Blank
+                }
+            };
+        },
+        watch: {
+            filter: _.debounce(function () {
+                if (!this.loading) {
+                    this.fetch();
+                }
+            }, 250)
+        },
+        methods: {
+            showRequestModal() {
+                if (!this.loaded) {
+                    // Perform initial load of requests from backend
+                    this.$refs.requestModalAdd.show();
+                    this.fetch();
+                }
+            },
+            fetch() {
+                this.loading = true;
+                // Now call our api
+                // Maximum number of requests returned is 200 but should be enough
+                // @todo Determine if we need to paginate or lazy scroll if someone has more than 200 requests
+                window.ProcessMaker.apiClient
+                    .get("processes?include=events,category"+
+                    "&status=Active")
+                    .then(response => {
+                        let data = response.data;
+                        // Empty processes
+                        this.processes = {};
+                        // Now populate our processes array with data for rendering
+                        this.populate(data.data);
+                        // Do initial filter
+                        this.loading = false;
+                    })
+                    .catch(error => {
+                        this.loading = false;
+                        this.error = true;
+                    });
+            },
+            populate(data) {
+                // Each element in data represents an individual process
+                // We need to pull out the category name, and if it's available in our processes, append it there
+                // if not, create the category in our processes array and then append it
+                for (let process of data) {
+                    let category = process.category ? process.category.name : "Uncategorized";
+                    // Now determine if we have it defined in our processes list
+                    if (typeof this.processes[category] == "undefined") {
+                        // Create it
+                        this.processes[category] = [];
+                    }
+                    // Now append
+                    this.processes[category].push(process);
+                }
+            }
         }
-        // Now append
-        this.processes[category].push(process);
-      }
-    }
-  }
-};
+    };
 </script>
 
 <style lang="scss" scoped>
-.requests-modal {
+    .requests-modal {
 
-  .loading,
-  .no-requests {
-    padding: 32px 60px;
-    font-size: 16px;
-    font-weight: bold;
-  }
+        .loading,
+        .no-requests {
+            padding: 32px 60px;
+            font-size: 16px;
+            font-weight: bold;
+        }
 
-  .process-list {
-    //flex-grow: 1;
-    overflow: auto;
-    
+        .process-list {
+            //flex-grow: 1;
+            overflow: auto;
 
-    .category {
-      padding-bottom: 32px;
 
-      .name {
-        font-size: 16px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        color: #788793;
-      }
+            .category {
+                padding-bottom: 32px;
+
+                .name {
+                    font-size: 16px;
+                    font-weight: bold;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    color: #788793;
+                }
+            }
+
+            .processes {
+                display: flex;
+                flex-flow: row wrap;
+            }
+        }
+
+        &.show {
+            display: flex;
+            flex-direction: column;
+        }
     }
-
-    .processes {
-      display: flex;
-      flex-flow: row wrap;
-    }
-  }
-
-  &.show {
-    display: flex;
-    flex-direction: column;
-  }
-}
 </style>

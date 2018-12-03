@@ -72,6 +72,12 @@ class ProcessController extends Controller
             ->leftJoin('users as user', 'processes.user_id', '=', 'user.id')
             ->where($where);
 
+        //Validate the field status strictly
+        $parameters = $request->all();
+        if ($parameters['status']) {
+            $processes->where('processes.status', '=', $parameters['status']);
+        }
+
         //Verify what processes the current user can initiate, user Administrator can start everything.
         if (!Auth::user()->is_administrator) {
             $processId = Auth::user()->startProcesses();
