@@ -74,7 +74,7 @@ class ProcessController extends Controller
 
         //Validate the field status strictly
         $parameters = $request->all();
-        if ($parameters['status']) {
+        if ($parameters && array_key_exists('status', $parameters)) {
             $processes->where('processes.status', '=', $parameters['status']);
         }
 
