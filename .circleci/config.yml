@@ -216,7 +216,7 @@ jobs:
 
       - run:
           name: "SauceLabs Browser Tests: Chrome"
-          command: "ssh -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-pm4builds \"cd ~/builds/$BUILD_NAME && php artisan dusk\""
+          command: "ssh -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-pm4builds \"cd ~/builds/$BUILD_NAME && php artisan dusk --env=dusk\""
           environment:
             DB_DATABASE: "circle_test"
             RUN_MSSQL_TESTS: "true"
