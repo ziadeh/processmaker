@@ -70,23 +70,20 @@ trait HasAuthorization
         if ($this->is_administrator) {
             return true;
         }
-        $response = $this->hasPermission($permission);
-        if ($response) {
-            $permission = Permission::byGuardName($permission);
-            //Check permission type user
+        $permission = Permission::byGuardName($permission);
+        //Check permission type user
+        $response = ProcessPermission::where('permission_id', $permission->id)
+            ->where('process_id', $process->id)
+            ->where('assignable_id', $this->id)
+            ->where('assignable_type', User::class)
+            ->exists();
+        if (!$response) {
+            //check permission type group only in one level
             $response = ProcessPermission::where('permission_id', $permission->id)
                 ->where('process_id', $process->id)
-                ->where('assignable_id', $this->id)
-                ->where('assignable_type', User::class)
+                ->whereIn('assignable_id', $this->groupMembersFromMemberable()->pluck('group_id')->toArray()) // groupMembersFromMemberable does not inherit
+                ->where('assignable_type', Group::class)
                 ->exists();
-            if (!$response) {
-                //check permission type group only in one level
-                $response = ProcessPermission::where('permission_id', $permission->id)
-                    ->where('process_id', $process->id)
-                    ->whereIn('assignable_id', $this->groupMembersFromMemberable()->pluck('group_id')->toArray())
-                    ->where('assignable_type', Group::class)
-                    ->exists();
-            }
         }
         return $response;
     }

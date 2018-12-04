@@ -42,43 +42,47 @@ class ProcessController extends Controller
             ->pluck('title', 'id')
             ->toArray();
 
-        //list users and groups with permissions requests.cancel
-        $listCancel = [
-            'Users' => $this->assignee('requests.cancel', User::class),
-            'Groups' => $this->assignee('requests.cancel', Group::class)
+        $users = [];
+        foreach(User::active()->get() as $u) {
+            $users['user-' . $u->id] = $u->full_name;
+        }
+        
+        $groups = [];
+        foreach(Group::active()->get() as $g) {
+            $groups['group-' . $g->id] = $g->name;
+        }
+
+        $assignables = [
+            'Users' => $users,
+            'Groups' => $groups,
         ];
 
-        //list users and groups with permission requests.create
-        $listStart = [
-            'Users' => $this->assignee('requests.create', User::class),
-            'Groups' => $this->assignee('requests.create', Group::class)
-        ];
         $process->cancel_request_id = $this->loadAssigneeProcess('requests.cancel',  $process->id);
         $process->start_request_id = $this->loadAssigneeProcess('requests.create',  $process->id);
 
-        return view('processes.edit', compact(['process', 'categories', 'screens', 'listCancel', 'listStart']));
+        return view('processes.edit', compact(['process', 'categories', 'screens', 'assignables']));
     }
 
-    /**
-     * Load users or groups assigned with the permission
-     *
-     * @param $permission
-     * @param $type
-     *
-     * @return array Users|Groups assigned
-     */
-    private function assignee($permission, $type)
-    {
-        $items = PermissionAssignment::where('permission_id', Permission::byGuardName($permission)->id)
-            ->where('assignable_type', $type)
-            ->get();
-        $data = [];
-        foreach ($items as $assigned) {
-            $item = $type::find($assigned->assignable_id);
-            $data[($item->fullname ? 'user-' : 'group-') . $item->id] = $item->fullname ?: $item->name;
-        }
-        return $data;
-    }
+    // /**
+    //  * Load users or groups assigned with the permission
+    //  *
+    //  * @param $permission
+    //  * @param $type
+    //  *
+    //  * @return array Users|Groups assigned
+    //  */
+    // private function assignee($permission, $type)
+    // {
+    //     $items = PermissionAssignment::where('permission_id', Permission::byGuardName($permission)->id)
+    //         ->where('assignable_type', $type)
+    //         ->get();
+    //     $data = [];
+    //     foreach ($items as $assigned) {
+    //         $item = $type::find($assigned->assignable_id);
+    //         $data[($item->fullname ? 'user-' : 'group-') . $item->id] = $item->fullname ?: $item->name;
+    //     }
+    //     return $data;
+    // }
 
     /**
      * Load users and groups assigned to process

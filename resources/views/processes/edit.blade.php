@@ -63,7 +63,7 @@
                 </div>
                 <div class="form-group p-0">
                     {!! Form::label('startRequest', __('Start Request')) !!}
-                    {!! Form::select('startRequest', $listStart, null, [
+                    {!! Form::select('startRequest', $assignables, null, [
                             'id' => 'start_request_id',
                             'class' => 'form-control',
                             'v-model' => 'formData.start_request_id',
@@ -73,7 +73,7 @@
                 </div>
                 <div class="form-group p-0">
                     {!! Form::label('cancelRequest', __('Cancel Request')) !!}
-                    {!! Form::select('cancelRequest', $listCancel, null, [
+                    {!! Form::select('cancelRequest', $assignables, null, [
                             'id' => 'cancel_request_id',
                             'class' => 'form-control',
                             'v-model' => 'formData.cancel_request_id',
