@@ -9,7 +9,7 @@ use ProcessMaker\Models\PermissionAssignment;
 
 class PermissionSeeder extends Seeder
 {
-    private $permissions = [
+    private $route_permissions = [
         'documents.index',
         'documents.create',
         'documents.destroy',
@@ -45,12 +45,6 @@ class PermissionSeeder extends Seeder
         'processes.destroy',
         'processes.edit',
         'processes.show',
-        'requests.index',
-        'requests.create',
-        'requests.destroy',
-        'requests.cancel',
-        'requests.edit',
-        'requests.show',
         'scripts.index',
         'scripts.create',
         'scripts.destroy',
@@ -63,31 +57,36 @@ class PermissionSeeder extends Seeder
         'users.show'
     ];
 
-    public function run($user = null)
+    private $resource_permissions = [
+        'requests.create',
+        'requests.cancel',
+        'requests.show',
+    ];
+
+    public function run()
     {
         $group = factory(Group::class)->create([
             'name' => 'All Permissions',
         ]);
 
-        if (!$user) {
-            $user = User::first()->id;
-        }
-
-        factory(GroupMember::class)->create([
-            'group_id' => $group->id,
-            'member_type' => User::class,
-            'member_id' => User::first()->id,
-        ]);
-
-        foreach ($this->permissions as $permissionString) {
+        foreach ($this->route_permissions as $permissionString) {
             $permission = factory(Permission::class)->create([
                 'name' => ucwords(preg_replace('/(\.|_)/', ' ', $permissionString)),
                 'guard_name' => $permissionString,
+                'type' => Permission::TYPE_ROUTE,
             ]);
             factory(PermissionAssignment::class)->create([
                 'permission_id' => $permission->id,
                 'assignable_type' => Group::class,
                 'assignable_id' => $group->id,
+            ]);
+        }
+        
+        foreach ($this->resource_permissions as $permissionString) {
+            $permission = factory(Permission::class)->create([
+                'name' => ucwords(preg_replace('/(\.|_)/', ' ', $permissionString)),
+                'guard_name' => $permissionString,
+                'type' => Permission::TYPE_RESOURCE,
             ]);
         }
     }

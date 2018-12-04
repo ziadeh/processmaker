@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class Permission extends Model
 {
+    const TYPE_ROUTE = 'route';
+    const TYPE_RESOURCE = 'resource';
 
     protected $fillable = [
         'name',
