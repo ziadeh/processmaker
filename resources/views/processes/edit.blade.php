@@ -148,8 +148,8 @@
                     let response = {};
                     response['users'] = [];
                     response['groups'] = [];
-
                     data.forEach(value => {
+                        if (value === null) { return false; }
                         let option = value.split('-');
                         if (option[0] === 'user') {
                             response['users'].push(parseInt(option[1]));

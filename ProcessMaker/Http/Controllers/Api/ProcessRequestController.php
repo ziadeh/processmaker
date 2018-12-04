@@ -16,6 +16,8 @@ use ProcessMaker\Http\Resources\ProcessRequests as ProcessRequestResource;
 
 class ProcessRequestController extends Controller
 {
+    public $skipPermissionCheckFor = ['index'];
+
     /**
      * Display a listing of the resource.
      *

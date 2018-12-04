@@ -12,6 +12,9 @@ use ProcessMaker\Http\Resources\Notifications as NotificationResource;
 
 class NotificationController extends Controller
 {
+    public $skipPermissionCheckFor =
+        ['userNotifications', 'updateAsRead'];
+
     /**
      * Display a listing of the resource.
      *

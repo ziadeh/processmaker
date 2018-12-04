@@ -20,7 +20,8 @@ use ProcessMaker\Models\User;
 
 class ProcessController extends Controller
 {
-    public $skipPermissionCheckFor = ['triggerStartEvent'];
+    public $skipPermissionCheckFor =
+        ['index', 'triggerStartEvent'];
 
     /**
      * Get list Process
