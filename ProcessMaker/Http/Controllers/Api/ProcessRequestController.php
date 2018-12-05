@@ -16,7 +16,7 @@ use ProcessMaker\Http\Resources\ProcessRequests as ProcessRequestResource;
 
 class ProcessRequestController extends Controller
 {
-    public $skipPermissionCheckFor = ['index'];
+    public $skipPermissionCheckFor = ['index', 'cancel'];
 
     /**
      * Display a listing of the resource.
@@ -224,6 +224,19 @@ class ProcessRequestController extends Controller
 
         $httpRequest->validate(ProcessRequest::rules($request));
         $request->fill($httpRequest->json()->all());
+        $request->saveOrFail();
+        return response([], 204);
+    }
+
+    public function cancel(ProcessRequest $request, Request $httpRequest)
+    {
+        if (!Auth::user()->hasProcessPermission($request->process, 'requests.cancel')) {
+            throw new AuthorizationException('Not authorized to cancel this request');
+        }
+        $this->cancelRequestToken($request);
+        return response([], 204);
+
+        $request->status = 'CANCELED';
         $request->saveOrFail();
         return response([], 204);
     }

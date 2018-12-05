@@ -24,46 +24,38 @@ class ProcessPermissionsTest extends TestCase
     {
         $this->user->is_administrator = false;
         $this->user->save();
+    }
 
-        (new PermissionSeeder)->run($this->user);
-
-        //Permission to use api
-        factory(PermissionAssignment::class)->create([
-            'permission_id' => Permission::byGuardName('requests.edit')->id,
-            'assignable_type' => User::class,
-            'assignable_id' => $this->user->id
-        ]);
-        factory(PermissionAssignment::class)->create([
-            'permission_id' => Permission::byGuardName('requests.cancel')->id,
-            'assignable_type' => User::class,
-            'assignable_id' => $this->user->id
-        ]);
+    protected function setupPermissions()
+    {
+        foreach(['requests.cancel', 'requests.create', 'processes.edit'] as $name) {
+            factory(Permission::class)->create(['guard_name' => $name]);
+        }
     }
 
     public function testUpdateProcessPermissionRequestCancelTypeUser()
     {
         $process = factory(Process::class)->create();
-        $normal_user = factory(User::class)->create([
+        $cancel_user= factory(User::class)->create([
             'password' => 'password'
         ]);
-        // User needs the 'global' requests.cancel first
-        $normal_user->giveDirectPermission('requests.cancel');
+        $this->user->giveDirectPermission('processes.edit');
 
         $route = route('api.processes.update', [$process->id]);
         $response = $this->apiCall('PUT', $route, [
             'name' => 'Update Process',
             'description' => 'Update Test',
-            'cancel_request' => ['users' => [$normal_user->id], 'groups' => []]
+            'cancel_request' => ['users' => [$cancel_user->id], 'groups' => []]
         ]);
         $response->assertStatus(200, $response);
 
         //Verify if user has a permission requests cancel
-        $this->assertTrue($normal_user->hasProcessPermission($process, 'requests.cancel'));
+        $this->assertTrue($cancel_user->hasProcessPermission($process, 'requests.cancel'));
 
         //Verify Process Permission
         $response = ProcessPermission::where('permission_id', Permission::byGuardName('requests.cancel')->id)
             ->where('process_id', $process->id)
-            ->where('assignable_id', $normal_user->id)
+            ->where('assignable_id', $cancel_user->id)
             ->where('assignable_type', User::class)
             ->exists();
 
@@ -144,10 +136,8 @@ class ProcessPermissionsTest extends TestCase
         $request = factory(ProcessRequest::class)->create(['user_id' => $this->user->id, 'process_id' => $process->id]);
 
         //Canceling request
-        $route = route('api.' . $this->resource . '.update', [$request->id]);
-        $response = $this->apiCall('PUT', $route, [
-            'status' => 'CANCELED',
-        ]);
+        $route = route('api.' . $this->resource . '.cancel', [$request->id]);
+        $response = $this->apiCall('PUT', $route);
         //The user have process permission and request is canceled
         $response->assertStatus(204, $response);
     }

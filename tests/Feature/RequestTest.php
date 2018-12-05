@@ -14,6 +14,11 @@ class RequestTest extends TestCase
 {
     use RequestHelper;
 
+    public function withUserSetUp()
+    {
+        $this->user->update(['is_administrator' => false]);
+    }
+
     /**
      * Test to make sure the controller and route work with the view
      *
@@ -29,50 +34,15 @@ class RequestTest extends TestCase
     }
 
     /**
-     * Test to make sure the controller and route work with the view and show_all_requests permissions
-     *
-     * @return void
-     */
-    public function testRequestAllRouteWithShowAllRequestsPermission()
-    {
-        factory(Permission::class)->create(['guard_name' => 'show_all_requests']);
-        $this->user = factory(User::class)->create();
-        $this->user->giveDirectPermission('show_all_requests');
-        // get the URL
-        $response = $this->webCall('GET', '/requests/all');
-        $response->assertStatus(200);
-        // check the correct view is called
-        $response->assertViewIs('requests.index');
-    }
-
-    public function testShowRouteWithShowAllPermission()
-    {
-        $this->user = factory(User::class)->create();
-
-        factory(Permission::class)->create(['guard_name' => 'show_all_requests']);
-        $request_id = factory(ProcessRequest::class)->create()->id;
-
-        $response = $this->webCall('GET', '/requests/' . $request_id);
-        $response->assertStatus(403);
-
-        $this->user->giveDirectPermission('show_all_requests');
-        $this->user->refresh();
-
-        $response = $this->webCall('GET', '/requests/' . $request_id);
-        $response->assertStatus(200);
-
-        // check the correct view is called
-        $response->assertViewIs('requests.show');
-    }
-
-    /**
      * Test to make sure the controller and route work with the view
      *
      * @return void
      */
     public function testShowCancelRoute()
     {
-        $Request_id = factory(ProcessRequest::class)->create()->id;
+        $Request_id = factory(ProcessRequest::class)->create([
+            'user_id' => $this->user->id,
+        ])->id;
         // get the URL
         $response = $this->webCall('GET', '/requests/' . $Request_id);
 

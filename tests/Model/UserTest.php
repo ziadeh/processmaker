@@ -27,33 +27,33 @@ class UserTest extends TestCase
         $p_group = factory(Group::class)->create(['name' => 'Presidents']);
 
         factory(GroupMember::class)->create([
-            'group_uuid' => $nl_group->uuid,
+            'group_id' => $nl_group->id,
             'member_type' => Group::class,
-            'member_uuid' => $p_group,
+            'member_id' => $p_group,
         ]);
         
         factory(GroupMember::class)->create([
-            'group_uuid' => $nl_group->uuid,
+            'group_id' => $nl_group->id,
             'member_type' => User::class,
-            'member_uuid' => $technician_user,
+            'member_id' => $technician_user,
         ]);
         
         factory(GroupMember::class)->create([
-            'group_uuid' => $p_group->uuid,
+            'group_id' => $p_group->id,
             'member_type' => User::class,
-            'member_uuid' => $president_user->uuid,
+            'member_id' => $president_user->id,
         ]);
 
         factory(PermissionAssignment::class)->create([
-            'permission_uuid' => $ln_permission->uuid,
+            'permission_id' => $ln_permission->id,
             'assignable_type' => Group::class,
-            'assignable_uuid' => $p_group->uuid,
+            'assignable_id' => $p_group->id,
         ]);
         
         factory(PermissionAssignment::class)->create([
-            'permission_uuid' => $dn_permission->uuid,
+            'permission_id' => $dn_permission->id,
             'assignable_type' => Group::class,
-            'assignable_uuid' => $nl_group->uuid,
+            'assignable_id' => $nl_group->id,
         ]);
         
         $mom_user->giveDirectPermission('disarm.nukes');
