@@ -2,6 +2,8 @@
 
 namespace Tests\Browser;
 
+use Barryvdh\Debugbar\Middleware\DebugbarEnabled;
+use DebugBar\DebugBar;
 use Illuminate\Support\Facades\Artisan;
 use ProcessMaker\Models\User;
 use Tests\DuskTestCase;
@@ -38,7 +40,7 @@ class LoginTest extends DuskTestCase
                 ->pause(5000)
                 ->waitFor('.vuetable-body', 5)
                 ->assertSee('1 - 10 of 100 Users')
-                ->click('div.icon:nth-child(8)')
+                ->click('div.data-table div.icon:nth-child(8)')
                 ->pause(1000)
                 ->assertSee('11 - 20 of 100 Users');
         });
