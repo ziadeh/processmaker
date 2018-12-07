@@ -40,6 +40,7 @@ class LoginTest extends DuskTestCase
                 ->pause(5000)
                 ->waitFor('.vuetable-body', 5)
                 ->assertSee('1 - 10 of 100 Users')
+                ->driver->executeScript('window.scrollTo(0, 500);')
                 ->click('div.data-table div.icon:nth-child(8)')
                 ->pause(1000)
                 ->assertSee('11 - 20 of 100 Users');
