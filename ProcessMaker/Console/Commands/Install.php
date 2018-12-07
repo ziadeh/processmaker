@@ -155,7 +155,7 @@ class Install extends Command
 
         // Our initial .env values
         $config= [
-            'APP_DEBUG' => FALSE,
+            'APP_DEBUG' => 'FALSE',
             'APP_NAME' => 'ProcessMaker',
             'APP_ENV' => 'testing',
             'APP_KEY' => $this->key,
