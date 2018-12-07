@@ -40,8 +40,7 @@ class LoginTest extends DuskTestCase
                 ->pause(5000)
                 ->waitFor('.vuetable-body', 5)
                 ->assertSee('1 - 10 of 100 Users')
-                ->click('a.phpdebugbar-close-btn')
-                ->click('div.data-table div.icon:nth-child(8)')
+                ->click('div.icon:nth-child(8)')
                 ->pause(1000)
                 ->assertSee('11 - 20 of 100 Users');
         });
