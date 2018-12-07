@@ -63,7 +63,8 @@ abstract class DuskTestCase extends BaseTestCase
                 [
                     "platform" => env('SAUCELABS_PLATFORM', "Windows 7"),
                     "browserName" => env('SAUCELABS_BROWSER', "chrome"),
-                    "version" => env('SAUCELABS_BROWSER_VERSION', "67")
+                    "version" => env('SAUCELABS_BROWSER_VERSION', "67"),
+                    "debug" => 'false'
                 ]
             );
         }
