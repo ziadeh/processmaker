@@ -30,7 +30,7 @@ class LoginTest extends DuskTestCase
         ]);
         factory(User::class, 99)->create();
         // Test login
-        app('debugbar')->disable();
+        //app('debugbar')->disable();
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->assertSee('Username')
@@ -41,6 +41,7 @@ class LoginTest extends DuskTestCase
                 ->pause(5000)
                 ->waitFor('.vuetable-body', 5)
                 ->assertSee('1 - 10 of 100 Users')
+                ->script("$('html, body').animate({ scrollTop: $('.table-hover').offset().top }, 0);")
                 ->click('div.icon:nth-child(8)')
                 ->pause(1000)
                 ->assertSee('11 - 20 of 100 Users');
