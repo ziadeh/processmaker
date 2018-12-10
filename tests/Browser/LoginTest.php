@@ -2,8 +2,6 @@
 
 namespace Tests\Browser;
 
-use Barryvdh\Debugbar\Middleware\DebugbarEnabled;
-use DebugBar\DebugBar;
 use Illuminate\Support\Facades\Artisan;
 use ProcessMaker\Models\User;
 use Tests\DuskTestCase;
