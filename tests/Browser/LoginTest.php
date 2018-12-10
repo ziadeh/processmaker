@@ -2,8 +2,6 @@
 
 namespace Tests\Browser;
 
-use Barryvdh\Debugbar\Middleware\DebugbarEnabled;
-use DebugBar\DebugBar;
 use Illuminate\Support\Facades\Artisan;
 use ProcessMaker\Models\User;
 use Tests\DuskTestCase;
@@ -30,6 +28,7 @@ class LoginTest extends DuskTestCase
         ]);
         factory(User::class, 99)->create();
         // Test login
+        //app('debugbar')->disable();
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
                 ->assertSee('Username')
