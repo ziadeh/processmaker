@@ -132,9 +132,6 @@ class Install extends Command
         // Now store it
         Storage::disk('install')->put('.env', $contents);
 
-        //Generate configuration Testing Laravel Dusk
-        $this->generateConfigurationTestDusk();
-
         // Install migrations
         $this->call('migrate:fresh', [
             '--seed' => true,
@@ -149,38 +146,6 @@ class Install extends Command
         return true;
     }
 
-    private function generateConfigurationTestDusk()
-    {
-        $this->env;
-
-        // Our initial .env values
-        $config= [
-            'APP_DEBUG' => TRUE,
-            'APP_NAME' => 'ProcessMaker',
-            'APP_ENV' => 'testing',
-            'APP_KEY' => $this->key,
-            'DB_HOSTNAME' => 'localhost',
-            'DB_CONNECTION' => 'sqlite',
-            'DB_DATABASE' => ':memory:',
-            'APP_URL' => $this->env['APP_URL'],
-            'SAUCELABS_BROWSER_TESTING' => 'false',
-            'SAUCELABS_USERNAME' => 'processmaker',
-            'SAUCELABS_ACCESS_KEY' => 'eb78836b-b7c9-4800-95b4-69ef4be96106',
-            'SAUCELABS_BROWSER' => 'chrome',
-            'SAUCELABS_BROWSER_VERSION' => '67',
-            'SAUCELABS_PLATFORM' => '"Windows 10"',
-        ];
-
-        // Now generate the .env.dusk file
-        $contents = '';
-        // Build out the file contents for our .env file
-        foreach ($config as $key => $value) {
-            $contents .= $key . "=" . $value . "\n";
-        }
-
-        // Now store it
-        Storage::disk('install')->put('.env.dusk', $contents);
-    }
     /**
      * The following checks for required extensions needed by ProcessMaker
      */
