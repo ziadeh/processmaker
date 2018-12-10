@@ -64,7 +64,6 @@ class Install extends Command
         // Our initial .env values
         $this->env = [
             'APP_DEBUG' => 'FALSE',
-            'DEBUGBAR_ENABLED' => 'FALSE',
             'APP_NAME' => 'ProcessMaker',
             'APP_ENV' => 'production',
             'APP_KEY' => $this->key,
