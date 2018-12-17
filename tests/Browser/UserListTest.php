@@ -51,7 +51,6 @@ class UserListTest extends DuskTestCase
                 //Verify we see next/previous button
                 ->assertPresent('div.icon:nth-child(2) > .fa-angle-left')
                 ->assertPresent('div.icon:nth-child(8) > .fa-angle-right');
-
         });
     }
 }
