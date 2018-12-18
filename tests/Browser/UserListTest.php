@@ -39,7 +39,7 @@ class UserListTest extends DuskTestCase
                 ->type('#username', 'admin')
                 ->type('#password', 'admin')
                 ->press('.btn')
-                ->clickLink('Admin');
+                //->clickLink('Admin');
                 //Visit /admin/users
                 //->pause(5000)
                 //->waitFor('.vuetable-body', 5)
