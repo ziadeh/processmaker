@@ -35,9 +35,9 @@ class UserListTest extends DuskTestCase
         // Test login
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
-                ->assertSee('Username');
-                //->type('#username', 'admin')
-                //->type('#password', 'admin')
+                ->assertSee('Username')
+                ->type('#username', 'admin')
+                ->type('#password', 'admin');
                 //->press('.btn');
                 //->clickLink('Admin');
                 //Visit /admin/users
