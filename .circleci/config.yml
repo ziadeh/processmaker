@@ -177,7 +177,7 @@ jobs:
             echo "BROADCASTER_KEY=21a795019957dde6bcd96142e05d4b10" >> .env
             echo "REDIS_PORT=%%REDISPORT%%" >> .env
             echo "BPM_SCRIPTS_HOME=/home/circleci/tmp" >> .env
-            # echo "HOME=/home/circleci" >> .env
+            echo "HOME=/home/circleci" >> .env
             
             # Generate unique app key
             php artisan key:generate --force
@@ -227,7 +227,7 @@ jobs:
             
       - run:
           name: "SauceLabs Browser Tests: Chrome"
-          command: "ssh -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-pm4builds \"cd ~/builds/$BUILD_NAME && php artisan dusk --env=dusk\""
+          command: "ssh -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-pm4builds \"cd ~/builds/$BUILD_NAME && php artisan dusk\""
           environment:
             DB_DATABASE: "circle_test"
             RUN_MSSQL_TESTS: "true"
@@ -235,7 +235,7 @@ jobs:
 
       - run:
           name: "SauceLabs Browser Tests: Firefox"
-          command: "ssh -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-pm4builds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk --env=dusk\""
+          command: "ssh -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-pm4builds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk\""
           environment:
             SAUCELABS_BROWSER: "firefox"
             SAUCELABS_PLATFORM: "Windows 10"
