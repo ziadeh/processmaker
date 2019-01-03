@@ -62,16 +62,19 @@ class RunServiceTask extends BpmnAction implements ShouldQueue
             Log::error('Service task not implemented: ' . $implementation);
             throw new ScriptException('Service task not implemented: ' . $implementation);
         }
-        $response = $script->runScript($data, $configuration);
-        if (is_array($response['output'])) {
+        try {
+            $response = $script->runScript($data, $configuration);
+            // Update data
             foreach ($response['output'] as $key => $value) {
                 $dataStore->putData($key, $value);
             }
             $element->complete($token);
             Log::info('Service task completed: ' . $implementation);
-        } else {
+        } catch (Throwable $exception) {
+            // Change to error status
             $token->setStatus(ServiceTaskInterface::TOKEN_STATE_FAILING);
-            Log::info('Service task failed: ' . $implementation . ' - ' . $response['output']);
+            $token->getInstance()->logError($exception, $element);
+            Log::info('Service task failed: ' . $implementation);
         }
     }
 }
