@@ -20,7 +20,6 @@ class loginTest extends DuskTestCase
     {
         factory(User::class, 100)->create();
         $this->browse(function ($browser) {
-            dd(\ProcessMaker\Models\User::all());
             $browser->visit("https://bpm4.local.processmaker.com/admin/users")
                     ->type("#username","admin")
                     ->type("#password","admin")
