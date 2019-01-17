@@ -124,7 +124,10 @@
     </div>
     <div id="processes" class="collapse" >
         <div class="card-body">
-            <label><input type="checkbox" :disabled="formData.is_administrator" value="view-processes" v-model="selectedPermissions">   {{__('View Processes')}}</label>
+            <label><input type="checkbox" :disabled="formData.is_administrator" value="view-processes" v-model="selectedPermissions"> {{__('View Processes')}}</label>
+            <label><input type="checkbox" :disabled="formData.is_administrator" value="create-processes" v-model="selectedPermissions" @change="checkCreate('edit-processes', $event)">   {{__('Create processes')}}</label>
+            <label><input type="checkbox" :disabled="formData.is_administrator" value="edit-processes" v-model="selectedPermissions" @change="checkEdit('create-processes', $event)">   {{__('Edit processes')}}</label>
+            <label><input type="checkbox" :disabled="formData.is_administrator" value="archive-processes" v-model="selectedPermissions">   {{__('Archive processes')}}</label>  
         </div>
     </div>
 </div>
