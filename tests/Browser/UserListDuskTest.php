@@ -34,12 +34,11 @@ class loginTest extends DuskTestCase
         ]);
         factory(User::class, 100)->create();
         $this->browse(function ($browser) {
-            $browser->visit("/")
+            $browser->visit("https://bpm4.local.processmaker.com/admin/users")
                     ->type("#username","admin")
                     ->type("#password","admin")
                     ->click(".btn-success")
-                    ->assertMissing(".invalid-feedback");
-            $browser->visit("/admin/users")
+                    ->assertMissing(".invalid-feedback")
                     ->waitUntilMissing('.vuetable-empty-result');
             $browser->assertSeeIn("#users-listing", "1 - 10 of 101 Users")
                     ->click(".fa-angle-right")
