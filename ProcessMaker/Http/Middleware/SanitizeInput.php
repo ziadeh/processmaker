@@ -2,10 +2,11 @@
 
 namespace ProcessMaker\Http\Middleware;
 
-use Closure;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Http\Middleware\TransformsRequest;
 use Route;
 use Request;
-use Illuminate\Foundation\Http\Middleware\TransformsRequest;
+
 
 class SanitizeInput extends TransformsRequest
 {
@@ -20,14 +21,14 @@ class SanitizeInput extends TransformsRequest
 
     /**
      * Construct the class.
-     */    
+     */
     public function __construct()
     {
         // If we have access to the current route...
         if ($route = Route::current()) {
             // Get our controller.
             $controller = $route->controller;
-        
+
             // If the controller has a doNotSanitize property,
             // add it to our exceptions array.
             if ($controller && property_exists($controller, 'doNotSanitize')) {
@@ -37,7 +38,7 @@ class SanitizeInput extends TransformsRequest
             }
         }
     }
-    
+
     /**
      * Sanitize the given value.
      *
@@ -50,17 +51,29 @@ class SanitizeInput extends TransformsRequest
         // If this is a string and is not in the exceptions
         // array, return it after sanitization.
         if (is_string($value) && !in_array($key, $this->except, true)) {
+
+            //save old value
+            $old = $value;
+
             // Remove most injectable code
             $value = strip_tags($value);
-            
+
             // Run this for double safety, but we do allow quotes, for example
             // to allow for users who have names such as Conan O'Brien
-            $value = htmlspecialchars($value, ENT_NOQUOTES, null, true); 
-            
+            $value = htmlspecialchars($value, ENT_NOQUOTES, null, true);
+
+            if ($old !==  $value) {
+                //Set error invalid characters
+                $error = ValidationException::withMessages([
+                    $key => 'Invalid characters in ' . $key
+                ]);
+                throw $error;
+            }
+
             // Return the sanitized string
             return $value;
         }
-        
+
         // Return the original value.
         return $value;
     }
