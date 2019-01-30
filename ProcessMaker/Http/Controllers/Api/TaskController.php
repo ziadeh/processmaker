@@ -21,7 +21,7 @@ class TaskController extends Controller
      * @var array
      */
     public $doNotSanitize = [
-        //
+        'bpmn'
     ];
     /**
      * Display a listing of the resource.
@@ -124,7 +124,7 @@ class TaskController extends Controller
             // Reassign user
             $task->user_id = $request->input('user_id');
             $task->save();
-            
+
             // Send a notification to the user
             $notification = new TaskReassignmentNotification($task);
             $task->user->notify($notification);
