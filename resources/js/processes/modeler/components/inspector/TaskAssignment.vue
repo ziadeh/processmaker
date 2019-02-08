@@ -289,6 +289,9 @@
                     this.userAssignmentExpression = '';
                     this.groupAssignmentExpression = '';
                 }
+                else {
+                    ProcessMaker.alert("You must enter an expression and select an assignment.", "warning");
+                }
             },
 
             loadSpecialAssignments() {
