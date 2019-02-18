@@ -151,14 +151,14 @@
 </script>
 
 <style lang="scss" scoped>
-    .icon {
-        width:1em;
-    }
-    /deep/ .vuetable-th-slot-subject {
-        min-width: 450px;
-        white-space: nowrap;
-    }
-    /deep/ tr td:nth-child(1) span {
-        padding: 6px 0px 0px 12px;
-    }
+.icon {
+    width:1em;
+}
+>>> .vuetable-th-slot-subject {
+    min-width: 450px;
+    white-space: nowrap;
+}
+>>> tr td:nth-child(1) span {
+    padding: 6px 0px 0px 12px;
+}
 </style>

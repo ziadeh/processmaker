@@ -144,7 +144,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/deep/ tr td:nth-child(2) {
+>>> tr td:nth-child(2) {
   padding: 6px 10px;
 }
 </style>

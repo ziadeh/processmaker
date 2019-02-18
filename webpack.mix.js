@@ -1,6 +1,5 @@
-const {
-    mix
-} = require('laravel-mix');
+const mix = require('laravel-mix');
+
 const MonocoEditorPlugin = require('monaco-editor-webpack-plugin')
 
 /*
@@ -14,9 +13,13 @@ const MonocoEditorPlugin = require('monaco-editor-webpack-plugin')
  |
 */
 
-mix.webpackConfig({
+mix
+    .webpackConfig(
+     {
         plugins: [
-            new MonocoEditorPlugin()
+            /*new MonocoEditorPlugin({
+                languages: ['javascript', 'typescript', 'css']
+            })*/
         ],
         resolve: {
             modules: [
@@ -29,9 +32,11 @@ mix.webpackConfig({
                 Horizon: path.resolve(__dirname, 'vendor/laravel/horizon/resources/assets/js/')
             }
         }
-    }).js('resources/js/app-layout.js', 'public/js')
+    })
+
+    .js('resources/js/app-layout.js', 'public/js')
     .js('resources/js/processes/modeler/index.js', 'public/js/processes/modeler')
-    .js('resources/js/processes/modeler/initialLoad.js', 'public/js/processes/modeler')
+//    .js('resources/js/processes/modeler/initialLoad.js', 'public/js/processes/modeler')
     .js('resources/js/admin/users/index.js', 'public/js/admin/users')
 	.js('resources/js/admin/users/edit.js', 'public/js/admin/users/edit.js')
     .js('resources/js/admin/groups/index.js', 'public/js/admin/groups')
@@ -42,9 +47,9 @@ mix.webpackConfig({
 
     .js('resources/js/processes/index.js', 'public/js/processes')
     .js('resources/js/processes/categories/index.js', 'public/js/processes/categories')
-    .js('resources/js/processes/scripts/index.js', 'public/js/processes/scripts')
-    .js('resources/js/processes/scripts/edit.js', 'public/js/processes/scripts')
-    .js('resources/js/processes/environment-variables/index.js', 'public/js/processes/environment-variables')
+//    .js('resources/js/processes/scripts/index.js', 'public/js/processes/scripts')
+//    .js('resources/js/processes/scripts/edit.js', 'public/js/processes/scripts')
+//    .js('resources/js/processes/environment-variables/index.js', 'public/js/processes/environment-variables')
     .js('resources/js/processes/screens/index.js', 'public/js/processes/screens')
     .js('resources/js/processes/screen-builder/main.js', 'public/js/processes/screen-builder')
     .js('resources/js/processes/screen-builder/typeForm.js', 'public/js/processes/screen-builder')
@@ -53,12 +58,9 @@ mix.webpackConfig({
 
     .js('resources/js/requests/index.js', 'public/js/requests')
 
-
-    .js('resources/js/nayra/start.js', 'public/js/nayra')
-
-    .js('resources/js/requests/show.js', 'public/js/requests')
+//    .js('resources/js/requests/show.js', 'public/js/requests')
     .js('resources/js/tasks/index.js', 'public/js/tasks/index.js')
-    .js('resources/js/tasks/show.js', 'public/js/tasks/show.js')
+//    .js('resources/js/tasks/show.js', 'public/js/tasks/show.js')
 
     .js('resources/js/notifications/index.js', 'public/js/notifications/index.js')
 
