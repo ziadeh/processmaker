@@ -1,4 +1,4 @@
-import "bootstrap-vue/dist/bootstrap-vue.css";
+//import "bootstrap-vue/dist/bootstrap-vue.css";
 import BootstrapVue from "bootstrap-vue";
 import Echo from "laravel-echo";
 import VueRouter from "vue-router";
