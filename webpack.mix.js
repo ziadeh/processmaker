@@ -31,10 +31,9 @@ mix
                 // This is so we can override some of Laravel Horizon's javascript with our own so we can embed in our UI
                 Horizon: path.resolve(__dirname, 'vendor/laravel/horizon/resources/assets/js/')
             }
-        }
-    })
-
-    .js('resources/js/app-layout.js', 'public/js')
+        },
+        node: { fs: 'empty' }
+    }).js('resources/js/app-layout.js', 'public/js')
     .js('resources/js/processes/modeler/index.js', 'public/js/processes/modeler')
 //    .js('resources/js/processes/modeler/initialLoad.js', 'public/js/processes/modeler')
     .js('resources/js/admin/users/index.js', 'public/js/admin/users')
