@@ -47,7 +47,7 @@
     "@fortawesome/fontawesome-free": "^5.6.1",
     "@fortawesome/free-brands-svg-icons": "^5.6.1",
     "@fortawesome/free-solid-svg-icons": "^5.6.1",
-    "@processmaker/modeler": "^0.2.6",
+    "@processmaker/modeler": "^0.3.0",
     "@processmaker/processmaker-bpmn-moddle": "^0.1.7",
     "@processmaker/vue-form-builder": "git://github.com/ProcessMaker/vue-form-builder.git#feature/55",
     "@tinymce/tinymce-vue": "^1.0.8",
