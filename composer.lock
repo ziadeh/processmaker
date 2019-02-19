@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1dcddd86515f7b7855ab544a7c7916f3",
+    "content-hash": "beabcfa4c3a9ca3854a6b726cffb0875",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -3151,7 +3151,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ProcessMaker/nayra/zipball/54c49db3b033f2ef9d6f607352f08de5dc3ef332",
+                "url": "https://api.github.com/repos/ProcessMaker/nayra/zipball/2db3dc5c45addb67b48cc4401976b88ab703e1ce",
                 "reference": "2db3dc5c45addb67b48cc4401976b88ab703e1ce",
                 "shasum": ""
             },
@@ -3169,7 +3169,48 @@
                 "Apache-2.0"
             ],
             "description": "BPMN compliant engine",
-            "time": "2018-12-07T11:54:16+00:00"
+            "time": "2019-01-10T19:43:23+00:00"
+        },
+        {
+            "name": "processmaker/pm4-packages",
+            "version": "dev-master",
+            "dist": {
+                "type": "zip",
+                "url": "https://processmaker.repo.packagist.com/example-customer/dists/processmaker/pm4-packages/9999999-dev/43e5cfd0e4ee00c5c7a87cc1bab08b184df180e9.zip",
+                "reference": "43e5cfd0e4ee00c5c7a87cc1bab08b184df180e9",
+                "shasum": null,
+                "mirrors": [
+                    {
+                        "url": "https://processmaker.repo.packagist.com/example-customer/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "processmaker/bpm": "4.0.*"
+            },
+            "type": "project",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ProcessMaker\\Package\\Packages\\PackageServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ProcessMaker\\Package\\Packages\\": "src"
+                }
+            },
+            "notification-url": "https://processmaker.repo.packagist.com/example-customer/downloads/",
+            "authors": [
+                {
+                    "name": "DevOps",
+                    "email": "devops@processmaker.com"
+                }
+            ],
+            "description": "Package to manage packages",
+            "time": "2019-02-11T13:17:15+00:00"
         },
         {
             "name": "psr/cache",
@@ -3960,54 +4001,6 @@
                 "spatie"
             ],
             "time": "2016-12-14T15:37:00+00:00"
-        },
-        {
-            "name": "spatie/server-side-rendering",
-            "version": "0.2.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/server-side-rendering.git",
-                "reference": "fb646f07be18e83324d7e32773c19ccf06a78530"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/server-side-rendering/zipball/fb646f07be18e83324d7e32773c19ccf06a78530",
-                "reference": "fb646f07be18e83324d7e32773c19ccf06a78530",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0",
-                "symfony/process": "^3.0|^4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Ssr\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian De Deyne",
-                    "email": "sebastian@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Server side rendering JavaScript in your PHP application",
-            "homepage": "https://github.com/spatie/server-side-rendering",
-            "keywords": [
-                "SSR",
-                "server-side-rendering",
-                "spatie"
-            ],
-            "time": "2018-08-10T08:07:00+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -4975,16 +4968,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.2.1",
+            "version": "v4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "2b341009ccec76837a7f46f59641b431e4d4c2b0"
+                "reference": "6c05edb11fbeff9e2b324b4270ecb17911a8b7ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/2b341009ccec76837a7f46f59641b431e4d4c2b0",
-                "reference": "2b341009ccec76837a7f46f59641b431e4d4c2b0",
+                "url": "https://api.github.com/repos/symfony/process/zipball/6c05edb11fbeff9e2b324b4270ecb17911a8b7ad",
+                "reference": "6c05edb11fbeff9e2b324b4270ecb17911a8b7ad",
                 "shasum": ""
             },
             "require": {
@@ -5020,7 +5013,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2018-11-20T16:22:05+00:00"
+            "time": "2019-01-24T22:05:03+00:00"
         },
         {
             "name": "symfony/psr-http-message-bridge",
@@ -7815,7 +7808,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "pion/laravel-chunk-upload": 20,
-        "processmaker/nayra": 20
+        "processmaker/nayra": 20,
+        "processmaker/pm4-packages": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
