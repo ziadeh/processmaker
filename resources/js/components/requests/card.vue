@@ -82,7 +82,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .process-card /deep/ .filtered {
+  .process-card >>> .filtered {
     color: #3397e1;
   }
 
@@ -135,7 +135,7 @@ export default {
   &:hover {
     .name {
       color: #00bf9c; 
-      & /deep/ .filtered {
+      & >>> .filtered {
         color: #00bf9c; 
       }
     }

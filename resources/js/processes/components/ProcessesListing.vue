@@ -268,11 +268,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/deep/ th#_updated_at {
+>>> th#_updated_at {
   width: 14%;
 }
 
-/deep/ th#_created_at {
+>>> th#_created_at {
   width: 14%;
 }
 </style>

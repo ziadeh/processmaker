@@ -1,6 +1,4 @@
-const {
-    mix
-} = require('laravel-mix');
+const mix = require('laravel-mix');
 const MonocoEditorPlugin = require('monaco-editor-webpack-plugin')
 
 /*
@@ -16,20 +14,16 @@ const MonocoEditorPlugin = require('monaco-editor-webpack-plugin')
 
 mix.webpackConfig({
         plugins: [
-            new MonocoEditorPlugin()
+            new MonocoEditorPlugin({
+                languages: ['javascript', 'typescript', 'css']
+            })
         ],
         resolve: {
-            modules: [
-                path.resolve(__dirname, 'node_modules'),
-                'node_modules'
-            ],
-            symlinks: false,
             alias: {
                 // This is so we can override some of Laravel Horizon's javascript with our own so we can embed in our UI
                 Horizon: path.resolve(__dirname, 'vendor/laravel/horizon/resources/assets/js/')
             }
         },
-        node: { fs: 'empty' }
     }).js('resources/js/app-layout.js', 'public/js')
     .js('resources/js/processes/modeler/index.js', 'public/js/processes/modeler')
     .js('resources/js/processes/modeler/initialLoad.js', 'public/js/processes/modeler')
@@ -53,24 +47,18 @@ mix.webpackConfig({
     .js('resources/js/processes/screen-builder/typeEmail.js', 'public/js/processes/screen-builder')
 
     .js('resources/js/requests/index.js', 'public/js/requests')
-
-
     .js('resources/js/nayra/start.js', 'public/js/nayra')
-
     .js('resources/js/requests/show.js', 'public/js/requests')
     .js('resources/js/tasks/index.js', 'public/js/tasks/index.js')
     .js('resources/js/tasks/show.js', 'public/js/tasks/show.js')
 
     .js('resources/js/notifications/index.js', 'public/js/notifications/index.js')
 
-
-
-
     // Note, that this should go last for the extract to properly put the manifest and vendor in the right location
     // See: https://github.com/JeffreyWay/laravel-mix/issues/1118
     .js('resources/js/app.js', 'public/js')
 
-    .extract(['vue', 'jquery', 'bootstrap-vue', 'axios', 'popper.js', 'lodash', 'bootstrap'])
+    .extract([])
     .copy('resources/img/*', 'public/img')
     .sass('resources/sass/sidebar/sidebar.scss', 'public/css')
     .sass('resources/sass/app.scss', 'public/css')

@@ -9,20 +9,21 @@
     <div class="modeler-container">
       <modeler ref="modeler" />
     </div>
-    <status-bar>
+    <statusbar>
         <template slot="secondary">
             Last Saved: {{lastSaved}}
         </template>
       {{statusText}}
       <font-awesome-icon :style="{color: statusColor}" :icon="statusIcon" />
-    </status-bar>
+    </statusbar>
 
   </div>    
 </template>
 
 
 <script>
-import {Modeler, StatusBar} from "@processmaker/modeler";
+import { Modeler } from "@processmaker/modeler";
+import statusbar from '@processmaker/modeler/src/components/statusbar.vue';
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 import {
@@ -39,7 +40,7 @@ export default {
   name: "ModelerApp",
   components: {
     Modeler,
-    StatusBar,
+    statusbar,
     FontAwesomeIcon
   },
   data() {
