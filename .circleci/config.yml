@@ -94,6 +94,7 @@ jobs:
 
       - run: composer install -n --prefer-dist
 
+      # npm install
       - run: npm install
 
       - save_cache:
