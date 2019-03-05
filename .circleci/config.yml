@@ -95,7 +95,7 @@ jobs:
       - run: composer install -n --prefer-dist
 
       # npm install
-      - run: npm install
+      - run: sudo npm install -g npm@6.4.1 && npm ci
 
       - save_cache:
           paths:
