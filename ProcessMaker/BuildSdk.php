@@ -177,7 +177,7 @@ class BuildSdk {
             "options" => [
                 "gitUserId" => "ProcessMaker",
                 "gitRepoId" => "pm4-sdk-" . $this->lang,
-                "packageName" => "pm4-sdk-" . $this->lang,
+                "packageName" => "pmsdk",
                 "invokerPackage" => "ProcessMaker\\Client",
                 "appDescription" => "SDK Client for the ProcessMaker v4 App",
                 "infoUrl" => "https://github.com/ProcessMaker/bpm",
