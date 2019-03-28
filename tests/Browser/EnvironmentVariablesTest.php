@@ -5,7 +5,8 @@ namespace Tests\Browser;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Hash;
+use ProcessMaker\Models\User;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Artisan;
@@ -17,7 +18,7 @@ class EnvironmentVariablesCreationTest extends DuskTestCase
      */
     public function testEnvironmentVariablesCreation()
     {
-        //         $this->markTestSkipped('Skipping Dusk tests temporarily');
+        //$this->markTestSkipped('Skipping Dusk tests temporarily');
 
         //Create Admin User
         Artisan::call('migrate:fresh', []);
@@ -46,7 +47,7 @@ class EnvironmentVariablesCreationTest extends DuskTestCase
             //Add Environment Variable
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='process-variables-listing']/div[1]/div[2]/button"))
                 ->click();  //The add button lacks a unique ID
-            //                ->press(".btn-secondary") //We can use this line and remove the previous two once the add button is updated
+            //    ->press(".btn-secondary") //We can use this line and remove the previous two once the add button is updated
             $browser->type("#name", "foobar")
                 ->type("#description", "Bars of Foo.")
                 ->type("#value", "foobar")
@@ -66,8 +67,9 @@ class EnvironmentVariablesCreationTest extends DuskTestCase
             //Delete Environment Variable
             $browser->press(".fa-trash-alt")
                 ->waitFor('.modal-content', 10)
+                ->waitForText('Are you sure you want to delete the environment variable barfoo?', 10)
                 ->press("#confirm")
-                ->pause(800)   //No choice here, we have to pause for either the error message or the success alert.
+                ->waitFor(".vuetable-empty-result")
                 ->assertDontSee("barfoo");
         });
     }
