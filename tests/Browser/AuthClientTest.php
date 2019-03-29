@@ -5,6 +5,9 @@ namespace Tests\Browser;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Artisan;
+use ProcessMaker\Models\User;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 
@@ -45,7 +48,7 @@ class AuthClientTest extends DuskTestCase
                 ->press(".fa-key");
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='authClients']/div[2]/div[1]/div/button"))
                 ->click();  //The add button lacks a unique ID
-//                ->press(".btn-secondary") //We can use this line and remove the previous two once the add button is updated
+            //    ->press(".btn-secondary") //We can use this line and remove the previous two once the add button is updated
             $browser->type("#name", "foobar")
                 ->type("#redirect", "https://foo.bar.com")
                 ->press(".ml-2")
