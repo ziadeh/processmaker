@@ -20,20 +20,6 @@ class EnvironmentVariablesCreationTest extends DuskTestCase
     {
         //$this->markTestSkipped('Skipping Dusk tests temporarily');
 
-        //Create Admin User
-        Artisan::call('migrate:fresh', []);
-        $user = factory(User::class)->create([
-            'username' => 'admin',
-            'password' => Hash::make('admin'),
-            'email' => 'any@gmail.com',
-            'firstname' => 'admin',
-            'lastname' => 'admin',
-            'timezone' => null,
-            'datetime_format' => null,
-            'status' => 'ACTIVE',
-            'is_administrator' => true,
-        ]);
-
         $this->browse(function ($browser) {
             //Login
             $browser->visit("/")
