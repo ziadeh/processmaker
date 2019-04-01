@@ -13,6 +13,20 @@ use Facebook\WebDriver\Remote\RemoteWebDriver;
 
 class CombinedTestCase extends DuskTestCase
 {
+    protected function driver()
+    {
+        return RemoteWebDriver::create(
+            "https://" . env('SAUCELABS_USERNAME') . ":" . env('SAUCELABS_ACCESS_KEY') . "@ondemand.saucelabs.com:443/wd/hub",
+            [
+                "platform" => env('SAUCELABS_PLATFORM'),
+                "browserName" => env('chrome'),
+                "version" => env('latest'),
+                "tags" => ["Auth Client", "Groups", "Category", "Users"],
+                "name" => ("Combined Auth/Group/Category/User Test"),
+                "build" => (exec('git rev-parse --abbrev-ref HEAD')),
+            ]
+        );
+    }
     /**
      * @throws \Throwable
      */
@@ -28,7 +42,7 @@ class CombinedTestCase extends DuskTestCase
                 ->press(".btn")
                 ->assertMissing(".invalid-feedback")
                 ->clickLink('Admin')
-                ->waitUntilMissing(".vuetable-empty-result", 20)
+                ->waitUntilMissing(".vuetable-empty-result")
             //Add Auth Client
                 ->press(".fa-key");
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='authClients']/div[2]/div[1]/div/button"))
@@ -38,10 +52,10 @@ class CombinedTestCase extends DuskTestCase
                 ->type("#name", "foobar")
                 ->type("#redirect", "https://foo.bar.com")
                 ->press(".ml-2")
-                ->waitUntilMissing('#createEditAuthClient', 20)
+                ->waitUntilMissing('#createEditAuthClient')
                 //->pause(500)   //No choice here, we have to pause for either the error message or the success alert.
                 ->assertMissing(".invalid-feedback")
-                ->waitForText('foobar', 20);
+                ->waitForText('foobar');
             //Edit Auth Client
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='authClients']/div[2]/div[2]/div/table/tbody/tr[1]/td[5]/div/div/button[1]/i"))
                 ->click();  //The edit button lacks a unique ID
@@ -50,16 +64,16 @@ class CombinedTestCase extends DuskTestCase
                 ->type("#name", "bar foo")
                 ->type("#redirect", "https://bar.foo.com")
                 ->press(".ml-2")
-                ->waitUntilMissing('#createEditAuthClient', 20)
+                ->waitUntilMissing('#createEditAuthClient')
                 //->pause(500)   //No choice here, we have to pause for either the error message or the success alert.
                 ->assertMissing(".invalid-feedback")
-                ->waitForText('bar foo', 20);
+                ->waitForText('bar foo');
             //Delete Auth Client
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='authClients']/div[2]/div[2]/div/table/tbody/tr[1]/td[5]/div/div/button[2]/i"))
                 ->click();  //The delete button lacks a unique ID
-            $browser->waitFor('#confirmModal', 20)
+            $browser->waitFor('#confirmModal')
                 ->press("#confirm")
-                ->waitUntilMissing('#createEditAuthClient', 20)
+                ->waitUntilMissing('#createEditAuthClient')
                 ->pause(750)   //No choice here, we have to pause for either the error message or the success alert.
                 ->assertDontSee("bar foo");
         });
@@ -76,22 +90,21 @@ class CombinedTestCase extends DuskTestCase
             $browser->press(".btn-secondary")
                 ->type("#name", "!It is a Foobar")
                 ->press(".ml-2")
-                ->waitFor("#editProcessCategory", 20)
+                ->waitFor("#editProcessCategory")
                 ->clickLink("Categories")
-                ->waitFor(".vuetable-empty-result", 20)
-                ->waitForText('!It is a Foobar', 20);
+                ->waitForText('!It is a Foobar');
             //Edit Environment Variable
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='process-categories-listing']/div[2]/div/table/tbody/tr[1]/td[6]/div/div/button[1]/i"))
                 ->click();  //This is a really awful hacky workaround, because there is not a unique ID for each edit icon
             $browser->type("#name", "!It is a Barfoo")
                 ->press(".ml-2")
-                ->waitFor(".vuetable-empty-result", 20)
-                ->waitForText('!It is a Barfoo', 20);
+                ->waitFor(".vuetable-empty-result")
+                ->waitForText('!It is a Barfoo');
             //Delete Environment Variable
             $browser->press(".fa-trash-alt")
-                ->waitFor('.modal-content', 20)
+                ->waitFor('.modal-content')
                 ->press("#confirm")
-                ->waitFor(".vuetable-empty-result", 20)
+                ->waitFor(".vuetable-empty-result")
                 ->assertDontSee("!It is a Barfoo");
         });
     }
@@ -106,19 +119,19 @@ class CombinedTestCase extends DuskTestCase
             //Add User Group
             $browser->clickLink('Groups')
                 ->press(".btn-secondary")
-                ->waitFor('#createGroup', 20)
+                ->waitFor('#createGroup')
                 ->pause(250)
                 ->type("#name", "!foobar")
                 ->type("#description", "Group for Foo Bar")
                 ->press(".ml-2")
                 ->pause(800)
                 ->assertMissing(".invalid-feedback")
-                ->waitFor('#nav-home-tab', 20);
+                ->waitFor('#nav-home-tab');
             //Add User to User Group
             $browser->click("#nav-profile-tab")
-                ->waitFor(".btn-action", 20)
+                ->waitFor(".btn-action")
                 ->press(".btn-action")
-                ->waitFor("#addUser", 20)
+                ->waitFor("#addUser")
                 ->click(".multiselect__select")
                 ->pause(2000);  //For some reason, the selector will not immediately populate like it does under normal usage. This is a work-around
             $browser->driver->findElement(WebDriverBy::xpath("//span[text()='admin admin']"))   //To ensure the correct user is chosen
@@ -127,10 +140,10 @@ class CombinedTestCase extends DuskTestCase
                 $modal->press(".ml-2");
             });
             $browser->pause(1000)   //No choice.
-                ->waitForText('admin admin', 20)
+                ->waitForText('admin admin')
                 ->press(".fa-users")
-                ->waitUntilMissing(".vuetable-empty-result", 20)
-                ->waitForText('!foobar', 20);
+                ->waitUntilMissing(".vuetable-empty-result")
+                ->waitForText('!foobar');
             //Edit User Group
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='listGroups']/div[2]/div/div/table/tbody/tr[1]/td[7]/div/div/button[1]/i"))
                 ->click();  //The edit button lacks a unique ID
@@ -141,13 +154,13 @@ class CombinedTestCase extends DuskTestCase
                 ->press(".ml-2")
                 ->pause(800)   //No choice here, we have to pause for either the error message or the success alert.
                 ->assertMissing(".invalid-feedback")
-                ->waitForText('!bar foo', 20);
+                ->waitForText('!bar foo');
             //Delete User Group
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='listGroups']/div[2]/div/div/table/tbody/tr[1]/td[7]/div/div/button[2]/i"))
                 ->click();  //The delete button lacks a unique ID
-            $browser->waitFor('#confirmModal', 20)
+            $browser->waitFor('#confirmModal')
                 ->press("#confirm")
-                ->waitFor('.alert-dismissible', 20)
+                ->waitFor('.alert-dismissible')
                 ->pause(700)
                 ->assertDontSee("!bar foo");
         });
@@ -162,7 +175,7 @@ class CombinedTestCase extends DuskTestCase
                 ->waitUntilMissing(".vuetable-empty-result");
             //Add User
             $browser->press("#addUserBtn")
-                ->type("#username", "user1")
+                ->type("#username", "1user")
                 ->type("#firstname", "user1")
                 ->type("#lastname", "last1")
                 ->select("select[name='size']", "ACTIVE")
@@ -174,26 +187,33 @@ class CombinedTestCase extends DuskTestCase
             })
                 ->pause(750)   //No choice here, we have to pause here to wait for either the error message or the success alert.
                 ->assertMissing(".invalid-feedback")
-                ->waitFor(".alert-dismissible", 20)
+                ->waitFor(".alert-dismissible")
                 ->assertSee("successfully created");
             //Edit User
             $browser->clickLink("Admin")
-                ->waitUntilMissing(".vuetable-empty-result");
-            $browser->driver->findElement(WebDriverBy::xpath("//*[@id='users-listing']/div[2]/div/div/table/tbody/tr[2]/td[7]/div/div/button[1]/i"))
+                ->waitUntilMissing(".vuetable-empty-result")
+                ->waitForText('1user')
+                ->press(".fa-pen-square");
+            //This has to happen because SauceLabs is not able to click the edit icon via XPath, I don't know why.
+            /*$browser->driver->findElement(WebDriverBy::xpath("//*[@id='users-listing']/div[2]/div/div/table/tbody/tr[2]/td[7]/div/div/button[1]/i"))
                 ->click();  //The edit button lacks a unique ID
-            $browser->waitFor("#navbar-request-button", 20) //when this loads, the whole page is loaded
+            */
+            $browser->waitFor("#navbar-request-button") //when this loads, the whole page is loaded
                 ->type("#firstname","foo")
                 ->type("#lastname","bar")
                 ->press(".ml-2")
-                ->waitFor(".vuetable-body", 20)
-                ->waitUntilMissing(".vuetable-empty-result", 20)
-                ->assertSee("foo bar");
+                ->waitFor(".vuetable-body")
+                ->waitUntilMissing(".vuetable-empty-result")
+                ->assertSee("foo bar")
             //Delete User
-            $browser->driver->findElement(WebDriverBy::xpath("//*[@id='users-listing']/div[2]/div/div/table/tbody/tr[2]/td[7]/div/div/button[2]/i"))
+                ->press(".fa-trash-alt");
+            //This has to happen because SauceLabs is not able to click the edit icon via XPath, I don't know why.
+            /*$browser->driver->findElement(WebDriverBy::xpath("//*[@id='users-listing']/div[2]/div/div/table/tbody/tr[2]/td[7]/div/div/button[2]/i"))
                 ->click();  //The delete button lacks a unique ID
-            $browser->waitFor('#confirmModal', 20)
+            */
+            $browser->waitFor('#confirmModal')
                 ->press("#confirm")
-                ->waitFor("#alertBox", 20)
+                ->waitFor("#alertBox")
                 ->assertSee("The user was deleted");
         });
 
