@@ -23,7 +23,7 @@ class CombinedTestCase extends DuskTestCase
                 "version" => env('latest'),
                 "tags" => ["Auth Client", "Groups", "Category", "Users"],
                 "name" => ("Combined Auth/Group/Category/User Test"),
-                "build" => (exec('git rev-parse --abbrev-ref HEAD')),
+                "build" => env('CIRCLE_BRANCH')
             ]
         );
     }
