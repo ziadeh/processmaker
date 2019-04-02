@@ -13,6 +13,22 @@ use Facebook\WebDriver\Remote\RemoteWebDriver;
 
 class GroupCreationTest extends DuskTestCase
 {
+/*
+    protected function driver()
+    {
+        return RemoteWebDriver::create(
+            "https://" . env('SAUCELABS_USERNAME') . ":" . env('SAUCELABS_ACCESS_KEY') . "@ondemand.saucelabs.com:443/wd/hub",
+            [
+                "platform" => env('SAUCELABS_PLATFORM'),
+                "browserName" => env('SAUCELABS_BROWSER'),
+                "version"=> env('SAUCELABS_BROWSER_VERSION'),
+                "tags" => ["Auth Client", "Groups", "Category", "Users"],
+                "name" => ("Combined Auth/Group/Category/User Test"),
+                "build" => env('BUILD_NAME')
+            ]
+        );
+    }
+*/
     /**
      * @throws \Throwable
      */

@@ -13,6 +13,22 @@ use Facebook\WebDriver\Remote\RemoteWebDriver;
 
 class AuthClientTest extends DuskTestCase
 {
+/*
+    protected function driver()
+    {
+        return RemoteWebDriver::create(
+            "https://" . env('SAUCELABS_USERNAME') . ":" . env('SAUCELABS_ACCESS_KEY') . "@ondemand.saucelabs.com:443/wd/hub",
+            [
+                "platform" => env('SAUCELABS_PLATFORM'),
+                "browserName" => env('SAUCELABS_BROWSER'),
+                "version"=> env('SAUCELABS_BROWSER_VERSION'),
+                "tags" => ["Auth Client", "Groups", "Category", "Users"],
+                "name" => ("Combined Auth/Group/Category/User Test"),
+                "build" => env('BUILD_NAME')
+            ]
+        );
+    }
+*/
     /**
      * @throws \Throwable
      */
@@ -35,7 +51,8 @@ class AuthClientTest extends DuskTestCase
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='authClients']/div[2]/div[1]/div/button"))
                 ->click();  //The add button lacks a unique ID
             //    ->press(".btn-secondary") //We can use this line and remove the previous two once the add button is updated
-            $browser->type("#name", "foobar")
+            $browser->assertSee('Create An Auth-Client')
+                ->type("#name", "foobar")
                 ->type("#redirect", "https://foo.bar.com")
                 ->press(".ml-2")
                 ->pause(500)   //No choice here, we have to pause for either the error message or the success alert.
@@ -45,7 +62,8 @@ class AuthClientTest extends DuskTestCase
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='authClients']/div[2]/div[2]/div/table/tbody/tr[1]/td[5]/div/div/button[1]/i"))
                 ->click();  //The edit button lacks a unique ID
             $browser->pause(500)
-                ->assertSee('Edit Auth Client')
+                ->assertSee('Create An Auth-Client')   //This needs to be removed when the correct title is merged into develop
+                //->assertSee('Edit Auth Client') //This needs to be added when the correct title is merged into develop
                 ->type("#name", "bar foo")
                 ->type("#redirect", "https://bar.foo.com")
                 ->press(".ml-2")
