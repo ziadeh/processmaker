@@ -36,10 +36,6 @@ class CombinedTestCase extends DuskTestCase
     {
         //$this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
-            //Setup
-            $browser->executeScript("sauce:job-name=Combined Auth/Group/Category/User Test");
-            $browser->executeScript("sauce:job-tags=Auth Client, Groups, Category, Users");
-            $browser->executeScript("sauce:job-build=" . env('BUILD_NAME')."");
             //Login
             $browser->visit("/")
                 ->assertSee("Username")
