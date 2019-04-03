@@ -22,8 +22,8 @@ class UserAddEditDeleteTest extends DuskTestCase
                 "platform" => env('SAUCELABS_PLATFORM'),
                 "browserName" => env('SAUCELABS_BROWSER'),
                 "version"=> env('SAUCELABS_BROWSER_VERSION'),
-                "tags" => ["Auth Client", "Groups", "Category", "Users"],
-                "name" => ("Combined Auth/Group/Category/User Test"),
+                "tags" => ["Users"],
+                "name" => ("User Test"),
                 "build" => env('BUILD_NAME')
             ]
         );
@@ -44,10 +44,10 @@ class UserAddEditDeleteTest extends DuskTestCase
                 ->type("#password", "admin")
                 ->press(".btn")
                 ->assertMissing(".invalid-feedback")
-                ->clickLink('Admin')
-                ->waitUntilMissing(".vuetable-empty-result");
+                ->clickLink("Admin")
+                ->waitUntilMissing(".vuetable-empty-result")
             //Add User
-            $browser->press("#addUserBtn")
+                ->press("#addUserBtn")
                 ->type("#username", "1user")
                 ->type("#firstname", "user1")
                 ->type("#lastname", "last1")
@@ -65,7 +65,7 @@ class UserAddEditDeleteTest extends DuskTestCase
             //Edit User
             $browser->clickLink("Admin")
                 ->waitUntilMissing(".vuetable-empty-result")
-                ->waitForText('1user')
+                ->waitForText("1user")
                 ->press(".fa-pen-square");
             //This has to happen because SauceLabs is not able to click the edit icon via XPath, I don't know why.
             /*$browser->driver->findElement(WebDriverBy::xpath("//*[@id='users-listing']/div[2]/div/div/table/tbody/tr[2]/td[7]/div/div/button[1]/i"))
@@ -84,9 +84,9 @@ class UserAddEditDeleteTest extends DuskTestCase
             /*$browser->driver->findElement(WebDriverBy::xpath("//*[@id='users-listing']/div[2]/div/div/table/tbody/tr[2]/td[7]/div/div/button[2]/i"))
                 ->click();  //The delete button lacks a unique ID
             */
-            $browser->waitFor('#confirmModal')
+            $browser->waitFor("#confirmModal")
                 ->press("#confirm")
-                ->waitFor("#alertBox")
+                ->waitFor(".alertBox")
                 ->assertSee("The user was deleted");
         });
 

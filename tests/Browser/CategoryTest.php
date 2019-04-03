@@ -22,8 +22,8 @@ class CategoryCreationTest extends DuskTestCase
                 "platform" => env('SAUCELABS_PLATFORM'),
                 "browserName" => env('SAUCELABS_BROWSER'),
                 "version"=> env('SAUCELABS_BROWSER_VERSION'),
-                "tags" => ["Auth Client", "Groups", "Category", "Users"],
-                "name" => ("Combined Auth/Group/Category/User Test"),
+                "tags" => ["Category"],
+                "name" => ("Category Test"),
                 "build" => env('BUILD_NAME')
             ]
         );
@@ -46,25 +46,25 @@ class CategoryCreationTest extends DuskTestCase
                 ->assertMissing(".invalid-feedback")
                 ->waitFor(".vuetable-empty-result")
                 ->clickLink("Processes")
-                ->press(".fa-sitemap");
+                ->press(".fa-sitemap")
             //Add Environment Variable
-            $browser->press(".btn-secondary")
+                ->press("#create_category")
                 ->type("#name", "!It is a Foobar")
                 ->press(".ml-2")
                 ->waitFor("#editProcessCategory")
                 ->clickLink("Categories")
                 ->waitFor(".vuetable-empty-result")
-                ->waitForText('!It is a Foobar', 10);
+                ->waitForText("!It is a Foobar");
             //Edit Environment Variable
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='process-categories-listing']/div[2]/div/table/tbody/tr[1]/td[6]/div/div/button[1]/i"))
                 ->click();  //This is a really awful hacky workaround, because there is not a unique ID for each edit icon
             $browser->type("#name", "!It is a Barfoo")
                 ->press(".ml-2")
                 ->waitFor(".vuetable-empty-result")
-                ->waitForText('!It is a Barfoo', 10);
+                ->waitForText("!It is a Barfoo");
             //Delete Environment Variable
             $browser->press(".fa-trash-alt")
-                ->waitFor('.modal-content', 10)
+                ->waitFor(".modal-content")
                 ->press("#confirm")
                 ->waitFor(".vuetable-empty-result")
                 ->assertDontSee("!It is a Barfoo");

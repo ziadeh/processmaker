@@ -22,8 +22,8 @@ class AuthClientTest extends DuskTestCase
                 "platform" => env('SAUCELABS_PLATFORM'),
                 "browserName" => env('SAUCELABS_BROWSER'),
                 "version"=> env('SAUCELABS_BROWSER_VERSION'),
-                "tags" => ["Auth Client", "Groups", "Category", "Users"],
-                "name" => ("Combined Auth/Group/Category/User Test"),
+                "tags" => ["Auth Client"],
+                "name" => ("Auth Client Test"),
                 "build" => env('BUILD_NAME')
             ]
         );
@@ -47,33 +47,30 @@ class AuthClientTest extends DuskTestCase
                 ->clickLink('Admin')
                 ->waitUntilMissing(".vuetable-empty-result")
             //Add Auth Client
-                ->press(".fa-key");
-            $browser->driver->findElement(WebDriverBy::xpath("//*[@id='authClients']/div[2]/div[1]/div/button"))
-                ->click();  //The add button lacks a unique ID
-            //    ->press(".btn-secondary") //We can use this line and remove the previous two once the add button is updated
-            $browser->assertSee('Create An Auth-Client')
+                ->press(".fa-key")
+                ->press("#create_authclients")
+                ->assertSee("Create An Auth-Client")
                 ->type("#name", "foobar")
                 ->type("#redirect", "https://foo.bar.com")
                 ->press(".ml-2")
                 ->pause(500)   //No choice here, we have to pause for either the error message or the success alert.
                 ->assertMissing(".invalid-feedback")
-                ->waitForText('foobar', 10);
+                ->waitForText("foobar");
             //Edit Auth Client
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='authClients']/div[2]/div[2]/div/table/tbody/tr[1]/td[5]/div/div/button[1]/i"))
                 ->click();  //The edit button lacks a unique ID
             $browser->pause(500)
-                ->assertSee('Create An Auth-Client')   //This needs to be removed when the correct title is merged into develop
-                //->assertSee('Edit Auth Client') //This needs to be added when the correct title is merged into develop
+                ->assertSee('Edit Auth Client')
                 ->type("#name", "bar foo")
                 ->type("#redirect", "https://bar.foo.com")
                 ->press(".ml-2")
                 ->pause(500)   //No choice here, we have to pause for either the error message or the success alert.
                 ->assertMissing(".invalid-feedback")
-                ->waitForText('bar foo', 10);
+                ->waitForText("bar foo");
             //Delete Auth Client
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='authClients']/div[2]/div[2]/div/table/tbody/tr[1]/td[5]/div/div/button[2]/i"))
                 ->click();  //The delete button lacks a unique ID
-            $browser->waitFor('#confirmModal', 10)
+            $browser->waitFor("#confirmModal")
                 ->press("#confirm")
                 ->pause(750)   //No choice here, we have to pause for either the error message or the success alert.
                 ->assertDontSee("bar foo");

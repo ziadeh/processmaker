@@ -6,13 +6,29 @@ use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Artisan;
 use ProcessMaker\Models\User;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
-use Artisan;
 
 class EnvironmentVariablesCreationTest extends DuskTestCase
 {
+/*
+    protected function driver()
+    {
+        return RemoteWebDriver::create(
+            "https://" . env('SAUCELABS_USERNAME') . ":" . env('SAUCELABS_ACCESS_KEY') . "@ondemand.saucelabs.com:443/wd/hub",
+            [
+                "platform" => env('SAUCELABS_PLATFORM'),
+                "browserName" => env('SAUCELABS_BROWSER'),
+                "version"=> env('SAUCELABS_BROWSER_VERSION'),
+                "tags" => ["Environment Variable"],
+                "name" => ("Environment Variable Test"),
+                "build" => env('BUILD_NAME')
+            ]
+        );
+    }
+*/
     /**
      * @throws \Throwable
      */
@@ -29,31 +45,29 @@ class EnvironmentVariablesCreationTest extends DuskTestCase
                 ->press(".btn")
                 ->assertMissing(".invalid-feedback")
                 ->clickLink("Processes")
-                ->press(".fa-cogs");
+                ->press(".fa-cogs")
             //Add Environment Variable
-            $browser->driver->findElement(WebDriverBy::xpath("//*[@id='process-variables-listing']/div[1]/div[2]/button"))
-                ->click();  //The add button lacks a unique ID
-            //    ->press(".btn-secondary") //We can use this line and remove the previous two once the add button is updated
-            $browser->type("#name", "foobar")
+                ->press("#create_envvar") //We can use this line and remove the previous two once the add button is updated
+                ->type("#name", "foobar")
                 ->type("#description", "Bars of Foo.")
                 ->type("#value", "foobar")
                 ->press(".ml-2")
                 ->pause(500)   //No choice here, we have to pause for either the error message or the success alert.
                 ->assertMissing(".invalid-feedback")
-                ->waitForText('foobar', 10);
+                ->waitForText("foobar");
             //Edit Environment Variable
             $browser->press(".fa-pen-square")
-                ->assertSee('Value')
+                ->assertSee("Value")
                 ->type("#name", "barfoo")
                 ->type("#description", "Foos of Bar.")
                 ->type("#value", "barfoo")
                 ->press(".ml-2")
                 ->waitFor(".vuetable-empty-result")
-                ->waitForText('barfoo', 10);
+                ->waitForText("barfoo");
             //Delete Environment Variable
             $browser->press(".fa-trash-alt")
-                ->waitFor('.modal-content', 10)
-                ->waitForText('Are you sure you want to delete the environment variable barfoo?', 10)
+                ->waitFor(".modal-content")
+                ->waitForText("Are you sure you want to delete the environment variable barfoo?")
                 ->press("#confirm")
                 ->waitFor(".vuetable-empty-result")
                 ->assertDontSee("barfoo");
