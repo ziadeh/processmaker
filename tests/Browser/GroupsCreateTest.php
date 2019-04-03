@@ -90,7 +90,7 @@ class GroupCreationTest extends DuskTestCase
                 ->click();  //The delete button lacks a unique ID
             $browser->waitFor("#confirmModal")
                 ->press("#confirm")
-                ->waitFor(".alert-dismissible"', 10)
+                ->waitFor(".alert-dismissible")
                 ->pause(700)
                 ->assertDontSee("!bar foo");
         });
