@@ -34,7 +34,7 @@ class EnvironmentVariablesCreationTest extends DuskTestCase
      */
     public function testEnvironmentVariablesCreation()
     {
-        //$this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->markTestSkipped('Skipping Dusk tests temporarily');
 
         $this->browse(function ($browser) {
             //Login
