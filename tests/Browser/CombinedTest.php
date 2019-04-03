@@ -206,7 +206,7 @@ class CombinedTestCase extends DuskTestCase
                 ->click();  //This is a really awful hacky workaround, because there is not a unique ID for each edit icon
             $browser->type("#name", "!It is a Barfoo")
                 ->press(".ml-2")
-                ->waitFor(".vuetable-empty-result")
+                //->waitFor(".vuetable-empty-result")
                 ->waitForText("!It is a Barfoo");
             //Delete Environment Variable
             $browser->press(".fa-trash-alt")
@@ -240,7 +240,7 @@ class CombinedTestCase extends DuskTestCase
                 ->type("#description", "Foos of Bar.")
                 ->type("#value", "barfoo")
                 ->press(".ml-2")
-                ->waitFor(".vuetable-empty-result")
+                //->waitFor(".vuetable-empty-result")
                 ->waitForText("barfoo");
             //Delete Environment Variable
             $browser->press(".fa-trash-alt")
