@@ -14,7 +14,7 @@ Depending on how a Process model is configured, you may [start a Request](make-a
 * Request a leave of absence for next week.
 * Request to purchase office supplies.
 
-Likewise, you can participate in others' Requests. This occurs when someone else in your organization starts a Request that involves you. You might be the only person deciding on someone's Request, or you might be a member of a group involved in the decision process.
+Likewise, you can participate in others' Requests. This occurs when someone else in your organization starts a Request that involves you. You would be [notified](../notifications.md) of the Request and that you have [Task](../task-management/what-is-a-task.md) to do. You might be the only person deciding on someone's Request, or you might be a member of a group involved in the decision process.
 
 ## Related Topics
 
