@@ -21,7 +21,9 @@ The notifications screen displays your notifications. To view new notifications,
 Notifications remain visible until you do one of the following:
 
 * Select the notification represented by the blue-colored text.
-* Click the **Dismiss** button for a notification to hide it.
+* Click the **Dismiss** button to hide that notification.
+* Click the **Dismiss All** button to hide all notifications.
+* Click the **View All** button to [view all notifications](notifications.md#view-all-notifications).
 
 A notification may contain the following information:
 
