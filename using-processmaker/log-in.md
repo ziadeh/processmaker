@@ -7,12 +7,18 @@ description: Log on to ProcessMaker Spark using your ProcessMaker credentials.
 ## Log On
 
 {% hint style="info" %}
+### Having Problems Logging On?
+
 Please contact your ProcessMaker Administrator if you do not know either of the following:
 
 * the web address to access the ProcessMaker log in page
 * your ProcessMaker log in credentials
 
 Did you forget your password? See [Reset Your Password](log-in.md#reset-your-password).
+
+### Minimum Screen Requirements
+
+Ensure that your display is at least 1200 by 720 pixel resolution before logging on to ProcessMaker Spark.
 {% endhint %}
 
 Follow these steps to log on to ProcessMaker Spark:
