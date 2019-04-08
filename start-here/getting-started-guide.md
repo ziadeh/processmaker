@@ -18,7 +18,7 @@ The Getting Started Guide is in development. Please visit this page often for up
 
 A short description precedes each instructional video.
 
-{% embed url="https://youtu.be/NYsY8R00FSk" caption="This is a test to embed MP4 video into Gitbook \(video has no audio\)" %}
+{% embed url="https://youtu.be/NYsY8R00FSk" caption="This is a test to embed YouTube video into Gitbook \(video has no audio\)" %}
 {% endtab %}
 
 {% tab title="Introduction" %}
