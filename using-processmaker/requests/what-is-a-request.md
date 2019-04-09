@@ -6,7 +6,7 @@ description: Understand what Requests are in ProcessMaker Spark.
 
 ## Overview
 
-In ProcessMaker Spark, a "Request" represents an instance of a Process.
+In ProcessMaker Spark, a "Request" represents an occurrence of a Process.
 
 Depending on how a [Process model](../../designing-processes/process-design/what-is-process-modeling.md) is configured, you may [start a Request](make-a-request.md#start-a-request). Below are a few examples of Requests that you might start in your organization:
 
