@@ -14,7 +14,7 @@ The Getting Started Guide is in development. Please visit this page often for up
 
 {% tabs %}
 {% tab title="Test" %}
-#### This Is a Proof-of-Concept to Embed MP4 Video
+#### This Is a Proof-of-Concept to Embed YouTube Video
 
 A short description precedes each instructional video.
 
