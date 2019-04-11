@@ -39,7 +39,7 @@ Follow these steps to export a BPMN 2.0 compliant Process:
 
    ![](../../../.gitbook/assets/export-process-message-processes.png)
 
-3. Click **Download**. ProcessMaker Spark exports the Process using the original Process name except spaces in the name are replaced with underscores \(`_`\). The file has the extension `.bpm4`. ProcessMaker Spark exports the `.bpm4` file to your local computer. The following message displays when the Process exports successfully: **The process was exported.**
+3. Click **Download**. ProcessMaker Spark exports the Process using the original Process name except spaces in the name are replaced with underscores \(`_`\). The file has the extension `.spark`. ProcessMaker Spark exports the `.spark` file to your local computer. The following message displays when the Process exports successfully: **The process was exported.**
 
 ## Related Topics
 
