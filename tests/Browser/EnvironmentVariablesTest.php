@@ -11,7 +11,7 @@ use ProcessMaker\Models\User;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 
-class AuthClientTest extends DuskTestCase
+class EnvironmentVariablesCreationTest extends DuskTestCase
 {
 /*
     protected function driver()
@@ -22,8 +22,8 @@ class AuthClientTest extends DuskTestCase
                 "platform" => env('SAUCELABS_PLATFORM'),
                 "browserName" => env('SAUCELABS_BROWSER'),
                 "version"=> env('SAUCELABS_BROWSER_VERSION'),
-                "tags" => ["Auth Client"],
-                "name" => ("Auth Client Test"),
+                "tags" => ["Environment Variable"],
+                "name" => ("Environment Variable Test"),
                 "build" => env('BUILD_NAME')
             ]
         );
@@ -32,7 +32,7 @@ class AuthClientTest extends DuskTestCase
     /**
      * @throws \Throwable
      */
-    public function testAuthClientCreation()
+    public function testEnvironmentVariablesCreation()
     {
         $this->markTestSkipped('Skipping Dusk tests temporarily');
 
@@ -44,37 +44,33 @@ class AuthClientTest extends DuskTestCase
                 ->type("#password", "admin")
                 ->press(".btn")
                 ->assertMissing(".invalid-feedback")
-                ->clickLink('Admin')
-                ->waitUntilMissing(".vuetable-empty-result")
-            //Add Auth Client
-                ->press(".fa-key")
-                ->press("#create_authclients")
-                ->assertSee("Create An Auth-Client")
+                ->clickLink("Processes")
+                ->press(".fa-cogs")
+            //Add Environment Variable
+                ->press("#create_envvar") //We can use this line and remove the previous two once the add button is updated
                 ->type("#name", "foobar")
-                ->type("#redirect", "https://foo.bar.com")
+                ->type("#description", "Bars of Foo.")
+                ->type("#value", "foobar")
                 ->press(".ml-2")
                 ->pause(500)   //No choice here, we have to pause for either the error message or the success alert.
                 ->assertMissing(".invalid-feedback")
                 ->waitForText("foobar");
-            //Edit Auth Client
-            $browser->driver->findElement(WebDriverBy::xpath("//*[@id='authClients']/div[2]/div[2]/div/table/tbody/tr[1]/td[5]/div/div/button[1]/i"))
-                ->click();  //The edit button lacks a unique ID
-            $browser->pause(500)
-                ->assertSee('Edit Auth Client')
-                ->type("#name", "bar foo")
-                ->type("#redirect", "https://bar.foo.com")
+            //Edit Environment Variable
+            $browser->press(".fa-pen-square")
+                ->assertSee("Value")
+                ->type("#name", "barfoo")
+                ->type("#description", "Foos of Bar.")
+                ->type("#value", "barfoo")
                 ->press(".ml-2")
-                ->pause(500)   //No choice here, we have to pause for either the error message or the success alert.
-                ->assertMissing(".invalid-feedback")
-                ->waitForText("bar foo");
-            //Delete Auth Client
-            $browser->driver->findElement(WebDriverBy::xpath("//*[@id='authClients']/div[2]/div[2]/div/table/tbody/tr[1]/td[5]/div/div/button[2]/i"))
-                ->click();  //The delete button lacks a unique ID
-            $browser->waitFor("#confirmModal")
+                ->waitFor(".vuetable-empty-result")
+                ->waitForText("barfoo");
+            //Delete Environment Variable
+            $browser->press(".fa-trash-alt")
+                ->waitFor(".modal-content")
+                ->waitForText("Are you sure you want to delete the environment variable barfoo?")
                 ->press("#confirm")
-                ->pause(750)   //No choice here, we have to pause for either the error message or the success alert.
-                ->assertDontSee("bar foo");
+                ->waitFor(".vuetable-empty-result")
+                ->assertDontSee("barfoo");
         });
-
     }
 }

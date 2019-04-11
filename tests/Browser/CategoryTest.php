@@ -5,31 +5,36 @@ namespace Tests\Browser;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Artisan;
+use ProcessMaker\Models\User;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 
 class CategoryCreationTest extends DuskTestCase
 {
+/*
+    protected function driver()
+    {
+        return RemoteWebDriver::create(
+            "https://" . env('SAUCELABS_USERNAME') . ":" . env('SAUCELABS_ACCESS_KEY') . "@ondemand.saucelabs.com:443/wd/hub",
+            [
+                "platform" => env('SAUCELABS_PLATFORM'),
+                "browserName" => env('SAUCELABS_BROWSER'),
+                "version"=> env('SAUCELABS_BROWSER_VERSION'),
+                "tags" => ["Category"],
+                "name" => ("Category Test"),
+                "build" => env('BUILD_NAME')
+            ]
+        );
+    }
+*/
     /**
      * @throws \Throwable
      */
     public function testCategoryCreation()
     {
         $this->markTestSkipped('Skipping Dusk tests temporarily');
-
-        //Create Admin User
-        Artisan::call('migrate:fresh', []);
-        $user = factory(User::class)->create([
-            'username' => 'admin',
-            'password' => Hash::make('admin'),
-            'email' => 'any@gmail.com',
-            'firstname' => 'admin',
-            'lastname' => 'admin',
-            'timezone' => null,
-            'datetime_format' => null,
-            'status' => 'ACTIVE',
-            'is_administrator' => true,
-        ]);
 
         $this->browse(function ($browser) {
             //Login
@@ -41,25 +46,25 @@ class CategoryCreationTest extends DuskTestCase
                 ->assertMissing(".invalid-feedback")
                 ->waitFor(".vuetable-empty-result")
                 ->clickLink("Processes")
-                ->press(".fa-sitemap");
+                ->press(".fa-sitemap")
             //Add Environment Variable
-            $browser->press(".btn-secondary")
+                ->press("#create_category")
                 ->type("#name", "!It is a Foobar")
                 ->press(".ml-2")
                 ->waitFor("#editProcessCategory")
                 ->clickLink("Categories")
                 ->waitFor(".vuetable-empty-result")
-                ->waitForText('!It is a Foobar', 10);
+                ->waitForText("!It is a Foobar");
             //Edit Environment Variable
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='process-categories-listing']/div[2]/div/table/tbody/tr[1]/td[6]/div/div/button[1]/i"))
                 ->click();  //This is a really awful hacky workaround, because there is not a unique ID for each edit icon
             $browser->type("#name", "!It is a Barfoo")
                 ->press(".ml-2")
                 ->waitFor(".vuetable-empty-result")
-                ->waitForText('!It is a Barfoo', 10);
+                ->waitForText("!It is a Barfoo");
             //Delete Environment Variable
             $browser->press(".fa-trash-alt")
-                ->waitFor('.modal-content', 10)
+                ->waitFor(".modal-content")
                 ->press("#confirm")
                 ->waitFor(".vuetable-empty-result")
                 ->assertDontSee("!It is a Barfoo");
