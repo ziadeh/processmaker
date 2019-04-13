@@ -101,7 +101,7 @@ The **Summary** tab displays the summary of information entered into the complet
 
 ![&quot;Summary&quot; tab in a completed Request&apos;s summary](../../.gitbook/assets/summary-tab-request-information-request.png)
 
-~~Process Owners can specify how information displays in the **Summary** tab. By default,~~ the **Summary** tab displays the JSON-formatted key/value pairs in tabular format that represent ProcessMaker Screen control data. Information is displayed:
+The **Summary** tab displays the JSON-formatted key/value pairs in tabular format that represent ProcessMaker Screen control data. Information is displayed:
 
 * **KEY:** The **KEY** column displays the JSON key name that represents the ProcessMaker Screen control name the Request participant entered data or specified through the [ProcessMaker 4 REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation). For example, a Text control to enter your name could be named `Full Name` which would display in the **Key** column here.
 * **VALUE:** The **VALUE** column displays that key's value as entered by a person manually interacting with a form or specified through the [ProcessMaker 4 REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation). For example, a Text control to enter your name could have the value `John Doe` which would display in the **Value** column here.
