@@ -46,7 +46,7 @@ A short description precedes each instructional video.
 
 
 
-#### How Do I View My Tasks?
+#### How Do I View My Tasks and Their Summaries?
 {% endtab %}
 
 {% tab title="Notifications" %}
