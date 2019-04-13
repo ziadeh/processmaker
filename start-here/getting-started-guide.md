@@ -38,7 +38,7 @@ A short description precedes each instructional video.
 
 
 
-#### How Do I View Requests?
+#### How Do I View Requests and Their Summaries?
 {% endtab %}
 
 {% tab title="Tasks" %}
