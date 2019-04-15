@@ -4,9 +4,11 @@ namespace ProcessMaker\Http\Controllers\Api;
 
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Notification;
 use ProcessMaker\Http\Controllers\Controller;
 use ProcessMaker\Http\Resources\ApiCollection;
@@ -15,6 +17,7 @@ use ProcessMaker\Jobs\TerminateRequest;
 use ProcessMaker\Models\Comment;
 use ProcessMaker\Models\ProcessRequest;
 use ProcessMaker\Models\ProcessRequestToken;
+use ProcessMaker\Query\SyntaxError;
 use ProcessMaker\Notifications\ProcessCanceledNotification;
 use ProcessMaker\Facades\WorkflowManager;
 use Symfony\Component\HttpFoundation\IpUtils;
@@ -111,15 +114,35 @@ class ProcessRequestController extends Controller
 
         $filterBase = $request->input('filter', '');
         if (!empty($filterBase)) {
-            $filter = '%' . $filterBase . '%';
-            $query->where(function ($query) use ($filter, $filterBase) {
+            try {
+                $query->pmql($filterBase, function($expression) {
+                    // Handle status checks
+                    if($expression->field->field() == 'status') {
+                        return function($query) use($expression) {
+                            $query->where('status', strtoupper($expression->value->value()));
+                        };
+                    } else if($expression->field->field() == 'participant') {
+                        // Check for username
+                        return function($query) use($expression) {
+                            $query->whereHas('participants', function($query) use($expression) {
+                                $query->where(DB::raw('LOWER(username)'), strtolower($expression->value->value()));
+                            });
+                        };
+                    }
+                    return false;
+                });
+            } catch (QueryException | SyntaxError $e) {
+                // Try some default filtering
+                $filter = '%' . $filterBase . '%';
+                $query->where(function ($query) use ($filter, $filterBase) {
                     $query->whereHas('participants', function ($query) use ($filter) {
-                    $query->Where('firstname', 'like', $filter);
-                    $query->orWhere('lastname', 'like', $filter);
-                })->orWhere('name', 'like', $filter)
-                    ->orWhere('id', 'like', $filterBase)
-                    ->orWhere('status', 'like', $filter);
-            });
+                        $query->Where('firstname', 'like', $filter);
+                        $query->orWhere('lastname', 'like', $filter);
+                    })->orWhere('name', 'like', $filter)
+                        ->orWhere('id', 'like', $filterBase)
+                        ->orWhere('status', 'like', $filter);
+                });
+            }
         }
 
         $response = $query
@@ -212,7 +235,7 @@ class ProcessRequestController extends Controller
             return response([], 204);
         }
         if ($httpRequest->post('status') === 'COMPLETED') {
-            if (! Auth::user()->is_administrator) {
+            if (!Auth::user()->is_administrator) {
                 throw new AuthorizationException(__('Not authorized to complete this request.'));
             }
             if ($request->status != 'ERROR') {
@@ -350,7 +373,7 @@ class ProcessRequestController extends Controller
             }
         }
 
-        $data = (array) request()->json()->all();
+        $data = (array)request()->json()->all();
 
         // Trigger the catch event
         WorkflowManager::completeCatchEvent($process, $request, $token, $data);
@@ -443,7 +466,7 @@ class ProcessRequestController extends Controller
             'body' => $user->fullname . ' ' . __('manually completed the request from an error state'),
         ]);
     }
-    
+
     /**
      * Get task name by token fields and request
      *

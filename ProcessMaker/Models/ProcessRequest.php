@@ -10,6 +10,7 @@ use ProcessMaker\Managers\TaskSchedulerManager;
 use ProcessMaker\Nayra\Contracts\Bpmn\FlowElementInterface;
 use ProcessMaker\Nayra\Contracts\Engine\ExecutionInstanceInterface;
 use ProcessMaker\Nayra\Engine\ExecutionInstanceTrait;
+use ProcessMaker\Query\Traits\PMQL;
 use ProcessMaker\Traits\SerializeToIso8601;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
@@ -61,6 +62,7 @@ class ProcessRequest extends Model implements ExecutionInstanceInterface, HasMed
     use ExecutionInstanceTrait;
     use SerializeToIso8601;
     use HasMediaTrait;
+    use PMQL;
 
     /**
      * The attributes that aren't mass assignable.

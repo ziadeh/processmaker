@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "047d0d5f82f243068740077bdd7ff996",
+    "content-hash": "b1be3e7d65b46c19bd46cd41c4c55e85",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2002,16 +2002,16 @@
         },
         {
             "name": "lavary/laravel-menu",
-            "version": "v1.7.4",
+            "version": "v1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lavary/laravel-menu.git",
-                "reference": "f2ae50cea31776bd01d71b472229f9b23688b62e"
+                "reference": "d7406165939362da831ad2b47ddac9cebdfc3af4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lavary/laravel-menu/zipball/f2ae50cea31776bd01d71b472229f9b23688b62e",
-                "reference": "f2ae50cea31776bd01d71b472229f9b23688b62e",
+                "url": "https://api.github.com/repos/lavary/laravel-menu/zipball/d7406165939362da831ad2b47ddac9cebdfc3af4",
+                "reference": "d7406165939362da831ad2b47ddac9cebdfc3af4",
                 "shasum": ""
             },
             "require": {
@@ -2050,7 +2050,7 @@
             "keywords": [
                 "laravel"
             ],
-            "time": "2019-03-26T15:43:19+00:00"
+            "time": "2019-04-11T23:15:53+00:00"
         },
         {
             "name": "lcobucci/jwt",
@@ -2636,16 +2636,16 @@
         },
         {
             "name": "nexmo/client",
-            "version": "1.6.3",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nexmo/nexmo-php.git",
-                "reference": "29f6856b4d918f3565bf56c26bc01dd664988b24"
+                "reference": "f8582d2361382e2b02352b1cb96c69ce2a2c7360"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/29f6856b4d918f3565bf56c26bc01dd664988b24",
-                "reference": "29f6856b4d918f3565bf56c26bc01dd664988b24",
+                "url": "https://api.github.com/repos/Nexmo/nexmo-php/zipball/f8582d2361382e2b02352b1cb96c69ce2a2c7360",
+                "reference": "f8582d2361382e2b02352b1cb96c69ce2a2c7360",
                 "shasum": ""
             },
             "require": {
@@ -2680,7 +2680,7 @@
                 }
             ],
             "description": "PHP Client for using Nexmo's API.",
-            "time": "2019-03-15T11:47:11+00:00"
+            "time": "2019-04-13T10:18:16+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -3394,6 +3394,48 @@
             ],
             "description": "BPMN compliant engine",
             "time": "2019-04-10T19:59:07+00:00"
+        },
+        {
+            "name": "processmaker/pmql",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ProcessMaker/pmql.git",
+                "reference": "00dd1b4319953f1279e45321e147bed28157a7a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ProcessMaker/pmql/zipball/00dd1b4319953f1279e45321e147bed28157a7a4",
+                "reference": "00dd1b4319953f1279e45321e147bed28157a7a4",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.7.*"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.5",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "project",
+            "extra": {
+                "laravel": {
+                    "providers": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ProcessMaker\\Query\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Taylor Dondich",
+                    "email": "taylor@processmaker.com"
+                }
+            ],
+            "description": "An Eloquent trait that provides the pmql scope to allow converting simple sql criteria clauses to Eloquent",
+            "time": "2019-04-15T21:46:39+00:00"
         },
         {
             "name": "psr/cache",
@@ -4139,24 +4181,24 @@
         },
         {
             "name": "spatie/pdf-to-image",
-            "version": "1.2.2",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/pdf-to-image.git",
-                "reference": "9a5cb264a99e87e010c65d4ece03b51f821d55bd"
+                "reference": "f33afc92ff7bff272fa6a9ba1cc335e96c57eb26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/pdf-to-image/zipball/9a5cb264a99e87e010c65d4ece03b51f821d55bd",
-                "reference": "9a5cb264a99e87e010c65d4ece03b51f821d55bd",
+                "url": "https://api.github.com/repos/spatie/pdf-to-image/zipball/f33afc92ff7bff272fa6a9ba1cc335e96c57eb26",
+                "reference": "f33afc92ff7bff272fa6a9ba1cc335e96c57eb26",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.0"
+                "ext-imagick": "*",
+                "php": "^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1"
+                "phpunit/phpunit": "^6.2"
             },
             "type": "library",
             "autoload": {
@@ -4185,7 +4227,7 @@
                 "pdf-to-image",
                 "spatie"
             ],
-            "time": "2016-12-14T15:37:00+00:00"
+            "time": "2018-07-02T09:30:32+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -4235,16 +4277,16 @@
         },
         {
             "name": "swagger-api/swagger-ui",
-            "version": "v3.22.0",
+            "version": "v3.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swagger-api/swagger-ui.git",
-                "reference": "99b899797ec7d10081febf0299ea7f0c90ad7632"
+                "reference": "c38bf85e34ee46b2ad399b25c4c73668dc0d7e1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/99b899797ec7d10081febf0299ea7f0c90ad7632",
-                "reference": "99b899797ec7d10081febf0299ea7f0c90ad7632",
+                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/c38bf85e34ee46b2ad399b25c4c73668dc0d7e1d",
+                "reference": "c38bf85e34ee46b2ad399b25c4c73668dc0d7e1d",
                 "shasum": ""
             },
             "type": "library",
@@ -4288,7 +4330,7 @@
                 "swagger",
                 "ui"
             ],
-            "time": "2019-03-23T08:21:22+00:00"
+            "time": "2019-04-13T01:40:36+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -7960,7 +8002,8 @@
     "stability-flags": {
         "pion/laravel-chunk-upload": 20,
         "processmaker/laravel-i18next": 20,
-        "processmaker/nayra": 20
+        "processmaker/nayra": 20,
+        "processmaker/pmql": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
