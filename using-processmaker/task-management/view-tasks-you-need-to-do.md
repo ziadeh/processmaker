@@ -45,6 +45,8 @@ A message displays above your assigned Tasks how many of those Tasks are overdue
 
 ![](../../.gitbook/assets/assigned-to-do-tasks-overdue-tasks.png)
 
+Furthermore, the due date for overdue Tasks display in a different color in the **Due** column than Tasks that are not overdue.
+
 ### No Assigned Tasks?
 
 If there are no assigned Tasks, the following message displays: **No data available**.

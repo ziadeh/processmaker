@@ -49,6 +49,29 @@ If the assigned Task is not overdue, the summary's label displays **Open**.
 
 ![Summary for an assigned Task that is not overdue](../../.gitbook/assets/assigned-to-do-summary-active-open-tasks.png)
 
+{% hint style="info" %}
+### Reassign a Task
+
+If the Task has been configured to allow the Task assignee to reassign the Task to another ProcessMaker user, the **Reassign** button displays in the Task summary.
+
+Follow these steps to reassign a Task to another ProcessMaker user:
+
+1. Click the **Reassign** button. The **Reassign to** screen displays.  
+
+   ![](../../.gitbook/assets/reassign-to-screen-task-summary-tasks.png)
+
+2. Select the user in which to reassign the Task.
+3. Click **Reassign**.
+
+### What Happens if the Task Cannot Be Reassigned?
+
+If the Task has not been configured that it can be reassigned, then the **Reassign** button does not display. Therefore, the Task assignee does not have the option to reassign the Task to another ProcessMaker user.
+
+### Want to Allow Task Assignees to Reassign Tasks in Your Process Models?
+
+See [Add and Configure Task Elements](../../designing-processes/process-design/model-your-process/add-and-configure-task-elements.md#select-to-whom-to-assign-the-task).
+{% endhint %}
+
 If an assigned Task is overdue, the summary's label displays **Overdue**.
 
 ![Summary for an assigned Task that is overdue](../../.gitbook/assets/assigned-to-do-summary-overdue-tasks.png)
@@ -57,7 +80,7 @@ The following summary displays about an assigned Task:
 
 * **Due:** The **Due** field displays the date and time the assigned Task is due.
 * **Assigned To:** The **Assigned To** field displays the avatar and full name of the person assigned the Task.
-* **Assigned:** The date and time the Task was assigned displays below the **Assigned To** field. The time zone setting to display the time is according to the ProcessMaker 4 server unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Assigned:** The date and time the Task was assigned displays below the **Assigned To** field. The **Reassign** button displays if the Task can be reassigned. The time zone setting to display the time is according to the ProcessMaker 4 server unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 * **Request:** The **Request** field displays the Process name associated with the Request preceded by its numerical iteration. Click the Process name to [view the Request summary](../requests/request-details.md).
 * **Requested By:** The **Requested By** field displays the avatar and full name of the person who started the Request. Hover your cursor over a user's avatar to view that person's full name.
 
@@ -93,4 +116,6 @@ The following summary displays about a completed Task:
 {% page-ref page="../../designing-processes/design-forms/what-is-a-form.md" %}
 
 {% page-ref page="../../designing-processes/design-forms/screens-builder/" %}
+
+{% page-ref page="../../designing-processes/process-design/model-your-process/add-and-configure-task-elements.md" %}
 

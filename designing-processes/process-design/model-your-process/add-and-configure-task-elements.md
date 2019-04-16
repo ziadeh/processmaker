@@ -160,7 +160,7 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
      From the **Assigned Group** drop-down menu, select the group as the Task assignee.
 
    * **Previous Task Assignee:** Select **Previous Task Assignee** to assign the Task to who was assigned the Task in the preceding Task element.
-4. Select the **Allow Reassignment** checkbox to allow the Task assignee to reassign the Task if necessary.
+4. Select the **Allow Reassignment** checkbox to allow the Task assignee to reassign the Task if necessary. If the **Allow Reassignment** checkbox is selected, the **Reassign** button displays in the Task summary to allow the Task assignee to reassign that Task. See [View a Task Summary](../../../using-processmaker/task-management/view-a-task-summary.md#summary).
 
 ### Assign the Task Using a Rule
 
@@ -312,4 +312,6 @@ Follow these steps to set Task notifications in a Task element:
 {% page-ref page="../../../using-processmaker/notifications.md" %}
 
 {% page-ref page="remove-process-model-elements.md" %}
+
+{% page-ref page="../../../using-processmaker/task-management/view-a-task-summary.md" %}
 

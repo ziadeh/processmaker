@@ -19,7 +19,7 @@ See the ProcessMaker [Environment Variable](../../../processmaker-administration
 Follow these steps to search for a ProcessMaker Environment Variable:
 
 1. [View your ProcessMaker Environment Variables.](view-all-environment-variables.md) The **Environment Variables** page displays.
-2. Click the **Search** field and then enter text to filter ProcessMaker Environment Variables using any of the following criteria:
+2. Enter in the **Search** field the text to filter ProcessMaker Environment Variables using any of the following criteria:
    * **Name:** Filter by the ProcessMaker Environment Variable name that displays in the **Name** column.
    * **Description:** Filter by the ProcessMaker Environment Variable description that displays in the **Description** column.
 

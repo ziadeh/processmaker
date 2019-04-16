@@ -17,9 +17,16 @@ Search for any Request that displays within the Request page you are viewing. Fo
    * [In Progress](view-in-progress-requests.md) tab
    * [Completed](view-completed-requests.md) tab
    * [All Requests](view-all-requests.md) tab
-3. Click the **Search** field and then enter text to filter Requests using any of the following criteria:
-   * **Name:** Filter by the Process name associated with the Request.
-   * **Status:** Filter by the Request status.
+3. Enter in the **Search** field the Request data to filter Requests using any of the following criteria:
+
+   * **Name:** Filter by the Process name associated with the Request that displays in the **Name** column.
+   * **Status:** Filter by the Request status that displays in the **Status** column.
+   * **Request participant:** Filter by a Request participant's username.
+   * **Request data:** Filter using JSON objects associated with the Request data. To do this, you must know the JSON data objects associated with the Request's Process.
+
+   For example, suppose that you wanted to search for a completed Request in which John Doe was a participant, and he requisitioned a laptop that cost less than $1,000. Enter the following Request data in the **Search** field:
+
+   `status="completed" and participant="jdoe" and (purchase.item="laptop" AND purchase.cost < 1000)`
 
 As you enter text into the **Search** field, Requests display that match your entered text.
 
@@ -27,6 +34,8 @@ As you enter text into the **Search** field, Requests display that match your en
 ### Scope of Search Results <a id="search-for-a-request"></a>
 
 Search results display only for Requests within the Request page you are viewing. For example, performing a search from within the **My Requests** page displays results only for Requests within that page.
+
+To search using Request data objects
 
 ### View a Request Summary <a id="view-information-about-a-request"></a>
 

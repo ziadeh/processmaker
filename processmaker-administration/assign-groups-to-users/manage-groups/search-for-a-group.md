@@ -19,7 +19,7 @@ See the [Group](../../permission-descriptions-for-users-and-groups.md#groups) pe
 Follow these steps to search for a ProcessMaker group:
 
 1. [View all ProcessMaker groups.](view-all-groups.md) The **Groups** page displays.
-2. Click the **Search** field and then enter text to filter ProcessMaker user accounts using any of the following criteria:
+2. Enter in the **Search** field the text to filter ProcessMaker user accounts using any of the following criteria:
    * **Name:** Filter by the ProcessMaker group name that displays in the **Name** column.
    * **Description:** Filter by the ProcessMaker group description that displays in the **Description** column.
 
