@@ -6,7 +6,7 @@ description: View all Requests in your organization.
 
 ## View All Requests in Your Organization
 
-The **All Requests** page displays all Requests in your organization including those in which you have not participated. Request information displays in tabular format.
+The **All Requests** page displays all Requests in your organization, regardless of whether you participated in them. Request information displays in tabular format.
 
 {% hint style="info" %}
 Your user account or group membership must have the "Requests: View All Requests" permission to view the list of all Requests.
@@ -14,7 +14,7 @@ Your user account or group membership must have the "Requests: View All Requests
 See the [Request permissions](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to view the **All Requests** page:
+Follow these steps to view all Requests in your organization:
 
 1. Do one of the following:
    * [Log on](../log-in.md#log-in) to ProcessMaker. The **My Requests** page displays.
