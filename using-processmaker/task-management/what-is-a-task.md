@@ -10,7 +10,7 @@ In ProcessMaker Spark, a "Task" represents information that must provided, revie
 
 Each of the examples below are Tasks that you might use for a purchase process:
 
-* An employee enters information about the purchase request such as items to be requisitioned.
+* An employee enters information about the purchase request, such as items to be requisitioned.
 * A manager approves or rejects the purchase request.
 * The purchasing manager enters information on a vendor website to order approved items.
 
