@@ -6,6 +6,8 @@ description: View Tasks that are assigned to you.
 
 ## View Your Assigned Tasks
 
+The **To Do Tasks** page displays all Tasks that are assigned to you.
+
 Follow these steps to view your assigned Tasks:
 
 1. [Log on](../log-in.md#log-in) to ProcessMaker. The **My Requests** page displays.
