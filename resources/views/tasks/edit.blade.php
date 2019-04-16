@@ -52,7 +52,7 @@
                                                  :screen="{{json_encode($task->getScreen()->config)}}"
                                                  :computed="{{json_encode($task->getScreen()->computed)}}"
                                                  :custom-css="{{json_encode(strval($task->getScreen()->custom_css))}}"
-                                                 :data="{{json_encode($task->processRequest->data, JSON_FORCE_OBJECT)}}"/>
+                                                 :data="data"/>
                                 </div>
                             @elseif ($task->advanceStatus==='completed')
                                 <div class="card card-body" align="center">
