@@ -6,7 +6,7 @@ description: View Requests that are in progress in which you are participating.
 
 ## View In-Progress Requests in Which You are a Participant
 
-The **In Progress** page displays all in-progress Requests in which you are participating. Request information displays in tabular format.
+The **In Progress** page displays all in-progress Requests in which you are participating. You are a Request participant because you started that Request or have been assigned a Task in that Request. Request information displays in tabular format.
 
 Follow these steps to view in-progress Requests:
 

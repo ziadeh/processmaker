@@ -6,7 +6,7 @@ description: View completed Requests in which you started or participated.
 
 ## View Completed Requests in Which You Are a Participant
 
-The **Completed** page displays all Requests that have completed in which you participated. Request information displays in tabular format.
+The **Completed** page displays all Requests that have completed in which you participated. You were a Request participant because you started that Request or were assigned a Task in that Request. Request information displays in tabular format.
 
 Follow these steps to view completed Requests:
 
