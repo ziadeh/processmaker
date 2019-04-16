@@ -8,11 +8,11 @@ description: Understand what Tasks are in ProcessMaker Spark.
 
 In ProcessMaker Spark, a "Task" represents information that must provided, reviewed, approved, decided about, or otherwise acted upon. People participate in Processes through Tasks.
 
-Below are a few examples of Tasks that your organization might use:
+Each of the examples below are Tasks that you might use for a purchase process:
 
-* Enter information into a digital form, called [ProcessMaker Screens](../../designing-processes/design-forms/what-is-a-form.md), as part of a Request.
-* Approve or reject a Request based on entered information.
-* Run an automated script either through a [ProcessMaker Script](../../designing-processes/scripts/what-is-a-script.md) or as an authenticated user in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
+* An employee enters information about the purchase request such as items to be requisitioned.
+* A manager approves or rejects the purchase request.
+* The purchasing manager enters information on a vendor website to order approved items.
 
 ## Related Topics
 
