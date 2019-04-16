@@ -66,10 +66,6 @@ Follow these steps to reassign a Task to another ProcessMaker user:
 ### What Happens if the Task Cannot Be Reassigned?
 
 If the Task has not been configured that it can be reassigned, then the **Reassign** button does not display. Therefore, the Task assignee does not have the option to reassign the Task to another ProcessMaker user.
-
-### Want to Allow Task Assignees to Reassign Tasks in Your Process Models?
-
-See [Add and Configure Task Elements](../../designing-processes/process-design/model-your-process/add-and-configure-task-elements.md#select-to-whom-to-assign-the-task).
 {% endhint %}
 
 If an assigned Task is overdue, the summary's label displays **Overdue**.
