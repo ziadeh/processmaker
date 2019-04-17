@@ -11,6 +11,7 @@
         :data="data"
         data-path="data"
         pagination-path="meta"
+        :noDataTemplate="$t('No Data Available')"
       >
         <template slot="actions" slot-scope="props">
           <div class="actions">
@@ -19,7 +20,8 @@
                 variant="link"
                 @click="onEdit(props.rowData, props.rowIndex)"
                 v-b-tooltip.hover
-                title="Edit"
+                :title="$t('Edit')"
+                v-if="permission.includes('edit-groups')"
               >
                 <i class="fas fa-pen-square fa-lg fa-fw"></i>
               </b-btn>
@@ -27,7 +29,8 @@
                 variant="link"
                 @click="onDelete( props.rowData, props.rowIndex)"
                 v-b-tooltip.hover
-                title="Remove"
+                :title="$t('Delete')"
+                v-if="permission.includes('delete-groups')"
               >
                 <i class="fas fa-trash-alt fa-lg fa-fw"></i>
               </b-btn>
@@ -36,8 +39,8 @@
         </template>
       </vuetable>
       <pagination
-        single="Group"
-        plural="Groups"
+        :single="$t('Group')"
+        :plural="$t('Groups')"
         :perPageSelectEnabled="true"
         @changePerPage="changePerPage"
         @vuetable-pagination:change-page="onPageChange"
@@ -52,7 +55,7 @@ import datatableMixin from "../../../components/common/mixins/datatable";
 
 export default {
   mixins: [datatableMixin],
-  props: ["filter"],
+  props: ["filter", "permission"],
   data() {
     return {
       orderBy: "name",
@@ -66,34 +69,34 @@ export default {
       ],
       fields: [
         {
-          title: "Name",
+          title: () => this.$t("Name"),
           name: "name",
           sortField: "Name"
         },
         {
-          title: "Description",
+          title: () => this.$t("Description"),
           name: "description",
           sortField: "description"
         },
         {
-          title: "Status",
+          title: () => this.$t("Status"),
           name: "status",
           sortField: "status",
           callback: this.formatStatus
         },
         {
-          title: "# users",
+          title: () => this.$t("# Users"),
           name: "group_members_count",
           sortField: "group_members_count"
         },
         {
-          title: "Modified",
+          title: () => this.$t("Modified"),
           name: "updated_at",
           sortField: "updated_at",
           callback: "formatDate"
         },
         {
-          title: "Created",
+          title: () => this.$t("Created"),
           name: "created_at",
           sortField: "created_at",
           callback: "formatDate"
@@ -129,12 +132,11 @@ export default {
     onDelete(data, index) {
       let that = this;
       ProcessMaker.confirmModal(
-        "Caution!",
-        "<b>Are you sure to delete the group </b>" + data.name + "?",
-        "",
+        this.$t('Caution!'),
+        "<b>" + this.$t('Are you sure you want to delete {{item}}?', {item: data.name}) + "</b>",
         function() {
           ProcessMaker.apiClient.delete("groups/" + data.id).then(response => {
-            ProcessMaker.alert("Group successfully eliminated", "success");
+            ProcessMaker.alert(this.$t("The group was deleted."), "success");
             that.fetch();
           });
         }

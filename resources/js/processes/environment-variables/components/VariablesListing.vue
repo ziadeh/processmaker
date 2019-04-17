@@ -10,6 +10,7 @@
         :fields="fields"
         :data="data"
         data-path="data"
+        :noDataTemplate="$t('No Data Available')"
         pagination-path="meta"
       >
         <template slot="actions" slot-scope="props">
@@ -19,7 +20,8 @@
                 variant="link"
                 @click="onAction('edit-item', props.rowData, props.rowIndex)"
                 v-b-tooltip.hover
-                title="Edit"
+                :title="$t('Edit')"
+                v-if="permission.includes('edit-environment_variables')"
               >
                 <i class="fas fa-pen-square fa-lg fa-fw"></i>
               </b-btn>
@@ -27,7 +29,8 @@
                 variant="link"
                 @click="onAction('remove-item', props.rowData, props.rowIndex)"
                 v-b-tooltip.hover
-                title="Remove"
+                :title="$t('Delete')"
+                v-if="permission.includes('delete-environment_variables')"
               >
                 <i class="fas fa-trash-alt fa-lg fa-fw"></i>
               </b-btn>
@@ -36,8 +39,8 @@
         </template>
       </vuetable>
       <pagination
-        single="Variable"
-        plural="Variables"
+        :single="$t('Variable')"
+        :plural="$t('Variables')"
         :perPageSelectEnabled="true"
         @changePerPage="changePerPage"
         @vuetable-pagination:change-page="onPageChange"
@@ -52,7 +55,7 @@ import datatableMixin from "../../../components/common/mixins/datatable";
 
 export default {
   mixins: [datatableMixin],
-  props: ["filter"],
+  props: ["filter", "permission"],
   data() {
     return {
       orderBy: "name",
@@ -66,23 +69,23 @@ export default {
       ],
       fields: [
         {
-          title: "Name",
+          title: () => this.$t("Name"),
           name: "name",
           sortField: "name"
         },
         {
-          title: "Description",
+          title: () => this.$t("Description"),
           name: "description",
           sortField: "description"
         },
         {
-          title: "Modified",
+          title: () => this.$t("Modified"),
           name: "updated_at",
           sortField: "updated_at",
           callback: "formatDate"
         },
         {
-          title: "Created",
+          title: () => this.$t("Created"),
           name: "created_at",
           sortField: "created_at",
           callback: "formatDate"
@@ -103,10 +106,10 @@ export default {
           break;
         case "remove-item":
           ProcessMaker.confirmModal(
-            "Caution!",
-            "<b>Are you sure to delete the Environment Variable </b>" +
+            this.$t("Caution!"),
+            this.$t("Are you sure you want to delete the environment variable ") +
               data.name +
-              "?",
+              this.$t("?"),
             "",
             () => {
               this.$emit("delete", data);

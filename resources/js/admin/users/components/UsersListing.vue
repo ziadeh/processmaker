@@ -10,8 +10,12 @@
         :fields="fields"
         :data="data"
         data-path="data"
+        :noDataTemplate="$t('No Data Available')"
         pagination-path="meta"
       >
+      <template slot="avatar" slot-scope="props">
+        <avatar-image size="25" :input-data="props.rowData" hide-name="true"></avatar-image>
+      </template>
         <template slot="actions" slot-scope="props">
           <div class="actions">
             <div class="popout">
@@ -19,7 +23,8 @@
                 variant="link"
                 @click="onAction('edit-item', props.rowData, props.rowIndex)"
                 v-b-tooltip.hover
-                title="Edit"
+                :title="$t('Edit')"
+                v-if="permission.includes('edit-users')"
               >
                 <i class="fas fa-pen-square fa-lg fa-fw"></i>
               </b-btn>
@@ -27,7 +32,8 @@
                 variant="link"
                 @click="onAction('remove-item', props.rowData, props.rowIndex)"
                 v-b-tooltip.hover
-                title="Remove"
+                :title="$t('Delete')"
+                v-if="permission.includes('delete-users')"
               >
                 <i class="fas fa-trash-alt fa-lg fa-fw"></i>
               </b-btn>
@@ -36,8 +42,8 @@
         </template>
       </vuetable>
       <pagination
-        single="User"
-        plural="Users"
+        :single="$t('User')"
+        :plural="$t('Users')"
         :perPageSelectEnabled="true"
         @changePerPage="changePerPage"
         @vuetable-pagination:change-page="onPageChange"
@@ -50,10 +56,13 @@
 
 <script>
 import datatableMixin from "../../../components/common/mixins/datatable";
+import AvatarImage from "../../../components/AvatarImage";
+Vue.component("avatar-image", AvatarImage);
+
 
 export default {
   mixins: [datatableMixin],
-  props: ["filter"],
+  props: ["filter", "permission"],
   data() {
     return {
       orderBy: "username",
@@ -67,35 +76,40 @@ export default {
       ],
       fields: [
         {
-          title: "Username",
+          title: () => this.$t("Username"),
           name: "username",
           sortField: "username"
         },
         {
-          title: "Full Name",
+          title: () => this.$t("Full Name"),
           name: "fullname",
           sortField: "fullname"
         },
         {
-          title: "Status",
+          title: () => this.$t("Avatar"),
+          name: "__slot:avatar",
+          field: "user"
+        },
+        {
+          title: () => this.$t("Status"),
           name: "status",
           sortField: "status",
           callback: this.formatStatus
         },
         {
-          title: "Modified",
+          title: () => this.$t("Modified"),
           name: "updated_at",
           sortField: "updated_at",
           callback: "formatDate"
         },
         {
-          title: "Created",
+          title: () => this.$t("Created"),
           name: "created_at",
           sortField: "created_at",
           callback: "formatDate"
         },
         {
-          title: "Last login",
+          title: () => this.$t("Last Login"),
           name: "loggedin_at",
           sortField: "loggedin_at",
           callback: "formatDate"
@@ -134,14 +148,16 @@ export default {
           break;
         case "remove-item":
           ProcessMaker.confirmModal(
-            "Caution!",
-            "<b>Are you sure to inactive the user </b>" + data.fullname + "?",
+            this.$t("Caution!"),
+            this.$t("Are you sure you want to delete the user ") +
+              data.fullname +
+              this.$t("?"),
             "",
             () => {
               ProcessMaker.apiClient
                 .delete("users/" + data.id)
                 .then(response => {
-                  ProcessMaker.alert("User Marked As Deleted", "warning");
+                  ProcessMaker.alert(this.$t("The user was deleted."), "danger");
                   this.$emit("reload");
                 });
             }

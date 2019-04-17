@@ -1,17 +1,17 @@
 <template>
-  <vue-form-renderer @submit="submit" v-model="formData" :config="screen" :computed="computed"/>
+  <vue-form-renderer @submit="submit" v-model="formData" :config="screen" :computed="computed" :custom-css="customCss" />
 </template>
 
 <script>
-import VueFormRenderer from "@processmaker/vue-form-builder/src/components/vue-form-renderer";
+import VueFormRenderer from "@processmaker/spark-screen-builder/src/components/vue-form-renderer";
 
-import OptionsList from "@processmaker/vue-form-builder/src/components/inspector/options-list";
-import PageSelect from "@processmaker/vue-form-builder/src/components/inspector/page-select";
-import FormMultiColumn from "@processmaker/vue-form-builder/src/components/renderer/form-multi-column";
-import MultiColumn from "@processmaker/vue-form-builder/src/components/editor/multi-column";
-import FormText from "@processmaker/vue-form-builder/src/components/renderer/form-text";
-import FormButton from "@processmaker/vue-form-builder/src/components/renderer/form-button";
-import FormRecordList from "@processmaker/vue-form-builder/src/components/renderer/form-record-list";
+import OptionsList from "@processmaker/spark-screen-builder/src/components/inspector/options-list";
+import PageSelect from "@processmaker/spark-screen-builder/src/components/inspector/page-select";
+import FormMultiColumn from "@processmaker/spark-screen-builder/src/components/renderer/form-multi-column";
+import MultiColumn from "@processmaker/spark-screen-builder/src/components/editor/multi-column";
+import FormText from "@processmaker/spark-screen-builder/src/components/renderer/form-text";
+import FormButton from "@processmaker/spark-screen-builder/src/components/renderer/form-button";
+import FormRecordList from "@processmaker/spark-screen-builder/src/components/renderer/form-record-list";
 import FileUpload from "../../processes/screen-builder/components/form/file-upload";
 import FileDownload from "../../processes/screen-builder/components/file-download";
 
@@ -43,7 +43,7 @@ export default {
   components: {
     VueFormRenderer
   },
-  props: ["processId", "instanceId", "tokenId", "screen", "data", "computed"],
+  props: ["processId", "instanceId", "tokenId", "screen", "data", "computed", "customCss"],
   data() {
     return {
       formData: this.data
@@ -54,7 +54,7 @@ export default {
     submit() {
       var self = this;
       ProcessMaker.apiClient
-        .put("tasks/" + this.tokenId + "?status=COMPLETED", this.formData)
+        .put("tasks/" + this.tokenId, {status:"COMPLETED", data: this.formData})
         .then(function() {
           document.location.href = "/tasks";
         });

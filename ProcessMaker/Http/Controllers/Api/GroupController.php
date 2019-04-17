@@ -12,6 +12,15 @@ use ProcessMaker\Models\User;
 
 class GroupController extends Controller
 {
+    /**
+     * A whitelist of attributes that should not be
+     * sanitized by our SanitizeInput middleware.
+     *
+     * @var array
+     */
+    public $doNotSanitize = [
+        //
+    ];
 
     /**
      * Display a listing of the resource.
@@ -44,7 +53,7 @@ class GroupController extends Controller
      *             @OA\Property(
      *                 property="meta",
      *                 type="object",
-     *                 allOf={@OA\Schema(ref="#/components/schemas/metadata")},
+     *                 ref="#/components/schemas/metadata",
      *             ),
      *         ),
      *     ),
@@ -97,12 +106,12 @@ class GroupController extends Controller
      *
      * @OA\Post(
      *     path="/groups",
-     *     summary="Save a new groups",
+     *     summary="Save a new group",
      *     operationId="createGroup",
      *     tags={"Groups"},
      *     @OA\RequestBody(
-     *       required=true,
-     *       @OA\JsonContent(ref="#/components/schemas/groupsEditable")
+     *         required=true,
+     *         @OA\JsonContent(ref="#/components/schemas/groupsEditable")
      *     ),
      *     @OA\Response(
      *         response=201,
@@ -123,11 +132,11 @@ class GroupController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  id $id
-     * @return \Illuminate\Http\Response
+     * @param Group $group
+     * @return GroupResource
      *
      * @OA\Get(
-     *     path="/groups/groupId",
+     *     path="/groups/{group_id}",
      *     summary="Get single group by ID",
      *     operationId="getGroupById",
      *     tags={"Groups"},
@@ -162,7 +171,7 @@ class GroupController extends Controller
      * @throws \Throwable
      *
      * @OA\Put(
-     *     path="/groups/groupId",
+     *     path="/groups/{group_id}",
      *     summary="Update a group",
      *     operationId="updateGroup",
      *     tags={"Groups"},
@@ -197,12 +206,13 @@ class GroupController extends Controller
     /**
      * Delete a user
      *
-     * @param Group $user
+     * @param Group $group
      *
-     * @return ResponseFactory|Response
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     * @throws \Exception
      *
      * @OA\Delete(
-     *     path="/groups/groupId",
+     *     path="/groups/{group_id}",
      *     summary="Delete a group",
      *     operationId="deleteGroup",
      *     tags={"Groups"},
@@ -259,7 +269,7 @@ class GroupController extends Controller
      *             @OA\Property(
      *                 property="meta",
      *                 type="object",
-     *                 allOf={@OA\Schema(ref="#/components/schemas/metadata")},
+     *                 ref="#/components/schemas/metadata",
      *             ),
      *         ),
      *     ),
@@ -268,7 +278,7 @@ class GroupController extends Controller
     public function members(Group $group, Request $request)
     {
         $query = User::query()
-                ->leftJoin('group_members', 'users.id', '=', 'group_members.member_id');
+            ->leftJoin('group_members', 'users.id', '=', 'group_members.member_id');
 
         $query->where('group_members.group_id', $group->id);
 
@@ -285,11 +295,11 @@ class GroupController extends Controller
         $order_by = 'username';
         $order_direction = 'ASC';
 
-        if($request->has('order_by')){
+        if ($request->has('order_by')) {
             $order_by = $request->input('order_by');
         }
 
-        if($request->has('order_direction')){
+        if ($request->has('order_direction')) {
             $order_direction = $request->input('order_direction');
         }
 

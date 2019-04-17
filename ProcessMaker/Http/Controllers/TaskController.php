@@ -11,8 +11,6 @@ use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
-    public $skipPermissionCheckFor = ['index', 'show', 'edit'];
-
     private static $dueLabels = [
         'open' => 'Due ',
         'completed' => 'Completed ',
@@ -21,10 +19,10 @@ class TaskController extends Controller
 
     public function index()
     {
-        $title = __('To Do Tasks');
+        $title = 'To Do Tasks';
         
         if(Request::input('status') == 'CLOSED'){
-            $title = __('Completed Tasks');
+            $title = 'Completed Tasks';
         }
         
         return view('tasks.index', compact('title'));
@@ -37,7 +35,7 @@ class TaskController extends Controller
 
     public function edit(ProcessRequestToken $task)
     {
-        $task->authorize(Auth::user());
+        $this->authorize('update', $task);
         //Mark as unread any not read notification for the task
         Notification::where('data->url', Request::path())
             ->whereNotNull('read_at')

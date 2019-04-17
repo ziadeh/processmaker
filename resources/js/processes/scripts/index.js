@@ -10,10 +10,13 @@ new Vue({
         ScriptListing
     },
     methods: {
+        __(variable) {
+            return __(variable);
+        },
         deleteScript(data) {
             ProcessMaker.apiClient.delete(`scripts/${data.id}`)
                 .then((response) => {
-                    ProcessMaker.alert("Script Successfully Deleted", "success");
+                    ProcessMaker.alert(__("The script was deleted."), "success");
                     this.reload();
                 });
         },

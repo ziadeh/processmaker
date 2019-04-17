@@ -10,10 +10,11 @@
         :fields="fields"
         :data="data"
         data-path="data"
+        :noDataTemplate="$t('No Data Available')"
         pagination-path="meta"
       >
         <template slot="ids" slot-scope="props">
-          <b-link @click="openRequest(props.rowData, props.rowIndex)">{{props.rowData.name}}</b-link>
+          <b-link @click="openRequest(props.rowData, props.rowIndex)">#{{props.rowData.id}}</b-link>
         </template>
         <template slot="participants" slot-scope="props">
           <avatar-image
@@ -32,7 +33,7 @@
                 variant="link"
                 @click="onAction('edit-designer', props.rowData, props.rowIndex)"
                 v-b-tooltip.hover
-                title="Open Request"
+                :title="$t('Open Request')"
               >
                 <i class="fas fa-caret-square-right fa-lg fa-fw"></i>
               </b-btn>
@@ -41,8 +42,8 @@
         </template>
       </vuetable>
       <pagination
-        single="Request"
-        plural="Requests"
+        :single="$t('Request')"
+        :plural="$t('Requests')"
         :perPageSelectEnabled="true"
         @changePerPage="changePerPage"
         @vuetable-pagination:change-page="onPageChange"
@@ -76,26 +77,31 @@ export default {
       fields: [
         {
           name: "__slot:ids",
-          title: "Name",
+          title: '#',
           field: "id",
           sortField: "id"
         },
         {
-          title: "Status",
+          title: () => this.$t("Name"),
+          name: "name",
+          sortField: "name"
+        },
+        {
+          title: () => this.$t("Status"),
           name: "status",
           sortField: "status"
         },
         {
-          title: "Participants",
+          title: () => this.$t("Participants"),
           name: "__slot:participants"
         },
         {
-          title: "Started",
+          title: () => this.$t("Started"),
           name: "initiated_at",
           sortField: "initiated_at"
         },
         {
-          title: "Completed",
+          title: () => this.$t("Completed"),
           name: "completed_at",
           sortField: "completed_at"
         },

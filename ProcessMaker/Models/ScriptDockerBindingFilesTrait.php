@@ -2,7 +2,9 @@
 
 namespace ProcessMaker\Models;
 
-use RuntimeException;
+use Log;
+use ProcessMaker\Exception\ScriptException;
+use ProcessMaker\Exception\ScriptTimeoutException;
 
 /**
  * Execute a docker container binding files to interchange information.
@@ -10,7 +12,6 @@ use RuntimeException;
  */
 trait ScriptDockerBindingFilesTrait
 {
-
     private $temporalFiles = [];
     private $outputFiles = [];
 
@@ -31,8 +32,13 @@ trait ScriptDockerBindingFilesTrait
         foreach ($options['outputs'] as $name => $guestFile) {
             $bindings .= $this->bindOutput($guestFile, $name);
         }
-        $response = $this->runContainer($options['image'], $options['command'],
-            $options['parameters'], $bindings);
+        $response = $this->runContainer(
+            $options['image'],
+            $options['command'],
+            $options['parameters'],
+            $bindings,
+            $options['timeout']
+        );
         return $response;
     }
 
@@ -43,17 +49,44 @@ trait ScriptDockerBindingFilesTrait
      * @param string $command
      * @param string $parameters
      * @param string $bindings
+     * @param integer $timeout
      *
      * @return array
-     * @throws RuntimeException
+     * @throws ScriptTimeoutException
      */
-    private function runContainer($image, $command, $parameters, $bindings)
+    private function runContainer($image, $command, $parameters, $bindings, $timeout)
     {
-        $cmd = config('app.bpm_scripts_docker') . sprintf(' run %s %s %s %s 2>&1',
-                $parameters, $bindings, $image, $command);
+        $cmd = '';
+
+        if ($timeout > 0) {
+            $cmd .= "timeout -s 9 $timeout ";
+        }
+
+        $cmd .= config('app.spark_scripts_docker') . sprintf(
+            ' run %s %s %s %s 2>&1',
+            $parameters,
+            $bindings,
+            $image,
+            $command
+        );
+
+        Log::debug('Running Docker container', [
+            'timeout' => $timeout,
+            'cmd' => $cmd,
+        ]);
+
         $line = exec($cmd, $output, $returnCode);
         if ($returnCode) {
-            throw new RuntimeException(implode("\n", $output));
+            if ($returnCode == 137) {
+                Log::error('Script timed out');
+                throw new ScriptTimeoutException(
+                    __("Script took too long to complete. Consider increasing the timeout.")
+                  . " "
+                  . implode("\n", $output)
+                );
+            }
+            Log::error('Script threw return code ' . $returnCode . 'Message: ' . implode("\n", $output));
+            throw new ScriptException(implode("\n", $output));
         }
         $outputs = $this->getOutputFilesContent();
         $this->removeTemporalFiles();
@@ -70,7 +103,7 @@ trait ScriptDockerBindingFilesTrait
      */
     private function bindFile($hostFile, $guestFile)
     {
-        return sprintf(" -v %s:%s", $hostFile, $guestFile);
+        return sprintf(' -v %s:%s', $hostFile, $guestFile);
     }
 
     /**
@@ -83,7 +116,7 @@ trait ScriptDockerBindingFilesTrait
      */
     private function bindInput($guestFile, $content)
     {
-        $hostFile = tempnam(config('app.bpm_scripts_home'), 'put');
+        $hostFile = tempnam(config('app.spark_scripts_home'), 'put');
         $this->temporalFiles[] = $hostFile;
         file_put_contents($hostFile, $content);
         return $this->bindFile($hostFile, $guestFile);
@@ -98,7 +131,7 @@ trait ScriptDockerBindingFilesTrait
      */
     private function bindOutput($guestFile, $name)
     {
-        $hostFile = tempnam(config('app.bpm_scripts_home'), 'get');
+        $hostFile = tempnam(config('app.spark_scripts_home'), 'get');
         $this->temporalFiles[] = $hostFile;
         $this->outputFiles[$name] = $hostFile;
         return $this->bindFile($hostFile, $guestFile);

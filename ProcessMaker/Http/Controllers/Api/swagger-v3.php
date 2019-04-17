@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * @OA\OpenApi(
  *     @OA\Info(
@@ -13,7 +13,6 @@
  *             url="http://www.apache.org/licenses/LICENSE-2.0.html"
  *         )
  *     ),
- *     @OA\Server(url="/api/1.0"),
  *     @OA\Components(
  *         @OA\Parameter(
  *             parameter="filter",
@@ -28,6 +27,12 @@
  *             in="query",
  *             description="Field to order results by",
  *             @OA\Schema(type="string"),
+ *         ),
+ *         @OA\Parameter(
+ *             parameter="status",
+ *             name="status",
+ *             in="query",
+ *             @OA\Schema(type="string", enum={"active", "inactive"}, default="active"),
  *         ),
  *         @OA\Parameter(
  *             parameter="order_direction",
@@ -54,7 +59,19 @@
  *             in="query",
  *             @OA\Schema(type="integer"),
  *         ),
+ *         @OA\Parameter(
+ *             parameter="commentable_id",
+ *             name="commentable_id",
+ *             in="query",
+ *             @OA\Schema(type="integer"),
+ *         ),
+ *         @OA\Parameter(
+ *             parameter="commentable_type",
+ *             name="commentable_type",
+ *             in="query",
+ *             @OA\Schema(type="string", default=""),
+ *         ),
  *     ),
- *     security={{"pm_api_bearer": {}}},
+ *     security={{"pm_api_bearer": {}}, {"pm_api_auth_code": {}}},
  * )
  */

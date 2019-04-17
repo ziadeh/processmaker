@@ -10,6 +10,7 @@
         :fields="fields"
         :data="data"
         data-path="data"
+        :noDataTemplate="$t('No Data Available')"
         pagination-path="meta"
       >
         <template slot="actions" slot-scope="props">
@@ -19,7 +20,8 @@
                 variant="link"
                 @click="onAction('edit-item', props.rowData, props.rowIndex)"
                 v-b-tooltip.hover
-                title="Edit"
+                :title="$t('Edit')"
+                v-if="permission.includes('edit-categories')"
               >
                 <i class="fas fa-pen-square fa-lg fa-fw"></i>
               </b-btn>
@@ -27,8 +29,8 @@
                 variant="link"
                 @click="onAction('remove-item', props.rowData, props.rowIndex)"
                 v-b-tooltip.hover
-                title="Remove"
-                v-if="props.rowData.processes_count == 0"
+                :title="$t('Remove')"
+                v-if="permission.includes('delete-categories') && props.rowData.processes_count == 0"
               >
                 <i class="fas fa-trash-alt fa-lg fa-fw"></i>
               </b-btn>
@@ -37,8 +39,8 @@
         </template>
       </vuetable>
       <pagination
-        single="Category"
-        plural="Categories"
+        :single="$t('Category')"
+        :plural="$t('Categories')"
         :perPageSelectEnabled="true"
         @changePerPage="changePerPage"
         @vuetable-pagination:change-page="onPageChange"
@@ -53,7 +55,7 @@ import datatableMixin from "../../../components/common/mixins/datatable";
 
 export default {
   mixins: [datatableMixin],
-  props: ["filter"],
+  props: ["filter", "permission"],
   data() {
     return {
       orderBy: "name",
@@ -66,29 +68,29 @@ export default {
       ],
       fields: [
         {
-          title: "Name",
+          title: () => this.$t('Name'),
           name: "name",
           sortField: "name"
         },
         {
-          title: "Status",
+          title: () => this.$t("Status"),
           name: "status",
           sortField: "status",
           callback: this.formatStatus
         },
         {
-          title: "# Processes",
+          title: () => this.$t("# Processes"),
           name: "processes_count",
           sortField: "processes_count"
         },
         {
-          title: "Modified",
+          title: () => this.$t("Modified"),
           name: "updated_at",
           sortField: "updated_at",
           callback: "formatDate"
         },
         {
-          title: "Created",
+          title: () => this.$t("Created"),
           name: "created_at",
           sortField: "created_at",
           callback: "formatDate"
@@ -137,9 +139,8 @@ export default {
           break;
         case "remove-item":
           ProcessMaker.confirmModal(
-            "Caution!",
-            "<b>Are you sure to delete the process </b>" + data.name + "?",
-            "",
+            this.$t('Caution!'),
+            "<b>" + this.$t('Are you sure you want to delete {{item}}?', {item: data.name}) + "</b>",
             () => {
               this.$emit("delete", data);
             }

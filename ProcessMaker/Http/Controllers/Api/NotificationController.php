@@ -6,16 +6,26 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Notification as NotificationFacade;
 use Laravel\Horizon\Http\Controllers\Controller;
 use ProcessMaker\Http\Resources\ApiCollection;
-use ProcessMaker\Models\Notification;
 use ProcessMaker\Http\Resources\Notifications as NotificationResource;
+use ProcessMaker\Models\Notification;
+use ProcessMaker\Models\ProcessRequestToken;
 use ProcessMaker\Models\User;
+use ProcessMaker\Notifications\TaskOverdueNotification;
 
 class NotificationController extends Controller
 {
-    // No need for further authorization since the ID is a guid
-    public $skipPermissionCheckFor = ['index', 'show', 'updateAsRead', 'updateAsUnread'];
+    /**
+     * A whitelist of attributes that should not be
+     * sanitized by our SanitizeInput middleware.
+     *
+     * @var array
+     */
+    public $doNotSanitize = [
+        'data'
+    ];
 
     /**
      * Display a listing of the resource.
@@ -63,6 +73,9 @@ class NotificationController extends Controller
      */
     public function index(Request $request)
     {
+        // This creates notifications for overdue tasks
+        $this->notifyOverdueTasks();
+
         $query = Notification::select(
             'id',
             'read_at',
@@ -318,5 +331,68 @@ class NotificationController extends Controller
             ->orWhereIn('data->url', $routes)
             ->update(['read_at' => null]);
         return response($updated, 201);
+    }
+
+
+    /**
+     * Update all notification as read.
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     *
+     * @OA\Put(
+     *     path="/read_all_notifications",
+     *     summary="Mark notifications as read by id and type",
+     *     tags={"Notifications"},
+     *
+     *     @OA\RequestBody(
+     *       required=true,
+     *       @OA\JsonContent(
+     *          @OA\Property(
+     *              property="id",
+     *              type="integer",
+     *              description="Polymorphic relation id",
+     *              @OA\Items (type="integer")),
+     *          @OA\Property(
+     *              property="type",
+     *              type="string",
+     *              description="Polymorphic relation type",
+     *              @OA\Items (type="string"))
+     *       ),
+     *     ),
+     *     @OA\Response(
+     *         response=201,
+     *         description="success",
+     *     ),
+     * )
+     */
+    public function updateAsReadAll(Request $request)
+    {
+        $id = $request->input('id');
+        $type = $request->input('type');
+
+        DB::table('notifications')
+            ->where('notifiable_id', $id)
+            ->where('notifiable_type', $type)
+            ->update(['read_at' => Carbon::now()]);
+        return response([], 201);
+    }
+
+    /**
+     * This method find task in overdue status that were not notified to the
+     * owner user.
+     */
+    private function notifyOverdueTasks()
+    {
+        $inOverdue = ProcessRequestToken::where('user_id', Auth::user()->id)
+            ->where('status', 'ACTIVE')
+            ->where('due_at', '<', Carbon::now())
+            ->where('due_notified', 0)
+            ->get();
+        foreach($inOverdue as $token) {
+            $notifiables = $token->getNotifiables('due');
+            NotificationFacade::send($notifiables, new TaskOverdueNotification($token));
+        }
     }
 }

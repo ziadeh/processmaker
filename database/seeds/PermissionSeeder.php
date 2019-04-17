@@ -5,107 +5,113 @@ use ProcessMaker\Models\User;
 use ProcessMaker\Models\Group;
 use ProcessMaker\Models\GroupMember;
 use ProcessMaker\Models\Permission;
-use ProcessMaker\Models\PermissionAssignment;
 
 class PermissionSeeder extends Seeder
 {
-
-    private $permissions = [
-        'documents.index',
-        'documents.create',
-        'documents.destroy',
-        'documents.edit',
-        'documents.show',
-        'environment_variables.index',
-        'environment_variables.create',
-        'environment_variables.destroy',
-        'environment_variables.edit',
-        'environment_variables.show',
-        'screens.index',
-        'screens.create',
-        'screens.destroy',
-        'screens.edit',
-        'screens.show',
-        'group_members.index',
-        'group_members.create',
-        'group_members.destroy',
-        'group_members.edit',
-        'group_members.show',
-        'groups.index',
-        'groups.create',
-        'groups.destroy',
-        'groups.edit',
-        'groups.show',
-        'process_categories.index',
-        'process_categories.create',
-        'process_categories.destroy',
-        'process_categories.edit',
-        'process_categories.show',
-        'processes.index',
-        'processes.create',
-        'processes.destroy',
-        'processes.edit',
-        'processes.show',
-        'requests.index',	
-        'requests.create',	
-        'requests.destroy',	
-        'requests.cancel',	
-        'requests.edit',	
-        'requests.show',
-        'scripts.index',
-        'scripts.create',
-        'scripts.destroy',
-        'scripts.edit',
-        'scripts.show',
-        'users.index',
-        'users.create',
-        'users.destroy',
-        'users.edit',
-        'users.show',
-        'modeler.show'
+    private $permissionGroups = [
+        'Processes' => [
+            'archive-processes',
+            'create-processes',
+            'edit-processes',
+            'export-processes',
+            'import-processes',
+            'view-processes',
+        ],
+        'Categories' => [
+            'create-categories',
+            'delete-categories',
+            'edit-categories',
+            'view-categories',
+        ],
+        'Comments' => [
+            'create-comments',
+            'delete-comments',
+            'edit-comments',
+            'view-comments',
+        ],
+        'Environment Variables' => [
+            'create-environment_variables',
+            'delete-environment_variables',
+            'edit-environment_variables',
+            'view-environment_variables',
+        ],
+        'Groups' => [
+            'create-groups',
+            'delete-groups',
+            'edit-groups',
+            'view-groups',
+        ],
+        'Screens' => [
+            'create-screens',
+            'delete-screens',
+            'edit-screens',
+            'view-screens',
+            'export-screens',
+            'import-screens',
+        ],
+        'Scripts' => [
+            'create-scripts',
+            'delete-scripts',
+            'edit-scripts',
+            'view-scripts',
+        ],
+        'Users' => [
+            'create-users',
+            'delete-users',
+            'edit-users',
+            'view-users',
+        ],
+        'Requests' => [
+            'view-all_requests',
+            'edit-request_data',
+            'edit-task_data',
+        ],
+        'Files (API)' => [
+            'create-files',
+            'view-files',
+            'edit-files',
+            'delete-files',
+        ],
+        'Notifications (API)' => [
+            'create-notifications',
+            'view-notifications',
+            'edit-notifications',
+            'delete-notifications',
+        ],
+        'Task Assignments (API)' => [
+            'create-task_assignments',
+            'view-task_assignments',
+            'edit-task_assignments',
+            'delete-task_assignments',
+        ],
+        'Auth Clients' => [
+            'create-auth_clients',
+            'view-auth_clients',
+            'edit-auth_clients',
+            'delete-auth_clients',
+        ],
     ];
 
-    private $resourcePermissions = [
-        'requests'
-    ];
-
-    public function run($user = null)
+    public function run($seedUser = null)
     {
-        if (Permission::count() !== 0) {
-            return;
-        }
-        $group = factory(Group::class)->create([
-            'name' => 'All Permissions',
-        ]);
-
-        if (!$user) {
-            $user = User::first()->id;
-        }
-
-        factory(GroupMember::class)->create([
-            'group_id' => $group->id,
-            'member_type' => User::class,
-            'member_id' => User::first()->id,
-        ]);
-
-        foreach ($this->permissions as $permissionString) {
-            $type = 'ROUTE';
-            $resource = explode('.', $permissionString)[0];
-            if (in_array($resource, $this->resourcePermissions)) {
-                $type = 'RESOURCE';
+        if (Permission::count() === 0) {
+            foreach ($this->permissionGroups as $groupName => $permissions) {
+                foreach ($permissions as $permissionString) {
+                    $permission = factory(Permission::class)->create([
+                        'title' => ucwords(preg_replace('/(\-|_)/', ' ',
+                                $permissionString)),
+                        'name' => $permissionString,
+                        'group' => $groupName,
+                    ]);
+                }
             }
+        }
 
-            $permission = factory(Permission::class)->create([
-                'name' => ucwords(preg_replace('/(\.|_)/', ' ',
-                        $permissionString)),
-                'type' => $type,
-                'guard_name' => $permissionString,
-            ]);
-            factory(PermissionAssignment::class)->create([
-                'permission_id' => $permission->id,
-                'assignable_type' => Group::class,
-                'assignable_id' => $group->id,
-            ]);
+        $permissions = Permission::all()->pluck('id');
+
+        if ($seedUser) {
+            $seedUser->permissions()->attach($permissions);
+            $seedUser->save();
         }
     }
 }

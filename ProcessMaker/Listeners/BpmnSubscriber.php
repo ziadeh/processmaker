@@ -1,4 +1,5 @@
 <?php
+
 namespace ProcessMaker\Listeners;
 
 use ProcessMaker\Nayra\Contracts\Bpmn\ActivityInterface;
@@ -8,13 +9,21 @@ use ProcessMaker\Nayra\Bpmn\Events\ActivityClosedEvent;
 use ProcessMaker\Nayra\Contracts\Bpmn\ProcessInterface;
 use ProcessMaker\Nayra\Bpmn\Events\ProcessInstanceCreatedEvent;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Notification;
 use ProcessMaker\Nayra\Contracts\Bpmn\ScriptTaskInterface;
 use ProcessMaker\Nayra\Contracts\Bpmn\ServiceTaskInterface;
-use ProcessMaker\Notifications\ActivityActivatedNotification;
 use ProcessMaker\Nayra\Bpmn\Events\ProcessInstanceCompletedEvent;
-use ProcessMaker\Notifications\ProcessCompletedNotification;
 use ProcessMaker\Nayra\Contracts\Bpmn\TokenInterface;
 use ProcessMaker\Facades\WorkflowManager;
+use ProcessMaker\Models\Comment;
+use ProcessMaker\Models\ProcessRequest;
+use ProcessMaker\Notifications\ProcessCreatedNotification;
+use ProcessMaker\Notifications\ProcessCompletedNotification;
+use ProcessMaker\Notifications\ActivityActivatedNotification;
+use ProcessMaker\Notifications\ActivityCompletedNotification;
+use ProcessMaker\Nayra\Contracts\Bpmn\IntermediateCatchEventInterface;
+use ProcessMaker\Nayra\Contracts\Bpmn\MessageEventDefinitionInterface;
+use ProcessMaker\Nayra\Contracts\Bpmn\TimerEventDefinitionInterface;
 
 /**
  * Description of BpmnSubscriber
@@ -22,39 +31,17 @@ use ProcessMaker\Facades\WorkflowManager;
  */
 class BpmnSubscriber
 {
-
-    /**
-     * When a new activity is Activated
-     *
-     * @param ActivityActivatedEvent $event
-     */
-    public function ActivityActivated(ActivityActivatedEvent $event)
-    {
-        $token = $event->token;
-        Log::info('Nofity activity activated: ' . json_encode($token->getProperties()));
-
-        //Send the notification to the assigned user
-        $user = $event->token->user;
-        if (!empty($user)) {
-            $notification = new ActivityActivatedNotification($event->token);
-            $user->notify($notification);
-        }
-    }
-
     /**
      * When a process instance is completed.
      *
      * @param ProcessInstanceCreatedEvent $event
      */
-    public function ProcessCompleted(ProcessInstanceCompletedEvent $event)
+    public function onProcessCompleted(ProcessInstanceCompletedEvent $event)
     {
         Log::info('Process completed: ' . json_encode($event->instance->getProperties()));
 
-        //client events
-        $user = $event->instance->user;
-        $notification = new ProcessCompletedNotification($event->instance);
-        $user->notify($notification);
-
+        $notifiables = $event->instance->getNotifiables('completed');
+        Notification::send($notifiables, new ProcessCompletedNotification($event->instance));
     }
 
     /**
@@ -64,7 +51,10 @@ class BpmnSubscriber
      */
     public function onProcessCreated(ProcessInstanceCreatedEvent $event)
     {
-        // Log::info('ProcessCreated: ' . json_encode($event->instance->getProperties()));
+        Log::info('Process created: ' . json_encode($event->instance->getProperties()));
+
+        $notifiables = $event->instance->getNotifiables('started');
+        Notification::send($notifiables, new ProcessCreatedNotification($event->instance));
     }
 
     /**
@@ -74,8 +64,11 @@ class BpmnSubscriber
      */
     public function onActivityActivated(ActivityActivatedEvent $event)
     {
-        // Log::info('ActivityActivated: ' . json_encode($event->token->getProperties()));
-        $this->ActivityActivated($event);
+        $token = $event->token;
+        Log::info('Activity activated: ' . json_encode($token->getProperties()));
+
+        $notifiables = $token->getNotifiables('assigned');
+        Notification::send($notifiables, new ActivityActivatedNotification($token));
     }
 
     /**
@@ -85,7 +78,13 @@ class BpmnSubscriber
      */
     public function onActivityCompleted(ActivityCompletedEvent $event)
     {
-        // Log::info('ActivityCompleted: ' . json_encode($event->token->getProperties()));
+        $token = $event->token;
+        Log::info('Activity completed: ' . json_encode($token->getProperties()));
+
+        if ($token->element_type == 'task') {
+            $notifiables = $token->getNotifiables('completed');
+            Notification::send($notifiables, new ActivityCompletedNotification($token));
+        }
     }
 
     /**
@@ -95,7 +94,7 @@ class BpmnSubscriber
      */
     public function onActivityClosed(ActivityClosedEvent $event)
     {
-        // Log::info('ActivityClosed: ' . json_encode($event->token->getProperties()));
+        Log::info('ActivityClosed: ' . json_encode($event->token->getProperties()));
     }
 
     /**
@@ -121,6 +120,30 @@ class BpmnSubscriber
         WorkflowManager::runServiceTask($serviceTask, $token);
     }
 
+    public function onIntermediateCatchEventActivated(IntermediateCatchEventInterface $event, TokenInterface $token)
+    {
+        $messages = [
+            MessageEventDefinitionInterface::class => 'System is waiting to receive message ":event"',
+            TimerEventDefinitionInterface::class => 'System has schedules to execute a timer ":event"'
+        ];
+        foreach ($event->getEventDefinitions() as $eventDefinition) {
+            foreach ($messages as $interface => $message) {
+                if (is_subclass_of($eventDefinition, $interface)) {
+                    $comment = new Comment([
+                        'user_id' => null,
+                        'commentable_type' => ProcessRequest::class,
+                        'commentable_id' => $token->getInstance()->id,
+                        'subject' => __($message, ['event' => $event->getName()]),
+                        'body' => __($message, ['event' => $event->getName()]),
+                        'type' => 'LOG'
+                    ]);
+                    $comment->save();
+                    break;
+                }
+            }
+        }
+    }
+
     /**
      * Subscription.
      *
@@ -129,7 +152,7 @@ class BpmnSubscriber
     public function subscribe($events)
     {
         $events->listen(ProcessInterface::EVENT_PROCESS_INSTANCE_CREATED, static::class . '@onProcessCreated');
-        $events->listen(ProcessInterface::EVENT_PROCESS_INSTANCE_COMPLETED, static::class . '@ProcessCompleted');
+        $events->listen(ProcessInterface::EVENT_PROCESS_INSTANCE_COMPLETED, static::class . '@onProcessCompleted');
 
         $events->listen(ActivityInterface::EVENT_ACTIVITY_COMPLETED, static::class . '@onActivityCompleted');
         $events->listen(ActivityInterface::EVENT_ACTIVITY_CLOSED, static::class . '@onActivityClosed');
@@ -137,5 +160,7 @@ class BpmnSubscriber
         $events->listen(ActivityInterface::EVENT_ACTIVITY_ACTIVATED, static::class . '@onActivityActivated');
         $events->listen(ScriptTaskInterface::EVENT_SCRIPT_TASK_ACTIVATED, static::class . '@onScriptTaskActivated');
         $events->listen(ServiceTaskInterface::EVENT_SERVICE_TASK_ACTIVATED, static::class . '@onServiceTaskActivated');
+
+        $events->listen(IntermediateCatchEventInterface::EVENT_CATCH_TOKEN_ARRIVES, static::class . '@onIntermediateCatchEventActivated');
     }
 }

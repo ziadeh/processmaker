@@ -47,6 +47,15 @@ class ProcessScriptsTest extends TestCase
     }
 
     /**
+     * Make sure we have a personal access client set up
+     *
+     */
+    public function setUpWithPersonalAccessClient()
+    {
+        $this->withPersonalAccessClient();
+    }
+
+    /**
      * Create a single task process assigned to $this->user
      */
     private function createTestProcess(array $data = [])
@@ -61,7 +70,7 @@ class ProcessScriptsTest extends TestCase
      */
     public function testExecuteAProcess()
     {
-        if (!file_exists(config('app.bpm_scripts_home')) || !file_exists(config('app.bpm_scripts_docker'))) {
+        if (!file_exists(config('app.spark_scripts_home')) || !file_exists(config('app.spark_scripts_docker'))) {
             $this->markTestSkipped(
                 'This test requires docker'
             );

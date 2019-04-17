@@ -1,24 +1,29 @@
 <?php
+
 namespace ProcessMaker\Repositories;
 
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Log;
 use ProcessMaker\Models\ProcessRequest as Instance;
-use ProcessMaker\Models\ProcessRequest;
 use ProcessMaker\Models\ProcessRequestToken as Token;
+use ProcessMaker\Models\ProcessCollaboration;
+use ProcessMaker\Models\User;
 use ProcessMaker\Nayra\Bpmn\Collection;
 use ProcessMaker\Nayra\Bpmn\Models\EndEvent;
 use ProcessMaker\Nayra\Contracts\Bpmn\ActivityInterface;
+use ProcessMaker\Nayra\Contracts\Bpmn\CallActivityInterface;
 use ProcessMaker\Nayra\Contracts\Bpmn\CatchEventInterface;
+use ProcessMaker\Nayra\Contracts\Bpmn\CollectionInterface;
 use ProcessMaker\Nayra\Contracts\Bpmn\GatewayInterface;
 use ProcessMaker\Nayra\Contracts\Bpmn\ScriptTaskInterface;
+use ProcessMaker\Nayra\Contracts\Bpmn\StartEventInterface;
 use ProcessMaker\Nayra\Contracts\Bpmn\ThrowEventInterface;
 use ProcessMaker\Nayra\Contracts\Bpmn\TokenInterface;
-use ProcessMaker\Nayra\Contracts\Bpmn\StartEventInterface;
-use ProcessMaker\Nayra\Contracts\Bpmn\CollectionInterface;
+use ProcessMaker\Nayra\Contracts\Bpmn\FlowInterface;
 use ProcessMaker\Nayra\Contracts\Repositories\TokenRepositoryInterface;
-use ProcessMaker\Repositories\ExecutionInstanceRepository;
+use ProcessMaker\Nayra\Contracts\Bpmn\EventBasedGatewayInterface;
+use ProcessMaker\Nayra\Contracts\Engine\ExecutionInstanceInterface;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 /**
  * Execution Instance Repository.
@@ -56,7 +61,6 @@ class TokenRepository implements TokenRepositoryInterface
 
     public function loadTokenByUid($uid): TokenInterface
     {
-
     }
 
     /**
@@ -71,15 +75,17 @@ class TokenRepository implements TokenRepositoryInterface
     {
         $this->instanceRepository->persistInstanceUpdated($token->getInstance());
         $user = $token->getInstance()->process->getNextUser($activity, $token);
+        $this->addUserToData($token->getInstance(), $user);
         $token->status = $token->getStatus();
         $token->element_id = $activity->getId();
-        $token->element_type = $activity instanceof ScriptTaskInterface ? 'scriptTask' : 'task';
+//        $token->element_type = $activity instanceof ScriptTaskInterface ? 'scriptTask' : 'task';
+        $token->element_type = $this->getActivityType($activity);
         $token->element_name = $activity->getName();
         $token->process_id = $token->getInstance()->process->getKey();
         $token->process_request_id = $token->getInstance()->getKey();
         $token->user_id = $user ? $user->getKey() : null;
         //Default 3 days of due date
-        $due = $activity->getProperty('dueDate', '72');
+        $due = $activity->getProperty('dueIn', '72');
         $token->due_at = $due ? Carbon::now()->addHours($due) : null;
         $token->initiated_at = null;
         $token->riskchanges_at = $due ? Carbon::now()->addHours($due * 0.7) : null;
@@ -102,11 +108,11 @@ class TokenRepository implements TokenRepositoryInterface
         $this->instanceRepository->persistInstanceUpdated($token->getInstance());
         $token->status = 'TRIGGERED';
         $token->element_id = $startEvent->getId();
-        $token->element_type = $startEvent instanceof StartEventInterface? 'startEvent' : 'task';
+        $token->element_type = $startEvent instanceof StartEventInterface ? 'startEvent' : 'task';
         $token->element_name = $startEvent->getName();
         $token->process_id = $token->getInstance()->process->getKey();
         $token->process_request_id = $token->getInstance()->getKey();
-        $token->user_id = Auth::user()->id;
+        $token->user_id = empty(Auth::user()) ? null : Auth::user()->id;
 
         $token->due_at = null;
         $token->initiated_at = null;
@@ -117,8 +123,6 @@ class TokenRepository implements TokenRepositoryInterface
 
     private function assignTaskUser(ActivityInterface $activity, TokenInterface $token, Instance $instance)
     {
-
-
     }
 
     /**
@@ -149,6 +153,7 @@ class TokenRepository implements TokenRepositoryInterface
      */
     public function persistActivityCompleted(ActivityInterface $activity, TokenInterface $token)
     {
+        $this->removeUserFromData($token->getInstance());
         $this->instanceRepository->persistInstanceUpdated($token->getInstance());
         $token->status = $token->getStatus();
         $token->element_id = $activity->getId();
@@ -234,27 +239,22 @@ class TokenRepository implements TokenRepositoryInterface
 
     public function persistCatchEventTokenPassed(CatchEventInterface $intermediateCatchEvent, Collection $consumedTokens)
     {
-
     }
 
     public function persistGatewayTokenArrives(GatewayInterface $exclusiveGateway, TokenInterface $token)
     {
-
     }
 
     public function persistGatewayTokenConsumed(GatewayInterface $exclusiveGateway, TokenInterface $token)
     {
-
     }
 
     public function persistGatewayTokenPassed(GatewayInterface $exclusiveGateway, TokenInterface $token)
     {
-
     }
 
     public function persistThrowEventTokenArrives(ThrowEventInterface $event, TokenInterface $token)
     {
-
     }
 
     public function persistThrowEventTokenConsumed(ThrowEventInterface $event, TokenInterface $token)
@@ -279,11 +279,96 @@ class TokenRepository implements TokenRepositoryInterface
 
     public function persistThrowEventTokenPassed(ThrowEventInterface $endEvent, TokenInterface $token)
     {
-
     }
 
     public function store(TokenInterface $token, $saveChildElements = false): \this
     {
-
     }
+
+    /**
+     * Add user to the request data.
+     *
+     * @param Instance $instance
+     * @param User $user
+     */
+    private function addUserToData(Instance $instance, User $user = null)
+    {
+        if (empty($user)) {
+            $instance->getDataStore()->putData('_user', null);
+        } else {
+            $userData = $user->toArray();
+            unset($userData['remember_token']);
+            $instance->getDataStore()->putData('_user', $userData);
+        }
+        $this->instanceRepository->persistInstanceUpdated($instance);
+    }
+
+    /**
+     * Remove user from the request data.
+     *
+     * @param Instance $instance
+     * @param User $user
+     */
+    private function removeUserFromData(Instance $instance)
+    {
+        $instance->getDataStore()->removeData('_user');
+    }
+
+
+    private function getActivityType($activity)
+    {
+        if ($activity instanceof  ScriptTaskInterface) {
+            return 'scriptTask';
+        }
+
+        if ($activity instanceof  CallActivityInterface) {
+            return 'callActivity';
+        }
+
+        if ($activity instanceof  ActivityInterface) {
+            return 'task';
+        }
+
+        return 'task';
+    }
+
+    /**
+     * Persists a Call Activity Activated
+     *
+     * @param TokenInterface $token
+     * @param ExecutionInstanceInterface $subprocess
+     * @return void
+     */
+    public function persistCallActivityActivated(TokenInterface $token, ExecutionInstanceInterface $subprocess, FlowInterface $sequenceFlow)
+    {
+        $source = $token->getInstance();
+        if ($source->process_collaboration_id === null) {
+            $collaboration = new ProcessCollaboration();
+            $collaboration->process_id = $source->process->getKey();
+            $collaboration->saveOrFail();
+            $source->process_collaboration_id = $collaboration->getKey();
+            $source->saveOrFail();
+        }
+        $subprocess->process_collaboration_id = $source->process_collaboration_id;
+        $subprocess->parent_request_id = $source->getKey();
+        $subprocess->saveOrFail();
+        $token->subprocess_request_id = $subprocess->id;
+        $token->subprocess_start_event_id = $sequenceFlow->getProperty('startEvent');
+        $token->saveOrFail();
+    }
+
+    /**
+     * Persists instance and token data when a token is consumed in a event based gateway
+     *
+     * @param \ProcessMaker\Nayra\Contracts\Bpmn\EventBasedGatewayInterface $eventBasedGateway
+     * @param \ProcessMaker\Nayra\Contracts\Bpmn\TokenInterface $passedToken
+     * @param \ProcessMaker\Nayra\Contracts\Bpmn\CollectionInterface $consumedTokens
+     *
+     * @return mixed
+     */
+    public function persistEventBasedGatewayActivated(EventBasedGatewayInterface $eventBasedGateway, TokenInterface $passedToken, CollectionInterface $consumedTokens)
+    {
+        Log::info('persistEventBasedGatewayActivated');
+    }
+
 }

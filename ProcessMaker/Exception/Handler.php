@@ -9,6 +9,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\App;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Illuminate\Support\Facades\Route;
 
 /**
  * Our general exception handler
@@ -56,7 +57,21 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-       return parent::render($request, $exception);
+        $prefix = '';
+        $route = $request->route();
+        // Make sure we are using the correct fallback, web or api
+        if ($route && substr($route->getName(), 0, 4) === 'api.') {
+            $prefix = 'api.';
+        }
+
+        if ($exception instanceof NotFoundHttpException) {
+            return Route::respondWithRoute($prefix . 'fallback');
+        }
+
+        if ($exception instanceof ModelNotFoundException) {
+            return Route::respondWithRoute($prefix . 'fallback');
+        }
+        return parent::render($request, $exception);
     }
 
     /**

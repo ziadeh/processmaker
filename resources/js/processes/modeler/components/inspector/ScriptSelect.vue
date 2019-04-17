@@ -1,17 +1,17 @@
 <template>
     <div class="form-group">
-        <label>{{label}}</label>
+        <label>{{ $t(label) }}</label>
         <div v-if="loading">
-            Loading...
+            {{ $t('Loading...') }}
         </div>
         <div v-else>
             <select class="form-control" @change="updateValue">
                 <option value=""></option>
                 <option :value="screen.id" :selected="screen.id == value" v-for="screen in screens" :key="screen.id">
-                    {{screen.title}}
+                    {{ $t(screen.title) }}
                 </option>
             </select>
-            <a href="#" @click="load">Refresh</a>
+            <a href="#" @click="load">{{ $t('Refresh') }}</a>
         </div>
     </div>
 </template>
@@ -55,8 +55,11 @@ export default {
         },
         load() {
             this.loading = true;
+            let params = Object.assign({ per_page: 10000 })
             ProcessMaker.apiClient
-                .get("/scripts")
+                .get("/scripts",{
+                    params: params
+                } )
                 .then(response => {
                     this.screens = response.data.data;
                     this.loading = false;

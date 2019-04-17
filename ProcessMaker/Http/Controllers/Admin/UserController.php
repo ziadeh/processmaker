@@ -10,7 +10,6 @@ use ProcessMaker\Models\Group;
 use ProcessMaker\Models\JsonData;
 use ProcessMaker\Models\User;
 use ProcessMaker\Models\Permission;
-use ProcessMaker\Models\PermissionAssignment;
 
 class UserController extends Controller
 {
@@ -36,10 +35,17 @@ class UserController extends Controller
         //include memberships
         $user->memberships = $user->groupMembersFromMemberable()->get();
         $groups = $this->getAllGroups();
-        $permission_ids = $user->permissionAssignments()->pluck('permission_id')->toArray();
-        $all_permissions = Permission::routes()->get();
-        $users_permission_ids = $this->user_permission_ids($user);
+        $all_permissions = Permission::all();
+        $permissionNames = $user->permissions()->pluck('name')->toArray();
+        $permissionGroups = $all_permissions->sortBy('title')->groupBy('group')->sortKeys();
 
+        $availableLangs = [];
+        foreach (scandir(resource_path('lang')) as $file) {
+            preg_match("/([a-z]{2})\.json/", $file, $matches);
+            if (!empty($matches)) {
+                $availableLangs[] = $matches[1];
+            }
+        }
         $currentUser = $user;
         $states = JsonData::states();
         $countries = JsonData::countries();
@@ -58,19 +64,18 @@ class UserController extends Controller
             }
         );
 
-        return view('admin.users.edit', compact(['user', 'groups', 'all_permissions', 'users_permission_ids', 'permission_ids',
-             'states', 'timezones', 'countries', 'datetimeFormats'
-            ]));
-    }
-
-    public function create()
-    {
-        return view('admin.users.create');
-    }
-
-    public function show(User $user)
-    {
-        return view('admin.users.show', compact('user'));
+        return view('admin.users.edit', compact(
+            'user',
+            'groups',
+            'all_permissions',
+            'permissionNames',
+            'permissionGroups',
+            'states',
+            'timezones',
+            'countries',
+            'datetimeFormats',
+            'availableLangs'
+        ));
     }
 
     /**
@@ -81,10 +86,5 @@ class UserController extends Controller
     private function getAllGroups()
     {
         return Group::where('status', 'ACTIVE')->get();
-    }
-
-    private function user_permission_ids($user) 
-    {
-        return $user->permissionAssignments()->pluck('permission_id')->toArray();
     }
 }

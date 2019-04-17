@@ -3,9 +3,11 @@
 namespace ProcessMaker\Http\Controllers\Process;
 
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 use ProcessMaker\Http\Controllers\Controller;
 use ProcessMaker\Models\Screen;
+use ProcessMaker\Models\Script;
 
 class ScreenController extends Controller
 {
@@ -16,7 +18,16 @@ class ScreenController extends Controller
      */
     public function index()
     {
-        return view('processes.screens.index');
+        $types = [
+            '' => __('Select Type'),
+            'DISPLAY' => 'Display',
+            'FORM' => 'Form',
+        ];
+
+        if (Script::where('key', 'processmaker-communication-email-send')->exists()) {
+            $types['EMAIL'] = 'Email';
+        }
+        return view('processes.screens.index', compact('types'));
     }
 
     /**
@@ -29,5 +40,44 @@ class ScreenController extends Controller
     public function edit(Screen $screen)
     {
         return view('processes.screens.edit', compact('screen'));
+    }
+
+    /**
+     * Get page export
+     *
+     * @param Screen $screen
+     *
+     * @return Factory|View
+     */
+    public function export(Screen $screen)
+    {
+        return view('processes.screens.export', compact('screen'));
+    }
+
+    /**
+     * Get page import
+     *
+     * @param Screen $screen
+     *
+     * @return Factory|View
+     */
+    public function import(Screen $screen)
+    {
+        return view('processes.screens.import');
+    }
+
+
+    public function download(Screen $screen, $key)
+    {
+        $fileName = snake_case($screen->title) . '.spark';
+        $fileContents = Cache::get($key);
+
+        if (! $fileContents) {
+            return abort(404);
+        } else {
+            return response()->streamDownload(function () use ($fileContents) {
+                echo $fileContents;
+            }, $fileName);
+        }
     }
 }

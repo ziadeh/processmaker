@@ -1,9 +1,10 @@
+/* eslint-disable func-names */
 // Our initial node types to register with our modeler
 import {
     association,
     endEvent,
     exclusiveGateway,
-    inclusiveGateway,
+    // inclusiveGateway,
     parallelGateway,
     sequenceFlow,
     startEvent,
@@ -11,38 +12,130 @@ import {
     scriptTask,
     pool,
     poolLane,
-    textAnnotation
-} from '@processmaker/modeler';
+    textAnnotation,
+    messageFlow,
+    serviceTask,
+    startTimerEvent,
+    intermediateTimerEvent,
+    callActivity,
+    eventBasedGateway,
+    intermediateMessageCatchEvent
+} from '@processmaker/spark-modeler';
 import bpmnExtension from '@processmaker/processmaker-bpmn-moddle/resources/processmaker.json';
 import ModelerScreenSelect from './components/inspector/ScreenSelect';
+import TaskNotifications from './components/inspector/TaskNotifications';
 import ExpressionEditor from './components/inspector/ExpressionEditor';
 import TaskAssignment from './components/inspector/TaskAssignment';
 import ConfigEditor from './components/inspector/ConfigEditor';
 import ScriptSelect from './components/inspector/ScriptSelect';
+import Webhook from './components/inspector/Webhook';
+import StartPermission from './components/inspector/StartPermission';
 
 Vue.component('ModelerScreenSelect', ModelerScreenSelect);
+Vue.component('TaskNotifications', TaskNotifications);
 Vue.component('ExpressionEditor', ExpressionEditor);
 Vue.component('TaskAssignment', TaskAssignment);
 Vue.component('ConfigEditor', ConfigEditor);
 Vue.component('ScriptSelect', ScriptSelect);
+Vue.component('Webhook', Webhook);
+Vue.component('StartPermission', StartPermission);
 
 let nodeTypes = [
-    startEvent,
     endEvent,
     task,
     scriptTask,
+    callActivity,
     exclusiveGateway,
-    //inclusiveGateway,
-    //parallelGateway,
+    // inclusiveGateway,
+    parallelGateway,
     sequenceFlow,
-    textAnnotation,
     association,
     pool,
     poolLane,
+    messageFlow,
+    serviceTask,
+    textAnnotation,
+    eventBasedGateway,
+    intermediateMessageCatchEvent,
 ]
 ProcessMaker.nodeTypes.push(...nodeTypes);
 
-ProcessMaker.EventBus.$on('modeler-init', ({registerNode, registerBpmnExtension, registerInspectorExtension}) => {
+// Implement user list and group list for intermediate catch event
+// eslint-disable-next-line func-names
+(function () {
+    const activeUsers = [],
+        activeGroups = [],
+        inspector = intermediateMessageCatchEvent.inspectorConfig[0].items[1];
+    inspector.items[4] = {
+        component: 'FormSelect',
+        config: {
+            label: 'Allowed User',
+            helper: 'Select allowed user',
+            name: 'allowedUsers',
+            options: activeUsers
+        }
+    };
+    window.ProcessMaker.apiClient
+        .get("/users", {
+        })
+        .then((response) => {
+            response.data.data.forEach((item) => {
+                activeUsers.push({
+                    value: item.id,
+                    content: item.fullname
+                });
+            });
+        })
+        .catch(() => {
+        });
+    inspector.items[5] = {
+        component: 'FormSelect',
+        config: {
+            label: 'Allowed Group',
+            helper: 'Select allowed group',
+            name: 'allowedUsers',
+            options: activeGroups
+        }
+    };
+    window.ProcessMaker.apiClient
+        .get("/groups", {
+        })
+        .then((response) => {
+            response.data.data.forEach((item) => {
+                activeGroups.push({
+                    value: item.id,
+                    content: item.name
+                });
+            });
+        })
+        .catch(() => {
+        });
+})();
+
+// Set default properties for task
+task.definition = function definition(moddle) {
+    return moddle.create('bpmn:Task', {
+        name: 'New Task',
+        assignment: 'requester',
+    });
+};
+
+ProcessMaker.EventBus.$on('modeler-init', ({ registerNode, registerBpmnExtension, registerInspectorExtension }) => {
+    // Register start events
+    registerNode(startEvent);
+    registerNode(startTimerEvent, definition => {
+        const eventDefinitions = definition.get('eventDefinitions');
+        if (definition.$type === 'bpmn:StartEvent' && eventDefinitions && eventDefinitions.length && eventDefinitions[0].$type === 'bpmn:TimerEventDefinition') {
+        return 'processmaker-modeler-start-timer-event';
+        }
+    });
+    registerNode(intermediateTimerEvent, definition => {
+        const eventDefinitions = definition.get('eventDefinitions');
+        if (definition.$type === 'bpmn:IntermediateCatchEvent' && eventDefinitions && eventDefinitions.length && eventDefinitions[0].$type === 'bpmn:TimerEventDefinition') {
+        return 'processmaker-modeler-intermediate-catch-timer-event';
+        }
+    });
+
     /* Register basic node types */
     for (const node of nodeTypes) {
         registerNode(node);
@@ -50,6 +143,26 @@ ProcessMaker.EventBus.$on('modeler-init', ({registerNode, registerBpmnExtension,
 
     /* Add a BPMN extension */
     registerBpmnExtension('pm', bpmnExtension);
+
+    /* Register extension for webhooks */
+    registerInspectorExtension(startEvent, {
+        component: 'Webhook',
+        config: {
+            label: 'Webhook',
+            helper: '',
+            name: ''
+        }
+    });
+
+    /* Register extension for start permission */
+    registerInspectorExtension(startEvent, {
+        component: 'StartPermission',
+        config: {
+            label: 'Permission To Start',
+            helper: '',
+            name: 'id',
+        }
+    });
 
     /* Register the inspector extensions for tasks */
     registerInspectorExtension(task, {
@@ -62,21 +175,18 @@ ProcessMaker.EventBus.$on('modeler-init', ({registerNode, registerBpmnExtension,
         }
     });
     registerInspectorExtension(task, {
-        component: "FormInput",
-        config: {
-            type: "number",
-            label: "Due In",
-            placeholder: "72 hours",
-            helper: "Time when the task will due (hours)",
-            name: "dueIn"
-        }
-    });
-    registerInspectorExtension(task, {
         component: "TaskAssignment",
         config: {
             label: "Task Assignment",
             helper: "",
             name: "id"
+        }
+    });
+    registerInspectorExtension(task, {
+        component: "TaskNotifications",
+        config: {
+            label: "Task Notifications",
+            helper: "Users that should be notified about task events",
         }
     });
 
@@ -89,6 +199,7 @@ ProcessMaker.EventBus.$on('modeler-init', ({registerNode, registerBpmnExtension,
             name: 'scriptRef'
         }
     });
+
     registerInspectorExtension(scriptTask, {
         component: 'ConfigEditor',
         config: {

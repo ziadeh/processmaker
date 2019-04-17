@@ -2,10 +2,11 @@
 
 namespace ProcessMaker\Models;
 
+use Log;
 use Carbon\Carbon;
-use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\Rule;
+use ProcessMaker\Managers\TaskSchedulerManager;
 use ProcessMaker\Nayra\Contracts\Bpmn\FlowElementInterface;
 use ProcessMaker\Nayra\Contracts\Engine\ExecutionInstanceInterface;
 use ProcessMaker\Nayra\Engine\ExecutionInstanceTrait;
@@ -32,30 +33,31 @@ use Throwable;
  * @property Process $process
  *
  * @OA\Schema(
- *   schema="requestsEditable",
- *   @OA\Property(property="name", type="string"),
- *   @OA\Property(property="process_id", type="string", format="id"),
+ *   schema="processRequestEditable",
+ *   @OA\Property(property="user_id", type="string", format="id"),
  *   @OA\Property(property="callable_id", type="string", format="id"),
  *   @OA\Property(property="data", type="string", format="json"),
  *   @OA\Property(property="status", type="string", enum={"DRAFT", "ACTIVE", "COMPLETED"}),
  * ),
  * @OA\Schema(
- *   schema="requests",
- *   allOf={@OA\Schema(ref="#/components/schemas/requestsEditable")},
- *   @OA\Property(property="id", type="string", format="id"),
- *
- *   @OA\Property(property="process_collaboration_id", type="string", format="id"),
- *   @OA\Property(property="user_id", type="string", format="id"),
- *   @OA\Property(property="participant_id", type="string", format="id"),
- *
- *   @OA\Property(property="process_category_id", type="string", format="id"),
- *   @OA\Property(property="created_at", type="string", format="date-time"),
- *   @OA\Property(property="updated_at", type="string", format="date-time"),
+ *   schema="processRequest",
+ *   allOf={
+ *       @OA\Schema(ref="#/components/schemas/processRequestEditable"),
+ *       @OA\Schema(
+ *           type="object",
+ *           @OA\Property(property="id", type="string", format="id"),
+ *           @OA\Property(property="process_id", type="string", format="id"),
+ *           @OA\Property(property="process_collaboration_id", type="string", format="id"),
+ *           @OA\Property(property="participant_id", type="string", format="id"),
+ *           @OA\Property(property="process_category_id", type="string", format="id"),
+ *           @OA\Property(property="created_at", type="string", format="date-time"),
+ *           @OA\Property(property="updated_at", type="string", format="date-time"),
+ *      )
+ *   },
  * )
  */
 class ProcessRequest extends Model implements ExecutionInstanceInterface, HasMedia
 {
-
     use ExecutionInstanceTrait;
     use SerializeToIso8601;
     use HasMediaTrait;
@@ -127,6 +129,16 @@ class ProcessRequest extends Model implements ExecutionInstanceInterface, HasMed
         $this->bootElement([]);
     }
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function ($model) {
+            $manager = new TaskSchedulerManager();
+            $manager->registerIntermediateTimerEvents($model);
+        });
+    }
+
     /**
      * Validation rules.
      *
@@ -146,6 +158,52 @@ class ProcessRequest extends Model implements ExecutionInstanceInterface, HasMed
             'process_collaboration_id' => 'nullable|exists:process_collaborations,id',
             'user_id' => 'exists:users,id',
         ];
+    }
+
+    /**
+     * Notification settings of the process.
+     *
+     * @param string $entity
+     * @param string $notificationType
+     *
+     * @return array
+     */
+    public function getNotifiables($notificationType)
+    {
+        $userIds = collect([]);
+
+        $process = $this->process()->first();
+
+        $notifiableTypes = $process->notification_settings()
+                                   ->where('notification_type', $notificationType)
+                                   ->whereNull('element_id')
+                                   ->get()->pluck('notifiable_type');
+
+        foreach ($notifiableTypes as $notifiableType) {
+            $userIds = $userIds->merge($this->getNotifiableUserIds($notifiableType));
+        }
+
+        $userIds = $userIds->unique();
+
+        $notifiables = $notifiableTypes->implode(', ');
+        $users = $userIds->implode(', ');
+        Log::debug("Sending request $notificationType notification to $notifiables (users: $users)");
+
+        return User::whereIn('id', $userIds)->get();
+    }
+
+    public function getNotifiableUserIds($notifiableType)
+    {
+        switch ($notifiableType) {
+            case 'requester':
+                return collect([$this->user_id]);
+                break;
+            case 'participants':
+                return $this->participants()->get()->pluck('id');
+                break;
+            default:
+                return collect([]);
+        }
     }
 
     /**
@@ -169,7 +227,7 @@ class ProcessRequest extends Model implements ExecutionInstanceInterface, HasMed
      *
      * @return null
      */
-    public function getSummaryScreenId()
+    public function getSummaryScreen()
     {
         $endEvents = $this->tokens()->where('element_type', 'end_event')->get();
 
@@ -177,12 +235,11 @@ class ProcessRequest extends Model implements ExecutionInstanceInterface, HasMed
             return null;
         }
 
-
         //get the first token that is and end event to get the summary screen
         $definition = $endEvents->first()->getDefinition();
-        $screenId = empty($definition['screenRef']) ? null : Screen::find($definition['screenRef']);
+        $screen = empty($definition['screenRef']) ? null : Screen::find($definition['screenRef']);
 
-        return $screenId;
+        return $screen;
     }
 
     /**
@@ -209,8 +266,10 @@ class ProcessRequest extends Model implements ExecutionInstanceInterface, HasMed
      */
     public function collaboration()
     {
-        return $this->belongsTo(ProcessCollaboration::class,
-                'process_collaboration_id');
+        return $this->belongsTo(
+            ProcessCollaboration::class,
+            'process_collaboration_id'
+        );
     }
 
     /**
@@ -219,7 +278,7 @@ class ProcessRequest extends Model implements ExecutionInstanceInterface, HasMed
      */
     public function process()
     {
-        return $this->belongsTo(Process::class);
+        return $this->belongsTo(Process::class, 'process_id');
     }
 
     /**
@@ -266,14 +325,30 @@ class ProcessRequest extends Model implements ExecutionInstanceInterface, HasMed
     }
 
     /**
+     * Filter process not completed
+     *
+     * @param $query
+     */
+    public function scopeNotCompleted($query)
+    {
+        $query->where('status', '!=', 'COMPLETED');
+    }
+
+    /**
      * Returns the list of users that have participated in the request
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
      */
     public function participants()
     {
-        return $this->hasManyThrough(User::class, ProcessRequestToken::class,
-                    'process_request_id', 'id', $this->getKeyName(), 'user_id')
+        return $this->hasManyThrough(
+            User::class,
+            ProcessRequestToken::class,
+            'process_request_id',
+            'id',
+            $this->getKeyName(),
+            'user_id'
+        )
                 ->distinct();
     }
 
@@ -293,20 +368,6 @@ class ProcessRequest extends Model implements ExecutionInstanceInterface, HasMed
         }
 
         return $result;
-    }
-
-    /**
-     * Check if the user has access to this request
-     *
-     * @param User $user
-     * @return void
-     */
-    public function authorize(User $user)
-    {
-        if ($this->user_id === $user->id || $user->is_administrator) {
-            return true;
-        }
-        throw new AuthorizationException("Not authorized to view this request");
     }
 
     /**
@@ -340,5 +401,15 @@ class ProcessRequest extends Model implements ExecutionInstanceInterface, HasMed
         $this->errors = $errors;
         $this->status = 'ERROR';
         $this->save();
+    }
+
+    public function childRequests()
+    {
+        return $this->hasMany(ProcessRequest::class, 'parent_request_id');
+    }
+
+    public function parentRequest()
+    {
+        return $this->belongsTo(ProcessRequest::class, 'parent_request_id');
     }
 }

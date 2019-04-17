@@ -3,26 +3,34 @@
 namespace ProcessMaker\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
-
-use ProcessMaker\Http\Controllers\Controller;
-
-use ProcessMaker\Models\User;
-use ProcessMaker\Models\Group;
-use ProcessMaker\Models\GroupMember;
 use Illuminate\Support\Facades\Auth;
+use ProcessMaker\Http\Controllers\Controller;
 use ProcessMaker\Http\Resources\ApiCollection;
 use ProcessMaker\Http\Resources\GroupMembers as GroupMemberResource;
+use ProcessMaker\Models\Group;
+use ProcessMaker\Models\GroupMember;
+use ProcessMaker\Models\User;
 
 class GroupMemberController extends Controller
 {
-    public $skipPermissionCheckFor = ['index'];
+    /**
+     * A whitelist of attributes that should not be
+     * sanitized by our SanitizeInput middleware.
+     *
+     * @var array
+     */
+    public $doNotSanitize = [
+        //
+    ];
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
      *
-     *     @OA\Get(
+     * @return ApiCollection
+     *
+     * @OA\Get(
      *     path="/group_members",
      *     summary="Returns all groups for a given member",
      *     operationId="getGroupMembers",
@@ -40,12 +48,12 @@ class GroupMemberController extends Controller
      *             @OA\Property(
      *                 property="data",
      *                 type="array",
-     *                 @OA\Items(ref="#/components/schemas/group_members"),
+     *                 @OA\Items(ref="#/components/schemas/groupMembers"),
      *             ),
      *             @OA\Property(
      *                 property="meta",
      *                 type="object",
-     *                 allOf={@OA\Schema(ref="#/components/schemas/metadata")},
+     *                 ref="#/components/schemas/metadata",
      *             ),
      *         ),
      *     ),
@@ -68,41 +76,42 @@ class GroupMemberController extends Controller
 
         $response =
             $query->orderBy(
-            $request->input('order_by', 'created_at'),
-            $request->input('order_direction', 'ASC')
-        )->paginate($request->input('per_page', 10));
+                $request->input('order_by', 'created_at'),
+                $request->input('order_direction', 'ASC')
+            )->paginate($request->input('per_page', 10));
 
         return new ApiCollection($response);
     }
 
-
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
      *
-     *     @OA\Post(
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     * @throws \Throwable
+     *
+     * @OA\Post(
      *     path="/group_members",
-     *     summary="Save a new group_members",
-     *     operationId="createGroupMembers",
+     *     summary="Save a new group member",
+     *     operationId="createGroupMember",
      *     tags={"Group Members"},
      *     @OA\RequestBody(
      *       required=true,
-     *       @OA\JsonContent(ref="#/components/schemas/group_membersEditable")
+     *       @OA\JsonContent(ref="#/components/schemas/groupMembersEditable")
      *     ),
      *     @OA\Response(
      *         response=201,
      *         description="success",
-     *         @OA\JsonContent(ref="#/components/schemas/group_members")
+     *         @OA\JsonContent(ref="#/components/schemas/groupMembers")
      *     ),
      * )
      */
     public function store(Request $request)
     {
         $isMemberAssociated = GroupMember::where('group_id', $request->input('group_id'))
-            ->where ('member_type', $request->input('member_type'))
-            ->where ('member_id', $request->input('member_id'))
+            ->where('member_type', $request->input('member_type'))
+            ->where('member_id', $request->input('member_id'))
             ->count();
 
         if ($isMemberAssociated) {
@@ -126,16 +135,17 @@ class GroupMemberController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  id  $id
-     * @return \Illuminate\Http\Response
+     * @param GroupMember $group_member
      *
-     *     @OA\Get(
-     *     path="/group_members/group_memberId",
-     *     summary="Get single group_member by ID",
+     * @return GroupMemberResource
+     *
+     * @OA\Get(
+     *     path="/group_members/{group_member_id}",
+     *     summary="Get single group member by ID",
      *     operationId="getGroupMemberById",
      *     tags={"Group Members"},
      *     @OA\Parameter(
-     *         description="ID of group_members to return",
+     *         description="ID of group members to return",
      *         in="path",
      *         name="group_member_id",
      *         required=true,
@@ -145,8 +155,8 @@ class GroupMemberController extends Controller
      *     ),
      *     @OA\Response(
      *         response=200,
-     *         description="Successfully found the group_members",
-     *         @OA\JsonContent(ref="#/components/schemas/group_members")
+     *         description="Successfully found the group members",
+     *         @OA\JsonContent(ref="#/components/schemas/groupMembers")
      *     ),
      * )
      */
@@ -158,14 +168,16 @@ class GroupMemberController extends Controller
     /**
      * Delete a group membership
      *
-     * @param GroupMember $user
+     * @param GroupMember $group_member
      *
-     * @return ResponseFactory|Response
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
      *
-     *     @OA\Delete(
-     *     path="/group_members/group_memberId",
-     *     summary="Delete a group_members",
-     *     operationId="deleteGroupMembers",
+     * @throws \Exception
+     *
+     * @OA\Delete(
+     *     path="/group_members/{group_member_id}",
+     *     summary="Delete a group member",
+     *     operationId="deleteGroupMember",
      *     tags={"Group Members"},
      *     @OA\Parameter(
      *         description="ID of group_members to return",
@@ -179,7 +191,7 @@ class GroupMemberController extends Controller
      *     @OA\Response(
      *         response=204,
      *         description="success",
-     *         @OA\JsonContent(ref="#/components/schemas/group_members")
+     *         @OA\JsonContent(ref="#/components/schemas/groupMembers")
      *     ),
      * )
      */
@@ -187,5 +199,174 @@ class GroupMemberController extends Controller
     {
         $group_member->delete();
         return response([], 204);
+    }
+
+    /**
+     * Display a listing of groups available
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return ApiCollection
+     *
+     * @OA\Get(
+     *     path="/group_members_available",
+     *     summary="Returns all groups available for a given member",
+     *     operationId="getGroupMembersAvailable",
+     *     tags={"Group Members"},
+     *     @OA\Parameter(
+     *         description="ID of group member to return",
+     *         in="path",
+     *         name="member_id",
+     *         required=true,
+     *         @OA\Schema(
+     *           type="string",
+     *         )
+     *     ),
+     *     @OA\Parameter(
+     *         description="type of group member to return",
+     *         in="path",
+     *         name="member_type",
+     *         required=true,
+     *         @OA\Schema(
+     *           type="string",
+     *         )
+     *     ),
+     *     @OA\Parameter(ref="#/components/parameters/filter"),
+     *     @OA\Parameter(ref="#/components/parameters/order_by"),
+     *     @OA\Parameter(ref="#/components/parameters/order_direction"),
+     *     @OA\Parameter(ref="#/components/parameters/per_page"),
+     *
+     *     @OA\Response(
+     *         response=200,
+     *         description="list of groups available to be assigned as member",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(ref="#/components/schemas/groupMembers"),
+     *             ),
+     *             @OA\Property(
+     *                 property="meta",
+     *                 type="object",
+     *                 ref="#/components/schemas/metadata",
+     *             ),
+     *         ),
+     *     ),
+     * )
+     */
+    public function groupsAvailable(Request $request)
+    {
+        $member_id = $request->input('member_id', null);
+        $member_type = $request->input('member_type', null);
+
+        $members = [];
+        if ($member_id && $member_type) {
+            //Load groups already assigned.
+            $data = GroupMember::where('member_type', $member_type)
+                ->where('member_id', $member_id)
+                ->get();
+            foreach ($data as $item) {
+                array_push($members, $item->group_id);
+            }
+        }
+
+        $query = Group::where('status', 'ACTIVE')
+            ->whereNotIn('id', $members);
+
+        $filter = $request->input('filter', '');
+        if (!empty($filter)) {
+            //filter by name group
+            $filter = '%' . $filter . '%';
+            $query->where(function ($query) use ($filter) {
+                $query->Where('name', 'like', $filter);
+            });
+        }
+        $response =
+            $query->orderBy(
+                $request->input('order_by', 'name'),
+                $request->input('order_direction', 'ASC')
+            )->paginate($request->input('per_page', 10));
+
+        return new ApiCollection($response);
+    }
+
+    /**
+     * Display a listing of users available
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return ApiCollection
+     *
+     * @OA\Get(
+     *     path="/user_members_available",
+     *     summary="Returns all users available for a given member",
+     *     operationId="getUserMembersAvailable",
+     *     tags={"Group Members"},
+     *     @OA\Parameter(
+     *         description="ID of group to return",
+     *         in="path",
+     *         name="group_id",
+     *         required=true,
+     *         @OA\Schema(
+     *           type="string",
+     *         )
+     *     ),
+     *     @OA\Parameter(ref="#/components/parameters/filter"),
+     *     @OA\Parameter(ref="#/components/parameters/order_by"),
+     *     @OA\Parameter(ref="#/components/parameters/order_direction"),
+     *     @OA\Parameter(ref="#/components/parameters/per_page"),
+     *
+     *     @OA\Response(
+     *         response=200,
+     *         description="list of users available to be assigned as member",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(ref="#/components/schemas/groupMembers"),
+     *             ),
+     *             @OA\Property(
+     *                 property="meta",
+     *                 type="object",
+     *                 ref="#/components/schemas/metadata",
+     *             ),
+     *         ),
+     *     ),
+     * )
+     */
+    public function usersAvailable(Request $request)
+    {
+        $groupId = $request->input('group_id', null);
+
+        $members = [];
+        if ($groupId) {
+            //Load user members already assigned.
+            $data = GroupMember::where('member_type', User::class)
+                ->where('group_id', $groupId)
+                ->get();
+            foreach ($data as $item) {
+                array_push($members, $item->member_id);
+            }
+        }
+
+        $query = User::where('status', 'ACTIVE')
+            ->whereNotIn('id', $members);
+
+        $filter = $request->input('filter', '');
+        if (!empty($filter)) {
+            //filter by name group
+            $filter = '%' . $filter . '%';
+            $query->where(function ($query) use ($filter) {
+                $query->Where('firstname', 'like', $filter)
+                    ->orWhere('lastname', 'like', $filter);
+            });
+        }
+        $response =
+            $query->orderBy(
+                $request->input('order_by', 'firstname'),
+                $request->input('order_direction', 'ASC')
+            )->paginate($request->input('per_page', 10));
+
+        return new ApiCollection($response);
     }
 }

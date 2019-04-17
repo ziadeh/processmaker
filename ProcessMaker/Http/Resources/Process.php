@@ -12,7 +12,7 @@ class Process extends ApiResource
      */
     public function toArray($request)
     {
-        $array = parent::toArray($request);
+        $array = parent::append('notifications', 'task_notifications')->toArray($request);
         $include = explode(',', $request->input('include', ''));
         if (in_array('user', $include)) {
             $array['user'] = new Users($this->user);
@@ -21,7 +21,7 @@ class Process extends ApiResource
             $array['category'] = new ProcessCategory($this->category);
         }
         if (in_array('events', $include)) {
-            $array['events'] = $this->getStartEvents();
+            $array['events'] = $this->getStartEvents(true);
         }
         return $array;
     }

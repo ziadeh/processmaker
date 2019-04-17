@@ -2,6 +2,7 @@
 
 namespace ProcessMaker\Http\Controllers\Api;
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -12,6 +13,17 @@ use ProcessMaker\Models\User;
 
 class UserController extends Controller
 {
+    /**
+     * A whitelist of attributes that should not be
+     * sanitized by our SanitizeInput middleware.
+     *
+     * @var array
+     */
+    public $doNotSanitize = [
+        'username', // has alpha_dash rule
+        'password',
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +53,7 @@ class UserController extends Controller
      *             @OA\Property(
      *                 property="meta",
      *                 type="object",
-     *                 allOf={@OA\Schema(ref="#/components/schemas/metadata")},
+     *                 ref="#/components/schemas/metadata",
      *             ),
      *         ),
      *     ),
@@ -89,9 +101,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      *
      *     @OA\Get(
-     *     path="/users/userId",
+     *     path="/users/{user_id}",
      *     summary="Get single user by ID",
-     *     operationId="getUsersById",
+     *     operationId="getUserById",
      *     tags={"Users"},
      *     @OA\Parameter(
      *         description="ID of user to return",
@@ -146,6 +158,10 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+        if (!Auth::user()->can('view', $user)) {
+            throw new AuthorizationException(__('Not authorized to update this user.'));
+        }
+
         return new UserResource($user);
     }
 
@@ -158,7 +174,7 @@ class UserController extends Controller
      * @return ResponseFactory|Response
      *
      *     @OA\Put(
-     *     path="/users/userId",
+     *     path="/users/{user_id}",
      *     summary="Update a user",
      *     operationId="updateUsers",
      *     tags={"Users"},
@@ -184,6 +200,10 @@ class UserController extends Controller
      */
     public function update(User $user, Request $request)
     {
+        if (!Auth::user()->can('edit', $user)) {
+            throw new AuthorizationException(__('Not authorized to update this user.'));
+        }
+
         $request->validate(User::rules($user));
         $fields = $request->json()->all();
         if (isset($fields['password'])) {
@@ -209,7 +229,7 @@ class UserController extends Controller
      * @return ResponseFactory|Response
      *
      *     @OA\Delete(
-     *     path="/users/userId",
+     *     path="/users/{user_id}",
      *     summary="Delete a user",
      *     operationId="deleteUser",
      *     tags={"Users"},

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Access\AuthorizationException;
+use ProcessMaker\Exception\TaskDoesNotHaveUsersException;
 use ProcessMaker\Facades\WorkflowManager;
 use ProcessMaker\Http\Controllers\Controller;
 use ProcessMaker\Http\Resources\ApiCollection;
@@ -17,10 +18,22 @@ use ProcessMaker\Models\Permission;
 use ProcessMaker\Models\Process;
 use ProcessMaker\Models\ProcessPermission;
 use ProcessMaker\Models\User;
+use ProcessMaker\Jobs\ExportProcess;
+use ProcessMaker\Jobs\ImportProcess;
+use ProcessMaker\Nayra\Bpmn\Models\TimerEventDefinition;
+use ProcessMaker\Nayra\Storage\BpmnDocument;
 
 class ProcessController extends Controller
 {
-    public $skipPermissionCheckFor = ['triggerStartEvent', 'startProcesses'];
+    /**
+     * A whitelist of attributes that should not be
+     * sanitized by our SanitizeInput middleware.
+     *
+     * @var array
+     */
+    public $doNotSanitize = [
+        'bpmn',
+    ];
 
     /**
      * Get list Process
@@ -33,11 +46,12 @@ class ProcessController extends Controller
      *     path="/processes",
      *     summary="Returns all processes that the user has access to",
      *     operationId="getProcesses",
-     *     tags={"Process"},
+     *     tags={"Processes"},
      *     @OA\Parameter(ref="#/components/parameters/filter"),
      *     @OA\Parameter(ref="#/components/parameters/order_by"),
      *     @OA\Parameter(ref="#/components/parameters/order_direction"),
      *     @OA\Parameter(ref="#/components/parameters/per_page"),
+     *     @OA\Parameter(ref="#/components/parameters/status"),
      *     @OA\Parameter(ref="#/components/parameters/include"),
      *
      *     @OA\Response(
@@ -53,7 +67,7 @@ class ProcessController extends Controller
      *             @OA\Property(
      *                 property="meta",
      *                 type="object",
-     *                 allOf={@OA\Schema(ref="#/components/schemas/metadata")},
+     *                 ref="#/components/schemas/metadata",
      *             ),
      *         ),
      *     ),
@@ -67,23 +81,18 @@ class ProcessController extends Controller
         $include = $this->getRequestInclude($request);
         $status = $request->input('status');
 
-        $processes = ($status === 'deleted')
-                        ? Process::onlyTrashed()->with($include)
-                        : Process::with($include);
+        $processes = ($status === 'inactive')
+                        ? Process::inactive()->with($include)
+                        : Process::active()->with($include);
 
-        $processes->select('processes.*')
+        $processes = $processes->select('processes.*')
             ->leftJoin('process_categories as category', 'processes.process_category_id', '=', 'category.id')
             ->leftJoin('users as user', 'processes.user_id', '=', 'user.id')
-            ->where($where);
+            ->orderBy(...$orderBy)
+            ->where($where)
+            ->get();
 
-        //Verify what processes the current user can initiate, user Administrator can start everything.
-        if (!Auth::user()->is_administrator) {
-            $processId = Auth::user()->startProcesses();
-            $processes->whereIn('processes.id', $processId);
-        }
-        $processes->orderBy(...$orderBy);
-
-        return new ApiCollection($processes->paginate($perPage));
+        return new ApiCollection($processes);
     }
 
     /**
@@ -94,14 +103,14 @@ class ProcessController extends Controller
      * @return Response
      *
      * @OA\Get(
-     *     path="/processes/processId",
+     *     path="/processes/{processId}",
      *     summary="Get single process by ID",
      *     operationId="getProcessById",
-     *     tags={"Process"},
+     *     tags={"Processes"},
      *     @OA\Parameter(
      *         description="ID of process to return",
      *         in="path",
-     *         name="process_id",
+     *         name="processId",
      *         required=true,
      *         @OA\Schema(
      *           type="string",
@@ -131,7 +140,7 @@ class ProcessController extends Controller
      *     path="/processes",
      *     summary="Save a new process",
      *     operationId="createProcess",
-     *     tags={"Process"},
+     *     tags={"Processes"},
      *     @OA\RequestBody(
      *       required=true,
      *       @OA\JsonContent(ref="#/components/schemas/ProcessEditable")
@@ -147,6 +156,17 @@ class ProcessController extends Controller
     {
         $request->validate(Process::rules());
         $data = $request->json()->all();
+
+        if (! isset($data['status'])) {
+            $data['status'] = 'ACTIVE';
+        }
+
+        if ($schemaErrors = $this->validateBpmn($request)) {
+            return response(
+                ['message' => 'The bpm definition is not valid',
+                    'errors' => ['bpmn' => $schemaErrors]],
+                422);
+        }
 
         $process = new Process();
         $process->fill($data);
@@ -172,14 +192,14 @@ class ProcessController extends Controller
      * @throws \Throwable
      *
      * @OA\Put(
-     *     path="/processes/processId",
+     *     path="/processes/{processId}",
      *     summary="Update a process",
      *     operationId="updateProcess",
-     *     tags={"Process"},
+     *     tags={"Processes"},
      *     @OA\Parameter(
      *         description="ID of process to return",
      *         in="path",
-     *         name="process_id",
+     *         name="processId",
      *         required=true,
      *         @OA\Schema(
      *           type="string",
@@ -202,20 +222,25 @@ class ProcessController extends Controller
         $original_attributes = $process->getAttributes();
 
         //bpmn validation
-        libxml_use_internal_errors(true);
-        $definitions = $process->getDefinitions();
-        $res = $definitions->validateBPMNSchema(public_path('definitions/ProcessMaker.xsd'));
-        if (!$res) {
-            $schemaErrors = $definitions->getValidationErrors();
+        if ($schemaErrors = $this->validateBpmn($request)) {
             return response(
                 ['message' => 'The bpm definition is not valid',
                     'errors' => ['bpmn' => $schemaErrors]],
                 422);
         }
 
-        //$process->fill($request->except('cancelRequest', 'startRequest')->json()->all());
-        $process->fill($request->except('cancel_request', 'start_request', 'cancel_request_id', 'start_request_id'));
-        $process->saveOrFail();
+        $process->fill($request->except('notifications', 'task_notifications', 'notification_settings','cancel_request', 'cancel_request_id', 'start_request_id', 'edit_data', 'edit_data_id'));
+
+        // Catch errors to send more specific status
+        try {
+            $process->saveOrFail();
+        }
+        catch (TaskDoesNotHaveUsersException $e) {
+            return response(
+                ['message' => $e->getMessage(),
+                    'errors' => ['bpmn' => $e->getMessage()]],
+                422);
+        }
 
         unset(
             $original_attributes['id'],
@@ -223,30 +248,163 @@ class ProcessController extends Controller
         );
         $process->versions()->create($original_attributes);
 
-        ProcessPermission::where('process_id', $process->id)->delete();
-        $cancelId = Permission::byGuardName('requests.cancel')->id;
-        $startId = Permission::byGuardName('requests.create')->id;
+        //If we are specifying cancel assignments...
         if ($request->has('cancel_request')) {
-            foreach ($request->input('cancel_request')['users'] as $id) {
-                $this->savePermission($process, User::class, $id, $cancelId);
+            //Adding method to users array
+            $cancelUsers = [];
+            foreach ($request->input('cancel_request')['users'] as $item) {
+                $cancelUsers[$item] = ['method' => 'CANCEL'];
             }
 
-            foreach ($request->input('cancel_request')['groups'] as $id) {
-                $this->savePermission($process, Group::class, $id, $cancelId);
+            //Adding method to groups array
+            $cancelGroups = [];
+            foreach ($request->input('cancel_request')['groups'] as $item) {
+                $cancelGroups[$item] = ['method' => 'CANCEL'];
             }
+
+            //Syncing users and groups that can cancel this process
+            $process->usersCanCancel()->sync($cancelUsers, ['method' => 'CANCEL']);
+            $process->groupsCanCancel()->sync($cancelGroups, ['method' => 'CANCEL']);
         }
 
-        if ($request->has('start_request')) {
-            foreach ($request->input('start_request')['users'] as $id) {
-                $this->savePermission($process, User::class, $id, $startId);
+        //If we are specifying cancel assignments...
+        if ($request->has('edit_data')) {
+            //Adding method to users array
+            $editDataUsers = [];
+            foreach ($request->input('edit_data')['users'] as $item) {
+                $editDataUsers[$item] = ['method' => 'EDIT_DATA'];
             }
 
-            foreach ($request->input('start_request')['groups'] as $id) {
-                $this->savePermission($process, Group::class, $id, $startId);
+            //Adding method to groups array
+            $editDataGroups = [];
+            foreach ($request->input('edit_data')['groups'] as $item) {
+                $editDataGroups[$item] = ['method' => 'EDIT_DATA'];
             }
+
+            //Syncing users and groups that can cancel this process
+            $process->usersCanEditData()->sync($editDataUsers, ['method' => 'EDIT_DATA']);
+            $process->groupsCanEditData()->sync($editDataGroups, ['method' => 'EDIT_DATA']);
+        }
+
+        //Save any request notification settings...
+        if ($request->has('notifications')) {
+            $this->saveRequestNotifications($process, $request);
+        }
+
+        //Save any task notification settings...
+        if ($request->has('task_notifications')) {
+            $this->saveTaskNotifications($process, $request);
         }
 
         return new Resource($process->refresh());
+    }
+
+    private function saveRequestNotifications($process, $request)
+    {
+        //Retrieve input
+        $input = $request->input('notifications');
+
+        //For each notifiable type...
+        foreach ($process->requestNotifiableTypes as $notifiable) {
+
+            //And for each notification type...
+            foreach ($process->requestNotificationTypes as $notification) {
+
+                //If this input has been set
+                if (isset($input[$notifiable][$notification])) {
+
+                    //Determine if this notification is wanted
+                    $notificationWanted = filter_var($input[$notifiable][$notification], FILTER_VALIDATE_BOOLEAN);
+
+                    //If we want the notification, find or create it
+                    if ($notificationWanted === true) {
+                        $process->notification_settings()->firstOrCreate([
+                            'element_id' => null,
+                            'notifiable_type' => $notifiable,
+                            'notification_type' => $notification,
+                        ]);
+                    }
+
+                    //If we do not want the notification, delete it
+                    if ($notificationWanted === false) {
+                        $process->notification_settings()
+                            ->whereNull('element_id')
+                            ->where('notifiable_type', $notifiable)
+                            ->where('notification_type', $notification)
+                            ->delete();
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Validates the Bpmn content that comes in the request.
+     * Returns the list of errors found
+     *
+     * @param Request $request
+     * @return array|null
+     */
+    private function validateBpmn(Request $request)
+    {
+        $data = $request->json()->all();
+        $schemaErrors = null;
+        if (isset($data['bpmn'])) {
+            $document = new BpmnDocument();
+            $document->loadXML($data['bpmn']);
+
+            try {
+                $validation = $document->validateBPMNSchema(public_path('definitions/ProcessMaker.xsd'));
+            }
+            catch (\Exception $e) {
+                $schemaErrors = $document->getValidationErrors();
+                $schemaErrors[] = $e->getMessage();
+            }
+        }
+        return $schemaErrors;
+    }
+
+    private function saveTaskNotifications($process, $request)
+    {
+        //Retrieve input
+        $inputs = $request->input('task_notifications');
+
+        //For each node...
+        foreach ($inputs as $nodeId => $input) {
+
+            //For each notifiable type...
+            foreach ($process->taskNotifiableTypes as $notifiable) {
+
+                //And for each notification type...
+                foreach ($process->taskNotificationTypes as $notification) {
+
+                    //If this input has been set
+                    if (isset($input[$notifiable][$notification])) {
+
+                        //Determine if this notification is wanted
+                        $notificationWanted = filter_var($input[$notifiable][$notification], FILTER_VALIDATE_BOOLEAN);
+
+                        //If we want the notification, find or create it
+                        if ($notificationWanted === true) {
+                            $process->notification_settings()->firstOrCreate([
+                                'element_id' => $nodeId,
+                                'notifiable_type' => $notifiable,
+                                'notification_type' => $notification,
+                            ]);
+                        }
+
+                        //If we do not want the notification, delete it
+                        if ($notificationWanted === false) {
+                            $process->notification_settings()
+                                ->where('element_id', $nodeId)
+                                ->where('notifiable_type', $notifiable)
+                                ->where('notification_type', $notification)
+                                ->delete();
+                        }
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -260,7 +418,7 @@ class ProcessController extends Controller
      *     path="/start_processes",
      *     summary="Returns the list of processes that the user can start",
      *     operationId="startProcesses",
-     *     tags={"Process"},
+     *     tags={"Processes"},
      *     @OA\Parameter(ref="#/components/parameters/order_by"),
      *     @OA\Parameter(ref="#/components/parameters/order_direction"),
      *     @OA\Parameter(ref="#/components/parameters/per_page"),
@@ -274,12 +432,12 @@ class ProcessController extends Controller
      *             @OA\Property(
      *                 property="data",
      *                 type="array",
-     *                 @OA\Items(ref="#/components/schemas/Process"),
+     *                 @OA\Items(ref="#/components/schemas/ProcessWithStartEvents"),
      *             ),
      *             @OA\Property(
      *                 property="meta",
      *                 type="object",
-     *                 allOf={@OA\Schema(ref="#/components/schemas/metadata")},
+     *                 ref="#/components/schemas/metadata",
      *             ),
      *         ),
      *     ),
@@ -287,25 +445,38 @@ class ProcessController extends Controller
      */
     public function startProcesses(Request $request)
     {
+        $where = $this->getRequestFilterBy($request, ['processes.name', 'processes.description', 'category.name']);
         $orderBy = $this->getRequestSortBy($request, 'name');
-        $perPage = $this->getPerPage($request);
         $include = $this->getRequestInclude($request);
 
-        $processes = Process::with($include)
+        $processes = Process::with($include)->with('events')
             ->select('processes.*')
             ->leftJoin('process_categories as category', 'processes.process_category_id', '=', 'category.id')
             ->leftJoin('users as user', 'processes.user_id', '=', 'user.id')
             ->where('processes.status', 'ACTIVE')
-            ->where('category.status', 'ACTIVE');
+            ->where('category.status', 'ACTIVE')
+            ->where($where)
+            ->orderBy(...$orderBy)
+            ->get();
 
-        //Verify what processes the current user can initiate, user Administrator can start everything.
-        if (!Auth::user()->is_administrator) {
-            $processId = Auth::user()->startProcesses();
-            $processes->whereIn('processes.id', $processId);
+        foreach($processes as $key => $process) {
+            //filter he start events that can be used manually (no timer start events);
+            # TODO: startEvents is not a real property on Process.
+            # Move below to $process->getManualStartEvents();
+            $process->startEvents = $process->events->filter(function($event) {
+                $eventIsTimerStart = collect($event['eventDefinitions'])
+                                        ->filter(function($eventDefinition){
+                                            return get_class($eventDefinition) == TimerEventDefinition::class;
+                                        })->count() > 0;
+                return !$eventIsTimerStart;
+            });
+
+            if (count($process->startEvents) === 0) {
+                $processes->forget($key);
+            }
         }
-        $processes->orderBy(...$orderBy);
 
-        return new ApiCollection($processes->paginate($perPage));
+        return new ApiCollection($processes); // TODO use existing resource class
     }
 
     /**
@@ -317,14 +488,14 @@ class ProcessController extends Controller
      * @throws \Throwable
      *
      * @OA\Put(
-     *     path="/processes/processId/restore",
-     *     summary="Restore a soft deleted process",
+     *     path="/processes/{processId}/restore",
+     *     summary="Restore an inactive process",
      *     operationId="restoreProcess",
-     *     tags={"Process"},
+     *     tags={"Processes"},
      *     @OA\Parameter(
      *         description="ID of process to return",
      *         in="path",
-     *         name="process_id",
+     *         name="processId",
      *         required=true,
      *         @OA\Schema(
      *           type="string",
@@ -343,10 +514,9 @@ class ProcessController extends Controller
      */
     public function restore(Request $request, $processId)
     {
-        $process = Process::withTrashed()->find($processId);
+        $process = Process::find($processId);
         $process->status='ACTIVE';
         $process->save();
-        $process->restore();
         return new Resource($process->refresh());
     }
 
@@ -369,14 +539,14 @@ class ProcessController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      *
      * @OA\Delete(
-     *     path="/processes/processId",
+     *     path="/processes/{processId}",
      *     summary="Delete a process",
      *     operationId="deleteProcess",
-     *     tags={"Process"},
+     *     tags={"Processes"},
      *     @OA\Parameter(
      *         description="ID of process to return",
      *         in="path",
-     *         name="process_id",
+     *         name="processId",
      *         required=true,
      *         @OA\Schema(
      *           type="string",
@@ -394,23 +564,87 @@ class ProcessController extends Controller
         $process->status='INACTIVE';
         $process->save();
 
-        if ($process->collaborations->count() !== 0) {
-            return response(
-                ['message' => 'The item should not have associated collaboration',
-                    'errors' => ['collaborations' => $process->collaborations->count()]],
-                422);
-        }
-
-        if ($process->requests->count() !== 0) {
-            return response(
-                ['message' => 'The item should not have associated requests',
-                    'errors' => ['requests' => $process->requests->count()]],
-                422);
-        }
-
-
-        $process->delete();
         return response('', 204);
+    }
+
+    /**
+     * Export the specified process.
+     *
+     * @param $process
+     *
+     * @return Response
+     *
+     * @OA\Get(
+     *     path="/processes/{processId}/export",
+     *     summary="Export a single process by ID",
+     *     operationId="exportProcess",
+     *     tags={"Processes"},
+     *     @OA\Parameter(
+     *         description="ID of process to return",
+     *         in="path",
+     *         name="processId",
+     *         required=true,
+     *         @OA\Schema(
+     *           type="string",
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successfully found the process",
+     *         @OA\JsonContent(ref="#/components/schemas/Process")
+     *     ),
+     * )
+     */
+    public function export(Request $request, Process $process)
+    {
+        $fileKey = ExportProcess::dispatchNow($process);
+
+        if ($fileKey) {
+            $url = url("/processes/{$process->id}/download/{$fileKey}");
+            return ['url' => $url];
+        } else {
+            return response(['error' => __('Unable to Export Process')], 500) ;
+        }
+    }
+
+    /**
+     * Import the specified process.
+     *
+     * @param $process
+     *
+     * @return Response
+     *
+     * @OA\Post(
+     *     path="/processes/import",
+     *     summary="Import a new process",
+     *     operationId="importProcess",
+     *     tags={"Processes"},
+     *     @OA\Response(
+     *         response=201,
+     *         description="success",
+     *         @OA\JsonContent(ref="#/components/schemas/Process")
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\MediaType(
+     *             mediaType="multipart/form-data",
+     *             @OA\Schema(
+     *                 @OA\Property(
+     *                     description="file to upload",
+     *                     property="file",
+     *                     type="file",
+     *                     format="file",
+     *                 ),
+     *                 required={"file"}
+     *             )
+     *         )
+     *     ),
+     * )
+     */
+    public function import(Request $request)
+    {
+        $success = ImportProcess::dispatchNow($request->file('file')->get());
+        return ['status' => $success];
     }
 
     /**
@@ -420,17 +654,47 @@ class ProcessController extends Controller
      * @param Request $request
      *
      * @return \ProcessMaker\Http\Resources\ProcessRequests
+     *
+     * @OA\Post(
+     *     path="/process_events/{process_id}",
+     *     summary="Start a new process",
+     *     operationId="triggerStartEvent",
+     *     tags={"Processes"},
+     *     @OA\Parameter(
+     *         description="ID of process to return",
+     *         in="path",
+     *         name="process_id",
+     *         required=true,
+     *         @OA\Schema(
+     *           type="string",
+     *         )
+     *     ),
+     *     @OA\Parameter(
+     *         description="Node ID of the start event",
+     *         in="query",
+     *         name="event",
+     *         required=true,
+     *         @OA\Schema(
+     *           type="string",
+     *         )
+     *     ),
+     *     @OA\RequestBody(
+     *       required=false,
+     *       @OA\JsonContent()
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="success",
+     *         @OA\JsonContent(ref="#/components/schemas/processRequest")
+     *     ),
+     * )
      */
     public function triggerStartEvent(Process $process, Request $request)
     {
         //Get the event BPMN element
-        $id = $request->input('event');
+        $id = $request->query('event');
         if (!$id) {
             return abort(404);
-        }
-
-        if (!\Auth::user()->hasProcessPermission($process, 'requests.create')) {
-            throw new AuthorizationException("Not authorized to start this process");
         }
 
         $definitions = $process->getDefinitions();
@@ -438,7 +702,7 @@ class ProcessController extends Controller
             return abort(404);
         }
         $event = $definitions->getEvent($id);
-        $data = request()->input();
+        $data = request()->post();
         //Trigger the start event
         $processRequest = WorkflowManager::triggerStartEvent($process, $event, $data);
         return new ProcessRequests($processRequest);

@@ -1,5 +1,4 @@
 <?php
-
 return [
     'api' => [
         /*
@@ -42,16 +41,6 @@ return [
         |--------------------------------------------------------------------------
          */
         'middleware' => [
-            'api' => [
-                \ProcessMaker\Http\Middleware\EncryptCookies::class,
-                \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-                \Illuminate\Session\Middleware\StartSession::class,
-                \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-                \ProcessMaker\Http\Middleware\VerifyCsrfToken::class,
-                \Illuminate\Routing\Middleware\SubstituteBindings::class,
-                \Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,
-                'auth',
-            ],
             'asset' => [],
             'docs' => [],
             'oauth2_callback' => [],
@@ -109,7 +98,7 @@ return [
         |--------------------------------------------------------------------------
         */
 
-        'base' => env('L5_SWAGGER_BASE_PATH', null),
+        'base' => '/api/1.0',
 
         /*
         |--------------------------------------------------------------------------
@@ -127,9 +116,16 @@ return [
     */
     'security' => [
         'pm_api_bearer' => [ // personal access token
-            'type' => 'http',
-            'scheme' => 'bearer',
-        ]
+            'type' => 'oauth2',
+            'flows' => [
+                'authorizationCode' => [
+                    'authorizationUrl' => '/oauth/authorize',
+                    'tokenUrl' => '/oauth/token',
+                    'scopes' => '*'
+                ],
+                'implicit' => ['authorizationUrl' => ''],
+            ],
+        ],
     ],
 
     /*
@@ -199,7 +195,6 @@ return [
      */
     'constants' => [
         // We're assuming base path is the same as the swagger UI
-        // 'APP_URL' => getenv('APP_URL') ?: 'http://localhost',
     ],
 ];
 

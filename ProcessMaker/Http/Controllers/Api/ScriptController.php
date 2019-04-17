@@ -3,21 +3,35 @@
 namespace ProcessMaker\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Mockery\Exception;
 use ProcessMaker\Http\Controllers\Controller;
 use ProcessMaker\Http\Resources\ApiCollection;
 use ProcessMaker\Http\Resources\Script as ScriptResource;
+use ProcessMaker\Jobs\TestScript;
 use ProcessMaker\Models\Script;
+use ProcessMaker\Models\User;
 
 class ScriptController extends Controller
 {
+    /**
+     * A whitelist of attributes that should not be
+     * sanitized by our SanitizeInput middleware.
+     *
+     * @var array
+     */
+    public $doNotSanitize = [
+        'code',
+    ];
+
     /**
      * Get a list of scripts in a process.
      *
      * @param Process $process
      *
      * @return ResponseFactory|Response
-     * 
-     *     
+     *
+     *
      *     @OA\Get(
      *     path="/scripts",
      *     summary="Returns all scripts that the user has access to",
@@ -28,7 +42,7 @@ class ScriptController extends Controller
      *     @OA\Parameter(ref="#/components/parameters/order_direction"),
      *     @OA\Parameter(ref="#/components/parameters/per_page"),
      *     @OA\Parameter(ref="#/components/parameters/include"),
-     * 
+     *
      *     @OA\Response(
      *         response=200,
      *         description="list of scripts",
@@ -75,12 +89,17 @@ class ScriptController extends Controller
 
     /**
      * Previews executing a script, with sample data/config data
-     * 
+     *
      *     @OA\Get(
-     *     path="/scripts/ew",
-     *     summary="Returns all scripts that the user has access to",
+     *     path="/scripts/{script_id}/preview",
+     *     summary="Test script code without saving it",
      *     operationId="getScriptsPreview",
      *     tags={"Scripts"},
+     *         @OA\Parameter(
+     *             name="script_id",
+     *             in="path",
+     *             @OA\Schema(type="integer"),
+     *         ),
      *         @OA\Parameter(
      *             name="data",
      *             in="query",
@@ -96,31 +115,23 @@ class ScriptController extends Controller
      *             in="query",
      *             @OA\Schema(type="string"),
      *         ),
-     *         @OA\Parameter(
-     *             name="language",
-     *             in="query",
-     *             @OA\Schema(type="string"),
-     *         ),
-     * 
+     *
      *     @OA\Response(
      *         response=200,
-     *         description="output of scripts",
+     *         description="success if the script was queued",
      *         @OA\JsonContent()
      *         ),
      *     ),
      * )
      */
-    public function preview(Request $request)
+    public function preview(Request $request, Script $script)
     {
         $data = json_decode($request->get('data'), true) ?: [];
         $config = json_decode($request->get('config'), true) ?: [];
         $code = $request->get('code');
-        $language = $request->get('language');
-        $script = new Script([
-            'code' => $code,
-            'language' => $language,
-        ]);
-        return $script->runScript($data, $config);
+
+        TestScript::dispatch($script, $request->user(), $code, $data, $config);
+        return ['status' => 'success'];
     }
 
     /**
@@ -129,7 +140,7 @@ class ScriptController extends Controller
      * @param Script $script
      *
      * @return ResponseFactory|Response
-     * 
+     *
      *     @OA\Get(
      *     path="/scripts/scriptsId",
      *     summary="Get single script by ID",
@@ -162,7 +173,7 @@ class ScriptController extends Controller
      * @param Request $request
      *
      * @return ResponseFactory|Response
-     * 
+     *
      *     @OA\Post(
      *     path="/scripts",
      *     summary="Save a new script",
@@ -184,6 +195,7 @@ class ScriptController extends Controller
         $request->validate(Script::rules());
         $script = new Script();
         $script->fill($request->input());
+
         $script->saveOrFail();
         return new ScriptResource($script);
     }
@@ -196,7 +208,7 @@ class ScriptController extends Controller
      * @param Request $request
      *
      * @return ResponseFactory|Response
-     * 
+     *
      *     @OA\Put(
      *     path="/scripts/scriptsId",
      *     summary="Update a script",
@@ -225,11 +237,13 @@ class ScriptController extends Controller
     public function update(Script $script, Request $request)
     {
         $request->validate(Script::rules($script));
+
         $original_attributes = $script->getAttributes();
 
         $script->fill($request->input());
+
         $script->saveOrFail();
-        
+
         unset(
             $original_attributes['id'],
             $original_attributes['updated_at']
@@ -240,12 +254,69 @@ class ScriptController extends Controller
     }
 
     /**
+     * duplicate a Script.
+     *
+     * @param Script $script
+     * @param Request $request
+     *
+     * @return ResponseFactory|Response
+     *
+     *     @OA\Put(
+     *     path="/scripts/scriptsId/duplicate",
+     *     summary="duplicate a script",
+     *     operationId="duplicateScreen",
+     *     tags={"scripts"},
+     *     @OA\Parameter(
+     *         description="ID of script to return",
+     *         in="path",
+     *         name="screens_id",
+     *         required=true,
+     *         @OA\Schema(
+     *           type="string",
+     *         )
+     *     ),
+     *     @OA\RequestBody(
+     *       required=true,
+     *       @OA\JsonContent(ref="#/components/schemas/screensEditable")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="success",
+     *         @OA\JsonContent(ref="#/components/schemas/scripts")
+     *     ),
+     * )
+     */
+    public function duplicate(Script $script, Request $request)
+    {
+        $request->validate(Script::rules());
+        $newScript = new Script();
+
+        $exclude = ['id', 'created_at', 'updated_at'];
+        foreach ($script->getAttributes() as $attribute => $value) {
+            if (!in_array($attribute, $exclude)) {
+                $newScript->{$attribute} = $script->{$attribute};
+            }
+        }
+
+        if ($request->has('title')) {
+            $newScript->title = $request->input('title');
+        }
+
+        if ($request->has('description')) {
+            $newScript->description = $request->input('description');
+        }
+
+        $newScript->saveOrFail();
+        return new ScriptResource($newScript);
+    }
+
+    /**
      * Delete a script in a process.
      *
      * @param Script $script
      *
      * @return ResponseFactory|Response
-     * 
+     *
      *     @OA\Delete(
      *     path="/scripts/scriptsId",
      *     summary="Delete a script",

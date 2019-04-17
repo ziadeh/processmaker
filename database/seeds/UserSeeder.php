@@ -20,11 +20,6 @@ class UserSeeder extends Seeder
         if (User::count() !== 0) {
             return;
         }
-        //Create default All Users group
-        $group_id = factory(Group::class)->create([
-                'name' => 'Users',
-                'status' => 'ACTIVE'
-            ])->id;
 
         //Create admin user
         $user = factory(User::class)->create([
@@ -38,15 +33,16 @@ class UserSeeder extends Seeder
             'is_administrator' => true,
         ]);
 
-
-        factory(GroupMember::class)->create([
-            'member_id' => $user->id,
-            'member_type' => User::class,
-            'group_id' => $group_id,
-        ]);
-
+        // Create client so we can generate tokens
         $clients->createPersonalAccessClient(
             null, 'PmApi', 'http://localhost'
+        );
+        
+        // Create client OAuth (for 3-legged auth)
+        $clients->create(
+            $user->id,
+            'Swagger UI Auth',
+            env('APP_URL', 'http://localhost') . '/api/oauth2-callback'
         );
     }
 }

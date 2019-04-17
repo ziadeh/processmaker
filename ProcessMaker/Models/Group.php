@@ -23,9 +23,14 @@ use ProcessMaker\Traits\SerializeToIso8601;
  * ),
  * @OA\Schema(
  *   schema="groups",
- *   allOf={@OA\Schema(ref="#/components/schemas/groupsEditable")},
- *   @OA\Property(property="created_at", type="string", format="date-time"),
- *   @OA\Property(property="updated_at", type="string", format="date-time"),
+ *   allOf={
+ *      @OA\Schema(ref="#/components/schemas/groupsEditable"),
+ *      @OA\Schema(
+ *          type = "object",
+ *          @OA\Property(property="created_at", type="string", format="date-time"),
+ *          @OA\Property(property="updated_at", type="string", format="date-time"),
+ *      )
+ *   }
  * )
  *
  */
@@ -44,14 +49,19 @@ class Group extends Model
         $unique = Rule::unique('groups')->ignore($existing);
 
         return [
-            'name' => ['required', 'string', $unique],
+            'name' => ['required', 'string', 'max:255', $unique],
             'status' => 'in:ACTIVE,INACTIVE'
         ];
     }
-
-    public function permissionAssignments()
+    
+    public function permissions()
     {
-        return $this->morphMany(PermissionAssignment::class, 'assignable', null, 'assignable_id');
+        return $this->morphToMany('ProcessMaker\Models\Permission', 'assignable');
+    }
+
+    public function processesFromProcessable()
+    {
+        return $this->morphToMany('ProcessMaker\Models\Process', 'processable');
     }
 
     public function groupMembersFromMemberable()
@@ -64,18 +74,14 @@ class Group extends Model
         return $this->hasMany(GroupMember::class);
     }
 
-    public function permissions()
+    /**
+     * Scope to only return active groups.
+     *
+     * @var Builder
+     */
+    public function scopeActive($query)
     {
-        $permissions = [];
-        foreach ($this->groupMembersFromMemberable as $gm) {
-            $group = $gm->group;
-            $permissions =
-                array_merge($permissions, $group->permissions());
-        }
-        foreach ($this->permissionAssignments as $pa) {
-            $permissions[] = $pa->permission;
-        }
-        return $permissions;
+        return $query->where('status', 'ACTIVE');
     }
 
     /**

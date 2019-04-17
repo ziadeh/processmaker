@@ -2,7 +2,9 @@
 
 namespace ProcessMaker\Models;
 
+use Log;
 use Carbon\Carbon;
+use ProcessMaker\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use ProcessMaker\Nayra\Bpmn\TokenTrait;
 use ProcessMaker\Nayra\Contracts\Bpmn\TokenInterface;
@@ -27,6 +29,30 @@ use \Illuminate\Auth\Access\AuthorizationException;
  * @property \Carbon\Carbon $created_at
  * @property ProcessRequest $request
  *
+ * @OA\Schema(
+ *   schema="processRequestTokenEditable",
+ *   @OA\Property(property="user_id", type="string", format="id"),
+ *   @OA\Property(property="status", type="string"),
+ *   @OA\Property(property="due_at", type="date-time"),
+ *   @OA\Property(property="initiated_at", type="string", format="date-time"),
+ *   @OA\Property(property="riskchanges_at", type="string", format="date-time"),
+ * ),
+ * @OA\Schema(
+ *   schema="processRequestToken",
+ *   allOf={
+ *       @OA\Schema(ref="#/components/schemas/processRequestTokenEditable"),
+ *       @OA\Schema(
+ *          @OA\Property(property="id", type="string", format="id"),
+ *          @OA\Property(property="process_id", type="string", format="id"),
+ *          @OA\Property(property="process_request_id", type="string", format="id"),
+ *          @OA\Property(property="element_id", type="string", format="id"),
+ *          @OA\Property(property="element_type", type="string", format="id"),
+ *          @OA\Property(property="created_at", type="string", format="date-time"),
+ *          @OA\Property(property="updated_at", type="string", format="date-time"),
+ *          @OA\Property(property="initiated_at", type="string", format="date-time"),
+ *       )
+ *   }
+ * )
  */
 class ProcessRequestToken extends Model implements TokenInterface
 {
@@ -81,6 +107,7 @@ class ProcessRequestToken extends Model implements TokenInterface
      * @var array
      */
     protected $dates = [
+        'completed_at',
         'due_at',
         'initiated_at',
         'riskchanges_at',
@@ -95,6 +122,55 @@ class ProcessRequestToken extends Model implements TokenInterface
     {
         parent::__construct($argument);
         $this->bootElement([]);
+    }
+
+    /**
+     * Notification settings of the process.
+     *
+     * @param string $entity
+     * @param string $notificationType
+     * 
+     * @return array
+     */    
+    public function getNotifiables($notificationType)
+    {
+        $userIds = collect([]);
+        
+        $process = $this->process()->first();
+        
+        $notifiableTypes = $process->notification_settings()
+                                   ->where('notification_type', $notificationType)
+                                   ->where('element_id', $this->element_id)
+                                   ->get()->pluck('notifiable_type');
+
+        foreach ($notifiableTypes as $notifiableType) {
+            $userIds = $userIds->merge($this->getNotifiableUserIds($notifiableType));
+        }
+
+        $userIds = $userIds->unique();
+        
+        $notifiables = $notifiableTypes->implode(', ');
+        $users = $userIds->implode(', ');
+        Log::debug("Sending task $notificationType notification to $notifiables (users: $users)");
+        
+        return User::whereIn('id', $userIds)->get();
+    }
+
+    public function getNotifiableUserIds($notifiableType)
+    {
+        switch ($notifiableType) {
+            case 'requester':
+                return collect([$this->processRequest->user_id]);
+                break;
+            case 'assignee':
+                return collect([$this->user_id]);
+                break;
+            case 'participants':
+                return $this->processRequest->participants()->get()->pluck('id');
+                break;
+            default:
+                return collect([]);
+        }
     }
 
     /**
@@ -178,31 +254,20 @@ class ProcessRequestToken extends Model implements TokenInterface
     }
 
     /**
-     * Check if the user has access to this task
-     *
-     * @param User $user
-     * @return void
-     */
-    public function authorize(User $user)
-    {
-        if ($this->user_id === $user->id || $user->is_administrator) {
-            return true;
-        }
-        throw new AuthorizationException("Not authorized to view this task");
-    }
-
-    /**
      * Check if the user has access to reassign this task
      * 
      * @param \ProcessMaker\Models\User $user
      */
     public function authorizeReassignment(User $user)
     {
-        $this->authorize($user);
-        $definitions = $this->getDefinition();
-        if (empty($definitions['allowReassignment'])) {
-            throw new AuthorizationException("Not authorized to reassign this task");
+        if ($user->can('update', $this)) {
+            $definitions = $this->getDefinition();
+            if (empty($definitions['allowReassignment'])) {
+                throw new AuthorizationException("Not authorized to reassign this task");
+            }
+            return true;
+        } else {
+            throw new AuthorizationException("Not authorized to view this task");
         }
-        return true;
     }
 }

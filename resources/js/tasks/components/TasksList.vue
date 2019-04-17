@@ -10,6 +10,7 @@
         :fields="fields"
         :data="data"
         data-path="data"
+        :noDataTemplate="$t('No Data Available')"
         pagination-path="meta"
       >
         <template slot="name" slot-scope="props">
@@ -35,7 +36,7 @@
                 variant="link"
                 @click="onAction('edit', props.rowData, props.rowIndex)"
                 v-b-tooltip.hover
-                title="Open Task"
+                :title="$t('Open Task')"
               >
                 <i class="fas fa-caret-square-right fa-lg fa-fw"></i>
               </b-btn>
@@ -43,7 +44,7 @@
                 variant="link"
                 @click="onAction('showRequestSummary', props.rowData, props.rowIndex)"
                 v-b-tooltip.hover
-                title="Open Request"
+                :title="$t('Open Request')"
               >
                 <i class="fas fa-clipboard fa-lg fa-fw"></i>
               </b-btn>
@@ -52,8 +53,8 @@
         </template>
       </vuetable>
       <pagination
-        single="Task"
-        plural="Tasks"
+        :single="$t('Task')"
+        :plural="$t('Tasks')"
         :perPageSelectEnabled="true"
         @changePerPage="changePerPage"
         @vuetable-pagination:change-page="onPageChange"
@@ -86,24 +87,24 @@ export default {
       ],
       fields: [
         {
-          title: "Name",
+          title: () => this.$t("Name"),
           name: "__slot:name",
           field: "element_name",
           sortField: "element_name"
         },
         {
-          title: "Request",
+          title: () => this.$t("Request"),
           name: "__slot:requestName",
           field: "request",
           sortField: "request.name"
         },
         {
-          title: "Assignee",
+          title: () => this.$t("Assignee"),
           name: "__slot:assignee",
           field: "user"
         },
         {
-          title: "Due",
+          title: () => this.$t("Due"),
           name: "due_at",
           callback: this.formatDueDate,
           sortField: "due_at"
@@ -119,7 +120,7 @@ export default {
     let params = new URL(document.location).searchParams;
     let successRouting = params.get("successfulRouting") === "true";
     if (successRouting) {
-      ProcessMaker.alert("The request was completed successfully.", "success");
+      ProcessMaker.alert($t("The request was completed."), "success");
     }
   },
   methods: {
@@ -193,6 +194,9 @@ export default {
         .then(response => {
           this.data = this.transform(response.data);
           this.loading = false;
+          if (response.data.meta.in_overdue > 0) {
+            this.$emit("in-overdue", response.data.meta.in_overdue);
+          }
         });
     }
   }

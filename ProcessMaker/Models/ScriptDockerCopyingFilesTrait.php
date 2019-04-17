@@ -2,7 +2,9 @@
 
 namespace ProcessMaker\Models;
 
+use Log;
 use RuntimeException;
+use ProcessMaker\Exception\ScriptTimeoutException;
 
 /**
  * Execute a docker container copying files to interchange information.
@@ -10,7 +12,6 @@ use RuntimeException;
  */
 trait ScriptDockerCopyingFilesTrait
 {
-
     /**
      * Run a command in a docker container.
      *
@@ -25,12 +26,13 @@ trait ScriptDockerCopyingFilesTrait
         foreach ($options['inputs'] as $path => $data) {
             $this->putInContainer($container, $path, $data);
         }
-        $response = $this->startContainer($container);
+        $response = $this->startContainer($container, $options['timeout']);
         $outputs = [];
         foreach ($options['outputs'] as $name => $path) {
             $outputs[$name] = $this->getFromContainer($container, $path);
         }
-        exec(config('app.bpm_scripts_docker') . ' rm ' . $container);
+
+        exec(config('app.spark_scripts_docker') . ' rm ' . $container);
         $response['outputs'] = $outputs;
         return $response;
     }
@@ -47,9 +49,9 @@ trait ScriptDockerCopyingFilesTrait
      */
     private function createContainer($image, $command, $parameters = '')
     {
-        $cidfile = tempnam(config('app.bpm_scripts_home'), 'cid');
+        $cidfile = tempnam(config('app.spark_scripts_home'), 'cid');
         unlink($cidfile);
-        $cmd = config('app.bpm_scripts_docker') . sprintf(' create %s --cidfile %s %s %s 2>&1', $parameters, $cidfile, $image, $command);
+        $cmd = config('app.spark_scripts_docker') . sprintf(' create %s --cidfile %s %s %s 2>&1', $parameters, $cidfile, $image, $command);
         $line = exec($cmd, $output, $returnCode);
         if ($returnCode) {
             throw new RuntimeException('Unable to create a docker container: ' . implode("\n", $output));
@@ -73,15 +75,30 @@ trait ScriptDockerCopyingFilesTrait
      */
     private function putInContainer($container, $path, $content)
     {
-        $source = tempnam(config('app.bpm_scripts_home'), 'put');
+        $source = tempnam(config('app.spark_scripts_home'), 'put');
         file_put_contents($source, $content);
-        $cmd = config('app.bpm_scripts_docker')
-            . sprintf(' cp %s %s:%s 2>&1', $source, $container, $path);
-        $line = exec($cmd, $output, $returnCode);
+        list($returnCode, $output) = $this->execCopy($source, $container, $path);
         unlink($source);
         if ($returnCode) {
             throw new RuntimeException('Unable to send data to container: ' . implode("\n", $output));
         }
+    }
+    
+    /**
+     * Runs the docker copy command
+     *
+     * @param string $source
+     * @param string $container
+     * @param string $dest
+     *
+     * @throws \RuntimeException
+     */
+    private function execCopy($source, $container, $dest)
+    {
+        $cmd = config('app.spark_scripts_docker')
+            . sprintf(' cp %s %s:%s 2>&1', $source, $container, $dest);
+        exec($cmd, $output, $returnCode);
+        return [$returnCode, $output];
     }
 
     /**
@@ -95,8 +112,8 @@ trait ScriptDockerCopyingFilesTrait
      */
     private function getFromContainer($container, $path)
     {
-        $target = tempnam(config('app.bpm_scripts_home'), 'get');
-        $cmd = config('app.bpm_scripts_docker') . sprintf(' cp %s:%s %s 2>&1', $container, $path, $target);
+        $target = tempnam(config('app.spark_scripts_home'), 'get');
+        $cmd = config('app.spark_scripts_docker') . sprintf(' cp %s:%s %s 2>&1', $container, $path, $target);
         exec($cmd, $output, $returnCode);
         $content = file_get_contents($target);
         unlink($target);
@@ -107,15 +124,33 @@ trait ScriptDockerCopyingFilesTrait
      * Start the container.
      *
      * @param string $container
+     * @param integer $timeout
      *
      * @return array
      */
-    private function startContainer($container)
+    private function startContainer($container, $timeout)
     {
-        $cmd = config('app.bpm_scripts_docker') . sprintf(' start %s -a 2>&1', $container);
+        $cmd = '';
+
+        if ($timeout > 0) {
+            $cmd .= "timeout -s 9 $timeout ";
+        }
+
+        $cmd .= config('app.spark_scripts_docker') . sprintf(' start %s -a 2>&1', $container);
+
+        Log::debug('Running Docker container', [
+            'timeout' => $timeout,
+            'cmd' => $cmd,
+        ]);
+
         $line = exec($cmd, $output, $returnCode);
         if ($returnCode) {
-            throw new RuntimeException(implode("\n", $output));
+            if ($returnCode == 137) {
+                Log::error('Script timed out');
+                throw new ScriptTimeoutException(implode("\n", $output));
+            }
+            Log::error('Script threw return code ' . $returnCode);
+            throw new ScriptException(implode("\n", $output));
         }
         return compact('line', 'output', 'returnCode');
     }

@@ -1,4 +1,5 @@
 <?php
+
 namespace ProcessMaker\Repositories;
 
 use Carbon\Carbon;
@@ -18,7 +19,6 @@ use ProcessMaker\Nayra\RepositoryTrait;
  */
 class ExecutionInstanceRepository implements ExecutionInstanceRepositoryInterface
 {
-
     use RepositoryTrait;
 
     /**
@@ -26,7 +26,6 @@ class ExecutionInstanceRepository implements ExecutionInstanceRepositoryInterfac
      *
      * @return ExecutionInstanceInterface
      */
-
     public function createExecutionInstance()
     {
         $instance = new Instance();
@@ -66,6 +65,10 @@ class ExecutionInstanceRepository implements ExecutionInstanceRepositoryInterfac
             $element = $storage->getElementInstanceById($tokenInfo['element_ref']);
             $element->addToken($instance, $token);
         }
+        $mytokens2 = [];
+        foreach ($instance->getTokens() as $tt) {
+            $mytokens2[] = $tt->id;
+        }
         return $instance;
     }
 
@@ -100,7 +103,7 @@ class ExecutionInstanceRepository implements ExecutionInstanceRepositoryInterfac
         //Save the row
         $instance->callable_id = $process->getId();
         $instance->process_id = $definition->getKey();
-        $instance->user_id = Auth::user()->getKey();
+        $instance->user_id = Auth::user() ? Auth::user()->getKey() : null;
         $instance->name = $definition->name;
         $instance->status = 'ACTIVE';
         $instance->initiated_at = Carbon::now();

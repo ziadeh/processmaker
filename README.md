@@ -1,6 +1,6 @@
 # ProcessMaker 4.1 Community Edition Documentation
 
-![ProcessMaker](http://www.processmaker.com/themes/processmaker/images/logo.jpg)
+![](https://www.processmaker.com/assets/PartnerArea/new_logos/sample200_whitebg.png)
 
 [![CircleCI](https://circleci.com/gh/ProcessMaker/bpm/tree/develop.svg?style=svg&circle-token=bc15deff649712440252088a12ec20b4b7c96826)](https://circleci.com/gh/ProcessMaker/bpm/tree/develop)
 
@@ -51,7 +51,11 @@ APP_DEBUG=TRUE
 
 Optionally, trust the self-signed certificate on your host machine so you don't get the "Not Secure" warnings in chrome and postman.
 
-For OSX: 1. In your-repository-root/storage/ssl, double-click on bpm4.local.processmaker.com.crt 1. Click on "Add" to add it to your login keychain 1. In the Keychain Access window click on the Certificates category on the bottom left. 1. Double-click on the bpm4 certificate 1. Open the Trust section. For "When using this certificate", select "always trust" 1. Close the window. You will be asked for your password. Close and reopen the processmaker tab in chrome.
+For macOS: 1. In your-repository-root/storage/ssl, double-click on bpm4.local.processmaker.com.crt 2. Click on "Add" to add it to your login keychain 3. In the Keychain Access window click on the Certificates category on the bottom left. 4. Double-click on the bpm4 certificate 5. Open the Trust section. For "When using this certificate", select "always trust" 6. Close the window. You will be asked for your password. Close and reopen the processmaker tab in chrome.
+
+If you choose not to install the certificate, you should access the socket.io js file in your browser to allow unsafe connections from it. Otherwise, real-time notifications may not work in your development environment.
+
+* [https://bpm4.local.processmaker.com:6001/socket.io/socket.io.js](https://bpm4.local.processmaker.com:6001/socket.io/socket.io.js)
 
 #### Customize Logos
 
@@ -65,6 +69,14 @@ LOGIN_LOGO_PATH={{LOGIN PAGE LOGO PATH HERE}}
 ```
 
 1. Run npm run dev
+
+#### Scheduled tasks/events
+
+To run time based BPMN events like Timer Start Events or Intermediate Timer Events, the laravel scheduler should be enabled. To do this open a console and: 1. Execute crontab -e 2. Add to the cron tab the following line \(replacing the upper cased text with the directory where your proyecto is located \):
+
+```text
+* * * * * cd YOUR_BPM_PROJECT && php artisan schedule:run >> /dev/null 2>&1
+```
 
 #### API
 
@@ -95,11 +107,17 @@ To keep things dry, you can define 2 schemas. One that inherits the other.
  * ),
  * @OA\Schema(
  *   schema="Process",
- *   allOf={@OA\Schema(ref="#/components/schemas/ProcessEditable")},
- *   @OA\Property(property="user_uuid", type="string", format="uuid"),
- *   @OA\Property(property="uuid", type="string", format="uuid"),
- *   @OA\Property(property="created_at", type="string", format="date-time"),
- *   @OA\Property(property="updated_at", type="string", format="date-time"),
+ *   allOf={
+ *       @OA\Schema(ref="#/components/schemas/ProcessEditable")
+ *       @OA\Schema(
+ *           type="object",
+ *           @OA\Property(property="user_uuid", type="string", format="uuid"),
+ *           @OA\Property(property="uuid", type="string", format="uuid"),
+ *           @OA\Property(property="created_at", type="string", format="date-time"),
+ *           @OA\Property(property="updated_at", type="string", format="date-time"),
+ *       ),
+ *   },
+ *   
  * )
  */
 class Process extends Model implements HasMedia
@@ -224,7 +242,9 @@ List of available assertions [https://laravel.com/docs/5.7/dusk\#available-asser
 
 #### License
 
-ProcessMaker - Automate your Workflow Copyright \(C\) 2002 - 2018 ProcessMaker Inc.
+Distributed under the [AGPL Version 3](https://www.gnu.org/licenses/agpl-3.0.en.html)
+
+ProcessMaker \(C\) 2002 - 2019 ProcessMaker Inc.
 
 For further information visit: [http://www.processmaker.com/](http://www.processmaker.com/)
 

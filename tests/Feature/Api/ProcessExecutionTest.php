@@ -9,6 +9,7 @@ use Tests\TestCase;
 use Tests\Feature\Shared\RequestHelper;
 use ProcessMaker\Models\Group;
 use ProcessMaker\Models\GroupMember;
+use ProcessMaker\Models\ProcessRequest;
 
 /**
  * Test the process execution with requests
@@ -82,7 +83,7 @@ class ProcessExecutionTest extends TestCase
         $tasks = $response->json('data');
         //Complete the task
         $route = route('api.tasks.update', [$tasks[0]['id'], 'status' => 'COMPLETED']);
-        $response = $this->apiCall('PUT', $route, $data);
+        $response = $this->apiCall('PUT', $route, ['data' => $data]);
         $task = $response->json();
         //Check the task is closed
         $this->assertEquals('CLOSED', $task['status']);
@@ -90,6 +91,18 @@ class ProcessExecutionTest extends TestCase
         //Check the request is completed
         $this->assertEquals('COMPLETED', $task['process_request']['status']);
         $this->assertNotNull($task['process_request']['completed_at']);
+
+        // Check that a log comment was created
+        $response = $this->apiCall('GET', '/comments', [
+            'commentable_type' => ProcessRequest::class,
+            'commentable_id' => $tasks[0]['process_request_id'],
+        ]);
+        $message = $response->json()['data'][0]['body'];
+        $this->assertEquals(
+            $this->user->fullname . " has completed the task " . $task['element_name'],
+            $message
+        );
+
     }
 
     /**
@@ -145,14 +158,14 @@ class ProcessExecutionTest extends TestCase
         $tasks = $response->json('data');
         //Complete the task
         $route = route('api.tasks.update', [$tasks[0]['id'], 'status' => 'COMPLETED']);
-        $response = $this->apiCall('PUT', $route, $data);
+        $response = $this->apiCall('PUT', $route, ['data' => $data]);
         $task = $response->json();
         //Check the task is closed
         $this->assertEquals('CLOSED', $task['status']);
         $this->assertNotNull($task['completed_at']);
         //Try to complete the task again
         $route = route('api.tasks.update', [$tasks[0]['id'], 'status' => 'COMPLETED']);
-        $response = $this->apiCall('PUT', $route, $data);
+        $response = $this->apiCall('PUT', $route, ['data' => $data]);
         $task = $response->json();
         $response->assertStatus(422);
     }
@@ -177,11 +190,11 @@ class ProcessExecutionTest extends TestCase
         $tasks = $response->json('data');
         //Update to a FAILING status
         $route = route('api.tasks.update', [$tasks[0]['id'], 'status' => 'FAILING']);
-        $response = $this->apiCall('PUT', $route, $data);
+        $response = $this->apiCall('PUT', $route, ['data' => $data]);
         $response->assertStatus(422);
         //Update to a *invalid* status
         $route = route('api.tasks.update', [$tasks[0]['id'], 'status' => '*invalid*']);
-        $response = $this->apiCall('PUT', $route, $data);
+        $response = $this->apiCall('PUT', $route, ['data' => $data]);
         $response->assertStatus(422);
     }
 
@@ -190,6 +203,7 @@ class ProcessExecutionTest extends TestCase
      */
     public function testGetListProcessesToStart()
     {
+        $this->actingAs($this->user);
         //Create two additional processes
         $this->createTestProcess();
         $uncProcess = $this->createTestProcess(['process_category_id' => null]);
@@ -312,7 +326,7 @@ class ProcessExecutionTest extends TestCase
 
         // Complete the task
         $route = route('api.tasks.update', [$task_id, 'status' => 'COMPLETED']);
-        $response = $this->apiCall('PUT', $route, $data);
+        $response = $this->apiCall('PUT', $route, ['data' => $data]);
 
         // Start another request
         $route = route('api.process_events.trigger', [$group_process->id, 'event' => 'node_2']);
@@ -328,7 +342,7 @@ class ProcessExecutionTest extends TestCase
         
         // Complete the task
         $route = route('api.tasks.update', [$tasks[0]['id'], 'status' => 'COMPLETED']);
-        $response = $this->apiCall('PUT', $route, $data);
+        $response = $this->apiCall('PUT', $route, ['data' => $data]);
         
         // Start another request
         $route = route('api.process_events.trigger', [$group_process->id, 'event' => 'node_2']);

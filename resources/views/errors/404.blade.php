@@ -1,12 +1,21 @@
-@extends('layouts.minimal')
+@extends('layouts.layout')
+
+@section('title')
+  {{__('Page not found - ProcessMaker')}}
+@endsection
+
+@section('sidebar')
+@include('layouts.sidebar', ['sidebar'=> Menu::get('sidebar_designer')])
+@endsection
+
 @section('content')
 <div class="error-404">
     <div class="error-404-icon">
       <img src="/img/robot.png"/>
     </div>
     <div class="error-content">
-      <h1>Oops!</h1>
-      <p>The page you are looking for could not be found</p>
+      <h1>{{__('Oops!')}}</h1>
+      <p>{{__('The page you are looking for could not be found')}}</p>
     </div>
 </div>
 @endsection

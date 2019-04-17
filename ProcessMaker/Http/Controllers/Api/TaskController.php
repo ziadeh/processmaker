@@ -1,26 +1,71 @@
 <?php
 namespace ProcessMaker\Http\Controllers\Api;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use ProcessMaker\Facades\WorkflowManager;
 use ProcessMaker\Http\Controllers\Controller;
-use ProcessMaker\Http\Resources\ApiCollection;
 use ProcessMaker\Http\Resources\Task as Resource;
+use ProcessMaker\Http\Resources\TaskCollection;
 use ProcessMaker\Models\ProcessRequestToken;
 use ProcessMaker\Notifications\TaskReassignmentNotification;
 
 class TaskController extends Controller
 {
-    public $skipPermissionCheckFor = ['index', 'show', 'update'];
-
+    /**
+     * A whitelist of attributes that should not be
+     * sanitized by our SanitizeInput middleware.
+     *
+     * @var array
+     */
+    public $doNotSanitize = [
+        //
+    ];
     /**
      * Display a listing of the resource.
      *
      * @param Request $request
      *
      * @return Response
+     * 
+     * @OA\Get(
+     *     path="/tasks",
+     *     summary="Returns all tasks that the user has access to",
+     *     operationId="getTasks",
+     *     tags={"Tasks"},
+     *     @OA\Parameter(
+     *         description="Process request id",
+     *         in="query",
+     *         name="process_request_id",
+     *         required=false,
+     *         @OA\Schema(
+     *           type="integer",
+     *         )
+     *     ),
+     *     @OA\Parameter(ref="#/components/parameters/filter"),
+     *     @OA\Parameter(ref="#/components/parameters/order_by"),
+     *     @OA\Parameter(ref="#/components/parameters/order_direction"),
+     *
+     *     @OA\Response(
+     *         response=200,
+     *         description="list of tasks",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(ref="#/components/schemas/processRequestToken"),
+     *             ),
+     *             @OA\Property(
+     *                 property="meta",
+     *                 type="object",
+     *                 ref="#/components/schemas/metadata",
+     *             ),
+     *         ),
+     *     ),
+     * )
      */
     public function index(Request $request)
     {
@@ -55,17 +100,26 @@ class TaskController extends Controller
             $request->input('order_by', 'updated_at'), $request->input('order_direction', 'asc')
         );
 
-        // only show tasks that the user is assigned to
-        if (!Auth::user()->is_administrator) {
-            $query->where('process_request_tokens.user_id', Auth::user()->id);
-        }
-        $response = $query->paginate($request->input('per_page', 10));
-        return new ApiCollection($response);
+        $inOverdueQuery = ProcessRequestToken::where('user_id', Auth::user()->id)
+            ->where('status', 'ACTIVE')
+            ->where('due_at', '<', Carbon::now());
+
+        $inOverdue = $inOverdueQuery->count();
+
+        $response = $query->get();
+
+        $response = $response->filter(function($processRequestToken) {
+            return Auth::user()->can('view', $processRequestToken);
+        })->values();
+
+        $response->inOverdue = $inOverdue;
+
+        return new TaskCollection($response);
     }
 
     /**
      * Display the specified resource.
-     *
+     * @TODO remove this method,view and route this is not a used file
      * @param ProcessRequestToken $task
      *
      * @return Resource
@@ -83,15 +137,40 @@ class TaskController extends Controller
      *
      * @return Resource
      * @throws \Throwable
+     * 
+     * @OA\Put(
+     *     path="/tasks/{task_id}",
+     *     summary="Update a task",
+     *     operationId="updateTask",
+     *     tags={"Tasks"},
+     *     @OA\Parameter(
+     *         description="ID of task to update",
+     *         in="path",
+     *         name="task_id",
+     *         required=true,
+     *         @OA\Schema(
+     *           type="string",
+     *         )
+     *     ),
+     *     @OA\RequestBody(
+     *       required=true,
+     *       @OA\JsonContent(ref="#/components/schemas/processRequestTokenEditable")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="success",
+     *         @OA\JsonContent(ref="#/components/schemas/processRequestToken")
+     *     ),
+     * )
      */
     public function update(Request $request, ProcessRequestToken $task)
     {
-        $task->authorize(Auth::user());
+        $this->authorize('update', $task);
         if ($request->input('status') === 'COMPLETED') {
             if ($task->status === 'CLOSED') {
                 return abort(422, __('Task already closed'));
             }
-            $data = $request->input();
+            $data = $request->json('data');
             //Call the manager to trigger the start event
             $process = $task->process;
             $instance = $task->processRequest;

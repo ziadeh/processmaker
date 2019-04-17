@@ -16,6 +16,8 @@
     <meta name="broadcaster" content="{{config('broadcasting.broadcaster')}}">
     <meta name="broadcasting-host" content="{{config('broadcasting.host')}}">
     <meta name="broadcasting-key" content="{{config('broadcasting.key')}}">
+    <meta name="timeout-worker" content="{{ mix('js/timeout.js') }}">
+    <meta name="timeout-length" content="{{ config('session.lifetime') }}">
     @endif
     @if(Session::has('_alert'))
       <meta name="alert" content="show">
@@ -27,13 +29,13 @@
       <meta name="alertMessage" content="{{$message}}">
     @endif
 
-    <title>@yield('title',__('Welcome')) - {{__('ProcessMaker')}}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
+    <title>@yield('title',__('Welcome')) - {{__('ProcessMaker Spark')}}</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ mix('css/sidebar.css') }}" rel="stylesheet">
-    {{-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> --}}
     @yield('css')
     <script type="text/javascript">
+    @if(Auth::user())
     window.Processmaker = {
       csrfToken: "{{csrf_token()}}",
       userId: "{{\Auth::user()->id}}",
@@ -44,6 +46,7 @@
         key: "{{config('broadcasting.key')}}"
       }
     }
+    @endif
   </script>
 </head>
 
@@ -55,7 +58,8 @@
 
   <div class="d-flex flex-grow-1 flex-column" style="overflow: hidden;">
     @include('layouts.navbar')
-    <div class="flex-grow-1 d-flex flex-column h-100" id="mainbody">
+    @yield('breadcrumbs')
+    <div class="flex-grow-1 d-flex flex-column h-50" id="mainbody">
       <div class="main flex-grow-1">
         @yield('content')
       </div>
@@ -65,8 +69,8 @@
 
 <div id="api-error" class="error-content">
   <div>
-    <h1>Sorry! API failed to load</h1>
-    <p>Something went wrong. Try refreshing the application</p>
+    <h1>{{__('Sorry! API failed to load')}}</h1>
+    <p>{{__('Something went wrong. Try refreshing the application')}}</p>
   </div>
 </div>
 <!-- Scripts -->
