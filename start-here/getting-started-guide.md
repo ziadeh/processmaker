@@ -43,18 +43,10 @@ A short description precedes each instructional video.
 
 {% tab title="Tasks" %}
 #### What Is a Task?
-
-
-
-#### How Do I View My Tasks and Their Summaries?
 {% endtab %}
 
 {% tab title="Notifications" %}
 #### What Is a Notification?
-
-
-
-#### How Do I View Notifications?
 {% endtab %}
 {% endtabs %}
 
