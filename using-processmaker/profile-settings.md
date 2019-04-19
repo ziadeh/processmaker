@@ -48,6 +48,9 @@ Follow these steps to change your profile settings:
        * m/d/Y \(12/31/2017\)
        * m/d/Y h:i A \(12/31/2017 11:30 pm\)
        * m/d/Y H:i \(12/31/2017 23:30\)
+       * d/m/Y \(31/12/2017 23:30\)
+       * Y/m/d \(2017/12/31\)
+       * Y/m/d H:i \(2017/12/31 23:30\)
      * From the **Time zone** drop-down menu, select the time zone in which to display times.
      * From the **Language** drop-down menu, select in which language to display ProcessMaker labels.
 3. Click the avatar image to change the avatar for the ProcessMaker user account if necessary. If there is no avatar image, the initials of your full name display. When the avatar image is selected, the **Upload Avatar** screen displays to select a new avatar image. Click the **Browse** button to locate the new avatar image. After selecting the new image click **Continue** from the **Upload Avatar** screen.  
