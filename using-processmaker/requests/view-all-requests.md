@@ -6,7 +6,7 @@ description: View all Requests in your organization.
 
 ## View All Requests in Your Organization
 
-The **All Requests** page displays all Requests in your organization, regardless of whether you participated in them. Request information displays in tabular format.
+The **All Requests** page displays all Requests in your organization regardless of whether you participated in them. Request information displays in tabular format.
 
 {% hint style="info" %}
 Your user account or group membership must have the "Requests: View All Requests" permission to view the list of all Requests.

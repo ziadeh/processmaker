@@ -44,7 +44,7 @@ Follow these steps to cancel a Request:
 
    ![](../../.gitbook/assets/canceled-request-requests.png)
 
-Canceled Requests display in the [**All Requests** page](view-all-requests.md).
+Canceled Requests display in the [**All Requests** page](view-all-requests.md). Note that your ProcessMaker user account must have the [**Requests: All Requests** permission](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** tab.
 
 ![Canceled Request in the &quot;All Requests&quot; page](../../.gitbook/assets/canceled-request-in-all-requests-tab-requests.png)
 
