@@ -9,14 +9,13 @@ description: Search for any Request in which you started or participated.
 Search for any Request that displays within the Request page you are viewing. Follow these steps to search for a Request within the displayed page:
 
 1. Do one of the following:
-   * [Log on](../log-in.md#log-in) to ProcessMaker. The **My Requests** page displays.
    * Click the **Requests** option from the top menu if it is not currently displayed. The **My Requests** page displays.
    * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
-2. Go to any of the following tabs in the **Requests** page from which to search its Requests:
-   * [Started by Me](make-a-request.md) tab \(if it is not currently displayed\)
+2. View any of the following Request pages to search its Requests:
+   * [My Requests](make-a-request.md) tab \(if it is not currently displayed\)
    * [In Progress](view-in-progress-requests.md) tab
    * [Completed](view-completed-requests.md) tab
-   * [All Requests](view-all-requests.md) tab
+   * [All Requests](view-all-requests.md) tab \(Note that your ProcessMaker user account must have the [**Requests: All Requests** permission](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** tab.\)
 3. Enter in the **Search** field the Request data to filter Requests using any of the following criteria:
 
    * **Name:** Filter by the Process name associated with the Request that displays in the **Name** column.

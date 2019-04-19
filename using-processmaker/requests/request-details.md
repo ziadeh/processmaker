@@ -8,12 +8,15 @@ description: View the summary for a Request.
 
 Follow these steps to view a Request summary:
 
-1. View any of the following Request pages:
-   * [My Requests](view-started-requests.md#view-requests-you-started)
+1. Do one of the following:
+   * Click the **Requests** option from the top menu if it is not currently displayed. The **My Requests** page displays.
+   * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
+2. View any of the following Request pages:
+   * [My Requests](view-started-requests.md#view-requests-you-started) \(if it is not currently displayed\)
    * [Requests in Progress](view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-a-participant)
    * [Completed Requests](view-completed-requests.md#view-completed-requests-in-which-you-are-a-participant)
-   * [All Requests](view-all-requests.md#view-all-requests-in-your-organization) \(Note that your ProcessMaker user account or group must have the permission to view this page.\)
-2. Do one of the following:
+   * [All Requests](view-all-requests.md#view-all-requests-in-your-organization) \(Note that your ProcessMaker user account must have the [**Requests: All Requests** permission](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** tab.\)
+3. Do one of the following:
    * From the **Name** column in the Request page, click the Process name associated with the Request that you want to view.
    * Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-requests.png)for the Request that you want to view its summary.
 

@@ -2,15 +2,14 @@
 description: View the status of Requests you've started.
 ---
 
-# View Requests You Started
+# View Your Requests
 
-## View Requests You Started
+## View Your Requests
 
 The **My Requests** page displays all Requests you started. Request information displays in tabular format.
 
 Do one of the following to view Requests that you started:
 
-* [Log on](../log-in.md#log-in) to ProcessMaker. The **My Requests** page displays.
 * Click the **Requests** option from the top menu if the **Requests** page is not currently displayed. The **My Requests** page displays.
 * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
 

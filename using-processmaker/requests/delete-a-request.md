@@ -11,22 +11,22 @@ You can cancel a Request in the following circumstances:
 * The Process associated with a Request is configured to [allow you or the group of which you are a member to cancel Requests for that Process](../../designing-processes/viewing-processes/view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md#edit-general-information-about-a-process).
 * Any [ProcessMaker Administrator](../../start-here/how-to-use-this-document.md#processmaker-administrator) can cancel a Request associated with any active Process.
 
+## Cancel a Request
+
 {% hint style="info" %}
 If a Process is not configured to allow you to cancel Requests, then functionality does not display to cancel Requests for that Process.
 {% endhint %}
 
-## Cancel a Request
-
 Follow these steps to cancel a Request:
 
 1. Do one of the following:
-   * [Log on](../log-in.md#log-in) to ProcessMaker. The **My Requests** page displays.
-   * Click the **Requests** page if the **Requests** page is not currently displayed. The **My Requests** page displays.
-   * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png). The **My Requests** page displays.
-2. Click the **In Progress** tab or click the **In Progress** icon![](../../.gitbook/assets/in-progress-icon-request.png)from the left sidebar. The **In Progress** page displays all Requests that are in progress.  
-
-   ![](../../.gitbook/assets/in-progress-request.png)
-
+   * Click the **Requests** option from the top menu if it is not currently displayed. The **My Requests** page displays.
+   * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
+2. View any of the following Request pages:
+   * [My Requests](make-a-request.md) tab \(if it is not currently displayed\)
+   * [In Progress](view-in-progress-requests.md) tab
+   * [Completed](view-completed-requests.md) tab
+   * [All Requests](view-all-requests.md) tab \(Note that your ProcessMaker user account must have the [**Requests: All Requests** permission](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** tab.\)
 3. Do one of the following:
 
    * From the **Name** column, click the name of the Process associated with the Request that you want to cancel.
