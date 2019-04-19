@@ -42,7 +42,7 @@
     * [Search for a Process](designing-processes/viewing-processes/view-the-list-of-processes/search-for-a-process.md)
     * [Configure a Process](designing-processes/viewing-processes/view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md)
     * [Export a BPMN-Compliant Process](designing-processes/viewing-processes/view-the-list-of-processes/export-a-bpmn-compliant-process.md)
-    * [Archive an Inactive Process](designing-processes/viewing-processes/view-the-list-of-processes/remove-a-process.md)
+    * [Archive a Process](designing-processes/viewing-processes/view-the-list-of-processes/remove-a-process.md)
     * [Restore a Process](designing-processes/viewing-processes/view-the-list-of-processes/restore-a-process.md)
   * [Process Categories](designing-processes/viewing-processes/process-categories.md)
 * [Script Management](designing-processes/scripts/README.md)

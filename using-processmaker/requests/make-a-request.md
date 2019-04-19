@@ -19,16 +19,16 @@ Follow these steps to start a Request:
 
 3. Do one of the following:
 
-   * Select the Process from which to start a new Request.
-   * From the **Search** field, enter text to filter the list of Processes, and then select the Process from which to start a new Request. See [Search for a Request](search-for-a-request.md) for more information.
+   * Select the Process to start a new Request.
+   * From the **Search** field, enter text to filter the list of Processes, and then select the Process to start a new Request. See [Search for a Request](search-for-a-request.md) for more information.
 
    The Process you selected starts a Request.
 
 {% hint style="info" %}
-If there are no active Processes or you are not authorized to start a Request for a Process, the following message displays: **You don't have any Processes. Please visit the Processes page and click on +Process to get started.**
+If there are no active Processes or you are not authorized to start a Request for a Process, the following message displays: **You don't have any Processes. Please contact your administrator to get started.**
 {% endhint %}
 
-After the Request starts, the new Request displays in the [**My Requests** page](view-started-requests.md#view-requests-you-started).
+After the Request starts, the Request you started displays in the [**My Requests** page](view-started-requests.md#view-requests-you-started).
 
 ## Related Topics
 

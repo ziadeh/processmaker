@@ -61,7 +61,7 @@ Follow these steps to change your profile settings:
 5. Follow these guidelines to change your password if necessary:
    * In the **New Password** field, enter your new password. Leave the **New Password** field blank to keep the current password. Password validation indicates how strong your password is if you enter a new password.
    * In the **Confirm Password** field, confirm that the password matches that entered into the **New Password** field if a new password is entered. If you entered a new password, password validation indicates if the **New Password** and **Confirm Password** values do not match.
-6. Click **Update**. The following message displays: **Save profile success**.
+6. Click **Save**. The following message displays: **Your profile was saved**.
 
 ## View Another User's Profile Information
 
@@ -69,7 +69,7 @@ To view another user's profile information, click that person's avatar.
 
 ![Click a user&apos;s avatar to view that person&apos;s user profile information](../.gitbook/assets/hover-over-a-user-avatar-for-profile-full-name.png)
 
-After clicking the avatar, that person's profile information displays. Each user is responsible for profile content.
+After clicking the avatar, that person's profile information displays. Each ProcessMaker user is responsible for profile content.
 
 ![Viewing a user&apos;s profile information](../.gitbook/assets/profile-displayed-after-clicking-avatar.png)
 
@@ -82,4 +82,6 @@ Hover your cursor over a user's avatar to view that person's full name.
 {% page-ref page="application-version-details.md" %}
 
 {% page-ref page="log-out.md" %}
+
+{% page-ref page="../processmaker-administration/add-users/manage-user-accounts/create-a-user-account.md" %}
 

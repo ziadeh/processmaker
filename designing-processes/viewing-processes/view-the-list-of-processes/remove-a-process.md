@@ -2,13 +2,13 @@
 description: Archive a Process that is no longer needed in your organization.
 ---
 
-# Archive an Inactive Process
+# Archive a Process
 
 ## Overview
 
 An archived Process has the following attributes:
 
-* Archived Processes are disabled and inactive until they are [restored](restore-a-process.md#restore-a-process).
+* Archived Processes are disabled until they are [restored](restore-a-process.md#restore-a-process).
 * All archived Processes in the organization are accessible from the **Process Archive** page. See [View Archived Processes](remove-a-process.md#view-archived-processes).
 * A Process with in-progress Requests can be archived. In-progress Requests will complete.
 
@@ -60,10 +60,6 @@ Your user account or group membership must have the following permissions to arc
 * Processes: Edit Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
-{% endhint %}
-
-{% hint style="warning" %}
-When a Process is archived ~~describe what happens and in which conditions a process can be removed.~~
 {% endhint %}
 
 Follow these steps to archive a Process:
