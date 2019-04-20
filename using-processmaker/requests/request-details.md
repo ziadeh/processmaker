@@ -17,7 +17,7 @@ Follow these steps to view a Request summary:
    * [Completed Requests](view-completed-requests.md#view-completed-requests-in-which-you-are-a-participant)
    * [All Requests](view-all-requests.md#view-all-requests-in-your-organization) \(Note that your ProcessMaker user account must have the [**Requests: All Requests** permission](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** tab.\)
 3. Do one of the following:
-   * From the **Name** column in the Request page, click the Process name associated with the Request that you want to view.
+   * From the **\#** column in the Request page, click the Request number associated with the Process that you want to view.
    * Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-requests.png)for the Request that you want to view its summary.
 
 ## Summary for In-Progress Requests
@@ -34,7 +34,7 @@ The **Tasks** tab displays the following summary in tabular format about assigne
 
 * **Task:** The **Task** column displays the name of each Task to be completed for the selected Request for all Request participants. If a Task is assigned to you, a hyperlink displays in the Task name.
 * **Assigned:** The **Assigned** column displays the username's avatar to whom the Task is assigned. Hover your cursor over a user's avatar to view that person's full name.
-* **Due:** The **Due** column displays the date the Task is due. The time zone setting to display the time is according to the ProcessMaker 4 server unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Due:** The **Due** column displays the date the Task is due. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 Below the table, the history of the Request displays all Request actions. [See Request History](request-details.md#request-history).
 
