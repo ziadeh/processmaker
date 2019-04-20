@@ -16,7 +16,7 @@
 * [Requests](using-processmaker/requests/README.md)
   * [What is a Request?](using-processmaker/requests/what-is-a-request.md)
   * [Start a Request](using-processmaker/requests/make-a-request.md)
-  * [View Your Requests](using-processmaker/requests/view-started-requests.md)
+  * [View Your Requests That You Started](using-processmaker/requests/view-started-requests.md)
   * [View Requests That Are In Progress](using-processmaker/requests/view-in-progress-requests.md)
   * [View Completed Requests](using-processmaker/requests/view-completed-requests.md)
   * [View All Requests](using-processmaker/requests/view-all-requests.md)
