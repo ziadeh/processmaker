@@ -259,7 +259,7 @@ jobs:
 
       - run:
           name: "SauceLabs Browser Tests: Edge"
-           command: |
+          command: |
             # Clean up SauceLabs Variables
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "sed -i '/SAUCELABS_BROWSER=/d' ~/builds/$BUILD_NAME/.env"
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "sed -i '/SAUCELABS_PLATFORM=/d' ~/builds/$BUILD_NAME/.env"
@@ -274,7 +274,7 @@ jobs:
 
       - run:
           name: "SauceLabs Browser Tests: Safari"
-           command: |
+          command: |
             # Clean up SauceLabs Variables
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "sed -i '/SAUCELABS_BROWSER=/d' ~/builds/$BUILD_NAME/.env"
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "sed -i '/SAUCELABS_PLATFORM=/d' ~/builds/$BUILD_NAME/.env"
