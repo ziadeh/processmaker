@@ -46,7 +46,13 @@ Follow these steps to import a Process:
    ![](../../../.gitbook/assets/import-process-message-processes.png)
 
 3. Click **Browse** to locate the source BPMN 2.0 compliant Process to import. ProcessMaker Spark Processes have the `.spark` file extension.
-4. Click **Import**. If the source Process imports successfully, the **Processes** page displays. The imported Processes is named identically to the source Process except with the number "2" suffix.  
+4. Click **Import**. The **Import Process** screen displays to indicate which components of the imported Process import correctly.  
+
+   ![](../../../.gitbook/assets/import-process-screen-processes.png)
+
+5. Click the **List Processes** button.
+
+   The **Processes** page displays the imported Process with the identically as the source Process except with a number "2" suffix.  
 
    ![](../../../.gitbook/assets/imported-process-with-name-of-source-process-processes.png)
 
