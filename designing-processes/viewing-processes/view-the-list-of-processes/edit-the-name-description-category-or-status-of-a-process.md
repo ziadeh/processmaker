@@ -58,14 +58,14 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 Configure Process notifications to notify Process Requesters and/or Request participants when any of the following Request events occur:
 
-* **Request started:** A Request for this Process was started.
+* **Request started:** A Request for this Process started.
 * **Request canceled:** A Request for this Process was canceled.
-* **Request completed:** A Request for this Process was completed.
+* **Request completed:** A Request for this Process completed.
 
 Process notifications can be sent to the following sets of users or group members:
 
 * **Requester:** A Requester is any user or group member who has been granted permission to start a Request for this Process.
-* **Request participants:** A Request participant is any user or group member who participates in a specific Request for this Process. Generally, a Request participant is an individual who does a Task in the Request.
+* **Request participants:** A Request participant is any user or group member who participates in a specific Request for this Process. A Request participant is an individual who is assigned a Task in the Request.
 
 Follow these steps to edit Process configuration notifications:
 
@@ -76,9 +76,9 @@ Follow these steps to edit Process configuration notifications:
    ![](../../../.gitbook/assets/edit-process-notifications-processes.png)
 
 4. Toggle any of the following settings as necessary:
-   * **Request Started:** Toggle the **Request Started** setting to notify/not notify Requesters and/or Request participants that a Request from this Process has started.
-   * **Request Canceled:** Toggle the **Request Canceled** setting to notify/not notify Requesters and/or Request participants that a Request from this Process has been canceled.
-   * **Request Completed:** Toggle the **Request Completed** setting to notify/not notify Requesters and/or Request participants that a Request from this Process has completed.
+   * **Request Started:** Toggle the **Request Started** setting to notify/not notify Requesters and/or Request participants that a Request from this Process started.
+   * **Request Canceled:** Toggle the **Request Canceled** setting to notify/not notify Requesters and/or Request participants that a Request from this Process was canceled.
+   * **Request Completed:** Toggle the **Request Completed** setting to notify/not notify Requesters and/or Request participants that a Request from this Process completed.
 5. Click **Save**.
 
 ## Related Topics

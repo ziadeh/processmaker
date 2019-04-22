@@ -29,7 +29,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 {% endhint %}
 
 {% hint style="warning" %}
-ProcessMaker Spark Processes that are not BPMN 2.0 compliant can be exported successfully. However, that Process will not import successfully. Therefore, validate that your Process is BPMN 2.0 compliant before exporting it. See [Validate Your Process is BPMN 2.0 Compliant](../../process-design/model-your-process/validate-bpmn-2.0-compliance.md).
+ProcessMaker Spark Processes that are not BPMN 2.0 compliant can be exported successfully. However, that Process will not [import](import-a-bpmn-compliant-process.md) successfully. Therefore, validate that your Process is BPMN 2.0 compliant before exporting it. See [Validate Your Process is BPMN 2.0 Compliant](../../process-design/model-your-process/validate-bpmn-2.0-compliance.md).
 {% endhint %}
 
 Follow these steps to export a BPMN 2.0 compliant Process:
