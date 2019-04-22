@@ -36,8 +36,11 @@ class CombinedTestCase extends DuskTestCase
     {
         $this->browse(function ($browser) {
             //Login
-            $browser->visit("https://bpm4.local.processmaker.com")
-                ->assertSee("Username")
+            $browser->visit("/");
+            if ($browser->assertVisible(".phpdebugbar") == TRUE){   // Minimize the Laravel debug bar (if exists)
+                $browser->press(".phpdebugbar-close-btn");
+            }
+            $browser->assertSee("Username")
                 ->type("#username", "admin")
                 ->type("#password", "admin")
                 ->press(".btn")
@@ -116,7 +119,7 @@ class CombinedTestCase extends DuskTestCase
                 ->pause(2000);  //For some reason, the selector will not immediately populate like it does under normal usage. This is a work-around
             $browser->driver->findElement(WebDriverBy::xpath("//span[text()='admin admin']"))   //To ensure the correct user is chosen
                 ->click();
-            $browser->whenAvailable(".modal-footer", function ($modal) { //A funky work-around to let me click the save modal button 
+            $browser->whenAvailable("#addUser", function ($modal) { //A funky work-around to let me click the save modal button 
                 $modal->press(".ml-2");
             });
             $browser->pause(1000)   //No choice.

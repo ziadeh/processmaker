@@ -32,10 +32,26 @@ class AuthClientTest extends DuskTestCase
     /**
      * @throws \Throwable
      */
+    public function testLogin()
+    {
+        $this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->browse(function ($browser) {
+            //Login
+            $browser->visit("/");
+            if ($browser->assertVisible(".phpdebugbar") == TRUE){   // Minimize the Laravel debug bar (if exists)
+                $browser->press(".phpdebugbar-close-btn");
+            }
+            $browser->assertSee("Username")
+                ->type("#username", "admin")
+                ->type("#password", "admin")
+                ->press(".btn")
+                ->assertMissing(".invalid-feedback");
+        });
+    }
+
     public function testAuthClientCreation()
     {
         $this->markTestSkipped('Skipping Dusk tests temporarily');
-
         $this->browse(function ($browser) {
             //Login
             $browser->visit("/")

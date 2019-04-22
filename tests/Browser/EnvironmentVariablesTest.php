@@ -32,26 +32,37 @@ class EnvironmentVariablesCreationTest extends DuskTestCase
     /**
      * @throws \Throwable
      */
-    public function testEnvironmentVariablesCreation()
+    public function testLogin()
     {
         $this->markTestSkipped('Skipping Dusk tests temporarily');
-
         $this->browse(function ($browser) {
             //Login
-            $browser->visit("/")
-                ->assertSee("Username")
+            $browser->visit("/");
+            if ($browser->assertVisible(".phpdebugbar") == TRUE){   // Minimize the Laravel debug bar (if exists)
+                $browser->press(".phpdebugbar-close-btn");
+            }
+            $browser->assertSee("Username")
                 ->type("#username", "admin")
                 ->type("#password", "admin")
                 ->press(".btn")
-                ->assertMissing(".invalid-feedback")
-                ->clickLink("Processes")
-                ->press(".fa-cogs")
+                ->assertMissing(".invalid-feedback");
+        });
+    }
+
+    public function testEnvironmentVariablesCreation()
+    {
+        $this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->browse(function ($browser) {
+            //Navigate
+            $browser->clickLink("Processes")
+                ->clickLink("Environment Variables")
             //Add Environment Variable
                 ->press("#create_envvar") //We can use this line and remove the previous two once the add button is updated
+                ->assertVisible("#createEnvironmentVariable .ml-2")
                 ->type("#name", "foobar")
                 ->type("#description", "Bars of Foo.")
                 ->type("#value", "foobar")
-                ->press(".ml-2")
+                ->press("#createEnvironmentVariable .ml-2")
                 ->pause(500)   //No choice here, we have to pause for either the error message or the success alert.
                 ->assertMissing(".invalid-feedback")
                 ->waitForText("foobar");
@@ -61,8 +72,8 @@ class EnvironmentVariablesCreationTest extends DuskTestCase
                 ->type("#name", "barfoo")
                 ->type("#description", "Foos of Bar.")
                 ->type("#value", "barfoo")
-                ->press(".ml-2")
-                ->waitFor(".vuetable-empty-result")
+                ->press("#editEnvironmentVariable .ml-2")
+                //->waitFor(".vuetable-empty-result")
                 ->waitForText("barfoo");
             //Delete Environment Variable
             $browser->press(".fa-trash-alt")

@@ -32,22 +32,33 @@ class UserAddEditDeleteTest extends DuskTestCase
     /**
      * @throws \Throwable
      */
-    public function testUserAddEditDelete()
+    public function testLogin()
     {
         $this->markTestSkipped('Skipping Dusk tests temporarily');
-
         $this->browse(function ($browser) {
             //Login
-            $browser->visit("/")
-                ->assertSee("Username")
+            $browser->visit("/");
+            if ($browser->assertVisible(".phpdebugbar") == TRUE){   // Minimize the Laravel debug bar (if exists)
+                $browser->press(".phpdebugbar-close-btn");
+            }
+            $browser->assertSee("Username")
                 ->type("#username", "admin")
                 ->type("#password", "admin")
                 ->press(".btn")
-                ->assertMissing(".invalid-feedback")
-                ->clickLink("Admin")
+                ->assertMissing(".invalid-feedback");
+        });
+    }
+
+    public function testUserAddEditDelete()
+    {
+        $this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->browse(function ($browser) {
+            //Navigate
+            $browser->clickLink("Admin")
                 ->waitUntilMissing(".vuetable-empty-result")
             //Add User
                 ->press("#addUserBtn")
+                ->assertVisible("#addUser .ml-2")
                 ->type("#username", "1user")
                 ->type("#firstname", "user1")
                 ->type("#lastname", "last1")
@@ -55,7 +66,7 @@ class UserAddEditDeleteTest extends DuskTestCase
                 ->type("#email", "user1@hotmail.com")
                 ->type("#password", "password123")
                 ->type("#confpassword", "password123");
-            $browser->whenAvailable(".modal-footer", function ($modal) { //A funky work-around to let me click the save modal button 
+            $browser->whenAvailable("#addUser", function ($modal) { //A funky work-around to let me click the save modal button 
                 $modal->press(".ml-2");
             })
                 ->pause(750)   //No choice here, we have to pause here to wait for either the error message or the success alert.
@@ -72,9 +83,10 @@ class UserAddEditDeleteTest extends DuskTestCase
                 ->click();  //The edit button lacks a unique ID
             */
             $browser->waitFor("#navbar-request-button") //when this loads, the whole page is loaded
+                ->assertVisible("#nav-home .ml-2")
                 ->type("#firstname","foo")
                 ->type("#lastname","bar")
-                ->press(".ml-2")
+                ->press("#nav-home .ml-2")
                 ->waitFor(".vuetable-body")
                 ->waitUntilMissing(".vuetable-empty-result")
                 ->assertSee("foo bar")
@@ -89,6 +101,5 @@ class UserAddEditDeleteTest extends DuskTestCase
                 ->waitFor(".alertBox")
                 ->assertSee("The user was deleted");
         });
-
     }
 }

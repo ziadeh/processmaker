@@ -32,28 +32,39 @@ class GroupCreationTest extends DuskTestCase
     /**
      * @throws \Throwable
      */
-    public function testGroupCreation()
+    public function testLogin()
     {
         $this->markTestSkipped('Skipping Dusk tests temporarily');
-
         $this->browse(function ($browser) {
             //Login
-            $browser->visit("/")
-                ->assertSee("Username")
+            $browser->visit("/");
+            if ($browser->assertVisible(".phpdebugbar") == TRUE){   // Minimize the Laravel debug bar (if exists)
+                $browser->press(".phpdebugbar-close-btn");
+            }
+            $browser->assertSee("Username")
                 ->type("#username", "admin")
                 ->type("#password", "admin")
                 ->press(".btn")
-                ->assertMissing(".invalid-feedback")
-                ->clickLink("Admin")
+                ->assertMissing(".invalid-feedback");
+        });
+    }
+
+    public function testGroupCreation()
+    {
+        $this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->browse(function ($browser) {
+            //Navigate
+            $browser->clickLink("Admin")
+                ->clickLink("Groups")
                 ->waitUntilMissing(".vuetable-empty-result")
             //Add User Group
-                ->press(".fa-users")
                 ->press("#create_group")
                 ->waitFor("#createGroup")
                 ->pause(250)
+                ->assertVisible("#createGroup .ml-2")
                 ->type("#name", "!foobar")
                 ->type("#description", "Group for Foo Bar")
-                ->press(".ml-2")
+                ->press("#createGroup .modal-dialog .modal-content .modal-footer .ml-2")
                 ->pause(800)
                 ->assertMissing(".invalid-feedback")
                 ->waitFor("#nav-home-tab");
@@ -62,11 +73,12 @@ class GroupCreationTest extends DuskTestCase
                 ->waitFor(".btn-action")
                 ->press(".btn-action")
                 ->waitFor("#addUser")
+                ->assertVisible("#addUser .ml-2")
                 ->click(".multiselect__select")
                 ->pause(2000);  //For some reason, the selector will not immediately populate like it does under normal usage. This is a work-around
             $browser->driver->findElement(WebDriverBy::xpath("//span[text()='admin admin']"))   //To ensure the correct user is chosen
                 ->click();
-            $browser->whenAvailable(".modal-footer", function ($modal) { //A funky work-around to let me click the save modal button 
+            $browser->whenAvailable("#addUser", function ($modal) { //A funky work-around to let me click the save modal button 
                 $modal->press(".ml-2");
             });
             $browser->pause(1000)   //No choice.
@@ -78,10 +90,11 @@ class GroupCreationTest extends DuskTestCase
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='listGroups']/div[2]/div/div/table/tbody/tr[1]/td[7]/div/div/button[1]/i"))
                 ->click();  //The edit button lacks a unique ID
             $browser->assertSee("Edit !foobar")
+                ->assertVisible("#nav-home .ml-2")
                 ->type("#name", "!bar foo")
                 ->type("#description", "Group for Bar Foo")
                 ->select("select[name='status']", "INACTIVE")
-                ->press(".ml-2")
+                ->press("#nav-home .ml-2")
                 ->pause(800)   //No choice here, we have to pause for either the error message or the success alert.
                 ->assertMissing(".invalid-feedback")
                 ->waitForText("!bar foo");
@@ -94,6 +107,5 @@ class GroupCreationTest extends DuskTestCase
                 ->pause(700)
                 ->assertDontSee("!bar foo");
         });
-
     }
 }
