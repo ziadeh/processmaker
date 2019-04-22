@@ -85,6 +85,7 @@ Follow these steps to import a BPMN 2.0 compliant process model from a third-par
 
 4. Click **Upload file**, and then browse for the third-party process model in which to import to Process Modeler.
 5. Click **OK**. Process Modeler imports the third-party process model if it is BPMN 2.0 compliant.
+6. Click the **Save** icon![](../../../.gitbook/assets/save-icon-processes.png)to save the imported process model.
 
 ## Related Topics
 
