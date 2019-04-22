@@ -39,12 +39,19 @@ class CombinedTestCase extends DuskTestCase
             $browser->visit("/");
             if ($browser->assertVisible(".phpdebugbar") == TRUE){   // Minimize the Laravel debug bar (if exists)
                 $browser->press(".phpdebugbar-close-btn");
-            }
-            $browser->assertSee("Username")
+                ->assertSee("Username")
                 ->type("#username", "admin")
                 ->type("#password", "admin")
                 ->press(".btn")
                 ->assertMissing(".invalid-feedback");
+            }
+            else{
+                $browser->assertSee("Username")
+                    ->type("#username", "admin")
+                    ->type("#password", "admin")
+                    ->press(".btn")
+                    ->assertMissing(".invalid-feedback");
+            }
         });
     }
 
