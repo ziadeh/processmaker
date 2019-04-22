@@ -241,7 +241,7 @@ jobs:
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "echo 'RUN_MSSQL_TESTS=\"true\"' >> ~/builds/$BUILD_NAME/.env"
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "echo 'MSSQL_HOST=\"127.0.0.1\"' >> ~/builds/$BUILD_NAME/.env"
             # Run Artisan Dusk
-            ssh -o \"StrictHostKeyChecking no\" -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-sparkbuilds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk\""
+            ssh -o \"StrictHostKeyChecking no\" -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-sparkbuilds "cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk"
 
       - run:
           name: "SauceLabs Browser Tests: Firefox"
@@ -255,7 +255,7 @@ jobs:
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "echo 'SAUCELABS_PLATFORM=\"Windows 10\"' >> ~/builds/$BUILD_NAME/.env"
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "echo 'SAUCELABS_BROWSER_VERSION=\"47.0\"' >> ~/builds/$BUILD_NAME/.env"
             # Run Artisan Dusk
-            ssh -o \"StrictHostKeyChecking no\" -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-sparkbuilds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk\""
+            ssh -o \"StrictHostKeyChecking no\" -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-sparkbuilds "cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk"
 
       - run:
           name: "SauceLabs Browser Tests: Edge"
@@ -269,8 +269,7 @@ jobs:
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "echo 'SAUCELABS_PLATFORM=\"Windows 10\"' >> ~/builds/$BUILD_NAME/.env"
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "echo 'SAUCELABS_BROWSER_VERSION=\"16.16299\"' >> ~/builds/$BUILD_NAME/.env"
             # Run Artisan Dusk
-            ssh -o \"StrictHostKeyChecking no\" -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-sparkbuilds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk\""
-            command: "ssh -o \"StrictHostKeyChecking no\" -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-sparkbuilds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk\""
+            ssh -o \"StrictHostKeyChecking no\" -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-sparkbuilds "cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk"
 
       - run:
           name: "SauceLabs Browser Tests: Safari"
@@ -284,8 +283,7 @@ jobs:
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "echo 'SAUCELABS_PLATFORM=\"macOS 10.13\"' >> ~/builds/$BUILD_NAME/.env"
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "echo 'SAUCELABS_BROWSER_VERSION=\"11.0\"' >> ~/builds/$BUILD_NAME/.env"
             # Run Artisan Dusk
-            ssh -o \"StrictHostKeyChecking no\" -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-sparkbuilds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk\""
-            command: "ssh -o \"StrictHostKeyChecking no\" -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-sparkbuilds \"cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk\""          
+            ssh -o \"StrictHostKeyChecking no\" -o \"ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p\" qa-sparkbuilds "cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk"    
 
       - run:
           name: "Final QA Artisan DB Migration"
