@@ -56,11 +56,11 @@ The **Summary** tab displays the summary of information entered into the Request
 
 ### Completed Tasks Summary
 
-The **Completed** tab displays the summary of all Tasks Request participants completed to that time. ~~Verify this is accurate.~~
+The **Completed** tab displays the summary of all Tasks Request participants completed to that time.
 
-~~ADD SCREEN SHOT~~
+![&quot;Completed&quot; tab for an in-progress Request&apos;s summary](../../.gitbook/assets/completed-tab-for-in-progress-request-requests.png)
 
-The **Completed** tab displays the following summary in tabular format about completed Tasks Request participants completed to that time:
+The **Completed** tab displays the following summary in tabular format about completed Tasks participants completed to that time in the Request:
 
 * **Task:** The **Task** column displays the name of each completed Task in the selected Request. 
 * **Assigned:** The **Assigned** column displays the username's avatar to whom the Task was assigned. Hover your cursor over a user's avatar to view that person's full name.
@@ -237,7 +237,7 @@ The following summary displays about participants in a canceled Request:
 
 * **Requested By:** The **Requested By** field displays the avatar and full name of the person who started the selected Request. Hover your cursor over a user's avatar to view that person's full name.
 * **Participants:** The **Participants** field displays each Request participant's avatar in the selected Request to the time the Request was canceled. Hover your cursor over a user's avatar to view that person's full name.
-* **Request completion date:** ~~The date and time the Request was completed displays below the **Participants** field. The time zone setting to display the time is according to the ProcessMaker Spark server unless your~~ [~~user profile's~~](../profile-settings.md#change-your-profile-settings) ~~**Time zone** setting is specified. THIS IS A BUG, ISN'T IT?~~
+* **Request cancellation date:** The date and time the Request was canceled displays below the **Participants** field. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 ## Error Summary for Requests
 
