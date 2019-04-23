@@ -6,9 +6,9 @@ description: Assign Categories to Processes for better organization.
 
 ## Overview
 
-Processes for which a Request can be started can be grouped into Categories. Use Categories to organize your Processes for Requesters.
+Processes can be grouped into Categories. Use Categories to organize your Processes for Requesters.
 
-Categories can be active or inactive. Processes that have been assigned to an inactive Category do not display in any Category for Requesters.
+Categories can be active or inactive. Processes that have been assigned to an inactive Category do not display in any Category when [Requesters start a Request](../../using-processmaker/requests/make-a-request.md#start-a-request).
 
 A Process can be assigned to only one Category. See [Edit Process Configuration](view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md#edit-configuration-information-about-a-process) for more information.
 
@@ -35,8 +35,8 @@ The **Categories** page displays the following information in tabular format abo
   * **Active:** An active Process Category can have Processes assigned to it.
   * **Inactive:** An inactive Process Category can no longer be selected when [assigning a Process to a Category](view-the-list-of-processes/create-a-process.md#create-a-new-process). Furthermore, Processes assigned to an inactive Category [no longer display to Requesters](../../using-processmaker/requests/make-a-request.md#start-a-request) even though such Processes may be active.
 * **Processes:** The **\# Processes** column displays how many Processes in your organization have been assigned to that Process Category.
-* **Modified:** The **Modified** column displays the date and time the Process Category was last modified. The time zone setting to display the time is according to the ProcessMaker 4 server unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Created:** The **Created** column displays the date and time the Process Category was created. The time zone setting to display the time is according to the ProcessMaker 4 server unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Modified:** The **Modified** column displays the date and time the Process Category was last modified. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the Process Category was created. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### No Process Categories? <a id="no-processes"></a>
@@ -62,7 +62,7 @@ See the Process [Categories](../../processmaker-administration/permission-descri
 Follow these steps to create a new Process Category:
 
 1. [View your Process Categories.](process-categories.md#view-process-categories)
-2. Click the **+Category** button. The **Create New Process Category** screen displays.  
+2. Click the **+Category** button. The **Create Category** screen displays.  
 
    ![](../../.gitbook/assets/create-new-process-category-screen-processes.png)
 
@@ -99,8 +99,6 @@ Follow these steps to edit a Process Category:
 Your user account or group membership must have the following permissions to delete a Process Category:
 
 * Categories: View Categories
-* Categories: Create Categories
-* Categories: Edit Categories
 * Categories: Delete Categories
 
 See the Process [Categories](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
@@ -121,7 +119,7 @@ Follow these steps to delete a Process Category:
 
    ![](../../.gitbook/assets/remove-process-category-screen-processes.png)
 
-3. Click **Confirm** to delete the Category. The following message displays: **The category was deleted.**
+3. Click **Confirm**. The following message displays: **The category was deleted.**
 
 ## Related Topics
 

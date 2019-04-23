@@ -10,7 +10,7 @@ An archived Process has the following attributes:
 
 * Archived Processes are disabled until they are [restored](restore-a-process.md#restore-a-process).
 * All archived Processes in the organization are accessible from the **Process Archive** page. See [View Archived Processes](remove-a-process.md#view-archived-processes).
-* A Process with in-progress Requests can be archived. In-progress Requests will complete.
+* A Process with in-progress Requests can be archived. In-progress Requests for a Process that is archived will complete.
 
 ## View Archived Processes
 
@@ -32,14 +32,13 @@ Click the **Archived Processes** icon![](../../../.gitbook/assets/archived-proce
 
 ![&quot;Process Archive&quot; page contains all archived Processes in your organization](../../../.gitbook/assets/process-archive-page-processes.png)
 
-The **Process Archive** page displays the following information in tabular format about archived Processes:
+The **Archived Processes** page displays the following information in tabular format about archived Processes:
 
 * **Name:** The **Name** column displays the Process name.
 * **Category:** The **Category** column displays in which Process Category the Process is assigned. See [Process Categories](../process-categories.md).
-* **Status:** The **Status** column displays that the Process is inactive and is represented by the![](../../../.gitbook/assets/inactive-status-icon-processes.png)icon.
 * **Owner:** The **Owner** column displays the Process Owner who maintains the Process. Hover your cursor over a user's avatar to view that person's full name.
-* **Modified:** The **Modified** column displays the date and time the Process was last modified. The time zone setting to display the time is according to the ProcessMaker 4 server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Created:** The **Created** column displays the date and time the Process was created. The time zone setting to display the time is according to the ProcessMaker 4 server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Modified:** The **Modified** column displays the date and time the Process was last modified. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the Process was created. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### Need to Restore an Archived Process?
@@ -69,7 +68,7 @@ Follow these steps to archive a Process:
 
    ![](../../../.gitbook/assets/archive-process-confirmation-processes.png)
 
-3. Click **Confirm** to archive the Process. The following message displays: **The process was archived.** The Process moves from the **Processes** page to the **Process Archive** page. See [View Archived Processes](remove-a-process.md#view-archived-processes). Also see [Restore an Archived Process](restore-a-process.md#restore-a-process).
+3. Click **Confirm** to archive the Process. The following message displays: **The process was archived.** The Process moves from the **Processes** page to the **Archived Processes** page. See [View Archived Processes](remove-a-process.md#view-archived-processes). Also see [Restore an Archived Process](restore-a-process.md#restore-a-process).
 
 ## Related Topics
 

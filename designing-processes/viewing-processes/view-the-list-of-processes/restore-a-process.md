@@ -6,7 +6,7 @@ description: Restore an archived Process to use again in your organization.
 
 ## Overview
 
-Restore an archived Process so Requests can be started against it. After a Process is restored, that Process moves from the **Process Archive** page to the **Processes** page. A restored Process is automatically set to active status.
+Restore an [archived Process](remove-a-process.md) to start Requests of it. After a Process is restored, that Process moves from the **Archived Processes** page to the **Processes** page. A restored Process is automatically set to active status.
 
 ## Restore an Archived Process
 
@@ -22,7 +22,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 Follow these steps to restore an archived Process:
 
 1. [View your archived Processes](remove-a-process.md#view-archived-processes). The **Archived Processes** page displays.
-2. Select the **Restore** icon![](../../../.gitbook/assets/restore-process-icon-processes-page-processes.png)for your Process. The following message displays: **The process was restored**. The Process moves from the **Process Archive** page to the **Processes** page. See [View All Active Processes](view-your-processes.md#view-all-active-processes).
+2. Select the **Restore** icon![](../../../.gitbook/assets/restore-process-icon-processes-page-processes.png)for your Process. The following message displays: **The process was restored**. The Process moves from the **Archived Processes** page to the **Processes** page. See [View All Active Processes](view-your-processes.md#view-all-active-processes).
 
 ## Related Topics
 
