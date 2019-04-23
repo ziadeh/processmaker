@@ -13,22 +13,22 @@ use Facebook\WebDriver\Remote\RemoteWebDriver;
 
 class CombinedTestCase extends DuskTestCase
 {
-/*
+
     protected function driver()
     {
         return RemoteWebDriver::create(
             "https://" . env('SAUCELABS_USERNAME') . ":" . env('SAUCELABS_ACCESS_KEY') . "@ondemand.saucelabs.com:443/wd/hub",
             [
-                "platform" => env('SAUCELABS_PLATFORM'),
-                "browserName" => env('SAUCELABS_BROWSER'),
-                "version"=> env('SAUCELABS_BROWSER_VERSION'),
+                //"platform" => env('SAUCELABS_PLATFORM'),
+                //"browserName" => env('SAUCELABS_BROWSER'),
+                //"version"=> env('SAUCELABS_BROWSER_VERSION'),
                 "tags" => ["Auth Client", "Groups", "Category", "Users"],
                 "name" => ("Combined Auth/Group/Category/User/EnvVar Test"),
                 "build" => env('BUILD_NAME')
             ]
         );
     }
-*/
+
     /**
      * @throws \Throwable
      */
@@ -37,20 +37,14 @@ class CombinedTestCase extends DuskTestCase
         $this->browse(function ($browser) {
             //Login
             $browser->visit("/");
-            if ($browser->assertVisible(".phpdebugbar") == TRUE){   // Minimize the Laravel debug bar (if exists)
+            if ($browser->waitFor('.phpdebugbar'); == TRUE){   // Minimize the Laravel debug bar (if exists)
                 $browser->press(".phpdebugbar-close-btn")
-                ->assertSee("Username")
+            }
+            $browser->assertSee("Username")
                 ->type("#username", "admin")
                 ->type("#password", "admin")
                 ->press(".btn")
                 ->assertMissing(".invalid-feedback");
-            }
-            else{
-                $browser->assertSee("Username")
-                    ->type("#username", "admin")
-                    ->type("#password", "admin")
-                    ->press(".btn")
-                    ->assertMissing(".invalid-feedback");
             }
         });
     }
