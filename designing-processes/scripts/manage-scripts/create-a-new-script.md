@@ -30,7 +30,7 @@ Follow these steps to create a new ProcessMaker Script:
    * PHP
    * Lua
 6. From the **Run script as** drop-down menu, select which ProcessMaker user's API client authentication key to use with the ProcessMaker Script. This is a required field. Ensure that ProcessMaker user has the API client authentication key configured. See [Create a New Client Authentication Key](../../../processmaker-administration/auth-client-management/manage-client-authentications/create-a-new-client-authentication-key.md#create-a-client-authentication-key).
-7. In the **Timeout** field, use the slider control or enter how many seconds the ProcessMaker Script is allowed to run before it times out. Use `0` to indicate that the ProcessMaker Script never times out. The default timeout is **60** seconds.
+7. In the **Timeout** field, use the slider control or enter how many seconds the ProcessMaker Script is allowed to run before it times out. Use `0` to indicate that the ProcessMaker Script never times out. The default timeout is **60** seconds. This is a required field.
 8. Click **Save**. Scripts Editor displays so you can develop your ProcessMaker Script. See [Scripts Editor](../scripts-editor.md).
 
 ## Related Topics
