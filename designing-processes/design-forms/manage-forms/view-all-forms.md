@@ -41,6 +41,10 @@ Use the [Search](search-for-a-screen.md#search-for-a-processmaker-screen) field 
 
 Click the **+Screen** button. See [Create a New Script](../../scripts/manage-scripts/create-a-new-script.md#create-a-new-processmaker-script).
 
+### Import a ProcessMaker Screen
+
+Click the **Import** button. See [Import a Screen](import-a-screen.md).
+
 ### Edit a ProcessMaker Screen
 
 Click the **Open Editor** icon![](../../../.gitbook/assets/edit-icon.png). See [Screens Builder](../screens-builder/) for topics.
@@ -52,6 +56,10 @@ Click the **Configure** icon![](../../../.gitbook/assets/configure-process-icon-
 ### Duplicate a ProcessMaker Screen
 
 Click the **Duplicate** icon![](../../../.gitbook/assets/duplicate-script-processes.png). See [Duplicate a Screen](duplicate-a-screen.md#duplicate-a-processmaker-screen).
+
+### Export a ProcessMaker Screen
+
+Click the **Export** icon![](../../../.gitbook/assets/export-process-icon-processes.png). See [Export a Screen](export-a-screen.md).
 
 ### Delete a ProcessMaker Screen
 
