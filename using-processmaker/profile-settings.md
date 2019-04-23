@@ -32,8 +32,8 @@ Follow these steps to change your profile settings:
 
 2. The ProcessMaker Administrator may have entered some profile settings when your [user account was created](../processmaker-administration/add-users/manage-user-accounts/create-a-user-account.md#create-a-processmaker-user-account). Follow these guidelines to change your profile information as necessary:
    * In the **Name** section, change the following information:
-     * In the **First Name** field, enter your first name. ~~This is a required field.~~
-     * In the **Last Name** field, enter your last name. ~~This is a required field.~~
+     * In the **First Name** field, enter your first name. This is a required field.
+     * In the **Last Name** field, enter your last name. This is a required field.
    * In the **Contact Information** section, change the following information:
      * In the **Email** field, enter your business email address. This is a required field.
      * In the **Phone** field, enter your business telephone or cell phone number.
