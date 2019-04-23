@@ -13,7 +13,7 @@ use Facebook\WebDriver\Remote\RemoteWebDriver;
 
 class CombinedTestCase extends DuskTestCase
 {
-
+/*
     protected function driver()
     {
         return RemoteWebDriver::create(
@@ -28,7 +28,7 @@ class CombinedTestCase extends DuskTestCase
             ]
         );
     }
-
+*/
     /**
      * @throws \Throwable
      */
