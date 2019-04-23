@@ -25,8 +25,8 @@ Follow these steps to create a new ProcessMaker Screen:
 3. In the **Name** field, enter the name of the ProcessMaker Screen. This is a required field.
 4. From the **Type** drop-down menu, select one of the following ProcessMaker Screen types:
 
-   * **Display:** The Display type, generally used to display information, has limited functionality compared the Form type.
-   * **Form:** The Form type allows people to interact with a [Request](../../../using-processmaker/requests/what-is-a-request.md) in which those ProcessMaker Screens are used.
+   * **Display:** The Display type, generally used to display information or download files, has limited functionality compared the Form type.
+   * **Form:** The Form type allows people to interact with [Request](../../../using-processmaker/requests/what-is-a-request.md) information.
 
    This is a required field. See [Screen Types](../screens-builder/types-for-screens.md).
 
