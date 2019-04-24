@@ -17,6 +17,8 @@ The following ProcessMaker Spark components are exported if they are specified i
 
 ProcessMaker Spark does not export [users](../../../processmaker-administration/add-users/what-is-a-user.md) or [groups](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) associated with the original ProcessMaker Spark Process. Therefore, Task element assignments are not exported and must be configured if the Process is imported to another ProcessMaker Spark instance or third-party BPMN 2.0 modeler application.
 
+The exported Process has the `.spark` file extension.
+
 ## Export a BPMN 2.0 Compliant Process
 
 {% hint style="info" %}
@@ -29,7 +31,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 {% endhint %}
 
 {% hint style="warning" %}
-ProcessMaker Spark Processes that are not BPMN 2.0 compliant can be exported successfully. However, that Process will not [import](import-a-bpmn-compliant-process.md) successfully. Therefore, validate that your Process is BPMN 2.0 compliant before exporting it. See [Validate Your Process is BPMN 2.0 Compliant](../../process-design/model-your-process/validate-bpmn-2.0-compliance.md).
+ProcessMaker Spark Processes that are not BPMN 2.0 compliant can be exported successfully. However, such Processes will not [import](import-a-bpmn-compliant-process.md) successfully. Therefore, validate that your Process is BPMN 2.0 compliant before exporting it. See [Validate Your Process is BPMN 2.0 Compliant](../../process-design/model-your-process/validate-bpmn-2.0-compliance.md).
 {% endhint %}
 
 Follow these steps to export a BPMN 2.0 compliant Process:
@@ -39,7 +41,9 @@ Follow these steps to export a BPMN 2.0 compliant Process:
 
    ![](../../../.gitbook/assets/export-process-message-processes.png)
 
-3. Click **Download**. ProcessMaker Spark exports the Process using the original Process name except spaces in the name are replaced with underscores \(`_`\). The file has the extension `.spark`. ProcessMaker Spark exports the `.spark` file to your local computer. The following message displays when the Process exports successfully: **The process was exported.**
+3. Click **Download**, and then browse for the location on your local computer to save the exported Process.
+4. By default, ProcessMaker Spark exports the Process using the original Process name except spaces in the name are replaced with underscores \(`_`\). The file has the file extension `.spark`. Rename the default file name if necessary, though do not change the file extension. As a best practice, specify in the file name that this is an exported ProcessMaker Process and not an [exported ProcessMaker Screen](../../design-forms/manage-forms/export-a-screen.md#export-a-processmaker-screen).
+5. Save the file. ProcessMaker Spark exports the `.spark` file to your local computer. The following message displays when the Process exports successfully: **The process was exported.**
 
 ## Related Topics
 
