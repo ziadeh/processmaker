@@ -86,9 +86,61 @@ Follow these steps to edit a ProcessMaker user account:
    * Click on a permission category to expand the view of individual permissions within that category. Click on an expanded permission category to collapse that category. If you don't intend to assign this ProcessMaker user account with any group\(s\), then assign permissions to this user account. Note that if this ProcessMaker user account is assigned to any group\(s\), the permissions set in the group\(s\) take apply to those assigned to the user account. See [Permission Descriptions for Users and Groups](../../permission-descriptions-for-users-and-groups.md).
 9. Click **Save** if you made any changes in the **Information** or **Permissions** tabs.
 
+## Generate an API Token
+
 {% hint style="info" %}
-The **API Tokens** tab displays the API token that ProcessMaker user generated to access the [ProcessMaker 4 REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation). It is not editable.
+Your user account or group membership must have the following permissions to edit a ProcessMaker user account:
+
+* Users: View Users
+* Users: Edit Users
+
+See the [User](../../permission-descriptions-for-users-and-groups.md#users) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
+
+Use an API token with a ProcessMaker user account to successfully make calls to the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation) from an external third-party application. The API token must not be expired for that API token to work.
+
+A ProcessMaker user must have a valid API token to successfully make calls to the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation) from an external third-party application.
+
+Follow these steps to generate an API token:
+
+1. [View all ProcessMaker user accounts.](view-all-users.md) The **Users** page displays.
+2. Select the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the ProcessMaker user account to generate an API token to the ProcessMaker Spark REST API. The **Information** tab displays for that ProcessMaker user account.
+3. Click the **API Tokens** tab.  
+
+   ![](../../../.gitbook/assets/api-token-tab-user-profile-admin.png)
+
+4. Click **Generate New Token**. The token displays.
+5. Click **Copy Token to Clipboard**.  
+
+   ![](../../../.gitbook/assets/api-token-tab-copy-to-clipboard-admin.png)
+
+6. Save the API token in the external third-party application. Alternatively, send the person using the ProcessMaker user account the API token. Make note of when the API token automatically expires.
+
+## Delete an API Token
+
+{% hint style="info" %}
+Your user account or group membership must have the following permissions to edit a ProcessMaker user account:
+
+* Users: View Users
+* Users: Edit Users
+
+See the [User](../../permission-descriptions-for-users-and-groups.md#users) permissions or ask your ProcessMaker Administrator for assistance.
+{% endhint %}
+
+{% hint style="warning" %}
+Deleting an API token revokes the ProcessMaker user holding the token from using an external third-party application from successfully making calls to the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation). Deleting an API token cannot be undone.
+{% endhint %}
+
+Follow these steps to generate an API token:
+
+1. [View all ProcessMaker user accounts.](view-all-users.md) The **Users** page displays.
+2. Select the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the ProcessMaker user account to generate an API token to the ProcessMaker Spark REST API. The **Information** tab displays for that ProcessMaker user account.
+3. Click the **API Tokens** tab.
+4. Click the **Delete** icon![](../../../.gitbook/assets/delete-api-token-admin.png)for the API token to delete. A message displays to confirm deletion of the API token. The API token is referenced by its ID value.  
+
+   ![](../../../.gitbook/assets/caution-delete-api-token-admin.png)
+
+5. Click **Confirm**.
 
 ## Related Topics
 
