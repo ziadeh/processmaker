@@ -24,11 +24,11 @@ Follow these steps to duplicate a ProcessMaker Screen:
 
 3. Edit the following information from the original ProcessMaker Screen as necessary:
    * In the **Name** field, edit the name of the duplicated ProcessMaker Screen. After the original ProcessMaker Screen is duplicated, the word **Copy** is suffixed to the original Screen's name. This is a required field.
-   * In the **Description** field, edit the description from the original ProcessMaker Screen.
+   * In the **Description** field, edit the description of the original ProcessMaker Screen.
 4. Click **Save**.
 
 {% hint style="info" %}
-The **Type** field shows which [type](../screens-builder/types-for-screens.md) the original ProcessMaker Screen is. The duplicate ProcessMaker Screen must be of the same type.
+The **Type** field shows which [type](../screens-builder/types-for-screens.md) the original ProcessMaker Screen is. The duplicate ProcessMaker Screen must be of the same Screen type as the original.
 {% endhint %}
 
 ## Related Topics

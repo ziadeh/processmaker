@@ -12,10 +12,10 @@ Use Screens Builder to design different types of ProcessMaker Screens. Savvy dev
 
 ### Form
 
-The Form type allows people to interact with a Request in which those ProcessMaker Screens are used. Below are only a few of the ways that people may interact with a digital form:
+The Form type allows Request participants to interact with Request information. Below are a few ways that Request participants might interact with a digital form:
 
-* Make a request.
-* Approve a request.
+* Enter information, such as name and email address, to apply for a loan.
+* Approve the department budget.
 * Upload or download documents.
 
 All ProcessMaker Spark Screen [controls](control-descriptions/) in Screens Builder are available for the Form type.

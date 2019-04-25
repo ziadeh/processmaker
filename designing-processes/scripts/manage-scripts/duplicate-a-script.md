@@ -24,7 +24,7 @@ Follow these steps to duplicate a ProcessMaker Script:
 
 3. Edit the following information from the original ProcessMaker Script as necessary:
    * In the **Name** field, edit the name of the duplicated ProcessMaker Script. After the original ProcessMaker Script is duplicated, the word **Copy** is suffixed to the original Script's name. This is a required field.
-   * In the **Description** field, edit the description from the original ProcessMaker Script.
+   * In the **Description** field, edit the description of the original ProcessMaker Script.
 4. Click **Save**.
 
 {% hint style="info" %}

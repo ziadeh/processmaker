@@ -23,7 +23,7 @@ See the ProcessMaker [Screens](../../../processmaker-administration/permission-d
 
 Follow these steps to view the **Inspector** panel:
 
-1. Ensure you are in Editor mode in the ProcessMaker Screen page for which you want to view the settings of a control. To be in Editor mode, click the **Editor** option from Screen Builder's top menu. Editor mode is the default mode when a ProcessMaker Screen is edited.
+1. Ensure you are in [Editor mode](screens-builder-modes.md#editor-mode) in the ProcessMaker Screen page for which you want to view the settings of a control. To be in Editor mode, click the **Editor** option from Screen Builder's top menu. Editor mode is the default mode when a ProcessMaker Screen is edited.
 2. Select the control in which to view its settings. The **Inspector** panel displays the settings for that control.
 
 ![Inspector panel displaying control settings in Editor mode](../../../.gitbook/assets/inspector-panel-scripts-builder-processes.png)

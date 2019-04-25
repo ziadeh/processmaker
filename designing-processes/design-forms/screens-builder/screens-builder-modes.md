@@ -26,7 +26,7 @@ See [Add a New Page to a Screen](add-a-new-page-to-a-screen.md).
 
 Use Preview mode to view how your ProcessMaker Screen displays.
 
-Furthermore, use Preview mode to view how the ProcessMaker Screen's controls you configured in Editor mode interact with JSON data models. While Screens Builder has an easy-to-use design interface to edit and preview ProcessMaker Screens, they are represented as JSON data models. You can view any JSON data model in Preview mode to experiment with how a [Process's](../../viewing-processes/what-is-a-process.md) JSON data model or another ProcessMaker Screen's data model interacts with your Screen. Viewing the JSON data model can be helpful to see how values are entered into the ProcessMaker Screen as well as to use that JSON data model in your [ProcessMaker Scripts](../../scripts/what-is-a-script.md).
+Furthermore, use Preview mode to view how the ProcessMaker Screen's controls you configured in Editor mode interact with JSON data models. While Screens Builder has an easy-to-use drag-and-drop design interface to edit and preview ProcessMaker Screens, ProcessMaker Spark represents them as JSON data models. You can view any JSON data model in Preview mode to experiment with how a [Process's](../../viewing-processes/what-is-a-process.md) JSON data model or another ProcessMaker Screen's data model interacts with your Screen. Viewing the JSON data model can be helpful to see how values are entered into the ProcessMaker Screen as well as to use that JSON data model in your [ProcessMaker Scripts](../../scripts/what-is-a-script.md).
 
 {% hint style="info" %}
  See [Preview a Screen and Its JSON Data Model](preview-a-screen.md).
@@ -34,7 +34,7 @@ Furthermore, use Preview mode to view how the ProcessMaker Screen's controls you
 
 ## Computed Properties Mode
 
-Use Computed Properties mode to add Properties to a ProcessMaker Screen's JSON data model. A Property represents any value, mathematical calculation, or formula that computes a value. A Property's computation can be determined either through a mathematical formula or valid JavaScript, and may include values from [ProcessMaker Screen control](control-descriptions/) values during a Request. Likewise, a computed Property's value can be displayed in a ProcessMaker Screen control. Computed Properties can only be used within and only affect the currently opened ProcessMaker Screen.
+Use Computed Properties mode to add Properties to a ProcessMaker Screen's JSON data model. A Property represents any value, mathematical calculation, or formula that computes a value. A Property's computation can be determined either through a mathematical formula or valid JavaScript, and may include values from [ProcessMaker Screen control](control-descriptions/) values during a Request. Likewise, a computed Property's value can be displayed in a ProcessMaker Screen control. Computed Properties can only be used within and only affect the ProcessMaker Screen in which the Property is defined.
 
 {% hint style="info" %}
 See [Manage Computed Properties](manage-computed-properties.md).

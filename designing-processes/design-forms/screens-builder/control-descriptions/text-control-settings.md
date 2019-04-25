@@ -1,12 +1,12 @@
 ---
-description: Add a control that displays text.
+description: Add a control that displays plain or bold-formatted text.
 ---
 
 # Text Box Control Settings
 
 ## Control Description
 
-The Text Box control adds a text field that displays text.
+The Text Box control adds a text field that displays plain or bold-formatted text.
 
 ## Add the Control to a ProcessMaker Screen
 

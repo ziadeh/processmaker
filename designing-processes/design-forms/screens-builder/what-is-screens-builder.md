@@ -16,7 +16,9 @@ Your user account or group membership must have the following permissions to cre
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Screens Builder allows Process Owners to design screens for their Processes. ProcessMaker Screens are independent of Processes: any ProcessMaker Screen can be used in any Process, even those that you did not design. While Screens Builder has an easy-to-use drag-and-drop design interface to edit and preview ProcessMaker Screens, they are represented as JSON data models. You can view the JSON data model while in [Preview mode](preview-a-screen.md) as well as in your [ProcessMaker Scripts](../../scripts/scripts-editor.md#enter-json-data-model-variables-from-processmaker-screens).
+Screens Builder allows Process Owners to design ProcessMaker Screens for their Processes. ProcessMaker Screens are independent of Processes: any ProcessMaker Screen can be used in any Process, even those that you did not design. ProcessMaker Screens can be [exported](../manage-forms/export-a-screen.md), and then shared with other Process Owners so they may [import](../manage-forms/import-a-screen.md) them for their Processes.
+
+While Screens Builder has an easy-to-use drag-and-drop design interface to edit and preview ProcessMaker Screens, ProcessMaker Spark represents them as JSON data models. You can view the JSON data model while in [Preview mode](preview-a-screen.md) as well as in your [ProcessMaker Scripts](../../scripts/scripts-editor.md#enter-json-data-model-variables-from-processmaker-screens).
 
 You can design different types of ProcessMaker Screens. See [Screen Types](types-for-screens.md) to learn more.
 
