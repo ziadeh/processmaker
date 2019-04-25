@@ -4,9 +4,9 @@ description: >-
   Screen show or hide in run-time.
 ---
 
-# Expression Syntax Components for "Show If" Control Settings
+# Expression Syntax Components for "Visibility Rule" Control Settings
 
-## Expression Syntax Components for "Show If" Control Settings
+## Expression Syntax Components for "Visibility Rule" Control Settings
 
 Use the following expression syntax components to compose the expression that describes under which condition\(s\) a ProcessMaker Screen control displays.
 
@@ -15,7 +15,7 @@ If an expression in a control evaluates as True, then that control displays in r
 If an expression in a control does not evaluate as True, then that control does not display in run-time during a Request.
 
 {% hint style="info" %}
-If a ProcessMaker Screen control does not have an expression in its **Show If** setting, then that control displays by default.
+If a ProcessMaker Screen control does not have an expression in its **Visibility Rule** setting, then that control displays by default.
 {% endhint %}
 
 ### Literals
