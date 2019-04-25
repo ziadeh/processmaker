@@ -10,7 +10,7 @@ Import Processes into ProcessMaker Spark if the Process to be imported is BPMN 2
 
 ### Import Validated ProcessMaker Spark Processes
 
-Import validated ProcessMaker Spark Processes that have been [exported](export-a-bpmn-compliant-process.md) from ProcessMaker Spark if the Process was exported from the same [ProcessMaker Spark version](../../../using-processmaker/application-version-details.md#view-processmaker-version-information). A validated ProcessMaker Spark Process is [BPMN 2.0 compliant](https://www.omg.org/spec/BPMN/2.0/About-BPMN/) and has been [validated in Process Modeler](../../process-design/model-your-process/validate-bpmn-2.0-compliance.md) before that Process was exported. The Process can be imported from the same or different ProcessMaker Spark instance.
+Import validated ProcessMaker Spark Processes that have been [exported](export-a-bpmn-compliant-process.md) from the same [ProcessMaker Spark version](../../../using-processmaker/application-version-details.md#view-processmaker-version-information). A validated ProcessMaker Spark Process is [BPMN 2.0 compliant](https://www.omg.org/spec/BPMN/2.0/About-BPMN/) and has been [validated in Process Modeler](../../process-design/model-your-process/validate-bpmn-2.0-compliance.md) before that Process was exported. The Process can be imported from the same or different ProcessMaker Spark instance. Exported ProcessMaker Spark Processes have the `.spark` file extension.
 
 The following ProcessMaker Spark components are imported from a validated ProcessMaker Spark Process if they are specified in that Process:
 
@@ -49,19 +49,17 @@ Follow these steps to import a validated ProcessMaker Spark Process:
 
    ![](../../../.gitbook/assets/import-process-message-processes.png)
 
-3. Click **Browse** to locate the source BPMN 2.0 compliant Process to import. ProcessMaker Spark Processes have the `.spark` file extension.
+3. Click **Browse** to locate the ProcessMaker Spark Process to import. ProcessMaker Spark Processes have the `.spark` file extension.
 4. Click **Import**. The **Import Process** screen displays to indicate which components of the imported Process import correctly.  
 
    ![](../../../.gitbook/assets/import-process-screen-processes.png)
 
-5. Click the **List Processes** button.
-
-   The **Processes** page displays the imported Process with the identically as the source Process except with a number "2" suffix.  
+5. Click the **List Processes** button. The **Processes** page displays the imported Process with the same name as the original ProcessMaker Spark Process except with a number "2" suffix.  
 
    ![](../../../.gitbook/assets/imported-process-with-name-of-source-process-processes.png)
 
 {% hint style="warning" %}
-If the source BPMN 2.0 compliant Process cannot import successfully, the following message displays: **Unable to import the process.** Ensure that the source Process is BPMN 2.0 compliant.
+If the original ProcessMaker Spark Process cannot import successfully, the following message displays: **Unable to import the process.** Ensure that the original ProcessMaker Spark Process is BPMN 2.0 compliant.
 {% endhint %}
 
 ## Import a BPMN 2.0 Compliant Process Model from a Third-Party Application

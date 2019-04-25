@@ -37,9 +37,13 @@ If there are no search results, the following message displays: **No data availa
 
 {% page-ref page="create-a-new-form.md" %}
 
+{% page-ref page="import-a-screen.md" %}
+
 {% page-ref page="edit-a-screen.md" %}
 
 {% page-ref page="duplicate-a-screen.md" %}
+
+{% page-ref page="export-a-screen.md" %}
 
 {% page-ref page="remove-a-screen.md" %}
 
