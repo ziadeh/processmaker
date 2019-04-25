@@ -63,7 +63,6 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Below are Inspector settings for the Multi Column control:
 
-* **Field Name:** Specify the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **Field Name** value for this control to reference it in [**Show If** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 * **Column Widths:** Specify the column width for each column in the control. Add each column and its width specification in the order they are to display from left to right in the control. Specify the width of each column in `colspan` [HTML attribute](https://www.w3schools.com/tags/att_colspan.asp) settings. The total of all `colspan` attribute settings must be divisible by 12. The control contains two columns of six \(6\) `colspan` HTML attribute setting each by default.  
 
   ![](../../../../.gitbook/assets/column-width-colspan-multi-control-screens-builder-processes.png)
@@ -71,27 +70,31 @@ Below are Inspector settings for the Multi Column control:
   Each option has the following settings:
 
   * **Column:** **Column** is the internal designation for the column that only the Process Owner views at design time.
-  * **Colspan:** **Colspan** is the width of the column in `colspan` HTML attribute settings. 
+  * **Colspan:** **Colspan** is the width of the column in `colspan` HTML attribute settings.
   * **Actions:** Click the Remove![](../../../../.gitbook/assets/options-list-delete-option-icon-screens-builder-processes.png)icon to remove the column.
 
-  Follow these steps to add a column: 
+  Follow these steps to add a column and specify its width: 
 
-  1. Click **Add Column** from below the **Options Widths** setting. The **Add New Column** screen displays.  
+  1. Click **Add Column** from below the **Column Widths** setting. The **Add New Column** screen displays.   
 
      ![](../../../../.gitbook/assets/add-column-multi-control-screens-builder-processes.png)
 
   2. In the **Column Width** field, enter the width of the column \(as described above\).
   3. Click **OK**. The column displays below the existing columns in **Column Widths**.
+  4. If necessary, click the **Show in Json Format** checkbox to view the multiple columns in JSON format.
 
 * **Background Color:** Select to specify the background color of the Submit Button control. Selecting a background color also selects the **Background Color** checkbox.
 * **Text Color:** Select to specify the text color that displays in the control. Selecting a text color also selects the **Text Color** checkbox.
-* **Show If:** Specify an expression that dictates the condition\(s\) under which the Submit Button control displays. See [Expression Syntax Components for "Show If" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **Visibility Rule:** Specify an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 
 ## Related Topics <a id="related-topics"></a>
 
 {% page-ref page="../types-for-screens.md" %}
 
 {% page-ref page="./" %}
+
+{% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="text-control-settings.md" %}
 

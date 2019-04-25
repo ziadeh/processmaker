@@ -95,8 +95,8 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Below are Inspector settings for the Record List control:
 
-* **List Name:** Specify the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **List Name** value for this control to reference it in [**Show If** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
-* **List Label:** Specify the field label text that displays. **New Record List** is the default value.
+* **List Name:** Enter the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **List Name** value for this control to reference it in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+* **List Label:** Enter the field label text that displays. **New Record List** is the default value.
 * **Editable?:** Select to indicate that the record that the form user enters can be edited. Otherwise, deselect to indicate that the form user's record cannot be changed. This setting is not selected by default.
 * **Fields List:** Specify the list of options the Record List records from the form user. Each option in the **Fields List** setting references a control on a secondary ProcessMaker Screen page that uses the same **Field Name** value as entered into the **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page. See the [example](record-list-control-settings.md#example). The following message displays in Preview mode when not all the **Value** parameters match with a control's **Field Name** value on the secondary page: **There is no records in this list or the data is invalid.**   
 
@@ -116,9 +116,14 @@ Below are Inspector settings for the Record List control:
 
   2. In the **Option Value** field, enter the **Value** option value \(as described above\).
   3. In the **Option Label** field, enter the **Content** option value \(as described above\).
-  4. Click **OK**. The field item displays below the existing items in **Fields List**.
+  4. If necessary, click the **Show in Json Format** checkbox to view the multiple columns in JSON format.
+  5. Click **OK**. The field item displays below the existing items in **Fields List**.
 
 * **Record Form:** Select from which ProcessMaker Screen page to add/edit records. The page that records the submitted records cannot be on the same page as the Record List control. The following message displays in Preview mode when the Record List control references the same page the control is placed: **The add/edit form referencing our own form which is not allowed.**
+* **Background Color:** Select to specify the background color of the Submit Button control. Selecting a background color also selects the **Background Color** checkbox.
+* **Text Color:** Select to specify the text color that displays in the control. Selecting a text color also selects the **Text Color** checkbox.
+* **Visibility Rule:** Specify an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 
 ## Related Topics <a id="related-topics"></a>
 
@@ -127,6 +132,8 @@ Below are Inspector settings for the Record List control:
 {% page-ref page="../view-the-inspector-pane.md" %}
 
 {% page-ref page="./" %}
+
+{% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="text-control-settings.md" %}
 

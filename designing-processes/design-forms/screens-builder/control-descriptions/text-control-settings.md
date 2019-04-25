@@ -62,22 +62,25 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Below are Inspector settings for the Text Box control:
 
-* **Field Name:** Specify the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **Field Name** value for this control to reference it in [**Show If** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
-* **Text Content:** Specify what text displays for the Text Box control. **New Text** is the default value. You can change what text will display.
+* **Text Content:** Enter what text displays for the Text Box control. **New Text** is the default value. You can change what text will display.
 * **Font Weight:** Sets the weight of the text specified in the **Text Content** setting. **Normal** is the default option. You can change to **Bold**.
-* ~~**Text Color:** Sets the color of the displayed text. Use any HTML or Hex code. This setting has no default value.~~
-* **Text Alignment:** Sets the text alignment. **Left** is the default option. Select one of the following options:
+* **Text Horizontal Alignment:** Sets the text horizontal alignment. **Left** is the default option. Select one of the following options:
   * Center
   * Left
   * Right
   * Justify
+* **Text Vertical Alignment:** Sets the text vertical alignment. **Top** is the default option. Select one of the following options:
+  * Top
+  * Middle
+  * Bottom
 * **Font Size:** Sets the size of the **Text Label** text in em units. **1** is the default option. Select one of the following options:
   * 1
   * 1.5
   * 2
 * **Background Color:** Select to specify the background color of the Text Box control. Selecting a background color also selects the **Background Color** checkbox.
 * **Text Color:** Select to specify the text color specified in the **Text Content** setting. Selecting a text color also selects the **Text Color** checkbox.
-* **Show If:** Specify an expression that dictates the condition\(s\) under which the Text Box control displays. See [Expression Syntax Components for "Show If" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **Visibility Rule:** Specify an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 
 {% hint style="info" %}
 Below are some ways to render Request data to display as text in a Text Box control:
@@ -93,6 +96,8 @@ Below are some ways to render Request data to display as text in a Text Box cont
 {% page-ref page="../view-the-inspector-pane.md" %}
 
 {% page-ref page="./" %}
+
+{% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="line-input-control-settings.md" %}
 

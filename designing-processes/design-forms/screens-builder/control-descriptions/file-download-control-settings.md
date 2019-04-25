@@ -32,7 +32,9 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
 5. Configure the File Download control. See [Inspector Settings](file-download-control-settings.md#inspector-settings).
 
-Below is a File Download control in Preview mode. ~~ADD THE FILE DOWNLOAD PREVIEW AFTER THE CONTROL HAS A PREVIEW REPRESENTATION.~~
+Below is a File Download control in Preview mode.
+
+
 
 ## Delete the Control from a ProcessMaker Screen
 
@@ -61,10 +63,10 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Below are Inspector settings for the File Download control:
 
-* ~~**Field Name:** Specify the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **Field Name** value for this control to reference it in~~ [~~**Show If** setting expressions~~](expression-syntax-components-for-show-if-control-settings.md)~~.~~
-* **Text Label:** Specify the field label text that displays. **New File Download** is the default value.
-* **Download Name:** Specify the name associated with the downloaded file\(s\). This name can be referenced from a previous step in the Request. This setting has no default value.
-* **Show If:** Specify an expression that dictates the condition\(s\) under which the File Download control displays. See [Expression Syntax Components for "Show If" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **Text Label:** Enter the field label text that displays. **New File Download** is the default value.
+* **Download Name:** Enter the name associated with the downloaded file\(s\). This name can be referenced from a previous step in the Process. This setting has no default value.
+* **Visibility Rule:** Enter an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 
 ## Related Topics <a id="related-topics"></a>
 
@@ -73,6 +75,8 @@ Below are Inspector settings for the File Download control:
 {% page-ref page="../view-the-inspector-pane.md" %}
 
 {% page-ref page="./" %}
+
+{% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="text-control-settings.md" %}
 

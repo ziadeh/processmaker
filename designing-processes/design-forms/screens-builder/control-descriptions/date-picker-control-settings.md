@@ -68,12 +68,13 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Below are Inspector settings for the Date Picker control:
 
-* **Field Name:** Specify the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **Field Name** value for this control to reference it in [**Show If** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
-* **Field Label:** Specify the field label text that displays. **New Date Picker** is the default value.
-* **Placeholder:** Specify the placeholder text that displays in the field when no value has been provided. This setting has no default value.
+* **Field Name:** Enter the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **Field Name** value for this control to reference it in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+* **Field Label:** Enter the field label text that displays. **New Date Picker** is the default value.
+* **Placeholder:** Enter the placeholder text that displays in the field when no value has been provided. This setting has no default value.
 * **Background Color:** Select to specify the background color of the Date Picker control. Selecting a background color also selects the **Background Color** checkbox.
 * **Text Color:** Select to specify the text color that displays in the control. Selecting a text color also selects the **Text Color** checkbox.
-* **Show If:** Specify an expression that dictates the condition\(s\) under which the Date Picker control displays. See [Expression Syntax Components for "Show If" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **Visibility Rule:** Enter an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 
 ## Related Topics <a id="related-topics"></a>
 
@@ -82,6 +83,8 @@ Below are Inspector settings for the Date Picker control:
 {% page-ref page="../view-the-inspector-pane.md" %}
 
 {% page-ref page="./" %}
+
+{% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="text-control-settings.md" %}
 

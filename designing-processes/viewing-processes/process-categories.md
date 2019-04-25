@@ -6,7 +6,9 @@ description: Assign Categories to Processes for better organization.
 
 ## Overview
 
-Processes can be grouped into Categories. Use Categories to organize your Processes for Requesters.
+A Category is a group of Processes with similar functions or goals. A Category helps organize Processes into groups. When a Requester starts a new Request, the New Request screen displays Processes in Categories. Use Categories to help Requesters find the Process in which to start a Request.
+
+![The &quot;New Request&quot; screen displays Processes into Categories](../../.gitbook/assets/new-request-screen-requests.png)
 
 Categories can be active or inactive. Processes that have been assigned to an inactive Category do not display in any Category when [Requesters start a Request](../../using-processmaker/requests/make-a-request.md#start-a-request).
 

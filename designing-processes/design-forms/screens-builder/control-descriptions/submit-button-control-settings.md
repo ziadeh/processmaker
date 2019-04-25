@@ -68,10 +68,10 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Below are Inspector settings for the Submit Button control:
 
-* **Field Name:** Specify the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **Field Name** value for this control to reference it in [**Show If** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
-* **Field Label:** Specify the field label text that displays. **New Submit** is the default value.
-* **Field Value:** Specify any alphanumeric value that the Submit Button control sends when the form user selects the button. This value can be evaluated in a rule.
-* **Variant:** Specify the style for the Submit Button control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
+* **Field Name:** Enter the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **Field Name** value for this control to reference it in [**Visibilty Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+* **Field Label:** Enter the field label text that displays. **New Submit** is the default value.
+* **Field Value:** Enter any alphanumeric value that the Submit Button control sends when the form user selects the button. This value can be evaluated in a rule.
+* **Variant:** Select the style for the Submit Button control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
   * **Primary:** Blue-colored background with white-colored **Field Label** text. Set as the default.
   * **Secondary:** Gray-colored background with white-colored **Field Label** text.
   * **Success:** Green-colored background with white-colored **Field Label** text.
@@ -83,7 +83,8 @@ Below are Inspector settings for the Submit Button control:
   * **Link:** White-colored background with blue-colored **Field Label** text.
 * **Background Color:** Select to specify the background color of the Submit Button control. Selecting a background color also selects the **Background Color** checkbox.
 * **Text Color:** Select to specify the text color that displays in the control. Selecting a text color also selects the **Text Color** checkbox.
-* **Show If:** Specify an expression that dictates the condition\(s\) under which the Submit Button control displays. See [Expression Syntax Components for "Show If" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **Visibility Rule:** Enter an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 
 ## Related Topics <a id="related-topics"></a>
 
@@ -92,6 +93,8 @@ Below are Inspector settings for the Submit Button control:
 {% page-ref page="../view-the-inspector-pane.md" %}
 
 {% page-ref page="./" %}
+
+{% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="text-control-settings.md" %}
 

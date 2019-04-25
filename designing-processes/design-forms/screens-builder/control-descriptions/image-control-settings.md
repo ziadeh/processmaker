@@ -62,13 +62,14 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Below are Inspector settings for the Image control:
 
-* **Id:** Specify the unique internal image identification. ~~This is a required setting.~~
-* **Field Name:** Specify the unique internal data name of the control that only the Process Owner views at design time. This setting automatically uses the file name of the uploaded image as its value. This is a required setting. Use the **Field Name** value for this control to reference it in [**Show If** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+* **Id:** Enter the unique internal image identification. ~~This is a required setting.~~
+* **Field Name:** Enter the unique internal data name of the control that only the Process Owner views at design time. This setting automatically uses the file name of the uploaded image as its value. This is a required setting. Use the **Field Name** value for this control to reference it in [**Show If** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 * **Upload Image:** Click the **Upload Image** button to browse for the PNG, GIF, or JPG file type image to upload to the Image control.
 * **Preview:** This setting displays a preview of the uploaded image.
 * **Width:** Specify the width of the uploaded image in pixels. If the **Height** setting has no value, the Image control adjust the uploaded image to the **Width** setting value.
 * **Height:** Specify the width of the uploaded image in pixels. If the **Width** setting has no value, the Image control adjust the uploaded image to the **Height** setting value.
-* **Show If:** Specify an expression that dictates the condition\(s\) under which the Image control displays. See [Expression Syntax Components for "Show If" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **Visibility Rule:** Enter an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 
 ## Related Topics <a id="related-topics"></a>
 
@@ -77,6 +78,8 @@ Below are Inspector settings for the Image control:
 {% page-ref page="../view-the-inspector-pane.md" %}
 
 {% page-ref page="./" %}
+
+{% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="text-control-settings.md" %}
 

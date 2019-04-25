@@ -66,11 +66,11 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Below are Inspector settings for the Line Input control:
 
-* **Field Name:** Specify the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **Field Name** value for this control to reference it in [**Show If** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
-* **Field Label:** Specify the field label text that displays. **New Select** is the default value.
-* **Validation:** Specify the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
-* **Help Text:** Specify text that provides additional guidance on the field's use. This setting has no default value.
-* **Options List:** Specify the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down menu. The default option is called **new** with the content **New Option**.  
+* **Field Name:** Enter the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **Field Name** value for this control to reference it in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+* **Field Label:** Enter the field label text that displays. **New Select** is the default value.
+* **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+* **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
+* **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down menu. The default option is called **new** with the content **New Option**.  
 
   ![](../../../../.gitbook/assets/select-control-options-list-screens-builder-processes.png)
 
@@ -92,7 +92,8 @@ Below are Inspector settings for the Line Input control:
 
 * **Background Color:** Select to specify the background color of the Select control. Selecting a background color also selects the **Background Color** checkbox.
 * **Text Color:** Select to specify the text color that displays in the control. Selecting a text color also selects the **Text Color** checkbox.
-* **Show If:** Specify an expression that dictates the condition\(s\) under which the Select control displays. See [Expression Syntax Components for "Show If" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **Visibility Rule:** Specify an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 
 ## ​Related Topics
 
@@ -101,6 +102,8 @@ Below are Inspector settings for the Line Input control:
 {% page-ref page="../view-the-inspector-pane.md" %}
 
 {% page-ref page="./" %}
+
+{% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="text-control-settings.md" %}
 
