@@ -60,6 +60,10 @@ Below is an Intermediate Timer Event element when it has been placed into a Proc
 See [Add and Configure Intermediate Timer Event Elements](add-and-configure-intermediate-timer-event-elements.md).
 {% endhint %}
 
+### Intermediate Message Catch Event
+
+
+
 ### End Event
 
 An End Event element represents where a modeled Process normally ends when abnormal events do not terminate a [Request](../../../using-processmaker/requests/) for that Process \(such as a canceled Request\). An End Event element terminates the workflow of a Request for that Process. Therefore, an End Event element cannot have an outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow), though it may have an outgoing [Message Flow](process-modeling-element-descriptions.md#message-flow). A Process model can have multiple End Event elements.
@@ -116,6 +120,10 @@ Below is a Script Task element when it has been placed into a Process model.
 See [Add and Configure Script Task Elements](add-and-configure-script-task-elements.md).
 {% endhint %}
 
+## Call Activity
+
+
+
 ## Gateways
 
 A Gateway controls how and/or when [Sequence Flows](process-modeling-element-descriptions.md#sequence-flow) that interact with other elements in the Process model.
@@ -157,6 +165,10 @@ Below is a Parallel Gateway element when it has been placed into a Process model
 {% hint style="info" %}
 See [Add and Configure Parallel Gateway Elements](add-and-configure-parallel-gateway-elements.md).
 {% endhint %}
+
+### Event-Based Gateway
+
+
 
 ## Organize Process Participants
 
