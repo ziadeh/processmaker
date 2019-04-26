@@ -6,11 +6,17 @@ description: These are brief descriptions about commonly used Process modeling e
 
 ## Overview
 
-The following are brief descriptions about each Process modeling element. See the [BPMN 2.0 specification](https://www.omg.org/spec/BPMN/2.0/About-BPMN/) for more information.
+The following are brief descriptions about each Process modeling element in ProcessMaker Spark. See the [BPMN 2.0 specification](https://www.omg.org/spec/BPMN/2.0/About-BPMN/) for more information.
 
 ## Events
 
-An Event represents a milestone, time, or time interval in the Process model.
+An Event represents a milestone or an intermediate delay in the Process. ProcessMaker Spark provides the following event type Process model elements:
+
+* [Start Event](process-modeling-element-descriptions.md#start-event)
+* [Start Timer Event](process-modeling-element-descriptions.md#start-timer-event)
+* [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event)
+* [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event)
+* [End Event](process-modeling-element-descriptions.md#end-event)
 
 ### Start Event
 
@@ -46,7 +52,7 @@ See [Add and Configure Start Timer Event Elements](add-and-configure-start-timer
 
 ### Intermediate Timer Event
 
-An Intermediate Timer Event element represents a delay in a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow for that Process either at a specific time or at a periodic interval. When the specified time or interval occurs, the Intermediate Timer Event element triggers, thereby resuming workflow for that Process's Request.
+An Intermediate Timer Event element represents a delay in a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow for a Process either at a specific time or at a periodic interval. When the specified time or interval occurs, the Intermediate Timer Event element triggers, thereby resuming workflow for that Process's Request.
 
 In Process Modeler, the Intermediate Timer Event element is labeled as "Intermediate Timer Event" in the **BPMN** panel as highlighted below.
 
@@ -62,7 +68,7 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 ### Intermediate Message Catch Event
 
-An Intermediate Message Catch Event element represents a delay in a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow for that Process until that element receives a [Message Flow](process-modeling-element-descriptions.md#message-flow) element from another element. The Intermediate Catch Event element triggers, thereby resuming workflow for that Process's Request.
+An Intermediate Message Catch Event element represents a delay in a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow for a Process until that element receives a [Message Flow](process-modeling-element-descriptions.md#message-flow) element from another element. The Intermediate Catch Event element triggers, thereby resuming workflow for that Process's Request.
 
 In Process Modeler, the Intermediate Message Catch Event element is labeled as "Intermediate Message Catch Event" in the **BPMN** panel as highlighted below.
 
@@ -78,7 +84,7 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 ### End Event
 
-An End Event element represents where a modeled Process normally ends when abnormal events do not terminate a [Request](../../../using-processmaker/requests/) for that Process \(such as a canceled Request\). An End Event element terminates the workflow of a Request for that Process. Therefore, an End Event element cannot have an outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element, though it may have an outgoing [Message Flow](process-modeling-element-descriptions.md#message-flow) element. A Process model can have multiple End Event elements.
+An End Event element represents where a modeled Process normally ends when abnormal events do not terminate a [Request](../../../using-processmaker/requests/) for a Process \(such as a canceled Request\). An End Event element terminates the workflow of a Request for that Process. Therefore, an End Event element cannot have an outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element, though it may have an outgoing [Message Flow](process-modeling-element-descriptions.md#message-flow) element. A Process model can have multiple End Event elements.
 
 In Process Modeler, the End Event element is labeled as "End Event" in the **BPMN** panel as highlighted below.
 
@@ -94,7 +100,10 @@ See [Add and Configure Event Elements](add-and-configure-an-event-element.md#add
 
 ## Tasks
 
-A Task represents an activity to be performed either by a [Request](../../../using-processmaker/requests/what-is-a-request.md) participant or a [ProcessMaker Script](../../scripts/).
+A Task represents an activity to be performed either by a [Request](../../../using-processmaker/requests/what-is-a-request.md) participant or a [ProcessMaker Script](../../scripts/). ProcessMaker Spark provides the following Task type Process model elements:
+
+* [Task](process-modeling-element-descriptions.md#task)
+* [Script Task](process-modeling-element-descriptions.md#script-task)
 
 ### Task
 
@@ -253,7 +262,10 @@ See [Add and Configure Pool and Lane Elements](add-and-configure-pool-and-lane-e
 
 ## Flows
 
-Flows represent the order in which workflow routing and messaging occur in a Process model.
+Flows represent the order in which workflow routing and messaging occur in a Process model. ProcessMaker Spark provides the following Process model elements that indicate workflow:
+
+* [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow)
+* [Message Flow](process-modeling-element-descriptions.md#message-flow)
 
 ### Sequence Flow
 
@@ -303,7 +315,7 @@ See [Set and Delete Message Flow Between Elements](set-and-delete-message-flow-b
 
 ## Text Annotations and Associations
 
-Use Text Annotation and Association elements to add human-readable descriptions about the Process model.
+Use [Text Annotation](process-modeling-element-descriptions.md#text-annotation) and [Association](process-modeling-element-descriptions.md#association) elements to add human-readable descriptions about the Process model.
 
 ### Text Annotation
 
