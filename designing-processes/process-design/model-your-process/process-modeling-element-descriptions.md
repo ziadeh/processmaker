@@ -116,7 +116,7 @@ See [Add and Configure Task Elements](add-and-configure-task-elements.md).
 
 ### Script Task
 
-A Script Task element is an activity to be performed by a ProcessMaker Script.
+A Script Task element represents an activity to be performed by a ProcessMaker Script.
 
 ProcessMaker Scripts are designed in [Scripts Editor](../../scripts/scripts-editor.md). ProcessMaker Scripts are independent of modeled processes: any ProcessMaker Script can be reused in any modeled process in your organization. This architecture allows Process Owners to focus on process modeling in a no-code environment while ProcessMaker Developers develop reusable ProcessMaker Scripts. ProcessMaker Scripts can leverage Request-level variable data as well as variable data designed in ProcessMaker Screens from [Screens Builder](../../design-forms/screens-builder/).
 
@@ -134,15 +134,32 @@ See [Add and Configure Script Task Elements](add-and-configure-script-task-eleme
 
 ## Call Activity
 
+A Call Activity element represents a call to an external sub-Process. This is not to be confused when an embedded sub-Process is depicted in the Process model. Use the Call Activity element to call a reusable external Process from another Process.
 
+The called sub-Process has its own [Request](../../../using-processmaker/requests/what-is-a-request.md). The Request for the calling Process waits until the sub-Process's Request completes. When the external sub-Process's Request completes, workflow returns to the calling Process's Call Activity element and then continues.
+
+In Process Modeler, the Call Activity element is labeled as "Call Activity" in the **BPMN** panel as highlighted below.
+
+
+
+Below is a Call Activity element when it has been placed into a Process model.
+
+
+
+{% hint style="info" %}
+See [Add and Configure Call Activity Elements](add-and-configure-call-activity-elements.md).
+{% endhint %}
 
 ## Gateways
 
-A Gateway controls how and/or when [Sequence Flows](process-modeling-element-descriptions.md#sequence-flow) that interact with other elements in the Process model.
+Gateway elements route Request workflow in the following ways:
+
+* Limit workflow based on conditions or events, such as the [Exclusive Gateway](process-modeling-element-descriptions.md#exclusive-gateway) and [Event-Based Gateway](process-modeling-element-descriptions.md#event-based-gateway) elements do, respectively.
+* Synchronize or continue parallel workflows, as the [Parallel Gateway](process-modeling-element-descriptions.md#parallel-gateway) element does.
 
 ### Exclusive Gateway
 
-An Exclusive Gateway element represents a decision that creates alternative paths within a [Request's](../../../using-processmaker/requests/) workflow. During a Request's workflow for that Process, only one outgoing path from the Exclusive Gateway element can be taken. An Exclusive Gateway element can have two or more outgoing [Sequence Flows](process-modeling-element-descriptions.md#sequence-flow).
+An Exclusive Gateway element represents a decision that creates alternative paths within a [Request's](../../../using-processmaker/requests/) workflow for a Process. During a Request's workflow routing, only one outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element from the Exclusive Gateway element is followed based on a valid condition that is met in that Request.
 
 In Process Modeler, the Exclusive Gateway element is labeled as "Exclusive Gateway" in the **BPMN** panel as highlighted below.
 
@@ -164,7 +181,7 @@ See the following topics about Exclusive Gateway elements:
 A Parallel Gateway element represents the synchronization and/or creation of parallel paths within a [Request's](../../../using-processmaker/requests/) workflow. The Parallel Gateway element has two functions:
 
 * A Parallel Gateway does not trigger until all its incoming [Sequence Flows](process-modeling-element-descriptions.md#sequence-flow) route to it. This is how Parallel Gateways synchronize workflow.
-* When a Parallel Gateway triggers, its outgoing Sequence Flows creates parallel paths without any conditions. This function differentiates it from outgoing Sequence Flows for [Exclusive Gateway](process-modeling-element-descriptions.md#exclusive-gateway) elements.
+* When a Parallel Gateway triggers, its outgoing Sequence Flows creates parallel workflows without any conditions. This function differentiates it from outgoing Sequence Flows for [Exclusive Gateway](process-modeling-element-descriptions.md#exclusive-gateway) or [Event-Based Gateway](process-modeling-element-descriptions.md#event-based-gateway) elements.
 
 In Process Modeler, the Parallel Gateway element is labeled as "Parallel Gateway" in the **BPMN** panel as highlighted below.
 
@@ -180,7 +197,27 @@ See [Add and Configure Parallel Gateway Elements](add-and-configure-parallel-gat
 
 ### Event-Based Gateway
 
+An Event-Based Gateway element represents a decision that creates alternative paths within a [Request's](../../../using-processmaker/requests/) workflow for a Process. During a Request's workflow routing, only one outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element from the Event-Based Gateway element is followed based on the event that occurs following Event-Based Gateway element. Those possible events are represented immediately after the Event-Based Gateway element's outgoing Sequence Flow elements.
 
+The following Process model elements can follow the Event-Based Gateway to represent the possible events that occur:
+
+* Use an [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event) element to indicate that the event must occur at a time or an interval.
+* Use an [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) element to indicate that a message occurs.
+* Use a [Task](process-modeling-element-descriptions.md#task) element to indicate a Task is assigned.
+* Use a [Script Task](process-modeling-element-descriptions.md#script-task) element to indicate a Script Task runs.
+* Use a [Call Activity](process-modeling-element-descriptions.md#call-activity) element to indicate that an external sub-process is called.
+
+In Process Modeler, the Event-Based Gateway element is labeled as "Event-Based Gateway" in the **BPMN** panel as highlighted below.
+
+
+
+Below is an Event-Based Gateway element when it has been placed into a Process model.
+
+
+
+{% hint style="info" %}
+See [Add and Configure Event-Based Gateway Elements](add-and-configure-event-based-gateway-elements.md).
+{% endhint %}
 
 ## Organize Process Participants
 
