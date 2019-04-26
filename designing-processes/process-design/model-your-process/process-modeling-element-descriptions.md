@@ -30,7 +30,7 @@ See [Add and Configure Event Elements](add-and-configure-an-event-element.md#add
 
 ### Start Timer Event
 
-A Start Timer Event element represents a time or periodic interval when a modeled Process starts. A Start Timer Event element begins the workflow of a Request for that Process. Therefore, a Start Timer Event element cannot have an incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow). A Process model can have multiple Start Timer Event elements.
+A Start Timer Event element represents a time or periodic interval when a modeled Process starts. A Start Timer Event element begins the workflow of a Request for that Process. Therefore, a Start Timer Event element cannot have an incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element. A Process model can have multiple Start Timer Event elements.
 
 In Process Modeler, the Start Timer Event element is labeled as "Start Timer Event" in the **BPMN** panel as highlighted below.
 
@@ -46,7 +46,7 @@ See [Add and Configure Start Timer Event Elements](add-and-configure-start-timer
 
 ### Intermediate Timer Event
 
-An Intermediate Timer Event element represents a delay in a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow for that Process either at a specific time or at a periodic interval.
+An Intermediate Timer Event element represents a delay in a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow for that Process either at a specific time or at a periodic interval. When the specified time or interval occurs, the Intermediate Timer Event element triggers, thereby resuming workflow for that Process's Request.
 
 In Process Modeler, the Intermediate Timer Event element is labeled as "Intermediate Timer Event" in the **BPMN** panel as highlighted below.
 
@@ -62,11 +62,23 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 ### Intermediate Message Catch Event
 
+An Intermediate Message Catch Event element represents a delay in a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow for that Process until that element receives a [Message Flow](process-modeling-element-descriptions.md#message-flow) element from another element. The Intermediate Catch Event element triggers, thereby resuming workflow for that Process's Request.
 
+In Process Modeler, the Intermediate Message Catch Event element is labeled as "Intermediate Message Catch Event" in the **BPMN** panel as highlighted below.
+
+
+
+Below is an Intermediate Message Catch Event element when it has been placed into a Process model.
+
+
+
+{% hint style="info" %}
+See [Add and Configure Intermediate Timer Event Elements](add-and-configure-intermediate-timer-event-elements.md).
+{% endhint %}
 
 ### End Event
 
-An End Event element represents where a modeled Process normally ends when abnormal events do not terminate a [Request](../../../using-processmaker/requests/) for that Process \(such as a canceled Request\). An End Event element terminates the workflow of a Request for that Process. Therefore, an End Event element cannot have an outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow), though it may have an outgoing [Message Flow](process-modeling-element-descriptions.md#message-flow). A Process model can have multiple End Event elements.
+An End Event element represents where a modeled Process normally ends when abnormal events do not terminate a [Request](../../../using-processmaker/requests/) for that Process \(such as a canceled Request\). An End Event element terminates the workflow of a Request for that Process. Therefore, an End Event element cannot have an outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element, though it may have an outgoing [Message Flow](process-modeling-element-descriptions.md#message-flow) element. A Process model can have multiple End Event elements.
 
 In Process Modeler, the End Event element is labeled as "End Event" in the **BPMN** panel as highlighted below.
 
