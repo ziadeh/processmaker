@@ -41,7 +41,3 @@ To display all Process elements in the **BPMN** panel, remove the text from the 
 
 {% page-ref page="process-modeling-element-descriptions.md" %}
 
-{% page-ref page="../../viewing-processes/view-the-list-of-processes/view-your-processes.md" %}
-
-{% page-ref page="../../viewing-processes/view-the-list-of-processes/create-a-process.md" %}
-
