@@ -11,7 +11,7 @@ use ProcessMaker\Models\User;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 
-class CategoryCreationTest extends DuskTestCase
+class EnvironmentVariablesCreationTest extends DuskTestCase
 {
 /*
     protected function driver()
@@ -22,8 +22,8 @@ class CategoryCreationTest extends DuskTestCase
                 "platform" => env('SAUCELABS_PLATFORM'),
                 "browserName" => env('SAUCELABS_BROWSER'),
                 "version"=> env('SAUCELABS_BROWSER_VERSION'),
-                "tags" => ["Category"],
-                "name" => ("Category Test"),
+                "tags" => ["Environment Variable"],
+                "name" => ("Environment Variable Test"),
                 "build" => env('BUILD_NAME')
             ]
         );
@@ -49,34 +49,39 @@ class CategoryCreationTest extends DuskTestCase
         });
     }
 
-    public function testCategoryCreation()
+    public function testEnvironmentVariablesCreation()
     {
         $this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
             //Navigate
             $browser->clickLink("Processes")
-                ->clickLink("Categories")
+                ->clickLink("Environment Variables")
             //Add Environment Variable
-                ->press("#create_category")
-                ->assertVisible("#createProcessCategory .ml-2")
-                ->type("#name", "!It is a Foobar")
-                ->press("#createProcessCategory .ml-2")
-                ->waitFor("#editProcessCategory")
-                ->clickLink("Categories")
-                ->waitForText("!It is a Foobar");
+                ->press("#create_envvar") //We can use this line and remove the previous two once the add button is updated
+                ->assertVisible("#createEnvironmentVariable .ml-2")
+                ->type("#name", "foobar")
+                ->type("#description", "Bars of Foo.")
+                ->type("#value", "foobar")
+                ->press("#createEnvironmentVariable .ml-2")
+                ->pause(500)   //No choice here, we have to pause for either the error message or the success alert.
+                ->assertMissing(".invalid-feedback")
+                ->waitForText("foobar");
             //Edit Environment Variable
-            $browser->driver->findElement(WebDriverBy::xpath("//*[@id='process-categories-listing']/div[2]/div/table/tbody/tr[1]/td[6]/div/div/button[1]/i"))
-                ->click();  //This is a really awful hacky workaround, because there is not a unique ID for each edit icon
-            $browser->type("#name", "!It is a Barfoo")
-                ->press("#editProcessCategory .ml-2")
+            $browser->press(".fa-pen-square")
+                ->assertSee("Value")
+                ->type("#name", "barfoo")
+                ->type("#description", "Foos of Bar.")
+                ->type("#value", "barfoo")
+                ->press("#editEnvironmentVariable .ml-2")
                 //->waitFor(".vuetable-empty-result")
-                ->waitForText("!It is a Barfoo");
+                ->waitForText("barfoo");
             //Delete Environment Variable
             $browser->press(".fa-trash-alt")
                 ->waitFor(".modal-content")
+                ->waitForText("Are you sure you want to delete the environment variable barfoo?")
                 ->press("#confirm")
                 ->waitFor(".vuetable-empty-result")
-                ->assertDontSee("!It is a Barfoo");
+                ->assertDontSee("barfoo");
         });
     }
 }
