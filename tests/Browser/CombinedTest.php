@@ -50,7 +50,7 @@ class CombinedTestCase extends DuskTestCase
 
     public function testAuthClientCreation()
     {
-        //$this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
             $browser->clickLink("Admin")
                 ->waitUntilMissing(".vuetable-empty-result")
@@ -92,7 +92,7 @@ class CombinedTestCase extends DuskTestCase
 
     public function testGroupCreation()
     {
-        //$this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
             //Navigate
             $browser->clickLink("Admin")
@@ -152,7 +152,7 @@ class CombinedTestCase extends DuskTestCase
 
     public function testUserAddEditDelete()
     {
-        //$this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
             //Navigate
             $browser->clickLink("Admin")
@@ -206,7 +206,7 @@ class CombinedTestCase extends DuskTestCase
 
     public function testCategoryCreation()
     {
-        //$this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
             //Navigate
             $browser->clickLink("Processes")
@@ -237,7 +237,7 @@ class CombinedTestCase extends DuskTestCase
 
     public function testEnvironmentVariablesCreation()
     {
-        //$this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
             //Navigate
             $browser->clickLink("Processes")
