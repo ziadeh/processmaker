@@ -42,7 +42,7 @@ Moving an End Event element has the following limitations in regards to the foll
 * **Lane element:** If the End Event element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the End Event element cannot be move outside of the Pool element.
 {% endhint %}
 
-## Configure an Event Element
+## Configure an End Event Element
 
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to configure an End Event element:

@@ -68,7 +68,15 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 ### Intermediate Message Catch Event
 
-An Intermediate Message Catch Event element represents a delay in a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow for a Process until that element receives a [Message Flow](process-modeling-element-descriptions.md#message-flow) element from another element. The Intermediate Catch Event element triggers, thereby resuming workflow for that Process's Request.
+An Intermediate Message Catch Event element represents a delay in a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow for a Process until that element receives an external API call. This external API call can be represented as an incoming [Message Flow](process-modeling-element-descriptions.md#message-flow) element from another Pool element.
+
+The Intermediate Message Catch Event element can receive the external API call that uses the authorization credentials from any of the following:
+
+* A specified ProcessMaker user
+* Any member of a specified ProcessMaker group
+* A whitelisted \(allowed\) IP address or domain
+
+When the Intermediate Catch Event element receives the API call the element triggers, thereby resuming workflow for that Process's Request.
 
 In Process Modeler, the Intermediate Message Catch Event element is labeled as "Intermediate Message Catch Event" in the **BPMN** panel as highlighted below.
 
