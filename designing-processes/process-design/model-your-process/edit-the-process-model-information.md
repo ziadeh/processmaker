@@ -54,9 +54,7 @@ Follow these steps to edit the Process model name:
 
 ## Related Topics
 
-{% page-ref page="../../../using-processmaker/requests/what-is-a-request.md" %}
-
-{% page-ref page="edit-the-process-model-information.md" %}
+{% page-ref page="process-modeling-element-descriptions.md" %}
 
 {% page-ref page="filter-elements-in-the-bpmn-panel.md" %}
 
