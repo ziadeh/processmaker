@@ -72,11 +72,11 @@ An Intermediate Message Catch Event element represents a delay in a [Request's](
 
 In Process Modeler, the Intermediate Message Catch Event element is labeled as "Intermediate Message Catch Event" in the **BPMN** panel as highlighted below.
 
-
+![Intermediate  Message Catch Event element in the BPMN panel of Process Modeler](../../../.gitbook/assets/bpmn-intermediate-message-catch-event-process-modeler-processes.png)
 
 Below is an Intermediate Message Catch Event element when it has been placed into a Process model.
 
-
+![Intermediate Message Catch Event element](../../../.gitbook/assets/inetermediate-message-catch-event-process-modeler-processes.png)
 
 {% hint style="info" %}
 See [Add and Configure Intermediate Timer Event Elements](add-and-configure-intermediate-timer-event-elements.md).
@@ -149,11 +149,11 @@ The called sub-Process has its own [Request](../../../using-processmaker/request
 
 In Process Modeler, the Call Activity element is labeled as "Call Activity" in the **BPMN** panel as highlighted below.
 
-
+![Call Activity element in the BPMN panel of Process Modeler](../../../.gitbook/assets/bpmn-call-activity-process-modeler-processes.png)
 
 Below is a Call Activity element when it has been placed into a Process model.
 
-
+![Call Activity element](../../../.gitbook/assets/call-activity-process-modeler-processes.png)
 
 {% hint style="info" %}
 See [Add and Configure Call Activity Elements](add-and-configure-call-activity-elements.md).
@@ -218,11 +218,11 @@ The following Process model elements can follow the Event-Based Gateway to repre
 
 In Process Modeler, the Event-Based Gateway element is labeled as "Event-Based Gateway" in the **BPMN** panel as highlighted below.
 
-
+![Event-Based Gateway in the BPMN panel of Process Modeler](../../../.gitbook/assets/bpmn-event-based-gateway-process-modeler-processes.png)
 
 Below is an Event-Based Gateway element when it has been placed into a Process model.
 
-
+![Event-Based Gateway element](../../../.gitbook/assets/event-based-gateway-process-modeler-processes.png)
 
 {% hint style="info" %}
 See [Add and Configure Event-Based Gateway Elements](add-and-configure-event-based-gateway-elements.md).
@@ -349,11 +349,13 @@ See [Add and Configure Text Annotation and Association Elements](add-and-configu
 
 ## Related Topics
 
-{% page-ref page="../../../using-processmaker/requests/" %}
+{% page-ref page="../../../using-processmaker/requests/what-is-a-request.md" %}
 
-{% page-ref page="../../design-forms/screens-builder/types-for-screens.md" %}
+{% page-ref page="edit-the-process-model-information.md" %}
 
-{% page-ref page="../../design-forms/screens-builder/" %}
+{% page-ref page="filter-elements-in-the-bpmn-panel.md" %}
 
-{% page-ref page="../../scripts/scripts-editor.md" %}
+{% page-ref page="add-and-configure-an-event-element.md" %}
+
+{% page-ref page="add-and-configure-intermediate-message-catch-event-elements.md" %}
 
