@@ -25,8 +25,10 @@ The following element types do not use Message Flow elements:
 * ​Start Timer Event
 * Intermediate Timer Event
 * Script Task
+* Call Activity
 * Exclusive Gateway
 * Parallel Gateway
+* Event-Based Gateway
 * Text Annotation
 
 ## Set the Message Flow Element Between Elements in Separate Pool Elements

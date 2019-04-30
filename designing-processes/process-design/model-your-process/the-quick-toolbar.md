@@ -12,7 +12,7 @@ Use a Sequence Flow element to indicate workflow routing between the connected e
 
 Sequence Flow elements have the following attributes in regards to specific Process model elements:
 
-* From the context of a Process model element associated with a Sequence Flow, that Sequence Flow element can be "incoming" or "outgoing" for that element. Consider the following Process model to demonstrate their differences.  
+* From the context of a Process model element associated with a Sequence Flow element, that Sequence Flow element can be "incoming" or "outgoing." Consider the following Process model to demonstrate their differences.  
 
   ![](../../../.gitbook/assets/sequence-flow-incoming-outgoing-process-modeler-processes.png)
 
@@ -25,7 +25,7 @@ Sequence Flow elements have the following attributes in regards to specific Proc
     ![](../../../.gitbook/assets/sequence-flow-outgoing-process-modeler-processes.png)
 
 * Text annotations and Pool elements do not participate in Sequence Flow.
-* Sequence Flow elements cannot connect workflow between Process model elements within different Pool elements. However, use [Message Flow](set-and-delete-message-flow-between-elements.md) elements to infer communication between elements in different Pool elements.
+* Sequence Flow elements cannot connect workflow between Process model elements within different Pool elements. Use [Message Flow](set-and-delete-message-flow-between-elements.md) elements to infer communication between elements in different Pool elements.
 * A Start Event begins the flow of a Request for that Process. Therefore, a Start Event cannot have an incoming Sequence Flow.
 * An End Event terminates the flow of a Request for that Process. Therefore, an End Event cannot have an outgoing Sequence Flow.
 * Sequence Flows from Exclusive Gateway elements can be configured to specify under which condition a Request routes through that Sequence Flow. See [Configure a Sequence Flow from an Exclusive Gateway Element](the-quick-toolbar.md#configure-a-sequence-flow-from-an-exclusive-gateway-element).

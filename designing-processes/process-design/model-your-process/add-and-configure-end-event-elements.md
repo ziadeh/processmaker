@@ -87,18 +87,18 @@ Follow these steps to edit the name for an End Event element:
 
 After a [Request](../../../using-processmaker/requests/what-is-a-request.md) completes when an End Event element triggers, a [ProcessMaker Screen](../../design-forms/what-is-a-form.md) can display a summary of the completed Request. If a Process model has multiple End Event elements, then a different ProcessMaker Screen can display the Request summary.
 
-For example, if an End Event element triggers from Lane 1 of a Pool element, then use a different ProcessMaker Screen to display the Request summary than if an End Event element triggers from Lane 2.
+For example, if an End Event element triggers from Lane 1 of a Pool element, then use a different ProcessMaker Screen to display the Request summary than an End Event element that triggers from Lane 2.
 
-Follow these steps to select the ProcessMaker Screen that displays when a Request completes in an End Event element:
+Follow these steps to select the ProcessMaker Screen that displays when an End Event element triggers:
 
 1. Select the End Event element from the Process model in which to select the ProcessMaker Screen that displays when that End Event element is triggered, thereby completing that Request.
 2. The **Summary screen** drop-down menu displays below the **Configuration** setting section.  
 
    ![](../../../.gitbook/assets/summary-screen-end-event-process-modeler-processes.png)
 
-3. From the **Summary screen** drop-down menu, select the ProcessMaker Screen that has been designed to display Request summaries for that Process when that End Event element is triggered. Click the **Refresh** link below the **Summary screen** drop-down menu to refresh the options that display in the drop-down menu if necessary.
+3. From the **Summary screen** drop-down menu, select the ProcessMaker Screen that has been designed to display Request summaries for that Process when that End Event element triggers. Click the **Refresh** link below the **Summary screen** drop-down menu to refresh the options that display in the drop-down menu if necessary.
 
-   Note that another End Event element located elsewhere in the Process model, such as another Pool or Lane element, may reference a different ProcessMaker Screen to display Request summaries when it is triggered.
+   Note that another End Event element located elsewhere in the Process model, such as another Pool or Lane element, may reference a different ProcessMaker Screen to display Request summaries when it triggers.
 
 ## Related Topics
 

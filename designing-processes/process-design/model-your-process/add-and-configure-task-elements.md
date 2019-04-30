@@ -286,12 +286,15 @@ Follow these steps to set Task notifications in a Task element:
 3. From the **Requester** settings, set Task notifications for the Request initiator following these guidelines:
    * Enable the **Assigned** setting to notify the Request initiator when the Task associated with this Task element is assigned. Otherwise, disable this setting to not send this notification.
    * Enable the **Completed** setting to notify the Request initiator when the Task associated with this Task element is completed. Otherwise, disable this setting to not send this notification.
+   * Enable the **Due** setting to notify the Request initiator when the Task associated with this Task element is due to be completed. Otherwise, disable this setting to not send this notification.
 4. From the **Assignee** settings, set Task notifications for assignees of this Task element following these guidelines:
    * Enable the **Assigned** setting to notify Task assignees associated with this Task element when they are assigned this Task. Otherwise, disable this setting to not send this notification.
    * Enable the **Completed** setting to notify Task assignees associated with this Task element when they complete this Task. Otherwise, disable this setting to not send this notification.
+   * Enable the **Due** setting to notify Task assignees associated with this Task element is due to be completed. Otherwise, disable this setting to not send this notification.
 5. From the **Participants** settings, set Task notifications to all Request participants of this Process following these guidelines:
    * Enable the **Assigned** setting to notify all Request participants of this Process when the Task associated with this Task element is assigned. Otherwise, disable this setting to not send this notification.
    * Enable the **Completed** setting to notify all Request participants of this Process when the Task associated with this Task element is completed. Otherwise, disable this setting to not send this notification.
+   * Enable the **Due** setting to notify all Request participants of this Process when the Task associated with this Task element is due to be completed. Otherwise, disable this setting to not send this notification.
 
 ## Related Topics
 

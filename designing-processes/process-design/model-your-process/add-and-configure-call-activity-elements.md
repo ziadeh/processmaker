@@ -83,6 +83,19 @@ Follow these steps to edit the name for a Call Activity element:
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
+### Select the Called Process
+
+The Call Activity element calls an external sub-Process when it triggers. The external sub-Process must be a ProcessMaker Spark Process that is not archived.
+
+Follow these steps to select the external sub-Process the Call Activity element calls when it triggers:
+
+1. Select the Call Activity element from the Process model in which to select the called sub-Process.
+2. Expand the **Configuration** setting section if it is not presently expanded. The **Process** drop-down menu displays.  
+
+   ![](../../../.gitbook/assets/identifier-call-activity-process-modeler-processes.png)
+
+3. From the **Process** drop-down menu, select which Process the Call Activity element calls when it triggers.
+
 ## Related Topics
 
 {% page-ref page="process-modeling-element-descriptions.md" %}

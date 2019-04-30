@@ -153,6 +153,8 @@ See [Add and Configure Script Task Elements](add-and-configure-script-task-eleme
 
 A Call Activity element represents a call to an external sub-Process. This is not to be confused when an embedded sub-Process is depicted in the Process model. Use the Call Activity element to call a reusable external Process from another Process.
 
+The external sub-Process that the Call Activity calls must be a ProcessMaker Spark Process that is not archived.
+
 The called sub-Process has its own [Request](../../../using-processmaker/requests/what-is-a-request.md). The Request for the calling Process waits until the sub-Process's Request completes. When the external sub-Process's Request completes, workflow returns to the calling Process's Call Activity element and then continues.
 
 In Process Modeler, the Call Activity element is labeled as "Call Activity" in the **BPMN** panel as highlighted below.
