@@ -254,7 +254,7 @@ jobs:
             # Echo FireFox Variables
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "echo 'SAUCELABS_BROWSER=\"firefox\"' >> ~/builds/$BUILD_NAME/.env"
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "echo 'SAUCELABS_PLATFORM=\"Windows 10\"' >> ~/builds/$BUILD_NAME/.env"
-            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "echo 'SAUCELABS_BROWSER_VERSION=\"latest\"' >> ~/builds/$BUILD_NAME/.env"
+            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "echo 'SAUCELABS_BROWSER_VERSION=\"60\"' >> ~/builds/$BUILD_NAME/.env"
             # Run Artisan Dusk
             ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-sparkbuilds "cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk"
 
