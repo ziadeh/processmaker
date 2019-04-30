@@ -6,6 +6,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 use ProcessMaker\Http\Controllers\Controller;
+use ProcessMaker\Models\Catalog;
 use ProcessMaker\Models\Screen;
 use ProcessMaker\Models\Script;
 
@@ -18,14 +19,10 @@ class ScreenController extends Controller
      */
     public function index()
     {
-        $types = [
-            '' => __('Select Type'),
-            'DISPLAY' => 'Display',
-            'FORM' => 'Form',
-        ];
-
-        if (Script::where('key', 'processmaker-communication-email-send')->exists()) {
-            $types['EMAIL'] = 'Email';
+        $catalog = Catalog::where('type', Screen::class)->get();
+        $types = [];
+        foreach ($catalog as $item) {
+            $types[$item->value] = $item->label;
         }
         return view('processes.screens.index', compact('types'));
     }
