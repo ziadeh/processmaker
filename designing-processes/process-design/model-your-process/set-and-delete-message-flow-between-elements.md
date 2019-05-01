@@ -1,10 +1,10 @@
 ---
 description: >-
-  Indicate communication in your Process model by setting Message Flows between
+  Indicate messaging in your Process model by setting Message Flows between
   elements in separate Pool elements.
 ---
 
-# Set Message Flow Elements Between Separate Pool Elements
+# Set Message Flow Elements to Indicate Messaging
 
 ## Overview
 
@@ -14,26 +14,42 @@ In Process Modeler, Flow indicators display when you click an element in the Pro
 
 ![Message Flow indicator \(highlighted\) on a selected Process element](../../../.gitbook/assets/message-flow-indicator-process-model-processes.png)
 
+### Types of Messaging
+
 The Message Flow element indicates the following types of messaging:
 
 * **Symbolic communication:** The Message Flow element does not indicate whether the communication is physical or digital. Use a [Text Annotation](process-modeling-element-descriptions.md#text-annotation) element to add information about the communication. Message Flow elements cannot connect to Process model elements within the same Pool element.
 
 ![A Message Flow element \(dotted line\) between two elements in different Pool elements](../../../.gitbook/assets/message-flow-between-pool-elements-process-model-processes.png)
 
-* **External API call:** An [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) element receives an external API call.
+* **External API call:** An [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) element receives an external API call. The Intermediate Message Catch Event element must be in a different Pool element than the source of the Message Flow element.
 
 ![External API call to an Intermediate Message Catch Event element using a Message Flow element](../../../.gitbook/assets/message-flow-connecting-to-intermediate-message-catch-event.png)
 
+### Incoming and Outgoing Message Flow
+
+From the context of a Process model element associated with a Message Flow element, that Message Flow element can be "incoming" or "outgoing." Consider the following Process model to demonstrate their differences.
+
+![Message Flow element is outgoing for Task 1, but incoming for Task 2](../../../.gitbook/assets/message-flow-between-pool-elements-process-model-processes.png)
+
+Below are the differences between incoming and outgoing Message Flow elements:
+
+* **Incoming:** An incoming Message Flow element comes from its connecting element. In the Process model above, the Message Flow element is incoming to the "Task 2" element.
+* **Outgoing:** An outgoing Message Flow goes to the connecting element. In the Process model above, the Message Flow element is outgoing from the "Task 1" element. The outgoing Message Flow element must originate from a separate Pool element than from where it connects.
+
+### Restrictions on Message Flow Elements
+
 The following element types do not use Message Flow elements:
 
-* ​Start Timer Event
-* Intermediate Timer Event
-* Script Task
-* Call Activity
-* Exclusive Gateway
-* Parallel Gateway
-* Event-Based Gateway
-* Text Annotation
+* ​[Start Timer Event](process-modeling-element-descriptions.md#start-timer-event)
+* [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event)
+* [Script Task](process-modeling-element-descriptions.md#script-task)
+* [Call Activity](process-modeling-element-descriptions.md#call-activity)
+* [Exclusive Gateway](process-modeling-element-descriptions.md#exclusive-gateway)
+* [Parallel Gateway](process-modeling-element-descriptions.md#parallel-gateway)
+* [Event-Based Gateway](process-modeling-element-descriptions.md#event-based-gateway)
+* [Text Annotation](process-modeling-element-descriptions.md#text-annotation)
+* [Association](process-modeling-element-descriptions.md#association)
 
 ## Set the Message Flow Element Between Elements in Separate Pool Elements
 
@@ -62,7 +78,7 @@ Follow these steps to set the Message Flow element between elements in separate 
 
 4. Click the **Message Flow** icon![](../../../.gitbook/assets/message-flow-icon-process-modeler-processes.png).
 5. Do one of the following:
-   * Click the second Pool element to which to establish communication between the two elements. Message flow indicates that communication is between an element in one Pool element to another Pool elements.  
+   * Click the second Pool element to which to establish communication between the two elements. Message flow indicates that communication is between an element in one Pool element to another Pool element.  
 
      ![](../../../.gitbook/assets/message-flow-to-pool-element-process-modeler-processes.png)
 

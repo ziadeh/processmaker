@@ -8,7 +8,7 @@ description: >-
 
 ## Overview
 
-Before you deploy your Process model to production, ensure that it is BPMN 2.0 compliant. Ensure that your Process model is valid for the following reasons:
+Before you deploy your Process model to production, ensure that it is BPMN 2.0 compliant. Ensure that your Process model is compliant for the following reasons:
 
 * Minimize problems when testing your Process prior to deploying it. Regardless of whether your Process model is a self-contained business solution or one which calls another Process/is called by another Process, ensure that it functions correctly by validating its BPMN 2.0 compliance.
 * Ensure that if you [export](../../viewing-processes/view-the-list-of-processes/export-a-bpmn-compliant-process.md) the Process, you will be able to [import](../../viewing-processes/view-the-list-of-processes/import-a-bpmn-compliant-process.md) it later. If the Process model is not BPMN 2.0 compliant, you will not successfully import the Process.
@@ -32,8 +32,11 @@ Follow these steps to validate your Process model is BPMN 2.0 compliant:
 
    ![](../../../.gitbook/assets/validate-bpmn-no-problems-process-modeler-processes.png)
 
-3. [Save your Process model](toolboxes.md#save-your-process-model) if you make changes.
-4. Click the **Validate BPMN** button. Process Modeler tests the Process model's BPMN 2.0 compliance. One of the following occurs:
+3. Enable the **Auto validate** button so that Process Modeler automatically validates your Process model as you work.  
+
+   ![](../../../.gitbook/assets/auto-validate-process-modeler-processes.png)
+
+4. Work on your Process model. Process Modeler indicates any BPMN 2.0 compliance issues as you work. The following indicators may occur:
    * **No errors found:** If no errors are found, the following text displays to the left of the **Validate BPMN** button: **Problems 0**. The green check mark displays. Your Process model is BPMN 2.0 compliant.
    * **Errors are found:** If errors are found, Process Modeler displays how any errors are found to the left of the **Validate BPMN** button. Instead of the green check mark the error icon displays![](../../../.gitbook/assets/validate-bpmn-problems-errors-process-modeler-processes.png). Click the error icon to display a summary of the errors. Below is an example.  
 
