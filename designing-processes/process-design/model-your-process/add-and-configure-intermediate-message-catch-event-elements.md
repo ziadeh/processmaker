@@ -85,17 +85,17 @@ Follow these steps to edit the name for an Intermediate Message Catch Event elem
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
-### Configure How to Trigger a Intermediate Message Catch Event Element
+### Configure How to Trigger an Intermediate Message Catch Event Element
 
-Follow these guidelines to configure how to trigger an Intermediate Message Catch Event element:
+Follow these guidelines how to trigger an Intermediate Message Catch Event element:
 
-* The incoming Message Flow element that represents the external API call that triggers the element.
+* Optionally, specify the incoming Message Flow element representing the external API call that triggers the Intermediate Message Catch Event element. If you don't specify which Message Flow element triggers the Intermediate Message Catch Event element when that element has multiple incoming Message Flow elements, then the first Message Flow element that triggers will trigger the Intermediate Message Catch Event element; this represents when the first external API call that meets the conditions set to trigger the Intermediate Message Catch Event element will do so. If there is only one incoming Message Flow element, then specifying that element triggers the Intermediate Message Catch Event element is not necessary.
 * Optionally, the key that the Intermediate Message Catch Event element stores in the Request's JSON data model a value. If no key is provided, then the Message Catch Event element passes data to the global JSON data model.
 * Optionally, the specified ProcessMaker user whose authorization credentials are required to make the external API call to the Intermediate Message Catch Event element.
 * Optionally, the specified ProcessMaker group of which any member's authorization credentials can be used to make the external API call to the Intermediate Message Catch Event element.
 * Optionally, the IP address or domain that is the Intermediate Message Catch Event is allowed to receive the API call.
 
-Adding optional settings to the Intermediate Message Catch Event element restricts how this element can be triggered. Inversely, the fewer optional settings you enter makes it easier for the Intermediate Message Catch Event element to trigger.
+Adding optional settings to the Intermediate Message Catch Event element restricts how this element can be triggered. Inversely, the fewer optional settings you enter provides more flexibility for the Intermediate Message Catch Event element to trigger.
 
 Follow these steps to configure how to trigger an Intermediate Message Catch Event element:
 
@@ -104,14 +104,22 @@ Follow these steps to configure how to trigger an Intermediate Message Catch Eve
 
    ![](../../../.gitbook/assets/data-name-intermediate-message-catch-event-proces-modeler-processes.png)
 
-3. In the **Message Event Identifier** field, enter the unique Identifier value for the incoming Message Flow element that represents the external API call. This is a required field. To locate this value, follow these steps:
+3. In the **Message Event Identifier** field, enter the unique **Identifier** field value for the incoming Message Flow element that represents the external API call. When the incoming Message Flow element matching the **Identifier** field value triggers, then the Intermediate Message Catch Event element evaluates the other settings to determine if it triggers.
+
+   To locate the **Identifier** field value for an incoming Message Flow element, follow these steps:
+
    1. Select the incoming Message Flow element to the Intermediate Message Catch Event element.
-   2. Expand the **Configuration** section if it is not presented expanded.
+   2. Expand the **Configuration** section if it is not presently expanded.
    3. Copy the value in the **Identifier** field. See [Set Message Flow Elements Between Separate Pool Elements](set-and-delete-message-flow-between-elements.md#edit-the-identifier-value).
    4. Paste that value into the Intermediate Message Catch Event element's **Message Event Identifier** field.
-4. In the **Data Name** field, enter the key that the Intermediate Message Catch Event element stores in the Request's JSON data model a value. If you do not provide a key, then the Message Catch Event element passes data to the global JSON data model.
-5. From the **Allowed User** drop-down menu, select the ProcessMaker user whose authorization credentials are required to make the external API call to the Intermediate Message Catch Event element.
-6. From the **Allowed Group** drop-down menu, select the ProcessMaker group of which any member's authorization credentials can be used to make the external API call to the Intermediate Message Catch Event element.
+
+4. In the **Data Name** field, enter the key in the Request's JSON data model that the Intermediate Message Catch Event element stores data from the external API call. If you do not provide a key, then the Intermediate Message Catch Event element passes data to the global JSON data model.
+5. From the **Allowed User** drop-down menu, select the ProcessMaker user whose authorization credentials are required to make the external API call to the Intermediate Message Catch Event element. Do not select a ProcessMaker user in the following circumstances:
+   * There is no restriction whose ProcessMaker user's authorization credentials are associated with the API call.
+   * You intend to select a ProcessMaker group from which any member's authorization credentials can be associated with the API call.
+6. From the **Allowed Group** drop-down menu, select the ProcessMaker group of which any member's authorization credentials can be used to make the external API call to the Intermediate Message Catch Event element. Do not select a ProcessMaker group in the following circumstances:
+   * There is no restriction whose ProcessMaker user's authorization credentials are associated with the API call.
+   * You intend to select a ProcessMaker user whose authorization credentials are required to make the API call.
 7. In the **Whitelist** field, enter the IP address or domain name from which the Intermediate Message Catch Event element is allowed to receive the external API call.
 
 ## Related Topics

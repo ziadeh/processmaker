@@ -14,11 +14,15 @@ In Process Modeler, Flow indicators display when you click an element in the Pro
 
 ![Message Flow indicator \(highlighted\) on a selected Process element](../../../.gitbook/assets/message-flow-indicator-process-model-processes.png)
 
-The Message Flow element indicates communication between the two separate Pool elements. The Message Flow does not indicate whether the communication is physical or digital. Use a [Text Annotation](process-modeling-element-descriptions.md#text-annotation) element to add information about the communication.
+The Message Flow element indicates the following types of messaging:
+
+* **Symbolic communication:** The Message Flow element does not indicate whether the communication is physical or digital. Use a [Text Annotation](process-modeling-element-descriptions.md#text-annotation) element to add information about the communication. Message Flow elements cannot connect to Process model elements within the same Pool element.
 
 ![A Message Flow element \(dotted line\) between two elements in different Pool elements](../../../.gitbook/assets/message-flow-between-pool-elements-process-model-processes.png)
 
-Message Flow elements cannot connect to Process model elements within the same Pool element.
+* **External API call:** An [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) element receives an external API call.
+
+![External API call to an Intermediate Message Catch Event element using a Message Flow element](../../../.gitbook/assets/message-flow-connecting-to-intermediate-message-catch-event.png)
 
 The following element types do not use Message Flow elements:
 
