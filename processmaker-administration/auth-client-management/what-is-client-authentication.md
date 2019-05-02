@@ -6,9 +6,7 @@ description: Learn more about OAuth 2.0 authentication from third-party resource
 
 ## Overview
 
-ProcessMaker requires developers who want to access the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation) to follow OAuth 2.0 authentication protocols. OAuth 2.0 authentication is a published specification outside the scope of ProcessMaker. Refer to [OAuth.net](https://oauth.net/2/) to learn more about this specification.
-
-Client authentication keys are required to access the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
+Client authentication allows authenticated ProcessMaker Spark users Single Sign On \(SSO\) to ProcessMaker Spark using OAuth 2.0 client authentication. OAuth 2.0 authentication is a published specification outside the scope of ProcessMaker. Refer to [OAuth.net](https://oauth.net/2/) to learn more about this specification.
 
 ## Related Topics
 

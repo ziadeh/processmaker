@@ -1,6 +1,8 @@
 ---
-description: Manage your Auth client keys as a Process Administrator.
+description: >-
+  Manage your authenticated client in your organization as a Process
+  Administrator.
 ---
 
-# Manage Client Authentications
+# Manage Authenticated Clients
 

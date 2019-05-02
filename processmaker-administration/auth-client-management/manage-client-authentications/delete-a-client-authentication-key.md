@@ -1,13 +1,13 @@
 ---
-description: Delete a client authentication key.
+description: Delete an authenticated client.
 ---
 
-# Delete a Client Authentication Key
+# Delete an Authenticated Client
 
-## Delete a Client Authentication Key
+## Delete an Authenticated Client
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to delete a client authentication key:
+Your user account or group membership must have the following permissions to delete an authenticated client:
 
 * Auth Clients: View Auth Clients
 * Auth Clients: Delete Auth Clients
@@ -16,15 +16,15 @@ See the [Auth Clients](../../permission-descriptions-for-users-and-groups.md#aut
 {% endhint %}
 
 {% hint style="warning" %}
-When a client authentication key is deleted, it can no longer be used to access the [ProcessMaker 4 REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
+When an authenticated client is deleted, the ProcessMaker user to whom the client authentication applied will no longer be able to log on to ProcessMaker Spark via Single Sign On \(SSO\).
 
-Deleting a client authentication key from the **Auth Clients** page cannot be undone.
+Deleting an authenticated client from the **Auth Clients** page cannot be undone.
 {% endhint %}
 
-Follow these steps to delete a client authentication key:
+Follow these steps to delete an authenticated client:
 
-1. [View all client authentication keys.](view-all-client-authentication-keys.md#view-all-scripts) The **Auth Clients** page displays.
-2. Select the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png)for the client authentication key. The **Caution** screen displays to confirm the deletion of the client authentication key.  
+1. [View all authenticated clients.](view-all-client-authentication-keys.md#view-all-scripts) The **Auth Clients** page displays.
+2. Select the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png)for the authenticated client to be deleted. The **Caution** screen displays to confirm the deletion of the authenticated client.  
 
    ![](../../../.gitbook/assets/caution-remove-client-authentication-key-admin.png)
 

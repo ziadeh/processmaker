@@ -100,7 +100,7 @@ Your user account or group membership must have the following permissions to edi
 See the [User](../../permission-descriptions-for-users-and-groups.md#users) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Use an API token with a ProcessMaker user account to successfully make calls to the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation) from an external third-party application. The API token must not be expired for that API token to work.
+Use an API token with a ProcessMaker user account to successfully make calls to the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation) from an external third-party application or a [ProcessMaker Script](../../../designing-processes/scripts/what-is-a-script.md). The API token must not be expired for that API token to work.
 
 A ProcessMaker user must have a valid API token to successfully make calls to the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation) from an external third-party application.
 

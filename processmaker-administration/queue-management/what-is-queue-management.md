@@ -23,7 +23,7 @@ Below are examples of ProcessMaker Spark jobs:
 
 ### Queues
 
-A queue manages and monitors the sequence of jobs that ProcessMaker Spark must run. When a job is called, that job enters the queue. If there is no delay to run the job, the queue loads that job to run as soon as possible. However, some jobs are intentionally delayed from running immediately, such as a Start Timer Event element in a Request.
+A queue manages and monitors the sequence of jobs that ProcessMaker Spark must run. When a job is called, that job enters the queue. If there is no delay to run the job, the queue loads that job to run as soon as possible. However, some jobs are intentionally delayed from running immediately such as a Start Timer Event element in a Request.
 
 The queue have the following functions:
 

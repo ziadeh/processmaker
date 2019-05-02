@@ -1,13 +1,13 @@
 ---
-description: Edit a client authentication key.
+description: Edit an authenticated client.
 ---
 
-# Edit a Client Authentication Key
+# Edit an Authenticated Client
 
-## Edit a Client Authentication Key
+## Edit an Authenticated Client
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit a client authentication key:
+Your user account or group membership must have the following permissions to edit client authentication:
 
 * Auth Clients: View Auth Clients
 * Auth Clients: Edit Auth Clients
@@ -15,21 +15,17 @@ Your user account or group membership must have the following permissions to edi
 See the [Auth Clients](../../permission-descriptions-for-users-and-groups.md#auth-clients) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to edit a client authentication key that grants access to the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation):
+Follow these steps to edit an authenticated client that allows that ProcessMaker user to log on to ProcessMaker Spark via Single Sign On \(SSO\):
 
-1. [View all client authentication keys.](view-all-client-authentication-keys.md#view-all-scripts) The **Auth Clients** page displays.
-2. Select the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the client authentication key to edit. The **Edit Auth Client** screen displays.  
+1. [View all authenticated clients.](view-all-client-authentication-keys.md#view-all-scripts) The **Auth Clients** page displays.
+2. Select the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the authenticated client to edit. The **Edit Auth Client** screen displays.  
 
    ![](../../../.gitbook/assets/edit-auth-client-screen-admin.png)
 
-3. Edit the following information about the client authentication key as necessary:
-   * In the **Name** field, edit the name of the client authentication key. The key's name must be unique from all other keys. This is a required field.
+3. Edit the following information about the authenticated client as necessary:
+   * In the **Name** field, edit to whom the authenticated client is granted. This name must be unique from all other authenticated clients. This is a required field.
    * In the **Redirect URL** field, edit the URL that redirects the authenticated client to your ProcessMaker Spark application server. This is a required field.
 4. Click **Save**.
-
-{% hint style="info" %}
-The **Client Secret** value cannot be changed.
-{% endhint %}
 
 ## Related Topics
 
