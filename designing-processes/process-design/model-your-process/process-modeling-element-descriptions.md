@@ -216,15 +216,15 @@ See [Add and Configure Parallel Gateway Elements](add-and-configure-parallel-gat
 
 ### Event-Based Gateway
 
-An Event-Based Gateway element represents a decision that creates alternative paths within a [Request's](../../../using-processmaker/requests/) workflow for a Process. During a Request's workflow routing, only one outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element from the Event-Based Gateway element is followed based on the event that occurs following Event-Based Gateway element. Those possible events are represented immediately after the Event-Based Gateway element's outgoing Sequence Flow elements.
+An Event-Based Gateway element represents a decision that creates alternative paths within a [Request's](../../../using-processmaker/requests/) workflow for a Process. During a Request's workflow routing, only one outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element from the Event-Based Gateway element is followed based on the event that occurs immediately following the Event-Based Gateway element. Those possible events are represented immediately after the Event-Based Gateway element's outgoing Sequence Flow elements.
 
-The following Process model elements can follow the Event-Based Gateway to represent the possible events that occur:
+Below are examples of how to use the Event-Based Gateway element to represent subsequent workflow:
 
-* Use an [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event) element to indicate that the event must occur at a time or an interval.
-* Use an [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) element to indicate that a message occurs.
-* Use a [Task](process-modeling-element-descriptions.md#task) element to indicate a Task is assigned.
-* Use a [Script Task](process-modeling-element-descriptions.md#script-task) element to indicate a Script Task runs.
-* Use a [Call Activity](process-modeling-element-descriptions.md#call-activity) element to indicate that an external sub-process is called.
+* Use an [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event) element to indicate that the following event must occur at a time or an interval for workflow to continue.
+* Use an [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) element to indicate that the following event must receive an external API call for workflow to continue.
+* Use a [Task](process-modeling-element-descriptions.md#task) element to indicate what that a Task is assigned to a specific ProcessMaker user or group for workflow to continue.
+* Use a [Script Task](process-modeling-element-descriptions.md#script-task) element to indicate that a [ProcessMaker Script](../../scripts/what-is-a-script.md) runs for workflow to continue.
+* Use a [Call Activity](process-modeling-element-descriptions.md#call-activity) element to indicate that an external sub-Process is called for workflow to continue.
 
 In Process Modeler, the Event-Based Gateway element is labeled as "Event-Based Gateway" in the **BPMN** panel as highlighted below.
 
