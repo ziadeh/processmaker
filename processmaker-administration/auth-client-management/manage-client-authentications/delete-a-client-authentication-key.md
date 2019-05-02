@@ -9,10 +9,10 @@ description: Delete a client authentication key.
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to delete a client authentication key:
 
-* Auth-Clients: View Auth-Clients
-* Auth-Clients: Delete Auth-Clients
+* Auth Clients: View Auth Clients
+* Auth Clients: Delete Auth Clients
 
-See the [Auth-Clients](../../permission-descriptions-for-users-and-groups.md#auth-clients) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Auth Clients](../../permission-descriptions-for-users-and-groups.md#auth-clients) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 {% hint style="warning" %}
