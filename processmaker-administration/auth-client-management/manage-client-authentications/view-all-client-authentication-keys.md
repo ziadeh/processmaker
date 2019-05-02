@@ -6,7 +6,7 @@ description: View all client authentication keys in your organization.
 
 ## View All Client Authentication Keys <a id="view-all-scripts"></a>
 
-ProcessMaker displays all client authentication keys to access the [ProcessMaker 4 REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation) in one table that ProcessMaker Administrators throughout your organization have created. This makes it easy to manage client authentication keys. Client authentication keys display the most recently created keys at the top of the table.
+ProcessMaker displays all client authentication keys to access the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation) in one table that ProcessMaker Administrators throughout your organization have created. This makes it easy to manage client authentication keys. Client authentication keys display the most recently created keys at the top of the table.
 
 {% hint style="info" %}
 Your user account or group membership must have the "Auth-Clients: View Auth-Clients" permission to view the list of client authentication keys.
@@ -14,7 +14,7 @@ Your user account or group membership must have the "Auth-Clients: View Auth-Cli
 See the [Auth-Clients](../../permission-descriptions-for-users-and-groups.md#auth-clients) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to view all client authentication keys granted access to the ProcessMaker 4 REST API:
+Follow these steps to view all client authentication keys granted access to the ProcessMaker Spark REST API:
 
 1. [Log on](../../../using-processmaker/log-in.md#log-in) to ProcessMaker.
 2. Click the **Admin** option from the top menu. The **Users** page displays.
@@ -22,12 +22,12 @@ Follow these steps to view all client authentication keys granted access to the 
 
 ![&quot;Auth Clients&quot; page displays all client authentication keys that can access the ProcessMaker 4 REST API](../../../.gitbook/assets/auth-client-page-admin.png)
 
-The **Auth Clients** page displays the following information in tabular format about client authentication keys that can access the ProcessMaker 4 REST API:
+The **Auth Clients** page displays the following information in tabular format about client authentication keys that can access the ProcessMaker Spark REST API:
 
-* **Client ID:** The **Client ID** column displays the Client ID for the key. ProcessMaker 4 automatically generates the Client ID value when the key is created and represents a sequential number of how many total keys have been created to that time.
+* **Client ID:** The **Client ID** column displays the Client ID for the key. ProcessMaker Spark automatically generates the Client ID value when the key is created and represents a sequential number of how many total keys have been created to that time.
 * **Name:** The **Name** column displays the unique name of the key. See [Create a New Client Authentication Key](create-a-new-client-authentication-key.md).
-* **Redirect:** The **Redirect** column displays the URL that redirects the authenticated client back to the ProcessMaker 4 application. See [Create a New Client Authentication Key](create-a-new-client-authentication-key.md).
-* **Client Secret:** The **Client Secret** column displays the Client Secret for the key. ProcessMaker 4 automatically generates the Client Secret value when the key is created. Click the **Copy Client Secret to Clipboard** icon![](../../../.gitbook/assets/copy-icon-admin.png)to copy the Client Secret. Paste the Client Secret into your application to access the ProcessMaker 4 REST API.
+* **Redirect:** The **Redirect** column displays the URL that redirects the authenticated client back to the ProcessMaker Spark application. See [Create a New Client Authentication Key](create-a-new-client-authentication-key.md).
+* **Client Secret:** The **Client Secret** column displays the Client Secret for the key. ProcessMaker Spark automatically generates the Client Secret value when the key is created. Click the **Copy Client Secret to Clipboard** icon![](../../../.gitbook/assets/copy-icon-admin.png)to copy the Client Secret. Paste the Client Secret into your application to access the ProcessMaker Spark REST API.
 
 {% hint style="info" %}
 ### Edit a Client Authentication Key

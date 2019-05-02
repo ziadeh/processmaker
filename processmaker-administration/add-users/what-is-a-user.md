@@ -8,9 +8,10 @@ description: Understand what users are in ProcessMaker Spark.
 
 In ProcessMaker Spark, a user is any person for which a ProcessMaker account is created to allow that individual to do the following:
 
-* Log in to ProcessMaker using unique credentials
+* Log on to ProcessMaker Spark using unique credentials
 * Adjust his or her [user profile](../../using-processmaker/profile-settings.md)
 * Participate in [Requests](../../using-processmaker/requests/what-is-a-request.md)
+* Do [Tasks](../../using-processmaker/task-management/what-is-a-task.md)
 
 ## Related Topics
 

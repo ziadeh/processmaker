@@ -87,10 +87,17 @@ Follow these steps to edit the name for a Parallel Gateway element:
 
 Indicate if the workflow direction for the Parallel Gateway is converging or diverging:
 
-* **Converging:** Converging workflow indicates incoming [Sequence Flows](process-modeling-element-descriptions.md#sequence-flow) to the Parallel Gateway element. ~~Indicate one of the following:~~
-  * ~~The first incoming Sequence Flow element that triggers to the Parallel Gateway element thereby triggers the Parallel Gateway element. This implies that any of the preceding elements routing to the Parallel Gateway element can trigger the gateway.~~
-  * ~~All incoming Sequence Flow elements to the Parallel Gateway element must trigger before the Parallel Gateway triggers. This implies that all of the preceding elements routing to the Parallel Gateway element have triggered to trigger the gateway.~~
-* **Diverging:** Diverging workflow indicates outgoing Sequence Flow elements from the Parallel Gateway element. When a Parallel Gateway triggers, all outgoing Sequence Flow elements from the gateway trigger simultaneously without exception. Conditions cannot be placed on any outgoing Sequence Flow elements from the Parallel Gateway element.
+* **Converging:** Converging workflow indicates that [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements are incoming to the Parallel Gateway element. The first incoming Sequence Flow element to the Parallel Gateway element that triggers causes the Parallel Gateway element to trigger.  
+
+  ![](../../../.gitbook/assets/parallel-gateway-converging.png)
+
+* **Diverging:** Diverging workflow indicates that Sequence Flow elements are outgoing from the Parallel Gateway element. When a Parallel Gateway triggers, all outgoing Sequence Flow elements from the gateway trigger simultaneously without exception. Conditions cannot be placed on any outgoing Sequence Flow elements from the Parallel Gateway element.  
+
+  ![](../../../.gitbook/assets/parallel-gateway-diverging.png)
+
+A Parallel Gateway element can only indicate converging or diverging workflow, but not both. To indicate workflow in which "the first Sequence Flow element that triggers to a Parallel Gateway element thereby causes subsequent elements to trigger simultaneously," use two Parallel Gateway elements.
+
+![Indicate converging and diverging workflow using two Parallel Gateway elements](../../../.gitbook/assets/parallel-gateway-converging-and-diverging.png)
 
 Follow these steps to indicate the workflow direction for a Parallel Gateway element:
 
@@ -101,13 +108,7 @@ Follow these steps to indicate the workflow direction for a Parallel Gateway ele
 
 3. From the **Direction** drop-down menu, select from one of the following options:
    * **Diverging:** Select the **Diverging** option to indicate that the workflow direction is for outgoing Sequence Flow elements. When this option is selected, all outgoing Sequence Flow elements from the Parallel Gateway element trigger simultaneously without exception.
-   * **Converging:** Select the **Converging** option to indicate the workflow direction is for incoming Sequence Flow elements. ~~When this option is selected, the **Sequence Flow Trigger Condition** drop-down menu displays.~~
-
-     ~~From the **Sequence Flow Trigger Condition** drop-down menu, select how the incoming Sequence Flow element\(s\) triggers the Parallel Gateway element:~~
-
-     * ~~**First Sequence Flow:** Select the **First Sequence Flow** option to indicate that the first incoming Sequence Flow element that triggers to the Parallel Gateway element thereby triggers the Parallel Gateway element.~~
-     * ~~**All Sequence Flows:** Select the **All Sequence Flows** option to indicate that all incoming Sequence Flow elements to the Parallel Gateway element must trigger before the Parallel Gateway triggers.~~
-4. ~~Are there more steps?~~
+   * **Converging:** Select the **Converging** option to indicate the workflow direction is for incoming Sequence Flow elements. The first incoming Sequence Flow element to the Parallel Gateway element that triggers causes the Parallel Gateway element to trigger.
 
 ## Related Topics
 

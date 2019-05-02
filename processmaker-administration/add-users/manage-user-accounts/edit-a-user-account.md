@@ -24,8 +24,8 @@ Follow these steps to edit a ProcessMaker user account:
 
 3. Edit the following information in the **Information** tab about the person associated with the ProcessMaker user account as necessary:
    * In the **Name** section, change the following information:
-     * In the **First Name** field, edit the person's first name.
-     * In the **Last Name** field, edit the person's last name.
+     * In the **First Name** field, edit the person's first name. This is a required field.
+     * In the **Last Name** field, edit the person's last name. This is a required field.
    * In the **Contact Information** section, change the following information:
      * In the **Email** field, edit the person's business email address. This is a required field.
      * In the **Phone** field, edit the person's business telephone or cell phone number.
@@ -40,6 +40,9 @@ Follow these steps to edit a ProcessMaker user account:
        * m/d/Y \(12/31/2017\)
        * m/d/Y h:i A \(12/31/2017 11:30 pm\)
        * m/d/Y H:i \(12/31/2017 23:30\)
+       * d/m/Y \(31/12/2017 23:30\)
+       * Y/m/d \(2017/12/31\)
+       * Y/m/d H:i \(2017/12/31 23:30\)
      * From the **Time zone** drop-down menu, select the time zone in which to display times for this person.
      * From the **Language** drop-down menu, select in which language to display ProcessMaker labels.
    * Select the avatar image to change the avatar for the ProcessMaker user account. If there is no avatar image, the initials for that person's full name display. When the avatar image is selected, the **Upload Avatar** screen displays to select a new avatar image. Click the **Browse** button to locate the new avatar image. After selecting the new image click **Continue** from the **Upload Avatar** screen.  
@@ -48,9 +51,9 @@ Follow these steps to edit a ProcessMaker user account:
 
    * In the **Username** field, edit the username for the person's ProcessMaker user account. This is a required field.
    * From the **Status** drop-down menu, select the status of the ProcessMaker user account from the following options:
-     * **Active:** An Active ProcessMaker user account is one in which a person can use it to log in to ProcessMaker.
-     * **Inactive:** An Inactive ProcessMaker user account is one in which a person cannot use it to log in to ProcessMaker.
-   * In the **New Password** field, edit the password to log in with the ProcessMaker user account. Leave the **New Password** field blank to keep the current password. Passwords must be at least eight \(8\) characters long. [Password special characters](https://www.owasp.org/index.php/Password_special_characters) are recommended. Password validation indicates how strong your password is if you enter a new password.
+     * **Active:** An Active ProcessMaker user account is one in which a person can use it to log on to ProcessMaker.
+     * **Inactive:** An Inactive ProcessMaker user account is one in which a person cannot use it to log on to ProcessMaker.
+   * In the **New Password** field, edit the password to log on with the ProcessMaker user account. Leave the **New Password** field blank to keep the current password. Passwords must be at least eight \(8\) characters long. [Password special characters](https://www.owasp.org/index.php/Password_special_characters) are recommended. Password validation indicates how strong your password is if you enter a new password.
    * In the **Confirm Password** field, confirm that the password matches that entered into the **New Password** field if a new password was entered. If you entered a new password, password validation indicates if the **New Password** and **Confirm Password** values do not match.
 4. Click **Save** if you made any changes in the **Information** tab and do not need to make other changes in the ProcessMaker user account. Otherwise, continue.
 5. Click the **Groups** tab. The **Groups** tab displays the ProcessMaker [groups](../../assign-groups-to-users/what-is-a-group.md) of which that ProcessMaker user is a member. If no groups have been created, the following message displays: **No Data Available**. See [Create a Group](../../assign-groups-to-users/manage-groups/create-a-group.md#create-a-processmaker-group).  
