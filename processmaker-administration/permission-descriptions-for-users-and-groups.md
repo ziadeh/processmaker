@@ -37,31 +37,23 @@ ProcessMaker recommends [creating ProcessMaker groups](assign-groups-to-users/ma
   * **Start Requests:** [Start Event element configuration](../designing-processes/process-design/model-your-process/add-and-configure-an-event-element.md#select-the-processmaker-user-or-group-that-can-start-requests)
 * **Process Owner:** Process Owners create Process models. Their permission assignments may be limited to [Requests](permission-descriptions-for-users-and-groups.md#requests), [Processes](permission-descriptions-for-users-and-groups.md#processes), Process [Categories](permission-descriptions-for-users-and-groups.md#categories), [Screens](permission-descriptions-for-users-and-groups.md#screens), and [Environment Variables](permission-descriptions-for-users-and-groups.md#environment-variables) categories.
 * **ProcessMaker Developer:** ProcessMaker Developers create ProcessMaker Scripts. Their permission assignments may be limited to [Requests](permission-descriptions-for-users-and-groups.md#requests), [Scripts](permission-descriptions-for-users-and-groups.md#scripts), [Files \(API\)](permission-descriptions-for-users-and-groups.md#files-api), [Notifications \(API\)](permission-descriptions-for-users-and-groups.md#notifications-api), and [Task Assignments \(API\)](permission-descriptions-for-users-and-groups.md#task-assignments-api) categories.
-* **ProcessMaker Administrator:** ProcessMaker Administrators administer the ProcessMaker environment and its users. Their permission assignments may be limited to [Requests](permission-descriptions-for-users-and-groups.md#requests), [Users](permission-descriptions-for-users-and-groups.md#users), [Groups](permission-descriptions-for-users-and-groups.md#groups), and [Comments](permission-descriptions-for-users-and-groups.md#comments) categories.
+* **ProcessMaker Administrator:** ProcessMaker Administrators administer the ProcessMaker environment and its users. Their permission assignments may be limited to [Requests](permission-descriptions-for-users-and-groups.md#requests), [Users](permission-descriptions-for-users-and-groups.md#users), [Groups](permission-descriptions-for-users-and-groups.md#groups), [Auth Clients](permission-descriptions-for-users-and-groups.md#auth-clients) and [Comments](permission-descriptions-for-users-and-groups.md#comments) categories.
 
 ## Permission Descriptions
 
 Permissions are organized into categories. Permissions are described below by category and how each permission affects ProcessMaker functionality. These permissions function identically in ProcessMaker user accounts and groups.
 
-### Requests
+### Auth Clients
 
-The **Requests** category contains the following permission:
+The **Auth Clients** category contains the following permissions:
 
-* **View All Requests:** View the **All Requests** page and [Request information](../using-processmaker/requests/request-details.md) accessible from that page. See [View All Requests](../using-processmaker/requests/view-all-requests.md).
-* **Edit Request Data:** View the **Data** tab for a completed Request and edit the [completed Request data](../using-processmaker/requests/request-details.md#completed-tasks-summary) that is in JSON format. See [View a Request Summary](../using-processmaker/requests/request-details.md#editable-request-data).
-* **Edit Task Data:** View the **Data** tab for an assigned Task and edit the Task data that is in JSON format. See [View a Task Summary](../using-processmaker/task-management/view-a-task-summary.md#editable-task-data).
-
-### Scripts
-
-The **Scripts** category contains the following permissions:
-
-* **View Scripts:** View the table of ProcessMaker Scripts on the **Scripts** page. See [View All Scripts](../designing-processes/scripts/manage-scripts/view-all-scripts.md).
-* **Create Scripts:** Create a ProcessMaker Script from the **Scripts** page. Selecting this permission also selects the **Edit Scripts** permission. See [Create a New Script](../designing-processes/scripts/manage-scripts/create-a-new-script.md).
-* **Edit Scripts:** Edit a ProcessMaker Script and/or its configuration from the **Scripts** page. See [Edit a Script](../designing-processes/scripts/manage-scripts/edit-a-script.md) and [Edit Script Configuration](../designing-processes/scripts/manage-scripts/edit-script-configuration.md).
-* **Delete Scripts:** Delete a ProcessMaker Script from the **Scripts** page. See [Delete a Script](../designing-processes/scripts/manage-scripts/remove-a-script.md).
+* **View Auth Clients:** View all client authentication keys on the **Auth Clients** page. See [View All Client Authentication Keys](auth-client-management/manage-client-authentications/view-all-client-authentication-keys.md).
+* **Create Auth Clients:** Create a client authentication key on the **Auth Clients** page. Selecting this permission also selects the **Edit Auth Clients** permission. See [Create a New Client Authentication Key](auth-client-management/manage-client-authentications/create-a-new-client-authentication-key.md).
+* **Edit Auth Clients:** Edit a client authentication key from the **Auth Clients** page. See [Edit a Client Authentication Key](auth-client-management/manage-client-authentications/edit-a-client-authentication-key.md).
+* **Delete Auth Clients:** Delete a client authentication key from the **Auth Clients** page. See [Delete a Client Authentication Key](auth-client-management/manage-client-authentications/delete-a-client-authentication-key.md).
 
 {% hint style="info" %}
-Select the **View Scripts** permission to use any of the other permissions in this category.
+Select the **View Auth Clients** permission to use any of the other permissions in this category.
 {% endhint %}
 
 ### Categories
@@ -71,23 +63,36 @@ The **Categories** category contains the following permissions:
 * **View Categories:** View the table of Process Categories on the **Categories** page. See [View Process Categories](../designing-processes/viewing-processes/process-categories.md#view-process-categories).
 * **Create Categories:** Create a Process Category from the **Categories** page. Selecting this permission also selects the **Edit Categories** permission. See [Add a New Process Category](../designing-processes/viewing-processes/process-categories.md#add-a-new-process-category).
 * **Edit Categories:** Edit a Process Category from the **Categories** page. See [Edit a Process Category](../designing-processes/viewing-processes/process-categories.md#edit-a-process-category).
-* **Delete Categories:** Delete a Process Category from the Categories page. See [Delete a Process Category](../designing-processes/viewing-processes/process-categories.md#delete-a-process-category).
+* **Delete Categories:** Delete a Process Category from the **Categories** page. See [Delete a Process Category](../designing-processes/viewing-processes/process-categories.md#delete-a-process-category).
 
 {% hint style="info" %}
 Select the **View Categories** permission to use any of the other permissions in this category.
 {% endhint %}
 
-### Screens
+### Collections
 
-The **Screens** category contains the following permissions:
+The **Collections** category contains the following permissions:
 
-* **View Screens:** View the table of ProcessMaker Screens on the **Screens** page. See [View All Screens](../designing-processes/design-forms/manage-forms/view-all-forms.md).
-* **Create Screens:** Create a ProcessMaker Screen from the **Screens** page. Selecting this permission also selects the **Edit Screens** permission. See [Create a New Screen](../designing-processes/design-forms/manage-forms/create-a-new-form.md).
-* **Edit Screens:** Edit a ProcessMaker Screen and/or its configuration from the **Screens** page. See [Edit a Screen](../designing-processes/design-forms/screens-builder/control-descriptions/) and [Edit Screen Configuration](../designing-processes/design-forms/manage-forms/edit-a-screen.md).
-* **Delete Screens:** Delete a ProcessMaker Screen from the **Screens** page. See [Delete a Screen](../designing-processes/design-forms/manage-forms/remove-a-screen.md).
+* **View Collections:** View the table of Collections on the **Collections** page. See ~~LINK~~.
+* **Create Categories:** Create a Collection from the **Collections** page. Selecting this permission also selects the **Edit Collections** permission. See ~~LINK~~.
+* **Edit Collections:** Edit a Collection from the **Collections** page. See ~~LINK~~.
+* **Delete Collections:** Delete a Collection from the **Collections** page. See ~~LINK~~.
 
 {% hint style="info" %}
-Select the **View Screens** permission to use any of the other permissions in this category.
+Select the **View Collections** permission to use any of the other permissions in this category.
+{% endhint %}
+
+### Comments
+
+The **Comments** category contains the following permissions:
+
+* **View Comments:** View comments on a Request information page. See ~~LINK~~.
+* **Create Comments:** Create a comment from a Request information page. Selecting this permission also selects the **Edit Comments** permission. See ~~LINK~~.
+* **Edit Comments:** Edit a comment from a Request information page. See ~~LINK~~.
+* **Delete Comments:** Delete a comment from a Request information page. See ~~LINK~~.
+
+{% hint style="info" %}
+Select the **View Comments** permission to use any of the other permissions in this category.
 {% endhint %}
 
 ### Environment Variables
@@ -103,18 +108,14 @@ The **Environment Variables** category contains the following permissions:
 Select the **View Environment Variables** permission to use any of the other permissions in this category.
 {% endhint %}
 
-### Users
+### Files \(API\)
 
-The **Users** category contains the following permissions:
+The **Files \(API\)** category contains the following permissions:
 
-* **View Users:** View the table of ProcessMaker user accounts on the **Users** page. See [View All Users Accounts](add-users/manage-user-accounts/view-all-users.md).
-* **Create Users:** Create a ProcessMaker user account from the **Users** page. Selecting this permission also selects the **Edit Users** permission. See [Create a New User Account](add-users/manage-user-accounts/create-a-user-account.md).
-* **Edit Users:** Edit a ProcessMaker user account from the **Users** page. See [Edit a User Account](add-users/manage-user-accounts/edit-a-user-account.md).
-* **Delete Users:** Delete a ProcessMaker user account from the **Users** page. See [Delete a User Account](add-users/manage-user-accounts/remove-a-user-account.md).
-
-{% hint style="info" %}
-Select the **View Users** permission to use any of the other permissions in this category.
-{% endhint %}
+* **View Files:** Returns the list of files associated to an API request. See "Files &gt; Get" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
+* **Create Files:** Saves a new file specified in an API request. Selecting this permission also selects the **Edit Files** permission. See "Files &gt; Post" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
+* **Edit Files:** Update a file specified in an API request. See "Files &gt; Update" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
+* **Delete Files:** Deletes a specified file in an API request. See "Files &gt; Delete" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
 
 ### Groups
 
@@ -128,6 +129,15 @@ The **Groups** category contains the following permissions:
 {% hint style="info" %}
 Select the **View Groups** permission to use any of the other permissions in this category.
 {% endhint %}
+
+### Notifications \(API\)
+
+The **Notifications \(API\)** category contains the following permissions:
+
+* **View Notifications:**  Returns all notifications to which the user has access. See "Notifications &gt; Get" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
+* **Create Notifications:**  Save a new notification through an API request. Selecting this permission also selects the **Edit Notifications** permission. See "Notifications &gt; Post" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
+* **Edit Notifications:** Updates a notification through an API request. See "Notifications &gt; Update" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
+* **Delete Notifications:** Deletes a specified notification through an API request. See "Notifications &gt; Delete" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
 
 ### Processes
 
@@ -144,49 +154,39 @@ The **Processes** category contains the following permissions:
 Select the **View Processes** permission to use any of the other permissions in this category.
 {% endhint %}
 
-### Comments
+### Requests
 
-The **Comments** category contains the following permissions:
+The **Requests** category contains the following permission:
 
-* **View Comments:** View comments on a Request information page. See ~~LINK~~.
-* **Create Comments:** Create a comment from a Request information page. Selecting this permission also selects the **Edit Comments** permission. See ~~LINK~~.
-* **Edit Comments:** Edit a comment from a Request information page. See ~~LINK~~.
-* **Delete Comments:** Delete a comment from a Request information page. See ~~LINK~~.
+* **View All Requests:** View the **All Requests** page and [Request information](../using-processmaker/requests/request-details.md) accessible from that page. See [View All Requests](../using-processmaker/requests/view-all-requests.md).
+* **Edit Request Data:** View the **Data** tab for a completed Request and edit the [completed Request data](../using-processmaker/requests/request-details.md#completed-tasks-summary) that is in JSON format. See [View a Request Summary](../using-processmaker/requests/request-details.md#editable-request-data).
+* **Edit Task Data:** View the **Data** tab for an assigned Task and edit the Task data that is in JSON format. See [View a Task Summary](../using-processmaker/task-management/view-a-task-summary.md#editable-task-data).
 
-{% hint style="info" %}
-Select the **View Comments** permission to use any of the other permissions in this category.
-{% endhint %}
+### Screens
 
-### Auth-Clients
+The **Screens** category contains the following permissions:
 
-The **Auth-Clients** category contains the following permissions:
-
-* **View Auth-Clients:** View all client authentication keys on the **Auth Clients** page. See [View All Client Authentication Keys](auth-client-management/manage-client-authentications/view-all-client-authentication-keys.md).
-* **Create Auth-Clients:** Create a client authentication key on the **Auth Clients** page. Selecting this permission also selects the **Edit Auth-Clients** permission. See [Create a New Client Authentication Key](auth-client-management/manage-client-authentications/create-a-new-client-authentication-key.md).
-* **Edit Auth-Clients:** Edit a client authentication key from the **Auth Clients** page. See [Edit a Client Authentication Key](auth-client-management/manage-client-authentications/edit-a-client-authentication-key.md).
-* **Delete Auth-Clients:** Delete a client authentication key from the **Auth Clients** page. See [Delete a Client Authentication Key](auth-client-management/manage-client-authentications/delete-a-client-authentication-key.md).
+* **View Screens:** View the table of ProcessMaker Screens on the **Screens** page. See [View All Screens](../designing-processes/design-forms/manage-forms/view-all-forms.md).
+* **Create Screens:** Create a ProcessMaker Screen from the **Screens** page. Selecting this permission also selects the **Edit Screens** permission. See [Create a New Screen](../designing-processes/design-forms/manage-forms/create-a-new-form.md).
+* **Edit Screens:** Edit a ProcessMaker Screen and/or its configuration from the **Screens** page. See [Edit a Screen](../designing-processes/design-forms/screens-builder/control-descriptions/) and [Edit Screen Configuration](../designing-processes/design-forms/manage-forms/edit-a-screen.md).
+* **Delete Screens:** Delete a ProcessMaker Screen from the **Screens** page. See [Delete a Screen](../designing-processes/design-forms/manage-forms/remove-a-screen.md).
 
 {% hint style="info" %}
-Select the **View Auth-Clients** permission to use any of the other permissions in this category.
+Select the **View Screens** permission to use any of the other permissions in this category.
 {% endhint %}
 
-### Files \(API\)
+### Scripts
 
-The **Files \(API\)** category contains the following permissions:
+The **Scripts** category contains the following permissions:
 
-* **View Files:** Returns the list of files associated to an API request. See "Files &gt; Get" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
-* **Create Files:** Saves a new file specified in an API request. Selecting this permission also selects the **Edit Files** permission. See "Files &gt; Post" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
-* **Edit Files:** Update a file specified in an API request. See "Files &gt; Update" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
-* **Delete Files:** Deletes a specified file in an API request. See "Files &gt; Delete" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
+* **View Scripts:** View the table of ProcessMaker Scripts on the **Scripts** page. See [View All Scripts](../designing-processes/scripts/manage-scripts/view-all-scripts.md).
+* **Create Scripts:** Create a ProcessMaker Script from the **Scripts** page. Selecting this permission also selects the **Edit Scripts** permission. See [Create a New Script](../designing-processes/scripts/manage-scripts/create-a-new-script.md).
+* **Edit Scripts:** Edit a ProcessMaker Script and/or its configuration from the **Scripts** page. See [Edit a Script](../designing-processes/scripts/manage-scripts/edit-a-script.md) and [Edit Script Configuration](../designing-processes/scripts/manage-scripts/edit-script-configuration.md).
+* **Delete Scripts:** Delete a ProcessMaker Script from the **Scripts** page. See [Delete a Script](../designing-processes/scripts/manage-scripts/remove-a-script.md).
 
-### Notifications \(API\)
-
-The **Notifications \(API\)** category contains the following permissions:
-
-* **View Notifications:**  Returns all notifications to which the user has access. See "Notifications &gt; Get" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
-* **Create Notifications:**  Save a new notification through an API request. Selecting this permission also selects the **Edit Notifications** permission. See "Notifications &gt; Post" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
-* **Edit Notifications:** Updates a notification through an API request. See "Notifications &gt; Update" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
-* **Delete Notifications:** Deletes a specified notification through an API request. See "Notifications &gt; Delete" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
+{% hint style="info" %}
+Select the **View Scripts** permission to use any of the other permissions in this category.
+{% endhint %}
 
 ### Task Assignments \(API\)
 
@@ -196,6 +196,19 @@ The **Task Assignments \(API\)** category contains the following permissions:
 * **Create Task Assignments:** Saves a new task assignment to a specified user in an API request. Selecting this permission also selects the **Edit Task Assignments** permission. See "Task Assignments &gt; Post" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
 * **Edit Task Assignments:** Updates a task assignment through an API request. See "Task Assignments &gt; Update" endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
 * **Delete Task Assignments:** Deletes a specified task assignment through an API request. See ~~WHAT?~~ endpoint in the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation).
+
+### Users
+
+The **Users** category contains the following permissions:
+
+* **View Users:** View the table of ProcessMaker user accounts on the **Users** page. See [View All Users Accounts](add-users/manage-user-accounts/view-all-users.md).
+* **Create Users:** Create a ProcessMaker user account from the **Users** page. Selecting this permission also selects the **Edit Users** permission. See [Create a New User Account](add-users/manage-user-accounts/create-a-user-account.md).
+* **Edit Users:** Edit a ProcessMaker user account from the **Users** page. See [Edit a User Account](add-users/manage-user-accounts/edit-a-user-account.md).
+* **Delete Users:** Delete a ProcessMaker user account from the **Users** page. See [Delete a User Account](add-users/manage-user-accounts/remove-a-user-account.md).
+
+{% hint style="info" %}
+Select the **View Users** permission to use any of the other permissions in this category.
+{% endhint %}
 
 ## Related Topics
 
