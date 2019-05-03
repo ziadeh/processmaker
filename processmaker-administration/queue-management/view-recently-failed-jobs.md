@@ -24,7 +24,7 @@ The **Failed Jobs** panel displays the following information about failed jobs:
 * **Failed At:** The **Failed At** column displays the date and time the job failed.
 * **Retry:** Click the **Retry** icon![](../../.gitbook/assets/retry-failed-job-icon-1-failed-jobs-page-queue-management-admin.png)for the failed job to retry running it.
 
-If more than ~~nine \(9\)~~ failed jobs display in the **Failed Jobs** panel, then the **Next** and **Previous** navigation buttons enable. Use the **Next** and **Previous** navigation buttons to navigate multiple pages of failed jobs.
+If more than 25 failed jobs display in the **Failed Jobs** panel, then the **Next** and **Previous** navigation buttons enable. Use the **Next** and **Previous** navigation buttons to navigate multiple pages of failed jobs.
 
 ## Related Topics
 

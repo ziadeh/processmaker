@@ -6,7 +6,7 @@ description: Monitor ProcessMaker Spark jobs using tags.
 
 ## Overview
 
-Queue Management allows you to assign “tags” to jobs.
+Assign “tags” to jobs to more easily search for and monitor jobs. At this time, tags are not enabled in ProcessMaker Spark.
 
 ## Related Topics
 

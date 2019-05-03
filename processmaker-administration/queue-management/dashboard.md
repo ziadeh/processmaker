@@ -32,9 +32,9 @@ The Dashboard displays in the **Overview** panel the following metrics about you
   * **Inactive:** The ProcessMaker Spark server is inactive.
   * **Error:** The ProcessMaker Spark server has an error.
 * **Total Processes:** The **Total Processes** metric displays how many computer server processes the job queue is using.
-* **Max Wait Time:** The **Max Wait Time** metric displays the maximum wait time ~~\(in what units of time?\)~~ the queue has required to run a recent job. ~~If the wait time is negligible, then this metric displays the following: **-**.~~
-* **Max Runtime:** The **Max Runtime** metric displays the ~~name of the job queue that has the maximum runtime~~.
-* **Max Throughput:** The **Max Throughput** metric displays the ~~name of the job queue that has the maximum throughput~~.
+* **Max Wait Time:** The **Max Wait Time** metric displays the maximum wait time the queue has required to run a recent job in real-time. If there is no wait time, then this metric displays the following: **-**.
+* **Max Runtime:** The **Max Runtime** metric displays the name of the job queue that has the maximum runtime. `default` is the name of the default queue.
+* **Max Throughput:** The **Max Throughput** metric displays the name of the job queue that has the maximum throughput. `default` is the name of the default queue.
 
 The Dashboard displays in the **Current Workload** panel the following information about the jobs queue:
 
@@ -45,8 +45,8 @@ The Dashboard displays in the **Current Workload** panel the following informati
 
 The Dashboard displays a panel labeled with the name of the ProcessMaker Spark server that contains the following information:
 
-* **Supervisor:** The **Supervisor** column displays ~~the computer server username that manages the ProcessMaker Spark server~~.
-* **Processes:** The **Processes** column displays how many computer server processes the job queue is using.
+* **Supervisor:** The **Supervisor** column displays the supervisor name. The supervisor monitors the default queue.
+* **Processes:** The **Processes** column displays how many processes the job queue is using.
 * **Queues:** The **Queues** column displays the name\(s\) of the job queue\(s\).
 * **Balancing:** The **Balancing** column displays the balancing strategy to manage jobs in the queue\(s\). The  Simple strategy splits incoming jobs evenly between computer server processes.
 

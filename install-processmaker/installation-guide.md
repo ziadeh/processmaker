@@ -128,14 +128,14 @@ You only need to add the following Cron entry to your server:
 
 This Cron calls the scheduler service every minute. When the `schedule:run`command runs, ProcessMaker evaluates your scheduled tasks and runs the tasks that are due.
 
-## Log In for the First Time
+## Log On for the First Time
 
-Go to [https://localhost](https://localhost) or the IP address/domain name you specified. Use the following credentials to [log in](../using-processmaker/log-in.md#log-in):
+Go to [https://localhost](https://localhost) or the IP address/domain name you specified. Use the following credentials to [log on](../using-processmaker/log-in.md#log-in):
 
 * Username: `admin`
 * Password: `admin`
 
-After you log in for the first time, you may begin managing [user accounts](../processmaker-administration/add-users/manage-user-accounts/) and [groups](../processmaker-administration/assign-groups-to-users/manage-groups/).
+After you log on for the first time, you may begin managing [user accounts](../processmaker-administration/add-users/manage-user-accounts/) and [groups](../processmaker-administration/assign-groups-to-users/manage-groups/).
 
 ## Related Topics
 
