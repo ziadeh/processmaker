@@ -10,8 +10,8 @@ services:
   webserver:
     image: nginx:alpine
     ports:
-      - "8089:80"
-      - "443:443"
+      - "8080:80"
+      - "8443:443"
     volumes:
       - ./:/var/www
       - ./docker/nginx/:/etc/nginx/conf.d/
@@ -21,7 +21,7 @@ services:
     image: mysql:8
     environment:
       MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: workflow
+      MYSQL_DATABASE: spark
     volumes:
       - database:/var/lib/mysql
 
