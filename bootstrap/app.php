@@ -9,6 +9,18 @@ use ProcessMaker\Exception\Handler;
 use ProcessMaker\Http\Kernel as HttpKernel;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\RotatingFileHandler;
+use Dotenv\Dotenv;
+
+/**
+ * Overload an environment specific dotenv file
+ */
+$env_specific_file = strtolower(getenv('APP_ENV'));
+$dir = __DIR__ . '/../';
+$file = '.env.' . $env_specific_file;
+if (file_exists($dir . $file)) {
+    $dotenv = new Dotenv($dir, $file);
+    $dotenv->overload();
+}
 
 /*
 |--------------------------------------------------------------------------

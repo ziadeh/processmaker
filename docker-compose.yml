@@ -1,9 +1,9 @@
 version: '3'
 services:
   app:
-    build: .
-    image: php:7.2-fpm-stretch
-    working_dir: /var/www
+    build:
+      context: .
+      dockerfile: SparkDockerfile
     volumes:
       - ./:/var/www
       - ./docker/php.ini:/usr/local/etc/php/conf.d/local.ini
@@ -18,12 +18,25 @@ services:
   redis:
     image: redis:5
   mysql:
-    image: mysql:8
+    image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: spark
     volumes:
       - database:/var/lib/mysql
-
+  selenium-hub:
+    image: selenium/hub:3.141.59-neon
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+  chrome:
+    image: selenium/node-chrome:3.141.59-neon
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
 volumes:
   database:
