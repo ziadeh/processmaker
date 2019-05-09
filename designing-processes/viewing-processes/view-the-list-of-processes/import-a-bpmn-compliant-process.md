@@ -25,7 +25,7 @@ See [Import a Validated ProcessMaker Spark Process](import-a-bpmn-compliant-proc
 
 ### Import BPMN 2.0 Compliant Processes from Third-Party Modeling Applications
 
-ProcessMaker Spark supports importing third-party processes if those processes are compliant to the [BPMN 2.0 specification](https://www.omg.org/spec/BPMN/2.0/About-BPMN/). When importing BPMN 2.0 compliant processes, ProcessMaker imports the Process model that can be opened in [Process Modeler](../../process-design/what-is-process-modeling.md). ProcessMaker Spark ignores any functionality that the third-party tool may support that is not part of the BPMN 2.0 specification.
+ProcessMaker Spark supports importing third-party processes if those processes are compliant to the [BPMN 2.0 specification](https://www.omg.org/spec/BPMN/2.0/About-BPMN/). When importing BPMN 2.0 compliant processes, ProcessMaker Spark imports the Process model that can be opened in [Process Modeler](../../process-design/what-is-process-modeling.md). ProcessMaker Spark ignores any functionality that the third-party tool may support that is not part of the BPMN 2.0 specification.
 
 Despite that the imported Process is BPMN 2.0 compliant, you may need to edit the Process in Process Modeler for ProcessMaker Spark specific functionality.
 
