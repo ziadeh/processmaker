@@ -127,7 +127,7 @@
 </template>
 
 <script>
-  import {VueFormBuilder, VueFormRenderer, FormBuilderControls as controlConfig} from "@processmaker/spark-screen-builder";
+  import {VueFormBuilder, VueFormRenderer, ControlsConfiguration as controlConfig} from "@processmaker/spark-screen-builder";
   import "@processmaker/spark-screen-builder/dist/vue-form-builder.css";
   import "@processmaker/vue-form-elements/dist/vue-form-elements.css";
   import VueJsonPretty from 'vue-json-pretty';
