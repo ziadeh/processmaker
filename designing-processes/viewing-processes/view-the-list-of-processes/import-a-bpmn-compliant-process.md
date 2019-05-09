@@ -8,6 +8,8 @@ description: Import a process into ProcessMaker Spark if it is BPMN 2.0 complian
 
 Import Processes into ProcessMaker Spark if the Process to be imported is BPMN 2.0 compliant.
 
+Importing a Process helps you jump-start your own Process design by using someone else’s Process rather than starting from nothing. Suppose that you have a respected colleague that has designed a Process for her organization that you want to use for your team. Starting your Process model from hers gets you started faster.
+
 ### Import Validated ProcessMaker Spark Processes
 
 Import validated ProcessMaker Spark Processes that have been [exported](export-a-bpmn-compliant-process.md) from the same [ProcessMaker Spark version](../../../using-processmaker/application-version-details.md#view-processmaker-version-information). A validated ProcessMaker Spark Process is [BPMN 2.0 compliant](https://www.omg.org/spec/BPMN/2.0/About-BPMN/) and has been [validated in Process Modeler](../../process-design/model-your-process/validate-bpmn-2.0-compliance.md) before that Process was exported. The Process can be imported from the same or different ProcessMaker Spark instance. Exported ProcessMaker Spark Processes have the `.spark` file extension.
