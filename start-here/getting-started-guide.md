@@ -52,23 +52,29 @@ A short description precedes each instructional video.
 
 ## How Do I Manage and Create Workflows?
 
-### Manage Processes
-
 {% tabs %}
 {% tab title="View" %}
 #### What Is a Process?
-{% endtab %}
-
-{% tab title="Create" %}
-#### How Do I Create a Process?
 {% endtab %}
 
 {% tab title="Import" %}
 #### How Do I Import a Process?
 {% endtab %}
 
+{% tab title="Create" %}
+#### How Do I Create a Process?
+{% endtab %}
+
 {% tab title="Configure" %}
 #### How Do I Configure a Process?
+{% endtab %}
+
+{% tab title="Design a Simple Process" %}
+#### Process Modeling Elements in ProcessMaker Spark
+
+
+
+#### Design a Simple Process
 {% endtab %}
 
 {% tab title="Export" %}
@@ -81,18 +87,6 @@ A short description precedes each instructional video.
 
 {% tab title="Restore" %}
 #### How Do I Restore a Process?
-{% endtab %}
-{% endtabs %}
-
-### Model Processes
-
-{% tabs %}
-{% tab title="Overview" %}
-#### Process Modeling Element Descriptions in ProcessMaker Spark
-{% endtab %}
-
-{% tab title="Design a Simple Process" %}
-
 {% endtab %}
 {% endtabs %}
 
