@@ -10,7 +10,7 @@ The following are brief descriptions about each Process modeling element that Pr
 
 ## Events
 
-An Event represents a milestone or an intermediate delay in the Process. ProcessMaker Spark provides the following event type Process model elements:
+Use event-type elements to represent an event, milestone, or delay in the Process. ProcessMaker Spark provides the following event type Process model elements:
 
 * [Start Event](process-modeling-element-descriptions.md#start-event)
 * [Start Timer Event](process-modeling-element-descriptions.md#start-timer-event)
