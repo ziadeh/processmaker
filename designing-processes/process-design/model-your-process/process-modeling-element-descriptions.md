@@ -38,7 +38,7 @@ See [Add and Configure Event Elements](add-and-configure-an-event-element.md#add
 
 ### Start Timer Event
 
-A Start Timer Event element represents a time or periodic interval when a modeled Process starts. A Start Timer Event element begins the workflow of a Request for that Process. Therefore, a Start Timer Event element cannot have an incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element. A Process model can have multiple Start Timer Event elements.
+A Start Timer Event element represents a time or periodic interval when a Process starts. A Start Timer Event element begins the Process. Therefore, a Start Timer Event element cannot have an incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element. A Process model can have multiple Start Timer Event elements.
 
 In Process Modeler, the Start Timer Event element is labeled as "Start Timer Event" in the **BPMN** panel as highlighted below.
 
@@ -54,7 +54,7 @@ See [Add and Configure Start Timer Event Elements](add-and-configure-start-timer
 
 ### Intermediate Timer Event
 
-An Intermediate Timer Event element represents a delay in a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow for a Process either at a specific time or at a periodic interval. When the specified time or interval occurs, the Intermediate Timer Event element triggers, thereby resuming workflow for that Process's Request.
+An Intermediate Timer Event element represents a delay in a Process either at a specific time or at a periodic interval. When the specified time or interval occurs, the Intermediate Timer Event element triggers, thereby resuming workflow for that Process's [Request](../../../using-processmaker/requests/what-is-a-request.md).
 
 In Process Modeler, the Intermediate Timer Event element is labeled as "Intermediate Timer Event" in the **BPMN** panel as highlighted below.
 
@@ -70,7 +70,7 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 ### Intermediate Message Catch Event
 
-An Intermediate Message Catch Event element represents a delay in a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow for a Process until that element receives an external API call. This external API call can be represented as an incoming [Message Flow](process-modeling-element-descriptions.md#message-flow) element from another Pool element.
+An Intermediate Message Catch Event element represents a delay in a Process until that element receives an external API call. This external API call can be represented as an incoming [Message Flow](process-modeling-element-descriptions.md#message-flow) element from another Pool element.
 
 The Intermediate Message Catch Event element can receive the external API call that uses the authorization credentials from any of the following:
 
@@ -78,7 +78,7 @@ The Intermediate Message Catch Event element can receive the external API call t
 * Any member of a specified ProcessMaker group
 * A whitelisted \(allowed\) IP address or domain
 
-When the Intermediate Catch Event element receives the API call the element triggers, thereby resuming workflow for that Process's Request.
+When the Intermediate Catch Event element receives the API call the element triggers, thereby resuming workflow for that Process's [Request](../../../using-processmaker/requests/what-is-a-request.md).
 
 In Process Modeler, the Intermediate Message Catch Event element is labeled as "Intermediate Message Catch Event" in the **BPMN** panel as highlighted below.
 
@@ -94,7 +94,7 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 ### End Event
 
-An End Event element represents where a modeled Process normally ends when abnormal events do not terminate a [Request](../../../using-processmaker/requests/) for a Process \(such as a [canceled Request](../../../using-processmaker/requests/delete-a-request.md)\). An End Event element terminates the workflow of a Request for that Process. Therefore, an End Event element cannot have an outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element, though it may have an outgoing [Message Flow](process-modeling-element-descriptions.md#message-flow) element. A Process model can have multiple End Event elements.
+An End Event element represents where a Process ends when abnormal events do not terminate a [Request](../../../using-processmaker/requests/) for a Process \(such as a [canceled Request](../../../using-processmaker/requests/delete-a-request.md)\). An End Event element ends the workflow for that Process. Therefore, an End Event element cannot have an outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element, though it may have an outgoing [Message Flow](process-modeling-element-descriptions.md#message-flow) element. A Process model can have multiple End Event elements.
 
 In Process Modeler, the End Event element is labeled as "End Event" in the **BPMN** panel as highlighted below.
 
