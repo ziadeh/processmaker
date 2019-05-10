@@ -20,7 +20,9 @@ Use event-type elements to represent an event, milestone, or delay in the Proces
 
 ### Start Event
 
-A Start Event element represents where a modeled Process starts. A Start Event element begins the workflow of a [Request](../../../using-processmaker/requests/what-is-a-request.md) for that Process. Therefore, a Start Event element cannot have an incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow). A Process model can have multiple Start Event elements.
+A Start Event element represents the start of a Process. Therefore, a Start Event element cannot have an incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow). A Process model can have multiple Start Event elements.
+
+Use a Start Event element to represent how a [Request](../../../using-processmaker/requests/what-is-a-request.md) for that Process starts. The Request can be started from an API request to a Webhook URL or by a specified ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) or [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md).
 
 In Process Modeler, the Start Event element is labeled as "Start Event" in the **BPMN** panel as highlighted below.
 
