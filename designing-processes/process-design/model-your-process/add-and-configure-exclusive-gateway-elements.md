@@ -39,7 +39,7 @@ After the element is placed into the Process model, you may move it by dragging 
 Moving an Exclusive Gateway element has the following limitations in regards to the following Process model elements:
 
 * **Pool element:** If the Exclusive Gateway element is inside of a [Pool](process-modeling-element-descriptions.md#pool) element, it cannot be moved outside of the Pool element. If you attempt to do so, Process Modeler places the Exclusive Gateway element inside the Pool element closest to where you attempted to move it.
-* **Lane element:** If the Exclusive Gateway element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Exclusive Gateway element cannot be move outside of the Pool element.
+* **Lane element:** If the Exclusive Gateway element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Exclusive Gateway element cannot be moved outside of the Pool element.
 {% endhint %}
 
 ## Configure an Exclusive Gateway Element
