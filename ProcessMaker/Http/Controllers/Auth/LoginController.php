@@ -37,6 +37,11 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except(['logout', 'keepAlive']);
     }
+    
+    public function loginWithoutIntended(Request $request) {
+        $request->session()->put('url.intended', false);
+        return $this->login($request);
+    }
 
     public function loginWithIntendedCheck(Request $request) {
         $intended = redirect()->intended()->getTargetUrl();
