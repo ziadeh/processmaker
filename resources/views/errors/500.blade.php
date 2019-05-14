@@ -1,11 +1,7 @@
-@extends('layouts.layout')
+@extends('layouts.minimal')
 
 @section('title')
   {{__('Server Error - ProcessMaker')}}
-@endsection
-
-@section('sidebar')
-@include('layouts.sidebar', ['sidebar'=> Menu::get('sidebar_designer')])
 @endsection
 
 @section('content')
