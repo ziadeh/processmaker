@@ -97,7 +97,7 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 ### End Event
 
-An End Event element represents where a Process ends when abnormal events do not terminate a [Request](../../../using-processmaker/requests/) for a Process \(such as a [canceled Request](../../../using-processmaker/requests/delete-a-request.md)\). An End Event element ends the workflow for that Process. Therefore, an End Event element cannot have an outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element, though it may have an outgoing [Message Flow](process-modeling-element-descriptions.md#message-flow) element. A Process model can have multiple End Event elements.
+An End Event element represents where a Process ends when abnormal events such as a [canceled Request](../../../using-processmaker/requests/delete-a-request.md) do not terminate a [Request](../../../using-processmaker/requests/what-is-a-request.md). An End Event element ends the workflow for that Process. Therefore, an End Event element cannot have an outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element, though it may have an outgoing [Message Flow](process-modeling-element-descriptions.md#message-flow) element. A Process model can have multiple End Event elements.
 
 In Process Modeler, the End Event element is labeled as "End Event" in the **BPMN** panel as highlighted below.
 
@@ -113,14 +113,19 @@ See [Add and Configure Event Elements](add-and-configure-an-event-element.md#add
 
 ## Tasks
 
-A Task represents an activity to be performed either by a [Request](../../../using-processmaker/requests/what-is-a-request.md) participant or a [ProcessMaker Script](../../scripts/). ProcessMaker Spark provides the following Task type Process model elements:
+A Task represents an activity to be performed either by a [Request](../../../using-processmaker/requests/what-is-a-request.md) participant or a [ProcessMaker Script](../../scripts/). ProcessMaker Spark provides the following Task-type Process model elements:
 
 * [Task](process-modeling-element-descriptions.md#task)
 * [Script Task](process-modeling-element-descriptions.md#script-task)
 
 ### Task
 
-A Task element represents an activity to be performed by a person participating in a [Request](../../../using-processmaker/requests/what-is-a-request.md). The Request participant assigned that Task might be determined by the conditions in a Request's workflow.
+A Task element represents an activity to be performed by a person participating in a [Request](../../../using-processmaker/requests/what-is-a-request.md). Assign the [Task](../../../using-processmaker/task-management/what-is-a-task.md) that the Task element represents to any of the following types of Request participants:
+
+* The ProcessMaker user who started the Request, referred to as the Requester
+* A specific ProcessMaker user
+* Any member of a specified ProcessMaker group
+* The previous Task assignee in that Request's workflow
 
 People perform Task activities through ProcessMaker Screens as digital [forms](../../design-forms/screens-builder/types-for-screens.md#forms) and [displays](../../design-forms/screens-builder/types-for-screens.md#display). ProcessMaker Screens are designed in [Screens Builder](../../design-forms/screens-builder/).
 

@@ -133,10 +133,10 @@ Follow these steps to specify when a Task element is due:
 
 Select to whom to assign the Task that is referenced in a Task element:
 
-* **Requester:** Assign that Task to the Request initiator.
-* **User:** Assign that Task to a selected ProcessMaker user.
-* **Group:** Assign that Task to a selected ProcessMaker group. When a Task is assigned to a ProcessMaker group, round robin assignment rules determine which group member is the assignee without manually assigning the Task.
-* **Previous Task assignee:** Assign that Task to who was assigned the Task in the preceding Task element.
+* **Requester:** Assign that Task to the ProcessMaker user who started the Request.
+* **User:** Assign that Task to a specified ProcessMaker user.
+* **Group:** Assign that Task to any member of a specified ProcessMaker group. When a Task is assigned to a ProcessMaker group, round robin assignment rules determine which group member is the assignee without manually assigning the Task.
+* **Previous Task assignee:** Assign that Task to the previous Task assignee in that Request's workflow.
 
 Follow these steps to select to whom to assign the Task that is referenced in a Task element:
 
