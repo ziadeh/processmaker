@@ -143,9 +143,12 @@ See [Add and Configure Task Elements](add-and-configure-task-elements.md).
 
 ### Script Task
 
-A Script Task element represents an activity to be performed by a ProcessMaker Script.
+A Script Task element represents an activity to be performed by a ProcessMaker Script. ProcessMaker Scripts support Lua and PHP programming languages. Use ProcessMaker Scripts in the following ways:
 
-ProcessMaker Scripts are designed in [Scripts Editor](../../scripts/scripts-editor.md). ProcessMaker Scripts are independent of modeled processes: any ProcessMaker Script can be reused in any modeled process in your organization. This architecture allows Process Owners to focus on process modeling in a no-code environment while ProcessMaker Developers develop reusable ProcessMaker Scripts. ProcessMaker Scripts can leverage Request-level variable data as well as variable data designed in ProcessMaker Screens from [Screens Builder](../../design-forms/screens-builder/).
+* Interact with legacy systems in your organization such as ERPs and CRMs.
+* Connect with third-party services like Adobe DocuSign, Short Message Service \(SMS\), or REST APIs.
+
+ProcessMaker Scripts are designed in [Scripts Editor](../../scripts/scripts-editor.md). ProcessMaker Scripts are independent of Process models: any ProcessMaker Script can be reused in any Process model in your organization. This architecture allows Process Owners to focus on Process modeling in a no-code environment while ProcessMaker Developers develop reusable ProcessMaker Scripts. ProcessMaker Scripts can leverage ProcessMaker Screens variable values for in-progress Requests.
 
 In Process Modeler, the Script Task element is labeled as "Script Task" in the **BPMN** panel as highlighted below.
 
