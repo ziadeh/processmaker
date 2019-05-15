@@ -87,11 +87,11 @@ Follow these steps to edit the name for a Parallel Gateway element:
 
 Indicate if the workflow direction for the Parallel Gateway is converging or diverging:
 
-* **Converging:** Converging workflow is represented by two or more incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements to the Parallel Gateway element. The Parallel Gateway does not trigger until one of its incoming Sequence Flow elements routes to it. The first incoming Sequence Flow element that triggers to the Parallel Gateway element causes the Parallel Gateway element to trigger. 
+* **Converging:** Converging workflow represents two or more incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements to the Parallel Gateway element. The first incoming Sequence Flow element that triggers to the Parallel Gateway element causes the Parallel Gateway element to trigger. 
 
   ![](../../../.gitbook/assets/parallel-gateway-converging.png)
 
-* **Diverging:** Diverging workflow is represented by two or more outgoing Sequence Flow elements from the Parallel Gateway element. When a Parallel Gateway triggers, all outgoing Sequence Flow elements from the gateway element trigger simultaneously without exception. Conditions cannot be placed on any outgoing Sequence Flow elements from the Parallel Gateway element.  
+* **Diverging:** Diverging workflow represents two or more outgoing Sequence Flow elements from the Parallel Gateway element. When a Parallel Gateway triggers, all outgoing Sequence Flow elements from the gateway element trigger simultaneously without exception. Conditions cannot be placed on any outgoing Sequence Flow elements from the Parallel Gateway element.  
 
   ![](../../../.gitbook/assets/parallel-gateway-diverging.png)
 
