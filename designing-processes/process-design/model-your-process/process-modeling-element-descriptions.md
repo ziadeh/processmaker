@@ -287,9 +287,9 @@ Below is a Pool element with three Lane elements when it has been placed into a 
 See [Add and Configure Pool and Lane Elements](add-and-configure-pool-and-lane-elements.md).
 {% endhint %}
 
-## Flows
+## Flow Indicators
 
-Flows represent the order in which workflow routing and messaging occur in a Process model. ProcessMaker Spark provides the following Process model elements that indicate workflow:
+Flow indicators represent the order in which workflow routing and messaging occur in a Process model. ProcessMaker Spark provides the following Process model elements that indicate workflow:
 
 * [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow)
 * [Message Flow](process-modeling-element-descriptions.md#message-flow)
