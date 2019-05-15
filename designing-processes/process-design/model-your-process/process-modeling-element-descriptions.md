@@ -212,10 +212,12 @@ See the following topics about Exclusive Gateway elements:
 
 ### Parallel Gateway
 
-A Parallel Gateway element represents the synchronization and/or creation of parallel paths within a [Request's](../../../using-processmaker/requests/) workflow. The Parallel Gateway element has two functions:
+A Parallel Gateway element represents converging or diverging workflow within a Process. The Parallel Gateway element has two separate functions:
 
-* A Parallel Gateway does not trigger until all its incoming [Sequence Flows](process-modeling-element-descriptions.md#sequence-flow) route to it. This is how Parallel Gateways synchronize workflow.
-* When a Parallel Gateway triggers, its outgoing Sequence Flows creates parallel workflows without any conditions. This function differentiates it from outgoing Sequence Flows for [Exclusive Gateway](process-modeling-element-descriptions.md#exclusive-gateway) or [Event-Based Gateway](process-modeling-element-descriptions.md#event-based-gateway) elements.
+* **Indicate converging workflow:** Converging workflow is represented by two or more incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements to the Parallel Gateway element. The Parallel Gateway does not trigger until one of its incoming Sequence Flow elements routes to it. The first incoming Sequence Flow element that triggers to the Parallel Gateway element causes the Parallel Gateway element to trigger. 
+* **Indicate diverging workflow:** Diverging workflow is represented by two or more outgoing Sequence Flow elements from the Parallel Gateway element. When a Parallel Gateway triggers, all outgoing Sequence Flow elements from the gateway element trigger simultaneously without exception. Conditions cannot be placed on any outgoing Sequence Flow elements from the Parallel Gateway element. This function differentiates it from outgoing Sequence Flow elements for the [Exclusive Gateway](process-modeling-element-descriptions.md#exclusive-gateway) element.
+
+One Parallel Gateway element can only indicate converging or diverging workflow, but not both.
 
 In Process Modeler, the Parallel Gateway element is labeled as "Parallel Gateway" in the **BPMN** panel as highlighted below.
 

@@ -87,15 +87,15 @@ Follow these steps to edit the name for a Parallel Gateway element:
 
 Indicate if the workflow direction for the Parallel Gateway is converging or diverging:
 
-* **Converging:** Converging workflow indicates that [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements are incoming to the Parallel Gateway element. The first incoming Sequence Flow element to the Parallel Gateway element that triggers causes the Parallel Gateway element to trigger.  
+* **Converging:** Converging workflow is represented by two or more incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements to the Parallel Gateway element. The Parallel Gateway does not trigger until one of its incoming Sequence Flow elements routes to it. The first incoming Sequence Flow element that triggers to the Parallel Gateway element causes the Parallel Gateway element to trigger. 
 
   ![](../../../.gitbook/assets/parallel-gateway-converging.png)
 
-* **Diverging:** Diverging workflow indicates that Sequence Flow elements are outgoing from the Parallel Gateway element. When a Parallel Gateway triggers, all outgoing Sequence Flow elements from the gateway trigger simultaneously without exception. Conditions cannot be placed on any outgoing Sequence Flow elements from the Parallel Gateway element.  
+* **Diverging:** Diverging workflow is represented by two or more outgoing Sequence Flow elements from the Parallel Gateway element. When a Parallel Gateway triggers, all outgoing Sequence Flow elements from the gateway element trigger simultaneously without exception. Conditions cannot be placed on any outgoing Sequence Flow elements from the Parallel Gateway element.  
 
   ![](../../../.gitbook/assets/parallel-gateway-diverging.png)
 
-A Parallel Gateway element can only indicate converging or diverging workflow, but not both. To indicate workflow in which "the first Sequence Flow element that triggers to a Parallel Gateway element thereby causes subsequent elements to trigger simultaneously," use two Parallel Gateway elements.
+One Parallel Gateway element can only indicate converging or diverging workflow, but not both. To indicate workflow in which "the first Sequence Flow element that triggers to a Parallel Gateway element thereby causes subsequent elements to trigger simultaneously," use two Parallel Gateway elements.
 
 ![Indicate converging and diverging workflow using two Parallel Gateway elements](../../../.gitbook/assets/parallel-gateway-converging-and-diverging.png)
 
