@@ -233,7 +233,7 @@ See [Add and Configure Parallel Gateway Elements](add-and-configure-parallel-gat
 
 ### Event-Based Gateway
 
-An Event-Based Gateway element represents a decision that creates alternative paths within a [Request's](../../../using-processmaker/requests/) workflow for a Process. During a Request's workflow routing, only one outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element from the Event-Based Gateway element is followed based on the event that occurs immediately following the Event-Based Gateway element. Those possible events are represented immediately after the Event-Based Gateway element's outgoing Sequence Flow elements.
+An Event-Based Gateway element represents an evaluation of a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow routing for a Process based on which event occurs immediately after the Event-Based Gateway element. When a Request is in progress and the Event-Based Gateway element triggers, the events immediately following the Event-Based Gateway element are evaluated and workflow routes to the event that occurred in that Request. Those possible events are represented immediately after the Event-Based Gateway element's outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements.
 
 Below are examples of how to use the Event-Based Gateway element to represent subsequent workflow:
 
