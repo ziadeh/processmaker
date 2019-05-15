@@ -122,7 +122,7 @@ Each outgoing Sequence Flow from an Exclusive Gateway element is evaluated using
 * **The Sequence Flow has an expression:** The condition\(s\) in the Request is evaluated to determine if the condition\(s\) is met. If so, workflow can follow that outgoing Sequence Flow to its connected element. If not, then workflow cannot follow that Sequence Flow.
 
 {% hint style="warning" %}
-When specifying the condition\(s\) for outgoing Sequence Flows from an Exclusive Gateway element, ensure that the condition\(s\) for at least one outgoing Sequence Flow can evaluate validly to meet possible Request conditions. Otherwise, no outgoing Sequence Flows can be followed and the Request will stall at the Exclusive Gateway element.
+When specifying the condition\(s\) for outgoing Sequence Flows from an Exclusive Gateway element, ensure that the condition\(s\) for at least one outgoing Sequence Flow element can occur. Otherwise, it may be possible that no outgoing Sequence Flows can be followed and a Request's workflow will wait indefinitely at the Exclusive Gateway element since none of its outgoing Sequence Flow elements can trigger.
 {% endhint %}
 
 Follow these steps to set the condition under which a Request follows an outgoing Sequence Flow element from an Exclusive Gateway element:
