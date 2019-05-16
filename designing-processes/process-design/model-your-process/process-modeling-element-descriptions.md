@@ -233,12 +233,12 @@ See [Add and Configure Parallel Gateway Elements](add-and-configure-parallel-gat
 
 ### Event-Based Gateway
 
-An Event-Based Gateway element represents an evaluation of a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow routing for a Process based on which event occurred immediately after the Event-Based Gateway element. Follow these guidelines to use the Event-Based Gateway element:
+An Event-Based Gateway element represents an evaluation of a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow routing for a Process based on which event occurs immediately after the Event-Based Gateway element. Follow these guidelines to use the Event-Based Gateway element:
 
 * The Event-Based Gateway element requires two or more going outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements.
 * The Event-Based Gateway element can only connect with [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event) or [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) elements. This creates the scenario that either a timed event occurs or an Intermediate Message Catch Event element receives a message.
 
-When a Request is in progress and the Event-Based Gateway element triggers, workflow for that Request pauses. ProcessMaker Spark then evaluates the events following the Event-Based Gateway element's outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements and waits until one of those events occur. When one of those events occurs, the Request's workflow resumes by routing to the event that occurred.
+When a Request is in progress and the Event-Based Gateway element triggers, workflow for that Request pauses. ProcessMaker Spark then evaluates the events following the Event-Based Gateway element's outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements and waits until one of those events occur. Request workflow resumes and routes to the event that occurs first.
 
 In Process Modeler, the Event-Based Gateway element is labeled as "Event-Based Gateway" in the **BPMN** panel as highlighted below.
 
