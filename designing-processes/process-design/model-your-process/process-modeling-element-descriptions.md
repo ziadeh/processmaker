@@ -235,13 +235,7 @@ See [Add and Configure Parallel Gateway Elements](add-and-configure-parallel-gat
 
 An Event-Based Gateway element represents an evaluation of a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow routing for a Process based on which event occurs immediately after the Event-Based Gateway element. When a Request is in progress and the Event-Based Gateway element triggers, the events immediately following the Event-Based Gateway element are evaluated and workflow routes to the event that occurred in that Request. Those possible events are represented immediately after the Event-Based Gateway element's outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements.
 
-Below are examples of how to use the Event-Based Gateway element to represent subsequent workflow:
-
-* Use an [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event) element to indicate that the following event must occur at a time or an interval for workflow to continue.
-* Use an [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) element to indicate that the following event must receive an external API call for workflow to continue.
-* Use a [Task](process-modeling-element-descriptions.md#task) element to indicate what that a Task is assigned to a specific ProcessMaker user or group for workflow to continue.
-* Use a [Script Task](process-modeling-element-descriptions.md#script-task) element to indicate that a [ProcessMaker Script](../../scripts/what-is-a-script.md) runs for workflow to continue.
-* Use a [Call Activity](process-modeling-element-descriptions.md#call-activity) element to indicate that an external sub-Process is called for workflow to continue.
+Use an Event-Based Gateway element when a specific event must dictate how workflow routes in a Process.
 
 In Process Modeler, the Event-Based Gateway element is labeled as "Event-Based Gateway" in the **BPMN** panel as highlighted below.
 
