@@ -2,6 +2,7 @@
     <div class="data-table">
         <div class="card card-body table-card">
             <vuetable :dataManager="dataManager"
+                      :noDataTemplate="$t('No Data Available')"
                       :sortOrder="sortOrder"
                       :css="css"
                       :api-mode="false"
@@ -169,7 +170,7 @@
         ProcessMaker.apiClient
           .put("screens/" + this.dupScreen.id + "/duplicate", this.dupScreen)
           .then(response => {
-            ProcessMaker.alert($t('The screen was duplicated.'), "success");
+            ProcessMaker.alert(this.$t('The screen was duplicated.'), "success");
             this.hideModal();
             this.fetch();
           })
@@ -202,7 +203,7 @@
             let that = this;
             ProcessMaker.confirmModal(
               this.$t("Caution!"),
-              this.$t("Are you sure you want to delete the screen ") +
+              this.$t("Are you sure you want to delete the screen") + ' ' +
               data.title +
               this.$t("?"),
               "",

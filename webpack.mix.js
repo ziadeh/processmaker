@@ -29,6 +29,12 @@ mix.webpackConfig({
             Horizon: path.resolve(__dirname, 'vendor/laravel/horizon/resources/assets/js/')
         }
     },
+    resolveLoader: {
+        modules: [
+            path.resolve(__dirname, 'node_modules'),
+            'node_modules'
+        ],
+    },
     node: { fs: 'empty' }
 }).js('resources/js/app-layout.js', 'public/js')
     .js('resources/js/processes/modeler/index.js', 'public/js/processes/modeler')
@@ -50,7 +56,6 @@ mix.webpackConfig({
     .js('resources/js/processes/screen-builder/main.js', 'public/js/processes/screen-builder')
     .js('resources/js/processes/screen-builder/typeForm.js', 'public/js/processes/screen-builder')
     .js('resources/js/processes/screen-builder/typeDisplay.js', 'public/js/processes/screen-builder')
-    .js('resources/js/processes/screen-builder/typeEmail.js', 'public/js/processes/screen-builder')
     .js('resources/js/leave-warning.js', 'public/js')
     .js('resources/js/requests/index.js', 'public/js/requests')
 

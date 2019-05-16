@@ -4,15 +4,19 @@ namespace ProcessMaker\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use ProcessMaker\Events\ScreenBuilderStarting;
 use ProcessMaker\Http\Controllers\Controller;
+use ProcessMaker\Managers\ScreenBuilderManager;
 use ProcessMaker\Models\ProcessRequest;
 use Spatie\MediaLibrary\Models\Media;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use ProcessMaker\Traits\SearchAutocompleteTrait;
 
 class RequestController extends Controller
 {
     use HasMediaTrait;
+    use SearchAutocompleteTrait;
 
     /**
      * Get the list of requests.
@@ -43,9 +47,11 @@ class RequestController extends Controller
         if(array_key_exists($type,$types)){
           $title = $types[$type];
         }
+        
+        $currentUser = Auth::user()->only(['id', 'username', 'fullname', 'firstname', 'lastname', 'avatar']);
 
         return view('requests.index', compact(
-            ['allRequest', 'startedMe', 'inProgress', 'completed', 'type','title']
+            ['allRequest', 'startedMe', 'inProgress', 'completed', 'type','title', 'currentUser']
         ));
     }
     private function calculate($type)
@@ -99,8 +105,11 @@ class RequestController extends Controller
 
         $files = $request->getMedia();
 
+        $manager = new ScreenBuilderManager();
+        event(new ScreenBuilderStarting($manager, ($request->summary_screen) ? $request->summary_screen->type : 'FORM'));
+
         return view('requests.show', compact(
-            'request', 'files', 'canCancel', 'canViewComments', 'canManuallyComplete'
+            'request', 'files', 'canCancel', 'canViewComments', 'canManuallyComplete', 'manager'
         ));
     }
 

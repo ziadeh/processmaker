@@ -5,9 +5,15 @@ import VueRouter from "vue-router";
 import datetime_format from "../js/data/datetime_formats.json"
 import translator from "./modules/lang.js"
 
+
 window.__ = translator;
 window._ = require("lodash");
 window.Popper = require("popper.js").default;
+
+/**
+ * Give node plugins access to our custom screen builder components
+ */
+window.SparkComponents = require("../js/processes/screen-builder/components")
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -39,6 +45,9 @@ import VueI18Next from '@panter/vue-i18next';
 
 window.Vue.use(VueI18Next)
 let translationsLoaded = false
+let mdates = JSON.parse(
+    document.head.querySelector("meta[name=\"i18n-mdate\"]").content
+)
 i18next.use(Backend).init({
     lng: document.documentElement.lang,
     keySeparator: false,
@@ -55,7 +64,7 @@ i18next.use(Backend).init({
             XHR,
         ],
         backendOptions: [
-            { versions: { en: 6, es: 6 } }, // change this to invalidate cache
+            { versions: mdates },
             { loadPath: '/i18next/fetch/{{lng}}/_default' },
         ],
     }
@@ -183,17 +192,18 @@ let broadcaster = document.head.querySelector("meta[name=\"broadcaster\"]");
 let key = document.head.querySelector("meta[name=\"broadcasting-key\"]");
 let host = document.head.querySelector("meta[name=\"broadcasting-host\"]");
 
-window.Echo = new Echo({
-    broadcaster: broadcaster.content,
-    key: key.content,
-    host: host.content
-});
+if (broadcaster) {
+    window.Echo = new Echo({
+        broadcaster: broadcaster.content,
+        key: key.content,
+        host: host.content
+    });
+}
 
 if (userID) {
     // Session timeout
     let timeoutScript = document.head.querySelector("meta[name=\"timeout-worker\"]").content;
     window.ProcessMaker.AccountTimeoutLength = parseInt(document.head.querySelector("meta[name=\"timeout-length\"]").content);
-
     window.ProcessMaker.AccountTimeoutWorker = new Worker(timeoutScript);
     window.ProcessMaker.AccountTimeoutWorker.addEventListener('message', function (e) {
         if (e.data.method === 'countdown') {
@@ -205,7 +215,15 @@ if (userID) {
     });
 
     window.ProcessMaker.AccountTimeoutWorker.postMessage({ method: 'start', data: { timeout: window.ProcessMaker.AccountTimeoutLength } });
+}
 
+window.Echo = new Echo({
+    broadcaster: broadcaster.content,
+    key: key.content,
+    host: host.content
+});
+
+if (userID) {
     window.Echo.private(`ProcessMaker.Models.User.${userID.content}`)
         .notification((token) => {
             ProcessMaker.pushNotification(token);

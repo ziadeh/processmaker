@@ -60,6 +60,7 @@ Route::group(['middleware' => ['auth', 'sanitize']], function () {
 
     Route::post('/keep-alive', 'Auth\LoginController@keepAlive')->name('keep-alive');
 
+    Route::get('requests/search', 'RequestController@search')->name('requests.search');
     Route::get('requests/{type}', 'RequestController@index')
         ->where('type', 'all|in_progress|completed')
         ->name('requests_by_type');
@@ -67,7 +68,7 @@ Route::group(['middleware' => ['auth', 'sanitize']], function () {
     Route::get('requests', 'RequestController@index')->name('requests.index');
     Route::get('requests/{request}', 'RequestController@show')->name('requests.show');
 
-
+    Route::get('tasks/search', 'TaskController@search')->name('tasks.search');
     Route::get('tasks', 'TaskController@index')->name('tasks.index');
     Route::get('tasks/{task}', 'TaskController@show')->name('tasks.show');
     Route::get('tasks/{task}/edit', 'TaskController@edit')->name('tasks.edit');
@@ -85,7 +86,7 @@ Broadcast::routes();
 
 // Authentication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-$this->post('login', 'Auth\LoginController@loginWithoutIntended');
+$this->post('login', 'Auth\LoginController@loginWithIntendedCheck');
 $this->get('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Password Reset Routes...
@@ -102,6 +103,3 @@ $this->delete('oauth/clients/{client_id}', 'Auth\ClientController@destroy')->nam
 $this->get('password/success', function () {
     return view('auth.passwords.success', ['title' => __('Password Reset')]);
 })->name('password-success');
-
-// Public webhook entry (verified by token in controller)
-$this->post('webhook/start_event', 'WebhookController@startEvent')->name('webhook.start_event');

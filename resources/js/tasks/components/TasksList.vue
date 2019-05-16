@@ -1,6 +1,12 @@
 <template>
   <div class="data-table">
-    <div class="card card-body table-card">
+    <data-loading v-if="apiDataLoading || apiNoResults"
+      :empty="$t('Congratulations')"
+      :empty-desc="$t('You don\'t currently have any tasks assigned to you')"
+      empty-icon="beach"
+      ref="loader"
+    />
+    <div v-else class="card card-body table-card">
       <vuetable
         :dataManager="dataManager"
         :sortOrder="sortOrder"
@@ -10,7 +16,6 @@
         :fields="fields"
         :data="data"
         data-path="data"
-        :noDataTemplate="$t('No Data Available')"
         pagination-path="meta"
       >
         <template slot="name" slot-scope="props">
@@ -70,13 +75,14 @@
 
 <script>
 import datatableMixin from "../../components/common/mixins/datatable";
+import dataLoadingMixin from "../../components/common/mixins/apiDataLoading";
 import AvatarImage from "../../components/AvatarImage";
 import moment from "moment";
 
 Vue.component("avatar-image", AvatarImage);
 
 export default {
-  mixins: [datatableMixin],
+  mixins: [datatableMixin, dataLoadingMixin],
   props: ["filter"],
   data() {
     return {
@@ -92,10 +98,16 @@ export default {
       ],
       fields: [
         {
-          title: () => this.$t("Name"),
+          title: () => this.$t("Task"),
           name: "__slot:name",
           field: "element_name",
           sortField: "element_name"
+        },
+        {
+          title: () => this.$t("Status"),
+          name: "status",
+          sortField: "status",
+          callback: this.formatStatus
         },
         {
           title: () => this.$t("Request"),
@@ -124,6 +136,23 @@ export default {
   beforeCreate() {
     let params = (new URL(document.location)).searchParams;
     this.status = params.get('status');
+
+    switch (this.status) {
+      case "CLOSED":
+        this.$parent.status.push({
+          name: 'Completed',
+          value: 'Completed'
+        });
+        break;
+      default:
+        this.$parent.status.push({
+          name: 'In Progress',
+          value: 'In Progress'
+        });
+        break;
+    }
+    
+    this.$parent.buildPmql();
   },
   mounted: function mounted() {
     let params = new URL(document.location).searchParams;
@@ -143,6 +172,21 @@ export default {
         let link = "/requests/" + rowData.process_request.id;
         window.location = link;
       }
+    },
+    formatStatus(status) {
+      let statusNames = {
+        "ACTIVE" : this.$t('In Progress'),
+        "CLOSED" : this.$t('Completed')
+      }
+      let bubbleColor = {
+        "ACTIVE": "text-success",
+        "CLOSED": "text-primary",
+      };
+      return (
+        '<i class="fas fa-circle ' +
+        bubbleColor[status] + 
+        ' small"></i> ' + statusNames[status]
+      );
     },
     classDueDate(value) {
       let dueDate = moment(value);
@@ -170,7 +214,6 @@ export default {
     },
 
     fetch() {
-      this.loading = true;
       if (this.cancelToken) {
         this.cancelToken();
         this.cancelToken = null;
@@ -183,12 +226,15 @@ export default {
           "tasks?page=" +
             this.page +
             "&include=process,processRequest,processRequest.user,user" +
-            "&status=" +
-            this.getTaskStatus() +
+            "&pmql=" +
+            this.$parent.pmql +
             "&per_page=" +
             this.perPage +
+            "&user_id=" +
+            window.ProcessMaker.user.id +
             "&filter=" +
             this.filter +
+            "&statusfilter=ACTIVE,CLOSED" +
             this.getSortParam(),
           {
             cancelToken: new CancelToken(c => {
@@ -198,15 +244,18 @@ export default {
         )
         .then(response => {
           this.data = this.transform(response.data);
-          this.loading = false;
           if (response.data.meta.in_overdue > 0) {
             this.$emit("in-overdue", response.data.meta.in_overdue);
           }
+        })
+        .catch(error => {
+          window.ProcessMaker.alert(error.response.data.message, "danger");
+          this.data = [];
         });
     }
   }
 };
 </script>
 
-
-
+<style>
+</style>

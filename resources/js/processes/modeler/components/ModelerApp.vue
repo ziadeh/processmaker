@@ -1,56 +1,60 @@
 <template>
-  <div id="modeler-app">
-    <div class="navbar">
-      <div>{{process.name}}</div>
-      <div>
-          <a v-b-modal="'uploadmodal'"><i class="fas fa-upload fa-fw"></i></a>
-          <a @click="saveBpmn"><i class="fas fa-save fa-fw"></i></a>
-      </div>
-    </div>
-    <div class="modeler-container">
-      <modeler ref="modeler" @validate="validationErrors = $event" />
-    </div>
-    <statusbar>
-      <template slot="secondary">
-        {{$t('Last Saved:')}} {{lastSaved}}
-      </template>
+  <b-container id="modeler-app" class="h-100 container p-0">
+    <b-card no-body class="h-100">
+      <b-card-header class="d-flex align-items-center header">
+        <b-card-text class="m-0 font-weight-bolder">
+          {{ process.name }}
+        </b-card-text>
 
-      <validation-status :validation-errors="validationErrors"/>
-    </statusbar>
-    <b-modal ref="uploadmodal" id="uploadmodal" centered :title="$t('Upload BPMN File')" :cancel-title="$t('Cancel')" :ok-title="$t('Ok')">
+        <div class="ml-auto">
+          <b-btn variant="secondary" size="sm" v-b-modal="'uploadmodal'" class="mr-2">
+            <i class="fas fa-upload mr-1"/>
+            {{ $t('Upload XML') }}
+          </b-btn>
+          <b-btn variant="secondary" size="sm" @click="saveBpmn">
+            <i class="fas fa-save mr-1"/>
+            {{ $t('Save') }}
+          </b-btn>
+        </div>
+      </b-card-header>
+
+      <b-card-body class="overflow-hidden position-relative">
+        <modeler ref="modeler" @validate="validationErrors = $event" />
+      </b-card-body>
+
+      <b-card-footer class="p-0 border-0">
+        <statusbar>
+          <validation-status :validation-errors="validationErrors"/>
+        </statusbar>
+      </b-card-footer>
+    </b-card>
+
+    <b-modal ref="uploadmodal"
+             id="uploadmodal"
+             :title="$t('Upload BPMN File')"
+             :cancel-title="$t('Cancel')"
+             :ok-title="$t('Ok')">
       <file-upload @input-file="handleUpload">
         {{ $t('Upload file') }}
       </file-upload>
     </b-modal>
-  </div>
+  </b-container>
 </template>
-
 
 <script>
 import { Modeler, Statusbar, ValidationStatus } from "@processmaker/spark-modeler";
-import { library } from "@fortawesome/fontawesome-svg-core";
 import FileUpload from 'vue-upload-component';
-
-import {
-  faCheckCircle,
-  faTimesCircle,
-  faSave,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import moment from 'moment';
-
-library.add(faSave)
+import FilerSaver from 'file-saver';
 
 const reader = new FileReader();
 
 export default {
-  name: "ModelerApp",
+  name: 'ModelerApp',
   components: {
     Modeler,
-    Statusbar,
-    FontAwesomeIcon,
-    ValidationStatus,
     FileUpload,
+    ValidationStatus,
+    Statusbar,
   },
   data() {
     return {
@@ -58,35 +62,16 @@ export default {
       validationErrors: {},
     };
   },
-  computed: {
-    lastSaved() {
-      return moment(this.process.updated_at).fromNow();
-    }
-  },
-  mounted() {
-    reader.onloadend = () => {
-      this.$refs.modeler.loadXML(reader.result);
-      this.$refs.uploadmodal.hide();
-    };
-
-    ProcessMaker.$modeler = this.$refs.modeler;
-
-    window.ProcessMaker.EventBus.$on('modeler-change', this.refreshSession);
-  },
   methods: {
-    refreshSession: _.throttle(function() {
+    refreshSession: _.throttle(() => {
       ProcessMaker.apiClient({
-          method: 'POST',
-          url: '/keep-alive',
-          baseURL: '/',
-        })
+        method: 'POST',
+        url: '/keep-alive',
+        baseURL: '/',
+      })
     }, 60000),
-    handleUpload(fileObject) {
-      if (!fileObject) {
-        return;
-      }
-
-      reader.readAsText(fileObject.file);
+    runningInCypressTest() {
+      return !!window.Cypress;
     },
     getTaskNotifications() {
       var notifications = {};
@@ -124,45 +109,37 @@ export default {
             console.log(errors);
           })
         }
-
       });
-    }
+    },
+    handleUpload(fileObject) {
+      if (!fileObject) {
+        return;
+      }
 
-   }
+      reader.readAsText(fileObject.file);
+    },
+  },
+  mounted() {
+    reader.onloadend = () => {
+      this.$refs.modeler.loadXML(reader.result);
+      this.$refs.uploadmodal.hide();
+    };
+
+    ProcessMaker.$modeler = this.$refs.modeler;
+
+    window.ProcessMaker.EventBus.$on('modeler-change', this.refreshSession);
+  },
 };
 </script>
 
-
-<style lang="scss" scoped>
-#modeler-app {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 100%;
-  .modeler-container {
-    flex-grow: 1;
-    overflow: hidden;
-  }
-  .navbar {
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1.2em;
-    background-color: #b6bfc6;
-    color: white;
-    border-bottom: 1px solid grey;
-    padding-right: 16px;
-    padding-left: 16px;
-
-  }
-}
+<style lang="scss">
+/* body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+} */
 </style>
