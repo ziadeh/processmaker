@@ -69,11 +69,15 @@ A short description precedes each instructional video.
 #### How Do I Configure a Process?
 {% endtab %}
 
-{% tab title="Design a Simple Process" %}
-#### Process Modeling Elements in ProcessMaker Spark
+{% tab title="Descriptions" %}
+#### Start Event Element Description
 
 
 
+#### Start Timer Event Element Description
+{% endtab %}
+
+{% tab title="Design" %}
 #### Design a Simple Process
 {% endtab %}
 
