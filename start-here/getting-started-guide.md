@@ -50,7 +50,7 @@ A short description precedes each instructional video.
 {% endtab %}
 {% endtabs %}
 
-## How Do I Manage and Create Workflows?
+## How Do I Manage Processes?
 
 {% tabs %}
 {% tab title="View" %}
@@ -59,26 +59,6 @@ A short description precedes each instructional video.
 
 {% tab title="Import" %}
 #### How Do I Import a Process?
-{% endtab %}
-
-{% tab title="Create" %}
-#### How Do I Create a Process?
-{% endtab %}
-
-{% tab title="Configure" %}
-#### How Do I Configure a Process?
-{% endtab %}
-
-{% tab title="Descriptions" %}
-#### Start Event Element Description
-
-
-
-#### Start Timer Event Element Description
-{% endtab %}
-
-{% tab title="Design" %}
-#### Design a Simple Process
 {% endtab %}
 
 {% tab title="Export" %}
@@ -91,6 +71,30 @@ A short description precedes each instructional video.
 
 {% tab title="Restore" %}
 #### How Do I Restore a Process?
+{% endtab %}
+{% endtabs %}
+
+## How Do I Create My First Process?
+
+{% tabs %}
+{% tab title="Categories" %}
+#### How Do I Create a Process Category?
+{% endtab %}
+
+{% tab title="Create" %}
+#### How Do I Create a Process?
+{% endtab %}
+
+{% tab title="Configure" %}
+#### How Do I Configure a Process?
+{% endtab %}
+
+{% tab title="Modeling Element Descriptions" %}
+
+{% endtab %}
+
+{% tab title="Design" %}
+#### Design Your First Process
 {% endtab %}
 {% endtabs %}
 
