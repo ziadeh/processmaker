@@ -90,7 +90,59 @@ A short description precedes each instructional video.
 {% endtab %}
 
 {% tab title="Modeling Element Descriptions" %}
+#### Start Event Element Description
 
+
+
+#### Start Timer Event Element Description
+
+
+
+#### Intermediate Timer Event Element Description
+
+
+
+#### Intermediate Message Catch Event Element Description
+
+
+
+#### End Event Element Description
+
+
+
+#### Task Element Description
+
+
+
+#### Script Task Element Description
+
+
+
+#### Call Activity Element Description
+
+
+
+#### Exclusive Gateway Element Description
+
+
+
+#### Parallel Gateway Element Description
+
+
+
+#### Event-Based Gateway Element Description
+
+
+
+#### Pool Element and Lane Element Descriptions
+
+
+
+#### Sequence Flow Element and Message Flow Element Descriptions
+
+
+
+#### Text Annotation Element and Association Element Descriptions
 {% endtab %}
 
 {% tab title="Design" %}
