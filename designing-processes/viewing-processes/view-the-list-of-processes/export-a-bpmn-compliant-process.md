@@ -6,7 +6,10 @@ description: Export a ProcessMaker Spark Process that is BPMN 2.0 compliant.
 
 ## Overview
 
-Export Processes from ProcessMaker Spark that are BPMN 2.0 compliant. The exported Process may then be [imported](import-a-bpmn-compliant-process.md) to the same or another ProcessMaker Spark instance of the same product version and/or imported to a third-party BPMN 2.0 compliant tool. If the exported Process is imported to a third-party tool, all ProcessMaker features that are not part of the [BPMN 2.0 specification](https://www.omg.org/spec/BPMN/2.0/About-BPMN/) are ignored.
+Export Processes from ProcessMaker Spark that are BPMN 2.0 compliant. An exported Process may then be [imported](import-a-bpmn-compliant-process.md) in the following ways:
+
+* Import into ProcessMaker Spark: Import a Process to the same or another ProcessMaker Spark instance of the same product version.
+* Import into a third-party tool: Import into a BPMN 2.0 compliant third-party tool. All ProcessMaker features that are not part of the [BPMN 2.0 specification](https://www.omg.org/spec/BPMN/2.0/About-BPMN/) are ignored.
 
 The following ProcessMaker Spark components are exported if they are specified in the Process:
 
