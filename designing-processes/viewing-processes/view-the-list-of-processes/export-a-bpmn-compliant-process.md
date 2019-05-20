@@ -20,7 +20,7 @@ The following ProcessMaker Spark components are exported if they are specified i
 
 ProcessMaker Spark does not export [users](../../../processmaker-administration/add-users/what-is-a-user.md) or [groups](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) associated with the original ProcessMaker Spark Process. Therefore, Task element assignments are not exported and must be configured if the Process is imported to another ProcessMaker Spark instance or third-party BPMN 2.0 modeler application.
 
-The exported Process has the `.spark` file extension.
+An exported Process has the `.spark` file extension.
 
 ## Export a BPMN 2.0 Compliant Process
 
