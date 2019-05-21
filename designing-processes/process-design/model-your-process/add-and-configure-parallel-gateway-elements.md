@@ -95,9 +95,9 @@ Indicate if the workflow direction for the Parallel Gateway is converging or div
 
   ![](../../../.gitbook/assets/parallel-gateway-diverging.png)
 
-One Parallel Gateway element can only converge or diverge workflow, but not both. To indicate workflow in which "the first Sequence Flow element that triggers to a Parallel Gateway element thereby causes subsequent elements to trigger simultaneously," use two Parallel Gateway elements.
+One Parallel Gateway element can only converge or diverge parallel workflow, but not both. Use two Parallel Gateway elements to synchronize both converging and diverging parallel workflow.
 
-![Indicate converging and diverging workflow using two Parallel Gateway elements](../../../.gitbook/assets/parallel-gateway-converging-and-diverging.png)
+![Use two Parallel Gateway elements for both converging and diverging parallel workflow](../../../.gitbook/assets/parallel-gateway-converging-and-diverging.png)
 
 Follow these steps to indicate the workflow direction for a Parallel Gateway element:
 
