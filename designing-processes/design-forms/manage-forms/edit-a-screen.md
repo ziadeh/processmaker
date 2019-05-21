@@ -18,7 +18,7 @@ See the ProcessMaker [Screens](../../../processmaker-administration/permission-d
 Follow these steps to configure a ProcessMaker Screen:
 
 1. [View your ProcessMaker Screens.](view-all-forms.md) The **Screens** page displays.
-2. Select the **Configure** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)for your ProcessMaker Screen. The **Configure** page displays.  
+2. Click the **Configure** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)for your ProcessMaker Screen. The **Configure** page displays.  
 
    ![](../../../.gitbook/assets/edit-screen-processes.png)
 

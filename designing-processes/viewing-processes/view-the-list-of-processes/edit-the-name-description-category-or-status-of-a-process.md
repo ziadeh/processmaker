@@ -24,7 +24,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 Follow these steps to configure a Process:
 
 1. [View your active Processes.](./#view-your-processes) The **Processes** page displays.
-2. Select the **Configure** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)for your Process. The **Edit** page displays.  
+2. Click the **Configure** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)for your Process. The **Edit** page displays.  
 
    ![](../../../.gitbook/assets/edit-process-page-processes.png)
 

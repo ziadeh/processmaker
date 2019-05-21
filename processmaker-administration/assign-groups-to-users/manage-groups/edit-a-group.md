@@ -18,7 +18,7 @@ See the [Group](../../permission-descriptions-for-users-and-groups.md#groups) pe
 Follow these steps to edit a ProcessMaker group:
 
 1. [View all ProcessMaker groups.](view-all-groups.md) The **Groups** page displays.
-2. Select the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the ProcessMaker group to edit. The **Group Details** tab displays.  
+2. Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the ProcessMaker group to edit. The **Group Details** tab displays.  
 
    ![](../../../.gitbook/assets/group-details-tab-edit-groups-admin.png)
 

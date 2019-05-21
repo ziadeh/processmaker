@@ -24,7 +24,7 @@ Deleting a ProcessMaker group from the **Groups** page cannot be undone.
 Follow these steps to delete a ProcessMaker group:
 
 1. [View all ProcessMaker groups.](view-all-groups.md) The **Groups** page displays.
-2. Select the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png)for the ProcessMaker group. The **Caution** screen displays to confirm the deletion of the ProcessMaker group.  
+2. Click the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png)for the ProcessMaker group. The **Caution** screen displays to confirm the deletion of the ProcessMaker group.  
 
    ![](../../../.gitbook/assets/caution-group-removal-screen-admin.png)
 

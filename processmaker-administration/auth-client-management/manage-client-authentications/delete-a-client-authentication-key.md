@@ -24,7 +24,7 @@ Deleting an authenticated client from the **Auth Clients** page cannot be undone
 Follow these steps to delete an authenticated client:
 
 1. [View all authenticated clients.](view-all-client-authentication-keys.md#view-all-scripts) The **Auth Clients** page displays.
-2. Select the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png)for the authenticated client to be deleted. The **Caution** screen displays to confirm the deletion of the authenticated client.  
+2. Click the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png)for the authenticated client to be deleted. The **Caution** screen displays to confirm the deletion of the authenticated client.  
 
    ![](../../../.gitbook/assets/caution-remove-client-authentication-key-admin.png)
 

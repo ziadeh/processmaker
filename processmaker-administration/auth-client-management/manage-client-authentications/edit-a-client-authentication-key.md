@@ -18,7 +18,7 @@ See the [Auth Clients](../../permission-descriptions-for-users-and-groups.md#aut
 Follow these steps to edit an authenticated client that allows that ProcessMaker user to log on to ProcessMaker Spark via Single Sign On \(SSO\):
 
 1. [View all authenticated clients.](view-all-client-authentication-keys.md#view-all-scripts) The **Auth Clients** page displays.
-2. Select the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the authenticated client to edit. The **Edit Auth Client** screen displays.  
+2. Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the authenticated client to edit. The **Edit Auth Client** screen displays.  
 
    ![](../../../.gitbook/assets/edit-auth-client-screen-admin.png)
 

@@ -18,7 +18,7 @@ See the ProcessMaker [Environment Variable](../../../processmaker-administration
 Follow these steps to edit a ProcessMaker Environment Variable:
 
 1. [View your ProcessMaker Environment Variables.](view-all-environment-variables.md) The **Environment Variables** page displays.
-2. Select the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the ProcessMaker Environment Variable to edit. The **Edit** page displays.  
+2. Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the ProcessMaker Environment Variable to edit. The **Edit** page displays.  
 
    ![](../../../.gitbook/assets/edit-environment-variable-page-processes.png)
 

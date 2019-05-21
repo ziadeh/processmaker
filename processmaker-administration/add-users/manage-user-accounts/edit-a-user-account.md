@@ -18,7 +18,7 @@ See the [User](../../permission-descriptions-for-users-and-groups.md#users) perm
 Follow these steps to edit a ProcessMaker user account:
 
 1. [View all ProcessMaker user accounts.](view-all-users.md) The **Users** page displays.
-2. Select the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the ProcessMaker user account to edit. The **Information** tab displays for that ProcessMaker user account.  
+2. Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the ProcessMaker user account to edit. The **Information** tab displays for that ProcessMaker user account.  
 
    ![](../../../.gitbook/assets/edit-user-information-tab-admin.png)
 

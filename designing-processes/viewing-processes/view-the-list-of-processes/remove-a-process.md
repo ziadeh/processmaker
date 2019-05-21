@@ -64,7 +64,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 Follow these steps to archive a Process:
 
 1. [View your Processes.](./#view-your-processes) The **Processes** page displays.
-2. Select the **Archive** icon![](../../../.gitbook/assets/archive-process-icon-processes-page-processes.png)for your Process. The **Caution** screen displays to confirm archiving the Process.  
+2. Click the **Archive** icon![](../../../.gitbook/assets/archive-process-icon-processes-page-processes.png)for your Process. The **Caution** screen displays to confirm archiving the Process.  
 
    ![](../../../.gitbook/assets/archive-process-confirmation-processes.png)
 

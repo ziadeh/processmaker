@@ -26,7 +26,7 @@ See the ProcessMaker [Screens](../../../processmaker-administration/permission-d
 Follow these steps to export a ProcessMaker Screen:
 
 1. [View your ProcessMaker Screens.](view-all-forms.md) The **Screens** page displays.
-2. Select the **Export** icon![](../../../.gitbook/assets/export-process-icon-processes.png)for your ProcessMaker Screen. The following message displays: **You are about to export a Screen. All the configurations of the screen will be exported.**  
+2. Click the **Export** icon![](../../../.gitbook/assets/export-process-icon-processes.png)for your ProcessMaker Screen. The following message displays: **You are about to export a Screen. All the configurations of the screen will be exported.**  
 
    ![](../../../.gitbook/assets/export-screen-processes.png)
 

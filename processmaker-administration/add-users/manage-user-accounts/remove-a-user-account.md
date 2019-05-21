@@ -24,7 +24,7 @@ Deleting a ProcessMaker user account from the **Users** page cannot be undone.
 Follow these steps to delete a ProcessMaker user account:
 
 1. [View all ProcessMaker user accounts.](view-all-users.md) The **Users** page displays.
-2. Select the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png)for the ProcessMaker user account. The **Caution** screen displays to confirm the deletion of the ProcessMaker user account.  
+2. Click the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png)for the ProcessMaker user account. The **Caution** screen displays to confirm the deletion of the ProcessMaker user account.  
 
    ![](../../../.gitbook/assets/caution-delete-user-account-admin.png)
 
