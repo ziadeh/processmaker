@@ -21,7 +21,7 @@
                 </div>
             </span>
 
-            <p>{{ $t("We've made it easy for you to make the following Requests.") }}</p>
+            <p>{{ $t("We've made it easy for you to start a Request for the following Processes. Select a Process to start your Request.") }}</p>
             <div v-if="Object.keys(processes).length && !loading" class="process-list p-4">
                 <div class="category" v-for="(category, index) in processes">
                     <h3 class="name">{{index}}</h3>
@@ -36,7 +36,7 @@
             <div class="no-requests" v-if="!Object.keys(processes).length && !loading">
                 <h4>{{$t('You don\'t have any Processes.')}}</h4>
                 <span v-if="permission.includes('create-processes')">
-                    <a href="/processes">{{$t('Please visit the Processes page')}}</a>
+                    <span @click="redirect" class="text-primary">{{$t('Please visit the Processes page')}}</span>
                     {{$t('and click on +Process to get started.')}}
                 </span>
                 <span v-else>{{$t('Please contact your administrator to get started.')}}</span>
@@ -85,6 +85,9 @@
       }, 250)
     },
     methods: {
+      redirect() {
+        window.location = "/processes" 
+      },
       showRequestModal() {
         if (!this.loaded) {
           // Perform initial load of requests from backend

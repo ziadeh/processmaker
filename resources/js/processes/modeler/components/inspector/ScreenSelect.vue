@@ -1,80 +1,122 @@
 <template>
-  <div class="form-group">
-    <label>{{ $t(label)}}</label>
-    <div v-if="loading">{{ $t('Loading...') }}</div>
-    <div v-else>
-      <select class="form-control" @change="updateValue">
-        <option value></option>
-        <option
-          :value="screen.id"
-          :selected="screen.id == value"
-          v-for="screen in screens"
-          :key="screen.id"
-        >{{ $t(screen.title) }}</option>
-      </select>
-      <a href="#" @click="load">{{ $t('Refresh') }}</a>
+    <div class="form-group" :class="{'has-error':error}">
+        <label>{{ $t(label) }}</label>
+        <multiselect v-model="content"
+                     track-by="id"
+                     label="title"
+                     :class="{'border border-danger':error}"
+                     :loading="loading"
+                     :placeholder="$t('type here to search')"
+                     :options="screens"
+                     :multiple="false"
+                     :show-labels="false"
+                     :searchable="true"
+                     :internal-search="false"
+                     @open="load"
+                     @search-change="load">
+        </multiselect>
+        <small v-if="error" class="text-danger">{{ error }}</small>
+        <small v-if="helper" class="form-text text-muted">{{ $t(helper) }}</small>
     </div>
-  </div>
 </template>
 
-
 <script>
-export default {
-  props: ["value", "label", "helper", "params"],
-  data() {
-    return {
-      content: "",
-      loading: true,
-      screens: null
-    };
-  },
-  computed: {
-    node() {
-      return this.$parent.$parent.highlightedNode.definition;
-    }
-  },
-  mounted() {
-    // Check to see if we already have a value set, if not, set it to first option
-    // Also check if we have at least one option available
-    if (!this.value && this.screens) {
-      this.content = this.screens[0].id;
-      this.$emit("input", this.content);
-    }
-    this.load();
-  },
-  watch: {
-    currentValue: {
-      handler() {
-        this.$emit("change", this.currentValue);
+  import Multiselect from "vue-multiselect";
+
+  export default {
+    props: ["value", "label", "helper", "params", "requiredMessage"],
+    components: {
+      Multiselect
+    },
+    data() {
+      return {
+        content: "",
+        loading: false,
+        screens: [],
+        error: ''
+      };
+    },
+    computed: {
+      node() {
+        return this.$parent.$parent.highlightedNode.definition;
+      }
+    },
+    watch: {
+      content: {
+        immediate: true,
+        handler() {
+          if (this.content) {
+            this.error = '';
+            this.$emit("input", this.content.id);
+          } else if (this.requiredMessage) {
+            this.error = this.requiredMessage
+          }
+        }
+      },
+      value: {
+        immediate: true,
+        handler() {
+          // Load selected item.
+          if (this.value) {
+            this.loading = true;
+            ProcessMaker.apiClient
+              .get("screens/" + this.value)
+              .then(response => {
+                this.loading = false;
+                this.content = response.data;
+              })
+              .catch(error => {
+                this.loading = false;
+                if (error.response.status == 404) {
+                  this.content = '';
+                  this.error = this.$t('Selected screen not found');
+                }
+              });
+          } else {
+            this.content = '';
+            if (this.requiredMessage) {
+              this.error = this.requiredMessage
+            } else {
+              this.error = '';
+            }
+          }
+        },
+      }
+    },
+    methods: {
+      type() {
+        if (this.params && this.params.type) {
+          return this.params.type
+        }
+        return 'FORM'
+      },
+      load(filter) {
+        let params = Object.assign(
+          {
+            type: this.type(),
+            order_direction: 'asc',
+            status: 'active',
+            filter: (typeof filter === 'string' ? filter : '')
+          },
+          this.params
+        );
+        this.loading = true;
+        ProcessMaker.apiClient
+          .get('screens', {
+            params: params
+          })
+          .then(response => {
+            this.loading = false;
+            this.screens = response.data.data;
+          })
+          .catch(err => {
+            this.loading = false;
+          });
       }
     }
-  },
-  methods: {
-    updateValue(e) {
-      this.content = e.target.value;
-      this.$emit("input", this.content);
-    },
-    load() {
-      this.loading = true;
-      let params = Object.assign(
-        { type: "FORM", per_page: 10000 },
-        this.params
-      );
-      ProcessMaker.apiClient
-        .get("/screens", {
-          params: params
-        })
-        .then(response => {
-          this.screens = response.data.data;
-          this.loading = false;
-        })
-        .catch(err => {
-          this.loading = false;
-        });
-    }
-  }
-};
+  };
 </script>
 
 <style lang="scss" scoped>
+    @import "~vue-multiselect/dist/vue-multiselect.min.css";
 </style>

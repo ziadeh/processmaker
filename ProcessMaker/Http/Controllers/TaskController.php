@@ -4,27 +4,30 @@ namespace ProcessMaker\Http\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Request;
-use ProcessMaker\Http\Controllers\Controller;
+use ProcessMaker\Events\ScreenBuilderStarting;
+use ProcessMaker\Managers\ScreenBuilderManager;
 use ProcessMaker\Models\Notification;
 use ProcessMaker\Models\ProcessRequestToken;
-use Illuminate\Support\Facades\Auth;
+use ProcessMaker\Traits\SearchAutocompleteTrait;
 
 class TaskController extends Controller
 {
+    use SearchAutocompleteTrait;
+
     private static $dueLabels = [
-        'open' => 'Due ',
-        'completed' => 'Completed ',
-        'overdue' => 'Due ',
+        'open' => 'Due',
+        'completed' => 'Completed',
+        'overdue' => 'Due',
     ];
 
     public function index()
     {
         $title = 'To Do Tasks';
-        
+
         if(Request::input('status') == 'CLOSED'){
             $title = 'Completed Tasks';
         }
-        
+
         return view('tasks.index', compact('title'));
     }
 
@@ -41,6 +44,10 @@ class TaskController extends Controller
             ->whereNotNull('read_at')
             ->update(['read_at' => Carbon::now()]);
 
-        return view('tasks.edit', ['task' => $task, 'dueLabels' => self::$dueLabels]);
+
+        $manager = new ScreenBuilderManager();
+        event(new ScreenBuilderStarting($manager, $task->getScreen() ? $task->getScreen()->type : "FORM"));
+
+        return view('tasks.edit', ['task' => $task, 'dueLabels' => self::$dueLabels, 'manager' => $manager]);
     }
 }

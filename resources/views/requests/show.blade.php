@@ -87,7 +87,7 @@
                                     </div>
                                 </template>
                                 <template v-else>
-                                    <table class="vuetable table table-hover">
+                                    <table class="vuetable table table-hover mt-3 border">
                                         <thead>
                                         <tr>
                                             <th scope="col">{{ __('Key') }}</th>
@@ -104,7 +104,7 @@
                                 </template>
                             </template>
                             <template v-else>
-                                <div class="card m-3">
+                                <div class="card mt-3">
                                     <div class="card-header">
                                         <h5>
                                             {{ __('Request In Progress') }}
@@ -159,7 +159,6 @@
                         </div>
                     </div>
                 </div>
-
                 @if($canViewComments === true)
                     <div>
                         <comments commentable_id="{{ $request->getKey() }}"
@@ -172,7 +171,7 @@
                 <template v-if="statusLabel">
                     <div class="card">
                         <div :class="classStatusCard">
-                            <h4 style="margin:0; padding:0; line-height:1">@{{ statusLabel }}</h4>
+                            <h4 style="margin:0; padding:0; line-height:1">@{{ __(statusLabel) }}</h4>
                         </div>
                         <ul class="list-group list-group-flush w-100">
                             <li class="list-group-item">
@@ -180,10 +179,10 @@
                                 <avatar-image v-if="userRequested" size="32"
                                               class="d-inline-flex pull-left align-items-center"
                                               :input-data="requestBy" display-name="true"></avatar-image>
-                                <span v-if="!userRequested">{{__('Webhook')}}</span>
+                                <span v-if="!userRequested">{{__('Web Entry')}}</span>
                             </li>
 
-                            @if($canCancel == true)
+                            @if($canCancel == true && $request->status === 'ACTIVE')
                                 <template>
                                     <li class="list-group-item">
                                         <h5>{{__('Cancel Request')}}</h5>
@@ -267,6 +266,11 @@
 @endsection
 
 @section('js')
+
+    @foreach($manager->getScripts() as $script)
+        <script src="{{$script}}"></script>
+    @endforeach
+
     <script src="{{mix('js/requests/show.js')}}"></script>
     <script>
       new Vue({
@@ -354,23 +358,6 @@
             };
             return 'card-header text-capitalize text-white ' + header[this.request.status.toUpperCase()];
           },
-          statusLabel() {
-            let label = {
-              "ACTIVE": 'In Progress',
-              "COMPLETED": 'Completed',
-              "CANCELED": 'Canceled',
-              "ERROR": 'Error'
-            };
-
-            if (this.request.status.toUpperCase() === 'COMPLETED') {
-              this.status = 'Completed'
-            }
-            if (this.request.status.toUpperCase() === 'CANCELED') {
-              this.status = 'Canceled'
-            }
-
-            return label[this.request.status.toUpperCase()];
-          },
           labelDate() {
             let label = {
               "ACTIVE": 'Created',
@@ -392,10 +379,10 @@
           },
           statusLabel() {
             let status = {
-              "ACTIVE": "{{__('Created')}}",
+              "ACTIVE": "{{__('In Progress')}}",
               "COMPLETED": "{{__('Completed')}}",
               "CANCELED": "{{__('Canceled')}}",
-              "ERROR": "{{__('Canceled')}}",
+              "ERROR": "{{__('Error')}}",
             };
 
             return status[this.request.status.toUpperCase()];
