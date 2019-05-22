@@ -245,7 +245,7 @@ An Event-Based Gateway element represents an evaluation of a [Request's](../../.
 * The Event-Based Gateway element requires two or more going outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements.
 * The Event-Based Gateway element can only connect with [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event) or [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) elements. This creates the scenario that either a timed event occurs or an Intermediate Message Catch Event element receives a message.
 
-When a Request is in progress and the Event-Based Gateway element triggers, workflow for that Request pauses. ProcessMaker Spark then evaluates the events immediately following the Event-Based Gateway element's and waits until one of those events occur. Request workflow resumes and routes to the event that occurs first.
+When a Request is in progress and the Event-Based Gateway element triggers, workflow for that Request pauses. ProcessMaker Spark then evaluates the events immediately following the Event-Based Gateway element's and waits until one of those events occur. Request workflow resumes by routing to the event that occurred first.
 
 Consider the following example. Suppose that you have a Process that monitors that you receive package shipments on time. Use an Event-Based Gateway element that monitors which event occurs next. Refer to the Process modeling elements below.
 
