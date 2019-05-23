@@ -90,9 +90,9 @@ Follow these steps to edit a Process Category:
 
    ![](../../.gitbook/assets/edit-process-category-page-processes.png)
 
-3. Edit the following information about the Category as necessary:
-   * In the **Category Name** field, edit the name of the Category if necessary. The Category name must be unique from all other Category names in your organization. This is a required field.
-   * From the **Status** drop-down menu, change the status of the Category. This is a required field. See [View Process Categories](process-categories.md#view-process-categories) for status descriptions.
+3. Edit the following information about the Process Category as necessary:
+   * In the **Category Name** field, edit the name of the Category if necessary. The Process Category name must be unique from all other Category names in your organization. This is a required field.
+   * From the **Status** drop-down menu, change the status of the Process Category. This is a required field. See [View Process Categories](process-categories.md#view-process-categories) for status descriptions.
 4. Click **Save**.
 
 ## Delete a Process Category
@@ -112,12 +112,12 @@ To delete a Process Category, no Processes can be assigned to it. Reassign those
 Furthermore, deleting a Process Category cannot be undone.
 {% endhint %}
 
-A Process Category cannot be deleted until no Processes are assigned to it. If any Processes are assigned to the Category, its Delete icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png)does not display.
+A Process Category cannot be deleted until no Processes are assigned to it. If any Processes are assigned to the Process Category, its **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png)does not display.
 
 Follow these steps to delete a Process Category:
 
 1. [View your Process Categories.](process-categories.md#view-process-categories)
-2. Select the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png). A message displays to confirm deletion of the Category.  
+2. Select the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png). A message displays to confirm deletion of the Process Category.  
 
    ![](../../.gitbook/assets/remove-process-category-screen-processes.png)
 
