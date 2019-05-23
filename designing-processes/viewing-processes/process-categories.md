@@ -6,13 +6,13 @@ description: Assign Categories to Processes for better organization.
 
 ## Overview
 
-A Category is a group of Processes with similar functions or goals. A Category helps organize Processes into groups. Use Categories to help Requesters find the Process in which to start a Request. When a Requester starts a new Request, the **New Request** screen displays Processes organized into Categories.
+A Process Category is a group of Processes with similar functions or goals. Use Process Categories to help Requesters find the Process in which to start a Request. When a Requester starts a new Request, the **New Request** screen displays Processes organized into Process Categories.
 
 ![The &quot;New Request&quot; screen displays Processes into Categories](../../.gitbook/assets/new-request-screen-requests.png)
 
-Categories can be active or inactive. Processes that have been assigned to an inactive Category do not display in any Category when [Requesters start a Request](../../using-processmaker/requests/make-a-request.md#start-a-request).
+Process Categories can be active or inactive. Processes that have been assigned to an inactive Process Category do not display in any Process Category when [Requesters start a Request](../../using-processmaker/requests/make-a-request.md#start-a-request).
 
-A Process can be assigned to only one Category. See [Edit Process Configuration](view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md#edit-configuration-information-about-a-process) for more information.
+A Process can be assigned to only one Process Category. See [Edit Process Configuration](view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md#edit-configuration-information-about-a-process) for more information.
 
 ## View Process Categories
 
