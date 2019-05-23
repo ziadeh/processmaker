@@ -6,7 +6,7 @@ description: Restore an archived Process to use again in your organization.
 
 ## Overview
 
-Restore an [archived Process](remove-a-process.md) to start Requests of it. After a Process is restored, that Process moves from the **Archived Processes** page to the **Processes** page. A restored Process is automatically set to active status.
+Restore an [archived Process](remove-a-process.md) to start Requests of it. After a Process is restored, that Process moves from the **Archived Processes** page to the **Processes** page.
 
 ## Restore an Archived Process
 
