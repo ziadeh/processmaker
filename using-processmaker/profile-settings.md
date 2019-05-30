@@ -48,6 +48,7 @@ Follow these steps to change your profile settings:
        * m/d/Y \(12/31/2017\)
        * m/d/Y h:i A \(12/31/2017 11:30 pm\)
        * m/d/Y H:i \(12/31/2017 23:30\)
+       * d/m/Y \(31/12/2017\)
        * d/m/Y \(31/12/2017 23:30\)
        * Y/m/d \(2017/12/31\)
        * Y/m/d H:i \(2017/12/31 23:30\)
