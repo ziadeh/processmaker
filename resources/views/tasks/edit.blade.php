@@ -44,9 +44,10 @@
                         @endcan
                     @endif
                     <div id="tabContent" class="tab-content">
-                        <div id="tab-form" role="tabpanel" aria-labelledby="tab-form" class="tab-pane active show">
-                            @if ($task->getScreen() && ($task->advanceStatus==='open' || $task->advanceStatus==='overdue'))
-                                <div class="card card-body">
+                        <div id="tab-form" role="tabpanel" aria-labelledby="tab-form" class="tab-pane active show card">
+                            @if ($task->advanceStatus==='open' || $task->advanceStatus==='overdue')
+                                @if ($task->getScreen())
+                                <div class="card-body">
                                     <task-screen ref="taskScreen"
                                                  process-id="{{$task->processRequest->process->getKey()}}"
                                                  instance-id="{{$task->processRequest->getKey()}}"
@@ -54,15 +55,27 @@
                                                  :screen="{{json_encode($task->getScreen()->config)}}"
                                                  :computed="{{json_encode($task->getScreen()->computed)}}"
                                                  :custom-css="{{json_encode(strval($task->getScreen()->custom_css))}}"
-                                                 :data="{{json_encode($task->processRequest->data, JSON_FORCE_OBJECT)}}">
+                                                 :data="{{json_encode((object)$task->processRequest->data)}}">
                                     </task-screen>
-                                    @if ($task->getBpmnDefinition()->localName==='manualTask')
-                                    <footer>
-                                      <button class="btn btn-primary" @click="submitTaskScreen">{{__('Complete Task')}}</button>
-                                    </footer>
-                                    @endif
                                 </div>
-                            @elseif ($task->advanceStatus==='completed')
+                                @else
+                                <task-screen ref="taskScreen"
+                                              v-show="false"
+                                              process-id="{{$task->processRequest->process->getKey()}}"
+                                              instance-id="{{$task->processRequest->getKey()}}"
+                                              token-id="{{$task->getKey()}}"
+                                              :screen="[{items:[]}]"
+                                              :computed="[]"
+                                              :custom-css="''"
+                                              :data="{{json_encode((object)$task->processRequest->data)}}">
+                                </task-screen>
+                                @endif
+                                @if (!$task->getScreen() || $task->getBpmnDefinition()->localName==='manualTask')
+                                <div class="card-footer">
+                                      <button class="btn btn-primary" @click="submitTaskScreen">{{__('Complete Task')}}</button>
+                                </div>
+                                @endif
+                                @elseif ($task->advanceStatus==='completed')
                                 <div class="card card-body" align="center">
                                     <h1>Task Completed <i class="fas fa-clipboard-check"></i></h1>
                                 </div>
