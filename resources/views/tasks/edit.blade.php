@@ -21,7 +21,8 @@
             }
             return ['To Do Tasks', route('tasks.index')];
         },
-        $task->processRequest->name => route('requests.show', ['id' => $task->processRequest->id]),
+        $task->processRequest->name =>
+            Auth::user()->can('view', $task->processRequest) ? route('requests.show', ['id' => $task->processRequest->id]) : null,
         $task->element_name => null,
     ]])
 
@@ -32,7 +33,7 @@
 
                     @if ($task->processRequest->status === 'ACTIVE')
                         @can('editData', $task->processRequest)
-                            <ul id="tabHeader" role="tablist" class="nav nav-tabs">
+                            <ul id="tabHeader" role="tablist" class="nav nav-tabs mb-3">
                                 <li class="nav-item"><a id="pending-tab" data-toggle="tab" href="#tab-form" role="tab"
                                                         aria-controls="tab-form" aria-selected="true"
                                                         class="nav-link active">{{__('Form')}}</a></li>
@@ -46,13 +47,20 @@
                         <div id="tab-form" role="tabpanel" aria-labelledby="tab-form" class="tab-pane active show">
                             @if ($task->getScreen() && ($task->advanceStatus==='open' || $task->advanceStatus==='overdue'))
                                 <div class="card card-body">
-                                    <task-screen process-id="{{$task->processRequest->process->getKey()}}"
+                                    <task-screen ref="taskScreen"
+                                                 process-id="{{$task->processRequest->process->getKey()}}"
                                                  instance-id="{{$task->processRequest->getKey()}}"
                                                  token-id="{{$task->getKey()}}"
                                                  :screen="{{json_encode($task->getScreen()->config)}}"
                                                  :computed="{{json_encode($task->getScreen()->computed)}}"
                                                  :custom-css="{{json_encode(strval($task->getScreen()->custom_css))}}"
-                                                 :data="{{json_encode($task->processRequest->data, JSON_FORCE_OBJECT)}}"/>
+                                                 :data="{{json_encode($task->processRequest->data, JSON_FORCE_OBJECT)}}">
+                                    </task-screen>
+                                    @if ($task->getBpmnDefinition()->localName==='manualTask')
+                                    <footer>
+                                      <button class="btn btn-primary" @click="submitTaskScreen">{{__('Complete Task')}}</button>
+                                    </footer>
+                                    @endif
                                 </div>
                             @elseif ($task->advanceStatus==='completed')
                                 <div class="card card-body" align="center">
@@ -77,13 +85,23 @@
                             <h4 style="margin:0; padding:0; line-height:1">{{__($task->advanceStatus)}}</h4>
                         </div>
                         <ul class="list-group list-group-flush w-100">
-                            <li class="list-group-item">
+                            <li class="list-group-item" v-if="showDueAtDates">
                                 <i class='far fa-calendar-alt'></i>
                                 <small> {{__($dueLabels[$task->advanceStatus])}} @{{ moment(dateDueAt).fromNow() }}
                                 </small>
                                 <br>
                                 @{{ moment(dateDueAt).format() }}
                             </li>
+
+
+                            <li class="list-group-item" v-if="!showDueAtDates">
+                                <i class='far fa-calendar-alt'></i>
+                                <small> {{__($dueLabels[$task->advanceStatus])}} @{{ moment().to(moment(completedAt)) }}
+                                </small>
+                                <br>
+                                @{{ moment(completedAt).format() }}
+                            </li>
+
                             <li class="list-group-item">
                                 <h5>{{__('Assigned To')}}</h5>
                                 <avatar-image size="32" class="d-inline-flex pull-left align-items-center"
@@ -104,6 +122,8 @@
                                         <multiselect v-model="selectedUser"
                                                      placeholder="{{__('Select the user to reassign to the task')}}"
                                                      :options="usersList"
+                                                     :select-label="''"
+                                                     :deselect-label="''"
                                                      :multiple="false"
                                                      track-by="fullname"
                                                      :show-labels="false"
@@ -161,7 +181,7 @@
                                 <avatar-image v-if="userRequested" size="32"
                                               class="d-inline-flex pull-left align-items-center"
                                               :input-data="userRequested"></avatar-image>
-                                <p v-if="!userRequested">{{__('Webhook')}}</p>
+                                <p v-if="!userRequested">{{__('Web Entry')}}</p>
                             </li>
                         </ul>
                     </div>
@@ -217,11 +237,23 @@
           createdAt() {
             return this.task.created_at;
           },
+          completedAt() {
+            return this.task.completed_at;
+          },
+          showDueAtDates() {
+            return this.task.status !== 'CLOSED';
+          },
           disabled() {
             return this.selectedUser ? this.selectedUser.length === 0 : true;
           }
         },
         methods: {
+          /**
+           * Submit the task screen
+           */
+          submitTaskScreen() {
+            this.$refs.taskScreen.submit();
+          },
           // Data editor
           updateRequestData() {
             const data = JSON.parse(this.jsonData);

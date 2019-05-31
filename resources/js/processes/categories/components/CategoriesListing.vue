@@ -122,16 +122,14 @@ export default {
             "&include=processesCount"
         )
         .then(response => {
-          this.data = this.transform(response.data);
-          this.loading = false;
+          if(response.data.data.length === 0){
+              $('#createProcessCategory').modal('show')
+            }else {
+              this.data = this.transform(response.data);
+              this.loading = false;
+            }
         });
     },
-    transform(data) {
-      // format in a way vuetable is expecting
-      data = Object.assign({}, data, data.meta, { meta: null });
-      return data;
-    },
-    onPaginationData() {},
     onAction(action, data, index) {
       switch (action) {
         case "edit-item":

@@ -11,23 +11,26 @@
             </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" v-if="assignmentGetter">
             <label class="text-capitalize">{{ $t(assignmentGetter)}}</label>
-            <div v-if="loading">{{ $t('Loading...') }}</div>
-            <div v-else>
-                <multiselect v-model="content"
-                             track-by="id"
-                             label="name"
-                             :placeholder="$t('type here to search')"
-                             :options="options"
-                             :multiple="false"
-                             :show-labels="false"
-                             :searchable="true"
-                             :internal-search="false"
-                             :helper="helper"
-                             @search-change="load">
-                </multiselect>
-            </div>
+            <multiselect v-model="content"
+                         track-by="id"
+                         label="name"
+                         :select-label="''"
+                         :deselect-label="''"
+                         :class="{'border border-danger':error}"
+                         :loading="loading"
+                         :placeholder="$t('type here to search')"
+                         :options="options"
+                         :multiple="false"
+                         :show-labels="false"
+                         :searchable="true"
+                         :internal-search="false"
+                         @open="load"
+                         @search-change="load">
+            </multiselect>
+            <small v-if="error" class="text-danger">{{error}}</small>
+            <small v-if="helper" class="form-text text-muted">{{ $t(helper) }}</small>
         </div>
     </div>
 </template>
@@ -40,6 +43,7 @@
         content: null,
         options: [],
         loading: false,
+        error: '',
         type: '',
       };
     },
@@ -52,11 +56,17 @@
             this.assignedGroupSetter(this.content.id)
           }
         }
+      },
+      value: {
+        immediate: true,
+        handler() {
+          this.loadAssigned();
+        }
       }
     },
     computed: {
       assignmentGetter() {
-        const node = this.$parent.$parent.highlightedNode.definition;
+        const node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
         const value = _.get(node, "assignment");
         this.type = value;
         return value;
@@ -72,6 +82,7 @@
         }
       },
       loadUsers(filter) {
+        this.loading = true;
         ProcessMaker.apiClient
           .get("users?order_direction=asc&status=active" + (typeof filter === 'string' ? '&filter=' + filter : ''))
           .then(response => {
@@ -88,6 +99,7 @@
           });
       },
       loadGroups(filter) {
+        this.loading = true;
         ProcessMaker.apiClient
           .get("groups?order_direction=asc&status=active" + (typeof filter === 'string' ? '&filter=' + filter : ''))
           .then(response => {
@@ -104,9 +116,16 @@
           });
       },
       loadAssigned() {
-        const node = this.$parent.$parent.highlightedNode.definition;
+        let node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
+        let value = _.get(node, "assignment");
+        this.type = value;
+        this.content = null;
         if (this.type === 'user') {
-          const value = _.get(node, "assignedUsers");
+          value = _.get(node, "assignedUsers");
+          if (!value) {
+            return
+          }
+          this.loading = true;
           ProcessMaker.apiClient
             .get("users/" + value)
             .then(response => {
@@ -116,11 +135,19 @@
                 name: response.data.fullname
               };
             })
-            .catch(err => {
+            .catch(error => {
               this.loading = false;
+              if (error.response.status == 404) {
+                this.content = '';
+                this.error = this.$t('Selected user not found');
+              }
             });
         } else if (this.type === 'group') {
-          const value = _.get(node, "assignedGroups");
+          value = _.get(node, "assignedGroups");
+          if (!value) {
+            return
+          }
+          this.loading = true;
           ProcessMaker.apiClient
             .get("groups/" + value)
             .then(response => {
@@ -132,19 +159,23 @@
             })
             .catch(err => {
               this.loading = false;
+              if (error.response.status == 404) {
+                this.content = '';
+                this.error = this.$t('Selected group not found');
+              }
             });
         }
       },
 
       assignedUserSetter(id) {
-        let node = this.$parent.$parent.highlightedNode.definition;
+        let node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
         let value = _.get(node, "assignedUsers");
         this.$set(node, "assignedUsers", id);
         value = _.get(node, "assignedGroups");
         this.$set(node, "assignedGroups", '');
       },
       assignedGroupSetter(id) {
-        let node = this.$parent.$parent.highlightedNode.definition;
+        let node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
         let value = _.get(node, "assignedUsers");
         this.$set(node, "assignedUsers", '');
         value = _.get(node, "assignedGroups");
@@ -153,7 +184,7 @@
       assignmentSetter(event) {
         this.type = event.target.value;
         this.content = null;
-        let node = this.$parent.$parent.highlightedNode.definition;
+        let node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
         this.$set(node, "assignment", this.type);
         this.load();
       },

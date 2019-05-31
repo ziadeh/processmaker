@@ -2,6 +2,7 @@
 
 namespace ProcessMaker\Models;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
@@ -14,14 +15,17 @@ use ProcessMaker\Traits\SerializeToIso8601;
 use ProcessMaker\Traits\HasAuthorization;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use ProcessMaker\Query\Traits\PMQL;
 
 class User extends Authenticatable implements HasMedia
 {
+    use PMQL;
     use HasApiTokens;
     use Notifiable;
     use HasMediaTrait;
     use HasAuthorization;
     use SerializeToIso8601;
+    use SoftDeletes;
 
     //Disk
     public const DISK_PROFILE = 'profile';

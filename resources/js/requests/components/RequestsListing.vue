@@ -1,6 +1,7 @@
 <template>
   <div class="data-table">
-    <div class="card card-body table-card">
+    <data-loading v-if="apiDataLoading || apiNoResults" ref="loader" />
+    <div v-else class="card card-body table-card">
       <vuetable
         :dataManager="dataManager"
         :sortOrder="sortOrder"
@@ -10,7 +11,6 @@
         :fields="fields"
         :data="data"
         data-path="data"
-        :noDataTemplate="$t('No Data Available')"
         pagination-path="meta"
       >
         <template slot="ids" slot-scope="props">
@@ -55,14 +55,15 @@
 
 <script>
 import datatableMixin from "../../components/common/mixins/datatable";
+import dataLoadingMixin from "../../components/common/mixins/apiDataLoading.js";
 import AvatarImage from "../../components/AvatarImage";
 import moment from "moment";
 
 Vue.component("avatar-image", AvatarImage);
 
 export default {
-  mixins: [datatableMixin],
-  props: ["filter", "type"],
+  mixins: [datatableMixin, dataLoadingMixin],
+  props: ["type"],
   data() {
     return {
       orderBy: "id",
@@ -148,7 +149,7 @@ export default {
         '<i class="fas fa-circle text-' +
         color +
         '"></i> <span>' +
-        label +
+        this.$t(label) +
         "</span>"
       );
     },
@@ -170,18 +171,13 @@ export default {
       }
       return data;
     },
-    fetch() {
-      this.loading = true;
-      switch (this.type) {
-        case "":
-          this.additionalParams = "&type=started_me";
-          break;
-        case "all":
-          this.additionalParams = "";
-          break;
-        default:
-          this.additionalParams = "&type=" + this.type;
+    fetch(resetPagination) {
+
+      if (resetPagination) {
+        this.page = 1;
       }
+
+      this.additionalParams = ((this.type === '') ? '&type=started_me': '&type=' + this.type);
 
       // Load from our api client
       ProcessMaker.apiClient
@@ -191,8 +187,8 @@ export default {
             "&per_page=" +
             this.perPage +
             "&include=process,participants" +
-            "&filter=" +
-            this.filter +
+            "&pmql=" +
+            this.$parent.pmql +
             "&order_by=" +
             (this.orderBy === "__slot:ids" ? "id" : this.orderBy) +
             "&order_direction=" +
@@ -201,10 +197,10 @@ export default {
         )
         .then(response => {
           this.data = this.transform(response.data);
-          this.loading = false;
         });
     }
   }
 };
 </script>
-
+<style>
+</style>

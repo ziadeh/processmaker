@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 use ProcessMaker\Http\Controllers\Controller;
 use ProcessMaker\Models\Screen;
+use ProcessMaker\Models\ScreenType;
 use ProcessMaker\Models\Script;
 
 class ScreenController extends Controller
@@ -18,14 +19,9 @@ class ScreenController extends Controller
      */
     public function index()
     {
-        $types = [
-            '' => __('Select Type'),
-            'DISPLAY' => 'Display',
-            'FORM' => 'Form',
-        ];
-
-        if (Script::where('key', 'processmaker-communication-email-send')->exists()) {
-            $types['EMAIL'] = 'Email';
+        $types = [];
+        foreach(ScreenType::pluck('name')->toArray() as $type) {
+            $types[$type] = __(ucwords(strtolower($type)));
         }
         return view('processes.screens.index', compact('types'));
     }

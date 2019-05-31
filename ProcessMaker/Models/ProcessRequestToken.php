@@ -10,6 +10,7 @@ use ProcessMaker\Nayra\Bpmn\TokenTrait;
 use ProcessMaker\Nayra\Contracts\Bpmn\TokenInterface;
 use ProcessMaker\Traits\SerializeToIso8601;
 use \Illuminate\Auth\Access\AuthorizationException;
+use ProcessMaker\Query\Traits\PMQL;
 
 /**
  * ProcessRequestToken is used to store the state of a token of the
@@ -56,6 +57,7 @@ use \Illuminate\Auth\Access\AuthorizationException;
  */
 class ProcessRequestToken extends Model implements TokenInterface
 {
+    use PMQL;
     use TokenTrait;
     use SerializeToIso8601;
 
@@ -200,7 +202,6 @@ class ProcessRequestToken extends Model implements TokenInterface
         return $this->belongsTo(User::class, 'user_id');
     }
 
-
     /**
      * Get the BPMN definition of the element where the token is.
      *
@@ -214,6 +215,17 @@ class ProcessRequestToken extends Model implements TokenInterface
             return [];
         }
         return $element->getBpmnElementInstance()->getProperties();
+    }
+
+    /**
+     * Get the BPMN element node where the token is currently located.
+     *
+     * @return \ProcessMaker\Nayra\Storage\BpmnElement
+     */
+    public function getBpmnDefinition()
+    {
+        $definitions = $this->processRequest->process->getDefinitions();
+        return $definitions->findElementById($this->element_id);
     }
 
     /**

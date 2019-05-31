@@ -15,14 +15,18 @@
 ]])
 <div class="container" id="editProcess">
     <div class="row">
-        <div class="col-8">
+        <div class="col-12">
 
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-config" role="tab"
                         aria-controls="nav-config" aria-selected="true">{{__('Configuration')}}</a>
-                        <a class="nav-item nav-link" id="nav-groups-tab" data-toggle="tab" href="#nav-notifications" role="tab"
-                           aria-controls="nav-notifications" aria-selected="true">{{__('Notifications')}}</a>
+                    <a class="nav-item nav-link" id="nav-groups-tab" data-toggle="tab" href="#nav-notifications" role="tab"
+                        aria-controls="nav-notifications" aria-selected="true">{{__('Notifications')}}</a>
+                    @foreach ($addons as $addon)
+                    <a class="nav-item nav-link" id="{{$addon['id'] . '-tab'}}" data-toggle="tab" href="{{'#' . $addon['id']}}" role="tab"
+                       aria-controls="nav-notifications" aria-selected="true">{{ __($addon['title']) }}</a>
+                    @endforeach
                 </div>
             </nav>
             <div class="card card-body card-body-nav-tabs">
@@ -69,6 +73,8 @@
                                 v-model="canCancel"
                                 :options="activeUsersAndGroups"
                                 :multiple="true"
+                                :select-label="''"
+                                :deselect-label="''"
                                 placeholder="{{__('Type to search')}}"
                                 track-by="fullname"
                                 label="fullname"
@@ -94,6 +100,8 @@
                                 v-model="canEditData"
                                 :options="activeUsersAndGroups"
                                 :multiple="true"
+                                :select-label="''"
+                                :deselect-label="''"
                                 placeholder="{{__('Type to search')}}"
                                 track-by="fullname"
                                 label="fullname"
@@ -145,8 +153,7 @@
                                         <td class="notify">{{__('Notify Participants')}}</td>
                                         <td class="action">
                                             <div class="custom-control custom-switch">
-                                                <input v-model="formData.notifications.participants.started" type="checkbox" class="custom-control-input" id="notify-participants-started">
-                                                <label class="custom-control-label" for="notify-participants-started"></label>
+
                                             </div>
                                         </td>
                                         <td class="action">
@@ -170,18 +177,14 @@
                             {!! Form::button(__('Save'), ['class'=>'btn btn-secondary ml-2', '@click' => 'onUpdate']) !!}
                         </div>
                     </div>
+                    @foreach ($addons as $addon)
+                    <div class="tab-pane fade show" id="{{$addon['id']}}" role="tabpanel" aria-labelledby="nav-notifications-tab">
+                        {!! $addon['content'] !!}
+                    </div>
+                    @endforeach
                 </div>
             </div>
 
-        </div>
-        <div class="col-4">
-            <div class="card card-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
-            </div>
         </div>
     </div>
 </div>
@@ -190,8 +193,17 @@
 
 @section('js')
     <script>
+        var addons = [];
+    </script>
+    @foreach ($addons as $addon)
+    @if (!empty($addon['script']))
+        {!! $addon['script'] !!}
+    @endif
+    @endforeach
+    <script>
         test = new Vue({
             el: '#editProcess',
+            mixins: addons,
             data() {
                 return {
                     formData: @json($process),
@@ -270,16 +282,16 @@
         .card-body-nav-tabs {
             border-top: 0;
         }
-        
+
         .nav-tabs .nav-link.active {
             background: white;
             border-bottom: 0;
         }
-        
+
         #table-notifications {
             margin-bottom: 20px;
         }
-        
+
         #table-notifications th {
             border-top: 0;
         }
@@ -291,7 +303,7 @@
         #table-notifications td.action {
             width: 20%;
         }
-    
+
         .inline-input {
             margin-right: 6px;
         }

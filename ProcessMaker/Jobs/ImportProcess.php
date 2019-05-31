@@ -5,9 +5,9 @@ namespace ProcessMaker\Jobs;
 use Auth;
 use Cache;
 use DB;
+use DOMXPath;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
-use ProcessMaker\Models\EnvironmentVariable;
 use ProcessMaker\Models\User;
 use ProcessMaker\Models\Process;
 use ProcessMaker\Models\ProcessCategory;
@@ -19,10 +19,11 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use ProcessMaker\Providers\WorkflowServiceProvider;
+use ProcessMaker\Traits\PluginServiceProviderTrait;
 
 class ImportProcess implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, PluginServiceProviderTrait;
 
     /**
      * The original contents of the imported file.
@@ -52,6 +53,8 @@ class ImportProcess implements ShouldQueue
      */
     private $definitions;
 
+    private $assignable = [];
+
     /**
      * An array of the new models being created on import.
      *
@@ -65,6 +68,17 @@ class ImportProcess implements ShouldQueue
      * @var array
      */
     protected $status = [];
+    
+    /**
+     * In order to handle backwards compatibility with previous packages, an
+     * array with a previous package name as the key, and the updated
+     * package name as the value.
+     *
+     * @var array
+     */
+    private $backwardCompatiblePackageMap = [
+        'processmaker-communication-email-send' => 'spark-connector-send-email',
+    ];
 
     /**
      * Create a new job instance and set the file contents.
@@ -170,6 +184,117 @@ class ImportProcess implements ShouldQueue
         }
     }
 
+    private function getElementById($id)
+    {
+        $x = new DOMXPath($this->definitions);
+        return $x->query("//*[@id='$id']")->item(0);
+    }
+
+    /**
+     * Look for any assignable entities in the BPMN, then add them to a list.
+     *
+     * @return void
+     */
+    private function parseAssignables()
+    {
+        $this->assignable = collect([]);
+
+        $this->parseAssignableStartEvent();
+        $this->parseAssignableTasks();
+        $this->parseAssignableCallActivity();
+        $this->parseAssignableScripts();
+
+        if (!$this->assignable->count()) {
+            $this->assignable = null;
+        }
+    }
+
+    /**
+     * Look for any assignable Start event and add them to the assignable list.
+     *
+     * @return void
+     */
+    private function parseAssignableStartEvent()
+    {
+        $tasks = $this->definitions->getElementsByTagName('startEvent');
+        foreach ($tasks as $task) {
+            $assignment = $task->getAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'assignment');
+            $eventDefinition = $task->getElementsByTagName('timerEventDefinition');
+            if (!$assignment && $eventDefinition->count() === 0) {
+                $this->assignable->push((object)[
+                    'type' => 'startEvent',
+                    'id' => $task->getAttribute('id'),
+                    'name' => $task->getAttribute('name'),
+                    'prefix' => __('Assign Start Event'),
+                    'suffix' => __('to'),
+                ]);
+            }
+        }
+    }
+
+    /**
+     * Look for any assignable Call Activity and add them to the assignable list.
+     *
+     * @return void
+     */
+    private function parseAssignableCallActivity()
+    {
+        $tasks = $this->definitions->getElementsByTagName('callActivity');
+        foreach ($tasks as $task) {
+            $assignment = $task->getAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'calledElement');
+            if (!$assignment) {
+                $this->assignable->push((object)[
+                    'type' => 'callActivity',
+                    'id' => $task->getAttribute('id'),
+                    'name' => $task->getAttribute('name'),
+                    'prefix' => __('Assign Call Activity'),
+                    'suffix' => __('to'),
+                ]);
+            }
+        }
+    }
+
+    /**
+     * Look for any assignable tasks and add them to the assignable list.
+     *
+     * @return void
+     */
+    private function parseAssignableTasks()
+    {
+        //tasks that should always be assigned
+        $humanTasks = ['task', 'userTask'];
+        foreach ($humanTasks as $humanTask) {
+            $tasks = $this->definitions->getElementsByTagName($humanTask);
+            foreach ($tasks as $task) {
+                $this->assignable->push((object)[
+                    'type' => 'task',
+                    'id' => $task->getAttribute('id'),
+                    'name' => $task->getAttribute('name'),
+                    'prefix' => __('Assign task'),
+                    'suffix' => __('to'),
+                ]);
+            }
+        }
+    }
+
+    /**
+     * Look for any scripts and add them to the assignable list.
+     *
+     * @return void
+     */
+    private function parseAssignableScripts()
+    {
+        foreach ($this->new['scripts'] as $script) {
+            $this->assignable->push((object)[
+                'type' => 'script',
+                'id' => $script->id,
+                'name' => $script->title,
+                'prefix' => __('Run script'),
+                'suffix' => __('as'),
+            ]);
+        }
+    }
+
     /**
      * Parse the BPMN, looking for any task assignments to users and/or groups,
      * then remove them along with any referenced users or groups.
@@ -192,61 +317,50 @@ class ImportProcess implements ShouldQueue
         }
     }
 
-    /**
-     * Create a new EnvironmentVariable model for each environment variable
-     * object in the imported file, then save it to the database if it
-     * does not match the name of an existing environment variable.
-     *
-     * @param object[] $environmentVariables
-     *
-     * @return void
-     */
-    private function saveEnvironmentVariables($environmentVariables)
-    {
-        try {
-            $this->new['environment_variables'] = [];
-
-            $this->prepareStatus('environment_variables', count($environmentVariables) > 0);
-            foreach ($environmentVariables as $environmentVariable) {
-                //Find duplicates of the environment variable's name
-                $dupe = EnvironmentVariable::where('name', $environmentVariable->name)->get();
-
-                //If no duplicate, save it!
-                if (!$dupe->count()) {
-                    $new = new EnvironmentVariable;
-                    $new->name = $environmentVariable->name;
-                    $new->description = $environmentVariable->description;
-                    $new->value = '';
-                    $new->created_at = $this->formatDate($environmentVariable->created_at);
-                    $new->save();
-                }
-            }
-            $this->finishStatus('environment_variables');
-        } catch (\Exception $e) {
-            $this->finishStatus('environment_variables', true);
-        }
-
-    }
-
-    /**
+     /**
      * Pass an old screen ID and a new screen ID, then replace any references
      * within the BPMN to the old ID with the new ID.
      *
      * @param string|integer $oldId
      * @param string|integer $newId
+     * @param Process $process
      *
      * @return void
      */
-    private function updateScreenRefs($oldId, $newId)
+    private function updateScreenRefs($oldId, $newId, $process)
     {
-        $humanTasks = ['task', 'userTask'];
+        $humanTasks = ['task', 'userTask', 'endEvent'];
         foreach ($humanTasks as $humanTask) {
             $tasks = $this->definitions->getElementsByTagName($humanTask);
             foreach ($tasks as $task) {
                 $screenRef = $task->getAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'screenRef');
                 if ($screenRef == $oldId) {
-                    $task->setAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'screenRef', $newId);
+                    $task->setAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'screenRefNew', $newId);
                 }
+            }
+        }
+
+        //Update id screen cancel process
+        if ($process->cancel_screen_id && $process->cancel_screen_id === $oldId) {
+            $this->new['process']->cancel_screen_id = $newId;
+            $this->new['process']->save();
+        }
+    }
+
+    /**
+     * Complete the process of updating screen refs.
+     *
+     * @return void
+     */
+    private function completeScreenRefs()
+    {
+        $humanTasks = ['task', 'userTask', 'endEvent'];
+        foreach ($humanTasks as $humanTask) {
+            $tasks = $this->definitions->getElementsByTagName($humanTask);
+            foreach ($tasks as $task) {
+                $newScreenRef = $task->getAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'screenRefNew');
+                $task->removeAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'screenRefNew');
+                $task->setAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'screenRef', $newScreenRef);
             }
         }
     }
@@ -256,10 +370,11 @@ class ImportProcess implements ShouldQueue
      * then save it to the database.
      *
      * @param object[] $screens
+     * @param Process $process
      *
      * @return void
      */
-    private function saveScreens($screens)
+    private function saveScreens($screens, $process)
     {
         try {
             $this->new['screens'] = [];
@@ -275,10 +390,11 @@ class ImportProcess implements ShouldQueue
                 $new->created_at = $this->formatDate($screen->created_at);
                 $new->save();
 
-                $this->updateScreenRefs($screen->id, $new->id);
+                $this->updateScreenRefs($screen->id, $new->id, $process);
 
                 $this->new['screens'][] = $new;
             }
+            $this->completeScreenRefs();
             $this->finishStatus('screens');
         } catch (\Exception $e) {
             $this->finishStatus('screens', true);
@@ -300,8 +416,23 @@ class ImportProcess implements ShouldQueue
         foreach ($tasks as $task) {
             $scriptRef = $task->getAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'scriptRef');
             if ($scriptRef == $oldId) {
-                $task->setAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'scriptRef', $newId);
+                $task->setAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'scriptRefNew', $newId);
             }
+        }
+    }
+
+    /**
+     * Complete the process of updating script refs.
+     *
+     * @return void
+     */
+    private function completeScriptRefs()
+    {
+        $tasks = $this->definitions->getElementsByTagName('scriptTask');
+        foreach ($tasks as $task) {
+            $newScriptRef = $task->getAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'scriptRefNew');
+            $task->removeAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'scriptRefNew');
+            $task->setAttributeNS(WorkflowServiceProvider::PROCESS_MAKER_NS, 'scriptRef', $newScriptRef);
         }
     }
 
@@ -331,6 +462,7 @@ class ImportProcess implements ShouldQueue
 
                 $this->new['scripts'][] = $new;
             }
+            $this->completeScriptRefs();
             $this->finishStatus('scripts');
         } catch (\Exception $e) {
             $this->finishStatus('scripts', true);
@@ -431,6 +563,61 @@ class ImportProcess implements ShouldQueue
     }
 
     /**
+     * Handle the edge case of packages that have been renamed but are still
+     * referenced in old .spark files.
+     *
+     * @param string $package
+     *
+     * @return boolean
+     */
+    private function isBackwardCompatiblePackage($package)
+    {
+        if (array_key_exists($package, $this->backwardCompatiblePackageMap)) {
+            return $this->isRegisteredPackage($this->backwardCompatiblePackageMap[$package]);
+        }
+        
+        return false;
+    }
+
+    private function validatePackages($process)
+    {
+        try {
+            $response = true;
+
+            $new = new Process;
+            $new->bpmn = $process->bpmn;
+            $definitions = $new->getDefinitions();
+            $packages = [];
+
+            $tasks = $definitions->getElementsByTagName('serviceTask');
+            foreach ($tasks as $task) {
+                $implementation = $task->getAttribute('implementation');
+                if ($implementation) {
+                    $implementation = explode('/', $implementation);
+                    if (!in_array($implementation[0], $packages, true)) {
+                        $packages[] = $implementation[0];
+                        $exists = $this->isRegisteredPackage($implementation[0]);
+                        if (! $exists) {
+                            $exists = $this->isBackwardCompatiblePackage($implementation[0]);
+                        }
+                        $response = $exists === false ? false : $response;
+                        $package = [];
+                        $package['label'] = $implementation[0];
+                        $package['success'] = $exists;
+                        $package['message'] = $exists ? __('Package installed') : __('The package is not installed');
+                        $this->status = array_merge([$implementation[0] => $package], $this->status);
+                    }
+                }
+            }
+
+            return $response;
+        } catch (\Exception $e) {
+            return false;
+        }
+
+    }
+
+    /**
      * Save the BPMN with any adjustments that have been made along the way.
      *
      * @return void
@@ -444,18 +631,30 @@ class ImportProcess implements ShouldQueue
     /**
      * Parse files with version 1
      *
-     * @return array
+     * @return object
      */
     private function parseFileV1()
     {
-        $this->saveEnvironmentVariables($this->file->environment_variables);
+        if (!$this->validatePackages($this->file->process)) {
+            return (object)[
+                'status' => collect($this->status),
+                'assignable' => [],
+                'process' => []
+            ];
+        }
+
         $this->saveProcessCategory($this->file->process_category);
         $this->saveProcess($this->file->process);
         $this->saveScripts($this->file->scripts);
-        $this->saveScreens($this->file->screens);
-        $this->removeAssignedEntities();
+        $this->saveScreens($this->file->screens, $this->file->process);
+        $this->parseAssignables();
         $this->saveBpmn();
-        return $this->status;
+
+        return (object)[
+            'status' => collect($this->status),
+            'assignable' => $this->assignable,
+            'process' => $this->new['process']
+        ];
     }
 
     /**
@@ -497,10 +696,6 @@ class ImportProcess implements ShouldQueue
     protected function resetStatus()
     {
         $this->status = [];
-        $this->status['environment_variables'] = [
-            'label' => __('Environment Variables'),
-            'success' => false,
-            'message' => __('Starting')];
 
         $this->status['process_category'] = [
             'label' => __('Process Category'),
@@ -531,9 +726,9 @@ class ImportProcess implements ShouldQueue
      */
     protected function prepareStatus($element, $data = false)
     {
-        $this->status[$element]['message'] = __('There is no information');
+        $this->status[$element]['message'] = __('Started import of');
         if ($data) {
-            $this->status[$element]['message'] = __('the process not finished.');
+            $this->status[$element]['message'] = __('Incomplete import of');
         }
     }
 
@@ -546,10 +741,10 @@ class ImportProcess implements ShouldQueue
     protected function finishStatus($element, $error = false)
     {
         $this->status[$element]['success'] = true;
-        $this->status[$element]['message'] = __('It was imported correctly.');
+        $this->status[$element]['message'] = __('Successfully imported');
         if ($error) {
             $this->status[$element]['success'] = false;
-            $this->status[$element]['message'] = __('An error occurred in the import..');
+            $this->status[$element]['message'] = __('Unable to import');
         }
     }
 }

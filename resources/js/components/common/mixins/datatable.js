@@ -34,7 +34,11 @@ export default {
         },
         // Data manager takes new sorting and calls our fetch method
         dataManager(sortOrder, pagination) {
-            this.orderBy = sortOrder[0].field;
+            if (sortOrder[0].sortField != undefined) {
+              this.orderBy = sortOrder[0].sortField;
+            } else {
+              this.orderBy = sortOrder[0].field;
+            }
             this.orderDirection = sortOrder[0].direction;
             this.fetch();
         },
@@ -99,7 +103,7 @@ export default {
             // Cancel token which should be stored from axios if you want to cancel the current in progress request
             cancelToken: null,
             css: {
-                tableClass: "table table-hover table-responsive",
+                tableClass: "table table-hover table-responsive text-break",
                 loadingClass: "loading",
                 detailRowClass: "vuetable-detail-row",
                 handleIcon: "grey sidebar icon",

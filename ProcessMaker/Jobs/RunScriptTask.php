@@ -4,13 +4,14 @@ namespace ProcessMaker\Jobs;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Log;
+use ProcessMaker\Exception\ScriptException;
+use ProcessMaker\Facades\WorkflowManager;
 use ProcessMaker\Models\Process as Definitions;
 use ProcessMaker\Models\Script;
 use ProcessMaker\Nayra\Contracts\Bpmn\ScriptTaskInterface;
 use ProcessMaker\Nayra\Contracts\Bpmn\TokenInterface;
 use ProcessMaker\Nayra\Contracts\Engine\ExecutionInstanceInterface;
 use Throwable;
-use ProcessMaker\Models\User;
 
 class RunScriptTask extends BpmnAction implements ShouldQueue
 {
@@ -41,7 +42,7 @@ class RunScriptTask extends BpmnAction implements ShouldQueue
      *
      * @return void
      */
-    public function action(TokenInterface $token, ScriptTaskInterface $element)
+    public function action(TokenInterface $token, ScriptTaskInterface $element, Definitions $processModel)
     {
         $scriptRef = $element->getProperty('scriptRef');
         Log::info('Script started: ' . $scriptRef);
@@ -53,21 +54,29 @@ class RunScriptTask extends BpmnAction implements ShouldQueue
         }
         $dataStore = $token->getInstance()->getDataStore();
         $data = $dataStore->getData();
-        if (empty($scriptRef)) {
-            $script = new Script([
-                'code' => $element->getScript(),
-                'language' => Script::scriptFormat2Language($element->getProperty('scriptFormat', 'application/x-php')),
-                'run_as_user_id' => Script::defaultRunAsUser()->id,
-            ]);
-        } else {
-            $script = Script::find($scriptRef);
-        }
-
         try {
+            if (empty($scriptRef)) {
+                $code = $element->getScript();
+                if (empty($code)) {
+                    throw new ScriptException(__('No code or script assigned to ":name"', ['name' => $element->getName()]));
+                }
+                $script = new Script([
+                    'code' => $code,
+                    'language' => Script::scriptFormat2Language($element->getProperty('scriptFormat', 'application/x-php')),
+                    'run_as_user_id' => Script::defaultRunAsUser()->id,
+                ]);
+            } else {
+                $script = Script::find($scriptRef);
+            }
+
             $response = $script->runScript($data, $configuration);
             // Update data
-            foreach ($response['output'] as $key => $value) {
-                $dataStore->putData($key, $value);
+            if (is_array($response['output'])) {
+                // Validate data
+                WorkflowManager::validateData($response['output'], $processModel);
+                foreach ($response['output'] as $key => $value) {
+                    $dataStore->putData($key, $value);
+                }
             }
             $element->complete($token);
             Log::info('Script completed: ' . $scriptRef);
