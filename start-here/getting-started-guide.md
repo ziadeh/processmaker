@@ -21,12 +21,8 @@ A short description precedes each instructional video.
 {% embed url="https://youtu.be/NYsY8R00FSk" caption="This is a test to embed YouTube video into Gitbook \(video has no audio\)" %}
 {% endtab %}
 
-{% tab title="Introduction" %}
-#### Welcome to ProcessMaker Spark
-{% endtab %}
-
-{% tab title="Differences from Previous ProcessMaker Versions" %}
-#### Primer for Previous ProcessMaker Users
+{% tab title="Take a Tour" %}
+#### Take a Tour of ProcessMaker Spark
 {% endtab %}
 {% endtabs %}
 
@@ -36,7 +32,9 @@ A short description precedes each instructional video.
 {% tab title="Requests" %}
 #### How Do I Start a Request?
 
+Learn how to start a Request in ProcessMaker Spark. This is a proof-of-concept video for style. The video will be re-recorded with ProcessMaker Spark Beta 5 or later.
 
+{% embed url="https://youtu.be/0XPtJzmBBLI" caption="Learn how to start a Request in ProcessMaker Spark." %}
 
 #### How Do I View Requests and Their Summaries?
 {% endtab %}
