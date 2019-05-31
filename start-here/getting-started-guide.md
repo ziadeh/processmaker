@@ -13,14 +13,6 @@ The Getting Started Guide is in development. Please visit this page often for up
 ## What Is ProcessMaker Spark?
 
 {% tabs %}
-{% tab title="Test" %}
-#### This Is a Proof-of-Concept to Embed YouTube Video
-
-A short description precedes each instructional video.
-
-{% embed url="https://youtu.be/NYsY8R00FSk" caption="This is a test to embed YouTube video into Gitbook \(video has no audio\)" %}
-{% endtab %}
-
 {% tab title="Take a Tour" %}
 #### Take a Tour of ProcessMaker Spark
 {% endtab %}
