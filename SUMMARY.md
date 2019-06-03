@@ -5,7 +5,7 @@
 ## Start Here
 
 * [How to Use This Document](start-here/how-to-use-this-document.md)
-* [Getting Started Guide](start-here/getting-started-guide.md)
+* [Get Started Guide](start-here/getting-started-guide.md)
 
 ## Use ProcessMaker
 

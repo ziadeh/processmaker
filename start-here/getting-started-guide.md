@@ -2,13 +2,13 @@
 description: Are you new to ProcessMaker Spark? This is a great place to start.
 ---
 
-# Getting Started Guide
+# Get Started Guide
 
 ## Overview
 
-The Getting Started Guide is in modular sections to help you learn ProcessMaker faster.
+The Get Started Guide is in modular sections to help you learn ProcessMaker faster.
 
-The Getting Started Guide is in development. Please visit this page often for updates.
+The Get Started Guide is in development. Please visit this page often for updates.
 
 ## What Is ProcessMaker Spark?
 
