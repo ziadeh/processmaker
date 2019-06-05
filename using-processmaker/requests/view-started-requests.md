@@ -21,6 +21,7 @@ Click the **Started By Me** icon![](../../.gitbook/assets/started-by-me-icon-req
 
 The **My Requests** page displays the following information in tabular format about Requests you started:
 
+* **\#:** The **\#** column displays the Request number associated with the Process. This number represents the sequential occurrence of that Process.
 * **Name:** The **Name** column displays the Process name associated with the Request. Click the Process name to [view the Request summary](request-details.md).
 * **Status:** The **Status** column displays the status of the Request. The following are possible statuses:
   * **In Progress:** The Request is in-progress and is represented by the![](../../.gitbook/assets/in-progress-status-icon-requests.png)icon.
@@ -36,16 +37,16 @@ The **My Requests** page displays the following information in tabular format ab
 
 To [view a Request summary](request-details.md), do one of the following:
 
-* From the **Name** column, click the Process name associated with the Request that you want to view.
-* Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-requests.png)for the Request that you want to view its summary.
+* From the **\#** column, click the Request number associated with the Process displaying in the **Name** column to view its summary.
+* Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-requests.png)for the Request to view its summary.
 
 ### Search for a Request
 
-Use the [Search](search-for-a-request.md) field to filter Requests that display in this page.
+Use Request data to [search](search-for-a-request.md) for Requests on this page.
 
 ### No Requests?
 
-If there are no Requests in this tab, the following message displays: **No Data Available**.
+If there are no Requests in this tab, the following message displays: **No Results**.
 
 ### Display Information the Way You Want It
 

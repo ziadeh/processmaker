@@ -27,7 +27,7 @@ As you enter text into the **Search** field, Processes display that match your e
 {% hint style="info" %}
 ### No Search Results?
 
-If there are no search results, the following message displays: **No data available**.
+If there are no search results, the following message displays: **No Results**.
 
 ### Manage Your Processes
 

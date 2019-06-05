@@ -26,7 +26,7 @@ Follow these steps to search for a ProcessMaker Screen:
 As you enter text into the **Search** field, ProcessMaker Screens display that match your entered text.
 
 {% hint style="info" %}
-If there are no search results, the following message displays: **No data available**.
+If there are no search results, the following message displays: **No Results**.
 {% endhint %}
 
 ## Related Topics

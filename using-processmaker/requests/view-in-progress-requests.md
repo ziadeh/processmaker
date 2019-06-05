@@ -19,6 +19,7 @@ Follow these steps to view in-progress Requests in which you are participating:
 
 The **In Progress** page displays the following information in tabular format about in-progress Requests:
 
+* **\#:** The **\#** column displays the Request number associated with the Process. This number represents the sequential occurrence of that Process.
 * **Name:** The **Name** column displays the Process name associated with the Request. Click the Process name to [view the Request summary](request-details.md#information-for-in-progress-requests).
 * **Status:** The **Status** column displays the **In Progress** status for all Requests in this view.
 * **Participants:** The **Participants** column displays each Request participant's avatar. Hover your cursor over a user's avatar to view that person's full name.
@@ -30,8 +31,8 @@ The **In Progress** page displays the following information in tabular format ab
 
 To [view a Request summary](request-details.md), do one of the following:
 
-* From the **Name** column, click the Process name associated with the Request that you want to view.
-* Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-requests.png)for the Request that you want to view its summary.
+* From the **\#** column, click the Request number associated with the Process displaying in the **Name** column to view its summary.
+* Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-requests.png)for the Request to view its summary.
 
 ### Search for a Request
 
