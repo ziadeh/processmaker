@@ -37,12 +37,17 @@ The **My Requests** page displays the following information in tabular format ab
 
 To [view a Request summary](request-details.md), do one of the following:
 
-* From the **\#** column, click the Request number associated with the Process displaying in the **Name** column to view its summary.
+* From the **\#** column, click the Request number associated with the Process displaying in the **Name** column to view its summary. This number represents the sequential occurrence of that Process.
 * Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-requests.png)for the Request to view its summary.
 
 ### Search for a Request
 
-Use Request data to [search](search-for-a-request.md) for Requests on this page.
+Use Request data to [search](search-for-a-request.md) for Requests on this page based on the following criteria:
+
+* **Process:** The Process name associated with a Request.
+* **Status:** The status of a Request.
+* **Requester:** The ProcessMaker user who started a Request.
+* **Participants:** Any ProcessMaker user participating in a Request.
 
 ### No Requests?
 
