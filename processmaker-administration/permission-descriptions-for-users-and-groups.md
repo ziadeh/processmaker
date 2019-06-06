@@ -158,9 +158,9 @@ Select the **View Processes** permission to use any of the other permissions in 
 
 The **Requests** category contains the following permission:
 
-* **View All Requests:** View the **All Requests** page and [Request information](../using-processmaker/requests/request-details.md) accessible from that page. See [View All Requests](../using-processmaker/requests/view-all-requests.md).
 * **Edit Request Data:** View the **Data** tab for a completed Request and edit the [completed Request data](../using-processmaker/requests/request-details.md#completed-tasks-summary) that is in JSON format. See [View a Request Summary](../using-processmaker/requests/request-details.md#editable-request-data).
 * **Edit Task Data:** View the **Data** tab for an assigned Task and edit the Task data that is in JSON format. See [View a Task Summary](../using-processmaker/task-management/view-a-task-summary.md#editable-task-data).
+* **View All Requests:** View the **All Requests** page and [Request information](../using-processmaker/requests/request-details.md) accessible from that page. See [View All Requests](../using-processmaker/requests/view-all-requests.md).
 
 ### Screens
 

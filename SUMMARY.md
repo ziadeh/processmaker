@@ -171,15 +171,10 @@
 * [On-Premises Server Requirements](install-processmaker/prerequisites.md)
 * [On-Premises Install Guide](install-processmaker/installation-guide.md)
 
-## Script Central
-
-## Connector Development
-
-* [What is a Connector?](connector-development/first-topic.md)
-* [Build a Connector](connector-development/build-a-connector.md)
-
-## Package Development and Distribution
+## Packages
 
 * [What is a Package?](package-development-distribution/first-topic.md)
-* [Package a Connector](package-development-distribution/package-a-connector.md)
+* [Available Packages from ProcessMaker](package-development-distribution/package-a-connector.md)
+
+## Script Central
 

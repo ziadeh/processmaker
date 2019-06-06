@@ -48,10 +48,14 @@ To [view a Request summary](request-details.md), do one of the following:
 
 Use Request data to [search](search-for-a-request.md) for Requests on this page based on the following criteria:
 
-* **Process:** The Process name associated with a Request.
-* **Status:** The status of a Request.
-* **Requester:** The ProcessMaker user who started a Request.
-* **Participants:** Any ProcessMaker user participating in a Request.
+* **Process:** Search using one or more Process names associated with a Request.
+* **Status:** Search using one or more of the following Request statuses:
+  * **In progress:** Include Requests that are in progress as part of your search criteria.
+  * **Completed:** Include Requests that are completed as part of your search criteria.
+  * **Error:** Include Requests that are in error as part of your search criteria.
+  * **Canceled:** Include Requests that have been canceled as part of your search criteria.
+* **Requester:** Search using one or more the ProcessMaker users who started a Request.
+* **Participants:** Search using one or more ProcessMaker users participating in a Request.
 
 ### No Requests?
 

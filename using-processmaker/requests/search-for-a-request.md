@@ -4,30 +4,38 @@ description: Search for any Request in which you started or participated.
 
 # Search for a Request
 
-## Search for a Request
+## Do a Basic Search for a Request
 
-Search for any Request that displays within the Request page you are viewing. Follow these steps to search for a Request within the displayed page:
+Follow these steps to do a basic search for a Request within the Request page you are viewing:
 
-1. Do one of the following:
-   * Click the **Requests** option from the top menu if it is not currently displayed. The **My Requests** page displays.
-   * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
-2. View any of the following Request pages to search its Requests:
-   * [My Requests](make-a-request.md) \(if it is not currently displayed\)
-   * [Requests in Progress](view-in-progress-requests.md)
-   * [Completed Requests](view-completed-requests.md)
-   * [All Requests](view-all-requests.md) \(Note that your ProcessMaker user account must have the [**Requests: All Requests** permission](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** tab.\)
-3. Enter in the **Search** field the Request data to filter Requests using any of the following criteria:
+1. Ensure that the basic search fields are displaying on the **Requests** page you are viewing.  
 
-   * **Name:** Filter by the Process name associated with the Request that displays in the **Name** column.
-   * **Status:** Filter by the Request status that displays in the **Status** column.
-   * **Request participant:** Filter by a Request participant's username.
-   * **Request data:** Filter using JSON objects associated with the Request data. To do this, you must know the JSON data objects associated with the Request's Process.
+   ![](../../.gitbook/assets/basic-request-search-requests.png)
 
-   For example, suppose that you wanted to search for a completed Request in which John Doe was a participant, and he requisitioned a laptop that cost less than $1,000. Enter the following Request data in the **Search** field:
+   If not, then click the **Basic Search** button![](../../.gitbook/assets/basic-search-button.gif).
 
-   `status="completed" and participant="jdoe" and (purchase.item="laptop" AND purchase.cost < 1000)`
+2. Use Request data to search for Requests on the displayed page based on the following criteria:
+   * **Process:** Search using one or more Process names associated with a Request.
+   * **Status:** Search using one or more of the following Request statuses:
+     * **In progress:** Include Requests that are in progress as part of your search criteria.
+     * **Completed:** Include Requests that are completed as part of your search criteria.
+     * **Error:** Include Requests that are in error as part of your search criteria.
+     * **Canceled:** Include Requests that have been canceled as part of your search criteria.
+   * **Requester:** Search using one or more the ProcessMaker users who started a Request.
+   * **Participants:** Search using one or more ProcessMaker users participating in a Request.
+3. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
 
-As you enter text into the **Search** field, Requests display that match your entered text.
+## Do an Advanced Search for a Request
+
+1. Ensure that the advanced search field is displaying on the **Requests** page you are viewing.  
+
+   ![](../../.gitbook/assets/advanced-request-search-requests.png)
+
+   If not, then click the **Advanced Search** button![](../../.gitbook/assets/advanced-search-button.png).
+
+2. Use Request data to search for Requests on the displayed page based on the following syntax:
+   * dsfdf
+3. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
 
 {% hint style="info" %}
 ### Scope of Search Results <a id="search-for-a-request"></a>
