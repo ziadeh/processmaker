@@ -1,10 +1,10 @@
 ---
-description: Search for any Request in which you started or participated.
+description: Search for any Request in which you started or have been a participant.
 ---
 
 # Search for a Request
 
-## Do a Basic Search for a Request
+## Basic Search for a Request
 
 Follow these steps to do a basic search for a Request within the Request page you are viewing:
 
@@ -17,15 +17,15 @@ Follow these steps to do a basic search for a Request within the Request page yo
 2. Use Request data to search for Requests on the displayed page based on the following criteria:
    * **Process:** Search using one or more Process names associated with a Request.
    * **Status:** Search using one or more of the following Request statuses:
-     * **In progress:** Include Requests that are in progress as part of your search criteria.
-     * **Completed:** Include Requests that are completed as part of your search criteria.
+     * **In progress:** Include Requests that are in progress as part of your search criteria. Requests that are in progress are included by default when searching for Requests on the **In Progress** page.
+     * **Completed:** Include Requests that are completed as part of your search criteria. Requests that are completed are included by default when searching for Requests on the **Completed** page.
      * **Error:** Include Requests that are in error as part of your search criteria.
      * **Canceled:** Include Requests that have been canceled as part of your search criteria.
-   * **Requester:** Search using one or more the ProcessMaker users who started a Request.
+   * **Requester:** Search using one or more the ProcessMaker users who started a Request. The currently logged on ProcessMaker user is included by default when searching for Requests on the **My Requests** page.
    * **Participants:** Search using one or more ProcessMaker users participating in a Request.
 3. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
 
-## Do an Advanced Search for a Request
+## Advanced Search for a Request
 
 1. Ensure that the advanced search field is displaying on the **Requests** page you are viewing.  
 

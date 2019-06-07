@@ -36,7 +36,7 @@ To [view a Request summary](request-details.md), do one of the following:
 
 ### Search for a Request
 
-Use Request data to [search](search-for-a-request.md) for Requests on this page based on the following criteria:
+Use Request data to search for Requests on this page based on the following criteria:
 
 * **Process:** Search using one or more Process names associated with a Request.
 * **Status:** Search using one or more of the following Request statuses:
@@ -46,6 +46,8 @@ Use Request data to [search](search-for-a-request.md) for Requests on this page 
   * **Canceled:** Include Requests that have been canceled as part of your search criteria.
 * **Requester:** Search using one or more the ProcessMaker users who started a Request.
 * **Participants:** Search using one or more ProcessMaker users participating in a Request.
+
+You can do [basic](search-for-a-request.md#do-a-basic-search-for-a-request) and [advanced](search-for-a-request.md#do-an-advanced-search-for-a-request) searches for Requests.
 
 ### No Requests?
 
