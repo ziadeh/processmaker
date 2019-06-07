@@ -8,13 +8,18 @@ description: Search for any Request in which you started or have been a particip
 
 Follow these steps to do a basic search for a Request within the Request page you are viewing:
 
-1. Ensure that the basic search fields are displaying on the **Requests** page you are viewing.  
+1. Go to one of the following Requests pages:
+   * My Requests. See [View Your Requests That You Started](view-started-requests.md#view-your-requests).
+   * In Progress. See [View Requests That Are In Progress](view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
+   * Completed. See [View Completed Requests](view-completed-requests.md#view-completed-requests-in-which-you-participated).
+   * All Requests. See [View All Requests](view-all-requests.md#view-all-requests-in-your-organization). \(To view the **All Requests** page, your ProcessMaker user account must be assigned the [**View All Requests**](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission.\)
+2. Ensure that the basic search fields are displaying on the **Requests** page you are viewing.  
 
    ![](../../.gitbook/assets/basic-request-search-requests.png)
 
    If not, then click the **Basic Search** button![](../../.gitbook/assets/basic-search-button.gif).
 
-2. Use Request data to search for Requests on the displayed page based on the following criteria:
+3. Use Request data to search for Requests on the displayed page based on the following criteria:
    * **Process:** Search using one or more Process names associated with a Request.
    * **Status:** Search using one or more of the following Request statuses:
      * **In progress:** Include Requests that are in progress as part of your search criteria. Requests that are in progress are included by default when searching for Requests on the **In Progress** page.
@@ -23,19 +28,63 @@ Follow these steps to do a basic search for a Request within the Request page yo
      * **Canceled:** Include Requests that have been canceled as part of your search criteria.
    * **Requester:** Search using one or more the ProcessMaker users who started a Request. The currently logged on ProcessMaker user is included by default when searching for Requests on the **My Requests** page.
    * **Participants:** Search using one or more ProcessMaker users participating in a Request.
-3. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
+4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
 
 ## Advanced Search for a Request
 
-1. Ensure that the advanced search field is displaying on the **Requests** page you are viewing.  
+1. Go to one of the following Requests pages:
+   * My Requests. See [View Your Requests That You Started](view-started-requests.md#view-your-requests).
+   * In Progress. See [View Requests That Are In Progress](view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
+   * Completed. See [View Completed Requests](view-completed-requests.md#view-completed-requests-in-which-you-participated).
+   * All Requests. See [View All Requests](view-all-requests.md#view-all-requests-in-your-organization). \(To view the **All Requests** page, your ProcessMaker user account must be assigned the [**View All Requests**](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission.\)
+2. Ensure that the advanced search field is displaying on the **Requests** page you are viewing.  
 
    ![](../../.gitbook/assets/advanced-request-search-requests.png)
 
    If not, then click the **Advanced Search** button![](../../.gitbook/assets/advanced-search-button.png).
 
-2. Use Request data to search for Requests on the displayed page based on the following syntax:
-   * dsfdf
-3. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
+3. Use Request data to search for Requests on the displayed page based on the following syntax that is not case sensitive:
+
+   * **Process\(es\):**
+     * Use the following syntax as a guide to include one Process in your search criteria:
+
+       `(request = "exact Process name including spaces")`
+
+     * Use the following syntax as a guide to include two or more Processes in your search criteria:
+
+       `(request = "Process name 1" OR request = "Process name 2")`
+   * **Status\(es\):**
+     * Use the following syntax as a guide to include one Request status in your search criteria:
+
+       `(status = "In Progress")`
+
+     * Use the following syntax as a guide to include two or more Request statuses in your search criteria:
+
+       `(status = "Completed" OR status = "Canceled")`
+   * **Requester\(s\):**
+     * Use the following syntax as a guide to include one Requester in your search criteria:
+
+       `(requester = "Username1")`
+
+     * Use the following syntax as a guide to include two or more Requesters in your search criteria:
+
+       `(requester = "Username1" OR requester = "Username2")`
+   * **Participant\(s\):**
+     * Use the following syntax as a guide to include one Request participant in your search criteria:
+
+       `(participant = "Username3")`
+
+     * Use the following syntax as a guide to include two or more Request participants in your search criteria:
+
+       `(participant = "Username3" OR participant = "Username4")`
+   * **Operators between search criteria:**
+     * Use `AND` operators between each set of search criteria.
+
+   Below is an example of a valid advanced Request search:
+
+   `(request = "Process Name 1" OR request = "Process Name 2") AND (status = "Canceled" OR status = "Error") AND (requester = "Username1" OR requester = "Username2") AND (participant = "Username3" OR participant = "Username4")`
+
+4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
 
 {% hint style="info" %}
 ### Scope of Search Results <a id="search-for-a-request"></a>
