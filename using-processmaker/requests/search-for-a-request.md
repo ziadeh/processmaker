@@ -8,11 +8,11 @@ description: Search for any Request in which you started or have been a particip
 
 Follow these steps to do a basic search for a Request within the Request page you are viewing:
 
-1. Go to one of the following Requests pages:
-   * My Requests. See [View Your Requests That You Started](view-started-requests.md#view-your-requests).
-   * In Progress. See [View Requests That Are In Progress](view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
-   * Completed. See [View Completed Requests](view-completed-requests.md#view-completed-requests-in-which-you-participated).
-   * All Requests. See [View All Requests](view-all-requests.md#view-all-requests-in-your-organization). \(To view the **All Requests** page, your ProcessMaker user account must be assigned the [**View All Requests**](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission.\)
+1. Go to one of the following **Requests** pages:
+   * **My Requests** page. See [View Your Requests That You Started](view-started-requests.md#view-your-requests).
+   * **In Progress** page. See [View Requests That Are In Progress](view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
+   * **Completed** page. See [View Completed Requests](view-completed-requests.md#view-completed-requests-in-which-you-participated).
+   * **All Requests** page. See [View All Requests](view-all-requests.md#view-all-requests-in-your-organization). \(To view the **All Requests** page, your ProcessMaker user account must be assigned the [**View All Requests**](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission.\)
 2. Ensure that the basic search fields are displaying on the **Requests** page you are viewing.  
 
    ![](../../.gitbook/assets/basic-request-search-requests.png)
@@ -32,11 +32,11 @@ Follow these steps to do a basic search for a Request within the Request page yo
 
 ## Advanced Search for a Request
 
-1. Go to one of the following Requests pages:
-   * My Requests. See [View Your Requests That You Started](view-started-requests.md#view-your-requests).
-   * In Progress. See [View Requests That Are In Progress](view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
-   * Completed. See [View Completed Requests](view-completed-requests.md#view-completed-requests-in-which-you-participated).
-   * All Requests. See [View All Requests](view-all-requests.md#view-all-requests-in-your-organization). \(To view the **All Requests** page, your ProcessMaker user account must be assigned the [**View All Requests**](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission.\)
+1. Go to one of the following **Requests** pages:
+   * **My Requests** page. See [View Your Requests That You Started](view-started-requests.md#view-your-requests).
+   * **In Progress** page. See [View Requests That Are In Progress](view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
+   * **Completed** page. See [View Completed Requests](view-completed-requests.md#view-completed-requests-in-which-you-participated).
+   * **All Requests** page. See [View All Requests](view-all-requests.md#view-all-requests-in-your-organization). \(To view the **All Requests** page, your ProcessMaker user account must be assigned the [**View All Requests**](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission.\)
 2. Ensure that the advanced search field is displaying on the **Requests** page you are viewing.  
 
    ![](../../.gitbook/assets/advanced-request-search-requests.png)
@@ -89,9 +89,7 @@ Follow these steps to do a basic search for a Request within the Request page yo
 {% hint style="info" %}
 ### Scope of Search Results <a id="search-for-a-request"></a>
 
-Search results display only for Requests within the Request page you are viewing. For example, performing a search from within the **My Requests** page displays results only for Requests within that page.
-
-To search using Request data objects
+Search results display only for Requests within the **Requests** page you are viewing. For example, performing a search from within the **My Requests** page displays results only for Requests within that page.
 
 ### View a Request Summary <a id="view-information-about-a-request"></a>
 
