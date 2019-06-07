@@ -4,15 +4,19 @@ description: Search for any Request in which you started or have been a particip
 
 # Search for a Request
 
+## Overview
+
+Do [basic](search-for-a-request.md#basic-search-for-a-request) or [advanced](search-for-a-request.md#advanced-search-for-a-request) searches for Requests. Search results display only for Requests within the **Requests** page you are viewing. For example, performing a search from within the **My Requests** page displays results only for Requests within that page.
+
 ## Basic Search for a Request
 
 Follow these steps to do a basic search for a Request within the Request page you are viewing:
 
-1. Go to one of the following **Requests** pages:
+1. View one of the following **Requests** pages:
    * **My Requests** page. See [View Your Requests That You Started](view-started-requests.md#view-your-requests).
    * **In Progress** page. See [View Requests That Are In Progress](view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
    * **Completed** page. See [View Completed Requests](view-completed-requests.md#view-completed-requests-in-which-you-participated).
-   * **All Requests** page. See [View All Requests](view-all-requests.md#view-all-requests-in-your-organization). \(To view the **All Requests** page, your ProcessMaker user account must be assigned the [**View All Requests**](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission.\)
+   * **All Requests** page. See [View All Requests](view-all-requests.md#view-all-requests-in-your-organization). \(Note that your ProcessMaker user account must have the [**Requests: View All Requests** permission](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** tab.\)
 2. Ensure that the basic search fields are displaying on the **Requests** page you are viewing.  
 
    ![](../../.gitbook/assets/basic-request-search-requests.png)
@@ -36,7 +40,7 @@ Follow these steps to do a basic search for a Request within the Request page yo
    * **My Requests** page. See [View Your Requests That You Started](view-started-requests.md#view-your-requests).
    * **In Progress** page. See [View Requests That Are In Progress](view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
    * **Completed** page. See [View Completed Requests](view-completed-requests.md#view-completed-requests-in-which-you-participated).
-   * **All Requests** page. See [View All Requests](view-all-requests.md#view-all-requests-in-your-organization). \(To view the **All Requests** page, your ProcessMaker user account must be assigned the [**View All Requests**](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission.\)
+   * **All Requests** page. See [View All Requests](view-all-requests.md#view-all-requests-in-your-organization). \(Note that your ProcessMaker user account must have the [**Requests: View All Requests** permission](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** tab.\)
 2. Ensure that the advanced search field is displaying on the **Requests** page you are viewing.  
 
    ![](../../.gitbook/assets/advanced-request-search-requests.png)
@@ -87,15 +91,11 @@ Follow these steps to do a basic search for a Request within the Request page yo
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
 
 {% hint style="info" %}
-### Scope of Search Results <a id="search-for-a-request"></a>
-
-Search results display only for Requests within the **Requests** page you are viewing. For example, performing a search from within the **My Requests** page displays results only for Requests within that page.
-
 ### View a Request Summary <a id="view-information-about-a-request"></a>
 
 To [view a Request summary](request-details.md), do one of the following:
 
-* From the **Name** column, click the Process name associated with the Request that you want to view.
+* From the **\#** column, click the Request number associated with the Process displaying in the **Name** column to view its summary. This number represents the sequential occurrence of that Process.
 * Click the **Open Request** icon![](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LJ0aNaVW1m7sNsxVJLV%2F-LVEg50XN0-PSaV6jG0a%2F-LVEzGdlTxxh1B2FNuS7%2FOpen%20Request%20Icon%20-%20Requests.png?alt=media&token=006d03ea-98dd-4227-b702-31f7e709df10)for the Request that you want to view its summary.
 
 ### No Search Results?
