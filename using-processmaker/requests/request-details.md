@@ -84,7 +84,7 @@ Each in-progress Request displays a summary of the Request participants to that 
 The following summary displays about participants in an in-progress Request:
 
 * **Requested By:** The **Requested By** field displays the avatar and full name of the person who started the selected Request. Hover your cursor over a user's avatar to view that person's full name.
-* **Cancel Request:** The **Cancel Request** field allows a Request participant or ProcessMaker Administrator to cancel the Request if that Request participant's user account has the appropriate permission to cancel Requests for that Process. If your user account does not have the permission\(s\) to cancel Requests for that Process, the **Cancel Request** field does not display. See [Cancel a Request](delete-a-request.md) for more information.
+* **Cancel Request:** The **Cancel Request** field allows a Request participant or ProcessMaker Administrator to cancel the Request if that Request participant's user account has the appropriate permission to cancel Requests for that Process. If your user account does not have the permission\(s\) to cancel Requests for that Process, the **Cancel Request** field does not display. See [Cancel a Request](delete-a-request.md).
 * **Participants:** The **Participants** field displays each Request participant's avatar in the selected Request to that time. Hover your cursor over a user's avatar to view that person's full name.
 * **Request creation date:** The date and time the Request was created displays below the **Participants** field. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
@@ -123,7 +123,7 @@ The **Summary** tab only displays information for completed Requests. If you sel
 ### Editable Request Data
 
 {% hint style="info" %}
-Your user account or group membership must have the "Requests: Edit Request Data" permission to edit Request data.
+Your user account or group membership must have the [**Requests: Edit Request Data** permission](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to edit Request data.
 
 See the [Request permissions](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
