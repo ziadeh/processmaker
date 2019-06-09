@@ -19,7 +19,7 @@ Follow these steps to view all your completed Tasks:
 The **Completed Tasks** page displays the following information in tabular format about all your completed  Tasks:
 
 * **Task:** The **Task** column displays the name of the completed Task. If you click the Task name, the Task title displays with the following message: **Task Completed** along with [information about the completed Task](view-completed-tasks.md#view-information-about-a-completed-task).
-* **Request:** The **Request** column displays the name of the Process associated with the Request. Click the Process name to [view the Request summary](../requests/request-details.md).
+* **Request:** The **Request** column displays the name of the Process associated with the Request. Click the Process name to [view the Request summary](../requests/request-details/).
 * **Assignee:** The **Assignee** column displays the avatar for the username to whom the Task was assigned. Hover your cursor over a user's avatar to view that person's full name.
 * **Due:** The **Due** column displays the date the Task was due. The time zone setting to display the time is according to the ProcessMaker 4 server unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
@@ -33,7 +33,7 @@ To view a [completed Task and its summary](view-a-task-summary.md#summary-for-a-
 
 ### View a Request Summary Associated with a Task
 
-To [view a Request summary](../requests/request-details.md), do one of the following:
+To [view a Request summary](../requests/request-details/), do one of the following:
 
 * From the **Request** column, click the Process name associated with the Task that you want to view.
 * Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-assigned-tasks.png)for the Request associated with the Task.
@@ -53,7 +53,7 @@ If there are no completed Tasks by anyone in your organization, the following me
 
 {% page-ref page="view-tasks-you-need-to-do.md" %}
 
-{% page-ref page="../requests/request-details.md" %}
+{% page-ref page="../requests/request-details/" %}
 
 {% page-ref page="../control-how-requests-display-in-a-tab.md" %}
 

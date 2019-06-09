@@ -32,7 +32,7 @@ You may [start a Request](make-a-request.md#start-a-request) for Processes that 
 
 {% page-ref page="search-for-a-request.md" %}
 
-{% page-ref page="request-details.md" %}
+{% page-ref page="request-details/" %}
 
 {% page-ref page="../notifications.md" %}
 

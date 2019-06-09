@@ -38,7 +38,7 @@ Follow these steps to configure a Process:
 
        ![](../../../.gitbook/assets/close-remove-delete-user-group-drop-down-processes.png)
    * From the **Cancel Screen** drop-down menu, select a ProcessMaker Screen to display when a Request for this Process is canceled.
-   * From the **Edit Data** drop-down menu, specify from which ProcessMaker users or groups have permission to [edit Request data](../../../using-processmaker/requests/request-details.md#editable-request-data) from this Process. By editing Request data, these users and group members can adjust the data that Request participants have submitted during a Request. If no users or groups are selected, no one can edit Request data from this Process. Follow these guidelines:
+   * From the **Edit Data** drop-down menu, specify from which ProcessMaker users or groups have permission to [edit Request data](../../../using-processmaker/requests/request-details/#editable-request-data) from this Process. By editing Request data, these users and group members can adjust the data that Request participants have submitted during a Request. If no users or groups are selected, no one can edit Request data from this Process. Follow these guidelines:
      * **Select User\(s\)/Group\(s\):** Select which user\(s\) and/or group\(s\) have permission to edit Request data from this Process. Multiple users and/or can be selected. Use **Shift** to select multiple consecutive users/groups or use **Ctrl** to select multiple non-consecutive users/groups.
      * **Remove User\(s\)/Group\(s\):** To remove a user or group added to this field, either click the icon![](../../../.gitbook/assets/close-remove-delete-user-group-processes.png)for that user/group or mouse-hover over the user/group and press **Enter**.   
 

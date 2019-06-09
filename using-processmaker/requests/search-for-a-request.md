@@ -92,7 +92,7 @@ Follow these steps to do a basic search for a Request within the Request page yo
 {% hint style="info" %}
 ### View a Request Summary <a id="view-information-about-a-request"></a>
 
-To [view a Request summary](request-details.md), do one of the following:
+To [view a Request summary](request-details/), do one of the following:
 
 * From the **\#** column, click the Request number associated with the Process displaying in the **Name** column to view its summary. This number represents the sequential occurrence of that Process.
 * Click the **Open Request** icon![](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LJ0aNaVW1m7sNsxVJLV%2F-LVEg50XN0-PSaV6jG0a%2F-LVEzGdlTxxh1B2FNuS7%2FOpen%20Request%20Icon%20-%20Requests.png?alt=media&token=006d03ea-98dd-4227-b702-31f7e709df10)for the Request that you want to view its summary.
@@ -118,5 +118,5 @@ If there are no search results, the following message displays: **No data availa
 
 {% page-ref page="view-all-requests.md" %}
 
-{% page-ref page="request-details.md" %}
+{% page-ref page="request-details/" %}
 

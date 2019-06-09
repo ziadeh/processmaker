@@ -43,5 +43,5 @@ After the Request starts, that Request displays in the [**My Requests** page](vi
 
 {% page-ref page="search-for-a-request.md" %}
 
-{% page-ref page="request-details.md" %}
+{% page-ref page="request-details/" %}
 

@@ -28,7 +28,7 @@ If there are fewer than 10 records to display in the table, pagination functions
 
 {% page-ref page="requests/view-all-requests.md" %}
 
-{% page-ref page="requests/request-details.md" %}
+{% page-ref page="requests/request-details/" %}
 
 {% page-ref page="task-management/view-tasks-you-need-to-do.md" %}
 

@@ -9,8 +9,8 @@ description: Receive updates about Requests and your assigned Tasks.
 Request participants receive notifications when the following events occur:
 
 * A Request participant is assigned a [Task](task-management/what-is-a-task.md). Selecting a notification for an assigned Task opens that [Task's summary](task-management/view-a-task-summary.md#summary-for-an-assigned-task).
-* The Requester's Request is canceled. Selecting a notification for a canceled Request opens that [Request's summary](requests/request-details.md#summary-for-canceled-requests).
-* The Requester's Request is completed. Selecting a notification for a completed Request opens that [Request's summary](requests/request-details.md#summary-for-completed-requests).
+* The Requester's Request is canceled. Selecting a notification for a canceled Request opens that [Request's summary](requests/request-details/#summary-for-canceled-requests).
+* The Requester's Request is completed. Selecting a notification for a completed Request opens that [Request's summary](requests/request-details/#summary-for-completed-requests).
 
 ## View New Notifications
 
@@ -111,5 +111,5 @@ To search for a notification in the **All Notifications** page, select the **Sea
 
 {% page-ref page="task-management/view-a-task-summary.md" %}
 
-{% page-ref page="requests/request-details.md" %}
+{% page-ref page="requests/request-details/" %}
 

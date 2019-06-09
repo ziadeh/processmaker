@@ -20,7 +20,7 @@ Follow these steps to view completed Requests in which you participated:
 The **Completed** page displays the following information in tabular format about completed Requests:
 
 * **\#:** The **\#** column displays the Request number associated with the Process. This number represents the sequential occurrence of that Process.
-* **Name:** The **Name** column displays the Process name associated with the Request. Click the Process name to [view the Request summary](request-details.md#information-for-completed-requests).
+* **Name:** The **Name** column displays the Process name associated with the Request. Click the Process name to [view the Request summary](request-details/#information-for-completed-requests).
 * **Status:** The **Status** column displays the **Completed** status for all Requests in this view.
 * **Participants:** The **Participants** column displays each Request participant's avatar. Hover your cursor over a user's avatar to view that person's full name.
 * **Started:** The **Started** column displays the date and time you made the Request. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
@@ -29,7 +29,7 @@ The **Completed** page displays the following information in tabular format abou
 {% hint style="info" %}
 ### View a Request Summary
 
-To [view a Request summary](request-details.md), do one of the following:
+To [view a Request summary](request-details/), do one of the following:
 
 * From the **\#** column, click the Request number associated with the Process displaying in the **Name** column to view its summary. This number represents the sequential occurrence of that Process.
 * Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-requests.png)for the Request to view its summary.
@@ -74,5 +74,5 @@ If there are no Requests in this tab, the following message displays: **No Resul
 
 {% page-ref page="search-for-a-request.md" %}
 
-{% page-ref page="request-details.md" %}
+{% page-ref page="request-details/" %}
 

@@ -64,7 +64,7 @@ Canceled Requests display in the [**All Requests** page](view-all-requests.md). 
 
 {% page-ref page="search-for-a-request.md" %}
 
-{% page-ref page="request-details.md" %}
+{% page-ref page="request-details/" %}
 
 
 
