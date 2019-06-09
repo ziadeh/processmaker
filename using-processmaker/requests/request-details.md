@@ -1,8 +1,8 @@
 ---
-description: View the summary for a Request.
+description: Learn what information displays in a Request summary based on its status type.
 ---
 
-# View a Request Summary
+# Request Summary Descriptions by Status Type
 
 ## Overview
 
