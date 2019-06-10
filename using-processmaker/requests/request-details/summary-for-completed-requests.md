@@ -30,7 +30,7 @@ The **Summary** tab displays the JSON-formatted key/value pairs in tabular forma
 * **KEY:** The **KEY** column displays the JSON key name that represents the ProcessMaker Screen control name the Request participant entered data or specified through the ProcessMaker Spark REST API. For example, a Text control to enter your name could be named `Full Name` which would display in the **Key** column here.
 * **VALUE:** The **VALUE** column displays that key's value as entered by a person manually interacting with a form or specified through the ProcessMaker Spark REST API. For example, a Text control to enter your name could have the value `John Doe` which would display in the **Value** column here.
 
-Below the table, the history of the Request displays all Request actions. [See Request History](./#request-history).
+Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
 
 {% hint style="info" %}
 ### Summary Tab Displays Information for Completed Requests
@@ -62,7 +62,7 @@ Follow these steps to edit and save the completed Request data from those values
 2. From the editable JSON field, change the values that were submitted during the Request to those that you want.
 3. Click **Save**. The following message displays when the Request values are changed: **Request data successfully updated**.
 
-Below the editable JSON field, the history of the Request displays all Request actions. [See Request History](./#request-history).
+Below the editable JSON field, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
 
 ## Completed Tasks Summary
 
@@ -76,7 +76,7 @@ The **Completed** tab displays the following summary in tabular format about ass
 * **Assigned:** The **Assigned** column displays the username's avatar to whom the Task was assigned. Hover your cursor over a user's avatar to view that person's full name.
 * **Due:** The **Due** column displays the date the Task was due. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
-Below the table, the history of the Request displays all Request actions. [See Request History](./#request-history).
+Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
 
 {% hint style="info" %}
 ### Not a Completed Request?
@@ -87,6 +87,20 @@ If the selected Request is not completed, the following message displays: **No R
 
 [Control how tabular information displays](../../control-how-requests-display-in-a-tab.md), including how to sort columns or how many items display per page.
 {% endhint %}
+
+## Files Associated with the Request
+
+The **Files** tab displays the summary of all files associated with the completed Request. The **Files** tab only displays if at least one file was uploaded to the Request. The name of each file is linked to the file so you can download that file to your local computer or network location.
+
+![&quot;Files&quot; tab for an in-progress Request&apos;s summary](../../../.gitbook/assets/files-tab-request-summary-requests.png)
+
+The **Files** tab displays the following summary in tabular format about the files associated with the Request:
+
+* **File Name:** The **File Name** column displays the name of each associated with the selected Request. Click the file name to download it to your local computer or network location. 
+* **MIME Type:** The **MIME Type** column displays the MIME type for the associated file.
+* **Created At:** The **Created At** column displays the date the file became associated with the selected Request. The file became associated with the Request when the person who attached it submitted the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) to which the file was uploaded. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+
+Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
 
 ## Request Participants
 
@@ -127,4 +141,6 @@ The following information displays about each event in the Request history:
 {% page-ref page="summary-for-canceled-requests.md" %}
 
 {% page-ref page="summary-for-requests-with-errors.md" %}
+
+{% page-ref page="../../../designing-processes/design-forms/what-is-a-form.md" %}
 

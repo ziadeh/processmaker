@@ -16,7 +16,7 @@ Follow these steps to view a summary for an in-progress Request:
    * From the **\#** column in the Request page, click the Request number associated with the Process that you want to view. That Request's summary displays.
    * Click the **Open Request** icon![](../../../.gitbook/assets/open-request-icon-requests.png)for a Request. That Request's summary displays.
 
-## Assigned Participant Tasks
+## Tasks Assigned to Request Participants
 
 The **Tasks** tab displays the summary for all assigned Tasks to Request participants to that time.
 
@@ -28,7 +28,7 @@ The **Tasks** tab displays the following summary in tabular format about assigne
 * **Assigned:** The **Assigned** column displays the username's avatar to whom the Task is assigned. Hover your cursor over a user's avatar to view that person's full name.
 * **Due:** The **Due** column displays the date the Task is due. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
-Below the table, the history of the Request displays all Request actions. [See Request History](./#request-history).
+Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
 
 {% hint style="info" %}
 ### No Assigned Tasks?
@@ -58,7 +58,7 @@ The **Completed** tab displays the following summary in tabular format about com
 * **Assigned:** The **Assigned** column displays the username's avatar to whom the Task was assigned. Hover your cursor over a user's avatar to view that person's full name.
 * **Due:** The **Due** column displays the date the Task was due. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
-Below the table, the history of the Request displays all Request actions. [See Request History](./#request-history).
+Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
 
 {% hint style="info" %}
 ### There Are No Completed Tasks?
@@ -69,6 +69,20 @@ If the selected Request has no completed Tasks, the following message displays: 
 
 [Control how tabular information displays](../../control-how-requests-display-in-a-tab.md), including how to sort columns or how many items display per page.
 {% endhint %}
+
+## Files Associated with the Request
+
+The **Files** tab displays the summary of all files associated with the Request to that time. The **Files** tab only displays if at least one file has been uploaded to the Request. The name of each file is linked to the file so you can download that file to your local computer or network location.
+
+![&quot;Files&quot; tab for an in-progress Request&apos;s summary](../../../.gitbook/assets/files-tab-request-summary-requests.png)
+
+The **Files** tab displays the following summary in tabular format about the files associated with the Request:
+
+* **File Name:** The **File Name** column displays the name of each associated with the selected Request. Click the file name to download it to your local computer or network location. 
+* **MIME Type:** The **MIME Type** column displays the MIME type for the associated file.
+* **Created At:** The **Created At** column displays the date the file became associated with the selected Request. The file became associated with the Request when the person who attached it submitted the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) to which the file was uploaded. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+
+Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
 
 ## Request Participants
 
@@ -110,4 +124,6 @@ The following information displays about each event in the Request history:
 {% page-ref page="summary-for-canceled-requests.md" %}
 
 {% page-ref page="summary-for-requests-with-errors.md" %}
+
+{% page-ref page="../../../designing-processes/design-forms/what-is-a-form.md" %}
 
