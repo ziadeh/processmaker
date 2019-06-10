@@ -33,7 +33,7 @@ Below the table, the history of the Request displays all Request actions. See [R
 {% hint style="info" %}
 ### No Assigned Tasks?
 
-If there are no assigned Tasks for the selected Request, the following message displays: **No Results**.
+If there are no assigned Tasks for the selected Request, the following message displays: **No Data Available**.
 
 ### Display Information the Way You Want It
 
@@ -63,7 +63,7 @@ Below the table, the history of the Request displays all Request actions. See [R
 {% hint style="info" %}
 ### There Are No Completed Tasks?
 
-If the selected Request has no completed Tasks, the following message displays: **No Results**.
+If the selected Request has no completed Tasks, the following message displays: **No Data Available**.
 
 ### Display Information the Way You Want It
 

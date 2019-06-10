@@ -33,14 +33,6 @@ The **Summary** tab displays the JSON-formatted key/value pairs in tabular forma
 Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
 
 {% hint style="info" %}
-### Summary Tab Displays Information for Completed Requests
-
-The **Summary** tab only displays information for completed Requests. If you select the **Summary** tab for an in-progress Request, the following message displays: **Request In Progress: This Request is currently in progress. This screen will be populated once the Request is completed.**
-
-![](../../../.gitbook/assets/summary-tab-request-in-progress-request-information-request.png)
-
-### Display Information the Way You Want It
-
 [Control how tabular information displays](../../control-how-requests-display-in-a-tab.md), including how to sort columns or how many items display per page.
 {% endhint %}
 
@@ -81,7 +73,7 @@ Below the table, the history of the Request displays all Request actions. See [R
 {% hint style="info" %}
 ### Not a Completed Request?
 
-If the selected Request is not completed, the following message displays: **No Results**.
+If the selected Request is not completed, the following message displays: **No Data Available**.
 
 ### Display Information the Way You Want It
 

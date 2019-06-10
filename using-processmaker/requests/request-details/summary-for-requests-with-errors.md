@@ -48,7 +48,7 @@ Below the table, the history of the Request displays all Request actions. See [R
 {% hint style="info" %}
 ### No Assigned Tasks?
 
-If there are no assigned Tasks for the selected Request, the following message displays: **No Results**.
+If there are no assigned Tasks for the selected Request, the following message displays: **No Data Available**.
 
 ### Display Information the Way You Want It
 
@@ -92,7 +92,7 @@ Below the table, the history of the Request displays all Request actions. See [R
 {% hint style="info" %}
 ### There Are No Completed Tasks?
 
-If the selected Request has no completed Tasks, the following message displays: **No Results**.
+If the selected Request has no completed Tasks, the following message displays: **No Data Available**.
 
 ### Display Information the Way You Want It
 
@@ -103,7 +103,7 @@ If the selected Request has no completed Tasks, the following message displays: 
 
 The **Files** tab displays the summary of all files associated with the Request error occurred. The **Files** tab only displays if at least one file has been uploaded to the Request. The name of each file is linked to the file so you can download that file to your local computer or network location.
 
-![&quot;Files&quot; tab for an in-progress Request&apos;s summary](../../../.gitbook/assets/files-tab-request-summary-requests.png)
+~~NEED A SCREEN SHOT OF THE FILES TAB WITH AN ERROR~~
 
 The **Files** tab displays the following summary in tabular format about the files associated with the Request:
 

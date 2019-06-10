@@ -53,7 +53,7 @@ Below the table, the history of the Request displays all Request actions to the 
 {% hint style="info" %}
 ### There Are No Completed Tasks?
 
-If the selected Request has no completed Tasks, the following message displays: **No Results**.
+If the selected Request has no completed Tasks, the following message displays: **No Data Available**.
 
 ### Display Information the Way You Want It
 
