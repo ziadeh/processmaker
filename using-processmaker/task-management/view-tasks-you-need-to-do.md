@@ -10,18 +10,20 @@ The **To Do Tasks** page displays all Tasks that are assigned to you.
 
 Follow these steps to view your assigned Tasks:
 
-1. [Log on](../log-in.md#log-in) to ProcessMaker. The **My Requests** page displays.
+1. Ensure that you are [logged on](../log-in.md#log-in) to ProcessMaker.
 2. Click the **Tasks** option from the top menu. The **To Do Tasks** page displays. Tasks that display on this page are assigned to you.
 
 {% hint style="info" %}
 If you are viewing your completed Tasks, click the **To Do** icon![](../../.gitbook/assets/to-do-icon-tasks.png) in the left sidebar.
 {% endhint %}
 
+~~RETAKE SCREENSHOT AFTER THE "STATUS" COLUMN IS REMOVED.~~
+
 ![&quot;To Do Tasks&quot; page displays your assigned Tasks](../../.gitbook/assets/to-do-tasks-tasks.png)
 
 The **To Do Tasks** page displays the following information in tabular format about your assigned Tasks:
 
-* **Name:** The **Name** column displays the name of the assigned Task. Click the Task name to [open the selected Task and view its summary](view-a-task-summary.md#summary-for-an-assigned-task).
+* **Task:** The **Task** column displays the name of the assigned Task. Click the Task name to [open the selected Task and view its summary](view-a-task-summary.md#summary-for-an-assigned-task).
 * **Request:** The **Request** column displays the Process name associated with the Request for the assigned Task. Click the Process name to [view the Request summary](../requests/request-details/).
 * **Assignee:** The **Assignee** column displays your avatar since all Tasks in this display are assigned to you. Hover your cursor over a user's avatar to view that person's full name.
 * **Due:** The **Due** column displays the date and time the Task is due. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
@@ -31,14 +33,14 @@ The **To Do Tasks** page displays the following information in tabular format ab
 
 To view an [assigned Task and its summary](view-a-task-summary.md#summary-for-an-assigned-task), do one of the following:
 
-* From the **Name** column, click the Task name that you want to view.
+* From the **Task** column, click the Task name that you want to view.
 * Click the **Open Task** icon![](../../.gitbook/assets/open-request-icon-requests.png)for the Task name that you want to view.
 
 ### View a Request Summary Associated with a Task
 
 To [view a Request summary](../requests/request-details/), do one of the following:
 
-* From the **Request** column, click the Process name associated with the Task that you want to view.
+* From the **Request** column, click the Request for the Task that you want to view.
 * Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-assigned-tasks.png)for the Request associated with the Task.
 
 ### Search for a Task
@@ -48,7 +50,7 @@ Use Request data to search for Tasks on this page based on the following criteri
 * **Request:** Search using one or more Requests based on the Process names associated with the Request\(s\).
 * **Task:** Search using one or more Task names as part of your search criteria.
 * **Status:** Search using one or more of the following Task statuses:
-  * **In progress:** Include Tasks that are assigned to you which are in progress as part of your search criteria.
+  * **In progress:** Include Tasks that are assigned to you which are in progress or not started as part of your search criteria.
   * **Completed:** Include Tasks that are you have completed as part of your search criteria.
 
 You can do [basic](search-for-a-task.md#basic-search-for-a-task) and [advanced](search-for-a-task.md#advanced-search-for-a-task) searches for Tasks.
@@ -59,7 +61,7 @@ A message displays above your assigned Tasks how many of those Tasks are overdue
 
 ![](../../.gitbook/assets/assigned-to-do-tasks-overdue-tasks.png)
 
-Furthermore, the due date for overdue Tasks display in a different color in the **Due** column than Tasks that are not overdue.
+Furthermore, the due dates for overdue Tasks display in a different color in the **Due** column than Tasks that are not overdue.
 
 ### No Assigned Tasks?
 

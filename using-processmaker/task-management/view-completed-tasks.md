@@ -10,7 +10,7 @@ The Completed Tasks page displays all your completed Tasks.
 
 Follow these steps to view all your completed Tasks:
 
-1. [Log on](../log-in.md#log-in) to ProcessMaker. The **My Requests** page displays.
+1. Ensure that you are [logged on](../log-in.md#log-in) to ProcessMaker.
 2. Click the **Tasks** option from the top menu. The **Completed Tasks** page displays.
 3. Click the **Completed** icon ![](../../.gitbook/assets/completed-icon-request%20%281%29.png)in the left sidebar. All your completed Tasks display.
 

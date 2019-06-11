@@ -10,10 +10,11 @@ The **Completed** page displays completed Requests in which you participated. Yo
 
 Follow these steps to view completed Requests in which you participated:
 
-1. Do one of the following:
+1. Ensure that you are [logged on](../log-in.md#log-on) to ProcessMaker.
+2. Do one of the following:
    * Click the **Requests** option from the top menu if it is not currently displayed. The **My Requests** page displays.
    * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
-2. Click the **Completed** tab or click the **Completed** icon![](../../.gitbook/assets/completed-icon-request.png)from the left sidebar. The **Completed Requests** page displays.
+3. Click the **Completed** tab or click the **Completed** icon![](../../.gitbook/assets/completed-icon-request.png)from the left sidebar. The **Completed Requests** page displays.
 
 ![&quot;Completed Requests&quot; page displays completed Requests in which you participated](../../.gitbook/assets/completed-request.png)
 

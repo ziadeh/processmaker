@@ -8,11 +8,12 @@ description: Learn what information displays in summaries for in-progress Reques
 
 Follow these steps to view a summary for an in-progress Request:
 
-1. View one of the following **Requests** pages:
+1. Ensure that you are [logged on](../../log-in.md#log-on) to ProcessMaker.
+2. View one of the following **Requests** pages:
    * **My Requests** page. See [View Your Requests That You Started](../view-started-requests.md#view-your-requests).
    * **In Progress** page. See [View Requests That Are In Progress](../view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
    * **All Requests** page. See [View All Requests](../view-all-requests.md#view-all-requests-in-your-organization). \(Note that your ProcessMaker user account must have the [**Requests: View All Requests** permission](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** page.\)
-2. Do one of the following:
+3. Do one of the following:
    * From the **\#** column in the Request page, click the Request number associated with the Process that you want to view. That Request's summary displays.
    * Click the **Open Request** icon![](../../../.gitbook/assets/open-request-icon-requests.png)for a Request. That Request's summary displays.
 

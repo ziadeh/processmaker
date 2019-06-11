@@ -8,8 +8,9 @@ description: View the summary for a Task.
 
 Follow these steps to view the summary for an assigned Task:
 
-1. [View all assigned Tasks.](view-tasks-you-need-to-do.md#view-your-assigned-tasks) The **To Do Tasks** page displays.
-2. Click the name of the Task from the **Name** column. The Task's [form](view-a-task-summary.md#form), Request [data](view-a-task-summary.md#data), and Task [summary](view-a-task-summary.md#summary) display.
+1. Ensure that you are [logged on](../log-in.md#log-on) to ProcessMaker.
+2. [View all assigned Tasks.](view-tasks-you-need-to-do.md#view-your-assigned-tasks) The **To Do Tasks** page displays.
+3. Click the name of the Task from the **Name** column. The Task's [form](view-a-task-summary.md#form), Request [data](view-a-task-summary.md#data), and Task [summary](view-a-task-summary.md#summary) display.
 
 Below is an example assigned Task.
 

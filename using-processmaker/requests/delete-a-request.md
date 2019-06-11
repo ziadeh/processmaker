@@ -19,15 +19,16 @@ If a Process is not configured to allow you to cancel Requests, then functionali
 
 Follow these steps to cancel a Request:
 
-1. Do one of the following:
+1. Ensure that you are [logged on](../log-in.md#log-on) to ProcessMaker Spark.
+2. Do one of the following:
    * Click the **Requests** option from the top menu if it is not currently displayed. The **My Requests** page displays.
    * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
-2. View one of the following **Requests** pages:
+3. View one of the following **Requests** pages:
    * **My Requests** page. See [View Your Requests That You Started](view-started-requests.md#view-your-requests).
    * **In Progress** page. See [View Requests That Are In Progress](view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
    * **Completed** page. See [View Completed Requests](view-completed-requests.md#view-completed-requests-in-which-you-participated).
    * **All Requests** page. See [View All Requests](view-all-requests.md#view-all-requests-in-your-organization). \(Note that your ProcessMaker user account must have the [**Requests: View All Requests** permission](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** page.\)
-3. Do one of the following:
+4. Do one of the following:
 
    * From the **\#** column, click the Request number associated with the Process displaying in the **Name** column to view its summary. This number represents the sequential occurrence of that Process.
    * Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-requests.png)for the Request you want to cancel.
@@ -36,11 +37,11 @@ Follow these steps to cancel a Request:
 
    ![](../../.gitbook/assets/in-progress-request-to-cancel-request-requests%20%281%29.png)
 
-4. Click **Cancel**. A message displays to confirm you want to cancel the Request.  
+5. Click **Cancel**. A message displays to confirm you want to cancel the Request.  
 
    ![](../../.gitbook/assets/cancel-request-confirmation-screen-requests.png)
 
-5. Click **Confirm**. The Request is canceled.  
+6. Click **Confirm**. The Request is canceled.  
 
    ![](../../.gitbook/assets/canceled-request-requests.png)
 

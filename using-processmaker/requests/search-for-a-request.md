@@ -27,14 +27,18 @@ Follow these steps to do a basic search for a Request within the Request page yo
    If not, then click the **Basic Search** button![](../../.gitbook/assets/basic-search-button.gif).
 
 3. Use Request data to search for Requests on the displayed page based on the following criteria:
-   * **Process:** Search using one or more Process names associated with a Request.
-   * **Status:** Search using one or more of the following Request statuses:
+   * **Process:** From the **Process** field, select one or more Process names associated with a Request as part of the search criteria. Type into **Process** field to filter Processes that display in the **Process** drop-down menu. To remove a Process that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that Process or click `Enter` when the drop-down is visible.
+   * **Status:** From the **Status** field, select one or more Request statuses as part of the search criteria. Type into the **Status** field to filter statuses that display in the **Status** drop-down menu. To remove a Status that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that status or click `Enter` when the drop-down is visible.
+
+     Search using one or more of the following Request statuses:
+
      * **In progress:** Include Requests that are in progress as part of your search criteria. Requests that are in progress are included by default when searching for Requests on the **In Progress** page.
      * **Completed:** Include Requests that are completed as part of your search criteria. Requests that are completed are included by default when searching for Requests on the **Completed** page.
      * **Error:** Include Requests that are in error as part of your search criteria.
      * **Canceled:** Include Requests that have been canceled as part of your search criteria.
-   * **Requester:** Search using one or more the ProcessMaker users who started a Request. The currently logged on ProcessMaker user is included by default when searching for Requests on the **My Requests** page.
-   * **Participants:** Search using one or more ProcessMaker users participating in a Request.
+
+   * **Requester:** From the **Requester** field, select one or more Requesters as part of your search criteria. A Requester is a ProcessMaker user who starts a Request. The currently logged on ProcessMaker user is included by default when searching for Requests on the **My Requests** page. Type into **Requester** field to filter requesters that display in the **Requester** drop-down menu. To remove a Requester that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that requester or click `Enter` when the drop-down is visible.
+   * **Participants:** From the **Participants** field, select one or more Request participants as part of your search criteria. Type into **Participants** field to filter Request participants that display in the **Participants** drop-down menu. To remove a Request participant that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that requester or click `Enter` when the drop-down is visible.
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
 
 ## Advanced Search for a Request

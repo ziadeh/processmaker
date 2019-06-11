@@ -16,10 +16,13 @@ See the [Request permissions](../../processmaker-administration/permission-descr
 
 Follow these steps to view all Requests in your organization:
 
-1. Do one of the following:
+1. Ensure that you are [logged on](../log-in.md#log-on) to ProcessMaker.
+2. Do one of the following:
    * Click the **Requests** option from the top menu if it is not currently displayed. The **My Requests** page displays.
    * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
-2. Click the **All Requests** tab or click the **All** icon![](../../.gitbook/assets/all-icon-request.png)from the left sidebar. The **All Requests** page displays.
+3. Click the **All Requests** tab or click the **All** icon![](../../.gitbook/assets/all-icon-request.png)from the left sidebar. The **All Requests** page displays.
+
+~~RETAKE SCREENSHOT WHEN I CAN GET THE "ALL REQUESTS" SCREEN BACK!~~
 
 ![&quot;All Requests&quot; page displays all Requests in your organization](../../.gitbook/assets/canceled-request-in-all-requests-tab-requests.png)
 

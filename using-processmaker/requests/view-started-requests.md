@@ -8,7 +8,7 @@ description: View the status of Requests you've started.
 
 The **My Requests** page displays all Requests you started. Request information displays in tabular format.
 
-Do one of the following to view the Requests that you started:
+Assuming that you [logged on](../log-in.md#log-on), do one of the following to view the Requests that you started:
 
 * Click the **Requests** option from the top menu if the **Requests** page is not currently displayed. The **My Requests** page displays.
 * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
