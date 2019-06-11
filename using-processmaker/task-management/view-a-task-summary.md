@@ -32,7 +32,7 @@ Your user account or group membership must have the "Requests: Edit Task Data" p
 See the [Request permissions](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-The **Data** tab displays data as entered into a Task from a previous participant of this Request in JSON format. Values in the **Data** tab can be changed from those entered by the previous Request participant.
+The **Data** tab displays in JSON format the data a previous participant of this Request entered. Values in the **Data** tab can be changed from those entered by the previous Request participant.
 
 ![&quot;Data&quot; tab displays editable values for a completed Task](../../.gitbook/assets/data-tab-completed-task-tasks.png)
 
@@ -46,9 +46,21 @@ Follow these steps to edit and save the values from those entered by a previous 
 
 The Task summary displays general information about the assigned Task. The summary displays beside the assigned Task.
 
+If the assigned Task is overdue, the summary's label displays **Overdue**.
+
+![Summary for an assigned Task that is overdue](../../.gitbook/assets/assigned-to-do-summary-active-overdue-tasks.png)
+
 If the assigned Task is not overdue, the summary's label displays **Open**.
 
 ![Summary for an assigned Task that is not overdue](../../.gitbook/assets/assigned-to-do-summary-active-open-tasks.png)
+
+The following summary displays about an assigned Task:
+
+* **Due:** The **Due** field displays the date and time the assigned Task is due.
+* **Assigned To:** The **Assigned To** field displays the avatar and full name of the person assigned the Task.
+* **Assigned:** The date and time the Task was assigned displays below the **Assigned To** field. The **Reassign** button displays if the Task can be reassigned. The time zone setting to display the time is according to the ProcessMaker 4 server unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Request:** The **Request** field displays the Process name associated with the Request preceded by its numerical iteration. Click the Process name to [view the Request summary](../requests/request-details/).
+* **Requested By:** The **Requested By** field displays the avatar and full name of the person who started the Request. Hover your cursor over a user's avatar to view that person's full name.
 
 {% hint style="info" %}
 ### Reassign a Task
@@ -61,7 +73,7 @@ Follow these steps to reassign a Task to another ProcessMaker user:
 
    ![](../../.gitbook/assets/reassign-to-screen-task-summary-tasks.png)
 
-2. Select the user in which to reassign the Task.
+2. Select the user to whom to reassign the Task.
 3. Click **Reassign**.
 
 ### What Happens if the Task Cannot Be Reassigned?
@@ -69,24 +81,13 @@ Follow these steps to reassign a Task to another ProcessMaker user:
 If the Task has not been configured that it can be reassigned, then the **Reassign** button does not display. Therefore, the Task assignee does not have the option to reassign the Task to another ProcessMaker user.
 {% endhint %}
 
-If an assigned Task is overdue, the summary's label displays **Overdue**.
-
-![Summary for an assigned Task that is overdue](../../.gitbook/assets/assigned-to-do-summary-overdue-tasks.png)
-
-The following summary displays about an assigned Task:
-
-* **Due:** The **Due** field displays the date and time the assigned Task is due.
-* **Assigned To:** The **Assigned To** field displays the avatar and full name of the person assigned the Task.
-* **Assigned:** The date and time the Task was assigned displays below the **Assigned To** field. The **Reassign** button displays if the Task can be reassigned. The time zone setting to display the time is according to the ProcessMaker 4 server unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Request:** The **Request** field displays the Process name associated with the Request preceded by its numerical iteration. Click the Process name to [view the Request summary](../requests/request-details/).
-* **Requested By:** The **Requested By** field displays the avatar and full name of the person who started the Request. Hover your cursor over a user's avatar to view that person's full name.
-
 ## Summary for a Completed Task
 
 The Task summary displays general information about the completed Task. Follow these steps to view the summary for a completed Task:
 
-1. [View all completed Tasks.](view-completed-tasks.md#view-completed-tasks) The **Completed Tasks** screen displays.
-2. Click the name of the Task from the **Name** column. The following message displays for the completed Task: **Task Completed**.  
+1. Ensure that you are [logged on](../log-in.md#log-on) to ProcessMaker.
+2. [View all completed Tasks.](view-completed-tasks.md#view-completed-tasks) The **Completed Tasks** screen displays.
+3. Click the name of the Task from the **Name** column. The following message displays for the completed Task: **Task Completed**.  
 
    ![](../../.gitbook/assets/task-completed-message-tasks.png)
 

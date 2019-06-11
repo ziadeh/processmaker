@@ -6,9 +6,7 @@ description: Search for any Request in which you started or have been a particip
 
 ## Overview
 
-Do [basic](search-for-a-request.md#basic-search-for-a-request) or [advanced](search-for-a-request.md#advanced-search-for-a-request) searches for Requests. Search results display only for Requests within the **Requests** page you are viewing. For example, performing a search from within the **My Requests** page displays results only for Requests within that page.
-
-To do basic or advanced searches for Requests, view one of the following **Requests** pages:
+Do [basic](search-for-a-request.md#basic-search-for-a-request) or [advanced](search-for-a-request.md#advanced-search-for-a-request) searches for Requests. To do basic or advanced searches for Requests, view one of the following **Requests** pages:
 
 * **My Requests** page. See [View Your Requests That You Started](view-started-requests.md#view-your-requests).
 * **In Progress** page. See [View Requests That Are In Progress](view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
@@ -17,7 +15,7 @@ To do basic or advanced searches for Requests, view one of the following **Reque
 
 ## Basic Search for a Request
 
-Follow these steps to do a basic search for a Request within the Request page you are viewing:
+Follow these steps to do a basic search for a Request:
 
 1. View one of the **Requests** pages described in the [Overview](search-for-a-request.md#overview) of this topic.
 2. Ensure that the basic search fields are displaying on the **Requests** page you are viewing.  
@@ -43,7 +41,9 @@ Follow these steps to do a basic search for a Request within the Request page yo
 
 ## Advanced Search for a Request
 
-1. Go to one of the following **Requests** pages described in the Overview of this topic.
+Follow these steps to do an advanced search for a Request:
+
+1. Go to one of the following **Requests** pages described in the [Overview](search-for-a-request.md#overview) of this topic.
 2. Ensure that the advanced search field is displaying on the **Requests** page you are viewing.  
 
    ![](../../.gitbook/assets/advanced-request-search-requests.png)

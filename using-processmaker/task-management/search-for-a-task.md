@@ -6,18 +6,14 @@ description: Search for any Task that has been assigned to you.
 
 ## Overview
 
-Do [basic](../requests/search-for-a-request.md#basic-search-for-a-request) or [advanced](../requests/search-for-a-request.md#advanced-search-for-a-request) searches for Requests. Search results display only for Requests within the **Requests** page you are viewing. For example, performing a search from within the **My Requests** page displays results only for Requests within that page.
+Do [basic](../requests/search-for-a-request.md#basic-search-for-a-request) or [advanced](../requests/search-for-a-request.md#advanced-search-for-a-request) searches for Tasks. To do basic or advanced searches for Tasks, view one of the following **Tasks** pages:
 
-To do basic or advanced searches for Requests, view one of the following **Requests** pages:
-
-* **My Requests** page. See [View Your Requests That You Started](../requests/view-started-requests.md#view-your-requests).
-* **In Progress** page. See [View Requests That Are In Progress](../requests/view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
-* **Completed** page. See [View Completed Requests](../requests/view-completed-requests.md#view-completed-requests-in-which-you-participated).
-* **All Requests** page. See [View All Requests](../requests/view-all-requests.md#view-all-requests-in-your-organization). \(Note that your ProcessMaker user account must have the [**Requests: View All Requests** permission](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** page.\)
+* **To Do Tasks** page. See [View Tasks You Need to Do](view-tasks-you-need-to-do.md#view-your-assigned-tasks).
+* **Completed Tasks** page. See [View Completed Tasks](view-completed-tasks.md#view-completed-tasks).
 
 ## Basic Search for a Task
 
-Follow these steps to do a basic search for a Request within the Request page you are viewing:
+Follow these steps to do a basic search for a Task:
 
 1. View one of the **Requests** pages described in the [Overview](../requests/search-for-a-request.md#overview) of this topic.
 2. Ensure that the basic search fields are displaying on the **Requests** page you are viewing.  
@@ -27,19 +23,25 @@ Follow these steps to do a basic search for a Request within the Request page yo
    If not, then click the **Basic Search** button![](../../.gitbook/assets/basic-search-button.gif).
 
 3. Use Request data to search for Requests on the displayed page based on the following criteria:
-   * **Process:** Search using one or more Process names associated with a Request.
-   * **Status:** Search using one or more of the following Request statuses:
+   * **Process:** From the **Process** field, select one or more Process names associated with a Request as part of the search criteria. Type into **Process** field to filter Processes that display in the **Process** drop-down menu. To remove a Process that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that Process or click `Enter` when the drop-down is visible.
+   * **Status:** From the **Status** field, select one or more Request statuses as part of the search criteria. Type into the **Status** field to filter statuses that display in the **Status** drop-down menu. To remove a Status that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that status or click `Enter` when the drop-down is visible.
+
+     Search using one or more of the following Request statuses:
+
      * **In progress:** Include Requests that are in progress as part of your search criteria. Requests that are in progress are included by default when searching for Requests on the **In Progress** page.
      * **Completed:** Include Requests that are completed as part of your search criteria. Requests that are completed are included by default when searching for Requests on the **Completed** page.
      * **Error:** Include Requests that are in error as part of your search criteria.
      * **Canceled:** Include Requests that have been canceled as part of your search criteria.
-   * **Requester:** Search using one or more the ProcessMaker users who started a Request. The currently logged on ProcessMaker user is included by default when searching for Requests on the **My Requests** page.
-   * **Participants:** Search using one or more ProcessMaker users participating in a Request.
+
+   * **Requester:** From the **Requester** field, select one or more Requesters as part of your search criteria. A Requester is a ProcessMaker user who starts a Request. The currently logged on ProcessMaker user is included by default when searching for Requests on the **My Requests** page. Type into **Requester** field to filter requesters that display in the **Requester** drop-down menu. To remove a Requester that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that requester or click `Enter` when the drop-down is visible.
+   * **Participants:** From the **Participants** field, select one or more Request participants as part of your search criteria. Type into **Participants** field to filter Request participants that display in the **Participants** drop-down menu. To remove a Request participant that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that requester or click `Enter` when the drop-down is visible.
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
 
 ## Advanced Search for a Task
 
-1. Go to one of the following **Requests** pages described in the Overview of this topic.
+Follow these steps to do an advanced search for a Task:
+
+1. Go to one of the following **Requests** pages described in the [Overview](search-for-a-task.md#overview) of this topic.
 2. Ensure that the advanced search field is displaying on the **Requests** page you are viewing.  
 
    ![](../../.gitbook/assets/advanced-request-search-requests.png)
