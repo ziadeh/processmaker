@@ -40,7 +40,7 @@ To [view a Request summary](../requests/request-details/), do one of the followi
 
 ### No Completed Tasks?
 
-If there are no completed Tasks by anyone in your organization, the following message displays: **No data available**.
+If there are no completed Tasks by anyone in your organization, the following message displays: **No Results**.
 
 ### Display Information the Way You Want It
 
@@ -52,6 +52,10 @@ If there are no completed Tasks by anyone in your organization, the following me
 {% page-ref page="what-is-a-task.md" %}
 
 {% page-ref page="view-tasks-you-need-to-do.md" %}
+
+{% page-ref page="search-for-a-task.md" %}
+
+{% page-ref page="view-a-task-summary.md" %}
 
 {% page-ref page="../requests/request-details/" %}
 

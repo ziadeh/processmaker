@@ -31,6 +31,7 @@
   * [What is a Task?](using-processmaker/task-management/what-is-a-task.md)
   * [View Tasks You Need to Do](using-processmaker/task-management/view-tasks-you-need-to-do.md)
   * [View Completed Tasks](using-processmaker/task-management/view-completed-tasks.md)
+  * [Search for a Task](using-processmaker/task-management/search-for-a-task.md)
   * [View a Task Summary](using-processmaker/task-management/view-a-task-summary.md)
 * [Notifications](using-processmaker/notifications.md)
 * [Control How Tabular Information Displays](using-processmaker/control-how-requests-display-in-a-tab.md)

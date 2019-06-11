@@ -41,6 +41,18 @@ To [view a Request summary](../requests/request-details/), do one of the followi
 * From the **Request** column, click the Process name associated with the Task that you want to view.
 * Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-assigned-tasks.png)for the Request associated with the Task.
 
+### Search for a Task
+
+Use Request data to search for Tasks on this page based on the following criteria:
+
+* **Request:** Search using one or more Requests based on the Process names associated with the Request\(s\).
+* **Task:** Search using one or more Task names as part of your search criteria.
+* **Status:** Search using one or more of the following Task statuses:
+  * **In progress:** Include Tasks that are assigned to you which are in progress as part of your search criteria.
+  * **Completed:** Include Tasks that are you have completed as part of your search criteria.
+
+You can do [basic](search-for-a-task.md#basic-search-for-a-task) and [advanced](search-for-a-task.md#advanced-search-for-a-task) searches for Tasks.
+
 ### Be Reminded of Overdue Tasks
 
 A message displays above your assigned Tasks how many of those Tasks are overdue.  
@@ -51,7 +63,7 @@ Furthermore, the due date for overdue Tasks display in a different color in the 
 
 ### No Assigned Tasks?
 
-If there are no assigned Tasks, the following message displays: **No data available**.
+If there are no assigned Tasks, the following message displays: **No Results**.
 
 ### Display Information the Way You Want It
 
@@ -63,6 +75,10 @@ If there are no assigned Tasks, the following message displays: **No data availa
 {% page-ref page="what-is-a-task.md" %}
 
 {% page-ref page="view-completed-tasks.md" %}
+
+{% page-ref page="search-for-a-task.md" %}
+
+{% page-ref page="view-a-task-summary.md" %}
 
 {% page-ref page="../requests/request-details/" %}
 

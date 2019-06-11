@@ -109,6 +109,8 @@ The following summary displays about a completed Task:
 
 {% page-ref page="view-completed-tasks.md" %}
 
+{% page-ref page="search-for-a-task.md" %}
+
 {% page-ref page="../../designing-processes/design-forms/what-is-a-form.md" %}
 
 {% page-ref page="../../designing-processes/design-forms/screens-builder/" %}
