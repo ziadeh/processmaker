@@ -24,9 +24,9 @@ Follow these steps to do a basic search for a Request:
 
    If not, then click the **Basic Search** button![](../../.gitbook/assets/basic-search-button.gif).
 
-3. Use Request data to search for Requests on the displayed page based on the following criteria:
-   * **Process:** From the **Process** field, select one or more Process names associated with a Request as part of the search criteria. Type into **Process** field to filter Processes that display in the **Process** drop-down menu. To remove a Process that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that Process or click `Enter` when the drop-down is visible.
-   * **Status:** From the **Status** field, select one or more Request statuses as part of the search criteria. Type into the **Status** field to filter statuses that display in the **Status** drop-down menu. To remove a Status that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that status or click `Enter` when the drop-down is visible.
+3. Use Request data to search for Requests based on the following criteria:
+   * **Process:** From the **Process** field, select one or more Process names associated with a Request as part of the search criteria. Type into the **Process** field to filter Processes that display in the **Process** drop-down menu. To remove a Process that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that Process or click `Enter` when the drop-down is visible.
+   * **Status:** From the **Status** field, select one or more Request statuses as part of the search criteria. Type into the **Status** field to filter statuses that display in the **Status** drop-down menu. To remove a status that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that status or click `Enter` when the drop-down is visible.
 
      Search using one or more of the following Request statuses:
 
@@ -35,22 +35,22 @@ Follow these steps to do a basic search for a Request:
      * **Error:** Include Requests that are in error as part of your search criteria.
      * **Canceled:** Include Requests that have been canceled as part of your search criteria.
 
-   * **Requester:** From the **Requester** field, select one or more Requesters as part of your search criteria. A Requester is a ProcessMaker user who starts a Request. The currently logged on ProcessMaker user is included by default when searching for Requests on the **My Requests** page. Type into **Requester** field to filter requesters that display in the **Requester** drop-down menu. To remove a Requester that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that requester or click `Enter` when the drop-down is visible.
-   * **Participants:** From the **Participants** field, select one or more Request participants as part of your search criteria. Type into **Participants** field to filter Request participants that display in the **Participants** drop-down menu. To remove a Request participant that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that requester or click `Enter` when the drop-down is visible.
+   * **Requester:** From the **Requester** field, select one or more Requesters as part of your search criteria. A Requester is a ProcessMaker user who starts a Request. The currently logged on ProcessMaker user is included by default when searching for Requests on the **My Requests** page. Type into the **Requester** field to filter requesters that display in the **Requester** drop-down menu. To remove a Requester that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that requester or click `Enter` when the drop-down is visible.
+   * **Participants:** From the **Participants** field, select one or more Request participants as part of your search criteria. Type into the **Participants** field to filter Request participants that display in the **Participants** drop-down menu. To remove a Request participant that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that requester or click `Enter` when the drop-down is visible.
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
 
 ## Advanced Search for a Request
 
 Follow these steps to do an advanced search for a Request:
 
-1. Go to one of the following **Requests** pages described in the [Overview](search-for-a-request.md#overview) of this topic.
+1. View one of the **Requests** pages described in the [Overview](search-for-a-request.md#overview) of this topic.
 2. Ensure that the advanced search field is displaying on the **Requests** page you are viewing.  
 
    ![](../../.gitbook/assets/advanced-request-search-requests.png)
 
    If not, then click the **Advanced Search** button![](../../.gitbook/assets/advanced-search-button.png).
 
-3. Use Request data to search for Requests on the displayed page based on the following syntax that is not case sensitive:
+3. Use Request data to search for Requests based on the following syntax that is not case sensitive:
 
    * **Process\(es\):**
      * Use the following syntax as a guide to include one Process in your search criteria:
@@ -103,7 +103,7 @@ To [view a Request summary](request-details/), do one of the following:
 
 ### No Search Results?
 
-If there are no search results, the following message displays: **No data available**.
+If there are no search results, the following message displays: **No Data Available**.
 {% endhint %}
 
 ## Related Topics
