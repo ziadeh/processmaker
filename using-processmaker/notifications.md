@@ -6,11 +6,13 @@ description: Receive updates about Requests and your assigned Tasks.
 
 ## Overview
 
-Request participants receive notifications when the following events occur:
+Request participants may receive notifications when the following events occur:
 
+* A [Request](requests/what-is-a-request.md) has started for a specific Process.
 * A Request participant is assigned a [Task](task-management/what-is-a-task.md). Selecting a notification for an assigned Task opens that [Task's summary](task-management/view-a-task-summary.md#summary-for-an-assigned-task).
-* The Requester's Request is canceled. Selecting a notification for a canceled Request opens that [Request's summary](requests/request-details/#summary-for-canceled-requests).
-* The Requester's Request is completed. Selecting a notification for a completed Request opens that [Request's summary](requests/request-details/#summary-for-completed-requests).
+* Task assignees and/or Request participants may be notified when a Task is due.
+* The Requester's Request is canceled. Selecting a notification for a canceled Request opens that [Request's summary](requests/request-details/summary-for-canceled-requests.md).
+* The Requester's Request is completed. Selecting a notification for a completed Request opens that [Request's summary](requests/request-details/summary-for-completed-requests.md).
 
 ## View New Notifications
 
