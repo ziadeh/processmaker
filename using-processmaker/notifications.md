@@ -22,8 +22,8 @@ The notifications screen displays your notifications. To view new notifications,
 
 Notifications remain visible until you do one of the following:
 
-* Select the notification represented by the blue-colored text.
-* Click the **Dismiss** button to hide that notification.
+* Select the notification represented by the hyperlinked text.
+* Click the **Dismiss Notification** icon![](../.gitbook/assets/dismiss-notification-icon-notification.png)to hide that notification.
 * Click the **Dismiss All** button to hide all notifications.
 * Click the **View All** button to [view all notifications](notifications.md#view-all-notifications).
 
@@ -35,7 +35,7 @@ A notification may contain the following information:
 * **Requester:** Below the Request name is the full name of the person who started the Request.
 * **Request completed:** If you are a Request participant when a Request completes, a notification displays **Request completed:** followed by the name of the completed Request.
 * **Request canceled:** If you are a Request participant when a Request is canceled, a notification displays **Request canceled:** followed by the name of the canceled Request.
-* **Dismiss button:** The **Dismiss** button displays at the bottom-right of the notification.
+* **Dismiss Notification icon:** The **Dismiss Notification** icon![](../.gitbook/assets/dismiss-notification-icon-notification.png)displays at the bottom-right of the notification.
 
 {% hint style="info" %}
 If you have no notifications when you select the Notifications icon![](../.gitbook/assets/notification-icon-notifications.png), the following message displays: **No Notifications Found**.

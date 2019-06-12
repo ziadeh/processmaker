@@ -12,6 +12,7 @@
 * [Log On to ProcessMaker](using-processmaker/log-in.md)
 * [Profile Settings](using-processmaker/profile-settings.md)
 * [View ProcessMaker Version Information](using-processmaker/application-version-details.md)
+* [Session Timeout Warning](using-processmaker/session-timeout-warning.md)
 * [Log Out of ProcessMaker](using-processmaker/log-out.md)
 * [Requests](using-processmaker/requests/README.md)
   * [What is a Request?](using-processmaker/requests/what-is-a-request.md)
