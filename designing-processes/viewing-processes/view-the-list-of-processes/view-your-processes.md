@@ -70,9 +70,9 @@ Click the **Archive** icon![](../../../.gitbook/assets/archive-process-icon-proc
 
 ### Pause or Resume All Start Timer Events in a Process
 
-Click the **Pause Start Timer Events** icon![](../../../.gitbook/assets/pause-start-timer-event-element-icon-processes.png)to pause all [Start Timer Event](../../process-design/model-your-process/process-modeling-element-descriptions.md#start-timer-event) elements in the Process.
+Click the **Pause Start Timer Events** icon![](../../../.gitbook/assets/pause-start-timer-event-element-icon-processes.png)to pause all [Start Timer Event](../../process-design/model-your-process/process-modeling-element-descriptions.md#start-timer-event) elements in the Process. Note that this icon only displays if that Process uses at least one Start Timer Event that is not paused.
 
-Click the **Play Start Timer Events** icon![](../../../.gitbook/assets/play-start-timer-event-element-icon-processes.png)to resume all paused Start Timer Event elements in the Process.
+Click the **Play Start Timer Events** icon![](../../../.gitbook/assets/play-start-timer-event-element-icon-processes.png)to resume all Start Timer Event elements in the Process. Note that this icon only displays if that Process uses at least one Start Timer Event that is paused.
 
 ### No Processes?
 
