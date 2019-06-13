@@ -18,6 +18,10 @@ It’s easy for business analysts and business managers to model Processes. Busi
 
 Any Process designed in or exported from ProcessMaker Spark is [BPMN 2.0 compliant](https://www.omg.org/spec/BPMN/2.0/About-BPMN/). Furthermore, any process to be imported to ProcessMaker Spark must be BPMN 2.0 compliant.
 
+{% hint style="info" %}
+To learn more about how to model a Process in ProcessMaker Spark, see [Process Modeling](../process-design/).
+{% endhint %}
+
 ## Related Topics
 
 {% page-ref page="view-the-list-of-processes/view-your-processes.md" %}

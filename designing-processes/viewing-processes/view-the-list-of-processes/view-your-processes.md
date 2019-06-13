@@ -6,7 +6,7 @@ description: View all active Processes from all Process Owners in your organizat
 
 ## View All Active Processes
 
-ProcessMaker displays all active Processes in one table that Process Owners have created throughout your organization. This makes it easy to manage active Processes.
+ProcessMaker displays all active Processes in one table that Process Owners have created throughout your organization. This makes it easy to manage active Processes. An active Process is one in which has not been [archived](remove-a-process.md).
 
 {% hint style="info" %}
 ### Permission Required
@@ -22,7 +22,7 @@ Click the **Archived Processes** icon![](../../../.gitbook/assets/archived-proce
 
 Follow these steps to view all active Processes in your organization:
 
-1. [Log on](../../../using-processmaker/log-in.md#log-in) to ProcessMaker.
+1. Ensure that you are [logged on](../../../using-processmaker/log-in.md#log-in) to ProcessMaker.
 2. Click the **Processes** option from the top menu. The **Processes** page displays all active Processes.
 
 {% hint style="info" %}
@@ -67,6 +67,12 @@ Click the **Export** icon![](../../../.gitbook/assets/export-process-icon-proces
 ### Archive a Process
 
 Click the **Archive** icon![](../../../.gitbook/assets/archive-process-icon-processes-page-processes.png). See [Archive a Process](remove-a-process.md).
+
+### Pause or Resume All Start Timer Events in a Process
+
+Click the **Pause Start Timer Events** icon![](../../../.gitbook/assets/pause-start-timer-event-element-icon-processes.png)to pause all [Start Timer Event](../../process-design/model-your-process/process-modeling-element-descriptions.md#start-timer-event) elements in the Process.
+
+Click the **Play Start Timer Events** icon![](../../../.gitbook/assets/play-start-timer-event-element-icon-processes.png)to resume all paused Start Timer Event elements in the Process.
 
 ### No Processes?
 
