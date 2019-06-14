@@ -25,7 +25,7 @@ Follow these steps to create a new Process:
 3. In the **Name** field, enter the name of the Process. This is a required field.
 4. In the **Description** field, enter a description of the Process. This is a required field.
 5. From the **Category** drop-down, select a category to associate with the Process. This is a required field. See [Process Categories](../process-categories.md) for more information.
-6. Optionally, upload a third-party [BPMN 2.0 compliant](https://www.omg.org/spec/BPMN/2.0/About-BPMN/) BPMN file from which to use its Process model in ProcessMaker. Do not use this function to upload a ProcessMaker 4 `.spark` file. Import that file. See [Import a BPMN-Compliant Process](import-a-bpmn-compliant-process.md).
+6. Optionally, upload a third-party [BPMN 2.0 compliant](https://www.omg.org/spec/BPMN/2.0/About-BPMN/) BPMN file from which to use its Process model in ProcessMaker. Do not use this function to upload a ProcessMaker version 4 `.spark` file. Import that file. See [Import a BPMN-Compliant Process](import-a-bpmn-compliant-process.md).
 
    To do so, follow these guidelines:
 

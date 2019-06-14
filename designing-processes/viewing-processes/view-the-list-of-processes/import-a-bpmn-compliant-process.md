@@ -1,7 +1,7 @@
 ---
 description: >-
   Import a Process that has previously been validated and exported from
-  ProcessMaker 4.
+  ProcessMaker version 4.
 ---
 
 # Import a ProcessMaker Version 4 Process
