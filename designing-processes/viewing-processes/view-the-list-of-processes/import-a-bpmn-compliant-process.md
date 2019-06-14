@@ -1,8 +1,10 @@
 ---
-description: Import a process into ProcessMaker Spark if it is BPMN 2.0 compliant.
+description: >-
+  Import a Process that has previously been validated and exported from
+  ProcessMaker 4.
 ---
 
-# Import a BPMN-Compliant Process
+# Import a ProcessMaker Version 4 Process
 
 ## Overview
 

@@ -44,7 +44,7 @@
   * [Manage Processes](designing-processes/viewing-processes/view-the-list-of-processes/README.md)
     * [View All Active Processes](designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes.md)
     * [Create a New Process](designing-processes/viewing-processes/view-the-list-of-processes/create-a-process.md)
-    * [Import a BPMN-Compliant Process](designing-processes/viewing-processes/view-the-list-of-processes/import-a-bpmn-compliant-process.md)
+    * [Import a ProcessMaker Version 4 Process](designing-processes/viewing-processes/view-the-list-of-processes/import-a-bpmn-compliant-process.md)
     * [Search for a Process](designing-processes/viewing-processes/view-the-list-of-processes/search-for-a-process.md)
     * [Configure a Process](designing-processes/viewing-processes/view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md)
     * [Export a BPMN-Compliant Process](designing-processes/viewing-processes/view-the-list-of-processes/export-a-bpmn-compliant-process.md)
