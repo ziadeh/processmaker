@@ -30,6 +30,7 @@ Follow these steps to create a new Process:
    To do so, follow these guidelines:
 
    1. Ensure that the third-party process model is BPMN 2.0 compliant and has the `.BPMN` file extension.
+   2. Click the **Upload File** button, and then browse for the third-party `.BPMN` file to use as your process model.
 
 7. Click **Save**. Your new Process opens in Process Modeler. See [Process Modeling](../../process-design/) for topics.
 
