@@ -17,8 +17,8 @@ Follow these steps to start a Request:
 
 3. Do one of the following:
 
-   * Click the **Start** button beside the Process to start a Request for that Process. A Request is one occurrence of a Process.
-   * From the **Search** field, enter text to filter the list of Processes, and then click the **Start** button beside the Process to start a new Request.
+   * Click the **Start** button to start a Request for the selected Process. A Request is one occurrence of a Process.
+   * From the **Search** field, enter text to filter the list of Processes, and then click the **Start** button to start a Request for the selected Process.
 
    A Request starts for the Process you selected.
 
