@@ -1,5 +1,5 @@
 ---
-description: Log on to ProcessMaker Spark using your ProcessMaker credentials.
+description: Log on to ProcessMaker using your ProcessMaker credentials.
 ---
 
 # Log On to ProcessMaker
@@ -18,10 +18,10 @@ Did you forget your password? See [Reset Your Password](log-in.md#reset-your-pas
 
 ### Minimum Screen Requirements
 
-Ensure that your display is at least 1200 by 720 pixel resolution before logging on to ProcessMaker Spark.
+Ensure that your display is at least 1200 by 720 pixel resolution before logging on to ProcessMaker.
 {% endhint %}
 
-Follow these steps to log on to ProcessMaker Spark:
+Follow these steps to log on to ProcessMaker:
 
 1. Enter the IP address \(or domain name\) and port number for the server or instance hosting ProcessMaker in a [supported web browser](../install-processmaker/prerequisites.md#supported-browsers). Follow these guidelines:
 
@@ -40,7 +40,7 @@ Follow these steps to log on to ProcessMaker Spark:
 
 ## Reset Your Password
 
-Follow these steps to reset your ProcessMaker Spark password:
+Follow these steps to reset your ProcessMaker password:
 
 1. Access the ProcessMaker log in page as described in [Log On](log-in.md#log-in). If you do not know the web address to access the ProcessMaker log on page, ask your ProcessMaker Administrator for assistance.
 2. Click the **Forgot Password?** link as highlighted below.  
@@ -58,7 +58,7 @@ Follow these steps to reset your ProcessMaker Spark password:
 4. Click **Request Reset Link**.
 5. Check your email for the instructions to reset your password.
 6. After you select the link in that email to reset your password, click the **Back to Login** link to return to the log in page.
-7. Log on to ProcessMaker Spark as described in [Log On](log-in.md#log-in).
+7. Log on to ProcessMaker as described in [Log On](log-in.md#log-in).
 
 ## Related Topics
 

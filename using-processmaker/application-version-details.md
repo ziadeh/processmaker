@@ -1,26 +1,26 @@
 ---
-description: View ProcessMaker Spark version information.
+description: View ProcessMaker version information.
 ---
 
 # View ProcessMaker Version Information
 
 ## View ProcessMaker Version Information
 
-Follow these steps to view ProcessMaker Spark version information:
+Follow these steps to view ProcessMaker version information:
 
 1. [Log on](log-in.md#log-in) to ProcessMaker.
 2. Click your user avatar and then select **About**.  
 
    ![](../.gitbook/assets/about-option.png)
 
-   ProcessMaker Spark version information displays.  
+   ProcessMaker version information displays.  
 
 ![ProcessMaker Spark version information](../.gitbook/assets/about-processmaker-page-admin.png)
 
 {% hint style="info" %}
-Click **Report an issue** to [report a ProcessMaker Spark issue](https://docs.google.com/forms/d/e/1FAIpQLScnYje8uTACYwp3VxdRoA26OFkbfFs6kuXofqY-QXXsG-h9xA/viewform).
+Click **Report an issue** to [report a ProcessMaker issue](https://docs.google.com/forms/d/e/1FAIpQLScnYje8uTACYwp3VxdRoA26OFkbfFs6kuXofqY-QXXsG-h9xA/viewform).
 
-Click **Get Help** to display the [ProcessMaker **spark** GitHub repository](https://github.com/ProcessMaker/spark).
+Click **Get Help** to display the [**processmaker** GitHub repository](https://github.com/ProcessMaker/processmaker).
 {% endhint %}
 
 ## Related Topics
