@@ -63,14 +63,9 @@ The **Unread Notifications** page displays the following information in tabular 
   * The name of the Request associated with the Task displays in parentheses.
 * **Created:** The **Created** column displays when the notification was sent to you. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
-### Search for a Notification
-
-Search for any notification displaying in the **Unread Notifications** page.
-
-To search for a notification in the **Unread Notifications** page, select the **Search** field and then enter text to filter notifications using any of the following criteria:
-
-* **User:** Search for the user associated with the notification.
-* **Subject:** Search by the subject of the notification.
+{% hint style="info" %}
+Need to search for a notification? See [Search for a Notification](notifications.md#search-for-a-notification).
+{% endhint %}
 
 ## View All Notifications
 
@@ -96,11 +91,15 @@ The **All Notifications** page displays the following information in tabular for
   * **Request name:** The name of the Request associated with the Task displays in parentheses.
 * **Created:** The **Created** column displays when the notification was sent to you. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
-### Search for a Notification
+{% hint style="info" %}
+Need to search for a notification? See [Search for a Notification](notifications.md#search-for-a-notification).
+{% endhint %}
 
-Search for any notification displaying in the **All Notifications** page.
+## Search for a Notification
 
-To search for a notification in the **All Notifications** page, select the **Search** field and then enter text to filter notifications using any of the following criteria:
+Search for any notification displaying in the **Unread Notifications** or **All Notifications** pages.
+
+To search for a notification, select the **Search** field and then enter text to filter notifications using any of the following criteria:
 
 * **User:** Search for the user associated with the notification.
 * **Subject:** Search by the subject of the notification.

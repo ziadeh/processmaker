@@ -1,12 +1,12 @@
 ---
-description: Understand what Tasks are in ProcessMaker Spark.
+description: Understand what Tasks are in ProcessMaker.
 ---
 
 # What is a Task?
 
 ## Overview
 
-In ProcessMaker Spark, a "Task" represents information that must be provided, reviewed, approved, decided about, or otherwise acted upon. People participate in Processes through Tasks.
+In ProcessMaker, a "Task" represents information that must be provided, reviewed, approved, decided about, or otherwise acted upon. People participate in Processes through Tasks.
 
 For example, each of the following are Tasks that you might use for a purchase process:
 

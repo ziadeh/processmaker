@@ -22,9 +22,7 @@ Follow these steps to view all Requests in your organization:
    * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
 3. Click the **All Requests** tab or click the **All** icon![](../../.gitbook/assets/all-icon-request.png)from the left sidebar. The **All Requests** page displays.
 
-~~RETAKE SCREENSHOT WHEN I CAN GET THE "ALL REQUESTS" SCREEN BACK!~~
-
-![&quot;All Requests&quot; page displays all Requests in your organization](../../.gitbook/assets/canceled-request-in-all-requests-tab-requests.png)
+![&quot;All Requests&quot; page displays all Requests in your organization](../../.gitbook/assets/all-requests-request.png)
 
 The **All Requests** page displays the following information in tabular format about all Requests:
 
