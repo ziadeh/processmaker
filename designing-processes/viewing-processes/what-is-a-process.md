@@ -1,5 +1,5 @@
 ---
-description: Understand what Processes are in ProcessMaker Spark.
+description: Understand what Processes are in ProcessMaker.
 ---
 
 # What is a Process?
@@ -11,15 +11,15 @@ Making Process design easy and efficient for any type of process is one of Proce
 * A Process is a set of steps and decisions to document how to complete a particular goal, often as efficiently as possible.
 * A Process may involve people or be completely automated through scripting.
 * A Process can integrate with external third-party systems and legacy applications to extend their functionality.
-* Use ProcessMaker Spark to design a model of a Process. The Process model is a graphical representation of the Process.
-* ProcessMaker Spark uses the Process model as the Process definition to run [Requests](../../using-processmaker/requests/what-is-a-request.md) of that Process. A Request is one occurrence of a Process.
+* Use ProcessMaker to design a model of a Process. The Process model is a graphical representation of the Process.
+* ProcessMaker uses the Process model as the Process definition to run [Requests](../../using-processmaker/requests/what-is-a-request.md) of that Process. A Request is one occurrence of a Process.
 
-It’s easy for business analysts and business managers to model Processes. Business analysts and business managers understand the business processes that they use in their organizations, and they want to define and improve those processes. For example, business analysts want to learn how much time and money is spent to do work in their organizations, and they want to optimize those processes. In ProcessMaker Spark, we refer to these business experts as “Process Owners.”
+It’s easy for business analysts and business managers to model Processes. Business analysts and business managers understand the business processes that they use in their organizations, and they want to define and improve those processes. For example, business analysts want to learn how much time and money is spent to do work in their organizations, and they want to optimize those processes. In ProcessMaker, we refer to these business experts as “Process Owners.”
 
-Any Process designed in or exported from ProcessMaker Spark is [BPMN 2.0 compliant](https://www.omg.org/spec/BPMN/2.0/About-BPMN/). Furthermore, any process to be imported to ProcessMaker Spark must be BPMN 2.0 compliant.
+Any Process designed in or exported from ProcessMaker is [BPMN 2.0 compliant](https://www.omg.org/spec/BPMN/2.0/About-BPMN/). Furthermore, any process to be imported to ProcessMaker must be BPMN 2.0 compliant.
 
 {% hint style="info" %}
-To learn more about how to model a Process in ProcessMaker Spark, see [Process Modeling](../process-design/).
+To learn more about how to model a Process in ProcessMaker, see [Process Modeling](../process-design/).
 {% endhint %}
 
 ## Related Topics
