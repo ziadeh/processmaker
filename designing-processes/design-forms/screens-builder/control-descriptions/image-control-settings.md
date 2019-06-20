@@ -63,7 +63,13 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 Below are Inspector settings for the Image control:
 
 * **Id:** Enter the unique internal image identification. ~~This is a required setting.~~
-* **Field Name:** Enter the unique internal data name of the control that only the Process Owner views at design time. This setting automatically uses the file name of the uploaded image as its value. This is a required setting. Use the **Field Name** value for this control to reference it in [**Show If** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+* **Variable Name:** Enter a unique name that references this control elsewhere in ProcessMaker in the following ways:
+
+  * Reference this value in other Screens Builder controls or Process Modeler.
+  * Reference this value to in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+
+  This is a required setting.
+
 * **Upload Image:** Click the **Upload Image** button to browse for the PNG, GIF, or JPG file type image to upload to the Image control.
 * **Preview:** This setting displays a preview of the uploaded image.
 * **Width:** Specify the width of the uploaded image in pixels. If the **Height** setting has no value, the Image control adjust the uploaded image to the **Width** setting value.

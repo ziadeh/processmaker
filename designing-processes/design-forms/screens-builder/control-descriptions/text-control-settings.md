@@ -63,6 +63,9 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 Below are Inspector settings for the Text Box control:
 
 * **Text Content:** Enter what text displays for the Text Box control. **New Text** is the default value. You can change what text will display.
+
+  Also use the Text Box control to display the variable value of another control in the same or another ProcessMaker Screen. To do so, place between curly brackets the **Variable Value** setting value for the control from which you want to display its value. Example: `{FullName}`.
+
 * **Font Weight:** Sets the weight of the text specified in the **Text Content** setting. **Normal** is the default option. You can change to **Bold**.
 * **Text Horizontal Alignment:** Sets the text horizontal alignment. **Left** is the default option. Select one of the following options:
   * Center
@@ -77,8 +80,8 @@ Below are Inspector settings for the Text Box control:
   * 1
   * 1.5
   * 2
-* **Background Color:** Select to specify the background color of the Text Box control. Selecting a background color also selects the **Background Color** checkbox.
-* **Text Color:** Select to specify the text color specified in the **Text Content** setting. Selecting a text color also selects the **Text Color** checkbox.
+* **Element Background Color:** Select to specify the background color of this control.
+* **Text Color:** Select to specify the text color specified in the **Text Content** setting.
 * **Visibility Rule:** Specify an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 

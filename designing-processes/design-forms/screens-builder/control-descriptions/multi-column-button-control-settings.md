@@ -1,15 +1,15 @@
 ---
 description: >-
-  Add a Multi Column control from which the Process Owner adds a layout element
-  with two columns on the ProcessMaker Screen. Drag-and-drop other elements into
-  the two-column layout container.
+  Add a Table control from which the Process Owner adds a layout element with
+  two or more columns on the ProcessMaker Screen. Drag-and-drop other elements
+  into the multi-column layout container.
 ---
 
-# Multi Column Control Settings
+# Table Control Settings
 
 ## Control Description <a id="control-description"></a>
 
-The Multi Column control adds a layout element with two columns. The Process Owner drops elements into either column.
+The Table control adds a layout element with two or more columns. The Process Owner drops elements into any of the columns.
 
 ## Add the Control to a ProcessMaker Screen <a id="add-the-control-to-a-processmaker-screen"></a>
 
@@ -32,14 +32,14 @@ Follow these steps to add this control to the ProcessMaker Screen:
 6. Place into the ProcessMaker Screen canvas where you want the control to display on the page.​![](../../../../.gitbook/assets/multi-column-control-placed-screens-builder-processes.png)
 7. Drag-and-drop others controls into either column. Configure each control's settings. 
 
-Below is a Multi Column control in Preview mode. 
+Below is a Table control in Preview mode. 
 
 ![Multi Column control that contains other controls in Preview mode](../../../../.gitbook/assets/multi-column-control-display-screens-builder-processes.png)
 
 ## Delete the Control from a ProcessMaker Screen
 
 {% hint style="warning" %}
-Deleting a control deletes configuration for that control as well as any controls placed into the Multi Column control. If you add another control, it will have default settings.
+Deleting a control deletes configuration for that control as well as any controls placed into the Table control. If you add another control, it will have default settings.
 {% endhint %}
 
 Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
@@ -61,7 +61,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the Multi Column control:
+Below are Inspector settings for the Table control:
 
 * **Column Widths:** Specify the column width for each column in the control. Add each column and its width specification in the order they are to display from left to right in the control. Specify the width of each column in `colspan` [HTML attribute](https://www.w3schools.com/tags/att_colspan.asp) settings. The total of all `colspan` attribute settings must be divisible by 12. The control contains two columns of six \(6\) `colspan` HTML attribute setting each by default.  
 
@@ -83,8 +83,8 @@ Below are Inspector settings for the Multi Column control:
   3. Click **OK**. The column displays below the existing columns in **Column Widths**.
   4. If necessary, click the **Show in Json Format** checkbox to view the multiple columns in JSON format.
 
-* **Background Color:** Select to specify the background color of the Submit Button control. Selecting a background color also selects the **Background Color** checkbox.
-* **Text Color:** Select to specify the text color that displays in the control. Selecting a text color also selects the **Text Color** checkbox.
+* **Element Background Color:** Select to specify the background color of this control.
+* **Text Color:** Select to specify the text color that displays in this control.
 * **Visibility Rule:** Specify an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 

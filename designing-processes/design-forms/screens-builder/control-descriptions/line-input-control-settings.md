@@ -68,7 +68,13 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Below are Inspector settings for the Line Input control:
 
-* **Field Name:** Enter the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **Field Name** value for this control to reference it in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+* **Variable Name:** Enter a unique name that references this control elsewhere in ProcessMaker in the following ways:
+
+  * Reference this value in other Screens Builder controls or Process Modeler.
+  * Reference this value to in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+
+  This is a required setting.
+
 * **Field Type:** Select one of the following options:
   * **Text:** The form user enters a single line of plain text into the Line Input control. If the entered text is longer than the field width, the entered text is clipped. **Text** is the default option.
   * **Password:** The form user enters a password into the Line Input control. Entered text is masked. If the entered text is longer than the field width, the entered text is clipped.
@@ -76,8 +82,8 @@ Below are Inspector settings for the Line Input control:
 * **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
 * **Placeholder:** Enter the placeholder text that displays in the field when no value has been provided. This setting has no default value.
 * **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
-* **Background Color:** Select to specify the background color of the Line Input control. Selecting a background color also selects the **Background Color** checkbox.
-* **Text Color:** Select to specify the text color that displays in the control. Selecting a text color also selects the **Text Color** checkbox.
+* **Element Background Color:** Select to specify the background color of this control.
+* **Text Color:** Select to specify the text color that displays in this control.
 * **Visibility Rule:** Specify an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 

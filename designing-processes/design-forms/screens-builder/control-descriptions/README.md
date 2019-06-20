@@ -1,5 +1,5 @@
 ---
-description: Understand the components to design ProcessMaker Screens.
+description: Understand how to use controls to design ProcessMaker Screens.
 ---
 
 # Edit a Screen

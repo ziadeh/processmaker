@@ -42,7 +42,7 @@ Follow these steps to add a computed Property:
 5. In the **Description** field, enter the description of the Property. This is a required field.
 6. Above the **Formula** field, select one of the following ways to compute the Property:
    * **Mathematical calculation:** Click the **Formula** icon![](../../../.gitbook/assets/formula-icon-computed-property-screens-builder-processes.png)to enter the value, mathematical calculation, or formula that computes the Property. The **Formula** icon is selected by default.
-   * **JavaScript:** Click the **JavaScript** icon![](../../../.gitbook/assets/javascript-icon-computed-property-screens-builder-processes.png)to compute the Property using valid JavaScript.
+   * **JavaScript:** Click the **JavaScript** icon![](../../../.gitbook/assets/javascript-icon-computed-property-screens-builder-processes.png)to compute the Property using valid JavaScript. To reference a ProcessMaker Screen control's value in JavaScript, reference that control's **Variable Value** setting after `this.`. Example: `this.FullName`.
 7. In the **Formula** field, enter the computed Property. This is a required field.
 8. Click **Save Property**. The Property displays in the **Computed Properties** screen. The following message displays: **Property Saved**.
 

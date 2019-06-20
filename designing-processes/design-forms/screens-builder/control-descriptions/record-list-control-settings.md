@@ -120,8 +120,8 @@ Below are Inspector settings for the Record List control:
   5. Click **OK**. The field item displays below the existing items in **Fields List**.
 
 * **Record Form:** Select from which ProcessMaker Screen page to add/edit records. The page that records the submitted records cannot be on the same page as the Record List control. The following message displays in Preview mode when the Record List control references the same page the control is placed: **The add/edit form referencing our own form which is not allowed.**
-* **Background Color:** Select to specify the background color of the Submit Button control. Selecting a background color also selects the **Background Color** checkbox.
-* **Text Color:** Select to specify the text color that displays in the control. Selecting a text color also selects the **Text Color** checkbox.
+* **Element Background Color:** Select to specify the background color of this control.
+* **Text Color:** Select to specify the text color that displays in this control.
 * **Visibility Rule:** Specify an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 

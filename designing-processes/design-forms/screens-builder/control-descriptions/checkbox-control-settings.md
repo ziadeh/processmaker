@@ -68,13 +68,19 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Below are Inspector settings for the Checkbox control:
 
-* **Field Name:** Enter the unique internal data name of the control that only the Process Owner views at design time. Multiple Checkbox controls can be grouped together to function as one set of options whereby separate Checkbox controls with the same **Field Name** value maintain the same selected or deselected state. This is a required setting. Use the **Field Name** value for this control to reference it in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+* **Variable Name:** Enter a unique name that references this control elsewhere in ProcessMaker in the following ways:
+
+  * Reference this value in other Screens Builder controls or Process Modeler.
+  * Reference this value to in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+
+  This is a required setting.
+
 * **Field Label:** Enter the field label text that displays. **New Checkbox** is the default value.
 * **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
 * **Toggle Style?:** Select to display a toggle control instead of a checkbox control for each checkbox option.
 * **Initially Checked?:** Select to indicate that the Checkbox control is checked \(selected\) by default. Otherwise, deselect to indicate that the Checkbox control is not checked by default. This setting is not selected by default.
-* **Background Color:** Select to specify the background color of the Checkbox control. Selecting a background color also selects the **Background Color** checkbox.
-* **Text Color:** Select to specify the text color that displays in the control. Selecting a text color also selects the **Text Color** checkbox.
+* **Element Background Color:** Select to specify the background color of this control.
+* **Text Color:** Select to specify the text color that displays in this control.
 * **Visibility Rule:** Enter an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 
