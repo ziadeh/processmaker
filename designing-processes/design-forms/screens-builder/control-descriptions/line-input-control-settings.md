@@ -68,9 +68,10 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Below are Inspector settings for the Line Input control:
 
-* **Variable Name:** Enter a unique name that references this control elsewhere in ProcessMaker in the following ways:
+* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
 
-  * Reference this value in other Screens Builder controls or Process Modeler. To do so, use mustache syntax and reference the **Variable Value** setting value in the ProcessMaker Screen control or Process model element that you want to display its value. Example: `{{FullName}}`.
+  * Reference this control by its **Variable Name** setting's value.
+  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `My full name is {{FullName}}`.
   * Reference this value to in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
