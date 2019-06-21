@@ -70,7 +70,7 @@ Below are Inspector settings for the Date Picker control:
 
 * **Variable Name:** Enter a unique name that references this control elsewhere in ProcessMaker in the following ways:
 
-  * Reference this value in other Screens Builder controls or Process Modeler.
+  * Reference this value in other Screens Builder controls or Process Modeler. To do so, use mustache syntax and reference the **Variable Value** setting value in the ProcessMaker Screen control or Process model element that you want to display its value. Example: `{{FullName}}`.
   * Reference this value to in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.

@@ -64,7 +64,7 @@ Below are Inspector settings for the Text Box control:
 
 * **Text Content:** Enter what text displays for the Text Box control. **New Text** is the default value. You can change what text will display.
 
-  Also use the Text Box control to display the variable value of another control in the same or another ProcessMaker Screen. To do so, place between curly brackets the **Variable Value** setting value for the control from which you want to display its value. Example: `{FullName}`.
+  Also use the Text Box control to display the variable value of another control in the same or another ProcessMaker Screen. To do so, use mustache syntax and reference the **Variable Value** setting value for the control from which you want to display its value. Example: `{{FullName}}`.
 
 * **Font Weight:** Sets the weight of the text specified in the **Text Content** setting. **Normal** is the default option. You can change to **Bold**.
 * **Text Horizontal Alignment:** Sets the text horizontal alignment. **Left** is the default option. Select one of the following options:
