@@ -1,5 +1,5 @@
 ---
-description: Are you new to ProcessMaker Spark? This is a great place to start.
+description: Are you new to ProcessMaker? This is a great place to start.
 ---
 
 # Get Started Guide
@@ -10,19 +10,19 @@ The Get Started Guide is in modular sections to help you learn ProcessMaker fast
 
 The Get Started Guide is in development. Please visit this page often for updates.
 
-## What Is ProcessMaker Spark?
+## What Is ProcessMaker?
 
 
 
-## How Do I Use ProcessMaker Spark?
+## How Do I Use ProcessMaker?
 
 {% tabs %}
 {% tab title="Requests" %}
 #### How Do I Start a Request?
 
-Learn how to start a Request in ProcessMaker Spark. This is a proof-of-concept video for style. The video will be re-recorded with ProcessMaker Spark Beta 5 or later.
+Learn how to start a Request in ProcessMaker. This is a proof-of-concept video for style. The video will be re-recorded with ProcessMaker Beta 7 or later.
 
-{% embed url="https://youtu.be/0XPtJzmBBLI" caption="Learn how to start a Request in ProcessMaker Spark." %}
+{% embed url="https://youtu.be/I7MqXUIr9mg" caption="Learn how to start a Request in ProcessMaker." %}
 
 #### How Do I View Requests and Their Summaries?
 {% endtab %}
