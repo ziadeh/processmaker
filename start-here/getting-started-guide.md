@@ -18,21 +18,27 @@ The Get Started Guide is in development. Please visit this page often for update
 
 {% tabs %}
 {% tab title="Requests" %}
-#### How Do I Start a Request?
+### How Do I Start a Request?
 
-Learn how to start a Request in ProcessMaker. This is a proof-of-concept video for style. The video will be re-recorded with ProcessMaker Beta 7 or later.
+Learn how to start a Request in ProcessMaker. This is a proof-of-concept video for style. The video will be re-recorded with ProcessMaker Beta 6 or later.
 
 {% embed url="https://youtu.be/I7MqXUIr9mg" caption="Learn how to start a Request in ProcessMaker." %}
 
-#### How Do I View Requests and Their Summaries?
+#### Related Topics
+
+{% page-ref page="../using-processmaker/requests/what-is-a-request.md" %}
+
+{% page-ref page="../using-processmaker/requests/make-a-request.md" %}
+
+### How Do I View Requests and Their Summaries?
 {% endtab %}
 
 {% tab title="Tasks" %}
-#### What Is a Task?
+### What Is a Task?
 {% endtab %}
 
 {% tab title="Notifications" %}
-#### What Is a Notification?
+### What Is a Notification?
 {% endtab %}
 {% endtabs %}
 
@@ -40,23 +46,23 @@ Learn how to start a Request in ProcessMaker. This is a proof-of-concept video f
 
 {% tabs %}
 {% tab title="View" %}
-#### What Is a Process?
+### What Is a Process?
 {% endtab %}
 
 {% tab title="Import" %}
-#### How Do I Import a Process?
+### How Do I Import a Process?
 {% endtab %}
 
 {% tab title="Export" %}
-#### How Do I Export a Process?
+### How Do I Export a Process?
 {% endtab %}
 
 {% tab title="Archive" %}
-#### How Do I Archive a Process?
+### How Do I Archive a Process?
 {% endtab %}
 
 {% tab title="Restore" %}
-#### How Do I Restore a Process?
+### How Do I Restore a Process?
 {% endtab %}
 {% endtabs %}
 
@@ -64,75 +70,75 @@ Learn how to start a Request in ProcessMaker. This is a proof-of-concept video f
 
 {% tabs %}
 {% tab title="Categories" %}
-#### How Do I Create a Process Category?
+### How Do I Create a Process Category?
 {% endtab %}
 
 {% tab title="Create" %}
-#### How Do I Create a Process?
+### How Do I Create a Process?
 {% endtab %}
 
 {% tab title="Configure" %}
-#### How Do I Configure a Process?
+### How Do I Configure a Process?
 {% endtab %}
 
 {% tab title="Modeling Element Descriptions" %}
-#### Start Event Element Description
+### Start Event Element Description
 
 
 
-#### Start Timer Event Element Description
+### Start Timer Event Element Description
 
 
 
-#### Intermediate Timer Event Element Description
+### Intermediate Timer Event Element Description
 
 
 
-#### Intermediate Message Catch Event Element Description
+### Intermediate Message Catch Event Element Description
 
 
 
-#### End Event Element Description
+### End Event Element Description
 
 
 
-#### Task Element Description
+### Task Element Description
 
 
 
-#### Script Task Element Description
+### Script Task Element Description
 
 
 
-#### Call Activity Element Description
+### Call Activity Element Description
 
 
 
-#### Exclusive Gateway Element Description
+### Exclusive Gateway Element Description
 
 
 
-#### Parallel Gateway Element Description
+### Parallel Gateway Element Description
 
 
 
-#### Event-Based Gateway Element Description
+### Event-Based Gateway Element Description
 
 
 
-#### Pool Element and Lane Element Descriptions
+### Pool Element and Lane Element Descriptions
 
 
 
-#### Sequence Flow Element and Message Flow Element Descriptions
+### Sequence Flow Element and Message Flow Element Descriptions
 
 
 
-#### Text Annotation Element and Association Element Descriptions
+### Text Annotation Element and Association Element Descriptions
 {% endtab %}
 
 {% tab title="Design" %}
-#### Design Your First Process
+### Design Your First Process
 {% endtab %}
 {% endtabs %}
 
@@ -140,19 +146,19 @@ Learn how to start a Request in ProcessMaker. This is a proof-of-concept video f
 
 {% tabs %}
 {% tab title="View" %}
-#### What is a ProcessMaker Script?
+### What is a ProcessMaker Script?
 {% endtab %}
 
 {% tab title="Create" %}
-#### How Do I Create a ProcessMaker Script?
+### How Do I Create a ProcessMaker Script?
 {% endtab %}
 
 {% tab title="Configure" %}
-#### How Do I Configure a ProcessMaker Script?
+### How Do I Configure a ProcessMaker Script?
 {% endtab %}
 
 {% tab title="Scripts Editor" %}
-
+### 
 {% endtab %}
 {% endtabs %}
 
@@ -160,19 +166,19 @@ Learn how to start a Request in ProcessMaker. This is a proof-of-concept video f
 
 {% tabs %}
 {% tab title="View" %}
-#### What is a ProcessMaker Screen?
+### What is a ProcessMaker Screen?
 {% endtab %}
 
 {% tab title="Create" %}
-#### How Do I Create a ProcessMaker Screen?
+### How Do I Create a ProcessMaker Screen?
 {% endtab %}
 
 {% tab title="Configure" %}
-#### How Do I Configure a ProcessMaker Screen?
+### How Do I Configure a ProcessMaker Screen?
 {% endtab %}
 
 {% tab title="Screens Builder" %}
-
+### 
 {% endtab %}
 {% endtabs %}
 
@@ -180,11 +186,11 @@ Learn how to start a Request in ProcessMaker. This is a proof-of-concept video f
 
 {% tabs %}
 {% tab title="View" %}
-#### What is a ProcessMaker Environment Variable?
+### What is a ProcessMaker Environment Variable?
 {% endtab %}
 
 {% tab title="Create" %}
-#### How Do I Create a ProcessMaker Environment Variable?
+### How Do I Create a ProcessMaker Environment Variable?
 {% endtab %}
 {% endtabs %}
 
@@ -192,11 +198,11 @@ Learn how to start a Request in ProcessMaker. This is a proof-of-concept video f
 
 {% tabs %}
 {% tab title="View" %}
-#### What Is a ProcessMaker User Account?
+### What Is a ProcessMaker User Account?
 {% endtab %}
 
 {% tab title="Create" %}
-#### How Do I Create a ProcessMaker User Account?
+### How Do I Create a ProcessMaker User Account?
 {% endtab %}
 {% endtabs %}
 
@@ -204,11 +210,11 @@ Learn how to start a Request in ProcessMaker. This is a proof-of-concept video f
 
 {% tabs %}
 {% tab title="View" %}
-#### What is a ProcessMaker Group?
+### What is a ProcessMaker Group?
 {% endtab %}
 
 {% tab title="Create" %}
-#### How Do I Create a ProcessMaker Group?
+### How Do I Create a ProcessMaker Group?
 {% endtab %}
 {% endtabs %}
 
@@ -216,11 +222,11 @@ Learn how to start a Request in ProcessMaker. This is a proof-of-concept video f
 
 {% tabs %}
 {% tab title="View" %}
-#### View All Client Authentication Keys
+### View All Client Authentication Keys
 {% endtab %}
 
 {% tab title="Create" %}
-#### Create a Client Authentication Key
+### Create a Client Authentication Key
 {% endtab %}
 {% endtabs %}
 
@@ -228,27 +234,27 @@ Learn how to start a Request in ProcessMaker. This is a proof-of-concept video f
 
 {% tabs %}
 {% tab title="View" %}
-#### What Is Queue Management?
+### What Is Queue Management?
 {% endtab %}
 
 {% tab title="Monitoring Tags" %}
-#### What Are Monitoring Tags?
+### What Are Monitoring Tags?
 
 
 
-#### Assign Monitoring Tags
+### Assign Monitoring Tags
 {% endtab %}
 
 {% tab title="Metrics" %}
-#### View Metrics
+### View Metrics
 {% endtab %}
 
 {% tab title="Recent Jobs" %}
-#### View Recent Jobs
+### View Recent Jobs
 {% endtab %}
 
 {% tab title="Failed Jobs" %}
-#### View Recently Failed Jobs
+### View Recently Failed Jobs
 {% endtab %}
 {% endtabs %}
 
