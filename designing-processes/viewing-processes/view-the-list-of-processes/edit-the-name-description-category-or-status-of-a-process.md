@@ -100,7 +100,12 @@ Follow these steps to configure which Vocabularies are available to a Package:
 
    ![](../../../.gitbook/assets/vocabularies-tab-process-configuration-edit-processes.png)
 
-4. From the **Select process vocabularies** drop-down, select which Vocabularies are available for this Process. If no Vocabularies are selected, no JSON scheme is enforced for this Process. Type into the **Select process vocabularies** field to filter Vocabularies that display in that field's drop-down menu. To remove a Vocabulary that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
+4. From the **Select process vocabularies** drop-down, select which Vocabularies are available for this Process. If no Vocabularies are selected, no JSON scheme is enforced for this Process.
+
+   If no Vocabularies are configured in your ProcessMaker environment, then the following message displays: **List is empty.** Create at least one Vocabulary. See ~~SOME TOPIC~~.
+
+   Type into the **Select process vocabularies** field to filter Vocabularies that display in that field's drop-down menu. To remove a Vocabulary that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
+
 5. Click **Save**.
 
 ## Related Topics
