@@ -180,7 +180,8 @@
 ## Packages <a id="package-development-distribution"></a>
 
 * [What is a Package?](package-development-distribution/first-topic.md)
-* [Available Packages from ProcessMaker](package-development-distribution/package-a-connector.md)
+* [Available Packages from ProcessMaker](package-development-distribution/package-a-connector/README.md)
+  * [Vocabularies](package-development-distribution/package-a-connector/vocabularies.md)
 
 ## Script Central <a id="script-central-1"></a>
 
