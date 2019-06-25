@@ -28,9 +28,9 @@ The **Scripts** page displays the following information in tabular format about 
 
 * **Name:** The **Name** column displays the name of the ProcessMaker Script. Click the name to edit the ProcessMaker Screen in [Scripts Editor](../scripts-editor.md).
 * **Description:** The **Description** column displays the description of the ProcessMaker Script. See [Edit Script Configuration](edit-script-configuration.md#edit-configuration-information-about-a-processmaker-script) for more information.
-* **Language:** The **Language** column displays the programming language with which the ProcessMaker Script was written. Lua and PHP languages are supported out-of-the-box.
-* **Modified:** The **Modified** column displays the date and time the ProcessMaker Script was last modified. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Created:** The **Created** column displays the date and time the ProcessMaker Script was created. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Language:** The **Language** column displays the programming language with which the ProcessMaker Script was written. Lua and PHP languages are supported in the open-source release.
+* **Modified:** The **Modified** column displays the date and time the ProcessMaker Script was last modified. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the ProcessMaker Script was created. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### Search for a ProcessMaker Script
@@ -49,9 +49,9 @@ Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png). See [Edit a 
 
 Click the **Configure** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png). See [Edit Script Configuration](edit-script-configuration.md#edit-configuration-information-about-a-processmaker-script).
 
-### Duplicate a ProcessMaker Script
+### Copy a ProcessMaker Script
 
-Click the **Duplicate** icon![](../../../.gitbook/assets/duplicate-script-processes.png). See [Duplicate a Script](duplicate-a-script.md#duplicate-a-processmaker-script).
+Click the **Copy** icon![](../../../.gitbook/assets/duplicate-script-processes.png). See [Copy a Script](duplicate-a-script.md#duplicate-a-processmaker-script).
 
 ### Delete a ProcessMaker Script
 
@@ -59,7 +59,7 @@ Click the **Remove** icon![](../../../.gitbook/assets/trash-icon-process-modeler
 
 ### No ProcessMaker Scripts?
 
-If no ProcessMaker Scripts exist, the following message displays: **No Data Available**.
+If no ProcessMaker Scripts exist, the following message displays: **No Results**.
 
 ### Display Information the Way You Want It
 

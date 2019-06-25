@@ -1,12 +1,12 @@
 ---
-description: Understand how to use Screens in ProcessMaker Spark.
+description: Understand how to use Screens in ProcessMaker.
 ---
 
 # What is a Screen?
 
 ## Overview
 
-In ProcessMaker Spark, a Screen presents information for a person to interact with or view. A form is an example of a ProcessMaker Screen. Any ProcessMaker Screen can be re-used in any Process model. Many Processes require the same type of information be gathered, such as a [Request](../../using-processmaker/requests/what-is-a-request.md) participant's name, email address, and other business information. In other words, "design once, use anywhere."
+In ProcessMaker, a Screen presents information for a person to interact with or view. A form is an example of a ProcessMaker Screen. Any ProcessMaker Screen can be re-used in any Process model. Many Processes require the same type of information be gathered, such as a [Request](../../using-processmaker/requests/what-is-a-request.md) participant's name, email address, and other business information. In other words, "design once, use anywhere."
 
 In simple forms, ProcessMaker Screens can display information. However, ProcessMaker Screens also allow people to interact with Request information. Below are a few of ways Request participants can interact with ProcessMaker Screens:
 

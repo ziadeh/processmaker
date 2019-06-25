@@ -1,13 +1,13 @@
 ---
-description: Duplicate an existing ProcessMaker Script.
+description: Copy an existing ProcessMaker Script.
 ---
 
-# Duplicate a Script
+# Copy a Script
 
-## Duplicate a ProcessMaker Script
+## Copy a ProcessMaker Script
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to duplicate a ProcessMaker Script:
+Your user account or group membership must have the following permissions to copy a ProcessMaker Script:
 
 * Scripts: View Scripts
 * Scripts: Create Scripts
@@ -15,10 +15,10 @@ Your user account or group membership must have the following permissions to dup
 See the ProcessMaker [Scripts](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to duplicate a ProcessMaker Script:
+Follow these steps to copy a ProcessMaker Script:
 
 1. [View your ProcessMaker Scripts](view-all-scripts.md). The **Scripts** page displays.
-2. Click the **Duplicate** icon![](../../../.gitbook/assets/duplicate-script-processes.png)for your ProcessMaker Script. The **Duplicate Script** screen displays.  
+2. Click the **Copy** icon![](../../../.gitbook/assets/duplicate-script-processes.png)for your ProcessMaker Script. The **Duplicate Script** screen displays.  
 
    ![](../../../.gitbook/assets/duplicate-script-screen-processes.png)
 
@@ -28,7 +28,7 @@ Follow these steps to duplicate a ProcessMaker Script:
 4. Click **Save**.
 
 {% hint style="info" %}
-The **Language** field shows in which programming language the original ProcessMaker Script is written. The duplicated ProcessMaker Script must use the same programming language.
+The **Language** field shows in which programming language the original ProcessMaker Script is written. The copied ProcessMaker Script must use the same programming language.
 {% endhint %}
 
 ## Related Topics

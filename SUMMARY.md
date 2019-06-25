@@ -59,7 +59,7 @@
     * [Search for a Script](designing-processes/scripts/manage-scripts/search-for-a-script.md)
     * [Configure a Script](designing-processes/scripts/manage-scripts/edit-script-configuration.md)
     * [Edit a Script](designing-processes/scripts/manage-scripts/edit-a-script.md)
-    * [Duplicate a Script](designing-processes/scripts/manage-scripts/duplicate-a-script.md)
+    * [Copy a Script](designing-processes/scripts/manage-scripts/duplicate-a-script.md)
     * [Delete a Script](designing-processes/scripts/manage-scripts/remove-a-script.md)
   * [Scripts Editor](designing-processes/scripts/scripts-editor.md)
 * [Screen Management](designing-processes/design-forms/README.md)
