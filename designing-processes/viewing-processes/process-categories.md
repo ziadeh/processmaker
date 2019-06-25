@@ -6,13 +6,13 @@ description: Assign Categories to Processes for better organization.
 
 ## Overview
 
-A Process Category is a group of Processes with similar functions or goals. Use Process Categories to help Requesters find the Process in which to start a Request. When a Requester starts a new Request, the **New Request** screen displays Processes organized into Process Categories.
+A Process Category is a group of Processes with similar functions or goals. Use Process Categories to help Requesters find the Process from which to start a [Request](../../using-processmaker/requests/what-is-a-request.md). When a Requester starts a new Request, the **New Request** screen displays Processes organized into Process Categories.
 
 ![The &quot;New Request&quot; screen displays Processes into Categories](../../.gitbook/assets/new-request-screen-requests.png)
 
 Process Categories can be active or inactive. Processes that have been assigned to an inactive Process Category do not display in any Process Category when [Requesters start a Request](../../using-processmaker/requests/make-a-request.md#start-a-request).
 
-A Process can be assigned to only one Process Category. See [Edit Process Configuration](view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md#edit-configuration-information-about-a-process) for more information.
+A Process can be assigned to only one Process Category. See [Edit Process Configuration](view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md#edit-configuration-information-about-a-process).
 
 ## View Process Categories
 
@@ -43,7 +43,7 @@ The **Categories** page displays the following information in tabular format abo
 {% hint style="info" %}
 ### No Process Categories? <a id="no-processes"></a>
 
-If no Process Categories exist, the following message displays: **No Data Available**.
+If no Process Categories exist, the following message displays: **No Results**.
 
 ### Display Information the Way You Want It <a id="display-information-the-way-you-want-it"></a>
 
