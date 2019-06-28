@@ -31,7 +31,11 @@ The **Summary** tab displays the JSON-formatted key/value pairs in tabular forma
 * **KEY:** The **KEY** column displays the JSON key name that represents the ProcessMaker Screen control name the Request participant entered data or specified through the ProcessMaker Spark REST API. For example, a Text control to enter your name could be named `Full Name` which would display in the **Key** column here.
 * **VALUE:** The **VALUE** column displays that key's value as entered by a person manually interacting with a form or specified through the ProcessMaker Spark REST API. For example, a Text control to enter your name could have the value `John Doe` which would display in the **Value** column here.
 
-Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-canceled-requests.md#request-history).
+The **Summary** tab may also display a message about the canceled Request. This message is a ProcessMaker [Screen](../../../designing-processes/design-forms/what-is-a-form.md) configured to display when Requests for a specific Process are canceled.
+
+![ProcessMaker Screen displaying a message when Requests for a specific Process are canceled.](../../../.gitbook/assets/summary-tab-cancel-screen-requests.png)
+
+Below the **Summary** tab, the history of the Request displays all Request actions. See [Request History](summary-for-canceled-requests.md#request-history).
 
 {% hint style="info" %}
 [Control how tabular information displays](../../control-how-requests-display-in-a-tab.md), including how to sort columns or how many items display per page.
