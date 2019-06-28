@@ -8,7 +8,7 @@ description: >-
 
 ## View All ProcessMaker Screens <a id="view-all-scripts"></a>
 
-ProcessMaker displays all Screens in one location. Any ProcessMaker Screen developed by any Process Owner can be used in any Process model. This makes it easy to manage ProcessMaker Screens.
+ProcessMaker displays all Screens in one location. Any ProcessMaker Screen developed by any Process Owner can be used in any Process. This makes it easy to manage ProcessMaker Screens.
 
 {% hint style="info" %}
 Your user account or group membership must have the "Screens: View Screens" permission to view the list of ProcessMaker Screens.
@@ -29,8 +29,8 @@ The **Screens** page displays the following information in tabular format about 
 * **Name:** The **Name** column displays the name of the ProcessMaker Screen. Click the name to edit the ProcessMaker Screen in [Screens Builder](../screens-builder/).
 * **Description:** The **Description** column displays the description of the ProcessMaker Screen. See [Edit Script Configuration](../../scripts/manage-scripts/edit-script-configuration.md#edit-configuration-information-about-a-processmaker-script) for more information.
 * **Type:** The **Type** column displays which type the ProcessMaker Screen is. See [Screen Types](../screens-builder/types-for-screens.md).
-* **Modified:** The **Modified** column displays the date and time the ProcessMaker Screen was last modified. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Created:** The **Created** column displays the date and time the ProcessMaker Screen was created. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Modified:** The **Modified** column displays the date and time the ProcessMaker Screen was last modified. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the ProcessMaker Screen was created. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### Search for a ProcessMaker Screen

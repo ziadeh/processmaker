@@ -25,8 +25,9 @@ Follow these steps to create a new ProcessMaker Screen:
 3. In the **Name** field, enter the name of the ProcessMaker Screen. This is a required field.
 4. From the **Type** drop-down menu, select one of the following ProcessMaker Screen types:
 
-   * **Display:** The Display type, generally used to display information or download files, has limited functionality compared the Form type. See [Display](../screens-builder/types-for-screens.md#display).
-   * **Form:** The Form type allows people to interact with [Request](../../../using-processmaker/requests/what-is-a-request.md) information. See [Form](../screens-builder/types-for-screens.md#form).
+   * **Form:** Use the Form type to design interactive and complex forms. See [Form](../screens-builder/types-for-screens.md#form).
+   * **Display:** Use the Display type to display information or allow [Request](../../../using-processmaker/requests/what-is-a-request.md) participants to download files. The Display type has limited functionality compared the Form type. See [Display](../screens-builder/types-for-screens.md#display).
+   * **Email:** Use the Email type to compose the email body for email messages to be used with the [Email](../../../package-development-distribution/package-a-connector/email.md) package. Note that the Email package must be installed in your ProcessMaker environment for this option to display. See [Email](../screens-builder/types-for-screens.md#email).
 
    This is a required field.
 
@@ -52,4 +53,6 @@ Follow these steps to create a new ProcessMaker Screen:
 {% page-ref page="remove-a-screen.md" %}
 
 {% page-ref page="../screens-builder/" %}
+
+{% page-ref page="../../../package-development-distribution/package-a-connector/email.md" %}
 

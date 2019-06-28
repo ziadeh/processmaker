@@ -1,13 +1,13 @@
 ---
-description: Duplicate an existing ProcessMaker Screen.
+description: Copy an existing ProcessMaker Screen.
 ---
 
-# Duplicate a Screen
+# Copy a Screen
 
 ## Duplicate a ProcessMaker Screen
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to duplicate a ProcessMaker Screen's configuration:
+Your user account or group membership must have the following permissions to copy a ProcessMaker Screen's configuration:
 
 * Screens: View Screens
 * Screens: Create Screens
@@ -15,20 +15,20 @@ Your user account or group membership must have the following permissions to dup
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to duplicate a ProcessMaker Screen:
+Follow these steps to copy a ProcessMaker Screen:
 
 1. [View your ProcessMaker Screens.](view-all-forms.md) The **Screens** page displays.
-2. Click the **Duplicate** icon![](../../../.gitbook/assets/duplicate-script-processes.png)for your ProcessMaker Screen. The **Duplicate Screen** screen displays.  
+2. Click the **Copy** icon![](../../../.gitbook/assets/duplicate-script-processes.png)for your ProcessMaker Screen. The **Duplicate Screen** screen displays.  
 
    ![](../../../.gitbook/assets/duplicate-screen-screen-processes.png)
 
 3. Edit the following information from the original ProcessMaker Screen as necessary:
-   * In the **Name** field, edit the name of the duplicated ProcessMaker Screen. After the original ProcessMaker Screen is duplicated, the word **Copy** is suffixed to the original Screen's name. This is a required field.
+   * In the **Name** field, edit the name of the copied ProcessMaker Screen. After the original ProcessMaker Screen is copied, the word **Copy** is suffixed to the original Screen's name. This is a required field.
    * In the **Description** field, edit the description of the original ProcessMaker Screen.
 4. Click **Save**.
 
 {% hint style="info" %}
-The **Type** field shows which [type](../screens-builder/types-for-screens.md) the original ProcessMaker Screen is. The duplicate ProcessMaker Screen must be of the same Screen type as the original.
+The **Type** field shows which [type](../screens-builder/types-for-screens.md) the original ProcessMaker Screen is. The copied ProcessMaker Screen must be of the same Screen type as the original.
 {% endhint %}
 
 ## Related Topics

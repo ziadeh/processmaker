@@ -70,7 +70,7 @@
     * [Import a Screen](designing-processes/design-forms/manage-forms/import-a-screen.md)
     * [Search for a Screen](designing-processes/design-forms/manage-forms/search-for-a-screen.md)
     * [Configure a Screen](designing-processes/design-forms/manage-forms/edit-a-screen.md)
-    * [Duplicate a Screen](designing-processes/design-forms/manage-forms/duplicate-a-screen.md)
+    * [Copy a Screen](designing-processes/design-forms/manage-forms/duplicate-a-screen.md)
     * [Export a Screen](designing-processes/design-forms/manage-forms/export-a-screen.md)
     * [Delete a Screen](designing-processes/design-forms/manage-forms/remove-a-screen.md)
   * [Screens Builder](designing-processes/design-forms/screens-builder/README.md)
@@ -79,7 +79,7 @@
     * [Screens Builder Modes](designing-processes/design-forms/screens-builder/screens-builder-modes.md)
     * [View the Inspector Panel](designing-processes/design-forms/screens-builder/view-the-inspector-pane.md)
     * [Edit a Screen](designing-processes/design-forms/screens-builder/control-descriptions/README.md)
-      * [Text Box Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/text-control-settings.md)
+      * [Text Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/text-control-settings.md)
       * [Rich Text Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/rich-text-control-settings.md)
       * [Line Input Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/line-input-control-settings.md)
       * [Textarea Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/textarea-control-settings.md)
@@ -181,6 +181,7 @@
 
 * [What is a Package?](package-development-distribution/first-topic.md)
 * [Available Packages from ProcessMaker](package-development-distribution/package-a-connector/README.md)
+  * [Email](package-development-distribution/package-a-connector/email.md)
   * [Vocabularies](package-development-distribution/package-a-connector/vocabularies.md)
 
 ## Script Central <a id="script-central-1"></a>

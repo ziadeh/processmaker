@@ -27,10 +27,6 @@ Follow these steps to configure a ProcessMaker Screen:
    * In the **Description** field, edit the description of the ProcessMaker Screen. This is a required field.
 4. Click **Save**.
 
-{% hint style="info" %}
-The **Type** field shows of which type the ProcessMaker Screen is. After the ProcessMaker Screen has been created, its type cannot be changed.
-{% endhint %}
-
 ## Related Topics
 
 {% page-ref page="../what-is-a-form.md" %}

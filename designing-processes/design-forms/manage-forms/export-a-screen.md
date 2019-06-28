@@ -6,11 +6,11 @@ description: Export a ProcessMaker Screen.
 
 ## Overview
 
-Export a ProcessMaker Screen to your local computer. The exported ProcessMaker Screen may then be imported to the same or another ProcessMaker Spark instance of the same product version. An exported ProcessMaker Screen may then be shared with others so they can import your ProcessMaker Screen for their Processes.
+Export a ProcessMaker Screen to your local computer. The exported ProcessMaker Screen may then be imported to the same or another ProcessMaker instance of the same [ProcessMaker version](../../../using-processmaker/application-version-details.md#view-processmaker-version-information). An exported ProcessMaker Screen may then be shared with others so they can import your ProcessMaker Screen for their Processes.
 
-An exported ProcessMaker Screen contains all the [controls](../screens-builder/control-descriptions/) as they were configured at the time the Screen was exported.
+An exported ProcessMaker Screen contains all the [controls](../screens-builder/control-descriptions/) as the original at the time the original Screen was exported.
 
-The exported ProcessMaker Screen has the `.spark` file extension.
+The exported ProcessMaker Screen has the `.json` file extension.
 
 ## Export a ProcessMaker Screen
 
@@ -31,8 +31,8 @@ Follow these steps to export a ProcessMaker Screen:
    ![](../../../.gitbook/assets/export-screen-processes.png)
 
 3. Click **Download**, and then browse for the location on your local computer to save the exported ProcessMaker Screen.
-4. By default, ProcessMaker Spark exports the ProcessMaker Screen using the original Screen name except spaces in the name are replaced with underscores \(`_`\). The file has the file extension `.spark`. Rename the default file name if necessary, though do not change the file extension. As a best practice, specify in the file name that this is an exported ProcessMaker Screen and not an [exported ProcessMaker Process](../../viewing-processes/view-the-list-of-processes/export-a-bpmn-compliant-process.md#export-a-bpmn-2-0-compliant-process).
-5. Save the file. ProcessMaker Spark exports the `.spark` file to your local computer. The following message displays when the ProcessMaker Screen exports successfully: **The screen was exported.**
+4. By default, ProcessMaker exports the ProcessMaker Screen using the original Screen name except spaces in the name are replaced with underscores \(`_`\). The file has the file extension `.json`. Rename the default file name if necessary, though do not change the file extension. As a best practice, specify in the file name that this is an exported ProcessMaker Screen and not an [exported ProcessMaker Process](../../viewing-processes/view-the-list-of-processes/export-a-bpmn-compliant-process.md#export-a-bpmn-2-0-compliant-process).
+5. Save the file. ProcessMaker exports the `.json` file to your local computer. The following message displays when the ProcessMaker Screen exports successfully: **The screen was exported.**
 
 ## Related Topics
 

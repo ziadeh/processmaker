@@ -16,9 +16,16 @@ Please contact your ProcessMaker Administrator if you do not know either of the 
 
 Did you forget your password? See [Reset Your Password](log-in.md#reset-your-password).
 
-### Minimum Screen Requirements
+### Minimum Requirements
 
-Ensure that your display is at least 1200 by 720 pixel resolution before logging on to ProcessMaker.
+Ensure that the device from which you are logging on to ProcessMaker meets the following requirements:
+
+* Your web browser application on your device is the latest version of one of the following browsers:
+  * Apple Safari
+  * Google Chrome
+  * Microsoft Edge
+  * Mozilla Firefox
+* Your display is at least 1200 by 720 pixel resolution.
 {% endhint %}
 
 Follow these steps to log on to ProcessMaker:

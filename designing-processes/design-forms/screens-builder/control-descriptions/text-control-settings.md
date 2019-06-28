@@ -2,11 +2,11 @@
 description: Add a control that displays plain or bold-formatted text.
 ---
 
-# Text Box Control Settings
+# Text Control Settings
 
 ## Control Description
 
-The Text Box control adds a text field that displays plain or bold-formatted text.
+The Text control adds a text field that displays plain or bold-formatted text. This control can display the value of another control by referencing that control's **Variable Value** field setting using mustache syntax. Example: `{{FullName}}`.
 
 ## Add the Control to a ProcessMaker Screen
 
@@ -21,19 +21,19 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Follow these steps to add this control to the ProcessMaker Screen:
 
-1. [Create](../../manage-forms/create-a-new-form.md) or [open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Editor mode](../screens-builder-modes.md#editor-mode).
+1. [Create](../../manage-forms/create-a-new-form.md) or [open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
 3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
-4. Drag the **Text Box** icon ![](../../../../.gitbook/assets/text-control-screens-builder-processes.png) from the **Controls** panel anywhere within the ProcessMaker Screen canvas represented by the dotted-lined box. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
+4. Drag the **Text** icon ![](../../../../.gitbook/assets/text-control-screens-builder-processes.png) from the **Controls** panel anywhere within the ProcessMaker Screen canvas represented by the dotted-lined box. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
 5. Place into the ProcessMaker Screen canvas where you want the control to display on the page.   
 
    ![](../../../../.gitbook/assets/text-control-placed-screens-builder-processes.png)
 
-6. Configure the Text Box control. See [Inspector Settings](text-control-settings.md#inspector-settings).
+6. Configure the Text control. See [Inspector Settings](text-control-settings.md#inspector-settings).
 
-Below is a Text Box control in Preview mode.
+Below is a Text control in Preview mode.
 
-![Text Box control in Preview mode](../../../../.gitbook/assets/text-control-preview-screens-builder-processes.png)
+![Text control in Preview mode](../../../../.gitbook/assets/text-control-preview-screens-builder-processes.png)
 
 ## Delete the Control from a ProcessMaker Screen
 
@@ -60,11 +60,11 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the Text Box control:
+Below are Inspector settings for the Text control:
 
-* **Text Content:** Enter what text displays for the Text Box control. **New Text** is the default value. You can change what text will display.
+* **Text Content:** Enter what text displays for the Text control. **New Text** is the default value. You can change what text will display.
 
-  Also use the Text Box control to display the variable value of another control in the same or another ProcessMaker Screen. To do so, use mustache syntax and reference the **Variable Value** setting value for the control from which you want to display its value. Example: `{{FullName}}`.
+  Also use the Text control to display the variable value of another control in the same or another ProcessMaker Screen. To do so, use mustache syntax and reference the **Variable Value** setting value for the control from which you want to display its value. Example: `{{FullName}}`.
 
 * **Font Weight:** Sets the weight of the text specified in the **Text Content** setting. **Normal** is the default option. You can change to **Bold**.
 * **Text Horizontal Alignment:** Sets the text horizontal alignment. **Left** is the default option. Select one of the following options:
@@ -86,10 +86,10 @@ Below are Inspector settings for the Text Box control:
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
 
 {% hint style="info" %}
-Below are some ways to render Request data to display as text in a Text Box control:
+Below are some ways to render Request data to display as text in a Text control:
 
 * Use mustache template syntax to reference the Request data. Example: `Customer First Order Name: {{customer.orders.0.name}}`
-* Include your own HTML syntax in the Text Box control along with template references. Example: `Customer First Name: <strong>{{customer.firstname}}</strong>`
+* Include your own HTML syntax in the Text control along with template references. Example: `Customer First Name: <strong>{{customer.firstname}}</strong>`
 {% endhint %}
 
 ## Related Topics
