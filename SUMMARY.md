@@ -81,7 +81,7 @@
     * [Edit a Screen](designing-processes/design-forms/screens-builder/control-descriptions/README.md)
       * [Text Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/text-control-settings.md)
       * [Rich Text Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/rich-text-control-settings.md)
-      * [Line Input Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/line-input-control-settings.md)
+      * [Line Inputs Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/line-input-control-settings.md)
       * [Textarea Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/textarea-control-settings.md)
       * [Select Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/select-control-settings.md)
       * [Radio Group Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/radio-group-control-settings.md)

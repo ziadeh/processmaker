@@ -1,14 +1,14 @@
 ---
 description: >-
-  Add a control that displays a text box that the form user can enter plain text
-  or a password.
+  Add a control that displays a text field that the form user can enter plain
+  text or a password.
 ---
 
-# Line Input Control Settings
+# Line Inputs Control Settings
 
 ## Control Description
 
-The Line Input control adds a text box that the form user can enter plain text or a password.
+The Line Input control adds a text field that the form user can enter plain text or a password.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -27,19 +27,19 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Follow these steps to add this control to the ProcessMaker Screen:
 
-1. [Create](../../manage-forms/create-a-new-form.md) or [open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Editor mode](../screens-builder-modes.md#editor-mode).
+1. [Create](../../manage-forms/create-a-new-form.md) or [open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
 3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
-4. Drag the **Line Input** icon ![](../../../../.gitbook/assets/line-input-control-screens-builder-processes.png) from the **Controls** panel anywhere within the ProcessMaker Screen canvas represented by the dotted-lined box. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
+4. Drag the **Line Inputs** icon ![](../../../../.gitbook/assets/line-input-control-screens-builder-processes.png) from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
 5. Place into the ProcessMaker Screen canvas where you want the control to display on the page.  
 
    ![](../../../../.gitbook/assets/line-input-screens-builder-processes.png)
 
-6. Configure the Line Input control. See [Inspector Settings](line-input-control-settings.md#inspector-settings).
+6. Configure the Line Inputs control. See [Inspector Settings](line-input-control-settings.md#inspector-settings).
 
-Below is a Line Input control in Preview mode.
+Below is a Line Inputs control in Preview mode.
 
-![Line Input control in Preview mode](../../../../.gitbook/assets/line-input-control-preview-screens-builder-processes.png)
+![Line Inputs control in Preview mode](../../../../.gitbook/assets/line-input-control-preview-screens-builder-processes.png)
 
 ## Delete the Control from a ProcessMaker Screen
 
@@ -66,7 +66,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the Line Input control:
+Below are Inspector settings for the Line Inputs control:
 
 * **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
 
@@ -77,8 +77,8 @@ Below are Inspector settings for the Line Input control:
   This is a required setting.
 
 * **Field Type:** Select one of the following options:
-  * **Text:** The form user enters a single line of plain text into the Line Input control. If the entered text is longer than the field width, the entered text is clipped. **Text** is the default option.
-  * **Password:** The form user enters a password into the Line Input control. Entered text is masked. If the entered text is longer than the field width, the entered text is clipped.
+  * **Text:** The form user enters a single line of plain text into the Line Inputs control. If the entered text is longer than the field width, the entered text is clipped. **Text** is the default option.
+  * **Password:** The form user enters a password into the Line Inputs control. Entered text is masked. If the entered text is longer than the field width, the entered text is clipped.
 * **Field Label:** Enter the field label text that displays. **New Input** is the default value.
 * **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
 * **Placeholder:** Enter the placeholder text that displays in the field when no value has been provided. This setting has no default value.
