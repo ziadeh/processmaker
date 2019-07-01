@@ -25,7 +25,7 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Follow these steps to add this control to the ProcessMaker Screen:
 
-1. [Create](../../manage-forms/create-a-new-form.md) or [open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
+1. [Create](../../manage-forms/create-a-new-form.md) or [open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Editor mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
 3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
 4. Drag the **Select** icon ![](../../../../.gitbook/assets/select-control-screens-builder-processes.png) from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
@@ -77,7 +77,7 @@ Below are Inspector settings for the Line Input control:
 * **Field Label:** Enter the field label text that displays. **New Select** is the default value.
 * **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
 * **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
-* **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down menu. The default option is called **new** with the content **New Option**.  
+* **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down menu. The default option is called **new** with the content **New Option**. Use the **Show in Json Format** toggle to display these settings in JSON.  
 
   ![](../../../../.gitbook/assets/select-control-options-list-screens-builder-processes.png)
 
@@ -94,7 +94,7 @@ Below are Inspector settings for the Line Input control:
      ![](../../../../.gitbook/assets/add-new-option-screen-screen-builder-processes.png)
 
   2. In the **Option Value** field, enter the **Value** option value \(as described above\).
-  3. In the **Option Label** field, enter the **Content** option value \(as described above\).
+  3. In the **Content** field, enter the **Content** option value \(as described above\).
   4. Click **OK**. The option displays below the existing options in **Options List**.
 
 * **Element Background Color:** Select to specify the background color of this control.
