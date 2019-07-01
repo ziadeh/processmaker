@@ -87,7 +87,7 @@
       * [Radio Group Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/radio-group-control-settings.md)
       * [Checkbox Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/checkbox-control-settings.md)
       * [Date Picker Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/date-picker-control-settings.md)
-      * [Page Navigation Button Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/page-navigation-button-control-settings.md)
+      * [Navigation Button Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/page-navigation-button-control-settings.md)
       * [Table Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/multi-column-button-control-settings.md)
       * [Record List Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/record-list-control-settings.md)
       * [Image Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/image-control-settings.md)

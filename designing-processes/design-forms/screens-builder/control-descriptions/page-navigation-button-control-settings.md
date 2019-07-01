@@ -1,14 +1,14 @@
 ---
 description: >-
-  Add a Page Navigation button control from which the form user can go to
-  another page in a multi-page ProcessMaker Screen.
+  Add a Navigation button control from which the form user can go to another
+  page in a multi-page ProcessMaker Screen.
 ---
 
-# Page Navigation Button Control Settings
+# Navigation Button Control Settings
 
 ## Control Description <a id="control-description"></a>
 
-The Page Navigation Button control adds a button from which the form user can go to another page in a multi-page ProcessMaker Screen. 
+The Navigation Button control adds a button from which the form user can go to another page in a multi-page ProcessMaker Screen. 
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -30,16 +30,16 @@ Follow these steps to add this control to the ProcessMaker Screen:
 1. [Create](../../manage-forms/create-a-new-form.md) or [open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
 3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
-4. Drag the **Page Navigation Button** icon![](../../../../.gitbook/assets/page-navigation-control-screens-builder-processes.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
+4. Drag the **Navigation Button** icon![](../../../../.gitbook/assets/page-navigation-control-screens-builder-processes.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
 5. Place into the ProcessMaker Screen canvas where you want the control to display on the page.  
 
    ![](../../../../.gitbook/assets/page-navigation-control-placed-screens-builder-processes.png)
 
-6. Configure the Page Navigation Button control. See [Inspector Settings](page-navigation-button-control-settings.md#inspector-settings).
+6. Configure the Navigation Button control. See [Inspector Settings](page-navigation-button-control-settings.md#inspector-settings).
 
-Below is a Page Navigation Button control in Preview mode.
+Below is a Navigation Button control in Preview mode.
 
-![Page Navigation Button control in Preview mode using the &quot;Secondary&quot; Variant option](../../../../.gitbook/assets/page-navigation-button-control-preview-screens-builder-processes.png)
+![Navigation Button control in Preview mode using the &quot;Secondary&quot; Variant option](../../../../.gitbook/assets/page-navigation-button-control-preview-screens-builder-processes.png)
 
 ## Delete the Control from a ProcessMaker Screen
 
@@ -66,7 +66,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the Page Navigation Button control:
+Below are Inspector settings for the Navigation Button control:
 
 * **Field Label:** Enter the field label text that displays. **New** **Page Navigation** is the default value.
 * **Variant:** Select the style for the Page Navigation Button control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:

@@ -78,7 +78,7 @@ Below are Inspector settings for the Radio Group control:
 
 * **Field Label:** Enter the field label text that displays. **New Radio Button Group** is the default value.
 * **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
-* **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down. The default option is called **new** with the content **New Option**.  
+* **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down. The default option is called **new** with the content **New Option**. Use the **Show in Json Format** toggle to display these settings in JSON.  
 
   ![](../../../../.gitbook/assets/radio-group-control-options-list-screens-builder-processes.png)
 
@@ -95,9 +95,8 @@ Below are Inspector settings for the Radio Group control:
      ![](../../../../.gitbook/assets/add-new-option-screen-screen-builder-processes.png)
 
   2. In the **Option Value** field, enter the **Value** option value \(as described above\).
-  3. In the **Option Label** field, enter the **Content** option value \(as described above\).
+  3. In the **Content** field, enter the **Content** option value \(as described above\).
   4. Click **OK**. The option displays below the existing options in **Options List**.
-  5. If necessary, click the **Show in Json Format** checkbox to view the radio group options in JSON format.
 
 * **Toggle Style?:** Select to display a toggle control instead of a radio button control for each radio group option.
 * **Element Background Color:** Select to specify the background color of this control.
