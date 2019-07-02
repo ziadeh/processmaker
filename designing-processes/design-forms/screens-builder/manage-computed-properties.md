@@ -6,7 +6,7 @@ description: Manage computed Properties for a ProcessMaker Screen's JSON data mo
 
 ## Overview
 
-Use Computed Properties mode to add Properties to a [ProcessMaker Screen's](../what-is-a-form.md) JSON data model. A Property represents any value, mathematical calculation, or formula that computes a value. A Property's computation can be determined either through a mathematical formula or valid JavaScript, and may include values from [ProcessMaker Screen control](control-descriptions/) values during a [Request](../../../using-processmaker/requests/what-is-a-request.md). Likewise, a computed Property's value can be displayed in a ProcessMaker Screen control. Computed Properties can only be used within and only affect the currently opened ProcessMaker Screen.
+Use Computed Properties mode to add Properties to a [ProcessMaker Screen's](../what-is-a-form.md) JSON data model. A Property represents any value, mathematical calculation, or formula that calculates a value. A Property's computation can be determined either through a mathematical formula or valid JavaScript, and may include [ProcessMaker Screen control](control-descriptions/) values during a [Request](../../../using-processmaker/requests/what-is-a-request.md). Likewise, a computed Property's value can be displayed in a ProcessMaker Screen control. Computed Properties can only be used within and only affect the currently opened ProcessMaker Screen.
 
 Below are a few uses for computed Properties that can be calculated mathematically or through JavaScript:
 
@@ -14,7 +14,7 @@ Below are a few uses for computed Properties that can be calculated mathematical
 * Calculate the final cost of a purchase based on a sales tax. Example: $`60` \(item cost\) x `.075` \(sales tax\)
 * Calculate the minimum credit card payment. Example: $`1000` \(amount owed\) x `.03` \(interest rate\)
 
-Computed Properties display as the second key-value pair in the ProcessMaker Screen's JSON data model from the [**Data Preview** panel when previewing the Screen](preview-a-screen.md).
+Computed Properties display as the second key-value pair in the ProcessMaker Screen's JSON data model from the [**Data Preview** section of the **Inspector** panel when previewing the Screen](preview-a-screen.md).
 
 ## Add a Computed Property
 
@@ -27,10 +27,10 @@ Your user account or group membership must have the following permissions to add
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to add a computed Property:
+Follow these steps to add a calculated Property:
 
-1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to add a computed Property. The ProcessMaker Screen is in [Editor mode](screens-builder-modes.md#editor-mode).
-2. Click the **Computed Properties** option from Screen Builder's top menu. The **Computed Properties** screen displays all Properties configured for this ProcessMaker Screen. All Properties configured in this screen display their computed values in the JSON data model from the [**Data Preview** panel when previewing the ProcessMaker Screen](preview-a-screen.md). If no Properties have been configured for this ProcessMaker Screen, **Property Name** displays as a placeholder for the first Property.  
+1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to add a computed Property. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode).
+2. Click the **Computed Properties** button![](../../../.gitbook/assets/computed-properties-button-screens-builder-processes.png). The **Computed Properties** screen displays all Properties configured for this ProcessMaker Screen. All Properties configured in this screen display their computed values in the JSON data model from the [**Data Preview** section of the **Inspector** panel when previewing the ProcessMaker Screen](preview-a-screen.md). If no Properties have been configured for this ProcessMaker Screen, **Property Name** displays as a placeholder for the first Property.  
 
    ![](../../../.gitbook/assets/computed-properties-screen-screens-builder-processes.png)
 
@@ -38,7 +38,7 @@ Follow these steps to add a computed Property:
 
    ![](../../../.gitbook/assets/computed-properties-definition-screen-screens-builder-processes.png)
 
-4. In the **Property Name** field, enter the name of the Property. This Property name displays both in the **Computer Properties** screen and in the JSON data model when previewing the ProcessMaker Screen. This is a required field.
+4. In the **Property Name** field, enter the name of the Property. This Property name displays both in the **Computed Properties** screen and in the JSON data model when previewing the ProcessMaker Screen. This is a required field.
 5. In the **Description** field, enter the description of the Property. This is a required field.
 6. Above the **Formula** field, select one of the following ways to compute the Property:
    * **Mathematical calculation:** Click the **Formula** icon![](../../../.gitbook/assets/formula-icon-computed-property-screens-builder-processes.png)to enter the value, mathematical calculation, or formula that computes the Property. The **Formula** icon is selected by default.
@@ -61,7 +61,7 @@ See the ProcessMaker [Screens](../../../processmaker-administration/permission-d
 
 Follow these steps to view a computed Property:
 
-1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to add a computed Property. The ProcessMaker Screen is in [Editor mode](screens-builder-modes.md#editor-mode).
+1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to add a computed Property. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode).
 2. [Open the **Computed Properties** screen.](manage-computed-properties.md#add-a-computed-property)
 3. Click the **Details** icon![](../../../.gitbook/assets/computed-properties-details-icon-screens-builder-processes.png). The **Computed Properties** screen displays how the selected Property is named and computed.  
 
@@ -82,7 +82,7 @@ See the ProcessMaker [Screens](../../../processmaker-administration/permission-d
 
 Follow these steps to edit a computed Property:
 
-1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to add a computed Property. The ProcessMaker Screen is in [Editor mode](screens-builder-modes.md#editor-mode).
+1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to add a computed Property. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode).
 2. [Open the **Computed Properties** screen.](manage-computed-properties.md#add-a-computed-property)
 3. Click the **Edit** icon![](../../../.gitbook/assets/computed-properties-edit-icon-screens-builder-processes.png). The **Computed Properties** screen displays how the selected Property is named and computed.  
 
@@ -93,7 +93,7 @@ Follow these steps to edit a computed Property:
    * In the **Description** field, enter the description of the Property. This is a required field.
    * Above the **Formula** field, select one of the following ways to compute the Property:
      * **Mathematical calculation:** Click the **Formula** icon![](../../../.gitbook/assets/formula-icon-computed-property-screens-builder-processes.png)to enter the value, mathematical calculation, or formula that computes the Property. The **Formula** icon is selected by default.
-     * **JavaScript:** Click the **JavaScript** icon![](../../../.gitbook/assets/javascript-icon-computed-property-screens-builder-processes.png)to compute the Property using valid JavaScript.
+     * **JavaScript:** Click the **JavaScript** icon![](../../../.gitbook/assets/javascript-icon-computed-property-screens-builder-processes.png)to compute the Property using valid JavaScript. To reference a ProcessMaker Screen control's value in JavaScript, reference that control's **Variable Value** setting after `this.`. Example: `this.FullName`.
    * In the **Formula** field, enter the computed Property. This is a required field.
 5. Click **Save Property**.
 
@@ -110,7 +110,7 @@ See the ProcessMaker [Screens](../../../processmaker-administration/permission-d
 
 Follow these steps to delete a computed Property:
 
-1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to delete a computed Property. The ProcessMaker Screen is in [Editor mode](screens-builder-modes.md#editor-mode).
+1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to delete a computed Property. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode).
 2. [Open the **Computed Properties** screen.](manage-computed-properties.md#add-a-computed-property)
 3. Click the **Delete** icon![](../../../.gitbook/assets/computed-property-delete-icon-screens-builder-processes.png). The Property is deleted, and the following message displays: **Property deleted**.
 
@@ -137,8 +137,6 @@ Follow these steps to delete a computed Property:
 {% page-ref page="add-custom-css-to-a-screen.md" %}
 
 {% page-ref page="save-a-screen.md" %}
-
-{% page-ref page="close-screens-builder.md" %}
 
 {% page-ref page="best-practices.md" %}
 

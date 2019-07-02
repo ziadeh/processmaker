@@ -86,7 +86,7 @@ Below are Inspector settings for the Line Inputs control:
 * **Element Background Color:** Select to specify the background color of this control.
 * **Text Color:** Select to specify the text color that displays in this control.
 * **Visibility Rule:** Specify an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls to have the same custom CSS applied.
+* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics
 
@@ -123,6 +123,8 @@ Below are Inspector settings for the Line Inputs control:
 {% page-ref page="file-upload-control-settings.md" %}
 
 {% page-ref page="file-download-control-settings.md" %}
+
+{% page-ref page="validation-rules-for-validation-control-settings.md" %}
 
 {% page-ref page="expression-syntax-components-for-show-if-control-settings.md" %}
 

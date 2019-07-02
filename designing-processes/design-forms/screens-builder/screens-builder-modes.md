@@ -32,12 +32,12 @@ Furthermore, use Preview mode to view how the ProcessMaker Screen's controls you
  See [Preview a Screen and Its JSON Data Model](preview-a-screen.md).
 {% endhint %}
 
-## Calculated Properties Mode
+## Computed Properties Mode
 
-Use Calculated Properties mode to add Properties to a ProcessMaker Screen's JSON data model. A Property represents any value, mathematical calculation, or formula that computes a value. A Property's computation can be determined either through a mathematical formula or valid JavaScript, and may include values from [ProcessMaker Screen control](control-descriptions/) values during a Request. Likewise, a calculated Property's value can be displayed in a ProcessMaker Screen control. Calculated Properties can only be used within and only affect the ProcessMaker Screen in which the Property is defined.
+Use Computed Properties mode to add Properties to a ProcessMaker Screen's JSON data model. A Property represents any value, mathematical calculation, or formula that computes a value. A Property's computation can be determined either through a mathematical formula or valid JavaScript, and may include values from [ProcessMaker Screen control](control-descriptions/) values during a Request. Likewise, a computed Property's value can be displayed in a ProcessMaker Screen control. Computed Properties can only be used within and only affect the ProcessMaker Screen in which the Property is defined.
 
 {% hint style="info" %}
-See [Manage Calculated Properties](manage-computed-properties.md).
+See [Manage Computed Properties](manage-computed-properties.md).
 {% endhint %}
 
 ## Custom CSS Mode
@@ -73,8 +73,6 @@ See [Add Custom CSS to a Screen](add-custom-css-to-a-screen.md).
 {% page-ref page="add-custom-css-to-a-screen.md" %}
 
 {% page-ref page="save-a-screen.md" %}
-
-{% page-ref page="close-screens-builder.md" %}
 
 {% page-ref page="best-practices.md" %}
 

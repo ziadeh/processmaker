@@ -12,9 +12,15 @@ To allow ProcessMaker Screens to be used among any [Process](../../viewing-proce
 
 Use [Preview mode](screens-builder-modes.md#preview-mode) in the following ways:
 
-* In the **Data Input** panel, experiment with how JSON data models for different Processes interact with the JSON data model for your ProcessMaker Screen. Enter a JSON data model as data input into the **Data Input** panel that is to the left of the previewed ProcessMaker Screen.
-* In the **Data Preview** panel, view how the ProcessMaker Screen's controls you configured in [Editor mode](screens-builder-modes.md#editor-mode) use data in a JSON data model. To the right of the previewed ProcessMaker Screen, you can view the JSON data model as you enter information into your previewed ProcessMaker Screen. Viewing the JSON data model can be helpful to see how values are entered into the ProcessMaker Screen and how that data may affect other JSON data models.
-* Understand how different JSON data models may affect [ProcessMaker Scripts](../../scripts/what-is-a-script.md). ProcessMaker Developers can use a ProcessMaker Screen's JSON data model as variable input to a ProcessMaker Script. The JSON data model from either a Process or a ProcessMaker Screen becomes the variables that ProcessMaker Developers can use to capture what Request participants enter into a Process or a Screen.
+* In the **Data Input** section of the **Inspector** panel, experiment with how JSON data models for different Processes interact with the JSON data model for your ProcessMaker Screen. In the **Data Input** section, enter a JSON data model as your ProcessMaker Screen's data input.  
+
+  ![](../../../.gitbook/assets/data-input-section-inspector-panel-screens-builder-processes.png)
+
+* In the **Data Preview** section of the **Inspector** panel, view how the ProcessMaker Screen's controls you configured in [Design mode](screens-builder-modes.md#editor-mode) use data in a JSON data model. In the **Data Preview** section, view the JSON data model as you enter information into your previewed ProcessMaker Screen. Viewing the JSON data model can be helpful to see how values are entered into the ProcessMaker Screen and how that data may affect other JSON data models.  
+
+  ![](../../../.gitbook/assets/data-preview-section-inspector-panel-screens-builder-processes.png)
+
+* Understand how different JSON data models may affect [ProcessMaker Scripts](../../scripts/what-is-a-script.md). ProcessMaker Developers can use a ProcessMaker Screen's JSON data model as variable input to a ProcessMaker Script. The JSON data model from a ProcessMaker Screen becomes the variables that ProcessMaker Developers can use to capture what Request participants enter into or view from a Screen.
 
 ![Screens Builder displaying JSON input and output data models in Preview mode](../../../.gitbook/assets/preview-mode-screens-builder-processes.png)
 
@@ -33,19 +39,20 @@ Your user account or group membership must have the following permissions to pre
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these guidelines to preview a ProcessMaker Screen and how JSON data models interact with it:
+Follow these guidelines to preview a ProcessMaker Screen and how JSON data models interact with your Screen:
 
-1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Editor mode](screens-builder-modes.md#editor-mode).
-2. Click the **Preview** option from Screen Builder's top menu.
-3. Optionally, in the **Data Input** panel, enter a JSON data model. This JSON data model may come from a Process or another ProcessMaker Screen. If you enter a JSON data model into the **Data Input** panel, one of the following occurs:
-   * **Valid JSON:** The following message displays in the **Data Input** panel: **Valid JSON Data Object**. That JSON data model also displays in the **Data Preview** panel to indicate how that JSON data model interacts with the JSON data model from your previewed ProcessMaker Screen.
-   * **Invalid JSON:** The following message displays in the **Data Input** panel: **Invalid JSON Data Object**. Edit the JSON data model until the **Data Input** panel indicates the model is valid.
-4. Enter values into the control fields as if you were using the ProcessMaker Screen in a Request. In the **Data Preview** panel to the right of the preview, the JSON data model displays the key-value pairs. The key's values are those you enter in the ProcessMaker Screen preview.
+1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode).
+2. Click the **Preview** button.
+3. Optionally, in the **Data Input** section of the **Inspector** panel, enter a JSON data model. This JSON data model may come from a Process's Request data or another ProcessMaker Screen. As you enter a JSON data model, the **Screen Validation** indicator displays if your JSON schema has any errors that prevents validation.  
 
-![Data Preview panel displaying the combined JSON data model in Preview mode](../../../.gitbook/assets/data-preview-panel-screen-builder-processes.png)
+   ![](../../../.gitbook/assets/screen-validation-indicator-screens-builder-processes.png)
+
+4. Enter values into the control fields as if you were using the ProcessMaker Screen in a Request. In the **Data Preview** section of the **Inspector** panel, the JSON data model displays the key-value pairs. The key's values are those you enter in the ProcessMaker Screen preview.
+
+![Data Preview section of the Inspector panel displaying a JSON data model in Preview mode](../../../.gitbook/assets/data-preview-panel-screen-builder-processes.png)
 
 {% hint style="info" %}
-Computed properties also display in the **Data Preview** panel as part of the JSON data model. See [Manage Computed Properties](manage-computed-properties.md).
+Computed properties also display in the **Data Preview** section as part of the JSON data model. See [Manage Computed Properties](manage-computed-properties.md).
 {% endhint %}
 
 ## Related Topics
@@ -71,8 +78,6 @@ Computed properties also display in the **Data Preview** panel as part of the JS
 {% page-ref page="add-custom-css-to-a-screen.md" %}
 
 {% page-ref page="save-a-screen.md" %}
-
-{% page-ref page="close-screens-builder.md" %}
 
 {% page-ref page="best-practices.md" %}
 

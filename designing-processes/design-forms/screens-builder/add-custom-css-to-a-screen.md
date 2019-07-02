@@ -19,13 +19,14 @@ See the ProcessMaker [Screens](../../../processmaker-administration/permission-d
 
 Follow these steps to add custom CSS to a ProcessMaker Screen:
 
-1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to add custom CSS. The ProcessMaker Screen is in [Editor mode](screens-builder-modes.md#editor-mode).
-2. Click the **Custom CSS** option from Screen Builder's top menu. The **Custom CSS** screen displays.  
+1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to add custom CSS. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode).
+2. Click the **Custom CSS** button![](../../../.gitbook/assets/custom-css-button-screens-builder-processes.png). The **Custom CSS** screen displays.  
 
    ![](../../../.gitbook/assets/custom-css-screen-screens-builder-processes.png)
 
-3. Enter your custom CSS in valid Cascading Style Sheet language. Address any language errors as necessary.
-4. Click **Save**.
+3. Enter your custom CSS in valid Cascading Style Sheet language. Reference the **CSS Selector Name** setting\(s\) for ProcessMaker Screen controls to specify their CSS styling. Enter the value to represent this control in custom CSS syntax when in [Custom CSS](add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. Example: `[selector='my-selector']`.
+4. Address any language errors as necessary.
+5. Click **Save**.
 
 ## Related Topics
 
@@ -46,8 +47,6 @@ Follow these steps to add custom CSS to a ProcessMaker Screen:
 {% page-ref page="manage-computed-properties.md" %}
 
 {% page-ref page="save-a-screen.md" %}
-
-{% page-ref page="close-screens-builder.md" %}
 
 {% page-ref page="best-practices.md" %}
 

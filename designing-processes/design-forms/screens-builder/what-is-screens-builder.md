@@ -52,7 +52,5 @@ Below are a few examples of these controls:
 
 {% page-ref page="save-a-screen.md" %}
 
-{% page-ref page="close-screens-builder.md" %}
-
 {% page-ref page="best-practices.md" %}
 

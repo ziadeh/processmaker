@@ -101,7 +101,6 @@
     * [Manage Computed Properties](designing-processes/design-forms/screens-builder/manage-computed-properties.md)
     * [Add Custom CSS to a Screen](designing-processes/design-forms/screens-builder/add-custom-css-to-a-screen.md)
     * [Save a Screen](designing-processes/design-forms/screens-builder/save-a-screen.md)
-    * [Close Screens Builder](designing-processes/design-forms/screens-builder/close-screens-builder.md)
     * [Screens Builder Best Practices](designing-processes/design-forms/screens-builder/best-practices.md)
 * [Environment Variable Management](designing-processes/environment-variable-management/README.md)
   * [What is an Environment Variable?](designing-processes/environment-variable-management/what-is-an-environment-variable.md)
