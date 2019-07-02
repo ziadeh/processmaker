@@ -33,9 +33,9 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
 6. Configure the File Download control. See [Inspector Settings](file-download-control-settings.md#inspector-settings).
 
-Below is a File Download control in Preview mode.
+Below is a File Download control in Preview mode. The File Download control displays **No files available for download** until this control references a downloadable file in the Process or during a Process's Request.
 
-
+![File Download control in Preview mode](../../../../.gitbook/assets/file-download-control-preview-screens-builder-processes.png)
 
 ## Delete the Control from a ProcessMaker Screen
 

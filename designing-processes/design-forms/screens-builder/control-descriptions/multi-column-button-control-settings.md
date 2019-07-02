@@ -9,7 +9,7 @@ description: >-
 
 ## Control Description <a id="control-description"></a>
 
-The Table control adds a layout element with two or more columns. The Process Owner drops elements into any of the columns.
+The Table control adds a layout element with two or more columns. The Process Owner drops elements into any of the columns to display the width of the Table control.
 
 ## Add the Control to a ProcessMaker Screen <a id="add-the-control-to-a-processmaker-screen"></a>
 
@@ -27,14 +27,14 @@ Follow these steps to add this control to the ProcessMaker Screen:
 1. [Create](../../manage-forms/create-a-new-form.md) or [open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
 3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
-4. Drag the **Multi Column Button** icon![](../../../../.gitbook/assets/multi-column-control-screens-builder-processes.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
-5. Configure the Multi Column control. See [Inspector Settings](multi-column-button-control-settings.md#inspector-settings).
+4. Drag the **Table** icon![](../../../../.gitbook/assets/multi-column-control-screens-builder-processes.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
+5. Configure the Table control. See [Inspector Settings](multi-column-button-control-settings.md#inspector-settings).
 6. Place into the ProcessMaker Screen canvas where you want the control to display on the page.​![](../../../../.gitbook/assets/multi-column-control-placed-screens-builder-processes.png)
 7. Drag-and-drop others controls into either column. Configure each control's settings. 
 
 Below is a Table control in Preview mode. 
 
-![Multi Column control that contains other controls in Preview mode](../../../../.gitbook/assets/multi-column-control-display-screens-builder-processes.png)
+![Table control that contains other controls in Preview mode](../../../../.gitbook/assets/multi-column-control-display-screens-builder-processes.png)
 
 ## Delete the Control from a ProcessMaker Screen
 
@@ -63,7 +63,9 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Below are Inspector settings for the Table control:
 
-* **Column Widths:** Specify the column width for each column in the control. Add each column and its width specification in the order they are to display from left to right in the control. Specify the width of each column in `colspan` [HTML attribute](https://www.w3schools.com/tags/att_colspan.asp) settings. The total of all `colspan` attribute settings must be divisible by 12. The control contains two columns of six \(6\) `colspan` HTML attribute setting each by default.  
+* **Column Widths:** Specify the column width for each column in the control. Add each column and its width specification in the order they are to display from left to right in the control. Specify the width of each column in `colspan` [HTML attribute](https://www.w3schools.com/tags/att_colspan.asp) settings. The total of all `colspan` attribute settings must be divisible by 12. The control contains two columns of six \(6\) `colspan` HTML attribute setting each by default.
+
+  Use the **Show in Json Format** toggle to display these settings in JSON.  
 
   ![](../../../../.gitbook/assets/column-width-colspan-multi-control-screens-builder-processes.png)
 
@@ -81,7 +83,6 @@ Below are Inspector settings for the Table control:
 
   2. In the **Column Width** field, enter the width of the column \(as described above\).
   3. Click **OK**. The column displays below the existing columns in **Column Widths**.
-  4. If necessary, click the **Show in Json Format** checkbox to view the multiple columns in JSON format.
 
 * **Element Background Color:** Select to specify the background color of this control.
 * **Text Color:** Select to specify the text color that displays in this control.

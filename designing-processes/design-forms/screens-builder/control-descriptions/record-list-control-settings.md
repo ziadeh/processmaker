@@ -50,7 +50,7 @@ Consider the following example. A Record List control can be configured to recor
 
 The Record List control has the following configuration. See [Inspector Settings](record-list-control-settings.md#inspector-settings) for control setting descriptions.
 
-![Record List control that contains records in Editor mode](../../../../.gitbook/assets/record-list-control-example-screens-builder-processes.png)
+![Record List control that contains records in Design mode](../../../../.gitbook/assets/record-list-control-example-screens-builder-processes.png)
 
 On a secondary page, use ProcessMaker Screen controls for form users to enter values for each record. Ensure the following:
 
@@ -98,7 +98,9 @@ Below are Inspector settings for the Record List control:
 * **List Name:** Enter the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **List Name** value for this control to reference it in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 * **List Label:** Enter the field label text that displays. **New Record List** is the default value.
 * **Editable?:** Select to indicate that the record that the form user enters can be edited. Otherwise, deselect to indicate that the form user's record cannot be changed. This setting is not selected by default.
-* **Fields List:** Specify the list of options the Record List records from the form user. Each option in the **Fields List** setting references a control on a secondary ProcessMaker Screen page that uses the same **Field Name** value as entered into the **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page. See the [example](record-list-control-settings.md#example). The following message displays in Preview mode when not all the **Value** parameters match with a control's **Field Name** value on the secondary page: **There is no records in this list or the data is invalid.**   
+* **Fields List:** Specify the list of options the Record List records from the form user. Each option in the **Fields List** setting references a control on a secondary ProcessMaker Screen page that uses the same **Field Name** value as entered into the **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page. See the [example](record-list-control-settings.md#example). The following message displays in Preview mode when not all the **Value** parameters match with a control's **Field Name** value on the secondary page: **There is no records in this list or the data is invalid.**
+
+  Use the **Show in Json Format** toggle to display these settings in JSON.   
 
   ![](../../../../.gitbook/assets/fields-list-option-record-list-control-screens-builder-processes.png)
 
@@ -112,12 +114,11 @@ Below are Inspector settings for the Record List control:
 
   1. Click **Add Option** from below the **Fields List** setting. The **Add New Option** screen displays.
 
-     ​![](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LJ0aNaVW1m7sNsxVJLV%2F-LRh9g3GQGcB5CtncSF-%2F-LRhGwUGe2CECm6rxBfP%2FAdd%20New%20Option%20Screen%20Screen%20Builder%20-%20Processes.png?alt=media&token=3f36252b-6f82-44b7-aef3-bab793d1e6e2)​
+     ​![](../../../../.gitbook/assets/add-new-option-screen-screen-builder-processes.png)​
 
-  2. In the **Option Value** field, enter the **Value** option value \(as described above\).
-  3. In the **Option Label** field, enter the **Content** option value \(as described above\).
-  4. If necessary, click the **Show in Json Format** checkbox to view the multiple columns in JSON format.
-  5. Click **OK**. The field item displays below the existing items in **Fields List**.
+  2. In the **Value** field, enter the **Value** option value \(as described above\).
+  3. In the **Content** field, enter the **Content** option value \(as described above\).
+  4. Click **OK**. The field item displays below the existing items in **Fields List**.
 
 * **Record Form:** Select from which ProcessMaker Screen page to add/edit records. The page that records the submitted records cannot be on the same page as the Record List control. The following message displays in Preview mode when the Record List control references the same page the control is placed: **The add/edit form referencing our own form which is not allowed.**
 * **Element Background Color:** Select to specify the background color of this control.

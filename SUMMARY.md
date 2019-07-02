@@ -91,7 +91,7 @@
       * [Table Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/multi-column-button-control-settings.md)
       * [Record List Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/record-list-control-settings.md)
       * [Image Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/image-control-settings.md)
-      * [Submit Button Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/submit-button-control-settings.md)
+      * [Submit Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/submit-button-control-settings.md)
       * [File Upload Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/file-upload-control-settings.md)
       * [File Download Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/file-download-control-settings.md)
       * [Validation Rules for "Validation" Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/validation-rules-for-validation-control-settings.md)

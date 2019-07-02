@@ -77,7 +77,9 @@ Below are Inspector settings for the Line Input control:
 * **Field Label:** Enter the field label text that displays. **New Select** is the default value.
 * **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
 * **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
-* **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down menu. The default option is called **new** with the content **New Option**. Use the **Show in Json Format** toggle to display these settings in JSON.  
+* **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down menu. The default option is called **new** with the content **New Option**.
+
+  Use the **Show in Json Format** toggle to display these settings in JSON.  
 
   ![](../../../../.gitbook/assets/select-control-options-list-screens-builder-processes.png)
 

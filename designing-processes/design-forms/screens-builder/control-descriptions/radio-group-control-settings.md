@@ -78,7 +78,9 @@ Below are Inspector settings for the Radio Group control:
 
 * **Field Label:** Enter the field label text that displays. **New Radio Button Group** is the default value.
 * **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
-* **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down. The default option is called **new** with the content **New Option**. Use the **Show in Json Format** toggle to display these settings in JSON.  
+* **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down. The default option is called **new** with the content **New Option**.
+
+  Use the **Show in Json Format** toggle to display these settings in JSON.  
 
   ![](../../../../.gitbook/assets/radio-group-control-options-list-screens-builder-processes.png)
 

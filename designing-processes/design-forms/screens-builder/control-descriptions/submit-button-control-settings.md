@@ -1,14 +1,14 @@
 ---
 description: >-
-  Add a Submit Button control from which the form user can submit a form as part
-  of a Request.
+  Add a Submit control from which the form user can submit a form as part of a
+  Request.
 ---
 
-# Submit Button Control Settings
+# Submit Control Settings
 
 ## Control Description
 
-The Submit Button control adds a button from which the form user can submit the form as part of a Request. After using the Submit Button control, the form user cannot revise that form because the information included in the ProcessMaker Screen is sent to the next step in the Request.
+The Submit control adds a button from which the form user can submit the form as part of a Request. After using the Submit control, the form user cannot revise that form because the information included in the ProcessMaker Screen is sent to the next step in the Request.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -30,16 +30,16 @@ Follow these steps to add this control to the ProcessMaker Screen:
 1. [Create](../../manage-forms/create-a-new-form.md) or [open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
 3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
-4. Drag the **Submit Button** icon![](../../../../.gitbook/assets/submit-button-control-screens-builder-processes.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
+4. Drag the **Submit** icon![](../../../../.gitbook/assets/submit-button-control-screens-builder-processes.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
 5. Place into the ProcessMaker Screen canvas where you want the control to display on the page.  
 
    ![](../../../../.gitbook/assets/submit-button-control-placed-screens-builder-processes.png)
 
-6. Configure the Submit Button control. See [Inspector Settings](submit-button-control-settings.md#inspector-settings).
+6. Configure the Submit control. See [Inspector Settings](submit-button-control-settings.md#inspector-settings).
 
-Below is a Submit Button control in Preview mode.
+Below is a Submit control in Preview mode.
 
-![Submit Button control in Preview mode using the &quot;Primary&quot; Variant option](../../../../.gitbook/assets/submit-button-control-preview-screens-builder-processes.png)
+![Submit control in Preview mode using the &quot;Primary&quot; Variant option](../../../../.gitbook/assets/submit-button-control-preview-screens-builder-processes.png)
 
 ## Delete the Control from a ProcessMaker Screen
 
@@ -66,7 +66,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the Submit Button control:
+Below are Inspector settings for the Submit control:
 
 * **Field Label:** Enter the field label text that displays. **New Submit** is the default value.
 * **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
@@ -77,8 +77,8 @@ Below are Inspector settings for the Submit Button control:
 
   This is a required setting.
 
-* **Field Value:** Enter any alphanumeric value that the Submit Button control sends when the form user selects the button. This value can be evaluated in a rule.
-* **Variant:** Select the style for the Submit Button control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
+* **Field Value:** Enter any alphanumeric value that the Submit control sends when the form user selects the button. This value can be evaluated in a rule.
+* **Variant:** Select the style for the Submit control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
   * **Primary:** Blue-colored background with white-colored **Field Label** text. Set as the default.
   * **Secondary:** Gray-colored background with white-colored **Field Label** text.
   * **Success:** Green-colored background with white-colored **Field Label** text.

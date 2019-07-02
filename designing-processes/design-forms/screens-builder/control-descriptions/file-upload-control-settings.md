@@ -8,7 +8,7 @@ description: >-
 
 ## Control Description
 
-The File Upload control adds an area in the ProcessMaker Screen to which the form user can upload one or more files from a local computer. The form user can drag and place the file\(s\) on the control or select a button from which to locate the file\(s\) for upload. The uploaded file\(s\) can be referenced in a later step in the Request.
+The File Upload control adds an area in the ProcessMaker Screen to which the form user can upload one or more files from a local computer or accessible network location. The form user can drag and place the file\(s\) on the control or select a button from which to locate the file\(s\) for upload. The uploaded file\(s\) can be referenced in a later step in a Process's Request.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -39,7 +39,7 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
 Below is a File Upload control in Preview mode.
 
-![File Upload Control in Preview mode](../../../../.gitbook/assets/file-upload-control-preview-screens-builder-processes.png)
+![File Upload control in Preview mode](../../../../.gitbook/assets/file-upload-control-preview-screens-builder-processes.png)
 
 ## Delete the Control from a ProcessMaker Screen
 

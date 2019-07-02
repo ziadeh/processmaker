@@ -24,7 +24,7 @@ Follow these steps to add this control to the ProcessMaker Screen:
 1. [Create](../../manage-forms/create-a-new-form.md) or [open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
 3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
-4. Drag the **Image** icon![](../../../../.gitbook/assets/chrome_2019-03-13_11-29-37.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
+4. Drag the **Image** icon![](../../../../.gitbook/assets/image-control-screens-builder-processes.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
 5. Place into the ProcessMaker Screen canvas where you want the control to display on the page.  
 
    ![](../../../../.gitbook/assets/image-control-placed-screens-builder-processes.png)
@@ -62,7 +62,7 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Below are Inspector settings for the Image control:
 
-* **Id:** Enter the unique internal image identification. ~~This is a required setting.~~
+* **Id:** Enter the unique internal image identification.
 * **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
 
   * Reference this control by its **Variable Name** setting's value.
