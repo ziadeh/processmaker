@@ -6,7 +6,7 @@ description: Understand each of Screens Builder's modes.
 
 ## Design Mode
 
-Use Design mode to build your ProcessMaker Screen. While in Design mode, use the **Inspector** panel to configure [controls](control-descriptions/) that you place into your ProcessMaker Screen canvas.
+Use Design mode to design your ProcessMaker Screen. Design mode is the default mode when a ProcessMaker Screen is created or edited. While in Design mode, use the [**Inspector** panel](view-the-inspector-pane.md) to configure [controls](control-descriptions/) that you place into your ProcessMaker Screen canvas.
 
 {% hint style="info" %}
 ### Learn More About the Inspector Panel
@@ -24,9 +24,9 @@ See [Add a New Page to a Screen](add-a-new-page-to-a-screen.md).
 
 ## Preview Mode
 
-Use Preview mode to view how your ProcessMaker Screen displays.
+Use Preview mode to view and test your ProcessMaker Screen. Test how your controls function as a form user would experience your Screen during a [Request](../../../using-processmaker/requests/what-is-a-request.md).
 
-Furthermore, use Preview mode to view how the ProcessMaker Screen's controls you configured in Design mode interact with JSON data models. While Screens Builder has an easy-to-use drag-and-place design interface to edit and preview ProcessMaker Screens, ProcessMaker represents them as JSON data models. You can view any JSON data model in Preview mode to experiment with how a [Process's](../../viewing-processes/what-is-a-process.md) JSON data model or another ProcessMaker Screen's data model interacts with your Screen. Viewing the JSON data model can be helpful to see how values are entered into the ProcessMaker Screen as well as to use that JSON data model in your [ProcessMaker Scripts](../../scripts/what-is-a-script.md).
+Furthermore, test how the ProcessMaker Screen's controls you configured in Design mode interact with JSON data models. ProcessMaker represents ProcessMaker Screens as JSON data models. You can view any JSON data model in Preview mode to test how a [Process's](../../viewing-processes/what-is-a-process.md) JSON data model or another ProcessMaker Screen's data model interacts with your Screen. Viewing the JSON data model can be helpful to see how values are entered into the ProcessMaker Screen as well as to use that JSON data model in your [ProcessMaker Scripts](../../scripts/what-is-a-script.md).
 
 {% hint style="info" %}
  See [Preview a Screen and Its JSON Data Model](preview-a-screen.md).

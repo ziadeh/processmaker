@@ -25,7 +25,7 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Follow these steps to add this control to the ProcessMaker Screen:
 
-1. [Create](../../manage-forms/create-a-new-form.md) or [open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Editor mode](../screens-builder-modes.md#editor-mode).
+1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
 3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
 4. Drag the **Select** icon ![](../../../../.gitbook/assets/select-control-screens-builder-processes.png) from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
@@ -34,6 +34,7 @@ Follow these steps to add this control to the ProcessMaker Screen:
    ![](../../../../.gitbook/assets/select-control-placed-screens-builder-processes.png)
 
 6. Configure the Select control. See [Inspector Settings](select-control-settings.md#inspector-settings).
+7. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
 
 Below is a Select control in Preview mode.
 
@@ -79,7 +80,7 @@ Below are Inspector settings for the Line Input control:
 * **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
 * **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down menu. The default option is called **new** with the content **New Option**.
 
-  Use the **Show in Json Format** toggle to display these settings in JSON.  
+  Switch the **Show in Json Format** toggle key to display these settings in JSON.  
 
   ![](../../../../.gitbook/assets/select-control-options-list-screens-builder-processes.png)
 

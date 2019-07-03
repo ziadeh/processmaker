@@ -27,7 +27,7 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Follow these steps to add this control to the ProcessMaker Screen:
 
-1. [Create](../../manage-forms/create-a-new-form.md) or [open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
+1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
 3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
 4. Drag the **Line Inputs** icon ![](../../../../.gitbook/assets/line-input-control-screens-builder-processes.png) from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
@@ -36,6 +36,7 @@ Follow these steps to add this control to the ProcessMaker Screen:
    ![](../../../../.gitbook/assets/line-input-screens-builder-processes.png)
 
 6. Configure the Line Inputs control. See [Inspector Settings](line-input-control-settings.md#inspector-settings).
+7. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
 
 Below is a Line Inputs control in Preview mode.
 

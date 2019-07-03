@@ -25,7 +25,7 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Follow these steps to add this control to the ProcessMaker Screen:
 
-1. [Create](../../manage-forms/create-a-new-form.md) or [open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
+1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
 3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
 4. Drag the **Record List** icon![](../../../../.gitbook/assets/record-list-control-screens-builder-processes.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
@@ -34,8 +34,9 @@ Follow these steps to add this control to the ProcessMaker Screen:
    ![](../../../../.gitbook/assets/record-list-control-placed-screens-builder-processes.png)
 
 6. Configure the Record List control. See [Inspector Settings](record-list-control-settings.md#inspector-settings).
-7. Create a new page in the ProcessMaker Screen. The page that records the submitted records cannot be on the same page as the Record List control. See [Add a New Page to a ProcessMaker Screen](../add-a-new-page-to-a-screen.md#add-a-new-page-to-a-processmaker-screen).
-8. On the new page, create the form using controls to record the data that the Record List control records. In each of the controls to record elements of the record list, ensure to use the same **Field Name** value as you use in the Record List control's **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page.
+7. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
+8. Create a new page in the ProcessMaker Screen. The page that records the submitted records cannot be on the same page as the Record List control. See [Add a New Page to a ProcessMaker Screen](../add-a-new-page-to-a-screen.md#add-a-new-page-to-a-processmaker-screen).
+9. On the new page, create the form using controls to record the data that the Record List control records. In each of the controls to record elements of the record list, ensure to use the same **Field Name** value as you use in the Record List control's **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page.
 
 ## Example
 
@@ -100,7 +101,7 @@ Below are Inspector settings for the Record List control:
 * **Editable?:** Select to indicate that the record that the form user enters can be edited. Otherwise, deselect to indicate that the form user's record cannot be changed. This setting is not selected by default.
 * **Fields List:** Specify the list of options the Record List records from the form user. Each option in the **Fields List** setting references a control on a secondary ProcessMaker Screen page that uses the same **Field Name** value as entered into the **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page. See the [example](record-list-control-settings.md#example). The following message displays in Preview mode when not all the **Value** parameters match with a control's **Field Name** value on the secondary page: **There is no records in this list or the data is invalid.**
 
-  Use the **Show in Json Format** toggle to display these settings in JSON.   
+  Switch the **Show in Json Format** toggle key to display these settings in JSON.   
 
   ![](../../../../.gitbook/assets/fields-list-option-record-list-control-screens-builder-processes.png)
 

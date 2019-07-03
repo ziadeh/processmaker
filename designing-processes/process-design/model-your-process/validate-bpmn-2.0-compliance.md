@@ -32,13 +32,13 @@ Follow these steps to validate your Process model is BPMN 2.0 compliant:
 
    ![](../../../.gitbook/assets/validate-bpmn-no-problems-process-modeler-processes.png)
 
-3. Enable the **Auto validate** button so that Process Modeler automatically validates your Process model as you work.  
+3. Enable the **Auto validate** toggle key so that Process Modeler automatically validates your Process model as you work.  
 
    ![](../../../.gitbook/assets/auto-validate-process-modeler-processes.png)
 
 4. Work on your Process model. Process Modeler indicates any BPMN 2.0 compliance issues as you work. The following indicators may occur:
    * **No errors found:** If no errors are found, the following text displays to the left of the **Validate BPMN** button: **Problems 0**. The green check mark displays. Your Process model is BPMN 2.0 compliant.
-   * **Errors are found:** If errors are found, Process Modeler displays how any errors are found to the left of the **Validate BPMN** button. Instead of the green check mark the error icon displays![](../../../.gitbook/assets/validate-bpmn-problems-errors-process-modeler-processes.png). Click the error icon to display a summary of the errors. Below is an example.  
+   * **Errors are found:** If errors are found, Process Modeler displays how any errors are found to the left of the **Validate BPMN** button. The error icon displays![](../../../.gitbook/assets/validate-bpmn-problems-errors-process-modeler-processes.png). Click the error icon to display a summary of the errors. Below is an example.  
 
      ![](../../../.gitbook/assets/validate-bpmn-problem-error-summary-process-modeler-processes.png)
 
