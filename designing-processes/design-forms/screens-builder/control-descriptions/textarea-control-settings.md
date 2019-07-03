@@ -92,11 +92,13 @@ Below are Inspector settings for the Textarea control:
 
 {% page-ref page="../view-the-inspector-pane.md" %}
 
+{% page-ref page="../validate-your-screen.md" %}
+
 {% page-ref page="./" %}
 
-{% page-ref page="rich-text-control-settings.md" %}
-
 {% page-ref page="text-control-settings.md" %}
+
+{% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="line-input-control-settings.md" %}
 
@@ -108,8 +110,6 @@ Below are Inspector settings for the Textarea control:
 
 {% page-ref page="date-picker-control-settings.md" %}
 
-{% page-ref page="submit-button-control-settings.md" %}
-
 {% page-ref page="page-navigation-button-control-settings.md" %}
 
 {% page-ref page="multi-column-button-control-settings.md" %}
@@ -117,6 +117,8 @@ Below are Inspector settings for the Textarea control:
 {% page-ref page="record-list-control-settings.md" %}
 
 {% page-ref page="image-control-settings.md" %}
+
+{% page-ref page="submit-button-control-settings.md" %}
 
 {% page-ref page="file-upload-control-settings.md" %}
 

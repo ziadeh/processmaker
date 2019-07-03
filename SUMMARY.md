@@ -78,6 +78,7 @@
     * [Screen Types](designing-processes/design-forms/screens-builder/types-for-screens.md)
     * [Screens Builder Modes](designing-processes/design-forms/screens-builder/screens-builder-modes.md)
     * [View the Inspector Panel](designing-processes/design-forms/screens-builder/view-the-inspector-pane.md)
+    * [Validate Your Screen](designing-processes/design-forms/screens-builder/validate-your-screen.md)
     * [Edit a Screen](designing-processes/design-forms/screens-builder/control-descriptions/README.md)
       * [Text Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/text-control-settings.md)
       * [Rich Text Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/rich-text-control-settings.md)

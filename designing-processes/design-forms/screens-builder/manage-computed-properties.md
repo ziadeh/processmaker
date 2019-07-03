@@ -130,6 +130,8 @@ Follow these steps to delete a computed Property:
 
 {% page-ref page="view-the-inspector-pane.md" %}
 
+{% page-ref page="validate-your-screen.md" %}
+
 {% page-ref page="add-a-new-page-to-a-screen.md" %}
 
 {% page-ref page="manage-computed-properties.md" %}

@@ -79,13 +79,17 @@ Below are Inspector settings for the File Upload control:
 
 {% page-ref page="../view-the-inspector-pane.md" %}
 
-{% page-ref page="./" %}
+{% page-ref page="../validate-your-screen.md" %}
 
-{% page-ref page="rich-text-control-settings.md" %}
+{% page-ref page="./" %}
 
 {% page-ref page="text-control-settings.md" %}
 
+{% page-ref page="rich-text-control-settings.md" %}
+
 {% page-ref page="line-input-control-settings.md" %}
+
+{% page-ref page="textarea-control-settings.md" %}
 
 {% page-ref page="select-control-settings.md" %}
 
@@ -93,11 +97,7 @@ Below are Inspector settings for the File Upload control:
 
 {% page-ref page="checkbox-control-settings.md" %}
 
-{% page-ref page="textarea-control-settings.md" %}
-
 {% page-ref page="date-picker-control-settings.md" %}
-
-{% page-ref page="submit-button-control-settings.md" %}
 
 {% page-ref page="page-navigation-button-control-settings.md" %}
 
@@ -106,6 +106,8 @@ Below are Inspector settings for the File Upload control:
 {% page-ref page="record-list-control-settings.md" %}
 
 {% page-ref page="image-control-settings.md" %}
+
+{% page-ref page="submit-button-control-settings.md" %}
 
 {% page-ref page="file-download-control-settings.md" %}
 

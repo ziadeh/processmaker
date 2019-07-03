@@ -97,21 +97,23 @@ Below are Inspector settings for the Submit control:
 
 {% page-ref page="../view-the-inspector-pane.md" %}
 
-{% page-ref page="./" %}
+{% page-ref page="../validate-your-screen.md" %}
 
-{% page-ref page="rich-text-control-settings.md" %}
+{% page-ref page="./" %}
 
 {% page-ref page="text-control-settings.md" %}
 
+{% page-ref page="rich-text-control-settings.md" %}
+
 {% page-ref page="line-input-control-settings.md" %}
+
+{% page-ref page="textarea-control-settings.md" %}
 
 {% page-ref page="select-control-settings.md" %}
 
 {% page-ref page="radio-group-control-settings.md" %}
 
 {% page-ref page="checkbox-control-settings.md" %}
-
-{% page-ref page="textarea-control-settings.md" %}
 
 {% page-ref page="date-picker-control-settings.md" %}
 

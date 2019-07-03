@@ -58,6 +58,8 @@ See [Preview a Screen and Its JSON Data Model](preview-a-screen.md).
 
 {% page-ref page="screens-builder-modes.md" %}
 
+{% page-ref page="validate-your-screen.md" %}
+
 {% page-ref page="control-descriptions/" %}
 
 {% page-ref page="preview-a-screen.md" %}

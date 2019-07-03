@@ -64,6 +64,8 @@ See [Add Custom CSS to a Screen](add-custom-css-to-a-screen.md).
 
 {% page-ref page="view-the-inspector-pane.md" %}
 
+{% page-ref page="validate-your-screen.md" %}
+
 {% page-ref page="add-a-new-page-to-a-screen.md" %}
 
 {% page-ref page="preview-a-screen.md" %}
