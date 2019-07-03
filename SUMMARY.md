@@ -181,6 +181,7 @@
 
 * [What is a Package?](package-development-distribution/first-topic.md)
 * [Available Packages from ProcessMaker](package-development-distribution/package-a-connector/README.md)
+  * [Collections](package-development-distribution/package-a-connector/collections.md)
   * [Email](package-development-distribution/package-a-connector/email.md)
   * [Vocabularies](package-development-distribution/package-a-connector/vocabularies.md)
 

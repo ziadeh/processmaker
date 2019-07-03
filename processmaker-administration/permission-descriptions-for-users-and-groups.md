@@ -21,7 +21,13 @@ In ProcessMaker Spark, a permission allows a ProcessMaker user member to view a 
 
 While permissions apply to ProcessMaker users, those permissions can be assigned from a user account or a ProcessMaker group:
 
-* **User-level permissions:** Permissions can be assigned to a ProcessMaker user account. These permission assignments only apply to that user account. From user-level permissions, you can easily assign Administrator-level permissions or all permissions to a ProcessMaker user account. See [Edit a User Account](add-users/manage-user-accounts/edit-a-user-account.md#edit-a-processmaker-user-account).
+* **User-level permissions:** Permissions can be assigned to a ProcessMaker user account. These permission assignments only apply to that user account. From user-level permissions, you can easily assign Administrator-level permissions or all permissions to a ProcessMaker user account. Instead of assigning individual permissions to a ProcessMaker user account, the following options are also available:
+
+  * **Super Admin:** Assign the **Make this user a Super Admin** option to grant unrestricted access to the entire ProcessMaker instance. In doing so, ProcessMaker does not check permissions for ProcessMaker users with this setting selected. This allows such users to easily administer the ProcessMaker instance, including installing [packages](../package-development-distribution/first-topic.md) which might otherwise require permissions be granted to a user account to perform.
+  * **All permissions:** Assign the **Assign all permissions to this user** option to assign all permissions to that ProcessMaker user account.
+
+  See [Edit a User Account](add-users/manage-user-accounts/edit-a-user-account.md#edit-a-processmaker-user-account).
+
 * **Group-level permissions:** Permissions can be assigned to a ProcessMaker group. A group assigns permissions to all ProcessMaker user account members. ProcessMaker groups make it easy to manage permissions for multiple ProcessMaker user accounts with identical permission assignments. From group-level permissions, you can easily assign all permissions to a ProcessMaker group. See [Edit a Group](assign-groups-to-users/manage-groups/edit-a-group.md#edit-a-processmaker-group).
 
 ### User and Group Permissions are Cumulative

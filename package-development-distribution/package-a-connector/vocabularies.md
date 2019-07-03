@@ -1,14 +1,14 @@
 ---
 description: >-
-  Enforce the JSON schema that Process Owners can use for Process development in
-  your organization.
+  Enforce JSON schemas that Process Owners use for Process development in your
+  organization.
 ---
 
 # Vocabularies
 
 ## Overview
 
-The Vocabularies package requires that Process Owners who design Processes, ProcessMaker Screens, and ProcessMaker Scripts comply with the a uniform JSON schema.
+The Vocabularies package requires that Process Owners who design Processes, ProcessMaker Screens, and ProcessMaker Scripts comply with uniform JSON schemas.
 
 ## How Can I Get This Package?
 
