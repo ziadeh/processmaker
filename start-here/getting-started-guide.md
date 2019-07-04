@@ -17,7 +17,7 @@ The Get Started Guide is in development. Please visit this page often for update
 ## How Do I Use ProcessMaker?
 
 {% tabs %}
-{% tab title="Requests" %}
+{% tab title="Start a New Request" %}
 ### How Do I Start a Request?
 
 Learn how to start a Request in ProcessMaker. This is a proof-of-concept video for style. This video was recorded in ProcessMaker Beta 7.
@@ -31,16 +31,10 @@ Learn how to start a Request in ProcessMaker. This is a proof-of-concept video f
 {% page-ref page="../using-processmaker/requests/make-a-request.md" %}
 
 {% page-ref page="../using-processmaker/notifications.md" %}
-
-### How Do I View Requests and Their Summaries?
 {% endtab %}
 
-{% tab title="Tasks" %}
-### What Is a Task?
-{% endtab %}
-
-{% tab title="Notifications" %}
-### What Is a Notification?
+{% tab title="Participate in a Request of a Process" %}
+### How Do I Interact with Other People in a Process?
 {% endtab %}
 {% endtabs %}
 
