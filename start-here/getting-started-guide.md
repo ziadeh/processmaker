@@ -30,6 +30,8 @@ Learn how to start a Request in ProcessMaker. This is a proof-of-concept video f
 
 {% page-ref page="../using-processmaker/requests/make-a-request.md" %}
 
+{% page-ref page="../using-processmaker/notifications.md" %}
+
 ### How Do I View Requests and Their Summaries?
 {% endtab %}
 
