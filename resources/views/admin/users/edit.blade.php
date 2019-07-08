@@ -39,9 +39,8 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="card card-body">
-                                        <h2>{{__('Name')}}</h2>
-                                        <div class="row">
-                                            <div class="form-group col">
+                                        <h5>{{__('Name')}}</h5>
+                                            <div class="form-group">
                                                 {!! Form::label('firstname', __('First Name')) !!}
                                                 {!! Form::text('firstname', null, ['id' => 'firstname','class'=>
                                                 'form-control', 'v-model' => 'formData.firstname',
@@ -50,8 +49,7 @@
                                                 <div class="invalid-feedback" v-if="errors.firstname">
                                                     @{{errors.firstname[0]}}
                                                 </div>
-                                            </div>
-                                            <div class="form-group col">
+
                                                 {!! Form::label('lastname', __('Last Name'))!!}
                                                 {!! Form::text('lastname', null, ['id' => 'lastname', 'rows' => 4,
                                                 'class'=> 'form-control', 'v-model'
@@ -60,11 +58,23 @@
                                                 <div class="invalid-feedback" v-if="errors.lastname">
                                                     @{{errors.lastname[0]}}
                                                 </div>
-                                            </div>
+
+                                                                                        <div class="form-group">
+                                          {!!Form::label('title', __('Job Title')) !!}
+                                           <b-form-input
+                                              id="input-1"
+                                              class="mb-2"
+                                              v-model="formData.title"
+                                              type="text"
+                                              required
+                                              placeholder="Job Title"
+                                            ></b-form-input>
                                         </div>
-                                        <h2 class="mt-2">{{__('Contact Information')}}</h2>
-                                        <div class="row">
-                                            <div class="form-group col">
+
+                                        </div>
+                                        <h5 class="mt-2">{{__('Contact Information')}}</h5>
+
+                                            <div class="form-group">
                                                 {!! Form::label('email', __('Email')) !!}
                                                 {!! Form::email('email', null, ['id' => 'email', 'rows' => 4, 'class'=>
                                                 'form-control', 'v-model'
@@ -73,7 +83,7 @@
                                                 <div class="invalid-feedback" v-if="errors.email">@{{errors.email[0]}}
                                                 </div>
                                             </div>
-                                            <div class="form-group col">
+                                            <div class="form-group">
                                                 {!! Form::label('phone', __('Phone')) !!}
                                                 {!! Form::text('phone', null, ['id' => 'phone','class'=> 'form-control',
                                                 'v-model' => 'formData.phone',
@@ -82,8 +92,28 @@
                                                 <div class="invalid-feedback" v-if="errors.phone">@{{errors.phone}}
                                                 </div>
                                             </div>
-                                        </div>
-                                        <h2 class="mt-2">{{__('Address')}}</h2>
+
+                                     <div class="form-group">
+                                                {!! Form::label('fax', __('Fax')) !!}
+                                                {!! Form::text('fax', null, ['id' => 'fax','class'=> 'form-control',
+                                                'v-model' => 'formData.fax',
+                                                'v-bind:class' => '{\'form-control\':true, \'is-invalid\':errors.fax}'])
+                                                !!}
+                                                <div class="invalid-feedback" v-if="errors.fax">@{{errors.fax}}
+                                                </div>
+                                            </div>
+
+                                     <div class="form-group">
+                                                {!! Form::label('cell', __('Cell')) !!}
+                                                {!! Form::text('cell', null, ['id' => 'cell','class'=> 'form-control',
+                                                'v-model' => 'formData.cell',
+                                                'v-bind:class' => '{\'form-control\':true, \'is-invalid\':errors.cell}'])
+                                                !!}
+                                                <div class="invalid-feedback" v-if="errors.cell">@{{errors.cell}}
+                                                </div>
+                                            </div>
+
+                                        <h5 class="mt-2">{{__('Address')}}</h5>
                                         <div class="row">
                                             <div class="form-group col">
                                                 {!! Form::label('address', __('Address')) !!}
@@ -142,14 +172,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <h2 class="mt-2">{{__('Localization')}}</h2>
+                                        <h5 class="mt-2">{{__('Localization')}}</h5>
                                         <div class="row">
                                             <div class="form-group col">
                                                 {!!Form::label('datetime_format', __('Date format'));!!}
                                                 <b-form-select id="datetime_format" v-model="formData.datetime_format" class="form-control" :options="datetimeFormats">
-                                                  <template slot="first">
-                                                    <option :value="null" disabled>@{{appFormat}}</option>
-                                                  </template>
                                                 </b-form-select>
                                                 <div class="invalid-feedback" v-if="errors.email">
                                                     @{{errors.datetime_format}}
@@ -160,9 +187,6 @@
                                             <div class="form-group col">
                                                 {!!Form::label('timezone', __('Time zone'));!!}
                                                 <b-form-select id="timezone" v-model="formData.timezone" class="form-control" :options="timezones">
-                                                  <template slot="first">
-                                                    <option :value="null" disabled>@{{appTimezone}}</option>
-                                                  </template>
                                                 </b-form-select>
                                                 <div class="invalid-feedback" v-if="errors.email">@{{errors.timezone}}
                                                 </div>
@@ -170,7 +194,11 @@
 
                                             <div class="form-group col">
                                                 {!! Form::label('language', __('Language')) !!}
-                                                <b-form-select v-model="formData.language" :options="langs" class="form-control"></b-form-select>
+
+
+                                                <b-form-select id="language" v-model="formData.language" class="form-control" :options="langs">
+                                                </b-form-select>
+
                                                 <div class="invalid-feedback" v-if="errors.language">
                                                     @{{errors.language}}
                                                 </div>
@@ -188,15 +216,15 @@
                                             <avatar-image size="150" class-image="m-1"
                                                           :input-data="options"></avatar-image>
                                         </div>
+                                        <hr>
                                         <div class="form-group">
                                             @include('shared.input',
                                                 ['type' => 'text', 'name' => 'username', 'label' => __('Username')]
                                             )
                                         </div>
-
                                         <div class="form-group">
                                             {!!Form::label('status', __('Status')) !!}
-                                            {!!Form::select('size', ['ACTIVE' => 'Active', 'INACTIVE' => 'Inactive'],
+                                            {!!Form::select('size', ['ACTIVE' => __('active'), 'INACTIVE' => __('inactive')],
                                             'formData.status', ['class'=> 'form-control', 'v-model'=> 'formData.status',
                                             'v-bind:class' => '{\'form-control\':true, \'is-invalid\':errors.status}']);!!}
                                             <div class="invalid-feedback" v-if="errors.email">@{{errors.status}}</div>
@@ -350,6 +378,14 @@
                                          @search-change="loadGroups"
                                          label="name">
 
+                                <template slot="noResult" >
+                                    {{ __('No elements found. Consider changing the search query.') }}
+                                </template>
+
+                                <template slot="noOptions" >
+                                    {{ __('No Data Available') }}
+                                </template>
+
                                 <template slot="tag" slot-scope="props">
                                     <span class="multiselect__tag  d-flex align-items-center"
                                           style="width:max-content;">
@@ -498,9 +534,7 @@
             formData: @json($user),
             langs: @json($availableLangs),
             timezones: @json($timezones),
-            appTimezone: @json($appTimezone),
             datetimeFormats: @json($datetimeFormats),
-            appFormat: @json($appFormat),
             countries: @json($countries),
             image: '',
             errors: {
@@ -546,17 +580,19 @@
         },
         watch: {
           selectedPermissions: function () {
-            if (this.selectedPermissions.length !== this.permissions.length) {
-              this.selectAll = false;
-            }
+            this.selectAll = this.areAllPermissionsSelected();
           }
         },
         methods: {
+          areAllPermissionsSelected() {
+            return this.selectedPermissions.length === this.permissions.length;
+          },
           checkCreate(sibling, $event) {
             let self = $event.target.value;
             if (this.selectedPermissions.includes(self)) {
               this.selectedPermissions.push(sibling);
             }
+            Vue.set(this, 'selectedPermissions', this.selectedPermissions.filter((v, i, arr) => arr.indexOf(v) === i));
           },
           checkEdit(sibling, $event) {
             let self = $event.target.value;
@@ -565,6 +601,7 @@
                 return el !== sibling;
               });
             }
+            Vue.set(this, 'selectedPermissions', this.selectedPermissions.filter((v, i, arr) => arr.indexOf(v) === i));
           },
           copyTextArea() {
             this.$refs.text.select();
@@ -670,14 +707,14 @@
               .then((result) => {
                 this.newToken = result.data;
                 this.loadTokens();
-                ProcessMaker.alert("{{__('Access token generated successfully')}}", "success");
+                ProcessMaker.alert(this.$t('Access token generated successfully'), "success");
               })
           },
           deleteToken(tokenId) {
             ProcessMaker.confirmModal(
-              __("Caution!"),
-              __("Are you sure to delete the token ") + tokenId.substr(0, 7) +
-              __("? Any services using it will no longer have access."),
+              this.$t("Caution!"),
+              this.$t("Are you sure to delete the token ") + tokenId.substr(0, 7) +
+              this.$t("? Any services using it will no longer have access."),
               "",
               () => {
                 ProcessMaker.apiClient({

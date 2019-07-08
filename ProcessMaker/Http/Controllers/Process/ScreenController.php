@@ -19,8 +19,10 @@ class ScreenController extends Controller
      */
     public function index()
     {
-        $types = ScreenType::pluck('name', 'name')->all();
-
+        $types = [];
+        foreach(ScreenType::pluck('name')->toArray() as $type) {
+            $types[$type] = __(ucwords(strtolower($type)));
+        }
         return view('processes.screens.index', compact('types'));
     }
 
@@ -63,7 +65,7 @@ class ScreenController extends Controller
 
     public function download(Screen $screen, $key)
     {
-        $fileName = snake_case($screen->title) . '.spark';
+        $fileName = snake_case($screen->title) . '.json';
         $fileContents = Cache::get($key);
 
         if (! $fileContents) {

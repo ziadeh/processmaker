@@ -33,7 +33,7 @@
 
                     @if ($task->processRequest->status === 'ACTIVE')
                         @can('editData', $task->processRequest)
-                            <ul id="tabHeader" role="tablist" class="nav nav-tabs">
+                            <ul id="tabHeader" role="tablist" class="nav nav-tabs mb-3">
                                 <li class="nav-item"><a id="pending-tab" data-toggle="tab" href="#tab-form" role="tab"
                                                         aria-controls="tab-form" aria-selected="true"
                                                         class="nav-link active">{{__('Form')}}</a></li>
@@ -45,16 +45,33 @@
                     @endif
                     <div id="tabContent" class="tab-content">
                         <div id="tab-form" role="tabpanel" aria-labelledby="tab-form" class="tab-pane active show">
-                            @if ($task->getScreen() && ($task->advanceStatus==='open' || $task->advanceStatus==='overdue'))
+                            @if ($task->advanceStatus==='open' || $task->advanceStatus==='overdue')
                                 <div class="card card-body">
-                                    <task-screen process-id="{{$task->processRequest->process->getKey()}}"
+                                  @if ($task->getScreen())
+                                  <task-screen ref="taskScreen"
+                                                 process-id="{{$task->processRequest->process->getKey()}}"
                                                  instance-id="{{$task->processRequest->getKey()}}"
                                                  token-id="{{$task->getKey()}}"
                                                  :screen="{{json_encode($task->getScreen()->config)}}"
                                                  :computed="{{json_encode($task->getScreen()->computed)}}"
                                                  :custom-css="{{json_encode(strval($task->getScreen()->custom_css))}}"
-                                                 :data="{{json_encode($task->processRequest->data, JSON_FORCE_OBJECT)}}"/>
+                                                 :data="{{json_encode($task->processRequest->data, JSON_FORCE_OBJECT)}}">
+                                  </task-screen>
+                                  @else
+                                  <task-screen ref="taskScreen"
+                                                 process-id="{{$task->processRequest->process->getKey()}}"
+                                                 instance-id="{{$task->processRequest->getKey()}}"
+                                                 token-id="{{$task->getKey()}}"
+                                                 :screen="[{items:[]}]"
+                                                 :data="{{json_encode($task->processRequest->data, JSON_FORCE_OBJECT)}}">
+                                  </task-screen>
+                                  @endif
                                 </div>
+                                @if ($task->getBpmnDefinition()->localName==='manualTask' || !$task->getScreen())
+                                <div class="card-footer">
+                                    <button class="btn btn-primary" @click="submitTaskScreen">{{__('Complete Task')}}</button>
+                                </div>
+                                @endif
                             @elseif ($task->advanceStatus==='completed')
                                 <div class="card card-body" align="center">
                                     <h1>Task Completed <i class="fas fa-clipboard-check"></i></h1>
@@ -122,7 +139,12 @@
                                                      :internal-search="false"
                                                      @search-change="loadUsers"
                                                      label="fullname">
-
+                                             <template slot="noResult">
+                                                {{ __('No elements found. Consider changing the search query.') }}
+                                            </template>
+                                            <template slot="noOptions">
+                                                {{ __('No Data Available') }}
+                                            </template>
                                             <template slot="tag" slot-scope="props">
                                                 <span class="multiselect__tag  d-flex align-items-center"
                                                       style="width:max-content;">
@@ -239,6 +261,12 @@
           }
         },
         methods: {
+          /**
+           * Submit the task screen
+           */
+          submitTaskScreen() {
+            this.$refs.taskScreen.submit();
+          },
           // Data editor
           updateRequestData() {
             const data = JSON.parse(this.jsonData);

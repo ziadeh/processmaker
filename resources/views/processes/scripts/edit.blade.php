@@ -31,9 +31,19 @@
                         <label class="typo__label">{{__('Run script as')}}</label>
                         <multiselect v-model="selectedUser"
                                      label="fullname"
+                                     :show-labels="false"
                                      :options="options"
-                                     :searchable="true">
+                                     :searchable="true"
+                                     :class="{'is-invalid': errors.run_as_user_id}">
+                            <template slot="noResult" >
+                                {{ __('No elements found. Consider changing the search query.') }}
+                            </template>
+
+                            <template slot="noOptions" >
+                                {{ __('No Data Available') }}
+                            </template>
                         </multiselect>
+                        <div class="invalid-feedback" v-if="errors.run_as_user_id">@{{errors.run_as_user_id[0]}}</div>
                     </div>
                     <div class="form-group">
                         {!! Form::label('description', __('Description')) !!}
@@ -113,14 +123,11 @@
               timeout: this.formData.timeout,
             })
               .then(response => {
-                ProcessMaker.alert('{{__('The script was saved.')}}', 'success');
+                ProcessMaker.alert(this.$t('The script was saved.'), 'success');
                 this.onClose();
               })
               .catch(error => {
                 if (error.response.status && error.response.status === 422) {
-                  if (error.response.data.errors.run_as_user_id !== undefined) {
-                    ProcessMaker.alert(error.response.data.errors.run_as_user_id[0], 'danger');
-                  }
                   this.errors = error.response.data.errors;
                 }
               });

@@ -56,7 +56,7 @@
                         </div>
                         <div class="form-group">
                             {!! Form::label('status', __('Status')) !!}
-                            {!! Form::select('status', ['ACTIVE' => __('Active'), 'INACTIVE' => __('Inactive')], null, [
+                            {!! Form::select('status', ['ACTIVE' => __('active'), 'INACTIVE' => __('inactive')], null, [
                             'id' => 'status',
                             'class' => 'form-control',
                             'v-model' => 'formData.status',
@@ -136,6 +136,14 @@
                                              :internal-search="false"
                                              @search-change="loadUsers"
                                              label="fullname">
+
+                                    <template slot="noResult" >
+                                        {{ __('No elements found. Consider changing the search query.') }}
+                                    </template>
+
+                                    <template slot="noOptions" >
+                                        {{ __('No Data Available') }}
+                                    </template>
 
                                     <template slot="tag" slot-scope="props">
                                         <span class="multiselect__tag  d-flex align-items-center"
@@ -265,7 +273,7 @@
             this.resetErrors();
             ProcessMaker.apiClient.put('groups/' + this.formData.id, this.formData)
               .then(response => {
-                ProcessMaker.alert('{{__('Update Group Successfully')}}', 'success');
+                ProcessMaker.alert(this.$t('Update Group Successfully'), 'success');
                 this.onClose();
               })
               .catch(error => {
@@ -293,7 +301,7 @@
               group_id: this.formData.id
             })
               .then(response => {
-                ProcessMaker.alert('{{__('Group Permissions Updated Successfully ')}}', 'success');
+                ProcessMaker.alert(this.$t('Group Permissions Updated Successfully'), 'success');
                 this.onClose();
               })
           }

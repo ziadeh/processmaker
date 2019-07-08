@@ -80,14 +80,14 @@
                              role="tabpanel" aria-labelledby="summary-tab">
                             <template v-if="showSummary">
                                 <template v-if="showScreenSummary">
-                                    <div class="card m-3">
+                                    <div class="card">
                                         <div class="card-body">
                                             <task-screen ref="screen" :screen="screenSummary" :data="dataSummary"/>
                                         </div>
                                     </div>
                                 </template>
                                 <template v-else>
-                                    <table class="vuetable table table-hover">
+                                    <table class="vuetable table table-hover mt-3 border">
                                         <thead>
                                         <tr>
                                             <th scope="col">{{ __('Key') }}</th>
@@ -104,7 +104,7 @@
                                 </template>
                             </template>
                             <template v-else>
-                                <div class="card m-3">
+                                <div class="card mt-3">
                                     <div class="card-header">
                                         <h5>
                                             {{ __('Request In Progress') }}
@@ -497,7 +497,7 @@
               status: 'CANCELED'
             })
               .then(response => {
-                ProcessMaker.alert('The request was canceled.', 'success');
+                ProcessMaker.alert(this.$t('The request was canceled.'), 'success');
                 window.location.reload();
               })
               .catch(error => {
@@ -509,14 +509,14 @@
           },
           completeRequest() {
             ProcessMaker.confirmModal(
-              __("Caution!"),
-              __("Are you sure you want to complete this request?"),
+              this.$t("Caution!"),
+              this.$t("Are you sure you want to complete this request?"),
               "",
               () => {
                 ProcessMaker.apiClient.put(`requests/${this.requestId}`, {
                   status: 'COMPLETED'
                 }).then(() => {
-                  ProcessMaker.alert(__('Request Completed'), 'success')
+                  ProcessMaker.alert(this.$t('Request Completed'), 'success')
                   location.reload()
                 })
               })

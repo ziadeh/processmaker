@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Notification;
+use ProcessMaker\Exception\ReferentialIntegrityException;
 use ProcessMaker\Query\SyntaxError;
 use Illuminate\Database\QueryException;
 use ProcessMaker\Http\Controllers\Controller;
@@ -24,6 +25,7 @@ use Symfony\Component\HttpFoundation\IpUtils;
 use Illuminate\Support\Facades\Cache;
 use ProcessMaker\Nayra\Contracts\Bpmn\CatchEventInterface;
 use ProcessMaker\Jobs\CancelRequest;
+use ProcessMaker\PmqlHelper;
 
 class ProcessRequestController extends Controller
 {
@@ -37,13 +39,6 @@ class ProcessRequestController extends Controller
      */
     public $doNotSanitize = [
         'data'
-    ];
-    
-    private $statusMap = [
-        'In Progress' => 'ACTIVE',
-        'Completed' => 'COMPLETED',
-        'Error' => 'ERROR',
-        'Canceled' => 'CANCELED',
     ];
 
     /**
@@ -66,7 +61,6 @@ class ProcessRequestController extends Controller
      *         required=false,
      *         @OA\Schema(type="string", enum={"all", "in_progress", "completed"}),
      *     ),
-     *     @OA\Parameter(ref="#/components/parameters/filter"),
      *     @OA\Parameter(ref="#/components/parameters/order_by"),
      *     @OA\Parameter(ref="#/components/parameters/order_direction"),
      *     @OA\Parameter(ref="#/components/parameters/per_page"),
@@ -94,14 +88,12 @@ class ProcessRequestController extends Controller
     public function index(Request $request)
     {
         $query = ProcessRequest::query();
-
         $includes = $request->input('include', '');
         foreach (array_filter(explode(',', $includes)) as $include) {
             if (in_array($include, ProcessRequest::$allowedIncludes)) {
                 $query->with($include);
             }
         }
-
         // type filter
         switch ($request->input('type')) {
             case 'started_me':
@@ -120,85 +112,35 @@ class ProcessRequestController extends Controller
                 break;
         }
 
-        $filterBase = $request->input('filter', '');
-        if (!empty($filterBase)) {
-            $filter = '%' . $filterBase . '%';
-            $query->where(function ($query) use ($filter, $filterBase) {
-                $query->whereHas('participants', function ($query) use ($filter) {
-                    $query->Where('firstname', 'like', $filter);
-                    $query->orWhere('lastname', 'like', $filter);
-                })->orWhere('name', 'like', $filter)
-                    ->orWhere('id', 'like', $filterBase)
-                    ->orWhere('status', 'like', $filter);
-            });
-        }
-
-        $pmql = $request->input('pmql', '');    
-        
-        try {
-            if (!empty($pmql)) {
-                $query->pmql($pmql, function($expression) {
-                    //Handle process/request name
-                    if ($expression->field->field() == 'request') {
-                        return function($query) use($expression) {
-                            $processes = Process::where('name', $expression->value->value())->get();
-                            $query->whereIn('process_id', $processes->pluck('id'));
-                        };
-                    }
-                    
-                    //Handle status
-                    if ($expression->field->field() == 'status') {
-                        return function($query) use($expression) {
-                            $value = $expression->value->value();
-                            
-                            if (array_key_exists($value, $this->statusMap)) {
-                                $query->where('status', $this->statusMap[$value]);
-                            } else {
-                                $query->where('status', $value);
-                            }
-                        };
-                    }
-                    
-                    //Handle requester
-                    if ($expression->field->field() == 'requester') {
-                        return function($query) use($expression) {
-                            $requests = ProcessRequest::whereHas('user', function($query) use ($expression) {
-                                $query->where('username', $expression->value->value());
-                            })->get();
-                            $query->whereIn('process_id', $requests->pluck('process_id'));
-                        };
-                    }
-                    
-                    //Handle participants
-                    if ($expression->field->field() == 'participant') {
-                        return function($query) use($expression) {
-                            $requests = ProcessRequest::whereHas('participants', function($query) use ($expression) {
-                                $query->where('username', $expression->value->value());
-                            })->get();
-                            $query->whereIn('id', $requests->pluck('id'));
-                        };
-                    }
-                });
+        $pmql = $request->input('pmql', '');
+        if (!empty($pmql)) {
+            try {
+                $helper = new PmqlHelper('request');
+                $query->pmql($pmql, $helper->aliases());
+            } catch (QueryException $e) {
+                return response(['message' => __('Your PMQL search could not be completed.')], 400);
+            } catch (SyntaxError $e) {
+                return response(['message' => __('Your PMQL contains invalid syntax.')], 400);
             }
-
-            $response = $query->orderBy(
-                $request->input('order_by', 'name'),
-                $request->input('order_direction', 'ASC')
-            )->get();
-        } catch (QueryException $e) {
-            return response(['message' => __('Your PMQL search could not be completed.')], 400);
-        } catch (SyntaxError $e) {
-            return response(['message' => __('Your PMQL contains invalid syntax.')], 400);
         }
-        
+
+        $response = $query->orderBy(
+            str_ireplace('.', '->', $request->input('order_by', 'name')),
+            $request->input('order_direction', 'ASC')
+        )->get();
         if (isset($response)) {
+            //Filter by permission
             $response = $response->filter(function ($processRequest) {
                 return Auth::user()->can('view', $processRequest);
-            })->values();            
+            })->values();
+
+            //Map each item through its resource
+            $response = $response->map(function ($processRequest) use ($request) {
+                return new ProcessRequestResource($processRequest);
+            });
         } else {
             $response = collect([]);
         }
-
         return new ApiCollection($response);
     }
 
@@ -357,8 +299,15 @@ class ProcessRequestController extends Controller
      */
     public function destroy(ProcessRequest $request)
     {
-        $request->delete();
-        return response([], 204);
+        try
+        {
+            $request->delete();
+            return response([], 204);
+        } catch (\Exception $e) {
+            abort($e->getCode(), $e->getMessage());
+        } catch (ReferentialIntegrityException $e) {
+            abort($e->getCode(), $e->getMessage());
+        }
     }
 
     /**

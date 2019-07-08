@@ -4,7 +4,7 @@
             <label>{{ $t('Due In') }}</label>
             <input class="form-control"
                    type="number"
-                   placeholder="72 hours"
+                   :placeholder="$t('72 hours')"
                    :value="dueInGetter"
                    @input="dueInSetter"
                    min="0"
@@ -34,6 +34,7 @@
                              track-by="id"
                              label="name"
                              :placeholder="$t('type here to search')"
+                             :class="{'border border-danger':error}"
                              :options="options"
                              :multiple="false"
                              :show-labels="false"
@@ -41,7 +42,15 @@
                              :internal-search="false"
                              :helper="helper"
                              @search-change="load($event, 'assignment')">
+                    <template slot="noResult" >
+                        {{ $t('No elements found. Consider changing the search query.') }}
+                    </template>
+                    <template slot="noOptions" >
+                        {{ $t('No Data Available') }}
+                    </template>
                 </multiselect>
+                <small v-if="error" class="text-danger">{{ error }}</small>
+                <small v-if="helper" class="form-text text-muted">{{ $t(helper) }}</small>
             </div>
         </div>
 
@@ -92,6 +101,7 @@
                                          track-by="id"
                                          label="name"
                                          :placeholder="$t('type here to search')"
+                                         :class="{'border border-danger':error}"
                                          :options="optionsExpression"
                                          :multiple="false"
                                          :show-labels="false"
@@ -99,7 +109,15 @@
                                          :internal-search="false"
                                          :helper="helper"
                                          @search-change="load($event, 'expression')">
+                                <template slot="noResult" >
+                                    {{ $t('No elements found. Consider changing the search query.') }}
+                                </template>
+                                <template slot="noOptions" >
+                                    {{ $t('No Data Available') }}
+                                </template>
                             </multiselect>
+                            <small v-if="error" class="text-danger">{{ error }}</small>
+                            <small v-if="helper" class="form-text text-muted">{{ $t(helper) }}</small>
                         </div>
                     </div>
 
@@ -164,6 +182,7 @@
         loadingAssign: false,
         contentExpression: null,
         specialAssignmentsData: [],
+        error: '',
       };
     },
     computed: {
@@ -171,7 +190,7 @@
        * Get the value of the edited property
        */
       allowReassignmentGetter() {
-        const node = this.$parent.$parent.highlightedNode.definition;
+        const node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
         const value = _.get(node, "allowReassignment");
         return value;
       },
@@ -184,27 +203,27 @@
         return this.$parent.$parent.$parent.process;
       },
       dueInGetter() {
-        const node = this.$parent.$parent.highlightedNode.definition;
+        const node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
         const value = _.get(node, "dueIn");
         return value;
       },
       assignedUserGetter() {
-        const node = this.$parent.$parent.highlightedNode.definition;
+        const node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
         const value = _.get(node, "assignedUsers");
         return value;
       },
       assignedGroupGetter() {
-        const node = this.$parent.$parent.highlightedNode.definition;
+        const node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
         const value = _.get(node, "assignedGroups");
         return value;
       },
       assignmentGetter() {
-        const node = this.$parent.$parent.highlightedNode.definition;
+        const node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
         const value = _.get(node, "assignment");
         return value;
       },
       node() {
-        return this.$parent.$parent.highlightedNode.definition;
+        return this.$parent.$parent.$parent.$parent.highlightedNode.definition;
       },
       showAssignOneUser() {
         return this.assignmentGetter === "user";
@@ -226,7 +245,7 @@
         return this.typeAssignmentExpression === "group";
       },
       specialAssignmentsListGetter() {
-        const node = this.$parent.$parent.highlightedNode.definition;
+        const node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
         const value = _.get(node, "assignmentRules");
         return value;
       }
@@ -323,7 +342,7 @@
       },
 
       loadAssigned() {
-        const node = this.$parent.$parent.highlightedNode.definition;
+        const node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
         if (this.assignmentGetter === 'user') {
           const value = _.get(node, "assignedUsers");
           ProcessMaker.apiClient
@@ -361,7 +380,7 @@
         /*this.$set(this.node, "assignedUsers", event.target.value);
         this.$emit("input", this.value);*/
 
-        let node = this.$parent.$parent.highlightedNode.definition;
+        let node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
         //let value = _.get(node, "assignedUsers");
         this.$set(node, "assignedUsers", id);
         //value = _.get(node, "assignedGroups");
@@ -372,7 +391,7 @@
         /*this.$set(this.node, "assignedGroups", event.target.value);
         this.$emit("input", this.value);*/
 
-        let node = this.$parent.$parent.highlightedNode.definition;
+        let node = this.$parent.$parent.$parent.$parent.highlightedNode.definition;
         //let value = _.get(node, "assignedUsers");
         this.$set(node, "assignedUsers", '');
         //value = _.get(node, "assignedGroups");
@@ -564,12 +583,13 @@
     }
 
     .special-assignment-header {
-    label {
-        padding-top: 4px;
-    }
+        label {
+            padding-top: 4px;
+        }
     }
 
     .special-assignment-wrapper {
+        width: 100%;
         height: 0;
         opacity: 0;
         overflow: hidden;

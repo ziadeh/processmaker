@@ -24,6 +24,8 @@ use ProcessMaker\Nayra\Contracts\Bpmn\EventBasedGatewayInterface;
 use ProcessMaker\Nayra\Contracts\Engine\ExecutionInstanceInterface;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use ProcessMaker\Models\Process;
+use ProcessMaker\Models\ProcessRequestToken;
 
 /**
  * Execution Instance Repository.
@@ -76,6 +78,7 @@ class TokenRepository implements TokenRepositoryInterface
         $this->instanceRepository->persistInstanceUpdated($token->getInstance());
         $user = $token->getInstance()->process->getNextUser($activity, $token);
         $this->addUserToData($token->getInstance(), $user);
+        $this->addRequestToData($token->getInstance());
         $token->status = $token->getStatus();
         $token->element_id = $activity->getId();
 //        $token->element_type = $activity instanceof ScriptTaskInterface ? 'scriptTask' : 'task';
@@ -154,6 +157,7 @@ class TokenRepository implements TokenRepositoryInterface
     public function persistActivityCompleted(ActivityInterface $activity, TokenInterface $token)
     {
         $this->removeUserFromData($token->getInstance());
+        $this->removeRequestFromData($token->getInstance());
         $this->instanceRepository->persistInstanceUpdated($token->getInstance());
         $token->status = $token->getStatus();
         $token->element_id = $activity->getId();
@@ -241,12 +245,37 @@ class TokenRepository implements TokenRepositoryInterface
     {
     }
 
-    public function persistGatewayTokenArrives(GatewayInterface $exclusiveGateway, TokenInterface $token)
+    public function persistGatewayTokenArrives(GatewayInterface $gateway, TokenInterface $token)
     {
+        if ($token->exists) {
+            return;
+        }
+        $this->instanceRepository->persistInstanceUpdated($token->getInstance());
+        $token->status = $token->getStatus();
+        $token->element_index = $token->getIndex();
+        $token->element_id = $gateway->getId();
+        $token->element_type = 'gateway';
+        $token->element_name = $gateway->getName();
+        $token->process_id = $token->getInstance()->process->getKey();
+        $token->process_request_id = $token->getInstance()->getKey();
+        $token->user_id = null;
+        $token->due_at = null;
+        $token->initiated_at = null;
+        $token->riskchanges_at = null;
+        $token->saveOrFail();
+        $token->setId($token->getKey());
     }
 
-    public function persistGatewayTokenConsumed(GatewayInterface $exclusiveGateway, TokenInterface $token)
+    public function persistGatewayTokenConsumed(GatewayInterface $gateway, TokenInterface $token)
     {
+        $this->instanceRepository->persistInstanceUpdated($token->getInstance());
+        $token->status = 'CLOSED';
+        $token->element_id = $gateway->getId();
+        $token->process_id = $token->getInstance()->process->getKey();
+        $token->process_request_id = $token->getInstance()->getKey();
+        $token->completed_at = Carbon::now();
+        $token->save();
+        $token->setId($token->getKey());
     }
 
     public function persistGatewayTokenPassed(GatewayInterface $exclusiveGateway, TokenInterface $token)
@@ -312,6 +341,27 @@ class TokenRepository implements TokenRepositoryInterface
     private function removeUserFromData(Instance $instance)
     {
         $instance->getDataStore()->removeData('_user');
+    }
+
+    /**
+     * Add request to the request data.
+     *
+     * @param Instance $instance
+     */
+    private function addRequestToData(Instance $instance)
+    {
+        $instance->getDataStore()->putData('_request', $instance);
+        $this->instanceRepository->persistInstanceUpdated($instance);
+    }
+
+    /**
+     * Remove request from the request data.
+     *
+     * @param Instance $instance
+     */
+    private function removeRequestFromData(Instance $instance)
+    {
+        $instance->getDataStore()->removeData('_request');
     }
 
 

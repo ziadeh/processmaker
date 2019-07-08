@@ -1,15 +1,22 @@
 <template>
   <div id="userMenu">
-    <avatar-image
+    
+    
+    <a
+      data-toggle="dropdown"
+      href="#"
+      aria-expanded="false"
+      id="profileMenu"
+    ><avatar-image
       id="avatarMenu"
       class-container="d-flex m-1"
       size="40"
       class-image="m-1"
       :input-data="information"
-    ></avatar-image>
+    ></avatar-image></a>
 
     <b-popover
-      target="avatarMenu"
+      target="profileMenu"
       triggers="click blur"
       placement="bottomleft"
       container="userMenu"
@@ -22,7 +29,7 @@
       <template>
         <a
           data-v-2eb90a9e
-          href="https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/"
+          href="https://processmaker.gitbook.io/processmaker/-Lhqv3ZMbDJxqTpMtVKV/"
           class="dropdown-item item"
           target="_blank"
         >
@@ -75,7 +82,7 @@ export default {
       this.fullName = user.fullname;
       this.information = [
         {
-          src: user.avatar,
+          src: user.avatar ? (user.avatar + '?' + new Date().getTime()) : user.avatar,
           title: "",
           initials:
             user.firstname && user.lastname

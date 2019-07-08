@@ -4,7 +4,7 @@
       <a :href="value.id" style="margin: 0 2px;">
         <template v-if="value.src" class="align-center">
           <img
-            :src="value.src"
+            :src="timestamp(value.src)"
             :width="sizeImage"
             :height="sizeImage"
             class="image"
@@ -13,7 +13,7 @@
         </template>
         <template v-else>
           <button
-            class="rounded-circle bg-warning border-0 align-middle text-white text-center text-uppercase text-nowrap"
+            class="avatar-image-button rounded-circle bg-warning border-0 align-middle text-white text-center text-uppercase text-nowrap"
             :style="styleButton"
             :title="value.tooltip"
             :href="value.id"
@@ -58,6 +58,13 @@ export default {
     }
   },
   methods: {
+    timestamp(src) {
+      if (src.startsWith('data:image')) {
+        // Do not add cache buster to base64 encoded image
+        return src
+      }
+      return src + '?' + new Date().getTime();
+    },
     default() {
       this.displayTitle = this.hideName === undefined ? false : this.hideName;
       this.formatRounded(this.rounded);
@@ -127,3 +134,15 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+  .avatar-image-button {
+    outline: 0 !important;
+    
+    &:active,
+    &:focus,
+    &:hover {
+      outline: 0;
+    }
+  }
+</style>

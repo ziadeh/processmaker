@@ -36,9 +36,9 @@ class CreateUsersTable extends Migration
 
             $table->string('title')->nullable();
             $table->date('birthdate')->nullable();
-            $table->string('timezone')->nullable();
-            $table->string('datetime_format')->nullable();
-            $table->string('language')->nullable();
+            $table->string('timezone')->nullable()->default('America/Los_Angeles');
+            $table->string('datetime_format')->nullable()->default('m/d/Y H:i');
+            $table->string('language')->nullable()->default('en');
 
             $table->boolean('is_administrator')->default(false);
 
@@ -46,6 +46,7 @@ class CreateUsersTable extends Migration
             $table->dateTime('loggedin_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
 
         });
     }

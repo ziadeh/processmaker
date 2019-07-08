@@ -25,14 +25,14 @@
                             <h5 class="card-title">{{__('You are about to import a Process.')}}</h5>
                             <p class="card-text d-flex justify-content-center">{{__('After importing, you can reassign users and groups to your Process.')}}</p>
                             <div class="d-flex justify-content-center">
-                                <b-card header-class="d-flex bg-white align-items-center card-size-header border-0"
-                                        class="d-flex flex-row card-border border-0" style="width: 40em;">
+                                <b-card header-class="d-flex bg-light align-items-center card-size-header border-0"
+                                        class="d-flex flex-row card-border border-0 mb-1" style="width: 40em;">
                                     <i slot="header" class='fas fa-exclamation-circle fa-4x'></i>
-                                    {{__('ProcessMaker Spark does not import Environment Variables or Enterprise Packages. You must manually configure these features.')}}
+                                    {{__('ProcessMaker does not import Environment Variables or Enterprise Packages. You must manually configure these features.')}}
                                 </b-card>
                             </div>
 
-                            <input type="file" ref="file" class="d-none" @change="handleFile" accept=".spark">
+                            <input type="file" ref="file" class="d-none" @change="handleFile" accept=".spark,.json">
                             <button @click="$refs.file.click()" class="btn btn-secondary ml-2">
                                 <i class="fas fa-upload"></i>
                                 {{__('Browse')}}
@@ -84,6 +84,12 @@
                                                              @search-change="loadUsers($event, true, 'task')"
                                                              @open="loadUsers($event, true, 'task')"
                                                              class="assignable-input">
+                                                    <template slot="noResult" >
+                                                        {{ __('No elements found. Consider changing the search query.') }}
+                                                    </template>
+                                                    <template slot="noOptions" >
+                                                        {{ __('No Data Available') }}
+                                                    </template>
                                                 </multiselect>
                                                 <multiselect v-model="item.value"
                                                              placeholder="{{__('Type to search')}}"
@@ -100,6 +106,12 @@
                                                              @search-change="loadUsers($event, true)"
                                                              @open="loadUsers($event, true)"
                                                              class="assignable-input">
+                                                    <template slot="noResult" >
+                                                        {{ __('No elements found. Consider changing the search query.') }}
+                                                    </template>
+                                                    <template slot="noOptions" >
+                                                        {{ __('No Data Available') }}
+                                                    </template>
                                                 </multiselect>
                                                 <multiselect v-model="item.value"
                                                              placeholder="{{__('Type to search')}}"
@@ -114,6 +126,12 @@
                                                              @search-change="loadUsers($event, false)"
                                                              @open="loadUsers"
                                                              class="assignable-input">
+                                                    <template slot="noResult" >
+                                                        {{ __('No elements found. Consider changing the search query.') }}
+                                                    </template>
+                                                    <template slot="noOptions" >
+                                                        {{ __('No Data Available') }}
+                                                    </template>
                                                 </multiselect>
                                                 <multiselect v-model="item.value"
                                                              placeholder="{{__('Type to search process')}}"
@@ -128,6 +146,12 @@
                                                              @search-change="loadProcess($event)"
                                                              @open="loadProcess"
                                                              class="assignable-input">
+                                                    <template slot="noResult" >
+                                                        {{ __('No elements found. Consider changing the search query.') }}
+                                                    </template>
+                                                    <template slot="noOptions" >
+                                                        {{ __('No Data Available') }}
+                                                    </template>
                                                 </multiselect>
                                             </td>
                                         </tr>
@@ -152,6 +176,12 @@
                                                              @search-change="loadUsers($event, true)"
                                                              @open="loadUsers($event, true)"
                                                              class="assignable-input">
+                                                    <template slot="noResult" >
+                                                        {{ __('No elements found. Consider changing the search query.') }}
+                                                    </template>
+                                                    <template slot="noOptions" >
+                                                        {{ __('No Data Available') }}
+                                                    </template>
                                                 </multiselect>
                                             </td>
                                         </tr>
@@ -175,6 +205,12 @@
                                                              @search-change="loadUsers($event, true)"
                                                              @open="loadUsers($event, true)"
                                                              class="assignable-input">
+                                                    <template slot="noResult" >
+                                                        {{ __('No elements found. Consider changing the search query.') }}
+                                                    </template>
+                                                    <template slot="noOptions" >
+                                                        {{ __('No Data Available') }}
+                                                    </template>
                                                 </multiselect>
                                             </td>
                                         </tr>
@@ -381,11 +417,11 @@
                 'edit_data': this.formatAssignee(this.processEditData)
               })
               .then(response => {
-                ProcessMaker.alert('{{__('All assignments were saved.')}}', 'success');
+                ProcessMaker.alert(this.$t('All assignments were saved.'), 'success');
                 this.onCancel();
               })
               .catch(error => {
-                ProcessMaker.alert('{{__('Unable cannot save the assignments.')}}', 'danger');
+                ProcessMaker.alert(this.$t('Unable cannot save the assignments.'), 'danger');
               });
           },
           onAssignmentCancel() {
@@ -435,11 +471,11 @@
                 }
                 this.assignable = response.data.assignable;
                 this.processId = response.data.process.id;
-                message = '{{__('The process was imported.')}}';
+                message = this.$t('The process was imported.');
                 let variant = 'success';
                 for (let item in this.options) {
                   if (!this.options[item].success) {
-                    message = '{{__('The process was imported, but with errors.')}}';
+                    message = this.$t('The process was imported, but with errors.');
                     variant = 'warning'
                   }
                 }
@@ -447,7 +483,7 @@
               })
               .catch(error => {
                 this.submitted = false;
-                ProcessMaker.alert('{{__('Unable to import the process.')}}', 'danger');
+                ProcessMaker.alert(this.$t('Unable to import the process.')  + (error.response.data.message ? ': ' + error.response.data.message : ''), 'danger');
               });
           }
         }

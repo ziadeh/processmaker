@@ -12,7 +12,7 @@
         __('Processes') => route('processes.index'),
         __('Scripts') => null,
     ]])
-    <div class="container page-content" id="scriptIndex">
+    <div class="px-3 page-content" id="scriptIndex">
         <div class="row">
             <div class="col">
                 <div class="input-group">
@@ -79,9 +79,23 @@
 
                         <div class="form-group">
                             <label class="typo__label">{{__('Run script as')}}</label>
-                            <multiselect v-model="selectedUser" label="fullname" :options="users" :placeholder="$t('Select')"
-                                         :searchable="true"></multiselect>
-                        <small class="form-text text-muted">{{__('Select a user to set the API access of the Script')}}</small>
+                            <multiselect v-model="selectedUser"
+                                         label="fullname"
+                                         :options="users"
+                                         :show-labels="false"
+                                         :placeholder="$t('Select')"
+                                         :searchable="true"
+                                         :class="{'is-invalid': addError.run_as_user_id}">
+                                <template slot="noResult" >
+                                    {{ __('No elements found. Consider changing the search query.') }}
+                                </template>
+
+                                <template slot="noOptions" >
+                                    {{ __('No Data Available') }}
+                                </template>
+                            </multiselect>
+                            <small class="form-text text-muted" v-if="! addError.run_as_user_id">{{__('Select a user to set the API access of the Script')}}</small>
+                            <div class="invalid-feedback" v-for="run_as_user_id in addError.run_as_user_id">@{{run_as_user_id}}</div>
                         </div>
 
                         <div class="form-group">
@@ -165,9 +179,6 @@
                   .catch(error => {
                     this.disabled = false;
                     if (error.response.status && error.response.status === 422) {
-                      if (error.response.data.errors.run_as_user_id !== undefined) {
-                        ProcessMaker.alert(error.response.data.errors.run_as_user_id[0], 'danger');
-                      }
                       this.addError = error.response.data.errors;
                     }
                   })

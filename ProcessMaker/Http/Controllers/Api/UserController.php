@@ -6,6 +6,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use ProcessMaker\Exception\ReferentialIntegrityException;
 use ProcessMaker\Http\Controllers\Controller;
 use ProcessMaker\Http\Resources\ApiCollection;
 use ProcessMaker\Http\Resources\Users as UserResource;
@@ -94,8 +95,45 @@ class UserController extends Controller
         return new ApiCollection($response);
     }
 
-    /**
+     /**
      * Store a newly created resource in storage.
+     *
+     * @param  id  $id
+     * @return \Illuminate\Http\Response
+     *
+     *     @OA\Post(
+     *     path="/users",
+     *     summary="Save a new users",
+     *     operationId="createUser",
+     *     tags={"Users"},
+     *     @OA\RequestBody(
+     *       required=true,
+     *       @OA\JsonContent(ref="#/components/schemas/usersEditable")
+     *     ),
+     *     @OA\Response(
+     *         response=201,
+     *         description="success",
+     *         @OA\JsonContent(ref="#/components/schemas/users")
+     *     ),
+     * )
+     */
+    public function store(Request $request)
+    {
+        $request->validate(User::rules());
+        $user = new User();
+        $fields = $request->json()->all();
+
+        if (isset($fields['password'])) {
+            $fields['password'] = Hash::make($fields['password']);
+        }
+
+        $user->fill($fields);
+        $user->saveOrFail();
+        return new UserResource($user->refresh());
+    }
+
+    /**
+     * Display the specified resource.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -117,50 +155,6 @@ class UserController extends Controller
      *     @OA\Response(
      *         response=200,
      *         description="Successfully found the process",
-     *         @OA\JsonContent(ref="#/components/schemas/users")
-     *     ),
-     * )
-     */
-    public function store(Request $request)
-    {
-        $request->validate(User::rules());
-        $user = new User();
-        $fields = $request->json()->all();
-        if (isset($fields['password'])) {
-            $fields['password'] = Hash::make($fields['password']);
-        }
-
-        if (!isset($fields['timezone'])) {
-            $fields['timezone'] = env('APP_TIMEZONE');
-        }
-
-        if (!isset($fields['datetime_format'])) {
-            $fields['datetime_format'] = env('DATE_FORMAT');
-        }
-
-        $user->fill($fields);
-        $user->saveOrFail();
-        return new UserResource($user->refresh());
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  id  $id
-     * @return \Illuminate\Http\Response
-     *
-     *     @OA\Post(
-     *     path="/users",
-     *     summary="Save a new users",
-     *     operationId="createUser",
-     *     tags={"Users"},
-     *     @OA\RequestBody(
-     *       required=true,
-     *       @OA\JsonContent(ref="#/components/schemas/usersEditable")
-     *     ),
-     *     @OA\Response(
-     *         response=201,
-     *         description="success",
      *         @OA\JsonContent(ref="#/components/schemas/users")
      *     ),
      * )
@@ -260,11 +254,16 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $user->delete();
-        return response([], 204);
+        try
+        {
+            $user->delete();
+            return response([], 204);
+        } catch (\Exception $e) {
+            abort($e->getCode(), $e->getMessage());
+        } catch (ReferentialIntegrityException $e) {
+            abort($e->getCode(), $e->getMessage());
+        }
     }
-
-
 
     /**
      * Upload file avatar

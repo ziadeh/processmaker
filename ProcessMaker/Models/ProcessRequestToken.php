@@ -61,6 +61,8 @@ class ProcessRequestToken extends Model implements TokenInterface
     use TokenTrait;
     use SerializeToIso8601;
 
+    protected $connection = 'processmaker';
+
     /**
      * Attributes that are not mass assignable.
      *
@@ -131,15 +133,15 @@ class ProcessRequestToken extends Model implements TokenInterface
      *
      * @param string $entity
      * @param string $notificationType
-     * 
+     *
      * @return array
-     */    
+     */
     public function getNotifiables($notificationType)
     {
         $userIds = collect([]);
-        
+
         $process = $this->process()->first();
-        
+
         $notifiableTypes = $process->notification_settings()
                                    ->where('notification_type', $notificationType)
                                    ->where('element_id', $this->element_id)
@@ -150,11 +152,11 @@ class ProcessRequestToken extends Model implements TokenInterface
         }
 
         $userIds = $userIds->unique();
-        
+
         $notifiables = $notifiableTypes->implode(', ');
         $users = $userIds->implode(', ');
         Log::debug("Sending task $notificationType notification to $notifiables (users: $users)");
-        
+
         return User::whereIn('id', $userIds)->get();
     }
 
@@ -202,7 +204,6 @@ class ProcessRequestToken extends Model implements TokenInterface
         return $this->belongsTo(User::class, 'user_id');
     }
 
-
     /**
      * Get the BPMN definition of the element where the token is.
      *
@@ -216,6 +217,17 @@ class ProcessRequestToken extends Model implements TokenInterface
             return [];
         }
         return $element->getBpmnElementInstance()->getProperties();
+    }
+
+    /**
+     * Get the BPMN element node where the token is currently located.
+     *
+     * @return \ProcessMaker\Nayra\Storage\BpmnElement
+     */
+    public function getBpmnDefinition()
+    {
+        $definitions = $this->processRequest->process->getDefinitions();
+        return $definitions->findElementById($this->element_id);
     }
 
     /**
@@ -257,7 +269,7 @@ class ProcessRequestToken extends Model implements TokenInterface
 
     /**
      * Check if the user has access to reassign this task
-     * 
+     *
      * @param \ProcessMaker\Models\User $user
      */
     public function authorizeReassignment(User $user)

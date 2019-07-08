@@ -1,24 +1,7 @@
 <template>
   <b-container id="modeler-app" class="h-100 container p-0">
-    <b-card no-body class="h-100">
-      <b-card-header class="d-flex align-items-center header">
-        <b-card-text class="m-0 font-weight-bolder">
-          {{ process.name }}
-        </b-card-text>
-
-        <div class="ml-auto">
-          <b-btn variant="secondary" size="sm" v-b-modal="'uploadmodal'" class="mr-2">
-            <i class="fas fa-upload mr-1"/>
-            {{ $t('Upload XML') }}
-          </b-btn>
-          <b-btn variant="secondary" size="sm" @click="saveBpmn">
-            <i class="fas fa-save mr-1"/>
-            {{ $t('Save') }}
-          </b-btn>
-        </div>
-      </b-card-header>
-
-      <b-card-body class="overflow-hidden position-relative">
+    <b-card no-body class="h-100 border-top-0">
+      <b-card-body class="overflow-hidden position-relative p-0">
         <modeler ref="modeler" @validate="validationErrors = $event" />
       </b-card-body>
 
@@ -28,31 +11,16 @@
         </statusbar>
       </b-card-footer>
     </b-card>
-
-    <b-modal ref="uploadmodal"
-             id="uploadmodal"
-             :title="$t('Upload BPMN File')"
-             :cancel-title="$t('Cancel')"
-             :ok-title="$t('Ok')">
-      <file-upload @input-file="handleUpload">
-        {{ $t('Upload file') }}
-      </file-upload>
-    </b-modal>
   </b-container>
 </template>
 
 <script>
-import { Modeler, Statusbar, ValidationStatus } from "@processmaker/spark-modeler";
-import FileUpload from 'vue-upload-component';
-import FilerSaver from 'file-saver';
-
-const reader = new FileReader();
+import { Modeler, Statusbar, ValidationStatus } from "@processmaker/modeler";
 
 export default {
   name: 'ModelerApp',
   components: {
     Modeler,
-    FileUpload,
     ValidationStatus,
     Statusbar,
   },
@@ -101,6 +69,7 @@ export default {
             this.process.updated_at = response.data.updated_at;
             // Now show alert
             ProcessMaker.alert(this.$t('The process was saved.'), 'success');
+            window.ProcessMaker.EventBus.$emit('save-changes');
           })
           .catch((err) => {
             const message = err.response.data.message;
@@ -110,36 +79,20 @@ export default {
           })
         }
       });
-    },
-    handleUpload(fileObject) {
-      if (!fileObject) {
-        return;
-      }
-
-      reader.readAsText(fileObject.file);
-    },
+    }
   },
   mounted() {
-    reader.onloadend = () => {
-      this.$refs.modeler.loadXML(reader.result);
-      this.$refs.uploadmodal.hide();
-    };
-
     ProcessMaker.$modeler = this.$refs.modeler;
 
-    window.ProcessMaker.EventBus.$on('modeler-change', this.refreshSession);
+    window.ProcessMaker.EventBus.$on('modeler-saveBpmn', () => {
+      this.saveBpmn();
+    });
+
+    window.ProcessMaker.EventBus.$on('modeler-change', () => {
+      this.refreshSession();
+      window.ProcessMaker.EventBus.$emit('new-changes');
+    });
   },
 };
 </script>
 
-<style lang="scss">
-/* body,
-html {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  max-width: 100vw;
-  height: 100vh;
-  max-height: 100vh;
-} */
-</style>

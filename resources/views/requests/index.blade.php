@@ -13,7 +13,7 @@
     __('Requests') => route('requests.index'),
     function() use ($title) { return [__($title), null]; }
 ]])
-<div class="container page-content mt-2" id="requests-listing">
+<div class="px-3 page-content mt-2" id="requests-listing">
     <div class="row">
         <div class="col-sm-12">
             <template v-if="title">
@@ -45,7 +45,7 @@
                             <h6 class="card-text">{{__('Completed')}}</h6>
                         </a>
                     </b-card>
-                    @if (Auth::user()->is_administrator)
+                    @can('view-all_requests')
                     <b-card header-class="d-flex align-items-center justify-content-center card-size-header border-0"
                         text-variant="white" class="bg-warning mb-3 d-flex flex-row  card-border border-0">
                         <i slot="header" class='fas fa-clipboard fa-2x'></i>
@@ -54,7 +54,7 @@
                             <h6 class="card-text">{{__('All Requests')}}</h6>
                         </a>
                     </b-card>
-                    @endif
+                    @endcan
 
                 </b-card-group>
 
@@ -63,82 +63,104 @@
                         <div class="flex-grow-1">
                             <div id="search-dropdowns" v-if="! advanced" class="row">
                                 <div class="col-3">
-                                    <multiselect
-                                    v-model="process"
-                                    @search-change="getProcesses"
-                                    @input="buildPmql"
-                                    :select-label="''"
-                                    :loading="isLoading.process"
-                                    open-direction="bottom"
-                                    label="name"
-                                    :options="processOptions"
-                                    :track-by="'id'"
-                                    :multiple="true"
-                                    :placeholder="$t('Process')">
+                                    <multiselect v-model="process"
+                                                 @search-change="getProcesses"
+                                                 @input="buildPmql"
+                                                 :show-labels="false"
+                                                 :loading="isLoading.process"
+                                                 open-direction="bottom"
+                                                 label="name"
+                                                 :options="processOptions"
+                                                 :track-by="'id'"
+                                                 :multiple="true"
+                                                 :placeholder="$t('Process')">
+                                        <template slot="noResult">
+                                            {{ __('No elements found. Consider changing the search query.') }}
+                                        </template>
+                                        <template slot="noOptions">
+                                            {{ __('No Data Available') }}
+                                        </template>
                                         <template slot="selection" slot-scope="{ values, search, isOpen }">
                                             <span class="multiselect__single" v-if="values.length > 1 && !isOpen">@{{ values.length }} {{ __('processes') }}</span>
                                         </template>
                                     </multiselect>
                                 </div>
                                 <div class="col-3">
-                                    <multiselect
-                                    v-model="status"
-                                    :select-label="''"
-                                    @input="buildPmql"
-                                    :loading="isLoading.status"
-                                    open-direction="bottom"
-                                    label="name"
-                                    :options="statusOptions"
-                                    track-by="value"
-                                    :multiple="true"
-                                    :placeholder="$t('Status')">
+                                    <multiselect v-model="status"
+                                                 :show-labels="false"
+                                                 @input="buildPmql"
+                                                 :loading="isLoading.status"
+                                                 open-direction="bottom"
+                                                 label="name"
+                                                 :options="statusOptions"
+                                                 track-by="value"
+                                                 :multiple="true"
+                                                 :placeholder="$t('Status')">
+                                        <template slot="noResult">
+                                            {{ __('No elements found. Consider changing the search query.') }}
+                                        </template>
+                                        <template slot="noOptions">
+                                            {{ __('No Data Available') }}
+                                        </template>
                                         <template slot="selection" slot-scope="{ values, search, isOpen }">
                                             <span class="multiselect__single" v-if="values.length > 1 && !isOpen">@{{ values.length }} {{ __('statuses') }}</span>
                                         </template>
                                     </multiselect>
                                 </div>
                                 <div class="col-3">
-                                    <multiselect
-                                    v-model="requester"
-                                    @search-change="getRequesters"
-                                    @input="buildPmql"
-                                    :select-label="''"
-                                    :loading="isLoading.requester"
-                                    open-direction="bottom"
-                                    label="fullname"
-                                    :options="requesterOptions"
-                                    :track-by="'id'"
-                                    :multiple="true"
-                                    :placeholder="$t('Requester')">
+                                    <multiselect v-model="requester"
+                                                 @search-change="getRequesters"
+                                                 @input="buildPmql"
+                                                 :show-labels="false"
+                                                 :loading="isLoading.requester"
+                                                 open-direction="bottom"
+                                                 label="fullname"
+                                                 :options="requesterOptions"
+                                                 :track-by="'id'"
+                                                 :multiple="true"
+                                                 :placeholder="$t('Requester')">
+                                        <template slot="noResult">
+                                            {{ __('No elements found. Consider changing the search query.') }}
+                                        </template>
+                                        <template slot="noOptions">
+                                            {{ __('No Data Available') }}
+                                        </template>
                                         <template slot="selection" slot-scope="{ values, search, isOpen }">
                                             <span class="multiselect__single" v-if="values.length > 1 && !isOpen">@{{ values.length }} {{ __('requesters') }}</span>
                                         </template>
                                         <template slot="option" slot-scope="props">
-                                            <img v-if="props.option.avatar.length > 0" class="option__image" :src="props.option.avatar">
-                                        <span v-else class="initials bg-warning text-white p-1"> @{{getInitials(props.option.firstname, props.option.lastname)}}</span>
+                                            <img v-if="props.option.avatar.length > 0" class="option__image"
+                                                 :src="props.option.avatar">
+                                            <span v-else class="initials bg-warning text-white p-1"> @{{getInitials(props.option.firstname, props.option.lastname)}}</span>
                                             <span class="ml-1">@{{props.option.fullname}}</span>
                                         </template>
                                     </multiselect>
                                 </div>
                                 <div class="col-3">
-                                    <multiselect
-                                    v-model="participants"
-                                    @search-change="getParticipants"
-                                    @input="buildPmql"
-                                    :select-label="''"
-                                    :loading="isLoading.participants"
-                                    open-direction="bottom"
-                                    label="fullname"
-                                    :options="participantsOptions"
-                                    :track-by="'id'"
-                                    :multiple="true"
-                                    :placeholder="$t('Participants')">
+                                    <multiselect v-model="participants"
+                                                 @search-change="getParticipants"
+                                                 @input="buildPmql"
+                                                 :show-labels="false"
+                                                 :loading="isLoading.participants"
+                                                 open-direction="bottom"
+                                                 label="fullname"
+                                                 :options="participantsOptions"
+                                                 :track-by="'id'"
+                                                 :multiple="true"
+                                                 :placeholder="$t('Participants')">
+                                        <template slot="noResult">
+                                            {{ __('No elements found. Consider changing the search query.') }}
+                                        </template>
+                                        <template slot="noOptions">
+                                            {{ __('No Data Available') }}
+                                        </template>
                                         <template slot="selection" slot-scope="{ values, search, isOpen }">
                                             <span class="multiselect__single" v-if="values.length > 1 && !isOpen">@{{ values.length }} {{ __('requesters') }}</span>
                                         </template>
                                         <template slot="option" slot-scope="props">
-                                            <img v-if="props.option.avatar.length > 0" class="option__image" :src="props.option.avatar">
-                                        <span v-else class="initials bg-warning text-white p-1"> @{{getInitials(props.option.firstname, props.option.lastname)}}</span>
+                                            <img v-if="props.option.avatar.length > 0" class="option__image"
+                                                 :src="props.option.avatar">
+                                            <span v-else class="initials bg-warning text-white p-1"> @{{getInitials(props.option.firstname, props.option.lastname)}}</span>
                                             <span class="ml-1">@{{props.option.fullname}}</span>
                                         </template>
                                     </multiselect>
