@@ -79,7 +79,7 @@ The **Files** tab displays the summary of all files associated with the Request 
 
 The **Files** tab displays the following summary in tabular format about the files associated with the Request:
 
-* **File Name:** The **File Name** column displays the name of each associated with the selected Request. Click the file name to download it to your local computer or network location. 
+* **File Name:** The **File Name** column displays the name of each file associated with the selected Request. Click the file name to download it to your local computer or network location. 
 * **MIME Type:** The **MIME Type** column displays the MIME type for the associated file.
 * **Created At:** The **Created At** column displays the date the file became associated with the selected Request. The file became associated with the Request when the person who attached it submitted the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) to which the file was uploaded. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
