@@ -19,17 +19,14 @@ Follow these steps to view a summary for a completed Request:
 
 ## Values in the Request
 
-The **Summary** tab displays the summary of information entered into the completed Request. Request information may be entered in the following ways:
-
-* Request participants manually enter information into ProcessMaker Screens. ProcessMaker Screens are digital forms.
-* Authenticated users submit data through the ProcessMaker REST API.
+The **Summary** tab displays the summary of information entered into the completed Request via [ProcessMaker Screens](../../../designing-processes/design-forms/what-is-a-form.md). ProcessMaker Screens are digital forms.
 
 ![&quot;Summary&quot; tab in a completed Request&apos;s summary](../../../.gitbook/assets/summary-tab-request-information-request.png)
 
 The **Summary** tab displays the JSON-formatted key/value pairs in tabular format that represent ProcessMaker Screen control data. Information is displayed:
 
-* **Key:** The **Key** column displays the JSON key name that represents the ProcessMaker Screen control name the Request participant entered data or specified through the ProcessMaker REST API. For example, a Text control to enter your name could be named `Full Name` which would display in the **Key** column here.
-* **Value:** The **Value** column displays that key's value as entered by a person manually interacting with a form or specified through the ProcessMaker REST API. For example, a Text control to enter your name could have the value `John Doe` which would display in the **Value** column here.
+* **Key:** The **Key** column displays the JSON key name that represents the ProcessMaker Screen control name the Request participant entered data. For example, a Text control to enter your name could be named `Full Name` which would display in the **Key** column here.
+* **Value:** The **Value** column displays that key's value as entered by a person manually interacting with a formI. For example, a Text control to enter your name could have the value `John Doe` which would display in the **Value** column here.
 
 Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
 
