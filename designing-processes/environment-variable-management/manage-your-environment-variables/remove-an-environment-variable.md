@@ -19,7 +19,7 @@ See the ProcessMaker [Environment Variable](../../../processmaker-administration
 {% endhint %}
 
 {% hint style="warning" %}
-The data that a ProcessMaker Environment Variable maintains secure remains so for past Requests associated with Processes that reference a deleted Environment Variable. However, in-progress and future Requests that reference a deleted ProcessMaker Environment Variable no longer have a secure environment for that data. Be extremely cautious when considering deleting a ProcessMaker Environment Variable.
+The data that a ProcessMaker Environment Variable maintains secure remains so for completed Requests associated with Processes that reference a deleted Environment Variable. However, in-progress and future Requests that reference a deleted ProcessMaker Environment Variable no longer have a secure environment for that data. Be extremely cautious when considering deleting a ProcessMaker Environment Variable.
 
 Deleting a ProcessMaker Environment Variable from the **Environment Variables** page cannot be undone.
 {% endhint %}

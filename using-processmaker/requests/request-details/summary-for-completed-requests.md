@@ -67,7 +67,7 @@ The **Completed** tab displays the following summary in tabular format about ass
 
 * **Task:** The **Task** column displays the name of each completed Task in the selected Request. 
 * **Assigned:** The **Assigned** column displays the username's avatar to whom the Task was assigned. Hover your cursor over a user's avatar to view that person's full name.
-* **Due:** The **Due** column displays the date the Task was due. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Due:** The **Due** column displays the date the Task was due. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
 
@@ -91,7 +91,7 @@ The **Files** tab displays the following summary in tabular format about the fil
 
 * **File Name:** The **File Name** column displays the name of each associated with the selected Request. Click the file name to download it to your local computer or network location. 
 * **MIME Type:** The **MIME Type** column displays the MIME type for the associated file.
-* **Created At:** The **Created At** column displays the date the file became associated with the selected Request. The file became associated with the Request when the person who attached it submitted the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) to which the file was uploaded. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created At:** The **Created At** column displays the date the file became associated with the selected Request. The file became associated with the Request when the person who attached it submitted the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) to which the file was uploaded. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
 
@@ -105,7 +105,7 @@ The following summary displays about participants in a completed Request:
 
 * **Requested By:** The **Requested By** field displays the avatar and full name of the person who started the selected Request. Hover your cursor over a user's avatar to view that person's full name.
 * **Participants:** The **Participants** field displays each Request participant's avatar in the selected Request. Hover your cursor over a user's avatar to view that person's full name.
-* **Request completion date:** The date and time the Request was completed displays below the **Participants** field. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Request completion date:** The date and time the Request was completed displays below the **Participants** field. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 ## Request History
 
@@ -116,7 +116,7 @@ Below the tabular information summarizing the Request displays that Request's hi
 The following information displays about each event in the Request history:
 
 * **Request participant:** The Request participant who performed the action is represented by his or her avatar. Hover your cursor over a user's avatar to view that person's full name. If the ProcessMaker system performed an action by running a ProcessMaker Script or other automatic function, that action is represented by "S" avatar.
-* **Date and time the action occurred:** To the right of the Request participant displays the date and time the Request action occurred. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Date and time the action occurred:** To the right of the Request participant displays the date and time the Request action occurred. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 * **Description of the action:** To the right of when the Request action occurred displays a description of that action. The ProcessMaker system generates this action description.
 
 ## Related Topics

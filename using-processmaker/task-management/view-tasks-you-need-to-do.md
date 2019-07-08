@@ -26,7 +26,7 @@ The **To Do Tasks** page displays the following information in tabular format ab
 * **Task:** The **Task** column displays the name of the assigned Task. Click the Task name to [open the selected Task and view its summary](view-a-task-summary.md#summary-for-an-assigned-task).
 * **Request:** The **Request** column displays the Request associated with the assigned Task. Click the Request name to [view the Request summary](../requests/request-details/).
 * **Assignee:** The **Assignee** column displays your avatar since all Tasks in this display are assigned to you.
-* **Due:** The **Due** column displays the date and time the Task is due. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Due:** The **Due** column displays the date and time the Task is due. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### View an Assigned Task and Its Summary

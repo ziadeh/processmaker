@@ -27,7 +27,7 @@ The **Tasks** tab displays the following summary in tabular format about assigne
 
 * **Task:** The **Task** column displays the name of each Task to be completed for the selected Request for all Request participants. If a Task is assigned to you, a hyperlink displays in the Task name.
 * **Assigned:** The **Assigned** column displays the username's avatar to whom the Task is assigned. Hover your cursor over a user's avatar to view that person's full name.
-* **Due:** The **Due** column displays the date the Task is due. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Due:** The **Due** column displays the date the Task is due. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
 
@@ -57,7 +57,7 @@ The **Completed** tab displays the following summary in tabular format about com
 
 * **Task:** The **Task** column displays the name of each completed Task in the selected Request. 
 * **Assigned:** The **Assigned** column displays the username's avatar to whom the Task was assigned. Hover your cursor over a user's avatar to view that person's full name.
-* **Due:** The **Due** column displays the date the Task was due. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Due:** The **Due** column displays the date the Task was due. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
 
@@ -81,7 +81,7 @@ The **Files** tab displays the following summary in tabular format about the fil
 
 * **File Name:** The **File Name** column displays the name of each associated with the selected Request. Click the file name to download it to your local computer or network location. 
 * **MIME Type:** The **MIME Type** column displays the MIME type for the associated file.
-* **Created At:** The **Created At** column displays the date the file became associated with the selected Request. The file became associated with the Request when the person who attached it submitted the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) to which the file was uploaded. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created At:** The **Created At** column displays the date the file became associated with the selected Request. The file became associated with the Request when the person who attached it submitted the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) to which the file was uploaded. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
 
@@ -96,7 +96,7 @@ The following summary displays the following summary about participants in an in
 * **Requested By:** The **Requested By** field displays the avatar and full name of the person who started the selected Request. Hover your cursor over a user's avatar to view that person's full name.
 * **Cancel Request:** The **Cancel Request** field allows a Request participant or ProcessMaker Administrator to cancel the Request if that Request participant's user account has the appropriate permission to cancel Requests for that Process. If your user account does not have the permission\(s\) to cancel Requests for that Process, the **Cancel Request** field does not display. See [Cancel a Request](../delete-a-request.md).
 * **Participants:** The **Participants** field displays each Request participant's avatar in the selected Request to that time. Hover your cursor over a user's avatar to view that person's full name.
-* **Request creation date:** The date and time the Request was created displays below the **Participants** field. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Request creation date:** The date and time the Request was created displays below the **Participants** field. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 ## Request History
 
@@ -107,7 +107,7 @@ Below the tabular information summarizing the Request displays that Request's hi
 The following information displays about each event in the Request history:
 
 * **Request participant:** The Request participant who performed the action is represented by his or her avatar. Hover your cursor over a user's avatar to view that person's full name. If the ProcessMaker system performed an action by running a ProcessMaker Script or other automatic function, that action is represented by "S" avatar.
-* **Date and time the action occurred:** To the right of the Request participant displays the date and time the Request action occurred. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Date and time the action occurred:** To the right of the Request participant displays the date and time the Request action occurred. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 * **Description of the action:** To the right of when the Request action occurred displays a description of that action. The ProcessMaker system generates this action description.
 
 ## Related Topics
