@@ -6,11 +6,11 @@ description: These are brief descriptions about commonly used Process modeling e
 
 ## Overview
 
-The following are brief descriptions about each Process modeling element that ProcessMaker Spark provides. See the [BPMN 2.0 specification](https://www.omg.org/spec/BPMN/2.0/About-BPMN/) for more information.
+The following are brief descriptions about each Process modeling element that ProcessMaker provides. See the [BPMN 2.0 specification](https://www.omg.org/spec/BPMN/2.0/About-BPMN/) for more information.
 
 ## Events
 
-Use event-type elements to represent an event, milestone, or delay in the Process. ProcessMaker Spark provides the following event type Process model elements:
+Use event-type elements to represent an event, milestone, or delay in the Process. ProcessMaker provides the following event type Process model elements:
 
 * [Start Event](process-modeling-element-descriptions.md#start-event)
 * [Start Timer Event](process-modeling-element-descriptions.md#start-timer-event)
@@ -113,7 +113,7 @@ See [Add and Configure Event Elements](add-and-configure-an-event-element.md#add
 
 ## Tasks
 
-A Task represents an activity to be performed either by a [Request](../../../using-processmaker/requests/what-is-a-request.md) participant or a [ProcessMaker Script](../../scripts/). ProcessMaker Spark provides the following Task-type Process model elements:
+A Task represents an activity to be performed either by a [Request](../../../using-processmaker/requests/what-is-a-request.md) participant or a [ProcessMaker Script](../../scripts/). ProcessMaker provides the following Task-type Process model elements:
 
 * [Task](process-modeling-element-descriptions.md#task)
 * [Script Task](process-modeling-element-descriptions.md#script-task)
@@ -166,7 +166,7 @@ See [Add and Configure Script Task Elements](add-and-configure-script-task-eleme
 
 A Call Activity element represents a call to an external sub-Process. Use the Call Activity element to call an external Process, the sub-Process, from another Process.
 
-The external sub-Process that the Call Activity calls must be a ProcessMaker Spark Process that is not archived.
+The external sub-Process that the Call Activity calls must be a ProcessMaker Process that is not archived.
 
 The called sub-Process has its own [Request](../../../using-processmaker/requests/what-is-a-request.md). The Request for the calling Process waits until the sub-Process's Request completes. When the external sub-Process's Request completes, workflow continues for the Call Activity element's Process.
 
@@ -245,7 +245,7 @@ An Event-Based Gateway element represents an evaluation of a [Request's](../../.
 * The Event-Based Gateway element requires two or more going outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements.
 * The Event-Based Gateway element can only connect with [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event) or [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) elements. This creates the scenario that either a timed event occurs or an Intermediate Message Catch Event element receives a message.
 
-When a Request is in progress and the Event-Based Gateway element triggers, workflow for that Request pauses. ProcessMaker Spark then evaluates the events immediately following the Event-Based Gateway element's and waits until one of those events occur. Request workflow resumes by routing to the event that occurred first.
+When a Request is in progress and the Event-Based Gateway element triggers, workflow for that Request pauses. ProcessMaker then evaluates the events immediately following the Event-Based Gateway element's and waits until one of those events occur. Request workflow resumes by routing to the event that occurred first.
 
 Consider the following example. Suppose that you have a Process that monitors that you receive package shipments on time. Use an Event-Based Gateway element that monitors which event occurs next. Refer to the Process modeling elements below.
 
@@ -302,7 +302,7 @@ See [Add and Configure Pool and Lane Elements](add-and-configure-pool-and-lane-e
 
 ## Flow Indicators
 
-Flow indicators represent the order in which workflow routing and messaging occur in a Process model. ProcessMaker Spark provides the following Process model elements that indicate workflow:
+Flow indicators represent the order in which workflow routing and messaging occur in a Process model. ProcessMaker provides the following Process model elements that indicate workflow:
 
 * [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow)
 * [Message Flow](process-modeling-element-descriptions.md#message-flow)

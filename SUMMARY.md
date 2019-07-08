@@ -184,6 +184,7 @@
   * [Collections](package-development-distribution/package-a-connector/collections.md)
   * [Email](package-development-distribution/package-a-connector/email.md)
   * [Vocabularies](package-development-distribution/package-a-connector/vocabularies.md)
+  * [Web Entry](package-development-distribution/package-a-connector/web-entry.md)
 
 ## Script Central <a id="script-central-1"></a>
 

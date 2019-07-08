@@ -91,7 +91,7 @@ Each in-progress Request displays a summary of the Request participants to that 
 
 ![Request participant summary for an in-progress Request](../../../.gitbook/assets/in-progress-request-participants-request.png)
 
-The following summary displays the following summary about participants in an in-progress Request:
+The following summary displays about participants in an in-progress Request:
 
 * **Requested By:** The **Requested By** field displays the avatar and full name of the person who started the selected Request. Hover your cursor over a user's avatar to view that person's full name.
 * **Cancel Request:** The **Cancel Request** field allows a Request participant or ProcessMaker Administrator to cancel the Request if that Request participant's user account has the appropriate permission to cancel Requests for that Process. If your user account does not have the permission\(s\) to cancel Requests for that Process, the **Cancel Request** field does not display. See [Cancel a Request](../delete-a-request.md).

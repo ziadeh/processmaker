@@ -28,8 +28,8 @@ The **Summary** tab displays the summary of information entered into the Request
 
 The **Summary** tab displays the JSON-formatted key/value pairs in tabular format that represent ProcessMaker Screen control data. Information is displayed:
 
-* **KEY:** The **KEY** column displays the JSON key name that represents the ProcessMaker Screen control name the Request participant entered data or specified through the ProcessMaker REST API. For example, a Text control to enter your name could be named `Full Name` which would display in the **Key** column here.
-* **VALUE:** The **VALUE** column displays that key's value as entered by a person manually interacting with a form or specified through the ProcessMaker REST API. For example, a Text control to enter your name could have the value `John Doe` which would display in the **Value** column here.
+* **Key:** The **Key** column displays the JSON key name that represents the ProcessMaker Screen control name the Request participant entered data or specified through the ProcessMaker REST API. For example, a Text control to enter your name could be named `Full Name` which would display in the **Key** column here.
+* **Value:** The **Value** column displays that key's value as entered by a person manually interacting with a form or specified through the ProcessMaker REST API. For example, a Text control to enter your name could have the value `John Doe` which would display in the **Value** column here.
 
 The **Summary** tab may also display a message about the canceled Request. This message is a ProcessMaker Screen configured to display when Requests for a specific Process are canceled.
 
