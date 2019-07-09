@@ -61,7 +61,7 @@ Follow these steps to do an advanced search for a Task:
 
      * Use the following syntax as a guide to include two or more Task names in your search criteria:
 
-       `(task = "Task name 1" OR status = "Task name 2")`
+       `(task = "Task name 1" OR task = "Task name 2")`
    * **Status\(es\):**
      * Use the following syntax as a guide to include one Task status in your search criteria:
 

@@ -14,7 +14,7 @@ Follow these steps to view your assigned Tasks:
 2. Click the **Tasks** option from the top menu. The **To Do Tasks** page displays. Tasks that display on this page are assigned to you.
 
 {% hint style="info" %}
-If you are viewing your completed Tasks, click the **To Do** icon![](../../.gitbook/assets/to-do-icon-tasks.png) in the left sidebar.
+Click the **To Do** icon![](../../.gitbook/assets/to-do-icon-tasks.png) in the left sidebar to view your assigned Tasks when you are viewing your completed Tasks.
 {% endhint %}
 
 ~~RETAKE SCREENSHOT AFTER THE "STATUS" COLUMN IS REMOVED.~~

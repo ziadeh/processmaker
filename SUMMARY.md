@@ -124,6 +124,7 @@
     * [Add and Configure End Event Elements](designing-processes/process-design/model-your-process/add-and-configure-end-event-elements.md)
     * [Add and Configure Task Elements](designing-processes/process-design/model-your-process/add-and-configure-task-elements.md)
     * [Add and Configure Script Task Elements](designing-processes/process-design/model-your-process/add-and-configure-script-task-elements.md)
+    * [Add and Configure Manual Task Elements](designing-processes/process-design/model-your-process/add-and-configure-manual-task-elements.md)
     * [Add and Configure Call Activity Elements](designing-processes/process-design/model-your-process/add-and-configure-call-activity-elements.md)
     * [Add and Configure Exclusive Gateway Elements](designing-processes/process-design/model-your-process/add-and-configure-exclusive-gateway-elements.md)
     * [Add and Configure Parallel Gateway Elements](designing-processes/process-design/model-your-process/add-and-configure-parallel-gateway-elements.md)

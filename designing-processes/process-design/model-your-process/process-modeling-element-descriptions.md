@@ -114,7 +114,7 @@ See [Add and Configure Event Elements](add-and-configure-an-event-element.md#add
 
 ## Tasks
 
-A Task represents an activity to be performed either by a [Request](../../../using-processmaker/requests/what-is-a-request.md) participant or a [ProcessMaker Script](../../scripts/). ProcessMaker provides the following Task-type Process model elements:
+Tasks represent activities performed by persons in ProcessMaker software or in the physical environment, or by a [ProcessMaker Script](../../scripts/). ProcessMaker provides the following Task-type Process model elements:
 
 * [Task](process-modeling-element-descriptions.md#task)
 * [Script Task](process-modeling-element-descriptions.md#script-task)
@@ -122,18 +122,18 @@ A Task represents an activity to be performed either by a [Request](../../../usi
 
 ### Task
 
-A Task element represents an activity to be performed by a person participating in a [Request](../../../using-processmaker/requests/what-is-a-request.md). Assign the [Task](../../../using-processmaker/task-management/what-is-a-task.md) that the Task element represents to any of the following types of Request participants:
+A Task element represents an activity a person performs while participating in a [Request](../../../using-processmaker/requests/what-is-a-request.md) via ProcessMaker. A Task element is different than a [Manual Task](process-modeling-element-descriptions.md#manual-task) element, in which a person performs an activity in the physical environment. Assign the [Task](../../../using-processmaker/task-management/what-is-a-task.md) that the Task element represents to any of the following types of Request participants:
 
 * The ProcessMaker user who started the Request, referred to as the Requester
-* A specific ProcessMaker user
-* Any member of a specified ProcessMaker group
+* A specific ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md)
+* Any member of a specified ProcessMaker [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md)
 * The previous Task assignee in that Request's workflow
 
 People perform Task activities through ProcessMaker Screens as digital [forms](../../design-forms/screens-builder/types-for-screens.md#forms) and [displays](../../design-forms/screens-builder/types-for-screens.md#display). ProcessMaker Screens are designed in [Screens Builder](../../design-forms/screens-builder/).
 
-In Process Modeler, the Task element is labeled as "Task" in the **BPMN** panel as highlighted below.
+In Process Modeler, the Task element is labeled as "Task" in the **Controls** panel as highlighted below.
 
-![Task element in the BPMN panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-task-process-modeler-processes.png)
+![Task element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-task-process-modeler-processes.png)
 
 Below is a Task element when it has been placed into a Process model.
 
@@ -145,16 +145,16 @@ See [Add and Configure Task Elements](add-and-configure-task-elements.md).
 
 ### Script Task
 
-A Script Task element represents an activity to be performed by a ProcessMaker Script. ProcessMaker Scripts support Lua and PHP programming languages. Use ProcessMaker Scripts in the following ways:
+A Script Task element represents an activity performed by a [ProcessMaker Script](../../scripts/what-is-a-script.md). Use ProcessMaker Scripts in the following ways:
 
 * Interact with legacy systems in your organization such as ERPs and CRMs.
-* Connect with third-party services like Adobe DocuSign, Short Message Service \(SMS\), or REST APIs.
+* Connect with third-party services like Adobe DocuSign, Short Message Service \(SMS\), or APIs.
 
 ProcessMaker Scripts are designed in [Scripts Editor](../../scripts/scripts-editor.md). ProcessMaker Scripts are independent of Process models: any ProcessMaker Script can be reused in any Process model in your organization. This architecture allows Process Owners to focus on Process modeling in a no-code environment while ProcessMaker Developers develop reusable ProcessMaker Scripts. ProcessMaker Scripts can leverage ProcessMaker Screens variable values for in-progress Requests.
 
-In Process Modeler, the Script Task element is labeled as "Script Task" in the **BPMN** panel as highlighted below.
+In Process Modeler, the Script Task element is labeled as "Script Task" in the **Controls** panel as highlighted below.
 
-![Script Task element in the BPMN panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-script-task-process-modeler-processes.png)
+![Script Task element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-script-task-process-modeler-processes.png)
 
 Below is a Script Task element when it has been placed into a Process model.
 
@@ -166,19 +166,31 @@ See [Add and Configure Script Task Elements](add-and-configure-script-task-eleme
 
 ### Manual Task
 
+A Manual Task element represents an activity a person performs in the physical environment as a [Request](../../../using-processmaker/requests/what-is-a-request.md) participant. A Manual Task element is different than a [Task](process-modeling-element-descriptions.md#task) element, in which a person performs an activity via ProcessMaker software. The activity the Manual Task element represents does not directly involve ProcessMaker, nor does it require any software application to complete.
 
+In Process Modeler, the Manual Task element is labeled as "Manual Task" in the **Controls** panel as highlighted below.
+
+![Manual Task element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-manual-task-process-modeler-processes.png)
+
+Below is a Manual Task element when it has been placed into a Process model.
+
+![Manual Task element](../../../.gitbook/assets/manual-task-element-process-modeler-processes.png)
+
+{% hint style="info" %}
+See [Add and Configure Manual Task Elements](add-and-configure-manual-task-elements.md).
+{% endhint %}
 
 ## Call Activity
 
-A Call Activity element represents a call to an external sub-Process. Use the Call Activity element to call an external Process, the sub-Process, from another Process.
+A Call Activity element represents a call to an external sub-Process. Use the Call Activity element to call an external Process \(the sub-Process\) from the current Process.
 
-The external sub-Process that the Call Activity calls must be a ProcessMaker Process that is not archived.
+The external sub-Process that the Call Activity calls must be in the same ProcessMaker instance and not archived.
 
-The called sub-Process has its own [Request](../../../using-processmaker/requests/what-is-a-request.md). The Request for the calling Process waits until the sub-Process's Request completes. When the external sub-Process's Request completes, workflow continues for the Call Activity element's Process.
+The called sub-Process has its own [Request](../../../using-processmaker/requests/what-is-a-request.md). The Request for the calling Process waits until the sub-Process's Request completes. When the external sub-Process's Request completes, the Request continues for the Call Activity element's Process.
 
-In Process Modeler, the Call Activity element is labeled as "Call Activity" in the **BPMN** panel as highlighted below.
+In Process Modeler, the Call Activity element is labeled as "Call Activity" in the **Controls** panel as highlighted below.
 
-![Call Activity element in the BPMN panel of Process Modeler](../../../.gitbook/assets/bpmn-call-activity-process-modeler-processes.png)
+![Call Activity element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-call-activity-process-modeler-processes.png)
 
 Below is a Call Activity element when it has been placed into a Process model.
 
@@ -190,7 +202,7 @@ See [Add and Configure Call Activity Elements](add-and-configure-call-activity-e
 
 ## Gateways
 
-Gateway elements route Request workflow in the following ways:
+Gateway elements route [Request](../../../using-processmaker/requests/what-is-a-request.md) workflow in the following ways:
 
 * Limit workflow based on conditions or events, such as the [Exclusive Gateway](process-modeling-element-descriptions.md#exclusive-gateway) and [Event-Based Gateway](process-modeling-element-descriptions.md#event-based-gateway) elements do, respectively.
 * Synchronize or continue parallel workflows, as the [Parallel Gateway](process-modeling-element-descriptions.md#parallel-gateway) element does.

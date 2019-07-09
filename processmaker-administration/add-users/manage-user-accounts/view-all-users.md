@@ -20,7 +20,7 @@ Follow these steps to view all ProcessMaker user accounts in your organization:
 2. Click the **Admin** option from the top menu. The **Users** page displays all ProcessMaker user accounts.
 
 {% hint style="info" %}
-Click the **Users** ![](../../../.gitbook/assets/users-icon-admin.png) icon when you are in other administrative-related pages to view the **Users** page.
+Click the **Users** ![](../../../.gitbook/assets/users-icon-admin.png) icon to view the **Users** page when you are viewing other administrative-related pages.
 {% endhint %}
 
 ![&quot;Users&quot; page displays all users in your organization](../../../.gitbook/assets/users-page-admin.png)
