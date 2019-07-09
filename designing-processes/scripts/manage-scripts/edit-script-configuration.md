@@ -18,7 +18,7 @@ See the ProcessMaker [Scripts](../../../processmaker-administration/permission-d
 Follow these steps to configure a ProcessMaker Script:
 
 1. [View your ProcessMaker Scripts.](view-all-scripts.md#view-all-processmaker-scripts) The **Scripts** page displays.
-2. Click the **Configure** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)for your ProcessMaker Script. The **Edit** page displays.  
+2. Click the **Configure** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)for your ProcessMaker Script. The **Edit Configuration** page displays.  
 
    ![](../../../.gitbook/assets/edit-script-page-processes.png)
 
