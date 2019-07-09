@@ -62,7 +62,7 @@ Process notifications can be sent to the following sets of users or group member
 Follow these steps to configure notifications for a Process:
 
 1. [View your active Processes.](./#view-your-processes) The **Processes** page displays.
-2. Select the **Config** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)for your Process. The **Edit** page displays.
+2. Select the **Config** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)for your Process. The **Edit Configuration** page displays.
 3. Click the **Notifications** tab.  
 
    ![](../../../.gitbook/assets/edit-process-notifications-processes.png)
