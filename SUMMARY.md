@@ -127,6 +127,7 @@
     * [Add and Configure Manual Task Elements](designing-processes/process-design/model-your-process/add-and-configure-manual-task-elements.md)
     * [Add and Configure Call Activity Elements](designing-processes/process-design/model-your-process/add-and-configure-call-activity-elements.md)
     * [Add and Configure Exclusive Gateway Elements](designing-processes/process-design/model-your-process/add-and-configure-exclusive-gateway-elements.md)
+    * [Add and Configure Inclusive Gateway Elements](designing-processes/process-design/model-your-process/add-and-configure-inclusive-gateway-elements.md)
     * [Add and Configure Parallel Gateway Elements](designing-processes/process-design/model-your-process/add-and-configure-parallel-gateway-elements.md)
     * [Add and Configure Event-Based Gateway Elements](designing-processes/process-design/model-your-process/add-and-configure-event-based-gateway-elements.md)
     * [Add and Configure Pool and Lane Elements](designing-processes/process-design/model-your-process/add-and-configure-pool-and-lane-elements.md)
