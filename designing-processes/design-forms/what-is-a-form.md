@@ -8,7 +8,7 @@ description: Understand how to use Screens in ProcessMaker.
 
 In ProcessMaker, a Screen presents information for a person to interact with or view. A form is an example of a ProcessMaker Screen. Any ProcessMaker Screen can be re-used in any Process. Many Processes require the same type of information be gathered, such as a person's name, email address, and other business information. In other words, "design once, use anywhere."
 
-In simple forms, ProcessMaker Screens can display information. However, ProcessMaker Screens also allow people to interact with [Request](../../using-processmaker/requests/what-is-a-request.md) information. Below are a few of ways Request participants can interact with ProcessMaker Screens:
+In simple forms, ProcessMaker Screens can display information. However, ProcessMaker Screens also allow people to interact with [Request](../../using-processmaker/requests/what-is-a-request.md) information. Below are a few ways Request participants can interact with ProcessMaker Screens:
 
 * Enter information into a Request.
 * Review information and then approve or reject a Request.

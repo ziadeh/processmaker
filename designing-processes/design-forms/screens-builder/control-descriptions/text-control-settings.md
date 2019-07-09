@@ -84,7 +84,7 @@ Below are Inspector settings for the Text control:
 * **Element Background Color:** Select to specify the background color of this control.
 * **Text Color:** Select to specify the text color specified in the **Text Content** setting.
 * **Visibility Rule:** Specify an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. [Screens Builder Modes](https://app.gitbook.com/@processmaker/s/processmaker/~/edit/drafts/-LioNdF3bvVHwiA4AP4X/designing-processes/design-forms/screens-builder/screens-builder-modes)As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 {% hint style="info" %}
 Below are some ways to render Request data to display as text in a Text control:
