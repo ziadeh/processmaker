@@ -20,7 +20,7 @@ Use event-type elements to represent an event, milestone, or delay in the Proces
 
 ### Start Event
 
-A Start Event element represents the start of a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process. Therefore, a Start Event element cannot have an incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element. A Process model can have multiple Start Event elements.
+A Start Event element represents the start of a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process. Therefore, a Start Event element cannot have an incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element, though it may have an outgoing [Message Flow](process-modeling-element-descriptions.md#message-flow) element. A Process model can have multiple Start Event elements.
 
 Use a Start Event element to represent how a Request for that Process starts in one of the following ways:
 
@@ -98,11 +98,11 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 ### End Event
 
-An End Event element represents where a Process ends when abnormal events such as a [canceled Request](../../../using-processmaker/requests/delete-a-request.md) do not terminate a [Request](../../../using-processmaker/requests/what-is-a-request.md). An End Event element ends the workflow for that Process. Therefore, an End Event element cannot have an outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element, though it may have an outgoing [Message Flow](process-modeling-element-descriptions.md#message-flow) element. A Process model can have multiple End Event elements.
+An End Event element represents the completion of a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process. Therefore, an End Event element cannot have an outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element, though it may have an outgoing [Message Flow](process-modeling-element-descriptions.md#message-flow) element. A Process model can have multiple End Event elements.
 
-In Process Modeler, the End Event element is labeled as "End Event" in the **BPMN** panel as highlighted below.
+In Process Modeler, the End Event element is labeled as "End Event" in the **Controls** panel as highlighted below.
 
-![End Event element in the BPMN panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-end-event-process-modeler-processes.png)
+![End Event element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-end-event-process-modeler-processes.png)
 
 Below is an End Event element when it has been placed into a Process model.
 
@@ -118,6 +118,7 @@ A Task represents an activity to be performed either by a [Request](../../../usi
 
 * [Task](process-modeling-element-descriptions.md#task)
 * [Script Task](process-modeling-element-descriptions.md#script-task)
+* [Manual Task](process-modeling-element-descriptions.md#manual-task)
 
 ### Task
 
@@ -162,6 +163,10 @@ Below is a Script Task element when it has been placed into a Process model.
 {% hint style="info" %}
 See [Add and Configure Script Task Elements](add-and-configure-script-task-elements.md).
 {% endhint %}
+
+### Manual Task
+
+
 
 ## Call Activity
 
