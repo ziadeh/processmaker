@@ -68,6 +68,13 @@ Below are Inspector settings for the Rich Text control:
 * **Visibility Rule:** Enter an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
+{% hint style="info" %}
+Below are some ways to render Request data to display as text in a Rich Text control:
+
+* Use mustache template syntax to reference the Request data. Example: `Customer First Order Name: {{customer.orders.0.name}}`
+* Include your own HTML syntax in the Text control along with template references. Example: `Customer First Name: <strong>{{customer.firstname}}</strong>`
+{% endhint %}
+
 ## Related Topics
 
 {% page-ref page="../types-for-screens.md" %}

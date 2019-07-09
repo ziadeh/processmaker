@@ -250,13 +250,13 @@ See [Add and Configure Inclusive Gateway Elements](add-and-configure-inclusive-g
 
 ### Parallel Gateway
 
-A Parallel Gateway element synchronizes workflow within a Process by converging or diverging parallel [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements. The Parallel Gateway element has two separate functions:
+A Parallel Gateway element synchronizes [Request](../../../using-processmaker/requests/what-is-a-request.md) workflow for a Process by converging or diverging parallel [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements. The Parallel Gateway element has two separate functions:
 
-* **Converging workflow:** Converging workflow represents two or more incoming Sequence Flow elements to the Parallel Gateway element. All incoming Sequence Flow elements converging to the Parallel Gateway element must trigger before the Parallel Gateway element triggers, thereby synchronizing a [Request's](../../../using-processmaker/requests/what-is-a-request.md) workflow in a Process. Use this coordinate workflow.  
+* **Converging workflow:** Converging workflow represents two or more incoming Sequence Flow elements to the Parallel Gateway element. All incoming Sequence Flow elements converging to the Parallel Gateway element must trigger before the Parallel Gateway element triggers, thereby synchronizing a Request's workflow. Use this coordinate workflow.  
 
   ![](../../../.gitbook/assets/parallel-gateway-diverging.png)
 
-* **Diverging workflow:** Diverging workflow represents two or more outgoing Sequence Flow elements from the Parallel Gateway element. When a Parallel Gateway triggers, all outgoing Sequence Flow elements from the gateway element trigger simultaneously without exception. Conditions cannot be placed on any outgoing Sequence Flow elements from the Parallel Gateway element. Use this when multiple actions must occur at the same time.  
+* **Diverging workflow:** Diverging workflow represents two or more outgoing Sequence Flow elements from the Parallel Gateway element. When a Parallel Gateway triggers, all outgoing Sequence Flow elements from the gateway element trigger simultaneously without exception. Conditions cannot be placed on any outgoing Sequence Flow elements from the Parallel Gateway element. Use this when multiple workflow routes must occur simultaneously.  
 
   ![](../../../.gitbook/assets/parallel-gateway-diverging.png)
 
@@ -264,9 +264,9 @@ One Parallel Gateway element can only converge or diverge workflow, but not both
 
 ![Use two Parallel Gateway elements for both converging and diverging parallel workflow](../../../.gitbook/assets/parallel-gateway-converging-and-diverging.png)
 
-In Process Modeler, the Parallel Gateway element is labeled as "Parallel Gateway" in the **BPMN** panel as highlighted below.
+In Process Modeler, the Parallel Gateway element is labeled as "Parallel Gateway" in the **Controls** panel as highlighted below.
 
-![Parallel Gateway element in the BPMN panel of Process Modeler](../../../.gitbook/assets/parallel-gateway-bpmn-panel-process-modeler-processes.png)
+![Parallel Gateway element in the Controls panel of Process Modeler](../../../.gitbook/assets/parallel-gateway-bpmn-panel-process-modeler-processes.png)
 
 Below is a Parallel Gateway element when it has been placed into a Process model.
 
@@ -283,9 +283,9 @@ An Event-Based Gateway element represents an evaluation of a [Request's](../../.
 * The Event-Based Gateway element requires two or more going outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements. When evaluating events, workflow routes through only one Sequence Flow element; multiple events cannot pass simultaneously from one Event-Based Gateway element during a Request.
 * The Event-Based Gateway element can only connect with [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event) or [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) elements. This creates the scenario that either a timed event occurs or an Intermediate Message Catch Event element receives a message.
 
-When a Request is in progress and the Event-Based Gateway element triggers, workflow for that Request pauses. ProcessMaker then evaluates the events immediately following the Event-Based Gateway element's and waits until one of those events occur. Request workflow resumes by routing to the event that occurred first.
+When the Event-Based Gateway element triggers during a Request, workflow for that Request pauses. ProcessMaker then evaluates the events immediately following the Event-Based Gateway element's Sequence Flow elements and waits until one of those events occur. Request workflow resumes by routing to the event that occurs first.
 
-Consider the following example. Suppose that you have a Process that monitors that you receive package shipments on time. Use an Event-Based Gateway element that monitors which event occurs next. Refer to the Process modeling elements below.
+Consider the following example. Suppose that you have a Process that monitors if you receive package shipments on time. Use an Event-Based Gateway element to monitor which event occurs next. Refer to the Process modeling elements below.
 
 ![Event-Based Gateway element example](../../../.gitbook/assets/event-based-gateway-example.png)
 
