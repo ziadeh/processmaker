@@ -40,7 +40,7 @@ To view an [assigned Task and its summary](view-a-task-summary.md#summary-for-an
 
 To [view a Request summary](../requests/request-details/), do one of the following:
 
-* From the **Request** column, click the Process name associated with the Request for the assigned Task.
+* From the **Request** column, click the Request for the assigned Task.
 * Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-assigned-tasks.png)for the Request associated with the Task.
 
 ### Search for a Task

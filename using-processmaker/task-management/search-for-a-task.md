@@ -80,11 +80,11 @@ Follow these steps to do an advanced search for a Task:
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Tasks based on your entered criteria.
 
 {% hint style="info" %}
-### View a Request Summary <a id="view-information-about-a-request"></a>
+### View a Request Summary Associated with a Task <a id="view-information-about-a-request"></a>
 
 To [view a Request summary](../requests/request-details/), do one of the following:
 
-* From the **Request** column, click the Process name associated with the Request to view its summary.
+* From the **Request** column, click the Request to view its summary.
 * Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-assigned-tasks.png)for the Request that you want to view its summary.
 
 ### No Search Results?
