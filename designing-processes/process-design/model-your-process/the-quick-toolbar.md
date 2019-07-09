@@ -8,7 +8,7 @@ description: >-
 
 ## Overview
 
-Use a Sequence Flow element to indicate workflow routing between the connected elements. The direction in which the Sequence Flow points implies how [Request](../../../using-processmaker/requests/what-is-a-request.md) data is conveyed and utilized in the Process model. As a best practice indicate a consistent direction of Sequence Flow elements, either left to right or top to bottom, to make Process models easier to understand.
+Use a Sequence Flow element to indicate workflow routing between the connected elements. The direction in which the Sequence Flow points implies how [Request](../../../using-processmaker/requests/what-is-a-request.md) data is conveyed and utilized in the Process model. As a best practice, indicate a consistent direction of Sequence Flow elements: either left to right or top to bottom, to make Process models easier to understand.
 
 Sequence Flow elements have the following attributes in regards to specific Process model elements:
 
@@ -107,27 +107,27 @@ Follow these steps to edit the name for a Sequence Flow element:
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
-### Configure an Outgoing Sequence Flow from an Exclusive Gateway Element
+### Configure an Outgoing Sequence Flow Element from an Exclusive Gateway or Inclusive Gateway Element
 
-Outgoing Sequence Flows from Exclusive Gateway elements have the following settings as do other Sequence Flow elements:
+Outgoing Sequence Flows from Exclusive Gateway and Inclusive Gateway elements have the following settings as do other Sequence Flow elements:
 
 * [Identifier value](the-quick-toolbar.md#edit-the-identifier-value)
 * [Element name](the-quick-toolbar.md#edit-the-element-name)
 
-Outgoing Sequence Flows from Exclusive Gateway elements have an addition setting to indicate the condition under which a Request should follow that Sequence Flow to its connected element. Specify this condition using an expression syntax described in [Expression Syntax Components](the-quick-toolbar.md#expression-syntax-components). Each Sequence Flow can only have one expression, but by using logical operators multiple conditions can be specified in that expression.
+Outgoing Sequence Flows from Exclusive Gateway and Inclusive Gateway elements have an addition setting to indicate the condition under which a Request should follow that Sequence Flow element to its connecting element if the condition\(s\) set for that Sequence Flow element are True. Specify this condition using an expression syntax described in [Expression Syntax Components](the-quick-toolbar.md#expression-syntax-components). Each Sequence Flow element can only have one expression, but by using logical operators multiple conditions can be specified in that expression.
 
-Each outgoing Sequence Flow from an Exclusive Gateway element is evaluated using the following protocol:
+Each outgoing Sequence Flow from an Exclusive Gateway or Inclusive Gateway element is evaluated using the following protocol:
 
-* **The Sequence Flow does not have an expression:** If an outgoing Sequence Flow does not have an expression, there are no conditions to evaluate if that outgoing Sequence Flow should be followed.
-* **The Sequence Flow has an expression:** The condition\(s\) in the Request is evaluated to determine if the condition\(s\) is met. If so, workflow can follow that outgoing Sequence Flow to its connected element. If not, then workflow cannot follow that Sequence Flow.
+* **The Sequence Flow element does not have an expression:** If an outgoing Sequence Flow element does not have an expression, there are no conditions to evaluate if that outgoing Sequence Flow element should be followed. For Inclusive Gateway elements, workflow always routes through that Sequence Flow element because conditions always always met.
+* **The Sequence Flow element has an expression:** The condition\(s\) in the Request is evaluated to determine if the condition\(s\) is met. If so, workflow can follow that outgoing Sequence Flow element to its connecting element. If not, then workflow cannot follow that Sequence Flow element.
 
 {% hint style="warning" %}
-When specifying the condition\(s\) for outgoing Sequence Flows from an Exclusive Gateway element, ensure that the condition\(s\) for at least one outgoing Sequence Flow element can occur. Otherwise, it may be possible that no outgoing Sequence Flows can be followed and a Request's workflow will wait indefinitely at the Exclusive Gateway element since none of its outgoing Sequence Flow elements can trigger.
+When specifying the condition\(s\) for outgoing Sequence Flow elements from an Exclusive Gateway element, ensure that the condition\(s\) for at least one outgoing Sequence Flow element can occur. Otherwise, it may be possible that no outgoing Sequence Flow elements can continue workflow and a Request will wait indefinitely at the Exclusive Gateway element since none of its outgoing Sequence Flow elements can trigger.
 {% endhint %}
 
-Follow these steps to set the condition under which a Request follows an outgoing Sequence Flow element from an Exclusive Gateway element:
+Follow these steps to set the condition under which a Request follows an outgoing Sequence Flow element from an Exclusive Gateway or Inclusive Gateway element:
 
-1. Select the outgoing Sequence Flow from the Exclusive Gateway element in which to set its workflow condition.
+1. Select the outgoing Sequence Flow from the Exclusive Gateway or Inclusive Gateway element in which to set its workflow condition.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Expression** field displays.
 3. In the **Expression** field, enter or edit the expression for the selected Sequence Flow element using the syntax components described in [Expression Syntax Components](the-quick-toolbar.md#expression-syntax-components), and then press **Enter**.
 

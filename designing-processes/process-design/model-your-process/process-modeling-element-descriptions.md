@@ -283,20 +283,20 @@ An Event-Based Gateway element represents an evaluation of a [Request's](../../.
 * The Event-Based Gateway element requires two or more going outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements. When evaluating events, workflow routes through only one Sequence Flow element; multiple events cannot pass simultaneously from one Event-Based Gateway element during a Request.
 * The Event-Based Gateway element can only connect with [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event) or [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) elements. This creates the scenario that either a timed event occurs or an Intermediate Message Catch Event element receives a message.
 
-When the Event-Based Gateway element triggers during a Request, workflow for that Request pauses. ProcessMaker then evaluates the events immediately following the Event-Based Gateway element's Sequence Flow elements and waits until one of those events occur. Request workflow resumes by routing to the event that occurs first.
+When the Event-Based Gateway element triggers during a Request, workflow for that Request pauses. ProcessMaker then evaluates the events immediately following the Event-Based Gateway element's via its outgoing Sequence Flow elements and waits until one of those events occur. Request workflow resumes by routing to the event that occurs first.
 
 Consider the following example. Suppose that you have a Process that monitors if you receive package shipments on time. Use an Event-Based Gateway element to monitor which event occurs next. Refer to the Process modeling elements below.
 
 ![Event-Based Gateway element example](../../../.gitbook/assets/event-based-gateway-example.png)
 
-Connect the following process modeling elements from the Event-Based Gateway element:
+In this example, connect the following Process modeling elements from the Event-Based Gateway element:
 
-* **Intermediate Timer Event element:** The first connecting event from the Event-Based Gateway element is an Intermediate Timer Event element that is set to 24 hours. This event represents a 24-hour period in which presumably a notification has not arrived of the package’s shipment within that time period. If the timer set in the Intermediate Timer Event expires, then workflow routes to a Task element in which its assignee telephones the shipping company.
+* **Intermediate Timer Event element:** The first connecting event from the Event-Based Gateway element is an Intermediate Timer Event element that is set to 24 hours. This event represents a 24-hour period in which presumably a notification has not arrived that the package shipped within that time period. If the timer set in the Intermediate Timer Event expires, then workflow routes to a Manual Task element in which its assignee telephones the shipping company.
 * **Intermediate Message Catch Event element:** The second connecting element is an Intermediate Message Catch Event element that represents a notification of the package’s shipment presumably before the timer set in the Intermediate Timer Event element expires. If the Intermediate Message Catch Event element triggers, then the notification was received before the 24-hour period expired. No further action is required.
 
-In Process Modeler, the Event-Based Gateway element is labeled as "Event-Based Gateway" in the **BPMN** panel as highlighted below.
+In Process Modeler, the Event-Based Gateway element is labeled as "Event-Based Gateway" in the **Controls** panel as highlighted below.
 
-![Event-Based Gateway in the BPMN panel of Process Modeler](../../../.gitbook/assets/bpmn-event-based-gateway-process-modeler-processes.png)
+![Event-Based Gateway in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-event-based-gateway-process-modeler-processes.png)
 
 Below is an Event-Based Gateway element when it has been placed into a Process model.
 
@@ -314,11 +314,11 @@ BPMN 2.0 provides graphical representations to organize participants in a Proces
 
 A Pool element represents an organization or entity involved in a Process model. The Pool element might represent a specific role \("Human Resources"\), entity \(such as a company\) or a general relationship \(such as a buyer, seller, or manufacturer\).
 
-In Process Modeler, the Pool element is labeled as "Pool" in the **BPMN** panel as highlighted below.
+In Process Modeler, the Pool element is labeled as "Pool" in the **Controls** panel as highlighted below.
 
-![Pool element in the BPMN panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-pool-process-modeler-processes.png)
+![Pool element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-pool-process-modeler-processes.png)
 
-Below is a Pool element when it has been placed into a Process model.
+Below is a Pool element when it has been placed into a Process model. "New Pool" is the name of the Pool element.
 
 ![Pool element containing a modeled Process](../../../.gitbook/assets/pool-element-process-modeler-processes.png)
 
@@ -330,7 +330,7 @@ See [Add and Configure Pool and Lane Elements](add-and-configure-pool-and-lane-e
 
 A Lane element represents a partition within a [Pool](process-modeling-element-descriptions.md#pool) element. Each Lane element indicates a role, actor, or participant within the Pool element. Text within the Lane element indicates the participant in the Process model. Any elements within the Lane element indicate that the participant is the actor or is responsible for performing actions in the Process model. Furthermore, [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements between elements in other Pool or Lane elements indicate with which other Process participants that Lane element interacts.
 
-Below is a Pool element with three Lane elements when it has been placed into a Process model. Each Lane element indicates roles within the overall organization.
+Below is a Pool element that contains three Lane elements when it has been placed into a Process model: "Requester," "Approval," and "Requisition" from top to bottom in the Pool element. Each Lane element indicates roles within the overall organization.
 
 ![Pool element with three Lane elements that indicate roles within the organization](../../../.gitbook/assets/pool-element-with-lanes-process-modeler-processes.png)
 
@@ -349,7 +349,7 @@ Flow indicators represent the order in which workflow routing and messaging occu
 
 Sequence Flow elements connect Process model elements to represent the intended workflow routing in a Process model. Process workflow is the order in which elements trigger or activate in a Process model. Sequence Flow elements are not to be confused with [Message Flow](process-modeling-element-descriptions.md#message-flow) elements.
 
-As a best practice indicate a consistent direction of Sequence Flow elements, either left to right or top to bottom, to make Process models easier to understand.
+As a best practice, indicate a consistent direction of Sequence Flow elements: either left to right or top to bottom, to make Process models easier to understand.
 
 In Process Modeler, Flow indicators display when you click an element in the Process model. The top Flow indicator is for Sequence Flows \(highlighted below\), represented with a solid line.
 
@@ -358,16 +358,16 @@ In Process Modeler, Flow indicators display when you click an element in the Pro
 {% hint style="info" %}
 [Text annotations](process-modeling-element-descriptions.md#text-annotation), [Pool](process-modeling-element-descriptions.md#pool), and [Lane](process-modeling-element-descriptions.md#lane) elements do not use Sequence Flow elements. Furthermore, Sequence Flow elements cannot connect between Process model elements that are in different Pool elements since Pool elements represent different organizations. However, use Message Flow elements to infer communication between elements in different Pool elements.
 
-Sequence Flows from Exclusive Gateway elements can be configured to specify under which condition a Request routes through that Sequence Flow. See [Set and Delete Sequence Flow Between Elements](the-quick-toolbar.md#configure-the-sequence-flow-for-exclusive-gateway-elements).
+Sequence Flow elements from Exclusive Gateway and Inclusive Gateway elements can be configured to specify under which condition\(s\) Request workflow routes through that Sequence Flow element. See [Set Sequence Flow Elements to Indicate Workflow Routing](the-quick-toolbar.md#configure-an-outgoing-sequence-flow-element-from-an-exclusive-gateway-or-inclusive-gateway-element).
 
-A Start Event begins the flow of a Request for that Process. Therefore, a Start Event cannot have an incoming Sequence Flow.
+A Start Event or Start Timer Event element begins Request workflow for that Process. Therefore, these elements cannot have an incoming Sequence Flow elements.
 
-An End Event element terminates the flow of a Request for that Process. Therefore, an End Event element cannot have an outgoing Sequence Flow.
+An End Event element terminates Request workflow for that Process. Therefore, an End Event element cannot have an outgoing Sequence Flow element.
 {% endhint %}
 
-The Sequence Flow element indicates in which order workflow or routing occurs between two connected Process elements. Below are two Process model elements connected in Process Modeler.
+The Sequence Flow element indicates in which order workflow routing occurs between two connected Process model elements. Below are two Process model elements connected in Process Modeler.
 
-![Two Process elements connected by the Sequence Flow to infer the order of workflow](../../../.gitbook/assets/sequence-flow-connecting-elements-process-modeler-processes.png)
+![Process model elements connected by a Sequence Flow element infers the order of workflow](../../../.gitbook/assets/sequence-flow-connecting-elements-process-modeler-processes.png)
 
 {% hint style="info" %}
 See [Set and Delete Sequence Flow Between Elements](the-quick-toolbar.md).
@@ -381,7 +381,7 @@ In Process Modeler, Flow indicators display when you click an element in the Pro
 
 ![Message Flow indicator \(highlighted\) on a selected Process element](../../../.gitbook/assets/message-flow-indicator-process-model-processes.png)
 
-These messages indicate indirect communication between separate Process participants. The Message Flow does not indicate whether the message is physical or digital. Use a [Text Annotation](process-modeling-element-descriptions.md#text-annotation) element to add information about the communication.
+These messages indicate indirect communication between separate Process participants. The Message Flow element does not indicate whether the message is physical or digital. Use a [Text Annotation](process-modeling-element-descriptions.md#text-annotation) element to add information about the type of communication.
 
 ![A Message Flow element \(dotted line\) between two elements in different Pool elements](../../../.gitbook/assets/message-flow-between-pool-elements-process-model-processes.png)
 
@@ -399,9 +399,9 @@ Use [Text Annotation](process-modeling-element-descriptions.md#text-annotation) 
 
 A Text Annotation element is human-readable text in a Process model that provides description about the Process. Text Annotation elements perform no functional role in Process Requests or workflow routing.
 
-In Process Modeler, the Text Annotation element is labeled as "Text Annotation" in the **BPMN** panel as highlighted below.
+In Process Modeler, the Text Annotation element is labeled as "Text Annotation" in the **Controls** panel as highlighted below.
 
-![Text Annotation element in the BPMN panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-text-annotation-process-modeler-processes.png)
+![Text Annotation element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-text-annotation-process-modeler-processes.png)
 
 Below is a Text Annotation element when it has been placed into a Process model.
 
@@ -413,7 +413,7 @@ See [Add and Configure Text Annotation and Association Elements](add-and-configu
 
 ### Association
 
-An Association element is part of a Text Annotation element that graphically references the Process model element that the Text Annotation element describes. Multiple Association elements can be used from one Text Annotation element. However, a Text Annotation element must be placed into the Process model before an Association element can be.
+An Association element is part of a Text Annotation element that graphically references the Process model element that the Text Annotation element describes. Multiple Association elements can be used from one Text Annotation element. However, a Text Annotation element must be placed into the Process model before an Association element can be used.
 
 Each Annotation element can display a directional arrow to and/or from the Text Annotation element.
 
@@ -447,9 +447,13 @@ See [Add and Configure Text Annotation and Association Elements](add-and-configu
 
 {% page-ref page="add-and-configure-script-task-elements.md" %}
 
+{% page-ref page="add-and-configure-manual-task-elements.md" %}
+
 {% page-ref page="add-and-configure-call-activity-elements.md" %}
 
 {% page-ref page="add-and-configure-exclusive-gateway-elements.md" %}
+
+{% page-ref page="add-and-configure-inclusive-gateway-elements.md" %}
 
 {% page-ref page="add-and-configure-parallel-gateway-elements.md" %}
 
