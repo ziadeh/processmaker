@@ -20,7 +20,7 @@ Use event-type elements to represent an event, milestone, or delay in the Proces
 
 ### Start Event
 
-A Start Event element represents the start of a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process. Therefore, a Start Event element cannot have an incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow). A Process model can have multiple Start Event elements.
+A Start Event element represents the start of a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process. Therefore, a Start Event element cannot have an incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element. A Process model can have multiple Start Event elements.
 
 Use a Start Event element to represent how a Request for that Process starts in one of the following ways:
 
@@ -28,9 +28,9 @@ Use a Start Event element to represent how a Request for that Process starts in 
 * The Request can be started by an authenticated ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) \(Jane Doe\) or any member of a specified [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) \(Accounting department\).
 * The Request can be started by either an anonymous or authenticated ProcessMaker user through a published URL. This allows a ProcessMaker Screen to be available on a public-facing Web site that starts the Request when that Screen is submitted. Note that this feature is only available if the Web Entry package is installed in your ProcessMaker instance. See [Web Entry](../../../package-development-distribution/package-a-connector/web-entry.md).
 
-In Process Modeler, the Start Event element is labeled as "Start Event" in the **BPMN** panel as highlighted below.
+In Process Modeler, the Start Event element is labeled as "Start Event" in the **Controls** panel as highlighted below.
 
-![Start Event element in the BPMN panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-start-event-process-modeler-processes.png)
+![Start Event element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-start-event-process-modeler-processes.png)
 
 Below is a Start Event element when it has been placed into a Process model.
 
@@ -44,9 +44,9 @@ See [Add and Configure Event Elements](add-and-configure-an-event-element.md#add
 
 A Start Timer Event element represents a time or periodic interval when a [Request](../../../using-processmaker/requests/what-is-a-request.md) starts for a Process. A Start Timer Event element begins the Process. Therefore, a Start Timer Event element cannot have an incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element. A Process model can have multiple Start Timer Event elements. Use this element to indicate that a Request for that Process must begin at a specific date and time, such as on an employee’s employment anniversary to schedule a performance review.
 
-In Process Modeler, the Start Timer Event element is labeled as "Start Timer Event" in the **BPMN** panel as highlighted below.
+In Process Modeler, the Start Timer Event element is labeled as "Start Timer Event" in the **Controls** panel as highlighted below.
 
-![Start Timer Event element in the BPMN panel of Process Modeler](../../../.gitbook/assets/start-timer-event-bpmn-panel-process-modeler-processes.png)
+![Start Timer Event element in the Controls panel of Process Modeler](../../../.gitbook/assets/start-timer-event-bpmn-panel-process-modeler-processes.png)
 
 Below is a Start Timer Event element when it has been placed into a Process model.
 
@@ -58,11 +58,11 @@ See [Add and Configure Start Timer Event Elements](add-and-configure-start-timer
 
 ### Intermediate Timer Event
 
-An Intermediate Timer Event element represents a delay in a Process either at a specific time or at a periodic interval. When the specified time or interval occurs, the Intermediate Timer Event element triggers, thereby resuming workflow for that Process's [Request](../../../using-processmaker/requests/what-is-a-request.md). Use this element to cause a Request to wait until a specific time or periodic interval of your choosing. For example, use this element to make a Process wait 30 days before checking if you receive an invoice from a customer after services are rendered.
+An Intermediate Timer Event element represents a delay in a Process either at a specific time or at a periodic interval. When the specified time or interval occurs, the Intermediate Timer Event element triggers, thereby resuming workflow for that Process's [Request](../../../using-processmaker/requests/what-is-a-request.md). Use this element to cause a Request to wait until a specific time or periodic interval. For example, use this element to make a Process wait 30 days before checking if you receive an invoice from a customer after services are rendered.
 
-In Process Modeler, the Intermediate Timer Event element is labeled as "Intermediate Timer Event" in the **BPMN** panel as highlighted below.
+In Process Modeler, the Intermediate Timer Event element is labeled as "Intermediate Timer Event" in the **Controls** panel as highlighted below.
 
-![Intermediate Timer Event element in the BPMN panel of Process Modeler](../../../.gitbook/assets/intermediate-timer-event-bpmn-panel-process-modeler-processes.png)
+![Intermediate Timer Event element in the Controls panel of Process Modeler](../../../.gitbook/assets/intermediate-timer-event-bpmn-panel-process-modeler-processes.png)
 
 Below is an Intermediate Timer Event element when it has been placed into a Process model.
 
@@ -74,19 +74,19 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 ### Intermediate Message Catch Event
 
-An Intermediate Message Catch Event element represents a delay in a Process until that element receives an external API call. This external API call is represented as an incoming [Message Flow](process-modeling-element-descriptions.md#message-flow) element from another Pool element. When the Intermediate Catch Event element receives the API call the element triggers, thereby resuming workflow for that Process's [Request](../../../using-processmaker/requests/what-is-a-request.md).
+An Intermediate Message Catch Event element represents a delay in a Process until that element receives an external API call. This external API call is represented as an incoming [Message Flow](process-modeling-element-descriptions.md#message-flow) element from another [Pool](process-modeling-element-descriptions.md#pool) element. When the Intermediate Catch Event element receives the API call the element triggers, thereby resuming workflow for that Process's [Request](../../../using-processmaker/requests/what-is-a-request.md).
 
 Use this element to specify attributes of an API call that are required to pass information to the Request and then resume its workflow.
 
-The Intermediate Message Catch Event element can receive the external API call that uses the authorization credentials from any of the following:
+The Intermediate Message Catch Event element can receive the external API call using authorized credentials from any of the following:
 
-* A specified ProcessMaker user
-* Any member of a specified ProcessMaker group
+* A specified ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md)
+* Any member of a specified ProcessMaker [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md)
 * A whitelisted \(allowed\) IP address or domain
 
-In Process Modeler, the Intermediate Message Catch Event element is labeled as "Intermediate Message Catch Event" in the **BPMN** panel as highlighted below.
+In Process Modeler, the Intermediate Message Catch Event element is labeled as "Intermediate Message Catch Event" in the **Controls** panel as highlighted below.
 
-![Intermediate  Message Catch Event element in the BPMN panel of Process Modeler](../../../.gitbook/assets/bpmn-intermediate-message-catch-event-process-modeler-processes.png)
+![Intermediate  Message Catch Event element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-intermediate-message-catch-event-process-modeler-processes.png)
 
 Below is an Intermediate Message Catch Event element when it has been placed into a Process model.
 
