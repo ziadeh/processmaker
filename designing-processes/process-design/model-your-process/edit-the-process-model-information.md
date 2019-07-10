@@ -15,7 +15,7 @@ Your user account or group membership must have the following permissions to edi
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Process Modeler assigns a unique identifier to the Process model. The default Process model identifier value can be changed. Ensure that the identifier value is unique compared to all elements in the Process model.
+Process Modeler assigns a unique identifier to the Process model. However, the Process model's identifier value can be changed if it is unique to all other elements in the Process model.
 
 Follow these steps to edit the identifier value for a Process model:
 

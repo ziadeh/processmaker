@@ -25,7 +25,7 @@ Follow these steps to add a Start Event element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Start Event** element in the **BPMN** panel.  
+3. Locate the **Start Event** element in the **Control** panel.  
 
    ![](../../../.gitbook/assets/start-event-bpmn-side-bar-process-modeler-processes.png)
 
@@ -55,7 +55,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 ### Edit the Identifier Value
 
-Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique.
+Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
 {% hint style="warning" %}
 All identifier values for all elements in the Process model must be unique.
@@ -63,7 +63,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Start Event element:
 
-1. Select the Start Event element from the Process model in which to edit its identifier value.
+1. Select the Start Event element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/start-event-configuration-identifier-name-process-modeler-processes.png)
@@ -76,7 +76,7 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for a Start Event element:
 
-1. Select the Start Event element from the Process model in which to edit its name.
+1. Select the Start Event element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
    ![](../../../.gitbook/assets/start-event-configuration-identifier-name-process-modeler-processes.png)
@@ -106,7 +106,7 @@ After the Webhook is enabled, copy the generated URL from the Start Event elemen
 
 Follow these steps to enable a Webhook in a Start Event element:
 
-1. Select the Start Event element from the Process model in which to enable a Webhook.
+1. Select the Start Event element from the Process model in which to enable a Webhook. The **Inspector** panel displays the **Configuration** setting section.
 2. The **Webhook** setting displays below the **Configuration** setting section.  
 
    ![](../../../.gitbook/assets/enable-webhook-start-event-element-process-modeler-processes.png)
@@ -144,7 +144,7 @@ Follow these steps to disable an enabled Webhook in a Start Event element:
 
 Follow these steps to select which ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) can start a Request for this Process:
 
-1. Select the Start Event element from the Process model in which to select the user may start a Request.
+1. Select the Start Event element from the Process model in which to select the user may start a Request. The **Inspector** panel displays the **Configuration** setting section.
 2. The **Start Permission** drop-down menu displays below the **Configuration** setting section.  
 
    ![](../../../.gitbook/assets/start-permission-request-event-process-modeler-processes.png)

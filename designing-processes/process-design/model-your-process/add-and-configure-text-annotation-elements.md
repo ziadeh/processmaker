@@ -57,7 +57,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 ### Edit the Identifier Value
 
-Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique.
+Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
 {% hint style="warning" %}
 All identifier values for all elements in the Process model must be unique.
@@ -65,7 +65,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Text Annotation element:
 
-1. Select the Text Annotation element from the Process model in which to edit its identifier value.
+1. Select the Text Annotation element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/text-annotation-configuration-identifier-name-process-modeler-processes.png)
@@ -78,7 +78,7 @@ Process Modeler automatically assigns a default value to a new Text Annotation e
 
 Follow these steps to edit the annotation description for a Text Annotation element:
 
-1. Select the Text Annotation element from the Process model in which to edit its annotation description.
+1. Select the Text Annotation element from the Process model in which to edit its annotation description. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Annotation Description** field displays.  
 
    ![](../../../.gitbook/assets/text-annotation-configuration-identifier-name-process-modeler-processes.png)
@@ -131,7 +131,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 ### Edit the Identifier Value
 
-Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique.
+Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
 {% hint style="warning" %}
 All identifier values for all elements in the Process model must be unique.
@@ -139,7 +139,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for an Association element:
 
-1. Select the Association element from the Text Annotation element in which to edit its identifier value.
+1. Select the Association element from the Text Annotation element in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/association-configuration-identifier-direction-process-modeler-processes.png)
@@ -152,7 +152,7 @@ Use the Annotation element to place a directional arrow that points between the 
 
 Follow these steps to edit the directional arrow that points between the Text Annotation element and the element it describes:
 
-1. Select the Association element from the Text Annotation element in which to edit its annotation description.
+1. Select the Association element from the Text Annotation element in which to edit its annotation description. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Direction** drop-down menu displays.  
 
    ![](../../../.gitbook/assets/association-configuration-identifier-direction-process-modeler-processes.png)

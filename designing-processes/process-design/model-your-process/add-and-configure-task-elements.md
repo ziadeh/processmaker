@@ -55,7 +55,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 ### Edit the Identifier Value
 
-Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique.
+Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
 {% hint style="warning" %}
 All identifier values for all elements in the Process model must be unique.
@@ -63,7 +63,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Task element:
 
-1. Select the Task element from the Process model in which to edit its identifier value.
+1. Select the Task element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/task-configuration-identifier-name-process-modeler-processes.png)
@@ -76,7 +76,7 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for a Task element:
 
-1. Select the Task element from the Process model in which to edit its name.
+1. Select the Task element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
    ![](../../../.gitbook/assets/task-configuration-identifier-name-process-modeler-processes.png)
@@ -97,7 +97,7 @@ Ensure to select a ProcessMaker Screen for each Task element in your Process mod
 
 Follow these steps to select a ProcessMaker Screen for a Task element:
 
-1. Select the Task element from the Process model in which to specify its ProcessMaker Screen.
+1. Select the Task element from the Process model in which to specify its ProcessMaker Screen. The **Inspector** panel displays the **Configuration** setting section.
 2. The **Screen For Input** drop-down menu displays below the **Configuration** settings section.  
 
    ![](../../../.gitbook/assets/screen-input-task-process-modeler-processes.png)
@@ -120,7 +120,7 @@ Specify due time for a Task element in total number of hours. This includes hour
 
 Follow these steps to specify when a Task element is due:
 
-1. Select the Task element from the Process model in which to specify how many hours the task is due.
+1. Select the Task element from the Process model in which to specify how many hours the task is due. The **Inspector** panel displays the **Configuration** setting section.
 2. The **Due In** field displays below the **Configuration** settings section.  
 
    ![](../../../.gitbook/assets/due-task-process-modeler-processes.png)
@@ -140,7 +140,7 @@ Select to whom to assign the Task that is referenced in a Task element:
 
 Follow these steps to select to whom to assign the Task that is referenced in a Task element:
 
-1. Select the Task element from the Process model in which to select the Task assignee.
+1. Select the Task element from the Process model in which to select the Task assignee. The **Inspector** panel displays the **Configuration** setting section.
 2. The **Task Assignment** drop-down menu displays below the **Configuration** settings section.  
 
    ![](../../../.gitbook/assets/assignment-assignee-task-process-modeler-processes.png)
@@ -176,7 +176,7 @@ The rule that determines the Task assignee uses an expression syntax described i
 
 Follow these steps to select to whom to assign the Task that is referenced in a Task element using a rule:
 
-1. Select the Task element from the Process model in which to assign the Task via a rule.
+1. Select the Task element from the Process model in which to assign the Task via a rule. The **Inspector** panel displays the **Configuration** setting section.
 2. The **Assign by Expression** option displays below the **Configuration** settings section.  
 
    ![](../../../.gitbook/assets/rule-assignment-assignee-task-process-modeler-processes.png)
@@ -278,7 +278,7 @@ Set when [notifications](../../../using-processmaker/notifications.md) regarding
 
 Follow these steps to set Task notifications in a Task element:
 
-1. Select the Task element from the Process model in which to set Task notifications.
+1. Select the Task element from the Process model in which to set Task notifications. The **Inspector** panel displays the **Configuration** setting section.
 2. The **Task Notifications** settings displays below the **Configuration** settings section.  
 
    ![](../../../.gitbook/assets/notification-task-process-modeler-processes.png)

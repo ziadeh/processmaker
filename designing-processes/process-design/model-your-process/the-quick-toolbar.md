@@ -79,7 +79,7 @@ This section discusses how to configure any Sequence Flow element except from an
 
 #### Edit the Identifier Value
 
-Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique.
+Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
 {% hint style="warning" %}
 All identifier values for all elements in the Process model must be unique.
@@ -87,7 +87,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Sequence Flow element:
 
-1. Select the Sequence Flow element from the Process model in which to edit its identifier value.
+1. Select the Sequence Flow element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/sequence-flow-configuration-identifier-name-process-modeler-processes.png)
@@ -127,7 +127,7 @@ When specifying the condition\(s\) for outgoing Sequence Flow elements from an E
 
 Follow these steps to set the condition under which a Request follows an outgoing Sequence Flow element from an Exclusive Gateway or Inclusive Gateway element:
 
-1. Select the outgoing Sequence Flow from the Exclusive Gateway or Inclusive Gateway element in which to set its workflow condition.
+1. Select the outgoing Sequence Flow from the Exclusive Gateway or Inclusive Gateway element in which to set its workflow condition. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Expression** field displays.
 3. In the **Expression** field, enter or edit the expression for the selected Sequence Flow element using the syntax components described in [Expression Syntax Components](the-quick-toolbar.md#expression-syntax-components), and then press **Enter**.
 

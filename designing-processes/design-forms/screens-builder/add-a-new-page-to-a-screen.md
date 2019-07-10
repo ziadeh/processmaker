@@ -29,7 +29,7 @@ Follow these steps to add a new page to a ProcessMaker Screen:
 3. In the **Page Name** field, enter the name of the new page.
 4. Click **Save**. The new page displays in the drop-down menu of pages for that ProcessMaker Screen.
 
-Access each page from its the drop-down menu of pages for that ProcessMaker Screen.
+Access each page from the drop-down menu of pages for that ProcessMaker Screen.
 
 ![Multiple pages in a ProcessMaker Screen](../../../.gitbook/assets/multiple-pages-in-screens-builder-processes.png)
 

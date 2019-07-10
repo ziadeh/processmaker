@@ -55,7 +55,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 ### Edit the Identifier Value
 
-Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique.
+Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
 {% hint style="warning" %}
 All identifier values for all elements in the Process model must be unique.
@@ -63,7 +63,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for an End Event element:
 
-1. Select the End Event element from the Process model in which to edit its identifier value.
+1. Select the End Event element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/end-event-configuration-identifier-name-process-modeler-processes.png)
@@ -76,7 +76,7 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for an End Event element:
 
-1. Select the End Event element from the Process model in which to edit its name.
+1. Select the End Event element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
    ![](../../../.gitbook/assets/end-event-configuration-identifier-name-process-modeler-processes.png)
@@ -91,7 +91,7 @@ For example, if an End Event element triggers from Lane 1 of a Pool element, the
 
 Follow these steps to select the ProcessMaker Screen that displays when an End Event element triggers:
 
-1. Select the End Event element from the Process model in which to select the ProcessMaker Screen that displays when that End Event element is triggered, thereby completing that Request.
+1. Select the End Event element from the Process model in which to select the ProcessMaker Screen that displays when that End Event element is triggered, thereby completing that Request. The **Inspector** panel displays the **Configuration** setting section.
 2. The **Summary screen** drop-down menu displays below the **Configuration** setting section.  
 
    ![](../../../.gitbook/assets/summary-screen-end-event-process-modeler-processes.png)
