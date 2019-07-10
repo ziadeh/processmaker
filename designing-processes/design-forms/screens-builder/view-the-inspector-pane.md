@@ -10,7 +10,7 @@ The **Inspector** panel in Screens Builder displays information in both [Design]
 
 ### Design Mode Function
 
-In Design mode, use the **Inspector** panel to [configure control settings](control-descriptions/) you place into a ProcessMaker Screen. Design mode is the default mode when a ProcessMaker Screen is edited. The **Inspector** panel displays to the right of a displayed ProcessMaker Screen.
+In Design mode, use the **Inspector** panel to [configure control settings](control-descriptions/) you place into a ProcessMaker Screen. Design mode is the default mode when a ProcessMaker Screen is edited. The **Inspector** panel displays to the right of your ProcessMaker Screen.
 
 ![Screens Builder displaying the Inspector panel in Design mode ](../../../.gitbook/assets/screens-editor-mode-processes.png)
 

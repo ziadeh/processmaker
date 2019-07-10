@@ -114,6 +114,7 @@
 * [Process Modeling](designing-processes/process-design/README.md)
   * [What is Process Modeling?](designing-processes/process-design/what-is-process-modeling.md)
   * [Model Your Process](designing-processes/process-design/model-your-process/README.md)
+    * [View the Inspector Panel](designing-processes/process-design/model-your-process/view-the-inspector-panel.md)
     * [Process Modeling Element Descriptions](designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md)
     * [Edit the Process Model Information](designing-processes/process-design/model-your-process/edit-the-process-model-information.md)
     * [Filter Elements in the BPMN Panel](designing-processes/process-design/model-your-process/filter-elements-in-the-bpmn-panel.md)
