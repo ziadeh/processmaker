@@ -1,6 +1,6 @@
 ---
-description: Understand how to use controls to design ProcessMaker Screens.
+description: Understand how to use controls to design your ProcessMaker Screens.
 ---
 
-# Edit a Screen
+# Edit Your Screen
 

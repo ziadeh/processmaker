@@ -1,8 +1,8 @@
 ---
-description: Save your ProcessMaker Screen design.
+description: Save your designed ProcessMaker Screen.
 ---
 
-# Save a Screen
+# Save Your Screen
 
 ## Save a ProcessMaker Screen
 

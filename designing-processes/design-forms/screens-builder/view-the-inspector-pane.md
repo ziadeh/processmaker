@@ -27,6 +27,7 @@ Follow these steps to view the **Inspector** panel in Design mode:
 
 1. [Create a new ProcessMaker Screen](../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode).
 2. Select the control in which to view its settings. The **Inspector** panel displays the settings for that control.
+3. Make a change to a setting if necessary. The setting changes. Note that settings are not committed to the ProcessMaker Screen is [saved](save-a-screen.md#save-a-processmaker-screen).
 
 ![Inspector panel displaying control settings in Design mode](../../../.gitbook/assets/inspector-panel-scripts-builder-processes.png)
 

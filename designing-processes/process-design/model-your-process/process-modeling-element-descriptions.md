@@ -429,6 +429,8 @@ See [Add and Configure Text Annotation and Association Elements](add-and-configu
 
 {% page-ref page="../../../using-processmaker/requests/what-is-a-request.md" %}
 
+{% page-ref page="view-the-inspector-panel.md" %}
+
 {% page-ref page="edit-the-process-model-information.md" %}
 
 {% page-ref page="filter-elements-in-the-bpmn-panel.md" %}
