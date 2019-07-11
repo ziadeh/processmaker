@@ -86,7 +86,7 @@ Follow these steps to edit the name for a Start Event element:
 ## Set How a Request Starts Via a Start Event Element
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to set how a Request can start fpr that Process via a Start Event element:
+Your user account or group membership must have the following permissions to set how a Request can start via a Webhook for that Process:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -98,11 +98,11 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 #### Enable a Secure Webhook
 
-Enable a Webhook in a Start Event element to allow anyone to start a ProcessMaker Request for that Process by using a unique URL. When a Start Event element receives a programmatic call via its unique URL, it starts a [Request](../../../using-processmaker/requests/what-is-a-request.md) for that Process.
+Enable a Webhook in a Start Event element to allow anyone to start a [Request](../../../using-processmaker/requests/what-is-a-request.md) for that Process via a unique URL. When a Start Event element receives a programmatic call via its unique URL, it starts a Request for that Process.
 
-Each time a Webhook is enabled for a Start Event element, it generates a unique URL. Therefore, do not disable a Webhook if you do want to use the same URL to receive calls to start a Request. If you enable a Webhook again for the same Start Event element, it generates a new unique URL.
+Each time a Webhook is enabled for a Start Event element, it generates a unique URL. Therefore, do not disable a Webhook if you want to use the same URL to receive calls to start Requests. If you enable a Webhook again for the same Start Event element, it generates a new unique URL.
 
-After the Webhook is enabled, copy the generated URL from the Start Event element to use in a script, REST API call, or application that will call the Webhook to start a new Request for that Process. Share the Webhook's unique URL only with those allowed to start a new Request.
+After the Webhook is enabled, copy the generated URL from the Start Event element wherever you need it: in a script, API call, or application that will call the Webhook to start a new Request for that Process. Share the Webhook's unique URL only with those allowed to start a new Request.
 
 Follow these steps to enable a Webhook in a Start Event element:
 
