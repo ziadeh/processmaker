@@ -25,7 +25,7 @@ Follow these steps to add an Intermediate Timer Event element to the Process mod
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Intermediate Timer Event** element in the **BPMN** panel.  
+3. Locate the **Intermediate Timer Event** element in the **Controls** panel.  
 
    ![](../../../.gitbook/assets/intermediate-timer-event-bpmn-side-bar-process-modeler-processes.png)
 
@@ -66,7 +66,7 @@ Follow these steps to edit the identifier value for an Intermediate Timer Event 
 1. Select the Intermediate Timer Event element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
-   ![](../../../.gitbook/assets/intermediate-timer-event-configuration-identifier-name-process-modeler-processes%20%281%29.png)
+   ![](../../../.gitbook/assets/intermediate-timer-event-configuration-identifier-name-process-modeler-processes.png)
 
 3. In the **Identifier** field, edit the Intermediate Timer Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
@@ -94,7 +94,7 @@ Your user account or group membership must have the following permissions to set
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Set the timer controls for an Intermediate Timer Event element using one of the following methods:
+When an Intermediate Timer Event element is placed into a Process model, it is set to a delay of one \(1\) hour. If these are not the timing control settings you want, the Intermediate Timer Event element must be configured. Set the timer controls for an Intermediate Timer Event element using one of the following methods:
 
 * Set an interval in which to delay triggering the Intermediate Time Event element in a specified number of days, weeks, months, or years.
 * Set the date and hour when the trigger the Intermediate Timer Event element.
@@ -107,16 +107,14 @@ Follow these steps to set the timer controls for an Intermediate Timer Event ele
    ![](../../../.gitbook/assets/intermediate-timer-timing-control-process-modeler-processes.png)
 
 3. Do one of the following to set the timer control:
-   * **Delay the timer:** From the **Type** drop-down menu, select the **Delay** option. The **Delay** option is the default setting. When the **Delay** option is selected from the **Type** drop-down menu, the **Delay** setting displays.  
-
-     ![](../../../.gitbook/assets/intermediate-timer-timing-control-delay-process-modeler-processes.png)
+   * **Delay the timer:** From the **Type** drop-down menu, select the **Delay** option. **Delay** is the default setting.
 
      From the **Delay** setting, select at which interval of time to trigger the Intermediate Timer Event element. **1** is the default setting. Then select one of the following time periods for that element to trigger:
 
+     * Minute
+     * Hour \(default setting\)
      * Day
-     * Week
      * Month
-     * Year
 
    * **Set date and time to trigger the Intermediate Start Event element:** From the **Type** drop-down menu, select the **Date/Time** option. The **Wait until specific date/time** setting displays.  
 
@@ -124,7 +122,10 @@ Follow these steps to set the timer controls for an Intermediate Timer Event ele
 
      Do the following:
 
-     * From the **Wait until specific date/time** field, select the date to trigger the Intermediate Timer Event element. If this field has not been previously set, the current date is the default.
+     * From the **Wait until specific date/time** field, use the date control to select the date to trigger the Intermediate Timer Event element. If this field has not been previously set, the current date is the default.  
+
+       ![](../../../.gitbook/assets/start-timer-event-date-control-process-modeler-processes.png)
+
      * Below the **Wait until specific date/time** field, set the hour of that date to trigger the Intermediate Timer Event element.
 
 ## Related Topics

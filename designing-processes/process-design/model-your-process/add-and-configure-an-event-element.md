@@ -185,7 +185,7 @@ Follow these steps to select who can start a Request via a Web Entry URL via thi
    ![](../../../.gitbook/assets/web-entry-screen-associated-start-event-process-modeler-processes.png)
 
 5. From the **Completed Action** drop-down menu, select one of the following options:
-   * **Screen:** Select the **Screen** option to indicate that a ProcessMaker Screen displays after the Requester submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu. **Screen** is the default option.  
+   * **Screen:** Select the **Screen** option to indicate that a ProcessMaker Screen displays after the Requester submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu. **Screen** is the default setting.  
 
      ![](../../../.gitbook/assets/web-entry-completed-action-screen-start-event-process-modeler-processes.png)
 
