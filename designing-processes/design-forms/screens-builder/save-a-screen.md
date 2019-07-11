@@ -6,7 +6,7 @@ description: Save your designed ProcessMaker Screen.
 
 ## Save a ProcessMaker Screen
 
-A ProcessMaker Screen can be saved in either [Design](screens-builder-modes.md#editor-mode) or [Preview](screens-builder-modes.md#preview-mode) modes.
+A ProcessMaker Screen can be saved in [Design mode](screens-builder-modes.md#design-mode).
 
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to save a ProcessMaker Screen:
