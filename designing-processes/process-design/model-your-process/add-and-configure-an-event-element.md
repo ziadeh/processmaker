@@ -83,10 +83,10 @@ Follow these steps to edit the name for a Start Event element:
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
-## Set How a Request Starts Via a Start Event Element
+## Select the ProcessMaker User or Group That Can Start Requests
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to set how a Request can start via a Webhook for that Process:
+Your user account or group membership must have the following permissions to set which ProcessMaker user or group can start a Request for a Process:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -94,58 +94,12 @@ Your user account or group membership must have the following permissions to set
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-### Allow a Secure Webhook to Start Requests
-
-#### Enable a Secure Webhook
-
-Enable a Webhook in a Start Event element to allow anyone to start a [Request](../../../using-processmaker/requests/what-is-a-request.md) for that Process via a unique URL. When a Start Event element receives a programmatic call via its unique URL, it starts a Request for that Process.
-
-Each time a Webhook is enabled for a Start Event element, it generates a unique URL. Therefore, do not disable a Webhook if you want to use the same URL to receive calls to start Requests. If you enable a Webhook again for the same Start Event element, it generates a new unique URL.
-
-After the Webhook is enabled, copy the generated URL from the Start Event element wherever you need it: in a script, API call, or application that will call the Webhook to start a new Request for that Process. Share the Webhook's unique URL only with those allowed to start a new Request.
-
-Follow these steps to enable a Webhook in a Start Event element:
-
-1. Select the Start Event element from the Process model in which to enable a Webhook. The **Inspector** panel displays the **Configuration** setting section.
-2. The **Webhook** setting displays below the **Configuration** setting section.  
-
-   ![](../../../.gitbook/assets/enable-webhook-start-event-element-process-modeler-processes.png)
-
-3. Click **Enable** beside the **Webhook** setting. The Start Event element generates the unique URL to access the Webhook.  
-
-   ![](../../../.gitbook/assets/copy-to-clipboard-webhook-start-event-element-process-modeler-processes.png)
-
-4. Click **Copy To Clipboard** below the unique Webhook URL and then use or share the URL to make calls that start a Request for that Process via the Start Event element.
-
-#### Disable an Enabled Webhook
-
-Disable an enabled Webhook in a Start Event element so that Start Event element can no longer receive programmatic calls via its unique URL to start [Requests](../../../using-processmaker/requests/what-is-a-request.md) for that Process.
-
-{% hint style="warning" %}
-Each time a Webhook is enabled for a Start Event element, it generates a unique URL. Therefore, do not disable a Webhook if you do want to use the same URL to receive calls to start a Request. If you enable a Webhook again for the same Start Event element, it generates a new unique URL.
-{% endhint %}
-
-Follow these steps to disable an enabled Webhook in a Start Event element:
-
-1. Select the Start Event element from the Process model in which to disable its Webhook.
-2. The **Webhook** setting displays below the **Configuration** setting section.  
-
-   ![](../../../.gitbook/assets/disable-webhook-start-event-element-process-modeler-processes.png)
-
-3. Click **Disable** beside the **Webhook** setting. The **Caution** screen displays to confirm disabling the Start Event element's Webhook.  
-
-   ![](../../../.gitbook/assets/caution-disable-webhook-start-event-element-process-modeler-processes.png)
-
-4. Click **Confirm**.
-
-### Select the ProcessMaker User or Group That Can Start Requests
-
-#### Select the ProcessMaker User That Can Start a Request
+### Select the ProcessMaker User That Can Start a Request
 
 Follow these steps to select which ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) can start a Request for this Process:
 
 1. Select the Start Event element from the Process model in which to select the user may start a Request. The **Inspector** panel displays the **Configuration** setting section.
-2. The **Start Permission** drop-down menu displays below the **Configuration** setting section.  
+2. Expand the **Configuration** setting section if it is not presently expanded. The **Start Permission** drop-down menu displays.  
 
    ![](../../../.gitbook/assets/start-permission-request-event-process-modeler-processes.png)
 
@@ -155,12 +109,12 @@ Follow these steps to select which ProcessMaker [user](../../../processmaker-adm
 
 4. From the **User** drop-down menu, select which ProcessMaker user can start a Request via the Start Event element. That ProcessMaker user may start a Request.
 
-#### Select the ProcessMaker Group That Can Start a Request
+### Select the ProcessMaker Group That Can Start a Request
 
 Follow these steps to select which ProcessMaker [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) members can start a Request for this Process:
 
 1. Select the Start Event element from the Process model in which to select the user may start a Request.
-2. The **Start Permission** drop-down menu displays below the **Configuration** setting section.  
+2. Expand the **Configuration** setting section if it is not presently expanded. The **Start Permission** drop-down menu displays.
 
    ![](../../../.gitbook/assets/start-permission-request-event-process-modeler-processes.png)
 
@@ -169,6 +123,25 @@ Follow these steps to select which ProcessMaker [group](../../../processmaker-ad
    ![](../../../.gitbook/assets/start-permission-request-group-event-process-modeler-processes.png)
 
 4. From the **Group** drop-down menu, select which ProcessMaker group can start a Request via the Start Event element. All members of that ProcessMaker group may start a Request.
+
+## Select Who Can Start a Request via a Web Entry
+
+{% hint style="info" %}
+### ProcessMaker Package Required
+
+Your ProcessMaker instance must have the Web Entry package installed to select who can start a Request via a Web entry. The Web Entry package allows anonymous or authenticated ProcessMaker users to start or participate in Requests via a published URL. See [Web Entry](../../../package-development-distribution/package-a-connector/web-entry.md).
+
+### Permissions Required
+
+Your user account or group membership must have the following permissions to set which ProcessMaker user or group can start a Request for a Process:
+
+* Processes: View Processes
+* Processes: Edit Processes
+
+See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
+{% endhint %}
+
+
 
 ## Related Topics
 
