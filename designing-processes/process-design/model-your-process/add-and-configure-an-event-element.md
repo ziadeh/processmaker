@@ -180,7 +180,7 @@ Follow these steps to select who can start a Request via a Web Entry URL via thi
         ![](../../../.gitbook/assets/web-entry-authenticated-mode-group-start-event-process-modeler-processes.png)
 
      2. From the **Group** drop-down menu, select which ProcessMaker group may start a Request via the Web Entry's URL. All members of that ProcessMaker group may start a Request via the Web Entry's URL.
-4. From the **Screen Associated** drop-down menu, select the ProcessMaker Screen that displays when the Web Entry URL is accessed. This drop-down menu displays only [Form](../../design-forms/screens-builder/types-for-screens.md#form) types so the Requester can interact with information in the ProcessMaker Screen. This is a required field.  
+4. From the **Screen Associated** drop-down menu, select the [ProcessMaker Screen](../../design-forms/what-is-a-form.md) that displays when the Web Entry URL is accessed. This drop-down menu displays only [Form](../../design-forms/screens-builder/types-for-screens.md#form) types so the Requester can interact with information in the ProcessMaker Screen. This is a required field.  
 
    ![](../../../.gitbook/assets/web-entry-screen-associated-start-event-process-modeler-processes.png)
 

@@ -25,7 +25,7 @@ Follow these steps to add a Task element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Task** element in the **BPMN** panel.
+3. Locate the **Task** element in the **Controls** panel.
 
    ![](../../../.gitbook/assets/task-bpmn-side-bar-process-modeler-processes.png)
 
@@ -85,14 +85,10 @@ Follow these steps to edit the name for a Task element:
 
 ### Select the ProcessMaker Screen for a Task Element
 
-{% hint style="info" %}
-See [What is a Screen?](../../design-forms/what-is-a-form.md) for more information.
-{% endhint %}
-
-Since Task elements are designed to collect or display [Request](../../../using-processmaker/requests/what-is-a-request.md) information, specify which ProcessMaker Screen a selected Task element uses. A ProcessMaker Screen must already exist before it can be selected for use in a Task element.
+Since Task elements are designed to collect or display [Request](../../../using-processmaker/requests/what-is-a-request.md) information, specify which [ProcessMaker Screen](../../design-forms/what-is-a-form.md) a selected Task element uses. A ProcessMaker Screen must already exist before it can be selected for use in a Task element.
 
 {% hint style="warning" %}
-Ensure to select a ProcessMaker Screen for each Task element in your Process model. If a ProcessMaker Screen is not specified and Requests are started for that Process, users who are assigned Tasks with no ProcessMaker Screens have no way of interacting with the Request.
+Ensure to select a ProcessMaker Screen for each Task element in your Process model. If a ProcessMaker Screen is not specified and Requests are started for that Process, users who are assigned Tasks with no ProcessMaker Screens have no way of interacting with the Task.
 {% endhint %}
 
 Follow these steps to select a ProcessMaker Screen for a Task element:
@@ -102,7 +98,7 @@ Follow these steps to select a ProcessMaker Screen for a Task element:
 
    ![](../../../.gitbook/assets/screen-input-task-process-modeler-processes.png)
 
-3. From the **Screen For Input** drop-down menu, select which ProcessMaker Screen that Task element uses. Click the **Refresh** link below the **Screen For Input** drop-down menu if necessary to refresh the options in the drop-down menu.
+3. From the **Screen For Input** drop-down menu, select which ProcessMaker Screen that Task element uses.
 
 {% hint style="warning" %}
 If no ProcessMaker Screens exist, the **Screen For Input** drop-down menu contains no options. Ensure to select a ProcessMaker Screen for every Task element in the Process model before deploying your Process.
@@ -110,13 +106,15 @@ If no ProcessMaker Screens exist, the **Screen For Input** drop-down menu contai
 
 ### Specify When the Task is Due
 
-Specify how much time a [Task](../../../using-processmaker/task-management/what-is-a-task.md) in a Task element is due from when that task is assigned to a Request participant. The default period of time for a task to be due is 72 hours \(three days\).
+Specify how much time a [Task](../../../using-processmaker/task-management/what-is-a-task.md) in a Task element is due from when that task is assigned to a Request participant.
 
 The task due date displays for each [pending assigned task](../../../using-processmaker/requests/view-completed-requests.md#view-completed-requests-in-which-you-are-a-participant). After the specified time has expired for a task, an overdue indicator displays for that task to the assigned task recipient.
 
 {% hint style="info" %}
 Specify due time for a Task element in total number of hours. This includes hours not normally associated with business hours, including overnight hours, weekends, and holidays.
 {% endhint %}
+
+When a Task element is placed into a Process model, the default period of time for a task to be due is 72 hours \(three days\).
 
 Follow these steps to specify when a Task element is due:
 

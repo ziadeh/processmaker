@@ -27,7 +27,7 @@ Follow these steps to add an Intermediate Message Catch Event element to the Pro
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Intermediate Message Catch Event** element in the **BPMN** panel.  
+3. Locate the **Intermediate Message Catch Event** element in the **Controls** panel.  
 
    ![](../../../.gitbook/assets/intermediate-message-catch-event-bpmn-side-bar-process-modeler-processes.png)
 
@@ -81,7 +81,7 @@ Follow these steps to edit the name for an Intermediate Message Catch Event elem
 1. Select the Intermediate Message Catch Event element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
-   ![](../../../.gitbook/assets/name-intermediate-message-catch-event-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/identifier-intermediate-message-catch-event-process-modeler-processes.png)
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
@@ -89,13 +89,13 @@ Follow these steps to edit the name for an Intermediate Message Catch Event elem
 
 Follow these guidelines how to trigger an Intermediate Message Catch Event element:
 
-* Optionally, specify the incoming Message Flow element representing the external API call that triggers the Intermediate Message Catch Event element. If you don't specify which Message Flow element triggers the Intermediate Message Catch Event element when that element has multiple incoming Message Flow elements, then the first Message Flow element that triggers will trigger the Intermediate Message Catch Event element; this represents when the first external API call that meets the conditions set to trigger the Intermediate Message Catch Event element will do so. If there is only one incoming Message Flow element, then specifying that element triggers the Intermediate Message Catch Event element is not necessary.
-* Optionally, specify the key that the Intermediate Message Catch Event element stores in the Request's JSON data model a value. If no key is provided, then the Message Catch Event element passes data to the global JSON data model.
-* Optionally, specify the specified ProcessMaker user whose authorization credentials are required to make the external API call to the Intermediate Message Catch Event element.
-* Optionally, specify the specified ProcessMaker group of which any member's authorization credentials can be used to make the external API call to the Intermediate Message Catch Event element.
+* Optionally, specify the incoming [Message Flow](process-modeling-element-descriptions.md#message-flow) element representing the external API call that triggers the Intermediate Message Catch Event element. If you don't specify which Message Flow element triggers the Intermediate Message Catch Event element when that element has multiple incoming Message Flow elements, then the first Message Flow element that triggers will trigger the Intermediate Message Catch Event element; this represents when the first external API call occurs that meet the conditions set to trigger the Intermediate Message Catch Event. If there is only one incoming Message Flow element, then it is not necessary to specify which element triggers the Intermediate Message Catch Event element.
+* Optionally, specify the JSON data model key that the Intermediate Message Catch Event element stores in the [Request's](../../../using-processmaker/requests/what-is-a-request.md) JSON data model. This key contains a value \(or null\) that it received during the Request. If no key is provided, then the Message Catch Event element passes data to the global JSON data model.
+* Optionally, specify the ProcessMaker user whose authorization credentials are required to make the external API call to the Intermediate Message Catch Event element.
+* Optionally, specify the ProcessMaker group of which any member's authorization credentials can be used to make the external API call to the Intermediate Message Catch Event element.
 * Optionally, specify the IP address or domain that is the Intermediate Message Catch Event is allowed to receive the API call. If no IP addresses or domains are specified, then any IP address or domain can potentially trigger the Intermediate Message Catch Event element.
 
-Adding optional settings to the Intermediate Message Catch Event element restricts how this element can be triggered. Inversely, the fewer optional settings you enter provides more flexibility for the Intermediate Message Catch Event element to trigger.
+Adding settings to the Intermediate Message Catch Event element restricts how this element triggers. Inversely, the fewer settings you enter provides greater likelihood the Intermediate Message Catch Event element triggers.
 
 Follow these steps to configure how to trigger an Intermediate Message Catch Event element:
 
@@ -108,8 +108,8 @@ Follow these steps to configure how to trigger an Intermediate Message Catch Eve
 
    To locate the **Identifier** field value for an incoming Message Flow element, follow these steps:
 
-   1. Select the incoming Message Flow element to the Intermediate Message Catch Event element.
-   2. Expand the **Configuration** section if it is not presently expanded.
+   1. Select the incoming Message Flow element connecting to the Intermediate Message Catch Event element.
+   2. Expand the **Configuration** section for that Message Flow element if it is not presently expanded.
    3. Copy the value in the **Identifier** field. See [Set Message Flow Elements Between Separate Pool Elements](set-and-delete-message-flow-between-elements.md#edit-the-identifier-value).
    4. Paste that value into the Intermediate Message Catch Event element's **Message Event Identifier** field.
 
