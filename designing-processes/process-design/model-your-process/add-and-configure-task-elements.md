@@ -144,7 +144,7 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
    ![](../../../.gitbook/assets/assignment-assignee-task-process-modeler-processes.png)
 
 3. From the **Task Assignment** drop-down menu, select one of the following options:
-   * **Requester:** Select **Requester** to assign the Task to the Request initiator.
+   * **Requester:** Select **Requester** to assign the Task to the Request initiator, referred to as the requester.
    * **User:** Select **User** to assign the Task to a specified ProcessMaker user. When this option is selected, the **Assigned User** drop-down menu displays below the **Task Assignment** drop-down menu.  
 
      ![](../../../.gitbook/assets/assignment-assignee-user-task-process-modeler-processes.png)
@@ -158,13 +158,11 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
      From the **Assigned Group** drop-down menu, select the group as the Task assignee.
 
    * **Previous Task Assignee:** Select **Previous Task Assignee** to assign the Task to who was assigned the Task in the preceding Task element.
-4. Select the **Allow Reassignment** checkbox to allow the Task assignee to reassign the Task if necessary. If the **Allow Reassignment** checkbox is selected, the **Reassign** button displays in the Task summary to allow the Task assignee to reassign that Task. See [View a Task Summary](../../../using-processmaker/task-management/view-a-task-summary.md#summary).
+4. Select the **Allow Reassignment** checkbox to allow the Task assignee to reassign the Task if necessary. If the **Allow Reassignment** checkbox is selected, the **Reassign** button displays in the Task summary to allow that Task assignee to reassign that Task. See [View a Task Summary](../../../using-processmaker/task-management/view-a-task-summary.md#summary).
 
 ### Assign the Task Using a Rule
 
-Instead of [selecting to whom to assign a Task](add-and-configure-task-elements.md#select-to-whom-to-assign-the-task) that is reference in a Task element, assign that Task's assignee using a rule.
-
-Select to whom to assign the Task that is referenced in a Task element using a rule:
+Instead of [selecting to whom to assign a Task](add-and-configure-task-elements.md#select-to-whom-to-assign-the-task) that is referenced in a Task element, assign the Task's assignee using a rule:
 
 * **Requester:** Assign that Task to the Request initiator.
 * **User:** Assign that Task to a selected ProcessMaker user.
@@ -175,17 +173,17 @@ The rule that determines the Task assignee uses an expression syntax described i
 Follow these steps to select to whom to assign the Task that is referenced in a Task element using a rule:
 
 1. Select the Task element from the Process model in which to assign the Task via a rule. The **Inspector** panel displays the **Configuration** setting section.
-2. The **Assign by Expression** option displays below the **Configuration** settings section.  
+2. From the **Assign by Expression** option, click the **+Rule** button.  
 
    ![](../../../.gitbook/assets/rule-assignment-assignee-task-process-modeler-processes.png)
 
-3. Click the **+Rule** button. The **Expression** and **Task Assignment** fields display.  
+   The **Expression** and **Task Assignment** fields display.  
 
    ![](../../../.gitbook/assets/rule-expression-assignment-assignee-task-process-modeler-processes.png)
 
-4. In the **Expression** field, enter or edit the expression that determines that Task element's Task assignee using the syntax components described in [Expression Syntax Components](add-and-configure-task-elements.md#expression-syntax-components), and then press **Enter**.
-5. From the **Task Assignment** drop-down menu, select that Task's assignee from the following options:
-   * **Requester:** Select the **Requester** option to assign that Task element's Task to the Request initiator if the expression in the **Expression** field evaluates as True.
+3. In the **Expression** field, enter or edit the expression that determines that Task element's Task assignee using the syntax components described in [Expression Syntax Components](add-and-configure-task-elements.md#expression-syntax-components), and then press **Enter**.
+4. From the **Task Assignment** drop-down menu, select that Task's assignee from the following options:
+   * **Requester:** Select the **Requester** option to assign that Task element's Task to the Request initiator \(referred to as the requester\) if the expression in the **Expression** field evaluates as True.
    * **User:** Select the **User** option to assign that Task element's Task to a ProcessMaker user if the expression in the **Expression** field evaluates as True. When the **User** option is selected, the **Assigned User** drop-down menu displays below the **Task Assignment** option.  
 
      ![](../../../.gitbook/assets/rule-expression-user-assignment-assignee-task-process-modeler-processes.png)
@@ -197,7 +195,7 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
      ![](../../../.gitbook/assets/rule-expression-group-assignment-assignee-task-process-modeler-processes.png)
 
      From the **Assigned Group** drop-down menu, select which ProcessMaker group to assign that Task.
-6. Click **Save**.
+5. Click **Save**.
 
 #### Expression Syntax Components
 
@@ -270,7 +268,7 @@ Use the following expression syntax components to compose the expression that de
 
 Set when [notifications](../../../using-processmaker/notifications.md) regarding Tasks are sent to the following:
 
-* **Requester:** Send notifications to the Request initiator when the Task associated with this Task element is assigned and/or completed.
+* **Requester:** Send notifications to the Request initiator \(referred to as the requester\) when the Task associated with this Task element is assigned and/or completed.
 * **Task assignee:** Send notifications to Task assignees associated with this Task element when that Task is assigned and/or completed.
 * **Request participants:** Send notifications to all Request participants of this Process when the Task associated with this Task element is assigned or completed.
 
@@ -281,10 +279,10 @@ Follow these steps to set Task notifications in a Task element:
 
    ![](../../../.gitbook/assets/notification-task-process-modeler-processes.png)
 
-3. From the **Requester** settings, set Task notifications for the Request initiator following these guidelines:
-   * Enable the **Assigned** setting to notify the Request initiator when the Task associated with this Task element is assigned. Otherwise, disable this setting to not send this notification.
-   * Enable the **Completed** setting to notify the Request initiator when the Task associated with this Task element is completed. Otherwise, disable this setting to not send this notification.
-   * Enable the **Due** setting to notify the Request initiator when the Task associated with this Task element is due to be completed. Otherwise, disable this setting to not send this notification.
+3. From the **Requester** settings, set Task notifications for the Requester following these guidelines:
+   * Enable the **Assigned** setting to notify the Requester when the Task associated with this Task element is assigned. Otherwise, disable this setting to not send this notification.
+   * Enable the **Completed** setting to notify the Requester when the Task associated with this Task element is completed. Otherwise, disable this setting to not send this notification.
+   * Enable the **Due** setting to notify the Requester when the Task associated with this Task element is due to be completed. Otherwise, disable this setting to not send this notification.
 4. From the **Assignee** settings, set Task notifications for assignees of this Task element following these guidelines:
    * Enable the **Assigned** setting to notify Task assignees associated with this Task element when they are assigned this Task. Otherwise, disable this setting to not send this notification.
    * Enable the **Completed** setting to notify Task assignees associated with this Task element when they complete this Task. Otherwise, disable this setting to not send this notification.
@@ -293,6 +291,68 @@ Follow these steps to set Task notifications in a Task element:
    * Enable the **Assigned** setting to notify all Request participants of this Process when the Task associated with this Task element is assigned. Otherwise, disable this setting to not send this notification.
    * Enable the **Completed** setting to notify all Request participants of this Process when the Task associated with this Task element is completed. Otherwise, disable this setting to not send this notification.
    * Enable the **Due** setting to notify all Request participants of this Process when the Task associated with this Task element is due to be completed. Otherwise, disable this setting to not send this notification.
+
+### Select to Whom to Assign the Task via a Web Entry
+
+{% hint style="info" %}
+Your ProcessMaker instance must have the Web Entry package installed to select to whom to assign a Task via a Web entry. The Web Entry package allows anonymous or authenticated ProcessMaker users to start or participate in Requests via a published URL. See [Web Entry](../../../package-development-distribution/package-a-connector/web-entry.md).
+{% endhint %}
+
+When a Task element is placed into a Process model, Web Entry settings for that element are not configured. Therefore, even if the [Web Entry](../../../package-development-distribution/package-a-connector/web-entry.md) package is installed in your ProcessMaker instance, it must be configured for use.
+
+Follow these steps to select to whom to assign the Task via a Web Entry:
+
+1. Select the Task element from the Process model in which to select to whom to assign the Task via a Web Entry. The **Inspector** panel displays the **Configuration** setting section.
+2. From the Web Entry setting, click one of the following options:
+   * **Disabled:** Select the **Disabled** option to disable the Web Entry package from assigning this Task element via a Web Entry.
+   * **Anonymous:** Select the **Anonymous** option to assign the Task to any person who has access to the Web Entry's URL. This person may not be a ProcessMaker user.  
+
+     ![](../../../.gitbook/assets/web-entry-anonymous-task-process-modeler-processes.png)
+
+   * **Authenticated:** Select the **Authenticated** option to assign the Task to an authenticated ProcessMaker user or group member via the Web Entry's URL.  
+
+     ![](../../../.gitbook/assets/web-entry-authenticated-task-process-modeler-processes.png)
+
+     Select whether to assign a ProcessMaker user or group member the Task via the Web Entry's URL. To do so, follow these guidelines:
+
+     **ProcessMaker User**
+
+     1. From the **Web Entry Start Permission** drop-down menu, select the **User** option. The **User** drop-down menu displays below the **Web Entry Start Permission** drop-down menu.  
+
+        ![](../../../.gitbook/assets/web-entry-authenticated-mode-user-start-event-process-modeler-processes.png)
+
+     2. From the **User** drop-down menu, select which ProcessMaker user to assign the Task via the Web Entry's URL.
+
+     **ProcessMaker Group**
+
+     1. From the **Web Entry Start Permission** drop-down menu, select the **Group** option. The **Group** drop-down menu displays below the **Web Entry Start Permission** drop-down menu.  
+
+        ![](../../../.gitbook/assets/web-entry-authenticated-mode-group-start-event-process-modeler-processes.png)
+
+     2. From the **Group** drop-down menu, select which ProcessMaker group to assign the Task via the Web Entry's URL. Any member of that ProcessMaker group may be assigned the Task via the Web Entry's URL.
+3. From the **Screen Associated** drop-down menu, select the [ProcessMaker Screen](../../design-forms/what-is-a-form.md) that displays when the Web Entry URL is accessed. This drop-down menu displays only [Form](../../design-forms/screens-builder/types-for-screens.md#form) types so the Task assignee can interact with information in the ProcessMaker Screen. This is a required field.  
+
+   ![](../../../.gitbook/assets/web-entry-screen-associated-start-event-process-modeler-processes.png)
+
+4. From the **Completed Action** drop-down menu, select one of the following options:
+   * **Screen:** Select the **Screen** option to indicate that a ProcessMaker Screen displays after the Task assignee submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu. **Screen** is the default setting.  
+
+     ![](../../../.gitbook/assets/web-entry-completed-action-screen-start-event-process-modeler-processes.png)
+
+     After the **Screen** option is selected, the **Screen For Completed** drop-down menu displays below the **Completed Action** drop-down menu. From the **Screen For Completed** drop-down menu, select the ProcessMaker Screen that displays after the Task assignee submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu. This drop-down menu displays only [Display](../../design-forms/screens-builder/types-for-screens.md#display) types to display a message to the Task assignee. This is a required field.  
+
+     ![](../../../.gitbook/assets/web-entry-screen-completed-start-event-process-modeler-processes.png)\*\*\*\*
+
+   * **Url:** Select the **Url** option to indicate that the Task assignee is redirected to a URL after the Task assignee submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu.  
+
+     ![](../../../.gitbook/assets/web-entry-completed-action-url-start-event-process-modeler-processes.png)
+
+     After the **Url** option is selected, the **Url to redirect to** field displays below the **Completed Action** drop-down menu. In the **Url to redirect to** field, enter the URL to redirect the Requester after the Task assignee submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu, and then press **Enter**. This is a required field.  
+
+     ![](../../../.gitbook/assets/web-entry-url-start-event-process-modeler-processes.png)
+5. The **Web Entry URL** displays the Web Entry URL from which the Task assignee accesses the ProcessMaker Screen selected from the **Screen Associated** drop-down menu. The **Web Entry URL** value cannot be changed. The Web Entry package generates this URL using the following structure: _`ProcessMaker instance domain`_`/webentry/`_`Web Entry numerical instance`_`/`_`Identifier Value of this Start Event element`_. If necessary, click the **Copy to clipboard** link to copy the **Web Entry URL** value so that it is available in your clipboard.  
+
+   ![](../../../.gitbook/assets/web-entry-url-access-start-event-process-modeler-processes.png)
 
 ## Related Topics
 

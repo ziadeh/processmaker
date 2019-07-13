@@ -22,3 +22,5 @@ Ask your ProcessMaker sales representative how this package can be installed in 
 
 {% page-ref page="../../designing-processes/process-design/model-your-process/add-and-configure-an-event-element.md" %}
 
+{% page-ref page="../../designing-processes/process-design/model-your-process/add-and-configure-task-elements.md" %}
+
