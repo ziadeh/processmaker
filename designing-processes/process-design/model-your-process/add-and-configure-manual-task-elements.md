@@ -25,21 +25,21 @@ Follow these steps to add a Manual Task element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Manual Task** element in the **Controls** panel.
+3. Locate the **Manual Task** element in the **Controls** panel.  
 
-   ![](../../../.gitbook/assets/task-bpmn-side-bar-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/manual-task-bpmn-side-bar-process-modeler-processes.png)
 
 4. Drag the element to where in the Process model canvas that you want to place it. If a Pool element is in your Process model, the Manual Task element cannot be placed outside of the Pool element.
 
-![Task element](../../../.gitbook/assets/task-element-process-modeler-processes.png)
+![Manual Task element](../../../.gitbook/assets/manual-task-process-modeler-processes.png)
 
 After the element is placed into the Process model, you may move it by dragging it to the new location.
 
 {% hint style="warning" %}
-Moving a Task element has the following limitations in regards to the following Process model elements:
+Moving a Manual Task element has the following limitations in regards to the following Process model elements:
 
-* **Pool element:** If the Task element is inside of a [Pool](process-modeling-element-descriptions.md#pool) element, it cannot be moved outside of the Pool element. If you attempt to do so, Process Modeler places the Task element inside the Pool element closest to where you attempted to move it.
-* **Lane element:** If the Task element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Task element cannot be moved outside of the Pool element.
+* **Pool element:** If the Manual Task element is inside of a [Pool](process-modeling-element-descriptions.md#pool) element, it cannot be moved outside of the Pool element. If you attempt to do so, Process Modeler places the Manual Task element inside the Pool element closest to where you attempted to move it.
+* **Lane element:** If the Manual Task element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Manual Task element cannot be moved outside of the Pool element.
 {% endhint %}
 
 ## Configure a Task Element
@@ -61,12 +61,12 @@ Process Modeler automatically assigns a unique value to each Process element add
 All identifier values for all elements in the Process model must be unique.
 {% endhint %}
 
-Follow these steps to edit the identifier value for a Task element:
+Follow these steps to edit the identifier value for a Manual Task element:
 
-1. Select the Task element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Manual Task element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
-   ![](../../../.gitbook/assets/task-configuration-identifier-name-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/manual-task-configuration-identifier-name-process-modeler-processes.png)
 
 3. In the **Identifier** field, edit the Task element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
@@ -79,46 +79,55 @@ Follow these steps to edit the name for a Task element:
 1. Select the Task element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
-   ![](../../../.gitbook/assets/task-configuration-identifier-name-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/manual-task-configuration-identifier-name-process-modeler-processes.png)
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
-### Select the ProcessMaker Screen for a Task Element
+### Select the ProcessMaker Screen That Summarizes a Completed Request
+
+After a [Request](../../../using-processmaker/requests/what-is-a-request.md) completes when an End Event element triggers, a [ProcessMaker Screen](../../design-forms/what-is-a-form.md) can display a summary of the completed Request. If a Process model has multiple End Event elements, then each End Event element can reference a different ProcessMaker Screen to display a different summary.
+
+For example, if an End Event element triggers from Lane 1 of a Pool element, then use a different ProcessMaker Screen to display the Request summary than an End Event element that triggers from Lane 2.
+
+When an End Event element is placed into a Process model, it is not configured to display a summary ProcessMaker Screen when it triggers. Therefore, it must be configured.
+
+Follow these steps to select the ProcessMaker Screen that displays when an End Event element triggers:
+
+1. Select the End Event element from the Process model in which to select the ProcessMaker Screen that displays when that End Event element is triggered, thereby completing that Request. The **Inspector** panel displays the **Configuration** setting section.
+2. Expand the **Configuration** setting section if it is not presently expanded. The **Summary screen** displays.  
+
+   ![](../../../.gitbook/assets/summary-screen-end-event-process-modeler-processes.png)
+
+3. From the **Summary screen** drop-down menu, select the ProcessMaker Screen that has been designed to display Request summaries if that End Event element triggers. Note that another End Event element located elsewhere in the Process model, such as another Pool or Lane element, may reference a different ProcessMaker Screen to display Request summaries when it triggers.
+
+### Select the ProcessMaker Screen to Indicate that a Manual Task is Complete
+
+After a Manual Task element triggers to indicate manual work is to be performed, a [ProcessMaker Screen](../../design-forms/what-is-a-form.md) can display for the Request participant performing the manual work to indicate that the work is complete. If a Process model has multiple Manual Task elements, then each Manual Task element can reference a different ProcessMaker Screen.
+
+For example, if a Manual Task element triggers from Lane 1 of a Pool element, then use a different ProcessMaker Screen that Request participant uses to indicate manual work is complete than a Manual Task element that triggers from Lane 2.
+
+When a Manual Task element is placed into a Process model, it is not configured to display a ProcessMaker Screen. Therefore, it must be configured.
+
+Follow these steps to select the ProcessMaker Screen that displays for the Request participant to indicate that manual work is complete:
+
+1. Select the Manual Task element from the Process model in which to select the ProcessMaker Screen that displays so that the Request participant can indicate that the Manual Task is complete. The **Inspector** panel displays the **Configuration** setting section.
+2. Expand the **Configuration** setting section if it is not presently expanded. The **Summary screen** displays.  
+
+   ![](../../../.gitbook/assets/manual-task-configuration-summary-screen-process-modeler-processes.png)
+
+3. From the **Summary screen** drop-down menu, select the ProcessMaker Screen that has been designed for the Request participant to indicate that the manual work is completed. Note that another Manual Task element located elsewhere in the Process model, such as another Pool or Lane element, may reference a different ProcessMaker Screen to display for the Request participant to indicate that the manual work in that Pool or Lane element is completed.
+
+### Specify When the Manual Task is Due
+
+Specify when a Manual Task element is due from when that manual work is assigned to a Request participant. The default period of time for a task to be due is 72 hours \(three days\).
+
+The manual task due date displays for each [pending assigned task](../../../using-processmaker/requests/view-completed-requests.md#view-completed-requests-in-which-you-are-a-participant). After the specified time has expired for a manual task, an overdue indicator displays for that task to the assigned task recipient.
 
 {% hint style="info" %}
-See [What is a Screen?](../../design-forms/what-is-a-form.md) for more information.
+Specify due time for a Manual Task element in total number of hours. This includes hours not normally associated with business hours, including overnight hours, weekends, and holidays.
 {% endhint %}
 
-Since Task elements are designed to collect or display [Request](../../../using-processmaker/requests/what-is-a-request.md) information, specify which ProcessMaker Screen a selected Task element uses. A ProcessMaker Screen must already exist before it can be selected for use in a Task element.
-
-{% hint style="warning" %}
-Ensure to select a ProcessMaker Screen for each Task element in your Process model. If a ProcessMaker Screen is not specified and Requests are started for that Process, users who are assigned Tasks with no ProcessMaker Screens have no way of interacting with the Request.
-{% endhint %}
-
-Follow these steps to select a ProcessMaker Screen for a Task element:
-
-1. Select the Task element from the Process model in which to specify its ProcessMaker Screen. The **Inspector** panel displays the **Configuration** setting section.
-2. The **Screen For Input** drop-down menu displays below the **Configuration** settings section.  
-
-   ![](../../../.gitbook/assets/screen-input-task-process-modeler-processes.png)
-
-3. From the **Screen For Input** drop-down menu, select which ProcessMaker Screen that Task element uses. Click the **Refresh** link below the **Screen For Input** drop-down menu if necessary to refresh the options in the drop-down menu.
-
-{% hint style="warning" %}
-If no ProcessMaker Screens exist, the **Screen For Input** drop-down menu contains no options. Ensure to select a ProcessMaker Screen for every Task element in the Process model before deploying your Process.
-{% endhint %}
-
-### Specify When the Task is Due
-
-Specify how much time a [Task](../../../using-processmaker/task-management/what-is-a-task.md) in a Task element is due from when that task is assigned to a Request participant. The default period of time for a task to be due is 72 hours \(three days\).
-
-The task due date displays for each [pending assigned task](../../../using-processmaker/requests/view-completed-requests.md#view-completed-requests-in-which-you-are-a-participant). After the specified time has expired for a task, an overdue indicator displays for that task to the assigned task recipient.
-
-{% hint style="info" %}
-Specify due time for a Task element in total number of hours. This includes hours not normally associated with business hours, including overnight hours, weekends, and holidays.
-{% endhint %}
-
-Follow these steps to specify when a Task element is due:
+Follow these steps to specify when a Manual Task element is due:
 
 1. Select the Task element from the Process model in which to specify how many hours the task is due. The **Inspector** panel displays the **Configuration** setting section.
 2. The **Due In** field displays below the **Configuration** settings section.  
