@@ -101,11 +101,11 @@ Ensure to select a ProcessMaker Script for each Script Task element in your Proc
 Follow these steps to select a ProcessMaker Script for a Script Task element:
 
 1. Select the Script Task element from the Process model in which to specify its ProcessMaker Script. The **Inspector** panel displays the **Configuration** setting section.
-2. The **Script** drop-down menu displays below the **Configuration** settings section.  
+2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Script** drop-down menu.  
 
    ![](../../../.gitbook/assets/script-drop-down-script-task-process-modeler-processes.png)
 
-3. From the **Script** drop-down menu, select which ProcessMaker Script that Script Task element uses. Click the **Refresh** link below the Script drop-down menu if necessary to refresh the options in the drop-down menu.
+3. From the **Script** drop-down menu, select which ProcessMaker Script that Script Task element uses.
 
 {% hint style="warning" %}
 If no ProcessMaker Scripts exist, the **Script** drop-down menu contains no options. Ensure to select and configure a ProcessMaker Script for every Script Task element in the Process model before deploying your Process.

@@ -100,7 +100,7 @@ Adding settings to the Intermediate Message Catch Event element restricts how th
 Follow these steps to configure how to trigger an Intermediate Message Catch Event element:
 
 1. Select the Intermediate Message Catch Event element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Message Event Identifier** field displays.  
+2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Message Event Identifier** field.  
 
    ![](../../../.gitbook/assets/data-name-intermediate-message-catch-event-proces-modeler-processes.png)
 

@@ -101,7 +101,7 @@ When a Start Event element is placed into a Process model, it is not configured 
 Follow these steps to select which ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) can start a Request via this Start Event element:
 
 1. Select the Start Event element from the Process model in which to select the ProcessMaker user that may start a Request. The **Inspector** panel displays the **Configuration** setting section.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Start Permission** drop-down menu displays.  
+2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Start Permission** drop-down menu.  
 
    ![](../../../.gitbook/assets/start-permission-request-event-process-modeler-processes.png)
 
@@ -118,7 +118,7 @@ When a Start Event element is placed into a Process model, it is not configured 
 Follow these steps to select which ProcessMaker [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) members can start a Request via this Start Event element:
 
 1. Select the Start Event element from the Process model in which to select the ProcessMaker group that may start a Request. The **Inspector** panel displays the **Configuration** setting section.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Start Permission** drop-down menu displays.
+2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Start Permission** drop-down menu.
 
    ![](../../../.gitbook/assets/start-permission-request-event-process-modeler-processes.png)
 
@@ -150,7 +150,7 @@ When a Start Event element is placed into a Process model, Web Entry settings fo
 Follow these steps to select who can start a Request via a Web Entry URL via this Start Event element:
 
 1. Select the Start Event element from the Process model in which to select who may start a Request via a Web Entry URL.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Start Permission** drop-down menu displays. The **Inspector** panel displays the **Configuration** setting section.  
+2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Start Permission** drop-down menu displays. The **Inspector** panel displays the **Configuration** setting section.  
 
    ![](../../../.gitbook/assets/web-entry-mode-start-event-process-modeler-processes.png)
 
