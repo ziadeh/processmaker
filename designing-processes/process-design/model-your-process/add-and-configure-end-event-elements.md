@@ -94,7 +94,7 @@ When an End Event element is placed into a Process model, it is not configured t
 Follow these steps to select the ProcessMaker Screen that displays when an End Event element triggers:
 
 1. Select the End Event element from the Process model in which to select the ProcessMaker Screen that displays when that End Event element is triggered, thereby completing that Request. The **Inspector** panel displays the **Configuration** setting section.
-2. The **Summary screen** drop-down menu displays below the **Configuration** setting section.  
+2. Expand the **Configuration** setting section if it is not presently expanded. The **Summary screen** displays.  
 
    ![](../../../.gitbook/assets/summary-screen-end-event-process-modeler-processes.png)
 

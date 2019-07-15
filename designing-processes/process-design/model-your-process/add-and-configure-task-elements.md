@@ -94,7 +94,7 @@ Ensure to select a ProcessMaker Screen for each Task element in your Process mod
 Follow these steps to select a ProcessMaker Screen for a Task element:
 
 1. Select the Task element from the Process model in which to specify its ProcessMaker Screen. The **Inspector** panel displays the **Configuration** setting section.
-2. The **Screen For Input** drop-down menu displays below the **Configuration** settings section.  
+2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Screen For Input** drop-down menu.  
 
    ![](../../../.gitbook/assets/screen-input-task-process-modeler-processes.png)
 
@@ -119,7 +119,7 @@ When a Task element is placed into a Process model, the default period of time f
 Follow these steps to specify when a Task element is due:
 
 1. Select the Task element from the Process model in which to specify how many hours the task is due. The **Inspector** panel displays the **Configuration** setting section.
-2. The **Due In** field displays below the **Configuration** settings section.  
+2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Due In** field.  
 
    ![](../../../.gitbook/assets/due-task-process-modeler-processes.png)
 
@@ -139,7 +139,7 @@ Select to whom to assign the Task that is referenced in a Task element:
 Follow these steps to select to whom to assign the Task that is referenced in a Task element:
 
 1. Select the Task element from the Process model in which to select the Task assignee. The **Inspector** panel displays the **Configuration** setting section.
-2. The **Task Assignment** drop-down menu displays below the **Configuration** settings section.  
+2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Task Assignment** drop-down menu.  
 
    ![](../../../.gitbook/assets/assignment-assignee-task-process-modeler-processes.png)
 
@@ -173,7 +173,8 @@ The rule that determines the Task assignee uses an expression syntax described i
 Follow these steps to select to whom to assign the Task that is referenced in a Task element using a rule:
 
 1. Select the Task element from the Process model in which to assign the Task via a rule. The **Inspector** panel displays the **Configuration** setting section.
-2. From the **Assign by Expression** option, click the **+Rule** button.  
+2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Assign by Expression** option.
+3. From the **Assign by Expression** option, click the **+Rule** button.  
 
    ![](../../../.gitbook/assets/rule-assignment-assignee-task-process-modeler-processes.png)
 
@@ -181,8 +182,8 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
 
    ![](../../../.gitbook/assets/rule-expression-assignment-assignee-task-process-modeler-processes.png)
 
-3. In the **Expression** field, enter or edit the expression that determines that Task element's Task assignee using the syntax components described in [Expression Syntax Components](add-and-configure-task-elements.md#expression-syntax-components), and then press **Enter**.
-4. From the **Task Assignment** drop-down menu, select that Task's assignee from the following options:
+4. In the **Expression** field, enter or edit the expression that determines that Task element's Task assignee using the syntax components described in [Expression Syntax Components](add-and-configure-task-elements.md#expression-syntax-components), and then press **Enter**.
+5. From the **Task Assignment** drop-down menu, select that Task's assignee from the following options:
    * **Requester:** Select the **Requester** option to assign that Task element's Task to the Request initiator \(referred to as the requester\) if the expression in the **Expression** field evaluates as True.
    * **User:** Select the **User** option to assign that Task element's Task to a ProcessMaker user if the expression in the **Expression** field evaluates as True. When the **User** option is selected, the **Assigned User** drop-down menu displays below the **Task Assignment** option.  
 
@@ -195,7 +196,7 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
      ![](../../../.gitbook/assets/rule-expression-group-assignment-assignee-task-process-modeler-processes.png)
 
      From the **Assigned Group** drop-down menu, select which ProcessMaker group to assign that Task.
-5. Click **Save**.
+6. Click **Save**.
 
 #### Expression Syntax Components
 
@@ -275,7 +276,7 @@ Set when [notifications](../../../using-processmaker/notifications.md) regarding
 Follow these steps to set Task notifications in a Task element:
 
 1. Select the Task element from the Process model in which to set Task notifications. The **Inspector** panel displays the **Configuration** setting section.
-2. The **Task Notifications** settings displays below the **Configuration** settings section.  
+2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Task Notifications** settings.  
 
    ![](../../../.gitbook/assets/notification-task-process-modeler-processes.png)
 

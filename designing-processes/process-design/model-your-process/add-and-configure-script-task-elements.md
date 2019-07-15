@@ -131,7 +131,7 @@ The JSON script in the Script Task element overrides any JSON script entered in 
 Follow these steps to enter or edit a JSON configuration script for a Script Task element:
 
 1. Select the Script Task element from the Process model in which to specify its ProcessMaker Script. The **Inspector** panel displays the **Configuration** setting section.
-2. The **Script Configuration** option displays below the **Configuration** settings section.  
+2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Script Configuration** option displays.  
 
    ![](../../../.gitbook/assets/script-configuration-script-task-process-modeler-processes.png)
 

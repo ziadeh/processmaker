@@ -4,12 +4,12 @@ description: Add and configure Manual Task elements in your Process model.
 
 # Add and Configure Manual Task Elements
 
-## Add a Task Element
+## Add a Manual Task Element
 
 {% hint style="info" %}
-### Don't Know What a Task Element Is?
+### Don't Know What a Manual Task Element Is?
 
-See [Process Modeling Element Descriptions](process-modeling-element-descriptions.md) for a description of the [Task](process-modeling-element-descriptions.md#user-task) element.
+See [Process Modeling Element Descriptions](process-modeling-element-descriptions.md) for a description of the [Manual Task](process-modeling-element-descriptions.md#manual-task) element.
 
 ### Permissions Required
 
@@ -21,15 +21,15 @@ Your user account or group membership must have the following permissions to add
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to add a Task element to the Process model:
+Follow these steps to add a Manual Task element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Task** element in the **BPMN** panel.
+3. Locate the **Manual Task** element in the **Controls** panel.
 
    ![](../../../.gitbook/assets/task-bpmn-side-bar-process-modeler-processes.png)
 
-4. Drag the element to where in the Process model canvas that you want to place it. If a Pool element is in your Process model, the Task element cannot be placed outside of the Pool element.
+4. Drag the element to where in the Process model canvas that you want to place it. If a Pool element is in your Process model, the Manual Task element cannot be placed outside of the Pool element.
 
 ![Task element](../../../.gitbook/assets/task-element-process-modeler-processes.png)
 
