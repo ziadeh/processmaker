@@ -98,7 +98,7 @@ Follow these steps to select a ProcessMaker Screen for a Task element:
 
    ![](../../../.gitbook/assets/screen-input-task-process-modeler-processes.png)
 
-3. From the **Screen For Input** drop-down menu, select which ProcessMaker Screen that Task element uses.
+3. From the **Screen For Input** drop-down menu, select which ProcessMaker Screen that Task element references. This drop-down menu displays only [Form](../../design-forms/screens-builder/types-for-screens.md#form) types so the Task assignee can interact with information in the ProcessMaker Screen. Note that another Task element located elsewhere in the Process model may reference a different ProcessMaker Screen to display a different Task when it triggers.
 
 {% hint style="warning" %}
 If no ProcessMaker Screens exist, the **Screen For Input** drop-down menu contains no options. Ensure to select a ProcessMaker Screen for every Task element in the Process model before deploying your Process.

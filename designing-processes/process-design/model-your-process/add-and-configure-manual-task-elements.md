@@ -98,24 +98,7 @@ Follow these steps to select the ProcessMaker Screen that displays when an End E
 
    ![](../../../.gitbook/assets/summary-screen-end-event-process-modeler-processes.png)
 
-3. From the **Summary screen** drop-down menu, select the ProcessMaker Screen that has been designed to display Request summaries if that End Event element triggers. Note that another End Event element located elsewhere in the Process model, such as another Pool or Lane element, may reference a different ProcessMaker Screen to display Request summaries when it triggers.
-
-### Select the ProcessMaker Screen to Indicate that a Manual Task is Complete
-
-After a Manual Task element triggers to indicate manual work is to be performed, a [ProcessMaker Screen](../../design-forms/what-is-a-form.md) can display for the Request participant performing the manual work to indicate that the work is complete. If a Process model has multiple Manual Task elements, then each Manual Task element can reference a different ProcessMaker Screen.
-
-For example, if a Manual Task element triggers from Lane 1 of a Pool element, then use a different ProcessMaker Screen that Request participant uses to indicate manual work is complete than a Manual Task element that triggers from Lane 2.
-
-When a Manual Task element is placed into a Process model, it is not configured to display a ProcessMaker Screen. Therefore, it must be configured.
-
-Follow these steps to select the ProcessMaker Screen that displays for the Request participant to indicate that manual work is complete:
-
-1. Select the Manual Task element from the Process model in which to select the ProcessMaker Screen that displays so that the Request participant can indicate that the Manual Task is complete. The **Inspector** panel displays the **Configuration** setting section.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Summary screen** displays.  
-
-   ![](../../../.gitbook/assets/manual-task-configuration-summary-screen-process-modeler-processes.png)
-
-3. From the **Summary screen** drop-down menu, select the ProcessMaker Screen that has been designed for the Request participant to indicate that the manual work is completed. Note that another Manual Task element located elsewhere in the Process model, such as another Pool or Lane element, may reference a different ProcessMaker Screen to display for the Request participant to indicate that the manual work in that Pool or Lane element is completed.
+3. From the **Summary screen** drop-down menu, select the ProcessMaker Screen that has been designed to display Request summaries if that End Event element triggers. This drop-down menu displays only [Display](../../design-forms/screens-builder/types-for-screens.md#display) types to display a message to the Task assignee in the Task summary. Note that another End Event element located elsewhere in the Process model, such as another Pool or Lane element, may reference a different ProcessMaker Screen to display Request summaries when it triggers.
 
 ### Specify When the Manual Task is Due
 

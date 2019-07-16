@@ -98,7 +98,7 @@ Follow these steps to select the ProcessMaker Screen that displays when an End E
 
    ![](../../../.gitbook/assets/summary-screen-end-event-process-modeler-processes.png)
 
-3. From the **Summary screen** drop-down menu, select the ProcessMaker Screen that has been designed to display Request summaries if that End Event element triggers. Note that another End Event element located elsewhere in the Process model, such as another Pool or Lane element, may reference a different ProcessMaker Screen to display Request summaries when it triggers.
+3. From the **Summary screen** drop-down menu, select the ProcessMaker Screen that has been designed to display Request summaries if that End Event element triggers. This drop-down menu displays only [Display](../../design-forms/screens-builder/types-for-screens.md#display) types to display a message to the Request participant. Note that another End Event element located elsewhere in the Process model, such as another Pool or Lane element, may reference a different ProcessMaker Screen to display Request summaries when it triggers.
 
 ## Related Topics
 
