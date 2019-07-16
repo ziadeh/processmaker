@@ -28,8 +28,6 @@ The assigned Task displays in the **Form** tab. The **Form** tab displays by def
 
   ![](../../.gitbook/assets/forms-tab-assigned-to-do-summary-manual-tasks.png)
 
-The **Form** tab displays by default when an assigned Task is opened. Below is an example of a Task displayed in the **Forms** tab.
-
 ### Editable Task Data
 
 {% hint style="info" %}
