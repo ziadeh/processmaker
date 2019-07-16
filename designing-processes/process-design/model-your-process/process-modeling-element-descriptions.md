@@ -214,9 +214,9 @@ An Exclusive Gateway element represents an evaluation of a [Request's](../../../
 
 Use an Exclusive Gateway element when you want only one condition to pass. Otherwise, consider using an Inclusive Gateway element whereby any conditions that pass specified conditions allow workflow routing to continue.
 
-In Process Modeler, the Exclusive Gateway element is labeled as "Exclusive Gateway" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Exclusive Gateway element is labeled as "Exclusive Gateway."
 
-![Exclusive Gateway element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-exclusive-gateway-process-modeler-processes.png)
+![Exclusive Gateway element in the left side panel in Process Modeler](../../../.gitbook/assets/bpmn-panel-exclusive-gateway-process-modeler-processes.png)
 
 Below is an Exclusive Gateway element when it has been placed into a Process model.
 
@@ -235,9 +235,9 @@ An Inclusive Gateway element represents an evaluation of a [Request's](../../../
 
 Use an Inclusive Gateway element when you potentially want multiple workflow routes to occur simultaneously in that Request. Otherwise, consider using an Exclusive Gateway element to allow only one Sequence Flow element's condition\(s\) to continue workflow route for that Request.
 
-In Process Modeler, the Inclusive Gateway element is labeled as "Inclusive Gateway" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Inclusive Gateway element is labeled as "Inclusive Gateway."
 
-![Inclusive Gateway element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-inclusive-gateway-process-modeler-processes.png)
+![Inclusive Gateway element in the left side panel in Process Modeler](../../../.gitbook/assets/bpmn-inclusive-gateway-process-modeler-processes.png)
 
 Below is an Inclusive Gateway element when it has been placed into a Process model.
 
@@ -263,9 +263,9 @@ One Parallel Gateway element can only converge or diverge workflow, but not both
 
 ![Use two Parallel Gateway elements for both converging and diverging parallel workflow](../../../.gitbook/assets/parallel-gateway-converging-and-diverging.png)
 
-In Process Modeler, the Parallel Gateway element is labeled as "Parallel Gateway" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Parallel Gateway element is labeled as "Parallel Gateway."
 
-![Parallel Gateway element in the Controls panel of Process Modeler](../../../.gitbook/assets/parallel-gateway-bpmn-panel-process-modeler-processes.png)
+![Parallel Gateway element in the left side panel in Process Modeler](../../../.gitbook/assets/parallel-gateway-bpmn-panel-process-modeler-processes.png)
 
 Below is a Parallel Gateway element when it has been placed into a Process model.
 
@@ -293,9 +293,9 @@ In this example, connect the following Process modeling elements from the Event-
 * **Intermediate Timer Event element:** The first connecting event from the Event-Based Gateway element is an Intermediate Timer Event element that is set to 24 hours. This event represents a 24-hour period in which presumably a notification has not arrived that the package shipped within that time period. If the timer set in the Intermediate Timer Event expires, then workflow routes to a [Manual Task](process-modeling-element-descriptions.md#manual-task) element in which its assignee telephones the shipping company.
 * **Intermediate Message Catch Event element:** The second connecting element is an Intermediate Message Catch Event element that represents a notification of the package’s shipment presumably before the timer set in the Intermediate Timer Event element expires. If the Intermediate Message Catch Event element triggers, then the notification was received before the 24-hour period expired. No further action is required.
 
-In Process Modeler, the Event-Based Gateway element is labeled as "Event-Based Gateway" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Event-Based Gateway element is labeled as "Event-Based Gateway."
 
-![Event-Based Gateway in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-event-based-gateway-process-modeler-processes.png)
+![Event-Based Gateway element in the left side panel in Process Modeler](../../../.gitbook/assets/bpmn-event-based-gateway-process-modeler-processes.png)
 
 Below is an Event-Based Gateway element when it has been placed into a Process model.
 
@@ -313,9 +313,9 @@ BPMN 2.0 provides graphical representations to organize participants in a Proces
 
 A Pool element represents an organization or entity involved in a Process model. The Pool element might represent a specific role \("Human Resources"\), entity \(such as a company\) or a general relationship \(such as a buyer, seller, or manufacturer\).
 
-In Process Modeler, the Pool element is labeled as "Pool" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Pool element is labeled as "Pool."
 
-![Pool element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-pool-process-modeler-processes.png)
+![Pool element in the left side panel in Process Modeler](../../../.gitbook/assets/bpmn-panel-pool-process-modeler-processes.png)
 
 Below is a Pool element when it has been placed into a Process model. "New Pool" is the name of the Pool element.
 
@@ -352,7 +352,7 @@ As a best practice, indicate a consistent direction of Sequence Flow elements: e
 
 In Process Modeler, Flow indicators display when you click an element in the Process model. The top Flow indicator is for Sequence Flows \(highlighted below\), represented with a solid line.
 
-![Sequence Flow indicator \(highlighted\) on a selected Process element](../../../.gitbook/assets/sequence-flow-indicator-process-modeler-processes.png)
+![Sequence Flow indicator \(highlighted\) on a selected Process model element](../../../.gitbook/assets/sequence-flow-indicator-process-modeler-processes.png)
 
 {% hint style="info" %}
 [Text annotations](process-modeling-element-descriptions.md#text-annotation), [Pool](process-modeling-element-descriptions.md#pool), and [Lane](process-modeling-element-descriptions.md#lane) elements do not use Sequence Flow elements. Furthermore, Sequence Flow elements cannot connect between Process model elements that are in different Pool elements since Pool elements represent different organizations. However, use Message Flow elements to infer communication between elements in different Pool elements.
@@ -398,7 +398,7 @@ Use [Text Annotation](process-modeling-element-descriptions.md#text-annotation) 
 
 A Text Annotation element is human-readable text in a Process model that provides description about the Process. Text Annotation elements perform no functional role in Process Requests or workflow routing.
 
-In Process Modeler, the Text Annotation element is labeled as "Text Annotation" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Text Annotation element is labeled as "Text Annotation."
 
 ![Text Annotation element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-text-annotation-process-modeler-processes.png)
 
