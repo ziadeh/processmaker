@@ -18,11 +18,19 @@ Below is an example of a Task summary.
 
 ### Task Form
 
-The assigned Task displays in the **Form** tab. The Request participant enters, reviews, and/or makes decisions based on information in the form. These forms are [ProcessMaker Screens](../../designing-processes/design-forms/what-is-a-form.md) designed in [Screens Builder](../../designing-processes/design-forms/screens-builder/).
+The assigned Task displays in the **Form** tab. The **Form** tab displays by default when an assigned Task is opened. The Form tab displays information differently depending on whether ProcessMaker software is involved in the task's activity:
+
+* **Forms in which ProcessMaker software is involved with the activity:** The **Form** tab displays an interactive [ProcessMaker Screen](../../designing-processes/design-forms/what-is-a-form.md), which is a [Form](../../designing-processes/design-forms/screens-builder/types-for-screens.md#form)-type Screen. Form-type ProcessMaker Screens allow Request participants to enter, review, and/or make decisions based on information in the form. Below is an example of a Task in which ProcessMaker software is involved with the activity.  
+
+  ![](../../.gitbook/assets/forms-tab-assigned-to-do-summary-tasks.png)
+
+* **Forms in which ProcessMaker software is not involved with the activity:** The **Form** tab displays a ProcessMaker Screen that only displays a message. This is a [Display](../../designing-processes/design-forms/screens-builder/types-for-screens.md#display)-type Screen that allows the Task assignee to do a manual task in which ProcessMaker software is not directly involved, such as moving inventory containers. When the manual Task is complete, the Task assignee clicks the **Complete Task** button. Below is an example of a Task in which ProcessMaker software is not involved with the activity.  
+
+  ![](../../.gitbook/assets/forms-tab-assigned-to-do-summary-manual-tasks.png)
 
 The **Form** tab displays by default when an assigned Task is opened. Below is an example of a Task displayed in the **Forms** tab.
 
-![Assigned Task displayed in the &quot;Forms&quot; tab](../../.gitbook/assets/forms-tab-assigned-to-do-summary-tasks.png)
+![Assigned Task displayed in the Forms tab](../../.gitbook/assets/forms-tab-assigned-to-do-summary-tasks.png)
 
 ### Editable Task Data
 
