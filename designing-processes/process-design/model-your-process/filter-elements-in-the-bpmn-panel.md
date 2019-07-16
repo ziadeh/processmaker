@@ -1,13 +1,13 @@
 ---
-description: Filter which elements display in the Controls panel.
+description: Filter which elements and controls display for use in the Process model.
 ---
 
-# Filter Elements in the Controls Panel
+# Filter Elements and Controls
 
-## Filter Which Elements Display in the Controls Panel
+## Filter Which Elements and Controls Display for Use in the Process Model
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to filter elements in the **Controls** panel:
+Your user account or group membership must have the following permissions to filter elements for use in the Process model:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -15,33 +15,31 @@ Your user account or group membership must have the following permissions to fil
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-The **Controls** panel in Process Modeler displays elements that can compose a Process model.
+The panel to the left of the Process model displays elements and controls that can be used in a Process model.
 
-![Controls Panel in Process Modeler](../../../.gitbook/assets/bpmn-panel-process-modeler-processes.png)
+![Panel that contains elements and controls in Process Modeler](../../../.gitbook/assets/bpmn-panel-process-modeler-processes.png)
 
 {% hint style="info" %}
 See [Process Modeling Element Descriptions](process-modeling-element-descriptions.md).
 {% endhint %}
 
-Follow these steps to filter which Process modeling elements display in the **Controls** panel:
+Follow these steps to filter which Process modeling elements and controls display for use in the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Select the **Filter** field in the **Controls** panel.
+3. Select the **Filter Controls** field.
 
    ![](../../../.gitbook/assets/filter-bpmn-field-process-modeler-processes.png)
 
-4. Begin entering the name of the Process model element\(s\) to display. Process model elements that do not match your entered text no longer display in the **Controls** panel.
+4. Begin entering the name of the Process model element\(s\)/control\(s\) to display. Process model elements and controls that do not match your entered text no longer display in that panel.
 
 {% hint style="info" %}
-To display all Process elements in the **Controls** panel, remove the text from the **Filter** field.
+To display all Process elements in the panel, remove the text from the **Filter Controls** field.
 {% endhint %}
 
 ## Related Topics
 
 {% page-ref page="process-modeling-element-descriptions.md" %}
-
-{% page-ref page="view-the-inspector-panel.md" %}
 
 {% page-ref page="edit-the-process-model-information.md" %}
 

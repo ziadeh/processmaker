@@ -83,28 +83,26 @@ Follow these steps to edit the name for a Task element:
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
-### Select the ProcessMaker Screen That Summarizes a Completed Request
+### Select the ProcessMaker Screen Associated with the Manual Task
 
-After a [Request](../../../using-processmaker/requests/what-is-a-request.md) completes when an End Event element triggers, a [ProcessMaker Screen](../../design-forms/what-is-a-form.md) can display a summary of the completed Request. If a Process model has multiple End Event elements, then each End Event element can reference a different ProcessMaker Screen to display a different summary.
+When a Manual Task element triggers, a [ProcessMaker Screen](../../design-forms/what-is-a-form.md) can display instructions or information in its [Task summary](../../../using-processmaker/task-management/view-a-task-summary.md#task-form) so its Task assignee can perform the manual task. The ProcessMaker Screen must be of [Display](../../design-forms/screens-builder/types-for-screens.md#display) type.
 
-For example, if an End Event element triggers from Lane 1 of a Pool element, then use a different ProcessMaker Screen to display the Request summary than an End Event element that triggers from Lane 2.
+When a Manual Task element is placed into a Process model, it is not configured to display a ProcessMaker Screen when it triggers. Therefore, it must be configured.
 
-When an End Event element is placed into a Process model, it is not configured to display a summary ProcessMaker Screen when it triggers. Therefore, it must be configured.
+Follow these steps to select the ProcessMaker Screen that displays when a Manual Task element triggers:
 
-Follow these steps to select the ProcessMaker Screen that displays when an End Event element triggers:
+1. Select the Manual Task element from the Process model in which to select the ProcessMaker Screen that displays when that Manual Task element is triggered, thereby providing instructions or information to the Task assignee. The **Inspector** panel displays the **Configuration** setting section.
+2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Summary screen** drop-down menu.  
 
-1. Select the End Event element from the Process model in which to select the ProcessMaker Screen that displays when that End Event element is triggered, thereby completing that Request. The **Inspector** panel displays the **Configuration** setting section.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Summary screen** displays.  
+   ![](../../../.gitbook/assets/manual-task-configuration-summary-screen-process-modeler-processes%20%281%29.png)
 
-   ![](../../../.gitbook/assets/summary-screen-end-event-process-modeler-processes.png)
-
-3. From the **Summary screen** drop-down menu, select the ProcessMaker Screen that has been designed to display Request summaries if that End Event element triggers. This drop-down menu displays only [Display](../../design-forms/screens-builder/types-for-screens.md#display) types to display a message to the Task assignee in the Task summary. Note that another End Event element located elsewhere in the Process model, such as another Pool or Lane element, may reference a different ProcessMaker Screen to display Request summaries when it triggers.
+3. From the **Summary screen** drop-down menu, select the ProcessMaker Screen that has been designed to display when that Manual Task element triggers. This drop-down menu displays only Display types to display a message to the Task assignee in the Task summary. Note that another Manual Task element located elsewhere in the Process model may reference a different ProcessMaker Screen to display information for a different Task assignee.
 
 ### Specify When the Manual Task is Due
 
-Specify when a Manual Task element is due from when that manual work is assigned to a Request participant. The default period of time for a task to be due is 72 hours \(three days\).
+Specify when a Manual Task element is due from when that activity is assigned to a Request participant. The default period of time for a task to be due is 72 hours \(three days\).
 
-The manual task due date displays for each [pending assigned task](../../../using-processmaker/requests/view-completed-requests.md#view-completed-requests-in-which-you-are-a-participant). After the specified time has expired for a manual task, an overdue indicator displays for that task to the assigned task recipient.
+The Task due date displays for each [pending assigned Task](../../../using-processmaker/requests/view-completed-requests.md#view-completed-requests-in-which-you-are-a-participant). After the specified time has expired for a manual task, an overdue indicator displays for that task to the assigned task recipient.
 
 {% hint style="info" %}
 Specify due time for a Manual Task element in total number of hours. This includes hours not normally associated with business hours, including overnight hours, weekends, and holidays.
@@ -112,33 +110,33 @@ Specify due time for a Manual Task element in total number of hours. This includ
 
 Follow these steps to specify when a Manual Task element is due:
 
-1. Select the Task element from the Process model in which to specify how many hours the task is due. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Manual Task element from the Process model in which to specify how many hours the activity is due. The **Configuration** setting section displays.
 2. The **Due In** field displays below the **Configuration** settings section.  
 
    ![](../../../.gitbook/assets/due-task-process-modeler-processes.png)
 
-3. In the **Due In** field, specify the total number of hours the task is due in one of the following ways:
+3. In the **Due In** field, specify the total number of hours the activity is due in one of the following ways:
    * Enter the number in the **Due In** field and then press **Enter**. The number of hours is entered.
    * Hover your cursor over the **Due In** field, and then use the spin arrows to increase or decrease the total number of hours by one.
 
-### Select to Whom to Assign the Task
+### Select to Whom to Assign the Manual Task
 
-Select to whom to assign the Task that is referenced in a Task element:
+Select to whom to assign the Task represented by the Manual Task element:
 
-* **Requester:** Assign that Task to the ProcessMaker user who started the Request.
+* **Requester:** Assign that Task to the person who started the Request \(also known as the requester\).
 * **User:** Assign that Task to a specified ProcessMaker user.
 * **Group:** Assign that Task to any member of a specified ProcessMaker group. When a Task is assigned to a ProcessMaker group, round robin assignment rules determine which group member is the assignee without manually assigning the Task.
 * **Previous Task assignee:** Assign that Task to the previous Task assignee in that Request's workflow.
 
-Follow these steps to select to whom to assign the Task that is referenced in a Task element:
+Follow these steps to select to whom to assign the Task that is referenced in a Manual Task element:
 
-1. Select the Task element from the Process model in which to select the Task assignee. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Manual Task element from the Process model in which to select the Task assignee. The **Inspector** panel displays the **Configuration** setting section.
 2. The **Task Assignment** drop-down menu displays below the **Configuration** settings section.  
 
    ![](../../../.gitbook/assets/assignment-assignee-task-process-modeler-processes.png)
 
 3. From the **Task Assignment** drop-down menu, select one of the following options:
-   * **Requester:** Select **Requester** to assign the Task to the Request initiator.
+   * **Requester:** Select **Requester** to assign the Task to the requester.
    * **User:** Select **User** to assign the Task to a specified ProcessMaker user. When this option is selected, the **Assigned User** drop-down menu displays below the **Task Assignment** drop-down menu.  
 
      ![](../../../.gitbook/assets/assignment-assignee-user-task-process-modeler-processes.png)
@@ -156,19 +154,19 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
 
 ### Assign the Task Using a Rule
 
-Instead of [selecting to whom to assign a Task](add-and-configure-task-elements.md#select-to-whom-to-assign-the-task) that is reference in a Task element, assign that Task's assignee using a rule.
+Instead of [selecting to whom to assign a Task](add-and-configure-task-elements.md#select-to-whom-to-assign-the-task) that is reference in a Manual Task element, assign that Task's assignee using a rule.
 
-Select to whom to assign the Task that is referenced in a Task element using a rule:
+Select to whom to assign the Task that is referenced in a Manual Task element using a rule:
 
-* **Requester:** Assign that Task to the Request initiator.
+* **Requester:** Assign that Task to the person who started the Request, also known as the requester.
 * **User:** Assign that Task to a selected ProcessMaker user.
 * **Group:** Assign that Task to a selected ProcessMaker group. When a Task is assigned to a ProcessMaker group, round robin assignment rules determine which group member is the assignee without manually assigning the Task.
 
 The rule that determines the Task assignee uses an expression syntax described in [Expression Syntax Components](add-and-configure-task-elements.md#expression-syntax-components). Each rule can only have one expression, but by using logical operators multiple conditions can be specified in that expression.
 
-Follow these steps to select to whom to assign the Task that is referenced in a Task element using a rule:
+Follow these steps to select to whom to assign the Task that is referenced in a Manual Task element using a rule:
 
-1. Select the Task element from the Process model in which to assign the Task via a rule. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Manual Task element from the Process model in which to assign the Task via a rule. The **Inspector** panel displays the **Configuration** setting section.
 2. The **Assign by Expression** option displays below the **Configuration** settings section.  
 
    ![](../../../.gitbook/assets/rule-assignment-assignee-task-process-modeler-processes.png)
@@ -177,16 +175,16 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
 
    ![](../../../.gitbook/assets/rule-expression-assignment-assignee-task-process-modeler-processes.png)
 
-4. In the **Expression** field, enter or edit the expression that determines that Task element's Task assignee using the syntax components described in [Expression Syntax Components](add-and-configure-task-elements.md#expression-syntax-components), and then press **Enter**.
+4. In the **Expression** field, enter or edit the expression that determines that Manual Task element's Task assignee using the syntax components described in [Expression Syntax Components](add-and-configure-task-elements.md#expression-syntax-components), and then press **Enter**.
 5. From the **Task Assignment** drop-down menu, select that Task's assignee from the following options:
-   * **Requester:** Select the **Requester** option to assign that Task element's Task to the Request initiator if the expression in the **Expression** field evaluates as True.
+   * **Requester:** Select the **Requester** option to assign that Manual Task element's Task to the Requester if the expression in the **Expression** field evaluates as True.
    * **User:** Select the **User** option to assign that Task element's Task to a ProcessMaker user if the expression in the **Expression** field evaluates as True. When the **User** option is selected, the **Assigned User** drop-down menu displays below the **Task Assignment** option.  
 
      ![](../../../.gitbook/assets/rule-expression-user-assignment-assignee-task-process-modeler-processes.png)
 
      From the **Assigned User** drop-down menu, select which ProcessMaker user to assign that Task.
 
-   * **Group:** Select the **Group** option to assign that Task element's Task to a ProcessMaker group if the expression in the **Expression** field evaluates as True. When the **Group** option is selected, the **Assigned Group** drop-down menu displays below the **Task Assignment** option.  
+   * **Group:** Select the **Group** option to assign that Manual Task element's Task to a ProcessMaker group if the expression in the **Expression** field evaluates as True. When the **Group** option is selected, the **Assigned Group** drop-down menu displays below the **Task Assignment** option.  
 
      ![](../../../.gitbook/assets/rule-expression-group-assignment-assignee-task-process-modeler-processes.png)
 
@@ -195,7 +193,7 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
 
 #### Expression Syntax Components
 
-Use the following expression syntax components to compose the expression that describes to whom is assigned a Task referenced in a Task element.
+Use the following expression syntax components to compose the expression that describes to whom is assigned a Task referenced in a Manual Task element.
 
 **Literals**
 
@@ -264,29 +262,29 @@ Use the following expression syntax components to compose the expression that de
 
 Set when [notifications](../../../using-processmaker/notifications.md) regarding Tasks are sent to the following:
 
-* **Requester:** Send notifications to the Request initiator when the Task associated with this Task element is assigned and/or completed.
-* **Task assignee:** Send notifications to Task assignees associated with this Task element when that Task is assigned and/or completed.
-* **Request participants:** Send notifications to all Request participants of this Process when the Task associated with this Task element is assigned or completed.
+* **Requester:** Send notifications to the person who started the Request \(also known as the requester\) when the Task associated with this Manual Task element is assigned and/or completed.
+* **Task assignee:** Send notifications to Task assignees associated with this Manual Task element when that Task is assigned and/or completed. The Task for a Manual Task element is completed when the Task assignee clicks the **Complete Task** button from the **Form** tab in the [Task summary](../../../using-processmaker/task-management/view-a-task-summary.md#task-form).
+* **Request participants:** Send notifications to all Request participants of this Process when the Task associated with this Manual Task element is assigned or completed.
 
-Follow these steps to set Task notifications in a Task element:
+Follow these steps to set Task notifications in a Manual Task element:
 
-1. Select the Task element from the Process model in which to set Task notifications. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Manual Task element from the Process model in which to set Task notifications. The **Inspector** panel displays the **Configuration** setting section.
 2. The **Task Notifications** settings displays below the **Configuration** settings section.  
 
    ![](../../../.gitbook/assets/notification-task-process-modeler-processes.png)
 
-3. From the **Requester** settings, set Task notifications for the Request initiator following these guidelines:
-   * Enable the **Assigned** setting to notify the Request initiator when the Task associated with this Task element is assigned. Otherwise, disable this setting to not send this notification.
-   * Enable the **Completed** setting to notify the Request initiator when the Task associated with this Task element is completed. Otherwise, disable this setting to not send this notification.
-   * Enable the **Due** setting to notify the Request initiator when the Task associated with this Task element is due to be completed. Otherwise, disable this setting to not send this notification.
-4. From the **Assignee** settings, set Task notifications for assignees of this Task element following these guidelines:
-   * Enable the **Assigned** setting to notify Task assignees associated with this Task element when they are assigned this Task. Otherwise, disable this setting to not send this notification.
-   * Enable the **Completed** setting to notify Task assignees associated with this Task element when they complete this Task. Otherwise, disable this setting to not send this notification.
-   * Enable the **Due** setting to notify Task assignees associated with this Task element is due to be completed. Otherwise, disable this setting to not send this notification.
+3. From the **Requester** settings, set Task notifications for the requester following these guidelines:
+   * Enable the **Assigned** setting to notify the requester when the Task associated with this Manual Task element is assigned. Otherwise, disable this setting to not send this notification.
+   * Enable the **Completed** setting to notify the requester when the Task associated with this Manual Task element is completed. Otherwise, disable this setting to not send this notification.
+   * Enable the **Due** setting to notify the requester when the Task associated with this Manual Task element is due to be completed. Otherwise, disable this setting to not send this notification.
+4. From the **Assignee** settings, set Task notifications for assignees of this Manual Task element following these guidelines:
+   * Enable the **Assigned** setting to notify Task assignees associated with this Manual Task element when they are assigned this Task. Otherwise, disable this setting to not send this notification.
+   * Enable the **Completed** setting to notify Task assignees associated with this Manual Task element when they complete this Task. Otherwise, disable this setting to not send this notification.
+   * Enable the **Due** setting to notify Task assignees associated with this Manual Task element is due to be completed. Otherwise, disable this setting to not send this notification.
 5. From the **Participants** settings, set Task notifications to all Request participants of this Process following these guidelines:
-   * Enable the **Assigned** setting to notify all Request participants of this Process when the Task associated with this Task element is assigned. Otherwise, disable this setting to not send this notification.
-   * Enable the **Completed** setting to notify all Request participants of this Process when the Task associated with this Task element is completed. Otherwise, disable this setting to not send this notification.
-   * Enable the **Due** setting to notify all Request participants of this Process when the Task associated with this Task element is due to be completed. Otherwise, disable this setting to not send this notification.
+   * Enable the **Assigned** setting to notify all Request participants of this Process when the Task associated with this Manual Task element is assigned. Otherwise, disable this setting to not send this notification.
+   * Enable the **Completed** setting to notify all Request participants of this Process when the Task associated with this Manual Task element is completed. Otherwise, disable this setting to not send this notification.
+   * Enable the **Due** setting to notify all Request participants of this Process when the Task associated with this Manual Task element is due to be completed. Otherwise, disable this setting to not send this notification.
 
 ## Related Topics
 

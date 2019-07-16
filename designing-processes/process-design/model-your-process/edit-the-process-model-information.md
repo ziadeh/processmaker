@@ -21,7 +21,7 @@ Follow these steps to edit the identifier value for a Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Click anywhere in the Process model other than any Process element so that no elements are selected. The **Inspector** panel displays the **Configuration** setting section.
+3. Click anywhere in the Process model other than any Process element so that no elements are selected. The **Configuration** setting section displays.
 4. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/process-model-identier-field-modeler-processes.png)
@@ -45,7 +45,7 @@ Follow these steps to edit the Process model name:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Click anywhere in the Process model other than any Process element so that no elements are selected. The **Inspector** panel displays the **Configuration** setting section.
+3. Click anywhere in the Process model other than any Process element so that no elements are selected. The **Configuration** setting section displays.
 4. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
    ![](../../../.gitbook/assets/process-model-identier-field-modeler-processes.png)
@@ -55,8 +55,6 @@ Follow these steps to edit the Process model name:
 ## Related Topics
 
 {% page-ref page="process-modeling-element-descriptions.md" %}
-
-{% page-ref page="view-the-inspector-panel.md" %}
 
 {% page-ref page="filter-elements-in-the-bpmn-panel.md" %}
 

@@ -27,9 +27,9 @@ Use a Start Event element to represent how a Request for that Process starts in 
 * The Request can be started by an authenticated ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) \(Jane Doe\) or any member of a specified [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) \(Accounting department\).
 * The Request can be started by either an anonymous or authenticated ProcessMaker user through a published URL. This allows a ProcessMaker Screen to be available on a public-facing Web site that starts the Request when that Screen is submitted. Note that this feature is only available if the Web Entry package is installed in your ProcessMaker instance. See [Web Entry](../../../package-development-distribution/package-a-connector/web-entry.md).
 
-In Process Modeler, the Start Event element is labeled as "Start Event" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Start Event element is labeled as "Start Event."
 
-![Start Event element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-start-event-process-modeler-processes.png)
+![Start Event element in the left side panel in Process Modeler](../../../.gitbook/assets/start-event-bpmn-side-bar-process-modeler-processes.png)
 
 Below is a Start Event element when it has been placed into a Process model.
 
@@ -43,9 +43,9 @@ See [Add and Configure Event Elements](add-and-configure-an-event-element.md#add
 
 A Start Timer Event element represents a time or periodic interval when a [Request](../../../using-processmaker/requests/what-is-a-request.md) starts for a Process. A Start Timer Event element begins the Process. Therefore, a Start Timer Event element cannot have an incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element. A Process model can have multiple Start Timer Event elements. Use this element to indicate that a Request for that Process must begin at a specific date and time, such as on an employee’s employment anniversary to schedule a performance review.
 
-In Process Modeler, the Start Timer Event element is labeled as "Start Timer Event" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Start Timer Event element is labeled as "Start Timer Event."
 
-![Start Timer Event element in the Controls panel of Process Modeler](../../../.gitbook/assets/start-timer-event-bpmn-panel-process-modeler-processes.png)
+![Start Timer Event element in the left side panel in Process Modeler](../../../.gitbook/assets/start-timer-event-bpmn-side-bar-process-modeler-processes.png)
 
 Below is a Start Timer Event element when it has been placed into a Process model.
 
@@ -59,9 +59,9 @@ See [Add and Configure Start Timer Event Elements](add-and-configure-start-timer
 
 An Intermediate Timer Event element represents a delay in a Process either at a specific time. When the specified time occurs, the Intermediate Timer Event element triggers, thereby resuming workflow for that Process's [Request](../../../using-processmaker/requests/what-is-a-request.md). Use this element to cause a Request to wait until a specific time. For example, use this element to make a Process wait 30 days before checking if you receive an invoice from a customer after services are rendered.
 
-In Process Modeler, the Intermediate Timer Event element is labeled as "Intermediate Timer Event" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Intermediate Timer Event element is labeled as "Intermediate Timer Event."
 
-![Intermediate Timer Event element in the Controls panel of Process Modeler](../../../.gitbook/assets/intermediate-timer-event-bpmn-panel-process-modeler-processes.png)
+![Intermediate Timer Event element in the left side panel in Process Modeler](../../../.gitbook/assets/intermediate-timer-event-bpmn-side-bar-process-modeler-processes.png)
 
 Below is an Intermediate Timer Event element when it has been placed into a Process model.
 
@@ -83,9 +83,9 @@ The Intermediate Message Catch Event element can receive the external API call u
 * Any member of a specified ProcessMaker [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md)
 * A whitelisted \(allowed\) IP address or domain
 
-In Process Modeler, the Intermediate Message Catch Event element is labeled as "Intermediate Message Catch Event" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Intermediate Message Catch Event element is labeled as "Intermediate Message Catch Event."
 
-![Intermediate  Message Catch Event element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-intermediate-message-catch-event-process-modeler-processes.png)
+![Intermediate Message Catch Event element in the left side panel in Process Modeler](../../../.gitbook/assets/intermediate-message-catch-event-bpmn-side-bar-process-modeler-processes.png)
 
 Below is an Intermediate Message Catch Event element when it has been placed into a Process model.
 
@@ -99,9 +99,9 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 An End Event element represents the completion of a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process. Therefore, an End Event element cannot have an outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element, though it may have an outgoing [Message Flow](process-modeling-element-descriptions.md#message-flow) element. A Process model can have multiple End Event elements.
 
-In Process Modeler, the End Event element is labeled as "End Event" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the End Event element is labeled as "End Event."
 
-![End Event element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-end-event-process-modeler-processes.png)
+![End Event element in the left side panel in Process Modeler](../../../.gitbook/assets/end-event-bpmn-side-bar-process-modeler-processes.png)
 
 Below is an End Event element when it has been placed into a Process model.
 
@@ -130,9 +130,9 @@ A Task element represents an activity a person performs while participating in a
 
 People perform Task activities through ProcessMaker Screens as digital [forms](../../design-forms/screens-builder/types-for-screens.md#forms) and [displays](../../design-forms/screens-builder/types-for-screens.md#display). ProcessMaker Screens are designed in [Screens Builder](../../design-forms/screens-builder/).
 
-In Process Modeler, the Task element is labeled as "Task" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Task element is labeled as "Task."
 
-![Task element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-task-process-modeler-processes.png)
+![Task element in the left side panel in Process Modeler](../../../.gitbook/assets/task-bpmn-side-bar-process-modeler-processes.png)
 
 Below is a Task element when it has been placed into a Process model.
 
@@ -151,9 +151,9 @@ A Script Task element represents an activity performed by a [ProcessMaker Script
 
 ProcessMaker Scripts are designed in [Scripts Editor](../../scripts/scripts-editor.md). ProcessMaker Scripts are independent of Process models: any ProcessMaker Script can be reused in any Process model in your organization. This architecture allows Process Owners to focus on Process modeling in a no-code environment while ProcessMaker Developers develop reusable ProcessMaker Scripts. ProcessMaker Scripts can leverage ProcessMaker Screens variable values for in-progress Requests.
 
-In Process Modeler, the Script Task element is labeled as "Script Task" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Script Task element is labeled as "Script Task."
 
-![Script Task element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-script-task-process-modeler-processes.png)
+![Script Task element in the left side panel in Process Modeler](../../../.gitbook/assets/script-task-bpmn-side-bar-process-modeler-processes.png)
 
 Below is a Script Task element when it has been placed into a Process model.
 
@@ -167,9 +167,9 @@ See [Add and Configure Script Task Elements](add-and-configure-script-task-eleme
 
 A Manual Task element represents an activity a person performs in the physical environment as a [Request](../../../using-processmaker/requests/what-is-a-request.md) participant. A Manual Task element is different than a [Task](process-modeling-element-descriptions.md#task) element, in which a person performs an activity via ProcessMaker software. The activity the Manual Task element represents does not directly involve ProcessMaker, nor does it require any software application to complete.
 
-In Process Modeler, the Manual Task element is labeled as "Manual Task" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Manual Task element is labeled as "Manual Task."
 
-![Manual Task element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-manual-task-process-modeler-processes.png)
+![Manual Task element in the left side panel in Process Modeler](../../../.gitbook/assets/manual-task-bpmn-side-bar-process-modeler-processes.png)
 
 Below is a Manual Task element when it has been placed into a Process model.
 
@@ -187,9 +187,9 @@ The external sub-Process that the Call Activity calls must be in the same Proces
 
 The called sub-Process has its own [Request](../../../using-processmaker/requests/what-is-a-request.md). The Request for the calling Process waits until the sub-Process's Request completes. When the external sub-Process's Request completes, the Request continues for the Call Activity element's Process.
 
-In Process Modeler, the Call Activity element is labeled as "Call Activity" in the **Controls** panel as highlighted below.
+In the left side panel in Process Modeler, the Call Activity element is labeled as "Call Activity."
 
-![Call Activity element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-call-activity-process-modeler-processes.png)
+![Call Activity element in the left side panel in Process Modeler](../../../.gitbook/assets/call-activity-bpmn-side-bar-process-modeler-processes.png)
 
 Below is a Call Activity element when it has been placed into a Process model.
 
@@ -427,8 +427,6 @@ See [Add and Configure Text Annotation and Association Elements](add-and-configu
 ## Related Topics
 
 {% page-ref page="../../../using-processmaker/requests/what-is-a-request.md" %}
-
-{% page-ref page="view-the-inspector-panel.md" %}
 
 {% page-ref page="edit-the-process-model-information.md" %}
 

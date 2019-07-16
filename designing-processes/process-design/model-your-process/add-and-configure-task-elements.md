@@ -108,7 +108,7 @@ If no ProcessMaker Screens exist, the **Screen For Input** drop-down menu contai
 
 Specify when a [Task](../../../using-processmaker/task-management/what-is-a-task.md) in a Task element is due from when that task is assigned to a Request participant.
 
-The task due date displays for each [pending assigned task](../../../using-processmaker/requests/view-completed-requests.md#view-completed-requests-in-which-you-are-a-participant). After the specified time has expired for a task, an overdue indicator displays for that task to the assigned task recipient.
+The task due date displays for each [pending assigned Task](../../../using-processmaker/requests/view-completed-requests.md#view-completed-requests-in-which-you-are-a-participant). After the specified time has expired for a task, an overdue indicator displays for that task to the assigned task recipient.
 
 {% hint style="info" %}
 Specify due time for a Task element in total number of hours. This includes hours not normally associated with business hours, including overnight hours, weekends, and holidays.
@@ -131,7 +131,7 @@ Follow these steps to specify when a Task element is due:
 
 Select to whom to assign the Task that is referenced in a Task element:
 
-* **Requester:** Assign that Task to the ProcessMaker user who started the Request.
+* **Requester:** Assign that Task to the person who started the Request, also known as the requester.
 * **User:** Assign that Task to a specified ProcessMaker user.
 * **Group:** Assign that Task to any member of a specified ProcessMaker group. When a Task is assigned to a ProcessMaker group, round robin assignment rules determine which group member is the assignee without manually assigning the Task.
 * **Previous Task assignee:** Assign that Task to the previous Task assignee in that Request's workflow.
@@ -144,7 +144,7 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
    ![](../../../.gitbook/assets/assignment-assignee-task-process-modeler-processes.png)
 
 3. From the **Task Assignment** drop-down menu, select one of the following options:
-   * **Requester:** Select **Requester** to assign the Task to the Request initiator, referred to as the requester.
+   * **Requester:** Select **Requester** to assign the Task to the requester.
    * **User:** Select **User** to assign the Task to a specified ProcessMaker user. When this option is selected, the **Assigned User** drop-down menu displays below the **Task Assignment** drop-down menu.  
 
      ![](../../../.gitbook/assets/assignment-assignee-user-task-process-modeler-processes.png)
@@ -164,7 +164,7 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
 
 Instead of [selecting to whom to assign a Task](add-and-configure-task-elements.md#select-to-whom-to-assign-the-task) that is referenced in a Task element, assign the Task's assignee using a rule:
 
-* **Requester:** Assign that Task to the Request initiator.
+* **Requester:** Assign that Task to the person who started the Request, also known as the requester.
 * **User:** Assign that Task to a selected ProcessMaker user.
 * **Group:** Assign that Task to a selected ProcessMaker group. When a Task is assigned to a ProcessMaker group, round robin assignment rules determine which group member is the assignee without manually assigning the Task.
 
@@ -184,7 +184,7 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
 
 4. In the **Expression** field, enter or edit the expression that determines that Task element's Task assignee using the syntax components described in [Expression Syntax Components](add-and-configure-task-elements.md#expression-syntax-components), and then press **Enter**.
 5. From the **Task Assignment** drop-down menu, select that Task's assignee from the following options:
-   * **Requester:** Select the **Requester** option to assign that Task element's Task to the Request initiator \(referred to as the requester\) if the expression in the **Expression** field evaluates as True.
+   * **Requester:** Select the **Requester** option to assign that Task element's Task to the requester if the expression in the **Expression** field evaluates as True.
    * **User:** Select the **User** option to assign that Task element's Task to a ProcessMaker user if the expression in the **Expression** field evaluates as True. When the **User** option is selected, the **Assigned User** drop-down menu displays below the **Task Assignment** option.  
 
      ![](../../../.gitbook/assets/rule-expression-user-assignment-assignee-task-process-modeler-processes.png)
