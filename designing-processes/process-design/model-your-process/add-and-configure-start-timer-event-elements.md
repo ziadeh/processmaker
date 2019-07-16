@@ -121,7 +121,7 @@ Follow these steps to set the timer controls for a Start Timer Event element:
 
    ![](../../../.gitbook/assets/start-timer-event-date-control-process-modeler-processes.png)
 
-4. Set at which periodical interval to trigger the Start Time Event element again, thereby starting a new Request. Follow these guidelines:
+4. Set at which periodical interval to trigger the Start Timer Event element again, thereby starting a new Request. Follow these guidelines:
    * From the **Repeat every** setting, select at how many intervals of a set time period to trigger the Start Timer Event element. **1** is the default setting. Then select one of the following time periods for that element to trigger:
      * Day
      * Week \(default setting\)
