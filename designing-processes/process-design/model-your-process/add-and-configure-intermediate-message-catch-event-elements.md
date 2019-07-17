@@ -65,7 +65,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for an Intermediate Message Catch Event element:
 
-1. Select the Intermediate Message Catch Event element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Intermediate Message Catch Event element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/identifier-intermediate-message-catch-event-process-modeler-processes.png)
@@ -78,7 +78,7 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for an Intermediate Message Catch Event element:
 
-1. Select the Intermediate Message Catch Event element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Intermediate Message Catch Event element from the Process model in which to edit its name. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
    ![](../../../.gitbook/assets/identifier-intermediate-message-catch-event-process-modeler-processes.png)
@@ -99,7 +99,7 @@ Adding settings to the Intermediate Message Catch Event element restricts how th
 
 Follow these steps to configure how to trigger an Intermediate Message Catch Event element:
 
-1. Select the Intermediate Message Catch Event element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Intermediate Message Catch Event element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Message Event Identifier** field.  
 
    ![](../../../.gitbook/assets/data-name-intermediate-message-catch-event-proces-modeler-processes.png)

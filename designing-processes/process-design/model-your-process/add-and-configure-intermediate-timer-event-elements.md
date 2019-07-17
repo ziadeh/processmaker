@@ -79,7 +79,7 @@ Follow these steps to edit the name for an Intermediate Timer Event element:
 1. Select the Intermediate Timer Event element from the Process model in which to edit its name. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
-   ![](../../../.gitbook/assets/intermediate-timer-event-configuration-identifier-name-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/intermediate-timer-event-configuration-name-process-modeler-processes.png)
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
