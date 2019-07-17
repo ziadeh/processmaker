@@ -63,7 +63,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Call Activity element:
 
-1. Select the Call Activity element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Call Activity element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/identifier-call-activity-process-modeler-processes.png)
@@ -76,10 +76,10 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for a Call Activity element:
 
-1. Select the Call Activity element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Call Activity element from the Process model in which to edit its name. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
-   ![](../../../.gitbook/assets/identifier-call-activity-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/call-activity-configuration-name-process-modeler-processes%20%281%29.png)
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
@@ -89,10 +89,10 @@ The Call Activity element calls an external sub-Process when it triggers. The ex
 
 Follow these steps to select the external sub-Process the Call Activity element calls when it triggers:
 
-1. Select the Call Activity element from the Process model in which to select the called sub-Process. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Call Activity element from the Process model in which to select the called sub-Process. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Process** drop-down menu displays.  
 
-   ![](../../../.gitbook/assets/identifier-call-activity-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/call-activity-configuration-process-modeler-processes.png)
 
 3. From the **Process** drop-down menu, select which Process the Call Activity element calls when it triggers.
 

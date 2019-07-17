@@ -13,7 +13,7 @@ See [Process Modeling Element Descriptions](process-modeling-element-description
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to add a Task element to the Process model:
+Your user account or group membership must have the following permissions to add a Manual Task element to the Process model:
 
 * Processes: View Processes
 * Processes: Edit Processes

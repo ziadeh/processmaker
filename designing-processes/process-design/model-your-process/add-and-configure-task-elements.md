@@ -331,18 +331,12 @@ Follow these steps to select to whom to assign the Task via a Web Entry:
         ![](../../../.gitbook/assets/web-entry-authenticated-mode-group-start-event-process-modeler-processes.png)
 
      2. From the **Group** drop-down menu, select which ProcessMaker group to assign the Task via the Web Entry's URL. Any member of that ProcessMaker group may be assigned the Task via the Web Entry's URL.
-3. From the **Screen Associated** drop-down menu, select the [ProcessMaker Screen](../../design-forms/what-is-a-form.md) that displays when the Web Entry URL is accessed. This drop-down menu displays only [Form](../../design-forms/screens-builder/types-for-screens.md#form) types so the Task assignee can interact with information in the ProcessMaker Screen. This is a required field.  
+3. From the **Completed Action** drop-down menu, select one of the following options:
+   * **Screen:** Select the **Screen** option to indicate that a ProcessMaker Screen displays after the Task assignee submits the Task. **Screen** is the default setting. ![](../../../.gitbook/assets/web-entry-completed-action-screen-start-event-process-modeler-processes.png) 
 
-   ![](../../../.gitbook/assets/web-entry-screen-associated-start-event-process-modeler-processes.png)
+     After the **Screen** option is selected, the **Screen For Completed** drop-down menu displays below the **Completed Action** drop-down menu. From the **Screen For Completed** drop-down menu, select the ProcessMaker Screen that displays after the Task assignee submits the Task. This drop-down menu displays only [Display](../../design-forms/screens-builder/types-for-screens.md#display) types to display a message to the Task assignee. This is a required field.
 
-4. From the **Completed Action** drop-down menu, select one of the following options:
-   * **Screen:** Select the **Screen** option to indicate that a ProcessMaker Screen displays after the Task assignee submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu. **Screen** is the default setting.  
-
-     ![](../../../.gitbook/assets/web-entry-completed-action-screen-start-event-process-modeler-processes.png)
-
-     After the **Screen** option is selected, the **Screen For Completed** drop-down menu displays below the **Completed Action** drop-down menu. From the **Screen For Completed** drop-down menu, select the ProcessMaker Screen that displays after the Task assignee submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu. This drop-down menu displays only [Display](../../design-forms/screens-builder/types-for-screens.md#display) types to display a message to the Task assignee. This is a required field.  
-
-     ![](../../../.gitbook/assets/web-entry-screen-completed-start-event-process-modeler-processes.png)\*\*\*\*
+     ![](../../../.gitbook/assets/web-entry-screen-completed-start-event-process-modeler-processes.png) 
 
    * **Url:** Select the **Url** option to indicate that the Task assignee is redirected to a URL after the Task assignee submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu.  
 
@@ -351,7 +345,7 @@ Follow these steps to select to whom to assign the Task via a Web Entry:
      After the **Url** option is selected, the **Url to redirect to** field displays below the **Completed Action** drop-down menu. In the **Url to redirect to** field, enter the URL to redirect the Requester after the Task assignee submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu, and then press **Enter**. This is a required field.  
 
      ![](../../../.gitbook/assets/web-entry-url-start-event-process-modeler-processes.png)
-5. The **Web Entry URL** displays the Web Entry URL from which the Task assignee accesses the ProcessMaker Screen selected from the **Screen Associated** drop-down menu. The **Web Entry URL** value cannot be changed. The Web Entry package generates this URL using the following structure: _`ProcessMaker instance domain`_`/webentry/`_`Web Entry numerical instance`_`/`_`Identifier Value of this Start Event element`_. If necessary, click the **Copy to clipboard** link to copy the **Web Entry URL** value so that it is available in your clipboard.  
+4. The **Web Entry URL** displays the Web Entry URL from which the Task assignee accesses the ProcessMaker Screen selected from the **Screen Associated** drop-down menu. The **Web Entry URL** value cannot be changed. The Web Entry package generates this URL using the following structure: _`ProcessMaker instance domain`_`/webentry/`_`Web Entry numerical instance`_`/`_`Identifier Value of this Start Event element`_. If necessary, click the **Copy to clipboard** link to copy the **Web Entry URL** value so that it is available in your clipboard.  
 
    ![](../../../.gitbook/assets/web-entry-url-access-start-event-process-modeler-processes.png)
 

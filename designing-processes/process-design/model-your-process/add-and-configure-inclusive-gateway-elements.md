@@ -4,16 +4,16 @@ description: Add and configure Inclusive Gateway elements in your Process model.
 
 # Add and Configure Inclusive Gateway Elements
 
-## Add an Exclusive Gateway Element
+## Add an Inclusive Gateway Element
 
 {% hint style="info" %}
-### Don't Know What an Exclusive Gateway Element Is?
+### Don't Know What an Inclusive Gateway Element Is?
 
-See [Process Modeling Element Descriptions](process-modeling-element-descriptions.md) for a description of the [Exclusive Gateway](process-modeling-element-descriptions.md#exclusive-gateway) element.
+See [Process Modeling Element Descriptions](process-modeling-element-descriptions.md) for a description of the [Inclusive Gateway](process-modeling-element-descriptions.md#inclusive-gateway) element.
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to add an Exclusive Gateway element to the Process model:
+Your user account or group membership must have the following permissions to add an Inclusive Gateway element to the Process model:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -21,25 +21,25 @@ Your user account or group membership must have the following permissions to add
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to add an Exclusive Gateway element to the Process model:
+Follow these steps to add an Inclusive Gateway element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Exclusive Gateway** element in the panel to the left of the Process Modeler canvas.
+3. Locate the **Inclusive Gateway** element in the panel to the left of the Process Modeler canvas.
 
-   ![](../../../.gitbook/assets/exclusive-gateway-bpmn-side-bar-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/bpmn-inclusive-gateway-process-modeler-processes.png)
 
-4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Exclusive Gateway element cannot be placed outside of the Pool element.
+4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Inclusive Gateway element cannot be placed outside of the Pool element.
 
-![Exclusive Gateway element](../../../.gitbook/assets/exclusive-gateway-process-modeler-processes.png)
+![Inclusive Gateway element](../../../.gitbook/assets/inclusive-gateway-element-process-modeler-processes.png)
 
 After the element is placed into the Process model, you may move it by dragging it to the new location.
 
 {% hint style="warning" %}
-Moving an Exclusive Gateway element has the following limitations in regards to the following Process model elements:
+Moving an Inclusive Gateway element has the following limitations in regards to the following Process model elements:
 
-* **Pool element:** If the Exclusive Gateway element is inside of a [Pool](process-modeling-element-descriptions.md#pool) element, it cannot be moved outside of the Pool element. If you attempt to do so, Process Modeler places the Exclusive Gateway element inside the Pool element closest to where you attempted to move it.
-* **Lane element:** If the Exclusive Gateway element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Exclusive Gateway element cannot be moved outside of the Pool element.
+* **Pool element:** If the Inclusive Gateway element is inside of a [Pool](process-modeling-element-descriptions.md#pool) element, it cannot be moved outside of the Pool element. If you attempt to do so, Process Modeler places the Inclusive Gateway element inside the Pool element closest to where you attempted to move it.
+* **Lane element:** If the Inclusive Gateway element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Inclusive Gateway element cannot be moved outside of the Pool element.
 {% endhint %}
 
 ## Configure an Exclusive Gateway Element
