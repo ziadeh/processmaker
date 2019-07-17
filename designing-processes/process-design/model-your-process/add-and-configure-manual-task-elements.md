@@ -63,7 +63,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Manual Task element:
 
-1. Select the Manual Task element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Manual Task element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/manual-task-configuration-identifier-name-process-modeler-processes.png)
@@ -76,10 +76,10 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for a Task element:
 
-1. Select the Task element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Task element from the Process model in which to edit its name. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
-   ![](../../../.gitbook/assets/manual-task-configuration-identifier-name-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/manual-task-configuration-name-process-modeler-processes.png)
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
@@ -91,7 +91,7 @@ When a Manual Task element is placed into a Process model, it is not configured 
 
 Follow these steps to select the ProcessMaker Screen that displays when a Manual Task element triggers:
 
-1. Select the Manual Task element from the Process model in which to select the ProcessMaker Screen that displays when that Manual Task element is triggered, thereby providing instructions or information to the Task assignee. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Manual Task element from the Process model in which to select the ProcessMaker Screen that displays when that Manual Task element is triggered, thereby providing instructions or information to the Task assignee. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Summary screen** drop-down menu.  
 
    ![](../../../.gitbook/assets/manual-task-configuration-summary-screen-process-modeler-processes%20%281%29.png)
@@ -130,7 +130,7 @@ Select to whom to assign the Task represented by the Manual Task element:
 
 Follow these steps to select to whom to assign the Task that is referenced in a Manual Task element:
 
-1. Select the Manual Task element from the Process model in which to select the Task assignee. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Manual Task element from the Process model in which to select the Task assignee. The **Configuration** setting section displays.
 2. The **Task Assignment** drop-down menu displays below the **Configuration** settings section.  
 
    ![](../../../.gitbook/assets/assignment-assignee-task-process-modeler-processes.png)
@@ -166,7 +166,7 @@ The rule that determines the Task assignee uses an expression syntax described i
 
 Follow these steps to select to whom to assign the Task that is referenced in a Manual Task element using a rule:
 
-1. Select the Manual Task element from the Process model in which to assign the Task via a rule. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Manual Task element from the Process model in which to assign the Task via a rule. The **Configuration** setting section displays.
 2. The **Assign by Expression** option displays below the **Configuration** settings section.  
 
    ![](../../../.gitbook/assets/rule-assignment-assignee-task-process-modeler-processes.png)
@@ -268,7 +268,7 @@ Set when [notifications](../../../using-processmaker/notifications.md) regarding
 
 Follow these steps to set Task notifications in a Manual Task element:
 
-1. Select the Manual Task element from the Process model in which to set Task notifications. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Manual Task element from the Process model in which to set Task notifications. The **Configuration** setting section displays.
 2. The **Task Notifications** settings displays below the **Configuration** settings section.  
 
    ![](../../../.gitbook/assets/notification-task-process-modeler-processes.png)
