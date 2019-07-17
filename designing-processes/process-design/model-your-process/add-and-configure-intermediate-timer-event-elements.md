@@ -63,7 +63,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for an Intermediate Timer Event element:
 
-1. Select the Intermediate Timer Event element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Intermediate Timer Event element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/intermediate-timer-event-configuration-identifier-name-process-modeler-processes.png)
@@ -76,7 +76,7 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for an Intermediate Timer Event element:
 
-1. Select the Intermediate Timer Event element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Intermediate Timer Event element from the Process model in which to edit its name. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
    ![](../../../.gitbook/assets/intermediate-timer-event-configuration-identifier-name-process-modeler-processes.png)
@@ -101,7 +101,7 @@ When an Intermediate Timer Event element is placed into a Process model, it is s
 
 Follow these steps to set the timer controls for an Intermediate Timer Event element:
 
-1. Select the Intermediate Timer Event element from the Process model in which to set its timer controls. The **Inspector** panel displays the **Timing Control** setting section.
+1. Select the Intermediate Timer Event element from the Process model in which to set its timer controls. The **Timing Control** setting section displays.
 2. Expand the **Timing Control** setting section.  
 
    ![](../../../.gitbook/assets/intermediate-timer-timing-control-process-modeler-processes.png)

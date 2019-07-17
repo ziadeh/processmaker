@@ -63,7 +63,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Start Timer Event element:
 
-1. Select the Start Timer Event element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Start Timer Event element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/start-timer-event-configuration-identifier-name-process-modeler-processes.png)
@@ -79,7 +79,7 @@ Follow these steps to edit the name for a Start Timer Event element:
 1. Select the Start Timer Event element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
-   ![](../../../.gitbook/assets/start-timer-event-configuration-identifier-name-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/start-timer-event-configuration-name-process-modeler-processes.png)
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
@@ -112,7 +112,7 @@ If these are not the timing control settings you want, the Start Timer Event ele
 
 Follow these steps to set the timer controls for a Start Timer Event element:
 
-1. Select the Start Timer Event element from the Process model in which to set its timer controls. The **Inspector** panel displays the **Timing Control** setting section.
+1. Select the Start Timer Event element from the Process model in which to set its timer controls. The **Timing Control** setting section displays.
 2. Expand the **Timing Control** setting section.  
 
    ![](../../../.gitbook/assets/start-timer-timing-control-process-modeler-processes.png)

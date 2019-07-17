@@ -43,6 +43,7 @@ The following element types do not use Message Flow elements:
 
 * ​[Start Timer Event](process-modeling-element-descriptions.md#start-timer-event)
 * [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event)
+* [End Event](process-modeling-element-descriptions.md#end-event)
 * [Script Task](process-modeling-element-descriptions.md#script-task)
 * [Call Activity](process-modeling-element-descriptions.md#call-activity)
 * [Exclusive Gateway](process-modeling-element-descriptions.md#exclusive-gateway)
