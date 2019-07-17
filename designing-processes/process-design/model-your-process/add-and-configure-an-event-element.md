@@ -25,7 +25,7 @@ Follow these steps to add a Start Event element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Start Event** element in the **Control** panel.  
+3. Locate the **Start Event** element in the panel to the left of Process model canvas.  
 
    ![](../../../.gitbook/assets/start-event-bpmn-side-bar-process-modeler-processes.png)
 
@@ -63,7 +63,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Start Event element:
 
-1. Select the Start Event element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Start Event element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/start-event-configuration-identifier-name-process-modeler-processes.png)
@@ -76,7 +76,7 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for a Start Event element:
 
-1. Select the Start Event element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Start Event element from the Process model in which to edit its name. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
    ![](../../../.gitbook/assets/start-event-configuration-identifier-name-process-modeler-processes.png)
