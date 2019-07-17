@@ -81,7 +81,7 @@ Follow these steps to edit the name for an Intermediate Message Catch Event elem
 1. Select the Intermediate Message Catch Event element from the Process model in which to edit its name. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
-   ![](../../../.gitbook/assets/identifier-intermediate-message-catch-event-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/intermediate-message-catch-event-configuration-name-process-modeler-processes.png)
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
