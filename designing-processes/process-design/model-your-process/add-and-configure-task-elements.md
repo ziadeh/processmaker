@@ -25,11 +25,11 @@ Follow these steps to add a Task element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Task** element in the **Controls** panel.
+3. Locate the **Task** element in the panel to the left of the Process Modeler canvas.
 
    ![](../../../.gitbook/assets/task-bpmn-side-bar-process-modeler-processes.png)
 
-4. Drag the element to where in the Process model canvas that you want to place it. If a Pool element is in your Process model, the Task element cannot be placed outside of the Pool element.
+4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Task element cannot be placed outside of the Pool element.
 
 ![Task element](../../../.gitbook/assets/task-element-process-modeler-processes.png)
 

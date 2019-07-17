@@ -25,11 +25,11 @@ Follow these steps to add a Pool element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Pool** element in the **BPMN** panel.
+3. Locate the **Pool** element element in the panel to the left of the Process Modeler canvas.
 
    ![](../../../.gitbook/assets/pool-bpmn-side-bar-process-modeler-processes.png)
 
-4. Drag the element to where in the Process model canvas that you want to place it. If non-Pool/[Lane](process-modeling-element-descriptions.md#lane) elements are in your Process model when you place the Pool element, those elements are automatically placed into the Pool element. A Pool element cannot be placed into another Pool element, though the most recently placed Pool element can overlap another such that only the recent Pool element and its contents is visible.
+4. Drag the element into the Process model canvas where you want to place it. If non-Pool/[Lane](process-modeling-element-descriptions.md#lane) elements are in your Process model when you place the Pool element, those elements are automatically placed into the Pool element. A Pool element cannot be placed into another Pool element, though the most recently placed Pool element can overlap another such that only the recent Pool element and its contents is visible.
 
 ![Pool element](../../../.gitbook/assets/pool-process-modeler-processes.png)
 

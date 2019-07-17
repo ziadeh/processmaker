@@ -25,11 +25,11 @@ Follow these steps to add a Start Event element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Start Event** element in the panel to the left of Process model canvas.  
+3. Locate the **Start Event** element in the panel to the left of the Process Modeler canvas.  
 
    ![](../../../.gitbook/assets/start-event-bpmn-side-bar-process-modeler-processes.png)
 
-4. Drag the element to where in the Process model canvas that you want to place it. If a Pool element is in your Process model, the Start Event element cannot be placed outside of the Pool element.
+4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Start Event element cannot be placed outside of the Pool element.
 
 ![Start Event element](../../../.gitbook/assets/start-event-process-modeler-processes.png)
 
@@ -79,7 +79,7 @@ Follow these steps to edit the name for a Start Event element:
 1. Select the Start Event element from the Process model in which to edit its name. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
-   ![](../../../.gitbook/assets/start-event-configuration-identifier-name-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/start-event-configuration-name-process-modeler-processes.png)
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
@@ -100,7 +100,7 @@ When a Start Event element is placed into a Process model, it is not configured 
 
 Follow these steps to select which ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) can start a Request via this Start Event element:
 
-1. Select the Start Event element from the Process model in which to select the ProcessMaker user that may start a Request. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Start Event element from the Process model in which to select the ProcessMaker user that may start a Request. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Start Permission** drop-down menu.  
 
    ![](../../../.gitbook/assets/start-permission-request-event-process-modeler-processes.png)
@@ -117,7 +117,7 @@ When a Start Event element is placed into a Process model, it is not configured 
 
 Follow these steps to select which ProcessMaker [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) members can start a Request via this Start Event element:
 
-1. Select the Start Event element from the Process model in which to select the ProcessMaker group that may start a Request. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Start Event element from the Process model in which to select the ProcessMaker group that may start a Request. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Start Permission** drop-down menu.
 
    ![](../../../.gitbook/assets/start-permission-request-event-process-modeler-processes.png)
@@ -149,8 +149,8 @@ When a Start Event element is placed into a Process model, Web Entry settings fo
 
 Follow these steps to select who can start a Request via a Web Entry URL via this Start Event element:
 
-1. Select the Start Event element from the Process model in which to select who may start a Request via a Web Entry URL.
-2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Start Permission** drop-down menu displays. The **Inspector** panel displays the **Configuration** setting section.  
+1. Select the Start Event element from the Process model in which to select who may start a Request via a Web Entry URL. The **Configuration** setting section displays.
+2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Start Permission** drop-down menu displays.  
 
    ![](../../../.gitbook/assets/web-entry-mode-start-event-process-modeler-processes.png)
 

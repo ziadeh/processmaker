@@ -15,7 +15,7 @@ Your user account or group membership must have the following permissions to fil
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-The panel to the left of the Process model displays elements and controls that can be used in a Process model.
+The panel to the left of the Process Modeler canvas displays elements and controls that can be used in a Process model.
 
 ![Panel that contains elements and controls in Process Modeler](../../../.gitbook/assets/bpmn-panel-process-modeler-processes.png)
 
@@ -27,7 +27,7 @@ Follow these steps to filter which Process modeling elements and controls displa
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Select the **Filter Controls** field.
+3. Select the **Filter Controls** field in the panel that is to the left of the Process Modeler canvas.
 
    ![](../../../.gitbook/assets/filter-bpmn-field-process-modeler-processes.png)
 
