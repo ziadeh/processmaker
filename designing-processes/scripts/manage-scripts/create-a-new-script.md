@@ -25,11 +25,15 @@ Follow these steps to create a new ProcessMaker Script:
    ![](../../../.gitbook/assets/add-a-script-screen-processes.png)
 
 3. In the **Name** field, enter the name of the ProcessMaker Script. This is a required field.
-4. In the **Description** field, enter the description of the ProcessMaker Script.
+4. In the **Description** field, enter the description of the ProcessMaker Script. This is a required field.
 5. From the **Language** drop-down menu, select one of the following programming languages in which the ProcessMaker Script is written:
+
    * PHP
    * Lua
-6. From the **Run script as** drop-down menu, select which ProcessMaker user's API client token to use with the ProcessMaker REST API. This is a required field. Ensure that the selected ProcessMaker user's account has the appropriate API [permissions](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md) to access the ProcessMaker REST API.
+
+   This is a required field.
+
+6. From the **Run script as** drop-down menu, select which ProcessMaker user's API client token to use with the ProcessMaker REST API. Ensure that the selected ProcessMaker user's account has the appropriate API [permissions](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md) to access the ProcessMaker REST API. This is a required field.
 7. In the **Timeout** field, use the slider control or enter how many seconds the ProcessMaker Script is allowed to run before it times out. Use `0` to indicate that the ProcessMaker Script never times out. The default timeout is **60** seconds. This is a required field.
 8. Click **Save**. Scripts Editor displays so you can develop your ProcessMaker Script. See [Scripts Editor](../scripts-editor.md).
 
