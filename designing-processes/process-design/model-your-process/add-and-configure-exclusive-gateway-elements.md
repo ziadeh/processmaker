@@ -47,7 +47,7 @@ Moving an Exclusive Gateway element has the following limitations in regards to 
 {% hint style="info" %}
 ### Looking for Information How to Configure Exclusive Gateway Conditions?
 
-See [Configure a Sequence Flow from an Exclusive Gateway Element](the-quick-toolbar.md#configure-a-sequence-flow-from-an-exclusive-gateway-element).
+See [Configure an Outgoing Sequence Flow Element from an Exclusive Gateway or Inclusive Gateway Element](the-quick-toolbar.md#configure-an-outgoing-sequence-flow-element-from-an-exclusive-gateway-or-inclusive-gateway-element).
 
 ### Permissions Required to Do This Task
 

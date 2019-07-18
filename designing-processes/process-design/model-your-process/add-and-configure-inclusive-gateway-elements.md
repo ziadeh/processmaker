@@ -42,16 +42,16 @@ Moving an Inclusive Gateway element has the following limitations in regards to 
 * **Lane element:** If the Inclusive Gateway element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Inclusive Gateway element cannot be moved outside of the Pool element.
 {% endhint %}
 
-## Configure an Exclusive Gateway Element
+## Configure an Inclusive Gateway Element
 
 {% hint style="info" %}
-### Looking for Information How to Configure Exclusive Gateway Conditions?
+### Looking for Information How to Configure Inclusive Gateway Conditions?
 
-See [Configure a Sequence Flow from an Exclusive Gateway Element](the-quick-toolbar.md#configure-a-sequence-flow-from-an-exclusive-gateway-element).
+See [Configure an Outgoing Sequence Flow Element from an Exclusive Gateway or Inclusive Gateway Element](the-quick-toolbar.md#configure-an-outgoing-sequence-flow-element-from-an-exclusive-gateway-or-inclusive-gateway-element).
 
 ### Permissions Required to Do This Task
 
-Your user account or group membership must have the following permissions to configure an Exclusive Gateway element:
+Your user account or group membership must have the following permissions to configure an Inclusive Gateway element:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -67,25 +67,25 @@ Process Modeler automatically assigns a unique value to each Process element add
 All identifier values for all elements in the Process model must be unique.
 {% endhint %}
 
-Follow these steps to edit the identifier value for an Exclusive Gateway element:
+Follow these steps to edit the identifier value for an Inclusive Gateway element:
 
-1. Select the Exclusive Gateway element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Inclusive Gateway element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
-   ![](../../../.gitbook/assets/exclusive-gateway-configuration-identifier-name-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/inclusive-gateway-configuration-identifier-process-modeler-processes.png)
 
-3. In the **Identifier** field, edit the Exclusive Gateway element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+3. In the **Identifier** field, edit the Inclusive Gateway element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ### Edit the Element Name
 
 An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
 
-Follow these steps to edit the name for an Exclusive Gateway element:
+Follow these steps to edit the name for an Inclusive Gateway element:
 
-1. Select the Exclusive Gateway element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Inclusive Gateway element from the Process model in which to edit its name. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
-   ![](../../../.gitbook/assets/exclusive-gateway-configuration-identifier-name-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/inclusive-gateway-configuration-name-process-modeler-processes.png)
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
