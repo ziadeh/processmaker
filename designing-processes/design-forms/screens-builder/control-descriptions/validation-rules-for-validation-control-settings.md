@@ -170,8 +170,6 @@ Validate that an attribute has a valid URL format.
 
 {% page-ref page="../types-for-screens.md" %}
 
-{% page-ref page="../view-the-inspector-pane.md" %}
-
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}

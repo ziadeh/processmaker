@@ -26,8 +26,6 @@ Follow these best practices when designing ProcessMaker Screens in your organiza
 
 {% page-ref page="screens-builder-modes.md" %}
 
-{% page-ref page="view-the-inspector-pane.md" %}
-
 {% page-ref page="validate-your-screen.md" %}
 
 {% page-ref page="control-descriptions/" %}

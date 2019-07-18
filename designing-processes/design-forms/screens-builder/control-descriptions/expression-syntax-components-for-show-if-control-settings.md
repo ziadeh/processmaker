@@ -85,8 +85,6 @@ If a ProcessMaker Screen control does not have an expression in its **Visibility
 
 {% page-ref page="../types-for-screens.md" %}
 
-{% page-ref page="../view-the-inspector-pane.md" %}
-
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}

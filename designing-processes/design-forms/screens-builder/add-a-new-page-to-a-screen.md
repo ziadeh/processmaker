@@ -90,8 +90,6 @@ Follow these steps to rename a page on a ProcessMaker Screen:
 
 {% page-ref page="screens-builder-modes.md" %}
 
-{% page-ref page="view-the-inspector-pane.md" %}
-
 {% page-ref page="validate-your-screen.md" %}
 
 {% page-ref page="control-descriptions/" %}

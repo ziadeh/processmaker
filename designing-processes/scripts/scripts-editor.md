@@ -48,7 +48,7 @@ Develop the ProcessMaker Script below the script's name and language description
 Use the **Sample Input** panel to mock [Request](../../using-processmaker/requests/what-is-a-request.md) data that comes into the ProcessMaker Script.
 
 {% hint style="info" %}
-Define the variables in a [ProcessMaker Screen](../design-forms/what-is-a-form.md) in the **Inspector** panel when you configure its controls. See [View the Inspector Panel](../design-forms/screens-builder/view-the-inspector-pane.md). Also, see [information about each control](../design-forms/screens-builder/control-descriptions/).
+Define the variables in a [ProcessMaker Screen](../design-forms/what-is-a-form.md) in the **Inspector** panel when you configure its controls. See [View the Inspector Panel](). Also, see [information about each control](../design-forms/screens-builder/control-descriptions/).
 {% endhint %}
 
 Follow these guidelines to mock Request data coming into your ProcessMaker Script:

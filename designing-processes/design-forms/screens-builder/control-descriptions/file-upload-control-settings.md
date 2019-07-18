@@ -54,7 +54,7 @@ Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-s
 {% hint style="info" %}
 ### Don't Know What the Inspector Panel Is?
 
-See [View the Inspector Panel](../view-the-inspector-pane.md).
+See [View the Inspector Panel]().
 
 ### Permissions Required
 
@@ -76,8 +76,6 @@ Below are Inspector settings for the File Upload control:
 ## Related Topics <a id="related-topics"></a>
 
 {% page-ref page="../types-for-screens.md" %}
-
-{% page-ref page="../view-the-inspector-pane.md" %}
 
 {% page-ref page="../validate-your-screen.md" %}
 

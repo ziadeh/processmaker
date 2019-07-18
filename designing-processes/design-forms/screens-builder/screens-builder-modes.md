@@ -6,13 +6,11 @@ description: Understand each of Screens Builder's modes.
 
 ## Design Mode
 
-Use Design mode to design your ProcessMaker Screen. Design mode is the default mode when a ProcessMaker Screen is created or edited. While in Design mode, use the [**Inspector** panel](view-the-inspector-pane.md) to configure [controls](control-descriptions/) that you place into your ProcessMaker Screen canvas.
+Use Design mode to design your ProcessMaker Screen. Design mode is the default mode when a ProcessMaker Screen is created or edited. While in Design mode, use the **Design** setting section to configure [controls](control-descriptions/) that you place into your Screens Builder canvas.
+
+![Screens Builder in Design mode](../../../.gitbook/assets/screens-editor-mode-processes.png)
 
 {% hint style="info" %}
-### Learn More About the Inspector Panel
-
-See [View the Inspector Panel](view-the-inspector-pane.md).
-
 ### Learn How to Configure Controls
 
 See [Control Descriptions and Inspector Settings](control-descriptions/).
@@ -27,6 +25,8 @@ See [Add a New Page to a Screen](add-a-new-page-to-a-screen.md).
 Use Preview mode to view and test your ProcessMaker Screen. Test how your controls function as a form user would experience your Screen during a [Request](../../../using-processmaker/requests/what-is-a-request.md).
 
 Furthermore, test how the ProcessMaker Screen's controls you configured in Design mode interact with JSON data models. ProcessMaker represents ProcessMaker Screens as JSON data models. You can view any JSON data model in Preview mode to test how a [Process's](../../viewing-processes/what-is-a-process.md) JSON data model or another ProcessMaker Screen's data model interacts with your Screen. Viewing the JSON data model can be helpful to see how values are entered into the ProcessMaker Screen as well as to use that JSON data model in your [ProcessMaker Scripts](../../scripts/what-is-a-script.md).
+
+![Screens Builder in Preview mode](../../../.gitbook/assets/preview-mode-screens-builder-processes.png)
 
 {% hint style="info" %}
  See [Preview a Screen and Its JSON Data Model](preview-a-screen.md).
@@ -61,8 +61,6 @@ See [Add Custom CSS to a Screen](add-custom-css-to-a-screen.md).
 {% page-ref page="../../scripts/what-is-a-script.md" %}
 
 {% page-ref page="types-for-screens.md" %}
-
-{% page-ref page="view-the-inspector-pane.md" %}
 
 {% page-ref page="validate-your-screen.md" %}
 
