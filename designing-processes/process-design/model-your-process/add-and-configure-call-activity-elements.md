@@ -85,7 +85,7 @@ Follow these steps to edit the name for a Call Activity element:
 
 ### Select the Called Process
 
-The Call Activity element calls an external sub-Process when it triggers. The external sub-Process must be a ProcessMaker Spark Process that is not archived.
+The Call Activity element calls an external sub-Process when it triggers. The external sub-Process must be a ProcessMaker Process that is not archived.
 
 Follow these steps to select the external sub-Process the Call Activity element calls when it triggers:
 
