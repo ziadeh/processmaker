@@ -27,7 +27,7 @@ Follow these steps to add a Pool element to the Process model:
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
 3. Locate the **Pool** element element in the panel to the left of the Process Modeler canvas.
 
-   ![](../../../.gitbook/assets/pool-bpmn-side-bar-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/bpmn-panel-pool-process-modeler-processes.png)
 
 4. Drag the element into the Process model canvas where you want to place it. If non-Pool/[Lane](process-modeling-element-descriptions.md#lane) elements are in your Process model when you place the Pool element, those elements are automatically placed into the Pool element. A Pool element cannot be placed into another Pool element, though the most recently placed Pool element can overlap another such that only the recent Pool element and its contents is visible.
 
@@ -88,7 +88,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Pool element:
 
-1. Select the Pool element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Pool element from the Process model in which to edit its identifier value. The **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/pool-configuration-identifier-name-process-modeler-processes.png)
@@ -101,10 +101,10 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for a Pool element:
 
-1. Select the Pool element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Pool element from the Process model in which to edit its name. The **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
-   ![](../../../.gitbook/assets/pool-configuration-identifier-name-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/pool-configuration-name-process-modeler-processes.png)
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
@@ -178,7 +178,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Lane element:
 
-1. Select the Lane element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Lane element from the Process model in which to edit its identifier value. The **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/lane-configuration-identifier-name-process-modeler-processes.png)
@@ -191,10 +191,10 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for a Lane element:
 
-1. Select the Lane element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Lane element from the Process model in which to edit its name. The **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
-   ![](../../../.gitbook/assets/lane-configuration-identifier-name-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/lane-configuration-name-process-modeler-processes.png)
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 

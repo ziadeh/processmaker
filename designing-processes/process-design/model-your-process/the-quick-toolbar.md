@@ -1,7 +1,7 @@
 ---
 description: >-
   Indicate the order of workflow routing in your Process model by setting
-  Sequence Flow between elements.
+  Sequence Flow elements.
 ---
 
 # Set Sequence Flow Elements to Indicate Workflow Routing

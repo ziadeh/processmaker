@@ -42,10 +42,10 @@ Moving a Manual Task element has the following limitations in regards to the fol
 * **Lane element:** If the Manual Task element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Manual Task element cannot be moved outside of the Pool element.
 {% endhint %}
 
-## Configure a Task Element
+## Configure a Manual Task Element
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to configure a Task element:
+Your user account or group membership must have the following permissions to configure a Manual Task element:
 
 * Processes: View Processes
 * Processes: Edit Processes

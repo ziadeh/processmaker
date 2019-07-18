@@ -27,7 +27,7 @@ Follow these steps to add an Event-Based Gateway element to the Process model:
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
 3. Locate the **Event-Based Gateway** element in the panel to the left of the Process Modeler canvas.  
 
-   ![](../../../.gitbook/assets/event-based-gateway-bpmn-side-bar-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/bpmn-event-based-gateway-process-modeler-processes.png)
 
 4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Event-Based Gateway element cannot be placed outside of the Pool element.
 
@@ -63,7 +63,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for an Event-Based Gateway element:
 
-1. Select the Event-Based Gateway element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Event-Based Gateway element from the Process model in which to edit its identifier value. The **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/identifier-event-based-gateway-process-modeler-processes.png)
@@ -76,10 +76,10 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for an Event-Based Gateway element:
 
-1. Select the Event-Based Gateway element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Event-Based Gateway element from the Process model in which to edit its name. The **Configuration** setting section.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
-   ![](../../../.gitbook/assets/identifier-event-based-gateway-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/event-based-gateway-configuration-name-process-modeler-processes.png)
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 

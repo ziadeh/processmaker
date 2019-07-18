@@ -42,7 +42,7 @@ Moving a Call Activity element has the following limitations in regards to the f
 * **Lane element:** If the Call Activity element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Call Activity element cannot be moved outside of the Pool element.
 {% endhint %}
 
-## Configure an Event-Based Gateway Element
+## Configure a Call Activity Element
 
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to configure a Call Activity element:
