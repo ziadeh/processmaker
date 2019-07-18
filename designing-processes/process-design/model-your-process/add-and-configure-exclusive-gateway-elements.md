@@ -27,7 +27,7 @@ Follow these steps to add an Exclusive Gateway element to the Process model:
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
 3. Locate the **Exclusive Gateway** element in the panel to the left of the Process Modeler canvas.
 
-   ![](../../../.gitbook/assets/exclusive-gateway-bpmn-side-bar-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/bpmn-panel-exclusive-gateway-process-modeler-processes.png)
 
 4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Exclusive Gateway element cannot be placed outside of the Pool element.
 
