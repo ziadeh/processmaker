@@ -1,7 +1,7 @@
 ---
 description: >-
-  Indicate messaging in your Process model by setting Message Flows between
-  elements in separate Pool elements.
+  Indicate messaging in your Process model by setting Message Flows elements
+  between elements in separate Pool elements.
 ---
 
 # Set Message Flow Elements to Indicate Messaging
@@ -12,7 +12,7 @@ In a Process model, Message Flow elements represent communication between an ele
 
 In Process Modeler, Flow indicators display when you click an element in the Process model. The dotted-line Flow indicator is for Message Flows \(highlighted below\).
 
-![Message Flow indicator \(highlighted\) on a selected Process element](../../../.gitbook/assets/message-flow-indicator-process-model-processes.png)
+![Message Flow indicator \(highlighted\) on a selected Process model element](../../../.gitbook/assets/message-flow-indicator-process-model-processes.png)
 
 ### Types of Messaging
 
@@ -28,14 +28,14 @@ The Message Flow element indicates the following types of messaging:
 
 ### Incoming and Outgoing Message Flow
 
-From the context of a Process model element associated with a Message Flow element, that Message Flow element can be "incoming" or "outgoing." Consider the following Process model to demonstrate their differences.
+From the context of a Process model element associated with a Message Flow element, that Message Flow element can be "incoming" or "outgoing." Consider the following Process model example to demonstrate their differences.
 
 ![Message Flow element is outgoing for Task 1, but incoming for Task 2](../../../.gitbook/assets/message-flow-between-pool-elements-process-model-processes.png)
 
 Below are the differences between incoming and outgoing Message Flow elements:
 
-* **Incoming:** An incoming Message Flow element comes from its connecting element. In the Process model above, the Message Flow element is incoming to the "Task 2" element.
-* **Outgoing:** An outgoing Message Flow goes to the connecting element. In the Process model above, the Message Flow element is outgoing from the "Task 1" element. The outgoing Message Flow element must originate from a separate Pool element than from where it connects.
+* **Incoming:** An incoming Message Flow element comes from its connecting element. In the Process model example above, the Message Flow element is incoming to the "Task 2" element.
+* **Outgoing:** An outgoing Message Flow element goes to the connecting element. In the Process model example above, the Message Flow element is outgoing from the "Task 1" element. The outgoing Message Flow element must originate from a separate Pool element than from where it connects.
 
 ### Restrictions on Message Flow Elements
 
@@ -75,7 +75,7 @@ Follow these steps to set the Message Flow element between elements in separate 
 
 1. ​[View your Processes](../../viewing-processes/view-the-list-of-processes/view-your-processes.md#view-all-processes). The **Processes** page displays.
 2. Click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays. Ensure that the Process model has at least two \(2\) Pool elements from which to establish Message Flow between them.
-3. From one Pool element, select the Process model element from which you want to establish communication the Message Flow element. Available options display to the right of the selected element. Process model element types that do not support the Message Flow element do not have the Message Flow icon as highlighted below.  
+3. From one Pool element, select the Process model element from which you want to establish communication via the Message Flow element. Available options display to the right of the selected element. Process model element types that do not support the Message Flow element do not have the Message Flow indicator as highlighted below.  
 
    ![](../../../.gitbook/assets/message-flow-indicator-process-model-processes.png)
 
@@ -110,7 +110,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Message Flow element:
 
-1. Select the Message Flow element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Message Flow element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/message-flow-configuration-identifier-name-process-modeler-processes.png)
@@ -123,10 +123,10 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for a Message Flow element:
 
-1. Select the Message Flow element from the Process model in which to edit its name. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Message Flow element from the Process model in which to edit its name. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
 
-   ![](../../../.gitbook/assets/message-flow-configuration-identifier-name-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/message-flow-configuration-name-process-modeler-processes.png)
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 

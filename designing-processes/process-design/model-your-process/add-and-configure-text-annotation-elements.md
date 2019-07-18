@@ -29,7 +29,7 @@ Follow these steps to add a Text Annotation element to the Process model:
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
 3. Locate the **Text Annotation** element in the panel to the left of the Process Modeler canvas.
 
-   ![](../../../.gitbook/assets/text-annotation-bpmn-side-bar-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/bpmn-panel-text-annotation-process-modeler-processes.png)
 
 4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Text Annotation element cannot be placed outside of the Pool element.
 
@@ -65,7 +65,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Text Annotation element:
 
-1. Select the Text Annotation element from the Process model in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Text Annotation element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/text-annotation-configuration-identifier-name-process-modeler-processes.png)
@@ -78,10 +78,10 @@ Process Modeler automatically assigns a default value to a new Text Annotation e
 
 Follow these steps to edit the annotation description for a Text Annotation element:
 
-1. Select the Text Annotation element from the Process model in which to edit its annotation description. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Text Annotation element from the Process model in which to edit its annotation description. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Annotation Description** field displays.  
 
-   ![](../../../.gitbook/assets/text-annotation-configuration-identifier-name-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/text-annotation-configuration-name-process-modeler-processes.png)
 
 3. In the **Annotation Description** field, edit the selected element's description and then press **Enter**. The annotation description is changed.
 
@@ -116,7 +116,7 @@ Follow these steps to add an Association element to the Process model:
 
    ![](../../../.gitbook/assets/association-process-modeler-processes.png)
 
-7. Repeat steps 5 and 6 to reference another Process model element that the Text Annotation element  describes as necessary.
+7. Repeat steps 5 and 6 to reference another Process model element that the Text Annotation element describes as necessary.
 
 ## Configure an Association Element
 
@@ -139,7 +139,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for an Association element:
 
-1. Select the Association element from the Text Annotation element in which to edit its identifier value. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Association element from the Text Annotation element in which to edit its identifier value. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
 
    ![](../../../.gitbook/assets/association-configuration-identifier-direction-process-modeler-processes.png)
@@ -152,10 +152,10 @@ Use the Annotation element to place a directional arrow that points between the 
 
 Follow these steps to edit the directional arrow that points between the Text Annotation element and the element it describes:
 
-1. Select the Association element from the Text Annotation element in which to edit its annotation description. The **Inspector** panel displays the **Configuration** setting section.
+1. Select the Association element from the Text Annotation element in which to edit its annotation description. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Direction** drop-down menu displays.  
 
-   ![](../../../.gitbook/assets/association-configuration-identifier-direction-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/text-annotation-configuration-direction-process-modeler-processes.png)
 
 3. From the **Direction** drop-down menu, select the direction in which the arrow points between the Text Annotation element and the element it describes. Select one of the following options:
    * **None:** Select the **None** option to not display an arrow that indicates the reference between the Text Annotation element and the element it describes.  
