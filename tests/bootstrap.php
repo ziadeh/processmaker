@@ -20,7 +20,7 @@ Artisan::call('storage:link', []);
 if (env('RUN_MSSQL_TESTS')) {
     // Setup our testexternal database
     config(['database.connections.testexternal' => [
-        'driver' => 'mysql',
+        'driver' => 'sqlsrv',
         'host' => env('DATA_DB_HOST', '127.0.0.1'),
         'port' => env('DATA_DB_PORT', '3306'),
         // We set database to null to ensure we can create the testexternal database
@@ -60,10 +60,10 @@ if (env('RUN_MSSQL_TESTS')) {
 
     config(['database.connections.mssql' => [
         'driver' => 'sqlsrv',
-        'host' => env('MSSQL_HOST', '127.0.0.1'),
+        'host' => env('DATA_DB_HOST', '127.0.0.1'),
         'database' => null,
-        'username' => env('MSSQL_USERNAME', 'root'),
-        'password' => env('MSSQL_PASSWORD', ''),
+        'username' => env('DATA_DB_USERNAME', 'root'),
+        'password' => env('DATA_DB_PASSWORD', ''),
     ]]);
 
     $mssqlDBName = env('MSSQL_DATABASE', 'testexternal');
