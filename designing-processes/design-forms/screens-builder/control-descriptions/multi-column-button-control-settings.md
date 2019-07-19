@@ -28,11 +28,11 @@ Follow these steps to add this control to the ProcessMaker Screen:
 2. View the ProcessMaker Screen page to which to add the control.
 3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
 4. Drag the **Table** icon![](../../../../.gitbook/assets/multi-column-control-screens-builder-processes.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
-5. Configure the Table control. See [Inspector Settings](multi-column-button-control-settings.md#inspector-settings).
+5. Configure the Table control. See [Design Settings](multi-column-button-control-settings.md#inspector-settings).
 6. Place into the ProcessMaker Screen canvas where you want the control to display on the page.​![](../../../../.gitbook/assets/multi-column-control-placed-screens-builder-processes.png)
 7. Drag-and-drop others controls into either column. Configure each control's settings. 
 
-Below is a Table control in Preview mode. 
+Below is a Table control in [Preview mode](../screens-builder-modes.md#preview-mode). 
 
 ![Table control that contains other controls in Preview mode](../../../../.gitbook/assets/multi-column-control-display-screens-builder-processes.png)
 
@@ -44,15 +44,9 @@ Deleting a control deletes configuration for that control as well as any control
 
 Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
 
-## Inspector Settings <a id="inspector-settings"></a>
+## Design Settings <a id="inspector-settings"></a>
 
 {% hint style="info" %}
-### Don't Know What the Inspector Panel Is?
-
-See [View the Inspector Panel]().
-
-### Permissions Required
-
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
 
 * Screens: View Screens
@@ -61,7 +55,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the Table control:
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Table control:
 
 * **Column Widths:** Specify the column width for each column in the control. Add each column and its width specification in the order they are to display from left to right in the control. Specify the width of each column in `colspan` [HTML attribute](https://www.w3schools.com/tags/att_colspan.asp) settings. The total of all `colspan` attribute settings must be divisible by 12. The control contains two columns of six \(6\) `colspan` HTML attribute setting each by default.
 
@@ -93,9 +87,9 @@ Below are Inspector settings for the Table control:
 
 {% page-ref page="../types-for-screens.md" %}
 
-{% page-ref page="./" %}
-
 {% page-ref page="../validate-your-screen.md" %}
+
+{% page-ref page="./" %}
 
 {% page-ref page="../validate-your-screen.md" %}
 

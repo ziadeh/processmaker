@@ -29,10 +29,10 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
    ![](../../../../.gitbook/assets/image-control-placed-screens-builder-processes.png)
 
-6. Configure the Image control. See [Inspector Settings](image-control-settings.md#inspector-settings).
+6. Configure the Image control. See [Design Settings](image-control-settings.md#inspector-settings).
 7. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
 
-Below is an Image control in Preview mode.
+Below is an Image control in [Preview mode](../screens-builder-modes.md#preview-mode).
 
 ![Image control in Preview mode](../../../../.gitbook/assets/image-control-preview-screens-builder-processes.png)
 
@@ -44,15 +44,9 @@ Deleting a control also deletes configuration for that control. If you add anoth
 
 Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
 
-## Inspector Settings
+## Design Settings
 
 {% hint style="info" %}
-### Don't Know What the Inspector Panel Is?
-
-See [View the Inspector Panel]().
-
-### Permissions Required
-
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
 
 * Screens: View Screens
@@ -61,7 +55,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the Image control:
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Image control:
 
 * **Upload Image:** Click the **Upload Image** button to browse for the PNG, GIF, or JPG file type image to upload to the Image control.
 * **Preview:** This setting displays a preview of the uploaded image.

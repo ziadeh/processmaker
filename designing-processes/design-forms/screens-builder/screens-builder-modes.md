@@ -36,6 +36,8 @@ Furthermore, test how the ProcessMaker Screen's controls you configured in Desig
 
 Use Computed Properties mode to add Properties to a ProcessMaker Screen's JSON data model. A Property represents any value, mathematical calculation, or formula that computes a value. A Property's computation can be determined either through a mathematical formula or valid JavaScript, and may include values from [ProcessMaker Screen control](control-descriptions/) values during a Request. Likewise, a computed Property's value can be displayed in a ProcessMaker Screen control. Computed Properties can only be used within and only affect the ProcessMaker Screen in which the Property is defined.
 
+![Create Property values based on a computed calculation in Computed Properties mode](../../../.gitbook/assets/computed-properties-populated-screens-builder-processes.png)
+
 {% hint style="info" %}
 See [Manage Computed Properties](manage-computed-properties.md).
 {% endhint %}

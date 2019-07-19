@@ -31,9 +31,9 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
    ![](../../../../.gitbook/assets/file-download-control-placed-screens-builder-processes.png)
 
-6. Configure the File Download control. See [Inspector Settings](file-download-control-settings.md#inspector-settings).
+6. Configure the File Download control. See [Design Settings](file-download-control-settings.md#inspector-settings).
 
-Below is a File Download control in Preview mode. The File Download control displays **No files available for download** until this control references a downloadable file in the Process or during a Process's Request.
+Below is a File Download control in [Preview mode](../screens-builder-modes.md#preview-mode). The File Download control displays **No files available for download** until this control references a downloadable file in the Process or during a Process's Request.
 
 ![File Download control in Preview mode](../../../../.gitbook/assets/file-download-control-preview-screens-builder-processes.png)
 
@@ -45,15 +45,9 @@ Deleting a control also deletes configuration for that control. If you add anoth
 
 Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
 
-## Inspector Settings <a id="inspector-settings"></a>
+## Design Settings <a id="inspector-settings"></a>
 
 {% hint style="info" %}
-### Don't Know What the Inspector Panel Is?
-
-See [View the Inspector Panel]().
-
-### Permissions Required
-
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
 
 * Screens: View Screens
@@ -62,7 +56,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the File Download control:
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the File Download control:
 
 * **Text Label:** Enter the field label text that displays. **New File Download** is the default value.
 * **Download Name:** Enter the name associated with the downloaded file\(s\). This name can be referenced from a previous step in the Process. This setting has no default value.

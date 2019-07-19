@@ -33,7 +33,7 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
    ![](../../../../.gitbook/assets/record-list-control-placed-screens-builder-processes.png)
 
-6. Configure the Record List control. See [Inspector Settings](record-list-control-settings.md#inspector-settings).
+6. Configure the Record List control. See [Design Settings](record-list-control-settings.md#inspector-settings).
 7. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
 8. Create a new page in the ProcessMaker Screen. The page that records the submitted records cannot be on the same page as the Record List control. See [Add a New Page to a ProcessMaker Screen](../add-a-new-page-to-a-screen.md#add-a-new-page-to-a-processmaker-screen).
 9. On the new page, create the form using controls to record the data that the Record List control records. In each of the controls to record elements of the record list, ensure to use the same **Field Name** value as you use in the Record List control's **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page.
@@ -58,7 +58,7 @@ On a secondary page, use ProcessMaker Screen controls for form users to enter va
 * The Record List control references the secondary page to record each record from each conference attendee. The page that records the submitted records cannot be on the same page as the Record List control. 
 * In each of the controls to record elements of the record list, ensure to use the same **Field Name** value as you use in the Record List control's **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page.
 
-Below is the secondary ProcessMaker Screen page in Preview mode for each conference attendee to enter a record.
+Below is the secondary ProcessMaker Screen page in [Preview mode](../screens-builder-modes.md#preview-mode) for each conference attendee to enter a record.
 
 | Control Type | "Field Name" Value for Control | Corresponds to Record List Value |
 | :--- | :--- | :--- |
@@ -77,15 +77,9 @@ Deleting a control also deletes configuration for that control. If you add anoth
 
 Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
 
-## Inspector Settings <a id="inspector-settings"></a>
+## Design Settings <a id="inspector-settings"></a>
 
 {% hint style="info" %}
-### Don't Know What the Inspector Panel Is?
-
-See [View the Inspector Panel]().
-
-### Permissions Required
-
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
 
 * Screens: View Screens
@@ -94,7 +88,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the Record List control:
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Record List control:
 
 * **List Name:** Enter the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **List Name** value for this control to reference it in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 * **List Label:** Enter the field label text that displays. **New Record List** is the default value.

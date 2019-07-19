@@ -29,10 +29,10 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
    ![](../../../../.gitbook/assets/rich-text-control-placed-screens-builder-processes.png)
 
-6. Configure the Rich Text control. See [Inspector Settings](text-control-settings.md#inspector-settings).
+6. Configure the Rich Text control. See [Design Settings](text-control-settings.md#inspector-settings).
 7. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
 
-Below is a Rich Text control in Preview mode.
+Below is a Rich Text control in [Preview mode](../screens-builder-modes.md#preview-mode).
 
 ![Rich Text control in Preview mode](../../../../.gitbook/assets/rich-text-control-preview-screens-builder-processes.png)
 
@@ -44,15 +44,9 @@ Deleting a control also deletes configuration for that control. If you add anoth
 
 Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
 
-## Inspector Settings
+## Design Settings
 
 {% hint style="info" %}
-### Don't Know What the Inspector Panel Is?
-
-See [View the Inspector Panel]().
-
-### Permissions Required
-
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
 
 * Screens: View Screens
@@ -61,7 +55,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the Rich Text control:
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Rich Text control:
 
 * **Rich Text Content:** Enter the text to display in the Rich Text control using HTML syntax. Alternatively, use the WYSIWYG rich text editor to enter your text. **Rich text editor** is the default value. 
 * **Element Background Color:** Select to specify the background color of this control.

@@ -35,10 +35,10 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
    ![](../../../../.gitbook/assets/submit-button-control-placed-screens-builder-processes.png)
 
-6. Configure the Submit control. See [Inspector Settings](submit-button-control-settings.md#inspector-settings).
+6. Configure the Submit control. See [Design Settings](submit-button-control-settings.md#inspector-settings).
 7. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
 
-Below is a Submit control in Preview mode.
+Below is a Submit control in [Preview mode](../screens-builder-modes.md#preview-mode).
 
 ![Submit control in Preview mode using the &quot;Primary&quot; Variant option](../../../../.gitbook/assets/submit-button-control-preview-screens-builder-processes.png)
 
@@ -50,15 +50,9 @@ Deleting a control also deletes configuration for that control. If you add anoth
 
 Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
 
-## Inspector Settings <a id="inspector-settings"></a>
+## Design Settings <a id="inspector-settings"></a>
 
 {% hint style="info" %}
-### Don't Know What the Inspector Panel Is?
-
-See [View the Inspector Panel]().
-
-### Permissions Required
-
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
 
 * Screens: View Screens
@@ -67,7 +61,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the Submit control:
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Submit control:
 
 * **Field Label:** Enter the field label text that displays. **New Submit** is the default value.
 * **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:

@@ -70,6 +70,14 @@ Follow these steps to do an advanced search for a Task:
      * Use the following syntax as a guide to include two or more Task statuses in your search criteria:
 
        `(status = "In Progress" OR status = "Completed")`
+   * **Time Period:**
+
+     Use the following syntax as a guide to include a period of time in your search criteria:
+
+     `(updated_at < (now() - INTERVAL 2 day)`
+
+     The units of time `hour` and `day` are supported.
+
    * **Operators between search criteria:**
      * Use `AND` operators between each set of search criteria.
 

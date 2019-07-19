@@ -26,7 +26,7 @@ See the ProcessMaker [Screens](../../../processmaker-administration/permission-d
 
 Follow these steps to validate a ProcessMaker Screen:
 
-1. [Create a new ProcessMaker Screen](../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode). Though you can enable Screen Validation in [Preview](screens-builder-modes.md#preview-mode) mode, you may only fix validation errors in Design mode.
+1. [Create a new ProcessMaker Screen](../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode). Though you can enable Screen Validation in [Preview mode](screens-builder-modes.md#preview-mode), you may only fix validation errors in Design mode.
 2. Screen Validation is enabled by default. If the **Screen Validation** toggle key is disabled, enable the **Screen Validation** toggle key so that Screens Builder automatically validates your ProcessMaker Screen as you work.  
 
    ![](../../../.gitbook/assets/screen-validation-indicator-screens-builder-processes.png)

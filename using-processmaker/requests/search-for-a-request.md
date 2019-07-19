@@ -69,11 +69,11 @@ Follow these steps to do an advanced search for a Request:
 
        `(status = "Completed" OR status = "Canceled")`
    * **Requester\(s\):**
-     * Use the following syntax as a guide to include one Requester in your search criteria:
+     * Use the following syntax as a guide to include one requester in your search criteria:
 
        `(requester = "Username1")`
 
-     * Use the following syntax as a guide to include two or more Requesters in your search criteria:
+     * Use the following syntax as a guide to include two or more requesters in your search criteria:
 
        `(requester = "Username1" OR requester = "Username2")`
    * **Participant\(s\):**
@@ -84,6 +84,12 @@ Follow these steps to do an advanced search for a Request:
      * Use the following syntax as a guide to include two or more Request participants in your search criteria:
 
        `(participant = "Username3" OR participant = "Username4")`
+   * **Time Period:**
+     * Use the following syntax as a guide to include a period of time in your search criteria:
+
+       `(updated_at < (now() - INTERVAL 2 day)`
+
+       The units of time `hour` and `day` are supported.
    * **Operators between search criteria:**
      * Use `AND` operators between each set of search criteria.
 

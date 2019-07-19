@@ -35,9 +35,9 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
    ![](../../../../.gitbook/assets/file-upload-control-placed-screens-builder-processes.png)
 
-6. Configure the File Upload control. See [Inspector Settings](file-upload-control-settings.md#inspector-settings).
+6. Configure the File Upload control. See [Design Settings](file-upload-control-settings.md#inspector-settings).
 
-Below is a File Upload control in Preview mode.
+Below is a File Upload control in [Preview mode](../screens-builder-modes.md#preview-mode).
 
 ![File Upload control in Preview mode](../../../../.gitbook/assets/file-upload-control-preview-screens-builder-processes.png)
 
@@ -49,15 +49,9 @@ Deleting a control also deletes configuration for that control. If you add anoth
 
 Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
 
-## Inspector Settings <a id="inspector-settings"></a>
+## Design Settings <a id="inspector-settings"></a>
 
 {% hint style="info" %}
-### Don't Know What the Inspector Panel Is?
-
-See [View the Inspector Panel]().
-
-### Permissions Required
-
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
 
 * Screens: View Screens
@@ -66,7 +60,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the File Upload control:
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the File Upload control:
 
 * **Text Label:** Enter the field label text that displays. **New File Upload** is the default value.
 * **Upload Name:** Enter the unique name associated with the uploaded file\(s\). This name can be referenced in a later step in the Process. This setting has no default value.

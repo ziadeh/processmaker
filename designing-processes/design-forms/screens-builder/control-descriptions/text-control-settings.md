@@ -24,15 +24,15 @@ Follow these steps to add this control to the ProcessMaker Screen:
 1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
 3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
-4. Drag the **Text** icon ![](../../../../.gitbook/assets/text-control-screens-builder-processes.png) from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
+4. Drag the **Text** icon ![](../../../../.gitbook/assets/text-control-screens-builder-processes.png) from the left-side panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
 5. Place into the ProcessMaker Screen canvas where you want the control to display on the page.   
 
    ![](../../../../.gitbook/assets/text-control-placed-screens-builder-processes.png)
 
-6. Configure the Text control. See [Inspector Settings](text-control-settings.md#inspector-settings).
+6. Configure the Text control. See [Design Settings](text-control-settings.md#inspector-settings).
 7. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
 
-Below is a Text control in Preview mode.
+Below is a Text control in [Preview mode](../screens-builder-modes.md#preview-mode).
 
 ![Text control in Preview mode](../../../../.gitbook/assets/text-control-preview-screens-builder-processes.png)
 
@@ -44,15 +44,9 @@ Deleting a control also deletes configuration for that control. If you add anoth
 
 Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
 
-## Inspector Settings
+## Design Settings
 
 {% hint style="info" %}
-### Don't Know What the Inspector Panel Is?
-
-See [View the Inspector Panel]().
-
-### Permissions Required
-
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
 
 * Screens: View Screens
@@ -61,7 +55,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the Text control:
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Text control:
 
 * **Text Content:** Enter what text displays for the Text control. **New Text** is the default value. You can change what text will display.
 
