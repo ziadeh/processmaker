@@ -84,18 +84,20 @@ Follow these steps to do an advanced search for a Request:
      * Use the following syntax as a guide to include two or more Request participants in your search criteria:
 
        `(participant = "Username3" OR participant = "Username4")`
-   * **Time Period:**
+   * **Time Period\(s\):**
      * Use the following syntax as a guide to include a period of time in your search criteria:
 
-       `(updated_at < (now() - INTERVAL 2 day)`
+       `(updated_at < (date_sub(curdate(), INTERVAL 2 DAY))`
 
        The units of time `hour` and `day` are supported.
    * **Operators between search criteria:**
-     * Use `AND` operators between each set of search criteria.
+     * Use `AND` operators between each set of search criteria to search using multiple parameters.
+     * Use the `AND` operator between items to search for multiple specified items.
+     * Use the `OR` operator between items to search for either specified item. 
 
    Below is an example of a valid advanced Request search:
 
-   `(request = "Process Name 1" OR request = "Process Name 2") AND (status = "Canceled" OR status = "Error") AND (requester = "Username1" OR requester = "Username2") AND (participant = "Username3" OR participant = "Username4")`
+   `(request = "Process Name 1" OR request = "Process Name 2") AND (status = "Canceled" OR status = "Error") AND (requester = "Username1" OR requester = "Username2") AND (participant = "Username3" OR participant = "Username4" AND (updated_at < (date_sub(curdate(), INTERVAL 2 DAY))`
 
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
 

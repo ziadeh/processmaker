@@ -45,7 +45,7 @@ Deleting a control also deletes configuration for that control. If you add anoth
 
 Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
 
-## Design Settings <a id="inspector-settings"></a>
+## Settings <a id="inspector-settings"></a>
 
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:

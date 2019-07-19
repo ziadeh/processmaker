@@ -70,7 +70,7 @@ Follow these steps to do an advanced search for a Task:
      * Use the following syntax as a guide to include two or more Task statuses in your search criteria:
 
        `(status = "In Progress" OR status = "Completed")`
-   * **Time Period:**
+   * **Time Period\(s\):**
 
      Use the following syntax as a guide to include a period of time in your search criteria:
 
@@ -79,11 +79,13 @@ Follow these steps to do an advanced search for a Task:
      The units of time `hour` and `day` are supported.
 
    * **Operators between search criteria:**
-     * Use `AND` operators between each set of search criteria.
+     * Use `AND` operators between each set of search criteria to search using multiple parameters.
+     * Use the `AND` operator between items to search for multiple specified items.
+     * Use the `OR` operator between items to search for either specified item.
 
    Below is an example of a valid advanced Request search:
 
-   `(request = "Tax Return Process" OR request = "Modify Document Process") AND (task = "Customer Documents" OR task = "Loan Request") AND (status = "In Progress" OR status = "Completed")`
+   `(request = "Tax Return Process" OR request = "Modify Document Process") AND (task = "Customer Documents" OR task = "Loan Request") AND (status = "In Progress" OR status = "Completed") AND (updated_at < (date_sub(curdate(), INTERVAL 2 DAY))`
 
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Tasks based on your entered criteria.
 
