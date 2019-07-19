@@ -32,6 +32,7 @@ import TaskAssignment from './components/inspector/TaskAssignment';
 import ConfigEditor from './components/inspector/ConfigEditor';
 import ScriptSelect from './components/inspector/ScriptSelect';
 import StartPermission from './components/inspector/StartPermission';
+import ProcessNotifications from './components/inspector/ProcessNotifications';
 
 Vue.component('UserSelect', UserSelect);
 Vue.component('GroupSelect', GroupSelect);
@@ -42,6 +43,7 @@ Vue.component('TaskAssignment', TaskAssignment);
 Vue.component('ConfigEditor', ConfigEditor);
 Vue.component('ScriptSelect', ScriptSelect);
 Vue.component('StartPermission', StartPermission);
+Vue.component('ProcessNotifications', ProcessNotifications);
 
 let nodeTypes = [
     endEvent,
@@ -208,7 +210,7 @@ ProcessMaker.EventBus.$on('modeler-init', ({ registerNode, registerBpmnExtension
         }
     });
     registerInspectorExtension(pool, {
-        component: "TaskNotifications",
+        component: "ProcessNotifications",
         config: {
             label: "Process Notifications",
             helper: "Users that should be notified about process events"
