@@ -20,13 +20,13 @@ Artisan::call('storage:link', []);
 if (env('RUN_MSSQL_TESTS')) {
     // Setup our testexternal database
     config(['database.connections.testexternal' => [
-        'driver' => 'sqlsrv',
-        'host' => env('DATA_DB_HOST', '127.0.0.1'),
-        'port' => env('DATA_DB_PORT', '3306'),
+        'driver' => 'mysql',
+        'host' => env('DB_HOST', '127.0.0.1'),
+        'port' => env('DB_PORT', '3306'),
         // We set database to null to ensure we can create the testexternal database
         'database' => null,
-        'username' => env('DATA_DB_USERNAME', 'root'),
-        'password' => env('DATA_DB_PASSWORD', ''),
+        'username' => env('DB_USERNAME', 'root'),
+        'password' => env('DB_PASSWORD', ''),
         'unix_socket' => env('DB_SOCKET', ''),
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
