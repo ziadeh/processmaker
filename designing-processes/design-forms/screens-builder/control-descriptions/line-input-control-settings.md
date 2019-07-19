@@ -61,26 +61,44 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Line Inputs control:
+The Line Inputs control has the following panels that contain settings:
 
-* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
+* [**Variable** panel](line-input-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Design** panel](line-input-control-settings.md#design-panel-settings)
 
-  * Reference this control by its **Variable Name** setting's value.
-  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `My full name is {{FullName}}`.
+### Variable Panel Settings
+
+Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Line Inputs control in the **Variable** panel:
+
+* **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
+
+  * Reference this control by its **Key Name** setting's value.
+  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Key Name** value in the target control. Example: `My full name is {{FullName}}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
 
-* **Field Type:** Select one of the following options:
-  * **Text:** The form user enters a single line of plain text into the Line Inputs control. If the entered text is longer than the field width, the entered text is clipped. **Text** is the default option.
-  * **Password:** The form user enters a password into the Line Inputs control. Entered text is masked. If the entered text is longer than the field width, the entered text is clipped.
-* **Field Label:** Enter the field label text that displays. **New Input** is the default value.
+* **Data Type:** Select one of the following options to indicate the data type for the contents of this this control:
+  * **Boolean:** The control accepts a Boolean type value. **Boolean** is the default option.
+  * **Currency:** The control accepts a currency value.
+  * **Date:** The control accepts a date value.
+  * **Datetime:** The control accepts a datetime value. A datetime value contains both a date and time value.
+  * **Float:** The control accepts a float value. A float is a floating-point number, meaning it contains a decimal place.
+  * **Int:** The control accepts an integer value. An integer does not contain a decimal place.
+  * **String:** The control accepts a string value.
 * **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+* **Control is read only:** Select the **Control is read only** checkbox to indicate that the Line Inputs control field content cannot be edited.
+
+### Design Panel Settings
+
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Line Inputs control in the **Design** panel:
+
+* **Field Label:** Enter the field label text that displays. **New Input** is the default value.
 * **Placeholder:** Enter the placeholder text that displays in the field when no value has been provided. This setting has no default value.
 * **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
 * **Element Background Color:** Select to specify the background color of this control.
 * **Text Color:** Select to specify the text color that displays in this control.
-* **Visibility Rule:** Specify an expression that dictates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **Visibility Rule:** Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics
