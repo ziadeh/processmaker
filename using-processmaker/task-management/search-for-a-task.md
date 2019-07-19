@@ -76,7 +76,7 @@ Follow these steps to do an advanced search for a Task:
 
      `(updated_at < (now() - INTERVAL 2 day)`
 
-     The units of time `hour` and `day` are supported.
+     The units of time `second`, `minute`, `hour` and `day` are supported.
 
    * **Operators between search criteria:**
      * Use `AND` operators between each set of search criteria to search using multiple parameters.

@@ -89,7 +89,7 @@ Follow these steps to do an advanced search for a Request:
 
        `(updated_at < (date_sub(curdate(), INTERVAL 2 DAY))`
 
-       The units of time `hour` and `day` are supported.
+       The units of time `second`, `minute`, `hour` and `day` are supported.
    * **Operators between search criteria:**
      * Use `AND` operators between each set of search criteria to search using multiple parameters.
      * Use the `AND` operator between items to search for multiple specified items.
