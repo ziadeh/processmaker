@@ -61,7 +61,20 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Navigation Button control:
+The Navigation Button control has the following panels that contain settings:
+
+* \*\*\*\*[**Variable** panel](page-navigation-button-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Design** panel](page-navigation-button-control-settings.md#design-panel-settings)
+
+### Variable Panel Settings
+
+Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Navigation Button control in the **Variable** panel:
+
+* **Destination:** Select the destination page to which to navigate in a multi-page ProcessMaker Screen. The default is the first page of the ProcessMaker Screen.
+
+### Design Panel Settings
+
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Navigation Button control in the **Variable** panel:
 
 * **Field Label:** Enter the field label text that displays. **New** **Page Navigation** is the default value.
 * **Variant:** Select the style for the Page Navigation Button control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
@@ -74,7 +87,6 @@ Click the control to view its settings in the **Design** panel that is on the ri
   * **Light:** White-colored background with black-colored **Field Label** text.
   * **Dark:** Black-colored background with white-colored **Field Label** text.
   * **Link:** White-colored background with blue-colored **Field Label** text.
-* **Destination:** Select the destination page to which to navigate in a multi-page ProcessMaker Screen. The default is the first page of the ProcessMaker Screen.
 * **Visibility Rule:** Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 

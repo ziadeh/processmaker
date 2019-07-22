@@ -55,7 +55,14 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Table control:
+The Table control has the following panels that contain settings:
+
+* \*\*\*\*[**Variable** panel](multi-column-button-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Design** panel](multi-column-button-control-settings.md#design-panel-settings)
+
+### Variable Panel Settings
+
+Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Table control in the **Variable** panel:
 
 * **Column Widths:** Specify the column width for each column in the control. Add each column and its width specification in the order they are to display from left to right in the control. Specify the width of each column in `colspan` [HTML attribute](https://www.w3schools.com/tags/att_colspan.asp) settings. The total of all `colspan` attribute settings must be divisible by 12. The control contains two columns of six \(6\) `colspan` HTML attribute setting each by default.
 
@@ -77,6 +84,10 @@ Click the control to view its settings in the **Design** panel that is on the ri
 
   2. In the **Column Width** field, enter the width of the column \(as described above\).
   3. Click **OK**. The column displays below the existing columns in **Column Widths**.
+
+### Design Panel Settings
+
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Table control in the **Design** panel:
 
 * **Element Background Color:** Select to specify the background color of this control.
 * **Text Color:** Select to specify the text color that displays in this control.

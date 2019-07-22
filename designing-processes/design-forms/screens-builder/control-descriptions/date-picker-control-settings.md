@@ -61,15 +61,26 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Date Picker control:
+The Date Picker control has the following panels that contain settings:
 
-* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
+* \*\*\*\*[**Variable** panel](date-picker-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Design** panel](date-picker-control-settings.md#design-panel-settings)
 
-  * Reference this control by its **Variable Name** setting's value.
-  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `My full name is {{FullName}}`.
+### Variable Panel Settings
+
+Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Date Picker control in the **Variable** panel:
+
+* **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
+
+  * Reference this control by its **Key Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds with the datetime entered into the Date Picker control with that Date Picker control's **Key Name** value. ![](../../../../.gitbook/assets/date-picker-preview-screens-builder-processes.png) 
+  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Key Name** value in the target control. Example: `My full name is {{FullName}}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
+
+### Design Panel Settings
+
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Date Picker control in the **Design** panel:
 
 * **Field Label:** Enter the field label text that displays. **New Date Picker** is the default value.
 * **Placeholder:** Enter the placeholder text that displays in the field when no value has been provided. This setting has no default value.

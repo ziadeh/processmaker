@@ -82,7 +82,7 @@ Click the control to view its settings in the **Variable** panel that is on the 
 
 ### Design Panel Settings
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Checkbox control:
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Checkbox control in the **Design** panel:
 
 * **Field Label:** Enter the field label text that displays. **New Checkbox** is the default value.
 * **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
