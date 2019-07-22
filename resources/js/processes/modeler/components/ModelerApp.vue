@@ -42,10 +42,22 @@ export default {
       return !!window.Cypress;
     },
     getTaskNotifications() {
+      console.log('notificaciones');
       var notifications = {};
       this.$refs.modeler.nodes.forEach(function(node) {
         let id = node.definition.id;
         if (node.notifications !== undefined) {
+          notifications[id] = node.notifications;
+        }
+      });
+      return notifications;
+    },
+    getProcessNotifications() {
+      console.log('notificaciones de proceso');
+      var notifications = {};
+      this.$refs.modeler.nodes.forEach(function(node) {
+        let id = node.definition.id;
+        if (node.notifications !== undefined && node.type === 'processmaker-modeler-pool') {
           notifications[id] = node.notifications;
         }
       });
@@ -62,6 +74,7 @@ export default {
             name: this.process.name,
             description: this.process.description,
             task_notifications: this.getTaskNotifications(),
+            process_notifications: this.getProcessNotifications(),
             bpmn: xml
           };
           ProcessMaker.apiClient.put('/processes/' + this.process.id, data)
