@@ -21,14 +21,16 @@
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-config"
                            role="tab"
-                           aria-controls="nav-config" aria-selected="true">{{__('Configuration')}}</a>
-                        <a class="nav-item nav-link" id="nav-groups-tab" data-toggle="tab" href="#nav-notifications"
-                           role="tab"
-                           aria-controls="nav-notifications" aria-selected="true">{{__('Notifications')}}</a>
+                           aria-controls="nav-config" aria-selected="true">
+                            {{__('Configuration')}}
+                        </a>
+
                         @foreach ($addons as $addon)
                             <a class="nav-item nav-link" id="{{$addon['id'] . '-tab'}}" data-toggle="tab"
                                href="{{'#' . $addon['id']}}" role="tab"
-                               aria-controls="nav-notifications" aria-selected="true">{{ __($addon['title']) }}</a>
+                               aria-controls="nav-notifications" aria-selected="true">
+                                {{ __($addon['title']) }}
+                            </a>
                         @endforeach
                     </div>
                 </nav>
@@ -116,84 +118,6 @@
                                         {{ __('No Data Available') }}
                                     </template>
                                 </multiselect>
-                            </div>
-                            <div class="d-flex justify-content-end mt-2">
-                                {!! Form::button(__('Cancel'), ['class'=>'btn btn-outline-secondary', '@click' => 'onClose']) !!}
-                                {!! Form::button(__('Save'), ['class'=>'btn btn-secondary ml-2', '@click' => 'onUpdate']) !!}
-                            </div>
-                        </div>
-                        <div class="tab-pane fade show" id="nav-notifications" role="tabpanel"
-                             aria-labelledby="nav-notifications-tab">
-                            <div class="form-group p-0">
-
-                                <table id="table-notifications" class="table">
-                                    <thead>
-                                    <tr>
-                                        <th class="notify"></th>
-                                        <th class="action">{{__('Request Started')}}</th>
-                                        <th class="action">{{__('Request Canceled')}}</th>
-                                        <th class="action">{{__('Request Completed')}}</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td class="notify">{{__('Notify Requester')}}</td>
-                                        <td class="action">
-                                            <div class="custom-control custom-switch">
-                                                <input v-model="formData.notifications.requester.started"
-                                                       type="checkbox" class="custom-control-input"
-                                                       id="notify-requester-started">
-                                                <label class="custom-control-label"
-                                                       for="notify-requester-started"></label>
-                                            </div>
-                                        </td>
-                                        <td class="action">
-                                            <div class="custom-control custom-switch">
-                                                <input v-model="formData.notifications.requester.canceled"
-                                                       type="checkbox" class="custom-control-input"
-                                                       id="notify-requester-canceled">
-                                                <label class="custom-control-label"
-                                                       for="notify-requester-canceled"></label>
-                                            </div>
-                                        </td>
-                                        <td class="action">
-                                            <div class="custom-control custom-switch">
-                                                <input v-model="formData.notifications.requester.completed"
-                                                       type="checkbox" class="custom-control-input"
-                                                       id="notify-requester-completed">
-                                                <label class="custom-control-label"
-                                                       for="notify-requester-completed"></label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="notify">{{__('Notify Participants')}}</td>
-                                        <td class="action">
-                                            <div class="custom-control custom-switch">
-
-                                            </div>
-                                        </td>
-                                        <td class="action">
-                                            <div class="custom-control custom-switch">
-                                                <input v-model="formData.notifications.participants.canceled"
-                                                       type="checkbox" class="custom-control-input"
-                                                       id="notify-participants-canceled">
-                                                <label class="custom-control-label"
-                                                       for="notify-participants-canceled"></label>
-                                            </div>
-                                        </td>
-                                        <td class="action">
-                                            <div class="custom-control custom-switch">
-                                                <input v-model="formData.notifications.participants.completed"
-                                                       type="checkbox" class="custom-control-input"
-                                                       id="notify-participants-completed">
-                                                <label class="custom-control-label"
-                                                       for="notify-participants-completed"></label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
                             </div>
                             <div class="d-flex justify-content-end mt-2">
                                 {!! Form::button(__('Cancel'), ['class'=>'btn btn-outline-secondary', '@click' => 'onClose']) !!}
