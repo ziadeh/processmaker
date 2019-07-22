@@ -58,10 +58,6 @@
       assigned: false,
       completed: false,
     };
-    this.assignee = {
-      assigned: false,
-      completed: false,
-    };
     this.participants = {
       assigned: false,
       completed: false,
@@ -87,44 +83,28 @@
             }
           }
         },
-        requesterAssigned: false,
+        requesterStarted: false,
+        requesterCanceled: false,
         requesterCompleted: false,
-        requesterDue: false,
-        assigneeAssigned: false,
-        assigneeCompleted: false,
-        assigneeDue: false,
-        participantsAssigned: false,
+        participantsCanceled: false,
         participantsCompleted: false,
-        participantsDue: false,
       };
     },
     watch: {
-      requesterAssigned: function (value) {
-        this.notifications.requester.assigned = value;
+      requesterStarted: function (value) {
+        this.notifications.requester.started = value;
+      },
+      requesterCanceled: function (value) {
+        this.notifications.requester.canceled = value;
       },
       requesterCompleted: function (value) {
         this.notifications.requester.completed = value;
       },
-      requesterDue: function (value) {
-        this.notifications.requester.due = value;
-      },
-      assigneeAssigned: function (value) {
-        this.notifications.assignee.assigned = value;
-      },
-      assigneeCompleted: function (value) {
-        this.notifications.assignee.completed = value;
-      },
-      assigneeDue: function (value) {
-        this.notifications.assignee.due = value;
-      },
-      participantsAssigned: function (value) {
-        this.notifications.participants.assigned = value;
+      participantsCanceled: function (value) {
+        this.notifications.participants.canceled = value;
       },
       participantsCompleted: function (value) {
         this.notifications.participants.completed = value;
-      },
-      participantsDue: function (value) {
-        this.notifications.participants.due = value;
       },
       modelerId: function (newValue, oldValue) {
         this.loadNotifications();
@@ -132,15 +112,11 @@
     },
     methods: {
       loadNotifications () {
-        this.requesterAssigned = this.notifications.requester.assigned;
+        this.requesterStarted = this.notifications.requester.started;
+        this.requesterCanceled = this.notifications.requester.canceled;
         this.requesterCompleted = this.notifications.requester.completed;
-        this.requesterDue = this.notifications.requester.due;
-        this.assigneeAssigned = this.notifications.assignee.assigned;
-        this.assigneeCompleted = this.notifications.assignee.completed;
-        this.assigneeDue = this.notifications.assignee.due;
-        this.participantsAssigned = this.notifications.participants.assigned;
+        this.participantsCanceled = this.notifications.participants.canceled;
         this.participantsCompleted = this.notifications.participants.completed;
-        this.participantsDue = this.notifications.participants.due;
       }
     },
     computed: {
