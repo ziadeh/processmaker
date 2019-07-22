@@ -61,7 +61,14 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Radio Group control:
+The Radio Group control has the following panels that contain settings:
+
+* **Variable** panel
+* **Design** panel
+
+### Variable Panel Settings
+
+Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Radio Group control in the **Variable** panel:
 
 * **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
 

@@ -59,19 +59,24 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Below are Inspector settings for the Line Input control:
+The Select control has the following panels that contain settings:
 
-* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
+* **Variable** panel
+* **Design** panel
 
-  * Reference this control by its **Variable Name** setting's value.
-  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `My full name is {{FullName}}`.
+### Variable Panel Settings
+
+Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Select control in the **Variable** panel:
+
+* **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
+
+  * Reference this control by its **Key Name** setting's value.
+  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Key Name** value in the target control. Example: `My full name is {{FullName}}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
 
-* **Field Label:** Enter the field label text that displays. **New Select** is the default value.
 * **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
-* **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
 * **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down menu. The default option is called **new** with the content **New Option**.
 
   Switch the **Show in Json Format** toggle key to display these settings in JSON.  
@@ -94,6 +99,12 @@ Below are Inspector settings for the Line Input control:
   3. In the **Content** field, enter the **Content** option value \(as described above\).
   4. Click **OK**. The option displays below the existing options in **Options List**.
 
+### Design Panel Settings
+
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Select control in the **Design** panel:
+
+* **Field Label:** Enter the field label text that displays. **New Select** is the default value.
+* **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
 * **Element Background Color:** Select to specify the background color of this control.
 * **Text Color:** Select to specify the text color that displays in this control.
 * **Visibility Rule:** Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
