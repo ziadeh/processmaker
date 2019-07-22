@@ -72,7 +72,7 @@ Click the control to view its settings in the **Variable** panel that is on the 
 
 * **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
 
-  * Reference this control by its **Key Name** setting's value.
+  * Reference this control by its **Key Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the textual content entered into the Textarea control with that Textarea control's **Key Name** value. ![](../../../../.gitbook/assets/textarea-preview-screens-builder-processes.png) 
   * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Key Name** value in the target control. Example: `My full name is {{FullName}}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 

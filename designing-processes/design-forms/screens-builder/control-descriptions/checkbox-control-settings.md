@@ -61,7 +61,14 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Checkbox control:
+The Checkbox control has the following panels that contain settings:
+
+* \*\*\*\*[**Variable** panel](checkbox-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Design** panel](checkbox-control-settings.md#design-panel-settings)
+
+### Variable Panel Settings
+
+Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Checkbox control in the **Variable** panel:
 
 * **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
 
@@ -72,6 +79,10 @@ Click the control to view its settings in the **Design** panel that is on the ri
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
+
+### Design Panel Settings
+
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Checkbox control:
 
 * **Field Label:** Enter the field label text that displays. **New Checkbox** is the default value.
 * **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.

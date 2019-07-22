@@ -63,23 +63,21 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 The Radio Group control has the following panels that contain settings:
 
-* **Variable** panel
-* **Design** panel
+* \*\*\*\*[**Variable** panel](radio-group-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Design** panel](radio-group-control-settings.md#design-panel-settings)
 
 ### Variable Panel Settings
 
 Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Radio Group control in the **Variable** panel:
 
-* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
+* **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
 
-  * Reference this control by its **Variable Name** setting's value.
-  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `My full name is {{FullName}}`.
+  * Reference this control by its **Key Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Radio Group control's selected option with that Radio Group control's **Key Name** value. ![](../../../../.gitbook/assets/radio-group-preview-screens-builder-processes.png) 
+  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Key Name** value in the target control. Example: `My full name is {{FullName}}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
 
-* **Field Label:** Enter the field label text that displays. **New Radio Button Group** is the default value.
-* **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
 * **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down. The default option is called **new** with the content **New Option**.
 
   Switch the **Show in Json Format** toggle key to display these settings in JSON.  
@@ -102,6 +100,12 @@ Click the control to view its settings in the **Variable** panel that is on the 
   3. In the **Content** field, enter the **Content** option value \(as described above\).
   4. Click **OK**. The option displays below the existing options in **Options List**.
 
+### Design Panel Settings
+
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Radio Group control in the **Design** panel:
+
+* **Field Label:** Enter the field label text that displays. **New Radio Button Group** is the default value.
+* **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
 * **Toggle Style?:** Select to display a toggle key control instead of a radio button control for each radio group option.
 * **Element Background Color:** Select to specify the background color of this control.
 * **Text Color:** Select to specify the text color that displays in this control.
