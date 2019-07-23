@@ -1,17 +1,19 @@
 ---
-description: Understand what users are in ProcessMaker Spark.
+description: Understand what users are in ProcessMaker.
 ---
 
 # What is a User?
 
 ## Overview
 
-In ProcessMaker Spark, a user is any person for which a ProcessMaker account is created to allow that individual to do the following:
+In ProcessMaker, a user is any person associated with a ProcessMaker account that allows that individual to do the following:
 
-* Log on to ProcessMaker Spark using unique credentials
+* Log on to ProcessMaker using unique credentials
 * Adjust his or her [user profile](../../using-processmaker/profile-settings.md)
 * Participate in [Requests](../../using-processmaker/requests/what-is-a-request.md)
 * Do [Tasks](../../using-processmaker/task-management/what-is-a-task.md)
+
+Note that any person who interacts with a Request is not necessarily a ProcessMaker user. For example, an anonymous person can participate in a Request via a [Web Entry](../../package-development-distribution/package-a-connector/web-entry.md) URL.
 
 ## Related Topics
 
