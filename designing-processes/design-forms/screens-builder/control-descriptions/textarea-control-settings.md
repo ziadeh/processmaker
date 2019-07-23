@@ -72,14 +72,14 @@ Click the control to view its settings in the **Variable** panel that is on the 
 
 * **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
 
-  * Reference this control by its **Key Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the textual content entered into the Textarea control with that Textarea control's **Key Name** value. ![](../../../../.gitbook/assets/textarea-preview-screens-builder-processes.png) 
+  * Reference this control by its **Key Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Textarea control's textual content with that Textarea control's **Key Name** value. ![](../../../../.gitbook/assets/textarea-preview-screens-builder-processes.png) 
   * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Key Name** value in the target control. Example: `My full name is {{FullName}}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
 
 * **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
-* **Control is read only:** Select the **Control is read only** checkbox to indicate that the Line Inputs control field content cannot be edited.
+* **Control is read only:** Select the **Control is read only** checkbox to indicate that the Textarea control field content cannot be edited.
 
 ### Design Panel Settings
 

@@ -88,7 +88,28 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Record List control:
+The Record List control has the following panels that contain settings:
+
+* \*\*\*\*[**Variable** panel](record-list-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Design** panel](record-list-control-settings.md#design-panel-settings)
+
+### Variable Panel Settings
+
+Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Record List control in the **Variable** panel:
+
+* **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
+
+  * Reference this control by its **Key Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Record List control's records with that Record List control's **Key Name** value.
+  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Key Name** value in the target control. Example: `My full name is {{FullName}}`.
+  * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+
+  This is a required setting.
+
+* **Data Type:** Select one of the following options to indicate the data type for the contents of this this control:
+
+### Design Panel Settings
+
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Record List control in the **Variable** panel:
 
 * **List Name:** Enter the unique internal data name of the control that only the Process Owner views at design time. This is a required setting. Use the **List Name** value for this control to reference it in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 * **List Label:** Enter the field label text that displays. **New Record List** is the default value.
