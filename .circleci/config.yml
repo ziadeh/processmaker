@@ -247,6 +247,9 @@ jobs:
           name: 'SauceLabs Browser Tests: Chrome'
           command: 'ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "cd ~/builds/$BUILD_NAME && php artisan dusk"'
           environment:
+            SAUCELABS_BROWSER: 'chrome'
+            SAUCELABS_PLATFORM: 'Windows 10'
+            SAUCELABS_BROWSER_VERSION: '75.0'
             DB_DATABASE: 'circle_test'
             RUN_MSSQL_TESTS: 'true'
             MSSQL_HOST: '127.0.0.1'
@@ -257,7 +260,7 @@ jobs:
           environment:
             SAUCELABS_BROWSER: 'firefox'
             SAUCELABS_PLATFORM: 'Windows 10'
-            SAUCELABS_BROWSER_VERSION: '47.0'
+            SAUCELABS_BROWSER_VERSION: '68.0'
 
       - run:
           name: 'SauceLabs Browser Tests: Edge'
@@ -265,7 +268,7 @@ jobs:
           environment:
             SAUCELABS_BROWSER: 'MicrosoftEdge'
             SAUCELABS_PLATFORM: 'Windows 10'
-            SAUCELABS_BROWSER_VERSION: '16.16299'
+            SAUCELABS_BROWSER_VERSION: '18.17763'
 
       - run:
           name: 'SauceLabs Browser Tests: Safari'
@@ -273,7 +276,7 @@ jobs:
           environment:
             SAUCELABS_BROWSER: 'safari'
             SAUCELABS_PLATFORM: 'macOS 10.13'
-            SAUCELABS_BROWSER_VERSION: '11.0'
+            SAUCELABS_BROWSER_VERSION: '11.1'
 
       - run:
           name: 'Final QA Artisan DB Migration'
