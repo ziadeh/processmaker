@@ -34,13 +34,10 @@ class EnvironmentVariablesCreationTest extends DuskTestCase
      */
     public function testLogin()
     {
-        $this->markTestSkipped('Skipping Dusk tests temporarily');
+        //$this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
             //Login
-            $browser->visit("/");
-            if ($browser->assertVisible(".phpdebugbar") == TRUE){   // Minimize the Laravel debug bar (if exists)
-                $browser->press(".phpdebugbar-close-btn");
-            }
+            $browser->visit("/processes/environment-variables");
             $browser->assertSee("Username")
                 ->type("#username", "admin")
                 ->type("#password", "admin")
@@ -51,21 +48,25 @@ class EnvironmentVariablesCreationTest extends DuskTestCase
 
     public function testEnvironmentVariablesCreation()
     {
-        $this->markTestSkipped('Skipping Dusk tests temporarily');
+        //$this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
-            //Navigate
-            $browser->clickLink("Processes")
-                ->clickLink("Environment Variables")
             //Add Environment Variable
-                ->press("#create_envvar") //We can use this line and remove the previous two once the add button is updated
+            $browser->press("#create_envvar")
                 ->assertVisible("#createEnvironmentVariable .ml-2")
                 ->type("#name", "foobar")
                 ->type("#description", "Bars of Foo.")
                 ->type("#value", "foobar")
                 ->press("#createEnvironmentVariable .ml-2")
-                ->pause(500)   //No choice here, we have to pause for either the error message or the success alert.
                 ->assertMissing(".invalid-feedback")
-                ->waitForText("foobar");
+                ->waitForText("foobar",10);
+
+        });
+    }
+
+    public function testEnvironmentVariablesEdit()
+    {
+        //$this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->browse(function ($browser) {
             //Edit Environment Variable
             $browser->press(".fa-pen-square")
                 ->assertSee("Value")
@@ -73,14 +74,21 @@ class EnvironmentVariablesCreationTest extends DuskTestCase
                 ->type("#description", "Foos of Bar.")
                 ->type("#value", "barfoo")
                 ->press("#editEnvironmentVariable .ml-2")
-                //->waitFor(".vuetable-empty-result")
-                ->waitForText("barfoo");
+                ->waitForText("barfoo",10);
+
+        });
+    }
+
+    public function testEnvironmentVariablesDelete()
+    {
+        //$this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->browse(function ($browser) {
             //Delete Environment Variable
             $browser->press(".fa-trash-alt")
-                ->waitFor(".modal-content")
-                ->waitForText("Are you sure you want to delete the environment variable barfoo?")
+                ->waitFor(".modal-content",10)
+                ->waitForText("Are you sure you want to delete the environment variable barfoo?",10)
                 ->press("#confirm")
-                ->waitFor(".vuetable-empty-result")
+                ->waitFor(".vuetable-empty-result",10)
                 ->assertDontSee("barfoo");
         });
     }

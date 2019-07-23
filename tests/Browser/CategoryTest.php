@@ -34,13 +34,10 @@ class CategoryCreationTest extends DuskTestCase
      */
     public function testLogin()
     {
-        $this->markTestSkipped('Skipping Dusk tests temporarily');
+        //$this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
             //Login
-            $browser->visit("/");
-            if ($browser->assertVisible(".phpdebugbar") == TRUE){   // Minimize the Laravel debug bar (if exists)
-                $browser->press(".phpdebugbar-close-btn");
-            }
+            $browser->visit("/processes/categories");
             $browser->assertSee("Username")
                 ->type("#username", "admin")
                 ->type("#password", "admin")
@@ -51,32 +48,45 @@ class CategoryCreationTest extends DuskTestCase
 
     public function testCategoryCreation()
     {
-        $this->markTestSkipped('Skipping Dusk tests temporarily');
+        //$this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
-            //Navigate
-            $browser->clickLink("Processes")
-                ->clickLink("Categories")
-            //Add Environment Variable
-                ->press("#create_category")
-                ->assertVisible("#createProcessCategory .ml-2")
-                ->type("#name", "!It is a Foobar")
-                ->press("#createProcessCategory .ml-2")
-                ->waitFor("#editProcessCategory")
-                ->clickLink("Categories")
-                ->waitForText("!It is a Foobar");
+            $browser->waitFor('#createProcessCategory',10)
+                ->assertVisible('#createProcessCategory .ml-2')
+                ->assertSee('Create Category')
+                ->type('#name', 'Foobar')
+                ->press('#createProcessCategory .ml-2')
+                ->waitFor('#editProcessCategory',10)
+                ->clickLink('Categories')
+                ->waitForText('Foobar',10);
+        });
+    }
+
+    public function testCategoryEdit()
+    {
+        //$this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->browse(function ($browser) {
             //Edit Environment Variable
-            $browser->driver->findElement(WebDriverBy::xpath("//*[@id='process-categories-listing']/div[2]/div/table/tbody/tr[1]/td[6]/div/div/button[1]/i"))
-                ->click();  //This is a really awful hacky workaround, because there is not a unique ID for each edit icon
-            $browser->type("#name", "!It is a Barfoo")
-                ->press("#editProcessCategory .ml-2")
-                //->waitFor(".vuetable-empty-result")
-                ->waitForText("!It is a Barfoo");
+            $browser->press('.fa-pen-square')
+                ->waitFor('#editProcessCategory',10)
+                ->assertSee('Category Name')
+                ->type('#name', 'Barfoo')
+                ->press('#editProcessCategory .ml-2')
+                ->waitForText('Barfoo',10);
+        });
+    }
+
+    public function testCategoryDelete()
+    {
+        //$this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->browse(function ($browser) {
             //Delete Environment Variable
-            $browser->press(".fa-trash-alt")
-                ->waitFor(".modal-content")
-                ->press("#confirm")
-                ->waitFor(".vuetable-empty-result")
-                ->assertDontSee("!It is a Barfoo");
+            $browser->press('.fa-trash-alt')
+                ->waitFor('#confirmModal',10)
+                ->press('#confirm')
+                ->waitFor('#createProcessCategory',10)
+                ->visit('/processes/categories') //Reload the page, to make sure everything is cleared out
+                ->waitFor('#createProcessCategory',10)
+                ->assertDontSee('Barfoo');
         });
     }
 }

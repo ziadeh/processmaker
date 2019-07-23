@@ -37,10 +37,7 @@ class AuthClientTest extends DuskTestCase
         $this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
             //Login
-            $browser->visit("/");
-            if ($browser->assertVisible(".phpdebugbar") == TRUE){   // Minimize the Laravel debug bar (if exists)
-                $browser->press(".phpdebugbar-close-btn");
-            }
+            $browser->visit("/admin/auth-clients");
             $browser->assertSee("Username")
                 ->type("#username", "admin")
                 ->type("#password", "admin")
@@ -51,46 +48,49 @@ class AuthClientTest extends DuskTestCase
 
     public function testAuthClientCreation()
     {
-        $this->markTestSkipped('Skipping Dusk tests temporarily');
+        //$this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
-            //Login
-            $browser->visit("/")
-                ->assertSee("Username")
-                ->type("#username", "admin")
-                ->type("#password", "admin")
-                ->press(".btn")
-                ->assertMissing(".invalid-feedback")
-                ->clickLink('Admin')
-                ->waitUntilMissing(".vuetable-empty-result")
+            $browser->waitUntilMissing(".vuetable-empty-result")
             //Add Auth Client
-                ->press(".fa-key")
                 ->press("#create_authclients")
                 ->assertSee("Create An Auth-Client")
                 ->type("#name", "foobar")
                 ->type("#redirect", "https://foo.bar.com")
-                ->press(".ml-2")
-                ->pause(500)   //No choice here, we have to pause for either the error message or the success alert.
-                ->assertMissing(".invalid-feedback")
-                ->waitForText("foobar");
+                ->press("#createEditAuthClient .ml-2")
+                ->waitFor('#authClients > div.px-3.page-content > div.data-table > div > table > tbody > tr:nth-child(2)',10) //Hacky workaround to verify that a second auth client has appeared on the page
+                ->waitForText("foobar",10);
+        });
+    }
+
+    public function testAuthClientEdit()
+    {
+        //$this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->browse(function ($browser) {
             //Edit Auth Client
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='authClients']/div[2]/div[2]/div/table/tbody/tr[1]/td[5]/div/div/button[1]/i"))
                 ->click();  //The edit button lacks a unique ID
-            $browser->pause(500)
+            $browser->waitFor('#createEditAuthClient',10)
                 ->assertSee('Edit Auth Client')
                 ->type("#name", "bar foo")
                 ->type("#redirect", "https://bar.foo.com")
-                ->press(".ml-2")
-                ->pause(500)   //No choice here, we have to pause for either the error message or the success alert.
+                ->press("#createEditAuthClient .ml-2")
+                ->waitUntilMissing('#createEditAuthClient',10) //Wait for modal to go away
                 ->assertMissing(".invalid-feedback")
-                ->waitForText("bar foo");
+                ->waitForText("bar foo",10);
+        });
+    }
+
+    public function testAuthClientDelete()
+    {
+        //$this->markTestSkipped('Skipping Dusk tests temporarily');
+        $this->browse(function ($browser) {
             //Delete Auth Client
             $browser->driver->findElement(WebDriverBy::xpath("//*[@id='authClients']/div[2]/div[2]/div/table/tbody/tr[1]/td[5]/div/div/button[2]/i"))
                 ->click();  //The delete button lacks a unique ID
-            $browser->waitFor("#confirmModal")
+            $browser->waitFor("#confirmModal",10)
                 ->press("#confirm")
-                ->pause(750)   //No choice here, we have to pause for either the error message or the success alert.
+                ->waitUntilMissing('#authClients > div.px-3.page-content > div.data-table > div > table > tbody > tr:nth-child(2)',10) //Hacky workaround, make sure there only one auth client displayed on the page
                 ->assertDontSee("bar foo");
         });
-
     }
 }
