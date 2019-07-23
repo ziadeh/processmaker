@@ -196,7 +196,17 @@ jobs:
             echo "APP_URL=https://${BUILD_NAME}${QA_HOST_SUFFIX}" >> .env
             echo "PROXIES=*" >> .env
             echo "PROXIES_AWS=true" >> .env
-            # For .env.dusk.testing
+            # Put in configuration file for Broadcaster
+            echo "BROADCAST_DRIVER=redis" >> .env
+            echo "BROADCASTER_HOST=%%BROADCASTER_HOST%%" >> .env
+            echo "BROADCASTER_KEY=21a795019957dde6bcd96142e05d4b10" >> .env
+            echo "REDIS_PORT=%%REDISPORT%%" >> .env
+            echo "PROCESSMAKER_SCRIPTS_HOME=/home/circleci/tmp" >> .env
+            echo "HOME=/home/circleci" >> .env
+            echo "LARAVEL_ECHO_SERVER_AUTH_HOST=%%AUTHHOST%%" >> .env
+            echo "LARAVEL_ECHO_SERVER_PORT=%%ECHOPORT%%" >> .env
+            echo "LARAVEL_ECHO_SERVER_DEBUG=true" >> .env
+            # For File: .env.dusk.testing
             echo "APP_KEY=" >> .env.dusk.testing
             echo "APP_DEBUG=FALSE" >> .env.dusk.testing
             echo "DEBUGBAR_ENABLED=FALSE" >> .env.dusk.testing
@@ -224,15 +234,15 @@ jobs:
             echo "SAUCELABS_BROWSER_VERSION=" >> .env.dusk.testing
             echo "SAUCELABS_BUILD=$BUILD_NAME" >> .env.dusk.testing
             # Put in configuration file for Broadcaster
-            echo "BROADCAST_DRIVER=redis" >> .env
-            echo "BROADCASTER_HOST=%%BROADCASTER_HOST%%" >> .env
-            echo "BROADCASTER_KEY=21a795019957dde6bcd96142e05d4b10" >> .env
-            echo "REDIS_PORT=%%REDISPORT%%" >> .env
-            echo "PROCESSMAKER_SCRIPTS_HOME=/home/circleci/tmp" >> .env
-            echo "HOME=/home/circleci" >> .env
-            echo "LARAVEL_ECHO_SERVER_AUTH_HOST=%%AUTHHOST%%" >> .env
-            echo "LARAVEL_ECHO_SERVER_PORT=%%ECHOPORT%%" >> .env
-            echo "LARAVEL_ECHO_SERVER_DEBUG=true" >> .env
+            echo "BROADCAST_DRIVER=redis" >> .env.dusk.testin
+            echo "BROADCASTER_HOST=%%BROADCASTER_HOST%%" >> .env.dusk.testin
+            echo "BROADCASTER_KEY=21a795019957dde6bcd96142e05d4b10" >> .env.dusk.testin
+            echo "REDIS_PORT=%%REDISPORT%%" >> .env.dusk.testin
+            echo "PROCESSMAKER_SCRIPTS_HOME=/home/circleci/tmp" >> .env.dusk.testin
+            echo "HOME=/home/circleci" >> .env.dusk.testin
+            echo "LARAVEL_ECHO_SERVER_AUTH_HOST=%%AUTHHOST%%" >> .env.dusk.testin
+            echo "LARAVEL_ECHO_SERVER_PORT=%%ECHOPORT%%" >> .env.dusk.testin
+            echo "LARAVEL_ECHO_SERVER_DEBUG=true" >> .env.dusk.testin
 
             # Generate unique app key
             php artisan key:generate --force
