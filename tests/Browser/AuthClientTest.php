@@ -34,7 +34,7 @@ class AuthClientTest extends DuskTestCase
      */
     public function testLogin()
     {
-        $this->markTestSkipped('Skipping Dusk tests temporarily');
+        //$this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
             //Login
             $browser->visit("/admin/auth-clients");
