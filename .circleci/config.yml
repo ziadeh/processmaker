@@ -198,6 +198,8 @@ jobs:
             echo "PROXIES_AWS=true" >> .env
             # Put in configuration for SauceLabs Cloud based Browser Testing
             echo "SAUCELABS_BROWSER_TESTING=true" >> .env
+            echo "SAUCELABS_USERNAME=${SAUCELABS_USERNAME}" >> .env
+            echo "SAUCELABS_ACCESS_KEY=${SAUCELABS_ACCESS_KEY}" >> .env
             # Put in configuration file for Broadcaster
             echo "BROADCAST_DRIVER=redis" >> .env
             echo "BROADCASTER_HOST=%%BROADCASTER_HOST%%" >> .env
@@ -208,43 +210,27 @@ jobs:
             echo "LARAVEL_ECHO_SERVER_AUTH_HOST=%%AUTHHOST%%" >> .env
             echo "LARAVEL_ECHO_SERVER_PORT=%%ECHOPORT%%" >> .env
             echo "LARAVEL_ECHO_SERVER_DEBUG=true" >> .env
-            # For File: .env.dusk.testing
-            echo "APP_KEY=" >> .env.dusk.testing
-            echo "APP_DEBUG=FALSE" >> .env.dusk.testing
-            echo "DEBUGBAR_ENABLED=FALSE" >> .env.dusk.testing
-            echo "APP_NAME=ProcessMaker" >> .env.dusk.testing
-            echo "APP_ENV=staging" >> .env.dusk.testing
-            echo "DB_HOSTNAME=${QA_RDS_HOST}" >> .env.dusk.testing
-            echo "DB_DATABASE=${QA_DB_NAME}" >> .env.dusk.testing
-            echo "DB_USERNAME=${QA_RDS_USERNAME}" >> .env.dusk.testing
-            echo "DB_PASSWORD=${QA_RDS_PASSWORD}" >> .env.dusk.testing
-            echo "DATA_DB_DRIVER=mysql" >> .env.dusk.testing
-            echo "DATA_DB_HOST=${QA_RDS_HOST}" >> .env.dusk.testing
-            echo "DATA_DB_DATABASE=${QA_DATA_DB_NAME}" >> .env.dusk.testing
-            echo "DATA_DB_PORT=3306" >> .env.dusk.testing
-            echo "DATA_DB_USERNAME=${QA_RDS_USERNAME}" >> .env.dusk.testing
-            echo "DATA_DB_PASSWORD=${QA_RDS_PASSWORD}" >> .env.dusk.testing
-            echo "APP_URL=https://${BUILD_NAME}${QA_HOST_SUFFIX}" >> .env.dusk.testing
-            echo "PROXIES=*" >> .env.dusk.testing
-            echo "PROXIES_AWS=true" >> .env.dusk.testing
-            # Put in configuration for SauceLabs Cloud based Browser Testing
-            echo "SAUCELABS_BROWSER_TESTING=true" >> .env.dusk.testing
-            echo "SAUCELABS_USERNAME=${SAUCELABS_USERNAME}" >> .env.dusk.testing
-            echo "SAUCELABS_ACCESS_KEY=${SAUCELABS_ACCESS_KEY}" >> .env.dusk.testing
-            echo "SAUCELABS_PLATFORM=" >> .env.dusk.testing
-            echo "SAUCELABS_BROWSER=" >> .env.dusk.testing
-            echo "SAUCELABS_BROWSER_VERSION=" >> .env.dusk.testing
-            echo "SAUCELABS_BUILD=$BUILD_NAME" >> .env.dusk.testing
-            # Put in configuration file for Broadcaster
-            echo "BROADCAST_DRIVER=redis" >> .env.dusk.testin
-            echo "BROADCASTER_HOST=%%BROADCASTER_HOST%%" >> .env.dusk.testin
-            echo "BROADCASTER_KEY=21a795019957dde6bcd96142e05d4b10" >> .env.dusk.testin
-            echo "REDIS_PORT=%%REDISPORT%%" >> .env.dusk.testin
-            echo "PROCESSMAKER_SCRIPTS_HOME=/home/circleci/tmp" >> .env.dusk.testin
-            echo "HOME=/home/circleci" >> .env.dusk.testin
-            echo "LARAVEL_ECHO_SERVER_AUTH_HOST=%%AUTHHOST%%" >> .env.dusk.testin
-            echo "LARAVEL_ECHO_SERVER_PORT=%%ECHOPORT%%" >> .env.dusk.testin
-            echo "LARAVEL_ECHO_SERVER_DEBUG=true" >> .env.dusk.testin
+
+            # For File: .env.dusk.staging
+            echo "APP_KEY=" >> .env.dusk.staging
+            echo "APP_DEBUG=FALSE" >> .env.dusk.staging
+            echo "APP_NAME=ProcessMaker" >> .env.dusk.staging
+            echo "APP_ENV=staging" >> .env.dusk.staging
+            echo "DB_HOSTNAME=${QA_RDS_HOST}" >> .env.dusk.staging
+            echo "DB_DATABASE=${QA_DB_NAME}" >> .env.dusk.staging
+            echo "DB_USERNAME=${QA_RDS_USERNAME}" >> .env.dusk.staging
+            echo "DB_PASSWORD=${QA_RDS_PASSWORD}" >> .env.dusk.staging
+            echo "DATA_DB_DRIVER=mysql" >> .env.dusk.staging
+            echo "DATA_DB_HOST=${QA_RDS_HOST}" >> .env.dusk.staging
+            echo "DATA_DB_DATABASE=${QA_DATA_DB_NAME}" >> .env.dusk.staging
+            echo "DATA_DB_PORT=3306" >> .env.dusk.staging
+            echo "DATA_DB_USERNAME=${QA_RDS_USERNAME}" >> .env.dusk.staging
+            echo "DATA_DB_PASSWORD=${QA_RDS_PASSWORD}" >> .env.dusk.staging
+            echo "APP_URL=https://${BUILD_NAME}${QA_HOST_SUFFIX}" >> .env.dusk.staging
+            echo "SAUCELABS_BUILD=$BUILD_NAME" >> .env.dusk.staging
+            echo "SAUCELABS_PLATFORM='Windows 10'" >> .env.dusk.staging
+            echo "SAUCELABS_BROWSER='Chrome'" >> .env.dusk.staging
+            echo "SAUCELABS_BROWSER_VERSION='75.0'" >> .env.dusk.staging
 
             # Generate unique app key
             php artisan key:generate --force
