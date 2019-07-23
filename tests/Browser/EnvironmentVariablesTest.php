@@ -11,7 +11,7 @@ use ProcessMaker\Models\User;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 
-class CategoryCreationTest extends DuskTestCase
+class EnvironmentVariablesCreationTest extends DuskTestCase
 {
 /*
     protected function driver()
@@ -22,8 +22,8 @@ class CategoryCreationTest extends DuskTestCase
                 "platform" => env('SAUCELABS_PLATFORM'),
                 "browserName" => env('SAUCELABS_BROWSER'),
                 "version"=> env('SAUCELABS_BROWSER_VERSION'),
-                "tags" => ["Category"],
-                "name" => ("Category Test"),
+                "tags" => ["Environment Variable"],
+                "name" => ("Environment Variable Test"),
                 "build" => env('BUILD_NAME')
             ]
         );
@@ -37,7 +37,7 @@ class CategoryCreationTest extends DuskTestCase
         //$this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
             //Login
-            $browser->visit("/processes/categories");
+            $browser->visit("/processes/environment-variables");
             $browser->assertSee("Username")
                 ->type("#username", "admin")
                 ->type("#password", "admin")
@@ -46,47 +46,50 @@ class CategoryCreationTest extends DuskTestCase
         });
     }
 
-    public function testCategoryCreation()
+    public function testEnvironmentVariablesCreation()
     {
         //$this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
-            $browser->waitFor('#createProcessCategory',10)
-                ->assertVisible('#createProcessCategory .ml-2')
-                ->assertSee('Create Category')
-                ->type('#name', 'Foobar')
-                ->press('#createProcessCategory .ml-2')
-                ->waitFor('#editProcessCategory',10)
-                ->clickLink('Categories')
-                ->waitForText('Foobar',10);
+            //Add Environment Variable
+            $browser->press("#create_envvar")
+                ->assertVisible("#createEnvironmentVariable .ml-2")
+                ->type("#name", "foobar")
+                ->type("#description", "Bars of Foo.")
+                ->type("#value", "foobar")
+                ->press("#createEnvironmentVariable .ml-2")
+                ->assertMissing(".invalid-feedback")
+                ->waitForText("foobar",10);
+
         });
     }
 
-    public function testCategoryEdit()
+    public function testEnvironmentVariablesEdit()
     {
         //$this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
             //Edit Environment Variable
-            $browser->press('.fa-pen-square')
-                ->waitFor('#editProcessCategory',10)
-                ->assertSee('Category Name')
-                ->type('#name', 'Barfoo')
-                ->press('#editProcessCategory .ml-2')
-                ->waitForText('Barfoo',10);
+            $browser->press(".fa-pen-square")
+                ->assertSee("Value")
+                ->type("#name", "barfoo")
+                ->type("#description", "Foos of Bar.")
+                ->type("#value", "barfoo")
+                ->press("#editEnvironmentVariable .ml-2")
+                ->waitForText("barfoo",10);
+
         });
     }
 
-    public function testCategoryDelete()
+    public function testEnvironmentVariablesDelete()
     {
         //$this->markTestSkipped('Skipping Dusk tests temporarily');
         $this->browse(function ($browser) {
             //Delete Environment Variable
-            $browser->press('.fa-trash-alt')
-                ->waitFor('#confirmModal',10)
-                ->press('#confirm')
-                ->waitFor('#createProcessCategory',10)
-                ->visit('/processes/categories') //Reload the page, to make sure everything is cleared out
-                ->waitFor('#createProcessCategory',10)
-                ->assertDontSee('Barfoo');
+            $browser->press(".fa-trash-alt")
+                ->waitFor(".modal-content",10)
+                ->waitForText("Are you sure you want to delete the environment variable barfoo?",10)
+                ->press("#confirm")
+                ->waitFor(".vuetable-empty-result",10)
+                ->assertDontSee("barfoo");
         });
     }
 }
