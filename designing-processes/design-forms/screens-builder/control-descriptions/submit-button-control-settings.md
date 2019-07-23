@@ -61,18 +61,28 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Submit control:
+The Submit control has the following panels that contain settings:
 
-* **Field Label:** Enter the field label text that displays. **New Submit** is the default value.
-* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
+* \*\*\*\*[**Variable** panel](submit-button-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Design** panel](submit-button-control-settings.md#design-panel-settings)
 
-  * Reference this control by its **Variable Name** setting's value.
-  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `My full name is {{FullName}}`.
+### Variable Panel Settings
+
+Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Submit control in the **Variable** panel:
+
+* **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
+  * Reference this control by its **Key Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Submit control's **Key Name** value. In the example below, `SubmitControl` is the **Key Name** setting's value when the button is clicked. ![](../../../../.gitbook/assets/submit-preview-screens-builder-processes.png) 
+  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Key Name** value in the target control. Example: `{{SubmitControl}}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
-  This is a required setting.
+    This is a required setting.
+* **Field Value:** Enter any alphanumeric value that the Submit control sends when the form user selects the button. This value can be evaluated in a [**Visibility Rule** setting expression](expression-syntax-components-for-show-if-control-settings.md) or in a [Sequence Flow element's conditions to trigger](../../../process-design/model-your-process/the-quick-toolbar.md#configure-an-outgoing-sequence-flow-element-from-an-exclusive-gateway-or-inclusive-gateway-element).
 
-* **Field Value:** Enter any alphanumeric value that the Submit control sends when the form user selects the button. This value can be evaluated in a rule.
+### Design Panel Settings
+
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Submit control in the **Design** panel:
+
+* **Field Label:** Enter the field label text that displays. **New Submit** is the default value.
 * **Variant:** Select the style for the Submit control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
   * **Primary:** Blue-colored background with white-colored **Field Label** text. Set as the default.
   * **Secondary:** Gray-colored background with white-colored **Field Label** text.

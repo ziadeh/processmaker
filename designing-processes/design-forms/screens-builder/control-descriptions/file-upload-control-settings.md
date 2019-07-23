@@ -60,10 +60,22 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the File Upload control:
+The File Upload control has the following panels that contain settings:
+
+* \*\*\*\*[**Variable** panel](file-upload-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Design** panel](file-upload-control-settings.md#design-panel-settings)
+
+### Variable Panel Settings
+
+Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the File Upload control in the **Variable** panel:
+
+* **Upload Name:** Enter the unique name associated with the uploaded file\(s\). This name can be referenced in a later step in the Process. This setting has no default value.
+
+### Design Panel Settings
+
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the File Upload control in the **Design** panel:
 
 * **Text Label:** Enter the field label text that displays. **New File Upload** is the default value.
-* **Upload Name:** Enter the unique name associated with the uploaded file\(s\). This name can be referenced in a later step in the Process. This setting has no default value.
 * **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 

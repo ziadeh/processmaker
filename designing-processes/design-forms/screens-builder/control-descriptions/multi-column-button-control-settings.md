@@ -74,7 +74,7 @@ Click the control to view its settings in the **Variable** panel that is on the 
 
   * **Column:** **Column** is the internal designation for the column that only the Process Owner views at design time.
   * **Colspan:** **Colspan** is the width of the column in `colspan` HTML attribute settings.
-  * **Actions:** Click the Remove![](../../../../.gitbook/assets/options-list-delete-option-icon-screens-builder-processes.png)icon to remove the column.
+  * **Remove:** Click the Remove![](../../../../.gitbook/assets/options-list-delete-option-icon-screens-builder-processes.png)icon to remove the column.
 
   Follow these steps to add a column and specify its width: 
 

@@ -55,10 +55,29 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Image control:
+The Image control has the following panels that contain settings:
 
+* \*\*\*\*[**Variable** panel](image-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Design** panel](image-control-settings.md#design-panel-settings)
+
+### Variable Panel Settings
+
+Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Image control in the **Variable** panel:
+
+* **Id:** Enter the unique identifier that identifies the image in the ProcessMaker Screen. The **Id** value must be alphanumeric.
+* **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
+  * Reference this control by its **Key Name** setting's value.
+  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Key Name** value in the target control. Example: `{{ImageControl}}`.
+  * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+
+    This is a required setting.
 * **Upload Image:** Click the **Upload Image** button to browse for the PNG, GIF, or JPG file type image to upload to the Image control.
 * **Preview:** This setting displays a preview of the uploaded image.
+
+### Design Panel Settings
+
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Image control in the **Design** panel:
+
 * **Width:** Specify the width of the uploaded image in pixels. If the **Height** setting has no value, the Image control adjust the uploaded image to the **Width** setting value.
 * **Height:** Specify the width of the uploaded image in pixels. If the **Width** setting has no value, the Image control adjust the uploaded image to the **Height** setting value.
 * **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.

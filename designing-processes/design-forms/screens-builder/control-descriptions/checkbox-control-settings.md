@@ -75,7 +75,7 @@ Click the control to view its settings in the **Variable** panel that is on the 
   * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) represents the state of the Checkbox control using its **Key Name** value in the Request's JSON data model in the following ways:
     * **The Checkbox control is selected:** The key's value is `true` \(shown below\).
     * **The Checkbox control is deselected:** They key's value is `false`. ![](../../../../.gitbook/assets/checkbox-preview-screens-builder-processes.png) 
-  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `My full name is {{FullName}}`.
+  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{CheckboxControl}}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
