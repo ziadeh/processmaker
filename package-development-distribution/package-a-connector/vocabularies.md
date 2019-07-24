@@ -12,7 +12,7 @@ The Vocabularies package requires that Process Owners who design Processes, Proc
 
 ## How Can I Get This Package?
 
-Ask your ProcessMaker sales representative how this package can be installed in your ProcessMaker environment.
+Ask your ProcessMaker sales representative how this package can be installed in your ProcessMaker instance.
 
 ## Related Topics
 

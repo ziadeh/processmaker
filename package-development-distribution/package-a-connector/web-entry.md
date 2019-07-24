@@ -15,7 +15,7 @@ Allow anonymous or authenticated ProcessMaker users to start or participate in [
 
 ## How Can I Get This Package?
 
-Ask your ProcessMaker sales representative how this package can be installed in your ProcessMaker environment.
+Ask your ProcessMaker sales representative how this package can be installed in your ProcessMaker instance.
 
 ## Related Topics
 

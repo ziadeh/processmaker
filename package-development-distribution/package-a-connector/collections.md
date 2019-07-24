@@ -18,7 +18,7 @@ The Collections package allows members of an organization to maintain schema-les
 
 ## How Can I Get This Package?
 
-Ask your ProcessMaker sales representative how this package can be installed in your ProcessMaker environment.
+Ask your ProcessMaker sales representative how this package can be installed in your ProcessMaker instance.
 
 ## Related Topics
 
