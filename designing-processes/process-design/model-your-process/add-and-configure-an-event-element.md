@@ -218,7 +218,7 @@ Follow these steps to select who can start a Request via a Web Entry URL via thi
 
 {% page-ref page="../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md" %}
 
-{% page-ref page="remove-process-model-elements.md" %}
+{% page-ref page="../remove-process-model-elements.md" %}
 
 {% page-ref page="../../../package-development-distribution/package-a-connector/web-entry.md" %}
 

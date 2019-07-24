@@ -5,7 +5,7 @@ description: >-
   external database.
 ---
 
-# Collections
+# Collections Package
 
 ## Overview
 

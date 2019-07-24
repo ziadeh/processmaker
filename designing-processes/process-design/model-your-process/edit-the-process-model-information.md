@@ -92,5 +92,5 @@ Follow these steps to edit the Process model name:
 
 {% page-ref page="add-and-configure-text-annotation-elements.md" %}
 
-{% page-ref page="remove-process-model-elements.md" %}
+{% page-ref page="../remove-process-model-elements.md" %}
 

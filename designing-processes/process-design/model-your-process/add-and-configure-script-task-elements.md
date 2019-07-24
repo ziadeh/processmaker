@@ -159,5 +159,5 @@ You can enter your JSON configuration script directly into the **Script Configur
 
 {% page-ref page="../../scripts/scripts-editor.md" %}
 
-{% page-ref page="remove-process-model-elements.md" %}
+{% page-ref page="../remove-process-model-elements.md" %}
 

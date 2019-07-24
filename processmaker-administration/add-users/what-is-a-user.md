@@ -13,7 +13,7 @@ In ProcessMaker, a user is any person associated with a ProcessMaker account tha
 * Participate in [Requests](../../using-processmaker/requests/what-is-a-request.md)
 * Do [Tasks](../../using-processmaker/task-management/what-is-a-task.md)
 
-Note that any person who interacts with a Request is not necessarily a ProcessMaker user. For example, an anonymous person can participate in a Request via a [Web Entry](../../package-development-distribution/package-a-connector/web-entry.md) URL.
+Note that any person who interacts with a Request is not necessarily a ProcessMaker user. For example, an anonymous person can participate in a Request via a [Web Entry](../../package-development-distribution/package-a-connector/web-entry.md) URL, but is not a ProcessMaker user because an anonymous person does not have a ProcessMaker account.
 
 ## Related Topics
 

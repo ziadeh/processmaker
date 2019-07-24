@@ -104,5 +104,5 @@ Follow these steps to select the external sub-Process the Call Activity element 
 
 {% page-ref page="../../viewing-processes/view-the-list-of-processes/create-a-process.md" %}
 
-{% page-ref page="remove-process-model-elements.md" %}
+{% page-ref page="../remove-process-model-elements.md" %}
 

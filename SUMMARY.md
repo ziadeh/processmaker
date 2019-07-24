@@ -112,7 +112,7 @@
     * [Delete an Environment Variable](designing-processes/environment-variable-management/manage-your-environment-variables/remove-an-environment-variable.md)
 * [Process Modeling](designing-processes/process-design/README.md)
   * [What is Process Modeling?](designing-processes/process-design/what-is-process-modeling.md)
-  * [Model Your Process](designing-processes/process-design/model-your-process/README.md)
+  * [Model Your Process Using BPMN 2.0 Elements](designing-processes/process-design/model-your-process/README.md)
     * [Process Modeling Element Descriptions](designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md)
     * [Edit the Process Model Information](designing-processes/process-design/model-your-process/edit-the-process-model-information.md)
     * [Filter Elements and Controls](designing-processes/process-design/model-your-process/filter-elements-in-the-bpmn-panel.md)
@@ -133,11 +133,15 @@
     * [Set Sequence Flow Elements to Indicate Workflow Routing](designing-processes/process-design/model-your-process/the-quick-toolbar.md)
     * [Set Message Flow Elements to Indicate Messaging](designing-processes/process-design/model-your-process/set-and-delete-message-flow-between-elements.md)
     * [Add and Configure Text Annotation and Association Elements](designing-processes/process-design/model-your-process/add-and-configure-text-annotation-elements.md)
-    * [Delete Process Model Elements](designing-processes/process-design/model-your-process/remove-process-model-elements.md)
-    * [Undo and Redo Changes](designing-processes/process-design/model-your-process/undo-and-redo-changes.md)
-    * [Navigate Around Your Process Model](designing-processes/process-design/model-your-process/navigate-around-your-process-model.md)
-    * [Save Your Process Model](designing-processes/process-design/model-your-process/toolboxes.md)
-    * [Validate Your Process is BPMN 2.0 Compliant](designing-processes/process-design/model-your-process/validate-bpmn-2.0-compliance.md)
+  * [Model Processes Using Connectors](designing-processes/process-design/model-processes-using-connectors/README.md)
+    * [What is a Connector?](designing-processes/process-design/model-processes-using-connectors/what-is-a-connector.md)
+    * [Available Connectors from ProcessMaker](designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/README.md)
+      * [Email Connector](designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md)
+  * [Delete Process Model Elements or Connectors](designing-processes/process-design/remove-process-model-elements.md)
+  * [Undo and Redo Changes in the Process Model](designing-processes/process-design/undo-and-redo-changes.md)
+  * [Navigate Around Your Process Model](designing-processes/process-design/navigate-around-your-process-model.md)
+  * [Save Your Process Model](designing-processes/process-design/toolboxes.md)
+  * [Validate Your Process is BPMN 2.0 Compliant](designing-processes/process-design/validate-bpmn-2.0-compliance.md)
 
 ## ProcessMaker Administration
 
@@ -182,10 +186,10 @@
 
 * [What is a Package?](package-development-distribution/first-topic.md)
 * [Available Packages from ProcessMaker](package-development-distribution/package-a-connector/README.md)
-  * [Collections](package-development-distribution/package-a-connector/collections.md)
-  * [Email](package-development-distribution/package-a-connector/email.md)
-  * [Vocabularies](package-development-distribution/package-a-connector/vocabularies.md)
-  * [Web Entry](package-development-distribution/package-a-connector/web-entry.md)
+  * [Collections Package](package-development-distribution/package-a-connector/collections.md)
+  * [Email Package](package-development-distribution/package-a-connector/email.md)
+  * [Vocabularies Package](package-development-distribution/package-a-connector/vocabularies.md)
+  * [Web Entry Package](package-development-distribution/package-a-connector/web-entry.md)
 
 ## Script Central <a id="script-central-1"></a>
 

@@ -4,7 +4,7 @@ description: >-
   organization.
 ---
 
-# Vocabularies
+# Vocabularies Package
 
 ## Overview
 

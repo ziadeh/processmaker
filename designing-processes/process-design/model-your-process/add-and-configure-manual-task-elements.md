@@ -304,7 +304,7 @@ Follow these steps to set Task notifications in a Manual Task element:
 
 {% page-ref page="../../../using-processmaker/notifications.md" %}
 
-{% page-ref page="remove-process-model-elements.md" %}
+{% page-ref page="../remove-process-model-elements.md" %}
 
 {% page-ref page="../../../using-processmaker/task-management/view-a-task-summary.md" %}
 

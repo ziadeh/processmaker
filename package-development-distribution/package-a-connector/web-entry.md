@@ -4,7 +4,7 @@ description: >-
   Requests via a published URL.
 ---
 
-# Web Entry
+# Web Entry Package
 
 ## Overview
 

@@ -79,5 +79,5 @@ To display all Process elements in the panel, remove the text from the **Filter 
 
 {% page-ref page="add-and-configure-text-annotation-elements.md" %}
 
-{% page-ref page="remove-process-model-elements.md" %}
+{% page-ref page="../remove-process-model-elements.md" %}
 

@@ -2,7 +2,7 @@
 description: Integrate email functionality into your Processes.
 ---
 
-# Email
+# Email Package
 
 ## Overview
 

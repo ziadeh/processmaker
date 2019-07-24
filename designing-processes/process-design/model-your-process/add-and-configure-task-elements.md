@@ -367,7 +367,7 @@ Follow these steps to select to whom to assign the Task via a Web Entry:
 
 {% page-ref page="../../../using-processmaker/notifications.md" %}
 
-{% page-ref page="remove-process-model-elements.md" %}
+{% page-ref page="../remove-process-model-elements.md" %}
 
 {% page-ref page="../../../using-processmaker/task-management/view-a-task-summary.md" %}
 

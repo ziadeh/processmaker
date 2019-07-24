@@ -140,5 +140,5 @@ Follow these steps to edit the name for a Message Flow element:
 
 {% page-ref page="the-quick-toolbar.md" %}
 
-{% page-ref page="remove-process-model-elements.md" %}
+{% page-ref page="../remove-process-model-elements.md" %}
 

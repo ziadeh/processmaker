@@ -112,5 +112,5 @@ Follow these steps to select the ProcessMaker Screen that displays when an End E
 
 {% page-ref page="../../design-forms/what-is-a-form.md" %}
 
-{% page-ref page="remove-process-model-elements.md" %}
+{% page-ref page="../remove-process-model-elements.md" %}
 

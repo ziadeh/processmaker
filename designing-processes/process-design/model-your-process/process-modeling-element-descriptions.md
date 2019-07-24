@@ -8,6 +8,24 @@ description: These are brief descriptions about commonly used Process modeling e
 
 The following are brief descriptions about each Process modeling element that ProcessMaker provides. See the [BPMN 2.0 specification](https://www.omg.org/spec/BPMN/2.0/About-BPMN/) for more information.
 
+{% hint style="info" %}
+### Looking for Information About Connectors?
+
+While connectors are used similarly as Process model elements in Process Modeler, connectors are not part of the BPMN 2.0 specification. Connections provide integrations with third-party services that are configured in a Process model so that ProcessMaker integrates with that third-party service during [Requests](../../../using-processmaker/requests/what-is-a-request.md). See the following topics for more information:
+
+* [What is a Connector?](../model-processes-using-connectors/what-is-a-connector.md)
+* [Available Connectors from ProcessMaker](../model-processes-using-connectors/available-connectors-from-processmaker/)
+
+### Permissions Required
+
+Your user account or group membership must have the following permissions to use Process modeling elements in Process Modeler:
+
+* Processes: View Processes
+* Processes: Edit Processes
+
+See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
+{% endhint %}
+
 ## Events
 
 Use event-type elements to represent an event, milestone, or delay in the Process. ProcessMaker provides the following event type Process model elements:
@@ -466,13 +484,13 @@ See [Add and Configure Text Annotation and Association Elements](add-and-configu
 
 {% page-ref page="add-and-configure-text-annotation-elements.md" %}
 
-{% page-ref page="remove-process-model-elements.md" %}
+{% page-ref page="../remove-process-model-elements.md" %}
 
-{% page-ref page="undo-and-redo-changes.md" %}
+{% page-ref page="../undo-and-redo-changes.md" %}
 
-{% page-ref page="navigate-around-your-process-model.md" %}
+{% page-ref page="../navigate-around-your-process-model.md" %}
 
-{% page-ref page="toolboxes.md" %}
+{% page-ref page="../toolboxes.md" %}
 
-{% page-ref page="validate-bpmn-2.0-compliance.md" %}
+{% page-ref page="../validate-bpmn-2.0-compliance.md" %}
 
