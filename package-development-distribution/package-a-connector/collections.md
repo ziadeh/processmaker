@@ -9,6 +9,10 @@ description: >-
 
 ## Overview
 
+{% hint style="info" %}
+The Collections package is not available in the ProcessMaker open-source edition.
+{% endhint %}
+
 The Collections package allows members of an organization to maintain schema-less data records using [ProcessMaker Screens](../../designing-processes/design-forms/what-is-a-form.md). The Collections package has the following features:
 
 * An external database is not required to store data records. Records are maintained in the ProcessMaker instance.

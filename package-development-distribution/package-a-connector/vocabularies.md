@@ -8,6 +8,10 @@ description: >-
 
 ## Overview
 
+{% hint style="info" %}
+The Vocabularies package is not available in the ProcessMaker open-source edition.
+{% endhint %}
+
 The Vocabularies package requires that Process Owners who design Processes, ProcessMaker Screens, and ProcessMaker Scripts comply with uniform JSON schemas.
 
 ## How Can I Get This Package?
