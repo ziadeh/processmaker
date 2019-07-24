@@ -6,7 +6,7 @@ description: Add the Email connector to send emails during Requests for a Proces
 
 ## Overview
 
-The Email connector is part of the [Email package](../../../../package-development-distribution/package-a-connector/email.md) that allows ProcessMaker to send emails during [Requests](../../../../using-processmaker/requests/what-is-a-request.md) that use a Send Email control in a Process model. When you add a Send Email control to a Process model and then reference a [ProcessMaker Screen](../../../design-forms/screens-builder/types-for-screens.md#email) for email body content, the Send Email control can email specified email addresses when that Send Email control triggers in a Request's workflow.
+The Email connector is part of the [Email package](../../../../package-development-distribution/package-a-connector/email.md) that allows ProcessMaker to send emails during [Requests](../../../../using-processmaker/requests/what-is-a-request.md) that use a Send Email control in a Process model. When you add a Send Email control to a Process model and then reference a [ProcessMaker Screen](../../../design-forms/screens-builder/types-for-screens.md#email) for email body content, the Send Email control can email a specified email address when that Send Email control triggers in a Request's workflow. The Email connector supports sending an email to only one email recipient.
 
 {% hint style="info" %}
 ### Don't Know What a Connector Is?
@@ -68,8 +68,8 @@ See the [Process](../../../../processmaker-administration/permission-description
 Follow these steps to configure a Send Email control:
 
 1. Select the Send Email control from the Process model in which to configure its settings. The **Send Email** configuration settings display. ![](../../../../.gitbook/assets/send-email-control-connector-configuration-process-modeler-processes.png)
-2. In the **Email** field, enter the email address\(es\) to which the Send Email control sends an email when this Send Email control triggers. If the Send Email connector is to send an email to multiple email recipients, then separate each email address with a comma \(`,`\).
-3. In the **Name** field, enter the name of each email recipient. If the Send Mail control is to send an email to multiple recipients, then arrange the names in order to correspond with the appropriate email address specified in the **Email** field, and separate each name with a comma \(`,`\).
+2. In the **Email** field, enter the email address to which the Send Email control sends an email when this Send Email control triggers. The Email connector only supports sending an email to one email recipient.
+3. In the **Name** field, enter the name of the email recipient.
 4. In the **Subject** field, enter the subject of the email the Send Email control sends.
 5. From the **Email body** drop-down menu, select which ProcessMaker Screen that Send Email control references. This drop-down menu displays only [Email](../../../design-forms/screens-builder/types-for-screens.md#email) types so the email recipient can read the body of the email. Note that another Send Email control located elsewhere in the Process model may reference a different ProcessMaker Screen to display a different email body when it triggers.
 
