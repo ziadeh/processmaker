@@ -213,7 +213,7 @@ jobs:
 
             # For File: .env.dusk.staging
             echo "APP_KEY=" >> .env.dusk.staging
-            echo "APP_DEBUG=FALSE" >> .env.dusk.staging
+            echo "APP_DEBUG=TRUE" >> .env.dusk.staging
             echo "APP_NAME=ProcessMaker" >> .env.dusk.staging
             echo "APP_ENV=staging" >> .env.dusk.staging
             echo "DB_HOSTNAME=${QA_RDS_HOST}" >> .env.dusk.staging
@@ -273,9 +273,6 @@ jobs:
           name: 'SauceLabs Browser Tests: Chrome'
           command: 'ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "cd ~/builds/$BUILD_NAME && php artisan dusk"'
           environment:
-            SAUCELABS_BROWSER: 'chrome'
-            SAUCELABS_PLATFORM: 'Windows 10'
-            SAUCELABS_BROWSER_VERSION: '75.0'
             DB_DATABASE: 'circle_test'
             RUN_MSSQL_TESTS: 'true'
             MSSQL_HOST: '127.0.0.1'
