@@ -212,10 +212,10 @@ jobs:
             echo "LARAVEL_ECHO_SERVER_DEBUG=true" >> .env
 
             # For File: .env.dusk.staging
-            echo "APP_KEY=" >> .env.dusk.staging
-            echo "APP_DEBUG=TRUE" >> .env.dusk.staging
-            echo "APP_NAME=ProcessMaker" >> .env.dusk.staging
-            echo "APP_ENV=staging" >> .env.dusk.staging
+            #echo "APP_KEY=" >> .env.dusk.staging
+            #echo "APP_DEBUG=TRUE" >> .env.dusk.staging
+            #echo "APP_NAME=ProcessMaker" >> .env.dusk.staging
+            #echo "APP_ENV=staging" >> .env.dusk.staging
             echo "DB_HOSTNAME=${QA_RDS_HOST}" >> .env.dusk.staging
             echo "DB_DATABASE=${QA_DB_NAME}" >> .env.dusk.staging
             echo "DB_USERNAME=${QA_RDS_USERNAME}" >> .env.dusk.staging
