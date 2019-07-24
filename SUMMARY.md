@@ -133,7 +133,7 @@
     * [Set Sequence Flow Elements to Indicate Workflow Routing](designing-processes/process-design/model-your-process/the-quick-toolbar.md)
     * [Set Message Flow Elements to Indicate Messaging](designing-processes/process-design/model-your-process/set-and-delete-message-flow-between-elements.md)
     * [Add and Configure Text Annotation and Association Elements](designing-processes/process-design/model-your-process/add-and-configure-text-annotation-elements.md)
-  * [Model Processes Using Connectors](designing-processes/process-design/model-processes-using-connectors/README.md)
+  * [Add Connectors to Your Process Model](designing-processes/process-design/model-processes-using-connectors/README.md)
     * [What is a Connector?](designing-processes/process-design/model-processes-using-connectors/what-is-a-connector.md)
     * [Available Connectors from ProcessMaker](designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/README.md)
       * [Email Connector](designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md)

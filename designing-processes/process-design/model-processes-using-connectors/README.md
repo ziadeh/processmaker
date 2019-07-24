@@ -1,6 +1,8 @@
 ---
-description: Add connectors to your Process model that provide unique functions.
+description: >-
+  Add connectors to your Process model that provide integration to third-party
+  services.
 ---
 
-# Model Processes Using Connectors
+# Add Connectors to Your Process Model
 
