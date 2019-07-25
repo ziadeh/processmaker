@@ -22,9 +22,9 @@ If a ProcessMaker Screen control does not have an expression in its **Visibility
 
 | Component | Syntax | Example | Notes |
 | :--- | :--- | :--- | :--- |
-| string | `"hello world"` or `'hello world'` | `FullNameInput=="Louis Canera"` | Accepts variable placeholder by referencing the control's **Key Name** setting value that represents the variable. Use mustache syntax. Example: `{{FullNameInput}}` |
+| string | `"hi"` or `'hi'` | `FullName=="Louis Canera"` | Accepts variable. Reference the control's **Key Name** setting value to represent the variable. Use mustache syntax. Example: `{{FullName}}` |
 | number | `100` |  |  |
-| array | `[`value1`,` value2`]` | `[1, 2]` |  |
+| array | `[`int1`,` int2`]` | `[1, 2]` |  |
 | hash | `{foo: "`value`"}` | `{foo: "bar"}` |  |
 | Boolean | `true` and `false` |  |  |
 
