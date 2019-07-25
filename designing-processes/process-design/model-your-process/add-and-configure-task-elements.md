@@ -296,7 +296,9 @@ Follow these steps to set Task notifications in a Task element:
 ### Select to Whom to Assign the Task via a Web Entry
 
 {% hint style="info" %}
-Your ProcessMaker instance must have the Web Entry package installed to select to whom to assign a Task via a Web entry. The Web Entry package allows anonymous or authenticated ProcessMaker users to start or participate in Requests via a published URL. See [Web Entry](../../../package-development-distribution/package-a-connector/web-entry.md).
+Your ProcessMaker instance must have the [Web Entry package](../../../package-development-distribution/package-a-connector/web-entry.md) installed to select to whom to assign a Task via a Web entry. The Web Entry package allows anonymous or authenticated ProcessMaker users to start or participate in Requests via a published URL. The Web Entry package is not available in the ProcessMaker open-source edition.
+
+The Web Entry package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Web Entry package can be installed in your ProcessMaker instance.
 {% endhint %}
 
 When a Task element is placed into a Process model, Web Entry settings for that element are not configured. Therefore, even if the [Web Entry](../../../package-development-distribution/package-a-connector/web-entry.md) package is installed in your ProcessMaker instance, it must be configured for use.
