@@ -1,5 +1,5 @@
 ---
-description: Model your process in an easy-to-use graphical BPMN 2.0 compliant editor.
+description: Model your Process in an easy-to-use graphical BPMN 2.0 compliant editor.
 ---
 
 # Model Your Process Using BPMN 2.0 Elements

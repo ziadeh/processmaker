@@ -142,6 +142,14 @@
   * [Navigate Around Your Process Model](designing-processes/process-design/navigate-around-your-process-model.md)
   * [Save Your Process Model](designing-processes/process-design/toolboxes.md)
   * [Validate Your Process is BPMN 2.0 Compliant](designing-processes/process-design/validate-bpmn-2.0-compliance.md)
+* [Vocabularies Management](designing-processes/vocabularies-management/README.md)
+  * [What is a Vocabulary?](designing-processes/vocabularies-management/what-is-a-vocabulary.md)
+  * [Manage Your Vocabularies](designing-processes/vocabularies-management/manage-your-vocabularies/README.md)
+    * [View All Vocabularies](designing-processes/vocabularies-management/manage-your-vocabularies/view-all-vocabularies.md)
+    * [Create a New Vocabulary](designing-processes/vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md)
+    * [Search for a Vocabulary](designing-processes/vocabularies-management/manage-your-vocabularies/search-for-a-vocabulary.md)
+    * [Edit a Vocabulary](designing-processes/vocabularies-management/manage-your-vocabularies/edit-a-vocabulary.md)
+    * [Delete a Vocabulary](designing-processes/vocabularies-management/manage-your-vocabularies/delete-a-vocabulary.md)
 
 ## ProcessMaker Administration
 

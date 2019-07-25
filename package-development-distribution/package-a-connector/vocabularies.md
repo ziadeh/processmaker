@@ -9,14 +9,10 @@ description: >-
 ## Overview
 
 {% hint style="info" %}
-The Vocabularies package is not available in the ProcessMaker open-source edition.
+The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
 {% endhint %}
 
-The Vocabularies package requires that Process Owners who design Processes, ProcessMaker Screens, and ProcessMaker Scripts comply with uniform JSON schemas.
-
-## How Can I Get This Package?
-
-Ask your ProcessMaker sales representative how this package can be installed in your ProcessMaker instance.
+The Vocabularies package requires that Process Owners who design Processes, ProcessMaker Screens, and ProcessMaker Scripts comply with uniform JSON schemas in your organization.
 
 ## Related Topics
 
