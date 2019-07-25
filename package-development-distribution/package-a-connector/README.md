@@ -1,8 +1,8 @@
 ---
-description: Learn how to package a ProcessMaker Spark Connector.
+description: >-
+  These are packages available from ProcessMaker that extend functionality from
+  the ProcessMaker open-source edition.
 ---
 
 # Available Packages from ProcessMaker
-
-~~There is no information yet for the internal beta.~~
 
