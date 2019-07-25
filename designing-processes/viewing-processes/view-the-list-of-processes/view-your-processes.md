@@ -6,7 +6,7 @@ description: View all active Processes from all Process Owners in your organizat
 
 ## View All Active Processes
 
-ProcessMaker displays all active Processes in one table that Process Owners have created throughout your organization. This makes it easy to manage active Processes. An active Process is one in which has not been [archived](remove-a-process.md).
+ProcessMaker displays all active [Processes](../what-is-a-process.md) in one table that Process Owners have created throughout your organization. This makes it easy to manage active Processes. An active Process is one in which has not been [archived](remove-a-process.md).
 
 {% hint style="info" %}
 ### Permission Required

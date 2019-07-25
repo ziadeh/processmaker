@@ -87,9 +87,9 @@ Follow these steps to do an advanced search for a Request:
    * **Time Period\(s\):**
      * Use the following syntax as a guide to include a period of time in your search criteria:
 
-       `(updated_at < (date_sub(curdate(), INTERVAL 2 DAY))`
+       `updated_at < NOW -2 day`
 
-       The units of time `second`, `minute`, `hour` and `day` are supported.
+       Use `updated_at < NOW` to represent how much time from the present the sought after Request is, then use `-` followed by an integer to specify that time. The units of time `second`, `minute`, `hour` and `day` are supported.
    * **Operators between search criteria:**
      * Use `AND` operators between each set of search criteria to search using multiple parameters.
      * Use the `AND` operator between items to search for multiple specified items.
@@ -97,7 +97,7 @@ Follow these steps to do an advanced search for a Request:
 
    Below is an example of a valid advanced Request search:
 
-   `(request = "Process Name 1" OR request = "Process Name 2") AND (status = "Canceled" OR status = "Error") AND (requester = "Username1" OR requester = "Username2") AND (participant = "Username3" OR participant = "Username4" AND (updated_at < (date_sub(curdate(), INTERVAL 2 DAY))`
+   `(request = "Process Name 1" OR request = "Process Name 2") AND (status = "Canceled" OR status = "Error") AND (requester = "Username1" OR requester = "Username2") AND (participant = "Username3" OR participant = "Username4" AND (updated_at < NOW -2 day)`
 
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
 

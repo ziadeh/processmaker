@@ -30,7 +30,7 @@ Use the Display type to display information or allow [Request](../../../using-pr
 ### Email
 
 {% hint style="info" %}
-Note that the Email connector must be installed in your ProcessMaker instance to use the Email type of ProcessMaker Screen. The Email connector is not available in the ProcessMaker open-source edition. See [Email Connector](../../process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md).
+The Email package must be installed in your ProcessMaker instance to use the Email type of ProcessMaker Screen. The Email package is not available in the ProcessMaker open-source edition. See [Email Package](../../../package-development-distribution/package-a-connector/email.md).
 {% endhint %}
 
 Use the Email type to compose the email body for email messages to be used with the Email connector. The Email type provides the following controls in Screens Builder:

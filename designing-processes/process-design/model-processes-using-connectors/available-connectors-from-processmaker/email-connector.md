@@ -15,7 +15,7 @@ See [What is a Connector?](../what-is-a-connector.md).
 
 ### ProcessMaker Package Required
 
-The Email connector is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Email connector can be installed in your ProcessMaker instance.
+The Email package is required. The Email connector is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Email connector can be installed in your ProcessMaker instance.
 {% endhint %}
 
 The Email connector adds the following components to the ProcessMaker open-source edition:

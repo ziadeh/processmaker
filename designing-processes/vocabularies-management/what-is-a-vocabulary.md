@@ -9,7 +9,7 @@ description: Understand what a Vocabulary is in ProcessMaker.
 Use the [Vocabularies package](../../package-development-distribution/package-a-connector/vocabularies.md) to maintain uniform JSON schemas across all ProcessMaker assets in your organization. These assets include [Processes](../viewing-processes/what-is-a-process.md), [ProcessMaker Screens](../design-forms/what-is-a-form.md), and [ProcessMaker Scripts](../scripts/what-is-a-script.md).
 
 {% hint style="info" %}
-The Vocabularies package is required. The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
+The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
 {% endhint %}
 
 ## Related Topics
