@@ -1,6 +1,6 @@
 ---
 description: >-
-  Enforce JSON schemas that Process Owners use for Process development in your
+  Maintain uniform JSON schemas for all ProcessMaker assets in your
   organization.
 ---
 
@@ -12,7 +12,7 @@ description: >-
 The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
 {% endhint %}
 
-The Vocabularies package requires that Process Owners who design Processes, ProcessMaker Screens, and ProcessMaker Scripts comply with uniform JSON schemas in your organization.
+Use the Vocabularies package to maintain uniform JSON schemas across all assets in your organization. These assets include [Processes](../../designing-processes/viewing-processes/what-is-a-process.md), [ProcessMaker Screens](../../designing-processes/design-forms/what-is-a-form.md), and [ProcessMaker Scripts](../../designing-processes/scripts/what-is-a-script.md).
 
 ## Related Topics
 

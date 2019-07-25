@@ -150,11 +150,15 @@ Use the following expression syntax components to compose the expression that de
 
 | Component | Syntax | Example |
 | :--- | :--- | :--- |
-| string | `"hello world"` or `'hello world'` |  |
+| string | `"hello world"` or `'hello world'` | `FullNameInput=="Louis Canera"` |
 | number | `100` |  |
 | array | `[`value1`,` value2`]` | `[1, 2]` |
 | hash | `{foo: "`value`"}` | `{foo: "bar"}` |
 | Boolean | `true` and `false` |  |
+
+{% hint style="info" %}
+`string` component accepts a variable placeholder. Reference the ProcessMaker Screen control's **Key Name** setting value to represent the variable. Use mustache syntax. Example: `{{FullNameInput}}=="Louis Canera"`
+{% endhint %}
 
 **Arithmetic Operations**
 

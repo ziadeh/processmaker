@@ -1,5 +1,7 @@
 ---
-description: Manage the Vocabularies that are used in your organization.
+description: >-
+  Maintain uniform JSON schemas for all ProcessMaker assets in your
+  organization.
 ---
 
 # Vocabularies Management

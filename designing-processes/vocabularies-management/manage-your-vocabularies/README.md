@@ -1,5 +1,5 @@
 ---
-description: Manage the structure of JSON schemas in your organization.
+description: Manage uniform JSON schemas for all ProcessMaker assets in your organization.
 ---
 
 # Manage Your Vocabularies

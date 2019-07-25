@@ -24,12 +24,12 @@ If a ProcessMaker Screen control does not have an expression in its **Visibility
 | :--- | :--- | :--- |
 | string | `"hello"` or `'hello'` | `FullNameInput=="Louis Canera"` |
 | number | `100` |  |
-| array | `[`integer1`,` integer2`]` | `[1, 2]` |
+| array | `[`value1`,` value2`]` | `[1, 2]` |
 | hash | `{foo: "`value`"}` | `{foo: "bar"}` |
 | Boolean | `true` and `false` |  |
 
 {% hint style="info" %}
-`string` component accepts a variable placeholder. Reference the control's **Key Name** setting value to represent the variable. Use mustache syntax. Example: `{{FullNameInput}}`
+`string` component accepts a variable placeholder. Reference the control's **Key Name** setting value to represent the variable. Use mustache syntax. Example: `{{FullNameInput}}=="Louis Canera"`
 {% endhint %}
 
 ### Arithmetic Operations
