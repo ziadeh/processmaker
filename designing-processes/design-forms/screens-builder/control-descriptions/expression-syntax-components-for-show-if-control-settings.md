@@ -20,13 +20,17 @@ If a ProcessMaker Screen control does not have an expression in its **Visibility
 
 ### Literals
 
-| Component | Syntax | Example | Notes |
-| :--- | :--- | :--- | :--- |
-| string | `"hi"` or `'hi'` | `FullName=="Louis Canera"` | Accepts variable. Reference the control's **Key Name** setting value to represent the variable. Use mustache syntax. Example: `{{FullName}}` |
-| number | `100` |  |  |
-| array | `[`int1`,` int2`]` | `[1, 2]` |  |
-| hash | `{foo: "`value`"}` | `{foo: "bar"}` |  |
-| Boolean | `true` and `false` |  |  |
+| Component | Syntax | Example |
+| :--- | :--- | :--- |
+| string | `"hello"` or `'hello'` | `FullNameInput=="Louis Canera"` |
+| number | `100` |  |
+| array | `[`integer1`,` integer2`]` | `[1, 2]` |
+| hash | `{foo: "`value`"}` | `{foo: "bar"}` |
+| Boolean | `true` and `false` |  |
+
+{% hint style="info" %}
+`string` component accepts a variable placeholder. Reference the control's **Key Name** setting value to represent the variable. Use mustache syntax. Example: `{{FullNameInput}}`
+{% endhint %}
 
 ### Arithmetic Operations
 
