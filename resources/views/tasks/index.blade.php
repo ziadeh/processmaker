@@ -118,7 +118,20 @@
             </div>
         </div>
         <div class="container-fluid">
-            <tasks-list ref="taskList" :filter="filter" @in-overdue="setInOverdueMessage"></tasks-list>
+            <div class="row no-gutters">
+                <div class="col-6">
+                    <tasks-list ref="taskList" :filter="filter" @in-overdue="setInOverdueMessage"></tasks-list>
+                </div>
+                <div class="col-6 p-0">
+                    <div class="card my-4 ml-1 h-100">
+                        <div class="card-header">Task Preview</div>
+                        <div class="card-body">
+                            Click on a task to the left to preview it here.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
 @endsection
