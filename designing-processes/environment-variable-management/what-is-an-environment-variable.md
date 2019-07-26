@@ -8,7 +8,7 @@ description: Understand how to use Environment Variables in ProcessMaker.
 
 In ProcessMaker, an Environment Variable is a secure, abstract proxy for any sensitive information that you need to use in a [Process](../viewing-processes/what-is-a-process.md). Any ProcessMaker Environment Variable can be re-used in any Process to abstract information securely throughout your organization.
 
-You do not need to know the sensitive information that the ProcessMaker Environment Value represents. The Process Owner creates the placeholder for that sensitive information, and then the value for the ProcessMaker Environment Value is entered by a person or [ProcessMaker Script](../scripts/what-is-a-script.md) during a [Request](../../using-processmaker/requests/what-is-a-request.md).
+You do not need to know the sensitive information that the ProcessMaker Environment Value represents. The Process Owner creates the placeholder for that sensitive information, and then the value for the ProcessMaker Environment Value is entered or read via a [ProcessMaker Script](../scripts/what-is-a-script.md) during a [Request](../../using-processmaker/requests/what-is-a-request.md).
 
 Below are a few examples how to use ProcessMaker Environment Variables:
 
