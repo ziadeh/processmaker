@@ -8,42 +8,44 @@ description: >-
 
 ## Overview
 
-In ProcessMaker Spark, a permission allows a ProcessMaker user member to view a type of information or perform an action in ProcessMaker. Below are some examples of ProcessMaker permissions:
+In ProcessMaker, a permission allows a ProcessMaker user or group member to view a type of information or perform an action in ProcessMaker. Below are some examples of ProcessMaker permissions:
 
 * Start Requests
 * View the list of Processes
 * Edit Processes
 * Edit ProcessMaker Screens
 * Create Environment Variables
-* View Task Assignments through the ProcessMaker Spark REST API
+* View Task Assignments through the ProcessMaker REST API
+
+Permissions are organized into categories, such as for [Processes](permission-descriptions-for-users-and-groups.md#processes), [Requests](permission-descriptions-for-users-and-groups.md#requests), and [Screens](permission-descriptions-for-users-and-groups.md#screens).
 
 ### Assign Permissions to Users and Groups
 
-While permissions apply to ProcessMaker users, those permissions can be assigned from a user account or a ProcessMaker group:
+While permissions apply to ProcessMaker users, those permissions can be assigned from a ProcessMaker user account or a ProcessMaker group:
 
-* **User-level permissions:** Permissions can be assigned to a ProcessMaker user account. These permission assignments only apply to that user account. From user-level permissions, you can easily assign Administrator-level permissions or all permissions to a ProcessMaker user account. Instead of assigning individual permissions to a ProcessMaker user account, the following options are also available:
+* **User-level permissions:** Permissions can be assigned to a ProcessMaker user account. These permission assignments only apply to that user account. From user-level permissions, you can assign Administrator-level permissions or all permissions to a ProcessMaker user account. Instead of assigning individual permissions to a ProcessMaker user account, the following options are also available:
 
-  * **Super Admin:** Assign the **Make this user a Super Admin** option to grant unrestricted access to the entire ProcessMaker instance. In doing so, ProcessMaker does not check permissions for ProcessMaker users with this setting selected. This allows such users to easily administer the ProcessMaker instance, including installing [packages](../package-development-distribution/first-topic.md) which might otherwise require permissions be granted to a user account to perform.
+  * **Super Admin:** Assign the **Make this user a Super Admin** option to grant unrestricted access to the entire ProcessMaker instance. In doing so, ProcessMaker does not check permissions for ProcessMaker user accounts with this setting selected, allowing such users to administer and install [packages](../package-development-distribution/first-topic.md) which might otherwise require permissions be granted to a ProcessMaker user account to perform.
   * **All permissions:** Assign the **Assign all permissions to this user** option to assign all permissions to that ProcessMaker user account.
 
   See [Edit a User Account](add-users/manage-user-accounts/edit-a-user-account.md#edit-a-processmaker-user-account).
 
-* **Group-level permissions:** Permissions can be assigned to a ProcessMaker group. A group assigns permissions to all ProcessMaker user account members. ProcessMaker groups make it easy to manage permissions for multiple ProcessMaker user accounts with identical permission assignments. From group-level permissions, you can easily assign all permissions to a ProcessMaker group. See [Edit a Group](assign-groups-to-users/manage-groups/edit-a-group.md#edit-a-processmaker-group).
+* **Group-level permissions:** Permissions can be assigned to a ProcessMaker group. A group assigns the same permissions to all ProcessMaker user account members. Using ProcessMaker groups makes it easy to manage permissions for multiple ProcessMaker user accounts with identical permission assignments. From group-level permissions, you can assign all permissions to a ProcessMaker group. See [Edit a Group](assign-groups-to-users/manage-groups/edit-a-group.md#edit-a-processmaker-group).
 
 ### User and Group Permissions are Cumulative
 
-User-level and group-level permission assignments are cumulative. This means that a ProcessMaker user account has all the group-level permission assignments from all groups memberships, but also has the flexibility of permission assignments that apply only to that ProcessMaker user account. For example, a ProcessMaker user account might be a member of a group whereby its members can view the list of all Processes. However, a ProcessMaker Administrator can assign the permission to edit Processes to only the one ProcessMaker user account.
+User-level and group-level permission assignments are cumulative. This means that a ProcessMaker user account has all the group-level permission assignments from all its group memberships, but also has the flexibility of permission assignments that apply only to that ProcessMaker user account. For example, a ProcessMaker user account might be a member of a group whereby its members can view the list of all Processes. However, a ProcessMaker Administrator can assign the permission to edit Processes to only the one ProcessMaker user account.
 
 ### Best Practice to Assign Permissions
 
 ProcessMaker recommends [creating ProcessMaker groups](assign-groups-to-users/manage-groups/create-a-group.md#create-a-processmaker-group) based on how you define ProcessMaker usage roles in your organization. Based on usage roles you define, assign permissions to ProcessMaker groups so that all group members have the same permission set. Below is an example how you might create groups to assign permissions:
 
-* **ProcessMaker user:** Most ProcessMaker users start or participate in Requests and perform Tasks. Their permission assignments may be limited to [Requests](permission-descriptions-for-users-and-groups.md#requests). Note that if you want specific ProcessMaker users and/or groups to start and/or cancel Requests, those must be set from the following functional areas and are outside the scope of the permission settings discussed in this topic:
+* **ProcessMaker user:** Most ProcessMaker users start or participate in Requests and perform [Tasks](../using-processmaker/task-management/what-is-a-task.md). Their permission assignments may be limited to [Requests](permission-descriptions-for-users-and-groups.md#requests). Note that if you want specific ProcessMaker users and/or groups to start and/or cancel Requests, those must be set from the following functional areas and are outside the scope of the permission settings discussed in this topic:
   * **Cancel Requests:** [Process Configuration](../designing-processes/viewing-processes/view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md#edit-configuration-information-about-a-process)
   * **Start Requests:** [Start Event element configuration](../designing-processes/process-design/model-your-process/add-and-configure-an-event-element.md#select-the-processmaker-user-or-group-that-can-start-requests)
-* **Process Owner:** Process Owners create Process models. Their permission assignments may be limited to [Requests](permission-descriptions-for-users-and-groups.md#requests), [Processes](permission-descriptions-for-users-and-groups.md#processes), Process [Categories](permission-descriptions-for-users-and-groups.md#categories), [Screens](permission-descriptions-for-users-and-groups.md#screens), and [Environment Variables](permission-descriptions-for-users-and-groups.md#environment-variables) categories.
-* **ProcessMaker Developer:** ProcessMaker Developers create ProcessMaker Scripts. Their permission assignments may be limited to [Requests](permission-descriptions-for-users-and-groups.md#requests), [Scripts](permission-descriptions-for-users-and-groups.md#scripts), [Files \(API\)](permission-descriptions-for-users-and-groups.md#files-api), [Notifications \(API\)](permission-descriptions-for-users-and-groups.md#notifications-api), and [Task Assignments \(API\)](permission-descriptions-for-users-and-groups.md#task-assignments-api) categories.
-* **ProcessMaker Administrator:** ProcessMaker Administrators administer the ProcessMaker environment and its users. Their permission assignments may be limited to [Requests](permission-descriptions-for-users-and-groups.md#requests), [Users](permission-descriptions-for-users-and-groups.md#users), [Groups](permission-descriptions-for-users-and-groups.md#groups), [Auth Clients](permission-descriptions-for-users-and-groups.md#auth-clients) and [Comments](permission-descriptions-for-users-and-groups.md#comments) categories.
+* **Process Owner:** Process Owners create Process models. Their permission assignments may be limited to [Environment Variables](permission-descriptions-for-users-and-groups.md#environment-variables), Process [Categories](permission-descriptions-for-users-and-groups.md#categories), [Processes](permission-descriptions-for-users-and-groups.md#processes), [Requests](permission-descriptions-for-users-and-groups.md#requests), [Screens](permission-descriptions-for-users-and-groups.md#screens), and [Vocabularies](permission-descriptions-for-users-and-groups.md#vocabularies) categories.
+* **ProcessMaker Developer:** ProcessMaker Developers create ProcessMaker [Scripts](../designing-processes/scripts/what-is-a-script.md). Their permission assignments may be limited to [Collections](permission-descriptions-for-users-and-groups.md#collections), [Files \(API\)](permission-descriptions-for-users-and-groups.md#files-api), [Notifications \(API\)](permission-descriptions-for-users-and-groups.md#notifications-api), [Requests](permission-descriptions-for-users-and-groups.md#requests), [Scripts](permission-descriptions-for-users-and-groups.md#scripts), and [Task Assignments \(API\)](permission-descriptions-for-users-and-groups.md#task-assignments-api) categories.
+* **ProcessMaker Administrator:** ProcessMaker Administrators administer the ProcessMaker environment and its users. Their permission assignments may be limited to [Auth Clients](permission-descriptions-for-users-and-groups.md#auth-clients), [Collections](permission-descriptions-for-users-and-groups.md#collections), [Comments](permission-descriptions-for-users-and-groups.md#comments), [Groups](permission-descriptions-for-users-and-groups.md#groups), [Requests](permission-descriptions-for-users-and-groups.md#requests), and [Users](permission-descriptions-for-users-and-groups.md#users) categories. Assign specific ProcessMaker Administrators in their ProcessMaker user accounts the **Make this user a Super Admin** option.
 
 ## Permission Descriptions
 
@@ -122,10 +124,10 @@ Select the **View Environment Variables** permission to use any of the other per
 
 The **Files \(API\)** category contains the following permissions:
 
-* **View Files:** Returns the list of files associated to an API request. See "Files &gt; Get" endpoint in the ProcessMaker Spark REST API.
-* **Create Files:** Saves a new file specified in an API request. Selecting this permission also selects the **Edit Files** permission. See "Files &gt; Post" endpoint in the ProcessMaker Spark REST API.
-* **Edit Files:** Update a file specified in an API request. See "Files &gt; Update" endpoint in the ProcessMaker Spark REST API.
-* **Delete Files:** Deletes a specified file in an API request. See "Files &gt; Delete" endpoint in the ProcessMaker Spark REST API.
+* **View Files:** Returns the list of files associated to an API request. See "Files &gt; Get" endpoint in the ProcessMaker REST API.
+* **Create Files:** Saves a new file specified in an API request. Selecting this permission also selects the **Edit Files** permission. See "Files &gt; Post" endpoint in the ProcessMaker REST API.
+* **Edit Files:** Update a file specified in an API request. See "Files &gt; Update" endpoint in the ProcessMaker REST API.
+* **Delete Files:** Deletes a specified file in an API request. See "Files &gt; Delete" endpoint in the ProcessMaker REST API.
 
 ### Groups
 
@@ -144,10 +146,10 @@ Select the **View Groups** permission to use any of the other permissions in thi
 
 The **Notifications \(API\)** category contains the following permissions:
 
-* **View Notifications:**  Returns all notifications to which the user has access. See "Notifications &gt; Get" endpoint in the ProcessMaker Spark REST API.
-* **Create Notifications:**  Save a new notification through an API request. Selecting this permission also selects the **Edit Notifications** permission. See "Notifications &gt; Post" endpoint in the ProcessMaker Spark REST API.
-* **Edit Notifications:** Updates a notification through an API request. See "Notifications &gt; Update" endpoint in the ProcessMaker Spark REST API.
-* **Delete Notifications:** Deletes a specified notification through an API request. See "Notifications &gt; Delete" endpoint in the ProcessMaker Spark REST API.
+* **View Notifications:**  Returns all notifications to which the user has access. See "Notifications &gt; Get" endpoint in the ProcessMaker REST API.
+* **Create Notifications:**  Save a new notification through an API request. Selecting this permission also selects the **Edit Notifications** permission. See "Notifications &gt; Post" endpoint in the ProcessMaker REST API.
+* **Edit Notifications:** Updates a notification through an API request. See "Notifications &gt; Update" endpoint in the ProcessMaker REST API.
+* **Delete Notifications:** Deletes a specified notification through an API request. See "Notifications &gt; Delete" endpoint in the ProcessMaker REST API.
 
 ### Processes
 
