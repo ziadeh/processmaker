@@ -12,7 +12,7 @@ Your user account or group membership must have the following permissions to del
 * Users: View Users
 * Users: Delete Users
 
-See the [User](../../permission-descriptions-for-users-and-groups.md#users) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Users](../../permission-descriptions-for-users-and-groups.md#users) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 {% hint style="warning" %}

@@ -12,7 +12,7 @@ Your user account or group membership must have the following permissions to cre
 * Groups: View Groups
 * Groups: Create Groups
 
-See the [Group](../../permission-descriptions-for-users-and-groups.md#groups) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Groups](../../permission-descriptions-for-users-and-groups.md#groups) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to create a ProcessMaker group:

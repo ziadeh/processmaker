@@ -12,7 +12,7 @@ Your user account or group membership must have the following permissions to edi
 * Users: View Users
 * Users: Edit Users
 
-See the [User](../../permission-descriptions-for-users-and-groups.md#users) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Users](../../permission-descriptions-for-users-and-groups.md#users) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to edit a ProcessMaker user account:
@@ -29,7 +29,9 @@ Follow these steps to edit a ProcessMaker user account:
      * In the **Job Title** field, edit the person's organizational job title.
    * In the **Contact Information** section, change the following information:
      * In the **Email** field, edit the person's business email address. This is a required field.
-     * In the **Phone** field, edit the person's business telephone or cell phone number.
+     * In the **Phone** field, edit the person's business telephone number.
+     * In the **Fax** field, edit the person's business fax number.
+     * In the **Cell** field, edit the person's cell phone number.
    * In the **Address** section, change the following information:
      * In the **Address** field, edit the person's business address.
      * In the **City** field, edit the city for the person's business address.
@@ -42,6 +44,7 @@ Follow these steps to edit a ProcessMaker user account:
        * m/d/Y h:i A \(12/31/2017 11:30 pm\)
        * m/d/Y H:i \(12/31/2017 23:30\)
        * d/m/Y \(31/12/2017 23:30\)
+       * d/m/Y H:i \(31/12/2017 23:30\)
        * Y/m/d \(2017/12/31\)
        * Y/m/d H:i \(2017/12/31 23:30\)
      * From the **Time zone** drop-down menu, select the time zone in which to display times for this person.
