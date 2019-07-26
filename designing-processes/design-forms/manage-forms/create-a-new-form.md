@@ -32,7 +32,7 @@ Follow these steps to create a new ProcessMaker Screen:
    This is a required field.
 
 5. Enter in the **Description** field a description for the ProcessMaker Screen. This is a required field.
-6. Click **Save**. Screens Builder displays the new ProcessMaker Screen in [Editor mode](../screens-builder/screens-builder-modes.md#editor-mode). See [Screens Builder](../screens-builder/).
+6. Click **Save**. Screens Builder displays the new ProcessMaker Screen in [Design mode](../screens-builder/screens-builder-modes.md#editor-mode). See [Screens Builder](../screens-builder/).
 
 ## Related Topics
 

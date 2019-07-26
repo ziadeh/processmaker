@@ -29,7 +29,7 @@ Your user account or group membership must have the following permissions to imp
 * Processes: View Processes
 * Processes: Import Processes
 
-See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Processes](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to import a validated ProcessMaker version 4 Process:

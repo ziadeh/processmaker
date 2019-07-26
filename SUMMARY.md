@@ -188,7 +188,7 @@
 ## Download ProcessMaker for On-Premises Installation <a id="install-processmaker"></a>
 
 * [On-Premises Server Requirements](install-processmaker/prerequisites.md)
-* [Download ProcessMaker for On-Premises Open-Source Installation](install-processmaker/installation-guide.md)
+* [Download ProcessMaker Open-Source Edition for On-Premises Installation](install-processmaker/installation-guide.md)
 
 ## Packages <a id="package-development-distribution"></a>
 

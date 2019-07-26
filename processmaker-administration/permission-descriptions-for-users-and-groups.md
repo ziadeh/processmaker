@@ -77,6 +77,10 @@ Select the **View Categories** permission to use any of the other permissions in
 
 ### Collections
 
+{% hint style="info" %}
+The [Collections package](../package-development-distribution/package-a-connector/collections.md) must be installed in your ProcessMaker instance for the **Collections** category of permissions to display. The Collections package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Collections package can be installed in your ProcessMaker instance.
+{% endhint %}
+
 The **Collections** category contains the following permissions:
 
 * **View Collections:** View the table of Collections on the **Collections** page. See ~~LINK~~.
@@ -216,6 +220,23 @@ The **Users** category contains the following permissions:
 Select the **View Users** permission to use any of the other permissions in this category.
 {% endhint %}
 
+### Vocabularies
+
+{% hint style="info" %}
+The [Vocabularies package](../package-development-distribution/package-a-connector/vocabularies.md) must be installed in your ProcessMaker instance for the **Vocabularies** category of permissions to display. The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
+{% endhint %}
+
+The **Vocabularies** category contains the following permissions:
+
+* **View Vocabularies:** View the table of ProcessMaker Vocabularies on the **Vocabularies** page. See [View All Vocabularies](../designing-processes/vocabularies-management/manage-your-vocabularies/view-all-vocabularies.md).
+* **Create Vocabularies:** Create a ProcessMaker Vocabulary from the **Vocabularies** page. Selecting this permission also selects the **Edit Vocabularies** permission. See [Create a New Vocabulary](../designing-processes/vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md).
+* **Edit Vocabularies:** Edit a ProcessMaker Vocabulary from the **Vocabularies** page. See [Edit a Vocabulary](../designing-processes/vocabularies-management/manage-your-vocabularies/edit-a-vocabulary.md).
+* **Delete Vocabularies:** Delete a ProcessMaker Vocabulary from the **Vocabularies** page. See [Delete a Vocabulary](../designing-processes/vocabularies-management/manage-your-vocabularies/delete-a-vocabulary.md).
+
+{% hint style="info" %}
+Select the **View Vocabularies** permission to use any of the other permissions in this category.
+{% endhint %}
+
 ## Related Topics
 
 {% page-ref page="../using-processmaker/requests/what-is-a-request.md" %}
@@ -283,4 +304,14 @@ Select the **View Users** permission to use any of the other permissions in this
 {% page-ref page="../designing-processes/viewing-processes/view-the-list-of-processes/export-a-bpmn-compliant-process.md" %}
 
 {% page-ref page="auth-client-management/manage-client-authentications/view-all-client-authentication-keys.md" %}
+
+{% page-ref page="../designing-processes/vocabularies-management/what-is-a-vocabulary.md" %}
+
+{% page-ref page="../designing-processes/vocabularies-management/manage-your-vocabularies/view-all-vocabularies.md" %}
+
+{% page-ref page="../designing-processes/vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md" %}
+
+{% page-ref page="../designing-processes/vocabularies-management/manage-your-vocabularies/edit-a-vocabulary.md" %}
+
+{% page-ref page="../designing-processes/vocabularies-management/manage-your-vocabularies/delete-a-vocabulary.md" %}
 
