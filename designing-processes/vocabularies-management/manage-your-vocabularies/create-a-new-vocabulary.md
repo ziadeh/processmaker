@@ -9,6 +9,12 @@ description: >-
 ## Create a New ProcessMaker Vocabulary
 
 {% hint style="info" %}
+### ProcessMaker Package Required
+
+The [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) must be installed in your ProcessMaker instance. The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
+
+### Permissions Required
+
 Your user account or group membership must have the following permissions to create a ProcessMaker Vocabulary:
 
 * Vocabularies: View Vocabularies

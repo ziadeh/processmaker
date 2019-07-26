@@ -11,10 +11,6 @@ description: >-
 ProcessMaker displays all ProcessMaker Vocabularies in one table. This makes it easy to manage ProcessMaker Vocabularies.
 
 {% hint style="info" %}
-### Don't Know What a Vocabulary Is?
-
-See [What is a Vocabulary?](../what-is-a-vocabulary.md).
-
 ### ProcessMaker Package Required
 
 The [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) must be installed in your ProcessMaker instance. The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
@@ -23,7 +19,7 @@ The [Vocabularies package](../../../package-development-distribution/package-a-c
 
 Your user account or group membership must have the "Vocabularies: View Vocabularies" permission to view the list of Vocabularies.
 
-See the [Vocabularies](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#vocabularies) permissions or ask your ProcessMaker Administrator for assistance.
+See the ProcessMaker [Vocabularies](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#vocabularies) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to view all ProcessMaker Vocabularies in your organization:
