@@ -20,6 +20,8 @@ The Collections package allows members of an organization to maintain schema-les
 * Since records are schema-less, validation is optional but not required. To enforce a valid schema, use the [Vocabularies](vocabularies.md) package to specify the schema for the ProcessMaker Screens that compose the Collection.
 * Events are triggered when a Collection is created, updated, or deleted with which ProcessMaker user performed an action on a Collection and when that action occurred. A third-party auditing package can listen for these events and then audit/log that data into another storage repository. Note that the storage for audit configuration is not part of this package.
 
+Determine which ProcessMaker users and/or groups have permission to view, create, edit or delete Collections by setting [Collection permissions](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections).
+
 ## Related Topics
 
 {% page-ref page="../first-topic.md" %}
