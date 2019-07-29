@@ -104,14 +104,14 @@ Your user account or group membership must have the following permissions to edi
 See the [User](../../permission-descriptions-for-users-and-groups.md#users) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Use an API token with a ProcessMaker user account to successfully make calls to the [ProcessMaker Spark REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation) from an external third-party application or a [ProcessMaker Script](../../../designing-processes/scripts/what-is-a-script.md). The API token must not be expired for that API token to work.
+Use an API token with a ProcessMaker user account to successfully make calls to the [ProcessMaker REST API](https://develop-demo.bpm4.qa.processmaker.net/api/documentation) from an external third-party application or a [ProcessMaker Script](../../../designing-processes/scripts/what-is-a-script.md). The API token must not be expired for that API token to work.
 
-A ProcessMaker user must have a valid API token to successfully make calls to the ProcessMaker Spark REST API from an external third-party application.
+A ProcessMaker user must have a valid API token to successfully make calls to the ProcessMaker REST API from an external third-party application.
 
 Follow these steps to generate an API token:
 
 1. [View all ProcessMaker user accounts.](view-all-users.md) The **Users** page displays.
-2. Select the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the ProcessMaker user account to generate an API token to the ProcessMaker Spark REST API. The **Information** tab displays for that ProcessMaker user account.
+2. Select the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the ProcessMaker user account to generate an API token to the ProcessMaker REST API. The **Information** tab displays for that ProcessMaker user account.
 3. Click the **API Tokens** tab.  
 
    ![](../../../.gitbook/assets/api-token-tab-user-profile-admin.png)
@@ -135,13 +135,13 @@ See the [User](../../permission-descriptions-for-users-and-groups.md#users) perm
 {% endhint %}
 
 {% hint style="warning" %}
-Deleting an API token revokes the ProcessMaker user holding the token from using an external third-party application from successfully making calls to the ProcessMaker Spark REST API. Deleting an API token cannot be undone.
+Deleting an API token revokes the ProcessMaker user holding the token from using an external third-party application from successfully making calls to the ProcessMaker REST API. Deleting an API token cannot be undone.
 {% endhint %}
 
-Follow these steps to generate an API token:
+Follow these steps to delete an API token:
 
 1. [View all ProcessMaker user accounts.](view-all-users.md) The **Users** page displays.
-2. Select the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the ProcessMaker user account to generate an API token to the ProcessMaker Spark REST API. The **Information** tab displays for that ProcessMaker user account.
+2. Select the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the ProcessMaker user account from which to delete an API token. The **Information** tab displays for that ProcessMaker user account.
 3. Click the **API Tokens** tab.
 4. Click the **Delete** icon![](../../../.gitbook/assets/delete-api-token-admin.png)for the API token to delete. A message displays to confirm deletion of the API token. The API token is referenced by its ID value.  
 
