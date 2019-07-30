@@ -38,6 +38,7 @@ Follow these steps to do a basic search for a Request:
    * **Requester:** From the **Requester** field, select one or more Requesters as part of your search criteria. A Requester is a ProcessMaker user who starts a Request. The currently logged on ProcessMaker user is included by default when searching for Requests on the **My Requests** page. Type into the **Requester** field to filter requesters that display in that field's drop-down menu. To remove a Requester that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or click `Enter` when the drop-down is visible.
    * **Participants:** From the **Participants** field, select one or more Request participants as part of your search criteria. Type into the **Participants** field to filter Request participants that display in that field's drop-down menu. To remove a Request participant that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or click `Enter` when the drop-down is visible.
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
+5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Request search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save Request Searches](search-for-a-request.md#save-and-share-a-request-search).
 
 ## Advanced Search for a Request
 
@@ -100,7 +101,7 @@ Follow these steps to do an advanced search for a Request:
    `(request = "Process Name 1" OR request = "Process Name 2") AND (status = "Canceled" OR status = "Error") AND (requester = "Username1" OR requester = "Username2") AND (participant = "Username3" OR participant = "Username4" AND (updated_at < NOW -2 day)`
 
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
-5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Request search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See .
+5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Request search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save Request Searches](search-for-a-request.md#save-and-share-a-request-search).
 
 {% hint style="info" %}
 ### View a Request Summary <a id="view-information-about-a-request"></a>
@@ -115,11 +116,34 @@ To [view a Request summary](request-details/), do one of the following:
 If there are no search results, the following message displays: **No Data Available**.
 {% endhint %}
 
-## Save and Share a Request Search
+## Saved Request Searches
 
 {% hint style="info" %}
 To save and share a Request search, the [Saved Searches](../../package-development-distribution/package-a-connector/saved-searches-package.md) package must be installed in your ProcessMaker instance. The Saved Searches package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Saved Searches package can be installed in your ProcessMaker instance.
 {% endhint %}
+
+### Save and Share a Search
+
+Use the Save Search feature to save and share a Request search. Share the Request search with specific ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) and/or [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md).
+
+Follow these steps to save a Request search:
+
+1. Enter the search criteria for either a [basic](search-for-a-request.md#basic-search-for-a-request) or [advanced](search-for-a-request.md#advanced-search-for-a-request) Request search.
+2. Click the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). The **Save Search** screen displays. ![](../../.gitbook/assets/save-search-screen-package-requests-tasks.png) 
+3. In the **Name** field, enter the name of your saved search. This is a required field.
+4. Follow these guidelines to select an icon that represents the saved search in the left sidebar:
+   * **Follow this step to select an image from ProcessMaker to represent the saved search:**
+
+     Select any of the images that ProcessMaker provides by selecting its radio button. This image displays in the left sidebar below the **Saved Searches** icon.
+
+   * **Follow these steps to select a custom image to represent the saved search:**
+     1. Click the **Would you like to use a custom icon?** checkbox. The **Choose File** button displays.
+     2. Click the **Choose File** button and locate the icon that represents the saved search. The icon must not be larger than 2 kilobytes large or the following message displays below the **Choose File** button: **The file is too large. File size must be less than 2KB when base64 encoded.**. This image displays in the left sidebar below the **Saved Searches** icon.
+5. From the **Share With Users** drop-down menu, select with which ProcessMaker user\(s\) to share your saved search by selecting the person's full name. Multiple ProcessMaker users may be added, one at a time, to this field. You may click the Remove icon to remove a ProcessMaker user from the **Share With Users** drop-down menu.
+6. From the **Share With Groups** drop-down menu, select with which ProcessMaker group\(s\) to share your saved search by selecting the group. Multiple ProcessMaker groups may be added, one at a time, to this field. You may click the Remove icon to remove a ProcessMaker group from the **Share With Groups** drop-down menu.
+7. Click the **Save Search** button.
+
+### Configure a Saved Search
 
 
 
@@ -138,6 +162,8 @@ To save and share a Request search, the [Saved Searches](../../package-developme
 {% page-ref page="view-completed-requests.md" %}
 
 {% page-ref page="view-all-requests.md" %}
+
+{% page-ref page="../../package-development-distribution/package-a-connector/saved-searches-package.md" %}
 
 {% page-ref page="request-details/" %}
 

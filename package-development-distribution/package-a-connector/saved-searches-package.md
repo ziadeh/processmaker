@@ -14,8 +14,8 @@ Use the Saved Searches package to save and/or share search queries associated wi
 
 The Saved Searches package has the following components after it is installed to your ProcessMaker instance:
 
-* **Save and share Request searches:** After enter either a basic or advanced Request search, save the query and optionally share it with specific ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) and/or [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md). See [Search for a Request](../../using-processmaker/requests/search-for-a-request.md#save-and-share-a-request-search).
-* **Save and share Task searches:** After enter either a basic or advanced Task search, save the query and optionally share it with specific ProcessMaker users and/or groups. See [Search for a Task](../../using-processmaker/task-management/search-for-a-task.md#save-and-share-a-task-search).
+* **Save and share Request searches:** After enter either a basic or advanced Request search, save the query and optionally share it with specific ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) and/or [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md). See [Save Request Searches](../../using-processmaker/requests/search-for-a-request.md#saved-request-searches).
+* **Save and share Task searches:** After enter either a basic or advanced Task search, save the query and optionally share it with specific ProcessMaker users and/or groups. See [Save Task Searches](../../using-processmaker/task-management/search-for-a-task.md#save-task-searches).
 
 ## Related Topics
 

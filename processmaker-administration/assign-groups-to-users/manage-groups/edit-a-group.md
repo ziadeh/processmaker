@@ -48,7 +48,7 @@ Follow these steps to edit a ProcessMaker group:
 
         ![](../../../.gitbook/assets/add-users-screen-edit-groups-admin.png)
 
-     2. From the **Users** drop-down menu, select which ProcessMaker user account\(s\) to include as members of this ProcessMaker group by selecting the person's full name. Multiple ProcessMaker groups may be added, one at a time, to this field. You may click the Remove icon to remove a ProcessMaker user account from the **Users** drop-down menu.  
+     2. From the **Users** drop-down menu, select which ProcessMaker user account\(s\) to include as members of this ProcessMaker group by selecting the person's full name. Multiple ProcessMaker users may be added, one at a time, to this field. You may click the Remove icon to remove a ProcessMaker user account from the **Users** drop-down menu.  
 
         ![](../../../.gitbook/assets/add-users-screen-remove-user-edit-group-admin.png)
 
