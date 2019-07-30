@@ -21,6 +21,7 @@ The **Recent Jobs** panel displays the following information about recently run 
 * **On:** The **On** column displays the name of the queue from which the job ran.
 * **Tags:** The **Tags** column displays the tag\(s\) associated with the job.
 * **Queued At:** The **Queued At** column displays the date and time in which the job entered its queue.
+* **Runtime:** The **Runtime** column displays how much time in seconds the recently run job took to complete.
 
 If more than 25 jobs display in the **Recent Jobs** panel, then the following occurs:
 
