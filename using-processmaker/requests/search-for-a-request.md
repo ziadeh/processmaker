@@ -100,6 +100,7 @@ Follow these steps to do an advanced search for a Request:
    `(request = "Process Name 1" OR request = "Process Name 2") AND (status = "Canceled" OR status = "Error") AND (requester = "Username1" OR requester = "Username2") AND (participant = "Username3" OR participant = "Username4" AND (updated_at < NOW -2 day)`
 
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
+5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Request search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See .
 
 {% hint style="info" %}
 ### View a Request Summary <a id="view-information-about-a-request"></a>
@@ -115,6 +116,10 @@ If there are no search results, the following message displays: **No Data Availa
 {% endhint %}
 
 ## Save and Share a Request Search
+
+{% hint style="info" %}
+To save and share a Request search, the [Saved Searches](../../package-development-distribution/package-a-connector/saved-searches-package.md) package must be installed in your ProcessMaker instance. The Saved Searches package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Saved Searches package can be installed in your ProcessMaker instance.
+{% endhint %}
 
 
 
