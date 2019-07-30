@@ -196,6 +196,7 @@
 * [Available Packages from ProcessMaker](package-development-distribution/package-a-connector/README.md)
   * [Collections Package](package-development-distribution/package-a-connector/collections.md)
   * [Email Package](package-development-distribution/package-a-connector/email.md)
+  * [Saved Searches Package](package-development-distribution/package-a-connector/saved-searches-package.md)
   * [Vocabularies Package](package-development-distribution/package-a-connector/vocabularies.md)
   * [Web Entry Package](package-development-distribution/package-a-connector/web-entry.md)
 

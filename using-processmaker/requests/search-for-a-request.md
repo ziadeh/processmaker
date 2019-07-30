@@ -114,6 +114,10 @@ To [view a Request summary](request-details/), do one of the following:
 If there are no search results, the following message displays: **No Data Available**.
 {% endhint %}
 
+## Save and Share a Request Search
+
+
+
 ## Related Topics
 
 {% page-ref page="what-is-a-request.md" %}

@@ -14,7 +14,10 @@ The Vocabularies package is not available in the ProcessMaker open-source editio
 
 Use the Vocabularies package to maintain uniform JSON schemas across all assets in your organization. These assets include [Processes](../../designing-processes/viewing-processes/what-is-a-process.md), [ProcessMaker Screens](../../designing-processes/design-forms/what-is-a-form.md), and [ProcessMaker Scripts](../../designing-processes/scripts/what-is-a-script.md).
 
-Determine which ProcessMaker users and/or groups have permission to view, create, edit or delete Vocabularies by setting [Vocabulary permissions](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#vocabularies).
+The Vocabularies package has the following components after it is installed to your ProcessMaker instance:
+
+* **Manage your ProcessMaker Vocabularies:** Manage your organization's ProcessMaker Vocabularies. See [Vocabularies Management](../../designing-processes/vocabularies-management/).
+* **Set Vocabulary permissions:** Determine which ProcessMaker users and/or groups have permission to view, create, edit or delete Vocabularies. See [Vocabulary permissions](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#vocabularies).
 
 ## Related Topics
 
