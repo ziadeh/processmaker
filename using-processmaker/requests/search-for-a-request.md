@@ -163,7 +163,5 @@ Follow these steps to save a Request search:
 
 {% page-ref page="view-all-requests.md" %}
 
-{% page-ref page="../../package-development-distribution/package-a-connector/saved-searches-package.md" %}
-
 {% page-ref page="request-details/" %}
 
