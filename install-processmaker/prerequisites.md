@@ -1,7 +1,7 @@
 ---
 description: >-
-  Before installing ProcessMaker Spark on-premises, understand which
-  technologies ProcessMaker requires.
+  Before installing ProcessMaker on-premises, understand which technologies
+  ProcessMaker requires.
 ---
 
 # On-Premises Server Requirements
@@ -9,10 +9,10 @@ description: >-
 ## On-Premises Server Requirements
 
 {% hint style="info" %}
-The following server requirements are only for ProcessMaker Spark on-premises installation. Since ProcessMaker Spark is primarily an Enterprise cloud solution, these server requirements do not apply to ProcessMaker Spark.
+The following server requirements are only for a ProcessMaker on-premises installation. Since ProcessMaker is primarily an Enterprise cloud solution, these server requirements do not apply to ProcessMaker cloud instances.
 {% endhint %}
 
-The following are server requirements to install ProcessMaker Spark on-premises:
+The following are server requirements to install ProcessMaker on-premises:
 
 * **Core server components:** Ensure your server has the following core components:
   * PHP 7.1.3 or later
