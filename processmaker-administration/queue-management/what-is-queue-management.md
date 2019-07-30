@@ -1,38 +1,38 @@
 ---
-description: Understand what Queue Management is in ProcessMaker Spark.
+description: Understand what Queue Management is in ProcessMaker.
 ---
 
 # What is Queue Management?
 
 ## Overview
 
-ProcessMaker Spark is built on the Laravel framework. [Laravel Horizon](https://horizon.laravel.com/) is a robust queue monitoring solution. Use Laravel Horizon to monitor key metrics of your queue system such as job throughput, runtime, and job failures.
+ProcessMaker is built on the Laravel framework. [Laravel Horizon](https://horizon.laravel.com/) is a robust queue monitoring solution. Use Laravel Horizon to monitor key metrics of your queue system such as job throughput, runtime, and job failures.
 
 ## What are Jobs and Queues?
 
 ### Jobs
 
-In context with ProcessMaker Spark, a job is any action in which ProcessMaker must perform. A job is something that ProcessMaker Spark must run for it to function properly.
+In context with ProcessMaker, a job is any action in which ProcessMaker must perform. A job is something that ProcessMaker must run for it to function properly.
 
-Below are examples of ProcessMaker Spark jobs:
+Below are examples of ProcessMaker jobs:
 
-* A ProcessMaker Spark [user account is created](../add-users/manage-user-accounts/create-a-user-account.md).
-* A ProcessMaker Spark [user profile is updated](../../using-processmaker/profile-settings.md#change-your-profile-settings).
+* A ProcessMaker [user account is created](../add-users/manage-user-accounts/create-a-user-account.md).
+* A ProcessMaker [user profile is updated](../../using-processmaker/profile-settings.md#change-your-profile-settings).
 * A [Request](../../using-processmaker/requests/what-is-a-request.md) is started.
-* A [Task](../../using-processmaker/task-management/what-is-a-task.md) is assigned to a Request participant.
+* A [Task](../../using-processmaker/task-management/what-is-a-task.md) is assigned to a [Request](../../using-processmaker/requests/what-is-a-request.md) participant.
 
 ### Queues
 
-A queue manages and monitors the sequence of jobs that ProcessMaker Spark must run. When a job is called, that job enters the queue. If there is no delay to run the job, the queue loads that job to run as soon as possible. However, some jobs are intentionally delayed from running immediately such as a Start Timer Event element in a Request.
+A queue manages and monitors the sequence of jobs that ProcessMaker must run. When a job is called, that job enters the queue. If there is no delay to run the job, the queue loads that job to run as soon as possible. However, some jobs are intentionally delayed from running immediately such as a [Start Timer Event](../../designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md#start-timer-event) element in a Request.
 
-The queue have the following functions:
+The queue has the following functions:
 
-* The queue manages pending ProcessMaker Spark jobs regardless of whether a job is to run as soon as possible or at a later time.
-* The queue monitors how efficiently jobs run in the ProcessMaker Spark server. Queue Management indicates via [dashboard metrics](dashboard.md) job throughput in the queue.
+* The queue manages pending ProcessMaker jobs regardless of whether a job is to run as soon as possible or at a later time.
+* The queue monitors how efficiently jobs run in the ProcessMaker instance. Queue Management indicates via [dashboard metrics](dashboard.md) job throughput in the queue.
 
 ### Failed Jobs
 
-A failed job is one in which ProcessMaker Spark has unsuccessfully attempted to run a job three \(3\) times. Thereafter, the job has failed. Queue Management displays failed jobs in both the [Dashboard](dashboard.md) and the [**Failed**](view-recently-failed-jobs.md) page.
+A failed job is one in which ProcessMaker has unsuccessfully attempted to run a job three \(3\) times. Thereafter, the job has failed. Queue Management displays failed jobs in both the [Dashboard](dashboard.md) and the [**Failed**](view-recently-failed-jobs.md) page.
 
 ## Related Topics
 

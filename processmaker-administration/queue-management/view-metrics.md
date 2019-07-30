@@ -1,5 +1,5 @@
 ---
-description: View metrics for ProcessMaker Spark jobs and queues.
+description: View metrics for ProcessMaker jobs and queues.
 ---
 
 # View Metrics
@@ -30,7 +30,7 @@ Follow these steps to view job metrics in Queue Management:
 Follow these steps to view queue metrics in Queue Management:
 
 1. [View the Metrics panel in Queue Management](view-metrics.md#overview). The **Jobs** tab displays.
-2. Click the **Queues** tab to display all queues in ProcessMaker Spark.  
+2. Click the **Queues** tab to display all queues in ProcessMaker.  
 
    ![](../../.gitbook/assets/queues-tab-metrics-page-queue-management-admin.png)
 

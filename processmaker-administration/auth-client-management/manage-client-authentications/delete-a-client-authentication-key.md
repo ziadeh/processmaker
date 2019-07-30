@@ -16,7 +16,7 @@ See the [Auth Clients](../../permission-descriptions-for-users-and-groups.md#aut
 {% endhint %}
 
 {% hint style="warning" %}
-When an authenticated client is deleted, the ProcessMaker user to whom the client authentication applied will no longer be able to log on to ProcessMaker Spark via Single Sign On \(SSO\).
+When an authenticated client is deleted, the ProcessMaker user to whom the client authentication applied will no longer be able to access the ProcessMaker REST API in the ProcessMaker instance to which that user is granted.
 
 Deleting an authenticated client from the **Auth Clients** page cannot be undone.
 {% endhint %}

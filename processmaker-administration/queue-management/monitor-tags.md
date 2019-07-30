@@ -1,12 +1,12 @@
 ---
-description: Monitor ProcessMaker Spark jobs using tags.
+description: Monitor ProcessMaker jobs using tags.
 ---
 
 # Assign Monitoring Tags
 
 ## Overview
 
-Assign “tags” to jobs to more easily search for and monitor jobs. At this time, tags are not enabled in ProcessMaker Spark.
+Assign “tags” to jobs to more easily search for and monitor jobs. At this time, tags are not enabled in ProcessMaker's implementation of [Laravel Horizon](https://horizon.laravel.com/).
 
 ## Related Topics
 

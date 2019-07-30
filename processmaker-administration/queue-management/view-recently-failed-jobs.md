@@ -1,5 +1,5 @@
 ---
-description: View recently failed ProcessMaker Spark jobs.
+description: View recently failed ProcessMaker jobs.
 ---
 
 # View Recently Failed Jobs

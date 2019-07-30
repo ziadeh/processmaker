@@ -6,7 +6,7 @@ description: View all authenticated cients in your organization.
 
 ## View All Authenticated Clients <a id="view-all-scripts"></a>
 
-ProcessMaker displays all authenticated clients in one table that ProcessMaker Administrators throughout your organization have created. This makes it easy to manage authenticated clients that to allow these ProcessMaker users to Single Sign On \(SSO\) to ProcessMaker Spark. The most recently created authenticated clients display at the top of the table.
+ProcessMaker displays all authenticated clients in one table that ProcessMaker Administrators throughout your organization have created. This makes it easy to manage authenticated clients to allow these ProcessMaker users to access the ProcessMaker's REST API. The most recently created authenticated clients display at the top of the table.
 
 {% hint style="info" %}
 Your user account or group membership must have the "Auth Clients: View Auth Clients" permission to view the list of authenticated clients.
@@ -20,14 +20,14 @@ Follow these steps to view all authenticated clients:
 2. Click the **Admin** option from the top menu. The **Users** page displays.
 3. Click the **Auth Clients** icon![](../../../.gitbook/assets/auth-client-icon-admin.png). The **Auth Clients** page displays all client authentication keys. 
 
-![&quot;Auth Clients&quot; page displays all authenticated clients that can SSO to ProcessMaker Spark](../../../.gitbook/assets/auth-client-page-admin.png)
+![&quot;Auth Clients&quot; page displays all authenticated clients that can access the ProcessMaker&apos;s REST API](../../../.gitbook/assets/auth-client-page-admin.png)
 
-The **Auth Clients** page displays the following information in tabular format about authenticated clients that can SSO to ProcessMaker Spark:
+The **Auth Clients** page displays the following information in tabular format about authenticated clients that can access the ProcessMaker's REST API:
 
-* **Client ID:** The **Client ID** column displays the Client ID for the authenticated client. ProcessMaker Spark automatically generates the Client ID value when the client authentication is created and represents a sequential number of how many total authenticated clients have been created to that time.
+* **Client ID:** The **Client ID** column displays the Client ID for the authenticated client. ProcessMaker automatically generates the Client ID value when the client authentication is created and represents a sequential number of how many total authenticated clients have been created to that time.
 * **Name:** The **Name** column displays to whom the client authentication applies. See [Create a New Client Authentication Key](create-a-new-client-authentication-key.md).
-* **Redirect:** The **Redirect** column displays the URL that redirects the authenticated client back to the ProcessMaker Spark application. See [Create a New Client Authentication Key](create-a-new-client-authentication-key.md).
-* **Client Secret:** The **Client Secret** column displays the Client Secret for the authenticated client. ProcessMaker Spark automatically generates the Client Secret when the key is created. Click the **Copy Client Secret to Clipboard** icon![](../../../.gitbook/assets/copy-icon-admin.png)to copy the Client Secret. Paste the Client Secret into your ProcessMaker Spark authorization server.
+* **Redirect:** The **Redirect** column displays the URL that redirects the authenticated client back to the ProcessMaker application. See [Create a New Client Authentication Key](create-a-new-client-authentication-key.md).
+* **Client Secret:** The **Client Secret** column displays the Client Secret for the authenticated client. ProcessMaker automatically generates the Client Secret when the key is created. Click the **Copy Client Secret to Clipboard** icon![](../../../.gitbook/assets/copy-icon-admin.png)to copy the Client Secret. Paste the Client Secret into your ProcessMaker authorization server.
 
 {% hint style="info" %}
 ### Edit a Client Authentication Key

@@ -32,7 +32,7 @@ Follow these steps to view all ProcessMaker Vocabularies in your organization:
 
 The **Vocabularies** page displays the following information in tabular format about ProcessMaker Vocabularies:
 
-* **ID:** The **ID** column displays the ProcessMaker Vocabulary's ID.
+* **ID:** The **ID** column displays the ProcessMaker Vocabulary's ID. ProcessMaker automatically generates the ID value when the Vocabulary is created and represents a sequential number of how many total Vocabularies have been created to that time.
 * **Title:** The **Title** column displays the ProcessMaker Vocabulary's name.
 * **Description:** The **Description** column displays the ProcessMaker Vocabulary's description.
 * **Modified:** The **Modified** column displays the date and time the ProcessMaker Vocabulary was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.

@@ -1,5 +1,5 @@
 ---
-description: View recent ProcessMaker Spark jobs.
+description: View recent ProcessMaker jobs.
 ---
 
 # View Recent Jobs

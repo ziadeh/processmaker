@@ -15,7 +15,7 @@ Your user account or group membership must have the following permissions to edi
 See the [Auth Clients](../../permission-descriptions-for-users-and-groups.md#auth-clients) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to edit an authenticated client that allows that ProcessMaker user to log on to ProcessMaker Spark via Single Sign On \(SSO\):
+Follow these steps to edit an authenticated client that allows that ProcessMaker user to access the ProcessMaker REST API in your ProcessMaker instance:
 
 1. [View all authenticated clients.](view-all-client-authentication-keys.md#view-all-scripts) The **Auth Clients** page displays.
 2. Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the authenticated client to edit. The **Edit Auth Client** screen displays.  
@@ -24,7 +24,7 @@ Follow these steps to edit an authenticated client that allows that ProcessMaker
 
 3. Edit the following information about the authenticated client as necessary:
    * In the **Name** field, edit to whom the authenticated client is granted. This name must be unique from all other authenticated clients. This is a required field.
-   * In the **Redirect URL** field, edit the URL that redirects the authenticated client to your ProcessMaker Spark application server. This is a required field.
+   * In the **Redirect URL** field, edit the URL that redirects the authenticated client to your ProcessMaker instance. This is a required field.
 4. Click **Save**.
 
 ## Related Topics

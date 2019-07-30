@@ -1,5 +1,5 @@
 ---
-description: Manage client authentications to the ProcessMaker Spark REST API.
+description: Manage authenticated clients who have access to the ProcessMaker REST API.
 ---
 
 # Client Authentication Management

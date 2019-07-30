@@ -182,6 +182,8 @@ The **Screens** category contains the following permissions:
 * **Create Screens:** Create a ProcessMaker Screen from the **Screens** page. Selecting this permission also selects the **Edit Screens** permission. See [Create a New Screen](../designing-processes/design-forms/manage-forms/create-a-new-form.md).
 * **Edit Screens:** Edit a ProcessMaker Screen and/or its configuration from the **Screens** page. See [Edit a Screen](../designing-processes/design-forms/screens-builder/control-descriptions/) and [Edit Screen Configuration](../designing-processes/design-forms/manage-forms/edit-a-screen.md).
 * **Delete Screens:** Delete a ProcessMaker Screen from the **Screens** page. See [Delete a Screen](../designing-processes/design-forms/manage-forms/remove-a-screen.md).
+* **Import Screens:** Import a ProcessMaker Screen from the **Screens** page. See [Import a Screen](../designing-processes/design-forms/manage-forms/import-a-screen.md).
+* **Export Screens:** Export a ProcessMaker Screen from the **Screens** page. See [Export a Screen](../designing-processes/design-forms/manage-forms/export-a-screen.md).
 
 {% hint style="info" %}
 Select the **View Screens** permission to use any of the other permissions in this category.
