@@ -124,9 +124,9 @@ To save and share a Request search, the [Saved Searches](../../package-developme
 
 ### Save and Share a Search
 
-Use the Save Search feature to save and share a Request search. Share the Request search with specific ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) and/or [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md). In doing so, the shared Request search displays in the left sidebar on the **Requests** page for your ProcessMaker user account as well as those in which you've shared the search.
+Use the Save Search feature to save and share a Request search. Share the Request search with specific ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) and/or [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md). In doing so, the shared Request search displays in the  **My Saved Searches** page.
 
-Follow these steps to save and share a Request search:
+Follow these steps to save and share a Request search when the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance:
 
 1. Enter the search criteria for either a [basic](search-for-a-request.md#basic-search-for-a-request) or [advanced](search-for-a-request.md#advanced-search-for-a-request) Request search. It is this criteria from which the saved search settings are based.
 2. Click the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). The **Save Search** screen displays. ![](../../.gitbook/assets/save-search-screen-package-requests-tasks.png) 
@@ -145,7 +145,26 @@ Follow these steps to save and share a Request search:
 
 ### View Your Saved Searches
 
+Follow these steps to view your saved Request searches when the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance:
 
+1. View any of the following **Requests** pages:
+   * **My Requests** page. See [View Your Requests That You Started](view-started-requests.md#view-your-requests).
+   * **In Progress** page. See [View Requests That Are In Progress](view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
+   * **Completed** page. See [View Completed Requests](view-completed-requests.md#view-completed-requests-in-which-you-participated).
+   * **All Requests** page. See [View All Requests](view-all-requests.md#view-all-requests-in-your-organization). \(Note that your ProcessMaker user account must have the [**Requests: View All Requests** permission](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** page.\)
+2. Click the **My Saved Searches** icon![](../../.gitbook/assets/save-search-icon-package-requests-tasks.png)from the left sidebar. The **My Saved Searches** page displays.
+
+![&quot;My Saved Searches&quot; page displays your saved searches and those which have been shared with you](../../.gitbook/assets/my-saved-searches-page-package-requests-tasks.png)
+
+The **My Saved Searches** page displays the following information in tabular format about your saved searches and those which have been shared with you:
+
+* **Name:** The **Name** column displays the name of the saved search.
+* **Type:** The **Type** column displays the type of saved search:
+  * **Request:** The saved search is based on [Request search](search-for-a-request.md#save-and-share-a-search) parameters.
+  * **Task:** The saved search is based on Task search parameters.
+* **Created By:** The **Created By** column displays the ProcessMaker user's avatar who saved the search. Hover your cursor over the ProcessMaker user's avatar to view that person's full name.
+* **Modified:** The **Modified** column displays the date and time the saved search was last modified by the ProcessMaker user that created the saved search. A saved search can only be modified by the ProcessMaker user that created it. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the saved search was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 ## Related Topics
 
