@@ -38,7 +38,24 @@ Follow these steps to do a basic search for a Request:
    * **Requester:** From the **Requester** field, select one or more Requesters as part of your search criteria. A Requester is a ProcessMaker user who starts a Request. The currently logged on ProcessMaker user is included by default when searching for Requests on the **My Requests** page. Type into the **Requester** field to filter requesters that display in that field's drop-down menu. To remove a Requester that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or click `Enter` when the drop-down is visible.
    * **Participants:** From the **Participants** field, select one or more Request participants as part of your search criteria. Type into the **Participants** field to filter Request participants that display in that field's drop-down menu. To remove a Request participant that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or click `Enter` when the drop-down is visible.
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
-5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Request search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save Request Searches](search-for-a-request.md#save-and-share-a-request-search).
+5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Request search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches.md).
+
+{% hint style="info" %}
+### View a Request Summary <a id="view-information-about-a-request"></a>
+
+To [view a Request summary](request-details/), do one of the following:
+
+* From the **\#** column, click the Request number associated with the Process displaying in the **Name** column to view its summary. This number represents the sequential occurrence of that Process.
+* Click the **Open Request** icon![](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LJ0aNaVW1m7sNsxVJLV%2F-LVEg50XN0-PSaV6jG0a%2F-LVEzGdlTxxh1B2FNuS7%2FOpen%20Request%20Icon%20-%20Requests.png?alt=media&token=006d03ea-98dd-4227-b702-31f7e709df10)for the Request that you want to view its summary.
+
+### Super-Charge Search: Save Searches and Share Them With Others
+
+See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches.md).
+
+### No Search Results?
+
+If there are no search results, the following message displays: **No Data Available**.
+{% endhint %}
 
 ## Advanced Search for a Request
 
@@ -101,7 +118,7 @@ Follow these steps to do an advanced search for a Request:
    `(request = "Process Name 1" OR request = "Process Name 2") AND (status = "Canceled" OR status = "Error") AND (requester = "Username1" OR requester = "Username2") AND (participant = "Username3" OR participant = "Username4" AND (updated_at < NOW -2 day)`
 
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
-5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Request search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save Request Searches](search-for-a-request.md#save-and-share-a-request-search).
+5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Request search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches.md).
 
 {% hint style="info" %}
 ### View a Request Summary <a id="view-information-about-a-request"></a>
@@ -111,12 +128,16 @@ To [view a Request summary](request-details/), do one of the following:
 * From the **\#** column, click the Request number associated with the Process displaying in the **Name** column to view its summary. This number represents the sequential occurrence of that Process.
 * Click the **Open Request** icon![](https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LJ0aNaVW1m7sNsxVJLV%2F-LVEg50XN0-PSaV6jG0a%2F-LVEzGdlTxxh1B2FNuS7%2FOpen%20Request%20Icon%20-%20Requests.png?alt=media&token=006d03ea-98dd-4227-b702-31f7e709df10)for the Request that you want to view its summary.
 
+### Super-Charge Search: Save Searches and Share Them With Others
+
+See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches.md).
+
 ### No Search Results?
 
 If there are no search results, the following message displays: **No Data Available**.
 {% endhint %}
 
-## Saved Request Searches
+## Overview
 
 {% hint style="info" %}
 To save and share a Request search, the [Saved Searches](../../package-development-distribution/package-a-connector/saved-searches-package.md) package must be installed in your ProcessMaker instance. The Saved Searches package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Saved Searches package can be installed in your ProcessMaker instance.
@@ -124,9 +145,11 @@ To save and share a Request search, the [Saved Searches](../../package-developme
 
 ### Save and Share a Search
 
-Use the Save Search feature to save and share a Request search. Share the Request search with specific ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) and/or [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md). In doing so, the shared Request search displays in the  **My Saved Searches** page.
+Use the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) to save and share Request searches. In doing so, you maintain the search parameters for your saved searches; recipients of the searches that you share can only use those searches. Share your Request search with specific ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) and/or [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md).
 
-Follow these steps to save and share a Request search when the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance:
+The **My Saved Searches** page displays both your saved Request and Task searches, as well as those that others have shared with you. However, you can only configure your own saved searches. See [View Your Saved Searches](search-for-a-request.md#view-your-saved-searches).
+
+Follow these steps to save and share a Request search when the Saved Searches package is installed in your ProcessMaker instance:
 
 1. Enter the search criteria for either a [basic](search-for-a-request.md#basic-search-for-a-request) or [advanced](search-for-a-request.md#advanced-search-for-a-request) Request search. It is this criteria from which the saved search settings are based.
 2. Click the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). The **Save Search** screen displays. ![](../../.gitbook/assets/save-search-screen-package-requests-tasks.png) 
@@ -162,9 +185,21 @@ The **My Saved Searches** page displays the following information in tabular for
 * **Type:** The **Type** column displays the type of saved search:
   * **Request:** The saved search is based on [Request search](search-for-a-request.md#save-and-share-a-search) parameters.
   * **Task:** The saved search is based on Task search parameters.
-* **Created By:** The **Created By** column displays the ProcessMaker user's avatar who saved the search. Hover your cursor over the ProcessMaker user's avatar to view that person's full name.
+* **Created By:** The **Created By** column displays the ProcessMaker user's avatar who created the saved search. Hover your cursor over the ProcessMaker user's avatar to view that person's full name.
 * **Modified:** The **Modified** column displays the date and time the saved search was last modified by the ProcessMaker user that created the saved search. A saved search can only be modified by the ProcessMaker user that created it. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 * **Created:** The **Created** column displays the date and time the saved search was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+
+{% hint style="info" %}
+
+
+### No Saved Searches?
+
+If there are no saved searches, the following message displays: **No Results**.
+
+### Display Information the Way You Want It
+
+[Control how tabular information displays](../control-how-requests-display-in-a-tab.md), including how to sort columns or how many items display per page.
+{% endhint %}
 
 ## Related Topics
 

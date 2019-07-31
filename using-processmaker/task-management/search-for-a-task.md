@@ -32,7 +32,24 @@ Follow these steps to do a basic search for a Task:
      * **In progress:** Include Tasks that are in progress or not started as part of your search criteria. Tasks that are in progress are included by default when searching for Tasks on the **To Do** page.
      * **Completed:** Include Tasks that are completed as part of your search criteria. Tasks that are completed are included by default when searching for Requests on the **Completed** page.
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
-5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Task search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save and Share a Task Search](search-for-a-task.md#save-and-share-a-task-search).
+5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Task search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches.md).
+
+{% hint style="info" %}
+### View a Request Summary Associated with a Task <a id="view-information-about-a-request"></a>
+
+To [view a Request summary](../requests/request-details/), do one of the following:
+
+* From the **Request** column, click the Request to view its summary.
+* Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-assigned-tasks.png)for the Request that you want to view its summary.
+
+### Super-Charge Search: Save Searches and Share Them With Others
+
+See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches.md).
+
+### No Search Results?
+
+If there are no search results, the following message displays: **No Data Available**.
+{% endhint %}
 
 ## Advanced Search for a Task
 
@@ -89,7 +106,7 @@ Follow these steps to do an advanced search for a Task:
    `(request = "Tax Return Process" OR request = "Modify Document Process") AND (task = "Customer Documents" OR task = "Loan Request") AND (status = "In Progress" OR status = "Completed") AND (updated_at < NOW -2 day)`
 
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Tasks based on your entered criteria.
-5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Task search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save and Share a Task Search](search-for-a-task.md#save-and-share-a-task-search).
+5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Task search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches.md).
 
 {% hint style="info" %}
 ### View a Request Summary Associated with a Task <a id="view-information-about-a-request"></a>
@@ -99,15 +116,13 @@ To [view a Request summary](../requests/request-details/), do one of the followi
 * From the **Request** column, click the Request to view its summary.
 * Click the **Open Request** icon![](../../.gitbook/assets/open-request-icon-assigned-tasks.png)for the Request that you want to view its summary.
 
+### Super-Charge Search: Save Searches and Share Them With Others
+
+See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches.md).
+
 ### No Search Results?
 
 If there are no search results, the following message displays: **No Data Available**.
-{% endhint %}
-
-## Save Task Searches
-
-{% hint style="info" %}
-To save and share a Task search, the [Saved Searches](../../package-development-distribution/package-a-connector/saved-searches-package.md) package must be installed in your ProcessMaker instance. The Saved Searches package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Saved Searches package can be installed in your ProcessMaker instance.
 {% endhint %}
 
 ## Related Topics

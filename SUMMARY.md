@@ -34,6 +34,7 @@
   * [View Completed Tasks](using-processmaker/task-management/view-completed-tasks.md)
   * [Search for a Task](using-processmaker/task-management/search-for-a-task.md)
   * [View a Task Summary](using-processmaker/task-management/view-a-task-summary.md)
+* [Save and Share Request- and Task-Related Searches](using-processmaker/save-and-share-request-and-task-related-searches.md)
 * [Notifications](using-processmaker/notifications.md)
 * [Control How Tabular Information Displays](using-processmaker/control-how-requests-display-in-a-tab.md)
 
