@@ -22,10 +22,12 @@ Follow these steps to edit an authenticated client that allows that ProcessMaker
 
    ![](../../../.gitbook/assets/edit-auth-client-screen-admin.png)
 
-3. Edit the following information about the authenticated client as necessary:
-   * In the **Name** field, edit to whom the authenticated client is granted. This name must be unique from all other authenticated clients. This is a required field.
-   * In the **Redirect URL** field, edit the URL that redirects the authenticated client to your ProcessMaker instance. This is a required field.
-4. Click **Save**.
+3. In the **Name** field, enter to whom the authenticated client is granted. This name must be unique from all other authenticated clients. This is a required field.
+4. Select any of the following options as necessary to indicate how the ProcessMaker user being granted access to the ProcessMaker REST API has that access:
+   * **Enable Authorization Code Grant:** Select the **Enable Authorization Code Grant** checkbox to display the **Redirect URL** field in this screen to enter the URL that redirects the authenticated client to your ProcessMaker instance. If this checkbox is not selected, the **Redirect URL** field is hidden and that ProcessMaker user cannot access your ProcessMaker instance via a redirected URL.
+   * **Enable Password Grant:** Select the **Enable Password Grant** checkbox to display the **Password** field in this screen to enter the password that the authenticated client uses to access your ProcessMaker instance. If this checkbox is not selected, the **Password** field is hidden and that ProcessMaker user cannot access your ProcessMaker instance via a password.
+   * **Enable Personal Access Tokens:** Select the **Enable Personal Access Tokens** checkbox to display the **Access Token** field in this screen to enter the personal access token that the authenticated client uses to access your ProcessMaker instance. If this checkbox is not selected, the **Access Token** field is hidden and that ProcessMaker user cannot access your ProcessMaker instance via a personal access token.
+5. Click **Save**.
 
 ## Related Topics
 

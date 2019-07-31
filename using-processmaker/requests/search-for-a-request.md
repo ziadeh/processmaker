@@ -124,26 +124,26 @@ To save and share a Request search, the [Saved Searches](../../package-developme
 
 ### Save and Share a Search
 
-Use the Save Search feature to save and share a Request search. Share the Request search with specific ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) and/or [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md).
+Use the Save Search feature to save and share a Request search. Share the Request search with specific ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) and/or [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md). In doing so, the shared Request search displays in the left sidebar on the **Requests** page for your ProcessMaker user account as well as those in which you've shared the search.
 
-Follow these steps to save a Request search:
+Follow these steps to save and share a Request search:
 
-1. Enter the search criteria for either a [basic](search-for-a-request.md#basic-search-for-a-request) or [advanced](search-for-a-request.md#advanced-search-for-a-request) Request search.
+1. Enter the search criteria for either a [basic](search-for-a-request.md#basic-search-for-a-request) or [advanced](search-for-a-request.md#advanced-search-for-a-request) Request search. It is this criteria from which the saved search settings are based.
 2. Click the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). The **Save Search** screen displays. ![](../../.gitbook/assets/save-search-screen-package-requests-tasks.png) 
 3. In the **Name** field, enter the name of your saved search. This is a required field.
-4. Follow these guidelines to select an icon that represents the saved search in the left sidebar:
+4. Follow these guidelines to select an image that represents the saved search that displays in the left sidebar of the **Requests** page for yourself and those with whom you share this saved search. This image displays beside the name of the saved search in the **My Saved Searches** page.
    * **Follow this step to select an image from ProcessMaker to represent the saved search:**
 
-     Select any of the images that ProcessMaker provides by selecting its radio button. This image displays in the left sidebar below the **Saved Searches** icon.
+     Select any of the images that ProcessMaker provides by selecting its radio button.
 
    * **Follow these steps to select a custom image to represent the saved search:**
      1. Click the **Would you like to use a custom icon?** checkbox. The **Choose File** button displays.
-     2. Click the **Choose File** button and locate the icon that represents the saved search. The icon must not be larger than 2 kilobytes large or the following message displays below the **Choose File** button: **The file is too large. File size must be less than 2KB when base64 encoded.**. This image displays in the left sidebar below the **Saved Searches** icon.
-5. From the **Share With Users** drop-down menu, select with which ProcessMaker user\(s\) to share your saved search by selecting the person's full name. Multiple ProcessMaker users may be added, one at a time, to this field. You may click the Remove icon to remove a ProcessMaker user from the **Share With Users** drop-down menu.
-6. From the **Share With Groups** drop-down menu, select with which ProcessMaker group\(s\) to share your saved search by selecting the group. Multiple ProcessMaker groups may be added, one at a time, to this field. You may click the Remove icon to remove a ProcessMaker group from the **Share With Groups** drop-down menu.
+     2. Click the **Choose File** button and locate the icon that represents the saved search. The icon must not be larger than 2 kilobytes large or the following message displays below the **Choose File** button: **The file is too large. File size must be less than 2KB when base64 encoded.**.
+5. From the **Share With Users** drop-down menu, select with which ProcessMaker user\(s\) to share your saved search by selecting the person's full name. Multiple ProcessMaker users may be added, one at a time, to this field. You may click the Remove icon to remove a ProcessMaker user from the **Share With Users** drop-down menu. These selected ProcessMaker users receive your saved search using the image you selected.
+6. From the **Share With Groups** drop-down menu, select with which ProcessMaker group\(s\) to share your saved search by selecting the group. Multiple ProcessMaker groups may be added, one at a time, to this field. You may click the Remove icon to remove a ProcessMaker group from the **Share With Groups** drop-down menu. Members of these selected ProcessMaker groups receive your saved search using the image you selected.
 7. Click the **Save Search** button.
 
-### Configure a Saved Search
+### View Your Saved Searches
 
 
 
@@ -162,6 +162,8 @@ Follow these steps to save a Request search:
 {% page-ref page="view-completed-requests.md" %}
 
 {% page-ref page="view-all-requests.md" %}
+
+{% page-ref page="../../package-development-distribution/package-a-connector/saved-searches-package.md" %}
 
 {% page-ref page="request-details/" %}
 

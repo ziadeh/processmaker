@@ -29,7 +29,3 @@ The Saved Searches package has the following components after it is installed to
 
 {% page-ref page="../../using-processmaker/task-management/search-for-a-task.md" %}
 
-{% page-ref page="../../using-processmaker/requests/search-for-a-request.md" %}
-
-{% page-ref page="../../using-processmaker/task-management/search-for-a-task.md" %}
-

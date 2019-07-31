@@ -118,5 +118,7 @@ To save and share a Task search, the [Saved Searches](../../package-development-
 
 {% page-ref page="view-completed-tasks.md" %}
 
+{% page-ref page="../../package-development-distribution/package-a-connector/saved-searches-package.md" %}
+
 {% page-ref page="view-a-task-summary.md" %}
 
