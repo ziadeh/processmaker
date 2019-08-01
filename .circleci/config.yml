@@ -139,9 +139,183 @@ jobs:
 
       #
       - run:
-          name: 'Content of composer.json'
-          command: 'cat composer.json'
+          name: 'Media Storage Link'
+          command: 'php artisan storage:link'
+
+      # run tests!
+      - run:
+          name: 'PHPUnit'
+          command: './vendor/bin/phpunit -v -d memory_limit=-1'
+          environment:
+            DB_DATABASE: 'circle_test'
+            DB_PASSWORD: 'P4ssW0rd1!'
+            DB_USERNAME: 'root'
+            DATA_DB_DRIVER: 'sqlsrv'
+            DATA_DB_HOST: '127.0.0.1'
+            DATA_DB_PORT: '1433'
+            DATA_DB_DATABASE: 'test'
+            DATA_DB_USERNAME: 'sa'
+            DATA_DB_PASSWORD: 'P4ssW0rd1!'
+            RUN_MSSQL_TESTS: 'true'
+            MSSQL_HOST: '127.0.0.1'
+            MSSQL_PORT: '1433'
+            MSSQL_DATABASE: 'test'
+            MSSQL_USERNAME: 'sa'
+            MSSQL_PASSWORD: 'P4ssW0rd1!'
+            PROCESSMAKER_SCRIPTS_HOME: '/opt/executor'
+            PROCESSMAKER_SCRIPTS_DOCKER_MODE: 'copying'
+      - run:
+          name: 'Jest'
+          command: 'npm run test'
+
+
       - run:
           name: 'Echo app.css file content for testing...'
           command: 'cat ./public/css/app.css'
 
+      #- store_artifacts:
+      #    path: coverage
+
+      #- store_artifacts:
+      #    path: tests/js/coverage
+
+      # Prepare for packaging for QA environment
+
+      - run:
+          name: 'QA Configuration File Build'
+          command: |
+            echo "APP_KEY=" >> .env
+            echo "APP_DEBUG=FALSE" >> .env
+            echo "DEBUGBAR_ENABLED=FALSE" >> .env
+            echo "APP_NAME=ProcessMaker" >> .env
+            echo "APP_ENV=staging" >> .env
+            echo "DB_HOSTNAME=${QA_RDS_HOST}" >> .env
+            echo "DB_DATABASE=${QA_DB_NAME}" >> .env
+            echo "DB_USERNAME=${QA_RDS_USERNAME}" >> .env
+            echo "DB_PASSWORD=${QA_RDS_PASSWORD}" >> .env
+            echo "DATA_DB_DRIVER=mysql" >> .env
+            echo "DATA_DB_HOST=${QA_RDS_HOST}" >> .env
+            echo "DATA_DB_DATABASE=${QA_DATA_DB_NAME}" >> .env
+            echo "DATA_DB_PORT=3306" >> .env
+            echo "DATA_DB_USERNAME=${QA_RDS_USERNAME}" >> .env
+            echo "DATA_DB_PASSWORD=${QA_RDS_PASSWORD}" >> .env
+            echo "APP_URL=https://${BUILD_NAME}${QA_HOST_SUFFIX}" >> .env
+            echo "PROXIES=*" >> .env
+            echo "PROXIES_AWS=true" >> .env
+
+            # Put in configuration file for Broadcaster
+            echo "BROADCAST_DRIVER=redis" >> .env
+            echo "BROADCASTER_HOST=%%BROADCASTER_HOST%%" >> .env
+            echo "BROADCASTER_KEY=21a795019957dde6bcd96142e05d4b10" >> .env
+            echo "REDIS_PORT=%%REDISPORT%%" >> .env
+            echo "PROCESSMAKER_SCRIPTS_HOME=/home/circleci/tmp" >> .env
+            echo "HOME=/home/circleci" >> .env
+            echo "LARAVEL_ECHO_SERVER_AUTH_HOST=%%AUTHHOST%%" >> .env
+            echo "LARAVEL_ECHO_SERVER_PORT=%%ECHOPORT%%" >> .env
+            echo "LARAVEL_ECHO_SERVER_DEBUG=true" >> .env
+
+            echo "APP_KEY=" >> .env.dusk.staging
+            echo "APP_DEBUG=FALSE" >> .env.dusk.staging
+            echo "APP_NAME=ProcessMaker" >> .env.dusk.staging
+            echo "APP_ENV=staging" >> .env.dusk.staging
+            echo "DB_HOSTNAME=${QA_RDS_HOST}" >> .env.dusk.staging
+            echo "DB_DATABASE=${QA_DB_NAME}" >> .env.dusk.staging
+            echo "DB_USERNAME=${QA_RDS_USERNAME}" >> .env.dusk.staging
+            echo "DB_PASSWORD=${QA_RDS_PASSWORD}" >> .env.dusk.staging
+            echo "DATA_DB_DRIVER=mysql" >> .env.dusk.staging
+            echo "DATA_DB_HOST=${QA_RDS_HOST}" >> .env.dusk.staging
+            echo "DATA_DB_DATABASE=${QA_DATA_DB_NAME}" >> .env.dusk.staging
+            echo "DATA_DB_PORT=3306" >> .env.dusk.staging
+            echo "DATA_DB_USERNAME=${QA_RDS_USERNAME}" >> .env.dusk.staging
+            echo "DATA_DB_PASSWORD=${QA_RDS_PASSWORD}" >> .env.dusk.staging
+            echo "APP_URL=https://${BUILD_NAME}${QA_HOST_SUFFIX}" >> .env.dusk.staging
+            # Put in configuration for SauceLabs Cloud based Browser Testing
+            echo "SAUCELABS_BROWSER_TESTING=true" >> .env.dusk.staging
+            echo "SAUCELABS_USERNAME=${SAUCELABS_USERNAME}" >> .env.dusk.staging
+            echo "SAUCELABS_ACCESS_KEY=${SAUCELABS_ACCESS_KEY}" >> .env.dusk.staging
+            # Put in configuration file for Broadcaster
+            echo "BROADCAST_DRIVER=redis" >> .env.dusk.staging
+            echo "BROADCASTER_HOST=%%BROADCASTER_HOST%%" >> .env.dusk.staging
+            echo "BROADCASTER_KEY=21a795019957dde6bcd96142e05d4b10" >> .env.dusk.staging
+            echo "REDIS_PORT=%%REDISPORT%%" >> .env.dusk.staging
+            echo "PROCESSMAKER_SCRIPTS_HOME=/home/circleci/tmp" >> .env.dusk.staging
+            echo "HOME=/home/circleci" >> .env.dusk.staging
+            echo "LARAVEL_ECHO_SERVER_AUTH_HOST=%%AUTHHOST%%" >> .env.dusk.staging
+            echo "LARAVEL_ECHO_SERVER_PORT=%%ECHOPORT%%" >> .env.dusk.staging
+            echo "LARAVEL_ECHO_SERVER_DEBUG=true" >> .env.dusk.staging
+
+            # Generate unique app key
+            php artisan key:generate --force
+            # Copy over our test oauth keys. Regular install will create new ones
+            cp tests/storage/keys/* storage/keys/
+
+      - run:
+          name: 'QA Package'
+          command: './vendor/bin/phing package -Dpackage_name=processmaker-qa-${BUILD_NAME}.tar.gz'
+
+      - run:
+          name: 'Echo app.css file content for testing... part 2...'
+          command: 'cat ./public/css/app.css'
+
+      - run:
+          name: 'QA Deploy'
+          command: |
+            # Delete existing target QA directory, if it exists
+            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "rm -Rf ~/builds/$BUILD_NAME"
+            # Create new target QA directory
+            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "mkdir ~/builds/$BUILD_NAME"
+            # Copy over packaged qa deployment
+            scp -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" ./processmaker-qa-$BUILD_NAME.tar.gz qa-processmakerbuilds:~/builds/$BUILD_NAME/
+            # Extract to qa deployment dir
+            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "tar zxf ~/builds/$BUILD_NAME/processmaker-qa-$BUILD_NAME.tar.gz -C ~/builds/$BUILD_NAME/"
+            # Restart nginx and php-fpm to clear cache
+            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "sudo service nginx restart"
+            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "sudo service php-fpm restart"
+            # Create MYSQL Database
+            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "mysql -h ${QA_RDS_HOST} -u ${QA_RDS_USERNAME} -p${QA_RDS_PASSWORD} -e \"CREATE DATABASE IF NOT EXISTS ${QA_DB_NAME}\""
+            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "mysql -h ${QA_RDS_HOST} -u ${QA_RDS_USERNAME} -p${QA_RDS_PASSWORD} -e \"CREATE DATABASE IF NOT EXISTS ${QA_DATA_DB_NAME}\""
+            # Run php artisan migrate:fresh --seed to have a clean installed database in RDS
+            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "php ~/builds/$BUILD_NAME/artisan migrate:fresh --seed --force"
+            # Setup Media Link
+            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "rm -Rf ~/builds/$BUILD_NAME/public/storage"
+            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "php ~/builds/$BUILD_NAME/artisan storage:link"
+            echo "Deployed to https://${BUILD_NAME}.processmaker.qa.processmaker.net/"
+            # Run containerDeploy.sh script to spin up redis docker container, laravel-echo-server, and horizon.
+            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "sudo /bin/bash /root/cloudops/containerDeploy.sh $BUILD_NAME"
+            # Generate Passport Keys
+            ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "cd ~/builds/$BUILD_NAME && php artisan passport:keys"
+
+#      - run:
+#          name: 'SauceLabs Browser Tests: Chrome'
+#          command: 'ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "cd ~/builds/$BUILD_NAME && php artisan dusk"'
+#          environment:
+#            DB_DATABASE: 'circle_test'
+#            RUN_MSSQL_TESTS: 'true'
+#            MSSQL_HOST: '127.0.0.1'
+#
+#      - run:
+#          name: 'SauceLabs Browser Tests: Firefox'
+#          command: 'ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk"'
+#          environment:
+#            SAUCELABS_BROWSER: 'firefox'
+#            SAUCELABS_PLATFORM: 'Windows 10'
+#            SAUCELABS_BROWSER_VERSION: '47.0'
+#
+#      - run:
+#          name: 'SauceLabs Browser Tests: Edge'
+#          command: 'ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk"'
+#          environment:
+#            SAUCELABS_BROWSER: 'MicrosoftEdge'
+#            SAUCELABS_PLATFORM: 'Windows 10'
+#            SAUCELABS_BROWSER_VERSION: '16.16299'
+#
+#      - run:
+#          name: 'SauceLabs Browser Tests: Safari'
+#          command: 'ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "cd ~/builds/$BUILD_NAME && php ~/builds/$BUILD_NAME/artisan dusk"'
+#          environment:
+#            SAUCELABS_BROWSER: 'safari'
+#            SAUCELABS_PLATFORM: 'macOS 10.13'
+#            SAUCELABS_BROWSER_VERSION: '11.0'
+      - run:
+          name: 'Final QA Artisan DB Migration'
+          command: 'ssh -o "StrictHostKeyChecking no" -o "ProxyCommand ssh buildbot.processmaker.net -A -W %h:%p" qa-processmakerbuilds "php ~/builds/$BUILD_NAME/artisan migrate:fresh --seed --force"'
