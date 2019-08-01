@@ -41,9 +41,10 @@ The **My Saved Searches** page displays the following information in tabular for
 
 Use the **My Saved Searches** page to manage your own Saved Searches by using the following options:
 
-* Hide one of your Saved Searches. See [Hide One of Your Own Saved Searches](manage-your-saved-searches.md#hide-one-of-your-saved-searches).
-* Configure one of your Saved Searches. See [Configure One of Your Own Saved Searches](manage-your-saved-searches.md#configure-one-of-your-saved-searches).
-* Delete one of your Saved Searches. See [Delete One of Your Own Saved Searches](manage-your-saved-searches.md#delete-one-of-your-saved-searches).
+* [Hide your Saved Search](manage-your-saved-searches.md#hide-one-of-your-saved-searches)
+* [Show your hidden Saved Search](manage-your-saved-searches.md#show-one-of-your-hidden-saved-searches)
+* [Configure your Saved Search](manage-your-saved-searches.md#configure-one-of-your-saved-searches)
+* [Delete your Saved Search](manage-your-saved-searches.md#delete-one-of-your-saved-searches)
 
 Saved Searches that do not have these options are those which have been shared with you. A Saved Search can only be managed by the ProcessMaker [user](../../processmaker-administration/add-users/what-is-a-user.md) that creates it. Therefore, there are no options for Saved Searches shared with you. You may only use Saved Searches shared with you by [viewing their search results](view-saved-searches-that-are-shared-with-you.md).
 
@@ -57,38 +58,46 @@ If there are no Saved Searches, the following message displays: **No Results**.
 [Control how tabular information displays](../control-how-requests-display-in-a-tab.md), including how to sort columns or how many items display per page.
 {% endhint %}
 
-### Hide One of Your Own Saved Searches
+### Hide Your Saved Search
 
-Hiding a Saved Search only hides that Saved Search from you using it from the left sidebar of the Request- and Task-related pages. Sharing recipients of that Saved Search may still use it to view search results using your Saved Search's parameters.
+You may hide only one of your own Saved Searches. Hiding a Saved Search only hides that Saved Search from you using it from the left sidebar of the Request- and Task-related pages. Sharing recipients of that Saved Search may still use it to view search results using your Saved Search's parameters.
 
 Follow these steps to hide one of your own Saved Searches:
 
 1. [View all the Shared Searches that you have created and which have been shared with you](manage-your-saved-searches.md#manage-your-own-saved-searches). The **My Saved Searches** page displays.
-2. Click the **Hide Saved Search** icon![](../../.gitbook/assets/hide-saved-search-icon-package.png). The Saved Search is hidden, indicated by diminished visibility of that Saved Search in the **My Saved Searches** page.
+2. Click the **Hide Saved Search** icon![](../../.gitbook/assets/hide-saved-search-icon-package.png) for one of your Saved Searches. The Saved Search is hidden, indicated by diminished visibility of that Saved Search in the **My Saved Searches** page.
 
-### Show One of Your Hidden Saved Searches
+### Show Your Hidden Saved Search
 
 Showing a hidden Saved Search allows you to use that Saved Search again from the left sidebar of the Request- and Task-related pages.
 
 Follow these steps to show one of your hidden Saved Searches:
 
 1. [View all the Shared Searches that you have created and which have been shared with you](manage-your-saved-searches.md#manage-your-own-saved-searches). The **My Saved Searches** page displays.
-2. Click the **Show Saved Search** icon![](../../.gitbook/assets/show-saved-search-icon-package.png). The Saved Search is visible, indicated by full visibility of that Saved Search in the **My Saved Searches** page.
+2. Click the **Show Saved Search** icon![](../../.gitbook/assets/show-saved-search-icon-package.png) for the hidden Saved Search. The Saved Search is visible, indicated by full visibility of that Saved Search in the **My Saved Searches** page.
 
-### Configure One of Your Own Saved Searches
+### Configure Your Saved Search
 
+You may configure only one of your own Saved Searches. Configure a Saved Search regardless of whether it is [visible](manage-your-saved-searches.md#show-your-hidden-saved-search) or [hidden](manage-your-saved-searches.md#hide-your-saved-search).
 
+Follow these steps to configure one of your Saved Searches:
 
-### Delete One of Your Own Saved Searches
+1. [View all the Shared Searches that you have created and which have been shared with you](manage-your-saved-searches.md#manage-your-own-saved-searches). The **My Saved Searches** page displays.
+2. Click the **Configure** icon![](../../.gitbook/assets/configure-process-icon-processes-page-processes.png). The **Configuration** tab displays. ![](../../.gitbook/assets/configuration-tab-saved-searches-package.png) 
+3. dff
+
+### Delete Your Saved Search
 
 {% hint style="warning" %}
-Consider carefully whether to delete one of your own Saved Searches. When deleting a Shared Search, it is no longer shared with those ProcessMaker users and/or groups with which you have shared them. The recipients of your shared Saved Search will no longer be able to use it to quickly view search results using your Shared Search's parameters.
+Consider carefully whether to delete one of your own Saved Searches. When deleting a Shared Search, it is no longer shared with those ProcessMaker users and/or groups with which you have shared them. The recipients of your shared Saved Search will no longer be able to use it to quickly view search results using your Shared Search's parameters. Your Saved Search will be removed from the left sidebar of the **Requests**/**Tasks** pages.
 {% endhint %}
+
+You may delete only one of your own Saved Searches. Delete a Saved Search regardless of whether it is [visible](manage-your-saved-searches.md#show-your-hidden-saved-search) or [hidden](manage-your-saved-searches.md#hide-your-saved-search).
 
 Follow these steps to delete one of your own Saved Searches:
 
 1. [View all the Shared Searches that you have created and which have been shared with you](manage-your-saved-searches.md#manage-your-own-saved-searches). The **My Saved Searches** page displays.
-2. Click the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png). The **Caution** screen displays to confirm the deletion of the Saved Search.  ![](../../.gitbook/assets/caution-delete-shared-search-package.png) 
+2. Click the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png) for one of your Saved Searches. The **Caution** screen displays to confirm the deletion of the Saved Search.  ![](../../.gitbook/assets/caution-delete-saved-search-package.png) 
 3. Click **Confirm**.
 
 ## Related Topics
