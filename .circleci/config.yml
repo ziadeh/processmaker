@@ -138,9 +138,13 @@ jobs:
           command: 'npm run dev'
 
       - run:
-          name: 'Current directory'
+          name: '**Current directory'
           command: 'pwd'
-      #
+
+      - run:
+          name: '**Echo app.css file content for testing...'
+          command: 'cat ./public/css/app.css'
+
       - run:
           name: 'Media Storage Link'
           command: 'php artisan storage:link'
@@ -172,11 +176,11 @@ jobs:
           command: 'npm run test'
 
       - run:
-          name: 'Current directory'
+          name: '**Current directory'
           command: 'pwd'
 
       - run:
-          name: 'Echo app.css file content for testing...'
+          name: '**Echo app.css file content for testing...'
           command: 'cat ./public/css/app.css'
 
       #- store_artifacts:
@@ -256,11 +260,23 @@ jobs:
             cp tests/storage/keys/* storage/keys/
 
       - run:
+          name: '**Current directory'
+          command: 'pwd'
+
+      - run:
+          name: '**Echo app.css file content for testing...'
+          command: 'cat ./public/css/app.css'
+
+      - run:
           name: 'QA Package'
           command: './vendor/bin/phing package -Dpackage_name=processmaker-qa-${BUILD_NAME}.tar.gz'
 
       - run:
-          name: 'Echo app.css file content for testing... part 2...'
+          name: '**Current directory'
+          command: 'pwd'
+
+      - run:
+          name: '**Echo app.css file content for testing...'
           command: 'cat ./public/css/app.css'
 
       - run:
