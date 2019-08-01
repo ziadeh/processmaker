@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Hash;
 
 class CssOverrideTest extends TestCase
 {
-
     use RequestHelper;
 
     private $testColor = '#1f1f1f';
@@ -21,40 +20,22 @@ class CssOverrideTest extends TestCase
     private $originalSidebarCss = '';
     private $originalQueueCss = '';
 
-    /**
-     * Verifies that the bootstrap styles can be modified
-     */
-    public function testCssOverride()
-    {
-        $this->markTestSkipped();
-        chdir(app()->basePath());
-
-        // backup of original colors
-        $this->originalColors = file_get_contents("resources/sass/_colors.scss");
-        $this->originalAppCss = file_get_contents("public/css/app.css");
-        $this->originalSidebarCss = file_get_contents("public/css/sidebar.css");
-        $this->originalQueueCss = file_get_contents("public/css/admin/queues.css");
-
-        $response = $this->actingAs($this->user, 'api')
-            ->call('POST', '/api/1.0/customize-ui', $this->cssValues($this->testColor));
-
-        // Validate that the operation was successful
-        $response->assertStatus(201);
-
-        // Validate that the style was set in the compiled css:
-        $file = file_get_contents("public/css/app.css");
-
-        $this->assertStringContainsString($this->testColor, $file);
-
-    }
-
+//    public function setUp()
+//    {
+//        parent::setUp();
+//        chdir(app()->basePath());
+//        // backup of original colors
+//        $this->originalColors = file_get_contents("resources/sass/_colors.scss");
+//        $this->originalAppCss = file_get_contents("public/css/app.css");
+//        $this->originalSidebarCss = file_get_contents("public/css/sidebar.css");
+//        $this->originalQueueCss = file_get_contents("public/css/admin/queues.css");
+//    }
 
     /**
      * Verifies that the bootstrap styles are validated
      */
     public function testEmptyParameters()
     {
-        $this->markTestSkipped();
         $response = $this->actingAs($this->user, 'api')->call('POST', '/api/1.0/customize-ui', []);
 
         //Validate that the error does a redirection
@@ -66,7 +47,6 @@ class CssOverrideTest extends TestCase
      */
     public function testWrongKeys()
     {
-        $this->markTestSkipped();
         $response = $this->actingAs($this->user, 'api')->call('POST', '/api/1.0/customize-ui', ['wrongkey' => 'key']);
 
         //Validate that the error does a redirection
@@ -77,6 +57,8 @@ class CssOverrideTest extends TestCase
 //    {
 //        if ($this->getName() === 'testCssOverride')
 //        {
+//            chdir(app()->basePath());
+//
 //            //restore original colors
 //            file_put_contents('resources/sass/_colors.scss', $this->originalColors);
 //            file_put_contents('public/css/app.css', $this->originalAppCss);
