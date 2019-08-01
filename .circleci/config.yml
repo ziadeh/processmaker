@@ -137,6 +137,9 @@ jobs:
           name: 'Front-End Asset Build'
           command: 'npm run dev'
 
+      - run:
+          name: 'Current directory'
+          command: 'pwd'
       #
       - run:
           name: 'Media Storage Link'
@@ -168,6 +171,9 @@ jobs:
           name: 'Jest'
           command: 'npm run test'
 
+      - run:
+          name: 'Current directory'
+          command: 'pwd'
 
       - run:
           name: 'Echo app.css file content for testing...'
