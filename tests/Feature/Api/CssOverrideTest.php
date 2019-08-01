@@ -54,6 +54,7 @@ class CssOverrideTest extends TestCase
      */
     public function testEmptyParameters()
     {
+        $this->markTestSkipped();
         $response = $this->actingAs($this->user, 'api')->call('POST', '/api/1.0/customize-ui', []);
 
         //Validate that the error does a redirection
@@ -65,24 +66,25 @@ class CssOverrideTest extends TestCase
      */
     public function testWrongKeys()
     {
+        $this->markTestSkipped();
         $response = $this->actingAs($this->user, 'api')->call('POST', '/api/1.0/customize-ui', ['wrongkey' => 'key']);
 
         //Validate that the error does a redirection
         $response->assertStatus(302);
     }
 
-    public function tearDown()
-    {
-        if ($this->getName() === 'testCssOverride')
-        {
-            //restore original colors
-            file_put_contents('resources/sass/_colors.scss', $this->originalColors);
-            file_put_contents('public/css/app.css', $this->originalAppCss);
-            file_put_contents('public/css/sidebar.css', $this->originalSidebarCss );
-            file_put_contents('public/css/admin/queues.css', $this->originalQueueCss);
-        }
-        parent::tearDown();
-    }
+//    public function tearDown()
+//    {
+//        if ($this->getName() === 'testCssOverride')
+//        {
+//            //restore original colors
+//            file_put_contents('resources/sass/_colors.scss', $this->originalColors);
+//            file_put_contents('public/css/app.css', $this->originalAppCss);
+//            file_put_contents('public/css/sidebar.css', $this->originalSidebarCss );
+//            file_put_contents('public/css/admin/queues.css', $this->originalQueueCss);
+//        }
+//        parent::tearDown();
+//    }
 
     private function cssValues($testColor)
     {
