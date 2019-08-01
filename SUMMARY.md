@@ -36,7 +36,7 @@
   * [View a Task Summary](using-processmaker/task-management/view-a-task-summary.md)
 * [Saved Searches](using-processmaker/save-and-share-request-and-task-related-searches/README.md)
   * [What is a Saved Search?](using-processmaker/save-and-share-request-and-task-related-searches/what-is-a-saved-search.md)
-  * [View Saved Searches that Are Shared with You](using-processmaker/save-and-share-request-and-task-related-searches/view-saved-searches-that-are-shared-with-you.md)
+  * [View Saved Searches That Are Shared with You](using-processmaker/save-and-share-request-and-task-related-searches/view-saved-searches-that-are-shared-with-you.md)
   * [Create and Share a Saved Search](using-processmaker/save-and-share-request-and-task-related-searches/create-and-share-a-saved-search.md)
   * [Manage Your Saved Searches](using-processmaker/save-and-share-request-and-task-related-searches/manage-your-saved-searches.md)
 * [Notifications](using-processmaker/notifications.md)

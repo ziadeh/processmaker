@@ -30,20 +30,20 @@ Follow these steps to manage your Saved Searches:
 
 ![&quot;My Saved Searches&quot; page displays your saved searches and those which have been shared with you](../../.gitbook/assets/my-saved-searches-page-package-requests-tasks.png)
 
-The **My Saved Searches** page displays the following information in tabular format about your saved searches and those which have been shared with you:
+The **My Saved Searches** page displays the following information in tabular format about your Saved Searches and those which have been shared with you:
 
-* **Name:** The **Name** column displays the name of the saved search.
-* **Type:** The **Type** column displays the type of saved search:
-  * **Request:** The saved search is based on [Request search](../requests/search-for-a-request.md#save-and-share-a-search) parameters.
-  * **Task:** The saved search is based on Task search parameters.
-* **Created By:** The **Created By** column displays the ProcessMaker user's avatar who created the saved search. Hover your cursor over the ProcessMaker user's avatar to view that person's full name.
-* **Modified:** The **Modified** column displays the date and time the saved search was last modified by the ProcessMaker user that created the saved search. A saved search can only be modified by the ProcessMaker user that created it. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Created:** The **Created** column displays the date and time the saved search was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Name:** The **Name** column displays the name of the Saved Search.
+* **Type:** The **Type** column displays the type of Saved Search:
+  * **Request:** The Saved Search is based on [Request search](../requests/search-for-a-request.md#save-and-share-a-search) parameters.
+  * **Task:** The Saved Search is based on [Task search](../task-management/search-for-a-task.md) parameters.
+* **Created By:** The **Created By** column displays the ProcessMaker user's avatar who created the Saved Search. Hover your cursor over the ProcessMaker user's avatar to view that person's full name.
+* **Modified:** The **Modified** column displays the date and time the Saved Search was last modified by the ProcessMaker user that created the Saved Search. A Saved Search can only be modified by the ProcessMaker user that created it. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the Saved Search was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### No Saved Searches?
 
-If there are no saved searches, the following message displays: **No Results**.
+If there are no Saved Searches, the following message displays: **No Results**.
 
 ### Display Information the Way You Want It
 

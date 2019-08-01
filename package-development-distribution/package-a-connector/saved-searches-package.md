@@ -20,7 +20,7 @@ Saved Searches have the following attributes:
 * **Request-related Saved Searches:** Saved Searches associated with Requests display only in the left sidebar of Request-related pages.
 * **Task-related Saved Searches:** Saved Searches associated with Tasks display only in the left sidebar of Task-related pages.
 
-The **My Saved Searches** page displays both your saved Request- and Task-related Saved Searches, as well as those that others have shared with you. See [View Your Saved Searches](../../using-processmaker/save-and-share-request-and-task-related-searches/#view-your-saved-searches).
+The **My Saved Searches** page displays both your saved Request- and Task-related Saved Searches, as well as those that others have shared with you. See [Manage Your Saved Searches](../../using-processmaker/save-and-share-request-and-task-related-searches/manage-your-saved-searches.md).
 
 ![&quot;My Saved Searches&quot; page displays your saved searches and those which have been shared with you](../../.gitbook/assets/my-saved-searches-page-package-requests-tasks.png)
 
