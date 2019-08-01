@@ -149,6 +149,14 @@ jobs:
           name: 'Media Storage Link'
           command: 'php artisan storage:link'
 
+      - run:
+          name: '**Current directory'
+          command: 'pwd'
+
+      - run:
+          name: '**Echo app.css file content for testing...'
+          command: 'cat ./public/css/app.css'
+
       # run tests!
       - run:
           name: 'PHPUnit'
@@ -171,6 +179,14 @@ jobs:
             MSSQL_PASSWORD: 'P4ssW0rd1!'
             PROCESSMAKER_SCRIPTS_HOME: '/opt/executor'
             PROCESSMAKER_SCRIPTS_DOCKER_MODE: 'copying'
+      - run:
+          name: '**Current directory'
+          command: 'pwd'
+
+      - run:
+          name: '**Echo app.css file content for testing...'
+          command: 'cat ./public/css/app.css'
+
       - run:
           name: 'Jest'
           command: 'npm run test'
