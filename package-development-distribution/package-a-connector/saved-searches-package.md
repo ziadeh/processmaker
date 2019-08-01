@@ -32,7 +32,7 @@ Access Saved Search results from the left sidebar of the **Requests**- and **Tas
 
 {% page-ref page="../first-topic.md" %}
 
-{% page-ref page="../../using-processmaker/save-and-share-request-and-task-related-searches.md" %}
+{% page-ref page="../../using-processmaker/save-and-share-request-and-task-related-searches/" %}
 
 {% page-ref page="../../using-processmaker/requests/what-is-a-request.md" %}
 

@@ -38,7 +38,7 @@ Follow these steps to do a basic search for a Request:
    * **Requester:** From the **Requester** field, select one or more Requesters as part of your search criteria. A Requester is a ProcessMaker user who starts a Request. The currently logged on ProcessMaker user is included by default when searching for Requests on the **My Requests** page. Type into the **Requester** field to filter requesters that display in that field's drop-down menu. To remove a Requester that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or click `Enter` when the drop-down is visible.
    * **Participants:** From the **Participants** field, select one or more Request participants as part of your search criteria. Type into the **Participants** field to filter Request participants that display in that field's drop-down menu. To remove a Request participant that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or click `Enter` when the drop-down is visible.
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
-5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Request search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches.md).
+5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Request search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches/).
 
 {% hint style="info" %}
 ### View a Request Summary <a id="view-information-about-a-request"></a>
@@ -50,7 +50,7 @@ To [view a Request summary](request-details/), do one of the following:
 
 ### Super-Charge Search: Save Searches and Share Them With Others
 
-See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches.md).
+See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches/).
 
 ### No Search Results?
 
@@ -118,7 +118,7 @@ Follow these steps to do an advanced search for a Request:
    `(request = "Process Name 1" OR request = "Process Name 2") AND (status = "Canceled" OR status = "Error") AND (requester = "Username1" OR requester = "Username2") AND (participant = "Username3" OR participant = "Username4" AND (updated_at < NOW -2 day)`
 
 4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Requests based on your entered criteria.
-5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Request search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches.md).
+5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Request search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches/).
 
 {% hint style="info" %}
 ### View a Request Summary <a id="view-information-about-a-request"></a>
@@ -130,7 +130,7 @@ To [view a Request summary](request-details/), do one of the following:
 
 ### Super-Charge Search: Save Searches and Share Them With Others
 
-See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches.md).
+See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches/).
 
 ### No Search Results?
 
