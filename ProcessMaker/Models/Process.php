@@ -20,6 +20,7 @@ use ProcessMaker\Traits\ProcessStartEventAssignmentsTrait;
 use ProcessMaker\Traits\ProcessTaskAssignmentsTrait;
 use ProcessMaker\Traits\ProcessTimerEventsTrait;
 use ProcessMaker\Traits\SerializeToIso8601;
+use ProcessMaker\Traits\HideSystemCategories;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use ProcessMaker\Query\Traits\PMQL;
@@ -118,6 +119,7 @@ class Process extends Model implements HasMedia
     use ProcessTaskAssignmentsTrait;
     use ProcessTimerEventsTrait;
     use ProcessStartEventAssignmentsTrait;
+    use HideSystemCategories;
     use PMQL;
 
     protected $connection = 'processmaker';

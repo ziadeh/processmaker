@@ -9,8 +9,7 @@ use ProcessMaker\Models\ScreenCategory;
 $factory->define(ScreenCategory::class, function (Faker $faker) {
     return [
         'name' => $faker->unique()->sentence(),
-        'status' => $faker->randomElement(
-            ['ACTIVE', 'INACTIVE']
-        )
+        'status' => 'ACTIVE',
+        'is_system' => false,
     ];
 });

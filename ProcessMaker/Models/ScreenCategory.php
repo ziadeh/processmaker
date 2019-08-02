@@ -37,7 +37,8 @@ class ScreenCategory extends Model
 
     protected $fillable = [
         'name',
-        'status'
+        'status',
+        'is_system'
     ];
 
     public static function rules()
