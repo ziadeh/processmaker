@@ -39,14 +39,20 @@ Follow these steps to configure one of your Saved Searches:
      * [Request searches using PMQL](../../requests/search-for-a-request.md#advanced-search-for-a-request)
      * [Task searches using PMQL](../../task-management/search-for-a-task.md#advanced-search-for-a-task)
 4. Click **Save** if no further configuration is required. Otherwise, continue.
-5. Click the **Columns** tab. Use the **Columns** tab to customize a table from which to display search results for this Saved Search. The **Available Columns** column displays the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) control **Variable Name** field values that the Saved Search's selected Process references in [Task](../../../designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md#task) elements.  
+5. Click the **Columns** tab. Use the **Columns** tab to customize a table from which to display search results for this Saved Search. The **Active Columns** column displays the currently selected columns that display information in the Saved Search's search results. The **Available Columns** column displays optional informational components to display in the Saved Search's search results. These available options are based on ProcessMaker's analysis of completed Requests for the Saved Search's selected Process. These optional informational components are derived from the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) control **Variable Name** setting values that the Saved Search's selected Process references in [Task](../../../designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md#task) elements.  
    ![](../../../.gitbook/assets/columns-tab-saved-searches-package.png) 
 
-   **Note:** To view the **Variable Name** field values for ProcessMaker Screen controls that the Saved Search's selected Process references in Task elements, follow these guidelines:
-
-   1. 
+   It may be helpful to know the **Variable Name** field values for ProcessMaker Screen controls that the Saved Search's selected Process references in Task elements. See [View the Variable Name Setting Values for ProcessMaker Screen Controls](configure-a-saved-search.md#view-the-variable-name-setting-values-for-processmaker-screen-controls).
 
 6. dfdfdf
+
+### View the Variable Name Setting Values for ProcessMaker Screen Controls
+
+When [configuring a Saved Search](configure-a-saved-search.md#configure-a-saved-search), it may be helpful to know what the optional information components represent. These informational components are derived from the **Variable Name** setting values from the ProcessMaker Screen controls that the Saved Search's selected Process references in [Task](../../../designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md#task) elements.
+
+Follow these guidelines to view the **Variable Name** setting values in ProcessMaker Screen controls:
+
+
 
 ## Related Topics
 
