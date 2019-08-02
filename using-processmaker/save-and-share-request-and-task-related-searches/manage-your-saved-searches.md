@@ -84,7 +84,25 @@ Follow these steps to configure one of your Saved Searches:
 
 1. [View all the Shared Searches that you have created and which have been shared with you](manage-your-saved-searches.md#manage-your-own-saved-searches). The **My Saved Searches** page displays.
 2. Click the **Configure** icon![](../../.gitbook/assets/configure-process-icon-processes-page-processes.png). The **Configuration** tab displays. ![](../../.gitbook/assets/configuration-tab-saved-searches-package.png) 
-3. dff
+3. Edit the following information in the **Configuration** tab about the Saved Search as necessary:
+   * In the **Name** field, enter the name of your Saved Search. This is a required field.
+   * Follow these guidelines to select an image that represents the Saved Search results. Saved Searches associated with Requests display in the left sidebar of **Requests** pages, while those associated with Tasks display in the left sidebar of **Tasks** pages.
+
+     **Follow this step to select an image from ProcessMaker to represent the Saved Search:**
+
+     Select any of the images that ProcessMaker provides by selecting its radio button.
+
+     **Follow these steps to select a custom image to represent the Saved Search:**
+
+     1. Click the **Would you like to use a custom icon?** checkbox. The **Choose File** button displays.
+     2. Click the **Choose File** button and locate the icon that represents the Saved Search. The icon must not be larger than 2 kilobytes large or the following message displays below the **Choose File** button: **The file is too large. File size must be less than 2KB when base64 encoded.**.
+
+   * In the **PMQL** field, edit the ProcessMaker Query Language \(PMQL\) parameters if necessary. See the following topics for information how to use PMQL for Requests and Tasks:
+     * [Request searches using PMQL](../requests/search-for-a-request.md#advanced-search-for-a-request)
+     * [Task searches using PMQL](../task-management/search-for-a-task.md#advanced-search-for-a-task)
+4. Click **Save** if no further configuration is required. Otherwise, continue.
+5. Click the **Columns** tab. Use the **Columns** tab to customize a table from which to display search results for this Saved Search. The **Available Columns** column displays the ProcessMaker Screen Variable Name values associated with controls referenced by ProcessMaker Screens in the Saved Search's Process. ![](../../.gitbook/assets/columns-tab-saved-searches-package.png) 
+6. dfdfdf
 
 ### Delete Your Saved Search
 

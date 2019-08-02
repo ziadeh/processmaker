@@ -59,7 +59,13 @@ If there are no search results, the following message displays: **No Data Availa
 
 ## Advanced Search for a Request
 
-Follow these steps to do an advanced search for a Request:
+Use the ProcessMaker Query Language \(PMQL\) to compose an advanced Request search.
+
+{% hint style="info" %}
+Basic Request searches also use PMQL, but basic searches provide a user interface. Configure a basic search, and then click the Advanced Search button![](../../.gitbook/assets/advanced-search-button.png)to see the PMQL. This may help you learn how to use PMQL.
+{% endhint %}
+
+Follow these guidelines to do an advanced search for a Request using PMQL:
 
 1. View one of the **Requests** pages described in the [Overview](search-for-a-request.md#overview) of this topic.
 2. Ensure that the advanced search field is displaying on the **Requests** page you are viewing.  
