@@ -25,11 +25,12 @@ class HasSystemCategoriesTest extends TestCase
     }
     
     private function resourceInCategoryFiltered($model) {
+        $prefix = strtolower(substr(strrchr($model, '\\'), 1));
         $processCategory = factory($model . 'Category')->create([
             'is_system' => true,
         ]);
         $process = factory($model)->create([
-            'process_category_id' => $processCategory->id
+            $prefix . '_category_id' => $processCategory->id
         ]);
 
         $this->assertFalse(
@@ -39,11 +40,13 @@ class HasSystemCategoriesTest extends TestCase
     
     public function testResourceInCategoryFiltered() {
         $this->resourceInCategoryFiltered(Process::class);
+        $this->resourceInCategoryFiltered(Script::class);
     }
     
     private function resourceWithoutCategoryNotFiltered($model) {
+        $prefix = strtolower(substr(strrchr($model, '\\'), 1));
         $process = factory($model)->create([
-            'process_category_id' => null
+            $prefix . '_category_id' => null
         ]);
         
         $this->assertTrue(
@@ -53,6 +56,7 @@ class HasSystemCategoriesTest extends TestCase
     
     public function testResourceWithoutCategoryNotFiltered() {
         $this->resourceWithoutCategoryNotFiltered(Process::class);
+        $this->resourceWithoutCategoryNotFiltered(Script::class);
     }
 
     // public function testCanAny()

@@ -7,7 +7,9 @@ use Illuminate\Validation\Rule;
 use ProcessMaker\Traits\SerializeToIso8601;
 use ProcessMaker\GenerateAccessToken;
 use ProcessMaker\Models\User;
+use ProcessMaker\Models\ScriptCategory;
 use ProcessMaker\ScriptRunners\ScriptRunner;
+use ProcessMaker\Traits\HideSystemCategories;
 
 /**
  * Represents an Eloquent model of a Script
@@ -49,6 +51,7 @@ use ProcessMaker\ScriptRunners\ScriptRunner;
 class Script extends Model
 {
     use SerializeToIso8601;
+    use HideSystemCategories;
 
     protected $connection = 'processmaker';
 
@@ -223,5 +226,13 @@ class Script extends Model
     {
         # return the default admin user
         return User::where('is_administrator', true)->firstOrFail();
+    }
+    
+    /**
+     * Get the associated category
+     */
+    public function category()
+    {
+        return $this->belongsTo(ScriptCategory::class, 'script_category_id');
     }
 }
