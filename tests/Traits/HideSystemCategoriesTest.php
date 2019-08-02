@@ -5,58 +5,63 @@ use Tests\TestCase;
 use ProcessMaker\Models\Process;
 use ProcessMaker\Models\ProcessCategory;
 use ProcessMaker\Models\Script;
+use ProcessMaker\Models\ScriptCategory;
 use ProcessMaker\Models\Screen;
+use ProcessMaker\Models\ScreenCategory;
 
 class HasSystemCategoriesTest extends TestCase
 {
     private function categoryFiltered($model) {
-        $processCategory = factory($model . 'Category')->create([
+        $category = factory($model . 'Category')->create([
             'is_system' => true,
         ]);
 
         $this->assertFalse(
-            call_user_func($model . 'Category::all')->contains($processCategory)
+            call_user_func($model . 'Category::all')->contains($category)
         );
     }
 
     public function testCategoryFiltered() {
         $this->categoryFiltered(Process::class);
         $this->categoryFiltered(Script::class);
+        $this->categoryFiltered(Screen::class);
     }
     
     private function resourceInCategoryFiltered($model) {
         $prefix = strtolower(substr(strrchr($model, '\\'), 1));
-        $processCategory = factory($model . 'Category')->create([
+        $category = factory($model . 'Category')->create([
             'is_system' => true,
         ]);
-        $process = factory($model)->create([
-            $prefix . '_category_id' => $processCategory->id
+        $instance = factory($model)->create([
+            $prefix . '_category_id' => $category->id
         ]);
 
         $this->assertFalse(
-            call_user_func($model . '::all')->contains($process)
+            call_user_func($model . '::all')->contains($instance)
         );
     }
     
     public function testResourceInCategoryFiltered() {
         $this->resourceInCategoryFiltered(Process::class);
         $this->resourceInCategoryFiltered(Script::class);
+        $this->resourceInCategoryFiltered(Screen::class);
     }
     
     private function resourceWithoutCategoryNotFiltered($model) {
         $prefix = strtolower(substr(strrchr($model, '\\'), 1));
-        $process = factory($model)->create([
+        $instance = factory($model)->create([
             $prefix . '_category_id' => null
         ]);
         
         $this->assertTrue(
-            call_user_func($model . '::all')->contains($process)
+            call_user_func($model . '::all')->contains($instance)
         );
     }
     
     public function testResourceWithoutCategoryNotFiltered() {
         $this->resourceWithoutCategoryNotFiltered(Process::class);
         $this->resourceWithoutCategoryNotFiltered(Script::class);
+        $this->resourceWithoutCategoryNotFiltered(Screen::class);
     }
 
     // public function testCanAny()

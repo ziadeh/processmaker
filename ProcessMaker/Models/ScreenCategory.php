@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\Rule;
 use ProcessMaker\Models\Screen;
 use ProcessMaker\Traits\SerializeToIso8601;
+use ProcessMaker\Traits\HideSystemCategories;
 
 /**
  * Represents a business screen category definition.
@@ -32,6 +33,7 @@ use ProcessMaker\Traits\SerializeToIso8601;
 class ScreenCategory extends Model
 {
     use SerializeToIso8601;
+    use HideSystemCategories;
 
     protected $connection = 'processmaker';
 

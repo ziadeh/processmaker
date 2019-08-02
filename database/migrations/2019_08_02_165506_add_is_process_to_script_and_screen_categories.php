@@ -24,6 +24,10 @@ class AddIsProcessToScriptAndScreenCategories extends Migration
         Schema::table('screens', function (Blueprint $table) {
             $table->string('key')->nullable()->default(null);
         });
+        
+        Schema::table('screen_versions', function (Blueprint $table) {
+            $table->string('key')->nullable()->default(null);
+        });
     }
 
     /**
