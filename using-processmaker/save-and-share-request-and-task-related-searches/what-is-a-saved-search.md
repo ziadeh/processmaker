@@ -15,12 +15,12 @@ Use the Saved Searches package to save and share searches associated with [Reque
 Saved Searches have the following attributes:
 
 * **Configure your Saved Searches:** You configure your own Saved Searches. Those that you share with others can only view search results using the parameters configured in those Saved Searches.
-* **Hide Saved Searches:** You may hide your Saved Searches. However, in doing so, they are no longer shared with those ProcessMaker users and/or groups with which you have shared them. Hiding a Saved Search only hides that Saved Search from you using it from the left sidebar of the Request- and Task-related pages. Sharing recipients of that Saved Search may still use it to view search results using your Saved Search's parameters.
+* **Hide Saved Searches:** You may hide your Saved Searches. However, in doing so, they are no longer shared with those ProcessMaker users and/or groups with which you have shared them. Hiding a Saved Search only hides that Saved Search the left sidebar of the Request- and Task-related pages. Sharing recipients of that Saved Search may still use it to view search results using your Saved Search's parameters.
 * **Delete Saved Searches:** You may delete your Saved Searches. However, in doing so, they are no longer shared with those ProcessMaker users and/or groups with which you have shared them. The recipients of your shared Saved Search will no longer be able to use it to quickly view search results using your Shared Search's parameters.
 * **Request-related Saved Searches:** Saved Searches associated with Requests display only in the left sidebar of Request-related pages.
 * **Task-related Saved Searches:** Saved Searches associated with Tasks display only in the left sidebar of Task-related pages.
 
-The **My Saved Searches** page displays both your saved Request- and Task-related Saved Searches, as well as those that others have shared with you. See [Manage Your Own Saved Searches](manage-your-saved-searches.md).
+The **My Saved Searches** page displays both your saved Request- and Task-related Saved Searches, as well as those that others have shared with you. See [Manage Your Own Saved Searches](manage-your-saved-searches/).
 
 ![&quot;My Saved Searches&quot; page displays your saved searches and those which have been shared with you](../../.gitbook/assets/my-saved-searches-page-package-requests-tasks.png)
 

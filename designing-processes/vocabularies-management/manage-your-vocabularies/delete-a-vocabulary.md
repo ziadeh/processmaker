@@ -9,6 +9,10 @@ description: >-
 ## Delete a ProcessMaker Vocabulary
 
 {% hint style="info" %}
+### Don't Know What a Vocabulary Is?
+
+See [What is a Vocabulary?](../what-is-a-vocabulary.md) to learn how all your ProcessMaker assets can use a uniform JSON schema.
+
 ### ProcessMaker Package Required
 
 The [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) must be installed in your ProcessMaker instance. The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
