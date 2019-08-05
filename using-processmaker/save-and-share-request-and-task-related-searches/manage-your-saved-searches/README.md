@@ -22,35 +22,32 @@ You can manage your own Saved Searches. However, you cannot manage Saved Searche
 
 Follow these steps to manage your own Saved Searches:
 
-1. View all Saved Searches that you have created and which have been shared with you from any of the following pages:
-   * **Requests** pages:
+1. View the Saved Searches that you have created and which have been shared with you. A Saved Search is accessed from pages associated with its type.
+   * Access Request-related Saved Searches from the following **Requests** pages:
      * **My Requests** page. See [View Your Requests That You Started](../../requests/view-started-requests.md#view-your-requests).
      * **In Progress** page. See [View Requests That Are In Progress](../../requests/view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
      * **Completed** page. See [View Completed Requests](../../requests/view-completed-requests.md#view-completed-requests-in-which-you-participated).
      * **All Requests** page. See [View All Requests](../../requests/view-all-requests.md#view-all-requests-in-your-organization). \(Note that your ProcessMaker user account must have the [**Requests: View All Requests** permission](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** page.\)
-   * **Tasks** pages:
+   * Access Task-related Saved Searches from the following **Tasks** pages:
      * **To Do** page. See [View Tasks You Need to Do](../../task-management/view-tasks-you-need-to-do.md).
      * **Completed** page. See [View Completed Tasks](../../task-management/view-completed-tasks.md).
-2. Click the **My Saved Searches** icon![](../../../.gitbook/assets/save-search-icon-package-requests-tasks.png)from the left sidebar. The **My Saved Searches** page displays.
+2. Click the **Edit Saved Searches** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)from the left sidebar. The **Edit Saved Searches** page displays the type of Saved Searches specific to the context from which the **Edit Saved Searches** icon was selected. For example, the image below displays Request-specific Saved Searches.
 
 ![&quot;My Saved Searches&quot; page displays your saved searches and those which have been shared with you](../../../.gitbook/assets/my-saved-searches-page-package-requests-tasks.png)
 
-The **My Saved Searches** page displays the following information in tabular format about your Saved Searches and those which have been shared with you:
+The **Edit Saved Searches** page displays the following information in tabular format about your Saved Searches and those which have been shared with you:
 
-* **Name:** The **Name** column displays the name of the Saved Search.
-* **Type:** The **Type** column displays the type of Saved Search:
-  * **Request:** The Saved Search is based on [Request search](../../requests/search-for-a-request.md#save-and-share-a-search) parameters.
-  * **Task:** The Saved Search is based on [Task search](../../task-management/search-for-a-task.md) parameters.
+* **Name:** The **Name** column displays the name of the Saved Search. The icon beside the Saved Search's name displays in the left sidebar for that Saved Search's type. For example, the icons that display in the image above display in Request-related pages. ProcessMaker users who have been shared a Saved Search click on that Saved Search's icon to view the search results of that Saved Search. The ProcessMaker user who [created the Saved Search](../create-and-share-a-saved-search.md#create-and-share-a-saved-search) selects the icon that displays for that Saved Search.
 * **Created By:** The **Created By** column displays the ProcessMaker user's avatar who created the Saved Search. Hover your cursor over the ProcessMaker user's avatar to view that person's full name.
 * **Modified:** The **Modified** column displays the date and time the Saved Search was last modified by the ProcessMaker user that created the Saved Search. A Saved Search can only be modified by the ProcessMaker user that created it. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 * **Created:** The **Created** column displays the date and time the Saved Search was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
-Use the **My Saved Searches** page to manage your own Saved Searches. Saved Searches that do not have any options are those which have been shared with you. A Saved Search can only be managed by the ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) that creates it. Therefore, there are no options for Saved Searches shared with you. You may only use Saved Searches shared with you by [viewing their search results](../view-saved-searches-that-are-shared-with-you.md).
+Use the **Edit Saved Searches** page to manage your own Saved Searches. Saved Searches that do not have any options are those which have been shared with you. A Saved Search can only be managed by the ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) that creates it. Therefore, there are no options for Saved Searches shared with you. You may only use Saved Searches shared with you by [viewing their search results](../view-saved-searches-that-are-shared-with-you.md).
 
 {% hint style="info" %}
 ### Too Many Saved Searches in Your Sidebar?
 
-Toggle to hide or show your own Saved Searches by using the **Hide Saved Search**![](../../../.gitbook/assets/hide-saved-search-icon-package.png)and **Show Saved Search**![](../../../.gitbook/assets/show-saved-search-icon-package.png)icons. See [Hide or Show Your Own Saved Searches](hide-or-show-a-saved-search.md).
+Toggle to hide or show your own Saved Searches by using the **Hide Saved Search**![](../../../.gitbook/assets/hide-saved-search-icon-package.png)and **Show Saved Search**![](../../../.gitbook/assets/show-saved-search-icon-package.png)icons. Hidden Saved Searches do not display in the left sidebar specific to the context from which the **Edit Saved Searches** icon was selected. See [Hide or Show Your Own Saved Searches](hide-or-show-a-saved-search.md).
 
 ### Configure One of Your Own Saved Searches
 

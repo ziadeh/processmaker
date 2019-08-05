@@ -24,7 +24,7 @@ You may delete a Saved Search that you [created](../create-and-share-a-saved-sea
 
 Follow these steps to delete one of your own Saved Searches:
 
-1. [View all the Shared Searches that you have created and which have been shared with you](./#manage-your-own-saved-searches). The **My Saved Searches** page displays.
+1. [View the Shared Searches for a specific Saved Search type](./#manage-your-own-saved-searches). The **Edit Saved Searches** page displays.
 2. Click the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png) for one of your Saved Searches. The **Caution** screen displays to confirm the deletion of the Saved Search.  ![](../../../.gitbook/assets/caution-delete-saved-search-package.png) 
 3. Click **Confirm**.
 
