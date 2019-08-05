@@ -52,7 +52,12 @@ When [configuring a Saved Search](configure-a-saved-search.md#configure-a-saved-
 
 Follow these guidelines to view the **Variable Name** setting values in ProcessMaker Screen controls:
 
-
+1. [View your Processes](../../../designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes.md#view-all-active-processes). Note that your ProcessMaker user account must have the Processes: View Processes permission to do so. See [Processes](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions.
+2. Edit the Process for Requests or Tasks that your Saved Search references. Note that your ProcessMaker user account must have the Processes: Edit Processes permission to do so. See [Processes](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions.
+3. Do the following for each [Task](../../../designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md#task) element in the Process model: Click a Task element and then make note of the ProcessMaker Screen referenced in the **Screen For Input** setting. See [Add and Configure Task Elements](../../../designing-processes/process-design/model-your-process/add-and-configure-task-elements.md#select-the-processmaker-screen-for-a-task-element).
+4. Do the following for each Manual element in the Process model: Click a Manual Task element and then make note of the ProcessMaker Screen referenced in the **Summary screen** setting. See [Add and Configure Manual Task Elements](../../../designing-processes/process-design/model-your-process/add-and-configure-manual-task-elements.md#select-the-processmaker-screen-associated-with-the-manual-task).
+5. [View your ProcessMaker Screens](../../../designing-processes/scripts/manage-scripts/view-all-scripts.md#view-all-processmaker-scripts). Note that your ProcessMaker user account must have the Screens: View Screen permission to do so. See [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions.
+6. Edit the ProcessMaker Screen referenced in the Process. Note that your ProcessMaker user account must have the Screens: Edit Screen permission to do so. See [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions.
 
 ## Related Topics
 
