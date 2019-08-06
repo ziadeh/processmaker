@@ -72,9 +72,9 @@ Click the **Run** button to test your ProcessMaker Script. Scripts Editor evalua
 
 If the ProcessMaker Script evaluates successfully, its output displays in the **Output** panel. If the ProcessMaker Script does not evaluate successfully, the language engine evaluating the script displays an error.
 
-### Incorporate Request Data Into Your ProcessMaker Script
+### Pass Request Data Into Your ProcessMaker Script
 
-Incorporate Request-related data into your ProcessMaker Script in the following ways:
+Pass Request-related data into your ProcessMaker Script in the following ways:
 
 * **ProcessMaker variables:** ProcessMaker variables are global variables that pass data to a ProcessMaker Scripts when it runs.
 * **ProcessMaker Environment Variables:** The sensitive information that a [ProcessMaker Environment Variable](../environment-variable-management/what-is-an-environment-variable.md) represents can pass to a ProcessMaker Script when it runs. Usage depends on the programming language that the ProcessMaker Script uses. In the usage examples below, `ENV_VAR_NAME` represents the name of the ProcessMaker Environment Variable.
