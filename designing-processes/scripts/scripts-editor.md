@@ -9,7 +9,7 @@ description: >-
 ## Overview
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to create or edit a ProcessMaker Script:
+Your user account or group membership must have the following permissions to create or edit a [ProcessMaker Script](what-is-a-script.md):
 
 * Scripts: View Scripts
 * Scripts: Create Scripts
@@ -48,7 +48,7 @@ Develop the ProcessMaker Script below the script's name and language description
 Use the **Sample Input** panel to mock [Request](../../using-processmaker/requests/what-is-a-request.md) data that comes into the ProcessMaker Script.
 
 {% hint style="info" %}
-Define the variables in a [ProcessMaker Screen](../design-forms/what-is-a-form.md) in the **Inspector** panel when you configure its controls. See [View the Inspector Panel](). Also, see [information about each control](../design-forms/screens-builder/control-descriptions/).
+Define the variables in a [ProcessMaker Screen](../design-forms/what-is-a-form.md) in the **Inspector** panel when you configure its controls. See [information about each control](../design-forms/screens-builder/control-descriptions/).
 {% endhint %}
 
 Follow these guidelines to mock Request data coming into your ProcessMaker Script:
@@ -71,6 +71,210 @@ Use the **Configuration** panel to include JSON configuration settings your Proc
 Click the **Run** button to test your ProcessMaker Script. Scripts Editor evaluates any JSON data entered into the **Configuration** and **Sample Input** panels.
 
 If the ProcessMaker Script evaluates successfully, its output displays in the **Output** panel. If the ProcessMaker Script does not evaluate successfully, the language engine evaluating the script displays an error.
+
+### Incorporate Request Data Into Your ProcessMaker Script
+
+Incorporate Request-related data into your ProcessMaker Script in the following ways:
+
+* **ProcessMaker variables:** ProcessMaker variables are global variables that pass data to a ProcessMaker Scripts when it runs.
+* **ProcessMaker Environment Variables:** The sensitive information that a [ProcessMaker Environment Variable](../environment-variable-management/what-is-an-environment-variable.md) represents can pass to a ProcessMaker Script when it runs. Usage depends on the programming language that the ProcessMaker Script uses. In the usage examples below, `ENV_VAR_NAME` represents the name of the ProcessMaker Environment Variable.
+  * **PHP:** `get_env('ENV_VAR_NAME')`
+  * **Lua:** `os.getenv("ENV_VAR_NAME")`
+  * **NodeJS:** `process.env['ENV_VAR_NAME']`
+
+Following is a description of the available ProcessMaker variables. Variable usage depends on the programming language that the ProcessMaker Script uses. See [ProcessMaker Variable Syntax, Usage, and Examples](scripts-editor.md#processmaker-variable-syntax-usage-and-examples).
+
+* **Data:** The `data` variable contains all Request data to the moment a ProcessMaker Script runs. For Request data to pass to the ProcessMaker Script, the `data` variable must be used in the Script.
+* **Config:** The `config` variable contains any special configuration to be passed to the ProcessMaker Script prior to it running.
+
+#### ProcessMaker Variable Syntax, Usage, and Examples
+
+This section outlines how to use ProcessMaker variables in programming languages that ProcessMaker supports. In the examples provided, refer to the following sample JSON data model that represents example Request data:
+
+{% code-tabs %}
+{% code-tabs-item title="Example Request data in a sample JSON data model" %}
+```text
+{
+"Submit": null,
+"VendorName": "My Company",
+"ContractNumber": "5551231234",
+"name": "Louis"
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+Refer to the tabs below how to use ProcessMaker variables in supported programming languages.
+
+{% tabs %}
+{% tab title="PHP" %}
+### data
+
+{% code-tabs %}
+{% code-tabs-item title="Syntax" %}
+```text
+$data
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+{% code-tabs %}
+{% code-tabs-item title="Usage" %}
+```php
+return $data[key]
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+### config
+
+{% code-tabs %}
+{% code-tabs-item title="Syntax" %}
+```text
+$config
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+### Example
+
+{% code-tabs %}
+{% code-tabs-item title="Usage" %}
+```php
+return $data['name'];
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+### Output
+
+{% code-tabs %}
+{% code-tabs-item title="Output based on example Request data" %}
+```text
+{
+  "output": "Louis"
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+{% endtab %}
+
+{% tab title="Lua" %}
+### data
+
+{% code-tabs %}
+{% code-tabs-item title="Syntax and usage" %}
+```lua
+return {data, global variable set to}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+### config
+
+{% code-tabs %}
+{% code-tabs-item title="Syntax and usage" %}
+```text
+config, global variable set to: {"some_key": "baz"}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+### Example
+
+{% code-tabs %}
+{% code-tabs-item title="Example for data and config variables" %}
+```lua
+return {foo=data.foo, config_var=config.some_key}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+### Output
+
+{% code-tabs %}
+{% code-tabs-item title="Output based on example Request data" %}
+```text
+{
+  "output": {
+    "foo": "bar",
+    "config_var": "baz"
+  }
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+{% endtab %}
+
+{% tab title="NodeJS" %}
+{% hint style="info" %}
+To use ProcessMaker variables in NodeJS programming language, the [NodeJS package](../../package-development-distribution/package-a-connector/nodejs-package.md) must be installed in your ProcessMaker instance. The NodeJS package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Saved Searches package can be installed in your ProcessMaker instance.
+{% endhint %}
+
+### data
+
+{% code-tabs %}
+{% code-tabs-item title="Syntax and usage" %}
+```text
+data, global variable set to: {"foo":"bar"}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+### config
+
+{% code-tabs %}
+{% code-tabs-item title="Syntax and usage" %}
+```text
+config, global variable set to: {"some_key": "baz"}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+### Examples
+
+{% code-tabs %}
+{% code-tabs-item title="Example 1" %}
+```javascript
+return { 'foo': data['foo'], 'config_var': config['some_key'] };
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+{% code-tabs %}
+{% code-tabs-item title="Example 2" %}
+```javascript
+return { 'foo': data.foo, 'config_var': config.some_key };
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+{% code-tabs %}
+{% code-tabs-item title="Example in a promise" %}
+```javascript
+return new Promise((resolve, reject) => {
+  resolve({'foo': data.foo, 'config_var': config.some_key});
+})
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+### Output
+
+{% code-tabs %}
+{% code-tabs-item title="Output based on example Request data" %}
+```text
+{
+  "output": {
+    "foo": "bar",
+    "config_var": "baz"
+  }
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 ### Save Your ProcessMaker Script
 
