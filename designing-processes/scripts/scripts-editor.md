@@ -208,7 +208,7 @@ return {foo=data.foo, config_var=config.some_key}
 
 {% tab title="NodeJS" %}
 {% hint style="info" %}
-To use ProcessMaker variables in NodeJS programming language, the [NodeJS package](../../package-development-distribution/package-a-connector/nodejs-package.md) must be installed in your ProcessMaker instance. The NodeJS package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Saved Searches package can be installed in your ProcessMaker instance.
+To use ProcessMaker variables in NodeJS programming language, the [NodeJS package](../../package-development-distribution/package-a-connector/nodejs-package.md) must be installed in your ProcessMaker instance. The NodeJS package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the NodeJS package can be installed in your ProcessMaker instance.
 {% endhint %}
 
 ### data
