@@ -16,47 +16,69 @@ See [What is a Saved Search?](../what-is-a-saved-search.md) to learn how you can
 To configure a [Saved Search](../what-is-a-saved-search.md), the [Saved Searches package](../../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed in your ProcessMaker instance. The Saved Searches package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Saved Searches package can be installed in your ProcessMaker instance.
 {% endhint %}
 
-You may configure only one of your own Saved Searches. Configure a Saved Search regardless of whether it is [visible](hide-or-show-a-saved-search.md#show-your-hidden-saved-search) or [hidden](hide-or-show-a-saved-search.md#hide-your-own-saved-search).
+### Select the Saved Search to Configure
+
+You may configure only one of your own Saved Searches, not one which has been shared with you. Configure a Saved Search regardless of whether it is [visible](hide-or-show-a-saved-search.md#show-your-hidden-saved-search) or [hidden](hide-or-show-a-saved-search.md#hide-your-own-saved-search).
 
 Follow these steps to select the Saved Search to configure:
 
 1. [View the Shared Searches for a specific Saved Search type](./#manage-your-own-saved-searches). The **Edit Saved Searches** page displays.
-2. Click the **Configure** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png) for the Saved Search to configure. The **Configuration** tab displays. ![](../../../.gitbook/assets/configuration-tab-saved-searches-package.png) 
-3. Edit the following information in the **Configuration** tab about the Saved Search as necessary:
-   * In the **Name** field, enter the name of your Saved Search. This is a required field.
-   * Follow these guidelines to select an image that represents the Saved Search results. Saved Searches associated with Requests display in the left sidebar of **Requests** pages, while those associated with Tasks display in the left sidebar of **Tasks** pages.
+2. Click the **Configure** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png) for the Saved Search to configure. ![](../../../.gitbook/assets/configuration-tab-saved-searches-package.png) 
+3. Refer to the following sections to configure your Saved Search. These configuration sections of your Saved Search may be configured independently of one another:
+   * [Configure basic settings](configure-a-saved-search.md#configure-basic-settings)
+   * [Configure how Saved Search information displays](configure-a-saved-search.md#configure-how-saved-search-information-displays)
+   * [Select with which ProcessMaker Users to share the Saved Search](configure-a-saved-search.md#select-with-which-processmaker-users-to-share-the-saved-search)
+   * [Select with which ProcessMaker Groups to share the Saved Search](configure-a-saved-search.md#select-with-which-processmaker-groups-to-share-the-saved-search)
 
-     **Follow this step to select an image from ProcessMaker to represent the Saved Search:**
+### Configure Basic Settings
+
+Follow these steps to configure basic settings for your Saved Search:
+
+1. [Select the Saved Search to configure](configure-a-saved-search.md#select-the-saved-search-to-configure). The **Configuration** tab displays. Use the **Configuration** tab to configure basic settings for your Saved Search. ![](../../../.gitbook/assets/configuration-tab-saved-searches-package.png) 
+2. Edit the following information in the **Configuration** tab about the Saved Search as necessary:
+   * **Name:** In the **Name** field, edit the name of your Saved Search. This is a required field.
+   * **Image:** Follow these guidelines to select an image that represents the Saved Search results. Saved Searches associated with Requests display in the left sidebar of **Requests** pages, while those associated with Tasks display in the left sidebar of **Tasks** pages.
+
+     **Select an image from ProcessMaker to represent the Saved Search:**
 
      Select any of the images that ProcessMaker provides by selecting its radio button.
 
-     **Follow these steps to select a custom image to represent the Saved Search:**
+     **Select a custom image to represent the Saved Search:**
 
      1. Click the **Would you like to use a custom icon?** checkbox. The **Choose File** button displays.
      2. Click the **Choose File** button and locate the icon that represents the Saved Search. The icon must not be larger than 2 kilobytes large or the following message displays below the **Choose File** button: **The file is too large. File size must be less than 2KB when base64 encoded.**.
 
-   * In the **PMQL** field, edit the ProcessMaker Query Language \(PMQL\) parameters if necessary. See the following topics for information how to use PMQL for Requests and Tasks:
+   * **PMQL:** In the **PMQL** field, edit the ProcessMaker Query Language \(PMQL\) parameters if necessary. See the following topics for information how to use PMQL for Requests and Tasks:
      * [Request searches using PMQL](../../requests/search-for-a-request.md#advanced-search-for-a-request)
      * [Task searches using PMQL](../../task-management/search-for-a-task.md#advanced-search-for-a-task)
-4. Click **Save** if no further configuration is required. Otherwise, continue.
-5. Click the **Columns** tab. Use the **Columns** tab to customize a table from which to display search results for this Saved Search. The **Active Columns** column displays the currently selected columns that display information in the Saved Search's search results. The **Available Columns** column displays optional informational components to display in the Saved Search's search results. These available options are based on ProcessMaker's analysis of completed Requests for the Saved Search's selected Process. These optional informational components are derived from the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) control **Variable Name** setting values that the Saved Search's selected Process references in [Task](../../../designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md#task) and [Manual Task](../../../designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md#manual-task) elements.  
+3. Click **Save**.
+
+### Configure How Saved Search Information Displays
+
+Follow these steps to configure how information displays for your Saved Search:
+
+1. [Select the Saved Search to configure](configure-a-saved-search.md#select-the-saved-search-to-configure). The **Configuration** tab displays.
+2. Click the **Columns** tab. Use the **Columns** tab to customize a table from which to display search results for this Saved Search. The **Active Columns** column displays the currently selected columns that display information in the Saved Search's search results. The **Available Columns** column displays optional informational components to display in the Saved Search's search results. These available options are based on ProcessMaker's analysis of completed Requests for the Saved Search's selected Process. These optional informational components are derived from the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) control **Variable Name** setting values that the Saved Search's selected Process references in [Task](../../../designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md#task) and [Manual Task](../../../designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md#manual-task) elements.  
    ![](../../../.gitbook/assets/columns-tab-saved-searches-package.png) 
+
+   The informational components in the **Active Columns** column display in the order that these informational components will display in search results. Informational components at the top of the **Active Columns** column display left-most in search results; components at the bottom of the **Active Columns** column display right-most in search results.
 
    It may be helpful to know how the ProcessMaker Screen controls that have the **Variable Name** field values are utilized in the Process referenced in your Saved Search. See [View the Variable Name Setting Values for ProcessMaker Screen Controls](configure-a-saved-search.md#view-the-variable-name-setting-values-for-processmaker-screen-controls).
 
-6. Follow these guidelines to configure which columns display information in the Saved Search results:
+3. Follow these guidelines to select which columns display information in the Saved Search results:
 
    **Remove a column that displays information in the Saved Search results:**
 
-   1. dfdfdfdf
+   1. From the **Active Columns** column, click the **Remove** icon![](../../../.gitbook/assets/remove-icon-column-saved-search-package.png)for the informational component not to display in the Saved Search's search results. The removed informational component moves to the bottom of the **Available Columns** column.
 
    **Add and configure a column that displays information in the Saved Search results:**
 
-   1. dfdfdf
+   1. Drag the informational component from the **Available Columns** column to the Active Columns column, and then place the informational component in the order from top-to-bottom that you want that informational component to display in search results. Informational components at the top of the **Active Columns** column display left-most in search results; components at the bottom of the **Active Columns** column display right-most in search results.
+   2. Informational components that are not ProcessMaker defaults can be configured to display a label and what the informational component represents. Click the **Configuration** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)for the informational component placed from the **Available Columns** column.
 
-7. dfdff
+4. Sort the informational components in the **Active Columns** column in the order they are to display in the Saved Search's search results.
 
-### View the Variable Name Setting Values for ProcessMaker Screen Controls
+#### View the Variable Name Setting Values for ProcessMaker Screen Controls
 
 When [configuring a Saved Search](configure-a-saved-search.md#configure-a-saved-search), it may be helpful to know what the optional information components represent. These informational components are derived from the **Variable Name** setting values from the ProcessMaker Screen controls that the Saved Search's selected Process references in [Task](../../../designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md#task) and [Manual Task](../../../designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md#manual-task) elements.
 
@@ -72,6 +94,16 @@ Follow these guidelines to view the **Variable Name** setting values in ProcessM
 6. Click each control in each ProcessMaker Screen referenced by the Task/Manual Task element and make note of the **Variable Name** setting value for controls that have this setting.
 7. Determine how each control with the **Variable Name** setting value is used during a Request.
 8. Determine if that control's Request information should be referenced in your Saved Search. If so, consider using that Variable Name setting in your Saved Search.
+
+### Select with Which ProcessMaker Users to Share the Saved Search
+
+
+
+### Select with Which ProcessMaker Groups to Share the Saved Search
+
+
+
+### 
 
 ## Related Topics
 
