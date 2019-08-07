@@ -2,6 +2,7 @@
 
 namespace Tests\Browser;
 
+use Tests\Browser\Pages\AboutPage;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -31,7 +32,8 @@ class AboutTest extends DuskTestCase
         return $user;
     }
 
-    public function test_request_route_protected()
+
+    public function test_route_protected()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/requests')
@@ -39,74 +41,17 @@ class AboutTest extends DuskTestCase
         });
     }
 
-    public function test_request_route_loads()
+    public function test_index()
     {
         $user = $this->setuser();
 
         $this->browse(function ($first) use ($user) {
             $first->loginAs($user)
-                ->visit(new RequestsPage)
-                ->assertRouteIs('requests.index')
-                ->assertSee('My Requests');
-        });
-    }
-
-    public function test_pmql_initial_load()
-    {
-
-        $user = $this->setuser();
-
-        $this->browse(function ($first) use ($user) {
-            $first->loginAs($user)
-                ->visit(new RequestsPage)
-                ->assertVue('pmql', '(status = "In Progress") AND (requester = "' . $user->username . '")', '#requests-listing');
-        });
-    }
-
-    public function test_vuetable_initial_load()
-    {
-        // Initial load of the site would have no requests started
-        $user = $this->setuser();
-
-        $this->browse(function ($first) use ($user) {
-            $first->loginAs($user)
-                ->visit(new RequestsPage)
-                ->waitUntilMissing('.vuetable')
-                ->assertVue('data', '', '@container');
-        });
-    }
-
-    public function test_start_request()
-    {
-        $user = $this->setuser();
-
-        $this->browse(function ($first) use ($user) {
-            $first->loginAs($user)
-                ->visit(new RequestsPage)
+                ->visit(new AboutPage())
                 ->waitFor('#navbar')
-                ->click("#navbar-request-button")
-                ->whenAvailable('#requests-modal', function ($modal) {
-                    $modal->assertSee("New Request")
-                        ->waitFor(".no-requests")
-                        ->assertSee("You don't have any Processes.");
-                });
-        });
-    }
-
-    public function test_open_about_page()
-    {
-        $user = $this->setuser();
-
-        $this->browse(function ($first) use ($user) {
-            $first->loginAs($user)
-                ->visit(new RequestsPage)
-                ->waitFor('#navbar')
-                ->click("#navbar-request-button")
-                ->whenAvailable('#requests-modal', function ($modal) {
-                    $modal->assertSee("New Request")
-                        ->waitFor(".no-requests")
-                        ->assertSee("You don't have any Processes.");
-                });
+                ->assertSee('All Rights Reserved')
+                ->assertSee('Documentation');
+            ;
         });
     }
 }
