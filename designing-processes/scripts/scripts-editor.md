@@ -84,7 +84,7 @@ Pass Request-related data into your ProcessMaker Script in the following ways:
 
 Following is a description of the available ProcessMaker variables. Variable usage depends on the programming language that the ProcessMaker Script uses. See [ProcessMaker Variable Syntax, Usage, and Examples](scripts-editor.md#processmaker-variable-syntax-usage-and-examples).
 
-* **Data:** The `data` variable contains all Request data to the moment a ProcessMaker Script runs. For Request data to pass to the ProcessMaker Script, the `data` variable must be used in the Script.
+* **Data:** The `data` variable contains all Request data to the moment a ProcessMaker Script runs.
 * **Config:** The `config` variable contains any special configuration to be passed to the ProcessMaker Script prior to it running.
 
 #### ProcessMaker Variable Syntax, Usage, and Examples
@@ -132,16 +132,6 @@ return $data[key]
 {% code-tabs-item title="Syntax" %}
 ```text
 $config
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
-### Example
-
-{% code-tabs %}
-{% code-tabs-item title="Usage" %}
-```php
-return $data['name'];
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}

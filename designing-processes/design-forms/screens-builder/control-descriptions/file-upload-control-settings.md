@@ -1,14 +1,14 @@
 ---
 description: >-
-  Add a File Upload control to which the form user can upload files from a local
-  computer.
+  Add a File Upload control to which the form user can upload a file from a
+  local computer.
 ---
 
 # File Upload Control Settings
 
 ## Control Description
 
-The File Upload control adds an area in the ProcessMaker Screen to which the form user can upload one or more files from a local computer or accessible network location. The form user can drag and place the file\(s\) on the control or select a button from which to locate the file\(s\) for upload. The uploaded file\(s\) can be referenced in a later step in a Process's Request.
+The File Upload control adds an area in the ProcessMaker Screen to which the form user can upload one file from a local computer or accessible network location. The form user can drag and place the file on the control or select a button from which to locate the file for upload. The uploaded file can be referenced in a later step in a Process's Request.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -69,7 +69,7 @@ The File Upload control has the following panels that contain settings:
 
 Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the File Upload control in the **Variable** panel:
 
-* **Upload Name:** Enter the unique name associated with the uploaded file\(s\). This name can be referenced in a later step in the Process. This setting has no default value.
+* **Upload Name:** Enter the unique name associated with the uploaded file. This name can be referenced in a later step in the Process. The File Upload control allows one file to be uploaded. This setting has no default value.
 
 ### Design Panel Settings
 
