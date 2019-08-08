@@ -108,16 +108,22 @@ Follow these steps to configure how information displays for your Saved Search:
 Follow these steps to configure with which ProcessMaker users to share your Saved Search:
 
 1. [Select the Saved Search to configure](configure-a-saved-search.md#select-the-saved-search-to-configure). The **Configuration** tab displays.
-2. Click the **Shared with Users** tab.
-3. dfdfdf
+2. Click the **Shared with Users** tab. ![](../../../.gitbook/assets/shared-with-users-tab-saved-search-package.png) 
+3. Follow these guidelines to select with which ProcessMaker users to share your Saved Search:
+   * Adjust the toggle key for each ProcessMaker user that you want to share your Saved Search. When the toggle key is enabled, that ProcessMaker user can use your Saved Search, but cannot configure, hide, or delete it.
+   * Enter in the **Search** field the text to filter ProcessMaker users by their full name.
+4. Click **Save**.
 
 ### Select with Which ProcessMaker Groups to Share the Saved Search
 
 Follow these steps to configure with which ProcessMaker groups to share your Saved Search:
 
 1. [Select the Saved Search to configure](configure-a-saved-search.md#select-the-saved-search-to-configure). The **Configuration** tab displays.
-2. Click the **Shared with Groups** tab.
-3. fgfgfg
+2. Click the **Shared with Groups** tab. ![](../../../.gitbook/assets/shared-with-groups-tab-saved-search-package.png) 
+3. Follow these guidelines to select with which ProcessMaker groups to share your Saved Search:
+   * Adjust the toggle key for each ProcessMaker user that you want to share your Saved Search. When the toggle key is enabled, all members of that ProcessMaker group can use your Saved Search, but none can configure, hide, or delete it.
+   * Enter in the **Search** field the text to filter ProcessMaker groups.
+4. Click **Save**.
 
 ### 
 
