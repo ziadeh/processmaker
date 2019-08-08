@@ -61,11 +61,11 @@ Follow these steps to configure how information displays for your Saved Search:
 2. Click the **Columns** tab. Use the **Columns** tab to customize a table from which to display search results for this Saved Search. The **Active Columns** column displays the currently selected columns that display information in the Saved Search's search results. The **Available Columns** column displays optional informational components to display in the Saved Search's search results. These available options are based on ProcessMaker's analysis of completed Requests for the Saved Search's selected Process. These optional informational components are derived from the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) control **Variable Name** setting values that the Saved Search's selected Process references in [Task](../../../designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md#task) and [Manual Task](../../../designing-processes/process-design/model-your-process/process-modeling-element-descriptions.md#manual-task) elements.  
    ![](../../../.gitbook/assets/columns-tab-saved-searches-package.png) 
 
-   The informational components in the **Active Columns** column display in the order that these informational components will display in search results. Informational components at the top of the **Active Columns** column display left-most in search results; components at the bottom of the **Active Columns** column display right-most in search results.
+   The informational components in the **Active Columns** column display in the order that these informational components will display in search results. Informational components at the top of the **Active Columns** column display left-most in the column order; components at the bottom of the **Active Columns** column display right-most in the column order.
 
    It may be helpful to know how the ProcessMaker Screen controls that have the **Variable Name** field values are utilized in the Process referenced in your Saved Search. See [View the Variable Name Setting Values for ProcessMaker Screen Controls](configure-a-saved-search.md#view-the-variable-name-setting-values-for-processmaker-screen-controls).
 
-3. Follow these guidelines to select which columns display information in the Saved Search results:
+3. Follow these guidelines to select which column\(s\) display information in the Saved Search results:
 
    **Remove a column that displays information in the Saved Search results:**
 
@@ -73,7 +73,7 @@ Follow these steps to configure how information displays for your Saved Search:
 
    **Add and configure a column that displays information in the Saved Search results:**
 
-   1. Drag the informational component from the **Available Columns** column to the Active Columns column, and then place the informational component in the order from top-to-bottom that you want that informational component to display in search results. Informational components at the top of the **Active Columns** column display left-most in search results; components at the bottom of the **Active Columns** column display right-most in search results.
+   1. Drag the informational component from the **Available Columns** column to the **Active Columns** column, and then place the informational component in the order from top-to-bottom that you want that informational component to display in search results. Informational components at the top of the **Active Columns** column display left-most in the column order; components at the bottom of the **Active Columns** column display right-most in the column order.
    2. Informational components that are not ProcessMaker defaults can be configured to display a label and what the informational component represents. Click the **Configuration** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)for the informational component placed from the **Available Columns** column.
 
 4. Sort the informational components in the **Active Columns** column in the order they are to display in the Saved Search's search results.

@@ -35,6 +35,13 @@ Follow these steps to manage your own Saved Searches:
 
 ![&quot;My Saved Searches&quot; page displays your saved searches and those which have been shared with you](../../../.gitbook/assets/my-saved-searches-page-package-requests-tasks.png)
 
+{% hint style="info" %}
+To quickly configure a specific Saved Search that you have created, follow these steps:
+
+1. Click the image from the left sidebar that represents your Saved Search. The search results for that Saved Search displays.
+2. Click the **Configure Saved Search** button![](../../../.gitbook/assets/configure-saved-search-button-package.png). The configuration settings for your Saved Search displays. See [Configure a Saved Search](configure-a-saved-search.md).
+{% endhint %}
+
 The **Edit Saved Searches** page displays the following information in tabular format about your Saved Searches and those which have been shared with you:
 
 * **Name:** The **Name** column displays the name of the Saved Search. The icon beside the Saved Search's name displays in the left sidebar for that Saved Search's type. For example, the icons that display in the image above display in Request-related pages. ProcessMaker users who have been shared a Saved Search click on that Saved Search's icon to view the search results of that Saved Search. The ProcessMaker user who [created the Saved Search](../create-and-share-a-saved-search.md#create-and-share-a-saved-search) selects the icon that displays for that Saved Search.
