@@ -4,7 +4,7 @@ namespace Tests\Browser\Pages;
 
 use Laravel\Dusk\Browser;
 
-class AboutPage extends Page
+class CssOverridePage extends Page
 {
     /**
      * Get the URL for the page.
@@ -13,7 +13,7 @@ class AboutPage extends Page
      */
     public function url()
     {
-        return '/about';
+        return '/customize-ui';
     }
 
     /**
@@ -25,5 +25,16 @@ class AboutPage extends Page
     public function assert(Browser $browser)
     {
         $browser->assertPathIs($this->url());
+    }
+
+    /**
+     * Get the element shortcuts for the page.
+     *
+     * @return array
+     */
+    public function elements()
+    {
+        return [
+        ];
     }
 }

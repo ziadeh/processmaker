@@ -3,6 +3,7 @@
 namespace Tests\Browser;
 
 use Tests\Browser\Pages\AboutPage;
+use Tests\Browser\Pages\CssOverridePage;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -36,7 +37,7 @@ class AboutTest extends DuskTestCase
     public function test_route_protected()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/requests')
+            $browser->visit('/customize-ui')
                 ->assertPathIs('/login');
         });
     }
@@ -47,11 +48,25 @@ class AboutTest extends DuskTestCase
 
         $this->browse(function ($first) use ($user) {
             $first->loginAs($user)
-                ->visit(new AboutPage())
+                ->visit(new CssOverridePage())
                 ->waitFor('#navbar')
-                ->assertSee('All Rights Reserved')
-                ->assertSee('Documentation');
+                ->assertSee('Custom Logo')
+                ->assertSee('Custom Icon');
             ;
         });
     }
+
+//    public function test_font_and_color_change()
+//    {
+//        $user = $this->setuser();
+//
+//        $this->browse(function ($first) use ($user) {
+//            $first->loginAs($user)
+//                ->visit(new CssOverridePage())
+//                ->waitFor('#navbar')
+//                ->assertSee('Custom Logo')
+//                ->assertSee('Custom Icon');
+//            ;
+//        });
+//    }
 }
