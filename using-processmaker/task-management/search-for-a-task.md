@@ -78,6 +78,14 @@ Follow these guidelines to do an advanced search for a Task using PMQL:
      * Use the following syntax as a guide to include two or more Processes associated with multiple Requests in your search criteria:
 
        `(request = "Process name 1" OR request = "Process name 2")`
+   * **Request information:**
+
+     Use the following syntax as a guide to include Request-related information in your search criteria.
+
+     `data.RequestData`
+
+     `data.` represents that what follows derives from Request information. To derive that Request information, view the [**Data** tab in the summary for a completed Request](../requests/request-details/summary-for-completed-requests.md#editable-request-data) to view the data from a completed Request, and then use the specific key name \(represented in red-colored text\) in place of `RequestData` in this syntax. Note that your ProcessMaker user account or group membership must have the [Requests: Edit Request Data](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission. Ask your ProcessMaker Administrator if you do not see the **Data** tab in completed Requests.
+
    * **Task\(s\):**
      * Use the following syntax as a guide to include one Task name in your search criteria:
 
@@ -94,12 +102,6 @@ Follow these guidelines to do an advanced search for a Task using PMQL:
      * Use the following syntax as a guide to include two or more Task statuses in your search criteria:
 
        `(status = "In Progress" OR status = "Completed")`
-   * **Request information:**
-     * Use the following syntax as a guide to include Request-related information in your search criteria.
-
-       `data.RequestData`
-
-       `data.` represents that what follows derives from Request information represented by the [ProcessMaker Screen](../../designing-processes/design-forms/what-is-a-form.md) control that you want to include as a search criterion. To derive that Request information, view the [**Data** tab in the summary for a completed Request](../requests/request-details/summary-for-completed-requests.md#editable-request-data) to view the data from a completed Request, and then use the specific key name \(represented in red-colored text\) in place of `RequestData` in this syntax. Note that your ProcessMaker user account or group membership must have the [Requests: Edit Request Data](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission. Ask your ProcessMaker Administrator.
    * **Time Period\(s\):**
 
      Use the following syntax as a guide to include a period of time in your search criteria:

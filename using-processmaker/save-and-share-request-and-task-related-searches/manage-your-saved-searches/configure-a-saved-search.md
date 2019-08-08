@@ -74,9 +74,26 @@ Follow these steps to configure how information displays for your Saved Search:
    **Add and configure a column that displays information in the Saved Search results:**
 
    1. Drag the informational component from the **Available Columns** column to the **Active Columns** column, and then place the informational component in the order from top-to-bottom that you want that informational component to display in search results. Informational components at the top of the **Active Columns** column display left-most in the column order; components at the bottom of the **Active Columns** column display right-most in the column order.
-   2. Informational components that are not ProcessMaker defaults can be configured to display a label and what the informational component represents. Click the **Configuration** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)for the informational component placed from the **Available Columns** column.
+   2. Informational components that are not ProcessMaker defaults can be configured to display a label and what the informational component represents.
 
-4. Sort the informational components in the **Active Columns** column in the order they are to display in the Saved Search's search results.
+   **Configure how a column displays information in the Saved Search results:**
+
+   1. Click the **Configuration** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)for the informational component placed from the **Available Columns** column. The **Configure** screen for that informational component displays. ![](../../../.gitbook/assets/configure-information-screen-label-field-saved-search-package.png) Columns that do not have the **Configuration** icon are ProcessMaker default columns that cannot be configured, but only removed from search results.
+   2. In the **Label** field, edit the column label if necessary.
+   3. In the **Field** field, edit the key name that represents the Request data \(if necessary\). `data.` represents that what follows derives from Request information. To derive that Request information if it is necessary to change the **Field** field value, view the [**Data** tab in the summary for a completed Request](../../requests/request-details/summary-for-completed-requests.md#editable-request-data) to view the data from a completed Request, and then use the specific key name \(represented in red-colored text\) in the following syntax, where `RequestData` represents the key name: `data.RequestData`. Note that your ProcessMaker user account or group membership must have the [Requests: Edit Request Data](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission. Ask your ProcessMaker Administrator if you do not see the **Data** tab in completed Requests.
+   4. Use the **Sortable** toggle key to adjust whether the column is sortable in search results.
+   5. Click **Save**.
+
+   **Add a custom column to the Save Search results:**
+
+   1. dffdf
+
+   **Sort the order that columns display in Save Search results:**
+
+   1. Sort the informational components in the **Active Columns** column in the order that they are to display in the Saved Search's search results. To do so, click the![](../../../.gitbook/assets/move-column-icon-saved-search-package.png)icon for an informational component, drag it, and then place it into the order the column is to display in search results. Do not drag the information component to the **Available Columns** column, or it will no longer be included as a column that displays information in search results.
+
+4. Click the **Reset to Default** button if necessary. Doing so resets the column settings to their last saved settings.
+5. Click **Save**.
 
 #### View the Variable Name Setting Values for ProcessMaker Screen Controls
 
