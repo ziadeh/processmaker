@@ -48,8 +48,8 @@ The following information displays in tabular format about Request-related searc
 
 The following information displays in tabular format about Task-related search results:
 
-* **Task:** The **Task** column displays the name of the assigned Task. Click the Task name to [open the selected Task and view its summary](../../task-management/view-a-task-summary.md#summary-for-an-assigned-task).
-* **Request:** The **Request** column displays the Request associated with the assigned Task. Click the Request name to [view the Request summary](../../requests/request-details/).
+* **Task:** The **Task** column displays the name of the assigned Task. Click the Task name to [view its summary](../../task-management/view-a-task-summary.md#summary-for-an-assigned-task).
+* **Request:** The **Request** column displays the Request associated with the Task. Click the Request name to [view the Request summary](../../requests/request-details/).
 * **Assignee:** The **Assignee** column displays your avatar since all Tasks in this display are assigned to you.
 * **Due:** The **Due** column displays the date and time the Task is due. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
@@ -67,6 +67,10 @@ To view a [Task and its summary](../../task-management/view-a-task-summary.md#su
 
 * From the **Task** column, click the Task name that you want to view.
 * Click the **Open Task** icon![](../../../.gitbook/assets/open-request-icon-requests.png)for the Task name that you want to view.
+
+### Search for a Saved Search's Search Result
+
+Use the [Search](search-for-a-saved-searchs-search-result.md) field to filter the Saved Search's search results that display.
 
 ### No Search Results from the Saved Search?
 
