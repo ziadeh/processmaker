@@ -80,7 +80,7 @@ class ProcessTest extends TestCase
         $speed = ($count - $baseCount) / ($time / $baseTime);
 
         $minSpeed = isset($this->exceptions[$model]) ? $this->exceptions[$model] : self::MIN_SPEED;
-        //error_log($speed / $minSpeed);
+        error_log('['.$speed / $minSpeed.']');
         $this->assertGreaterThanOrEqual($minSpeed, $speed);
     }
 
