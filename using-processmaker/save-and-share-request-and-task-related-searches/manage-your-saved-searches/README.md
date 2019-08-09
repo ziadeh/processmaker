@@ -49,7 +49,7 @@ The **Edit Saved Searches** page displays the following information in tabular f
 * **Modified:** The **Modified** column displays the date and time the Saved Search was last modified by the ProcessMaker user that created the Saved Search. A Saved Search can only be modified by the ProcessMaker user that created it. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 * **Created:** The **Created** column displays the date and time the Saved Search was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
-Use the **Edit Saved Searches** page to manage your own Saved Searches. Saved Searches that do not have any options are those which have been shared with you. A Saved Search can only be managed by the ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) that creates it. Therefore, there are no options for Saved Searches shared with you. You may only use Saved Searches shared with you by [viewing their search results](../view-saved-searches-that-are-shared-with-you.md).
+Use the **Edit Saved Searches** page to manage your own Saved Searches. Saved Searches that do not have any options are those which have been shared with you. A Saved Search can only be managed by the ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) that creates it. Therefore, there are no options for Saved Searches shared with you. You may only use Saved Searches shared with you by [viewing their search results](../view-saved-searches-that-are-shared-with-you/).
 
 {% hint style="info" %}
 ### Too Many Saved Searches in Your Sidebar?
@@ -64,9 +64,13 @@ Click the **Configure** icon![](../../../.gitbook/assets/configure-process-icon-
 
 Click the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png). See [Delete a Saved Search](delete-a-saved-search.md#delete-your-saved-search).
 
+### Search for a Saved Search
+
+Use the [Search](search-for-a-saved-search.md) field to filter Saved Searches that display.
+
 ### No Saved Searches?
 
-If there are no Saved Searches, the following message displays: **No Results**.
+If there are no Saved Searches, the following message displays: **No Data Available**.
 
 ### Display Information the Way You Want It
 

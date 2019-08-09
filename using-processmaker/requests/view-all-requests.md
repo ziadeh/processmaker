@@ -60,6 +60,12 @@ Use Request data to search for Requests on this page based on the following crit
 
 You can do [basic](search-for-a-request.md#do-a-basic-search-for-a-request) and [advanced](search-for-a-request.md#do-an-advanced-search-for-a-request) searches for Requests.
 
+### Save the Settings of a Search
+
+If the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, you may save search parameters and share them with other ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) and [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Create and Share a Saved Search](../save-and-share-request-and-task-related-searches/create-and-share-a-saved-search.md).
+
+If the Saved Searches package is not installed, the **Save Search** button is not available.
+
 ### No Requests?
 
 If there are no Requests in this tab, the following message displays: **No Results**.

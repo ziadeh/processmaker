@@ -55,6 +55,12 @@ Use Request data to search for Tasks on this page based on the following criteri
 
 You can do [basic](search-for-a-task.md#basic-search-for-a-task) and [advanced](search-for-a-task.md#advanced-search-for-a-task) searches for Tasks.
 
+### Save the Settings of a Search
+
+If the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, you may save search parameters and share them with other ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) and [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Create and Share a Saved Search](../save-and-share-request-and-task-related-searches/create-and-share-a-saved-search.md).
+
+If the Saved Searches package is not installed, the **Save Search** button is not available.
+
 ### Be Reminded of Overdue Tasks
 
 A message displays above your assigned Tasks how many of those Tasks are overdue.  
