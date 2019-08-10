@@ -120,6 +120,7 @@ class ProcessTest extends TestCase
         return array_sum($tables);
     }
 
+    // Endpoints to be tested
     private $endpoints = [
         ['l5-swagger.oauth2_callback', []],
         ['horizon.stats.index', []],
@@ -177,15 +178,15 @@ class ProcessTest extends TestCase
         ['error.unavailable', []],
     ];
 
+    // High values ​​improve measurement accuracy and reduce the effect of database caches
+    private $repetitions = 50;
+    // Inicial size of database 
+    private $dbSize = 200;
+
     public function RoutesListProvider()
     {
-        try {
-            $this->user = factory(User::class)->create(['is_administrator' => true]);
-
-            factory(Comment::class, 200)->create();
-        } catch (\Throwable $t) {
-            dump($t->getMessage());
-        }
+        $this->user = factory(User::class)->create(['is_administrator' => true]);
+        factory(Comment::class, $this->dbSize)->create();
         return $this->endpoints;
     }
 
@@ -204,7 +205,7 @@ class ProcessTest extends TestCase
         // Test endpoint
         $path = route($route, $params);
         $fn = (substr($route, 0, 4) === 'api.') ? 'apiCall' : 'webCall';
-        $times = 10;
+        $times = $this->repetitions;
         $t = microtime(true);
         for ($i = 0;$i < $times;$i++) {
             $this->$fn('GET', $path);
