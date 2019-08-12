@@ -195,7 +195,7 @@ class PerformanceTest extends TestCase
     // High values ​​improve measurement accuracy and reduce the effect of database caches
     private $repetitions = 50;
     // Inicial size of database
-    private $dbSize = 200;
+    private $dbSize = 100;
     const MIN_ROUTE_SPEED = 2;
     const ACCEPTABLE_ROUTE_SPEED = 11;
 
@@ -203,8 +203,6 @@ class PerformanceTest extends TestCase
     {
         file_exists('coverage') ?: mkdir('coverage');
         $this->cleanMeasurements();
-        $this->user = factory(User::class)->create(['is_administrator' => true]);
-        factory(Comment::class, $this->dbSize)->create();
         return $this->endpoints;
     }
 
@@ -215,6 +213,8 @@ class PerformanceTest extends TestCase
      */
     public function testRoutesSpeed($route, $params)
     {
+        $this->user = factory(User::class)->create(['is_administrator' => true]);
+        factory(Comment::class, $this->dbSize)->create();
         $this->actingAs($this->user);
         $this->withoutExceptionHandling();
 
