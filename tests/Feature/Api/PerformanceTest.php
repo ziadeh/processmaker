@@ -2,19 +2,17 @@
 
 namespace Tests\Feature\Api;
 
+use Illuminate\Database\Eloquent\Factory as EloquentFactory;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\DB;
+use ProcessMaker\Models\Comment;
 use ProcessMaker\Models\Group;
-use ProcessMaker\Models\Process;
+use ProcessMaker\Models\User;
+use ReflectionObject;
+use Tests\Feature\Shared\PerformanceReportTrait;
+use Tests\Feature\Shared\RequestHelper;
 use Tests\Feature\Shared\ResourceAssertionsTrait;
 use Tests\TestCase;
-use Tests\Feature\Shared\RequestHelper;
-use Illuminate\Database\Eloquent\Factory as EloquentFactory;
-use ReflectionObject;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Route;
-use ProcessMaker\Models\User;
-use ProcessMaker\Models\Comment;
-use Tests\Feature\Shared\PerformanceReportTrait;
 
 /**
  * Tests routes related to processes / CRUD related methods
@@ -136,15 +134,6 @@ class PerformanceTest extends TestCase
     // Endpoints to be tested
     private $endpoints = [
         ['l5-swagger.oauth2_callback', []],
-        //['horizon.stats.index', []],
-        //['horizon.workload.index', []],
-        //['horizon.masters.index', []],
-        //['horizon.monitoring.index', []],
-        //['horizon.jobs-metrics.index', []],
-        //['horizon.queues-metrics.index', []],
-        //['horizon.recent-jobs.index', []],
-        //['horizon.failed-jobs.index', []],
-        ['passport.authorizations.authorize', []],
         ['passport.tokens.index', []],
         ['passport.clients.index', []],
         ['api.users.index', []],
