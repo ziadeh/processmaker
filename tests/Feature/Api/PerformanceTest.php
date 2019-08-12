@@ -14,17 +14,19 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use ProcessMaker\Models\User;
 use ProcessMaker\Models\Comment;
+use Tests\Feature\Shared\PerformanceReportTrait;
 
 /**
  * Tests routes related to processes / CRUD related methods
  *
  * @group process_tests
  */
-class ProcessTest extends TestCase
+class PerformanceTest extends TestCase
 {
     use WithFaker;
     use RequestHelper;
     use ResourceAssertionsTrait;
+    use PerformanceReportTrait;
 
     // Speed of model Group creation (records/unit_time):
     // u=71.48 σ=22.16 => Min Speed of distribution = 27.16
@@ -179,12 +181,16 @@ class ProcessTest extends TestCase
     ];
 
     // High values ​​improve measurement accuracy and reduce the effect of database caches
-    private $repetitions = 50;
-    // Inicial size of database 
-    private $dbSize = 200;
+    private $repetitions = 1;
+    // Inicial size of database
+    private $dbSize = 1;
+    const MIN_ROUTE_SPEED = 3;
+    const ACCEPTABLE_ROUTE_SPEED = 11;
 
     public function RoutesListProvider()
     {
+        file_exists('coverage') ?: mkdir('coverage');
+        $this->cleanMeasurements();
         $this->user = factory(User::class)->create(['is_administrator' => true]);
         factory(Comment::class, $this->dbSize)->create();
         return $this->endpoints;
@@ -214,7 +220,16 @@ class ProcessTest extends TestCase
 
         $requestsPerSecond = round($times / $time * 10) / 10;
         $speed = $times / ($time / $baseTime);
-        echo "[$route = $speed]\n";
-        $this->assertGreaterThanOrEqual(3, $speed, "Slow route response [$route]\n             Speed ~ $requestsPerSecond [reqs/sec]");
+        $this->addMeasurement([
+            'route' => $route,
+            'params' => $params,
+            'color' => $speed < self::MIN_ROUTE_SPEED ? 'table-danger' : ($speed >= self::ACCEPTABLE_ROUTE_SPEED ? 'table-success' : ''),
+            'speed' => round($speed * 10) / 10,
+            'requestsPerSecond' => $requestsPerSecond,
+            'time' => round($time / $times * 100000) / 100,
+        ]);
+        $this->writeReport('coverage/performance.html');
+        //$this->assertEquals('', 'current: ' . @realpath('.') . '  rep: '. @realpath('coverage/performance.html') );
+        $this->assertGreaterThanOrEqual(self::MIN_ROUTE_SPEED, $speed, "Slow route response [$route]\n             Speed ~ $requestsPerSecond [reqs/sec]");
     }
 }
