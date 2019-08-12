@@ -66,7 +66,7 @@ Following is a description of common information that may display in Task-relate
   * **Completed:** The Task is completed and is represented by the![](../../../.gitbook/assets/completed-status-icon-requests.png)icon.
 * **Request:** The **Request** column displays the Request associated with the Task. Click the Request name to [view the Request summary](../../requests/request-details/).
 * **Assignee:** The **Assignee** column displays your avatar since all Tasks in this display are assigned to you.
-* **Due:** The **Due** column displays the date and time the Task is due. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Due:** The **Due** column displays the date and time the Task is due. If **n/a** displays, then no due date was set to the Task. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### View the Request Summary from Search Results

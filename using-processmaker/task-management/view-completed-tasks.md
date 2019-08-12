@@ -14,16 +14,15 @@ Follow these steps to view all your completed Tasks:
 2. Click the **Tasks** option from the top menu. The **Completed Tasks** page displays.
 3. Click the **Completed** icon ![](../../.gitbook/assets/completed-icon-request%20%281%29.png)in the left sidebar. All your completed Tasks display.
 
-~~RETAKE SCREENSHOT AFTER THE "STATUS" COLUMN IS REMOVED.~~
-
 ![&quot;Completed Tasks&quot; page displays Tasks you have completed](../../.gitbook/assets/completed-tasks-tasks.png)
 
 The **Completed Tasks** page displays the following information in tabular format about all your completed  Tasks:
 
 * **Task:** The **Task** column displays the name of the completed Task. If you click the Task name, the Task title displays with the following message: **Task Completed** along with [information about the completed Task](view-completed-tasks.md#view-information-about-a-completed-task).
+* **Status:** The **Status** column displays the status of the Task. Since all Tasks in the **Completed** page are Tasks you have  completed, all Tasks display with the Completed status, represented by the![](../../.gitbook/assets/completed-status-icon-requests.png)icon.
 * **Request:** The **Request** column displays the name of the Process associated with the Request. Click the Process name to [view the Request summary](../requests/request-details/).
 * **Assignee:** The **Assignee** column displays the avatar for the username to whom the Task was assigned. Hover your cursor over a user's avatar to view that person's full name.
-* **Completed:** The **Completed** column displays the date you completed the Task. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Due:** The **Due** column displays the date you completed was due. If **n/a** displays, then no due date was set to the Task. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### View a Completed Task and Its Summary

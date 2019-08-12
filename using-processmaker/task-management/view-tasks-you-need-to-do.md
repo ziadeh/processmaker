@@ -1,32 +1,31 @@
 ---
-description: View Tasks that are assigned to you.
+description: View Tasks that are assigned to you that you have not completed.
 ---
 
 # View Tasks You Need to Do
 
 ## View Your Assigned Tasks
 
-The **To Do Tasks** page displays all Tasks that are assigned to you.
+The **To Do** page displays all Tasks that are assigned to you.
 
 Follow these steps to view your assigned Tasks:
 
 1. Ensure that you are [logged on](../log-in.md#log-in) to ProcessMaker.
-2. Click the **Tasks** option from the top menu. The **To Do Tasks** page displays. Tasks that display on this page are assigned to you.
+2. Click the **Tasks** option from the top menu. The **To Do** page displays. Tasks that display on this page are assigned to you.
 
 {% hint style="info" %}
 Click the **To Do** icon![](../../.gitbook/assets/to-do-icon-tasks.png) in the left sidebar to view your assigned Tasks when you are viewing your completed Tasks.
 {% endhint %}
 
-~~RETAKE SCREENSHOT AFTER THE "STATUS" COLUMN IS REMOVED.~~
-
 ![&quot;To Do Tasks&quot; page displays your assigned Tasks](../../.gitbook/assets/to-do-tasks-tasks.png)
 
-The **To Do Tasks** page displays the following information in tabular format about your assigned Tasks:
+The **To Do** page displays the following information in tabular format about your assigned Tasks:
 
 * **Task:** The **Task** column displays the name of the assigned Task. Click the Task name to [open the selected Task and view its summary](view-a-task-summary.md#summary-for-an-assigned-task).
+* **Status:** The **Status** column displays the status of the Task. Since all Tasks in the **To Do** page are Tasks you have not completed, all Tasks display with the In Progress status, represented by the![](../../.gitbook/assets/in-progress-status-icon-requests.png)icon.
 * **Request:** The **Request** column displays the Request associated with the assigned Task. Click the Request name to [view the Request summary](../requests/request-details/).
 * **Assignee:** The **Assignee** column displays your avatar since all Tasks in this display are assigned to you.
-* **Due:** The **Due** column displays the date and time the Task is due. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Due:** The **Due** column displays the date and time the Task is due. If **n/a** displays, then no due date was set to the Task. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### View an Assigned Task and Its Summary
