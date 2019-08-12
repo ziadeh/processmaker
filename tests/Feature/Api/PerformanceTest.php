@@ -46,7 +46,6 @@ class PerformanceTest extends TestCase
     public function FactoryListProvider()
     {
         file_exists('coverage') ?: mkdir('coverage');
-        $this->cleanMeasurements();
         $factories = app(EloquentFactory::class);
         $reflection = new ReflectionObject($factories);
         $property = $reflection->getProperty('definitions');
@@ -102,7 +101,7 @@ class PerformanceTest extends TestCase
         $minSpeed = isset($this->exceptions[$model]) ? $this->exceptions[$model] : self::MIN_SPEED;
         $factorySpeed = $times / ($time / $baseTime);
 
-        $this->addMeasurement([
+        $this->addMeasurement('factories', [
             'model' => $model,
             'time' => round($time / $times * 100000) / 100,
             'factorySpeed' => round($factorySpeed * 10) / 10,
@@ -110,7 +109,7 @@ class PerformanceTest extends TestCase
             'speed' => round($speed * 10) / 10,
             'color' => $speed < $minSpeed ? 'table-danger' : 'table-success',
         ]);
-        $this->writeReport('coverage/factory_performance.html', 'model.performance.template.php');
+        $this->writeReport('factories', 'coverage/factory_performance.html', 'model.performance.template.php');
         $this->assertGreaterThanOrEqual($minSpeed, $speed);
     }
 
@@ -202,7 +201,6 @@ class PerformanceTest extends TestCase
     public function RoutesListProvider()
     {
         file_exists('coverage') ?: mkdir('coverage');
-        $this->cleanMeasurements();
         return $this->endpoints;
     }
 
@@ -232,7 +230,7 @@ class PerformanceTest extends TestCase
 
         $requestsPerSecond = round($times / $time * 10) / 10;
         $speed = $times / ($time / $baseTime);
-        $this->addMeasurement([
+        $this->addMeasurement('routes', [
             'route' => $route,
             'params' => $params,
             'color' => $speed < self::MIN_ROUTE_SPEED ? 'table-danger' : ($speed >= self::ACCEPTABLE_ROUTE_SPEED ? 'table-success' : ''),
@@ -240,7 +238,7 @@ class PerformanceTest extends TestCase
             'requestsPerSecond' => $requestsPerSecond,
             'time' => round($time / $times * 100000) / 100,
         ]);
-        $this->writeReport('coverage/performance.html', 'performance.template.php');
+        $this->writeReport('routes', 'coverage/performance.html', 'performance.template.php');
         $this->assertGreaterThanOrEqual(self::MIN_ROUTE_SPEED, $speed, "Slow route response [$route]\n             Speed ~ $requestsPerSecond [reqs/sec]");
     }
 }
