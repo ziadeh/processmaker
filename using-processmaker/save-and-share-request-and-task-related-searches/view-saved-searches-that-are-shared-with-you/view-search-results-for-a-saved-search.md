@@ -33,6 +33,10 @@ Follow these steps to view the search results for a Saved Search:
 
 ![Search results for a Request-related Saved Search](../../../.gitbook/assets/saved-search-request-results-package.png)
 
+Below are search results for a Task-related Saved Search.
+
+![Search results for a Task-related Saved Search](../../../.gitbook/assets/saved-search-task-results-package.png)
+
 Columns that display in the search results for a Saved Search can be customized by the ProcessMaker user that created the Saved Search. See the following topics:
 
 * [Create and Share a Saved Search](../create-and-share-a-saved-search.md)
@@ -40,33 +44,16 @@ Columns that display in the search results for a Saved Search can be customized 
 
 If a Saved Search has been shared with you, you may not change the type of information that displays in its search results.
 
-Save Search search results display in tabular format. Following is a description of common information that may display in Request-related search results:
+Save Search search results display in tabular format. See the following topics for information about  Request- and Task-related information displays in ProcessMaker:
 
-* **\#:** The **\#** column displays the Request number associated with the Process. This number represents the sequential occurrence of that Process.
-* **Name:** The **Name** column displays the Process name associated with the Request. Click the Process name to [view the Request summary](../../requests/request-details/).
-* **Status:** The **Status** column displays the status of the Request. The following are possible statuses:
-  * **In Progress:** The Request is in-progress and is represented by the![](../../../.gitbook/assets/in-progress-status-icon-requests.png)icon.
-  * **Completed:** The Request is completed and is represented by the![](../../../.gitbook/assets/completed-status-icon-requests.png)icon.
-  * **Canceled:** The Request has been canceled and is represented by the![](../../../.gitbook/assets/error-status-icon-requests.png)icon. See [Cancel a Request](../../requests/delete-a-request.md).
-  * **Error:** An error occurred with the Request and is represented by the![](../../../.gitbook/assets/error-status-icon-requests.png)icon. [View the Request summary](../../requests/request-details/#error-information-for-a-request) to see the error.
-* **Participants:** The **Participants** column displays each Request participant's avatar. Hover your cursor over a user's avatar to view that person's full name.
-* **Started:** The **Started** column displays the date and time you started the Request. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Completed:** The **Completed** column displays the date and time the Request was completed. If the Request is not completed, this field displays no value for that Request. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-
-Below are search results for a Task-related Saved Search.
-
-![Search results for a Task-related Saved Search](../../../.gitbook/assets/saved-search-task-results-package.png)
-
-Following is a description of common information that may display in Task-related search results:
-
-* **\#:** The **\#** column displays the Task number associated with the Request. This number represents the sequential occurrence of that Process.
-* **Task:** The **Task** column displays the name of the assigned Task. Click the Task name to [view its summary](../../task-management/view-a-task-summary.md#summary-for-an-assigned-task).
-* **Status:** The **Status** column displays the status of the Task. The following are possible statuses:
-  * **In Progress:** The Task is in-progress and is represented by the![](../../../.gitbook/assets/in-progress-status-icon-requests.png)icon.
-  * **Completed:** The Task is completed and is represented by the![](../../../.gitbook/assets/completed-status-icon-requests.png)icon.
-* **Request:** The **Request** column displays the Request associated with the Task. Click the Request name to [view the Request summary](../../requests/request-details/).
-* **Assignee:** The **Assignee** column displays your avatar since all Tasks in this display are assigned to you.
-* **Due:** The **Due** column displays the date and time the Task is due. If **n/a** displays, then no due date was set to the Task. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Requests** pages:
+  * **My Requests** page. See [View Your Requests That You Started](../../requests/view-started-requests.md#view-your-requests).
+  * **In Progress** page. See [View Requests That Are In Progress](../../requests/view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
+  * **Completed** page. See [View Completed Requests](../../requests/view-completed-requests.md#view-completed-requests-in-which-you-participated).
+  * **All Requests** page. See [View All Requests](../../requests/view-all-requests.md#view-all-requests-in-your-organization). \(Note that your ProcessMaker user account must have the [**Requests: View All Requests** permission](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** page.\)
+* **Tasks** pages:
+  * **To Do** page. See [View Tasks You Need to Do](../../task-management/view-tasks-you-need-to-do.md).
+  * **Completed** page. See [View Completed Tasks](../../task-management/view-completed-tasks.md).
 
 {% hint style="info" %}
 ### View the Request Summary from Search Results
