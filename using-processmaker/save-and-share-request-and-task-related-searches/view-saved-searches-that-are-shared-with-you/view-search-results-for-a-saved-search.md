@@ -31,9 +31,16 @@ Follow these steps to view the search results for a Saved Search:
      * **Completed** page. See [View Completed Tasks](../../task-management/view-completed-tasks.md).
 2. Click the icon that represents the Saved Search. The search results for that Saved Search display.
 
-![Search results for a Request-related Saved Search](../../../.gitbook/assets/saved-search-results-package.png)
+![Search results for a Request-related Saved Search](../../../.gitbook/assets/saved-search-request-results-package.png)
 
-The following information displays in tabular format about Request-related search results:
+Columns that display in the search results for a Saved Search can be customized by the ProcessMaker user that created the Saved Search. See the following topics:
+
+* [Create and Share a Saved Search](../create-and-share-a-saved-search.md)
+* [Configure a Saved Search](../manage-your-saved-searches/configure-a-saved-search.md)
+
+If a Saved Search has been shared with you, you may not change the type of information that displays in its search results.
+
+Save Search search results display in tabular format. Following is a description of common information that may display in Request-related search results:
 
 * **\#:** The **\#** column displays the Request number associated with the Process. This number represents the sequential occurrence of that Process.
 * **Name:** The **Name** column displays the Process name associated with the Request. Click the Process name to [view the Request summary](../../requests/request-details/).
@@ -46,9 +53,17 @@ The following information displays in tabular format about Request-related searc
 * **Started:** The **Started** column displays the date and time you started the Request. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 * **Completed:** The **Completed** column displays the date and time the Request was completed. If the Request is not completed, this field displays no value for that Request. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
-The following information displays in tabular format about Task-related search results:
+Below are search results for a Task-related Saved Search.
 
+![Search results for a Task-related Saved Search](../../../.gitbook/assets/saved-search-task-results-package.png)
+
+Following is a description of common information that may display in Task-related search results:
+
+* **\#:** The **\#** column displays the Task number associated with the Request. This number represents the sequential occurrence of that Process.
 * **Task:** The **Task** column displays the name of the assigned Task. Click the Task name to [view its summary](../../task-management/view-a-task-summary.md#summary-for-an-assigned-task).
+* **Status:** The **Status** column displays the status of the Task. The following are possible statuses:
+  * **In Progress:** The Task is in-progress and is represented by the![](../../../.gitbook/assets/in-progress-status-icon-requests.png)icon.
+  * **Completed:** The Task is completed and is represented by the![](../../../.gitbook/assets/completed-status-icon-requests.png)icon.
 * **Request:** The **Request** column displays the Request associated with the Task. Click the Request name to [view the Request summary](../../requests/request-details/).
 * **Assignee:** The **Assignee** column displays your avatar since all Tasks in this display are assigned to you.
 * **Due:** The **Due** column displays the date and time the Task is due. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
