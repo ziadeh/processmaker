@@ -8,25 +8,27 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Performance</title>
+    <title>Model Factories Performance</title>
   </head>
   <body>
     
     <table class="table table-sm">
         <thead>
           <tr>
-            <th scope="col">Route</th>
+            <th scope="col">Model</th>
             <th scope="col" class="text-right">Average time [ms]</th>
-            <th scope="col" class="text-right">Requests per second</th>
+            <th scope="col" class="text-right">Models created per second</th>
+            <th scope="col" class="text-right">DB rows created per factory</th>
             <th scope="col" class="text-right">Weighted speed</th>
           </tr>
         </thead>
         <tbody>
 <?php foreach(static::$measurements as $measure): ?>
           <tr>
-            <th class="<?=$measure['color']?>" scope="row"><?=$measure['route']?> (<?=json_encode($measure['params'])?>)</th>
+            <th class="<?=$measure['color']?>" scope="row"><?=$measure['model']?></th>
             <td class="<?=$measure['color']?> text-right"><?=$measure['time']?></td>
-            <td class="<?=$measure['color']?> text-right"><?=$measure['requestsPerSecond']?></td>
+            <td class="<?=$measure['color']?> text-right"><?=$measure['factorySpeed']?></td>
+            <td class="<?=$measure['color']?> text-right"><?=$measure['recordsPerFactory']?></td>
             <td class="<?=$measure['color']?> text-right"><?=$measure['speed']?></td>
           </tr>
 <?php endforeach; ?>

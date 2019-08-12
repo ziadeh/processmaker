@@ -45,6 +45,8 @@ class PerformanceTest extends TestCase
      */
     public function FactoryListProvider()
     {
+        file_exists('coverage') ?: mkdir('coverage');
+        $this->cleanMeasurements();
         $factories = app(EloquentFactory::class);
         $reflection = new ReflectionObject($factories);
         $property = $reflection->getProperty('definitions');
@@ -86,19 +88,29 @@ class PerformanceTest extends TestCase
      * @param [type] $baseCount
      * @param [type] $baseTime
      *
-     * @dataProvider CaseProvider
+     * @dataProvider FactoryListProvider
      */
     public function testFactories($model, $baseTime)
     {
         $baseCount = $this->getTotalRecords();
         $t = microtime(true);
-        factory($model)->create();
+        $times = 1;
+        factory($model, $times)->create();
         $time = microtime(true) - $t;
         $count = $this->getTotalRecords();
         $speed = ($count - $baseCount) / ($time / $baseTime);
-
         $minSpeed = isset($this->exceptions[$model]) ? $this->exceptions[$model] : self::MIN_SPEED;
-        error_log('[' . $speed / $minSpeed . ']');
+        $factorySpeed = $times / ($time / $baseTime);
+
+        $this->addMeasurement([
+            'model' => $model,
+            'time' => round($time / $times * 100000) / 100,
+            'factorySpeed' => round($factorySpeed * 10) / 10,
+            'recordsPerFactory' => round(($count - $baseCount) / $times),
+            'speed' => round($speed * 10) / 10,
+            'color' => $speed < $minSpeed ? 'table-danger' : 'table-success',
+        ]);
+        $this->writeReport('coverage/factory_performance.html', 'model.performance.template.php');
         $this->assertGreaterThanOrEqual($minSpeed, $speed);
     }
 
@@ -125,14 +137,14 @@ class PerformanceTest extends TestCase
     // Endpoints to be tested
     private $endpoints = [
         ['l5-swagger.oauth2_callback', []],
-        ['horizon.stats.index', []],
-        ['horizon.workload.index', []],
-        ['horizon.masters.index', []],
-        ['horizon.monitoring.index', []],
-        ['horizon.jobs-metrics.index', []],
-        ['horizon.queues-metrics.index', []],
-        ['horizon.recent-jobs.index', []],
-        ['horizon.failed-jobs.index', []],
+        //['horizon.stats.index', []],
+        //['horizon.workload.index', []],
+        //['horizon.masters.index', []],
+        //['horizon.monitoring.index', []],
+        //['horizon.jobs-metrics.index', []],
+        //['horizon.queues-metrics.index', []],
+        //['horizon.recent-jobs.index', []],
+        //['horizon.failed-jobs.index', []],
         ['passport.authorizations.authorize', []],
         ['passport.tokens.index', []],
         ['passport.clients.index', []],
@@ -181,10 +193,10 @@ class PerformanceTest extends TestCase
     ];
 
     // High values ​​improve measurement accuracy and reduce the effect of database caches
-    private $repetitions = 1;
+    private $repetitions = 50;
     // Inicial size of database
-    private $dbSize = 1;
-    const MIN_ROUTE_SPEED = 3;
+    private $dbSize = 200;
+    const MIN_ROUTE_SPEED = 2;
     const ACCEPTABLE_ROUTE_SPEED = 11;
 
     public function RoutesListProvider()
@@ -228,8 +240,7 @@ class PerformanceTest extends TestCase
             'requestsPerSecond' => $requestsPerSecond,
             'time' => round($time / $times * 100000) / 100,
         ]);
-        $this->writeReport('coverage/performance.html');
-        //$this->assertEquals('', 'current: ' . @realpath('.') . '  rep: '. @realpath('coverage/performance.html') );
+        $this->writeReport('coverage/performance.html', 'performance.template.php');
         $this->assertGreaterThanOrEqual(self::MIN_ROUTE_SPEED, $speed, "Slow route response [$route]\n             Speed ~ $requestsPerSecond [reqs/sec]");
     }
 }

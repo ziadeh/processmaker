@@ -16,7 +16,7 @@ trait PerformanceReportTrait
         static::$measurements = [];
     }
 
-    private function writeReport($output, $tpl = 'performance.template.php')
+    private function writeReport($output, $tpl)
     {
         $report = fopen($output, 'w');
         ob_start();
