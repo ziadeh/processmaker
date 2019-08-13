@@ -14,6 +14,8 @@ If an expression in a control evaluates as True, then that control displays in r
 
 If an expression in a control does not evaluate as True, then that control does not display in run-time during a Request.
 
+Combine expressions using [logical operators](expression-syntax-components-for-show-if-control-settings.md#logical-operators). Example: `(not approved) or (cost > 500)`.
+
 {% hint style="info" %}
 If a ProcessMaker Screen control does not have an expression in its **Visibility Rule** setting, then that control displays by default.
 {% endhint %}
@@ -26,7 +28,7 @@ If a ProcessMaker Screen control does not have an expression in its **Visibility
 | number | `100` | `cost > 500` |
 | array | `[`value1`,` value2`]` | `myFruit not in ["apples", "oranges"]` |
 | hash | `{foo: "`value`"}` | `{foo: "bar"}` |
-| Boolean | `true` and `false` | `leave == true` |
+| Boolean | `true` and `false` | \`\` |
 
 {% hint style="info" %}
 `string` component accepts a variable placeholder. Reference the ProcessMaker Screen control's **Variable Name** setting value to represent the variable. Example: `FullNameInput == "Louis Canera"`
