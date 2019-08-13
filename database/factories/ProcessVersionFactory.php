@@ -11,6 +11,7 @@ use ProcessMaker\Models\User;
  */
 $factory->define(ProcessVersion::class, function (Faker $faker) {
     $emptyProcess = array_random(glob(Process::getProcessTemplatesPath() . '/*.bpmn'));
+    $process = factory(Process::class)->make();
     return [
         'bpmn' => file_get_contents($emptyProcess),
         'name' => $faker->sentence(3),
@@ -22,8 +23,11 @@ $factory->define(ProcessVersion::class, function (Faker $faker) {
         'process_category_id' => function () {
             return factory(ProcessCategory::class)->create()->getKey();
         },
-        'process_id' => function () {
-                return factory(Process::class)->create()->getKey();
+        'process_id' => function () use($process) {
+            return $process->save()->getKey();
+        },
+        'start_events' => function () use($process) {
+            return $process->save()->start_events;
         }
     ];
 });

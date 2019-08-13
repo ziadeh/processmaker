@@ -31,6 +31,16 @@ class ProcessObserver
      */
     public function saving(Process $process)
     {
-        $process->start_events = $process->updateStartEvents();
+        $process->start_events = $process->getUpdatedStartEvents();
+    }
+
+    /**
+     * Handle the Process "creating" event.
+     *
+     * @param Process $process
+     */
+    public function creating(Process $process)
+    {
+        $process->start_events = $process->getUpdatedStartEvents();
     }
 }

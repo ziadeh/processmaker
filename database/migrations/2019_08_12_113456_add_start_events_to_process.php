@@ -17,8 +17,11 @@ class AddStartEventsToProcess extends Migration
         Schema::table('processes', function (Blueprint $table) {
             $table->json('start_events');
         });
+        Schema::table('process_versions', function (Blueprint $table) {
+            $table->json('start_events');
+        });
         foreach(Process::all() as $process) {
-            $process->start_events = $process->updateStartEvents();
+            $process->start_events = $process->getUpdatedStartEvents();
             $process->save();
         }
     }
@@ -30,7 +33,10 @@ class AddStartEventsToProcess extends Migration
      */
     public function down()
     {
-        Schema::table('process', function (Blueprint $table) {
+        Schema::table('processes', function (Blueprint $table) {
+            $table->dropColumn('start_events');
+        });
+        Schema::table('process_versions', function (Blueprint $table) {
             $table->dropColumn('start_events');
         });
     }

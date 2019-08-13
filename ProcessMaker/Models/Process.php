@@ -34,6 +34,7 @@ use DOMElement;
  * @property string $description
  * @property string $name
  * @property string $status
+ * @property string start_events
  * @property \Carbon\Carbon $updated_at
  * @property \Carbon\Carbon $created_at
  *
@@ -46,6 +47,7 @@ use DOMElement;
  *   @OA\Property(property="pause_timer_start", type="integer"),
  *   @OA\Property(property="cancel_screen_id", type="integer"),
  *   @OA\Property(property="has_timer_start_events", type="boolean"),
+ *   @OA\Property(property="start_events", type="string", format="json"),
  * ),
  * @OA\Schema(
  *   schema="Process",
@@ -681,6 +683,9 @@ class Process extends Model implements HasMedia
         $permissions = $filterWithPermissions && !$isAdmin ? $this->getStartEventPermissions() : [];
         $nofilter = $isAdmin || !$filterWithPermissions;
         $response = [];
+        if (!isset($this->start_events)) {
+            $this->start_events = $this->getUpdatedStartEvents();
+        }
         foreach ($this->start_events as $startEvent) {
             $id = $startEvent['id'];
             if ($nofilter || ($user && isset($permissions[$id]) && in_array($user->id, $permissions[$id]))) {
@@ -695,7 +700,7 @@ class Process extends Model implements HasMedia
      *
      * @return array
      */
-    public function updateStartEvents()
+    public function getUpdatedStartEvents()
     {
         $definitions = new BpmnDocument();
         $definitions->loadXML($this->bpmn);
