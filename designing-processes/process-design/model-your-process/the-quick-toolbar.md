@@ -154,7 +154,7 @@ Use the following expression syntax components to compose the expression that de
 | number | `100` |  |
 | array | `[`value1`,` value2`]` | `[1, 2]` |
 | hash | `{foo: "`value`"}` | `{foo: "bar"}` |
-| Boolean | `true` and `false` | `leave == "true"` |
+| Boolean | `true` and `false` | `leave == true` |
 
 {% hint style="info" %}
 `string` component accepts a variable placeholder. Reference the ProcessMaker Screen control's **Key Name** setting value to represent the variable. Use mustache syntax. Example: `{{FullNameInput}}=="Louis Canera"`
