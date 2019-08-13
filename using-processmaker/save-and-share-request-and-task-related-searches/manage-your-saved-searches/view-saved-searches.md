@@ -58,7 +58,7 @@ The **Edit Saved Searches** page displays the following information in tabular f
 Use the **Edit Saved Searches** page to manage your own Saved Searches. Saved Searches that do not have any options are those which have been shared with you. A Saved Search can only be managed by the ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) that creates it. Therefore, there are no options for Saved Searches shared with you. You may only use Saved Searches shared with you by [viewing their search results](../view-saved-searches-that-are-shared-with-you/).
 
 {% hint style="info" %}
-### Too Many Saved Searches in Your Sidebar?
+### Too Many of Your Own Saved Searches in Your Sidebar?
 
 Toggle to hide or show your own Saved Searches by using the **Hide Saved Search**![](../../../.gitbook/assets/hide-saved-search-icon-package.png)and **Show Saved Search**![](../../../.gitbook/assets/show-saved-search-icon-package.png)icons. Hidden Saved Searches do not display in the left sidebar specific to the context from which the **Edit Saved Searches** icon was selected. See [Hide or Show Your Own Saved Searches](hide-or-show-a-saved-search.md).
 

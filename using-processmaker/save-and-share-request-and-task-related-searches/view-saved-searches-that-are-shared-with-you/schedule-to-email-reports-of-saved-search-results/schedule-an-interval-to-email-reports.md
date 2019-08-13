@@ -20,8 +20,8 @@ To schedule reports for a [Saved Search](../../what-is-a-saved-search.md)'s resu
 
 Follow these steps to schedule an interval to email reports of a Saved Search's search results:
 
-1. [View the search results for a Saved Search](../view-search-results-for-a-saved-search.md) in which to schedule an interval to email reports.
-2. Click the **Scheduled Reports** button![](../../../../.gitbook/assets/scheduled-reports-button-saved-search-package.png). The **Scheduled Reports** page displays.
+1. [View the schedules to email reports of a Saved Search's results](../view-search-results-for-a-saved-search.md). The **Scheduled Reports** page displays.
+2. Click the **Add Scheduled Report** button. The **Schedule Report** screen displays for that Saved Search.
 
 ## Related Topics
 
