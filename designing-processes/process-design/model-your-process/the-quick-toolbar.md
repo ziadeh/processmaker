@@ -133,7 +133,7 @@ ProcessMaker evaluates the condition\(s\) set for each outgoing Sequence Flow el
   * Outgoing Sequence Flow elements for Inclusive Gateway elements: Inclusive Gateway elements allow as many Sequence Flow elements to trigger in which their conditions are met. Therefore, all Sequence Flow elements in which their conditions are met trigger, thereby causing multiple workflow routes simultaneously for the same Request that stem from the Inclusive Gateway element. 
 
 {% hint style="warning" %}
-When designing the condition\(s\) for outgoing Sequence Flow elements from an Exclusive Gateway element, ensure that the condition for at least one of its outgoing Sequence Flow elements can trigger. Otherwise, it may be possible that no outgoing Sequence Flow elements trigger to continue workflow and a Request waits indefinitely at the Exclusive Gateway element.
+When designing the condition\(s\) for outgoing Sequence Flow elements from an Exclusive Gateway element, ensure that the condition for one of its outgoing Sequence Flow elements can trigger. Otherwise, it may be possible that no outgoing Sequence Flow elements trigger to continue workflow and a Request error occurs.
 
 Likewise, design conditions for outgoing Sequence Flow elements from an Exclusive Gateway element to trigger only one Sequence Flow element so that not more than one Sequence Flow element evaluates to trigger.
 {% endhint %}
