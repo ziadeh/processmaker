@@ -4,7 +4,7 @@ description: >-
   results.
 ---
 
-# Schedule to Email Reports of Saved Search Results
+# Schedule Email Reports of Saved Search Results
 
 ## Overview
 
