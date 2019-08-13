@@ -198,12 +198,6 @@ Combine expressions using logical operators. Example: `(not approved) or (cost >
 | contains | `in` |
 | does not contain | `not in` |
 
-**Ternary**
-
-| Component | Syntax | Example |
-| :--- | :--- | :--- |
-| ternary | tested value `?` if true then value `:` else then value | `foo ? bar : baz` |
-
 **Range**
 
 | Component | Syntax | Example |

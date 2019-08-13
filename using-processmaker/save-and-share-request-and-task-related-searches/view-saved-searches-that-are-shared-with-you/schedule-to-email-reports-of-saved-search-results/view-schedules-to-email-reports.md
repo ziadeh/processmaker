@@ -24,11 +24,23 @@ Follow these steps to view the schedules to email reports of a Saved Search's re
 ![Schedule to email reports for a Saved Search&apos;s results](../../../../.gitbook/assets/schedules-saved-search-package.png)
 
 {% hint style="info" %}
-### Pause the Schedule to Email Reports
+### Pause a Schedule to Email Reports
 
 Click the **Pause** icon![](../../../../.gitbook/assets/pause-start-timer-event-element-icon-processes.png)to suspend the schedule of emailed reports for that Saved Search's results.
 
-Click the **Play Start Timer Events** icon![](../../../../.gitbook/assets/play-start-timer-event-element-icon-processes.png)to resume the schedule for new Requests by resuming all Start Timer Event elements in the Process. Note that this icon only displays if that Process uses at least one Start Timer Event that is paused.
+Click the **Play** icon![](../../../../.gitbook/assets/play-start-timer-event-element-icon-processes.png)to resume the schedule of emailed reports for that Saved Search's results. Note that this icon only displays if a schedule is paused.
+
+### Create a Schedule
+
+Click the **Add Scheduled Report** button. See [Schedule an Interval to Email Reports](schedule-an-interval-to-email-reports.md).
+
+### Edit a Schedule
+
+Click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png). See .
+
+### Delete a Schedule
+
+Click the **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png). See .
 
 ### No Saved Searches?
 

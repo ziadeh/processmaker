@@ -75,12 +75,6 @@ If a ProcessMaker Screen control does not have an expression in its **Visibility
 | contains | `in` |
 | does not contain | `not in` |
 
-### Ternary
-
-| Component | Syntax | Example |
-| :--- | :--- | :--- |
-| ternary | tested value `?` if true then value `:` else then value | `foo ? bar : baz` |
-
 ### Range
 
 | Component | Syntax | Example |
