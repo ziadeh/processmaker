@@ -154,9 +154,9 @@ Use the following expression syntax components to compose the expression that de
 | :--- | :--- | :--- |
 | string | `"hello world"` or `'hello world'` | `FullNameInput == "Louis Canera"` |
 | number | `100` | `cost > 500` |
-| array | `[`value1`,` value2`]` | `[1, 2]` |
+| array | `[`value1`,` value2`]` | `myFruit not in ["apples", "oranges"]` |
 | hash | `{foo: "`value`"}` | `{foo: "bar"}` |
-| Boolean | `true` and `false` | `leave == true` |
+| Boolean | `true` and `false` |  |
 
 **Arithmetic Operations**
 

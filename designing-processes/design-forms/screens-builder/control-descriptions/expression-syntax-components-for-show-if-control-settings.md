@@ -24,7 +24,7 @@ If a ProcessMaker Screen control does not have an expression in its **Visibility
 | :--- | :--- | :--- |
 | string | `"hello"` or `'hello'` | `FullNameInput == "Louis Canera"` |
 | number | `100` | `cost > 500` |
-| array | `[`value1`,` value2`]` | `[1, 2]` |
+| array | `[`value1`,` value2`]` | `myFruit not in ["apples", "oranges"]` |
 | hash | `{foo: "`value`"}` | `{foo: "bar"}` |
 | Boolean | `true` and `false` | `leave == true` |
 
