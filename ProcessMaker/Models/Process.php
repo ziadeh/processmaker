@@ -702,9 +702,12 @@ class Process extends Model implements HasMedia
      */
     public function getUpdatedStartEvents()
     {
+        $response = [];
+        if (empty($this->bpmn)) {
+            return $response;
+        }
         $definitions = new BpmnDocument();
         $definitions->loadXML($this->bpmn);
-        $response = [];
         $startEvents = $definitions->getElementsByTagNameNS(BpmnDocument::BPMN_MODEL, 'startEvent');
         foreach ($startEvents as $startEvent) {
             $properties = $this->nodeAttributes($startEvent);

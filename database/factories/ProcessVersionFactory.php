@@ -24,10 +24,12 @@ $factory->define(ProcessVersion::class, function (Faker $faker) {
             return factory(ProcessCategory::class)->create()->getKey();
         },
         'process_id' => function () use($process) {
-            return $process->save()->getKey();
+            $process->save();
+            return $process->getKey();
         },
         'start_events' => function () use($process) {
-            return $process->save()->start_events;
+            $process->save();
+            return json_encode($process->start_events);
         }
     ];
 });
