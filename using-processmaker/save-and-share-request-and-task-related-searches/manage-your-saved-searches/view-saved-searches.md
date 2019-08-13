@@ -37,7 +37,7 @@ Access Task-related Saved Searches from the following **Tasks** pages:
 * **To Do** page. See [View Tasks You Need to Do](../../task-management/view-tasks-you-need-to-do.md).
 * **Completed** page. See [View Completed Tasks](../../task-management/view-completed-tasks.md).
 
-The **Edit Saved Searches** page displays all Saved Searches associated with its type. The image below displays Saved Searches for Requests.
+The **Edit Saved Searches** page displays all Saved Searches associated with its type. Below are Saved Searches for the Request type.
 
 ![&quot;My Saved Searches&quot; page displays all Saved Searches by type](../../../.gitbook/assets/my-saved-searches-page-package-requests-tasks.png)
 

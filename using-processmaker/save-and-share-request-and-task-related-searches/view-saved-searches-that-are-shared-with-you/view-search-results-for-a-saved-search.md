@@ -1,8 +1,8 @@
 ---
-description: View a Saved Search's search results.
+description: View a Saved Search's results.
 ---
 
-# View Search Results for a Saved Search
+# View Results for a Saved Search
 
 ## View Search Results
 
@@ -18,9 +18,11 @@ To view search results for a [Saved Search](../what-is-a-saved-search.md), the [
 
 Regardless of whether you [created](../create-and-share-a-saved-search.md) a Saved Search or if it has been shared with you, you may view the search results based on the ProcessMaker Query Language \(PMQL\) parameters configured in the Saved Search.
 
-Follow these steps to view the search results for a Saved Search:
+Saved Searches are organized by type: Request-related Saved Searches are accessed from **Requests** pages, while Task-related Saved Searches are accessed from **Tasks** pages. Furthermore, Saved Searches are represented by an image on the left sidebar, but only display on pages associated with its type.
 
-1. Locate the image that represents the Saved Search from the left sidebar. A Saved Search is accessed from pages associated with its type.
+Follow these steps to view the results for a Saved Search:
+
+1. Locate the image that represents the Saved Search from the left sidebar associated with its type. 
    * Access Request-related Saved Searches from the following **Requests** pages:
      * **My Requests** page. See [View Your Requests That You Started](../../requests/view-started-requests.md#view-your-requests).
      * **In Progress** page. See [View Requests That Are In Progress](../../requests/view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
@@ -29,22 +31,22 @@ Follow these steps to view the search results for a Saved Search:
    * Access Task-related Saved Searches from the following **Tasks** pages:
      * **To Do** page. See [View Tasks You Need to Do](../../task-management/view-tasks-you-need-to-do.md).
      * **Completed** page. See [View Completed Tasks](../../task-management/view-completed-tasks.md).
-2. Click the icon that represents the Saved Search. The search results for that Saved Search display.
+2. Click the icon that represents the Saved Search. The results for that Saved Search display.
 
-![Search results for a Request-related Saved Search](../../../.gitbook/assets/saved-search-request-results-package.png)
+![Results for a Request-related Saved Search](../../../.gitbook/assets/saved-search-request-results-package.png)
 
-Below are search results for a Task-related Saved Search.
+Below are results for a Task-related Saved Search.
 
 ![Search results for a Task-related Saved Search](../../../.gitbook/assets/saved-search-task-results-package.png)
 
-Columns that display in the search results for a Saved Search can be customized by the ProcessMaker user that created the Saved Search. See the following topics:
+Columns that display in the results for a Saved Search can be customized by the ProcessMaker user that created the Saved Search. See the following topics:
 
 * [Create and Share a Saved Search](../create-and-share-a-saved-search.md)
 * [Configure a Saved Search](../manage-your-saved-searches/configure-a-saved-search.md)
 
-If a Saved Search has been shared with you, you may not change the type of information that displays in its search results.
+If a Saved Search has been shared with you, you may not change the type of information that displays in its results.
 
-Save Search search results display in tabular format. See the following topics for information about  Request- and Task-related information displays in ProcessMaker:
+Save Search results display in tabular format. See the following topics for information about  Request- and Task-related information displays in ProcessMaker:
 
 * **Requests** pages:
   * **My Requests** page. See [View Your Requests That You Started](../../requests/view-started-requests.md#view-your-requests).
