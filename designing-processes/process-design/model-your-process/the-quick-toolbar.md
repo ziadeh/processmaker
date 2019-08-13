@@ -133,7 +133,9 @@ ProcessMaker evaluates the condition\(s\) set for each outgoing Sequence Flow el
   * Outgoing Sequence Flow elements for Inclusive Gateway elements: Inclusive Gateway elements allow as many Sequence Flow elements to trigger in which their conditions are met. Therefore, all Sequence Flow elements in which their conditions are met trigger, thereby causing multiple workflow routes simultaneously for the same Request that stem from the Inclusive Gateway element. 
 
 {% hint style="warning" %}
-When specifying the condition\(s\) for outgoing Sequence Flow elements from an Exclusive Gateway element, ensure that the condition for at least one of its outgoing Sequence Flow elements can trigger. Otherwise, it may be possible that no outgoing Sequence Flow elements trigger to continue workflow and a Request waits indefinitely at the Exclusive Gateway element.
+When designing the condition\(s\) for outgoing Sequence Flow elements from an Exclusive Gateway element, ensure that the condition for at least one of its outgoing Sequence Flow elements can trigger. Otherwise, it may be possible that no outgoing Sequence Flow elements trigger to continue workflow and a Request waits indefinitely at the Exclusive Gateway element.
+
+Likewise, design conditions for outgoing Sequence Flow elements from an Exclusive Gateway element to trigger only one Sequence Flow element so that not more than one Sequence Flow element evaluates to trigger.
 {% endhint %}
 
 Follow these steps to set the condition under which an outgoing Sequence Flow element triggers from an Exclusive Gateway or Inclusive Gateway element:
@@ -144,21 +146,17 @@ Follow these steps to set the condition under which an outgoing Sequence Flow el
 
 #### Expression Syntax Components
 
-Use the following expression syntax components to compose the expression that describes under which condition\(s\) an outgoing Sequence Flow element triggers to route workflow to its connecting element.
+Use the following expression syntax components to compose the expression that describes under which condition\(s\) an outgoing Sequence Flow element triggers. Reference the ProcessMaker Screen control's **Variable Name** setting value to represent the variable. Example: `FullNameInput == "Louis Canera"`.
 
 **Literals**
 
 | Component | Syntax | Example |
 | :--- | :--- | :--- |
 | string | `"hello world"` or `'hello world'` | `FullNameInput == "Louis Canera"` |
-| number | `100` |  |
+| number | `100` | `cost > 500` |
 | array | `[`value1`,` value2`]` | `[1, 2]` |
 | hash | `{foo: "`value`"}` | `{foo: "bar"}` |
 | Boolean | `true` and `false` | `leave == true` |
-
-{% hint style="info" %}
-`string` component accepts a variable placeholder. Reference the ProcessMaker Screen control's **Variable Name** setting value to represent the variable. Example: `FullNameInput == "Louis Canera"`
-{% endhint %}
 
 **Arithmetic Operations**
 
