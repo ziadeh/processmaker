@@ -28,7 +28,7 @@ If a ProcessMaker Screen control does not have an expression in its **Visibility
 | number | `100` | `cost > 500` |
 | array | `[`value1`,` value2`]` | `myFruit not in ["apples", "oranges"]` |
 | hash | `{foo: "`value`"}` | `{foo: "bar"}` |
-| Boolean | `true` and `false` | \`\` |
+| Boolean | `true` and `false` | `directorSigned` |
 
 {% hint style="info" %}
 `string` component accepts a variable placeholder. Reference the ProcessMaker Screen control's **Variable Name** setting value to represent the variable. Example: `FullNameInput == "Louis Canera"`
