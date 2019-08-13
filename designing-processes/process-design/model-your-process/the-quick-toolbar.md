@@ -155,7 +155,6 @@ Combine expressions using logical operators. Example: `(not approved) or (cost >
 | string | `"hello world"` or `'hello world'` | `FullNameInput == "Louis Canera"` |
 | number | `100` | `cost > 500` |
 | array | `[`value1`,` value2`]` | `myFruit not in ["apples", "oranges"]` |
-| hash | `{foo: "`value`"}` | `{foo: "bar"}` |
 | Boolean | `true` and `false` |  |
 
 **Arithmetic Operations**
