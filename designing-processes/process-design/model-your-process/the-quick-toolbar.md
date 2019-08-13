@@ -134,8 +134,6 @@ ProcessMaker evaluates the condition\(s\) set for each outgoing Sequence Flow el
 
 {% hint style="warning" %}
 When designing the condition\(s\) for outgoing Sequence Flow elements from an Exclusive Gateway element, ensure that the condition for one of its outgoing Sequence Flow elements can trigger. Otherwise, it may be possible that no outgoing Sequence Flow elements trigger to continue workflow and a Request error occurs.
-
-Likewise, design conditions for outgoing Sequence Flow elements from an Exclusive Gateway element to trigger only one Sequence Flow element so that not more than one Sequence Flow element evaluates to trigger.
 {% endhint %}
 
 Follow these steps to set the condition under which an outgoing Sequence Flow element triggers from an Exclusive Gateway or Inclusive Gateway element:
