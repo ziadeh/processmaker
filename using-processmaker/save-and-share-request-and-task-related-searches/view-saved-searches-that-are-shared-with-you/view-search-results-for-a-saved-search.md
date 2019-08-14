@@ -33,13 +33,15 @@ Follow these steps to view the results for a Saved Search:
      * **Completed** page. See [View Completed Tasks](../../task-management/view-completed-tasks.md).
 2. Click the icon that represents the Saved Search. The results for that Saved Search display.
 
+Below are results for a Request-related Saved Search.
+
 ![Results for a Request-related Saved Search](../../../.gitbook/assets/saved-search-request-results-package.png)
 
 Below are results for a Task-related Saved Search.
 
 ![Search results for a Task-related Saved Search](../../../.gitbook/assets/saved-search-task-results-package.png)
 
-Columns that display in the results for a Saved Search can be customized by the ProcessMaker user that created the Saved Search. See the following topics:
+Columns that display in the results for a Saved Search can be customized by the ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) that created the Saved Search. See the following topics:
 
 * [Create and Share a Saved Search](../create-and-share-a-saved-search.md)
 * [Configure a Saved Search](../manage-your-saved-searches/configure-a-saved-search.md)
@@ -87,5 +89,21 @@ If there are no search results from the Saved Search, the following message disp
 
 ## Related Topics
 
+{% page-ref page="../../../package-development-distribution/package-a-connector/saved-searches-package.md" %}
 
+{% page-ref page="../what-is-a-saved-search.md" %}
+
+{% page-ref page="../../../package-development-distribution/first-topic.md" %}
+
+{% page-ref page="./" %}
+
+{% page-ref page="search-for-a-saved-searchs-search-result.md" %}
+
+{% page-ref page="email-a-report-of-saved-search-results.md" %}
+
+{% page-ref page="schedule-to-email-reports-of-saved-search-results/" %}
+
+{% page-ref page="../create-and-share-a-saved-search.md" %}
+
+{% page-ref page="../manage-your-saved-searches/" %}
 

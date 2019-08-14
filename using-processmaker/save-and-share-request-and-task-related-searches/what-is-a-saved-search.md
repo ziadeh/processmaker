@@ -31,5 +31,15 @@ Access the search results of Saved Search from the left sidebar of the **Request
 
 ## Related Topics
 
+{% page-ref page="../../package-development-distribution/package-a-connector/saved-searches-package.md" %}
 
+{% page-ref page="../../package-development-distribution/first-topic.md" %}
+
+{% page-ref page="view-saved-searches-that-are-shared-with-you/" %}
+
+{% page-ref page="view-saved-searches-that-are-shared-with-you/schedule-to-email-reports-of-saved-search-results/" %}
+
+{% page-ref page="create-and-share-a-saved-search.md" %}
+
+{% page-ref page="manage-your-saved-searches/" %}
 

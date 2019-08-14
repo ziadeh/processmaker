@@ -37,5 +37,15 @@ Follow these steps to create and share a Saved Search:
 
 ## Related Topics
 
+{% page-ref page="../../package-development-distribution/package-a-connector/saved-searches-package.md" %}
 
+{% page-ref page="../../package-development-distribution/first-topic.md" %}
+
+{% page-ref page="what-is-a-saved-search.md" %}
+
+{% page-ref page="view-saved-searches-that-are-shared-with-you/" %}
+
+{% page-ref page="view-saved-searches-that-are-shared-with-you/schedule-to-email-reports-of-saved-search-results/" %}
+
+{% page-ref page="manage-your-saved-searches/" %}
 

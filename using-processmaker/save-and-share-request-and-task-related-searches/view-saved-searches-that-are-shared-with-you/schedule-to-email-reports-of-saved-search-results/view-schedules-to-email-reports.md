@@ -53,5 +53,25 @@ If there are no Saved Searches, the following message displays: **No Data Availa
 
 ## Related Topics
 
+{% page-ref page="../../../../package-development-distribution/package-a-connector/saved-searches-package.md" %}
 
+{% page-ref page="../../../../package-development-distribution/first-topic.md" %}
+
+{% page-ref page="../../what-is-a-saved-search.md" %}
+
+{% page-ref page="../" %}
+
+{% page-ref page="./" %}
+
+{% page-ref page="overview.md" %}
+
+{% page-ref page="schedule-an-interval-to-email-reports.md" %}
+
+{% page-ref page="edit-a-scheduled-interval-to-email-reports.md" %}
+
+{% page-ref page="delete-a-scheduled-interval-to-email-reports.md" %}
+
+{% page-ref page="../../create-and-share-a-saved-search.md" %}
+
+{% page-ref page="../../manage-your-saved-searches/" %}
 

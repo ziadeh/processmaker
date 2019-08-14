@@ -29,5 +29,21 @@ Follow these steps to email a report of search results for a Saved Search:
 
 ## Related Topics
 
+{% page-ref page="../../../package-development-distribution/package-a-connector/saved-searches-package.md" %}
 
+{% page-ref page="../../../package-development-distribution/first-topic.md" %}
+
+{% page-ref page="../what-is-a-saved-search.md" %}
+
+{% page-ref page="./" %}
+
+{% page-ref page="view-search-results-for-a-saved-search.md" %}
+
+{% page-ref page="search-for-a-saved-searchs-search-result.md" %}
+
+{% page-ref page="schedule-to-email-reports-of-saved-search-results/" %}
+
+{% page-ref page="../create-and-share-a-saved-search.md" %}
+
+{% page-ref page="../manage-your-saved-searches/" %}
 

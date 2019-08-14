@@ -4,7 +4,7 @@ description: >-
   results.
 ---
 
-# Overview
+# Overview of Saved Search Report Schedules
 
 ## Overview
 
@@ -22,12 +22,32 @@ Schedule an interval in which to email reports of a Saved Search's search result
 
 Additionally to emailing a report once for the currently displayed search results, in a scheduled interval you may do the following:
 
-* Use an [Email type](../../../../designing-processes/design-forms/screens-builder/types-for-screens.md#email) ProcessMaker [Screen](../../../../designing-processes/design-forms/what-is-a-form.md) instead of a manually entered email body.
+* Use an [Email-type](../../../../designing-processes/design-forms/screens-builder/types-for-screens.md#email) ProcessMaker [Screen](../../../../designing-processes/design-forms/what-is-a-form.md) instead of a manually entered email body.
 * Send a Microsoft Excel spreadsheet \(`.XLSX` file type\) instead of a comma-separated values `.CSV`\) file.
 
 The email recipients for each scheduled report do not vary each time the report is sent. Separate multiple email recipients using commas. If you need to vary the email recipients for scheduled reports, create different schedules for each set of emailed recipients.
 
 ## Related Topics
 
+{% page-ref page="../../../../package-development-distribution/package-a-connector/saved-searches-package.md" %}
 
+{% page-ref page="../../../../package-development-distribution/first-topic.md" %}
+
+{% page-ref page="../../what-is-a-saved-search.md" %}
+
+{% page-ref page="../" %}
+
+{% page-ref page="./" %}
+
+{% page-ref page="view-schedules-to-email-reports.md" %}
+
+{% page-ref page="schedule-an-interval-to-email-reports.md" %}
+
+{% page-ref page="edit-a-scheduled-interval-to-email-reports.md" %}
+
+{% page-ref page="delete-a-scheduled-interval-to-email-reports.md" %}
+
+{% page-ref page="../../create-and-share-a-saved-search.md" %}
+
+{% page-ref page="../../manage-your-saved-searches/" %}
 
