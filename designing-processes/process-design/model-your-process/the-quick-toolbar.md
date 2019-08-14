@@ -133,7 +133,7 @@ ProcessMaker evaluates the condition\(s\) set for each outgoing Sequence Flow el
   * Outgoing Sequence Flow elements for Inclusive Gateway elements: Inclusive Gateway elements allow as many Sequence Flow elements to trigger in which their conditions are met. Therefore, all Sequence Flow elements in which their conditions are met trigger, thereby causing multiple workflow routes simultaneously for the same Request that stem from the Inclusive Gateway element. 
 
 {% hint style="warning" %}
-When designing the condition\(s\) for outgoing Sequence Flow elements from an Exclusive Gateway element, ensure that the condition for one of its outgoing Sequence Flow elements can trigger. Otherwise, it may be possible that no outgoing Sequence Flow elements trigger to continue workflow and a Request error occurs.
+When designing the condition\(s\) for outgoing Sequence Flow elements from an Exclusive Gateway element, ensure that the condition for one of its outgoing Sequence Flow elements can trigger. Otherwise, it may be possible that no outgoing Sequence Flow elements trigger to continue workflow, thereby causing a Request error.
 {% endhint %}
 
 Follow these steps to set the condition under which an outgoing Sequence Flow element triggers from an Exclusive Gateway or Inclusive Gateway element:
@@ -146,11 +146,13 @@ Follow these steps to set the condition under which an outgoing Sequence Flow el
 
 Use the following expression syntax components to compose the expression that describes under which condition\(s\) an outgoing Sequence Flow element triggers. Reference the ProcessMaker Screen control's **Variable Name** setting value to represent the variable. Example: `FullNameInput == "Louis Canera"`.
 
+Spaces are allowed before and after expression components, such as arithmetic and comparison operators, to more easily read the expression.
+
 Combine expressions using logical operators. Example: `(not approved) or (cost > 500)`.
 
 **Literals**
 
-| Component | Syntax | Example |
+| Component | Syntax | Expression Example |
 | :--- | :--- | :--- |
 | string | `"hello world"` or `'hello world'` | `FullNameInput == "Louis Canera"` |
 | number | `100` | `cost > 500` |

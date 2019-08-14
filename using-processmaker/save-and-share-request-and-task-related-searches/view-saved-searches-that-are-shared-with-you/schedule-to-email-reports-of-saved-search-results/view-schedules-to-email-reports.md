@@ -19,7 +19,7 @@ To view the schedules to email reports of a [Saved Search's](../../what-is-a-sav
 Follow these steps to view the schedules to email reports of a Saved Search's results:
 
 1. [View the search results for a Saved Search](../view-search-results-for-a-saved-search.md) in which to view its schedules to email reports.
-2. Click the **Scheduled Reports** button![](../../../../.gitbook/assets/scheduled-reports-button-saved-search-package.png). The **Scheduled Reports** page displays.  
+2. Click the **Scheduled Reports** button![](../../../../.gitbook/assets/scheduled-reports-button-saved-search-package.png). The **Scheduled Reports** page displays for that Saved Search.  
 
 ![Schedule to email reports for a Saved Search&apos;s results](../../../../.gitbook/assets/schedules-saved-search-package.png)
 
@@ -30,17 +30,17 @@ Click the **Pause** icon![](../../../../.gitbook/assets/pause-start-timer-event-
 
 Click the **Play** icon![](../../../../.gitbook/assets/play-start-timer-event-element-icon-processes.png)to resume the schedule of emailed reports for that Saved Search's results. Note that this icon only displays if a schedule is paused.
 
-### Create a Schedule
+### Schedule a New Interval to Email Reports
 
 Click the **Add Scheduled Report** button. See [Schedule an Interval to Email Reports](schedule-an-interval-to-email-reports.md).
 
 ### Edit a Schedule
 
-Click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png). See .
+Click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png). See [Edit a Scheduled Interval to Email Reports](edit-a-scheduled-interval-to-email-reports.md).
 
 ### Delete a Schedule
 
-Click the **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png). See .
+Click the **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png). See [Delete a Scheduled Interval to Email Reports](delete-a-scheduled-interval-to-email-reports.md).
 
 ### No Saved Searches?
 

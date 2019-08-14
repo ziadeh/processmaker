@@ -44,6 +44,8 @@
       * [Overview](using-processmaker/save-and-share-request-and-task-related-searches/view-saved-searches-that-are-shared-with-you/schedule-to-email-reports-of-saved-search-results/overview.md)
       * [View Schedules to Email Reports of a Saved Search's Results](using-processmaker/save-and-share-request-and-task-related-searches/view-saved-searches-that-are-shared-with-you/schedule-to-email-reports-of-saved-search-results/view-schedules-to-email-reports.md)
       * [Schedule an Interval to Email Reports](using-processmaker/save-and-share-request-and-task-related-searches/view-saved-searches-that-are-shared-with-you/schedule-to-email-reports-of-saved-search-results/schedule-an-interval-to-email-reports.md)
+      * [Edit a Scheduled Interval to Email Reports](using-processmaker/save-and-share-request-and-task-related-searches/view-saved-searches-that-are-shared-with-you/schedule-to-email-reports-of-saved-search-results/edit-a-scheduled-interval-to-email-reports.md)
+      * [Delete a Scheduled Interval to Email Reports](using-processmaker/save-and-share-request-and-task-related-searches/view-saved-searches-that-are-shared-with-you/schedule-to-email-reports-of-saved-search-results/delete-a-scheduled-interval-to-email-reports.md)
   * [Create and Share a Saved Search](using-processmaker/save-and-share-request-and-task-related-searches/create-and-share-a-saved-search.md)
   * [Manage Your Own Saved Searches](using-processmaker/save-and-share-request-and-task-related-searches/manage-your-saved-searches/README.md)
     * [View Saved Searches](using-processmaker/save-and-share-request-and-task-related-searches/manage-your-saved-searches/view-saved-searches.md)

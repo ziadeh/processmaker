@@ -23,7 +23,7 @@ Follow these steps to email a report of search results for a Saved Search:
 1. [View the search results for a Saved Search](view-search-results-for-a-saved-search.md) in which to email its search results.
 2. Click the **Send Report** button. The **Email Report** screen displays. ![](../../../.gitbook/assets/email-report-screen-saved-search-package.png) 
 3. In the **Send to** field, enter the email address\(es\) for the email recipients to receive the report. Separate multiple email recipients using commas.
-4. In the **Email Subject** field, enter the email subject of your report to which the `.CSV` file will be attached.
+4. In the **Email Subject** field, enter the email subject of your report to which the report will be attached.
 5. In the **Email Body** field, enter the email body content for your report.
 6. Click **Send**.
 

@@ -14,6 +14,8 @@ If an expression in a control evaluates as True, then that control displays in r
 
 If an expression in a control does not evaluate as True, then that control does not display in run-time during a Request.
 
+Spaces are allowed before and after expression components, such as [arithmetic](expression-syntax-components-for-show-if-control-settings.md#arithmetic-operations) and [comparison](expression-syntax-components-for-show-if-control-settings.md#comparison-operators) operators, to more easily read the expression.
+
 Combine expressions using [logical operators](expression-syntax-components-for-show-if-control-settings.md#logical-operators). Example: `(not approved) or (cost > 500)`.
 
 {% hint style="info" %}
@@ -22,17 +24,12 @@ If a ProcessMaker Screen control does not have an expression in its **Visibility
 
 ### Literals
 
-| Component | Syntax | Example |
+| Component | Syntax | Expression Example |
 | :--- | :--- | :--- |
 | string | `"hello"` or `'hello'` | `FullNameInput == "Louis Canera"` |
 | number | `100` | `cost > 500` |
 | array | `[`value1`,` value2`]` | `myFruit not in ["apples", "oranges"]` |
-| hash | `{foo: "`value`"}` | `{foo: "bar"}` |
 | Boolean | `true` and `false` | `directorSigned` |
-
-{% hint style="info" %}
-`string` component accepts a variable placeholder. Reference the ProcessMaker Screen control's **Variable Name** setting value to represent the variable. Example: `FullNameInput == "Louis Canera"`
-{% endhint %}
 
 ### Arithmetic Operations
 

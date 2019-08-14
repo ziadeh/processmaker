@@ -17,7 +17,11 @@ To delete a [Saved Search](../what-is-a-saved-search.md), the [Saved Searches pa
 {% endhint %}
 
 {% hint style="warning" %}
-Consider carefully whether to delete one of your own Saved Searches. When deleting a Shared Search, it is no longer shared with those ProcessMaker users and/or groups with which you have shared them. The recipients of your shared Saved Search will no longer be able to use it to quickly view search results using your Shared Search's parameters. Your Saved Search will be removed from the left sidebar of the **Requests**/**Tasks** pages.
+When deleting a Shared Search, it is no longer shared with those ProcessMaker users and/or groups with which you have shared them. The recipients of your shared Saved Search will no longer be able to use it to quickly view search results using your Shared Search's parameters. Your Saved Search will be removed from the left sidebar of the **Requests**/**Tasks** pages.
+
+Furthermore, [scheduled email reports](../view-saved-searches-that-are-shared-with-you/schedule-to-email-reports-of-saved-search-results/schedule-an-interval-to-email-reports.md) for that Saved Search will no longer occur.
+
+Deleting a Saved Search from the **Edit Saved Searches** page cannot be undone.
 {% endhint %}
 
 You may delete a Saved Search that you [created](../create-and-share-a-saved-search.md). Delete a Saved Search regardless of whether it is [visible](hide-or-show-a-saved-search.md#show-your-hidden-saved-search) or [hidden](hide-or-show-a-saved-search.md#hide-your-own-saved-search).
