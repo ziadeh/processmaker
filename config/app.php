@@ -150,7 +150,7 @@ return [
          * Other Facades
          */
         'Theme' => Igaster\LaravelTheme\Facades\Theme::class,
-        'Menu'      => Lavary\Menu\Facade::class,
+        'Menu'  => Facades\ProcessMaker\Menu::class,
 
 
     ],

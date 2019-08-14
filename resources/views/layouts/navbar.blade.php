@@ -39,6 +39,7 @@
             <li class="d-none d-lg-block">
                 @php
                     $items = [];
+                    $dropdown_nav = Menu::get('dropdown_nav');
                     foreach ($dropdown_nav->items as $item ) {
                         $newItem = new stdClass();
                         $newItem->class = 'fas ' . $item->attr('icon') . ' fa-fw fa-lg';

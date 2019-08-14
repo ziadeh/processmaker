@@ -4,7 +4,7 @@ namespace ProcessMaker\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Lavary\Menu\Facade as Menu;
+use Facades\ProcessMaker\Menu;
 
 class GenerateMenus
 {
@@ -17,7 +17,6 @@ class GenerateMenus
      */
     public function handle(Request $request, Closure $next)
     {
-
         Menu::make('topnav', function ($menu) {
             $menu->group(['prefix' => 'requests'], function ($request_items) {
                 $request_items->add(__('Requests'), ['route' => 'requests.index'])->active('requests/*');
@@ -208,6 +207,7 @@ class GenerateMenus
                 }
             }
         });
+        /**/
         return $next($request);
     }
 }
