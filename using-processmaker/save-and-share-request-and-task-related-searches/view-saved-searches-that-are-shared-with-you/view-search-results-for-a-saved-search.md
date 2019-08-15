@@ -33,6 +33,17 @@ Follow these steps to view the results for a Saved Search:
      * **Completed** page. See [View Completed Tasks](../../task-management/view-completed-tasks.md).
 2. Click the icon that represents the Saved Search. The results for that Saved Search display.
 
+{% hint style="info" %}
+### Quickly View How Many Items Are in Your Saved Searches
+
+Click the ProcessMaker logo in the left sidebar to expand the sidebar. View at a glance how many items are in **Requests**/**Tasks** pages, as well as Saved Searches for that type.  
+![](../../../.gitbook/assets/expanded-sidebar-processmaker-logo-saved-search-package.png) 
+
+### View a Saved Search for Requests That You Started
+
+Click the **Started By Me** icon![](../../../.gitbook/assets/started-by-me-icon-requests.png)to view a Saved Search for Requests that you started. Note that the [Saved Searches package](../../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed to display this Saved Search. Otherwise, clicking the **Started By Me** icon displays the [**My Requests**](../../requests/view-started-requests.md) page.
+{% endhint %}
+
 Below are results for a Request-related Saved Search.
 
 ![Results for a Request-related Saved Search](../../../.gitbook/assets/saved-search-request-results-package.png)

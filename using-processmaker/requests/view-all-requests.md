@@ -22,6 +22,13 @@ Follow these steps to view all Requests in your organization:
    * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
 3. Click the **All Requests** tab or click the **All** icon![](../../.gitbook/assets/all-icon-request.png)from the left sidebar. The **All Requests** page displays.
 
+{% hint style="info" %}
+### Quickly View All Requests By Status
+
+Click the ProcessMaker logo in the left sidebar to expand the sidebar. View at a glance how many Requests by status you have. Note that if you have the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) installed in your ProcessMaker instance, you can also view how many items are in your [Saved Searches](../save-and-share-request-and-task-related-searches/what-is-a-saved-search.md) for that type.  
+![](../../.gitbook/assets/expanded-sidebar-processmaker-logo-saved-search-package.png) 
+{% endhint %}
+
 ![&quot;All Requests&quot; page displays all Requests in your organization](../../.gitbook/assets/all-requests-request.png)
 
 The **All Requests** page displays the following information in tabular format about all Requests:

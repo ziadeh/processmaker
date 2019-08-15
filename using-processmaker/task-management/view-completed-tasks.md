@@ -14,6 +14,13 @@ Follow these steps to view all your completed Tasks:
 2. Click the **Tasks** option from the top menu. The **Completed Tasks** page displays.
 3. Click the **Completed** icon ![](../../.gitbook/assets/completed-icon-request%20%281%29.png)in the left sidebar. All your completed Tasks display.
 
+{% hint style="info" %}
+### Quickly View All Your Assigned and Completed Tasks
+
+Click the ProcessMaker logo in the left sidebar to expand the sidebar. View at a glance how many Tasks you need to do and have completed. Note that if you have the Saved Searches package installed in your ProcessMaker instance, you can also view how many items are in your Saved Searches for that type.  
+![](../../.gitbook/assets/expanded-sidebar-processmaker-logo-tasks.png) 
+{% endhint %}
+
 ![&quot;Completed Tasks&quot; page displays Tasks you have completed](../../.gitbook/assets/completed-tasks-tasks.png)
 
 The **Completed Tasks** page displays the following information in tabular format about all your completed  Tasks:

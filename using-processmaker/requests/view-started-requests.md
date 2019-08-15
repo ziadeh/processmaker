@@ -14,7 +14,14 @@ Assuming that you [logged on](../log-in.md#log-on), do one of the following to v
 * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
 
 {% hint style="info" %}
-Click the **Started By Me** icon![](../../.gitbook/assets/started-by-me-icon-requests.png)in the left sidebar when you are in other Request-related pages to view the **My Requests** page.
+### Access the Requests That You Started from Other Requests Pages
+
+Click the **Started By Me** icon![](../../.gitbook/assets/started-by-me-icon-requests.png)in the left sidebar when you are in other Request-related pages to view the **My Requests** page. Note that if the [Saved Search package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, the [Saved Search](../save-and-share-request-and-task-related-searches/what-is-a-saved-search.md) for the Requests that you started displays.
+
+### Quickly View All Requests By Status
+
+Click the ProcessMaker logo in the left sidebar to expand the sidebar. View at a glance how many Requests by status you have. Note that if you have the Saved Searches package installed in your ProcessMaker instance, you can also view how many items are in your Saved Searches for that type.  
+![](../../.gitbook/assets/expanded-sidebar-processmaker-logo-saved-search-package.png) 
 {% endhint %}
 
 ![&quot;My Requests&quot; page displays Requests that you started](../../.gitbook/assets/started-by-me-request.png)
