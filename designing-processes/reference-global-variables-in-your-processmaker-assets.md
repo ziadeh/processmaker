@@ -124,16 +124,29 @@ Below is an example that contains all ProcessMaker Global Variables. Each contai
 
 Below are descriptions of each ProcessMaker Global Variable. Since these descriptions are outlined in tabular format, they do not imply how they are structured in the JSON data model. Refer to the example in the [Example of All Global Variables](reference-global-variables-in-your-processmaker-assets.md#example-of-all-global-variables) section to see how each object element is structured in the overall JSON data model.
 
-### `_user` Global Variables
+### `_user` Global Variable
 
 The `_user` Global Variable contains data about the current ProcessMaker user assigned a [Task](process-design/model-your-process/process-modeling-element-descriptions.md#task) element or [Manual Task](process-design/model-your-process/process-modeling-element-descriptions.md#manual-task) element during an in-progress Request. Use JSON dot notation to reference specific data in a Global Variable. Example: `_user.fullname`.
 
 | Global Variable Name | Description |
 | :--- | :--- |
-| `id` | Identifier for the ProcessMaker user in that ProcessMaker instance. |
-| `fax` | Fax number as entered into the ProcessMaker user's profile. |
+| `_user.id` | Identifier for the ProcessMaker user in that ProcessMaker instance. |
+| `_user.fax` | Fax number as entered into the ProcessMaker [user's profile](../using-processmaker/profile-settings.md). |
+| `_user.cell` | Cell number as entered into the ProcessMaker user's profile. |
+| `_user.city` | City as entered into the ProcessMaker user's profile. |
+| `_user.email` | Email address as entered into the ProcessMaker user's profile. |
+| `_user.media` |  |
+| `_user.phone` | Telephone number as entered into the ProcessMaker user's profile. |
+| `_user.state` | State, region, or province as entered into the ProcessMaker user's profile. |
+| `_user.title` | Job title as entered into the ProcessMaker user's profile. |
+| `_user.avatar` | Image reference for the ProcessMaker user's avatar as entered into the ProcessMaker user's profile. |
+| `_user.postal` | Business postal code as entered into the ProcessMaker user's profile. |
+| `_user.status` | Status of the ProcessMaker user's account \(active or inactive\). |
+| `_user.address` | Business address as entered into the ProcessMaker user's profile. |
+| `_user.fullname` | Full name of the ProcessMaker user as entered into the ProcessMaker user's profile. |
+| `_user.language` | Language to display ProcessMaker labels as entered into the ProcessMaker user's profile. |
 
-### `_request` Global Variables
+### `_request` Global Variable
 
 The `_request` Global Variable contains data about the current [Request](../using-processmaker/requests/what-is-a-request.md) or [Process](viewing-processes/what-is-a-process.md) during an in-progress Request. Use JSON dot notation to reference specific data in a Global Variable. Example: `_request.process.name`.
 
