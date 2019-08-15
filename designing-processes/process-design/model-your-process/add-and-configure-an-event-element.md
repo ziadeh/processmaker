@@ -157,7 +157,7 @@ Follow these steps to select who can start a Request via a Web Entry URL via thi
    ![](../../../.gitbook/assets/web-entry-mode-start-event-process-modeler-processes.png)
 
 3. From the **Mode** drop-down menu, select one of the following options:
-   * **Anonymous:** Select the **Anonymous** option to allow any person who has access to the Web Entry's URL to start a Request. This person may not be a ProcessMaker user.  
+   * **Anonymous:** Select the **Anonymous** option to allow any person who has access to the Web Entry's URL to start a Request. This person is not authenticated as a ProcessMaker user. Note that if an anonymous person starts a Request and a later Task element or [Manual Task](process-modeling-element-descriptions.md#manual-task) element is assigned to the requester, then the following Request error occurs: **This process was started by an anonymous user so this task can not be assigned to the requester**. Therefore, use this option cautiously.  
 
      ![](../../../.gitbook/assets/web-entry-anonymous-mode-start-event-process-modeler-processes.png)
 

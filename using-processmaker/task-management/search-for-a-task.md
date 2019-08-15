@@ -80,11 +80,15 @@ Follow these guidelines to do an advanced search for a Task using PMQL:
        `(request = "Process name 1" OR request = "Process name 2")`
    * **Request information:**
 
-     Use the following syntax as a guide to include Request-related information in your search criteria.
+     Use the following syntax as a guide to reference Request-related information in your search criteria.
 
      `data.RequestData`
 
-     `data.` represents that what follows derives from Request information. To derive that Request information, view the [**Data** tab in the summary for a completed Request](../requests/request-details/summary-for-completed-requests.md#editable-request-data) to view the data from a completed Request, and then use the specific key name \(represented in red-colored text\) in place of `RequestData` in this syntax. Note that your ProcessMaker user account or group membership must have the [Requests: Edit Request Data](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission. Ask your ProcessMaker Administrator if you do not see the **Data** tab in completed Requests.
+     `data.` represents that what follows derives from Request information, as is used in JSON dot notation. To derive that Request information, view the [**Data** tab in the summary for a completed Request](../requests/request-details/summary-for-completed-requests.md#editable-request-data) to view the data from a completed Request, and then use the specific key name \(represented in red-colored text\) in place of `RequestData` in this syntax. Note that your ProcessMaker user account or group membership must have the [Requests: Edit Request Data](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission. Ask your ProcessMaker Administrator if you do not see the **Data** tab in completed Requests.
+
+   * **ProcessMaker Global Variables:**
+
+     Following the same syntax as referencing Request-related information, reference ProcessMaker [Global Variables](../../designing-processes/reference-global-variables-in-your-processmaker-assets.md) in your search criteria. See [Global Variable Descriptions](../../designing-processes/reference-global-variables-in-your-processmaker-assets.md#global-variable-descriptions).
 
    * **Task\(s\):**
      * Use the following syntax as a guide to include one Task name in your search criteria:

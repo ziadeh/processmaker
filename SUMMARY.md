@@ -121,6 +121,7 @@
     * [Add Custom CSS to a Screen](designing-processes/design-forms/screens-builder/add-custom-css-to-a-screen.md)
     * [Save Your Screen](designing-processes/design-forms/screens-builder/save-a-screen.md)
     * [Screens Builder Best Practices](designing-processes/design-forms/screens-builder/best-practices.md)
+* [Reference Global Variables in ProcessMaker Assets](designing-processes/reference-global-variables-in-your-processmaker-assets.md)
 * [Environment Variable Management](designing-processes/environment-variable-management/README.md)
   * [What is an Environment Variable?](designing-processes/environment-variable-management/what-is-an-environment-variable.md)
   * [Manage Your Environment Variables](designing-processes/environment-variable-management/manage-your-environment-variables/README.md)
@@ -213,8 +214,8 @@
 
 * [What is a Package?](package-development-distribution/first-topic.md)
 * [Available Packages from ProcessMaker](package-development-distribution/package-a-connector/README.md)
-  * [Collections Package](package-development-distribution/package-a-connector/collections.md)
   * [C\# Package](package-development-distribution/package-a-connector/c-package.md)
+  * [Collections Package](package-development-distribution/package-a-connector/collections.md)
   * [Email Package](package-development-distribution/package-a-connector/email.md)
   * [NodeJS Package](package-development-distribution/package-a-connector/nodejs-package.md)
   * [Saved Searches Package](package-development-distribution/package-a-connector/saved-searches-package.md)

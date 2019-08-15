@@ -55,12 +55,15 @@ Follow these guidelines to mock Request data coming into your ProcessMaker Scrip
 
 1. [Open the ProcessMaker Screen](../design-forms/manage-forms/edit-a-screen.md) in which to view its JSON data model.
 2. Enter [Preview mode](../design-forms/screens-builder/preview-a-screen.md) on the ProcessMaker Screen page to view its JSON data model. Click the **Preview** button from Screen Builder's top menu to enter Preview mode.
-3. Enter values into the control fields as if you were using the ProcessMaker Screen in a Request. In the **Data Preview** section of the **Inspector** panel, the JSON data model displays the key-value pairs. The keys' values are those you enter in the ProcessMaker Screen preview.  Understand what the key names are. Each key is derived from a ProcessMaker Screen control's **Variable Name** value. Use these key names as variables in your ProcessMaker Script.
+3. Enter values into the control fields as if you were using the ProcessMaker Screen in a Request. In the **Data Preview** panel, the JSON data model displays the key-value pairs in each object element. The keys' values are those you enter in the ProcessMaker Screen preview. Understand what the key names are. Each key is derived from a ProcessMaker Screen control's **Variable Name** value. Use these key names as variables in your ProcessMaker Script.
 
    The JSON data model within a ProcessMaker Screen becomes the variables in any [Task element](../process-design/model-your-process/add-and-configure-task-elements.md#select-the-processmaker-screen-for-a-task-element) of a Process model that uses that Screen. Use these variables to capture what Request participants enter into a ProcessMaker Screen as input data to a ProcessMaker Script.
 
 4. After you have entered values into the ProcessMaker Script in Preview mode, the entire JSON data model displays in the **Data Preview** panel. Copy the JSON data model.
 5. Paste the JSON data model into the **Sample Input** panel in Scripts Editor. If you use any variables as defined in the JSON data model in your ProcessMaker Script, Scripts Editor uses those variable values during script testing.
+6. Optionally, mock the [ProcessMaker Global Variables](../reference-global-variables-in-your-processmaker-assets.md) that your ProcessMaker Script would reference during an in-progress Request. ProcessMaker uses a set of Global Variables that become part of the JSON data model for all Requests. ProcessMaker uses these Global Variables to store ProcessMaker user, Process, and Request related data for all Requests. During an in-progress Request, these ProcessMaker Global Variables are updated. All ProcessMaker Global Variables are preceded by an underscore \(`_`\) character in the JSON data model. Enter the ProcessMaker Global Variable into the **Sample Input** panel as part of the JSON data model, and then enter mock values for each. See [Global Variable Descriptions](../reference-global-variables-in-your-processmaker-assets.md#global-variable-descriptions).
+7. Click **Run**.
+8. In the **Output** panel, view the mocked Request data.
 
 ### Enter Other JSON Data as Input to Your ProcessMaker Script
 
