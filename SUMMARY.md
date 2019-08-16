@@ -121,7 +121,7 @@
     * [Add Custom CSS to a Screen](designing-processes/design-forms/screens-builder/add-custom-css-to-a-screen.md)
     * [Save Your Screen](designing-processes/design-forms/screens-builder/save-a-screen.md)
     * [Screens Builder Best Practices](designing-processes/design-forms/screens-builder/best-practices.md)
-* [Reference Global Variables in ProcessMaker Assets](designing-processes/reference-global-variables-in-your-processmaker-assets.md)
+* [Reference Magic Variables in ProcessMaker Assets](designing-processes/reference-global-variables-in-your-processmaker-assets.md)
 * [Environment Variable Management](designing-processes/environment-variable-management/README.md)
   * [What is an Environment Variable?](designing-processes/environment-variable-management/what-is-an-environment-variable.md)
   * [Manage Your Environment Variables](designing-processes/environment-variable-management/manage-your-environment-variables/README.md)

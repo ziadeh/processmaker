@@ -1,31 +1,31 @@
 ---
 description: >-
-  Reference the values in ProcessMaker Global Variables for use in your PMQL
-  queries. Furthermore, reference ProcessMaker Global Variables in Scripts and
+  Reference the values in ProcessMaker Magic Variables for use in your PMQL
+  queries. Furthermore, reference ProcessMaker Magic Variables in Scripts and
   Screens during in-progress Requests.
 ---
 
-# Reference Global Variables in ProcessMaker Assets
+# Reference Magic Variables in ProcessMaker Assets
 
 ## Overview
 
-ProcessMaker uses a set of Global Variables that you may reference in ProcessMaker Query Language \(PMQL\) queries and in your ProcessMaker assets, such as ProcessMaker [Scripts](scripts/what-is-a-script.md) and [Screens](design-forms/what-is-a-form.md).
+ProcessMaker uses a set of Magic Variables that you may reference in ProcessMaker Query Language \(PMQL\) queries and in your ProcessMaker assets, such as ProcessMaker [Scripts](scripts/what-is-a-script.md) and [Screens](design-forms/what-is-a-form.md).
 
 ProcessMaker uses a schema-less JSON data model from which to read, write, and store Request data. Since the JSON data model is schema-less, meaning that it does not require a specific schema or structure from which ProcessMaker assets must conform, the JSON data model is structured from the object elements in ProcessMaker assets used in a Request, such as the **Variable Name** setting values in a ProcessMaker Screen or variables a ProcessMaker Script creates.
 
-However, ProcessMaker uses a set of Global Variables that become part of the JSON data model for all Requests. ProcessMaker uses these Global Variables to store ProcessMaker user, Process, and Request related data for all Requests. During an in-progress Request, these ProcessMaker Global Variables are updated. All ProcessMaker Global Variables are preceded by an underscore \(`_`\) character in the JSON data model.
+However, ProcessMaker uses a set of Magic Variables that become part of the JSON data model for all Requests. ProcessMaker uses these Magic Variables to store ProcessMaker user, Process, and Request related data for all Requests. During an in-progress Request, these ProcessMaker Magic Variables are updated. All ProcessMaker Magic Variables are preceded by an underscore \(`_`\) character in the JSON data model.
 
 ProcessMaker [users](../processmaker-administration/add-users/what-is-a-user.md) that have the [Requests: Edit Request Data](../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission may view the JSON data model for a completed Request. This JSON data model displays from the [**Data** tab in a completed Request's summary](../using-processmaker/requests/request-details/summary-for-completed-requests.md#editable-request-data). Below is an example.
 
 ![JSON data model in a Completed Request, as viewed from the &quot;Data&quot; tab](../.gitbook/assets/data-tab-completed-request-information-requests.png)
 
-## How to Use Global Variables
+## How to Use Magic Variables
 
-Use ProcessMaker Global Variables in a variety of ways in ProcessMaker and in ProcessMaker assets.
+Use ProcessMaker Magic Variables in a variety of ways in ProcessMaker and in ProcessMaker assets.
 
 ### Reference in PMQL Queries for Request and Task Searches
 
-Reference ProcessMaker Global Variables to compose ProcessMaker Query Language \(PMQL\) advanced queries for [Request searches](../using-processmaker/requests/search-for-a-request.md#advanced-search-for-a-request) and [Task searches](../using-processmaker/task-management/search-for-a-task.md#advanced-search-for-a-task).
+Reference ProcessMaker Magic Variables to compose ProcessMaker Query Language \(PMQL\) advanced queries for [Request searches](../using-processmaker/requests/search-for-a-request.md#advanced-search-for-a-request) and [Task searches](../using-processmaker/task-management/search-for-a-task.md#advanced-search-for-a-task).
 
 ### Mock in Script Testing
 
@@ -38,7 +38,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Scripts](../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-[Mock ProcessMaker Global Variable values while mocking Request data](scripts/scripts-editor.md#mock-request-data-coming-into-the-processmaker-script) during testing to ensure your ProcessMaker Script runs as you intended.
+[Mock ProcessMaker Magic Variable values while mocking Request data](scripts/scripts-editor.md#mock-request-data-coming-into-the-processmaker-script) during testing to ensure your ProcessMaker Script runs as you intended.
 
 ### Reference in Screens
 
@@ -51,14 +51,14 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Reference ProcessMaker Global Variables in ProcessMaker Screens in the following ways:
+Reference ProcessMaker Magic Variables in ProcessMaker Screens in the following ways:
 
-* \*\*\*\*[**Text controls**](design-forms/screens-builder/control-descriptions/text-control-settings.md#control-description)**:** Reference a ProcessMaker Global Variable's value in a Text control through the [**Text Content** setting](design-forms/screens-builder/control-descriptions/text-control-settings.md#settings).
-* \*\*\*\*[**Computed Properties**](design-forms/screens-builder/manage-computed-properties.md)**:** [Reference a ProcessMaker Global Variable's value from a computed Property](design-forms/screens-builder/manage-computed-properties.md#add-a-computed-property). Use JavaScript to return a ProcessMaker Global Variable's value, then store it in a computed Property.
+* \*\*\*\*[**Text controls**](design-forms/screens-builder/control-descriptions/text-control-settings.md#control-description)**:** Reference a ProcessMaker Magic Variable's value in a Text control through the [**Text Content** setting](design-forms/screens-builder/control-descriptions/text-control-settings.md#settings).
+* \*\*\*\*[**Computed Properties**](design-forms/screens-builder/manage-computed-properties.md)**:** [Reference a ProcessMaker Magic Variable's value from a computed Property](design-forms/screens-builder/manage-computed-properties.md#add-a-computed-property). Use JavaScript to return a ProcessMaker Magic Variable's value, then store it in a computed Property.
 
-## Example of All Global Variables
+## Example of All Magic Variables
 
-Below is an example that contains all ProcessMaker Global Variables. Each contains a value as it might be read from the [**Data** tab in a completed Request summary](../using-processmaker/requests/request-details/summary-for-completed-requests.md#editable-request-data). This example indicates the JSON structure for each ProcessMaker Global Variable.
+Below is an example that contains all ProcessMaker Magic Variables. Each contains a value as it might be read from the [**Data** tab in a completed Request summary](../using-processmaker/requests/request-details/summary-for-completed-requests.md#editable-request-data). This example indicates the JSON structure for each ProcessMaker Magic Variable.
 
 ```text
 {
@@ -120,15 +120,15 @@ Below is an example that contains all ProcessMaker Global Variables. Each contai
 }
 ```
 
-## Global Variable Descriptions
+## Magic Variable Descriptions
 
-Below are descriptions of each ProcessMaker Global Variable. Since these descriptions are outlined in tabular format, they do not imply how they are structured in the JSON data model. Refer to the example in the [Example of All Global Variables](reference-global-variables-in-your-processmaker-assets.md#example-of-all-global-variables) section to see how each object element is structured in the overall JSON data model.
+Below are descriptions of each ProcessMaker Magic Variable. Since these descriptions are outlined in tabular format, they do not imply how they are structured in the JSON data model. Refer to the example in the [Example of All Magic Variables](reference-global-variables-in-your-processmaker-assets.md#example-of-all-global-variables) section to see how each object element is structured in the overall JSON data model.
 
-### `_user` Global Variable
+### `_user` Magic Variable
 
-The `_user` Global Variable contains data about the current ProcessMaker user assigned a [Task](process-design/model-your-process/process-modeling-element-descriptions.md#task) element or [Manual Task](process-design/model-your-process/process-modeling-element-descriptions.md#manual-task) element during an in-progress Request. Use JSON dot notation to reference specific data in a Global Variable. Example: `_user.fullname`.
+The `_user` Magic Variable contains data about the current ProcessMaker user assigned a [Task](process-design/model-your-process/process-modeling-element-descriptions.md#task) element or [Manual Task](process-design/model-your-process/process-modeling-element-descriptions.md#manual-task) element during an in-progress Request. Use JSON dot notation to reference specific data in a Magic Variable. Example: `_user.fullname`.
 
-| Global Variable Name | Description |
+| Magic Variable Name | Description |
 | :--- | :--- |
 | `_user.id` | Identifier for the ProcessMaker user in that ProcessMaker instance. |
 | `_user.fax` | Fax number as entered into the ProcessMaker [user's profile](../using-processmaker/profile-settings.md). |
@@ -146,11 +146,11 @@ The `_user` Global Variable contains data about the current ProcessMaker user as
 | `_user.fullname` | Full name of the ProcessMaker user as entered into the ProcessMaker user's profile. |
 | `_user.language` | Language to display ProcessMaker labels as entered into the ProcessMaker user's profile. |
 
-### `_request` Global Variable
+### `_request` Magic Variable
 
-The `_request` Global Variable contains data about the current [Request](../using-processmaker/requests/what-is-a-request.md) or [Process](viewing-processes/what-is-a-process.md) during an in-progress Request. Use JSON dot notation to reference specific data in a Global Variable. Example: `_request.process.name`.
+The `_request` Magic Variable contains data about the current [Request](../using-processmaker/requests/what-is-a-request.md) or [Process](viewing-processes/what-is-a-process.md) during an in-progress Request. Use JSON dot notation to reference specific data in a Magic Variable. Example: `_request.process.name`.
 
-| Global Variable Name | Description |
+| Magic Variable Name | Description |
 | :--- | :--- |
 |  |  |
 
