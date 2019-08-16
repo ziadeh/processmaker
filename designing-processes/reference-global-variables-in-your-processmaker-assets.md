@@ -126,33 +126,64 @@ Below are descriptions of each ProcessMaker Magic Variable. Since these descript
 
 ### `_user` Magic Variable
 
-The `_user` Magic Variable contains data about the current ProcessMaker user assigned a [Task](process-design/model-your-process/process-modeling-element-descriptions.md#task) element or [Manual Task](process-design/model-your-process/process-modeling-element-descriptions.md#manual-task) element during an in-progress Request. Use JSON dot notation to reference specific data in a Magic Variable. Example: `_user.fullname`.
+The `_user` Magic Variable contains data about the current ProcessMaker user assigned a [Task](process-design/model-your-process/process-modeling-element-descriptions.md#task) element or [Manual Task](process-design/model-your-process/process-modeling-element-descriptions.md#manual-task) element during an in-progress Request. Use JSON dot notation to reference specific data in a Magic Variable. Example: `_user.fullname`. If a Magic Variable contains no data, `null` is the value.
 
 | Magic Variable Name | Description |
 | :--- | :--- |
-| `_user.id` | Identifier for the ProcessMaker user in that ProcessMaker instance. |
+| `_user.id` | Identifier for the ProcessMaker user in that ProcessMaker instance. Automatically increments for each created ProcessMaker user. |
 | `_user.fax` | Fax number as entered into the ProcessMaker [user's profile](../using-processmaker/profile-settings.md). |
 | `_user.cell` | Cell number as entered into the ProcessMaker user's profile. |
 | `_user.city` | City as entered into the ProcessMaker user's profile. |
 | `_user.email` | Email address as entered into the ProcessMaker user's profile. |
 | `_user.media` |  |
 | `_user.phone` | Telephone number as entered into the ProcessMaker user's profile. |
-| `_user.state` | State, region, or province as entered into the ProcessMaker user's profile. |
+| `_user.state` | State, region, or province as selected in the ProcessMaker user's profile. |
 | `_user.title` | Job title as entered into the ProcessMaker user's profile. |
 | `_user.avatar` | Image reference for the ProcessMaker user's avatar as entered into the ProcessMaker user's profile. |
 | `_user.postal` | Business postal code as entered into the ProcessMaker user's profile. |
 | `_user.status` | Status of the ProcessMaker user's account \(active or inactive\). |
 | `_user.address` | Business address as entered into the ProcessMaker user's profile. |
 | `_user.fullname` | Full name of the ProcessMaker user as entered into the ProcessMaker user's profile. |
-| `_user.language` | Language to display ProcessMaker labels as entered into the ProcessMaker user's profile. |
+| `_user.language` | Language to display ProcessMaker labels as selected in the ProcessMaker user's profile. |
+| `_user.timezone` | Time zone as selected in the ProcessMaker user's profile. |
+| `_user.username` | User name for the ProcessMaker user as entered into the ProcessMaker user's profile. |
+| `_user.birthdate` | Birth date for the ProcessMaker user. This is not entered into a user profile. |
+| `_user.firstname` | First name for the ProcessMaker user as entered into the ProcessMaker user's profile. |
+| `_user.created_at` | Datetime the ProcessMaker user account was created. |
+| `_user.deleted_at` | Datetime the ProcessMaker user account was deleted, if applicable. |
+| `_user.expires_at` | Datetime the ProcessMaker user account expires, if applicable. |
+| `_user.updated_at` | Datetime the ProcessMaker user account was updated, if applicable.  |
+| `_user.loggedin_at` | Datetime the ProcessMaker user logged on to the account, if applicable. |
+| `_user.datetime_format` | Datetime format setting as selected in the ProcessMaker user's profile. |
+| `_user.is_administrator` | Indicates if the ProcessMaker user account is granted the [**Make this user a Super Admin** option](../processmaker-administration/add-users/manage-user-accounts/edit-a-user-account.md#edit-a-processmaker-user-account). `true` or `false` values. |
 
 ### `_request` Magic Variable
 
-The `_request` Magic Variable contains data about the current [Request](../using-processmaker/requests/what-is-a-request.md) or [Process](viewing-processes/what-is-a-process.md) during an in-progress Request. Use JSON dot notation to reference specific data in a Magic Variable. Example: `_request.process.name`.
+The `_request` Magic Variable contains data about the current [Request](../using-processmaker/requests/what-is-a-request.md) or [Process](viewing-processes/what-is-a-process.md) during an in-progress Request. Use JSON dot notation to reference specific data in a Magic Variable. Example: `_request.process.name`. If a Magic Variable contains no data, `null` is the value.
 
 | Magic Variable Name | Description |
 | :--- | :--- |
-|  |  |
+| `_request.id` | Request identifier for its associated Process. Automatically increments for each Request instance. |
+| `_request.name` | Name of the Process associated with the Request. |
+| `_request.status` | Status of the Request. `ACTIVE` or `INACTIVE` values. |
+| `_request.process.id` | Identifier for the Process associated with the Request. Automatically increments for each Process created in the ProcessMaker instance. |
+| `_request.process.name` | Name of the Process associated with the Request. |
+| `_request.process.status` | Status of the Process associated with the Request. `ACTIVE` or `INACTIVE` values. |
+| `_request.process.user_id` | Identifier for the ProcessMaker user that created the Process associated with the Request. |
+| `_request.process.created_at` | Timedate the Process associated with the Request was created. |
+| `_request.process.deleted_at` | Timedate the Process associated with the Request was archived. |
+| `_request.process.updated_at` | Timedate the Process associated with the Request was updated. |
+| `_request.process.description` | Description of the Process that is associated with the Request. |
+| `_request.process.cancel_screen_id` | Identifier for the Display-type ProcessMaker Screen that is selected to display when a Request is canceled. |
+| `_request.process.pause_timer_start` | Start Event Timer setting \(in minutes\) to start a Request. |
+| `_request.process.process_category_id` | Identifier for the Process Category associated with the Request. Automatically increments for each Process Category created in the ProcessMaker instance. |
+| `_request.process.has_timer_start_events` | Indicates that the Process associated with the Request has at least one Start Timer Event element. `true` or `false` values. |
+| `_request.user_id` | Identifier for the ProcessMaker user assigned the Task/Manual Task at that moment in the Request. |
+| `_request.created_at` | Datetime the ProcessMaker user account was create that is associated with the `_request.user_id` Magic Variable. |
+| `_request.process_id` |  |
+| `_request.updated_at` | Datetime the Process associated with the Request was last updated, if applicable. |
+| `_request.callable_id` | Callable identifier for the Process associated with the Request. `ProcessId` is the value. |
+| `_request.initiated_at` | Datetime the Request was started. |
 
 ## Related Topics
 
