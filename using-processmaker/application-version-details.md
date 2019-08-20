@@ -1,12 +1,14 @@
 ---
-description: View ProcessMaker version information.
+description: >-
+  View information about the ProcessMaker version and installed packages for
+  your ProcessMaker instance.
 ---
 
 # View ProcessMaker Version Information
 
-## View ProcessMaker Version and Package Information
+## View ProcessMaker and Package Version Information
 
-Follow these steps to view ProcessMaker version information:
+Follow these steps to view ProcessMaker and [package](../package-development-distribution/first-topic.md) version information:
 
 1. [Log on](log-in.md#log-in) to ProcessMaker.
 2. Click your user avatar and then select **About**.  
@@ -21,7 +23,11 @@ The **About ProcessMaker** page displays the following information:
 
 * ProcessMaker version
 * Links to [report an issue](https://docs.google.com/forms/d/e/1FAIpQLScnYje8uTACYwp3VxdRoA26OFkbfFs6kuXofqY-QXXsG-h9xA/viewform), [view the **processmaker** GitHub repository](https://github.com/ProcessMaker/bpm), and [read the user documentation](https://processmaker.gitbook.io/processmaker/)
-* Name, description, and version for each [package](../package-development-distribution/first-topic.md) installed to your ProcessMaker instance
+* Name, description, and version for each package installed to your ProcessMaker instance
+
+{% hint style="info" %}
+See [Available Packages from ProcessMaker](../package-development-distribution/package-a-connector/).
+{% endhint %}
 
 ## Related Topics
 
@@ -30,4 +36,6 @@ The **About ProcessMaker** page displays the following information:
 {% page-ref page="log-out.md" %}
 
 {% page-ref page="../package-development-distribution/first-topic.md" %}
+
+{% page-ref page="../package-development-distribution/package-a-connector/" %}
 
