@@ -65,8 +65,13 @@ Customize how the ProcessMaker user interface \(UI\) displays in your ProcessMak
 
     Default hex color: \#ED4757.
 
-  * **Dark:** The Dark color displays ~~when?~~. Default hex color: \#000000.
-  * **Light:** The Light color displays ~~when?~~. Default hex color: \#FFFFFF.
+  * **Dark:** The **Dark** color setting affects the **Dark** option in the **Variant** setting for ProcessMaker Screen controls. Default hex color: \#000000.
+  * **Light:** The **Light** color setting affects in the following components of the ProcessMaker UI:
+
+    * The background color of the top menu.
+    * Default color for the **Light** option in the **Variant** setting for ProcessMaker Screen controls.
+
+    Default hex color: \#FFFFFF.
 * **Default font:** Change the default font that displays in your ProcessMaker instance. The following fonts are available in the order they present in the application:
   * Default Font \(the default font\)
   * Mono Type
@@ -104,33 +109,32 @@ Follow these steps to customize the ProcessMaker user interface \(UI\) in your i
    1. From the **Custom Logo** field, click the **Upload File** button, and then locate the image to display as the brand's logo. Use a transparent PNG image at 150 by 40 pixels for best results.
    2. From the **Custom Icon** field, click the **Upload File** button, and then locate the image to display as the brand's icon. Use a transparent PNG image at 40 by 40 pixels for best results.
 
-5. Follow these guidelines to change any of the colors that comprise a ProcessMaker application color scheme \(as described in the [Overview](customize-the-processmaker-user-interface.md) section\), if necessary:
+5. Follow these guidelines to change any of the colors that comprise a ProcessMaker color scheme \(as described in the [Overview](customize-the-processmaker-user-interface.md) section\), if necessary:
    1. Click the hex color value for the color that you want to change. The color picker palette displays. ![](../.gitbook/assets/customize-ui-color-picker-palette-admin.png) 
    2. Do one of the following:
       * In the **Hex** field, enter the hex color value for your selected color, and then press **Enter**.
       * Enter the RGBA \(red, green, blue and alpha\) color values for your selected color.
       * Click one of the color swatches \(or the transparency swatch\) to select your color.
       * Click inside the color palette to select your color.
-6. From the **Custom Font** drop-down menu, optionally select one of the following fonts that displays all text in ProcessMaker:
-   * Default Font \(the default font\)
-   * Mono Type
-   * Arial
-   * Arial Black
-   * Bookman
-   * Comic Sans MS
-   * Courier New
-   * Garamond
-   * Georgia
-   * Helvetica
-   * Impact
-   * Times New Roman
-   * Verdana
-   * Palatino
-   * Trebuchet MS
+6. From the **Custom Font** drop-down menu, optionally select one of the fonts described in the [Overview](customize-the-processmaker-user-interface.md#overview) section to display all text in ProcessMaker.
 7. Click **Save**. ProcessMaker regenerates the UI. ![](../.gitbook/assets/regenerate-css-files-message-customize-ui-admin.png) 
 8. Clear the current web browser session \(**Ctrl+F5** for most web browsers\). Your web browser window refreshes to display your changes to the ProcessMaker UI.
 
 ## Related Topics
 
+{% page-ref page="../using-processmaker/requests/view-started-requests.md" %}
 
+{% page-ref page="../using-processmaker/requests/view-in-progress-requests.md" %}
+
+{% page-ref page="../using-processmaker/requests/view-completed-requests.md" %}
+
+{% page-ref page="../using-processmaker/requests/view-all-requests.md" %}
+
+{% page-ref page="../using-processmaker/notifications.md" %}
+
+{% page-ref page="../designing-processes/design-forms/what-is-a-form.md" %}
+
+{% page-ref page="../designing-processes/design-forms/screens-builder/" %}
+
+{% page-ref page="../designing-processes/scripts/scripts-editor.md" %}
 
