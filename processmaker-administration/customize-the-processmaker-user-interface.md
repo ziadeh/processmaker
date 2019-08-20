@@ -27,7 +27,7 @@ Customize how the ProcessMaker user interface \(UI\) displays in your ProcessMak
 
   * **Secondary:** The **Secondary** color setting affects in the following components of the ProcessMaker UI:
 
-    * The Secondary color displays in all primary action buttons in pages and screens, including but not limited to the **Save** and **Cancel** buttons.
+    * Color for all primary action buttons in pages and screens, including but not limited to the **Save** and **Cancel** buttons.
     * Primary action buttons in [Scripts Editor](../designing-processes/scripts/scripts-editor.md) and [Screens Builder](../designing-processes/design-forms/screens-builder/).
     * Default color for the **Secondary** option in the **Variant** setting for ProcessMaker Screen controls.
 
@@ -68,7 +68,8 @@ Customize how the ProcessMaker user interface \(UI\) displays in your ProcessMak
   * **Dark:** The **Dark** color setting affects the **Dark** option in the **Variant** setting for ProcessMaker Screen controls. Default hex color: \#000000.
   * **Light:** The **Light** color setting affects in the following components of the ProcessMaker UI:
 
-    * The background color of the top menu.
+    * Background color of the top menu.
+    * Color of icons in the left sidebar.
     * Default color for the **Light** option in the **Variant** setting for ProcessMaker Screen controls.
 
     Default hex color: \#FFFFFF.
