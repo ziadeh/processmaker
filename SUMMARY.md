@@ -2,6 +2,12 @@
 
 * [ProcessMaker User Documentation](README.md)
 
+## Quick Links
+
+* [Contact Sales](mailto:sales@processmaker.com)
+* [Contact Support](mailto:support@processmaker.com)
+* [Provide Feedback](https://docs.google.com/forms/d/e/1FAIpQLScnYje8uTACYwp3VxdRoA26OFkbfFs6kuXofqY-QXXsG-h9xA/viewform)
+
 ## Start Here
 
 * [How to Use This Document](start-here/how-to-use-this-document.md)
