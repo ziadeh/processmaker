@@ -27,6 +27,8 @@ Your user account or group membership must have the following permissions to cre
 See the ProcessMaker [Vocabularies](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#vocabularies) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
+A ProcessMaker Vocabulary can maintain a consistent nomenclature and architecture in your Processes in a variety of ways, such as business vertical or department within your organization. Therefore, consider creating ProcessMaker Vocabularies based on how you need to structure your JSON data model as granularly as each element within a Process.
+
 Follow these steps to create a new ProcessMaker Vocabulary:
 
 1. [View your ProcessMaker Vocabularies](view-all-vocabularies.md#view-all-vocabularies). The **Vocabularies** page displays.
