@@ -48,7 +48,7 @@ Your user account or group membership must have the following permissions to con
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Configure Process notifications to notify Process Requesters and/or Request participants when any of the following Request events occur:
+Configure Process notifications to notify Process requesters and/or participants when any of the following Request events occur:
 
 * **Request started:** A Request for this Process started.
 * **Request canceled:** A Request for this Process was canceled.
@@ -68,9 +68,9 @@ Follow these steps to configure notifications for a Process:
    ![](../../../.gitbook/assets/edit-process-notifications-processes.png)
 
 4. Toggle any of the following settings as necessary:
-   * **Request Started:** Toggle the **Request Started** setting to indicate whether Requesters are notified that a Request from this Process started.
-   * **Request Canceled:** Toggle the **Request Canceled** setting to indicate whether Requesters and/or Request participants are notified that a Request from this Process was canceled.
-   * **Request Completed:** Toggle the **Request Completed** setting to indicate whether Requesters and/or Request participants are notified that a Request from this Process completed.
+   * **Request Started:** Toggle the **Request Started** setting to indicate whether requesters are notified that a Request from this Process started.
+   * **Request Canceled:** Toggle the **Request Canceled** setting to indicate whether requesters and/or Request participants are notified that a Request from this Process was canceled.
+   * **Request Completed:** Toggle the **Request Completed** setting to indicate whether requesters and/or Request participants are notified that a Request from this Process completed.
 5. Click **Save**.
 
 ## Configure Which Vocabularies Are Available to a Process
