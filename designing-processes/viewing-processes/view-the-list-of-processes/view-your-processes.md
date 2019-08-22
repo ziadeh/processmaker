@@ -1,8 +1,8 @@
 ---
-description: View all active Processes from all Process Owners in your organization.
+description: View the active Processes in your organization.
 ---
 
-# View All Active Processes
+# View Active Processes
 
 ## View All Active Processes
 

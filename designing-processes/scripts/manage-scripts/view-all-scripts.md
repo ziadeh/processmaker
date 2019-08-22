@@ -1,10 +1,8 @@
 ---
-description: >-
-  View the ProcessMaker Scripts available to all Process Owners in your
-  organization.
+description: View the ProcessMaker Scripts in your organization.
 ---
 
-# View All Scripts
+# View Scripts
 
 ## View All ProcessMaker Scripts
 

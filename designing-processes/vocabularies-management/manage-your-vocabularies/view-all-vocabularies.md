@@ -4,7 +4,7 @@ description: >-
   your organization.
 ---
 
-# View All Vocabularies
+# View Vocabularies
 
 ## View All Vocabularies
 

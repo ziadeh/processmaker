@@ -1,10 +1,8 @@
 ---
-description: >-
-  View the ProcessMaker Screens available to all Process Owners in your
-  organization.
+description: View the ProcessMaker Screens in your organization.
 ---
 
-# View All Screens
+# View Screens
 
 ## View All ProcessMaker Screens <a id="view-all-scripts"></a>
 

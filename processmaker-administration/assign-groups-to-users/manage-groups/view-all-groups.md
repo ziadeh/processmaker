@@ -1,8 +1,8 @@
 ---
-description: View all ProcessMaker groups.
+description: View the ProcessMaker groups in your organization.
 ---
 
-# View All Groups
+# View Groups
 
 ## View All ProcessMaker Groups <a id="view-all-scripts"></a>
 

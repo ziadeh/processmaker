@@ -1,8 +1,8 @@
 ---
-description: View all authenticated cients in your organization.
+description: View the authenticated clients in your organization.
 ---
 
-# View All Authenticated Clients
+# View Authenticated Clients
 
 ## View All Authenticated Clients <a id="view-all-scripts"></a>
 

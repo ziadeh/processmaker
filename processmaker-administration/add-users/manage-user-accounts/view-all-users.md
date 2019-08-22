@@ -1,8 +1,8 @@
 ---
-description: View all ProcessMaker user accounts.
+description: View the ProcessMaker user accounts in your organization.
 ---
 
-# View All Users Accounts
+# View Users Accounts
 
 ## View All ProcessMaker User Accounts <a id="view-all-scripts"></a>
 

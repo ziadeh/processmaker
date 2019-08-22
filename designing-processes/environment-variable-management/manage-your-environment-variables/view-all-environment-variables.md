@@ -1,10 +1,8 @@
 ---
-description: >-
-  View the ProcessMaker Environment Variables available to all Process Owners in
-  your organization.
+description: View the ProcessMaker Environment Variables in your organization.
 ---
 
-# View All Environment Variables
+# View Environment Variables
 
 ## View All ProcessMaker Environment Variables <a id="view-all-scripts"></a>
 
