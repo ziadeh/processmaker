@@ -18,3 +18,7 @@ The Collections package allows members of an organization to maintain sets of sc
 
 Determine which ProcessMaker users and/or groups have permission to view, create, edit or delete Collections by setting [Collection permissions](../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections). These permissions are different than Collection-level permissions that specify ProcessMaker users and/or groups that can manage individual Collections.
 
+## Related Topics
+
+
+

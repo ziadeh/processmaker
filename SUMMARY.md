@@ -235,7 +235,6 @@
   * [C\# Package](package-development-distribution/package-a-connector/c-package.md)
   * [Collections Package](package-development-distribution/package-a-connector/collections.md)
   * [Email Package](package-development-distribution/package-a-connector/email.md)
-  * [NodeJS Package](package-development-distribution/package-a-connector/nodejs-package.md)
   * [Non-English Language Packages](package-development-distribution/package-a-connector/non-english-language-packages/README.md)
     * [French-Language Translation Package](package-development-distribution/package-a-connector/non-english-language-packages/french-language-translation-package.md)
     * [German-Language Translation Package](package-development-distribution/package-a-connector/non-english-language-packages/german-language-translation-package.md)

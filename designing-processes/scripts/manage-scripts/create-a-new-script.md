@@ -30,6 +30,7 @@ Follow these steps to create a new ProcessMaker Script:
 
    * PHP
    * Lua
+   * Node
 
    This is a required field.
 

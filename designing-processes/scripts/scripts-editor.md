@@ -18,7 +18,7 @@ Your user account or group membership must have the following permissions to cre
 See the ProcessMaker [Scripts](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Use Scripts Editor to develop and test your ProcessMaker Scripts. Any ProcessMaker Script can be used in any Process in your organization. Scripts Editor supports Lua and PHP languages in the open-source release.
+Use Scripts Editor to develop and test your ProcessMaker Scripts. Any ProcessMaker Script can be used in any Process in your organization. Scripts Editor supports Lua , PHP, and NodeJS programming languages in the ProcessMaker open-source edition.
 
 Scripts Editor evaluates a ProcessMaker Script securely and in isolation. This ensures that any malicious script that anyone in your organization might inadvertently introduce to ProcessMaker does not affect the ProcessMaker application or its environment.
 
@@ -205,7 +205,7 @@ return {foo=data.foo, config_var=config.some_key}
 
 {% tab title="NodeJS" %}
 {% hint style="info" %}
-To use ProcessMaker variables in NodeJS programming language, the [NodeJS package](../../package-development-distribution/package-a-connector/nodejs-package.md) must be installed in your ProcessMaker instance. The NodeJS package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the NodeJS package can be installed in your ProcessMaker instance.
+To use ProcessMaker variables in NodeJS programming language, the [NodeJS package]() must be installed in your ProcessMaker instance. The NodeJS package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the NodeJS package can be installed in your ProcessMaker instance.
 {% endhint %}
 
 ### data
