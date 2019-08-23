@@ -6,25 +6,28 @@ description: Understand what a Vocabulary is in ProcessMaker.
 
 ## Overview
 
-Use the [Vocabularies package](../../package-development-distribution/package-a-connector/vocabularies.md) to maintain a uniform nomenclature across all ProcessMaker assets in your organization. These assets include [Processes](../viewing-processes/what-is-a-process.md), [ProcessMaker Scripts](../scripts/what-is-a-script.md), and [ProcessMaker Screens](../design-forms/what-is-a-form.md).
+Use the [Vocabularies package](../../package-development-distribution/package-a-connector/vocabularies.md) to maintain a uniform JSON scheme that validates ProcessMaker assets referenced in your Processes. These assets include [Processes](../viewing-processes/what-is-a-process.md), [ProcessMaker Scripts](../scripts/what-is-a-script.md), and [ProcessMaker Screens](../design-forms/what-is-a-form.md).
 
 {% hint style="info" %}
 The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
 {% endhint %}
 
-A ProcessMaker Vocabulary is a JSON file that represents the nomenclature and architecture for ProcessMaker assets to which the Vocabulary is applied. The ProcessMaker Vocabulary defines the JSON data model to which that ProcessMaker asset must conform. ProcessMaker Vocabularies are granular, in that one or more Vocabularies can be assigned to specific BPMN 2.0 element types within a Process, thereby enforcing that each Vocabulary applies to the ProcessMaker asset that is referenced from that element. For example, apply a ProcessMaker Vocabulary for a selected Task element, thereby enforcing that Vocabulary on the ProcessMaker Screen that Task element references.
+A ProcessMaker Vocabulary is a JSON file that represents the scheme to validate ProcessMaker assets to which that Vocabulary is applied. The ProcessMaker Vocabulary defines the JSON data model to which that ProcessMaker asset must conform. ProcessMaker Vocabularies are granular, in that one or more Vocabularies can be assigned to specific BPMN 2.0 element types within a Process or the Process model itself to validate the ProcessMaker asset that is referenced from that element. For example, apply a ProcessMaker Vocabulary for a selected Task element, thereby requiring validation on the ProcessMaker Screen that Task element references.
 
-This provides a granular nomenclature and architecture for individual elements within a Process. A ProcessMaker Vocabulary can be applied to the following BPMN 2.0 elements:
+A ProcessMaker Vocabulary's validation can require that specific data passes through the JSON data model for that Process and/or BPMN element or that data be of a particular data type.
 
-* [Start Event](../process-design/model-your-process/process-modeling-element-descriptions.md#start-event)
-* [End Event](../process-design/model-your-process/process-modeling-element-descriptions.md#end-event)
+A ProcessMaker Vocabulary can be applied to the following BPMN 2.0 elements:
+
+* The Process model
+* [Start Event](../process-design/model-your-process/process-modeling-element-descriptions.md#start-event): Validate the JSON data model for [Web Entry](../../package-development-distribution/package-a-connector/web-entry.md).
+* [End Event](../process-design/model-your-process/process-modeling-element-descriptions.md#end-event): Validate the JSON data model for a ProcessMaker Screen that displays a Request summary.
 * [Intermediate Message Catch Event](../process-design/model-your-process/process-modeling-element-descriptions.md#intermediate-message-catch-event)
-* [Task](../process-design/model-your-process/process-modeling-element-descriptions.md#task)
-* [Script Task](../process-design/model-your-process/process-modeling-element-descriptions.md#script-task)
-* [Manual Task](../process-design/model-your-process/process-modeling-element-descriptions.md#manual-task)
-* [Call Activity](../process-design/model-your-process/process-modeling-element-descriptions.md#call-activity)
+* [Task](../process-design/model-your-process/process-modeling-element-descriptions.md#task): Validate the JSON data model for a ProcessMaker Screen that displays a Task.
+* [Script Task](../process-design/model-your-process/process-modeling-element-descriptions.md#script-task): Validate the JSON data model for a ProcessMaker Script.
+* [Manual Task](../process-design/model-your-process/process-modeling-element-descriptions.md#manual-task): Validate the JSON data model for a ProcessMaker Screen that displays a Manual Task.
+* [Call Activity](../process-design/model-your-process/process-modeling-element-descriptions.md#call-activity): Validate the JSON data model for a called Process.
 
-For example, use a ProcessMaker Vocabulary on a Task element. By extension, the ProcessMaker Vocabulary applies to the ProcessMaker Screen referenced by that Task element which is used to show information to or receive information from the Task assignee. The ProcessMaker Vocabulary ensures that the Screen designer complies with the JSON data model outlined in the Vocabulary, thereby ensuring that the Task assignee reads or provides information as indicated in the Vocabulary. This maintains consistency across any Task to which that ProcessMaker Vocabulary is applied.
+For example, use a ProcessMaker Vocabulary on a Task element. By extension, the ProcessMaker Vocabulary applies to the ProcessMaker Screen referenced by that Task element which is used to show information to or receive information from the Task assignee. The ProcessMaker Vocabulary ensures that the Screen designer complies with the JSON data model as structured in the Vocabulary. This maintains consistency across any Task to which that ProcessMaker Vocabulary is applied.
 
 Use ProcessMaker Vocabularies throughout your organization in the following ways:
 
