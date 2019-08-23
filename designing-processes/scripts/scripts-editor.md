@@ -85,7 +85,7 @@ Pass Request-related data into your ProcessMaker Script in the following ways:
 
 * **ProcessMaker Magic Variables:** ProcessMaker uses a set of Magic Variables that become part of the JSON data model for all Requests. ProcessMaker uses these Magic Variables to store ProcessMaker user, Process, and Request related data for all Requests. During an in-progress Request, these ProcessMaker Magic Variables are updated. All ProcessMaker Magic Variables are preceded by an underscore \(`_`\) character in the JSON data model. See [Reference Magic Variables in ProcessMaker Assets](../reference-global-variables-in-your-processmaker-assets.md).
 * **ProcessMaker Environment Variables:** The sensitive information that a [ProcessMaker Environment Variable](../environment-variable-management/what-is-an-environment-variable.md) represents can pass to a ProcessMaker Script when it runs. Usage depends on the programming language that the ProcessMaker Script uses. In the usage examples below, `ENV_VAR_NAME` represents the name of the ProcessMaker Environment Variable.
-  * **PHP:** `get_env('ENV_VAR_NAME')`
+  * **PHP:** `getenv('ENV_VAR_NAME')`
   * **Lua:** `os.getenv("ENV_VAR_NAME")`
   * **NodeJS:** `process.env['ENV_VAR_NAME']`
 
