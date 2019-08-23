@@ -90,7 +90,7 @@ Follow these guidelines to do an advanced search for a Request using PMQL:
 
      `data.RequestData`
 
-     `data.` represents that what follows derives from Request information, as is used in JSON dot notation. To derive that Request information, view the [**Data** tab in the summary for a completed Request](request-details/summary-for-completed-requests.md#editable-request-data) to view the data from a completed Request, and then use the specific key name \(represented in red-colored text\) in place of `RequestData` in this syntax. Note that your ProcessMaker user account or group membership must have the [Requests: Edit Request Data](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission. Ask your ProcessMaker Administrator if you do not see the **Data** tab in completed Requests.
+     `data.` represents that what follows derives from Request information, as is used in JSON dot notation. To derive that Request information, view the [**Data** tab in the summary for a completed Request](request-details/summary-for-completed-requests.md#editable-request-data) to view the data from a completed Request, and then use the specific key name \(represented in red-colored text\) in place of `RequestData` in this syntax. Spaces are allowed between operators. Example: `data.last_name = "Canera"`. Note that your ProcessMaker user account or group membership must have the [Requests: Edit Request Data](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission. Ask your ProcessMaker Administrator if you do not see the **Data** tab in completed Requests.
 
    * **ProcessMaker Magic Variables:**
 
@@ -120,12 +120,6 @@ Follow these guidelines to do an advanced search for a Request using PMQL:
      * Use the following syntax as a guide to include two or more Request participants in your search criteria:
 
        `(participant = "Username3" OR participant = "Username4")`
-   * **Request information:**
-     * Use the following syntax as a guide to include Request-related information in your search criteria.
-
-       `data.RequestData`
-
-       `data.` represents that what follows derives from Request information represented by the [ProcessMaker Screen](../../designing-processes/design-forms/what-is-a-form.md) control that you want to include as a search criterion. To derive that Request information, view the [**Data** tab in the summary for a completed Request](request-details/summary-for-completed-requests.md#editable-request-data) to view the data from a completed Request, and then use the specific key name \(represented in red-colored text\) in place of `RequestData` in this syntax. Note that your ProcessMaker user account or group membership must have the [Requests: Edit Request Data](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission. Ask your ProcessMaker Administrator.
    * **Time Period\(s\):**
      * Use the following syntax as a guide to include a period of time in your search criteria:
 
@@ -133,6 +127,7 @@ Follow these guidelines to do an advanced search for a Request using PMQL:
 
        Use `updated_at < NOW` to represent how much time from the present the sought after Request is, then use `-` followed by an integer to specify that time. The units of time `second`, `minute`, `hour` and `day` are supported.
    * **Operators for use in and between search criterion:**
+
      * Equal to: `=`
      * Not equal to: `!=`
      * Less than: `<`
@@ -142,6 +137,8 @@ Follow these guidelines to do an advanced search for a Request using PMQL:
      * Use `AND` operators between each set of search criterion to search using multiple criteria.
      * Use the `AND` operator between criterion to search for multiple specified criterion.
      * Use the `OR` operator between criterion to search for either specified criterion.
+
+     Spaces are allowed between operators. Example: `data.last_name = "Canera"`.
 
    Below is an example of a valid advanced Request search:
 
