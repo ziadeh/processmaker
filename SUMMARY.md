@@ -220,6 +220,7 @@
   * [View Collections](collections/manage-collections/view-collections.md)
   * [Create a New Collection](collections/manage-collections/create-a-new-collection.md)
   * [Configure a Collection](collections/manage-collections/configure-a-collection.md)
+  * [Search for a Collection](collections/manage-collections/search-for-a-collection.md)
   * [Edit a Collection](collections/manage-collections/edit-a-collection.md)
   * [Delete a Collection](collections/manage-collections/delete-a-collection.md)
 

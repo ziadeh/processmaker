@@ -55,7 +55,7 @@ Click the **+Vocabulary** button. See [Create a New Vocabulary](create-a-new-voc
 
 Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png). See [Edit a Vocabulary](edit-a-vocabulary.md).
 
-### No Processes?
+### No ProcessMaker Vocabularies?
 
 If no ProcessMaker Vocabularies exist, the following message displays: **No Data Available**.
 

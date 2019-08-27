@@ -1,7 +1,5 @@
 ---
-description: >-
-  Filter all ProcessMaker users groups in your organization to find that one you
-  need.
+description: Filter all ProcessMaker groups in your organization to find that one you need.
 ---
 
 # Search for a Group

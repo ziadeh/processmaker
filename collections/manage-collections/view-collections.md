@@ -1,12 +1,14 @@
 ---
-description: View ProcessMaker Collections in your organization.
+description: >-
+  View the ProcessMaker Collections in your organization that you're allowed to
+  view or revise.
 ---
 
 # View Collections
 
 ## View All Collections
 
-ProcessMaker displays all ProcessMaker Collections in one table. This makes it easy to manage ProcessMaker Collections.
+ProcessMaker displays all the ProcessMaker Collections in one table. This makes it easy to manage ProcessMaker Collections.
 
 {% hint style="info" %}
 ### Don't Know What a Collection Is?
@@ -27,34 +29,36 @@ See the ProcessMaker [Collections](../../processmaker-administration/permission-
 Follow these steps to view all ProcessMaker Collections in your organization:
 
 1. Ensure that you are [logged on](../../using-processmaker/log-in.md#log-in) to ProcessMaker.
-2. Click the **Collections** option from the top menu. The **Collections** page displays the ProcessMaker Collections you are allowed to view. 
+2. Click the **Collections** option from the top menu. The **Collections** page displays the ProcessMaker Collections that you are allowed to view. 
 
-![&quot;Vocabularies&quot; page displays all ProcessMaker Vocabularies in your organization](../../.gitbook/assets/vocabularies-page-processes.png)
+![&quot;Collections&quot; page displays all ProcessMaker Collections in your organization](../../.gitbook/assets/collections-page.png)
 
-The **Vocabularies** page displays the following information in tabular format about ProcessMaker Vocabularies:
+The **Collections** page displays the following information in tabular format about ProcessMaker Collections:
 
-* **ID:** The **ID** column displays the ProcessMaker Vocabulary's ID. ProcessMaker automatically generates the ID value when the Vocabulary is created and represents a sequential number of how many total Vocabularies have been created to that time.
-* **Title:** The **Title** column displays the ProcessMaker Vocabulary's name.
-* **Description:** The **Description** column displays the ProcessMaker Vocabulary's description.
+* **Collection ID:** The **Collection ID** column displays the ProcessMaker Collection's ID. ProcessMaker automatically generates the ID value when the Vocabulary is created and represents a sequential number of how many total Collections have been created to that time.
+* **Name:** The **Name** column displays the ProcessMaker Collection's name.
+* **\# Records:** The **\# Records** column displays how many records are in each ProcessMaker Collection.
+* **Modified By:** The **Modified By** column displays the ProcessMaker user who last modified the Collection. Hover your cursor over the user's avatar to view that person's full name.
+* **Created By:** The **Created By** column displays the ProcessMaker user who created the Collection. Hover your cursor over the user's avatar to view that person's full name.
 * **Modified:** The **Modified** column displays the date and time the ProcessMaker Vocabulary was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 * **Created:** The **Created** column displays the date and time the ProcessMaker Vocabulary was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
-### Search for a ProcessMaker Vocabulary
+### Search for a ProcessMaker Collection
 
-Use the [Search](../../designing-processes/vocabularies-management/manage-your-vocabularies/search-for-a-vocabulary.md) field to filter ProcessMaker Vocabularies that display.
+Use the [Search](search-for-a-collection.md) field to filter ProcessMaker Collections that display.
 
 ### Create a ProcessMaker Vocabulary
 
-Click the **+Vocabulary** button. See [Create a New Vocabulary](../../designing-processes/vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md).
+Click the **+Collection** button. See [Create a New Collection](create-a-new-collection.md).
 
-### Edit a ProcessMaker Vocabulary
+### Configure a ProcessMaker Collection
 
-Click the **Edit** icon![](../../.gitbook/assets/edit-icon.png). See [Edit a Vocabulary](../../designing-processes/vocabularies-management/manage-your-vocabularies/edit-a-vocabulary.md).
+Click the **Edit** icon![](../../.gitbook/assets/configure-process-icon-processes-page-processes.png). See [Edit a Collection](edit-a-collection.md).
 
-### No Processes?
+### No ProcessMaker Collections?
 
-If no ProcessMaker Vocabularies exist, the following message displays: **No Data Available**.
+If no ProcessMaker Collections exist, the following message displays: **No Data Available**.
 
 ### Display Information the Way You Want It
 
