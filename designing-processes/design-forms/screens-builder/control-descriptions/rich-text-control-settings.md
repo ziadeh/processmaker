@@ -6,7 +6,7 @@ description: Add a control that displays HTML-formatted text.
 
 ## Control Description
 
-The Rich Text control adds a placeholder in the ProcessMaker Screen that displays HTML-formatted text.
+The Rich Text control adds a placeholder in the ProcessMaker Screen that displays HTML-formatted text. This control can display the value of another control by referencing that control's **Variable Value** field setting using mustache syntax. Example: `{{ FullName }}`.
 
 ## Add the Control to a ProcessMaker Screen
 
@@ -65,8 +65,8 @@ Click the control to view its settings in the **Design** panel that is on the ri
 {% hint style="info" %}
 Below are some ways to render Request data to display as text in a Rich Text control:
 
-* Use mustache template syntax to reference the Request data. Example: `Customer First Order Name: {{customer.orders.0.name}}`
-* Include your own HTML syntax in the Text control along with template references. Example: `Customer First Name: <strong>{{customer.firstname}}</strong>`
+* Use mustache template syntax to reference the Request data. Example: `Customer First Order Name: {{ customer.orders.0.name }}`
+* Include your own HTML syntax in the Text control along with template references. Example: `Customer First Name: <strong>{{ customer.firstname }}</strong>`
 {% endhint %}
 
 ## Related Topics

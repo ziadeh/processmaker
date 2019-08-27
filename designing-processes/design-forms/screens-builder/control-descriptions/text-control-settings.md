@@ -6,7 +6,7 @@ description: Add a control that displays plain or bold-formatted text.
 
 ## Control Description
 
-The Text control adds a text field that displays plain or bold-formatted text. This control can display the value of another control by referencing that control's **Variable Value** field setting using mustache syntax. Example: `{{FullName}}`.
+The Text control adds a text field that displays plain or bold-formatted text. This control can display the value of another control by referencing that control's **Variable Value** field setting using mustache syntax. Example: `{{ FullName }}`.
 
 ## Add the Control to a ProcessMaker Screen
 
@@ -58,8 +58,8 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Text control:
 
 * **Text Content:** Enter what text displays for the Text control. **New Text** is the default value. You can change what text will display. Also use the Text control to display the following information:
-  * **Display the value of another control:** Display the value of another control in the same or another ProcessMaker Screen. To do so, use mustache syntax and reference the **Variable Value** setting value for the control from which you want to display its value. Example: `{{FullName}}`.
-  * **Display the value of a ProcessMaker Magic Variable's value:** Display the value of a [ProcessMaker Magic Variable](../../../reference-global-variables-in-your-processmaker-assets.md). ProcessMaker uses a set of Magic Variables that become part of the JSON data model for all Requests. ProcessMaker uses these Magic Variables to store ProcessMaker user, Process, and Request related data for all Requests. During an in-progress Request, these ProcessMaker Magic Variables are updated. All ProcessMaker Magic Variables are preceded by an underscore \(`_`\) character in the JSON data model. Use mustache syntax and reference the ProcessMaker Magic Variable of which you want to display its value. Example: `{{_user.FullName}}`. See [Magic Variable Descriptions](../../../reference-global-variables-in-your-processmaker-assets.md#global-variable-descriptions).
+  * **Display the value of another control:** Display the value of another control in the same or another ProcessMaker Screen. To do so, use mustache syntax and reference the **Variable Value** setting value for the control from which you want to display its value. Example: `{{ FullName }}`.
+  * **Display the value of a ProcessMaker Magic Variable's value:** Display the value of a [ProcessMaker Magic Variable](../../../reference-global-variables-in-your-processmaker-assets.md). ProcessMaker uses a set of Magic Variables that become part of the JSON data model for all Requests. ProcessMaker uses these Magic Variables to store ProcessMaker user, Process, and Request related data for all Requests. During an in-progress Request, these ProcessMaker Magic Variables are updated. All ProcessMaker Magic Variables are preceded by an underscore \(`_`\) character in the JSON data model. Use mustache syntax and reference the ProcessMaker Magic Variable of which you want to display its value. Example: `{{ _user.FullName }}`. See [Magic Variable Descriptions](../../../reference-global-variables-in-your-processmaker-assets.md#global-variable-descriptions).
 * **Font Weight:** Sets the weight of the text specified in the **Text Content** setting. **Normal** is the default option. You can change to **Bold**.
 * **Text Horizontal Alignment:** Sets the text horizontal alignment. **Left** is the default option. Select one of the following options:
   * Center
@@ -82,8 +82,8 @@ Click the control to view its settings in the **Design** panel that is on the ri
 {% hint style="info" %}
 Below are some ways to render Request data to display as text in a Text control:
 
-* Use mustache template syntax to reference the Request data. Example: `Customer First Order Name: {{customer.orders.0.name}}`
-* Include your own HTML syntax in the Text control along with template references. Example: `Customer First Name: <strong>{{customer.firstname}}</strong>`
+* Use mustache template syntax to reference the Request data. Example: `Customer First Order Name: {{ customer.orders.0.name }}`
+* Include your own HTML syntax in the Text control along with template references. Example: `Customer First Name: <strong>{{ customer.firstname }}</strong>`
 {% endhint %}
 
 ## Related Topics

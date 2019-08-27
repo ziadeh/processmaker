@@ -4,31 +4,30 @@ description: View ProcessMaker Collections in your organization.
 
 # View Collections
 
-## View All Vocabularies
+## View All Collections
 
-ProcessMaker displays all ProcessMaker Vocabularies in one table. This makes it easy to manage ProcessMaker Vocabularies.
+ProcessMaker displays all ProcessMaker Collections in one table. This makes it easy to manage ProcessMaker Collections.
 
 {% hint style="info" %}
-### Don't Know What a Vocabulary Is?
+### Don't Know What a Collection Is?
 
-See [What is a Vocabulary?](../../designing-processes/vocabularies-management/what-is-a-vocabulary.md) to learn how all your ProcessMaker assets can use a uniform JSON schema.
+See [What is a Collection?](../what-is-a-collection.md) to learn how to create a set of data records that do not require an external database.
 
 ### ProcessMaker Package Required
 
-The [Vocabularies package](../../package-development-distribution/package-a-connector/vocabularies.md) must be installed in your ProcessMaker instance. The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
+The [Collections package](../../package-development-distribution/package-a-connector/collections.md) must be installed in your ProcessMaker instance. The Collections package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Collections package can be installed in your ProcessMaker instance.
 
 ### Permission Required
 
-Your user account or group membership must have the "Vocabularies: View Vocabularies" permission to view the list of Vocabularies.
+Your user account or group membership must have the "Collections: View Collections" permission to view the list of ProcessMaker Collections. This permission is different than Collection-level permissions that allow you to view individual ProcessMaker Collections. Your account or group membership must have this permission to view the Collections package.
 
-See the ProcessMaker [Vocabularies](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#vocabularies) permissions or ask your ProcessMaker Administrator for assistance.
+See the ProcessMaker [Collections](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to view all ProcessMaker Vocabularies in your organization:
+Follow these steps to view all ProcessMaker Collections in your organization:
 
 1. Ensure that you are [logged on](../../using-processmaker/log-in.md#log-in) to ProcessMaker.
-2. Click the **Processes** option from the top menu. The **Processes** page displays all active Processes.
-3. Click the **Vocabularies** icon![](../../.gitbook/assets/vocabularies-icon-processes.png). The **Vocabularies** page displays all ProcessMaker Vocabularies.
+2. Click the **Collections** option from the top menu. The **Collections** page displays the ProcessMaker Collections you are allowed to view. 
 
 ![&quot;Vocabularies&quot; page displays all ProcessMaker Vocabularies in your organization](../../.gitbook/assets/vocabularies-page-processes.png)
 
