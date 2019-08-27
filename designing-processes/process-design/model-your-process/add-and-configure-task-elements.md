@@ -206,11 +206,10 @@ Use the following expression syntax components to compose the expression that de
 
 | Component | Syntax | Example |
 | :--- | :--- | :--- |
-| string | `"hello world"` or `'hello world'` |  |
-| number | `100` |  |
-| array | `[`value1`,` value2`]` | `[1, 2]` |
-| hash | `{foo: "`value`"}` | `{foo: "bar"}` |
-| Boolean | `true` and `false` |  |
+| string | `"hello world"` or `'hello world'` | `FullNameInput == "Louis Canera"` |
+| number | `100` | `cost > 500` |
+| array | `[`value1`,` value2`]` | `myFruit not in ["apples", "oranges"]` |
+| Boolean | `true` and `false` | `directorSigned` |
 
 **Arithmetic Operations**
 
