@@ -152,9 +152,9 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
    * **Previous Task Assignee:** Select **Previous Task Assignee** to assign the Task to who was assigned the Task in the preceding Task element.
 4. Select the **Allow Reassignment** checkbox to allow the Task assignee to reassign the Task if necessary. If the **Allow Reassignment** checkbox is selected, the **Reassign** button displays in the Task summary to allow the Task assignee to reassign that Task. See [View a Task Summary](../../../using-processmaker/task-management/view-a-task-summary.md#summary).
 
-### Assign the Task Using a Rule
+### Assign the Task Using Rules
 
-Instead of [selecting to whom to assign a Task](add-and-configure-task-elements.md#select-to-whom-to-assign-the-task) that is reference in a Manual Task element, assign that Task's assignee using a rule.
+Instead of [selecting to whom to assign a Task](add-and-configure-task-elements.md#select-to-whom-to-assign-the-task) that is reference in a Manual Task element, assign that Task's assignee using one or more rules.
 
 Select to whom to assign the Task that is referenced in a Manual Task element using a rule:
 
@@ -162,7 +162,7 @@ Select to whom to assign the Task that is referenced in a Manual Task element us
 * **User:** Assign that Task to a selected ProcessMaker user.
 * **Group:** Assign that Task to a selected ProcessMaker group. When a Task is assigned to a ProcessMaker group, round robin assignment rules determine which group member is the assignee without manually assigning the Task.
 
-The rule that determines the Task assignee uses an expression syntax described in [Expression Syntax Components](add-and-configure-task-elements.md#expression-syntax-components). Each rule can only have one expression, but by using logical operators multiple conditions can be specified in that expression.
+The rule that determines the Task assignee uses an expression syntax described in [Expression Syntax Components](add-and-configure-task-elements.md#expression-syntax-components). Each rule can only have one expression, but by using logical operators multiple conditions can be specified in that expression. You may use multiple rules to better confine the condition\(s\) to whom to assign the Task.
 
 Follow these steps to select to whom to assign the Task that is referenced in a Manual Task element using a rule:
 
@@ -245,12 +245,6 @@ Use the following expression syntax components to compose the expression that de
 | :--- | :--- |
 | contains | `in` |
 | does not contain | `not in` |
-
-**Ternary**
-
-| Component | Syntax | Example |
-| :--- | :--- | :--- |
-| ternary | tested value `?` if true then value `:` else then value | `foo ? bar : baz` |
 
 **Range**
 

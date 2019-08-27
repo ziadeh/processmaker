@@ -15,7 +15,7 @@ While writing a ProcessMaker Script, test it before you deploy it. ProcessMaker 
 
 During run-time, ProcessMaker Scripts run within isolated containers for greater security. After the ProcessMaker Script runs and returns output to the Request, the container that isolated and ran the script automatically removes itself.
 
-ProcessMaker supports Lua and PHP Scripts in the open-source release.
+ProcessMaker supports Lua, PHP, and NodeJS programming languages in the open-source edition.
 
 ## Related Topics
 
