@@ -258,15 +258,6 @@ Use the following expression syntax components to compose the expression that de
 | :--- | :--- | :--- |
 | range | `..` | `foo in 1..10` |
 
-#### Examples
-
-Consider the following examples.
-
-**Example 1:**  
-Suppose that you want to use a rule to assign a Task to the manager of a department to approve a leave request in a Leave Request Process. You're using a variable called `EmployeeDepartment` that represents the selected department that a requester specifies to which department that employee is a member. You want to assign the current Task to the manager of that employee. Use rules to specify to whom to assign the Task based on which department the requester belongs. Use the following expressions to assign the Task, assuming you know the manager of each department:
-
-If the employee's department is sales, then assign to the ProcessMaker user `Louis Canera: EmployeeDepartment == "sales"`.
-
 ### Set Task Notifications
 
 Set when [notifications](../../../using-processmaker/notifications.md) regarding Tasks are sent to the following:
