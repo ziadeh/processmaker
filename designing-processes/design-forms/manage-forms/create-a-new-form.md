@@ -27,12 +27,13 @@ Follow these steps to create a new ProcessMaker Screen:
 
    * **Form:** Use the Form type to design interactive and complex forms. See [Form](../screens-builder/types-for-screens.md#form).
    * **Display:** Use the Display type to display information or allow [Request](../../../using-processmaker/requests/what-is-a-request.md) participants to download files. The Display type has limited functionality compared the Form type. See [Display](../screens-builder/types-for-screens.md#display).
-   * **Email:** Use the Email type to compose the email body for email messages to be used with the Email connector. Note that the Email connector must be installed in your ProcessMaker instance for this option to display. See [Email Connector](../../process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) and [Screen Types](../screens-builder/types-for-screens.md#email).
+   * **Email:** Use the Email type to compose the email body for email messages to be used with the Send Email connector. Note that the Send Email connector must be installed in your ProcessMaker instance for this option to display. See [Send Email Connector](../../process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) and [Screen Types](../screens-builder/types-for-screens.md#email).
 
    This is a required field.
 
 5. Enter in the **Description** field a description for the ProcessMaker Screen. This is a required field.
-6. Click **Save**. Screens Builder displays the new ProcessMaker Screen in [Design mode](../screens-builder/screens-builder-modes.md#editor-mode). See [Screens Builder](../screens-builder/).
+6. In the **Category** field, enter the name for the category to associate with the ProcessMaker Screen. In doing so, maintain consistent naming with similarly functional ProcessMaker Screens so that they may be more easily sorted from the [**Screens** page](view-all-forms.md#view-all-scripts). This is a required field.
+7. Click **Save**. Screens Builder displays the new ProcessMaker Screen in [Design mode](../screens-builder/screens-builder-modes.md#editor-mode). See [Screens Builder](../screens-builder/).
 
 ## Related Topics
 

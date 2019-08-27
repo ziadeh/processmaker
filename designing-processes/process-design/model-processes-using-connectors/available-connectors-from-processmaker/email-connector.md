@@ -1,12 +1,12 @@
 ---
-description: Add the Email connector to send emails during Requests for a Process.
+description: Add the Send Email connector to send emails during Requests for a Process.
 ---
 
-# Email Connector
+# Send Email Connector
 
 ## Overview
 
-The Email connector is part of the [Email package](../../../../package-development-distribution/package-a-connector/email.md) that allows ProcessMaker to send emails during [Requests](../../../../using-processmaker/requests/what-is-a-request.md) that use a Send Email control in a Process model. When you add a Send Email control to a Process model and then reference a [ProcessMaker Screen](../../../design-forms/screens-builder/types-for-screens.md#email) for email body content, the Send Email control can email a specified email address when that Send Email control triggers in a Request's workflow. The Email connector supports sending an email to only one email recipient.
+The Send Email connector is part of the [Email package](../../../../package-development-distribution/package-a-connector/email.md) that allows ProcessMaker to send emails during [Requests](../../../../using-processmaker/requests/what-is-a-request.md) that use a Send Email control in a Process model. When you add a Send Email control to a Process model and then reference a [ProcessMaker Screen](../../../design-forms/screens-builder/types-for-screens.md#email) for email body content, the Send Email control can email a specified email address when that Send Email control triggers in a Request's workflow. The Send Email connector supports sending an email to only one email recipient.
 
 {% hint style="info" %}
 ### Don't Know What a Connector Is?
@@ -15,15 +15,15 @@ See [What is a Connector?](../what-is-a-connector.md).
 
 ### ProcessMaker Package Required
 
-The Email package is required. The Email connector is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Email connector can be installed in your ProcessMaker instance.
+The Send Email package is required. The Send Email connector is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Send Email connector can be installed in your ProcessMaker instance.
 {% endhint %}
 
-The Email connector adds the following components to the ProcessMaker open-source edition:
+The Send Email connector adds the following components to the ProcessMaker open-source edition:
 
-* **Process Modeler:** The Email connector adds the **Send Email** control below the BPMN 2.0 elements in the panel to the left of the Process Modeler canvas. See the following sections in this topic:
+* **Process Modeler:** The Send Email connector adds the **Send Email** control below the BPMN 2.0 elements in the panel to the left of the Process Modeler canvas. See the following sections in this topic:
   * [Add a Send Email Control to the Process Model](email-connector.md#add-a-send-email-control-to-the-process-model)
   * [Configure a Send Email Control](email-connector.md#configure-a-send-email-control)
-* **Screens Builder:** The Email connector adds a new ProcessMaker Screen type called Email. Select the **Email** Screen type when [creating a new ProcessMaker Screen](../../../scripts/manage-scripts/create-a-new-script.md#create-a-new-processmaker-script). See [Email Screen type](../../../design-forms/screens-builder/types-for-screens.md#email).
+* **Screens Builder:** The Send Email connector adds a new ProcessMaker Screen type called Email. Select the **Email** Screen type when [creating a new ProcessMaker Screen](../../../scripts/manage-scripts/create-a-new-script.md#create-a-new-processmaker-script). See [Email Screen type](../../../design-forms/screens-builder/types-for-screens.md#email).
 
 ## Add a Send Email Control to the Process Model
 
@@ -57,7 +57,7 @@ Moving a Send Email control has the following limitations in regards to the foll
 ## Configure a Send Email Control
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to configure a Send Email control to the Process model when the Email connector is installed in your ProcessMaker instance:
+Your user account or group membership must have the following permissions to configure a Send Email control to the Process model when the Send Email connector is installed in your ProcessMaker instance:
 
 * Processes: View Processes
 * Processes: Edit Processes

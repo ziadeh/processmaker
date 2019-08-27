@@ -26,7 +26,7 @@ Follow these steps to create a new ProcessMaker Script:
 
 3. In the **Name** field, enter the name of the ProcessMaker Script. This is a required field.
 4. In the **Description** field, enter the description of the ProcessMaker Script. This is a required field.
-5. In the **Category** field, enter the name for the category to associate with the ProcessMaker Script. In doing so, maintain consistent naming with similarly functional ProcessMaker Screens so that they may be more easily sorted from the [**Scripts** page](view-all-scripts.md#view-all-processmaker-scripts). This is a required field.
+5. In the **Category** field, enter the name for the category to associate with the ProcessMaker Script. In doing so, maintain consistent naming with similarly functional ProcessMaker Scripts so that they may be more easily sorted from the [**Scripts** page](view-all-scripts.md#view-all-processmaker-scripts). This is a required field.
 6. From the **Language** drop-down menu, select one of the following programming languages in which the ProcessMaker Script is written:
 
    * PHP
