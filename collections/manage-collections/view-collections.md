@@ -8,13 +8,9 @@ description: >-
 
 ## View All Collections
 
-ProcessMaker displays all the ProcessMaker Collections in one table. This makes it easy to manage ProcessMaker Collections.
+ProcessMaker displays all the ProcessMaker [Collections](../what-is-a-collection.md) in one table. This makes it easy to manage ProcessMaker Collections.
 
 {% hint style="info" %}
-### Don't Know What a Collection Is?
-
-See [What is a Collection?](../what-is-a-collection.md) to learn how to create a set of data records that do not require an external database.
-
 ### ProcessMaker Package Required
 
 The [Collections package](../../package-development-distribution/package-a-connector/collections.md) must be installed in your ProcessMaker instance. The Collections package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Collections package can be installed in your ProcessMaker instance.

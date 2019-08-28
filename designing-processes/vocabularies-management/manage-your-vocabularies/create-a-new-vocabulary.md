@@ -9,13 +9,9 @@ description: >-
 ## Create a New ProcessMaker Vocabulary
 
 {% hint style="info" %}
-### Don't Know What a Vocabulary Is?
-
-See [What is a Vocabulary?](../what-is-a-vocabulary.md) to learn how all your ProcessMaker assets can use a uniform JSON schema.
-
 ### ProcessMaker Package Required
 
-The [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) must be installed in your ProcessMaker instance. The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
+The [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) must be installed in your ProcessMaker instance. The [Vocabularies](../what-is-a-vocabulary.md) package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
 
 ### Permissions Required
 
@@ -27,7 +23,7 @@ Your user account or group membership must have the following permissions to cre
 See the ProcessMaker [Vocabularies](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#vocabularies) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-A ProcessMaker Vocabulary can maintain a consistent nomenclature and architecture in your Processes in a variety of ways, such as business vertical or department within your organization. Therefore, consider creating ProcessMaker Vocabularies based on how you need to structure your JSON data model as granularly as each element within a Process.
+A ProcessMaker [Vocabulary](../what-is-a-vocabulary.md) is a [JSON schema](https://json-schema.org) designed to validate ProcessMaker assets to which that Vocabulary is applied. Any ProcessMaker asset to which that ProcessMaker Vocabulary is applied must conform to that JSON schema. ProcessMaker Vocabularies are granular, in that one or more Vocabularies can be assigned to specific BPMN 2.0 element types within a Process or the Process model itself to validate the ProcessMaker asset that is referenced from that element.
 
 Follow these steps to create a new ProcessMaker Vocabulary:
 
