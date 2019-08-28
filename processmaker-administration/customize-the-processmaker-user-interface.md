@@ -93,7 +93,7 @@ Customize how the ProcessMaker user interface \(UI\) displays in your ProcessMak
 ## Customize the ProcessMaker User Interface
 
 {% hint style="info" %}
-Your user account must have the **Make this user a Super Admin** option selected to customize the ProcessMaker user interface.
+Your ProcessMaker user account must have the **Make this user a Super Admin** option selected to customize the ProcessMaker user interface.
 
 See [Edit a User Account](add-users/manage-user-accounts/edit-a-user-account.md#edit-a-processmaker-user-account) or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

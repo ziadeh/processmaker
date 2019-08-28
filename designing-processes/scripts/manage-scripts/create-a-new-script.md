@@ -9,7 +9,7 @@ description: >-
 ## Create a New ProcessMaker Script
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to create a ProcessMaker Script:
+Your ProcessMaker user account or group membership must have the following permissions to create a ProcessMaker Script unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Scripts: View Scripts
 * Scripts: Create Scripts

@@ -6,13 +6,9 @@ description: Filter all the Saved Search's results to find that one you need.
 
 ## Search for a Saved Search's Result
 
-Use the **Search** function to filter all the results for a Saved Search.
+Use the **Search** function to filter all the results for a [Saved Search](../what-is-a-saved-search.md).
 
 {% hint style="info" %}
-### Don't Know What a Saved Search Is?
-
-See [What is a Saved Search?](../what-is-a-saved-search.md) to learn how you can share the same Request and Task search parameters with other ProcessMaker users in your organization.
-
 ### ProcessMaker Package Required
 
 To search for a [Saved Search](../what-is-a-saved-search.md), the [Saved Searches package](../../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed in your ProcessMaker instance. The Saved Searches package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Saved Searches package can be installed in your ProcessMaker instance.

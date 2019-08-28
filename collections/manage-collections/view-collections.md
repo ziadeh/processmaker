@@ -17,7 +17,7 @@ The [Collections package](../../package-development-distribution/package-a-conne
 
 ### Permission Required
 
-Your user account or group membership must have the "Collections: View Collections" permission to view the list of ProcessMaker Collections. This permission is different than Collection-level permissions that allow you to view individual ProcessMaker Collections. Your account or group membership must have this permission to view the Collections package.
+Your ProcessMaker user account or group membership must have the "Collections: View Collections" permission to view the list of ProcessMaker Collections unless your user account has the **Make this user a Super Admin** setting selected. This permission is different than Collection-level permissions that allow you to view the records in a ProcessMaker Collection.
 
 See the ProcessMaker [Collections](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -25,7 +25,7 @@ See the ProcessMaker [Collections](../../processmaker-administration/permission-
 Follow these steps to view all ProcessMaker Collections in your organization:
 
 1. Ensure that you are [logged on](../../using-processmaker/log-in.md#log-in) to ProcessMaker.
-2. Click the **Collections** option from the top menu. The **Collections** page displays the ProcessMaker Collections that you are allowed to view. 
+2. Click the **Collections** option from the top menu. The **Collections** page displays the ProcessMaker Collections that you are allowed to view.
 
 ![&quot;Collections&quot; page displays all ProcessMaker Collections in your organization](../../.gitbook/assets/collections-page.png)
 
@@ -54,7 +54,7 @@ Click the **Edit** icon![](../../.gitbook/assets/configure-process-icon-processe
 
 ### No ProcessMaker Collections?
 
-If no ProcessMaker Collections exist, the following message displays: **No Data Available**.
+If no ProcessMaker Collections exist, or you do not have permission to view any, the following message displays: **No Data Available**.
 
 ### Display Information the Way You Want It
 

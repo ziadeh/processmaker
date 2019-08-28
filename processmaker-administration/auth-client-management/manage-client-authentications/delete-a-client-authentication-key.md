@@ -7,7 +7,7 @@ description: Delete an authenticated client.
 ## Delete an Authenticated Client
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to delete an authenticated client:
+Your ProcessMaker user account or group membership must have the following permissions to delete an authenticated client unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Auth Clients: View Auth Clients
 * Auth Clients: Delete Auth Clients

@@ -7,7 +7,7 @@ description: Edit the sensitive information that an Environment Variable represe
 ## Edit a ProcessMaker Environment Variable
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit a ProcessMaker Environment Variable:
+Your ProcessMaker user account or group membership must have the following permissions to edit a ProcessMaker Environment Variable unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Environment Variables: View Environment Variables
 * Environment Variables: Edit Environment Variables

@@ -11,7 +11,7 @@ description: >-
 Use the **Search** function to filter all ProcessMaker Screens from the **Screens** page based on your entered text.
 
 {% hint style="info" %}
-Your user account or group membership must have the "Screens: View Screens" permission to search for ProcessMaker Screens.
+Your ProcessMaker user account or group membership must have the "Screens: View Screens" permission to search for ProcessMaker Screens unless your user account has the **Make this user a Super Admin** setting selected.
 
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

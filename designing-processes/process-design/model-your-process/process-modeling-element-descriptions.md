@@ -18,7 +18,7 @@ While connectors are used similarly as Process model elements in Process Modeler
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to use Process modeling elements in Process Modeler:
+Your ProcessMaker user account or group membership must have the following permissions to use Process modeling elements in Process Modeler unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

@@ -11,7 +11,7 @@ description: >-
 Use the **Search** function to filter all ProcessMaker Environment Variables from the **Environment Variables** page based on your entered text.
 
 {% hint style="info" %}
-Your user account or group membership must have the "Environment Variables: View Environment Variables" permission to search for ProcessMaker Environment Variables.
+Your ProcessMaker user account or group membership must have the "Environment Variables: View Environment Variables" permission to search for ProcessMaker Environment Variables unless your user account has the **Make this user a Super Admin** setting selected.
 
 See the ProcessMaker [Environment Variable](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#environment-variables) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

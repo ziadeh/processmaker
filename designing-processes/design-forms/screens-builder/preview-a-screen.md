@@ -31,7 +31,7 @@ Are you a ProcessMaker Developer developing ProcessMaker Scripts? See [Scripts E
 ## Preview JSON Data Models in a ProcessMaker Screen
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to preview a ProcessMaker Screen:
+Your ProcessMaker user account or group membership must have the following permissions to preview a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Edit Screens

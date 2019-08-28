@@ -9,7 +9,7 @@ description: View the authenticated clients in your organization.
 ProcessMaker displays all authenticated clients in one table that ProcessMaker Administrators throughout your organization have created. This makes it easy to manage authenticated clients to allow these ProcessMaker users to access the ProcessMaker's REST API. The most recently created authenticated clients display at the top of the table.
 
 {% hint style="info" %}
-Your user account or group membership must have the "Auth Clients: View Auth Clients" permission to view the list of authenticated clients.
+Your ProcessMaker user account or group membership must have the "Auth Clients: View Auth Clients" permission to view the list of authenticated clients unless your user account has the **Make this user a Super Admin** setting selected.
 
 See the [Auth Clients](../../permission-descriptions-for-users-and-groups.md#auth-clients) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

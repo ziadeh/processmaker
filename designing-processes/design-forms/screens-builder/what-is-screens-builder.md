@@ -7,7 +7,7 @@ description: Understand what Screens Builder is in ProcessMaker.
 ## Overview
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to create or edit a ProcessMaker Screen:
+Your ProcessMaker user account or group membership must have the following permissions to create or edit a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Create Screens

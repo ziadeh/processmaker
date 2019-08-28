@@ -15,7 +15,7 @@ The page that records the submitted records cannot be on the same page as the Re
 ## Add the Control to a ProcessMaker Screen <a id="add-the-control-to-a-processmaker-screen"></a>
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to add a control to a ProcessMaker Screen:
+Your ProcessMaker user account or group membership must have the following permissions to add a control to a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Edit Screens

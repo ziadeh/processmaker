@@ -19,7 +19,7 @@ Computed Properties display as the second key-value pair in the ProcessMaker Scr
 ## Add a Computed Property
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to add a computed Property to a ProcessMaker Screen:
+Your ProcessMaker user account or group membership must have the following permissions to add a computed Property to a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Edit Screens

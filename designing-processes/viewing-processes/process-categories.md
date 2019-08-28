@@ -17,7 +17,7 @@ A Process can be assigned to only one Process Category. See [Edit Process Config
 ## View Process Categories
 
 {% hint style="info" %}
-Your user account or group membership must have the "Categories: View Categories" permission to view the list of Process Categories.
+Your ProcessMaker user account or group membership must have the "Categories: View Categories" permission to view the list of Process Categories unless your user account has the **Make this user a Super Admin** setting selected.
 
 See the Process [Categories](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

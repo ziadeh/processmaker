@@ -9,7 +9,7 @@ description: Filter all ProcessMaker groups in your organization to find that on
 Use the **Search** function to filter all ProcessMaker groups from the **Groups** page based on your entered text.
 
 {% hint style="info" %}
-Your user account or group membership must have the "Groups: View Groups" permission to view the list of groups.
+Your ProcessMaker user account or group membership must have the "Groups: View Groups" permission to view the list of groups unless your user account has the **Make this user a Super Admin** setting selected.
 
 See the [Groups](../../permission-descriptions-for-users-and-groups.md#groups) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

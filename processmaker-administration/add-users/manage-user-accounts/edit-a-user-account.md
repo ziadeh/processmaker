@@ -7,7 +7,7 @@ description: Edit a ProcessMaker user account.
 ## Edit a ProcessMaker User Account
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit a ProcessMaker user account:
+Your ProcessMaker user account or group membership must have the following permissions to edit a ProcessMaker user account unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Users: View Users
 * Users: Edit Users
@@ -102,7 +102,7 @@ Follow these steps to edit a ProcessMaker user account:
 ## Generate an API Token
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit a ProcessMaker user account:
+Your ProcessMaker user account or group membership must have the following permissions to edit a ProcessMaker user account unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Users: View Users
 * Users: Edit Users
@@ -132,7 +132,7 @@ Follow these steps to generate an API token:
 ## Delete an API Token
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit a ProcessMaker user account:
+Your ProcessMaker user account or group membership must have the following permissions to edit a ProcessMaker user account unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Users: View Users
 * Users: Edit Users

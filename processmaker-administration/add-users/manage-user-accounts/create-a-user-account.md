@@ -7,7 +7,7 @@ description: Create a new ProcessMaker user account.
 ## Create a ProcessMaker User Account
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to create a ProcessMaker user account:
+Your ProcessMaker user account or group membership must have the following permissions to create a ProcessMaker user account unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Users: View Users
 * Users: Create Users

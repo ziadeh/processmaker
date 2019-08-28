@@ -13,7 +13,7 @@ See [Process Modeling Element Descriptions](process-modeling-element-description
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to add an Intermediate Timer Event element to the Process model:
+Your ProcessMaker user account or group membership must have the following permissions to add an Intermediate Timer Event element to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -45,7 +45,7 @@ Moving an Intermediate Timer Event element has the following limitations in rega
 ## Configure an Intermediate Timer Event Element
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to configure an Intermediate Timer Event element:
+Your ProcessMaker user account or group membership must have the following permissions to configure an Intermediate Timer Event element unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -86,7 +86,7 @@ Follow these steps to edit the name for an Intermediate Timer Event element:
 ## Set the Timer Controls
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to set the timer controls for an Intermediate Timer Event element:
+Your ProcessMaker user account or group membership must have the following permissions to set the timer controls for an Intermediate Timer Event element unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

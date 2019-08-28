@@ -13,7 +13,7 @@ See [Process Modeling Element Descriptions](process-modeling-element-description
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to add an End Event element to the Process model:
+Your ProcessMaker user account or group membership must have the following permissions to add an End Event element to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -45,7 +45,7 @@ Moving an End Event element has the following limitations in regards to the foll
 ## Configure an End Event Element
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to configure an End Event element:
+Your ProcessMaker user account or group membership must have the following permissions to configure an End Event element unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

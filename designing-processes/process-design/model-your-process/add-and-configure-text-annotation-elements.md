@@ -15,7 +15,7 @@ See [Process Modeling Element Descriptions](process-modeling-element-description
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to add a Text Annotation element to the Process model:
+Your ProcessMaker user account or group membership must have the following permissions to add a Text Annotation element to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -47,7 +47,7 @@ Moving a Text Annotation element has the following limitations in regards to the
 ## Configure a Text Annotation Element
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to configure a Text Annotation element:
+Your ProcessMaker user account or group membership must have the following permissions to configure a Text Annotation element unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -94,7 +94,7 @@ See [Process Modeling Element Descriptions](process-modeling-element-description
 
 ### Permissions Required to Do This Task
 
-Your user account or group membership must have the following permissions to add an Association element to the Process model:
+Your ProcessMaker user account or group membership must have the following permissions to add an Association element to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -121,7 +121,7 @@ Follow these steps to add an Association element to the Process model:
 ## Configure an Association Element
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to configure an Association element:
+Your ProcessMaker user account or group membership must have the following permissions to configure an Association element unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

@@ -9,7 +9,7 @@ description: Filter all Processes in your organization to find that one you need
 Use the **Search** function to filter all Processes from the **Processes** page based on your entered text.
 
 {% hint style="info" %}
-Your user account or group membership must have the "Processes: List" permission to search for Processes.
+Your ProcessMaker user account or group membership must have the "Processes: List" permission to search for Processes unless your user account has the **Make this user a Super Admin** setting selected.
 
 See the [Processes](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

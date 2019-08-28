@@ -13,7 +13,7 @@ See [Process Modeling Element Descriptions](process-modeling-element-description
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to add a Start Timer Event element to the Process model:
+Your ProcessMaker user account or group membership must have the following permissions to add a Start Timer Event element to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -45,7 +45,7 @@ Moving a Start Timer Event element has the following limitations in regards to t
 ## Configure a Start Timer Event Element
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to configure a Start Timer Event element:
+Your ProcessMaker user account or group membership must have the following permissions to configure a Start Timer Event element unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -86,7 +86,7 @@ Follow these steps to edit the name for a Start Timer Event element:
 ## Set the Timer Controls
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to set the timer controls for a Start Timer Event element:
+Your ProcessMaker user account or group membership must have the following permissions to set the timer controls for a Start Timer Event element unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

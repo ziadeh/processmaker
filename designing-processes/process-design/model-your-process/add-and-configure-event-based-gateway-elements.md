@@ -13,7 +13,7 @@ See [Process Modeling Element Descriptions](process-modeling-element-description
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to add an Event-Based Gateway element to the Process model:
+Your ProcessMaker user account or group membership must have the following permissions to add an Event-Based Gateway element to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -45,7 +45,7 @@ Moving an Event-Based Gateway element has the following limitations in regards t
 ## Configure an Event-Based Gateway Element
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to configure an Event-Based Gateway element:
+Your ProcessMaker user account or group membership must have the following permissions to configure an Event-Based Gateway element unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

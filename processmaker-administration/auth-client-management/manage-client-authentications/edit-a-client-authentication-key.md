@@ -7,7 +7,7 @@ description: Edit an authenticated client.
 ## Edit an Authenticated Client
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit client authentication:
+Your ProcessMaker user account or group membership must have the following permissions to edit client authentication unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Auth Clients: View Auth Clients
 * Auth Clients: Edit Auth Clients

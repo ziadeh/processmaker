@@ -235,7 +235,7 @@
 * [Available Packages from ProcessMaker](package-development-distribution/package-a-connector/README.md)
   * [C\# Package](package-development-distribution/package-a-connector/c-package.md)
   * [Collections Package](package-development-distribution/package-a-connector/collections.md)
-  * [Email Package](package-development-distribution/package-a-connector/email.md)
+  * [Send Email Package](package-development-distribution/package-a-connector/email.md)
   * [Translation Package](package-development-distribution/package-a-connector/non-english-language-packages.md)
   * [Saved Searches Package](package-development-distribution/package-a-connector/saved-searches-package.md)
   * [Vocabularies Package](package-development-distribution/package-a-connector/vocabularies.md)

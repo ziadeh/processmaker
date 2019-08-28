@@ -7,7 +7,7 @@ description: Edit information regarding the Process model.
 ## Edit the Process Model Identifier
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit the Process model identifier:
+Your ProcessMaker user account or group membership must have the following permissions to edit the Process model identifier unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -31,7 +31,7 @@ Follow these steps to edit the identifier value for a Process model:
 ## Edit the Process Model Name
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit the Process model name:
+Your ProcessMaker user account or group membership must have the following permissions to edit the Process model name unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

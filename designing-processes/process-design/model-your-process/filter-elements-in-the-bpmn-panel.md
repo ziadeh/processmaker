@@ -4,10 +4,10 @@ description: Filter which elements and controls display for use in the Process m
 
 # Filter Elements and Controls
 
-## Filter Which Elements and Controls Display for Use in the Process Model
+## Filter Which Elements and Controls Display in the Process Model
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to filter elements for use in the Process model:
+Your ProcessMaker user account or group membership must have the following permissions to filter elements and controls in the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -23,7 +23,7 @@ The panel to the left of the Process Modeler canvas displays elements and contro
 See [Process Modeling Element Descriptions](process-modeling-element-descriptions.md).
 {% endhint %}
 
-Follow these steps to filter which Process modeling elements and controls display for use in the Process model:
+Follow these steps to filter which Process modeling elements and controls display in the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.

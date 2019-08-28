@@ -9,7 +9,7 @@ description: View the ProcessMaker Environment Variables in your organization.
 ProcessMaker displays all ProcessMaker Environment Variables in one table that Process Owners throughout your organization have created. Any ProcessMaker Environment Variable can be used in any Process in your organization. Since ProcessMaker Environment Variables are abstract proxies to securely maintain sensitive information during in-progress [Requests](../../../using-processmaker/requests/what-is-a-request.md), Process Owners who create or use ProcessMaker Environment Variables in their Processes do not have access to that sensitive information. This makes it easy to manage sensitive information used in Requests.
 
 {% hint style="info" %}
-Your user account or group membership must have the "Environment Variables: View Environment Variables" permission to view the list of ProcessMaker Environment Variables.
+Your ProcessMaker user account or group membership must have the "Environment Variables: View Environment Variables" permission to view the list of ProcessMaker Environment Variables unless your user account has the **Make this user a Super Admin** setting selected.
 
 See the ProcessMaker [Environment Variable](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#environment-variables) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

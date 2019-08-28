@@ -13,7 +13,7 @@ See [Process Modeling Element Descriptions](process-modeling-element-description
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to add a Start Event element to the Process model:
+Your ProcessMaker user account or group membership must have the following permissions to add a Start Event element to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -45,7 +45,7 @@ Moving a Start Event element has the following limitations in regards to the fol
 ## Configure a Start Event Element
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to configure a Start Event element:
+Your ProcessMaker user account or group membership must have the following permissions to configure a Start Event element unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -86,7 +86,7 @@ Follow these steps to edit the name for a Start Event element:
 ## Select the ProcessMaker User or Group That Can Start Requests
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to set which ProcessMaker user or group can start a Request for a Process:
+Your ProcessMaker user account or group membership must have the following permissions to set which ProcessMaker user or group can start a Request for a Process unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -139,7 +139,7 @@ The Web Entry package is not available in the ProcessMaker open-source edition. 
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to set which ProcessMaker user or group can start a Request for a Process:
+Your ProcessMaker user account or group membership must have the following permissions to set which ProcessMaker user or group can start a Request for a Process unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

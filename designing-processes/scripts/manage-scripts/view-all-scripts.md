@@ -9,7 +9,7 @@ description: View the ProcessMaker Scripts in your organization.
 ProcessMaker displays all ProcessMaker Scripts in one location. Any ProcessMaker Script developed by any Process Owner or ProcessMaker Developer can be used in any Process model. This makes it easy to manage ProcessMaker Scripts.
 
 {% hint style="info" %}
-Your user account or group membership must have the "Scripts: View Scripts" permission to view the list of ProcessMaker Scripts.
+Your ProcessMaker user account or group membership must have the "Scripts: View Scripts" permission to view the list of ProcessMaker Scripts unless your user account has the **Make this user a Super Admin** setting selected.
 
 See the ProcessMaker [Scripts](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

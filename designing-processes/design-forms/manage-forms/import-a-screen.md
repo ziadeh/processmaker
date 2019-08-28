@@ -11,7 +11,7 @@ Import a ProcessMaker Screen that has been [exported](export-a-screen.md) from t
 ## Import a ProcessMaker Screen
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to import a ProcessMaker Screen:
+Your ProcessMaker user account or group membership must have the following permissions to import a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Import Screens

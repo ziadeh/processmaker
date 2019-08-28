@@ -24,7 +24,7 @@ ProcessMaker does not import ProcessMaker [users](../../../processmaker-administ
 ## Import a Validated ProcessMaker Version 4 Process
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to import a ProcessMaker version 4 Process:
+Your ProcessMaker user account or group membership must have the following permissions to import a ProcessMaker version 4 Process unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Import Processes

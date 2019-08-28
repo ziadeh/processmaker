@@ -9,7 +9,7 @@ description: View the ProcessMaker groups in your organization.
 ProcessMaker displays all ProcessMaker groups in one table that ProcessMaker Administrators throughout your organization have created. This makes it easy to manage ProcessMaker groups.
 
 {% hint style="info" %}
-Your user account or group membership must have the "Groups: View Groups" permission to view the list of groups.
+Your ProcessMaker user account or group membership must have the "Groups: View Groups" permission to view the list of groups unless your user account has the **Make this user a Super Admin** setting selected.
 
 See the [Groups](../../permission-descriptions-for-users-and-groups.md#groups) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

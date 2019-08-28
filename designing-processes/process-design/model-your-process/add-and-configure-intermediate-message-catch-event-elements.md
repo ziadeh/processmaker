@@ -15,7 +15,7 @@ See [Process Modeling Element Descriptions](process-modeling-element-description
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to add an Intermediate Message Catch Event element to the Process model:
+Your ProcessMaker user account or group membership must have the following permissions to add an Intermediate Message Catch Event element to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -47,7 +47,7 @@ Moving an Intermediate Message Catch Event element has the following limitations
 ## Configure an Intermediate Message Catch Event Element
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to configure an Intermediate Message Catch Event element:
+Your ProcessMaker user account or group membership must have the following permissions to configure an Intermediate Message Catch Event element unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

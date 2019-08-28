@@ -19,7 +19,7 @@ See [What is a Connector?](model-processes-using-connectors/what-is-a-connector.
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to delete elements from the Process model:
+Your ProcessMaker user account or group membership must have the following permissions to delete elements from the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

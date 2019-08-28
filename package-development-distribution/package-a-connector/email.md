@@ -2,18 +2,18 @@
 description: Send emails automatically during your Processes' Requests.
 ---
 
-# Email Package
+# Send Email Package
 
 ## Overview
 
 {% hint style="info" %}
-The Email [package](../first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Email package can be installed in your ProcessMaker instance.
+The Send Email [package](../first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Email package can be installed in your ProcessMaker instance.
 {% endhint %}
 
-Use the Email package to send emails automatically during your Processes' [Requests](../../using-processmaker/requests/what-is-a-request.md). The Email package has the following components after it is installed to your ProcessMaker instance:
+Use the Send Email package to send emails automatically during your Processes' [Requests](../../using-processmaker/requests/what-is-a-request.md). The Send Email package has the following components after it is installed to your ProcessMaker instance:
 
-* **Process model connector:** An [Email connector](../../designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) integrates into Process Modeler. Use the Email connector as you would BPMN elements: drag and place the Email connector into your Process model, configure its settings, and then add its [incoming and outgoing Sequence Flow elements](../../designing-processes/process-design/model-your-process/the-quick-toolbar.md).
-* **ProcessMaker Screen type:** ProcessMaker Screens contains the [Email type](../../designing-processes/design-forms/screens-builder/types-for-screens.md#email) that is used to compose the email body for email messages to be used with the Email package. When creating a new ProcessMaker Screen, select the **Email** type.
+* **Process model connector:** A [Send Email connector](../../designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) integrates into Process Modeler. Use the Send Email connector as you would BPMN elements: drag and place the Email connector into your Process model, configure its settings, and then add its [incoming and outgoing Sequence Flow elements](../../designing-processes/process-design/model-your-process/the-quick-toolbar.md).
+* **ProcessMaker Screen type:** ProcessMaker Screens contains the [Email type](../../designing-processes/design-forms/screens-builder/types-for-screens.md#email) that is used to compose the email body for email messages to be used with the Send Email package. When creating a new ProcessMaker Screen, select the **Email** type.
 
 ## Related Topics
 

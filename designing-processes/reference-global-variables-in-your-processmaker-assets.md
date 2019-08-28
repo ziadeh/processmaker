@@ -30,7 +30,7 @@ Reference ProcessMaker Magic Variables to compose ProcessMaker Query Language \(
 ### Mock in Script Testing
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit a [ProcessMaker Script](scripts/what-is-a-script.md):
+Your ProcessMaker user account or group membership must have the following permissions to edit a [ProcessMaker Script](scripts/what-is-a-script.md) unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Scripts: View Scripts
 * Scripts: Edit Scripts
@@ -43,7 +43,7 @@ See the ProcessMaker [Scripts](../processmaker-administration/permission-descrip
 ### Reference in Screens
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
+Your ProcessMaker user account or group membership must have the following permissions to edit a ProcessMaker Screen control unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Edit Screens

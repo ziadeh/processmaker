@@ -15,7 +15,7 @@ The exported ProcessMaker Screen has the `.json` file extension.
 ## Export a ProcessMaker Screen
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to export a ProcessMaker Screen:
+Your ProcessMaker user account or group membership must have the following permissions to export a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Export Screens

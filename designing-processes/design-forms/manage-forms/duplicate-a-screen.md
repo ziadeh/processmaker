@@ -4,10 +4,10 @@ description: Copy an existing ProcessMaker Screen.
 
 # Copy a Screen
 
-## Duplicate a ProcessMaker Screen
+## Copy a ProcessMaker Screen
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to copy a ProcessMaker Screen's configuration:
+Your ProcessMaker user account or group membership must have the following permissions to copy a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Create Screens

@@ -7,7 +7,7 @@ description: Create a new ProcessMaker group.
 ## Create a ProcessMaker Group
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to create a ProcessMaker group:
+Your ProcessMaker user account or group membership must have the following permissions to create a ProcessMaker group unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Groups: View Groups
 * Groups: Create Groups

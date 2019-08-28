@@ -11,7 +11,7 @@ Restore an [archived Process](remove-a-process.md) to start Requests of it. Afte
 ## Restore an Archived Process
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to archive a Process:
+Your ProcessMaker user account or group membership must have the following permissions to archive a Process unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

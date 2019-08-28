@@ -7,7 +7,7 @@ description: Edit a ProcessMaker group.
 ## Edit a ProcessMaker Group
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit a ProcessMaker group:
+Your ProcessMaker user account or group membership must have the following permissions to edit a ProcessMaker group unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Groups: View Groups
 * Groups: Edit Groups

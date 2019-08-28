@@ -9,7 +9,7 @@ description: View the ProcessMaker Screens in your organization.
 ProcessMaker displays all Screens in one location. Any ProcessMaker Screen developed by any Process Owner can be used in any Process. This makes it easy to manage ProcessMaker Screens.
 
 {% hint style="info" %}
-Your user account or group membership must have the "Screens: View Screens" permission to view the list of ProcessMaker Screens.
+Your ProcessMaker user account or group membership must have the "Screens: View Screens" permission to view the list of ProcessMaker Screens unless your user account has the **Make this user a Super Admin** setting selected.
 
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

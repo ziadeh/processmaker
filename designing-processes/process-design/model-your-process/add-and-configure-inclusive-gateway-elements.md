@@ -13,7 +13,7 @@ See [Process Modeling Element Descriptions](process-modeling-element-description
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to add an Inclusive Gateway element to the Process model:
+Your ProcessMaker user account or group membership must have the following permissions to add an Inclusive Gateway element to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -51,7 +51,7 @@ See [Configure an Outgoing Sequence Flow Element from an Exclusive Gateway or In
 
 ### Permissions Required to Do This Task
 
-Your user account or group membership must have the following permissions to configure an Inclusive Gateway element:
+Your ProcessMaker user account or group membership must have the following permissions to configure an Inclusive Gateway element unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

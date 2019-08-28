@@ -10,7 +10,9 @@ description: Understand what a Collection is in ProcessMaker.
 The Collections [package](../package-development-distribution/first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Collections package can be installed in your ProcessMaker instance.
 {% endhint %}
 
-The Collections package allows members of an organization to maintain sets of schema-less data records using [ProcessMaker Screens](../designing-processes/design-forms/what-is-a-form.md), each referred to as a ProcessMaker Collection. The Collections package has the following features:
+The Collections package allows members of an organization to maintain sets of schema-less data records using [ProcessMaker Screens](../designing-processes/design-forms/what-is-a-form.md), each referred to as a ProcessMaker Collection. Functioning similarly to a database, ProcessMaker Collections provide ease and flexibility to design custom data views for information storage and reporting without any need to integrate into an organization's IT infrastructure.
+
+The Collections package has the following features:
 
 * An external database is not required to store ProcessMaker Collections. Collections are maintained in the ProcessMaker instance.
 * ProcessMaker Collections are schema-less, meaning that any type or format of data may be stored in a Collection. Because ProcessMaker Collections are schema-less, one record within a Collection can be changed, which then apply to all records within that Collection. You are not constrained by how you define a ProcessMaker Collection when you create it.

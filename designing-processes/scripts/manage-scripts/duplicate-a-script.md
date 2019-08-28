@@ -7,7 +7,7 @@ description: Copy an existing ProcessMaker Script.
 ## Copy a ProcessMaker Script
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to copy a ProcessMaker Script:
+Your ProcessMaker user account or group membership must have the following permissions to copy a ProcessMaker Script unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Scripts: View Scripts
 * Scripts: Create Scripts

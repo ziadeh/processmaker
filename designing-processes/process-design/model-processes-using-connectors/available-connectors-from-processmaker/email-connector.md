@@ -15,7 +15,7 @@ See [What is a Connector?](../what-is-a-connector.md).
 
 ### ProcessMaker Package Required
 
-The Send Email package is required. The Send Email connector is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Send Email connector can be installed in your ProcessMaker instance.
+The [Send Email package](../../../../package-development-distribution/package-a-connector/email.md) is required. The Send Email connector is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Send Email connector can be installed in your ProcessMaker instance.
 {% endhint %}
 
 The Send Email connector adds the following components to the ProcessMaker open-source edition:
@@ -28,7 +28,13 @@ The Send Email connector adds the following components to the ProcessMaker open-
 ## Add a Send Email Control to the Process Model
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to add a Send Email control to the Process model when the Email connector is installed in your ProcessMaker instance:
+### ProcessMaker Package Required
+
+The [Send Email package](../../../../package-development-distribution/package-a-connector/email.md) is required. The Send Email connector is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Send Email connector can be installed in your ProcessMaker instance.
+
+### Permissions Required
+
+Your ProcessMaker user account or group membership must have the following permissions to add a Send Email control to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
@@ -57,7 +63,13 @@ Moving a Send Email control has the following limitations in regards to the foll
 ## Configure a Send Email Control
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to configure a Send Email control to the Process model when the Send Email connector is installed in your ProcessMaker instance:
+### ProcessMaker Package Required
+
+The [Send Email package](../../../../package-development-distribution/package-a-connector/email.md) is required. The Send Email connector is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Send Email connector can be installed in your ProcessMaker instance.
+
+### Permissions Required
+
+Your ProcessMaker user account or group membership must have the following permissions to configure a Send Email control unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

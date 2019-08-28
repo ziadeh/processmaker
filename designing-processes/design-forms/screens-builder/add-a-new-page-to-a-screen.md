@@ -11,7 +11,7 @@ Process Owners can create multi-page ProcessMaker Screens. By default, a Process
 Each page has its own name. Multiple pages in the same ProcessMaker Screen can have identical page names.
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to add a new page to a ProcessMaker Screen:
+Your ProcessMaker user account or group membership must have the following permissions to add a new page to a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Edit Screens

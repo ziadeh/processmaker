@@ -6,10 +6,10 @@ description: Add custom CSS to controls in your ProcessMaker Screen.
 
 ## Add Custom CSS to a ProcessMaker Screen
 
-Use the Custom CSS mode to add custom CSS styles to a ProcessMaker Screen.
+Use the Custom CSS mode to add custom [CSS](https://www.w3schools.com/whatis/whatis_css.asp) styles to a ProcessMaker Screen.
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to add custom CSS to a ProcessMaker Screen:
+Your ProcessMaker user account or group membership must have the following permissions to add custom CSS to a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Edit Screens

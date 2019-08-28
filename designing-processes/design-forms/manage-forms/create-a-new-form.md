@@ -7,7 +7,7 @@ description: Create a new ProcessMaker Screen that can be re-used in any Process
 ## Create a New ProcessMaker Screen
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to create a ProcessMaker Screen:
+Your ProcessMaker user account or group membership must have the following permissions to create a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Create Screens

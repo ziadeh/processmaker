@@ -15,7 +15,7 @@ The [Vocabularies package](../../../package-development-distribution/package-a-c
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to delete a ProcessMaker Vocabulary:
+Your ProcessMaker user account or group membership must have the following permissions to delete a ProcessMaker Vocabulary unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Vocabularies: View Vocabularies
 * Vocabularies: Delete Vocabularies

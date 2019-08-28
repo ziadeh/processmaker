@@ -25,7 +25,7 @@ An exported Process has the `.json` file extension.
 ## Export a BPMN 2.0 Compliant Process
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to export a Process:
+Your ProcessMaker user account or group membership must have the following permissions to export a Process unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Export Processes

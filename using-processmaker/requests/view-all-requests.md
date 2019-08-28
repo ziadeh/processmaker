@@ -9,7 +9,7 @@ description: View all Requests in your organization.
 The **All Requests** page displays all Requests in your organization regardless of whether you participated in them. Request information displays in tabular format.
 
 {% hint style="info" %}
-Your user account or group membership must have the "Requests: View All Requests" permission to view the list of all Requests.
+Your ProcessMaker user account or group membership must have the "Requests: View All Requests" permission to view the list of all Requests unless your user account has the **Make this user a Super Admin** setting selected.
 
 See the [Request permissions](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

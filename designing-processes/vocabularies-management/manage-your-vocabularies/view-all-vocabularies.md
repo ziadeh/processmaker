@@ -17,7 +17,7 @@ The [Vocabularies package](../../../package-development-distribution/package-a-c
 
 ### Permission Required
 
-Your user account or group membership must have the "Vocabularies: View Vocabularies" permission to view the list of ProcessMaker Vocabularies.
+Your ProcessMaker user account or group membership must have the "Vocabularies: View Vocabularies" permission to view the list of ProcessMaker Vocabularies unless your user account has the **Make this user a Super Admin** setting selected.
 
 See the ProcessMaker [Vocabularies](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#vocabularies) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

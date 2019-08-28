@@ -13,7 +13,7 @@ Process configuration is different than Process model editing. See [Model Your P
 
 ### Permissions Required
 
-Your user account or group membership must have the following permissions to configure a Process's configuration:
+Your ProcessMaker user account or group membership must have the following permissions to configure a Process unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes

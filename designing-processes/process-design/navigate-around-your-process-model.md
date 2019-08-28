@@ -7,7 +7,7 @@ description: Navigate a Process model larger than your browser window.
 ## Navigate Around Your Process Model
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to navigate around the Process model:
+Your ProcessMaker user account or group membership must have the following permissions to navigate around the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: View Processes
 * Processes: Edit Processes
