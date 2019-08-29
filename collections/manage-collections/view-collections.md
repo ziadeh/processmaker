@@ -50,7 +50,7 @@ Click the **+Collection** button. See [Create a New Collection](create-a-new-col
 
 ### Configure a ProcessMaker Collection
 
-Click the **Edit** icon![](../../.gitbook/assets/configure-process-icon-processes-page-processes.png). See [Edit a Collection](edit-a-collection.md).
+Click the **Edit** icon![](../../.gitbook/assets/configure-process-icon-processes-page-processes.png). See [Edit a Collection](../edit-a-collection.md).
 
 ### No ProcessMaker Collections?
 
