@@ -25,7 +25,7 @@ See the ProcessMaker [Vocabularies](../../../processmaker-administration/permiss
 Follow these steps to view all ProcessMaker Vocabularies in your organization:
 
 1. Ensure that you are [logged on](../../../using-processmaker/log-in.md#log-in) to ProcessMaker.
-2. Click the **Processes** option from the top menu. The **Processes** page displays all active Processes.
+2. Click the **Designer** option from the top menu. The **Processes** page displays all active Processes.
 3. Click the **Vocabularies** icon![](../../../.gitbook/assets/vocabularies-icon-processes.png). The **Vocabularies** page displays all ProcessMaker Vocabularies.
 
 ![&quot;Vocabularies&quot; page displays all ProcessMaker Vocabularies in your organization](../../../.gitbook/assets/vocabularies-page-processes.png)
