@@ -19,8 +19,8 @@ You may configure only one of your own Saved Searches, not one which has been sh
 Follow these steps to select the Saved Search to configure:
 
 1. [View the Shared Searches for a specific Saved Search type](./#manage-your-own-saved-searches). The **Edit Saved Searches** page displays.
-2. Click the **Configure** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png) for the Saved Search to configure. ![](../../../.gitbook/assets/configuration-tab-saved-searches-package.png) 
-3. Refer to the following sections to configure your Saved Search. These configuration sections of your Saved Search may be configured independently of one another:
+2. Click the **Configure** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png) for your Saved Search. The **Configuration** tab displays. ![](../../../.gitbook/assets/configuration-tab-saved-searches-package.png) 
+3. Refer to the following sections to configure your Saved Search. These configuration sections may be configured independently of one another:
    * [Configure basic settings](configure-a-saved-search.md#configure-basic-settings)
    * [Configure how Saved Search information displays](configure-a-saved-search.md#configure-how-saved-search-information-displays)
    * [Select with which ProcessMaker Users to share the Saved Search](configure-a-saved-search.md#select-with-which-processmaker-users-to-share-the-saved-search)
@@ -31,7 +31,7 @@ Follow these steps to select the Saved Search to configure:
 Follow these steps to configure basic settings for your Saved Search:
 
 1. [Select the Saved Search to configure](configure-a-saved-search.md#select-the-saved-search-to-configure). The **Configuration** tab displays. Use the **Configuration** tab to configure basic settings for your Saved Search. ![](../../../.gitbook/assets/configuration-tab-saved-searches-package.png) 
-2. Edit the following information in the **Configuration** tab about the Saved Search as necessary:
+2. Edit the following information in the **Configuration** tab about your Saved Search as necessary:
    * **Name:** In the **Name** field, edit the name of your Saved Search. Since this name displays in the left sidebar of **Requests**/**Tasks** pages, ensure that this is a descriptive name based on the ProcessMaker Query Language \(PMQL\) parameters that compose the search. This name is helpful for yourself and those with whom you share this Saved Search to know for what this Saved Search's results are. This is a required field.
    * **Image:** Follow these guidelines to select an image that represents the Saved Search results. Saved Searches associated with Requests display in the left sidebar of **Requests** pages, while those associated with Tasks display in the left sidebar of **Tasks** pages.
 
