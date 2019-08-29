@@ -11,6 +11,7 @@ import Sidebaricon from "./components/Sidebaricon";
 import ConfirmationModal from "./components/Confirm";
 import NavbarProfile from "./components/NavbarProfile";
 import Multiselect from 'vue-multiselect/src/Multiselect';
+import SelectUser from './components/SelectUser';
 
 /******
  * Global adjustment parameters for moment.js.
@@ -34,6 +35,7 @@ window.moment = moment;
 
 Vue.component('multiselect', Multiselect);
 Vue.component('Sidebaricon', Sidebaricon);
+Vue.component('select-user', SelectUser);
 
 //Event bus ProcessMaker
 window.ProcessMaker.events = new Vue();
@@ -75,7 +77,12 @@ window.ProcessMaker.navbar = new Vue({
         };
     },
     methods: {
+        alertDownChanged(dismissCountDown, item) {
+            item.alertShow = dismissCountDown;
+            this.saveLocalAlerts(this.alerts);
+        },
         alertDismissed(alert) {
+            alert.alertShow = 0;
             const index = this.alerts.indexOf(alert);
             let copy = _.cloneDeep(this.alerts)
             index > -1 ? copy.splice(index, 1) : null;
