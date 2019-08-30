@@ -18,10 +18,12 @@ Your ProcessMaker user account or group membership must have the following permi
 * Collections: View Collections
 * Collections: Edit Collections
 
-These permissions are different than record-level permissions in a ProcessMaker Collection that allow you to [view](../manage-records-in-a-collection/view-a-collection-record.md) or [edit](../manage-records-in-a-collection/edit-a-collection-record.md) records in that Collection. See the ProcessMaker [Collections](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance.
+These permissions are different than record-level permissions in a ProcessMaker Collection that allow you to view or edit records in that Collection.
+
+See the ProcessMaker [Collections](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to configure a ProcessMaker Collection:
+Follow these steps to configure a ProcessMaker [Collection](../what-is-a-collection.md):
 
 1. [View your ProcessMaker Collections](view-collections.md#view-all-collections). The **Collections** page displays.
 2. Click the **Configure** icon![](../../.gitbook/assets/configure-process-icon-processes-page-processes.png) for your ProcessMaker Collection. The **Configuration** tab displays. ![](../../.gitbook/assets/configuration-tab-collection-package.png) 
@@ -54,7 +56,7 @@ Following are descriptions of each record-level permission:
 * **Create:** A ProcessMaker user granted the **Create** permission is allowed to create records in this Collection. If a ProcessMaker user does not have the **Create** toggle key enabled, the **+Record** button used to create a record is not visible for that user. When creating a record, the ProcessMaker Screen selected in the **Create Screen** drop-down menu of the [basic configuration settings](configure-a-collection.md#configure-basic-settings) is used.
 * **Delete:** A ProcessMaker user granted the **Delete** permission is allowed to delete records in this Collection. If a ProcessMaker user does not have the **Delete** toggle key enabled, the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png)used to delete a record is not available in all records for that user.
 * **Edit:** A ProcessMaker user granted the **Edit** permission is allowed to edit records in this Collection. If a ProcessMaker user does not have the **Edit** toggle key enabled, the **Edit** icon![](../../.gitbook/assets/edit-icon.png)used to edit a record is not available in all records for that user. When editing a record, the ProcessMaker Screen selected in the **Edit Screen** drop-down menu of the basic configuration settings is used.
-* **View:** A ProcessMaker user granted the **View** permission is allowed to view records in this Collection. If a ProcessMaker user does not have the **View** toggle key enabled, the **View** icon ![](../../.gitbook/assets/view-icon-collection-record-package.png)used to view a record is not available in all records for that user. When viewing a record, the ProcessMaker Screen selected in the **View Screen** drop-down menu of the basic configuration settings is used.
+* **View:** A ProcessMaker user granted the **View** permission is allowed to view records in this Collection. If a ProcessMaker user does not have the **View** toggle key enabled, that user does not see any records in that Collection. When viewing a record, the ProcessMaker Screen selected in the **View Screen** drop-down menu of the basic configuration settings is used.
 
 Follow these steps to configure how ProcessMaker users have access to your Collection:
 
@@ -79,10 +81,10 @@ By default all ProcessMaker groups do not have any access to records in your Col
 
 Following are descriptions of each record-level permission:
 
-* **Create:** A ProcessMaker group granted the **Create** permission allows its members to create records in this Collection. If a ProcessMaker group does not have the **Create** toggle key enabled, the **+Record** button used to create a record is not visible for its members. When creating a record, the ProcessMaker Screen selected in the **Create Screen** drop-down menu of the [basic configuration settings](configure-a-collection.md#configure-basic-settings) is used.
+* **Create:** A ProcessMaker group granted the **Create** permission allows its members to create records in this Collection. If a ProcessMaker group does not have the **Create** toggle key enabled, the **+Record** button used to create a record is not visible for its members unless individual users in the group have this permission. When creating a record, the ProcessMaker Screen selected in the **Create Screen** drop-down menu of the [basic configuration settings](configure-a-collection.md#configure-basic-settings) is used.
 * **Delete:** A ProcessMaker group granted the **Delete** permission allows its members to delete records in this Collection. If a ProcessMaker group does not have the **Delete** toggle key enabled, the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png)used to delete a record is not available in all records for its members.
-* **Edit:** A ProcessMaker group granted the **Edit** permission allows its members to edit records in this Collection. If a ProcessMaker group does not have the **Edit** toggle key enabled, the **Edit** icon![](../../.gitbook/assets/edit-icon.png)used to edit a record is not available in all records for its members. When editing a record, the ProcessMaker Screen selected in the **Edit Screen** drop-down menu of the basic configuration settings is used.
-* **View:** A ProcessMaker group granted the **View** permission allows its members to view records in this Collection. If a ProcessMaker group does not have the **View** toggle key enabled, the **View** icon![](../../.gitbook/assets/view-icon-collection-record-package.png)used to view a record is not available in all records for its members. When viewing a record, the ProcessMaker Screen selected in the **View Screen** drop-down menu of the basic configuration settings is used.
+* **Edit:** A ProcessMaker group granted the **Edit** permission allows its members to edit records in this Collection. If a ProcessMaker group does not have the **Edit** toggle key enabled, the **Edit** icon![](../../.gitbook/assets/edit-icon.png)used to edit a record is not available in all records for its members unless individual users in the group have this permission. When editing a record, the ProcessMaker Screen selected in the **Edit Screen** drop-down menu of the basic configuration settings is used.
+* **View:** A ProcessMaker group granted the **View** permission allows its members to view records in this Collection. If a ProcessMaker group does not have the **View** toggle key enabled, members of that group do not see any records in that Collection, unless individual users in the group have this permission. When viewing a record, the ProcessMaker Screen selected in the **View Screen** drop-down menu of the basic configuration settings is used.
 
 Follow these steps to configure how ProcessMaker groups have access to your Collection:
 

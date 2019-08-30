@@ -32,7 +32,7 @@ Follow these steps to search for a ProcessMaker Vocabulary:
 As you enter text into the **Search** field, ProcessMaker Vocabularies display that match your entered text.
 
 {% hint style="info" %}
-If there are no search results, the following message displays: **No Results**.
+If there are no search results, the following message displays: **No Data Available**.
 {% endhint %}
 
 ## Related Topics

@@ -6,7 +6,7 @@ description: Create a new ProcessMaker Collection into which to add records.
 
 ## Create a New ProcessMaker Collection
 
-A ProcessMaker Collection uses at least two [Screens](../../designing-processes/design-forms/what-is-a-form.md) to create, edit, and view a record:
+A ProcessMaker [Collection](../what-is-a-collection.md) uses at least two [Screens](../../designing-processes/design-forms/what-is-a-form.md) to create, edit, and view a record:
 
 * **Create a record:** Have available a [Form-type](../../designing-processes/design-forms/screens-builder/types-for-screens.md#form) ProcessMaker Screen to create a record in the Collection.
 * **Edit a record:** Either use the same ProcessMaker Screen that creates a record, or have available a second Form-type Screen to edit any record in the Collection. If you want to use a second ProcessMaker Screen, optionally [make a copy](../../designing-processes/design-forms/manage-forms/duplicate-a-screen.md#duplicate-a-processmaker-screen) of the Screen intended to create a record, and then make changes to it without needing to design a new Screen.
@@ -26,7 +26,9 @@ Your ProcessMaker user account or group membership must have the following permi
 * Collections: View Collections
 * Collections: Create Collections
 
-These permissions are different than record-level permissions in a ProcessMaker Collection that allow you to [view](../manage-records-in-a-collection/view-a-collection-record.md) or [create](../manage-records-in-a-collection/create-a-collection-record.md) records in that Collection. See the ProcessMaker [Collections](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance.
+These permissions are different than record-level permissions in a ProcessMaker Collection that allow you to view or create records in that Collection.
+
+See the ProcessMaker [Collections](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to create a ProcessMaker Collection:
