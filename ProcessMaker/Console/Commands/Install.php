@@ -91,7 +91,7 @@ class Install extends Command
         $this->checkDependencies();
         do {
             $this->fetchDatabaseCredentials();
-        } while (!$this->testDatabaseConnection());
+        } while (!$this->testLocalConnection());
         // Configure the DATA connection
         $this->info(__('ProcessMaker requires a DATA database.'));
         $dataConnection = $this->choice(__('Would you like setup different credentials or use the same ProcessMaker 
@@ -164,6 +164,9 @@ class Install extends Command
 
         //Create a symbolic link from "public/storage" to "storage/app/public"
         $this->call('storage:link');
+
+
+        $this->call('vendor:publish', ['--tag'=>'telescope-assets', '--force' =>true]);
 
         $this->info(__("ProcessMaker installation is complete. Please visit the URL in your browser to continue."));
         $this->info(__("Installer completed. Consult ProcessMaker documentation on how to configure email, jobs and notifications."));
@@ -297,11 +300,15 @@ class Install extends Command
      *
      * @return void
      */
-    private function testDatabaseConnection()
+    private function testLocalConnection()
     {
+
+        if (!isset($this->env['DB_DRIVER'])) {
+            $this->env['DB_DRIVER'] = 'mysql';
+        }
         // Setup Laravel Database Configuration
         config(['database.connections.processmaker' => [
-            'driver' => 'mysql',
+            'driver' => $this->env['DB_DRIVER'],
             'host' => $this->env['DB_HOSTNAME'],
             'port' => $this->env['DB_PORT'],
             'database' => $this->env['DB_DATABASE'],

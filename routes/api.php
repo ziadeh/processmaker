@@ -69,6 +69,13 @@ Route::group(
     Route::delete('scripts/{script}', 'ScriptController@destroy')->name('scripts.destroy')->middleware('can:delete-scripts');
     Route::post('scripts/{script}/preview', 'ScriptController@preview')->name('script.preview')->middleware('can:view-scripts');
 
+    // Script Categories
+    Route::get('script_categories', 'ScriptCategoryController@index')->name('script_categories.index')->middleware('can:view-scripts');
+    Route::get('script_categories/{script_category}', 'ScriptCategoryController@show')->name('script_categories.show')->middleware('can:view-scripts');
+    Route::post('script_categories', 'ScriptCategoryController@store')->name('script_categories.store')->middleware('can:edit-scripts');
+    Route::put('script_categories/{script_category}', 'ScriptCategoryController@update')->name('script_categories.update')->middleware('can:edit-scripts');
+    Route::delete('script_categories/{script_category}', 'ScriptCategoryController@destroy')->name('script_categories.destroy')->middleware('can:edit-scripts');
+
     // Processes
     Route::get('processes', 'ProcessController@index')->name('processes.index')->middleware('can:view-processes');
     Route::get('processes/{process}', 'ProcessController@show')->name('processes.show')->middleware('can:view-processes');
@@ -115,11 +122,11 @@ Route::group(
 
     // Files
     Route::get('files', 'FileController@index')->name('files.index')->middleware('can:view-files');
-    Route::get('files/{file}', 'FileController@show')->name('files.show')->middleware('can:view-files');
-    Route::get('files/{file}/contents', 'FileController@download')->name('files.download')->middleware('can:view-files');
-    Route::post('files', 'FileController@store')->name('files.store')->middleware('can:create-files');
-    Route::put('files/{file}', 'FileController@update')->name('files.update')->middleware('can:edit-files');
-    Route::delete('files/{file}', 'FileController@destroy')->name('files.destroy')->middleware('can:delete-files');
+    Route::get('files/{file}', 'FileController@show')->name('files.show')->middleware('can:view,file');
+    Route::get('files/{file}/contents', 'FileController@download')->name('files.download')->middleware('can:view,file');
+    Route::post('files', 'FileController@store')->name('files.store')->middleware('can:create,ProcessMaker\Models\Media');
+    Route::put('files/{file}', 'FileController@update')->name('files.update')->middleware('can:update,file');
+    Route::delete('files/{file}', 'FileController@destroy')->name('files.destroy')->middleware('can:delete,file');
 
     // Notifications
     Route::get('notifications', 'NotificationController@index')->name('notifications.index');  //Already filtered in controller
@@ -145,7 +152,10 @@ Route::group(
     Route::post('comments', 'CommentController@store')->name('comments.store')->middleware('can:create-comments');
     Route::put('comments/{comment}', 'CommentController@update')->name('comments.update')->middleware('can:edit-comments');
     Route::delete('comments/{comment}', 'CommentController@destroy')->name('comments.destroy')->middleware('can:delete-comments');
-    
+
+    //UI customization
+    Route::post('customize-ui', 'CssOverrideController@store')->name('customize-ui.store');
+
     // debugging javascript errors
     Route::post('debug', 'DebugController@store')->name('debug.store')->middleware('throttle');
 

@@ -8,7 +8,9 @@ use ProcessMaker\Events\ScreenBuilderStarting;
 use ProcessMaker\Http\Controllers\Controller;
 use ProcessMaker\Managers\ScreenBuilderManager;
 use ProcessMaker\Models\ProcessRequest;
+use ProcessMaker\Models\ProcessRequestToken;
 use ProcessMaker\Models\Screen;
+use ProcessMaker\Models\Process;
 use Spatie\MediaLibrary\Models\Media;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
@@ -63,6 +65,11 @@ class RequestController extends Controller
             $query->startedMe(Auth::user()->id);
         }
 
+        $hiddenProcessIds = Process::whereHas('category', function($q) {
+            $q->where('is_system', true);
+        })->pluck('id');
+        $query->whereNotIn('process_id', $hiddenProcessIds);
+
         switch ($type) {
             case 'allRequest':
                $result = $query->count();
@@ -107,17 +114,52 @@ class RequestController extends Controller
 
         $files = $request->getMedia();
 
+        $canPrintScreens = $this->canUserPrintScreen($request);
+        $screenRequested = $canPrintScreens ? $request->getScreensRequested() : [];
+
         $manager = new ScreenBuilderManager();
         event(new ScreenBuilderStarting($manager, ($request->summary_screen) ? $request->summary_screen->type : 'FORM'));
 
         return view('requests.show', compact(
-            'request', 'files', 'canCancel', 'canViewComments', 'canManuallyComplete', 'manager'
+            'request', 'files', 'canCancel', 'canViewComments', 'canManuallyComplete', 'manager', 'canPrintScreens', 'screenRequested'
         ));
+    }
+
+    public function screenPreview(ProcessRequest $request, Screen $screen)
+    {
+        $this->authorize('view', $request);
+        if (!$this->canUserPrintScreen($request)) {
+            //user without permissions
+            return redirect('403');
+        }
+
+        return view('requests.preview', compact('request', 'screen'));
+    }
+
+    /**
+     * the user may or may not print forms
+     *
+     * @param ProcessRequest $request
+     * @return bool
+     */
+    private function canUserPrintScreen(ProcessRequest $request)
+    {
+        //validate user is administrator
+        if (Auth::user()->is_administrator) {
+            return true;
+        }
+
+        //validate user is participant or requester
+        if (in_array(Auth::user()->id, $request->participants()->get()->pluck('id')->toArray())) {
+            return true;
+        }
+
+        return false;
     }
 
     public function downloadFiles(ProcessRequest $requestID, Media $fileID)
     {
         $requestID->getMedia();
-        return response()->download($fileID->getPath(), $fileID->name);
+        return response()->download($fileID->getPath(), $fileID->file_name);
     }
 }

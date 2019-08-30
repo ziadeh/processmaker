@@ -1,6 +1,13 @@
 <template>
   <div class="data-table">
-    <div class="card card-body table-card">
+    <data-loading
+            :for="/scripts\?page/"
+            v-show="shouldShowLoader"
+            :empty="$t('No Data Available')"
+            :empty-desc="$t('')"
+            empty-icon="noData"
+    />
+    <div v-show="!shouldShowLoader"  class="card card-body table-card">
       <vuetable
         :dataManager="dataManager"
         :sortOrder="sortOrder"
@@ -76,7 +83,7 @@
     <b-modal ref="myModalRef" :title="$t('Copy Script')" centered>
       <form>
         <div class="form-group">
-          <label for="title">{{ $t('Name') }}</label>
+          <label for="title">{{ $t('Name') }}<small class="ml-1">*</small></label>
           <input
             type="text"
             class="form-control"
@@ -101,15 +108,17 @@
 
 <script>
 import datatableMixin from "../../../components/common/mixins/datatable";
+import dataLoadingMixin from "../../../components/common/mixins/apiDataLoading";
 
 export default {
-  mixins: [datatableMixin],
+  mixins: [datatableMixin, dataLoadingMixin],
   props: ["filter", "id", "permission", "scriptFormats"],
   data() {
     return {
       dupScript: {
         title: "",
         type: "",
+        category: "",
         description: ""
       },
       errors: [],
@@ -134,6 +143,11 @@ export default {
           title: () => this.$t("Description"),
           name: "description",
           sortField: "description"
+        },
+        {
+          title: () => this.$t("Category"),
+          name: "category.name",
+          sortField: "category.name"
         },
         {
           title: () => this.$t("Language"),
@@ -198,6 +212,7 @@ export default {
           this.dupScript.language = data.language;
           this.dupScript.code = data.code;
           this.dupScript.description = data.description;
+          this.dupScript.category = data.category;
           this.dupScript.id = data.id;
           this.dupScript.run_as_user_id = data.run_as_user_id;
           this.showModal();
@@ -240,7 +255,7 @@ export default {
             this.orderBy +
             "&order_direction=" +
             this.orderDirection +
-            "&include=user"
+            "&include=category"
         )
         .then(response => {
           this.data = this.transform(response.data);

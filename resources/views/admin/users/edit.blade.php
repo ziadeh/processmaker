@@ -175,7 +175,7 @@
                                         <h5 class="mt-2">{{__('Localization')}}</h5>
                                         <div class="row">
                                             <div class="form-group col">
-                                                {!!Form::label('datetime_format', __('Date format'));!!}
+                                                {!!Form::label('datetime_format', __('Date Format'));!!}
                                                 <b-form-select id="datetime_format" v-model="formData.datetime_format" class="form-control" :options="datetimeFormats">
                                                 </b-form-select>
                                                 <div class="invalid-feedback" v-if="errors.email">
@@ -185,7 +185,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="form-group col">
-                                                {!!Form::label('timezone', __('Time zone'));!!}
+                                                {!!Form::label('timezone', __('Time Zone'));!!}
                                                 <b-form-select id="timezone" v-model="formData.timezone" class="form-control" :options="timezones">
                                                 </b-form-select>
                                                 <div class="invalid-feedback" v-if="errors.email">@{{errors.timezone}}
@@ -302,31 +302,10 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-tokens" role="tabpanel" aria-labelledby="nav-tokens-tab">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>{{__('ID')}}</th>
-                                        <th>{{__('Created At')}}</th>
-                                        <th>{{__('Expires At')}}</th>
-                                        <th>{{__('Delete')}}</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr v-for="token in apiTokens">
-                                        <td>@{{ token.id.substr(0,7) }}</td>
-                                        <td>@{{ moment(token.created_at).format() }}</td>
-                                        <td>@{{ moment(token.expires_at).format() }}</td>
-                                        <td>
-                                            <a style="cursor: pointer" @click='deleteToken(token.id)'>
-                                                <i class="fas fa-trash-alt fa-lg" style="cursor: pointer"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr v-if='apiTokens.length == 0'>
-                                        <td colspan="4">{{__('User has no tokens.')}}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                            <div class="card card-body table-card mb-3">
+
+                                <user-tokens-listing :user_id="formData.id"></user-tokens-listing>
+
                                 <div class="form-group" v-if="newToken != null">
                                     <div class="alert alert-warning">
                                         <i class="fas fa-exclamation-triangle"></i>
@@ -342,6 +321,7 @@
                                 <button class="btn btn-secondary float-right" @click="generateToken">
                                     {{__('Generate New Token')}}
                                 </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -571,7 +551,6 @@
           if (created) {
             ProcessMaker.alert('{{__('The user was successfully created')}}', 'success');
           }
-          this.loadTokens();
         },
         watch: {
           selectedPermissions: function () {
@@ -680,13 +659,7 @@
             }
           },
           loadTokens() {
-            ProcessMaker.apiClient({
-              method: 'GET',
-              url: '/users/' + {{ $user->id }} + '/tokens',
-            })
-              .then((result) => {
-                this.apiTokens = result.data.data
-              })
+            
           },
           generateToken() {
             ProcessMaker.apiClient({
@@ -704,24 +677,7 @@
                 ProcessMaker.alert(this.$t('Access token generated successfully'), "success");
               })
           },
-          deleteToken(tokenId) {
-            ProcessMaker.confirmModal(
-              this.$t("Caution!"),
-              this.$t("Are you sure to delete the token ") + tokenId.substr(0, 7) +
-              this.$t("? Any services using it will no longer have access."),
-              "",
-              () => {
-                ProcessMaker.apiClient({
-                  method: 'DELETE',
-                  url: '/users/' + this.currentUserId + '/tokens/' + tokenId,
-                })
-                  .then((result) => {
-                    this.loadTokens();
-                    this.newToken = null;
-                  })
-              }
-            );
-          },
+          
           customLabel(options) {
             return `${options.name}`
           },

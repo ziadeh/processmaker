@@ -30,11 +30,16 @@ class ScreenCategoryController extends Controller
      *     summary="Returns all screens categories that the user has access to",
      *     operationId="getScreenCategories",
      *     tags={"Screen Categories"},
-     *     @OA\Parameter(ref="#/components/parameters/filter"),
+     *     @OA\Parameter(
+     *             parameter="filter",
+     *             name="filter",
+     *             in="query",
+     *             description="Filter results by string. Searches Name, Description, and Status. All fields must match exactly.",
+     *             @OA\Schema(type="string"),
+     *     ),
      *     @OA\Parameter(ref="#/components/parameters/order_by"),
      *     @OA\Parameter(ref="#/components/parameters/order_direction"),
      *     @OA\Parameter(ref="#/components/parameters/per_page"),
-     *     @OA\Parameter(ref="#/components/parameters/include"),
      *
      *     @OA\Response(
      *         response=200,
@@ -57,7 +62,21 @@ class ScreenCategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $query = ScreenCategory::query();
+        $query = ScreenCategory::nonSystem();
+        $include = $request->input('include', '');
+
+        if ($include) {
+            $include = explode(',', $include);
+            $count = array_search('screensCount', $include);
+            if ($count !== false) {
+                unset($include[$count]);
+                $query->withCount('screens');
+            }
+            if ($include) {
+                $query->with($include);
+            }
+        }
+
         $filter = $request->input('filter', '');
         if (!empty($filter)) {
             $query->where(function ($query) use ($filter) {
@@ -72,8 +91,6 @@ class ScreenCategoryController extends Controller
             $request->input('order_by', 'name'),
             $request->input('order_direction', 'asc')
         );
-        $include  = $request->input('include') ? explode(',',$request->input('include')) : [];
-        $query->with($include);
         $response = $query->paginate($request->input('per_page', 10));
         return new ApiCollection($response);
     }
@@ -85,7 +102,7 @@ class ScreenCategoryController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      *     * @OA\Get(
-     *     path="/screen_categories/screen_category_id",
+     *     path="/screen_categories/{screen_category_id}",
      *     summary="Get single screen category by ID",
      *     operationId="getScreenCategoryById",
      *     tags={"Screen Categories"},
@@ -150,7 +167,7 @@ class ScreenCategoryController extends Controller
      *
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
      *      * @OA\Put(
-     *     path="/screen_categories/screen_category_id",
+     *     path="/screen_categories/{screen_category_id}",
      *     summary="Update a screen Category",
      *     operationId="updateScreenCategory",
      *     tags={"Screen Categories"},
@@ -190,7 +207,7 @@ class ScreenCategoryController extends Controller
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
      *
      *      * @OA\Delete(
-     *     path="/screen_categories/screen_category_id",
+     *     path="/screen_categories/{screen_category_id}",
      *     summary="Delete a screen category",
      *     operationId="deleteScreenCategory",
      *     tags={"Screen Categories"},
@@ -205,8 +222,7 @@ class ScreenCategoryController extends Controller
      *     ),
      *     @OA\Response(
      *         response=204,
-     *         description="success",
-     *         @OA\JsonContent(ref="#/components/schemas/ScreenCategory")
+     *         description="success"
      *     ),
      * )
      */

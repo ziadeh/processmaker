@@ -27,22 +27,12 @@
                                v-if="! errors.title">{{ __('The script name must be distinct.') }}</small>
                         <div class="invalid-feedback" v-if="errors.title">@{{errors.title[0]}}</div>
                     </div>
+                    <category-select :label="$t('Category')" api-get="script_categories" api-list="script_categories" v-model="formData.script_category_id" :errors="errors.script_category_id">
+                    </category-select>
                     <div class="form-group">
                         <label class="typo__label">{{__('Run script as')}}</label>
-                        <multiselect v-model="selectedUser"
-                                     label="fullname"
-                                     :show-labels="false"
-                                     :options="options"
-                                     :searchable="true"
-                                     :class="{'is-invalid': errors.run_as_user_id}">
-                            <template slot="noResult" >
-                                {{ __('No elements found. Consider changing the search query.') }}
-                            </template>
-
-                            <template slot="noOptions" >
-                                {{ __('No Data Available') }}
-                            </template>
-                        </multiselect>
+                        <select-user v-model="selectedUser" :multiple="false" :class="{'is-invalid': errors.run_as_user_id}">
+                        </select-user>
                         <div class="invalid-feedback" v-if="errors.run_as_user_id">@{{errors.run_as_user_id[0]}}</div>
                     </div>
                     <div class="form-group">
@@ -76,14 +66,14 @@
 @endsection
 
 @section('js')
+    <script src="{{mix('js/processes/scripts/editConfig.js')}}"></script>
     <script>
       new Vue({
         el: '#editScript',
         data() {
           return {
             formData: @json($script),
-            options:@json($users),
-            selectedUser: "",
+            selectedUser: @json($selectedUser),
             errors: {
               'title': null,
               'language': null,
@@ -91,14 +81,6 @@
               'timeout': null,
               'status': null
             }
-          }
-        },
-        mounted() {
-          let users = this.options.filter(u => {
-            return u.id === this.formData.run_as_user_id
-          });
-          if (users.length > 0) {
-            this.selectedUser = users[0];
           }
         },
         methods: {
@@ -118,6 +100,7 @@
             ProcessMaker.apiClient.put('scripts/' + this.formData.id, {
               title: this.formData.title,
               language: this.formData.language,
+              script_category_id: this.formData.script_category_id,
               description: this.formData.description,
               run_as_user_id: this.selectedUser === null ? null : this.selectedUser.id,
               timeout: this.formData.timeout,

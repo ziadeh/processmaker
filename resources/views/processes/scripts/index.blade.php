@@ -27,7 +27,8 @@
 
             <div class="col-8" align="right">
                 @can('create-scripts')
-                    <a href="#" id="create_script" class="btn btn-secondary" data-toggle="modal" data-target="#addScript"><i
+                    <a href="#" id="create_script" class="btn btn-secondary" data-toggle="modal"
+                       data-target="#addScript"><i
                                 class="fas fa-plus"></i>
                         {{__('Script')}}</a>
                 @endcan
@@ -53,72 +54,78 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            {!!Form::label('title', __('Name'))!!}
-                            {!!Form::text('title', null, ['class'=> 'form-control', 'v-model'=> 'title', 'v-bind:class' =>
-                            '{\'form-control\':true, \'is-invalid\':addError.title}'])!!}
-                            <small class="form-text text-muted"
-                                   v-if="! addError.title">{{ __('The script name must be distinct.') }}</small>
-                            <div class="invalid-feedback" v-for="title in addError.title">@{{title}}</div>
-                        </div>
-                        <div class="form-group">
-                            {!!Form::label('description', __('Description'))!!}
-                            {!!Form::textarea('description', null, ['rows'=>'2','class'=> 'form-control', 'v-model'=> 'description',
-                            'v-bind:class' => '{\'form-control\':true, \'is-invalid\':addError.description}'])!!}
-                            <div class="invalid-feedback" v-for="description in addError.description">@{{description}}
+                    @if ($scriptCategories !== 0)
+                        <div class="modal-body">
+                            <div class="form-group">
+                                {!!Form::label('title', __('Name'))!!}
+                                {!!Form::text('title', null, ['class'=> 'form-control', 'v-model'=> 'title', 'v-bind:class' =>
+                                '{\'form-control\':true, \'is-invalid\':addError.title}'])!!}
+                                <small class="form-text text-muted"
+                                       v-if="! addError.title">{{ __('The script name must be distinct.') }}</small>
+                                <div class="invalid-feedback" v-for="title in addError.title">@{{title}}</div>
+                            </div>
+                            <div class="form-group">
+                                {!!Form::label('description', __('Description'))!!}
+                                {!!Form::textarea('description', null, ['rows'=>'2','class'=> 'form-control', 'v-model'=> 'description',
+                                'v-bind:class' => '{\'form-control\':true, \'is-invalid\':addError.description}'])!!}
+                                <div class="invalid-feedback" v-for="description in addError.description">
+                                    @{{description}}
+                                </div>
+                            </div>
+                            <category-select :label="$t('Category')" api-get="script_categories"
+                                             api-list="script_categories" v-model="script_category_id"
+                                             :errors="addError.script_category_id">
+                            </category-select>
+                            <div class="form-group">
+                                {!!Form::label('language', __('Language'))!!}
+                                {!!Form::select('language', [''=>__('Select')] + $scriptFormats, null, ['class'=>
+                                'form-control', 'v-model'=> 'language', 'v-bind:class' => '{\'form-control\':true,
+                                \'is-invalid\':addError.language}']);!!}
+                                <div class="invalid-feedback" v-for="language in addError.language">@{{language}}</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="typo__label">{{__('Run script as')}}</label>
+                                <select-user v-model="selectedUser" :multiple="false"
+                                             :class="{'is-invalid': addError.run_as_user_id}">
+                                </select-user>
+                                <small class="form-text text-muted"
+                                       v-if="! addError.run_as_user_id">{{__('Select a user to set the API access of the Script')}}</small>
+                                <div class="invalid-feedback" v-for="run_as_user_id in addError.run_as_user_id">
+                                    @{{run_as_user_id}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                {!! Form::label('timeout', __('Timeout')) !!}
+                                <div class="form-row ml-0">
+                                    {!! Form::text('timeout', null, ['id' => 'timeout', 'class'=> 'form-control col-2',
+                                    'v-model' => 'timeout', 'pattern' => '[0-9]*', 'v-bind:class' => '{"form-control":true, "is-invalid":addError.timeout}']) !!}
+                                    {!! Form::range(null, null, ['id' => 'timeout-range', 'class'=> 'custom-range col ml-1 mt-2',
+                                    'v-model' => 'timeout', 'min' => 0, 'max' => 300]) !!}
+                                    <div class="invalid-feedback" v-for="timeout in addError.timeout">@{{timeout}}</div>
+                                </div>
+                                <small class="form-text text-muted" v-if="! addError.timeout">
+                                    {{ __('Enter how many seconds the Script runs before timing out (0 is unlimited).') }}
+                                </small>
                             </div>
                         </div>
-                        <div class="form-group">
-                            {!!Form::label('language', __('Language'))!!}
-                            {!!Form::select('language', [''=>__('Select')] + $scriptFormats, null, ['class'=>
-                            'form-control', 'v-model'=> 'language', 'v-bind:class' => '{\'form-control\':true,
-                            \'is-invalid\':addError.language}']);!!}
-                            <div class="invalid-feedback" v-for="language in addError.language">@{{language}}</div>
+                    @else
+                        <div class="modal-body">
+                            <div>{{__('Categories are required to create a script')}}</div>
+                            <a href="{{ url('designer/scripts/categories') }}" class="btn btn-primary container mt-2">
+                                {{__('Add Category')}}
+                            </a>
                         </div>
-
-                        <div class="form-group">
-                            <label class="typo__label">{{__('Run script as')}}</label>
-                            <multiselect v-model="selectedUser"
-                                         label="fullname"
-                                         :options="users"
-                                         :show-labels="false"
-                                         :placeholder="$t('Select')"
-                                         :searchable="true"
-                                         :class="{'is-invalid': addError.run_as_user_id}">
-                                <template slot="noResult" >
-                                    {{ __('No elements found. Consider changing the search query.') }}
-                                </template>
-
-                                <template slot="noOptions" >
-                                    {{ __('No Data Available') }}
-                                </template>
-                            </multiselect>
-                            <small class="form-text text-muted" v-if="! addError.run_as_user_id">{{__('Select a user to set the API access of the Script')}}</small>
-                            <div class="invalid-feedback" v-for="run_as_user_id in addError.run_as_user_id">@{{run_as_user_id}}</div>
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('timeout', __('Timeout')) !!}
-                            <div class="form-row ml-0">
-                                {!! Form::text('timeout', null, ['id' => 'timeout', 'class'=> 'form-control col-2',
-                                'v-model' => 'timeout', 'pattern' => '[0-9]*', 'v-bind:class' => '{"form-control":true, "is-invalid":addError.timeout}']) !!}
-                                {!! Form::range(null, null, ['id' => 'timeout-range', 'class'=> 'custom-range col ml-1 mt-2',
-                                'v-model' => 'timeout', 'min' => 0, 'max' => 300]) !!}
-                                <div class="invalid-feedback" v-for="timeout in addError.timeout">@{{timeout}}</div>
-                            </div>
-                            <small class="form-text text-muted" v-if="! addError.timeout">
-                                {{ __('How many seconds the script should be allowed to run (0 is unlimited).') }}
-                            </small>
-                        </div>
-                    </div>
+                    @endif
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" @click="onClose">
                             {{__('Cancel')}}
                         </button>
-                        <button type="button" class="btn btn-secondary ml-2" @click="onSubmit" :disabled="disabled">
-                            {{__('Save')}}
-                        </button>
+                        @if ($scriptCategories !== 0)
+                            <button type="button" class="btn btn-secondary ml-2" @click="onSubmit" :disabled="disabled">
+                                {{__('Save')}}
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -137,10 +144,11 @@
               title: '',
               language: '',
               description: '',
+              script_category_id: '',
               code: '',
               addError: {},
               selectedUser: '',
-              users:@json($users),
+              users: [],
               timeout: 60,
               disabled: false,
             },
@@ -149,6 +157,7 @@
                 this.title = '';
                 this.language = '';
                 this.description = '';
+                this.script_category_id = '';
                 this.code = '';
                 this.timeout = 60;
                 this.addError = {};
@@ -157,7 +166,8 @@
                 this.errors = Object.assign({}, {
                   name: null,
                   description: null,
-                  status: null
+                  status: null,
+                  script_category_id: null
                 });
                 //single click
                 if (this.disabled) {
@@ -168,7 +178,8 @@
                   title: this.title,
                   language: this.language,
                   description: this.description,
-                  run_as_user_id: this.selectedUser.id,
+                  script_category_id: this.script_category_id,
+                  run_as_user_id: this.selectedUser ? this.selectedUser.id : null,
                   code: "[]",
                   timeout: this.timeout
                 })
