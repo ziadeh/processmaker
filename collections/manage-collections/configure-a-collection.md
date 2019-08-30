@@ -61,7 +61,7 @@ Follow these steps to configure how ProcessMaker users have access to your Colle
 1. [Select the ProcessMaker Collection to configure](configure-a-collection.md#configure-a-processmaker-collection). The **Configuration** tab displays.
 2. Click the **User Permissions** tab. ![](../../.gitbook/assets/user-permissions-configuration-tab-collections-package.png) 
 3. Enter in the **Search** field the text to filter ProcessMaker user accounts, if necessary.
-4. Toggle any of the permission settings for applicable ProcessMaker users to allow each user appropriate access to records in this Collection. By default all ProcessMaker users do not have any access to records in your Collection unless a user has the **Make this use a Super Admin** setting selected. Follow these guidelines:
+4. Toggle any of the permission settings for applicable ProcessMaker users to allow each user appropriate access to records in this Collection. By default all ProcessMaker users do not have any access to records in your Collection unless a user has the **Make this use a Super Admin** setting selected. If necessary, ensure to grant your own ProcessMaker user permissions to access records in your Collection. Follow these guidelines:
    * **Create:** Toggle the **Create** setting to grant or restrict permission for that ProcessMaker user to create records in this Collection.
    * **Delete:** Toggle the **Delete** setting to grant or restrict permission for that ProcessMaker user to delete records in this Collection.
    * **Edit:** Toggle the **Edit** setting to grant or restrict permission for that ProcessMaker user to edit records in this Collection.
