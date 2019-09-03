@@ -223,7 +223,7 @@
   * [Search for a Collection](collections/manage-collections/search-for-a-collection.md)
   * [Delete a Collection](collections/manage-collections/delete-a-collection.md)
 * [Manage Records in a Collection](collections/manage-records-in-a-collection/README.md)
-  * [View All Records in a Collection](collections/manage-records-in-a-collection/view-all-records-in-a-collection.md)
+  * [View Records in a Collection](collections/manage-records-in-a-collection/view-all-records-in-a-collection.md)
   * [Create a Collection Record](collections/manage-records-in-a-collection/create-a-collection-record.md)
   * [Search for a Record in a Collection](collections/manage-records-in-a-collection/search-for-a-record-in-a-collection.md)
   * [Save and Share a Record Search](collections/manage-records-in-a-collection/save-and-share-a-record-search.md)
