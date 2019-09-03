@@ -222,7 +222,6 @@
   * [Configure a Collection](collections/manage-collections/configure-a-collection.md)
   * [Search for a Collection](collections/manage-collections/search-for-a-collection.md)
   * [Delete a Collection](collections/manage-collections/delete-a-collection.md)
-* [Update Screens for a Collection](collections/edit-a-collection.md)
 * [Manage Records in a Collection](collections/manage-records-in-a-collection/README.md)
   * [View All Records in a Collection](collections/manage-records-in-a-collection/view-all-records-in-a-collection.md)
   * [Create a Collection Record](collections/manage-records-in-a-collection/create-a-collection-record.md)
@@ -231,6 +230,7 @@
   * [Edit a Collection Record](collections/manage-records-in-a-collection/edit-a-collection-record.md)
   * [View a Collection Record](collections/manage-records-in-a-collection/view-a-collection-record.md)
   * [Delete a Collection Record](collections/manage-records-in-a-collection/delete-a-collection-record.md)
+* [Edit Screens for a Collection](collections/edit-a-collection.md)
 
 ## Download ProcessMaker for On-Premises Installation <a id="install-processmaker"></a>
 

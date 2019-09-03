@@ -4,15 +4,19 @@ description: Create a new ProcessMaker Collection into which to add records.
 
 # Create a New Collection
 
-## Create a New ProcessMaker Collection
+## Overview
 
 A ProcessMaker [Collection](../what-is-a-collection.md) uses at least two [Screens](../../designing-processes/design-forms/what-is-a-form.md) to create, edit, and view a record:
 
-* **Create a record:** Have available a [Form-type](../../designing-processes/design-forms/screens-builder/types-for-screens.md#form) ProcessMaker Screen to create a record in the Collection.
-* **Edit a record:** Either use the same ProcessMaker Screen that creates a record, or have available a second Form-type Screen to edit any record in the Collection. If you want to use a second ProcessMaker Screen, optionally [make a copy](../../designing-processes/design-forms/manage-forms/duplicate-a-screen.md#duplicate-a-processmaker-screen) of the Screen intended to create a record, and then make changes to it without needing to design a new Screen.
-* **View a record:** Have available a [Display-type](../../designing-processes/design-forms/screens-builder/types-for-screens.md#display) ProcessMaker Screen to view any record in the Collection.
+* **Create a record:** Have available a [Form-type](../../designing-processes/design-forms/screens-builder/types-for-screens.md#form) ProcessMaker Screen to create a record in the Collection. Ensure that this ProcessMaker Screen contains all the appropriate controls required for authorized Collection stakeholders to create a complete record.
+* **Edit a record:** Either use the same ProcessMaker Screen that creates a record, or have available a second Form-type Screen to edit any record in the Collection. Ensure that this ProcessMaker Screen contains all the appropriate controls for authorized Collection stakeholders to edit or update particular content of a record in the Collection. In many cases, the controls to create a record may be identical to those to edit a record. If you want to use a second ProcessMaker Screen, optionally [make a copy](../../designing-processes/design-forms/manage-forms/duplicate-a-screen.md#duplicate-a-processmaker-screen) of the Screen intended to create a record, and then make changes to it without needing to design a new Screen.
+* **View a record:** Have available a [Display-type](../../designing-processes/design-forms/screens-builder/types-for-screens.md#display) ProcessMaker Screen to view any record in the Collection. This ProcessMaker Screen may serve two purposes:
+  * **Provide a read-only view of a complete record:** This allows authorized Collection stakeholders to view complete contents of any record in the Collection, but not edit or update it.
+  * **Limit the information displayed in a record:** This allows authorized Collection stakeholders to view limited content of any record in the Collection to comply with specific legal or privacy requirements.
 
-Ensure these ProcessMaker Screens are available before creating a new ProcessMaker Collection.
+Ensure these ProcessMaker Screens are available before creating a new ProcessMaker Collection. You are not required to have the controls in these ProcessMaker Screens finalized, as you or an authorized ProcessMaker designer may change these Screens at any time. Doing so updates all records within that ProcessMaker Collection automatically.
+
+## Create a New ProcessMaker Collection
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
