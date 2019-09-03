@@ -18,7 +18,7 @@ See the ProcessMaker [Screens](../../../processmaker-administration/permission-d
 Follow these steps to copy a ProcessMaker Screen:
 
 1. [View your ProcessMaker Screens.](view-all-forms.md) The **Screens** page displays.
-2. Click the **Copy** icon![](../../../.gitbook/assets/duplicate-script-processes.png)for your ProcessMaker Screen. The **Duplicate Screen** screen displays.  
+2. Click the **Copy** icon![](../../../.gitbook/assets/duplicate-script-processes.png)for your ProcessMaker Screen. The **Copy Screen** screen displays.  
 
    ![](../../../.gitbook/assets/duplicate-screen-screen-processes.png)
 

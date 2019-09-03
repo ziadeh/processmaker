@@ -18,7 +18,7 @@ See the ProcessMaker [Scripts](../../../processmaker-administration/permission-d
 Follow these steps to copy a ProcessMaker Script:
 
 1. [View your ProcessMaker Scripts](view-all-scripts.md). The **Scripts** page displays.
-2. Click the **Copy** icon![](../../../.gitbook/assets/duplicate-script-processes.png)for your ProcessMaker Script. The **Duplicate Script** screen displays.  
+2. Click the **Copy** icon![](../../../.gitbook/assets/duplicate-script-processes.png)for your ProcessMaker Script. The **Copy Script** screen displays.  
 
    ![](../../../.gitbook/assets/duplicate-script-screen-processes.png)
 
@@ -26,10 +26,6 @@ Follow these steps to copy a ProcessMaker Script:
    * In the **Name** field, edit the name of the duplicated ProcessMaker Script. After the original ProcessMaker Script is duplicated, the word **Copy** is suffixed to the original Script's name. This is a required field.
    * In the **Description** field, edit the description of the original ProcessMaker Script.
 4. Click **Save**.
-
-{% hint style="info" %}
-The **Language** field shows in which programming language the original ProcessMaker Script is written. The copied ProcessMaker Script must use the same programming language.
-{% endhint %}
 
 ## Related Topics
 
