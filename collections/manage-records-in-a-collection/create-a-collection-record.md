@@ -15,7 +15,7 @@ The [Collections package](../../package-development-distribution/package-a-conne
 
 Your ProcessMaker user account or group membership must have the "Collections: View Collections" permission to view the list of ProcessMaker Collections unless your user account has the **Make this user a Super Admin** setting selected. See the ProcessMaker [Collections](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance.
 
-Furthermore, your ProcessMaker user account or group membership must have the following record-level permissions from a Collection's configuration:
+Furthermore, your ProcessMaker user account or group membership must have the following permissions from a Collection's configuration that control how records in that Collection are manipulated:
 
 * View
 * Create
