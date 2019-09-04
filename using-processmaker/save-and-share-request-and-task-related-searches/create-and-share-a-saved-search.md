@@ -16,9 +16,11 @@ To create and share [Saved Searches](what-is-a-saved-search.md), the [Saved Sear
 
 Follow these steps to create and share a Saved Search:
 
-1. Enter the search criteria for either a [Request](../requests/search-for-a-request.md) or [Task](../task-management/search-for-a-task.md) search. It is this criteria from which the Saved Search settings are based.
+1. Enter the advanced search criteria using ProcessMaker Query Language \(PMQL\) parameters for either a [Request](../requests/what-is-a-request.md) or [Task](../task-management/what-is-a-task.md) search. It is this criteria from which the Saved Search settings are based. See the following topics for how to compose PMQL search parameters in an advanced search:
+   * [PMQL advanced search parameters for Requests](../requests/search-for-a-request.md#advanced-search-for-a-request)
+   * [PMQL advanced search parameters for Tasks](../task-management/search-for-a-task.md#advanced-search-for-a-task)
 2. Click the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). The **Save Search** screen displays. ![](../../.gitbook/assets/save-search-screen-package-requests-tasks.png) 
-3. In the **Name** field, enter the name of your Saved Search. Since this name displays in the left sidebar of **Requests**/**Tasks** pages, ensure that this is a descriptive name based on the ProcessMaker Query Language \(PMQL\) parameters that compose the search. This name is helpful for yourself and those with whom you share this Saved Search to know for what this Saved Search's results are. This is a required field.
+3. In the **Name** field, enter the name of your Saved Search. Since this name displays in the left sidebar of **Requests**/**Tasks** pages, ensure that this is a descriptive name based on the PMQL parameters that compose the search. This name is helpful for yourself and those with whom you share this Saved Search to know for what this Saved Search's results are. This is a required field.
 4. Follow these guidelines to select an image that represents the Saved Search results. Saved Searches associated with Requests display in the left sidebar of **Requests** pages, while those associated with Tasks display in the left sidebar of **Tasks** pages.
    * **Follow this step to select an image from ProcessMaker to represent the Saved Search:**
 
