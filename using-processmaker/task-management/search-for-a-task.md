@@ -68,7 +68,7 @@ Follow these guidelines to do an advanced search for a Task using PMQL:
 
    If not, then click the **Advanced Search** button![](../../.gitbook/assets/advanced-search-button.png).
 
-3. Enter your PMQL parameters that compose your advanced search. Refer to the following PMQL parameter syntax options that are not case sensitive to compose your PMQL search:
+3. In the PMQL field, enter your PMQL parameters that compose your advanced search. Refer to the following PMQL parameter syntax options that are not case sensitive to compose your PMQL search:
 
    * **Process\(es\) associated with a Request:**
      * Use the following syntax as a guide to include one Process associated with a Request in your search criteria:
@@ -132,7 +132,7 @@ Follow these guidelines to do an advanced search for a Task using PMQL:
 
    `(request = "Tax Return Process" OR request = "Modify Document Process") AND (task = "Customer Documents" OR task = "Loan Request") AND (status = "In Progress" OR status = "Completed") AND (updated_at < NOW -2 day)`
 
-4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Tasks based on your entered criteria.
+4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Tasks based on your entered criteria. If there is no search criteria in the **PMQL** field when the **Search** button is clicked, the following message displays: **Search query is empty. Please add search attributes or PMQL before saving.**
 5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Task search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches/).
 
 {% hint style="info" %}
