@@ -31,26 +31,34 @@ Follow these steps to view all ProcessMaker Collections in your organization:
 
 The **Collections** page displays the following information in tabular format about ProcessMaker Collections:
 
-* **Collection ID:** The **Collection ID** column displays the ProcessMaker Collection's ID. ProcessMaker automatically generates the ID value when the Vocabulary is created and represents a sequential number of how many total Collections have been created to that time.
+* **Collection ID:** The **Collection ID** column displays the ProcessMaker Collection's ID. ProcessMaker automatically generates the ID value when the Collection is created and represents a sequential number of how many total Collections have been created to that time.
 * **Name:** The **Name** column displays the ProcessMaker Collection's name.
 * **\# Records:** The **\# Records** column displays how many records are in each ProcessMaker Collection.
 * **Modified By:** The **Modified By** column displays the ProcessMaker user who last modified the Collection. Hover your cursor over the user's avatar to view that person's full name.
 * **Created By:** The **Created By** column displays the ProcessMaker user who created the Collection. Hover your cursor over the user's avatar to view that person's full name.
-* **Modified:** The **Modified** column displays the date and time the ProcessMaker Vocabulary was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Created:** The **Created** column displays the date and time the ProcessMaker Vocabulary was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Modified:** The **Modified** column displays the date and time the ProcessMaker Collection was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the ProcessMaker Collection was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### Search for a ProcessMaker Collection
 
 Use the [Search](search-for-a-collection.md) field to filter ProcessMaker Collections that display.
 
-### Create a ProcessMaker Vocabulary
+### Create a ProcessMaker Collection
 
 Click the **+Collection** button. See [Create a New Collection](create-a-new-collection.md).
+
+### View Records in a ProcessMaker Collection
+
+Click the **Records** icon![](../../.gitbook/assets/records-icon-collections-package.png). See [View All Records in a Collection](../manage-records-in-a-collection/view-all-records-in-a-collection.md#view-all-records-in-a-collection).
 
 ### Configure a ProcessMaker Collection
 
 Click the **Edit** icon![](../../.gitbook/assets/configure-process-icon-processes-page-processes.png). See [Edit a Collection](../edit-a-collection.md).
+
+### Delete a ProcessMaker Collection
+
+Click the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png). See [Delete a Collection Record](../manage-records-in-a-collection/delete-a-collection-record.md#delete-a-processmaker-collection-record).
 
 ### No ProcessMaker Collections?
 

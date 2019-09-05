@@ -29,6 +29,48 @@ Follow these steps to view all ProcessMaker Collections in your organization:
      2. Click the ProcessMaker Collection name to view its records.
    * **View a ProcessMaker Collection from the Collections page:** Click the **Records** icon![](../../.gitbook/assets/records-icon-collections-package.png)for the ProcessMaker Collection to view its records.
 
+The records in the ProcessMaker Collection display.
+
+![Table of records in a ProcessMaker Collection](../../.gitbook/assets/records-page-collections-package.png)
+
+The following information displays in tabular format about records in the ProcessMaker Collection:
+
+* **\#:** The **\#** column displays the ID for the record. Use record IDs to [search for records in the ProcessMaker Collection](search-for-a-record-in-a-collection.md#search-records-in-a-processmaker-collection).
+* **Modified By:** The **Modified By** column displays the ProcessMaker user who last modified the record. Hover your cursor over the user's avatar to view that person's full name.
+* **Created By:** The **Created By** column displays the ProcessMaker user who created the record. Hover your cursor over the user's avatar to view that person's full name.
+* **Modified:** The **Modified** column displays the date and time the ProcessMaker Vocabulary was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the ProcessMaker Vocabulary was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+
+{% hint style="info" %}
+### Search for a Record in the ProcessMaker Collection
+
+Use the [**PMQL**](search-for-a-record-in-a-collection.md#search-records-in-a-processmaker-collection) field to filter records that display in the ProcessMaker Collection.
+
+### Create a New Record in the ProcessMaker Collection
+
+Click the **+Record** button. See [Create a New Collection Record](create-a-collection-record.md#create-a-new-processmaker-collection-record).
+
+### Edit a Record in the ProcessMaker Collection
+
+Click the **Edit** icon![](../../.gitbook/assets/edit-icon.png). See [Edit a Collection Record](edit-a-collection-record.md#edit-a-processmaker-collection-record).
+
+### View a Record in the ProcessMaker Collection
+
+Click the **View** icon![](../../.gitbook/assets/view-icon-collection-record-package.png). See [View a Collection Record](view-a-collection-record.md#view-a-processmaker-collection-record).
+
+### Delete a Record from the ProcessMaker Collection
+
+Click the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png). See [Delete a Collection Record](delete-a-collection-record.md#delete-a-processmaker-collection-record).
+
+### No Records in this ProcessMaker Collection?
+
+If no records exist in this ProcessMaker Collection, or you do not have permission to view any, the following message displays: **No Data Available**.
+
+### Display Information the Way You Want It
+
+[Control how tabular information displays](../../using-processmaker/control-how-requests-display-in-a-tab.md), including how to sort columns or how many items display per page.
+{% endhint %}
+
 ## Related Topics
 
 

@@ -28,3 +28,7 @@ Follow these steps to delete a record in a ProcessMaker Collection:
 1. [View the records for the ProcessMaker Collection](view-all-records-in-a-collection.md#view-all-records-in-a-collection) in which you want to delete a record.
 2. Click the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png)for the record you want to delete.
 
+## Related Topics
+
+
+
