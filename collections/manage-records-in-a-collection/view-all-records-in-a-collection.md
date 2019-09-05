@@ -20,7 +20,7 @@ Your ProcessMaker user account or group membership must have the "Collections: V
 Furthermore, your ProcessMaker user account or group membership must have the **View** record-level permission from a Collection's configuration to view that Collection's records. See [Configure a Collection](../manage-collections/configure-a-collection.md#configure-a-processmaker-collection) or ask the manager of that ProcessMaker Collection for assistance.
 {% endhint %}
 
-Follow these steps to view all ProcessMaker Collections in your organization:
+Follow these steps to view all records in a ProcessMaker Collection:
 
 1. [View your ProcessMaker Collections](../manage-collections/view-collections.md#view-all-collections). The **Collections** page displays.
 2. Do one of the following to view the list of records for a ProcessMaker Collection:
@@ -29,7 +29,7 @@ Follow these steps to view all ProcessMaker Collections in your organization:
      2. Click the ProcessMaker Collection name to view its records.
    * **View a ProcessMaker Collection from the Collections page:** Click the **Records** icon![](../../.gitbook/assets/records-icon-collections-package.png)for the ProcessMaker Collection to view its records.
 
-The records in the ProcessMaker Collection display.
+The list of records display for the selected ProcessMaker Collection.
 
 ![Table of records in a ProcessMaker Collection](../../.gitbook/assets/records-page-collections-package.png)
 

@@ -35,12 +35,12 @@ Follow these steps to search records in a ProcessMaker Collection:
      * Use the following syntax to include all records in your search criteria since record IDs begin with `1`:
 
        `id > 0`
-   * **Process\(es\):**
-     * Use the following syntax as a guide to include one Process in your search criteria:
+   * ~~**Process\(es\):**~~
+     * ~~Use the following syntax as a guide to include one Process in your search criteria:~~
 
-       `(request = "exact Process name including spaces")`
+       ~~`(request = "exact Process name including spaces")`~~
 
-     * Use the following syntax as a guide to include two or more Processes in your search criteria:
+     * ~~Use the following syntax as a guide to include two or more Processes in your search criteria:~~
 
        `(request = "Process name 1" OR request = "Process name 2")`
    * **Record information:**
@@ -51,34 +51,34 @@ Follow these steps to search records in a ProcessMaker Collection:
 
      `data.` represents that what follows derives from record information, as is used in JSON dot notation. Record data is derived from the **Variable Name** setting values in the ProcessMaker Screens that are used to [create, edit and view records in this Collection](../manage-collections/create-a-new-collection.md#overview). Use these **Variable Name** setting values in place of `RecordData` in this syntax. Spaces are allowed between operators. Example: `data.last_name = "Canera"`. Note that your ProcessMaker user account or group membership must have the [appropriate permissions to view and edit ProcessMaker Screens](../edit-a-collection.md#edit-a-processmaker-screen-for-a-collection) to view **Variable Name** setting values. Ask your ProcessMaker Administrator if you do not see the **Data** tab in completed Requests.
 
-   * **ProcessMaker Magic Variables:**
+   * ~~**ProcessMaker Magic Variables:**~~
 
-     Following the same syntax as referencing Request-related information, reference ProcessMaker [Magic Variables](../../designing-processes/reference-global-variables-in-your-processmaker-assets.md) in your search criteria. See [Magic Variable Descriptions](../../designing-processes/reference-global-variables-in-your-processmaker-assets.md#global-variable-descriptions).
+     ~~Following the same syntax as referencing Request-related information, reference ProcessMaker~~ [~~Magic Variables~~](../../designing-processes/reference-global-variables-in-your-processmaker-assets.md) ~~in your search criteria. See~~ [~~Magic Variable Descriptions~~](../../designing-processes/reference-global-variables-in-your-processmaker-assets.md#global-variable-descriptions)~~.~~
 
-   * **Status\(es\):** 
-     * Use the following syntax as a guide to include one Request status in your search criteria:
+   * ~~**Status\(es\):**~~ 
+     * ~~Use the following syntax as a guide to include one Request status in your search criteria:~~
 
-       `(status = "In Progress")`
+       ~~`(status = "In Progress")`~~
 
-     * Use the following syntax as a guide to include two or more Request statuses in your search criteria:
+     * ~~Use the following syntax as a guide to include two or more Request statuses in your search criteria:~~
 
-       `(status = "Completed" OR status = "Canceled")`
-   * **Requester\(s\):**
-     * Use the following syntax as a guide to include one requester in your search criteria:
+       ~~`(status = "Completed" OR status = "Canceled")`~~
+   * ~~**Requester\(s\):**~~
+     * ~~Use the following syntax as a guide to include one requester in your search criteria:~~
 
-       `(requester = "Username1")`
+       ~~`(requester = "Username1")`~~
 
-     * Use the following syntax as a guide to include two or more requesters in your search criteria:
+     * ~~Use the following syntax as a guide to include two or more requesters in your search criteria:~~
 
-       `(requester = "Username1" OR requester = "Username2")`
-   * **Participant\(s\):**
-     * Use the following syntax as a guide to include one Request participant in your search criteria:
+       ~~`(requester = "Username1" OR requester = "Username2")`~~
+   * ~~**Participant\(s\):**~~
+     * ~~Use the following syntax as a guide to include one Request participant in your search criteria:~~
 
-       `(participant = "Username3")`
+       ~~`(participant = "Username3")`~~
 
-     * Use the following syntax as a guide to include two or more Request participants in your search criteria:
+     * ~~Use the following syntax as a guide to include two or more Request participants in your search criteria:~~
 
-       `(participant = "Username3" OR participant = "Username4")`
+       ~~`(participant = "Username3" OR participant = "Username4")`~~
    * **Time Period\(s\):**
      * Use the following syntax as a guide to include a period of time in your search criteria:
 
@@ -99,7 +99,7 @@ Follow these steps to search records in a ProcessMaker Collection:
 
      Spaces are allowed between operators. Example: `data.last_name = "Canera"`.
 
-   Below is an example of a valid advanced Request search:
+   Below is an example of a valid Record search:
 
    `(request = "Process Name 1" OR request = "Process Name 2") AND (status = "Canceled" OR status = "Error") AND (requester = "Username1" OR requester = "Username2") AND (participant = "Username3" OR participant = "Username4" AND (data.last_name= "Canera") AND (updated_at < NOW -2 day)`
 

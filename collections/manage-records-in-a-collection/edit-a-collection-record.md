@@ -26,7 +26,7 @@ See [Configure a Collection](../manage-collections/configure-a-collection.md#con
 Follow these steps to edit a record in a ProcessMaker Collection:
 
 1. [View the records for the ProcessMaker Collection](view-all-records-in-a-collection.md#view-all-records-in-a-collection) in which you want to edit a record.
-2. Click the **Edit** icon![](../../.gitbook/assets/edit-icon.png)for the record you want to edit. The record displays using the ProcessMaker Screen configured to edit a record in this Collection.
+2. Click the **Edit** icon![](../../.gitbook/assets/edit-icon.png)for the record you want to edit. The record displays using the ProcessMaker Screen configured to [edit a record in this Collection](../manage-collections/create-a-new-collection.md#create-a-new-processmaker-collection).
 3. Edit information for the record as indicated in the ProcessMaker Screen.
 4. Submit the revised record as indicated in the ProcessMaker Screen.
 

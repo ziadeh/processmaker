@@ -21,7 +21,7 @@ Furthermore, your ProcessMaker user account or group membership must have the **
 Follow these steps to view a record in a ProcessMaker Collection:
 
 1. [View the records for the ProcessMaker Collection](view-all-records-in-a-collection.md#view-all-records-in-a-collection) in which you want to view a record.
-2. Click the **View** icon![](../../.gitbook/assets/view-icon-collection-record-package.png)for the record you want to view. The record displays using the ProcessMaker Screen configured to view a record in this Collection.
+2. Click the **View** icon![](../../.gitbook/assets/view-icon-collection-record-package.png)for the record you want to view. The record displays using the ProcessMaker Screen configured to [view a record in this Collection](../manage-collections/create-a-new-collection.md#create-a-new-processmaker-collection).
 3. Close the record as indicated by the ProcessMaker Screen. The list of records for that ProcessMaker Collection displays.
 
 ## Related Topics

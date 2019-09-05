@@ -23,6 +23,12 @@ Furthermore, your ProcessMaker user account or group membership must have the fo
 See [Configure a Collection](../manage-collections/configure-a-collection.md#configure-a-processmaker-collection) or ask the manager of that ProcessMaker Collection for assistance.
 {% endhint %}
 
+{% hint style="warning" %}
+When deleting a record from a ProcessMaker Collection, the information in that record is a also permanently deleted.
+
+Deleting a record from a ProcessMaker Collection cannot be undone.
+{% endhint %}
+
 Follow these steps to delete a record in a ProcessMaker Collection:
 
 1. [View the records for the ProcessMaker Collection](view-all-records-in-a-collection.md#view-all-records-in-a-collection) in which you want to delete a record.

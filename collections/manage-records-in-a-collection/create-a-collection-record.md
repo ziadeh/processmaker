@@ -26,9 +26,9 @@ See [Configure a Collection](../manage-collections/configure-a-collection.md#con
 Follow these steps to create a new record in a ProcessMaker Collection:
 
 1. [View the records for the ProcessMaker Collection](view-all-records-in-a-collection.md#view-all-records-in-a-collection) in which you want to add a record.
-2. Click the **+Record** button. The **Create Record** page displays the ProcessMaker Screen configured to create a record in this Collection.
+2. Click the **+Record** button. The **Create Record** page displays the ProcessMaker Screen configured to [create a record in this Collection](../manage-collections/create-a-new-collection.md#create-a-new-processmaker-collection).
 3. Enter information for the new record as indicated in the ProcessMaker Screen.
-4. Submit the new record as indicated in the ProcessMaker Screen. The new record displays in the list of records for that ProcessMaker Collection.
+4. Submit the new record as indicated in the ProcessMaker Screen. The new record [displays in the list of records for that ProcessMaker Collection](view-all-records-in-a-collection.md#view-all-records-in-a-collection).
 
 ## Related Topics
 
