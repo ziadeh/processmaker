@@ -58,7 +58,7 @@
       @yield('sidebar')
   </div>
 
-  <div class="d-flex flex-grow-1 flex-column" style="overflow: hidden;">
+  <div class="d-flex flex-grow-1 flex-column overflow-hidden">
     @include('layouts.navbar')
     <div class="flex-grow-1 d-flex flex-column overflow-hidden h-100" id="mainbody">
       @yield('breadcrumbs')
