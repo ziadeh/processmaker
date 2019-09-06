@@ -1,7 +1,7 @@
 ---
 description: >-
   Use ProcessMaker Query Language (PMQL) to search through Requests, Tasks, and
-  Collection records in your ProcessMaker instance.
+  Collection records in your ProcessMaker organization.
 ---
 
 # Search ProcessMaker Data using PMQL
