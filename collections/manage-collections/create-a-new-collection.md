@@ -30,7 +30,7 @@ Your ProcessMaker user account or group membership must have the following permi
 * Collections: View Collections
 * Collections: Create Collections
 
-These permissions are different than record-level permissions in a ProcessMaker Collection that allow you to view or create records in that Collection.
+These permissions are different than [record permissions](configure-a-collection.md#configure-record-level-permissions-for-users) in a ProcessMaker Collection that allow you to view or create records in that Collection.
 
 See the ProcessMaker [Collections](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

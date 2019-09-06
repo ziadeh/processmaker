@@ -9,7 +9,7 @@ description: Edit the configuration for a ProcessMaker Collection.
 {% hint style="info" %}
 ### ProcessMaker Package Required
 
-The [Collections package](../../package-development-distribution/package-a-connector/collections.md) must be installed in your ProcessMaker instance. The Collections package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Collections package can be installed in your ProcessMaker instance.
+The [Collections package](../../package-development-distribution/package-a-connector/collections.md) must be installed in your ProcessMaker instance. The [Collections](../what-is-a-collection.md) package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Collections package can be installed in your ProcessMaker instance.
 
 ### Permissions Required
 
@@ -18,19 +18,19 @@ Your ProcessMaker user account or group membership must have the following permi
 * Collections: View Collections
 * Collections: Edit Collections
 
-These permissions are different than record-level permissions in a ProcessMaker Collection that allow you to view or edit records in that Collection.
+These permissions are different than [record permissions](configure-a-collection.md#configure-record-level-permissions-for-users) in a ProcessMaker Collection that allow you to view or edit records in that Collection.
 
 See the ProcessMaker [Collections](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to configure a ProcessMaker [Collection](../what-is-a-collection.md):
+Follow these steps to configure a ProcessMaker Collection:
 
 1. [View your ProcessMaker Collections](view-collections.md#view-all-collections). The **Collections** page displays.
 2. Click the **Configure** icon![](../../.gitbook/assets/configure-process-icon-processes-page-processes.png) for your ProcessMaker Collection. The **Configuration** tab displays. ![](../../.gitbook/assets/configuration-tab-collection-package.png) 
 3. Refer to the following sections to configure your ProcessMaker Collection. These configuration sections may be configured independently of one another:
    * [Configure basic settings](configure-a-collection.md#configure-basic-settings)
-   * [Configure record-level permissions for users](configure-a-collection.md#configure-record-level-permissions-for-users)
-   * [Configure record-level permissions for groups](configure-a-collection.md#configure-record-level-permissions-for-groups)
+   * [Configure record permissions for users](configure-a-collection.md#configure-record-level-permissions-for-users)
+   * [Configure record permissions for groups](configure-a-collection.md#configure-record-level-permissions-for-groups)
 
 ### Configure Basic Settings
 
@@ -45,18 +45,18 @@ Follow these steps to configure basic settings for your ProcessMaker Collection:
    * From the **Edit Screen** drop-down menu, select a ProcessMaker Screen from which to edit or update records in this Collection. This can be the same or a different ProcessMaker Screen as selected from the **Create Screen** drop-down menu. This is a required field.
 3. Click **Save**.
 
-### Configure Record-Level Permissions for Users
+### Configure Record Permissions for ProcessMaker Users
 
 Configure how ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) have permission to access the records in your Collection. Permissions may be set differently for each ProcessMaker user. If a ProcessMaker user has the **Make this user a Super Admin** setting selected in his or her user account, then these settings have no effect on that user. ProcessMaker does not check permissions for ProcessMaker user accounts with this setting selected, allowing such users to administer and install [packages](../../package-development-distribution/first-topic.md) which might otherwise require permissions be granted to a ProcessMaker user account to perform.
 
 By default all ProcessMaker users do not have any access to records in your Collection unless a user has the **Make this use a Super Admin** setting selected.
 
-Following are descriptions of each record-level permission:
+Following are descriptions of each permission that specifies how a ProcessMaker user may access records in this Collection:
 
-* **Create:** A ProcessMaker user granted the **Create** permission is allowed to create records in this Collection. If a ProcessMaker user does not have the **Create** toggle key enabled, the **+Record** button used to create a record is not visible for that user. When creating a record, the ProcessMaker Screen selected in the **Create Screen** drop-down menu of the [basic configuration settings](configure-a-collection.md#configure-basic-settings) is used.
+* **Create:** A ProcessMaker user granted the **Create** permission is allowed to create records in this Collection. If a ProcessMaker user does not have the **Create** toggle key enabled, the **+Record** button used to create a record is not visible for that user.
 * **Delete:** A ProcessMaker user granted the **Delete** permission is allowed to delete records in this Collection. If a ProcessMaker user does not have the **Delete** toggle key enabled, the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png)used to delete a record is not available in all records for that user.
-* **Edit:** A ProcessMaker user granted the **Edit** permission is allowed to edit records in this Collection. If a ProcessMaker user does not have the **Edit** toggle key enabled, the **Edit** icon![](../../.gitbook/assets/edit-icon.png)used to edit a record is not available in all records for that user. When editing a record, the ProcessMaker Screen selected in the **Edit Screen** drop-down menu of the basic configuration settings is used.
-* **View:** A ProcessMaker user granted the **View** permission is allowed to view records in this Collection. If a ProcessMaker user does not have the **View** toggle key enabled, that user cannot access that Collection. When viewing a record, the ProcessMaker Screen selected in the **View Screen** drop-down menu of the basic configuration settings is used.
+* **Edit:** A ProcessMaker user granted the **Edit** permission is allowed to edit records in this Collection. If a ProcessMaker user does not have the **Edit** toggle key enabled, the **Edit** icon![](../../.gitbook/assets/edit-icon.png)used to edit a record is not available in all records for that user.
+* **View:** A ProcessMaker user granted the **View** permission is allowed to view records in this Collection. If a ProcessMaker user does not have the **View** toggle key enabled, that user cannot access that Collection.
 
 Follow these steps to configure how ProcessMaker users have access to your Collection:
 
@@ -70,28 +70,28 @@ Follow these steps to configure how ProcessMaker users have access to your Colle
    * **View:** Toggle the **View** setting to grant or restrict permission for that ProcessMaker user to view records in this Collection.
 5. Click **Save**.
 
-### Configure Record-Level Permissions for Groups
+### Configure Record Permissions for ProcessMaker Groups
 
 Configure how ProcessMaker [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) have permission to access the records in your Collection. Permissions may be set differently for each ProcessMaker group. ProcessMaker users have access to records in this Collection under the following circumstances:
 
-* Record-level permissions are cumulative, in that permissions set for a specific ProcessMaker user apply regardless of whether that user is a member of a group with record-level permissions. If that ProcessMaker is granted permissions not granted to a group, regardless of whether that use is a group member, that user maintains that record-level permission.
+* Record-level permissions are cumulative: permissions set for a specific ProcessMaker user apply regardless of whether that user is a member of a group with record permissions. If that ProcessMaker user is granted permissions not granted to a group, regardless of whether that user is a group member, that user maintains that record permission.
 * If a ProcessMaker user has the **Make this user a Super Admin** setting selected in his or her user account, then these settings have no effect on that user. ProcessMaker does not check permissions for ProcessMaker user accounts with this setting selected, allowing such users to administer and install [packages](../../package-development-distribution/first-topic.md) which might otherwise require permissions be granted to a ProcessMaker user account to perform.
 
 By default all ProcessMaker groups do not have any access to records in your Collection.
 
-Following are descriptions of each record-level permission:
+Following are descriptions of each permission that specifies how members of a ProcessMaker group may access records in this Collection:
 
-* **Create:** A ProcessMaker group granted the **Create** permission allows its members to create records in this Collection. If a ProcessMaker group does not have the **Create** toggle key enabled, the **+Record** button used to create a record is not visible for its members unless individual users in the group have this permission. When creating a record, the ProcessMaker Screen selected in the **Create Screen** drop-down menu of the [basic configuration settings](configure-a-collection.md#configure-basic-settings) is used.
-* **Delete:** A ProcessMaker group granted the **Delete** permission allows its members to delete records in this Collection. If a ProcessMaker group does not have the **Delete** toggle key enabled, the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png)used to delete a record is not available in all records for its members.
-* **Edit:** A ProcessMaker group granted the **Edit** permission allows its members to edit records in this Collection. If a ProcessMaker group does not have the **Edit** toggle key enabled, the **Edit** icon![](../../.gitbook/assets/edit-icon.png)used to edit a record is not available in all records for its members unless individual users in the group have this permission. When editing a record, the ProcessMaker Screen selected in the **Edit Screen** drop-down menu of the basic configuration settings is used.
-* **View:** A ProcessMaker group granted the **View** permission allows its members to view records in this Collection. If a ProcessMaker group does not have the **View** toggle key enabled, members of that group do not see any records in that Collection, unless individual users in the group have this permission. When viewing a record, the ProcessMaker Screen selected in the **View Screen** drop-down menu of the basic configuration settings is used.
+* **Create:** A ProcessMaker group granted the **Create** permission allows its members to create records in this Collection. If a ProcessMaker group does not have the **Create** toggle key enabled, the **+Record** button used to create a record is not visible for its members unless individual users in the group have this permission.
+* **Delete:** A ProcessMaker group granted the **Delete** permission allows its members to delete records in this Collection. If a ProcessMaker group does not have the **Delete** toggle key enabled, the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png)used to delete a record is not available in all records for members of this group unless individual users in the group have this permission.
+* **Edit:** A ProcessMaker group granted the **Edit** permission allows its members to edit records in this Collection. If a ProcessMaker group does not have the **Edit** toggle key enabled, the **Edit** icon![](../../.gitbook/assets/edit-icon.png)used to edit a record is not available in all records for members of this group unless individual users in the group have this permission.
+* **View:** A ProcessMaker group granted the **View** permission allows its members to view records in this Collection. If a ProcessMaker group does not have the **View** toggle key enabled, members of that group do not see any records in that Collection unless individual users in the group have this permission.
 
 Follow these steps to configure how ProcessMaker groups have access to your Collection:
 
 1. [Select the ProcessMaker Collection to configure](configure-a-collection.md#configure-a-processmaker-collection). The **Configuration** tab displays.
 2. Click the **Group Permissions** tab. ![](../../.gitbook/assets/group-permissions-configuration-tab-collections-package.png) 
 3. Enter in the **Search** field the text to filter ProcessMaker groups, if necessary.
-4. Toggle any of the permission settings for applicable ProcessMaker groups to allow its members appropriate access to records in this Collection. By default all ProcessMaker groups do not have any access to records in your Collection unless a group member has the **Make this use a Super Admin** setting selected for his or her user account. Follow these guidelines:
+4. Toggle any of the permission settings for applicable ProcessMaker groups to allow its members appropriate access to records in this Collection. By default all ProcessMaker groups do not have any access to records in your Collection unless a group member has this permission or has the **Make this use a Super Admin** setting selected for his or her user account. Follow these guidelines:
    * **Create:** Toggle the **Create** setting to grant or restrict permission for that ProcessMaker group to allow its members to create records in this Collection.
    * **Delete:** Toggle the **Delete** setting to grant or restrict permission for that ProcessMaker group to allow its members to delete records in this Collection.
    * **Edit:** Toggle the **Edit** setting to grant or restrict permission for that ProcessMaker group to allow its members to edit records in this Collection.

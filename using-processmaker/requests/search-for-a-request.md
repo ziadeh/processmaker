@@ -126,19 +126,21 @@ Follow these guidelines to do an advanced search for a Request using PMQL:
        `updated_at < NOW -2 day`
 
        Use `updated_at < NOW` to represent how much time from the present the sought after Request is, then use `-` followed by an integer to specify that time. The units of time `second`, `minute`, `hour` and `day` are supported.
-   * **Operators for use in and between search criterion:**
+   * **Standard SQL syntax:**
+     * **Operators for use in and between search criterion:**
 
-     * Equal to: `=`
-     * Not equal to: `!=`
-     * Less than: `<`
-     * Greater than: `>`
-     * Less than or equal to: `<=`
-     * Greater than or equal to: `>=`
-     * Use `AND` operators between each set of search criterion to search using multiple criteria.
-     * Use the `AND` operator between criterion to search for multiple specified criterion.
-     * Use the `OR` operator between criterion to search for either specified criterion.
+       * Equal to: `=`
+       * Not equal to: `!=`
+       * Less than: `<`
+       * Greater than: `>`
+       * Less than or equal to: `<=`
+       * Greater than or equal to: `>=`
+       * Not equal to: `<>`
+       * Use `AND` operators between each set of search criterion to search using multiple criteria.
+       * Use the `AND` operator between criterion to search for multiple specified criterion.
+       * Use the `OR` operator between criterion to search for either specified criterion.
 
-     Spaces are allowed between operators. Example: `data.last_name = "Canera"`.
+       Spaces are allowed between operators. Example: `data.last_name = "Canera"`.
 
    Below is an example of a valid advanced Request search:
 
