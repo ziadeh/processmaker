@@ -74,7 +74,7 @@ Follow these guidelines to do an advanced search for a Request using PMQL:
 
    If not, then click the **Advanced Search** button![](../../.gitbook/assets/advanced-search-button.png).
 
-3. In the PMQL field, enter your PMQL parameters that compose your advanced search. Refer to the following PMQL parameter syntax options that are not case sensitive to compose your PMQL search:
+3. In the **PMQL** field, enter your PMQL parameters that compose your advanced search. Refer to the following PMQL parameter syntax options that are not case sensitive to compose your PMQL search:
 
    * **Process\(es\):**
      * Use the following syntax as a guide to include one Process in your search criteria:
