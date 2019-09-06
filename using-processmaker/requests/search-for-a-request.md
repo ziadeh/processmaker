@@ -126,7 +126,7 @@ Follow these guidelines to do an advanced search for a Request using PMQL:
        `updated_at < NOW -2 day`
 
        Use `updated_at < NOW` to represent how much time from the present the sought after Request is, then use `-` followed by an integer to specify that time. The units of time `second`, `minute`, `hour` and `day` are supported.
-   * **Standard SQL syntax:**
+   * **Standard SQL syntax supported by PMQL:**
      * **Operators for use in and between search criterion:**
 
        * Equal to: `=`
@@ -141,6 +141,14 @@ Follow these guidelines to do an advanced search for a Request using PMQL:
        * Use the `OR` operator between criterion to search for either specified criterion.
 
        Spaces are allowed between operators. Example: `data.last_name = "Canera"`.
+
+     * **Wildcard syntax:**
+
+       Use `%` as a wildcard character to substitute one or more characters in any PMQL-supported parameter that uses a string. Include the `%` character within the quotation marks \(`"`\) of the parameter. Examples:
+
+       * `request = "P%"` finds Requests associated with all Processes that begin with `P`
+       * `status = "c%"` finds Requests with both Completed and Canceled statuses
+       * `data.last_name = "C%"` finds all values that begin with `C` in the `last_name` key name
 
    Below is an example of a valid advanced Request search:
 

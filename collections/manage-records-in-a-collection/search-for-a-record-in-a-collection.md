@@ -85,20 +85,25 @@ Follow these steps to search records in a ProcessMaker Collection:
        `updated_at < NOW -2 day`
 
        Use `updated_at < NOW` to represent how much time from the present the sought after record is, then use `-` followed by an integer to specify that time. The units of time `second`, `minute`, `hour` and `day` are supported.
-   * **Operators for use in and between search criterion:**
+   * **Standard SQL syntax supported by PMQL:**
+     * **Operators for use in and between search criterion:**
 
-     * Equal to: `=`
-     * Not equal to: `!=`
-     * Less than: `<`
-     * Greater than: `>`
-     * Less than or equal to: `<=`
-     * Greater than or equal to: `>=`
-     * Not equal to: `<>`
-     * Use `AND` operators between each set of search criterion to search using multiple criteria.
-     * Use the `AND` operator between criterion to search for multiple specified criterion.
-     * Use the `OR` operator between criterion to search for either specified criterion.
+       * Equal to: `=`
+       * Not equal to: `!=`
+       * Less than: `<`
+       * Greater than: `>`
+       * Less than or equal to: `<=`
+       * Greater than or equal to: `>=`
+       * Not equal to: `<>`
+       * Use `AND` operators between each set of search criterion to search using multiple criteria.
+       * Use the `AND` operator between criterion to search for multiple specified criterion.
+       * Use the `OR` operator between criterion to search for either specified criterion.
 
-     Spaces are allowed between operators. Example: `data.last_name = "Canera"`.
+       Spaces are allowed between operators. Example: `data.last_name = "Canera"`.
+
+     * **Wildcard syntax:**
+
+       Use `%` as a wildcard character to substitute one or more characters in any PMQL-supported parameter that uses a string. Include the `%` character within the quotation marks \(`"`\) of the parameter. Example: `data.last_name = "C%"` finds all values that begin with `C` in all records of the Collection that have the `last_name` **Variable Value** setting in any ProcessMaker Screen that the Collection references
 
    Below is an example of a valid record search:
 
