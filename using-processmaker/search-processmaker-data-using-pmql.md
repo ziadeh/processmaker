@@ -8,11 +8,11 @@ description: >-
 
 ## Overview
 
-ProcessMaker Query Language \(PMQL\) is a custom ProcessMaker language to search through ProcessMaker data in your organization. Similar in ways to SQL, which is standard language for storing, manipulating and retrieving data in databases, use PMQL to find [Request](requests/what-is-a-request.md), [Task](task-management/what-is-a-task.md), and ProcessMaker [Collection](../collections/what-is-a-collection.md) record information. PMQL uses both common SQL syntax as well as custom syntax parameters customized to find ProcessMaker data.
+ProcessMaker Query Language \(PMQL\) is a custom ProcessMaker language to search through ProcessMaker data in your organization. Similar in ways to SQL, which is a standard language for storing, manipulating and retrieving data in databases, use PMQL to find [Requests](requests/what-is-a-request.md), [Tasks](task-management/what-is-a-task.md), and ProcessMaker [Collection](../collections/what-is-a-collection.md) record information. PMQL uses both common SQL syntax as well as custom syntax parameters to find ProcessMaker data.
 
 Use PMQL in the following ways:
 
-* **Requests:** Perform [advanced searches through Requests](requests/search-for-a-request.md#advanced-search-for-a-request).
+* **Requests:** Perform [advanced searches to find Request summaries](requests/search-for-a-request.md#advanced-search-for-a-request).
 * **Tasks:** Perform [advanced searches through your Tasks](task-management/search-for-a-task.md#advanced-search-for-a-task).
 * **ProcessMaker Collection records:** [Search through the records](../collections/manage-records-in-a-collection/search-for-a-record-in-a-collection.md#search-records-in-a-processmaker-collection) in a ProcessMaker Collection.
 
