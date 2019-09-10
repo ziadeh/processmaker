@@ -50,7 +50,7 @@ To [view a Request summary](request-details/), do one of the following:
 
 ### Super-Charge Search: Save Searches and Share Them With Others
 
-See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches/).
+See [Saved Searches](../save-and-share-request-and-task-related-searches/).
 
 ### No Search Results?
 

@@ -20,6 +20,7 @@ Saved Searches have the following attributes:
 * **Delete Saved Searches:** You may delete your Saved Searches. However, in doing so, they are no longer shared with those ProcessMaker users and/or groups with which you have shared them. The recipients of your shared Saved Search will no longer be able to use it to quickly view search results using your Shared Search's parameters.
 * **Request-related Saved Searches:** Saved Searches associated with Requests display only in the left sidebar of Request-related pages.
 * **Task-related Saved Searches:** Saved Searches associated with Tasks display only in the left sidebar of Task-related pages.
+* **Collection-related Saved Searches:** Saved Searches associated with ProcessMaker [Collections](../../collections/what-is-a-collection.md) display on the left sidebar of ProcessMaker Collections. Note that the [Collections package](../../package-development-distribution/package-a-connector/collections.md) must be installed in your ProcessMaker instance for Collections to be available.
 
 The **My Saved Searches** page displays both your saved Request- and Task-related Saved Searches, as well as those that others have shared with you. See [Manage Your Own Saved Searches](manage-your-saved-searches/).
 

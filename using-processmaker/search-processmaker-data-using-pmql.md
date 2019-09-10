@@ -195,7 +195,9 @@ Use `%` as a wildcard character to substitute one or more characters in any PMQL
 
 ## Related Topics
 
+{% page-ref page="requests/search-for-a-request.md" %}
 
+{% page-ref page="task-management/search-for-a-task.md" %}
 
-
+{% page-ref page="../collections/manage-records-in-a-collection/search-for-a-record-in-a-collection.md" %}
 
