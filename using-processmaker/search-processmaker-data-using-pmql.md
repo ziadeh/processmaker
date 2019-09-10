@@ -139,15 +139,29 @@ Use [standard SQL syntax](search-processmaker-data-using-pmql.md#standard-sql-sy
 
 ### Record ID
 
+Use the following syntax as a guide to include one record in your search criteria based on its ID \(as noted in the **\#** column when [viewing the Collection's records](../collections/manage-records-in-a-collection/view-all-records-in-a-collection.md#view-all-records-in-a-collection)\):
 
+`id = 4`
+
+Use the following syntax to include all records in your search criteria since record IDs begin with `1`:
+
+`id > 0`
 
 ### Record Information
 
+Use the following syntax as a guide to reference record-related information in your search criteria.
 
+`data.RecordData`
+
+`data.` represents that what follows derives from record information, as is used in JSON dot notation. Record data is derived from the **Variable Name** setting values in the ProcessMaker [Screens](../designing-processes/design-forms/what-is-a-form.md) that are used to [create, edit and view records in this Collection](../collections/manage-collections/create-a-new-collection.md#overview). Use these **Variable Name** setting values in place of `RecordData` in this syntax. Spaces are allowed between operators. Example: `data.last_name = "Canera"`. Note that your ProcessMaker user account or group membership must have the [appropriate permissions to view and edit ProcessMaker Screens](../collections/edit-a-collection.md#edit-a-processmaker-screen-for-a-collection) to view **Variable Name** setting values. Ask your ProcessMaker Administrator if you do not have the appropriate permissions.
 
 ### Record Age
 
+Use the following syntax as a guide to include a period of time in your search criteria:
 
+`updated_at < NOW -2 day`
+
+Use `updated_at < NOW` to represent how much time from the present the sought after record is, then use `-` followed by an integer to specify that time. The units of time `second`, `minute`, `hour` and `day` are supported.
 
 ## Standard SQL Syntax PMQL Supports
 

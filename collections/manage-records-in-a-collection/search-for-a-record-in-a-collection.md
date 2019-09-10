@@ -25,7 +25,7 @@ Furthermore, your ProcessMaker user account or group membership must have the **
 Follow these steps to search records in a ProcessMaker Collection:
 
 1. [View the records for the ProcessMaker Collection](view-all-records-in-a-collection.md#view-all-records-in-a-collection) that you want to search.
-2. In the **PMQL** field, enter your ProcessMaker Query Language \(PMQL\) parameters that compose your record search. Refer to the following PMQL parameter syntax options that are not case sensitive to compose your PMQL search:
+2. In the **PMQL** field, enter your ProcessMaker Query Language \(PMQL\) parameters that compose your record search. See [PMQL Syntax for ProcessMaker Collections](../../using-processmaker/search-processmaker-data-using-pmql.md#pmql-syntax-for-processmaker-collections).
 
    * **Record ID\(s\):**
      * Use the following syntax as a guide to include one record in your search criteria based on its ID \(as noted in the **\#** column when [viewing the Collection's records](view-all-records-in-a-collection.md#view-all-records-in-a-collection)\):
