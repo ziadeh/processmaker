@@ -68,71 +68,7 @@ Follow these guidelines to do an advanced search for a Task using PMQL:
 
    If not, then click the **Advanced Search** button![](../../.gitbook/assets/advanced-search-button.png).
 
-3. In the **PMQL** field, enter your PMQL parameters that compose your advanced search. Refer to the following PMQL parameter syntax options that are not case sensitive to compose your PMQL search:
-
-   * **Process\(es\) associated with a Request:**
-     * Use the following syntax as a guide to include one Process associated with a Request in your search criteria:
-
-       `(request = "exact Process name including spaces")`
-
-     * Use the following syntax as a guide to include two or more Processes associated with multiple Requests in your search criteria:
-
-       `(request = "Process name 1" OR request = "Process name 2")`
-   * **Request information:**
-
-     Use the following syntax as a guide to reference Request-related information in your search criteria.
-
-     `data.RequestData`
-
-     `data.` represents that what follows derives from Request information, as is used in JSON dot notation. To derive that Request information, view the [**Data** tab in the summary for a completed Request](../requests/request-details/summary-for-completed-requests.md#editable-request-data) to view the data from a completed Request, and then use the specific key name \(represented in red-colored text\) in place of `RequestData` in this syntax. Spaces are allowed between operators. Example: `data.last_name = "Canera"`. Note that your ProcessMaker user account or group membership must have the [Requests: Edit Request Data](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission. Ask your ProcessMaker Administrator if you do not see the **Data** tab in completed Requests.
-
-   * **ProcessMaker Magic Variables:**
-
-     Following the same syntax as referencing Request-related information, reference ProcessMaker [Magic Variables](../../designing-processes/reference-global-variables-in-your-processmaker-assets.md) in your search criteria. See [Magic Variable Descriptions](../../designing-processes/reference-global-variables-in-your-processmaker-assets.md#global-variable-descriptions).
-
-   * **Task\(s\):**
-     * Use the following syntax as a guide to include one Task name in your search criteria:
-
-       `(task = "exact Task name including spaces")`
-
-     * Use the following syntax as a guide to include two or more Task names in your search criteria:
-
-       `(task = "Task name 1" OR task = "Task name 2")`
-   * **Status\(es\):**
-     * Use the following syntax as a guide to include one Task status in your search criteria:
-
-       `(status = "In Progress")`
-
-     * Use the following syntax as a guide to include two or more Task statuses in your search criteria:
-
-       `(status = "In Progress" OR status = "Completed")`
-   * **Time Period\(s\):**
-
-     Use the following syntax as a guide to include a period of time in your search criteria:
-
-     `updated_at < NOW -2 day`
-
-     Use `updated_at < NOW` to represent how much time from the present the sought after Task is, then use `-` followed by an integer to specify that time. The units of time `second`, `minute`, `hour` and `day` are supported.
-
-   * **Standard SQL syntax supported by PMQL:**
-     * **Operators for use in and between search criterion:**
-
-       * Equal to: `=`
-       * Not equal to: `!=`
-       * Less than: `<`
-       * Greater than: `>`
-       * Less than or equal to: `<=`
-       * Greater than or equal to: `>=`
-       * Not equal to: `<>`
-       * Use `AND` operators between each set of search criterion to search using multiple criteria.
-       * Use the `AND` operator between criterion to search for multiple specified criterion.
-       * Use the `OR` operator between criterion to search for either specified criterion.
-
-       Spaces are allowed between operators. Example: `Task = "Task Name"`.
-
-     * **Wildcard syntax:**
-
-       Use `%` as a wildcard character to substitute one or more characters in any PMQL-supported parameter that uses a string. Include the `%` character within the quotation marks \(`"`\) of the parameter. Example: `task = "T%"` finds all Tasks that begin with `T`
+3. In the **PMQL** field, enter your PMQL parameters that compose your advanced search. See [PMQL Syntax for Tasks](../search-processmaker-data-using-pmql.md#pmql-syntax-for-tasks).
 
    Below is an example of a valid advanced Task search:
 

@@ -29,31 +29,63 @@ Use [standard SQL syntax](search-processmaker-data-using-pmql.md#standard-sql-sy
 
 ### Processes Associated with the Request
 
+Use the following syntax as a guide to include one Process in your search criteria:
 
+`(request = "exact Process name including spaces")`
+
+Use the following syntax as a guide to include two or more Processes in your search criteria:
+
+`(request = "Process name 1" OR request = "Process name 2")`
 
 ### Request Information
 
+Use the following syntax as a guide to reference Request-related information in your search criteria.
 
+`data.RequestData`
+
+`data.` represents that what follows derives from Request information, as is used in JSON dot notation. To derive that Request information, view the [**Data** tab in the summary for a completed Request](requests/request-details/summary-for-completed-requests.md#editable-request-data) to view the data from a completed Request, and then use the specific key name \(represented in red-colored text\) in place of `RequestData` in this syntax. Spaces are allowed between operators. Example: `data.last_name = "Canera"`. Note that your ProcessMaker user account or group membership must have the [Requests: Edit Request Data](../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) permission. Ask your ProcessMaker Administrator if you do not see the **Data** tab in completed Requests.
 
 ### ProcessMaker Magic Variables
 
-
+Following the same syntax as referencing Request-related information, reference ProcessMaker [Magic Variables](../designing-processes/reference-global-variables-in-your-processmaker-assets.md) in your search criteria. See [Magic Variable Descriptions](../designing-processes/reference-global-variables-in-your-processmaker-assets.md#global-variable-descriptions).
 
 ### Request Status
 
+Use the following syntax as a guide to include one Request status in your search criteria:
 
+`(status = "In Progress")`
+
+Use the following syntax as a guide to include two or more Request statuses in your search criteria:
+
+`(status = "Completed" OR status = "Canceled")`
 
 ### Requesters
 
+Use the following syntax as a guide to include one requester in your search criteria:
 
+`(requester = "Username1")`
+
+Use the following syntax as a guide to include two or more requesters in your search criteria:
+
+`(requester = "Username1" OR requester = "Username2")`
 
 ### Request Participants
 
+Use the following syntax as a guide to include one Request participant in your search criteria:
 
+`(participant = "Username3")`
+
+Use the following syntax as a guide to include two or more Request participants in your search criteria:
+
+`(participant = "Username3" OR participant = "Username4")`
 
 ### Request Age
 
+Use the following syntax as a guide to include a period of time in your search criteria:
 
+`updated_at < NOW -2 day`
+
+Use `updated_at < NOW` to represent how much time from the present the sought after Request is, then use `-` followed by an integer to specify that time. The units of time `second`, `minute`, `hour` and `day` are supported.
 
 ## PMQL Syntax for Tasks
 
@@ -73,11 +105,23 @@ See [ProcessMaker Magic Variables](search-processmaker-data-using-pmql.md#proces
 
 ### Task Name
 
+Use the following syntax as a guide to include one Task name in your search criteria:
 
+`(task = "exact Task name including spaces")`
+
+Use the following syntax as a guide to include two or more Task names in your search criteria:
+
+`(task = "Task name 1" OR task = "Task name 2")`
 
 ### Task Status
 
+Use the following syntax as a guide to include one Task status in your search criteria:
 
+`(status = "In Progress")`
+
+Use the following syntax as a guide to include two or more Task statuses in your search criteria:
+
+`(status = "In Progress" OR status = "Completed")`
 
 ### Task Age
 
