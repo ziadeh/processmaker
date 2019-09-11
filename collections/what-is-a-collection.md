@@ -36,3 +36,5 @@ The Collections package has the following features:
 
 {% page-ref page="../package-development-distribution/package-a-connector/saved-searches-package.md" %}
 
+{% page-ref page="../package-development-distribution/first-topic.md" %}
+

@@ -36,5 +36,23 @@ Follow these steps to search records in a ProcessMaker Collection:
 
 ## Related Topics
 
+{% page-ref page="../what-is-a-collection.md" %}
 
+{% page-ref page="../manage-collections/" %}
+
+{% page-ref page="view-all-records-in-a-collection.md" %}
+
+{% page-ref page="create-a-collection-record.md" %}
+
+{% page-ref page="save-and-share-a-record-search.md" %}
+
+{% page-ref page="edit-a-collection-record.md" %}
+
+{% page-ref page="view-a-collection-record.md" %}
+
+{% page-ref page="delete-a-collection-record.md" %}
+
+{% page-ref page="../edit-a-collection.md" %}
+
+{% page-ref page="../../package-development-distribution/package-a-connector/collections.md" %}
 

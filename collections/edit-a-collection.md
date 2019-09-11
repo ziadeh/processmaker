@@ -55,5 +55,11 @@ After saving your ProcessMaker Screen changes, the records in that ProcessMaker 
 
 ## Related Topics
 
+{% page-ref page="what-is-a-collection.md" %}
 
+{% page-ref page="manage-collections/" %}
+
+{% page-ref page="manage-records-in-a-collection/" %}
+
+{% page-ref page="../package-development-distribution/package-a-connector/collections.md" %}
 

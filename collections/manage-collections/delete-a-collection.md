@@ -37,5 +37,19 @@ Follow these steps to delete a ProcessMaker Collection:
 
 ## Related Topics
 
+{% page-ref page="../what-is-a-collection.md" %}
 
+{% page-ref page="view-collections.md" %}
+
+{% page-ref page="create-a-new-collection.md" %}
+
+{% page-ref page="configure-a-collection.md" %}
+
+{% page-ref page="search-for-a-collection.md" %}
+
+{% page-ref page="../manage-records-in-a-collection/" %}
+
+{% page-ref page="../edit-a-collection.md" %}
+
+{% page-ref page="../../package-development-distribution/package-a-connector/collections.md" %}
 

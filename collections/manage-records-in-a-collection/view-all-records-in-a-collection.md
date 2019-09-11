@@ -73,5 +73,23 @@ If no records exist in this ProcessMaker Collection, or you do not have [permiss
 
 ## Related Topics
 
+{% page-ref page="../what-is-a-collection.md" %}
 
+{% page-ref page="../manage-collections/" %}
+
+{% page-ref page="create-a-collection-record.md" %}
+
+{% page-ref page="search-for-a-record-in-a-collection.md" %}
+
+{% page-ref page="save-and-share-a-record-search.md" %}
+
+{% page-ref page="edit-a-collection-record.md" %}
+
+{% page-ref page="view-a-collection-record.md" %}
+
+{% page-ref page="delete-a-collection-record.md" %}
+
+{% page-ref page="../edit-a-collection.md" %}
+
+{% page-ref page="../../package-development-distribution/package-a-connector/collections.md" %}
 
