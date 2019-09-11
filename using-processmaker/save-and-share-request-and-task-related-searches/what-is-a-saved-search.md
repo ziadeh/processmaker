@@ -10,7 +10,9 @@ description: Understand what the Saved Search package does in ProcessMaker.
 The [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed in your ProcessMaker instance to use Saved Searches. The Saved Searches package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Saved Searches package can be installed in your ProcessMaker instance.
 {% endhint %}
 
-Use the Saved Searches package to save and share searches associated with [Requests](../requests/what-is-a-request.md), [Tasks](../task-management/what-is-a-task.md) and [Collections](../../collections/what-is-a-collection.md). In doing so, you manage the search parameters for your Saved Searches; recipients of the Saved Searches that you share can only use your Saved Search to view its search results. Share your Saved Search with specific ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) and/or [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md). Furthermore, you may schedule a regular interval in which to email reports.
+Use the Saved Searches package to save and share search parameters associated with [Requests](../requests/what-is-a-request.md), [Tasks](../task-management/what-is-a-task.md) and [Collections](../../collections/what-is-a-collection.md). In doing so, you manage the search parameters for your Saved Searches. You may share your own Saved Searches with other ProcessMaker [users](../../processmaker-administration/add-users/what-is-a-user.md) and/or [groups](../../processmaker-administration/assign-groups-to-users/what-is-a-group.md). Recipients of your shared Saved Searches can only use your Saved Search to view its search results, but cannot modify your Saved Searches' parameter settings you configured.
+
+Furthermore, you may schedule a regular interval in which to email reports for either your own Saved Searches or those shared with you.
 
 Saved Searches have the following attributes:
 
@@ -20,15 +22,15 @@ Saved Searches have the following attributes:
 * **Delete Saved Searches:** You may delete your Saved Searches. However, in doing so, they are no longer shared with those ProcessMaker users and/or groups with which you have shared them. The recipients of your shared Saved Search will no longer be able to use it to quickly view search results using your Shared Search's parameters.
 * **Request-related Saved Searches:** Saved Searches associated with Requests display only in the left sidebar of Request-related pages.
 * **Task-related Saved Searches:** Saved Searches associated with Tasks display only in the left sidebar of Task-related pages.
-* **Collection-related Saved Searches:** Saved Searches associated with ProcessMaker [Collections](../../collections/what-is-a-collection.md) display on the left sidebar of ProcessMaker Collections. Note that the [Collections package](../../package-development-distribution/package-a-connector/collections.md) must be installed in your ProcessMaker instance for Collections to be available.
+* **Collection-related Saved Searches:** Saved Searches associated with ProcessMaker [Collections](../../collections/what-is-a-collection.md) display on the left sidebar of ProcessMaker Collection pages. Note that the [Collections package](../../package-development-distribution/package-a-connector/collections.md) must be installed in your ProcessMaker instance for Collections to be available.
 
-The **My Saved Searches** page displays both your saved Request- and Task-related Saved Searches, as well as those that others have shared with you. See [Manage Your Own Saved Searches](manage-your-saved-searches/).
+Click the **Edit Saved Searches** icon![](../../.gitbook/assets/configure-process-icon-processes-page-processes.png)from the left sidebar in any of the **Requests**, **Tasks**, or **Collections** pages to view the **Edit Saved Searches** page. The **Edit Saved Searches** page displays both your own Saved Searches as well as those that others have shared with you for that search type. For example, clicking the **Edit Saved Searches** icon from the left sidebar of any of the **Requests** pages only displays Request-type Saved Searches. See [Manage Your Own Saved Searches](manage-your-saved-searches/).
 
-![&quot;My Saved Searches&quot; page displays your saved searches and those which have been shared with you](../../.gitbook/assets/my-saved-searches-page-package-requests-tasks.png)
+![&quot;Edit Saved Searches&quot; page displaying your own and shared Saved Searches](../../.gitbook/assets/my-saved-searches-page-package-requests-tasks.png)
 
-Access the search results of Saved Search from the left sidebar of the **Requests**- and **Tasks**- related pages. An icon represents each Saved Search that the ProcessMaker user selects when [creating the Saved Search](create-and-share-a-saved-search.md). Saved Searches display above the **My Saved Searches** icon![](../../.gitbook/assets/save-search-icon-package-requests-tasks.png). Click the left sidebar on **Requests** and **Tasks** pages to view search results for each Saved Search.
+An icon represents each Saved Search that the ProcessMaker user selects when [creating the Saved Search](create-and-share-a-saved-search.md). Saved Searches display above the **My Saved Searches** icon![](../../.gitbook/assets/save-search-icon-package-requests-tasks.png). Click the logo at the top of the left sidebar on any of the **Requests**, **Tasks**, or **Collections** pages to view search results for each Saved Search.
 
-![View Saved Search Results by clicking the left sidebar on &quot;Requests&quot; and &quot;Tasks&quot; pages](../../.gitbook/assets/saved-searches-results-package-requests-tasks.png)
+![](../../.gitbook/assets/expanded-sidebar-processmaker-logo-saved-search-package.png)
 
 ## Related Topics
 
@@ -43,4 +45,10 @@ Access the search results of Saved Search from the left sidebar of the **Request
 {% page-ref page="create-and-share-a-saved-search.md" %}
 
 {% page-ref page="manage-your-saved-searches/" %}
+
+{% page-ref page="../requests/what-is-a-request.md" %}
+
+{% page-ref page="../task-management/what-is-a-task.md" %}
+
+{% page-ref page="../../collections/what-is-a-collection.md" %}
 
