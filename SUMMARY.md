@@ -164,6 +164,7 @@
   * [Add Connectors to Your Process Model](designing-processes/process-design/model-processes-using-connectors/README.md)
     * [What is a Connector?](designing-processes/process-design/model-processes-using-connectors/what-is-a-connector.md)
     * [Available Connectors from ProcessMaker](designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/README.md)
+      * [Actions By Email Connector](designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md)
       * [Send Email Connector](designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md)
   * [Delete Process Model Elements or Controls](designing-processes/process-design/remove-process-model-elements.md)
   * [Undo and Redo Changes in the Process Model](designing-processes/process-design/undo-and-redo-changes.md)
@@ -242,6 +243,7 @@
 
 * [What is a Package?](package-development-distribution/first-topic.md)
 * [Available Packages from ProcessMaker](package-development-distribution/package-a-connector/README.md)
+  * [Actions By Email Package](package-development-distribution/package-a-connector/actions-by-email-package.md)
   * [C\# Package](package-development-distribution/package-a-connector/c-package.md)
   * [Collections Package](package-development-distribution/package-a-connector/collections.md)
   * [Send Email Package](package-development-distribution/package-a-connector/email.md)
