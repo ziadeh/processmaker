@@ -14,53 +14,23 @@ The Actions By Email connector is part of the [Actions By Email package](../../.
 The Actions By Email connector requires that the [Actions By Email Email package](../../../../package-development-distribution/package-a-connector/actions-by-email-package.md) be installed in your ProcessMaker instance. The Actions By Email connector and the Actions By Email [package](../../../../package-development-distribution/first-topic.md) are not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Actions By Email connector can be installed in your ProcessMaker instance.
 {% endhint %}
 
-When the Actions By Email connector triggers during an in-progress Request, ProcessMaker sends an email to one email recipient so that this Request participant can make a decision as part of the Request. For example, this Request participant must make a decision to approve or deny a vacation request or for a purchase. The email recipient receive an email with buttons in the email to easily indicate the decision.
+When the Actions By Email connector triggers during an in-progress Request, ProcessMaker sends an email from the "no-reply@processmaker.net" email address to one email recipient so that this Request participant can make a decision as part of the Request. For example, this Request participant must make a decision to approve or deny a vacation request or for a purchase. The email recipient receives an email with buttons in the email to easily indicate the decision.
 
+![Example email the Actions By Email connector sends to an email recipient](../../../../.gitbook/assets/actions-by-email-package.png)
 
+After the email recipient clicks a button to indicate the decision, ProcessMaker receives the response and uses the indicated decision as part of the Request routing. For example, if you grant a leave request, the Request routes different than if you deny that leave request. 
 
 The email recipient's name and email address can be specified in one of the following ways when configuring the Actions By Email connector:
 
 * Plain text
-* A **Variable Name** setting value using mustache syntax, such as `{{ email_recipient }}` and `{{ email_address }}`, respectively
-* A [ProcessMaker Magic Variable](../../../reference-global-variables-in-your-processmaker-assets.md) value, such as `{{ _user.fullname }}` and `{{ _user.email }}`, respectively
+* A **Variable Name** setting value using mustache syntax, for example `{{ email_recipient }}` and `{{ email_address }}`, respectively
+* A [ProcessMaker Magic Variable](../../../reference-global-variables-in-your-processmaker-assets.md) value, specifically `{{ _user.fullname }}` and `{{ _user.email }}`, respectively
+
+When an Actions By Email connector triggers during an in-progress Request, ProcessMaker automatically creates an asynchronous child Process: the Actions By Email connector sends the email while simultaneously the parent Process's in-progress Request continues. You can view the status of the email delivery in that Request's summary. If an error occurs when the Actions by Email connectors attempts to send an email \(such as the email server is down\), then an error message is sent to the parent Process, where you can design how to address in your Process model.
+
+Likewise, design in your Process model how to address how much time to wait for the email recipient to respond to the email. For example, use an [Intermediate Timer Event](../../model-your-process/process-modeling-element-descriptions.md#intermediate-timer-event) element that, if triggered, sends an email to a different Request participant.
 
 
-
- to allow Actions by Email is a feature available in the ProcessMaker Enterprise Edition. This feature allows users to receive an email where they can send information to ProcessMaker cases and also route those cases onto the next task in the process. The email can contain a link to a form stored on the ProcessMaker server to be filled out and submitted, a group of links that can be clicked to accept or reject information in the email, or multiple different options customized by the designer. Actions by Email was originally created to allow people who are not registered users in ProcessMaker to work on cases, but it can also be used by registered users who wish to work on cases without having to log into the ProcessMaker interface.
-
-
-
-Actions by Email used to be an enterprise plugin, but currently it is an integrated feature available in ProcessMaker Enterprise Edition.
-
-
-
-It comprises three options:
-
-
-
-Link to fill a form: A link to a form is sent to the user's email. When the user submits the form, it saves any data entered into the form and routes the case to the next task in the process.
-
-Use a field to generate actions links: The user will be able to approve or reject the information sent via email. It routes the case onto the next task depending on the link that the user clicked in the email.
-
-Custom actions: This option gives designers the ability to add and customize the response options sent to users in the email by adding css code to each of these options.
-
-Note: The email sent by Actions by Email is resent when the case is unpaused, reassigned or uncancelled.
-
-
-
-Restrictions
-
-Please consider the following restrictions before using the Actions by Email feature:
-
-
-
-Actions by Email does NOT work with tasks that have self service and self service value based assignment routing rules, because these tasks need to be routed to a specific user in ProcessMaker.
-
-The configuration of the Actions By Email feature must be done only from the second task of the process.
-
-As a best practice, do not configure the current task to use Actions by Email, and then route cases of this task from the email to tasks that require manual assignment. This will cause errors in case run time because there is no way in the email to manually select a user in which to assign the task.
-
-As a best practice, do not configure a task to use manual timing control if that task requires Action by Email. If you do so, process users cannot change the task duration time during run time.
 
 ## Related Topics
 
