@@ -19,7 +19,7 @@ class MustacheTest extends TestCase
             },
         ]);
         $data = ['hola' => 'hola mundo'];
-        dump($mustache->render('{{%FILTERS}}{{hola|case.upper}}', $data));
+        //dump($mustache->render('{{%FILTERS}}{{hola|case.upper}}', $data));
 
         $mustache = new Mustache();
         /*$mustache->addHelper('number', [
@@ -46,6 +46,9 @@ class MustacheTest extends TestCase
 
 
         dump($mustache->getTokenizer()->scan('{{aaa|function:USD,3}}'));
+
+        dump($mustache->render('{{%FILTERS}}{{hola|case.xxxx}}', $data));
+        dump($mustache->render('{{%FILTERS}}{{hola|format.number:USD,3}}', $data));
 //cadena=aaa|function:"USD",2,".",","
 //aaa, function, USD, 3
 //function = function
@@ -54,10 +57,8 @@ class MustacheTest extends TestCase
 
         $tpl = <<<TPL
 {{%FILTERS}}
-{{ greeting | format.number:USD,2 }}, {{ planet | case.upper | !! }}
-{{ greeting | number:2 }}, {{ planet | case.upper | !! }}
-
-
+{{ greeting|format.number:USD,2 }}, {{ planet|case.upper | !! }}
+{{ greeting|number:2 }}, {{ planet|case.upper | !! }}
 TPL;
 
         dump($mustache->render($tpl, [
@@ -66,7 +67,12 @@ TPL;
         ]));
     }
 
-    function number($value, $precition)
+    public function xxxx($value)
+    {
+        return 'veamos' . $value;
+    }
+
+    public function number($value, $precition)
     {
         return number_format($value, $precition);
     }

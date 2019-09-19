@@ -43,12 +43,15 @@ class Mustache extends Mustache_Engine
             $tokens = explode('.', trim($function));
             if (count($tokens) === 2) {
                 [$token, $option] = explode('.', trim($function));
-                $parameters ? $parameters = json_decode('[' . $parameters . ']') : null;
-                $variable = trim($variable);
+                dump($parameters);
+                $parameters = explode(',', $parameters);
+                dump($parameters);
                 $function = trim($function);
                 $this->registerHelperForVariable($token, $option, $variable, $option, $parameters);
             }
-
+        } else {
+            [$token, $option] = explode('.', trim($function));
+            $this->registerHelperForVariable($token, $option, $variable, $option, []);
         }
 
     }
@@ -61,9 +64,13 @@ class Mustache extends Mustache_Engine
      */
     private function registerHelperForVariable($token, $option, $variable, $function, $parameters)
     {
+
+
         $this->addHelper($token, [$option => function ($value) use ($variable, $function, $parameters) {
+            dump($value);
+            dump(function_exists($function));
+            //return call_user_func($function, $value);
             return call_user_func($function, $value, ...$parameters);
         }]);
-        dump($this->getHelpers());
     }
 }
