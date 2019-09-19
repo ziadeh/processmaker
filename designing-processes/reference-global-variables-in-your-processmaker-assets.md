@@ -180,7 +180,7 @@ The `_request` Magic Variable contains data about the current [Request](../using
 | `_request.process.has_timer_start_events` | Indicates that the Process associated with the Request has at least one Start Timer Event element. `true` or `false` values. |
 | `_request.user_id` | Identifier for the ProcessMaker user assigned the Task/Manual Task at that moment in the Request. |
 | `_request.created_at` | Datetime the ProcessMaker user account was create that is associated with the `_request.user_id` Magic Variable. |
-| `_request.process_id` |  |
+| `_request.process_id` | Identifier associated with the Process in the ProcessMaker instance. Automatically increments for each Process created in that ProcessMaker instance. |
 | `_request.updated_at` | Datetime the Process associated with the Request was last updated, if applicable. |
 | `_request.callable_id` | Callable identifier for the Process associated with the Request. `ProcessId` is the value. |
 | `_request.initiated_at` | Datetime the Request was started. |
