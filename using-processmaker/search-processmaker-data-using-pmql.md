@@ -177,7 +177,6 @@ PMQL supports the following operators in and between search criterion:
 * Greater than: `>`
 * Less than or equal to: `<=`
 * Greater than or equal to: `>=`
-* Not equal to: `<>`
 * Use `AND` operators between each set of search criterion to search using multiple criteria.
 * Use the `AND` operator between criterion to search for multiple specified criterion.
 * Use the `OR` operator between criterion to search for either specified criterion.
