@@ -14,9 +14,17 @@ Use the Actions By Email package to send emails automatically during your Proces
 
 The Actions By Email package has the [Actions By Email](../../designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector that integrates into Process Modeler. Use the Actions By Email connector as you would BPMN elements: drag and place the Actions By Email connector into your Process model, configure its settings, and then add its [incoming and outgoing Sequence Flow elements](../../designing-processes/process-design/model-your-process/the-quick-toolbar.md).
 
+When the Actions By Email connector triggers during an in-progress Request, ProcessMaker sends an email from the "no-reply@processmaker.net" email address to one email recipient so that this Request participant can make a decision as part of the Request. For example, this Request participant must make a decision to approve or deny a vacation request or for a purchase. The email recipient receives an email with buttons in the email to easily indicate the decision.
+
+![Example email the Actions By Email connector sends to an email recipient](../../.gitbook/assets/actions-by-email-package.png)
+
+After the email recipient clicks a button to indicate the decision, ProcessMaker receives the response and uses the indicated decision as part of the Request routing. For example, if you grant a leave request, the Request routes differently than if you deny that leave request.
+
+See [Actions By Email Connector](../../designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md).
+
 ## Related Topics
 
-{% page-ref page="../../designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md" %}
+{% page-ref page="../../designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md" %}
 
 {% page-ref page="../first-topic.md" %}
 
