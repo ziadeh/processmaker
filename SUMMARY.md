@@ -214,6 +214,9 @@
   * [View Metrics](processmaker-administration/queue-management/view-metrics.md)
   * [View Recent Jobs](processmaker-administration/queue-management/view-recent-jobs.md)
   * [View Recently Failed Jobs](processmaker-administration/queue-management/view-recently-failed-jobs.md)
+* [Single Sign-On to ProcessMaker Via SAML](processmaker-administration/single-sign-on-to-processmaker-via-saml/README.md)
+  * [What is Single Sign-On?](processmaker-administration/single-sign-on-to-processmaker-via-saml/what-is-single-sign-on.md)
+  * [View the SAML Settings](processmaker-administration/single-sign-on-to-processmaker-via-saml/view-the-saml-settings.md)
 
 ## ProcessMaker Collections <a id="collections"></a>
 
@@ -248,6 +251,7 @@
   * [Collections Package](package-development-distribution/package-a-connector/collections.md)
   * [Send Email Package](package-development-distribution/package-a-connector/email.md)
   * [Translation Package](package-development-distribution/package-a-connector/non-english-language-packages.md)
+  * [SAML Package](package-development-distribution/package-a-connector/saml-package.md)
   * [Saved Searches Package](package-development-distribution/package-a-connector/saved-searches-package.md)
   * [Vocabularies Package](package-development-distribution/package-a-connector/vocabularies.md)
   * [Web Entry Package](package-development-distribution/package-a-connector/web-entry.md)
