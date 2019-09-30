@@ -25,6 +25,7 @@ use ProcessMaker\Traits\ProcessTimerEventsTrait;
 use ProcessMaker\Traits\SerializeToIso8601;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use ProcessMaker\Traits\HasCategories;
 
 /**
  * Represents a business process definition.
@@ -125,6 +126,7 @@ class Process extends Model implements HasMedia
     use ProcessStartEventAssignmentsTrait;
     use HideSystemResources;
     use PMQL;
+    use HasCategories;
 
     protected $connection = 'processmaker';
 
@@ -203,6 +205,7 @@ class Process extends Model implements HasMedia
     ];
 
     /**
+     * TODO: Delete
      * Category of the process.
      *
      * @return BelongsTo
@@ -211,6 +214,9 @@ class Process extends Model implements HasMedia
     {
         return $this->belongsTo(ProcessCategory::class, 'process_category_id');
     }
+
+
+    
 
     /**
      * Notification settings of the process.
