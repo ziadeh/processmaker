@@ -14,7 +14,7 @@ To single sign-on \(SSO\) to ProcessMaker via SAML, the [SAML package](../../pac
 
 Single sign-on \(SSO\) is a centralized session and user authentication service in which one set of log on credentials can be used to access multiple applications. For example, if your organization uses Google Suite to authenticate people in your organization, ProcessMaker users authenticate into your ProcessMaker instance using their Google credentials. In this example, Google Suite is the identity provider, while ProcessMaker is the service provider.
 
-The ProcessMaker SAML package uses the open-standard Security Assertion Markup Language \(SAML\) format to exchange authentication and authorization data between parties when establishing a SSO session. The ProcessMaker SAML package uses the [SAML 2.0 open standard](https://en.wikipedia.org/wiki/SAML_2.0).
+The ProcessMaker SAML package uses the open-standard Security Assertion Markup Language \(SAML\) format to exchange authentication and authorization data between parties when establishing a SSO session.  SAML SSO works by transferring the user’s identity from the identity provider to the service provider. This is done by exchanging a set of digitally signed XML documents. The ProcessMaker SAML package uses the [SAML 2.0 open standard](https://en.wikipedia.org/wiki/SAML_2.0).
 
 The ProcessMaker SAML package requires an HTTPS connection and access to a SAML identity provider service.
 
