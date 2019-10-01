@@ -1,8 +1,8 @@
 ---
-description: Single sign-on (SSO) ProcessMaker users to your ProcessMaker instance.
+description: Single sign-on ProcessMaker users to your ProcessMaker instance.
 ---
 
-# Single Sign-On to ProcessMaker Via SAML
+# Single Sign-On \(SSO\) to ProcessMaker Via SAML
 
 ## 
 

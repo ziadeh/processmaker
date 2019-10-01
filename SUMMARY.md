@@ -214,9 +214,9 @@
   * [View Metrics](processmaker-administration/queue-management/view-metrics.md)
   * [View Recent Jobs](processmaker-administration/queue-management/view-recent-jobs.md)
   * [View Recently Failed Jobs](processmaker-administration/queue-management/view-recently-failed-jobs.md)
-* [Single Sign-On to ProcessMaker Via SAML](processmaker-administration/single-sign-on-to-processmaker-via-saml/README.md)
-  * [What is Single Sign-On?](processmaker-administration/single-sign-on-to-processmaker-via-saml/what-is-single-sign-on.md)
-  * [View the SAML Settings](processmaker-administration/single-sign-on-to-processmaker-via-saml/view-the-saml-settings.md)
+* [Single Sign-On \(SSO\) to ProcessMaker Via SAML](processmaker-administration/single-sign-on-to-processmaker-via-saml/README.md)
+  * [What is Single Sign-On \(SSO\)?](processmaker-administration/single-sign-on-to-processmaker-via-saml/what-is-single-sign-on.md)
+  * [Configure Single Sign-On \(SSO\) Via SAML](processmaker-administration/single-sign-on-to-processmaker-via-saml/view-the-saml-settings.md)
 
 ## ProcessMaker Collections <a id="collections"></a>
 
