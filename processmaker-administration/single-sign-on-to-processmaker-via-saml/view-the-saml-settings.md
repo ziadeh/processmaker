@@ -32,6 +32,7 @@ Follow these steps to configure SAML settings to single sign-on to your ProcessM
     * **email:** The `email` component authenticates using the email address.
     * **firstname:** The `firstname` component authenticates using a person's first name.
     * **lastname:** The `lastname` component authenticates using a person's last name.
+    * **country:** The `country` component authenticates using a person's country code.
 
     Follow these guidelines:
 
