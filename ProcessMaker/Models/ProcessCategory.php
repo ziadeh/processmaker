@@ -65,6 +65,6 @@ class ProcessCategory extends Model
      */
     public function processes()
     {
-        return $this->morphMany(CategoryAssignable::class, 'assignable');
+        return $this->morphedByMany(Process::class, 'assignable');
     }
 }

@@ -31,7 +31,6 @@ use ProcessMaker\Traits\HasCategories;
  * Represents a business process definition.
  *
  * @property string $id
- * @property string $process_category_id
  * @property string $user_id
  * @property string $bpmn
  * @property string $description
@@ -203,20 +202,6 @@ class Process extends Model implements HasMedia
         'start_events' => 'array',
         'warnings' => 'array'
     ];
-
-    /**
-     * TODO: Delete
-     * Category of the process.
-     *
-     * @return BelongsTo
-     */
-    public function category()
-    {
-        return $this->belongsTo(ProcessCategory::class, 'process_category_id');
-    }
-
-
-    
 
     /**
      * Notification settings of the process.
