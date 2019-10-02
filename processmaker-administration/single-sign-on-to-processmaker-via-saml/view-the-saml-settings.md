@@ -27,10 +27,18 @@ Follow these steps to configure SAML settings to single sign-on to your ProcessM
 7. In the **SSO endpoint info of the IdP** field, enter the identity provider URL from which ProcessMaker retrieves the authentication response and validates it when establishing the SSO session. Your identity provider provides you this URL. This is a required field.
 8. In the **Identifier of the IdP entity \(must be a URI\)** field, enter the URL that references the SAML XML file for the identity provider \(IdP\). Your identity provider provides you this URL. Example: `https://idp_name.example.com/idp`. This is a required field.
 9. In the **Public certificate of the IdP** field, enter the URL that references the identity provider's certificate fingerprint. Your identity provider provides you this URL. ProcessMaker retrieves the authentication response and validates it using the identity provider's certificate fingerprint. This is a required field.
-10. Use the **Match fields** section to configure which components from the identity provider that ProcessMaker uses in the authentication response when establishing the SSO session. This is a required setting. Follow these guidelines:
-    * **Available:** Use the right arrow![](../../.gitbook/assets/right-arrow-saml-configuration-package-admin.png)to move a selected component from the **Available** column to the **Import** column.
-    * **Import:** Use the left arrow![](../../.gitbook/assets/left-arrow-saml-configuration-package-admin.png)to move a selected component from the **Import** column to the **Available** column.
+10. Use the **Match fields** section to configure which components from the identity provider that ProcessMaker uses in the authentication response when establishing the SSO session. This is a required setting. Specify the components ProcessMaker uses to authenticate an SSO session by including them in the **Import** column. By default, ProcessMaker authenticates using the following components:
+
+    * **email:** The `email` component authenticates using the email address.
+    * **firstname:** The `firstname` component authenticates using a person's first name.
+    * **lastname:** The `lastname` component authenticates using a person's last name.
+
+    Follow these guidelines:
+
+    * **Available:** Use the right arrow![](../../.gitbook/assets/right-arrow-saml-configuration-package-admin.png)to move a selected component from the **Available** column to the **Import** column, thereby using that component for authentication.
+    * **Import:** Use the left arrow![](../../.gitbook/assets/left-arrow-saml-configuration-package-admin.png)to move a selected component from the **Import** column to the **Available** column, thereby not using that component for authentication.
     * **Provider:** 
+
 11. Click **Save**.
 
 ## Related Topics
