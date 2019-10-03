@@ -27,29 +27,29 @@ Follow these steps to configure SAML settings to single sign-on to your ProcessM
 7. In the **SSO endpoint info of the IdP** field, enter the identity provider URL from which ProcessMaker retrieves the authentication response and validates it when establishing the SSO session. Your identity provider provides you this URL. This is a required field.
 8. In the **Identifier of the IdP entity \(must be a URI\)** field, enter the URL that references the SAML XML file for the identity provider \(IdP\). Your identity provider provides you this URL. Example: `https://idp_name.example.com/idp`. This is a required field.
 9. In the **Public certificate of the IdP** field, enter the URL that references the identity provider's certificate fingerprint. Your identity provider provides you this URL. ProcessMaker retrieves the authentication response and validates it using the identity provider's certificate fingerprint. This is a required field.
-10. Use the **Match fields** section to configure which components from the identity provider that ProcessMaker uses to authenticate a person establishing a SSO session. This is a required setting.  
+10. Use the **Match fields** section to configure which parameters from the identity provider that ProcessMaker uses to authenticate a person establishing a SSO session. This is a required setting.  
     ![](../../.gitbook/assets/saml-configuration-match-fields-package-admin.png) 
 
-    Follow these guidelines to configure which components from the identity provider that ProcessMaker uses to authenticate a person establishing a SSO session:
+    Follow these guidelines to configure which parameter\(s\) from the identity provider that ProcessMaker uses to authenticate a person establishing a SSO session:
 
-    * **Available:** The **Available** column displays components that can be used for authentication but are not presently configured to do so. Use the right arrow![](../../.gitbook/assets/right-arrow-saml-configuration-package-admin.png)to move a selected component from the **Available** column to the **Import** column, thereby using that component for authentication.
-    * **Import:** The **Import** column displays components to be used for authentication. Use the left arrow![](../../.gitbook/assets/left-arrow-saml-configuration-package-admin.png)to move a selected component from the **Import** column to the **Available** column, thereby not using that component for authentication.
-    * **Provider:** When a component is in the **Import** column, enter the required attribute ProcessMaker expects from the identity provider during the authentication response to validate a person establishing a SSO session.
+    * **Available:** The **Available** column displays parameters that can be used for authentication but are not presently configured to do so. Use the right arrow![](../../.gitbook/assets/right-arrow-saml-configuration-package-admin.png)to move a selected component from the **Available** column to the **Import** column, thereby using that component for authentication.
+    * **Import:** The **Import** column displays parameters to be used for authentication. Use the left arrow![](../../.gitbook/assets/left-arrow-saml-configuration-package-admin.png)to move a selected component from the **Import** column to the **Available** column, thereby not using that parameter for authentication. Note that the email parameter is required for authentication.
+    * **Provider:** When a parameter is in the **Import** column, enter the required attribute ProcessMaker expects from the identity provider during the authentication response to validate a person establishing a SSO session.
 
-    Below is a description of all components in the **Match fields** section, listed alphabetically:
+    Below is a description of all parameters in the **Match fields** section, listed alphabetically:
 
-    * **address:** Use the **address** component to authenticate a person's address.
-    * **birthdate:** 
-    * **cell:** 
-    * **city:** 
-    * **country:** The country component authenticates using a person's country code.
-    * **email:** The email component authenticates using the email address. This component is used for authentication by default.
-    * **fax:** 
-    * **firstname:** The firstname component authenticates using a person's first name. This component is used for authentication by default.
-    * **lastname:** The lastname component authenticates using a person's last name. This component is used for authentication by default.
-    * **phone:** 
-    * **postal:** 
-    * **state:** 
+    * **address:** Use the **address** parameter to authenticate by the person's physical address.
+    * **birthdate:** Use the **birthdate** parameter to authenticate by the person's birth date.
+    * **cell:** Use the **cell** parameter to authenticate by the person's cell or smart phone number.
+    * **city:** Use the **city** parameter to authenticate by the person's city.
+    * **country:** Use the **country** parameter to authenticate by the person's country code.
+    * **email:** The **email** parameter authenticates using the person's email address. This parameter is required for authentication. Do not remove it from the **Import** column.
+    * **fax:** Use the **fax** parameter to authenticate by the person's fax number.
+    * **firstname:** Use the **firstname** parameter to authenticate by the person's first name. This component is used for authentication by default.
+    * **lastname:** Use the **lastname** parameter to authenticate by the person's last name. This component is used for authentication by default.
+    * **phone:** Use the **phone** parameter to authenticate by the person's landline phone number.
+    * **postal:** Use the **postal** parameter to authenticate by the person's postal code.
+    * **state:** Use the **state** parameter to authenticate by the person's state.
 
 11. Click **Save**.
 
