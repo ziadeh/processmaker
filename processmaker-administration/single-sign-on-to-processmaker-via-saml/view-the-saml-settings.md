@@ -30,11 +30,11 @@ Follow these steps to configure SAML settings to single sign-on to your ProcessM
 10. Use the **Match fields** section to configure which parameters from the identity provider that ProcessMaker uses to authenticate a person establishing a SSO session. This is a required setting.  
     ![](../../.gitbook/assets/saml-configuration-match-fields-package-admin.png) 
 
-    Follow these guidelines to configure which parameter\(s\) from the identity provider that ProcessMaker uses to authenticate a person establishing a SSO session:
+    Follow these guidelines to configure which parameter\(s\) from the identity provider that ProcessMaker uses to authenticate and validate each person that may successfully establish a SSO session:
 
-    * **Available:** The **Available** column displays parameters that can be used for authentication but are not presently configured to do so. Use the right arrow![](../../.gitbook/assets/right-arrow-saml-configuration-package-admin.png)to move a selected component from the **Available** column to the **Import** column, thereby using that component for authentication.
-    * **Import:** The **Import** column displays parameters to be used for authentication. Use the left arrow![](../../.gitbook/assets/left-arrow-saml-configuration-package-admin.png)to move a selected component from the **Import** column to the **Available** column, thereby not using that parameter for authentication. Note that the email parameter is required for authentication.
-    * **Provider:** When a parameter is in the **Import** column, enter the required attribute ProcessMaker expects from the identity provider during the authentication response to validate a person establishing a SSO session.
+    * **Available:** The **Available** column displays parameters that can be used for authentication but are not configured to do so. Use the right arrow![](../../.gitbook/assets/right-arrow-saml-configuration-package-admin.png)to move a selected component from the **Available** column to the **Import** column, thereby using that component for authentication.
+    * **Import:** The **Import** column displays parameters to be used to authenticate each person that attempts a SSO session with your ProcessMaker instance. Use the left arrow![](../../.gitbook/assets/left-arrow-saml-configuration-package-admin.png)to move a selected component from the **Import** column to the **Available** column, thereby not using that parameter for authentication. Note that the email parameter is required for authentication.
+    * **Provider:** When a parameter is in the **Import** column, enter the required attribute ProcessMaker expects from the identity provider during the authentication response to validate each person attempting to establish a SSO session.
 
     Below is a description of all parameters in the **Match fields** section, listed alphabetically:
 
