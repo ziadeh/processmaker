@@ -84,9 +84,8 @@ class ProcessController extends Controller
             $processes = Process::inactive()->with($include);
         }
 
+        $processes->with(['categories', 'user']);
         $processes = $processes->select('processes.*')
-            ->leftJoin('process_categories as category', 'processes.process_category_id', '=', 'category.id')
-            ->leftJoin('users as user', 'processes.user_id', '=', 'user.id')
             ->orderBy(...$orderBy)
             ->where($where)
             ->get();
@@ -197,6 +196,7 @@ class ProcessController extends Controller
                 422
             );
         }
+        $process->categories()->sync([$data['process_category_id']]);
         return new Resource($process->refresh());
     }
 

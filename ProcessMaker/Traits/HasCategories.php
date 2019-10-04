@@ -2,22 +2,30 @@
 
 namespace ProcessMaker\Traits;
 
-use ProcessMaker\Http\Resources\ProcessCategory;
 use ProcessMaker\Models\CategoryAssignment;
+use ProcessMaker\Models\ProcessCategory;
 
 trait HasCategories
 {
-    /*public function categoryAssignments()
+    public function assignable()
     {
-        return $this->morphMany(CategoryAssignment::class, 'assignable');
+        return $this->morphedByMany(CategoryAssignment::class, 'assignable');
+    }
+
+    public function category()
+    {
+        return $this->hasOneThrough(ProcessCategory::class, CategoryAssignment::class, 'assignable_id', 'id', null,'category_id')->where('assignable_type', static::class);
+    }
+
+    public function getCategoryAttribute()
+    {
+        return $this->category()->first();
     }
 
     public function categories()
     {
-        return $this->categoryAssignments->map(function($ca) { return $ca->category; });
-    }*/
-    public function categories()
-    {
-        return $this->morphedByMany(ProcessCategory::class, 'category');
+        $categories = $this->morphedByMany(ProcessCategory::class, 'category', 'category_assignments', 'assignable_id', 'category_id');
+        $categories->withPivotValue('assignable_type', static::class);
+        return $categories;
     }
 }

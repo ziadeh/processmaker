@@ -429,4 +429,19 @@ class ProcessCategoriesTest extends TestCase
         $response->assertJsonStructure($this->errorStructure);
         $response->assertJsonStructure(['errors' => ['processes']]);
     }
+
+    /**
+     * Test to get the default category of a process
+     *
+     */
+    public function testProcessDefaultCategory()
+    {
+        $process = factory(Process::class)->create();
+        $process2 = factory(Process::class)->create();
+        $processCategory = factory(ProcessCategory::class)->create();
+        $process->categories()->sync([$processCategory->getKey()]);
+        $process2->categories()->sync([$processCategory->getKey()]);
+        $this->assertEquals($processCategory->getKey(), $process->category->getKey());
+        $this->assertEquals($processCategory->getKey(), $process2->category->getKey());
+    }
 }

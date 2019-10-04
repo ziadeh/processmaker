@@ -196,6 +196,7 @@ class Process extends Model implements HasMedia
 
     protected $appends = [
         'has_timer_start_events',
+        'category',
     ];
 
     protected $casts = [
@@ -301,7 +302,6 @@ class Process extends Model implements HasMedia
             'name' => ['required', $unique],
             'description' => 'required',
             'status' => 'in:ACTIVE,INACTIVE',
-            'process_category_id' => 'exists:process_categories,id',
             'bpmn' => 'nullable',
         ];
     }
@@ -999,5 +999,12 @@ class Process extends Model implements HasMedia
             }
         }
         return $newnode;
+    }
+
+    public function setProcessCategoryIdAttribute($value)
+    {
+        if ($this->getKey()) {
+            $this->categories()->sync([$value]);
+        }
     }
 }
