@@ -58,6 +58,7 @@ class Screen extends Model
     use HasCategories;
 
     protected $connection = 'processmaker';
+    const categoryClass = ScreenCategory::class;
 
     protected $casts = [
         'config' => 'array',

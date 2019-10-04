@@ -128,6 +128,7 @@ class Process extends Model implements HasMedia
     use HasCategories;
 
     protected $connection = 'processmaker';
+    const categoryClass = ProcessCategory::class;
 
     /**
      * The attributes that aren't mass assignable.

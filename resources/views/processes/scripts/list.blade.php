@@ -57,8 +57,8 @@
                                 </div>
                             </div>
                             <category-select :label="$t('Category')" api-get="script_categories"
-                                             api-list="script_categories" v-model="script_category_id"
-                                             :errors="addError.script_category_id">
+                                             api-list="script_categories" v-model="script_categories"
+                                             :errors="addError.script_categories">
                             </category-select>
                             <div class="form-group">
                                 {!!Form::label('language', __('Language'))!!}
@@ -127,7 +127,7 @@
               title: '',
               language: '',
               description: '',
-              script_category_id: '',
+              script_categories: [],
               code: '',
               addError: {},
               selectedUser: '',
@@ -140,7 +140,7 @@
                 this.title = '';
                 this.language = '';
                 this.description = '';
-                this.script_category_id = '';
+                this.script_categories = [];
                 this.code = '';
                 this.timeout = 60;
                 this.addError = {};
@@ -150,18 +150,22 @@
                   name: null,
                   description: null,
                   status: null,
-                  script_category_id: null
+                  script_categories: null
                 });
                 //single click
                 if (this.disabled) {
                   return
                 }
                 this.disabled = true;
+                const script_categories = [];
+                this.script_categories.forEach(element => {
+                    script_categories.push(element.id);
+                });
                 ProcessMaker.apiClient.post("/scripts", {
                   title: this.title,
                   language: this.language,
                   description: this.description,
-                  script_category_id: this.script_category_id,
+                  script_categories: script_categories,
                   run_as_user_id: this.selectedUser ? this.selectedUser.id : null,
                   code: "[]",
                   timeout: this.timeout

@@ -56,6 +56,7 @@ class Script extends Model
     use HasCategories;
 
     protected $connection = 'processmaker';
+    const categoryClass = ScriptCategory::class;
 
     protected $guarded = [
         'id',

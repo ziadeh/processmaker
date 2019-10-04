@@ -169,6 +169,7 @@ class ProcessController extends Controller
             );
         }
 
+        $processCategories = isset($data['process_categories']) ? $data['process_categories'] : [];
         unset($data['process_categories']);
         $process = new Process();
         $process->fill($data);
@@ -198,8 +199,8 @@ class ProcessController extends Controller
         }
         if (!empty($data['process_category_id'])) {
             $process->categories()->sync([$data['process_category_id']]);
-        } elseif (!empty($data['process_categories'])) {
-            $process->categories()->sync($data['process_categories']);
+        } elseif (!empty($processCategories)) {
+            $process->categories()->sync($processCategories);
         }
         return new Resource($process->refresh());
     }

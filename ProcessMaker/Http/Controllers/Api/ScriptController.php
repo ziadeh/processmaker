@@ -212,9 +212,15 @@ class ScriptController extends Controller
     {
         $request->validate(Script::rules());
         $script = new Script();
-        $script->fill($request->input());
+        $data = $request->input();
+        $scriptCategories = isset($data['script_categories']) ? $data['script_categories'] : [];
+        unset($data['script_categories']);
+        $script->fill($data);
 
         $script->saveOrFail();
+        if (!empty($scriptCategories)) {
+            $script->categories()->sync($scriptCategories);
+        }
         return new ScriptResource($script);
     }
 
