@@ -196,7 +196,6 @@ class Process extends Model implements HasMedia
 
     protected $appends = [
         'has_timer_start_events',
-        'category',
     ];
 
     protected $casts = [
