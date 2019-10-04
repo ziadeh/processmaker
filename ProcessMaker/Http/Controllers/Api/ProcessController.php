@@ -487,7 +487,7 @@ class ProcessController extends Controller
      */
     public function startProcesses(Request $request)
     {
-        $where = $this->getRequestFilterBy($request, ['processes.name', 'processes.description', 'category.name']);
+        $where = $this->getRequestFilterBy($request, ['processes.name', 'processes.description']);
         $orderColumns = explode(',', $request->input('order_by', 'name'));
         $orderDirections = explode(',', $request->input('order_direction', 'asc'));
         $include = $this->getRequestInclude($request);
