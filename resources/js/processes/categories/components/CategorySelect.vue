@@ -8,7 +8,7 @@
                  :loading="loading"
                  :placeholder="$t('type here to search')"
                  :options="options"
-                 :multiple="false"
+                 :multiple="true"
                  :show-labels="false"
                  :searchable="true"
                  :internal-search="false"
@@ -52,14 +52,14 @@
     watch: {
       content: {
         handler() {
-          this.$emit("input", this.content.id);
+          this.$emit("input", this.content);
         }
       },
       value: {
         immediate: true,
         handler() {
           // Load selected item.
-          if (this.value) {
+          /*if (this.value) {
             this.loading = true;
             ProcessMaker.apiClient
               .get(this.apiGet + "/" + this.value)
@@ -77,7 +77,7 @@
           } else {
             this.content = '';
             this.error = '';
-          }
+          }*/
         },
       }
     },

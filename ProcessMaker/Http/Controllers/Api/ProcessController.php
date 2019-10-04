@@ -17,7 +17,6 @@ use ProcessMaker\Models\ProcessPermission;
 use ProcessMaker\Models\Script;
 use ProcessMaker\Jobs\ExportProcess;
 use ProcessMaker\Jobs\ImportProcess;
-use ProcessMaker\Nayra\Bpmn\Models\TimerEventDefinition;
 use ProcessMaker\Nayra\Storage\BpmnDocument;
 use ProcessMaker\Nayra\Exceptions\ElementNotFoundException;
 
@@ -170,6 +169,7 @@ class ProcessController extends Controller
             );
         }
 
+        unset($data['process_categories']);
         $process = new Process();
         $process->fill($data);
 
@@ -196,7 +196,11 @@ class ProcessController extends Controller
                 422
             );
         }
-        $process->categories()->sync([$data['process_category_id']]);
+        if (!empty($data['process_category_id'])) {
+            $process->categories()->sync([$data['process_category_id']]);
+        } elseif (!empty($data['process_categories'])) {
+            $process->categories()->sync($data['process_categories']);
+        }
         return new Resource($process->refresh());
     }
 
@@ -504,7 +508,7 @@ class ProcessController extends Controller
             ->where($where);
 
         // Add the order by columns
-        foreach($orderColumns as $key=>$orderColumn) {
+        foreach ($orderColumns as $key => $orderColumn) {
             $orderDirection = array_key_exists($key, $orderDirections) ? $orderDirections[$key] : 'asc';
             $query->orderBy($orderColumn, $orderDirection);
         }

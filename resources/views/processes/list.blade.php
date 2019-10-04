@@ -71,8 +71,8 @@
                             </div>
                         </div>
                         <category-select :label="$t('Category')" api-get="process_categories"
-                                         api-list="process_categories" v-model="process_category_id"
-                                         :errors="addError.process_category_id">
+                                         api-list="process_categories" v-model="process_categories"
+                                         :errors="addError.process_categories">
                         </category-select>
                         <div class="form-group">
                             {!! Form::label('fileName', __('Upload BPMN File (optional)')) !!}
@@ -122,7 +122,7 @@
               selectedFile: "",
               categoryOptions: "",
               description: "",
-              process_category_id: "",
+              process_categories: [],
               addError: {},
               status: "",
               bpmn: "",
@@ -146,7 +146,7 @@
               onClose () {
                 this.name = "";
                 this.description = "";
-                this.process_category_id = "";
+                this.process_categories = [];
                 this.status = "";
                 this.addError = {};
               },
@@ -154,11 +154,11 @@
                 this.errors = Object.assign({}, {
                   name: null,
                   description: null,
-                  process_category_id: null,
+                  process_categories: null,
                   status: null
                 });
-                if (this.process_category_id === "") {
-                  this.addError = {"process_category_id": ["{{__('The category field is required.')}}"]};
+                if (this.process_categories.length === 0) {
+                  this.addError = {"process_categories": ["{{__('The category field is required.')}}"]};
                   return;
                 }
                 //single click
@@ -170,7 +170,11 @@
                 let formData = new FormData();
                 formData.append("name", this.name);
                 formData.append("description", this.description);
-                formData.append("process_category_id", this.process_category_id);
+                const process_categories = [];
+                this.process_categories.forEach(element => {
+                    process_categories.push(element.id);
+                });
+                formData.append("process_categories", process_categories);
                 if (this.file) {
                   formData.append("file", this.file);
                 }
