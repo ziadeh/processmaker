@@ -73,7 +73,7 @@ class ProcessController extends Controller
      */
     public function index(Request $request)
     {
-        $where = $this->getRequestFilterBy($request, ['processes.name', 'processes.description', 'processes.status', 'category.name', 'user.firstname', 'user.lastname']);
+        $where = $this->getRequestFilterBy($request, ['processes.name', 'processes.description', 'processes.status', 'user.firstname', 'user.lastname']);
         $orderBy = $this->getRequestSortBy($request, 'name');
         $perPage = $this->getPerPage($request);
         $include = $this->getRequestInclude($request);

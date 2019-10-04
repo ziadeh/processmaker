@@ -17,11 +17,6 @@ trait HasCategories
         return $this->hasOneThrough(ProcessCategory::class, CategoryAssignment::class, 'assignable_id', 'id', null,'category_id')->where('assignable_type', static::class);
     }
 
-    public function getCategoryAttribute()
-    {
-        return $this->category()->first();
-    }
-
     public function categories()
     {
         $categories = $this->morphedByMany(ProcessCategory::class, 'category', 'category_assignments', 'assignable_id', 'category_id');
