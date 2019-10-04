@@ -1001,10 +1001,33 @@ class Process extends Model implements HasMedia
         return $newnode;
     }
 
+    /**
+     * Get default category id
+     *
+     * @return string
+     */
+    public function getProcessCategoryIdAttribute()
+    {
+        return $this->category ? $this->category->id : null;
+    }
+
+    /**
+     * Set a default category
+     *
+     */
     public function setProcessCategoryIdAttribute($value)
     {
+        if (!$value) {
+            return;
+        }
         if ($this->getKey()) {
             $this->categories()->sync([$value]);
+        } else {
+            self::created(function($model) use($value) {
+                if ($model->getKey() === $this->getKey()) {
+                    $this->categories()->sync([$value]);
+                }
+            });
         }
     }
 }

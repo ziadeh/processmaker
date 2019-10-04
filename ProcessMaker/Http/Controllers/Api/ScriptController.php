@@ -67,8 +67,8 @@ class ScriptController extends Controller
         // Do not return results when a key is set. Those are for connectors.
         $query = Script::nonSystem()
                     ->select('scripts.*')
-                    ->where('key', null)
-                    ->leftJoin('script_categories as category', 'scripts.script_category_id', '=', 'category.id');
+                    ->with(['category'])
+                    ->where('key', null);
 
         $include = $request->input('include', '');
 

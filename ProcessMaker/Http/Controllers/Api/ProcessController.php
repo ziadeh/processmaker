@@ -494,10 +494,12 @@ class ProcessController extends Controller
 
         $query = Process::nonSystem()->with($include)->with('events')
             ->select('processes.*')
-            ->leftJoin('process_categories as category', 'processes.process_category_id', '=', 'category.id')
+            ->with(['category'])
             ->leftJoin('users as user', 'processes.user_id', '=', 'user.id')
             ->where('processes.status', 'ACTIVE')
-            ->where('category.status', 'ACTIVE')
+            ->whereHas('categories', function ($query) {
+                $query->where('status', '=', 'ACTIVE');
+            })
             ->whereNull('warnings')
             ->where($where);
 

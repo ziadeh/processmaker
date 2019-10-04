@@ -63,8 +63,8 @@ class ScreenController extends Controller
     {
         $query = Screen::nonSystem()
                     ->select('screens.*')
-                    ->where('key', null)
-                    ->leftJoin('screen_categories as category', 'screens.screen_category_id', '=', 'category.id');
+                    ->with(['category'])
+                    ->where('key', null);
         $include = $request->input('include', '');
 
         if ($include) {
