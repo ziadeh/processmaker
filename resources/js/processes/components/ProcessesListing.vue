@@ -141,8 +141,15 @@
           },
           {
             title: () => this.$t("Category"),
-            name: "category.name",
-            sortField: "category.name"
+            name: "categories",
+            sortField: "categories",
+            callback: function (categories) {
+              const labels = [];
+              categories instanceof Array ? categories.forEach((category) => {
+                labels.push(category.name);
+              }) : null;
+              return labels.join(', ');
+            },
           },
           {
             title: () => this.$t("Owner"),
