@@ -1021,11 +1021,11 @@ class Process extends Model implements HasMedia
             return;
         }
         if ($this->getKey()) {
-            $this->categories()->sync([$value]);
+            $this->categories()->sync(explode(',', $value));
         } else {
-            self::created(function($model) use($value) {
+            self::created(function ($model) use ($value) {
                 if ($model->getKey() === $this->getKey()) {
-                    $this->categories()->sync([$value]);
+                    $this->categories()->sync(explode(',', $value));
                 }
             });
         }

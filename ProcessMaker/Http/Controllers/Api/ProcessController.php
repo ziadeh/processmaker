@@ -198,9 +198,9 @@ class ProcessController extends Controller
             );
         }
         if (!empty($data['process_category_id'])) {
-            $process->categories()->sync([$data['process_category_id']]);
+            $process->categories()->sync(explode(',', $data['process_category_id']));
         } elseif (!empty($processCategories)) {
-            $process->categories()->sync($processCategories);
+            $process->categories()->sync(explode(',', $processCategories));
         }
         return new Resource($process->refresh());
     }
