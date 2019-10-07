@@ -6,7 +6,9 @@ description: Add a control that displays HTML-formatted text.
 
 ## Control Description
 
-The Rich Text control adds a placeholder in the ProcessMaker Screen that displays HTML-formatted text. This control can display the value of another control by referencing that control's **Variable Value** field setting using mustache syntax. Example: `{{ FullName }}`.
+The Rich Text control adds a placeholder in the ProcessMaker Screen that displays HTML-formatted text. The ProcessMaker Screen designer can use the What-You-See-Is-What-You-Get \(WYSIWYG\) settings to display a variety of text styles.
+
+This control can display the value of another control by referencing that control's **Variable Value** field setting using mustache syntax. Example: `{{ FullName }}`.
 
 ## Add the Control to a ProcessMaker Screen
 
