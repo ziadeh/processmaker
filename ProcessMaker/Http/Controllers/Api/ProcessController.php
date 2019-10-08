@@ -255,7 +255,7 @@ class ProcessController extends Controller
             $process->warnings = null;
         }
 
-        $process->fill($request->except('notifications', 'task_notifications', 'notification_settings', 'cancel_request', 'cancel_request_id', 'start_request_id', 'edit_data', 'edit_data_id'));
+        $process->fill($request->except('notifications', 'task_notifications', 'notification_settings', 'cancel_request', 'cancel_request_id', 'start_request_id', 'edit_data', 'edit_data_id', 'categories'));
 
         // Catch errors to send more specific status
         try {
@@ -270,6 +270,7 @@ class ProcessController extends Controller
 
         unset(
             $original_attributes['id'],
+            $original_attributes['process_category_id'],
             $original_attributes['updated_at']
         );
         $process->versions()->create($original_attributes);

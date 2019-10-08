@@ -197,6 +197,7 @@ class Process extends Model implements HasMedia
 
     protected $appends = [
         'has_timer_start_events',
+        'process_category_id'
     ];
 
     protected $casts = [
@@ -1008,7 +1009,15 @@ class Process extends Model implements HasMedia
      */
     public function getProcessCategoryIdAttribute()
     {
-        return $this->category ? $this->category->id : null;
+        if ($this->categories) {
+            $categories = [];
+            foreach ($this->categories as $category) {
+                $categories[] = $category->getKey();
+            }
+            return implode(',', $categories);
+        } else {
+            return null;
+        }
     }
 
     /**

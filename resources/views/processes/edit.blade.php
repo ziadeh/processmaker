@@ -65,7 +65,7 @@
                                 <div class="invalid-feedback" v-if="errors.description">@{{errors.description[0]}}</div>
                             </div>
                             <category-select :label="$t('Category')" api-get="process_categories"
-                                api-list="process_categories" v-model="formData.process_category_id"
+                                api-list="process_categories" v-model="formData.categories"
                                 >
                             </category-select>
                             <div class="form-group p-0">
@@ -318,7 +318,14 @@
             this.formData.edit_data = this.formatAssigneePermissions(this.canEditData);
             this.formData.cancel_screen_id = this.formatValueScreen(this.screenCancel);
             this.formData.request_detail_screen_id = this.formatValueScreen(this.screenRequestDetail);
-            ProcessMaker.apiClient.put('processes/' + that.formData.id, that.formData)
+            const data = Object.assign({}, that.formData);
+            delete data.categories;
+            const categories = [];
+            this.formData.categories.forEach(category => {
+                categories.push(category.id);
+            });
+            data.process_category_id = categories.join(',');
+            ProcessMaker.apiClient.put('processes/' + that.formData.id, data)
               .then(response => {
                 ProcessMaker.alert('{{__('The process was saved.')}}', 'success', 5, true);
                 that.onClose();
