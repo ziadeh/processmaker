@@ -146,8 +146,13 @@ export default {
         },
         {
           title: () => this.$t("Category"),
-          name: "category.name",
-          sortField: "category.name"
+          name: "categories",
+          sortField: "categories",
+          callback: function (categories) {
+            const label = [];
+            categories.forEach(category => label.push(category.name));
+            return label.join(', ');
+          }
         },
         {
           title: () => this.$t("Language"),

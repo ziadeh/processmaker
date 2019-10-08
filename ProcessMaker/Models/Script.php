@@ -68,6 +68,10 @@ class Script extends Model
         'timeout' => 'integer',
     ];
 
+    protected $appends = [
+        'script_category_id',
+    ];
+
     /**
      * Validation rules
      *
@@ -238,7 +242,15 @@ class Script extends Model
      */
     public function getScriptCategoryIdAttribute()
     {
-        return $this->category ? $this->category->id : null;
+        if ($this->categories) {
+            $categories = [];
+            foreach ($this->categories as $category) {
+                $categories[] = $category->getKey();
+            }
+            return implode(',', $categories);
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -251,11 +263,11 @@ class Script extends Model
             return;
         }
         if ($this->getKey()) {
-            $this->categories()->sync([$value]);
+            $this->categories()->sync(explode(',', $value));
         } else {
             self::created(function($model) use($value) {
                 if ($model->getKey() === $this->getKey()) {
-                    $this->categories()->sync([$value]);
+                    $this->categories()->sync(explode(',', $value));
                 }
             });
         }

@@ -58,7 +58,31 @@
       value: {
         immediate: true,
         handler(value) {
+          //value = typeof value === 'string' ? value.split(',') : value;
           this.content = value;
+          /*if (value instanceof Array) {
+            this.loading = 0;
+            value.forEach((category) => {
+              if (typeof category === "string") {
+                this.loading++;
+                ProcessMaker.apiClient
+                  .get(this.apiGet + "/" + category)
+                  .then(response => {
+                    this.loading--;
+                    this.content[this.content.indexOf(category)] = response.data;
+                  })
+                  .catch(error => {
+                    this.loading = false;
+                    if (error.response.status === 404) {
+                      this.content.splice(this.content.indexOf(category));
+                      this.error = this.$t('Selected not found');
+                    }
+                  });
+              }
+            });
+          } else {
+            this.error = '';
+          }*/
         },
       }
     },

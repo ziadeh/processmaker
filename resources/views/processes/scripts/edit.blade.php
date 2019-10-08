@@ -28,7 +28,7 @@
                                v-if="! errors.title">{{ __('The script name must be distinct.') }}</small>
                         <div class="invalid-feedback" v-if="errors.title">@{{errors.title[0]}}</div>
                     </div>
-                    <category-select :label="$t('Category')" api-get="script_categories" api-list="script_categories" v-model="formData.script_category_id" :errors="errors.script_category_id">
+                    <category-select :label="$t('Category')" api-get="script_categories" api-list="script_categories" v-model="formData.categories" :errors="errors.script_category_id">
                     </category-select>
                     <div class="form-group">
                         <label class="typo__label">{{__('Run script as')}}</label>
@@ -97,10 +97,12 @@
           },
           onUpdate() {
             this.resetErrors();
+            const categories = [];
+            this.formData.categories.forEach((category) => categories.push(category.id));
             ProcessMaker.apiClient.put('scripts/' + this.formData.id, {
               title: this.formData.title,
               language: this.formData.language,
-              script_category_id: this.formData.script_category_id,
+              script_category_id: categories.join(','),
               description: this.formData.description,
               run_as_user_id: this.selectedUser === null ? null : this.selectedUser.id,
               timeout: this.formData.timeout,
