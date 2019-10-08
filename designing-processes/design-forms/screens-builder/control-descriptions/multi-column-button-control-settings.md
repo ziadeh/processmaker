@@ -4,11 +4,11 @@ description: >-
   controls display.
 ---
 
-# Table Control Settings
+# Multicolumn / Table Control Settings
 
 ## Control Description <a id="control-description"></a>
 
-The Table control adds a layout element with two or more columns. Drop other controls into any of the columns to display them to the width of the Table control column.
+The Multicolumn / Table control adds a layout element with two or more columns. Drop other controls into any of the columns to display them to the width of the Multicolumn / Table control column.
 
 ## Add the Control to a ProcessMaker Screen <a id="add-the-control-to-a-processmaker-screen"></a>
 
@@ -26,19 +26,19 @@ Follow these steps to add this control to the ProcessMaker Screen:
 1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
 3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
-4. Drag the **Table** icon![](../../../../.gitbook/assets/multi-column-control-screens-builder-processes.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
-5. Configure the Table control. See [Design Settings](multi-column-button-control-settings.md#inspector-settings).
-6. Place into the ProcessMaker Screen canvas where you want the control to display on the page.​![](../../../../.gitbook/assets/multi-column-control-placed-screens-builder-processes.png)
-7. Drag-and-drop others controls into either column. Configure each control's settings. 
+4. Drag the **Multicolumn / Table** icon![](../../../../.gitbook/assets/multicolumn-table-control-screens-builder-processes.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
+5. Configure the Multicolumn / Table control. See [Design Settings](multi-column-button-control-settings.md#inspector-settings).
+6. Place into the ProcessMaker Screen canvas where you want the control to display on the page.​
+7. Drag and place others controls into a column. Configure each control's settings. ![](../../../../.gitbook/assets/multicolumn-table-control-placed-screens-builder-processes.png) 
 
-Below is a Table control in [Preview mode](../screens-builder-modes.md#preview-mode). 
+Below is a Multicolumn / Table control in [Preview mode](../screens-builder-modes.md#preview-mode).
 
-![Table control that contains other controls in Preview mode](../../../../.gitbook/assets/multi-column-control-display-screens-builder-processes.png)
+![Multicolumn / Table control that contains other controls in Preview mode](../../../../.gitbook/assets/multi-column-control-display-screens-builder-processes.png)
 
 ## Delete the Control from a ProcessMaker Screen
 
 {% hint style="warning" %}
-Deleting a control deletes configuration for that control as well as any controls placed into the Table control. If you add another control, it will have default settings.
+Deleting a control deletes configuration for that control as well as any controls placed into the Multicolumn / Table control. If you add another control, it will have default settings.
 {% endhint %}
 
 Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
@@ -54,14 +54,14 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-The Table control has the following panels that contain settings:
+The Multicolumn / Table control has the following panels that contain settings:
 
 * \*\*\*\*[**Variable** panel](multi-column-button-control-settings.md#variable-panel-settings)
 * \*\*\*\*[**Design** panel](multi-column-button-control-settings.md#design-panel-settings)
 
 ### Variable Panel Settings
 
-Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Table control in the **Variable** panel:
+Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Multicolumn / Table control in the **Variable** panel:
 
 * **Column Widths:** Specify the column width for each column in the control. Add each column and its width specification in the order they are to display from left to right in the control. Specify the width of each column in `colspan` [HTML attribute](https://www.w3schools.com/tags/att_colspan.asp) settings. The total of all `colspan` attribute settings must be divisible by 12. The control contains two columns of six \(6\) `colspan` HTML attribute setting each by default.
 
@@ -71,7 +71,7 @@ Click the control to view its settings in the **Variable** panel that is on the 
 
   Each option has the following settings:
 
-  * **Column:** **Column** is the internal designation for the column that only the Process Owner views at design time.
+  * **Column:** **Column** is the internal designation for the column that only the form designer views at design time.
   * **Colspan:** **Colspan** is the width of the column in `colspan` HTML attribute settings.
   * **Remove:** Click the Remove![](../../../../.gitbook/assets/options-list-delete-option-icon-screens-builder-processes.png)icon to remove the column.
 
@@ -86,7 +86,7 @@ Click the control to view its settings in the **Variable** panel that is on the 
 
 ### Design Panel Settings
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Table control in the **Design** panel:
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Multicolumn / Table control in the **Design** panel:
 
 * **Element Background Color:** Select to specify the background color of this control.
 * **Text Color:** Select to specify the text color that displays in this control.
