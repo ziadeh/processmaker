@@ -53,7 +53,7 @@ See the ProcessMaker [Screens](../processmaker-administration/permission-descrip
 
 Reference ProcessMaker Magic Variables in ProcessMaker Screens in the following ways:
 
-* \*\*\*\*[**Text controls**](design-forms/screens-builder/control-descriptions/text-control-settings.md#control-description)**:** Reference a ProcessMaker Magic Variable's value in a Text control through the [**Text Content** setting](design-forms/screens-builder/control-descriptions/text-control-settings.md#settings).
+* \*\*\*\*[**Text controls**]()**:** Reference a ProcessMaker Magic Variable's value in a Text control through the [**Text Content** setting]().
 * \*\*\*\*[**Computed Properties**](design-forms/screens-builder/manage-computed-properties.md)**:** [Reference a ProcessMaker Magic Variable's value from a computed Property](design-forms/screens-builder/manage-computed-properties.md#add-a-computed-property). Use JavaScript to return a ProcessMaker Magic Variable's value, then store it in a computed Property.
 
 ## Example of All Magic Variables

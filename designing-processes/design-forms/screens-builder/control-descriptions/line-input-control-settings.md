@@ -1,14 +1,14 @@
 ---
 description: >-
-  Add a control that displays a text field that allows the form user to enter
-  plain text or a password.
+  Add a control that displays a text field that allows the Request participant
+  to enter plain text or a password.
 ---
 
 # Line Inputs Control Settings
 
 ## Control Description
 
-The Line Input control adds a text field that the form user can enter plain text or a password.
+The Line Input control adds a text field that the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can enter plain text or a password.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -108,8 +108,6 @@ Click the control to view its settings in the **Design** panel that is on the ri
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="text-control-settings.md" %}
 
 {% page-ref page="rich-text-control-settings.md" %}
 

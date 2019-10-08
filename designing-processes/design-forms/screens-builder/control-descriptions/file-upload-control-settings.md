@@ -1,14 +1,14 @@
 ---
 description: >-
-  Add a File Upload control to which the form user can upload a file from a
-  local computer.
+  Add a control to which the Request participant can upload a file from a local
+  computer.
 ---
 
 # File Upload Control Settings
 
 ## Control Description
 
-The File Upload control adds an area in the ProcessMaker Screen to which the form user can upload one file from a local computer or accessible network location. The form user can drag and place the file on the control or select a button from which to locate the file for upload. The uploaded file can be referenced in a later step in a Process's Request.
+The File Upload control adds an area in the ProcessMaker [Screen](../../what-is-a-form.md) to which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can upload one file from a local computer or accessible network location. The Request participant can drag and place the file on the control or select a button from which to locate the file for upload. The uploaded file can be referenced in a later step in a Request.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -86,8 +86,6 @@ Click the control to view its settings in the **Design** panel that is on the ri
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="text-control-settings.md" %}
 
 {% page-ref page="rich-text-control-settings.md" %}
 

@@ -174,8 +174,6 @@ Validate that an attribute has a valid URL format.
 
 {% page-ref page="./" %}
 
-{% page-ref page="text-control-settings.md" %}
-
 {% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="line-input-control-settings.md" %}

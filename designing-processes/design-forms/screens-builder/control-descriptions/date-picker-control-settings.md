@@ -1,14 +1,14 @@
 ---
 description: >-
-  Add a Date Picker control that allows the form user to select dates from a
-  ProcessMaker Screen through an interactive calendar.
+  Add a Date Picker control that allows the Request participant to select dates
+  from a ProcessMaker Screen through an interactive calendar.
 ---
 
 # Date Picker Control Settings
 
 ## Control Description <a id="control-description"></a>
 
-The Date Picker control allows the form user to click the control and select a date from a calendar pop-up. After the user selects a date from the control, the calendar hides and the control shows the selected date using the `mm/dd/yyyy hh:mm` text format.
+The Date Picker control allows the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant to click the control and select a date from a calendar pop-up. After the user selects a date from the control, the calendar hides and the control shows the selected date using the `mm/dd/yyyy hh:mm` text format.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -98,8 +98,6 @@ Click the control to view its settings in the **Design** panel that is on the ri
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="text-control-settings.md" %}
 
 {% page-ref page="rich-text-control-settings.md" %}
 

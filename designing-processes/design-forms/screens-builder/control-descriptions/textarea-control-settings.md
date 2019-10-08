@@ -1,12 +1,14 @@
 ---
 description: >-
-  Add a Textarea control from which the user can insert more than three lines of
-  text.
+  Add a control from which the Request participant can insert more than three
+  lines of text.
 ---
 
 # Textarea Control Settings
 
 ## Control Description
+
+The Textarea control allows the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant to insert more than three lines of text.
 
 Though this control displays a vertical scroll bar if more than three lines are inserted, the input box can be expanded as necessary. To do this, click the lower right-hand corner of the input box of the Textarea control, hold, and then drag to enlarge or shrink the control size as necessary. Release when you have adjusted the input box to your required size.
 
@@ -101,8 +103,6 @@ Click the control to view its settings in the **Design** panel that is on the ri
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="text-control-settings.md" %}
 
 {% page-ref page="rich-text-control-settings.md" %}
 

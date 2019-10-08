@@ -1,14 +1,14 @@
 ---
 description: >-
-  Add a Navigation button control from which the form user can go to another
-  page in a multi-page ProcessMaker Screen.
+  Add a Navigation button control from which the Request participant can go to
+  another page in a multi-page ProcessMaker Screen.
 ---
 
 # Navigation Button Control Settings
 
 ## Control Description <a id="control-description"></a>
 
-The Navigation Button control adds a button from which the form user can go to another page in a multi-page ProcessMaker Screen. 
+The Navigation Button control adds a button from which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can go to another page in a multi-page ProcessMaker [Screen](../../what-is-a-form.md). 
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -99,8 +99,6 @@ Click the control to view its settings in the **Design** panel that is on the ri
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="text-control-settings.md" %}
 
 {% page-ref page="rich-text-control-settings.md" %}
 

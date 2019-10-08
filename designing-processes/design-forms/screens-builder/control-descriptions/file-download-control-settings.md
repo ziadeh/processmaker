@@ -1,14 +1,14 @@
 ---
 description: >-
-  Add a File Download control from which the form user can download files to a
-  local computer.
+  Add a control from which the Request participant can download files to a local
+  computer.
 ---
 
 # File Download Control Settings
 
 ## Control Description
 
-The File Download control adds an area in the ProcessMaker Screen from which the form user can download one or more files to a local computer. The downloaded file\(s\) can be referenced from a previous step in the Request.
+The File Download control adds an area in the ProcessMaker [Screen](../../what-is-a-form.md) from which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can download one or more files to a local computer. The downloaded file\(s\) can be referenced from a previous step in the Request.
 
 ## Add the Control to a ProcessMaker Screen <a id="add-the-control-to-a-processmaker-screen"></a>
 
@@ -82,8 +82,6 @@ Click the control to view its settings in the **Design** panel that is on the ri
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="text-control-settings.md" %}
 
 {% page-ref page="rich-text-control-settings.md" %}
 

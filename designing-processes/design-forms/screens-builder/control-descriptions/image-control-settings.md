@@ -91,8 +91,6 @@ Click the control to view its settings in the **Design** panel that is on the ri
 
 {% page-ref page="./" %}
 
-{% page-ref page="text-control-settings.md" %}
-
 {% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="line-input-control-settings.md" %}

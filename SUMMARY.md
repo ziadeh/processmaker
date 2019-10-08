@@ -106,7 +106,7 @@
     * [Screens Builder Modes](designing-processes/design-forms/screens-builder/screens-builder-modes.md)
     * [Validate Your Screen](designing-processes/design-forms/screens-builder/validate-your-screen.md)
     * [Edit Your Screen](designing-processes/design-forms/screens-builder/control-descriptions/README.md)
-      * [Text Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/text-control-settings.md)
+      * [Collection Select Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/collection-select-control-settings.md)
       * [Rich Text Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/rich-text-control-settings.md)
       * [Line Inputs Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/line-input-control-settings.md)
       * [Textarea Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/textarea-control-settings.md)

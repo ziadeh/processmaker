@@ -1,6 +1,6 @@
 ---
 description: >-
-  Add a Radio Group control from which the form user can select only one option
+  Add a control from which the Request participant can select only one option
   from a group of options.
 ---
 
@@ -8,7 +8,7 @@ description: >-
 
 ## Control Description
 
-The Radio Group control provides a group of options from which the form user can only select one.
+The Radio Group control provides a group of options from which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can select only one option.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -121,8 +121,6 @@ Click the control to view its settings in the **Design** panel that is on the ri
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="text-control-settings.md" %}
 
 {% page-ref page="rich-text-control-settings.md" %}
 

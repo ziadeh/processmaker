@@ -86,8 +86,6 @@ If a ProcessMaker Screen control does not have an expression in its **Visibility
 
 {% page-ref page="./" %}
 
-{% page-ref page="text-control-settings.md" %}
-
 {% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="line-input-control-settings.md" %}

@@ -1,15 +1,14 @@
 ---
 description: >-
-  Add a Table control from which the Process Owner adds a layout element with
-  two or more columns on the ProcessMaker Screen. Drag-and-drop other elements
-  into the multi-column layout container.
+  Add a control to display a container of two or more columns from which other
+  controls display.
 ---
 
 # Table Control Settings
 
 ## Control Description <a id="control-description"></a>
 
-The Table control adds a layout element with two or more columns. The Process Owner drops elements into any of the columns to display the width of the Table control.
+The Table control adds a layout element with two or more columns. Drop other controls into any of the columns to display them to the width of the Table control column.
 
 ## Add the Control to a ProcessMaker Screen <a id="add-the-control-to-a-processmaker-screen"></a>
 
@@ -103,8 +102,6 @@ Click the control to view its settings in the **Design** panel that is on the ri
 {% page-ref page="./" %}
 
 {% page-ref page="../validate-your-screen.md" %}
-
-{% page-ref page="text-control-settings.md" %}
 
 {% page-ref page="rich-text-control-settings.md" %}
 

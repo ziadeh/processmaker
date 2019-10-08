@@ -1,6 +1,6 @@
 ---
 description: >-
-  Add a Checkbox control from which the form user can select or deselect an
+  Add a control from which the Request participant can select or deselect an
   option. Multiple Checkbox controls can be grouped together.
 ---
 
@@ -8,7 +8,7 @@ description: >-
 
 ## Control Description
 
-The Checkbox control adds a checkbox from which the form user can select or deselect an option. Multiple Checkbox controls can be grouped together to function as one set of options whereby separate Checkbox controls with the same name maintain the same selected or deselected state.
+The Checkbox control adds a checkbox from which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can select or deselect an option. Multiple Checkbox controls can be grouped together to function as one set of options whereby separate Checkbox controls with the same name maintain the same selected or deselected state.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -102,8 +102,6 @@ Click the control to view its settings in the **Design** panel that is on the ri
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="text-control-settings.md" %}
 
 {% page-ref page="rich-text-control-settings.md" %}
 

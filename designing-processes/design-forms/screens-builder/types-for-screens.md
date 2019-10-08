@@ -35,7 +35,7 @@ The Email package must be installed in your ProcessMaker instance to use the Ema
 
 Use the Email type to compose the email body for email messages to be used with the Email connector. The Email type provides the following controls in Screens Builder:
 
-* [Text](control-descriptions/text-control-settings.md)
+* [Text]()
 * [Table](control-descriptions/multi-column-button-control-settings.md)
 * [Record List](control-descriptions/record-list-control-settings.md)
 

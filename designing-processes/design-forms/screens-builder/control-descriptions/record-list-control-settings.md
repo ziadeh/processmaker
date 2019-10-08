@@ -1,14 +1,14 @@
 ---
 description: >-
-  Add a Record List control from which the form user can insert several values
-  in a list.
+  Add a control from which the Request participant can insert several values in
+  a list.
 ---
 
 # Record List Control Settings
 
 ## Control Description <a id="control-description"></a>
 
-The Record List control records values that the form user enters into another page of the ProcessMaker Screen. Optionally, values can be edited after the form user initially enters the record\(s\) into the secondary ProcessMaker Screen page.
+The Record List control records values that the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters into another page of the ProcessMaker [Screen](../../what-is-a-form.md). Optionally, values can be edited after the Request participant initially enters the record\(s\) into the secondary ProcessMaker Screen page.
 
 The page that records the submitted records cannot be on the same page as the Record List control.
 
@@ -146,8 +146,6 @@ Click the control to view its settings in the **Design** panel that is on the ri
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="text-control-settings.md" %}
 
 {% page-ref page="rich-text-control-settings.md" %}
 

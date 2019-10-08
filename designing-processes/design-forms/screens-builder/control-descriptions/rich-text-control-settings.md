@@ -6,9 +6,12 @@ description: Add a control that displays HTML-formatted text.
 
 ## Control Description
 
-The Rich Text control adds a placeholder in the ProcessMaker Screen that displays HTML-formatted text. The ProcessMaker Screen designer can use the What-You-See-Is-What-You-Get \(WYSIWYG\) settings to display a variety of text styles.
+The Rich Text control displays HTML-formatted text. Use the What-You-See-Is-What-You-Get \(WYSIWYG\) editor to display a variety of text styles for the [Request ](../../../../using-processmaker/requests/what-is-a-request.md)participant.
 
-This control can display the value of another control by referencing that control's **Variable Value** field setting using mustache syntax. Example: `{{ FullName }}`.
+Aside from rich text styles, the Rich Text control can display the following information regarding in-progress [Requests](../../../../using-processmaker/requests/what-is-a-request.md):
+
+* **Request data:** Display the value of another control in the same or different ProcessMaker Screen by referencing that control's **Variable Value** setting value using mustache syntax. Example: `{{ FullName }}`.
+* **Magic Variable values:** Display the value of a [Magic Variable](../../../reference-global-variables-in-your-processmaker-assets.md) by referencing the Magic Variable using mustache syntax. Example: `{{ _user.fullname }}`.
 
 ## Add the Control to a ProcessMaker Screen
 
@@ -31,7 +34,7 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
    ![](../../../../.gitbook/assets/rich-text-control-placed-screens-builder-processes.png)
 
-6. Configure the Rich Text control. See [Design Settings](text-control-settings.md#inspector-settings).
+6. Configure the Rich Text control. See [Design Settings]().
 7. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
 
 Below is a Rich Text control in [Preview mode](../screens-builder-modes.md#preview-mode).
@@ -78,8 +81,6 @@ Below are some ways to render Request data to display as text in a Rich Text con
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="text-control-settings.md" %}
 
 {% page-ref page="line-input-control-settings.md" %}
 
