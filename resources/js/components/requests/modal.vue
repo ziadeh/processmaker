@@ -126,7 +126,7 @@
             this.perPage +
             "&filter=" +
             this.filter +
-            "&order_by=category.name,name" +
+            "&order_by=name" +
             "&order_direction=asc,asc" +
             "&include=events,category"
           )

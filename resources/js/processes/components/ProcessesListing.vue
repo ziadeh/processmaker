@@ -142,7 +142,6 @@
           {
             title: () => this.$t("Category"),
             name: "categories",
-            sortField: "categories",
             callback: function (categories) {
               const labels = [];
               categories instanceof Array ? categories.forEach((category) => {

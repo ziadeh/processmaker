@@ -179,7 +179,7 @@ class ProcessTest extends TestCase
         factory(Process::class)->create(['process_category_id' => $cat2->id, 'name' => 'BProcess', 'status' => 'ACTIVE', 'bpmn' => $bpmn]);
         factory(Process::class, 2)->create(['process_category_id' => $cat3->id]);
 
-        $response = $this->apiCall('GET', route('api.processes.start', ['order_by' => 'category.name,name']));
+        $response = $this->apiCall('GET', route('api.processes.start', ['order_by' => 'name']));
         $this->assertStatus(200, $response);
 
         // The returned list should be ordered category and then by process name, alphabetically
