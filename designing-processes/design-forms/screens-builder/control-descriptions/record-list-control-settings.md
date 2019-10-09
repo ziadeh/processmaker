@@ -27,16 +27,16 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
 1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
-3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
-4. Drag the **Record List** icon![](../../../../.gitbook/assets/record-list-control-screens-builder-processes.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
-5. Place into the ProcessMaker Screen canvas where you want the control to display on the page.
+3. Locate the **Record List** icon![](../../../../.gitbook/assets/record-list-control-screens-builder-processes.png)in the panel to the left of the Screens Builder canvas.
+4. Drag the **Record List** icon into the Screens Builder canvas. Existing controls on the Screens Builder canvas adjust positioning based on where you drag the control.
+5. Place into the Screens Builder canvas where you want the control to display on the ProcessMaker Screen.
 
    ![](../../../../.gitbook/assets/record-list-control-placed-screens-builder-processes.png)
 
-6. Configure the Record List control. See [Design Settings](record-list-control-settings.md#inspector-settings).
+6. Configure the Record List control. See [Settings](record-list-control-settings.md#inspector-settings).
 7. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
 8. Create a new page in the ProcessMaker Screen. The page that records the submitted records cannot be on the same page as the Record List control. See [Add a New Page to a ProcessMaker Screen](../add-a-new-page-to-a-screen.md#add-a-new-page-to-a-processmaker-screen).
-9. On the new page, create the form using controls to record the data that the Record List control records. In each of the controls to record elements of the record list, ensure to use the same **Field Name** value as you use in the Record List control's **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page.
+9. On the new page, create the form using controls to enter the data that the Record List control records. In each of the controls to record elements of the record list, ensure to use the same **Field Name** value as you use in the Record List control's **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page.
 
 ## Example
 
