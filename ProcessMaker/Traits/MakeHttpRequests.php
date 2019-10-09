@@ -17,8 +17,8 @@ trait MakeHttpRequests
 {
     private $authTypes = [
         'BASIC' => 'basicAuthorization',
-        'BEARER' => 'bearerAuthorization',
-        'PASSWORD' => 'passwordAuthorization',
+        'OAUTH2_BEARER' => 'bearerAuthorization',
+        'OAUTH2_PASSWORD' => 'passwordAuthorization',
     ];
 
     /**
@@ -114,13 +114,16 @@ trait MakeHttpRequests
     /**
      * Get token with credentials
      *
-     * @param string $method
-     * @param string $url
-     * @param array $headers
-     * @param string $body
+     * @param $method
+     * @param $url
+     * @param $headers
+     * @param $body
      * @param $bodyType
      *
      * @return array
+     *
+     * @throws GuzzleException
+     * @throws HttpResponseException
      */
     private function passwordAuthorization($method, $url, $headers, $body, $bodyType)
     {
