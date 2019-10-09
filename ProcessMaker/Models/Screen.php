@@ -123,11 +123,11 @@ class Screen extends Model
             return;
         }
         if ($this->getKey()) {
-            $this->categories()->sync([$value]);
+            $this->categories()->sync(explode(',', $value));
         } else {
             self::created(function($model) use($value) {
                 if ($model->getKey() === $this->getKey()) {
-                    $this->categories()->sync([$value]);
+                    $this->categories()->sync(explode(',', $value));
                 }
             });
         }

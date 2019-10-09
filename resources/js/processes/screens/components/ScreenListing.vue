@@ -164,8 +164,13 @@ export default {
         },
         {
           title: this.$t("Category"),
-          name: "category.name",
-          sortField: "category.name"
+          name: "categories",
+          sortField: "categories",
+          callback: function (categories) {
+            const label = [];
+            categories.forEach(category => label.push(category.name));
+            return label.join(', ');
+          }
         },
         {
           title: this.$t("Type"),
@@ -279,7 +284,7 @@ export default {
             this.orderBy +
             "&order_direction=" +
             this.orderDirection +
-            "&include=category"
+            "&include=categories"
         )
         .then(response => {
           this.data = this.transform(response.data);

@@ -33,14 +33,7 @@
                         'v-model' => 'formData.description', 'v-bind:class' => '{"form-control":true, "is-invalid":errors.description}']) !!}
                         <div class="invalid-feedback" v-if="errors.description">@{{errors.description[0]}}</div>
                     </div>
-                    {{--<div class="form-group">
-                        {!! Form::label('category', __('Category')) !!}
-                        {!! Form::text('category', null, ['id' => 'category','class'=> 'form-control', 'v-model' => 'formData.category',
-                        'v-bind:class' => '{"form-control":true, "is-invalid":errors.category}']) !!}
-                        <small class="form-text text-muted" v-if="! errors.category">{{__('The screen name must be distinct.') }}</small>
-                        <div class="invalid-feedback" v-if="errors.category">@{{errors.category[0]}}</div>
-                    </div>--}}
-                    <category-select :label="$t('Category')" api-get="screen_categories" api-list="screen_categories" v-model="formData.screen_category_id" :errors="errors.screen_category_id">
+                    <category-select :label="$t('Category')" api-get="screen_categories" api-list="screen_categories" v-model="formData.categories" :errors="errors.screen_category_id">
                     </category-select>
                     <br>
                     <div class="text-right">
@@ -83,7 +76,13 @@
                 },
                 onUpdate() {
                     this.resetErrors();
-                    ProcessMaker.apiClient.put('screens/' + this.formData.id, this.formData)
+                    const data = Object.assign({}, this.formData);
+                    delete data.category;
+                    delete data.categories;
+                    data.screen_category_id = [];
+                    this.formData.categories.forEach(category => data.screen_category_id.push(category.id));
+                    data.screen_category_id = data.screen_category_id.join(',');
+                    ProcessMaker.apiClient.put('screens/' + this.formData.id, data)
                         .then(response => {
                             ProcessMaker.alert('{{__('The screen was saved.')}}', 'success');
                             this.onClose();

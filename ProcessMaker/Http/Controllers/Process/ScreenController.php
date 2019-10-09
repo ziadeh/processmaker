@@ -58,6 +58,7 @@ class ScreenController extends Controller
      */
     public function edit(Screen $screen)
     {
+        $screen->categories;
         return view('processes.screens.edit', compact('screen'));
     }
 

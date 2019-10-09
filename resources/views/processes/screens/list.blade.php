@@ -63,7 +63,7 @@
                                 <div class="invalid-feedback" v-for="description in errors.description">@{{description}}
                                 </div>
                             </div>
-                            <category-select :label="$t('Category')" api-get="screen_categories" api-list="screen_categories" v-model="formData.screen_category_id" :errors="errors.screen_category_id">
+                            <category-select :label="$t('Category')" api-get="screen_categories" api-list="screen_categories" v-model="formData.categories" :errors="errors.screen_category_id">
                             </category-select>
                         </div>
                     @else
@@ -138,7 +138,12 @@
                   return
                 }
                 this.disabled = true;
-                ProcessMaker.apiClient.post('screens', this.formData)
+                const data = Object.assign({}, this.formData);
+                data.screen_category_id = [];
+                data.categories.forEach(category => data.screen_category_id.push(category.id));
+                data.screen_category_id = data.screen_category_id.join(',');
+                delete data.categories;
+                ProcessMaker.apiClient.post('screens', data)
                   .then(response => {
                     ProcessMaker.alert('{{__('The screen was created.')}}', 'success');
                     window.location = '/designer/screen-builder/' + response.data.id + '/edit';
