@@ -58,11 +58,11 @@ trait ResourceAssertionsTrait
      *
      * @return \Illuminate\Foundation\Testing\TestResponse
      */
-    protected function assertCorrectModelCreation($modelClass, array $attributes = [])
+    protected function assertCorrectModelCreation($modelClass, array $attributes = [], array $except = [])
     {
         $route = route('api.' . $this->resource . '.store');
         $base = factory($modelClass)->make($attributes);
-        $array = $base->toArray();
+        $array = array_merge($base->toArray(), $attributes);
         foreach ($attributes as $key => $value) {
             if ($value === static::$DO_NOT_SEND) {
                 unset($array[$key]);
@@ -72,6 +72,9 @@ trait ResourceAssertionsTrait
         $this->assertStatus(201, $response);
         $response->assertJsonStructure($this->structure);
         $data = $response->json();
+        foreach($except as $key) {
+            unset($array[$key]);
+        }
         $this->assertArraySubset($array, $data);
         return $response;
     }

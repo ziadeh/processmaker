@@ -83,8 +83,9 @@ class ProcessController extends Controller
             $processes = Process::inactive()->with($include);
         }
 
-        $processes->with(['categories', 'user']);
+        $processes->with(['categories']);
         $processes = $processes->select('processes.*')
+            ->leftJoin('users as user', 'processes.user_id', '=', 'user.id')
             ->orderBy(...$orderBy)
             ->where($where)
             ->get();

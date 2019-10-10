@@ -197,7 +197,6 @@ class Process extends Model implements HasMedia
 
     protected $appends = [
         'has_timer_start_events',
-        'process_category_id'
     ];
 
     protected $casts = [
@@ -304,6 +303,7 @@ class Process extends Model implements HasMedia
             'description' => 'required',
             'status' => 'in:ACTIVE,INACTIVE',
             'bpmn' => 'nullable',
+            //'process_category_id' => 'required',
         ];
     }
 

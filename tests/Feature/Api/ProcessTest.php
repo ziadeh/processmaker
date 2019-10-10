@@ -33,7 +33,6 @@ class ProcessTest extends TestCase
     protected $resource = 'processes';
     protected $structure = [
         'id',
-        'process_category_id',
         'user_id',
         'description',
         'name',
@@ -183,7 +182,6 @@ class ProcessTest extends TestCase
         $this->assertStatus(200, $response);
 
         // The returned list should be ordered category and then by process name, alphabetically
-        $this->assertEquals($cat2->id, $response->getData()->data[0]->process_category_id);
         $this->assertEquals('BProcess', $response->getData()->data[0]->name);
     }
 
@@ -385,7 +383,7 @@ class ProcessTest extends TestCase
         );
 
         //Create a process without sending the category
-        $this->assertCorrectModelCreation(
+        $this->assertModelCreationFails(
             Process::class,
             [
                 'user_id' => static::$DO_NOT_SEND,
@@ -402,6 +400,9 @@ class ProcessTest extends TestCase
                 'user_id' => static::$DO_NOT_SEND,
                 'process_category_id' => $category->id,
                 'has_timer_start_events' => static::$DO_NOT_SEND,
+            ],
+            [
+                'process_category_id'
             ]
         );
     }
@@ -820,11 +821,12 @@ class ProcessTest extends TestCase
     public function testCreateProcessWithMultipleBPMNDiagrams()
     {
         $route = route('api.' . $this->resource . '.store');
+        $category = factory(ProcessCategory::class)->create();
         $base = factory(Process::class)->make([
             'user_id' => static::$DO_NOT_SEND,
-            'process_category_id' => static::$DO_NOT_SEND,
         ]);
         $array = array_diff($base->toArray(), [static::$DO_NOT_SEND]);
+        $array['process_category_id'] = $category->getKey();
         //Add a bpmn content
         $array['bpmn'] = file_get_contents(__DIR__.'/processes/C.4.0-export.bpmn');
         $response = $this->apiCall('POST', $route, $array);
