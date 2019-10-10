@@ -25,13 +25,13 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
 1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
-3. Go to the **Controls** panel on the left side of the ProcessMaker Screen.
-4. Drag the **File Download** icon![](../../../../.gitbook/assets/file-download-control-screens-builder-processes.png)from the **Controls** panel anywhere within the ProcessMaker Screen canvas. Existing controls on the ProcessMaker Screen canvas adjust positioning based on where you drag the control.
-5. Place into the ProcessMaker Screen canvas where you want the control to display on the page.  
+3. Locate the **File Download** icon![](../../../../.gitbook/assets/file-download-control-screens-builder-processes.png)in the panel to the left of the Screens Builder canvas.
+4. Drag the **File Download** icon into the Screens Builder canvas. Existing controls on the Screens Builder canvas adjust positioning based on where you drag the control.
+5. Place into the Screens Builder canvas where you want the control to display on the ProcessMaker Screen.  
 
    ![](../../../../.gitbook/assets/file-download-control-placed-screens-builder-processes.png)
 
-6. Configure the File Download control. See [Design Settings](file-download-control-settings.md#inspector-settings).
+6. Configure the File Download control. See [Settings](file-download-control-settings.md#inspector-settings).
 
 Below is a File Download control in [Preview mode](../screens-builder-modes.md#preview-mode). The File Download control displays **No files available for download** until this control references a downloadable file in the Process or during a Process's Request.
 

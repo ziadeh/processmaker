@@ -49,18 +49,18 @@ Consider the following example. A Record List control can be configured to recor
 | email | Email address of attendee |
 | confirmation | Confirmation from the attendee |
 
-The Record List control has the following configuration. See [Inspector Settings](record-list-control-settings.md#inspector-settings) for control setting descriptions.
+The Record List control has the following configuration. See [Settings](record-list-control-settings.md#inspector-settings) for control setting descriptions.
 
 ![Record List control that contains records in Design mode](../../../../.gitbook/assets/record-list-control-example-screens-builder-processes.png)
 
-On a secondary page, use ProcessMaker Screen controls for form users to enter values for each record. Ensure the following:
+On a secondary page, use ProcessMaker Screen controls for Request participants to enter values for each record. Ensure the following:
 
 * The Record List control references the secondary page to record each record from each conference attendee. The page that records the submitted records cannot be on the same page as the Record List control. 
-* In each of the controls to record elements of the record list, ensure to use the same **Field Name** value as you use in the Record List control's **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page.
+* In each of the controls to record values of the record list, ensure to use the same **Column Header** value as you use in the Record List control's **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page.
 
 Below is the secondary ProcessMaker Screen page in [Preview mode](../screens-builder-modes.md#preview-mode) for each conference attendee to enter a record.
 
-| Control Type | "Field Name" Value for Control | Corresponds to Record List Value |
+| Control Type | "Column Header" Value for Control | Corresponds to Record List Value |
 | :--- | :--- | :--- |
 | Line Input | firstname | First name of attendee |
 | Line Input | lastname | Last name of attendee |
