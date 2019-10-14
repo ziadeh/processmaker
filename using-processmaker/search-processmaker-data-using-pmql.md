@@ -4,7 +4,7 @@ description: >-
   Collection records in your ProcessMaker organization.
 ---
 
-# Search ProcessMaker Data using PMQL
+# Search ProcessMaker Data Using PMQL
 
 ## Overview
 
