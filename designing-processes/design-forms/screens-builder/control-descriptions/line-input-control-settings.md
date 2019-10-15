@@ -70,7 +70,7 @@ The Line Inputs control has the following panels that contain settings:
 
 Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Line Inputs control in the **Variable** panel:
 
-* **Variable Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
+* **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
 
   * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Line Inputs control's textual content with that Line Inputs control's **Key Name** value. In the example below, `LineInputsControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/line-inputs-preview-screens-builder-processes.png) 
   * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ LineInputsControl }}`.

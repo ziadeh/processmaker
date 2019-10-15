@@ -16,7 +16,7 @@ See [What is a Collection?](../../../../../collections/what-is-a-collection.md) 
 
 When designing your ProcessMaker Screen with the Collection Select control, specify from which ProcessMaker Collection to reference its records. These records display as optional items for selection in the Collection Select control. Configure the Collection Select control to reference all the records in the specified Collection or use [ProcessMaker Query Language \(PMQL\)](../../../../../using-processmaker/search-processmaker-data-using-pmql.md) to limit particular records to display as the optional items based on those records that meet the PMQL filtering criteria.
 
-For example, suppose that you have a ProcessMaker Collection of doctors in a medical clinic. A new patient enters information into a ProcessMaker Screen whether that patient has a gender preference for a doctor by selecting that preference from a [Select](../select-control-settings.md) control. Use the Collection Select control and PMQL syntax in the following ways:
+For example, suppose that you have a ProcessMaker Collection of doctors in a medical clinic. A new patient enters information into a ProcessMaker [Screen](../../../what-is-a-form.md) whether that patient has a gender preference for a doctor by selecting that preference from a [Select](../select-control-settings.md) control. Use the Collection Select control and PMQL syntax in the following ways:
 
 * **No preference:** If the patient indicates no preference for the doctor's gender, then do not use PMQL to filter which records display. The Collection Select control displays all records from the ProcessMaker Collection \(all doctors in the clinic\).
 * **Female preference:** If the patient indicates a preference to see a female doctor, then use a PMQL expression to filter only female doctors in the clinic. Use the PMQL expression`gender = "female"` if your records use a **Key Name** value of `gender`, and its setting is `female` for all female doctors. The Collection Select control displays only female doctors as optional items.
@@ -80,5 +80,70 @@ See the ProcessMaker [Screens](../../../../../processmaker-administration/permis
 
 The Collection Select control has the following panels that contain settings:
 
+* **Variable** panel
+* **Configuration** panel
+* **Design** panel
+* **Advanced** panel
 
+### Variable Panel Settings
+
+Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings in the **Variable** panel:
+
+
+
+### Configuration Panel Settings
+
+
+
+### Design Panel Settings
+
+
+
+### Advanced Panel Settings
+
+
+
+## Related Topics
+
+{% page-ref page="../../../../../collections/what-is-a-collection.md" %}
+
+{% page-ref page="../../../../../package-development-distribution/package-a-connector/collections.md" %}
+
+{% page-ref page="../../types-for-screens.md" %}
+
+{% page-ref page="../../validate-your-screen.md" %}
+
+{% page-ref page="../" %}
+
+{% page-ref page="collection-record-control-settings.md" %}
+
+{% page-ref page="../rich-text-control-settings.md" %}
+
+{% page-ref page="../textarea-control-settings.md" %}
+
+{% page-ref page="../select-control-settings.md" %}
+
+{% page-ref page="../radio-group-control-settings.md" %}
+
+{% page-ref page="../checkbox-control-settings.md" %}
+
+{% page-ref page="../date-picker-control-settings.md" %}
+
+{% page-ref page="../page-navigation-button-control-settings.md" %}
+
+{% page-ref page="../multi-column-button-control-settings.md" %}
+
+{% page-ref page="../record-list-control-settings.md" %}
+
+{% page-ref page="../image-control-settings.md" %}
+
+{% page-ref page="../submit-button-control-settings.md" %}
+
+{% page-ref page="../file-upload-control-settings.md" %}
+
+{% page-ref page="../file-download-control-settings.md" %}
+
+{% page-ref page="../validation-rules-for-validation-control-settings.md" %}
 

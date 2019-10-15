@@ -74,7 +74,7 @@ Click the control to view its settings in the **Variable** panel that is on the 
 
 ### Design Panel Settings
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Navigation Button control in the **Variable** panel:
+Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Navigation Button control in the **Design** panel:
 
 * **Field Label:** Enter the field label text that displays. **New** **Page Navigation** is the default value.
 * **Variant:** Select the style for the Page Navigation Button control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
