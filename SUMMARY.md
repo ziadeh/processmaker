@@ -41,7 +41,7 @@
   * [View Completed Tasks](using-processmaker/task-management/view-completed-tasks.md)
   * [Search for a Task](using-processmaker/task-management/search-for-a-task.md)
   * [View a Task Summary](using-processmaker/task-management/view-a-task-summary.md)
-* [Search ProcessMaker Data Using PMQL](using-processmaker/search-processmaker-data-using-pmql.md)
+* [Search ProcessMaker Data Using ProcessMaker Query Language \(PMQL\)](using-processmaker/search-processmaker-data-using-pmql.md)
 * [Saved Searches](using-processmaker/save-and-share-request-and-task-related-searches/README.md)
   * [What is a Saved Search?](using-processmaker/save-and-share-request-and-task-related-searches/what-is-a-saved-search.md)
   * [Use Saved Searches](using-processmaker/save-and-share-request-and-task-related-searches/view-saved-searches-that-are-shared-with-you/README.md)
