@@ -9,7 +9,13 @@ description: Use these rules to describe how to validate your ProcessMaker Scree
 Use the following rules to validate your [ProcessMaker Screen controls](./). If a control that has a **Validation** setting does not contain any value or properly structured validation rule, that control automatically passes validation.
 
 {% hint style="info" %}
+### Ensure Validation Fails for an Undefined Setting
+
 If you want a validation to fail for undefined or `''`, use the [required](validation-rules-for-validation-control-settings.md#required) rule.
+
+### Combine Multiple Validation Rules into One Expression
+
+Use the pipe character \(`|`\) between rules to combine them into one **Validation** setting. Example: `required|unique:posts|max:255`
 {% endhint %}
 
 ## Validation Rules
