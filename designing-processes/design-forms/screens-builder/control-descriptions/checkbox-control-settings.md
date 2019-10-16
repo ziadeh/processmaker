@@ -68,13 +68,15 @@ The Checkbox control has the following panels that contain settings:
 
 ### Variable Panel Settings
 
-Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Checkbox control in the **Variable** panel:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screens Builder canvas.
 
-* **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
+Below are settings for the Checkbox control in the **Variable** panel:
 
-  * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) represents the state of the Checkbox control using its **Key Name** value in the Request's JSON data model in the following ways:
+* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
+
+  * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) represents the state of the Checkbox control using its **Variable Name** value in the Request's JSON data model in the following ways:
     * **The Checkbox control is selected:** The key's value is `true` \(shown below\).
-    * **The Checkbox control is deselected:** They key's value is `false`. ![](../../../../.gitbook/assets/checkbox-preview-screens-builder-processes.png) 
+    * **The Checkbox control is not deselected:** The key's value is `false`. ![](../../../../.gitbook/assets/checkbox-preview-screens-builder-processes.png) 
   * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ CheckboxControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
@@ -82,7 +84,9 @@ Click the control to view its settings in the **Variable** panel that is on the 
 
 ### Design Panel Settings
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Checkbox control in the **Design** panel:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Checkbox control in the **Design** panel:
 
 * **Field Label:** Enter the field label text that displays. **New Checkbox** is the default value.
 * **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.

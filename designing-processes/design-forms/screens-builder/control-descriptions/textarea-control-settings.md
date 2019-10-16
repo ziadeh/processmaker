@@ -70,12 +70,14 @@ The Textarea control has the following panels that contain settings:
 
 ### Variable Panel Settings
 
-Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Textarea control in the **Variable** panel:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screens Builder canvas.
 
-* **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
+Below are settings for the Textarea control in the **Variable** panel:
 
-  * Reference this control by its **Key Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Textarea control's textual content with that Textarea control's **Key Name** value. In the example below, `TextareaControl` is the **Key Name** setting's value. ![](../../../../.gitbook/assets/textarea-preview-screens-builder-processes.png) 
-  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Key Name** value in the target control. Example: `{{ TextareaControl }}`.
+* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
+
+  * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Textarea control's textual content with that Textarea control's **Variable Name** value. In the example below, `TextareaControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/textarea-preview-screens-builder-processes.png) 
+  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ TextareaControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
@@ -85,7 +87,9 @@ Click the control to view its settings in the **Variable** panel that is on the 
 
 ### Design Panel Settings
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Textarea control in the **Design** panel:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Textarea control in the **Design** panel:
 
 * **Field Label:** Enter the field label text that displays. **New TextArea** is the default value.
 * **Rows:** The number of rows to provide for input. **2** is the default value.

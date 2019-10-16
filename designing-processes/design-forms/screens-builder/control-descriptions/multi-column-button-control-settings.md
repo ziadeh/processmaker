@@ -61,7 +61,9 @@ The Multicolumn / Table control has the following panels that contain settings:
 
 ### Variable Panel Settings
 
-Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Multicolumn / Table control in the **Variable** panel:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Multicolumn / Table control in the **Variable** panel:
 
 * **Column Widths:** Specify the column width for each column in the control. Add each column and its width specification in the order they are to display from left to right in the control. Specify the width of each column in `colspan` [HTML attribute](https://www.w3schools.com/tags/att_colspan.asp) settings. The total of all `colspan` attribute settings must be divisible by 12. The control contains two columns of six \(6\) `colspan` HTML attribute setting each by default.
 
@@ -86,7 +88,9 @@ Click the control to view its settings in the **Variable** panel that is on the 
 
 ### Design Panel Settings
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Multicolumn / Table control in the **Design** panel:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Multicolumn / Table control in the **Design** panel:
 
 * **Element Background Color:** Select to specify the background color of this control.
 * **Text Color:** Select to specify the text color that displays in this control.

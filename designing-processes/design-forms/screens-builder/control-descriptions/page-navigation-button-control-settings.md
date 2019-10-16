@@ -1,14 +1,14 @@
 ---
 description: >-
-  Add a Navigation button control from which the Request participant can go to
+  Add a Page Navigation control from which the Request participant can go to
   another page in a multi-page ProcessMaker Screen.
 ---
 
-# Navigation Button Control Settings
+# Page Navigation Control Settings
 
 ## Control Description <a id="control-description"></a>
 
-The Navigation Button control adds a button from which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can go to another page in a multi-page ProcessMaker [Screen](../../what-is-a-form.md). 
+The Page Navigation control adds a button from which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can go to another page in a multi-page ProcessMaker [Screen](../../what-is-a-form.md). 
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -29,18 +29,18 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
 1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
-3. Locate the **Navigation Button** icon![](../../../../.gitbook/assets/page-navigation-control-screens-builder-processes.png)in the panel to the left of the Screens Builder canvas.
-4. Drag the **Navigation Button** icon into the Screens Builder canvas. Existing controls on the Screens Builder canvas adjust positioning based on where you drag the control.
+3. Locate the **Page Navigation** icon![](../../../../.gitbook/assets/page-navigation-control-screens-builder-package-processes.png)in the panel to the left of the Screens Builder canvas.
+4. Drag the **Page Navigation** icon into the Screens Builder canvas. Existing controls on the Screens Builder canvas adjust positioning based on where you drag the control.
 5. Place into the Screens Builder canvas where you want the control to display on the ProcessMaker Screen.  
 
    ![](../../../../.gitbook/assets/page-navigation-control-placed-screens-builder-processes.png)
 
-6. Configure the Navigation Button control. See [Settings](page-navigation-button-control-settings.md#inspector-settings).
+6. Configure the Page Navigation control. See [Settings](page-navigation-button-control-settings.md#inspector-settings).
 7. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
 
-Below is a Navigation Button control in [Preview mode](../screens-builder-modes.md#preview-mode).
+Below is a Page Navigation control in [Preview mode](../screens-builder-modes.md#preview-mode).
 
-![Navigation Button control in Preview mode using the &quot;Secondary&quot; Variant option](../../../../.gitbook/assets/page-navigation-button-control-preview-screens-builder-processes.png)
+![Page Navigation control in Preview mode using the &quot;Secondary&quot; Variant option](../../../../.gitbook/assets/page-navigation-button-control-preview-screens-builder-processes.png)
 
 ## Delete the Control from a ProcessMaker Screen
 
@@ -68,13 +68,17 @@ The Navigation Button control has the following panels that contain settings:
 
 ### Variable Panel Settings
 
-Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Navigation Button control in the **Variable** panel:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Navigation Button control in the **Variable** panel:
 
 * **Destination:** Select the destination page to which to navigate in a multi-page ProcessMaker Screen. The default is the first page of the ProcessMaker Screen.
 
 ### Design Panel Settings
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Navigation Button control in the **Design** panel:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Navigation Button control in the **Design** panel:
 
 * **Field Label:** Enter the field label text that displays. **New** **Page Navigation** is the default value.
 * **Variant:** Select the style for the Page Navigation Button control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:

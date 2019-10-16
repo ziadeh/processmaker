@@ -80,16 +80,16 @@ See the ProcessMaker [Screens](../../../../../processmaker-administration/permis
 
 The Collection Select control has the following panels that contain settings:
 
-* **Variable** panel
-* **Configuration** panel
-* **Design** panel
-* **Advanced** panel
+* \*\*\*\*[**Variable** panel](collection-select-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Configuration** panel](collection-select-control-settings.md#configuration-panel-settings)
+* \*\*\*\*[**Design** panel](collection-select-control-settings.md#design-panel-settings)
+* \*\*\*\*[**Advanced** panel](collection-select-control-settings.md#advanced-panel-settings)
 
 ### Variable Panel Settings
 
 Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screens Builder canvas.
 
-Below are settings in the **Variable** panel:
+Below are settings for the Collection Select control in the **Variable** panel:
 
 
 

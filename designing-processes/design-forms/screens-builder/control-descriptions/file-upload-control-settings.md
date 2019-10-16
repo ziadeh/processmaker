@@ -67,13 +67,17 @@ The File Upload control has the following panels that contain settings:
 
 ### Variable Panel Settings
 
-Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the File Upload control in the **Variable** panel:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the File Upload control in the **Variable** panel:
 
 * **Upload Name:** Enter the unique name associated with the uploaded file. This name can be referenced in a later step in the Process. The File Upload control allows one file to be uploaded. This setting has no default value.
 
 ### Design Panel Settings
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the File Upload control in the **Design** panel:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the File Upload control in the **Design** panel:
 
 * **Text Label:** Enter the field label text that displays. **New File Upload** is the default value.
 * **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.

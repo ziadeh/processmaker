@@ -4,7 +4,7 @@ description: >-
   to enter plain text or a password.
 ---
 
-# Line Inputs Control Settings
+# Line Input Control Settings
 
 ## Control Description
 
@@ -29,18 +29,18 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
 1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
-3. Locate the **Line Inputs** icon![](../../../../.gitbook/assets/line-input-control-screens-builder-processes.png)in the panel to the left of the Screens Builder canvas.
-4. Drag the **Line Inputs** icon into the Screens Builder canvas. Existing controls on the Screens Builder canvas adjust positioning based on where you drag the control.
+3. Locate the **Line Input** icon![](../../../../.gitbook/assets/line-input-control-screens-builder-processes.png)in the panel to the left of the Screens Builder canvas.
+4. Drag the **Line Input** icon into the Screens Builder canvas. Existing controls on the Screens Builder canvas adjust positioning based on where you drag the control.
 5. Place into the Screens Builder canvas where you want the control to display on the ProcessMaker Screen.  
 
    ![](../../../../.gitbook/assets/line-input-screens-builder-processes.png)
 
-6. Configure the Line Inputs control. See [Settings](line-input-control-settings.md#settings).
+6. Configure the Line Input control. See [Settings](line-input-control-settings.md#settings).
 7. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
 
-Below is a Line Inputs control in [Preview mode](../screens-builder-modes.md#preview-mode).
+Below is a Line Input control in [Preview mode](../screens-builder-modes.md#preview-mode).
 
-![Line Inputs control in Preview mode](../../../../.gitbook/assets/line-input-control-preview-screens-builder-processes.png)
+![Line Input control in Preview mode](../../../../.gitbook/assets/line-input-control-preview-screens-builder-processes.png)
 
 ## Delete the Control from a ProcessMaker Screen
 
@@ -61,19 +61,21 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-The Line Inputs control has the following panels that contain settings:
+The Line Input control has the following panels that contain settings:
 
 * [**Variable** panel](line-input-control-settings.md#variable-panel-settings)
 * \*\*\*\*[**Design** panel](line-input-control-settings.md#design-panel-settings)
 
 ### Variable Panel Settings
 
-Click the control to view its settings in the **Variable** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Line Inputs control in the **Variable** panel:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screens Builder canvas.
 
-* **Key Name:** Enter a unique name that represents this control's value. Use the **Key Name** value in the following ways:
+Below are settings for the Line Input control in the **Variable** panel:
 
-  * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Line Inputs control's textual content with that Line Inputs control's **Key Name** value. In the example below, `LineInputsControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/line-inputs-preview-screens-builder-processes.png) 
-  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ LineInputsControl }}`.
+* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
+
+  * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Line Input control's textual content with that Line Input control's **Variable Name** value. In the example below, `LineInputControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/line-inputs-preview-screens-builder-processes.png) 
+  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ LineInputControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
@@ -83,15 +85,17 @@ Click the control to view its settings in the **Variable** panel that is on the 
   * **Currency:** The control accepts a currency value.
   * **Date:** The control accepts a date value.
   * **Datetime:** The control accepts a datetime value. A datetime value contains both a date and time value.
-  * **Float:** The control accepts a float value. A float is a floating-point number, meaning it contains a decimal place.
-  * **Int:** The control accepts an integer value. An integer does not contain a decimal place.
+  * **Float:** The control accepts a float value. A float is a floating-point number, meaning it contains a decimal.
+  * **Int:** The control accepts an integer value. An integer does not contain a decimal.
   * **String:** The control accepts a string value.
 * **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
 * **Control is read only:** Select the **Control is read only** checkbox to indicate that the Line Inputs control field content cannot be edited.
 
 ### Design Panel Settings
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Line Inputs control in the **Design** panel:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Line Input control in the **Design** panel:
 
 * **Field Label:** Enter the field label text that displays. **New Input** is the default value.
 * **Placeholder:** Enter the placeholder text that displays in the field when no value has been provided. This setting has no default value.
