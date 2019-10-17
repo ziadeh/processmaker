@@ -18,11 +18,15 @@ When the Actions By Email connector triggers during an in-progress Request, Proc
 
 ![Example email the Actions By Email connector sends to an email recipient](../../../../.gitbook/assets/actions-by-email-package.png)
 
-After the email recipient clicks a button to indicate the decision, the email client creates a reply email to be delivered to the ProcessMaker instance that used the Actions By Email connector. As indicated in the reply email, do not change anything below the automatically generated response because this response notifies the ProcessMaker instance of the email recipient's decision for Request routing.
+After the email recipient clicks a button to indicate the decision, the email client creates an email reply to be delivered to the ProcessMaker instance that used the Actions By Email connector. As indicated in the email reply, do not change anything below the automatically generated response because this response notifies the ProcessMaker instance of the email recipient's decision for Request routing.
 
 ![Automatically generated email reply the email recipient sends to the ProcessMaker instance](../../../../.gitbook/assets/actions-by-email-response-package-processes.png)
 
-After the email recipient sends the reply email, ProcessMaker receives the response and uses the indicated decision as part of the Request routing. For example, if you grant a leave request, the Request routes differently than if you deny that leave request. 
+After the email recipient sends the reply email, ProcessMaker receives the response and uses the indicated decision as part of the Request routing. For example, if you grant a leave request, the Request routes differently than if you deny that leave request.
+
+{% hint style="info" %}
+The comment in the email reply above the indicated line is not preserved when the email reply is sent. This comment displays only for the benefit of the email recipient prior to sending the email reply.
+{% endhint %}
 
 The Actions By Email connector adds the **Actions By Email** control below the BPMN 2.0 elements in the panel to the left of the Process Modeler canvas. See the following sections in this topic:
 
