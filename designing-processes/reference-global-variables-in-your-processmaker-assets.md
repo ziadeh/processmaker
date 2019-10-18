@@ -25,7 +25,7 @@ Use ProcessMaker Magic Variables in a variety of ways in ProcessMaker and in Pro
 
 ### Reference in PMQL Queries for Request and Task Searches
 
-Reference ProcessMaker Magic Variables to compose ProcessMaker Query Language \(PMQL\) advanced queries for [Request searches](../using-processmaker/requests/search-for-a-request.md#advanced-search-for-a-request) and [Task searches](../using-processmaker/task-management/search-for-a-task.md#advanced-search-for-a-task).
+Reference ProcessMaker Magic Variables to compose ProcessMaker Query Language \([PMQL](../using-processmaker/search-processmaker-data-using-pmql.md)\) advanced queries for [Request searches](../using-processmaker/requests/search-for-a-request.md#advanced-search-for-a-request) and [Task searches](../using-processmaker/task-management/search-for-a-task.md#advanced-search-for-a-task).
 
 ### Mock in Script Testing
 
@@ -53,7 +53,7 @@ See the ProcessMaker [Screens](../processmaker-administration/permission-descrip
 
 Reference ProcessMaker Magic Variables in ProcessMaker Screens in the following ways:
 
-* \*\*\*\*[**Text controls**]()**:** Reference a ProcessMaker Magic Variable's value in a Text control through the [**Text Content** setting]().
+* \*\*\*\*[**Rich Text controls**](design-forms/screens-builder/control-descriptions/rich-text-control-settings.md)**:** Reference a ProcessMaker Magic Variable's value in a Rich Text control through the **Rich Text Content** setting.
 * \*\*\*\*[**Computed Properties**](design-forms/screens-builder/manage-computed-properties.md)**:** [Reference a ProcessMaker Magic Variable's value from a computed Property](design-forms/screens-builder/manage-computed-properties.md#add-a-computed-property). Use JavaScript to return a ProcessMaker Magic Variable's value, then store it in a computed Property.
 
 ## Example of All Magic Variables
@@ -187,5 +187,17 @@ The `_request` Magic Variable contains data about the current [Request](../using
 
 ## Related Topics
 
+{% page-ref page="../using-processmaker/requests/search-for-a-request.md" %}
 
+{% page-ref page="../using-processmaker/task-management/search-for-a-task.md" %}
+
+{% page-ref page="../using-processmaker/search-processmaker-data-using-pmql.md" %}
+
+{% page-ref page="../using-processmaker/requests/what-is-a-request.md" %}
+
+{% page-ref page="../using-processmaker/task-management/what-is-a-task.md" %}
+
+{% page-ref page="design-forms/what-is-a-form.md" %}
+
+{% page-ref page="scripts/what-is-a-script.md" %}
 

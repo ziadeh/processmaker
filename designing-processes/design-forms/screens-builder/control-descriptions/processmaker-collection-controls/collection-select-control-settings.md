@@ -91,19 +91,50 @@ Click the control while in [Design](../../screens-builder-modes.md#design-mode) 
 
 Below are settings for the Collection Select control in the **Variable** panel:
 
-
+* **Field Name:** Enter a unique name that represents this control's value. Use the **Field Name** value in the following ways:
+  * Reference this control by its **Field Name** setting's value. The **Data Preview** panel in [Preview mode](../../screens-builder-modes.md#preview-mode) corresponds the Collection Select control's textual content with that Collection Select control's **Field Name** value. In the example below, `CollectionSelectControl` is the **Field Name** setting's value. ![](../../../../../.gitbook/assets/collection-select-control-data-preview-screens-builder-package-processes.png) 
+  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Field Name** value in the target control. Example: `{{ CollectionSelectControl }}`.
+  * Reference this value in [**Visibility Rule** setting expressions](../expression-syntax-components-for-show-if-control-settings.md).
+* **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](../validation-rules-for-validation-control-settings.md).
 
 ### Configuration Panel Settings
 
+Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
 
+Below are settings for the Collection Select control in the **Configuration** panel:
+
+* **Field Label:** Enter the field label text that displays. This setting has no default value.
+* **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
+* **Collection:** Select from which ProcessMaker Collection to display its record\(s\) in the Collection Select control. If no ProcessMaker Collections exist, the **Collection** drop-down menu contains no options; create at least one ProcessMaker Collection before using the Collection Select control.
+* **Value:** Enter how records display in the Collection Select control. Follow these guidelines to format how record data displays:
+  * **Reference record data from the Collection:** Use mustache syntax to reference record data from the specified ProcessMaker Collection. References to the record data are case sensitive. Precede each reference with `data.`. Example: `{{ data.FirstName }}`. Reference multiple record data in the **Value** setting if necessary. Example: `{{ data.FirstName }} {{ data.LastName }}` if the specified ProcessMaker Collection uses two controls to record the first name and last name in records.
+
+    Follow these guidelines to determine which record data to reference from the specified ProcessMaker Collection:
+
+    1. Determine which ProcessMaker Screens the specified Collection uses to create, update, and/or view records. See [Configure a Collection](../../../../../collections/manage-collections/configure-a-collection.md#configure-a-processmaker-collection). Note that your user account or group membership must have ProcessMaker [Collection](../../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions to access any Collection.
+    2. Edit the appropriate ProcessMaker Screen from which to reference record data in the specified Collection.
+    3. Select the ProcessMaker Screen control from which you want to reference record data, then note the **Variable Name** setting value in the **Variable** panel. Use this value to reference that record data in the **Value** setting of the Collection Select control.
+
+  * **Use text to describe the referenced record data:** Enter text preceding and/or following the referenced record data to describe the data. This text displays in all options in the Collection Select control. Example: `Dr. {{ data.FirstName }} {{ data.LastName }}, MD`.
+* **PMQL Query \(optional\):** Enter a ProcessMaker Query Language \(PMQL\) expression to limit particular records to display as the optional items based on those records that meet the PMQL filtering criteria, if necessary. See the Collection Select [control description](../image-control-settings.md#control-description) for an example. 
 
 ### Design Panel Settings
 
+Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screens Builder canvas.
 
+Below are settings for the Collection Select control in the **Design** panel:
+
+* **Background Color:** Select to specify the background color of this control.
+* **Text Color:** Select to specify the text color that displays in this control.
 
 ### Advanced Panel Settings
 
+Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
 
+Below are settings for the Collection Select control in the **Advanced** panel:
+
+* **Visibility Rule:** Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](../expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics
 
