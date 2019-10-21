@@ -8,13 +8,19 @@ description: >-
 
 ## Control Description
 
-The Collection Select control functions similarly to a drop-down menu that allows a [Request](../../../../../using-processmaker/requests/what-is-a-request.md) participant to select one record from a ProcessMaker Collection. If the ProcessMaker [Collections package](../../../../../package-development-distribution/package-a-connector/collections.md) is not installed to the ProcessMaker instance, then the Collection Select control is not available.
+The Collection Select control functions similarly to a drop-down menu that allows a [Request](../../../../../using-processmaker/requests/what-is-a-request.md) participant to select record data from a ProcessMaker Collection. The Collection Select control functions on [Form](../../types-for-screens.md#form)-type ProcessMaker Screens.
+
+If the ProcessMaker [Collections package](../../../../../package-development-distribution/package-a-connector/collections.md) is not installed to the ProcessMaker instance, then the Collection Select control is not available.
 
 {% hint style="info" %}
 See [What is a Collection?](../../../../../collections/what-is-a-collection.md) for more information about what Collections and records are.
 {% endhint %}
 
-When designing your ProcessMaker Screen with the Collection Select control, specify from which ProcessMaker Collection to reference its records. These records display as optional items for selection in the Collection Select control. Configure the Collection Select control to reference all the records in the specified Collection or use [ProcessMaker Query Language \(PMQL\)](../../../../../using-processmaker/search-processmaker-data-using-pmql.md) to limit particular records to display as the optional items based on those records that meet the PMQL filtering criteria.
+Specify the following when configuring a Collection Select control:
+
+* Select from which ProcessMaker Collection to reference its records.
+* Use plain text preceding and following the referenced record data to provide context to the record data. For example, if referencing names from a ProcessMaker Collection, optionally include honorifics \(such as "Mr." or "Mrs."\) or professional titles \(such as "Dr." or "MD"\).
+* Configure the Collection Select control to reference all the records in the specified Collection or use [ProcessMaker Query Language \(PMQL\)](../../../../../using-processmaker/search-processmaker-data-using-pmql.md) to limit particular records to display as the optional items based on those records that meet the PMQL filtering criteria.
 
 For example, suppose that you have a ProcessMaker Collection of doctors in a medical clinic. A new patient enters information into a ProcessMaker [Screen](../../../what-is-a-form.md) whether that patient has a gender preference for a doctor by selecting that preference from a [Select](../select-control-settings.md) control. Use the Collection Select control and PMQL syntax in the following ways:
 
