@@ -19,8 +19,12 @@ See [What is a Collection?](../../../../../collections/what-is-a-collection.md) 
 Specify the following when configuring a Collection Record control:
 
 * Select from which ProcessMaker Collection to reference its records.
-* Use plain text preceding and following the referenced record data to provide context to the record data. For example, if referencing names from a ProcessMaker Collection, optionally include honorifics \(such as "Mr." or "Mrs."\) or professional titles \(such as "Dr." or "MD"\).
+* Use plain text preceding and following the referenced record data to provide context to the record data. For example, if referencing names from a ProcessMaker Collection, optionally include honorifics \(such as "Mr." or "Mrs."\) or professional titles \(such as "Dr." or "MD"\). Example: `Dr. {{ data.FirstName }} {{ data.LastName }}, MD`, when referencing a doctor's first name and last name, respectively.
 * Specify the record ID for the record in the ProcessMaker Collection to display. The record ID is a unique value to each record in a ProcessMaker Collection that is referenced in the **\#** column of a Collection. See [View Collections](../../../../../collections/manage-collections/view-collections.md).
+
+{% hint style="warning" %}
+If the record ID does not exist in the specified ProcessMaker Collection, the Collection Record control does not display record data. The record ID may not exist because the record with that ID has been deleted or has not yet been created. Therefore, preview the Collection Record control by clicking the **Update Record Data** button after you have configured the control.
+{% endhint %}
 
 ## Add the Control to a ProcessMaker Screen
 
@@ -52,7 +56,7 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
 Below is a Collection Record control in [Preview mode](../../screens-builder-modes.md#preview-mode).
 
-![Collection Select control in Preview mode](../../../../../.gitbook/assets/collection-select-control-preview-screens-builder-processes.png)
+![Collection Record control in Preview mode](../../../../../.gitbook/assets/collection-record-control-preview-screens-builder-processes.png)
 
 ## Delete the Control from a ProcessMaker Screen
 
@@ -63,4 +67,100 @@ Deleting a control also deletes configuration for that control. If you add anoth
 Click the **Delete** icon![](../../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
 
 
+
+## Settings
+
+{% hint style="info" %}
+### ProcessMaker Package Required
+
+The [Collections package](../../../../../package-development-distribution/package-a-connector/collections.md) must be installed in your ProcessMaker instance to use the Collection Record control. The Collections package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Collections package can be installed in your ProcessMaker instance.
+
+### Permissions Required
+
+Your ProcessMaker user account or group membership must have the following permissions to add a control to a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
+
+* Screens: View Screens
+* Screens: Edit Screens
+
+See the ProcessMaker [Screens](../../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+{% endhint %}
+
+The Collection Record control has the following panel that contain settings:
+
+* **Configuration** panel
+
+### Configuration Panel Settings
+
+Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Collection Select control in the **Configuration** panel:
+
+* **Text Label:** Enter how the referenced record displays in the Collection Record control. Follow these guidelines to format how record data displays:
+  * **Reference record data from the Collection:** Use mustache syntax to reference record data from the specified ProcessMaker Collection. References to the record data are case sensitive. Precede each reference with `data.`. Example: `{{ data.FirstName }}`. Reference multiple record data in the **Text Label** setting if necessary. Example: `{{ data.FirstName }} {{ data.LastName }}` if the specified ProcessMaker Collection uses two controls to record the first name and last name in records.
+
+    Follow these guidelines to determine which record data to reference from the specified ProcessMaker Collection:
+
+    1. Determine which ProcessMaker Screens the specified Collection uses to create, update, and/or view records. See [Configure a Collection](../../../../../collections/manage-collections/configure-a-collection.md#configure-a-processmaker-collection). Note that your user account or group membership must have ProcessMaker [Collection](../../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions to access any Collection.
+    2. Edit the appropriate ProcessMaker Screen from which to reference record data in the specified Collection.
+    3. Select the ProcessMaker Screen control from which you want to reference record data, then note the **Variable Name** setting value in the **Variable** panel. Use this value to reference that record data in the **Text Label** setting of the Collection Record control.
+
+  * **Use text to describe the referenced record data:** Enter text preceding and/or following the referenced record data to describe the data. Example: `Dr. {{ data.FirstName }} {{ data.LastName }}, MD`.
+* **Font Weight:** Select from the following options the weight of the font that displays the record data:
+  * **Normal:** Select **Normal** to display the normal font weight. This is the default option.
+  * **Bold:** Select **Bold** to display the bold font weight.
+* **Font Size:** Select from the following options the size of the font that displays the record data
+  * 0.5
+  * 1 \(default option\)
+  * 1.5
+  * 2
+* **Collection:** Select from which ProcessMaker Collection to display a record in the Collection Record control. If no ProcessMaker Collections exist, the **Collection** drop-down menu contains no options; create at least one ProcessMaker Collection before using the Collection Record control.
+* **Record ID:** Enter the record ID for the record in the ProcessMaker Collection to display. Follow these guidelines:
+  * Enter the record ID value. The record ID is a unique value to each record in a ProcessMaker Collection that is referenced in the **\#** column of a Collection. See [View Collections](../../../../../collections/manage-collections/view-collections.md).
+  * Enter the **Variable Name** setting value for a variable that represents the record ID value. Example: `data.id`.
+
+{% hint style="info" %}
+Click the **Update Record Data** button to reference records in the specified ProcessMaker Collection. This is required to preview the Collection Record control.
+{% endhint %}
+
+## Related Topics
+
+{% page-ref page="../../../../../collections/what-is-a-collection.md" %}
+
+{% page-ref page="../../../../../package-development-distribution/package-a-connector/collections.md" %}
+
+{% page-ref page="../../types-for-screens.md" %}
+
+{% page-ref page="../../validate-your-screen.md" %}
+
+{% page-ref page="../" %}
+
+{% page-ref page="collection-select-control-settings.md" %}
+
+{% page-ref page="../rich-text-control-settings.md" %}
+
+{% page-ref page="../textarea-control-settings.md" %}
+
+{% page-ref page="../select-control-settings.md" %}
+
+{% page-ref page="../radio-group-control-settings.md" %}
+
+{% page-ref page="../checkbox-control-settings.md" %}
+
+{% page-ref page="../date-picker-control-settings.md" %}
+
+{% page-ref page="../page-navigation-button-control-settings.md" %}
+
+{% page-ref page="../multi-column-button-control-settings.md" %}
+
+{% page-ref page="../record-list-control-settings.md" %}
+
+{% page-ref page="../image-control-settings.md" %}
+
+{% page-ref page="../submit-button-control-settings.md" %}
+
+{% page-ref page="../file-upload-control-settings.md" %}
+
+{% page-ref page="../file-download-control-settings.md" %}
+
+{% page-ref page="../validation-rules-for-validation-control-settings.md" %}
 

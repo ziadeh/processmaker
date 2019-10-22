@@ -19,7 +19,7 @@ See [What is a Collection?](../../../../../collections/what-is-a-collection.md) 
 Specify the following when configuring a Collection Select control:
 
 * Select from which ProcessMaker Collection to reference its records.
-* Use plain text preceding and following the referenced record data to provide context to the record data. For example, if referencing names from a ProcessMaker Collection, optionally include honorifics \(such as "Mr." or "Mrs."\) or professional titles \(such as "Dr." or "MD"\).
+* Use plain text preceding and following the referenced record data to provide context to the record data. For example, if referencing names from a ProcessMaker Collection, optionally include honorifics \(such as "Mr." or "Mrs."\) or professional titles \(such as "Dr." or "MD"\). Example: `Dr. {{ data.FirstName }} {{ data.LastName }}, MD`, when referencing a doctor's first name and last name, respectively.
 * Configure the Collection Select control to reference all the records in the specified Collection or use [ProcessMaker Query Language \(PMQL\)](../../../../../using-processmaker/search-processmaker-data-using-pmql.md) to limit particular records to display as the optional items based on those records that meet the PMQL filtering criteria.
 
 For example, suppose that you have a ProcessMaker Collection of doctors in a medical clinic. A new patient enters information into a ProcessMaker [Screen](../../../what-is-a-form.md) whether that patient has a gender preference for a doctor by selecting that preference from a [Select](../select-control-settings.md) control. Use the Collection Select control and PMQL syntax in the following ways:
@@ -122,7 +122,7 @@ Below are settings for the Collection Select control in the **Configuration** pa
     3. Select the ProcessMaker Screen control from which you want to reference record data, then note the **Variable Name** setting value in the **Variable** panel. Use this value to reference that record data in the **Value** setting of the Collection Select control.
 
   * **Use text to describe the referenced record data:** Enter text preceding and/or following the referenced record data to describe the data. This text displays in all options in the Collection Select control. Example: `Dr. {{ data.FirstName }} {{ data.LastName }}, MD`.
-* **PMQL Query \(optional\):** Enter a ProcessMaker Query Language \(PMQL\) expression to limit particular records to display as the optional items based on those records that meet the PMQL filtering criteria, if necessary. See the Collection Select [control description](../image-control-settings.md#control-description) for an example. 
+* **PMQL Query \(optional\):** Enter a ProcessMaker Query Language \(PMQL\) expression to limit particular records to display as the optional items based on those records that meet the PMQL filtering criteria, if necessary. See the Collection Select [control description](../image-control-settings.md#control-description) for an example.
 
 ### Design Panel Settings
 
