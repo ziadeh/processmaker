@@ -112,6 +112,7 @@
       * [Rich Text Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/rich-text-control-settings.md)
       * [Line Input Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/line-input-control-settings.md)
       * [Textarea Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/textarea-control-settings.md)
+      * [Select List Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/select-list-control-settings.md)
       * [Select Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/select-control-settings.md)
       * [Radio Button Group Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/radio-group-control-settings.md)
       * [Checkbox Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/checkbox-control-settings.md)
