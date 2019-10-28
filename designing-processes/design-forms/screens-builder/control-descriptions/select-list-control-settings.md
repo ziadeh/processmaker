@@ -10,6 +10,11 @@ description: >-
 
 The Select List control provides either a checkbox- or multi-select drop-down menu-style control from which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant selects one or more options.
 
+Set options that display in this control in one of the following ways:
+
+* **Enter each option:** For each option, enter an internal value, then enter the text that displays in the control. The internal value becomes part of the JSON data model during in-progress Requests for [Processes](../../../viewing-processes/what-is-a-process.md) that use this ProcessMaker [Screen](../../what-is-a-form.md). Optionally, organize the order in which the options display in the control.
+* **Reference a data source in the JSON data model:** Reference data from the JSON data model during in-progress Requests by specifying the data name, value, and content from the JSON data model as options that display in the control during the Request. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data sources render in the JSON data model determines the order these options display in the control; options cannot be manually reordered.
+
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
 {% endhint %}
