@@ -12,8 +12,8 @@ The Select List control provides either a checkbox- or multi-select drop-down me
 
 Set options that display in this control in one of the following ways:
 
-* **Provide each option:** For each option, enter an internal value, then enter the text that displays in the control. The internal value becomes part of the JSON data model during in-progress Requests for [Processes](../../../viewing-processes/what-is-a-process.md) that use this ProcessMaker [Screen](../../what-is-a-form.md). Optionally, organize the order in which the options display in the control.
-* **Reference a data source in the JSON data model:** Reference data from the JSON data model during in-progress Requests by specifying the data name, value, and content from the JSON data model as options that display in the control during the Request. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data sources present in the JSON data model determines the order these options display in the control; options cannot be manually reordered.
+* **Provide each option:** For each option, enter a value unique to all options in this control, then enter the text that displays in the control. The unique value represents the option in the JSON data model during in-progress Requests for [Processes](../../../viewing-processes/what-is-a-process.md) that use this ProcessMaker [Screen](../../what-is-a-form.md). Optionally, organize the order in which the options display in the control.
+* **Reference a data source in the JSON data model:** Reference data from the JSON data model during in-progress Requests that displays in the control as its options. Specify the data name, value, and content from the JSON data model as options that display in the control during the Request. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data sources present in the JSON data model determines the order these options display in the control; options cannot be manually reordered.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -99,7 +99,7 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Select List control in the **Variable** panel:
 
-* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
+* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
   * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the option\(s\) the form user selects in the Select List control with that Select List control's **Variable Name** value. The **Variable Name** setting contains the selected option\(s\) as an array. In the example below, `SelectListControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/select-list-control-variable-name-preview-screens-builder-processes.png) 
   * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ SelectListControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
@@ -121,13 +121,49 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 From the **Data Source** panel, select one of the following methods to specify options that display in the Select List control:
 
-* [Provide options](select-list-control-settings.md#provide-options): Enter an internal value, then enter the text that displays in the control.
-* [Reference a data source](select-list-control-settings.md#reference-a-data-source): Reference data from the JSON data model during in-progress Requests.
+* [Provide options](select-list-control-settings.md#provide-options): Enter a value unique for all options in this control, and then enter the text that displays in this control.
+* [Reference a data source](select-list-control-settings.md#reference-a-data-source): Reference data from the JSON data model during in-progress Requests that displays in this control as its options.
 
 #### Provide Options
 
+Follow these steps to provide options that display in this control:
 
+1. Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Data Source** panel that is on the right-side of the Screens Builder canvas.
+2. From the **Data Source** drop-down menu, select **Provide Values**. This is the default setting.
+3. Select one of the following options:
+   * **Provide options in the user interface:**
 
+     Follow these guidelines:
+
+     1. Click the icon![](../../../../.gitbook/assets/create-option-icon-screens-builder-processes.png)beside the **Options** list label. The **Add Option** screen displays. ![](../../../../.gitbook/assets/data-source-options-screens-builder-processes.png) 
+     2. In the **Value** field, enter a unique value from other **Value** settings in this control. This value represents the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
+     3. In the **Content** field, enter the option that displays in this control.
+     4. Click **Save**. The option displays below the **Options** list label. ![](../../../../.gitbook/assets/options-list-screens-builder-processes.png) 
+     5. If necessary, click the![](../../../../.gitbook/assets/configure-icon-data-source-screens-builder-processes.png)icon for an option to change its settings, then click the **Update** button. ![](../../../../.gitbook/assets/data-source-options-update-screens-builders-processes.png) 
+     6. If necessary, click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon to delete that option.
+     7. If necessary, drag the![](../../../../.gitbook/assets/sort-icon-data-source-screens-builder-processes.png)icon for an option up or down to sort the order the options display in this control.
+     8. Repeat Steps 1 through 7 until all options are configured for this control.
+     9. Click the **Allow multiple selections** option to allow the form user to select more than one option.
+     10. From the **Render Options As** drop-down menu, select one of the following options:
+         * **Dropdown/Multiselect:** Select the **Dropdown/Multiselect** option to display the control as a drop-down menu.
+         * **Radio/Checkbox Group:** Select the **Radio/Checkbox Group** option to display the control as a group of checkboxes.
+
+   * **Provide options in JSON format:**
+
+     Follow these guidelines:
+
+     1. Click the **Edit as JSON** option.  
+        ![](../../../../.gitbook/assets/edit-as-json-screens-builder-processes.png)
+
+        The **JSON Data** setting displays. If a valid JSON schema has been configured previously, the **JSON Data** setting displays the JSON. Otherwise the setting is empty.
+
+     2. Click the icon![](../../../../.gitbook/assets/json-configuration-script-icon-script-task-element-process-modeler-processes.png)beside the **JSON Data** option. The **Script Config Editor** displays.  
+
+        ![](../../../../.gitbook/assets/script-config-editor-task-element-process-modeler-processses.png)
+
+     3. Enter your control options in the order they are to display in this control using JSON. Use the scroll panel to the right of the JSON to scroll to different sections of the JSON if necessary. This is useful especially when you are editing a long JSON.
+     4. Click **Close** or the **Close** icon![](../../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The control options are saved.
+4. 
 #### Reference a Data Source
 
 
@@ -149,8 +185,6 @@ Below are settings for the Select List in the **Advanced** panel:
 
 * **Visibility Rule:** Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
-
-{% embed url="https://pm-documentation.processmaker.net/api/documentation" %}
 
 
 

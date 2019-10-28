@@ -140,7 +140,7 @@ Follow these steps to enter or edit a JSON configuration script for a Script Tas
 
    ![](../../../.gitbook/assets/script-config-editor-task-element-process-modeler-processses.png)
 
-5. Enter your JSON configuration script. Use the scroll panel to the right of the ProcessMaker script to scroll to different sections of the script if necessary. This is useful especially when you are editing a long ProcessMaker Script.
+5. Enter your JSON configuration script. Use the scroll panel to the right of the ProcessMaker Script to scroll to different sections of the Script if necessary. This is useful especially when you are editing a long ProcessMaker Script.
 6. Click **Close** or the **Close** icon![](../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The JSON configuration script is saved.
 
 {% hint style="info" %}

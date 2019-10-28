@@ -97,7 +97,7 @@ Click the control while in [Design](../../screens-builder-modes.md#design-mode) 
 
 Below are settings for the Collection Select control in the **Variable** panel:
 
-* **Field Name:** Enter a unique name that represents this control's value. Use the **Field Name** value in the following ways:
+* **Field Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Field Name** value in the following ways:
   * Reference this control by its **Field Name** setting's value. The **Data Preview** panel in [Preview mode](../../screens-builder-modes.md#preview-mode) corresponds the Collection Select control's textual content with that Collection Select control's **Field Name** value. In the example below, `CollectionSelectControl` is the **Field Name** setting's value. ![](../../../../../.gitbook/assets/collection-select-control-data-preview-screens-builder-package-processes.png) 
   * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Field Name** value in the target control. Example: `{{ CollectionSelectControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](../expression-syntax-components-for-show-if-control-settings.md).
