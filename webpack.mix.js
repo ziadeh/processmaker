@@ -63,13 +63,9 @@ mix.extract([
   .copy("resources/fonts/Open_Sans/", "public/fonts")
   .copy("resources/js/components/FilterBar.vue", "public/js")
   .copy("resources/js/timeout.js", "public/js")
-  // Copy files necessary for images for the designer/modeler to it's own img directory
-  .copy("node_modules/@processmaker/modeler/dist/img", "public/js/processes/modeler/img")
-  .copy("node_modules/@processmaker/vue-form-elements/dist", "public/js");
+  .copy("node_modules/@processmaker/vue-form-elements/dist", "public/js")
 
-mix.js("resources/js/app-layout.js", "public/js")
-  .js("resources/js/processes/modeler/index.js", "public/js/processes/modeler")
-  .js("resources/js/processes/modeler/initialLoad.js", "public/js/processes/modeler")
+  .js("resources/js/app-layout.js", "public/js")
   .js("resources/js/admin/users/index.js", "public/js/admin/users")
   .js("resources/js/admin/users/edit.js", "public/js/admin/users/edit.js")
   .js("resources/js/admin/groups/index.js", "public/js/admin/groups")

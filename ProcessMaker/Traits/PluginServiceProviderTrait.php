@@ -9,6 +9,8 @@ use ProcessMaker\Events\ModelerStarting;
 use Illuminate\Support\Facades\Event;
 use ProcessMaker\Managers\PackageManager;
 
+class ComposerFileNotFoundException extends \Exception { }
+
 /**
  * Add functionality to control a PM plug-in
  *
@@ -116,5 +118,10 @@ trait PluginServiceProviderTrait
     public function removePackage($package)
     {
         App::make(PackageManager::class)->remove($package);
+    }
+
+    private function getVersionFromComposer()
+    {
+        // get from composer.lock by traversing and looking for static::class in provider section (needs to be cached)
     }
 }

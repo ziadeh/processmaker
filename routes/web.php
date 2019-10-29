@@ -62,7 +62,7 @@ Route::group(['middleware' => ['auth', 'sanitize', 'external.connection']], func
     Route::get('profile/edit', 'ProfileController@edit')->name('profile.edit');
     Route::get('profile/{id}', 'ProfileController@show')->name('profile.show');
     // Ensure our modeler loads at a distinct url
-    Route::get('modeler/{process}', 'Process\ModelerController')->name('modeler.show')->middleware('can:edit-processes');
+    Route::get('modeler/{process}', '\ProcessMaker\Packages\Modeler\Http\Controllers\ModelerController')->name('modeler.show')->middleware('can:edit-processes');
 
     Route::get('/', 'HomeController@index')->name('home');
 

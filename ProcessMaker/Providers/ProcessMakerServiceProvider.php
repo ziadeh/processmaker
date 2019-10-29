@@ -4,7 +4,6 @@ namespace ProcessMaker\Providers;
 
 use Blade;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use ProcessMaker\Managers\ModelerManager;
 use ProcessMaker\Managers\PackageManager;
 use ProcessMaker\Managers\ScreenBuilderManager;
 use ProcessMaker\Events\ScreenBuilderStarting;
@@ -63,14 +62,6 @@ class ProcessMakerServiceProvider extends ServiceProvider
 
         $this->app->singleton(PackageManager::class, function () {
             return new PackageManager();
-        });
-
-        /**
-         * Maps our Modeler Manager as a singleton. The Modeler Manager is used
-         * to manage customizations to the Process Modeler.
-         */
-        $this->app->singleton(ModelerManager::class, function($app) {
-            return new ModelerManager();
         });
 
         /**
