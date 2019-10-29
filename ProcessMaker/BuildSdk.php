@@ -8,7 +8,7 @@ use function GuzzleHttp\json_decode;
 class BuildSdk {
     private $rebuild = false;
     private $debug = false;
-    private $image = "openapitools/openapi-generator-online:v4.0.0-beta2";
+    private $image = "openapitools/openapi-generator-online:v4.1.3";
     private $lang = null;
     private $outputPath = null;
     private $jsonPath = null;
@@ -268,7 +268,10 @@ class BuildSdk {
     {
         if ($this->lang === 'csharp') {
             // $this->runCmd("find {$folder} -name '*.cs' -exec sed -i -E 's/DateTime\?/DateTime/g' {} \;");
-            unlink("{$folder}/src/ProcessMakerSDK/Model/DateTime.cs");
+            $file = "{$folder}/src/ProcessMakerSDK/Model/DateTime.cs";
+            if (file_exists($file)) {
+                unlink($file);
+            }
         }
     }
 }
