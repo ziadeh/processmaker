@@ -12,7 +12,7 @@ The Select List control provides either a checkbox- or multi-select drop-down me
 
 Set options that display in this control in one of the following ways:
 
-* **Provide each option:** For each option, enter a value unique to all options in this control, then enter the text that displays in the control. The unique value represents the option in the JSON data model during in-progress Requests for [Processes](../../../viewing-processes/what-is-a-process.md) that use this ProcessMaker [Screen](../../what-is-a-form.md). Optionally, organize the order in which the options display in the control.
+* **Provide each option:** For each option, enter a value unique to each option in this control, then enter the text that displays in the control. The unique value represents the option in the JSON data model during in-progress Requests for [Processes](../../../viewing-processes/what-is-a-process.md) that use this ProcessMaker [Screen](../../what-is-a-form.md). Optionally, organize the order in which the options display in the control.
 * **Reference a data source in the JSON data model:** Reference data from the JSON data model during in-progress Requests that displays in the control as its options. Specify the data name, value, and content from the JSON data model as options that display in the control during the Request. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data sources present in the JSON data model determines the order these options display in the control; options cannot be manually reordered.
 
 {% hint style="info" %}
@@ -121,8 +121,8 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 From the **Data Source** panel, select one of the following methods to specify options that display in the Select List control:
 
-* [Provide options](select-list-control-settings.md#provide-options): Enter a value unique for all options in this control, and then enter the text that displays in this control.
-* [Reference a data source](select-list-control-settings.md#reference-a-data-source): Reference data from the JSON data model during in-progress Requests that displays in this control as its options.
+* [Provide options](select-list-control-settings.md#provide-options): Enter a value unique for each option in this control, and then enter the text that displays in this control.
+* [Reference a data object](select-list-control-settings.md#reference-a-data-object): Reference data from a data object that displays in this control as its options. This data object must be part of the JSON data model for a Process or a BPMN element in the Process, such as derived from a [ProcessMaker Vocabulary](../../../vocabularies-management/what-is-a-vocabulary.md).
 
 #### Provide Options
 
@@ -163,10 +163,41 @@ Follow these steps to provide options that display in this control:
 
      3. Enter your control options in the order they are to display in this control using JSON. Use the scroll panel to the right of the JSON to scroll to different sections of the JSON if necessary. This is useful especially when you are editing a long JSON.
      4. Click **Close** or the **Close** icon![](../../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The control options are saved.
-4. 
-#### Reference a Data Source
 
+#### Reference a Data Object
 
+Follow these steps to reference data from a data object that displays in this control as its options:
+
+1. Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Data Source** panel that is on the right-side of the Screens Builder canvas.
+2. From the **Data Source** drop-down menu, select **Data Object**. ![](../../../../.gitbook/assets/data-source-object-options-screens-builder-processes.png) 
+3. In the **Data Name** field, enter the name of the data object that contains the data from which to display as options in this control. Ensure that this data object meets the following criteria:
+   * The data object is part of the JSON data model for a Process or a BPMN element in the Process, such as derived from a [ProcessMaker Vocabulary](../../../vocabularies-management/what-is-a-vocabulary.md).
+   * The data object is an array from which its objects are to display as options in this control.
+4. In the **Value** field, enter the name of the variable \(or key name\) value in the data object to contain the option\(s\) the form user selects. **value** is the default value.
+5. In the **Content** field, enter the name of the variable \(or key name\) value in the data object that contains the options to display in this control. **content** is the default value.
+6. In the **PMQL** field, optionally enter a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md#overview) expression to filter which data in the data object to display as options in this control based on which objects in the array meet the PMQL expression's criteria.
+
+Consider the following example.
+
+```javascript
+users = {
+{id: 1, username: user9110252username, genrePref: user9110252genre},
+{id: 2, username: 'Jon', genrePref: 'rock'},
+{id: 3, username: 'Lucy', genrePref: 'pop'},
+{id: 4, username: 'Mike', genrePref: 'rock'},
+{id: 5, username: 'Luke', genrePref: 'house'}
+}
+```
+
+Use the following settings to reference this data object as options for this control:
+
+* **Data Name:** `users`
+* **Value:** `id`
+* **Content:** `username`
+
+To filter usernames in the array that begin with `j`, use the following PMQL expression:
+
+`username LIKE '%J%'`
 
 ### Design Panel Settings
 
