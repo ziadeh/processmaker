@@ -72,7 +72,7 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Date Picker control in the **Variable** panel:
 
-* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
+* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
 
   * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds with the Date Picker control's entered datetime with that Date Picker control's **Variable Name** value. In the example below, `DatePickerControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/date-picker-preview-screens-builder-processes.png) 
   * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ DatePickerControl }}`.

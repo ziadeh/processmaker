@@ -93,14 +93,14 @@ The Collection Record control has the following panel that contain settings:
 
 Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
 
-Below are settings for the Collection Select control in the **Configuration** panel:
+Below are settings for the Collection Record control in the **Configuration** panel:
 
 * **Text Label:** Enter how the referenced record displays in the Collection Record control. Follow these guidelines to format how record data displays:
-  * **Reference record data from the Collection:** Use mustache syntax to reference record data from the specified ProcessMaker Collection. References to the record data are case sensitive. Precede each reference with `data.`. Example: `{{ data.FirstName }}`. Reference multiple record data in the **Text Label** setting if necessary. Example: `{{ data.FirstName }} {{ data.LastName }}` if the specified ProcessMaker Collection uses two controls to record the first name and last name in records.
+  * **Reference record data from the Collection:** Use mustache syntax to reference record data from the specified ProcessMaker [Collection](../../../../../collections/what-is-a-collection.md). References to the record data are case sensitive. Precede each reference with `data.`. Example: `{{ data.FirstName }}`. Reference multiple record data in the **Text Label** setting if necessary. Example: `{{ data.FirstName }} {{ data.LastName }}` if the specified ProcessMaker Collection uses two controls to record the first name and last name in records.
 
     Follow these guidelines to determine which record data to reference from the specified ProcessMaker Collection:
 
-    1. Determine which ProcessMaker Screens the specified Collection uses to create, update, and/or view records. See [Configure a Collection](../../../../../collections/manage-collections/configure-a-collection.md#configure-a-processmaker-collection). Note that your user account or group membership must have ProcessMaker [Collection](../../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions to access any Collection.
+    1. Determine which ProcessMaker [Screens](../../../what-is-a-form.md) the specified Collection uses to create, update, and/or view records. See [Configure a Collection](../../../../../collections/manage-collections/configure-a-collection.md#configure-a-processmaker-collection). Note that your user account or group membership must have ProcessMaker [Collection](../../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions to access any Collection.
     2. Edit the appropriate ProcessMaker Screen from which to reference record data in the specified Collection.
     3. Select the ProcessMaker Screen control from which you want to reference record data, then note the **Variable Name** setting value in the **Variable** panel. Use this value to reference that record data in the **Text Label** setting of the Collection Record control.
 

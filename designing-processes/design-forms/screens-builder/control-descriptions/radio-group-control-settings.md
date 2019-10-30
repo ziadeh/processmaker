@@ -72,7 +72,7 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Radio Button Group control in the **Variable** panel:
 
-* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
+* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
 
   * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Radio Button Group control's selected option with that Radio Button Group control's **Variable Name** value. In the example below, `RadioGroupControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/radio-group-preview-screens-builder-processes.png) 
   * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ RadioButtonGroupControl }}`.

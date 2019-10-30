@@ -67,7 +67,7 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 Below are settings for the Image control in the **Variable** panel:
 
 * **Id:** Enter the unique identifier that identifies the image in the ProcessMaker Screen. The **Id** value must be alphanumeric.
-* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
+* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
   * Reference this control by its **Variable Name** setting's value.
   * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ ImageControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).

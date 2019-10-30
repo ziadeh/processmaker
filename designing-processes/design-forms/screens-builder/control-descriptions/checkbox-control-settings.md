@@ -72,7 +72,7 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Checkbox control in the **Variable** panel:
 
-* **Variable Name:** Enter a unique name that represents this control's value. Use the **Variable Name** value in the following ways:
+* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
 
   * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) represents the state of the Checkbox control using its **Variable Name** value in the Request's JSON data model in the following ways:
     * **The Checkbox control is selected:** The key's value is `true` \(shown below\).

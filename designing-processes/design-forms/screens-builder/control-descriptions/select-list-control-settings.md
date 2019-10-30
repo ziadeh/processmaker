@@ -12,8 +12,8 @@ The Select List control provides either a checkbox- or multi-select drop-down me
 
 Set options that display in this control in one of the following ways:
 
-* **Provide each option:** For each option, enter a value unique to each option in this control, then enter the text that displays in the control. The unique value represents the option in the JSON data model during in-progress Requests for [Processes](../../../viewing-processes/what-is-a-process.md) that use this ProcessMaker [Screen](../../what-is-a-form.md). Optionally, organize the order in which the options display in the control.
-* **Reference a data source in the JSON data model:** Reference data from the JSON data model during in-progress Requests that displays in the control as its options. Specify the data name, value, and content from the JSON data model as options that display in the control during the Request. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data sources present in the JSON data model determines the order these options display in the control; options cannot be manually reordered.
+* **Provide each option:** For each option, enter a unique value that represents the option, and then enter the text that displays as the option. After your options are configured, sort the order in which they are to display in the control. Alternatively, provide options in the control in JSON format.
+* **Reference a data source in the JSON data model:** Reference data from a data object that displays in this control as its options. This data object must be part of the JSON schema for a Process or a BPMN element in the Process, such as derived from a [ProcessMaker Vocabulary](../../../vocabularies-management/what-is-a-vocabulary.md). Specify the data name, value, and content from the data object. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data objects present in the data object determines the order these options display in the control; options cannot be manually reordered.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -30,7 +30,7 @@ When using the Select List control with checkboxes, the control functions simila
 When using the Select List control as the drop-down menu, the control functions similarly to a [Select](select-control-settings.md#control-description) control, except multiple options may be selected one at a time. Selected options have the following attributes:
 
 * Each selected option displays in the control.
-* Each selected option displays in bold-style text in the drop-down menu. Furthermore, a red-colored highlight displays when mouse-hovering over a selected option, rather than the default green-colored highlight.
+* Each selected option displays in bold-style text in the drop-down menu. Furthermore, a red-colored highlight displays when mouse-hovering over a selected option, rather than the default green-colored highlight for deselected options.
 
 Follow these guidelines to deselect an item from the Select List control when using the drop-down menu style:
 
@@ -121,8 +121,8 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 From the **Data Source** panel, select one of the following methods to specify options that display in the Select List control:
 
-* [Provide options](select-list-control-settings.md#provide-options): Enter a value unique for each option in this control, and then enter the text that displays in this control.
-* [Reference a data object](select-list-control-settings.md#reference-a-data-object): Reference data from a data object that displays in this control as its options. This data object must be part of the JSON data model for a Process or a BPMN element in the Process, such as derived from a [ProcessMaker Vocabulary](../../../vocabularies-management/what-is-a-vocabulary.md).
+* [Provide options](select-list-control-settings.md#provide-options): For each option, enter a unique value that represents the option, and then enter the text that displays as the option. After your options are configured, sort the order in which they are to display in this control. Alternatively, provide options in this control in JSON format.
+* [Reference a data object](select-list-control-settings.md#reference-a-data-object): Reference data from a data object that displays in this control as its options. This data object must be part of the JSON schema for a Process or a BPMN element in the Process, such as derived from a [ProcessMaker Vocabulary](../../../vocabularies-management/what-is-a-vocabulary.md). Specify the data name, value, and content from the data object. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data objects present in the data object determines the order these options display in the control; options cannot be manually reordered.
 
 #### Provide Options
 
@@ -136,12 +136,12 @@ Follow these steps to provide options that display in this control:
      Follow these guidelines:
 
      1. Click the icon![](../../../../.gitbook/assets/create-option-icon-screens-builder-processes.png)beside the **Options** list label. The **Add Option** screen displays. ![](../../../../.gitbook/assets/data-source-options-screens-builder-processes.png) 
-     2. In the **Value** field, enter a unique value from other **Value** settings in this control. This value represents the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
+     2. In the **Value** field, enter a value to represent the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
      3. In the **Content** field, enter the option that displays in this control.
      4. Click **Save**. The option displays below the **Options** list label. ![](../../../../.gitbook/assets/options-list-screens-builder-processes.png) 
      5. If necessary, click the![](../../../../.gitbook/assets/configure-icon-data-source-screens-builder-processes.png)icon for an option to change its settings, then click the **Update** button. ![](../../../../.gitbook/assets/data-source-options-update-screens-builders-processes.png) 
-     6. If necessary, click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon to delete that option.
-     7. If necessary, drag the![](../../../../.gitbook/assets/sort-icon-data-source-screens-builder-processes.png)icon for an option up or down to sort the order the options display in this control.
+     6. Click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon to delete that option if necessary.
+     7. Drag the![](../../../../.gitbook/assets/sort-icon-data-source-screens-builder-processes.png)icon for an option up or down to sort the order the options display in this control if necessary.
      8. Repeat Steps 1 through 7 until all options are configured for this control.
      9. Click the **Allow multiple selections** option to allow the form user to select more than one option.
      10. From the **Render Options As** drop-down menu, select one of the following options:
@@ -161,7 +161,7 @@ Follow these steps to provide options that display in this control:
 
         ![](../../../../.gitbook/assets/script-config-editor-task-element-process-modeler-processses.png)
 
-     3. Enter your control options in the order they are to display in this control using JSON. Use the scroll panel to the right of the JSON to scroll to different sections of the JSON if necessary. This is useful especially when you are editing a long JSON.
+     3. Enter your control options in the order they are to display in this control using JSON format. Use the scroll panel to the right of the JSON to scroll to different sections of the JSON if necessary. This is useful especially when you are editing a long JSON.
      4. Click **Close** or the **Close** icon![](../../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The control options are saved.
 
 #### Reference a Data Object
@@ -171,33 +171,33 @@ Follow these steps to reference data from a data object that displays in this co
 1. Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Data Source** panel that is on the right-side of the Screens Builder canvas.
 2. From the **Data Source** drop-down menu, select **Data Object**. ![](../../../../.gitbook/assets/data-source-object-options-screens-builder-processes.png) 
 3. In the **Data Name** field, enter the name of the data object that contains the data from which to display as options in this control. Ensure that this data object meets the following criteria:
-   * The data object is part of the JSON data model for a Process or a BPMN element in the Process, such as derived from a [ProcessMaker Vocabulary](../../../vocabularies-management/what-is-a-vocabulary.md).
-   * The data object is an array from which its objects are to display as options in this control.
-4. In the **Value** field, enter the name of the variable \(or key name\) value in the data object to contain the option\(s\) the form user selects. **value** is the default value.
-5. In the **Content** field, enter the name of the variable \(or key name\) value in the data object that contains the options to display in this control. **content** is the default value.
+   * The data object is part of the JSON schema for a Process or a BPMN element in the Process, such as derived from a [ProcessMaker Vocabulary](../../../vocabularies-management/what-is-a-vocabulary.md).
+   * The data object is an array from which its objects are in the order that they are to display as options in this control.
+4. In the **Value** field, enter the name of the variable or key name value in the data object to contain the option\(s\) the form user selects. **value** is the default value.
+5. In the **Content** field, enter the name of the variable or key name value in the data object that contains the options to display in this control. **content** is the default value.
 6. In the **PMQL** field, optionally enter a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md#overview) expression to filter which data in the data object to display as options in this control based on which objects in the array meet the PMQL expression's criteria.
 
-Consider the following example.
+Consider the following example of doctors who work in a clinic. 
 
 ```javascript
-users = {
-{id: 1, username: user9110252username, genrePref: user9110252genre},
-{id: 2, username: 'Jon', genrePref: 'rock'},
-{id: 3, username: 'Lucy', genrePref: 'pop'},
-{id: 4, username: 'Mike', genrePref: 'rock'},
-{id: 5, username: 'Luke', genrePref: 'house'}
+doctors = {
+{id: 1, name: 'Adam Ardin', gender: 'male'},
+{id: 2, name: 'Amanda Creek', gender: 'female'},
+{id: 3, name: 'Lucy Morales', gender: 'female'},
+{id: 4, name: 'Mindy Smith', gender: 'female'},
+{id: 5, name: 'Toby Tomlinson', gender: 'male'}
 }
 ```
 
 Use the following settings to reference this data object as options for this control:
 
-* **Data Name:** `users`
+* **Data Name:** `doctors`
 * **Value:** `id`
-* **Content:** `username`
+* **Content:** `name`
 
-To filter usernames in the array that begin with `j`, use the following PMQL expression:
+Suppose that a new patient at the clinic indicates that she wants to see a female doctor. To filter doctors who are female in the clinic so that they display as options in this control, use the following PMQL expression:
 
-`username LIKE '%J%'`
+`gender = "female"`
 
 ### Design Panel Settings
 
