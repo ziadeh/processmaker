@@ -108,9 +108,15 @@ Below are settings for the Textarea control in the **Design** panel:
 
 {% page-ref page="./" %}
 
+{% page-ref page="processmaker-collection-controls/collection-select-control-settings.md" %}
+
+{% page-ref page="processmaker-collection-controls/collection-record-control-settings.md" %}
+
 {% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="line-input-control-settings.md" %}
+
+{% page-ref page="select-list-control-settings.md" %}
 
 {% page-ref page="select-control-settings.md" %}
 

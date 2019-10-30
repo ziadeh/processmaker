@@ -140,6 +140,8 @@ Click the **Update Record Data** button to reference records in the specified Pr
 
 {% page-ref page="../textarea-control-settings.md" %}
 
+{% page-ref page="../select-list-control-settings.md" %}
+
 {% page-ref page="../select-control-settings.md" %}
 
 {% page-ref page="../radio-group-control-settings.md" %}

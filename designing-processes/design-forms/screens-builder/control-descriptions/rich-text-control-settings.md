@@ -8,9 +8,9 @@ description: Add a control that displays HTML-formatted text.
 
 The Rich Text control displays HTML-formatted text. Use the What-You-See-Is-What-You-Get \(WYSIWYG\) editor to display a variety of text styles for the [Request ](../../../../using-processmaker/requests/what-is-a-request.md)participant.
 
-Aside from rich text styles, the Rich Text control can display the following information regarding in-progress [Requests](../../../../using-processmaker/requests/what-is-a-request.md):
+Aside from rich text styles, the Rich Text control can display the following information regarding in-progress Requests:
 
-* **Request data:** Display the value of another control in the same or different ProcessMaker Screen by referencing that control's **Variable Value** setting value using mustache syntax. Example: `{{ FullName }}`.
+* **Request data:** Display the value of another control in the same or different ProcessMaker [Screen](../../what-is-a-form.md) by referencing that control's **Variable Value** setting value using mustache syntax. Example: `{{ FullName }}`.
 * **Magic Variable values:** Display the value of a [Magic Variable](../../../reference-global-variables-in-your-processmaker-assets.md) by referencing the Magic Variable using mustache syntax. Example: `{{ _user.fullname }}`.
 
 ## Add the Control to a ProcessMaker Screen
@@ -60,18 +60,33 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Click the control to view its settings in the **Design** panel that is on the right-side of the Screens Builder canvas. Below are settings for the Rich Text control:
+The Rich Text control has the following panels that contain settings:
 
-* **Rich Text Content:** Enter the text to display in the Rich Text control using HTML syntax. Alternatively, use the WYSIWYG rich text editor to enter your text. **Rich text editor** is the default value.
-* **Element Background Color:** Select to specify the background color of this control.
+* \*\*\*\*[**Configuration** panel](rich-text-control-settings.md#configuration-panel-settings)
+* \*\*\*\*[**Advanced** panel](rich-text-control-settings.md#advanced-panel-settings)
+
+### Configuration Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Select control in the **Configuration** panel:
+
+* **Content:** Enter the text to display in the Rich Text control using HTML syntax. Alternatively, use the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to enter your text. Your text displays in the **Content** field using HTML syntax. **Rich text editor** is the default value.
+
+### Advanced Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Select control in the **Advanced** panel:
+
 * **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 {% hint style="info" %}
-Below are some ways to render Request data to display as text in a Rich Text control:
+Below are some ways to render [Request](../../../../using-processmaker/requests/what-is-a-request.md) data to display as text in a Rich Text control:
 
-* Use mustache template syntax to reference the Request data. Example: `Customer First Order Name: {{ customer.orders.0.name }}`
-* Include your own HTML syntax in the Text control along with template references. Example: `Customer First Name: <strong>{{ customer.firstname }}</strong>`
+* Use mustache syntax to reference the Request data. Ensure to precede the Request data reference with `data.`. Example: `Customer First Name: {{ data.CustomerName }}`
+* Include your own HTML syntax in the Rich Text control along with Request data references. Example: `Customer First Name: <strong>{{ data.CustomerName }}</strong>`
 {% endhint %}
 
 ## Related Topics
@@ -82,9 +97,15 @@ Below are some ways to render Request data to display as text in a Rich Text con
 
 {% page-ref page="./" %}
 
+{% page-ref page="processmaker-collection-controls/collection-select-control-settings.md" %}
+
+{% page-ref page="processmaker-collection-controls/collection-record-control-settings.md" %}
+
 {% page-ref page="line-input-control-settings.md" %}
 
 {% page-ref page="textarea-control-settings.md" %}
+
+{% page-ref page="select-list-control-settings.md" %}
 
 {% page-ref page="select-control-settings.md" %}
 

@@ -160,6 +160,8 @@ Below are settings for the Collection Select control in the **Advanced** panel:
 
 {% page-ref page="../textarea-control-settings.md" %}
 
+{% page-ref page="../select-list-control-settings.md" %}
+
 {% page-ref page="../select-control-settings.md" %}
 
 {% page-ref page="../radio-group-control-settings.md" %}

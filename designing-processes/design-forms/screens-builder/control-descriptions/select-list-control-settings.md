@@ -217,5 +217,43 @@ Below are settings for the Select List in the **Advanced** panel:
 * **Visibility Rule:** Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
+## Related Topics <a id="related-topics"></a>
 
+{% page-ref page="../types-for-screens.md" %}
+
+{% page-ref page="../validate-your-screen.md" %}
+
+{% page-ref page="./" %}
+
+{% page-ref page="processmaker-collection-controls/collection-select-control-settings.md" %}
+
+{% page-ref page="processmaker-collection-controls/collection-record-control-settings.md" %}
+
+{% page-ref page="rich-text-control-settings.md" %}
+
+{% page-ref page="line-input-control-settings.md" %}
+
+{% page-ref page="select-control-settings.md" %}
+
+{% page-ref page="radio-group-control-settings.md" %}
+
+{% page-ref page="checkbox-control-settings.md" %}
+
+{% page-ref page="date-picker-control-settings.md" %}
+
+{% page-ref page="page-navigation-button-control-settings.md" %}
+
+{% page-ref page="multi-column-button-control-settings.md" %}
+
+{% page-ref page="record-list-control-settings.md" %}
+
+{% page-ref page="image-control-settings.md" %}
+
+{% page-ref page="submit-button-control-settings.md" %}
+
+{% page-ref page="file-upload-control-settings.md" %}
+
+{% page-ref page="file-download-control-settings.md" %}
+
+{% page-ref page="expression-syntax-components-for-show-if-control-settings.md" %}
 
