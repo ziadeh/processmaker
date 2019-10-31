@@ -57,6 +57,54 @@ If you choose not to install the certificate, you should access the socket.io js
 
 * [https://processmaker.local.processmaker.com:6001/socket.io/socket.io.js](https://processmaker.local.processmaker.com:6001/socket.io/socket.io.js)
 
+#### Developing Packages
+
+ProcessMaker4 Packages are PHP Composer Packages. Your vagrant environment will need access to the folder that contains your packages. To enable that:
+
+1. Edit the Homestead.yml file in the root of this repository. Uncomment the lines where we link packages
+   ```
+       -
+           map: '../processmaker-packages'
+           to: /home/vagrant/processmaker-packages
+   ```
+   Set 'map' to the folder that contains your package repositories on your host machine.
+1. Run `vagrant reload`
+
+Link the package you want to develop:
+
+1. Clone the package repository you want to develop into your packages folder on your host machine. For example, for the modeler package:
+   ```
+   $ cd ../processmaker-packages
+   $ git clone https://github.com/ProcessMaker/modeler.git
+
+   # Optionally, check out the branch you want to develop with
+
+   $ cd modeler
+   $ git checkout feature/1234
+1. Edit the composer.json file in the root of this repository and add it to the repositories section.
+   ```
+   "repositories": [
+     {
+        "type": "path",
+        "url": "../processmaker-packages/modeler"
+     },
+   ```
+1. SSH into your vagrant instance and install the package from the root of this repository.
+The package name must match the name in the package's composer.json
+   ```
+   composer require package-modeler
+   ```
+   This will create a symlink in the vendor/processmaker folder to your local clone of the package.
+
+1. In your vagrant instance, run the package's installer:
+   ```
+   php artisan package-modeler:install
+   ```
+
+*Note:* If you change any assets (js, css, images) in the package
+you will need to run the above install command again to publish 
+the assets to core.
+
 #### Customize Logos
 
 1. Add images to resources/img/
