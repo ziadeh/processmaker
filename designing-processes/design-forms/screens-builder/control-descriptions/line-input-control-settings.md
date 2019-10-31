@@ -8,7 +8,13 @@ description: >-
 
 ## Control Description
 
-The Line Input control adds a text field that the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can enter plain text or a password.
+The Line Input control is a text field that the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can enter information. Configure the Line Input control to accept one of the following data types:
+
+* **Text:** The control accepts alphanumeric characters.
+* **Integer:** The control accepts integers.
+* **Decimal:** The control accepts any number, both positive and negative.
+* **Datetime:** The control accepts a datetime, which is includes both date and time components.
+* **Date:** The control accepts a date.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -64,7 +70,9 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 The Line Input control has the following panels that contain settings:
 
 * [**Variable** panel](line-input-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Configuration** panel](line-input-control-settings.md#configuration-panel-settings)
 * \*\*\*\*[**Design** panel](line-input-control-settings.md#design-panel-settings)
+* \*\*\*\*[**Advanced** panel](line-input-control-settings.md#advanced-panel-settings)
 
 ### Variable Panel Settings
 
@@ -80,16 +88,31 @@ Below are settings for the Line Input control in the **Variable** panel:
 
   This is a required setting.
 
-* **Data Type:** Select one of the following options to indicate the data type for the contents of this this control:
-  * **Boolean:** The control accepts a Boolean type value. **Boolean** is the default option.
-  * **Currency:** The control accepts a currency value.
-  * **Date:** The control accepts a date value.
-  * **Datetime:** The control accepts a datetime value. A datetime value contains both a date and time value.
-  * **Float:** The control accepts a float value. A float is a floating-point number, meaning it contains a decimal.
-  * **Int:** The control accepts an integer value. An integer does not contain a decimal.
-  * **String:** The control accepts a string value.
-* **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
-* **Control is read only:** Select the **Control is read only** checkbox to indicate that the Line Inputs control field content cannot be edited.
+* **Data Type:** Select one of the following data type options this control accepts when the form user enters content into this control:
+
+  * **Text:** This control accepts alphanumeric characters.
+  * **Integer:** This control accepts integers.
+  * **Decimal:** This control accepts any number, both positive and negative.
+  * **Datetime:** This control accepts a datetime, which is includes both date and time components.
+  * **Date:** The control accepts a date.
+
+  This is a required setting. The following message displays below the control if the Request participant enters content that does not comply with this control's data type: **The format is invalid.**.
+
+* **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+* **Read Only:** Select the **Read Only** checkbox to indicate that the Line Input control field cannot be edited. This option is not selected by default.
+
+### Configuration Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Line Input control in the **Configuration** panel:
+
+* **Label:** Enter the field label text that displays. **New Input** is the default value.
+* **Type:** Select one of the following type options how this control displays entered content:
+  * **Text:** This control displays the entered characters. This is the default setting.
+  * **Password:** This control hides the entered characters as is customary when entering a password.
+* **Placeholder Text:** Enter the placeholder text that displays in the field when no value has been provided. This setting has no default value.
+* **Helper Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
 
 ### Design Panel Settings
 
@@ -97,11 +120,15 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Line Input control in the **Design** panel:
 
-* **Field Label:** Enter the field label text that displays. **New Input** is the default value.
-* **Placeholder:** Enter the placeholder text that displays in the field when no value has been provided. This setting has no default value.
-* **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
-* **Element Background Color:** Select to specify the background color of this control.
 * **Text Color:** Select to specify the text color that displays in this control.
+* **Background Color:** Select to specify the background color of this control.
+
+### Advanced Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Select List control in the **Advanced** panel:
+
 * **Visibility Rule:** Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 

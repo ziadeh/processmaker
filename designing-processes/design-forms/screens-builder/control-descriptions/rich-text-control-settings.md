@@ -6,7 +6,7 @@ description: Add a control that displays HTML-formatted text.
 
 ## Control Description
 
-The Rich Text control displays HTML-formatted text. Use the What-You-See-Is-What-You-Get \(WYSIWYG\) editor to display a variety of text styles for the [Request ](../../../../using-processmaker/requests/what-is-a-request.md)participant.
+The Rich Text control displays HTML-formatted text. Use the What-You-See-Is-What-You-Get \(WYSIWYG\) editor to display a variety of text styles for the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant.
 
 Aside from rich text styles, the Rich Text control can display the following information regarding in-progress Requests:
 

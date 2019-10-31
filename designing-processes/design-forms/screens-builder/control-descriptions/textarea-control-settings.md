@@ -8,9 +8,15 @@ description: >-
 
 ## Control Description
 
-The Textarea control allows the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant to insert more than three lines of text.
+The Textarea control allows the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant to insert more than three lines of text. Configure the Textarea control to accept one of the following data types:
 
-Though this control displays a vertical scroll bar if more than three lines are inserted, the input box can be expanded as necessary. To do this, click the lower right-hand corner of the input box of the Textarea control, hold, and then drag to enlarge or shrink the control size as necessary. Release when you have adjusted the input box to your required size.
+* **Text:** The control accepts alphanumeric characters.
+* **Integer:** The control accepts integers.
+* **Decimal:** The control accepts any number, both positive and negative.
+* **Datetime:** The control accepts a datetime, which is includes both date and time components.
+* **Date:** The control accepts a date.
+
+Though this control displays a vertical scroll bar if more than three lines are inserted, the input box can be expanded as necessary. To do this, click the lower right-hand corner of the input box of the Textarea control, hold, and then drag to enlarge or shrink the control size as necessary. Release when you have adjusted the Textarea control to your required size.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -66,7 +72,9 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 The Textarea control has the following panels that contain settings:
 
 * \*\*\*\*[**Variable** panel](textarea-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Configuration** panel](textarea-control-settings.md#configuration-panel-settings)
 * \*\*\*\*[**Design** panel](textarea-control-settings.md#design-panel-settings)
+* \*\*\*\*[**Advanced** panel](textarea-control-settings.md#advanced-panel-settings)
 
 ### Variable Panel Settings
 
@@ -82,8 +90,30 @@ Below are settings for the Textarea control in the **Variable** panel:
 
   This is a required setting.
 
-* **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
-* **Control is read only:** Select the **Control is read only** checkbox to indicate that the Textarea control field content cannot be edited.
+* **Data Type:** Select one of the following data type options this control accepts when the form user enters content into this control:
+
+  * **Text:** This control accepts alphanumeric characters.
+  * **Integer:** This control accepts integers.
+  * **Decimal:** This control accepts any number, both positive and negative.
+  * **Datetime:** This control accepts a datetime, which is includes both date and time components.
+  * **Date:** The control accepts a date.
+
+  This is a required setting. The following message displays below the control if the Request participant enters content that does not comply with this control's data type: **The format is invalid.**.
+
+* **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+* **Read Only:** Select the **Read Only** checkbox to indicate that the Textarea control field cannot be edited. This option is not selected by default.
+
+### Configuration Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Textarea control in the **Configuration** panel:
+
+* **Label:** Enter the field label text that displays. **New TextArea** is the default value.
+* **Placeholder:** Enter the placeholder text that displays in the field when no value has been provided. This setting has no default value.
+* **Helper Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
+* **Rich Text:** Select the **Rich Text** checkbox to display the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to allow the Request participant can enter rich text. This option is not selected by default.
+* **Rows:** The number of rows to provide for input. **2** is the default value.
 
 ### Design Panel Settings
 
@@ -91,12 +121,15 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Textarea control in the **Design** panel:
 
-* **Field Label:** Enter the field label text that displays. **New TextArea** is the default value.
-* **Rows:** The number of rows to provide for input. **2** is the default value.
-* **Placeholder:** Enter the placeholder text that displays in the field when no value has been provided. This setting has no default value.
-* **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
-* **Element Background Color:** Select to specify the background color of this control.
 * **Text Color:** Select to specify the text color that displays in this control.
+* **Background Color:** Select to specify the background color of this control.
+
+### Advanced Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Textarea control in the **Advanced** panel:
+
 * **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 

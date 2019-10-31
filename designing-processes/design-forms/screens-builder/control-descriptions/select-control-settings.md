@@ -1,14 +1,19 @@
 ---
 description: >-
-  Add a drop-down menu control from which the Request participant selects a
-  single option.
+  Add a drop-down menu control from which the Request participant selects one
+  option.
 ---
 
 # Select Control Settings
 
 ## Control Description
 
-The Select control provides a drop-down menu from which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant selects a single option.
+The Select control provides a drop-down menu from which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant selects one option.
+
+Set options that display in this control in one of the following ways:
+
+* **Provide each option:** For each option, enter a unique value that represents the option, and then enter the text that displays as the option. After your options are configured, sort the order in which they are to display in the control. Alternatively, provide options in the control in JSON format.
+* **Reference a data source in the JSON data model:** Reference data from a data object that displays in this control as its options. This data object must be part of the JSON schema for a Process or a BPMN element in the Process, such as derived from a [ProcessMaker Vocabulary](../../../vocabularies-management/what-is-a-vocabulary.md). Specify the data name, value, and content from the data object. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data objects present in the data object determines the order these options display in the control; options cannot be manually reordered.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -64,7 +69,10 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 The Select control has the following panels that contain settings:
 
 * \*\*\*\*[**Variable** panel](select-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Configuration** panel](select-control-settings.md#configuration-panel-settings)
+* \*\*\*\*[**Data Source** panel](select-control-settings.md#data-source-panel-settings)
 * \*\*\*\*[**Design** panel](select-control-settings.md#design-panel-settings)
+* \*\*\*\*[**Advanced** panel](select-control-settings.md#advanced-panel-settings)
 
 ### Variable Panel Settings
 
@@ -80,7 +88,7 @@ Below are settings for the Select control in the **Variable** panel:
 
   This is a required setting.
 
-* **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+* **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
 * **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down menu. The default option is called **new** with the content **New Option**.
 
   Switch the **Show in Json Format** toggle key to display these settings in JSON.  
@@ -90,7 +98,7 @@ Below are settings for the Select control in the **Variable** panel:
   Each option has the following settings:
 
   * **Value:** **Value** is the internal data name for the option that only the Process Owner views at design time.
-  * **Content:** **Content** is the option label displayed to the form user. 
+  * **Content:** **Content** is the option label displayed to the Request participant. 
   * **Actions:** Click the **Remove**![](../../../../.gitbook/assets/options-list-delete-option-icon-screens-builder-processes.png)icon to remove the option.
 
   Follow these steps to add an option: 
@@ -102,6 +110,22 @@ Below are settings for the Select control in the **Variable** panel:
   2. In the **Option Value** field, enter the **Value** option value \(as described above\).
   3. In the **Content** field, enter the **Content** option value \(as described above\).
   4. Click **OK**. The option displays below the existing options in **Options List**.
+
+### Configuration Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Select control in the **Configuration** panel:
+
+
+
+### Data Source Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Data Source** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Select control in the **Data Source** panel:
+
+
 
 ### Design Panel Settings
 
@@ -115,6 +139,14 @@ Below are settings for the Select control in the **Design** panel:
 * **Text Color:** Select to specify the text color that displays in this control.
 * **Visibility Rule:** Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+
+### Advanced Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Select control in the **Advanced** panel:
+
+
 
 ## ​Related Topics
 

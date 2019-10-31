@@ -8,7 +8,7 @@ description: >-
 
 ## Control Description <a id="control-description"></a>
 
-The Multicolumn / Table control adds a layout element with two or more columns. Drop other controls into any of the columns to display them to the width of the Multicolumn / Table control column.
+The Multicolumn / Table control adds a layout element with two or more columns. Drag and place other controls into any of the columns to display them to the width of the Multicolumn / Table control column.
 
 ## Add the Control to a ProcessMaker Screen <a id="add-the-control-to-a-processmaker-screen"></a>
 

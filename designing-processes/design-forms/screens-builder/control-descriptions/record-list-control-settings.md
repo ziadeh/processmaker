@@ -107,8 +107,8 @@ Below are settings for the Record List control in the **Variable** panel:
 
   This is a required setting.
 
-* **Editable?:** Select to indicate that the record that the form user enters can be edited. Otherwise, deselect to indicate that the form user's record cannot be changed. This setting is not selected by default.
-* **Fields List:** Specify the list of options the Record List records from the form user. Each option in the **Fields List** setting references a control on a secondary ProcessMaker Screen page that uses the same **Field Name** value as entered into the **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page. See the [example](record-list-control-settings.md#example). The following message displays in Preview mode when not all the **Value** parameters match with a control's **Field Name** value on the secondary page: **There is no records in this list or the data is invalid.**  
+* **Editable?:** Select to indicate that the record that the Request participant enters can be edited. Otherwise, deselect to indicate that the form user's record cannot be changed. This setting is not selected by default.
+* **Fields List:** Specify the list of options the Record List records from the Request participant. Each option in the **Fields List** setting references a control on a secondary ProcessMaker Screen page that uses the same **Field Name** value as entered into the **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page. See the [example](record-list-control-settings.md#example). The following message displays in Preview mode when not all the **Value** parameters match with a control's **Field Name** value on the secondary page: **There is no records in this list or the data is invalid.**  
   Switch the **Show in Json Format** toggle key to display these settings in JSON.   
 
   ![](../../../../.gitbook/assets/fields-list-option-record-list-control-screens-builder-processes.png)
@@ -116,7 +116,7 @@ Below are settings for the Record List control in the **Variable** panel:
   Each option has the following settings:
 
   * **Value:** **Value** is the internal data name for the option that only the Process Owner views at design time. Make note of each **Value** parameter you enter here, and then ensure to use the same **Field Name** value for the corresponding control in the secondary page to record that field's value for the record. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page.
-  * **Content:** **Content** is the option label to indicate what content the target control on the secondary ProcessMaker Screen page records. The Process Owner views this at design time and does not display to the form user.
+  * **Content:** **Content** is the option label to indicate what content the target control on the secondary ProcessMaker Screen page records. The Process Owner views this at design time and does not display to the Request participant.
   * **Actions:** Click the **Remove**![](../../../../.gitbook/assets/options-list-delete-option-icon-screens-builder-processes.png)icon to remove the field item.
 
   Follow these steps to add an option:

@@ -89,7 +89,7 @@ Below are settings for the Radio Button Group control in the **Variable** panel:
   Each option has the following settings:
 
   * **Value:** **Value** is the internal data name for the option that only the Process Owner views at design time.
-  * **Content:** **Content** is the option label displayed to the form user. 
+  * **Content:** **Content** is the option label displayed to the Request participant. 
   * **Actions:** Click the **Remove**![](../../../../.gitbook/assets/options-list-delete-option-icon-screens-builder-processes.png)icon to remove the radio button from the group.
 
   Follow these steps to add an option: 
