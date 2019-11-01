@@ -8,13 +8,11 @@ description: >-
 
 ## Control Description
 
-The Radio Button Group control provides a group of options from which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can select only one option. Configure the Radio Button Group control to accept one of the following data types:
+The Radio Button Group control provides a group of options from which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can select only one option. Configure the Radio Button Group control to accept one of the following data types for its options:
 
 * **Text:** The control accepts alphanumeric characters.
 * **Integer:** The control accepts integers.
 * **Decimal:** The control accepts any number, both positive and negative.
-* **Datetime:** The control accepts a datetime, which is includes both date and time components.
-* **Date:** The control accepts a date.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -90,13 +88,13 @@ Below are settings for the Radio Button Group control in the **Variable** panel:
   This is a required setting.
 
 * **Data Type:** Select one of the following data type options this control accepts when the form user enters content into this control:
-* * **Text:** This control accepts alphanumeric characters.
+
+  * **Text:** This control accepts alphanumeric characters.
   * **Integer:** This control accepts integers.
   * **Decimal:** This control accepts any number, both positive and negative.
-  * **Datetime:** This control accepts a datetime, which is includes both date and time components.
-  * **Date:** The control accepts a date.
 
   This is a required setting. The following message displays below the control if the Request participant enters content that does not comply with this control's data type: **The format is invalid.**.
+
 * **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
 * **Read Only:** Select the **Read Only** checkbox to indicate that the Line Input control cannot be edited. This option is not selected by default.
 
@@ -106,15 +104,92 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Radio Button Group control in the **Configuration** panel:
 
-
+* **Label:** Enter the text label that displays for this control. **New Radio Button Group** is the default value.
+* **Helper Text:** Enter text that provides additional guidance on this control's use. This setting has no default value.
 
 ### Data Source Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Data Source** panel that is on the right-side of the Screens Builder canvas.
 
-Below are settings for the Radio Button Group control in the **Data Source** panel:
+From the **Data Source** panel, select one of the following methods to specify options that display in the Radio Button Group control:
 
+* [Provide options](select-list-control-settings.md#provide-options): For each option, enter a unique value that represents the option, and then enter the text that displays as the option. After your options are configured, sort the order in which they are to display in this control. Alternatively, provide options in this control in JSON format.
+* [Reference a data object](select-list-control-settings.md#reference-a-data-object): Reference data from a data object that displays in this control as its options. This data object must be part of the JSON schema for a Process or a BPMN element in the Process, such as derived from a [ProcessMaker Vocabulary](../../../vocabularies-management/what-is-a-vocabulary.md). Specify the data name, value, and content from the data object. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data objects present in the data object determines the order these options display in the control; options cannot be manually reordered.
 
+#### Provide Options
+
+Follow these steps to provide options that display in this control:
+
+1. Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Data Source** panel that is on the right-side of the Screens Builder canvas.
+2. From the **Data Source** drop-down menu, select **Provide Values**. This is the default setting.
+3. Select one of the following options:
+   * **Provide options in the user interface:**
+
+     Follow these guidelines:
+
+     1. Click the icon![](../../../../.gitbook/assets/create-option-icon-screens-builder-processes.png)beside the **Options** list label. The **Add Option** screen displays. ![](../../../../.gitbook/assets/data-source-options-screens-builder-processes.png) 
+     2. In the **Value** field, enter a value to represent the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
+     3. In the **Content** field, enter the option that displays in this control.
+     4. Click **Save**. The option displays below the **Options** list label. ![](../../../../.gitbook/assets/options-list-screens-builder-processes.png) 
+     5. If necessary, click the![](../../../../.gitbook/assets/configure-icon-data-source-screens-builder-processes.png)icon for an option to change its settings, then click the **Update** button. ![](../../../../.gitbook/assets/data-source-options-update-screens-builders-processes.png) 
+     6. Click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon to delete that option if necessary.
+     7. Drag the![](../../../../.gitbook/assets/sort-icon-data-source-screens-builder-processes.png)icon for an option up or down to sort the order the options display in this control if necessary.
+     8. Repeat Steps 1 through 7 until all options are configured for this control.
+     9. Click the **Allow multiple selections** option to allow the form user to select more than one option.
+     10. From the **Render Options As** drop-down menu, select one of the following options:
+         * **Dropdown/Multiselect:** Select the **Dropdown/Multiselect** option to display the control as a drop-down menu.
+         * **Radio/Checkbox Group:** Select the **Radio/Checkbox Group** option to display the control as a group of checkboxes.
+
+   * **Provide options in JSON format:**
+
+     Follow these guidelines:
+
+     1. Click the **Edit as JSON** option.  
+        ![](../../../../.gitbook/assets/edit-as-json-screens-builder-processes.png)
+
+        The **JSON Data** setting displays. If a valid JSON schema has been configured previously, the **JSON Data** setting displays the JSON. Otherwise the setting is empty.
+
+     2. Click the icon![](../../../../.gitbook/assets/json-configuration-script-icon-script-task-element-process-modeler-processes.png)beside the **JSON Data** option. The **Script Config Editor** displays.  
+
+        ![](../../../../.gitbook/assets/script-config-editor-task-element-process-modeler-processses.png)
+
+     3. Enter your control options in the order they are to display in this control using JSON format. Use the scroll panel to the right of the JSON to scroll to different sections of the JSON if necessary. This is useful especially when you are editing a long JSON.
+     4. Click **Close** or the **Close** icon![](../../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The control options are saved.
+
+#### Reference a Data Object
+
+Follow these steps to reference data from a data object that displays in this control as its options:
+
+1. Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Data Source** panel that is on the right-side of the Screens Builder canvas.
+2. From the **Data Source** drop-down menu, select **Data Object**. ![](../../../../.gitbook/assets/data-source-object-options-screens-builder-processes.png) 
+3. In the **Data Name** field, enter the name of the data object that contains the data from which to display as options in this control. Ensure that this data object meets the following criteria:
+   * The data object is part of the JSON schema for a Process or a BPMN element in the Process, such as derived from a [ProcessMaker Vocabulary](../../../vocabularies-management/what-is-a-vocabulary.md).
+   * The data object is an array from which its objects are in the order that they are to display as options in this control.
+4. In the **Value** field, enter the name of the variable or key name value in the data object to contain the option\(s\) the form user selects. **value** is the default value.
+5. In the **Content** field, enter the name of the variable or key name value in the data object that contains the options to display in this control. **content** is the default value.
+6. In the **PMQL** field, optionally enter a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md#overview) expression to filter which data in the data object to display as options in this control based on which objects in the array meet the PMQL expression's criteria.
+
+Consider the following example of doctors who work in a clinic. 
+
+```javascript
+doctors = {
+{id: 1, name: 'Adam Ardin', gender: 'male'},
+{id: 2, name: 'Amanda Creek', gender: 'female'},
+{id: 3, name: 'Lucy Morales', gender: 'female'},
+{id: 4, name: 'Mindy Smith', gender: 'female'},
+{id: 5, name: 'Toby Tomlinson', gender: 'male'}
+}
+```
+
+Use the following settings to reference this data object as options for this control:
+
+* **Data Name:** `doctors`
+* **Value:** `id`
+* **Content:** `name`
+
+Suppose that a new patient at the clinic indicates that she wants to see a female doctor. To filter doctors who are female in the clinic so that they display as options in this control, use the following PMQL expression:
+
+`gender = "female"`
 
 ### Design Panel Settings
 
@@ -122,13 +197,9 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Radio Button Group control in the **Design** panel:
 
-* **Field Label:** Enter the field label text that displays. **New Radio Button Group** is the default value.
-* **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
-* **Toggle Style?:** Select to display a toggle key control instead of a radio button control for each radio group option.
-* **Element Background Color:** Select to specify the background color of this control.
 * **Text Color:** Select to specify the text color that displays in this control.
-* **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+* **Background Color:** Select to specify the background color of this control.
+* **Toggle Style:** Select to display a toggle key control instead of a radio button control for each radio group option in this control.
 
 ### Advanced Panel Settings
 
@@ -136,7 +207,8 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Radio Button Group control in the **Advanced** panel:
 
-
+* **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics <a id="related-topics"></a>
 
