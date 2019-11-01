@@ -111,9 +111,9 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Select List control in the **Configuration** panel:
 
-* **Label:** Enter the field label text that displays. **New Select List** is the default value.
-* **Placeholder Text:** Enter the placeholder text that displays in the field when no value has been provided. This setting has no default value.
-* **Helper Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
+* **Label:** Enter the text label that displays for this control. **New Select List** is the default value.
+* **Placeholder Text:** Enter the placeholder text that displays in this control when no value has been provided. This setting has no default value.
+* **Helper Text:** Enter text that provides additional guidance on this control's use. This setting has no default value.
 
 ### Data Source Panel Settings
 

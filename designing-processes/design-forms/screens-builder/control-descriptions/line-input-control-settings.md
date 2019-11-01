@@ -99,7 +99,7 @@ Below are settings for the Line Input control in the **Variable** panel:
   This is a required setting. The following message displays below the control if the Request participant enters content that does not comply with this control's data type: **The format is invalid.**.
 
 * **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
-* **Read Only:** Select the **Read Only** checkbox to indicate that the Line Input control field cannot be edited. This option is not selected by default.
+* **Read Only:** Select the **Read Only** checkbox to indicate that the Line Input control cannot be edited. This option is not selected by default.
 
 ### Configuration Panel Settings
 
@@ -107,12 +107,12 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Line Input control in the **Configuration** panel:
 
-* **Label:** Enter the field label text that displays. **New Input** is the default value.
+* **Label:** Enter the text label that displays for this control. **New Input** is the default value.
 * **Type:** Select one of the following type options how this control displays entered content:
   * **Text:** This control displays the entered characters. This is the default setting.
   * **Password:** This control hides the entered characters as is customary when entering a password.
-* **Placeholder Text:** Enter the placeholder text that displays in the field when no value has been provided. This setting has no default value.
-* **Helper Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
+* **Placeholder Text:** Enter the placeholder text that displays in this control when no value has been provided. This setting has no default value.
+* **Helper Text:** Enter text that provides additional guidance on this control's use. This setting has no default value.
 
 ### Design Panel Settings
 

@@ -109,9 +109,9 @@ Click the control while in [Design](../../screens-builder-modes.md#design-mode) 
 
 Below are settings for the Collection Select control in the **Configuration** panel:
 
-* **Field Label:** Enter the field label text that displays. This setting has no default value.
-* **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
-* **Collection:** Select from which ProcessMaker Collection to display its record\(s\) in the Collection Select control. If no ProcessMaker Collections exist, the **Collection** drop-down menu contains no options; create at least one ProcessMaker Collection before using the Collection Select control.
+* **Field Label:** Enter the text label that displays for this control. This setting has no default value.
+* **Help Text:** Enter text that provides additional guidance on this control's use. This setting has no default value. This setting has no default value.
+* **Collection:** Select from which ProcessMaker Collection to display its record\(s\) in the Collection Select control. If no ProcessMaker Collections exist, the **Collection** drop-down menu contains no options; create at least one ProcessMaker Collection before using a Collection Select control.
 * **Value:** Enter how records display in the Collection Select control. Follow these guidelines to format how record data displays:
   * **Reference record data from the Collection:** Use mustache syntax to reference record data from the specified ProcessMaker Collection. References to the record data are case sensitive. Precede each reference with `data.`. Example: `{{ data.FirstName }}`. Reference multiple record data in the **Value** setting if necessary. Example: `{{ data.FirstName }} {{ data.LastName }}` if the specified ProcessMaker Collection uses two controls to record the first name and last name in records.
 
@@ -119,7 +119,7 @@ Below are settings for the Collection Select control in the **Configuration** pa
 
     1. Determine which ProcessMaker Screens the specified Collection uses to create, update, and/or view records. See [Configure a Collection](../../../../../collections/manage-collections/configure-a-collection.md#configure-a-processmaker-collection). Note that your user account or group membership must have ProcessMaker [Collection](../../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions to access any Collection.
     2. Edit the appropriate ProcessMaker Screen from which to reference record data in the specified Collection.
-    3. Select the ProcessMaker Screen control from which you want to reference record data, then note the **Variable Name** setting value in the **Variable** panel. Use this value to reference that record data in the **Value** setting of the Collection Select control.
+    3. Select the ProcessMaker Screen control from which you want to reference record data, then note the **Variable Name** setting value in the **Variable** panel. Use this value to reference that record data in the **Value** setting of this Collection Select control.
 
   * **Use text to describe the referenced record data:** Enter text preceding and/or following the referenced record data to describe the data. This text displays in all options in the Collection Select control. Example: `Dr. {{ data.FirstName }} {{ data.LastName }}, MD`.
 * **PMQL Query \(optional\):** Enter a ProcessMaker Query Language \(PMQL\) expression to limit particular records to display as the optional items based on those records that meet the PMQL filtering criteria, if necessary. See the Collection Select [control description](../image-control-settings.md#control-description) for an example.

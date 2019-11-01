@@ -8,7 +8,13 @@ description: >-
 
 ## Control Description
 
-The Radio Button Group control provides a group of options from which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can select only one option.
+The Radio Button Group control provides a group of options from which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can select only one option. Configure the Radio Button Group control to accept one of the following data types:
+
+* **Text:** The control accepts alphanumeric characters.
+* **Integer:** The control accepts integers.
+* **Decimal:** The control accepts any number, both positive and negative.
+* **Datetime:** The control accepts a datetime, which is includes both date and time components.
+* **Date:** The control accepts a date.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -64,7 +70,10 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 The Radio Button Group control has the following panels that contain settings:
 
 * \*\*\*\*[**Variable** panel](radio-group-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Configuration** panel](radio-group-control-settings.md#configuration-panel-settings)
+* \*\*\*\*[**Data Source** panel](radio-group-control-settings.md#data-source-panel-settings)
 * \*\*\*\*[**Design** panel](radio-group-control-settings.md#design-panel-settings)
+* \*\*\*\*[**Advanced** panel](radio-group-control-settings.md#advanced-panel-settings)
 
 ### Variable Panel Settings
 
@@ -80,27 +89,32 @@ Below are settings for the Radio Button Group control in the **Variable** panel:
 
   This is a required setting.
 
-* **Options List:** Enter the list of options available in the select box. Add options in the order they are to display from top to bottom in the drop-down. The default option is called **new** with the content **New Option**.
+* **Data Type:** Select one of the following data type options this control accepts when the form user enters content into this control:
+* * **Text:** This control accepts alphanumeric characters.
+  * **Integer:** This control accepts integers.
+  * **Decimal:** This control accepts any number, both positive and negative.
+  * **Datetime:** This control accepts a datetime, which is includes both date and time components.
+  * **Date:** The control accepts a date.
 
-  Switch the **Show in Json Format** toggle key to display these settings in JSON.  
+  This is a required setting. The following message displays below the control if the Request participant enters content that does not comply with this control's data type: **The format is invalid.**.
+* **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+* **Read Only:** Select the **Read Only** checkbox to indicate that the Line Input control cannot be edited. This option is not selected by default.
 
-  ![](../../../../.gitbook/assets/radio-group-control-options-list-screens-builder-processes.png)
+### Configuration Panel Settings
 
-  Each option has the following settings:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
 
-  * **Value:** **Value** is the internal data name for the option that only the Process Owner views at design time.
-  * **Content:** **Content** is the option label displayed to the Request participant. 
-  * **Actions:** Click the **Remove**![](../../../../.gitbook/assets/options-list-delete-option-icon-screens-builder-processes.png)icon to remove the radio button from the group.
+Below are settings for the Radio Button Group control in the **Configuration** panel:
 
-  Follow these steps to add an option: 
 
-  1. Click **Add Option** from below the **Options List** setting. The **Add New Option** screen displays.  
 
-     ![](../../../../.gitbook/assets/add-new-option-screen-screen-builder-processes.png)
+### Data Source Panel Settings
 
-  2. In the **Option Value** field, enter the **Value** option value \(as described above\).
-  3. In the **Content** field, enter the **Content** option value \(as described above\).
-  4. Click **OK**. The option displays below the existing options in **Options List**.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Data Source** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Radio Button Group control in the **Data Source** panel:
+
+
 
 ### Design Panel Settings
 
@@ -115,6 +129,14 @@ Below are settings for the Radio Button Group control in the **Design** panel:
 * **Text Color:** Select to specify the text color that displays in this control.
 * **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+
+### Advanced Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Radio Button Group control in the **Advanced** panel:
+
+
 
 ## Related Topics <a id="related-topics"></a>
 

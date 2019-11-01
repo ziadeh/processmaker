@@ -101,7 +101,7 @@ Below are settings for the Textarea control in the **Variable** panel:
   This is a required setting. The following message displays below the control if the Request participant enters content that does not comply with this control's data type: **The format is invalid.**.
 
 * **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
-* **Read Only:** Select the **Read Only** checkbox to indicate that the Textarea control field cannot be edited. This option is not selected by default.
+* **Read Only:** Select the **Read Only** checkbox to indicate that the Textarea control cannot be edited. This option is not selected by default.
 
 ### Configuration Panel Settings
 
@@ -109,9 +109,9 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Textarea control in the **Configuration** panel:
 
-* **Label:** Enter the field label text that displays. **New TextArea** is the default value.
-* **Placeholder:** Enter the placeholder text that displays in the field when no value has been provided. This setting has no default value.
-* **Helper Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
+* **Label:** Enter the text label that displays for this control. **New TextArea** is the default value.
+* **Placeholder:** Enter the placeholder text that displays in this control when no value has been provided. This setting has no default value.
+* **Helper Text:** Enter text that provides additional guidance on this control's use. This setting has no default value.
 * **Rich Text:** Select the **Rich Text** checkbox to display the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to allow the Request participant can enter rich text. This option is not selected by default.
 * **Rows:** The number of rows to provide for input. **2** is the default value.
 
