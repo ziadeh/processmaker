@@ -6,7 +6,7 @@ description: Learn how to publish packages for the ProcessMaker architecture.
 
 ## Overview
 
-In the context of ProcessMaker, a package is a stand-alone container to distribute and install a ProcessMaker Connector.
+In the context of ProcessMaker, a package is a stand-alone container to distribute and install a ProcessMaker Connector or to extend core ProcessMaker functionality.
 
 ## Related Topics
 
