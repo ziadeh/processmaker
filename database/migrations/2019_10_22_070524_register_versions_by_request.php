@@ -19,7 +19,6 @@ class RegisterVersionsByRequest extends Migration
         $model = new ProcessRequest();
         Schema::connection($model->getConnectionName())->table('process_requests', function (Blueprint $table) {
             $table->integer('process_version_id')->nullable();
-            $table->json('versions')->nullable();
         });
         foreach(ProcessRequest::all() as $request) {
             $request->setCurrentVersions()->save();
