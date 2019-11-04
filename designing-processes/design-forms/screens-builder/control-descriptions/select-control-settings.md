@@ -89,7 +89,7 @@ Below are settings for the Select control in the **Variable** panel:
   This is a required setting.
 
 * **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
-* **Read Only:** Select to indicate that the Select control cannot be edited. This option is not selected by default.
+* **Read Only:** Select to indicate that this control cannot be edited. This option is not selected by default.
 
 ### Configuration Panel Settings
 

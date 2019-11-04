@@ -64,7 +64,9 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 The Checkbox control has the following panels that contain settings:
 
 * \*\*\*\*[**Variable** panel](checkbox-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Configuration** panel](checkbox-control-settings.md#configuration-panel-settings)
 * \*\*\*\*[**Design** panel](checkbox-control-settings.md#design-panel-settings)
+* \*\*\*\*[**Advanced** panel](checkbox-control-settings.md#advanced-panel-settings)
 
 ### Variable Panel Settings
 
@@ -76,11 +78,30 @@ Below are settings for the Checkbox control in the **Variable** panel:
 
   * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) represents the state of the Checkbox control using its **Variable Name** value in the Request's JSON data model in the following ways:
     * **The Checkbox control is selected:** The key's value is `true` \(shown below\).
-    * **The Checkbox control is not deselected:** The key's value is `false`. ![](../../../../.gitbook/assets/checkbox-preview-screens-builder-processes.png) 
+    * **The Checkbox control is not selected:** The key's value is `false`. ![](../../../../.gitbook/assets/checkbox-preview-screens-builder-processes.png) 
   * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ CheckboxControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
+
+* **Data Type:** Select the following data type option this control accepts when the form user enters content into this control:
+
+  * **Boolean:** This control is selected or not selected.
+
+  This is a required setting.
+
+* **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+* **Checked by default:** Select to indicate that this control is selected by default such that its key's value is `true`. This option is not selected by default.
+* **Read Only:** Select to indicate that this control cannot be edited. This option is not selected by default.
+
+### Configuration Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Checkbox control in the **Configuration** panel:
+
+* **Label:** Enter the text label that displays for this control. **New Checkbox** is the default value.
+* **Helper Text:** Enter text that provides additional guidance on this control's use. This setting has no default value.
 
 ### Design Panel Settings
 
@@ -88,12 +109,16 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Checkbox control in the **Design** panel:
 
-* **Field Label:** Enter the field label text that displays. **New Checkbox** is the default value.
-* **Help Text:** Enter text that provides additional guidance on the field's use. This setting has no default value.
-* **Toggle Style?:** Select to display a toggle key control instead of a checkbox control for each checkbox option.
-* **Initially Checked?:** Select to indicate that the Checkbox control is checked \(selected\) by default. Otherwise, deselect to indicate that the Checkbox control is not checked by default. This setting is not selected by default.
-* **Element Background Color:** Select to specify the background color of this control.
 * **Text Color:** Select to specify the text color that displays in this control.
+* **Background Color:** Select to specify the background color of this control.
+* **Toggle Style:** Select to display a toggle key control instead of a checkbox control for each checkbox option.
+
+### Advanced Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Checkbox control in the **Advanced** panel:
+
 * **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
