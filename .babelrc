@@ -3,7 +3,7 @@
     "env": {
       "test": {
         "presets": [
-          ["env", {
+          ["@babel/preset-env", {
             "targets": {
               "node": "current"
             }
@@ -12,7 +12,7 @@
       },
       "development": {
         "presets": [
-          ["env", {
+          ["@babel/preset-env", {
             "modules": false,
             "targets": {
               "browsers": "> 2%",
@@ -23,7 +23,7 @@
       },
       "production": {
         "presets": [
-          ["env", {
+          ["@babel/preset-env", {
             "modules": false,
             "targets": {
               "browsers": "> 2%",

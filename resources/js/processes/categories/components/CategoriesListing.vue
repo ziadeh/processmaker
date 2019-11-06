@@ -189,7 +189,7 @@
 </script>
 
 <style lang="scss" scoped>
-    /deep/ i.fa-circle {
+    >>> i.fa-circle {
     &.active {
          color: green;
      }

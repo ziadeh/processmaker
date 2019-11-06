@@ -107,7 +107,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/deep/ .popover-header {
+>>> .popover-header {
   background-color: #fff;
   font-size: 16px;
   font-weight: 600;

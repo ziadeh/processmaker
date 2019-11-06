@@ -2,6 +2,7 @@ const {
   mix
 } = require("laravel-mix");
 const MonacoEditorPlugin = require("monaco-editor-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const path = require("path");
 
 /*
@@ -17,7 +18,8 @@ const path = require("path");
 
 mix.webpackConfig({
   plugins: [
-    new MonacoEditorPlugin()
+    new MonacoEditorPlugin(),
+    new VueLoaderPlugin()
   ],
   resolve: {
     modules: [
@@ -47,7 +49,6 @@ mix.extract([
   "popper.js",
   "lodash",
   "bootstrap",
-  "jointjs",
   "luxon",
   "bpmn-moddle",
   "@fortawesome/fontawesome-free",
