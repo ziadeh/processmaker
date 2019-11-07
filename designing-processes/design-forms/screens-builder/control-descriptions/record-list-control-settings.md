@@ -8,15 +8,39 @@ description: >-
 
 ## Control Description <a id="control-description"></a>
 
-The Record List control records values that the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters into another page of the ProcessMaker [Screen](../../what-is-a-form.md). Optionally, values can be edited after the Request participant initially enters the record\(s\) into the secondary ProcessMaker Screen page.
-
-For each option, enter a unique value that represents the option, and then enter the text that displays as the option. After your options are configured, sort the order in which they are to display in the control. Alternatively, provide options in the control in JSON format.
-
-The page that records the submitted records cannot be on the same page as the Record List control.
-
 {% hint style="info" %}
 Do not confuse the Record List control with the ProcessMaker [Collections controls](processmaker-collection-controls/) that are part of the ProcessMaker [Collections package](../../../../package-development-distribution/package-a-connector/collections.md). ProcessMaker Collections use records in a different context. See [What is a Collection?](../../../../collections/what-is-a-collection.md).
 {% endhint %}
+
+The Record List control functions differently in [Form](../types-for-screens.md#form)- and [Display](../types-for-screens.md#display)-type ProcessMaker [Screens](../../what-is-a-form.md):
+
+* [Form-Type Screen Usage](record-list-control-settings.md#form-type-screen-usage)
+* [Display-Type Screen Usage](record-list-control-settings.md#display-type-screen-usage)
+
+### Form-Type Screen Usage
+
+#### Configuration Description
+
+In the Form-type ProcessMaker Screen, the Record List control records values that the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters into a secondary page of the same ProcessMaker Screen. The page that records the submitted records cannot be on the same page as the Record List control.
+
+When configuring the Record List control, specify how the record list displays information after the control has recorded each record for the list:
+
+* **Columns:** Specify each column that represents the data components for each record. For example, label a column `First Name` to indicate that this data contains the first name for each record in the list.
+* **Values:** For each column, reference the **Variable Name** setting value for the control on the secondary page that records data for that column when the Request participant enters information. For example, use a [Line Input](line-input-control-settings.md) control labeled `First Name` that the Request participant enters his or her first name; if that Line Input control's **Variable Name** setting value is `FirstName`, then associate that Line Input control's data with that column in the record list by referencing `FirstName` in the Record List control.
+
+After configuring the columns for the record list, sort the order in which they are to display in the record.
+
+Alternatively, provide the columns and their corresponding values in their respective order options in the Record List control using JSON format.
+
+Optionally, values can be edited after the Request participant initially enters the record\(s\). However, after the Request participant submits the Screen, the record list cannot be changed.
+
+#### Experience Description
+
+
+
+### Display-Type Screen Usage
+
+
 
 ## Add the Control to a ProcessMaker Screen <a id="add-the-control-to-a-processmaker-screen"></a>
 
@@ -39,10 +63,10 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
    ![](../../../../.gitbook/assets/record-list-control-placed-screens-builder-processes.png)
 
-6. Configure the Record List control. See [Settings](record-list-control-settings.md#inspector-settings).
-7. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
-8. Create a new page in the ProcessMaker Screen. Use this page to design how the form user enters data that the Record List control records. The page that records the submitted records cannot be on the same page as the Record List control. See [Add a New Page to a ProcessMaker Screen](../add-a-new-page-to-a-screen.md#add-a-new-page-to-a-processmaker-screen).
-9. On the new page, design the form using controls that the form user enters the data that the Record List control records. In each of the controls to record elements of the record list, ensure to use the same **Variable Name** value as you use in the Record List control's **Value** parameter. These values must match for the Record List control to correspond with each control in the secondary ProcessMaker Screen page.
+6. Create a new page in this ProcessMaker Screen. Use this page to design how the Request participant enters data that the Record List control records. The page that records the submitted records cannot be on the same page as the Record List control. See [Add a New Page to a ProcessMaker Screen](../add-a-new-page-to-a-screen.md#add-a-new-page-to-a-processmaker-screen).
+7. On the new page, design the form using controls from which the Request participant enters the data that the Record List control records. In each of the controls that records a data component for each record, make note of the **Variable Name** setting values for each control; these values correspond with how the Record List control displays the record list in the **Value** parameter for each column.
+8. Return to the page that the Record List control is placed, and then configure the Record List control. See [Settings](record-list-control-settings.md#inspector-settings).
+9. Validate that the control is configured correctly. See [Validate Your Screen](../validate-your-screen.md#validate-a-processmaker-screen).
 
 ## Example
 

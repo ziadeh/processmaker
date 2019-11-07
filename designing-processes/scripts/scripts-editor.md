@@ -98,8 +98,8 @@ ProcessMaker uses two global variables that can ProcessMaker Scripts can call. V
 
 This section outlines how to use ProcessMaker variables in programming languages that ProcessMaker supports. In the examples provided, refer to the following sample JSON data model that represents example Request data:
 
-{% code-tabs %}
-{% code-tabs-item title="Example Request data in a sample JSON data model" %}
+{% tabs %}
+{% tab title="Example Request data in a sample JSON data model" %}
 ```text
 {
 "Submit": null,
@@ -108,8 +108,8 @@ This section outlines how to use ProcessMaker variables in programming languages
 "name": "Louis"
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 Refer to the tabs below how to use ProcessMaker variables in supported programming languages.
 
@@ -117,80 +117,50 @@ Refer to the tabs below how to use ProcessMaker variables in supported programmi
 {% tab title="PHP" %}
 ### data
 
-{% code-tabs %}
-{% code-tabs-item title="Syntax" %}
 ```text
 $data
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
-{% code-tabs %}
-{% code-tabs-item title="Usage" %}
 ```php
 return $data[key]
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ### config
 
-{% code-tabs %}
-{% code-tabs-item title="Syntax" %}
 ```text
 $config
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ### Output
 
-{% code-tabs %}
-{% code-tabs-item title="Output based on example Request data" %}
 ```text
 {
   "output": "Louis"
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 {% endtab %}
 
 {% tab title="Lua" %}
 ### data
 
-{% code-tabs %}
-{% code-tabs-item title="Syntax and usage" %}
 ```lua
 return {data, global variable set to}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ### config
 
-{% code-tabs %}
-{% code-tabs-item title="Syntax and usage" %}
 ```text
 config, global variable set to: {"some_key": "baz"}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ### Example
 
-{% code-tabs %}
-{% code-tabs-item title="Example for data and config variables" %}
 ```lua
 return {foo=data.foo, config_var=config.some_key}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ### Output
 
-{% code-tabs %}
-{% code-tabs-item title="Output based on example Request data" %}
 ```text
 {
   "output": {
@@ -199,63 +169,39 @@ return {foo=data.foo, config_var=config.some_key}
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 {% endtab %}
 
 {% tab title="NodeJS" %}
 ### data
 
-{% code-tabs %}
-{% code-tabs-item title="Syntax and usage" %}
 ```text
 data, global variable set to: {"foo":"bar"}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ### config
 
-{% code-tabs %}
-{% code-tabs-item title="Syntax and usage" %}
 ```text
 config, global variable set to: {"some_key": "baz"}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ### Examples
 
-{% code-tabs %}
-{% code-tabs-item title="Example 1" %}
 ```javascript
 return { 'foo': data['foo'], 'config_var': config['some_key'] };
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
-{% code-tabs %}
-{% code-tabs-item title="Example 2" %}
 ```javascript
 return { 'foo': data.foo, 'config_var': config.some_key };
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
-{% code-tabs %}
-{% code-tabs-item title="Example in a promise" %}
 ```javascript
 return new Promise((resolve, reject) => {
   resolve({'foo': data.foo, 'config_var': config.some_key});
 })
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ### Output
 
-{% code-tabs %}
-{% code-tabs-item title="Output based on example Request data" %}
 ```text
 {
   "output": {
@@ -264,8 +210,6 @@ return new Promise((resolve, reject) => {
   }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 {% endtab %}
 {% endtabs %}
 
