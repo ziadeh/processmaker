@@ -21,12 +21,12 @@ The Record List control functions differently in [Form](../types-for-screens.md#
 
 #### Configuration Description
 
-In the [Form](../types-for-screens.md#form)-type ProcessMaker Screen, the Record List control records a record list. The record list is composed of multiple records, of which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters data components for each record. The controls used to record each record's data components are designed in a secondary page of the same ProcessMaker Screen containing the Record List control. The page that records the data components of each record cannot be on the same page as the Record List control.
+In the [Form](../types-for-screens.md#form)-type ProcessMaker Screen, the Record List control records a record list. The record list is composed of multiple records, of which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters data components for each record. The controls used to record each record's data components are designed in a second page of the same ProcessMaker Screen containing the Record List control. The page that records the data components of each record cannot be on the same page as the Record List control.
 
 When configuring the Record List control, specify how the record list displays information after the control has recorded each record for the list:
 
 * **Columns:** Specify each column that represents the data components for each record. For example, label a column `First Name` to indicate that this data component displays each person's first name for each record in the list.
-* **Values:** For each specified column, reference the **Variable Name** setting value for the control on the secondary page that records each record's data component that corresponds with that specified column. For example, use a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting value of `LineInputFirstName` to record each person's first name for each record in the list, and then associate that `LineInputFirstName` value with the `First Name` column.
+* **Values:** For each specified column, reference the **Variable Name** setting value for the control on the second page that records each record's data component that corresponds with that specified column. For example, use a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting value of `LineInputFirstName` to record each person's first name for each record in the list, and then associate that `LineInputFirstName` value with the `First Name` column.
 
 After configuring the columns for the record list, sort the order in which they are to display in the record list.
 
@@ -53,12 +53,12 @@ In the [Display](../types-for-screens.md#display)-type ProcessMaker Screen, the 
 
 When configuring the Record List control, specify how the record list displays information in the Display-type ProcessMaker Screen:
 
-* **Columns:** Specify each column that represents the data components for each record in the list. For example, if the record list had recorded first names, then label a column `First Name`.
-* **Values:** For each specified column, reference the **Variable Name** setting value for the control that corresponds with that specified column's record data component. To do so, open the ProcessMaker Screen that contains the Record List control that recorded the list, then locate the control that corresponds with the specified column's record data component. For example, if a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting value of `LineInputFirstName` is used to record each person's first name for each record in the list, associate that `LineInputFirstName` with the specified `First Name` column.
+* **Column Headers:** Specify each column header that represents the data components for each record in the list. For example, if the record list had recorded first names, then label a column header `First Name`.
+* **Values:** For each specified column header, reference the **Variable Name** setting value for the control that corresponds with that specified column header's record data component. To do so, open the ProcessMaker Screen that contains the Record List control that recorded the list, then locate the control that corresponds with the specified column header's record data component. For example, if a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting value of `LineInputFirstName` is used to record each person's first name for each record in the list, associate that `LineInputFirstName` with the specified `First Name` column header.
 
-After configuring the columns for the record list, sort the order in which they are to display in the record list.
+After configuring the column headers for the record list, sort the order in which they are to display in the record list.
 
-Alternatively, use JSON format to configure the columns and their corresponding **Variable Name** setting values in their respective order to display in the Record List control.
+Alternatively, use JSON format to configure the column headers and their corresponding **Variable Name** setting values in their respective order to display in the Record List control.
 
 #### Experience Description
 
@@ -90,7 +90,7 @@ Follow these steps to add this control to the ProcessMaker Screen:
    **Form-type ProcessMaker Screen:**
 
    1. Create a new page in this ProcessMaker Screen. Use this page to design how the Request participant enters data that the Record List control records. The page that records the submitted records cannot be on the same page as the Record List control. See [Add a New Page to a ProcessMaker Screen](../add-a-new-page-to-a-screen.md#add-a-new-page-to-a-processmaker-screen).
-   2. On the new page, design the form using controls from which the Request participant enters the data that the Record List control records. In each of the controls that records a data component for each record, make note of the **Variable Name** setting values for each control; these values correspond with how the Record List control displays the record list in the **Value** parameter for each column.
+   2. On the new page, design the form using controls from which the Request participant enters the data component that the Record List control receives for each record. In each of the controls that receives a data component for each record, make note of the **Variable Name** setting values for each control; these values correspond with how the Record List control displays the record list in the **Value** parameter for each column.
    3. Return to the page that the Record List control is placed, and then configure the Record List control. See [Settings](record-list-control-settings.md#inspector-settings).
 
    **Display-type ProcessMaker Screen:**
@@ -103,30 +103,29 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
 Consider the following example how to use a Record List control in a [Form](../types-for-screens.md#form)-type ProcessMaker Screen. Configure a Record List control to record the following data components about registrars for a conference. The table below shows how the Record List control displays the record list. Configuring each column and the **Variable Name** setting value for each control that records the data component that displays in that column is the same for both Form- and [Display](../types-for-screens.md#display)-type ProcessMaker Screens.
 
-| Record List Column Content | Record List Value \(Variable Name setting value for controls\) |
-| :--- | :--- |
-| First name of registrar | firstname |
-| Last name of registrar | lastname |
-| Email address for registrar | email |
-| Attendance confirmation | confirmation |
+On a second page in the ProcessMaker [Screen](../../what-is-a-form.md), use Screen controls for [Request](../../../../using-processmaker/requests/what-is-a-request.md) participants to enter data components for each record. Ensure the following:
 
-The Record List control has the following configuration. See [Settings](record-list-control-settings.md#inspector-settings) for the Record List control setting descriptions.
+* The Record List control references the specified controls on the second page. The controls that receive the record data components cannot be on the same page as the Record List control. 
+* In each of the controls that receives a data component for each record, make note of the **Variable Name** setting values for each control; these values correspond with how the Record List control displays the record list in the **Value** parameter for each column. This setting is in the **Columns** panel. See [Settings](record-list-control-settings.md#inspector-settings).
+
+The following table outlines how to configure the **Column Header** and **Value** settings for each column in the Record List control for this example.
+
+| Control Type | Control's "Variable Name" Value | Record List "Column Header" Value | Record List "Value" Value | What It Represents |
+| :--- | :--- | :--- | :--- | :--- |
+| Line Input | firstname | First Name | firstname | Registrar's first name |
+| Line Input | lastname | Last Name | lastname | Registrar's last name |
+| Line Input | email | Email Address | email | Registrar's email address |
+| Select | confirmation | Confirmation | confirmation | Attendance confirmation |
+
+The following image shows the **Column Header** and **Value** setting values in the Record List control to reference the [Line Input](line-input-control-settings.md) control with the **Variable Name** setting value of `firstname`.
+
+![&quot;Column Header&quot; and &quot;Value&quot; settings to reference a Line Input control](../../../../.gitbook/assets/record-list-control-column-screens-builder-processes.png)
+
+The following image shows the column configuration for the Record List control. See [Settings](record-list-control-settings.md#inspector-settings) for the Record List control setting descriptions.
 
 ![Record List control that contains records in Design mode in a Form-type ProcessMaker Screen](../../../../.gitbook/assets/record-list-control-example-screens-builder-processes.png)
 
-On a secondary page, use ProcessMaker Screen controls for form users to enter values for each record. Ensure the following:
-
-* The Record List control references the secondary page to record each record from each conference attendee. The page that records the submitted records cannot be on the same page as the Record List control. 
-* In each of the controls to record values of the record list, ensure to use the same **Column Header** value as you use in the Record List control's **Variable Name** setting. These values must match for the Record List control to correspond with each control in the secondary page.
-
 Below is the secondary page in [Preview mode](../screens-builder-modes.md#preview-mode) for each conference attendee to enter a record.
-
-| Control Type | "Column Header" Value for Control | Corresponds to Record List Value |
-| :--- | :--- | :--- |
-| Line Input | firstname | First name of attendee |
-| Line Input | lastname | Last name of attendee |
-| Line Input | email | Email address of attendee |
-| Select | confirmation | Confirmation from the attendee |
 
 ![Secondary page with controls to record attendance confirmation in Preview mode](../../../../.gitbook/assets/record-list-control-example-secondary-page-screens-builder-processes.png)
 
