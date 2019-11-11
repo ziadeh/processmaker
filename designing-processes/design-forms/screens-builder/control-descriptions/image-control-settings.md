@@ -57,24 +57,20 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 The Image control has the following panels that contain settings:
 
-* \*\*\*\*[**Variable** panel](image-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Configuration** panel](image-control-settings.md#configuration-panel-settings)
 * \*\*\*\*[**Design** panel](image-control-settings.md#design-panel-settings)
+* \*\*\*\*[**Advanced** panel](image-control-settings.md#advanced-panel-settings)
 
-### Variable Panel Settings
+### Configuration Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
 
-Below are settings for the Image control in the **Variable** panel:
+Below are settings for the Image control in the **Configuration** panel:
 
-* **Id:** Enter the unique identifier that identifies the image in the ProcessMaker Screen. The **Id** value must be alphanumeric.
-* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
-  * Reference this control by its **Variable Name** setting's value.
-  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ ImageControl }}`.
-  * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
-
-    This is a required setting.
-* **Upload Image:** Click the **Upload Image** button to browse for the PNG, GIF, or JPG file type image to upload to the Image control.
+* **Name:** Enter the alphanumeric name that identifies the image in the ProcessMaker Screen.
+* **Upload Image:** Click the **Upload** button to browse for the PNG, GIF, or JPG file type image to upload to the Image control.
 * **Preview:** This setting displays a preview of the uploaded image.
+* **Helper Text:** Enter text that provides additional guidance on this control's use. This setting has no default value.
 
 ### Design Panel Settings
 
@@ -82,8 +78,15 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Image control in the **Design** panel:
 
-* **Width:** Specify the width of the uploaded image in pixels. If the **Height** setting has no value, the Image control adjusts the uploaded image to the **Width** setting value.
 * **Height:** Specify the width of the uploaded image in pixels. If the **Width** setting has no value, the Image control adjusts the uploaded image to the **Height** setting value.
+* **Width:** Specify the width of the uploaded image in pixels. If the **Height** setting has no value, the Image control adjusts the uploaded image to the **Width** setting value.
+
+### Advanced Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Image control in the **Advanced** panel:
+
 * **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
