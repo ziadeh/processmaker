@@ -73,7 +73,7 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Navigation Button control in the **Configuration** panel:
 
-* **Destination:** Select the destination page to which to navigate in a multi-page ProcessMaker Screen. The default is the first page of the ProcessMaker Screen.
+* **Destination Screen:** Select the destination page to which to navigate in a multi-page ProcessMaker Screen.
 * **Button Label:** Enter the text label that displays for this control. **Page Navigation** is the default value.
 
 ### Design Panel Settings
@@ -83,15 +83,15 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 Below are settings for the Navigation Button control in the **Design** panel:
 
 * **Button Variant Style:** Select the style for the Page Navigation Button control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
-  * **Primary:** Blue-colored background with white-colored **Field Label** text. Set as the default.
-  * **Secondary:** Gray-colored background with white-colored **Field Label** text.
-  * **Success:** Green-colored background with white-colored **Field Label** text.
-  * **Danger:** Red-colored background with white-colored **Field Label** text.
-  * **Warning:** Yellow-colored background with black-colored **Field Label** text.
-  * **Info:** Teal-colored background with white-colored **Field Label** text.
-  * **Light:** White-colored background with black-colored **Field Label** text.
-  * **Dark:** Black-colored background with white-colored **Field Label** text.
-  * **Link:** White-colored background with blue-colored **Field Label** text.
+  * **Primary:** Blue-colored background with white-colored **Button Label** text. This is the default option.
+  * **Secondary:** Gray-colored background with white-colored **Button Label** text.
+  * **Success:** Green-colored background with white-colored **Button Label** text.
+  * **Danger:** Red-colored background with white-colored **Button Label** text.
+  * **Warning:** Yellow-colored background with black-colored **Button Label** text.
+  * **Info:** Teal-colored background with white-colored **Button Label** text.
+  * **Light:** White-colored background with black-colored **Button Label** text.
+  * **Dark:** Black-colored background with white-colored **Button Label** text.
+  * **Link:** White-colored background with blue-colored **Button Label** text.
 
 ### Advanced Panel Settings
 

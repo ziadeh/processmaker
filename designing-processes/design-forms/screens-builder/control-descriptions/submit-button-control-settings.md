@@ -62,7 +62,9 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 The Submit Button control has the following panels that contain settings:
 
 * \*\*\*\*[**Variable** panel](submit-button-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Configuration** panel](submit-button-control-settings.md#configuration-panel-settings)
 * \*\*\*\*[**Design** panel](submit-button-control-settings.md#design-panel-settings)
+* \*\*\*\*[**Advanced** panel](submit-button-control-settings.md#advanced-panel-settings)
 
 ### Variable Panel Settings
 
@@ -76,7 +78,15 @@ Below are settings for the Submit Button control in the **Variable** panel:
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
     This is a required setting.
-* **Field Value:** Enter any alphanumeric value that the Submit Button control sends when the Request participant selects the button. This value can be evaluated in a [**Visibility Rule** setting expression](expression-syntax-components-for-show-if-control-settings.md) or in a [Sequence Flow element's conditions to trigger](../../../process-design/model-your-process/the-quick-toolbar.md#configure-an-outgoing-sequence-flow-element-from-an-exclusive-gateway-or-inclusive-gateway-element).
+* **Value:** Enter any alphanumeric value that the Submit Button control sends when the Request participant selects the button. This value can be evaluated in a [**Visibility Rule** setting expression](expression-syntax-components-for-show-if-control-settings.md) or in a [Sequence Flow element's conditions to trigger](../../../process-design/model-your-process/the-quick-toolbar.md#configure-an-outgoing-sequence-flow-element-from-an-exclusive-gateway-or-inclusive-gateway-element).
+
+### Configuration Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Submit Button control in the **Configuration** panel:
+
+* **Label:** Enter the text label that displays for this control. **New Submit** is the default value.
 
 ### Design Panel Settings
 
@@ -84,17 +94,23 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Submit Button control in the **Design** panel:
 
-* **Field Label:** Enter the field label text that displays. **New Submit** is the default value.
-* **Variant:** Select the style for the Submit control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
-  * **Primary:** Blue-colored background with white-colored **Field Label** text. Set as the default.
-  * **Secondary:** Gray-colored background with white-colored **Field Label** text.
-  * **Success:** Green-colored background with white-colored **Field Label** text.
-  * **Danger:** Red-colored background with white-colored **Field Label** text.
-  * **Warning:** Yellow-colored background with black-colored **Field Label** text.
-  * **Info:** Teal-colored background with white-colored **Field Label** text.
-  * **Light:** White-colored background with black-colored **Field Label** text.
-  * **Dark:** Black-colored background with white-colored **Field Label** text.
-  * **Link:** White-colored background with blue-colored **Field Label** text.
+* **Button Variant Style:** Select the style for the Submit control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
+  * **Primary:** Blue-colored background with white-colored **Label** text. This is the default option.
+  * **Secondary:** Gray-colored background with white-colored **Label** text.
+  * **Success:** Green-colored background with white-colored **Label** text.
+  * **Danger:** Red-colored background with white-colored **Label** text.
+  * **Warning:** Yellow-colored background with black-colored **Label** text.
+  * **Info:** Teal-colored background with white-colored **Label** text.
+  * **Light:** White-colored background with black-colored **Label** text.
+  * **Dark:** Black-colored background with white-colored **Label** text.
+  * **Link:** White-colored background with blue-colored **Label** text.
+
+### Advanced Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the Submit Button control in the **Advanced** panel:
+
 * **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 

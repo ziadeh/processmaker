@@ -59,7 +59,9 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 The File Download control has the following panels that contain settings:
 
 * \*\*\*\*[**Variable** panel](file-download-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Configuration** panel](file-download-control-settings.md#configuration-panel-settings)
 * \*\*\*\*[**Design** panel](file-download-control-settings.md#design-panel-settings)
+* \*\*\*\*[**Advanced** panel](file-download-control-settings.md#advanced-panel-settings)
 
 ### Variable Panel Settings
 
@@ -67,7 +69,17 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the File Download control in the **Variable** panel:
 
-* **Download Name:** Enter the name associated with the downloaded file\(s\). This name can be referenced from a previous step in the Process. This setting has no default value.
+* **Field Name:** Enter the alphanumeric name associated with the downloaded file\(s\). This setting has no default value.
+* **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+
+### Configuration Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the File Download control in the **Configuration** panel:
+
+* **Field Label:** Enter the text label that displays for this control. **New File Download** is the default value.
+* **Helper Text:** Enter text that provides additional guidance on this control's use. This setting has no default value.
 
 ### Design Panel Settings
 
@@ -75,7 +87,15 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the File Download control in the **Design** panel:
 
-* **Text Label:** Enter the field label text that displays. **New File Download** is the default value.
+* **Text Color:** Select to specify the text color that displays in this control.
+* **Background Color:** Select to specify the background color of this control.
+
+### Advanced Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the File Download control in the **Advanced** panel:
+
 * **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 

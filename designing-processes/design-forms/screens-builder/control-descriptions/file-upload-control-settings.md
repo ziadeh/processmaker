@@ -63,7 +63,8 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 The File Upload control has the following panels that contain settings:
 
 * \*\*\*\*[**Variable** panel](file-upload-control-settings.md#variable-panel-settings)
-* \*\*\*\*[**Design** panel](file-upload-control-settings.md#design-panel-settings)
+* \*\*\*\*[**Configuration** panel](file-upload-control-settings.md#configuration-panel-settings)
+* \*\*\*\*[**Advanced** panel](file-upload-control-settings.md#advanced-panel-settings)
 
 ### Variable Panel Settings
 
@@ -71,15 +72,22 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the File Upload control in the **Variable** panel:
 
-* **Upload Name:** Enter the unique name associated with the uploaded file. This name can be referenced in a later step in the Process. The File Upload control allows one file to be uploaded. This setting has no default value.
+* **Name:** Enter the alphanumeric name associated with the uploaded file. The File Upload control allows one file to be uploaded. This setting has no default value.
 
-### Design Panel Settings
+### Configuration Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
 
-Below are settings for the File Upload control in the **Design** panel:
+Below are settings for the File Upload control in the **Configuration** panel:
 
-* **Text Label:** Enter the field label text that displays. **New File Upload** is the default value.
+* **Label:** Enter the field label text that displays. **New File Upload** is the default value.
+
+### Advanced Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+
+Below are settings for the File Upload control in the **Advanced** panel:
+
 * **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 * **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
