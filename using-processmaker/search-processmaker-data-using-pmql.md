@@ -81,11 +81,11 @@ Use the following syntax as a guide to include two or more Request participants 
 
 ### Request Age
 
-Use the following syntax as a guide to include a period of time in your search criteria:
+Use the following syntax as a guide to include the age of a Request or Task in your search criteria:
 
 `updated_at < NOW -2 day`
 
-Use `updated_at < NOW` to represent how much time from the present the sought after Request is, then use `-` followed by an integer to specify that time. The units of time `second`, `minute`, `hour` and `day` are supported.
+Use `updated_at < NOW` to represent how old the sought after Request or Task is, then use `-` followed by an integer to specify that time. The units of time `second`, `minute`, `hour` and `day` are supported.
 
 ## PMQL Syntax for Tasks
 
@@ -126,6 +126,14 @@ Use the following syntax as a guide to include two or more Task statuses in your
 ### Task Age
 
 See [Request Age](search-processmaker-data-using-pmql.md#request-age).
+
+### Task Due
+
+Use the following syntax as a guide to include when a Task is due in your search criteria:
+
+`due < NOW -2 day`
+
+Use `due < NOW` to represent when a Task is due, then use `-` followed by an integer to specify that time. The units of time `second`, `minute`, `hour` and `day` are supported.
 
 ## PMQL Syntax for ProcessMaker Collections
 
