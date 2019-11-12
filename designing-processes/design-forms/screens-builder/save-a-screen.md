@@ -22,6 +22,10 @@ Follow these steps to save a ProcessMaker Screen:
 1. [Create](../manage-forms/create-a-new-form.md) or [open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to add a new page. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode).
 2. Click the **Save** icon![](../../../.gitbook/assets/save-icon-processes.png)to save the ProcessMaker Screen. The following message displays: **Successfully saved**.
 
+{% hint style="info" %}
+Do you need to export this ProcessMaker Screen? Click the **Export Screen** button![](../../../.gitbook/assets/export-screen-button-screens-builder-processes.png). See [Export a Screen](../manage-forms/export-a-screen.md#overview) for more information.
+{% endhint %}
+
 ## Related Topics
 
 {% page-ref page="../what-is-a-form.md" %}

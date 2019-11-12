@@ -89,6 +89,10 @@ Below are some ways to render [Request](../../../../using-processmaker/requests/
 * Include your own HTML syntax in the Rich Text control along with Request data references. Example: `Customer First Name: <strong>{{ data.CustomerName }}</strong>`
 {% endhint %}
 
+{% hint style="info" %}
+Do you need to export this ProcessMaker Screen? Click the **Export Screen** button![](../../../../.gitbook/assets/export-screen-button-screens-builder-processes.png). See [Export a Screen](../../manage-forms/export-a-screen.md#overview) for more information.
+{% endhint %}
+
 ## Related Topics
 
 {% page-ref page="../types-for-screens.md" %}

@@ -10,6 +10,10 @@ Export a ProcessMaker Screen to your local computer. The exported ProcessMaker S
 
 An exported ProcessMaker Screen contains all the [controls](../screens-builder/control-descriptions/) as the original at the time the original Screen was exported.
 
+{% hint style="info" %}
+If your ProcessMaker Screen contains either of the [Collections controls](../screens-builder/control-descriptions/processmaker-collection-controls/) that are part of the ProcessMaker [Collections package](../../../package-development-distribution/package-a-connector/collections.md), a ProcessMaker instance that does not have the Collections package can import a validated Screen but Collections controls do not import. The ProcessMaker Collections controls on a Screen only import successfully if the ProcessMaker Collections package is installed in that ProcessMaker instance.
+{% endhint %}
+
 The exported ProcessMaker Screen has the `.json` file extension.
 
 ## Export a ProcessMaker Screen
@@ -32,7 +36,7 @@ Follow these steps to export a ProcessMaker Screen:
 
 3. Click **Download**, and then browse for the location on your local computer to save the exported ProcessMaker Screen.
 4. By default, ProcessMaker exports the ProcessMaker Screen using the original Screen name except spaces in the name are replaced with underscores \(`_`\). The file has the file extension `.json`. Rename the default file name if necessary, though do not change the file extension. As a best practice, specify in the file name that this is an exported ProcessMaker Screen and not an [exported ProcessMaker Process](../../viewing-processes/view-the-list-of-processes/export-a-bpmn-compliant-process.md#export-a-bpmn-2-0-compliant-process).
-5. Save the file. ProcessMaker exports the `.json` file to your local computer. The following message displays when the ProcessMaker Screen exports successfully: **The screen was exported.**
+5. Specify a directory location to save the file. ProcessMaker exports the `.json` file to your local computer. The following message displays when the ProcessMaker Screen exports successfully: **The screen was exported.**
 
 ## Related Topics
 
