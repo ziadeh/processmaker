@@ -16,9 +16,9 @@ Follow these steps to view [Process Categories](what-is-a-process-category.md):
 
 1. [Log on](../../../../using-processmaker/log-in.md#log-in) to ProcessMaker.
 2. Click the **Processes** option from the top menu. The **Processes** page displays.
-3. Click the **Process Categories** icon![](../../../../.gitbook/assets/process-categories-icon-processes.png) in the left sidebar. The **Categories** page displays.
+3. Click the **Categories** tab. The Process Categories display.
 
-![&quot;Process Categories&quot; page displays categories by which to organize Processes for Requesters](../../../../.gitbook/assets/process-categories-page-processes.png)
+![&quot;Process Categories&quot; page displays categories by which to organize Processes](../../../../.gitbook/assets/process-categories-page-processes.png)
 
 The **Categories** page displays the following information in tabular format about Process Categories:
 
