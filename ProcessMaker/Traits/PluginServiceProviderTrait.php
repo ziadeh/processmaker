@@ -45,7 +45,7 @@ trait PluginServiceProviderTrait
     {
         foreach ($this->modelerScripts as $path => $public) {
             if (File::exists(public_path() . '/' . $public)) {
-                $event->manager->addScript(mix($path, $public));
+                // $event->manager->addScript(mix($path, $public));
             }
         }
     }

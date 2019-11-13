@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 
+<script>
+const id = (() => {
+    let currentId = 0;
+    const map = new WeakMap();
+
+    return (object) => {
+        if (!map.has(object)) {
+            map.set(object, ++currentId);
+        }
+
+        return map.get(object);
+    };
+})();
+</script>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

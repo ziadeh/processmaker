@@ -28,6 +28,7 @@
 
 <script>
 import { TooltipPlugin } from "bootstrap-vue";
+import Vue from 'vue';
 Vue.use(TooltipPlugin);
 export default {
   props: ["name", "description", "filter", "id", "process"],

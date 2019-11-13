@@ -19,7 +19,9 @@ import __ from "./modules/lang";
 
 require("./bootstrap");
 
-let Vue = window.Vue;
+// let Vue = window.Vue;
+import Vue from 'vue';
+
 if (window.ProcessMaker && window.ProcessMaker.user) {
   moment.tz.setDefault(window.ProcessMaker.user.timezone);
   moment.defaultFormat = window.ProcessMaker.user.datetime_format;

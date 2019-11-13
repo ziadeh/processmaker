@@ -67,6 +67,7 @@ import AvatarImage from "../../components/AvatarImage";
 import isPMQL from "../../modules/isPMQL";
 import moment from "moment";
 
+import Vue from 'vue';
 Vue.component("avatar-image", AvatarImage);
 
 export default {

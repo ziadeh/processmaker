@@ -29,11 +29,15 @@ window.$ = window.jQuery = require("jquery");
  * and simple, leaving you to focus on building your next great project.
  */
 
-window.Vue = require("vue");
+import Vue from 'vue';
+window.Vue = Vue;
+import Vuex from 'vuex';
+window.Vuex = Vuex;
 
-window.Vue.use(BootstrapVue);
-window.Vue.use(VueRouter);
-window.Vue.use(ScreenBuilder);
+Vue.use(BootstrapVue);
+Vue.use(VueRouter);
+Vue.use(ScreenBuilder);
+console.log("Registering global vue with ID", id(Vue));
 
 /**
  * Setup Translations
@@ -47,10 +51,10 @@ import {install as VuetableInstall} from 'vuetable-2';
 import Pagination from "./components/common/Pagination";
 import MonacoEditor from "vue-monaco";
 
-window.Vue.use(VueI18Next);
-VuetableInstall(window.Vue);
-window.Vue.component('pagination', Pagination);
-window.Vue.component('monaco-editor', MonacoEditor);
+Vue.use(VueI18Next);
+VuetableInstall(Vue);
+Vue.component('pagination', Pagination);
+Vue.component('monaco-editor', MonacoEditor);
 let translationsLoaded = false
 let mdates = JSON.parse(
     document.head.querySelector("meta[name=\"i18n-mdate\"]").content
