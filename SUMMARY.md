@@ -71,6 +71,7 @@
   * [Manage Processes](designing-processes/viewing-processes/view-the-list-of-processes/README.md)
     * [Manage Process Categories](designing-processes/viewing-processes/view-the-list-of-processes/manage-process-categories/README.md)
       * [What is a Process Category?](designing-processes/viewing-processes/view-the-list-of-processes/manage-process-categories/what-is-a-process-category.md)
+      * [View Process Categories](designing-processes/viewing-processes/view-the-list-of-processes/manage-process-categories/view-process-categories.md)
     * [View Active Processes](designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes.md)
     * [Create a New Process](designing-processes/viewing-processes/view-the-list-of-processes/create-a-process.md)
     * [Import a ProcessMaker Version 4 Process](designing-processes/viewing-processes/view-the-list-of-processes/import-a-bpmn-compliant-process.md)
