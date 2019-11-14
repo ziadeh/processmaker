@@ -31,7 +31,7 @@ Follow these steps to configure a Process:
 3. Edit the following Process configuration as necessary:
    * In the **Name** field, edit the Process name. This is a required field.
    * In the **Description** field, edit the description of the Process. This is a required field.
-   * From the **Category** drop-down menu, select to which category to assign the Process. This is a required field. See [Process Categories](../process-categories.md) for more information how this affects new [Requests](../../../using-processmaker/requests/what-is-a-request.md) for the Process.
+   * From the **Category** drop-down menu, select to which category to assign the Process. This is a required field. See [Process Categories]() for more information how this affects new [Requests](../../../using-processmaker/requests/what-is-a-request.md) for the Process.
    * From the **Cancel Request** drop-down, assign which ProcessMaker user\(s\) or group\(s\) have permission to [cancel Requests](../../../using-processmaker/requests/delete-a-request.md) from this Process. If no users or groups are selected, no one can cancel a Request from this Process. Type into the **Cancel Request** field to filter ProcessMaker users and/or groups that display in that field's drop-down menu. To remove a ProcessMaker user or group that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
    * From the **Cancel Screen** drop-down menu, select a ProcessMaker Screen to display when a Request for this Process is canceled.
    * From the **Edit Data** drop-down menu, assign which ProcessMaker user\(s\) or group\(s\) have permission to [edit Request data](../../../using-processmaker/requests/request-details/summary-for-completed-requests.md#editable-request-data) from this Process. To remove a ProcessMaker user or group that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
@@ -114,6 +114,8 @@ Follow these steps to configure which Vocabularies are available to a Package:
 
 {% page-ref page="view-your-processes.md" %}
 
+{% page-ref page="manage-process-categories/" %}
+
 {% page-ref page="create-a-process.md" %}
 
 {% page-ref page="import-a-bpmn-compliant-process.md" %}
@@ -125,6 +127,4 @@ Follow these steps to configure which Vocabularies are available to a Package:
 {% page-ref page="remove-a-process.md" %}
 
 {% page-ref page="restore-a-process.md" %}
-
-{% page-ref page="../process-categories.md" %}
 

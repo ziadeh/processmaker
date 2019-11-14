@@ -33,3 +33,15 @@ Follow these steps to edit a Process Category:
      This is a required field.
 4. Click **Save**.
 
+## Related Topics
+
+{% page-ref page="what-is-a-process-category.md" %}
+
+{% page-ref page="view-process-categories.md" %}
+
+{% page-ref page="create-a-new-process-category.md" %}
+
+{% page-ref page="delete-a-process-category.md" %}
+
+{% page-ref page="../../what-is-a-process.md" %}
+

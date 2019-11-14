@@ -54,6 +54,8 @@ Follow these steps to export a BPMN 2.0 compliant Process:
 
 {% page-ref page="view-your-processes.md" %}
 
+{% page-ref page="manage-process-categories/" %}
+
 {% page-ref page="create-a-process.md" %}
 
 {% page-ref page="import-a-bpmn-compliant-process.md" %}
@@ -65,8 +67,6 @@ Follow these steps to export a BPMN 2.0 compliant Process:
 {% page-ref page="remove-a-process.md" %}
 
 {% page-ref page="restore-a-process.md" %}
-
-{% page-ref page="../process-categories.md" %}
 
 {% page-ref page="../../process-design/" %}
 

@@ -68,10 +68,10 @@ Select the **View Auth Clients** permission to use any of the other permissions 
 
 The **Categories** category contains the following permissions:
 
-* **View Categories:** View the table of Process Categories on the **Categories** page. See [View Process Categories](../designing-processes/viewing-processes/process-categories.md#view-process-categories).
-* **Create Categories:** Create a Process Category from the **Categories** page. Selecting this permission also selects the **Edit Categories** permission. See [Add a New Process Category](../designing-processes/viewing-processes/process-categories.md#add-a-new-process-category).
-* **Edit Categories:** Edit a Process Category from the **Categories** page. See [Edit a Process Category](../designing-processes/viewing-processes/process-categories.md#edit-a-process-category).
-* **Delete Categories:** Delete a Process Category from the **Categories** page. See [Delete a Process Category](../designing-processes/viewing-processes/process-categories.md#delete-a-process-category).
+* **View Categories:** View the table of Process Categories on the **Categories** page. See [View Process Categories]().
+* **Create Categories:** Create a Process Category from the **Categories** page. Selecting this permission also selects the **Edit Categories** permission. See [Add a New Process Category]().
+* **Edit Categories:** Edit a Process Category from the **Categories** page. See [Edit a Process Category]().
+* **Delete Categories:** Delete a Process Category from the **Categories** page. See [Delete a Process Category]().
 
 {% hint style="info" %}
 Select the **View Categories** permission to use any of the other permissions in this category.
@@ -260,8 +260,6 @@ Select the **View Vocabularies** permission to use any of the other permissions 
 {% page-ref page="../designing-processes/scripts/manage-scripts/edit-a-script.md" %}
 
 {% page-ref page="../designing-processes/scripts/manage-scripts/remove-a-script.md" %}
-
-{% page-ref page="../designing-processes/viewing-processes/process-categories.md" %}
 
 {% page-ref page="../designing-processes/design-forms/manage-forms/view-all-forms.md" %}
 

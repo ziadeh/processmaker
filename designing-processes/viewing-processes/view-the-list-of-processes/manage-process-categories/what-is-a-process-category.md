@@ -27,3 +27,15 @@ ProcessMaker has three Category types for different types of assets. Each Catego
 * [Screen Categories](../../../design-forms/manage-forms/manage-screen-categories.md): Organize your ProcessMaker [Screens](../../../design-forms/what-is-a-form.md).
 {% endhint %}
 
+## Related Topics
+
+{% page-ref page="view-process-categories.md" %}
+
+{% page-ref page="create-a-new-process-category.md" %}
+
+{% page-ref page="edit-a-process-category.md" %}
+
+{% page-ref page="delete-a-process-category.md" %}
+
+{% page-ref page="../../what-is-a-process.md" %}
+

@@ -32,3 +32,15 @@ Follow these steps to delete a Process Category:
 
 3. Click **Confirm**. The following message displays: **The category was deleted.**
 
+## Related Topics
+
+{% page-ref page="what-is-a-process-category.md" %}
+
+{% page-ref page="view-process-categories.md" %}
+
+{% page-ref page="create-a-new-process-category.md" %}
+
+{% page-ref page="edit-a-process-category.md" %}
+
+{% page-ref page="../../what-is-a-process.md" %}
+

@@ -5,9 +5,11 @@
 ## Quick Links
 
 * [ProcessMaker Home](https://www.processmaker.com/)
+* [Download ProcessMaker Open-Source Edition](https://github.com/ProcessMaker/processmaker/releases)
 * [Contact Sales](mailto:sales@processmaker.com)
 * [Contact Support](mailto:support@processmaker.com)
 * [Provide Feedback](https://docs.google.com/forms/d/e/1FAIpQLScnYje8uTACYwp3VxdRoA26OFkbfFs6kuXofqY-QXXsG-h9xA/viewform)
+* [Privacy Statement](https://www.processmaker.com/privacy-statement)
 
 ## Start Here
 
@@ -83,7 +85,6 @@
     * [Export a BPMN-Compliant Process](designing-processes/viewing-processes/view-the-list-of-processes/export-a-bpmn-compliant-process.md)
     * [Archive a Process](designing-processes/viewing-processes/view-the-list-of-processes/remove-a-process.md)
     * [Restore a Process](designing-processes/viewing-processes/view-the-list-of-processes/restore-a-process.md)
-  * [Process Categories](designing-processes/viewing-processes/process-categories.md)
 * [Script Management](designing-processes/scripts/README.md)
   * [What is a Script?](designing-processes/scripts/what-is-a-script.md)
   * [Manage Scripts](designing-processes/scripts/manage-scripts/README.md)

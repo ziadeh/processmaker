@@ -82,6 +82,8 @@ If the original ProcessMaker version 4 Process cannot import successfully, the f
 
 {% page-ref page="view-your-processes.md" %}
 
+{% page-ref page="manage-process-categories/" %}
+
 {% page-ref page="create-a-process.md" %}
 
 {% page-ref page="search-for-a-process.md" %}
@@ -93,8 +95,6 @@ If the original ProcessMaker version 4 Process cannot import successfully, the f
 {% page-ref page="remove-a-process.md" %}
 
 {% page-ref page="restore-a-process.md" %}
-
-{% page-ref page="../process-categories.md" %}
 
 {% page-ref page="../../process-design/what-is-process-modeling.md" %}
 

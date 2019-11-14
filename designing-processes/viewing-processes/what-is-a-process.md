@@ -26,6 +26,8 @@ To learn more about how to model a Process in ProcessMaker, see [Process Modelin
 
 {% page-ref page="view-the-list-of-processes/view-your-processes.md" %}
 
+{% page-ref page="view-the-list-of-processes/manage-process-categories/" %}
+
 {% page-ref page="view-the-list-of-processes/create-a-process.md" %}
 
 {% page-ref page="view-the-list-of-processes/import-a-bpmn-compliant-process.md" %}

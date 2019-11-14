@@ -19,7 +19,7 @@ Follow these steps to search for a Process:
 1. [View your active Processes.](./#view-your-processes) The **Processes** tab displays.
 2. Enter in the **Search** field the text to filter Processes using any of the following criteria:
    * **Name:** Filter by the Process name that displays in the **Name** column.
-   * **Category:** Filter by the Process [Category](../process-categories.md) name that displays in the **Category** column.
+   * **Category:** Filter by the Process [Category]() name that displays in the **Category** column.
    * **Owner:** Filter by the Process Owner's full name that displays in the **Owner** column.
 
 As you enter text into the **Search** field, Processes display that match your entered text.
@@ -40,6 +40,8 @@ See [View All Processes](view-your-processes.md#manage-your-processes) for ways 
 
 {% page-ref page="view-your-processes.md" %}
 
+{% page-ref page="manage-process-categories/" %}
+
 {% page-ref page="import-a-bpmn-compliant-process.md" %}
 
 {% page-ref page="create-a-process.md" %}
@@ -51,8 +53,6 @@ See [View All Processes](view-your-processes.md#manage-your-processes) for ways 
 {% page-ref page="remove-a-process.md" %}
 
 {% page-ref page="restore-a-process.md" %}
-
-{% page-ref page="../process-categories.md" %}
 
 {% page-ref page="../../process-design/model-your-process/" %}
 

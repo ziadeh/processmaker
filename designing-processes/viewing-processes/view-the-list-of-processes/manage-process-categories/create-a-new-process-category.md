@@ -34,3 +34,15 @@ Follow these steps to create a new Process Category:
 
 5. Click **Save**.
 
+## Related Topics
+
+{% page-ref page="what-is-a-process-category.md" %}
+
+{% page-ref page="view-process-categories.md" %}
+
+{% page-ref page="edit-a-process-category.md" %}
+
+{% page-ref page="delete-a-process-category.md" %}
+
+{% page-ref page="../../what-is-a-process.md" %}
+
