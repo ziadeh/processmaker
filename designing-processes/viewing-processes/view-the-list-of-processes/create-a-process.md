@@ -17,7 +17,7 @@ See the [Processes](../../../processmaker-administration/permission-descriptions
 
 Follow these steps to create a new Process:
 
-1. [View your active Processes.](./#view-your-processes) The **Processes** page displays.
+1. [View your active Processes.](./#view-your-processes) The **Processes** tab displays.
 2. Click the **+Process** button. The **Create Process** screen displays.  
 
    ![](../../../.gitbook/assets/add-a-process-screen-processes.png)

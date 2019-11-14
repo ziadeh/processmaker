@@ -17,7 +17,7 @@ Assigning your Process to Process Categories also makes it easier for [Request](
 Process Categories can be in active or inactive status. Following is a description of each status:
 
 * **Active:** Active Process Categories can have Processes assigned to them.
-* **Inactive:** Inactive Process Categories cannot have Processes assigned to them. Inactive Processes do not display as available Process Categories when [assigning a Process to a Category](../create-a-process.md#create-a-new-process). Furthermore, Processes assigned to an inactive Category no longer display in the **New Request** screen even though such Processes may be active.
+* **Inactive:** Inactive Process Categories cannot have Processes assigned to them. Furthermore, Processes assigned to an inactive Category no longer display in the **New Request** screen even though such Processes may be active.
 
 {% hint style="info" %}
 ProcessMaker has three Category types for different types of assets. Each Category type is distinct from the others and can only be used for its type of ProcessMaker asset. Following is a description of each Category type:

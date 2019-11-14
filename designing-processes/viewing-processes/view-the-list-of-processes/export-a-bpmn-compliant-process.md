@@ -39,7 +39,7 @@ ProcessMaker Processes that are not BPMN 2.0 compliant can be exported successfu
 
 Follow these steps to export a BPMN 2.0 compliant Process:
 
-1. [View your active Processes.](./#view-your-processes) The **Processes** page displays.
+1. [View your active Processes.](./#view-your-processes) The **Processes** tab displays.
 2. Click the **Export** icon![](../../../.gitbook/assets/export-process-icon-processes.png)for your Process. The following message displays: **You are about to export a Process. User assignments and sensitive environment variables will not be exported.**  
 
    ![](../../../.gitbook/assets/export-process-message-processes.png)

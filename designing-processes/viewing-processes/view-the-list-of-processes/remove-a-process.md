@@ -23,7 +23,7 @@ See the [Processes](../../../processmaker-administration/permission-descriptions
 Follow these steps to view all archived Processes in your organization:
 
 1. [Log on](../../../using-processmaker/log-in.md#log-in) to ProcessMaker.
-2. Click the **Processes** option from the top menu. The **Processes** page displays.
+2. Click the **Processes** option from the top menu. The **Processes** tab displays.
 3. Click the **Archived Processes** icon![](../../../.gitbook/assets/archived-processes-icon-processes.png)in the left sidebar. The **Archived Processes** page displays all archived Processes in your organization.
 
 {% hint style="info" %}

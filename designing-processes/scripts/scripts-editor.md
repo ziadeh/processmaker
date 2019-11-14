@@ -98,8 +98,7 @@ ProcessMaker uses two global variables that can ProcessMaker Scripts can call. V
 
 This section outlines how to use ProcessMaker variables in programming languages that ProcessMaker supports. In the examples provided, refer to the following sample JSON data model that represents example Request data:
 
-{% tabs %}
-{% tab title="Example Request data in a sample JSON data model" %}
+{% code title="Example Request data in a sample JSON data model" %}
 ```text
 {
 "Submit": null,
@@ -108,8 +107,7 @@ This section outlines how to use ProcessMaker variables in programming languages
 "name": "Louis"
 }
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 
 Refer to the tabs below how to use ProcessMaker variables in supported programming languages.
 
@@ -117,50 +115,65 @@ Refer to the tabs below how to use ProcessMaker variables in supported programmi
 {% tab title="PHP" %}
 ### data
 
+{% code title="Syntax" %}
 ```text
 $data
 ```
+{% endcode %}
 
+{% code title="Usage" %}
 ```php
 return $data[key]
 ```
+{% endcode %}
 
 ### config
 
+{% code title="Syntax" %}
 ```text
 $config
 ```
+{% endcode %}
 
 ### Output
 
+{% code title="Output based on example Request data" %}
 ```text
 {
   "output": "Louis"
 }
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="Lua" %}
 ### data
 
+{% code title="Syntax and usage" %}
 ```lua
 return {data, global variable set to}
 ```
+{% endcode %}
 
 ### config
 
+{% code title="Syntax and usage" %}
 ```text
 config, global variable set to: {"some_key": "baz"}
 ```
+{% endcode %}
 
 ### Example
 
+{% code title="Example for data and config variables" %}
 ```lua
 return {foo=data.foo, config_var=config.some_key}
 ```
+{% endcode %}
 
 ### Output
 
+{% code title="Output based on example Request data" %}
 ```text
 {
   "output": {
@@ -169,39 +182,51 @@ return {foo=data.foo, config_var=config.some_key}
   }
 }
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="NodeJS" %}
 ### data
 
+{% code title="Syntax and usage" %}
 ```text
 data, global variable set to: {"foo":"bar"}
 ```
+{% endcode %}
 
 ### config
 
+{% code title="Syntax and usage" %}
 ```text
 config, global variable set to: {"some_key": "baz"}
 ```
+{% endcode %}
 
 ### Examples
 
+{% code title="Example 1" %}
 ```javascript
 return { 'foo': data['foo'], 'config_var': config['some_key'] };
 ```
+{% endcode %}
 
+{% code title="Example 2" %}
 ```javascript
 return { 'foo': data.foo, 'config_var': config.some_key };
 ```
+{% endcode %}
 
+{% code title="Example in a promise" %}
 ```javascript
 return new Promise((resolve, reject) => {
   resolve({'foo': data.foo, 'config_var': config.some_key});
 })
 ```
+{% endcode %}
 
 ### Output
 
+{% code title="Output based on example Request data" %}
 ```text
 {
   "output": {
@@ -210,6 +235,7 @@ return new Promise((resolve, reject) => {
   }
 }
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 

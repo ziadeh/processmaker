@@ -16,7 +16,7 @@ See the [Processes](../../../processmaker-administration/permission-descriptions
 
 Follow these steps to search for a Process:
 
-1. [View your active Processes.](./#view-your-processes) The **Processes** page displays.
+1. [View your active Processes.](./#view-your-processes) The **Processes** tab displays.
 2. Enter in the **Search** field the text to filter Processes using any of the following criteria:
    * **Name:** Filter by the Process name that displays in the **Name** column.
    * **Category:** Filter by the Process [Category](../process-categories.md) name that displays in the **Category** column.

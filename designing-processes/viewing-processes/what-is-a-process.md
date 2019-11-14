@@ -40,7 +40,5 @@ To learn more about how to model a Process in ProcessMaker, see [Process Modelin
 
 {% page-ref page="view-the-list-of-processes/restore-a-process.md" %}
 
-{% page-ref page="process-categories.md" %}
-
 {% page-ref page="../process-design/" %}
 

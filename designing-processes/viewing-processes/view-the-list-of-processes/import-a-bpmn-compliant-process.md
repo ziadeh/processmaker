@@ -34,7 +34,7 @@ See the [Processes](../../../processmaker-administration/permission-descriptions
 
 Follow these steps to import a validated ProcessMaker version 4 Process:
 
-1. [View your active Processes.](./#view-your-processes) The **Processes** page displays.
+1. [View your active Processes.](./#view-your-processes) The **Processes** tab displays.
 2. Click the **Import** button. The following message displays: **You are about to import a Process. User assignments and sensitive environment variables will not be imported.**  
 
    ![](../../../.gitbook/assets/import-process-message-processes.png)
