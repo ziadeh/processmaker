@@ -29,12 +29,12 @@ Follow these steps to view all active Processes in your organization:
 Click the **Processes** icon![](../../../.gitbook/assets/processses-icon-processes.png)in the left side bar to view the **Processes** tab when you are viewing other Process-related pages.
 {% endhint %}
 
-![&quot;Processes&quot; page displays all Processes in your organization](../../../.gitbook/assets/processes.png)
+![&quot;Processes&quot; tab displays all Processes in your organization](../../../.gitbook/assets/processes.png)
 
-The **Processes** page displays the following information in tabular format about active Processes:
+The **Processes** tab displays the following information in tabular format about active Processes:
 
 * **Name:** The **Name** column displays the Process name. If the Process is not valid whereby it cannot successfully run Requests through completion, the following icon displays after the process name:![](../../../.gitbook/assets/invalid-process-icon-process-modeler.png).
-* **Category:** The **Category** column displays in which Process Category the Process is assigned. See [Process Categories]().
+* **Category:** The **Category** column displays in which [Process Category](manage-process-categories/what-is-a-process-category.md) the Process is assigned.
 * **Owner:** The **Owner** column displays the Process Owner who maintains the Process. Hover your cursor over a user's avatar to view that person's full name.
 * **Modified:** The **Modified** column displays the date and time the Process was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 * **Created:** The **Created** column displays the date and time the Process was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.

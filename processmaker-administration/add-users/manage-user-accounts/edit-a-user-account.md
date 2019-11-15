@@ -28,7 +28,7 @@ Follow these steps to edit a ProcessMaker user account:
      * In the **Last Name** field, edit the person's last name. This is a required field.
      * In the **Job Title** field, edit the person's organizational job title.
    * In the **Contact Information** section, change the following information:
-     * In the **Email** field, edit the person's business email address. This is a required field.
+     * In the **Email** field, edit the person's unique business email address. This is a required field.
      * In the **Phone** field, edit the person's business telephone number.
      * In the **Fax** field, edit the person's business fax number.
      * In the **Cell** field, edit the person's cell phone number.
