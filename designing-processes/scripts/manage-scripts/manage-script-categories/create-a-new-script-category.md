@@ -9,12 +9,12 @@ description: >-
 ## Create a New Script Category
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to create a new Process Category:
+Your user account or group membership must have the following permissions to create a new Script Category:
 
 * Categories: View Categories
 * Categories: Create Categories
 
-See the Process [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to create a new [Script Category](what-is-a-script-category.md):
@@ -33,7 +33,13 @@ Follow these steps to create a new [Script Category](what-is-a-script-category.m
 
 ## Related Topics
 
+{% page-ref page="what-is-a-script-category.md" %}
 
+{% page-ref page="view-script-categories.md" %}
 
+{% page-ref page="edit-a-script-category.md" %}
 
+{% page-ref page="delete-a-script-category.md" %}
+
+{% page-ref page="../../what-is-a-script.md" %}
 

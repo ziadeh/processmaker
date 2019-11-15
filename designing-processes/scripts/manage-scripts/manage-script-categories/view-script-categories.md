@@ -7,9 +7,9 @@ description: View the Script Categories in your organization.
 ## View Script Categories
 
 {% hint style="info" %}
-Your ProcessMaker user account or group membership must have the "Categories: View Categories" permission to view the list of Process Categories unless your user account has the **Make this user a Super Admin** setting selected.
+Your ProcessMaker user account or group membership must have the "Categories: View Categories" permission to view the list of Script Categories unless your user account has the **Make this user a Super Admin** setting selected.
 
-See the Process [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to view [Script Categories](what-is-a-script-category.md):
@@ -42,5 +42,13 @@ If no Script Categories exist, the following message displays: **No Results**.
 
 ## Related Topics
 
+{% page-ref page="what-is-a-script-category.md" %}
 
+{% page-ref page="create-a-new-script-category.md" %}
+
+{% page-ref page="edit-a-script-category.md" %}
+
+{% page-ref page="delete-a-script-category.md" %}
+
+{% page-ref page="../../what-is-a-script.md" %}
 

@@ -16,7 +16,7 @@ See the Process [Categories](../../../../processmaker-administration/permission-
 {% endhint %}
 
 {% hint style="warning" %}
-To delete a Process Category, no Processes can be assigned to it. Reassign those Processes to another Category.
+To delete a Process Category, no Processes can be assigned to it. Reassign those Processes to another Process Category.
 
 Furthermore, deleting a Process Category cannot be undone.
 {% endhint %}

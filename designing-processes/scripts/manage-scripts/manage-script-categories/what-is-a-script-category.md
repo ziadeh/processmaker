@@ -27,5 +27,15 @@ ProcessMaker has three Category types for different types of assets. Each Catego
 
 ## Related Topics
 
+{% page-ref page="view-script-categories.md" %}
+
+{% page-ref page="create-a-new-script-category.md" %}
+
+{% page-ref page="edit-a-script-category.md" %}
+
+{% page-ref page="delete-a-script-category.md" %}
+
+{% page-ref page="../../what-is-a-script.md" %}
+
 
 
