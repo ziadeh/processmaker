@@ -247,6 +247,8 @@ Click the **Save** icon![](../../.gitbook/assets/save-icon-processes.png)from Sc
 
 {% page-ref page="what-is-a-script.md" %}
 
+{% page-ref page="manage-scripts/manage-script-categories/" %}
+
 {% page-ref page="manage-scripts/view-all-scripts.md" %}
 
 {% page-ref page="manage-scripts/create-a-new-script.md" %}

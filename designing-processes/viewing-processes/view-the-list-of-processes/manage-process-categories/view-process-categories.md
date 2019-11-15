@@ -18,17 +18,17 @@ Follow these steps to view [Process Categories](what-is-a-process-category.md):
 2. Click the **Designer** option from the top menu. The **Processes** tab displays.
 3. Click the **Categories** tab. The Process Categories display.
 
-![&quot;Process Categories&quot; page displays categories by which to organize Processes](../../../../.gitbook/assets/process-categories-page-processes.png)
+![&quot;Categories&quot; tab in the &quot;Processes&quot; page displays Categories by which to organize Processes](../../../../.gitbook/assets/process-categories-page-processes%20%281%29.png)
 
 The **Categories** tab displays the following information in tabular format about Process Categories:
 
 * **Name:** The **Name** column displays the name of the Process Category.
 * **Status:** The **Status** column displays the status of the Process Category. Below is a description of each status:
   * **Active:** An active Process Category can have Processes assigned to it.
-  * **Inactive:** An inactive Process Category can no longer be selected when [assigning a Process to a Category](../create-a-process.md#create-a-new-process). Furthermore, Processes assigned to an inactive Category [no longer display to Requesters](../../../../using-processmaker/requests/make-a-request.md#start-a-request) even though such Processes may be active.
+  * **Inactive:** An inactive Process Category can no longer be selected when [assigning a Process to a Category](../create-a-process.md#create-a-new-process). Furthermore, Processes assigned to an inactive Category no longer display in the [**New Request** screen](../../../../using-processmaker/requests/make-a-request.md#start-a-request) even though such Processes may be active.
 * **Processes:** The **\# Processes** column displays how many Processes in your organization have been assigned to that Process Category.
-* **Modified:** The **Modified** column displays the date and time the Process Category was last modified. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Created:** The **Created** column displays the date and time the Process Category was created. The time zone setting to display the time is according to the ProcessMaker Spark server unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Modified:** The **Modified** column displays the date and time the Process Category was last modified. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the Process Category was created. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### No Process Categories? <a id="no-processes"></a>

@@ -31,6 +31,8 @@ Follow these steps to copy a ProcessMaker Script:
 
 {% page-ref page="../what-is-a-script.md" %}
 
+{% page-ref page="manage-script-categories/" %}
+
 {% page-ref page="view-all-scripts.md" %}
 
 {% page-ref page="create-a-new-script.md" %}

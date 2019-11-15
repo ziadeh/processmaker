@@ -43,6 +43,8 @@ Follow these steps to create a new ProcessMaker Script:
 
 {% page-ref page="../what-is-a-script.md" %}
 
+{% page-ref page="manage-script-categories/" %}
+
 {% page-ref page="view-all-scripts.md" %}
 
 {% page-ref page="search-for-a-script.md" %}

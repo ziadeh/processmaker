@@ -21,6 +21,8 @@ ProcessMaker supports Lua, PHP, and NodeJS programming languages in the open-sou
 
 {% page-ref page="what-is-a-script.md" %}
 
+{% page-ref page="manage-scripts/manage-script-categories/" %}
+
 {% page-ref page="manage-scripts/create-a-new-script.md" %}
 
 {% page-ref page="manage-scripts/search-for-a-script.md" %}

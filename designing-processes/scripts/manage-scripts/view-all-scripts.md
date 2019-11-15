@@ -18,11 +18,11 @@ Follow these steps to view all ProcessMaker Scripts in your organization:
 
 1. [Log on](../../../using-processmaker/log-in.md#log-in) to ProcessMaker.
 2. Click the **Designer** option from the top menu. The **Processes** page displays.
-3. Click the **Scripts** icon![](../../../.gitbook/assets/scripts-icon-processes.png) from the left sidebar. The **Scripts** page displays all ProcessMaker Scripts.
+3. Click the **Scripts** icon![](../../../.gitbook/assets/scripts-icon-processes.png) from the left sidebar. The **Scripts** tab displays all ProcessMaker Scripts in the **Scripts** page.
 
-![&quot;Scripts&quot; page displays all ProcessMaker Scripts in your organization](../../../.gitbook/assets/scripts-page-processes.png)
+![&quot;Scripts&quot; tab displays all ProcessMaker Scripts in your organization](../../../.gitbook/assets/scripts-page-processes.png)
 
-The **Scripts** page displays the following information in tabular format about ProcessMaker Scripts:
+The **Scripts** tab displays the following information in tabular format about ProcessMaker Scripts:
 
 * **Name:** The **Name** column displays the name of the ProcessMaker Script. Click the name to edit the ProcessMaker Script in [Scripts Editor](../scripts-editor.md).
 * **Description:** The **Description** column displays the description of the ProcessMaker Script. See [Edit Script Configuration](edit-script-configuration.md#edit-configuration-information-about-a-processmaker-script) for more information.
@@ -68,6 +68,8 @@ If no ProcessMaker Scripts exist, the following message displays: **No Results**
 ## Related Topics
 
 {% page-ref page="../what-is-a-script.md" %}
+
+{% page-ref page="manage-script-categories/" %}
 
 {% page-ref page="create-a-new-script.md" %}
 

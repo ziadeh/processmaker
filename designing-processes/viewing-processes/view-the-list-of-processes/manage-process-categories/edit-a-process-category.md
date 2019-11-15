@@ -16,7 +16,7 @@ Your user account or group membership must have the following permissions to edi
 See the Process [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to edit a Process Category:
+Follow these steps to edit a [Process Category](what-is-a-process-category.md):
 
 1. [View your Process Categories](view-process-categories.md#view-process-categories).
 2. Select the **Edit** icon![](../../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png). The **Edit Process Category** page displays.  

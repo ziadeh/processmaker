@@ -8,7 +8,9 @@ description: >-
 
 ## Overview
 
-Use Process Categories to organize your Processes. Organizing your Processes into Categories makes it easier to search for a Process based on its assigned Category. Assign multiple Process Categories to a Process if necessary. For example, assign a Process named "Loan Request" to the "Banking" and "Loans" Process Categories.
+Use Process Categories to organize your [Processes](../../what-is-a-process.md). Organizing your Processes into Categories makes it easier to search for a Process based on its assigned Category. Assign multiple Process Categories to a Process if necessary. For example, assign a Process named "Loan Request" to the "Banking" and "Loans" Process Categories.
+
+![&quot;Categories&quot; tab on the &quot;Processes&quot; page displays all Process Categories in your organization](../../../../.gitbook/assets/process-categories-page-processes.png)
 
 Assigning your Process to Process Categories also makes it easier for [Request](../../../../using-processmaker/requests/what-is-a-request.md) participants to start a Request of your Process. Processes are organized by Process Categories in the **New Request** screen, which is where [new Requests are started](../../../../using-processmaker/requests/make-a-request.md#start-a-request). In the **New Request** screen, a Process displays in each Process Category to which it is assigned.
 
@@ -17,7 +19,7 @@ Assigning your Process to Process Categories also makes it easier for [Request](
 Process Categories can be in active or inactive status. Following is a description of each status:
 
 * **Active:** Active Process Categories can have Processes assigned to them.
-* **Inactive:** Inactive Process Categories cannot have Processes assigned to them. Furthermore, Processes assigned to an inactive Category no longer display in the **New Request** screen even though such Processes may be active.
+* **Inactive:** Inactive Process Categories cannot have Processes assigned to them. Furthermore, Processes assigned to an inactive Category no longer display in the [**New Request** screen](../../../../using-processmaker/requests/make-a-request.md#start-a-request) even though such Processes may be active.
 
 {% hint style="info" %}
 ProcessMaker has three Category types for different types of assets. Each Category type is distinct from the others and can only be used for its type of ProcessMaker asset. Following is a description of each Category type:
