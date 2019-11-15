@@ -27,7 +27,7 @@ Follow these steps to edit a [Process Category](what-is-a-process-category.md):
    * In the **Category Name** field, edit the name of the Category if necessary. The Process Category name must be unique from all other Process Category names in your organization. This is a required field.
    * From the **Status** drop-down menu, change the status of the Process Category, if necessary, from the following options:
 
-     * **Active:** Select **Active** to allow Processes to be assigned to this Process Category.
+     * **Active:** Select **Active** to allow Processes to be assigned to this Process Category. This is the default option.
      * **Inactive:** Select **Inactive** to create this Process Category but not be available to assign Processes to it. Inactive Process Categories cannot have Processes assigned to them. Furthermore, Processes assigned to an inactive Category no longer display in the **New Request** screen even though such Processes may be active.
 
      This is a required field.
