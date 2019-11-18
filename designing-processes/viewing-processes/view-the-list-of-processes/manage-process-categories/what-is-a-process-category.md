@@ -26,7 +26,7 @@ ProcessMaker has three Category types for different types of assets. Each Catego
 
 * Process Categories: Organize your ProcessMaker [Processes](../../what-is-a-process.md).
 * [Script Categories](../../../scripts/manage-scripts/manage-script-categories/): Organize your ProcessMaker [Scripts](../../../scripts/what-is-a-script.md).
-* [Screen Categories](../../../design-forms/manage-forms/manage-screen-categories.md): Organize your ProcessMaker [Screens](../../../design-forms/what-is-a-form.md).
+* [Screen Categories](../../../design-forms/manage-forms/manage-screen-categories/): Organize your ProcessMaker [Screens](../../../design-forms/what-is-a-form.md).
 {% endhint %}
 
 ## Related Topics
