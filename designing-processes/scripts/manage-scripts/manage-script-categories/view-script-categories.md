@@ -16,14 +16,15 @@ Follow these steps to view [Script Categories](what-is-a-script-category.md):
 
 1. [Log on](../../../../using-processmaker/log-in.md#log-in) to ProcessMaker.
 2. Click the **Designer** option from the top menu. The **Processes** page displays.
-3. Click the **Categories** tab. The Script Categories display.
+3. Click the **Scripts** icon![](../../../../.gitbook/assets/scripts-icon-processes.png) from the left sidebar. The **Scripts** tab displays all ProcessMaker Scripts in the **Scripts** page.
+4. Click the **Categories** tab. The Script Categories display.
 
 ![&quot;Categories&quot; tab in the &quot;Scripts&quot; page displays Categories by which to organize ProcessMaker Scripts](../../../../.gitbook/assets/scripts-category-page-processes.png)
 
 The **Categories** tab displays the following information in tabular format about Script Categories:
 
 * **Name:** The **Name** column displays the name of the Script Category.
-* **Status:** The **Status** column displays the status of the Scripts Category. Below is a description of each status:
+* **Status:** The **Status** column displays the status of the Script Category. Below is a description of each status:
   * **Active:** Active Script Categories can have ProcessMaker Scripts assigned to them.
   * **Inactive:** Inactive Script Categories cannot have ProcessMaker Scripts assigned to them.
 * **Scripts:** The **\# Scripts** column displays how many ProcessMaker Scripts in your organization have been assigned to that Script Category.
