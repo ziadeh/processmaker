@@ -6,7 +6,7 @@ description: Add custom CSS to controls in your ProcessMaker Screen.
 
 ## Add Custom CSS to a ProcessMaker Screen
 
-Use the Custom CSS mode to add custom CSS styles to a ProcessMaker Screen.
+Use the Custom CSS mode to add custom CSS styles to a ProcessMaker Screen. ProcessMaker supports standard Cascading Style Sheet language \(CSS\) syntax with a few [exceptions](add-custom-css-to-a-screen.md#usage-exceptions-from-standard-css-syntax).
 
 {% hint style="info" %}
 ### ProcessMaker Permissions
@@ -30,10 +30,26 @@ Follow these steps to add custom CSS to a ProcessMaker Screen:
 
    ![](../../../.gitbook/assets/custom-css-screen-screens-builder-processes.png)
 
-3. Enter your custom CSS in valid Cascading Style Sheet language. Reference the **CSS Selector Name** field for ProcessMaker Screen controls to indicate CSS styling applies to those controls. Enter the value to represent this control in custom CSS syntax when in [Custom CSS](add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. Example: `[selector='my-selector']`.
+3. Enter your custom CSS in valid Cascading Style Sheet syntax. Reference the **CSS Selector Name** field for ProcessMaker Screen controls to indicate CSS styling applies to those controls. Enter the value to represent this control in custom CSS syntax when in [Custom CSS](add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. Example: `[selector='my-selector']`.
 4. Address any syntax errors or changes as necessary, then click **Save**.
 5. Click the **Preview** button to view your ProcessMaker Screen output using your CSS syntax in [Preview](screens-builder-modes.md#preview-mode) mode. Custom CSS does not display in Design mode.
 6. Click the **Design** button to return to Design mode, and then repeat Steps 2 through 5 as necessary.
+
+## Usage Exceptions from Standard CSS Syntax
+
+ProcessMaker supports standard Cascading Style Sheet language \(CSS\) syntax except for the following.
+
+### Apply CSS to All Pages in a ProcessMaker Screen
+
+Use `div.page` to apply CSS styling to all pages in a ProcessMaker Screen.
+
+Example:
+
+```css
+div.page{
+    background-color: lightblue;
+}
+```
 
 ## Related Topics
 
