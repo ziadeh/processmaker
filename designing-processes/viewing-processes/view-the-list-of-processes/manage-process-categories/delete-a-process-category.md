@@ -16,12 +16,10 @@ See the Process [Categories](../../../../processmaker-administration/permission-
 {% endhint %}
 
 {% hint style="warning" %}
-To delete a Process Category, no Processes can be assigned to it. Reassign those Processes to another Process Category.
+To delete a Process Category, no Processes can be assigned to it. If any Processes are assigned to the Process Category, its **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png)does not display. [Reassign those Processes to another Process Category](../edit-the-name-description-category-or-status-of-a-process.md#configure-a-process).
 
 Furthermore, deleting a Process Category cannot be undone.
 {% endhint %}
-
-A Process Category cannot be deleted until no Processes are assigned to it. If any Processes are assigned to the Process Category, its **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png)does not display.
 
 Follow these steps to delete a [Process Category](what-is-a-process-category.md):
 
