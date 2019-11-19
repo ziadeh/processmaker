@@ -30,3 +30,15 @@ Follow these steps to edit a [Screen Category](what-is-a-screen-category.md):
      This is a required field.
 4. Click **Save**.
 
+## Related Topics
+
+{% page-ref page="what-is-a-screen-category.md" %}
+
+{% page-ref page="view-screen-categories.md" %}
+
+{% page-ref page="create-a-new-screen-category.md" %}
+
+{% page-ref page="delete-a-screen-category.md" %}
+
+{% page-ref page="../../what-is-a-form.md" %}
+

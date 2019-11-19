@@ -41,3 +41,15 @@ If no Screen Categories exist, the following message displays: **No Results**.
 ​[Control how tabular information displays](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LWD5skTaOptuIWIWk76/primary/using-processmaker/control-how-requests-display-in-a-tab), including how to sort columns or how many items display per page.
 {% endhint %}
 
+## Related Topics
+
+{% page-ref page="what-is-a-screen-category.md" %}
+
+{% page-ref page="create-a-new-screen-category.md" %}
+
+{% page-ref page="edit-a-screen-category.md" %}
+
+{% page-ref page="delete-a-screen-category.md" %}
+
+{% page-ref page="../../what-is-a-form.md" %}
+

@@ -50,6 +50,8 @@ If the original ProcessMaker Screen cannot import successfully, the following me
 
 {% page-ref page="../what-is-a-form.md" %}
 
+{% page-ref page="manage-screen-categories/" %}
+
 {% page-ref page="view-all-forms.md" %}
 
 {% page-ref page="create-a-new-form.md" %}

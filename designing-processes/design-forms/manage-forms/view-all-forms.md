@@ -77,6 +77,8 @@ If no ProcessMaker Screens exist, the following message displays: **No Data Avai
 
 {% page-ref page="../what-is-a-form.md" %}
 
+{% page-ref page="manage-screen-categories/" %}
+
 {% page-ref page="create-a-new-form.md" %}
 
 {% page-ref page="import-a-screen.md" %}

@@ -31,3 +31,19 @@ Follow these steps to create a new [Screen Category](what-is-a-screen-category.m
 
 5. Click **Save**.
 
+## Related Topics
+
+{% page-ref page="what-is-a-screen-category.md" %}
+
+{% page-ref page="view-screen-categories.md" %}
+
+{% page-ref page="edit-a-screen-category.md" %}
+
+{% page-ref page="delete-a-screen-category.md" %}
+
+{% page-ref page="../../what-is-a-form.md" %}
+
+
+
+
+

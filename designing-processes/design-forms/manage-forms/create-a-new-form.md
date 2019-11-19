@@ -39,6 +39,8 @@ Follow these steps to create a new ProcessMaker Screen:
 
 {% page-ref page="../what-is-a-form.md" %}
 
+{% page-ref page="manage-screen-categories/" %}
+
 {% page-ref page="view-all-forms.md" %}
 
 {% page-ref page="import-a-screen.md" %}

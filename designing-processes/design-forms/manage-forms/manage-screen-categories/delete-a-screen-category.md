@@ -29,3 +29,13 @@ Follow these steps to delete a [Screen Category](what-is-a-screen-category.md):
 
 ## Related Topics
 
+{% page-ref page="what-is-a-screen-category.md" %}
+
+{% page-ref page="view-screen-categories.md" %}
+
+{% page-ref page="create-a-new-screen-category.md" %}
+
+{% page-ref page="edit-a-screen-category.md" %}
+
+{% page-ref page="../../what-is-a-form.md" %}
+
