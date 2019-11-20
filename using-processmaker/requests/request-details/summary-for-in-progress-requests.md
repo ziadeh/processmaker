@@ -23,8 +23,9 @@ The **Tasks** tab displays the summary for all assigned Tasks to Request partici
 
 ![&quot;Tasks&quot; tab displaying an in-progress Request&apos;s summary](../../../.gitbook/assets/tasks-tab-request-information-request.png)
 
-The **Tasks** tab displays the following summary in tabular format about assigned Tasks to Request participants to that time:
+The **Tasks** tab displays the following summary in tabular format about assigned [Tasks](../../task-management/what-is-a-task.md) to Request participants to that time:
 
+* **\#:** The **\#** column displays the Task ID associated with its [Process](../../../designing-processes/viewing-processes/what-is-a-process.md). Each time that Task is assigned to a Request participant, the ID for that Task increments by one.
 * **Task:** The **Task** column displays the name of each Task to be completed for the selected Request for all Request participants. If a Task is assigned to you, a hyperlink displays in the Task name.
 * **Assigned:** The **Assigned** column displays the username's avatar to whom the Task is assigned. Hover your cursor over a user's avatar to view that person's full name.
 * **Due:** The **Due** column displays the date the Task is due. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
@@ -43,7 +44,7 @@ If there are no assigned Tasks for the selected Request, the following message d
 
 ## Values in the Request
 
-The **Summary** tab displays the summary of information entered into the Request when a Request completes. However, because the Request is in progress, there are no Request values to display. The Summary tab displays the following message: **This Request is currently in progress. This screen will be populated once the Request is completed**.
+The **Summary** tab displays the summary of information entered into the Request when a Request completes. However, because the Request is in progress, there are no Request values to display. The Summary tab displays the following message: **This Request is currently in progress. This screen will be populated once the Request is completed**. Below this message, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
 
 ![&quot;Summary&quot; tab displays a message that this tab displays Request values after the Request completes](../../../.gitbook/assets/summary-tab-in-progress-request-message-requests.png)
 
@@ -55,6 +56,7 @@ The **Completed** tab displays the summary of all Tasks Request participants com
 
 The **Completed** tab displays the following summary in tabular format about completed Tasks participants completed to that time in the Request:
 
+* **\#:** The **\#** column displays the Task ID associated with its [Process](../../../designing-processes/viewing-processes/what-is-a-process.md). Each time that Task is assigned to a Request participant, the ID for that Task increments by one.
 * **Task:** The **Task** column displays the name of each completed Task in the selected Request. 
 * **Assigned:** The **Assigned** column displays the username's avatar to whom the Task was assigned. Hover your cursor over a user's avatar to view that person's full name.
 * **Due:** The **Due** column displays the date the Task was due. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
@@ -82,6 +84,32 @@ The **Files** tab displays the following summary in tabular format about the fil
 * **File Name:** The **File Name** column displays the name of each file associated with the selected Request. Click the file name to download it to your local computer or network location. 
 * **MIME Type:** The **MIME Type** column displays the MIME type for the associated file.
 * **Created At:** The **Created At** column displays the date the file became associated with the selected Request. The file became associated with the Request when the person who attached it submitted the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) to which the file was uploaded. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+
+Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
+
+## Forms Associated with the Request
+
+The **Forms** tab displays the ProcessMaker [Screen](../../../designing-processes/design-forms/what-is-a-form.md) associated with each Task that each Request participant submitted in the Request to that time. For example, if a Request participant entered information into a Screen, all Request participants can view the Request data that the Task assignee entered.
+
+![&quot;Forms&quot; tab for an in-progress Request&apos;s summary](../../../.gitbook/assets/forms-tab-summary-requests.png)
+
+The **Forms** tab displays the following summary in tabular format about submitted ProcessMaker Screens by Request participants to that time in the Request:
+
+* **Screen:** The **Screen** column displays the name of each submitted ProcessMaker Screen in the selected Request.
+* **Description:** The **Description** column displays the description of each ProcessMaker Screen.
+
+{% hint style="info" %}
+### View a ProcessMaker Screen and Its Submitted Request Data
+
+To view a ProcessMaker Screen and the Request data submitted by a Request participant, click the **Details** icon![](../../../.gitbook/assets/details-collapsed-icon-summary-requests.png). The submitted ProcessMaker Screen displays.  
+![](../../../.gitbook/assets/forms-tab-details-summary-requests.png) 
+
+Click the **Details** icon![](../../../.gitbook/assets/details-expanded-icon-summary-requests.png)again to hide the displayed ProcessMaker Screen and its Request data.
+
+### Print the ProcessMaker Screen and its Submitted Request Data
+
+To print a ProcessMaker and its Request data, click the **Print** icon![](../../../.gitbook/assets/print-icon-summary-requests.png). A print preview displays in a new browser window from which you can select an accessible printer.
+{% endhint %}
 
 Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
 
