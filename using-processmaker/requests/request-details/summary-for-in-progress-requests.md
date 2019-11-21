@@ -46,9 +46,9 @@ If there are no assigned Tasks for the selected Request, the following message d
 
 The **Summary** tab displays the summary of information entered into the Request when a Request completes. However, because the Request is in progress, there are no Request values to display. The **Summary** tab displays the following message: **This Request is currently in progress. This screen will be populated once the Request is completed**.
 
-Below this message, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
-
 ![&quot;Summary&quot; tab displays a message that this tab displays Request values after the Request completes](../../../.gitbook/assets/summary-tab-in-progress-request-message-requests.png)
+
+Below this message, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
 
 ## Completed Tasks Summary
 

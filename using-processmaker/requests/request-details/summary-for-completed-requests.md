@@ -19,13 +19,13 @@ Follow these steps to view a summary for a completed [Request](../what-is-a-requ
 
 ## Values in the Request
 
-The **Summary** tab displays the summary of information entered into the completed Request via [ProcessMaker Screens](../../../designing-processes/design-forms/what-is-a-form.md). ProcessMaker Screens are digital forms.
+The **Summary** tab displays the summary of information entered into the completed Request via ProcessMaker [Screens](../../../designing-processes/design-forms/what-is-a-form.md).
 
 ![&quot;Summary&quot; tab in a completed Request&apos;s summary](../../../.gitbook/assets/summary-tab-request-information-request.png)
 
 The **Summary** tab displays the JSON-formatted key/value pairs in tabular format that represent ProcessMaker [Screen](../../../designing-processes/design-forms/what-is-a-form.md) control data. Information is displayed:
 
-* **Key:** The **Key** column displays the JSON key name that represents the ProcessMaker Screen control name the Request participant entered data. For example, a Text control to enter your name could be named `Full Name` which would display in the **Key** column here.
+* **Key:** The **Key** column displays the JSON key name that represents the ProcessMaker Screen control name the Request participant entered data. For example, a [Rich Text](../../../designing-processes/design-forms/screens-builder/control-descriptions/rich-text-control-settings.md#control-description) control to enter your company's name could have a [**Variable Name**](../../../designing-processes/design-forms/screens-builder/control-descriptions/rich-text-control-settings.md#configuration-panel-settings) setting value of `companyName` which would display in the **Key** column here.
 * **Value:** The **Value** column displays that key's value as entered by a person manually interacting with a form. For example, a Text control to enter your name could have the value `John Doe` which would display in the **Value** column here.
 
 Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
@@ -62,6 +62,7 @@ The **Completed** tab displays the summary of all assigned Tasks to Request part
 
 The **Completed** tab displays the following summary in tabular format about assigned Tasks to Request participants for the completed Requests:
 
+* **\#:** The **\#** column displays the Task ID associated with its [Process](../../../designing-processes/viewing-processes/what-is-a-process.md). Each time that Task is assigned to a Request participant, the ID for that Task increments by one.
 * **Task:** The **Task** column displays the name of each completed Task in the selected Request. 
 * **Assigned:** The **Assigned** column displays the username's avatar to whom the Task was assigned. Hover your cursor over a user's avatar to view that person's full name.
 * **Due:** The **Due** column displays the date the Task was due. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
