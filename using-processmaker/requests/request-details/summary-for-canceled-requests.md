@@ -6,7 +6,7 @@ description: Learn what information displays in summaries for canceled Requests.
 
 ## Overview
 
-Follow these steps to view a summary for a canceled Request:
+Follow these steps to view a summary for a canceled [Request](../what-is-a-request.md):
 
 1. Ensure that you are [logged on](../../log-in.md#log-on) to ProcessMaker.
 2. View one of the following **Requests** pages:

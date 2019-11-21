@@ -6,7 +6,7 @@ description: Learn what information displays in summaries for in-progress Reques
 
 ## Overview
 
-Follow these steps to view a summary for an in-progress Request:
+Follow these steps to view a summary for an in-progress [Request](../what-is-a-request.md):
 
 1. Ensure that you are [logged on](../../log-in.md#log-on) to ProcessMaker.
 2. View one of the following **Requests** pages:
@@ -44,7 +44,9 @@ If there are no assigned Tasks for the selected Request, the following message d
 
 ## Values in the Request
 
-The **Summary** tab displays the summary of information entered into the Request when a Request completes. However, because the Request is in progress, there are no Request values to display. The Summary tab displays the following message: **This Request is currently in progress. This screen will be populated once the Request is completed**. Below this message, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
+The **Summary** tab displays the summary of information entered into the Request when a Request completes. However, because the Request is in progress, there are no Request values to display. The **Summary** tab displays the following message: **This Request is currently in progress. This screen will be populated once the Request is completed**.
+
+Below this message, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
 
 ![&quot;Summary&quot; tab displays a message that this tab displays Request values after the Request completes](../../../.gitbook/assets/summary-tab-in-progress-request-message-requests.png)
 
@@ -112,6 +114,12 @@ To print a ProcessMaker and its Request data, click the **Print** icon![](../../
 {% endhint %}
 
 Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
+
+{% hint style="info" %}
+### There Are No Forms?
+
+If the selected Request has no ProcessMaker Screens with submitted Request data, the following message displays: **No Data Available**.
+{% endhint %}
 
 ## Request Participants
 

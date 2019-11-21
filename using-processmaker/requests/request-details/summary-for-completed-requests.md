@@ -6,7 +6,7 @@ description: Learn what information displays in summaries for completed Requests
 
 ## Overview
 
-Follow these steps to view a summary for a completed Request:
+Follow these steps to view a summary for a completed [Request](../what-is-a-request.md):
 
 1. Ensure that you are [logged on](../../log-in.md#log-on) to ProcessMaker.
 2. View one of the following **Requests** pages:
@@ -23,10 +23,10 @@ The **Summary** tab displays the summary of information entered into the complet
 
 ![&quot;Summary&quot; tab in a completed Request&apos;s summary](../../../.gitbook/assets/summary-tab-request-information-request.png)
 
-The **Summary** tab displays the JSON-formatted key/value pairs in tabular format that represent ProcessMaker Screen control data. Information is displayed:
+The **Summary** tab displays the JSON-formatted key/value pairs in tabular format that represent ProcessMaker [Screen](../../../designing-processes/design-forms/what-is-a-form.md) control data. Information is displayed:
 
 * **Key:** The **Key** column displays the JSON key name that represents the ProcessMaker Screen control name the Request participant entered data. For example, a Text control to enter your name could be named `Full Name` which would display in the **Key** column here.
-* **Value:** The **Value** column displays that key's value as entered by a person manually interacting with a formI. For example, a Text control to enter your name could have the value `John Doe` which would display in the **Value** column here.
+* **Value:** The **Value** column displays that key's value as entered by a person manually interacting with a form. For example, a Text control to enter your name could have the value `John Doe` which would display in the **Value** column here.
 
 Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
 
@@ -91,6 +91,38 @@ The **Files** tab displays the following summary in tabular format about the fil
 * **Created At:** The **Created At** column displays the date the file became associated with the selected Request. The file became associated with the Request when the person who attached it submitted the [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md) to which the file was uploaded. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
+
+## Forms Associated with the Request
+
+The **Forms** tab displays the ProcessMaker [Screen](../../../designing-processes/design-forms/what-is-a-form.md) associated with each Task that each Request participant submitted in the Request to that time. For example, if a Request participant entered information into a Screen, all Request participants can view the Request data that the Task assignee entered.
+
+![&quot;Forms&quot; tab for an in-progress Request&apos;s summary](../../../.gitbook/assets/forms-tab-summary-requests.png)
+
+The **Forms** tab displays the following summary in tabular format about submitted ProcessMaker Screens by Request participants to that time in the Request:
+
+* **Screen:** The **Screen** column displays the name of each submitted ProcessMaker Screen in the selected Request.
+* **Description:** The **Description** column displays the description of each ProcessMaker Screen.
+
+{% hint style="info" %}
+### View a ProcessMaker Screen and Its Submitted Request Data
+
+To view a ProcessMaker Screen and the Request data submitted by a Request participant, click the **Details** icon![](../../../.gitbook/assets/details-collapsed-icon-summary-requests.png). The submitted ProcessMaker Screen displays.  
+![](../../../.gitbook/assets/forms-tab-details-summary-requests.png) 
+
+Click the **Details** icon![](../../../.gitbook/assets/details-expanded-icon-summary-requests.png)again to hide the displayed ProcessMaker Screen and its Request data.
+
+### Print the ProcessMaker Screen and its Submitted Request Data
+
+To print a ProcessMaker and its Request data, click the **Print** icon![](../../../.gitbook/assets/print-icon-summary-requests.png). A print preview displays in a new browser window from which you can select an accessible printer.
+{% endhint %}
+
+Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
+
+{% hint style="info" %}
+### There Are No Forms?
+
+If the selected Request has no ProcessMaker Screens with submitted Request data, the following message displays: **No Data Available**.
+{% endhint %}
 
 ## Request Participants
 

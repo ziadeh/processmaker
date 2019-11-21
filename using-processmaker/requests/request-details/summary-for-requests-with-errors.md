@@ -6,7 +6,7 @@ description: Learn what information displays in summaries for Requests with erro
 
 ## Overview
 
-Follow these steps to view a summary for a Request that has an error:
+Follow these steps to view a summary for a [Request](../what-is-a-request.md) that has an error:
 
 1. Ensure that you are [logged on](../../log-in.md#log-on) to ProcessMaker.
 2. View one of the following **Requests** pages:
