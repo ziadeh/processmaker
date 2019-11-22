@@ -14,7 +14,7 @@ You can cancel a Request in the following circumstances:
 ## Cancel a Request
 
 {% hint style="info" %}
-If a Process is not configured to allow you to cancel Requests, then the Cancel button to cancel Requests does not display in Request summaries associated with that Process.
+If a Process is not configured to allow you to cancel Requests, then the **Cancel** button to cancel Requests does not display in Request summaries associated with that Process.
 {% endhint %}
 
 Follow these steps to cancel a Request:

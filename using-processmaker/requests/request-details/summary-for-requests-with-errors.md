@@ -18,9 +18,9 @@ Follow these steps to view a summary for a [Request](../what-is-a-request.md) th
    * From the **\#** column in the Request page, click the Request number associated with the Process that you want to view. That Request's summary displays.
    * Click the **Open Request** icon![](../../../.gitbook/assets/open-request-icon-requests.png)for a Request. That Request's summary displays.
 
-## Summary of the Error
+## Error Description
 
-The **Errors** tab displays the summary about an error for a selected Request if an error occurred. The **Errors** tab only displays if an error has occurred.
+The **Errors** tab displays the description of the error for a selected Request if an error occurred. The **Errors** tab only displays if an error has occurred.
 
 ![&quot;Errors&quot; tab displays information about a Request error](../../../.gitbook/assets/error-tab-information-requests.png)
 
@@ -58,34 +58,26 @@ If there are no assigned Tasks for the selected Request, the following message d
 
 ## Values in the Request
 
-The **Summary** tab displays the summary of information entered into the Request to the time the error occurred. Request participants manually enter information into [ProcessMaker Screens](../../../designing-processes/design-forms/what-is-a-form.md). ProcessMaker Screens are digital forms.
+The **Summary** tab displays the summary of information entered into the Request when a Request completes. However, because the Request is in progress, there are no Request values to display. The **Summary** tab displays the following message: **This Request is currently in progress. This screen will be populated once the Request is completed**.
 
-~~NEED SCREEN SHOT OF SUMMARY TAB WITH AN ERROR~~
+![&quot;Summary&quot; tab displays a message that this tab displays Request values after the Request completes](../../../.gitbook/assets/summary-tab-in-progress-request-message-requests.png)
 
-The **Summary** tab displays the JSON-formatted key/value pairs in tabular format that represent ProcessMaker Screen control data. Information is displayed:
-
-* **Key:** The **Key** column displays the JSON key name that represents the ProcessMaker Screen control name the Request participant entered data. For example, a [Rich Text](../../../designing-processes/design-forms/screens-builder/control-descriptions/rich-text-control-settings.md#control-description) control to enter your company's name could have a [**Variable Name**](../../../designing-processes/design-forms/screens-builder/control-descriptions/rich-text-control-settings.md#configuration-panel-settings) setting value of `companyName` which would display in the **Key** column here.
-* **Value:** The **Value** column displays that key's value as entered by a person manually interacting with a form. For example, a Text control to enter your name could have the value `John Doe` which would display in the **Value** column here.
-
-Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-requests-with-errors.md#request-history).
-
-{% hint style="info" %}
-[Control how tabular information displays](../../control-how-requests-display-in-a-tab.md), including how to sort columns or how many items display per page.
-{% endhint %}
+Below this message, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
 
 ## Completed Tasks Summary
 
 The **Completed** tab displays the summary of all Tasks Request participants completed to the time the Request error occurred.
 
-~~NEED SCREEN SHOT OF COMPLETED TAB WITH AN ERROR~~
+![&quot;Completed&quot; tab for an in-progress Request&apos;s summary](../../../.gitbook/assets/completed-tab-for-in-progress-request-requests.png)
 
 The **Completed** tab displays the following summary in tabular format about completed Tasks Request participants completed to the time the Request error occurred:
 
+* **\#:** The **\#** column displays the Task ID associated with its [Process](../../../designing-processes/viewing-processes/what-is-a-process.md). Each time that Task is assigned to a Request participant, the ID for that Task increments by one.
 * **Task:** The **Task** column displays the name of each completed Task in the selected Request. 
 * **Assigned:** The **Assigned** column displays the username's avatar to whom the Task was assigned. Hover your cursor over a user's avatar to view that person's full name.
 * **Due:** The **Due** column displays the date the Task was due. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
-Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-requests-with-errors.md#request-history).
+Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-in-progress-requests.md#request-history).
 
 {% hint style="info" %}
 ### There Are No Completed Tasks?
@@ -101,7 +93,7 @@ If the selected Request has no completed Tasks, the following message displays: 
 
 The **Files** tab displays the summary of all files associated with the Request error occurred. The **Files** tab only displays if at least one file has been uploaded to the Request. The name of each file is linked to the file so you can download that file to your local computer or network location.
 
-~~NEED A SCREEN SHOT OF THE FILES TAB WITH AN ERROR~~
+![&quot;Files&quot; tab for an in-progress Request&apos;s summary](../../../.gitbook/assets/files-tab-request-summary-requests.png)
 
 The **Files** tab displays the following summary in tabular format about the files associated with the Request:
 
@@ -113,7 +105,7 @@ Below the table, the history of the Request displays all Request actions to the 
 
 ## Forms Associated with the Request
 
-The **Forms** tab displays the ProcessMaker [Screen](../../../designing-processes/design-forms/what-is-a-form.md) associated with each Task that each Request participant submitted in the Request to that time. For example, if a Request participant entered information into a Screen, all Request participants can view the Request data that the Task assignee entered.
+The **Forms** tab displays the ProcessMaker [Screen](../../../designing-processes/design-forms/what-is-a-form.md) associated with each Task that each Request participant submitted in the time the Request error occurred. For example, if a Request participant entered information into a ProcessMaker Screen, all Request participants can view the Request data that the Task assignee entered.
 
 ![&quot;Forms&quot; tab for an in-progress Request&apos;s summary](../../../.gitbook/assets/forms-tab-summary-requests.png)
 
@@ -143,17 +135,26 @@ Below the table, the history of the Request displays all Request actions. See [R
 If the selected Request has no ProcessMaker Screens with submitted Request data, the following message displays: **No Data Available**.
 {% endhint %}
 
-## Request Participants
+## Summary
 
-Each Request that has an error displays a summary of the Request participants to the time of the error.
+Each Request that has an error displays a summary of the Request to the time of the error.
 
 ![Request participant summary for a Request in which an error occurred](../../../.gitbook/assets/error-request-information-requests.png)
 
-The following summary displays about participants in a Request in which an error occurred:
+The following summary displays about a Request in which an error occurred:
 
 * **Requested By:** The **Requested By** field displays the avatar and full name of the person who started the selected Request. Hover your cursor over a user's avatar to view that person's full name.
+* **Child Requests:** The **Child Requests** field displays any child Requests associated with this Request, referred to as the parent Request when a child Request exists. A child Request is one from which this Request automatically started as designed in its associated Process. All child Requests have their own statuses since each routes independently of their parent Request. Click the link for any child Request to view the Request summary for that child Request. If there are no child Requests associated with this Request, the **Child Requests** field does not display. The status icon displays beside each child Request. See [View Your Requests](../view-started-requests.md#view-your-requests) for descriptions of each status icon.
+* **Parent Request:** The **Parent Request** field displays the parent Request associated with this Request, referred to as the child Request when a parent Request exists. The parent Request is one that automatically started this Request as designed in its associated Process. The parent Request has its own status since it routes independently of its child Request\(s\). Click the link for the parent Request to view the Request summary for that Request. If there is no parent Request associated with this Request, the **Parent Request** field does not display. The status icon displays beside the parent Request. See [View Your Requests](../view-started-requests.md#view-your-requests) for descriptions of each status icon.
 * **Participants:** The **Participants** displays each Request participant's avatar in the selected Request to the time of the error. Hover your cursor over a user's avatar to view that person's full name.
 * **Request error date:** The date and time in which the Request error occurred displays below the **Participants** field. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+
+{% hint style="info" %}
+Follow these steps to manually complete a Request with an error:
+
+1. Click **Complete**. A message displays to confirm you want to cancel the Request. ![](../../../.gitbook/assets/caution-manually-complete-request-screen-requests.png) 
+2. Click **Confirm**. The status for the selected Request changes from Error to Complete.
+{% endhint %}
 
 ## Request History
 
