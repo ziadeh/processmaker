@@ -90,9 +90,9 @@ Your user account or group membership must have the following permissions to con
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Configure to which Vocabularies Process Owners in your organization have access. Process Owners use these Vocabularies to enforce a uniform JSON scheme for this Process. The Vocabularies package must be installed in your ProcessMaker environment to make this configuration.
+Configure to which ProcessMaker Vocabularies Process Owners in your organization have access. Process Owners use these ProcessMaker Vocabularies to enforce a uniform JSON scheme for this Process. The Vocabularies package must be installed in your ProcessMaker environment to make this configuration.
 
-Follow these steps to configure which Vocabularies are available to a Package:
+Follow these steps to configure which ProcessMaker Vocabularies are available to a Process:
 
 1. [View your active Processes.](./#view-your-processes) The **Processes** page displays.
 2. Select the **Config** icon![](../../../.gitbook/assets/configure-process-icon-processes-page-processes.png)for your Process. The **Edit** page displays.
@@ -100,11 +100,11 @@ Follow these steps to configure which Vocabularies are available to a Package:
 
    ![](../../../.gitbook/assets/vocabularies-tab-process-configuration-edit-processes.png)
 
-4. From the **Select process vocabularies** drop-down, select which Vocabularies are available for this Process. If no Vocabularies are selected, no JSON scheme is enforced for this Process.
+4. From the **Select process vocabularies** drop-down, select which ProcessMaker Vocabularies are available for this Process. If no ProcessMaker Vocabularies are selected, no JSON schema is enforced for this Process.
 
-   If no Vocabularies are configured in your ProcessMaker environment, then the following message displays: **List is empty.** Create at least one Vocabulary. See ~~SOME TOPIC~~.
+   If no ProcessMaker Vocabularies are configured in your ProcessMaker environment, then the following message displays: **List is empty.** Create at least one ProcessMaker Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary).
 
-   Type into the **Select process vocabularies** field to filter Vocabularies that display in that field's drop-down menu. To remove a Vocabulary that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
+   Type into the **Select process vocabularies** field to filter ProcessMaker Vocabularies that display in that field's drop-down menu. To remove a ProcessMaker Vocabulary that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
 
 5. Click **Save**.
 
