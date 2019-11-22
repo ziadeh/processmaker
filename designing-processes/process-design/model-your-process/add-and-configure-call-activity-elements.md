@@ -85,11 +85,11 @@ Follow these steps to edit the name for a Call Activity element:
 
 ### Select the Called Process
 
-The Call Activity element calls an external sub-Process when it triggers. The external sub-Process must be a ProcessMaker Process that is not archived.
+The Call Activity element calls an external Process when it triggers. The external Process is referred to as a "child" Process, while the calling Process is referred to as the "parent" Process. The child Process must in the same ProcessMaker instance as the parent Process and not [archived](../../viewing-processes/view-the-list-of-processes/remove-a-process.md).
 
-Follow these steps to select the external sub-Process the Call Activity element calls when it triggers:
+Follow these steps to select the child Process the Call Activity element calls when it triggers:
 
-1. Select the Call Activity element from the Process model in which to select the called sub-Process. The **Configuration** setting section displays.
+1. Select the Call Activity element from the Process model in which to select the called child Process. The **Configuration** setting section displays.
 2. Expand the **Configuration** setting section if it is not presently expanded. The **Process** drop-down menu displays.  
 
    ![](../../../.gitbook/assets/call-activity-configuration-process-modeler-processes.png)

@@ -199,11 +199,15 @@ See [Add and Configure Manual Task Elements](add-and-configure-manual-task-eleme
 
 ## Call Activity
 
-A Call Activity element represents a call to an external sub-Process. Use the Call Activity element to call an external Process \(the sub-Process\) from the current Process.
+A Call Activity element represents a call to an external Process that can be re-used by other Processes in the ProcessMaker instance. The external Process that is called is referred to as the "child" Process. Use the Call Activity element to call a child Process from the current Process, which is referred to as the "parent" Process.
 
-The external sub-Process that the Call Activity calls must be in the same ProcessMaker instance and not archived.
+The child Process that the Call Activity element calls from the parent Process's Request must be in the same ProcessMaker instance and not [archived](../../viewing-processes/view-the-list-of-processes/remove-a-process.md).
 
-The called sub-Process has its own [Request](../../../using-processmaker/requests/what-is-a-request.md). The Request for the calling Process waits until the sub-Process's Request completes. When the external sub-Process's Request completes, the Request continues for the Call Activity element's Process.
+The child Process has its own [Request](../../../using-processmaker/requests/what-is-a-request.md). The Request for the parent Process waits until the child Process's Request completes before its workflow continues. When the child Process's Request completes, the parent Process's Request continues from the Call Activity element.
+
+{% hint style="info" %}
+To prevent routing for the parent Process's Request from waiting until the child Process's Request completes, use a [Parallel Gateway](process-modeling-element-descriptions.md#parallel-gateway) element preceding the Call Activity element. Use a parallel outgoing [Sequence Flow](the-quick-toolbar.md) element from the Parallel Gateway element to continue routing the parent Process while the Call Activity element waits for the child Process's Request to complete.
+{% endhint %}
 
 In the left panel in Process Modeler, the Call Activity element is labeled as "Call Activity."
 
