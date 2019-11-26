@@ -6,7 +6,7 @@ description: Understand what a Vocabulary is in ProcessMaker.
 
 ## Overview
 
-Use the [Vocabularies package](../../package-development-distribution/package-a-connector/vocabularies.md) to maintain a uniform JSON scheme that validates ProcessMaker assets referenced in your Processes. These assets include [Processes](../viewing-processes/what-is-a-process.md), [ProcessMaker Scripts](../scripts/what-is-a-script.md), and [ProcessMaker Screens](../design-forms/what-is-a-form.md).
+Use the [Vocabularies package](../../package-development-distribution/package-a-connector/vocabularies.md) to maintain a uniform JSON schema that validates ProcessMaker assets referenced in your Processes. These assets include [Processes](../viewing-processes/what-is-a-process.md), [ProcessMaker Scripts](../scripts/what-is-a-script.md), and [ProcessMaker Screens](../design-forms/what-is-a-form.md).
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
