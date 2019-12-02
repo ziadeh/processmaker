@@ -206,6 +206,35 @@ Follow these steps to select who can start a Request via a Web Entry URL via thi
 
    ![](../../../.gitbook/assets/web-entry-url-access-start-event-process-modeler-processes.png)
 
+## Select ProcessMaker Vocabularies That Apply to This Element
+
+{% hint style="info" %}
+### ProcessMaker Package Required
+
+Your ProcessMaker instance must have the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) installed to select which ProcessMaker Vocabulary applies to a Start Event element. Use the Vocabularies package to maintain uniform JSON schemas across all assets in your organization. These assets include [Processes](../../viewing-processes/what-is-a-process.md), [ProcessMaker Screens](../../design-forms/what-is-a-form.md), and [ProcessMaker Scripts](../../scripts/what-is-a-script.md).
+
+A ProcessMaker Vocabulary is a JSON schema designed to annotate and validate ProcessMaker assets to which that Vocabulary is applied. The JSON schema describes your existing data format\(s\) in both a machine and human readable structure. Any ProcessMaker asset to which that ProcessMaker Vocabulary applies must conform to that JSON schema.
+
+The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
+
+### Permissions Required
+
+Your ProcessMaker user account or group membership must have the following permissions to set which ProcessMaker user or group can start a Request for a Process unless your user account has the **Make this user a Super Admin** setting selected:
+
+* Processes: View Processes
+* Processes: Edit Processes
+
+See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
+{% endhint %}
+
+One or more [ProcessMaker Vocabularies](../../vocabularies-management/what-is-a-vocabulary.md) must be created to your ProcessMaker instance before selecting a [Vocabulary](../../vocabularies-management/what-is-a-vocabulary.md) to ensure a BPMN element's JSON schema conforms to that Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary).
+
+Multiple ProcessMaker Vocabularies can apply to one Start Event element. Understand which ProcessMaker Vocabularies apply to this Start Event element.
+
+Follow these steps to select which ProcessMaker Vocabularies apply this Start Event element:
+
+
+
 ## Related Topics
 
 {% page-ref page="process-modeling-element-descriptions.md" %}
@@ -223,6 +252,8 @@ Follow these steps to select who can start a Request via a Web Entry URL via thi
 {% page-ref page="../remove-process-model-elements.md" %}
 
 {% page-ref page="../../../package-development-distribution/package-a-connector/web-entry.md" %}
+
+{% page-ref page="../../../package-development-distribution/package-a-connector/vocabularies.md" %}
 
 {% page-ref page="../../design-forms/screens-builder/types-for-screens.md" %}
 
