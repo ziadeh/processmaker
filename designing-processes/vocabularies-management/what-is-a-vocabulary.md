@@ -38,17 +38,6 @@ During an in-progress Request, if ProcessMaker evaluates that the Request data n
 
 ProcessMaker Vocabularies can be granular, in that they evaluate compliance only for specific objects in an in-progress Request's JSON data model.
 
-A ProcessMaker Vocabulary can be applied to the following BPMN 2.0 elements:
-
-* The [Process's configuration](../viewing-processes/view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md#configure-which-vocabularies-are-available-to-a-process)
-* [Start Event](../process-design/model-your-process/process-modeling-element-descriptions.md#start-event): Validate the JSON data model for [Web Entry](../../package-development-distribution/package-a-connector/web-entry.md).
-* [End Event](../process-design/model-your-process/process-modeling-element-descriptions.md#end-event): Validate the JSON data model for a ProcessMaker Screen that displays a Request summary.
-* [Intermediate Message Catch Event](../process-design/model-your-process/process-modeling-element-descriptions.md#intermediate-message-catch-event)
-* [Task](../process-design/model-your-process/process-modeling-element-descriptions.md#task): Validate the JSON data model for a ProcessMaker Screen that displays a Task.
-* [Script Task](../process-design/model-your-process/process-modeling-element-descriptions.md#script-task): Validate the JSON data model for a ProcessMaker Script.
-* [Manual Task](../process-design/model-your-process/process-modeling-element-descriptions.md#manual-task): Validate the JSON data model for a ProcessMaker Screen that displays a Manual Task.
-* [Call Activity](../process-design/model-your-process/process-modeling-element-descriptions.md#call-activity): Validate the JSON data model for a called child Process.
-
 Use ProcessMaker Vocabularies throughout your organization in the following ways:
 
 * **Set Vocabulary permissions:** Determine which ProcessMaker users and/or groups have permission to view, create, edit or delete Vocabularies. See [Vocabulary permissions](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#vocabularies).
