@@ -6,30 +6,37 @@ description: Understand what a Vocabulary is in ProcessMaker.
 
 ## Overview
 
-Use the [Vocabularies package](../../package-development-distribution/package-a-connector/vocabularies.md) to ensure your Processes comply with specific data objects and structures, such as for regulatory specifications. ProcessMaker Vocabularies apply to ProcessMaker assets, including [Processes](../viewing-processes/what-is-a-process.md), [ProcessMaker Scripts](../scripts/what-is-a-script.md), and [ProcessMaker Screens](../design-forms/what-is-a-form.md).
+Use the [Vocabularies package](../../package-development-distribution/package-a-connector/vocabularies.md) to ensure your Processes comply with specific data structures or regulatory specifications. ProcessMaker Vocabularies apply to ProcessMaker assets, including [Processes](../viewing-processes/what-is-a-process.md), [ProcessMaker Scripts](../scripts/what-is-a-script.md), and [ProcessMaker Screens](../design-forms/what-is-a-form.md).
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
 
 The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
-
-### Need to Learn How to Develop JSON Schemas?
-
-Start with [JSON Schema](https://json-schema.org/).
 {% endhint %}
 
-A ProcessMaker Vocabulary is a JSON schema. The JSON schema describes the data objects, types, and structure that you want in both a machine and human readable structure. Use ProcessMaker Vocabularies to ensure that started Requests using a Process conform with the JSON schema you require. ProcessMaker Vocabularies apply to a Process and/or specific BPMN element types in a Process to validate data conformity for in-progress Requests of that Process. The Request's JSON data model must conform to the ProcessMaker Vocabulary's JSON schema, including all of its objects and their data types.
+### Why Use ProcessMaker Vocabularies?
 
-Any ProcessMaker asset to which that ProcessMaker Vocabulary applies must conform to that JSON schema, including Processes, ProcessMaker Scripts, and ProcessMaker Screens.
+ProcessMaker uses a schema-less JSON data model from which to read, write, and store Request data. Since the JSON data model is schema-less \(meaning that it does not require a specific schema or structure from which ProcessMaker assets must conform\), the JSON data model is structured from the JSON objects in ProcessMaker assets used in a Request: the **Variable Name** setting values in a ProcessMaker Screen or variables a ProcessMaker Script creates. When an in-progress Request routes through the Process, Request data aggregates into the JSON data model, thereby becoming Request data.
 
-ProcessMaker Vocabularies are granular, in that one or more Vocabularies can be assigned to specific BPMN 2.0 element types within a Process or the Process model itself to validate the ProcessMaker asset that is referenced from that BPMN 2.0 element. ProcessMaker Vocabularies can be granular, in that they evaluate compliance for only a segment of an in-progress Request's JSON data model. For example, during a Loan Application process, ensure that personal information has been included in the Request to that moment in that in-progress Request.
+Use ProcessMaker Vocabularies to ensure Request data complies with a specific data structure. This is often mandatory for many types of business sectors including banking and healthcare. Ensure the quality and compliance of Request data. For example, during a Loan Application process, ensure that personal information has been included in the Request to that moment in that in-progress Request.
 
-Use ProcessMaker Vocabularies for the following reasons:
+### What is a ProcessMaker Vocabulary?
 
-* Ensure that data associated with the ProcessMaker asset to which the Vocabulary applies complies with a required data format. For example, use a ProcessMaker Vocabulary on a Task element. By extension, the ProcessMaker Vocabulary applies to the ProcessMaker Screen referenced by that Task element. The ProcessMaker Vocabulary ensures that the Screen designer complies with the JSON schema as structured in the Vocabulary. This maintains consistency, validation, and compliance across any Task to which that ProcessMaker Vocabulary applies.
-* Ensure the quality and compliance of submitted data. For example, ensure that information entered into a ProcessMaker Screen for a Task complies with a regulatory specification.
+A ProcessMaker Vocabulary is a JSON schema. The JSON schema describes the data objects, types, and structure that you want in both a machine and human readable format. Apply one or more ProcessMaker Vocabularies to your Processes and/or specific BPMN 2.0 elements in your Process models to ensure the JSON data model in Request data complies with the data structure outlined in the JSON schema that you need to meet regulatory specifications or ensure Request data contains required information.
 
-A ProcessMaker Vocabulary's validation can require that specific data pass through the JSON data model for that Process and/or BPMN 2.0 element or that data be of a particular data type.
+{% hint style="info" %}
+Need to learn how to develop JSON schemas? Start with [JSON Schema](https://json-schema.org/).
+{% endhint %}
+
+### How Do ProcessMaker Vocabularies Work?
+
+Each moment ProcessMaker evaluates workflow routing for an in-progress Request, ProcessMaker also evaluates the Request data's conformity to the ProcessMaker Vocabularies applied to the Process and/or a specific BPMN 2.0 element in the Process model. The Request's JSON data model must conform to the ProcessMaker Vocabulary's JSON schema.
+
+During an in-progress Request, if ProcessMaker evaluates that the Request data no longer complies with all ProcessMaker Vocabularies to that moment, the Request status changes from In Progress to Error. The error displays in the [Request summary](../../using-processmaker/requests/request-details/summary-for-requests-with-errors.md). ProcessMaker Vocabularies are cumulative in an in-progress Request: as the Request progresses, if Request data does not conform with any Vocabulary's JSON schema to that moment in the Request, the Request errors.
+
+### How Would I Use ProcessMaker Vocabularies?
+
+ProcessMaker Vocabularies can be granular, in that they evaluate compliance only for specific objects in an in-progress Request's JSON data model.
 
 A ProcessMaker Vocabulary can be applied to the following BPMN 2.0 elements:
 

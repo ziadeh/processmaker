@@ -20,6 +20,8 @@ Start with [JSON Schema](https://json-schema.org/).
 
 Use the Vocabularies package to maintain uniform JSON schemas across all assets in your organization. These assets include [Processes](../../designing-processes/viewing-processes/what-is-a-process.md), [ProcessMaker Screens](../../designing-processes/design-forms/what-is-a-form.md), and [ProcessMaker Scripts](../../designing-processes/scripts/what-is-a-script.md).
 
+Use ProcessMaker Vocabularies to enforce compliance with a specific data structure in Request data for your Processes. Apply one or more ProcessMaker Vocabularies to your Processes and/or specific BPMN elements in your Process models to ensure the JSON data model in Request data complies with a data structure you need to meet regulatory specifications or ensure Request data contains required information as each Request routes through workflow.
+
 A ProcessMaker Vocabulary is a JSON schema designed to annotate and validate ProcessMaker assets to which that Vocabulary is applied. The JSON schema describes your existing data format\(s\) in both a machine and human readable structure. Any ProcessMaker asset to which that ProcessMaker Vocabulary applies must conform to that JSON schema.
 
 Use ProcessMaker Vocabularies for the following reasons:
