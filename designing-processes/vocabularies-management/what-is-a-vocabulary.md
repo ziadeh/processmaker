@@ -36,12 +36,12 @@ During an in-progress Request, if ProcessMaker evaluates that the Request data n
 
 ### How Would I Use ProcessMaker Vocabularies?
 
-ProcessMaker Vocabularies can be granular, in that they evaluate compliance only for specific objects in an in-progress Request's JSON data model.
+ProcessMaker Vocabularies can be granular, in that they evaluate compliance only for specific objects in an in-progress Request's JSON data model. As a best practice, develop granular ProcessMaker Vocabularies so that they can be re-used in multiple Processes and business sectors in your organization. Since you can add more than one ProcessMaker Vocabulary to a Process or supporting BPMN 2.0 element, add as many smaller ProcessMaker Vocabularies as necessary to target compliance. If you use ProcessMaker Vocabularies that contain large JSON schemas, they will not be as re-usable to as many Processes.
 
 Use ProcessMaker Vocabularies throughout your organization in the following ways:
 
 * **Set Vocabulary permissions:** Determine which ProcessMaker users and/or groups have permission to view, create, edit or delete Vocabularies. See [Vocabulary permissions](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#vocabularies).
-* **Manage your ProcessMaker Vocabularies:** Manage your organization's ProcessMaker Vocabularies based on business vertical, organizational department, or any way you want to maintain consistent nomenclature and architecture for your ProcessMaker assets. See [Manage Your Vocabularies](manage-your-vocabularies/).
+* **Manage your ProcessMaker Vocabularies:** Manage your organization's ProcessMaker Vocabularies based on business sector, organizational department, or any way you want to maintain regulatory compliance in your ProcessMaker assets. See [Manage Your Vocabularies](manage-your-vocabularies/).
 * **Configure which elements within a Process use a ProcessMaker Vocabulary:** After [creating](../environment-variable-management/manage-your-environment-variables/create-a-new-environment-variable.md#create-a-new-processmaker-environment-variable) one or more ProcessMaker Vocabularies, apply them to specific types of BPMN 2.0 elements and/or configuration within a Process. See the following topics:
   * [Process configuration](../viewing-processes/view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md#configure-which-vocabularies-are-available-to-a-process)
   * Event elements

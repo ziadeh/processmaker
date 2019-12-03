@@ -152,7 +152,7 @@ When a Start Event element is placed into a Process model, Web Entry settings fo
 Follow these steps to select who can start a Request via a Web Entry URL via this Start Event element:
 
 1. Select the Start Event element from the Process model in which to select who may start a Request via a Web Entry URL. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Start Permission** drop-down menu displays.  
+2. Expand the **Web Entry** setting section. The **Mode** drop-down menu displays.  
 
    ![](../../../.gitbook/assets/web-entry-mode-start-event-process-modeler-processes.png)
 
@@ -227,13 +227,16 @@ Your ProcessMaker user account or group membership must have the following permi
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-One or more [ProcessMaker Vocabularies](../../vocabularies-management/what-is-a-vocabulary.md) must be created to your ProcessMaker instance before selecting a [Vocabulary](../../vocabularies-management/what-is-a-vocabulary.md) to ensure a BPMN element's JSON schema conforms to that Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary).
+Select which [ProcessMaker Vocabularies](../../vocabularies-management/what-is-a-vocabulary.md) ensure Request data complies with a specific data structure. This is often mandatory for many types of business sectors including banking and healthcare. Ensure the quality and compliance of Request data. For example, during a Loan Application process, ensure that personal information has been included in the Request to that moment in that in-progress Request. The Vocabularies package must be installed in your ProcessMaker instance to make this configuration.
 
-Multiple ProcessMaker Vocabularies can apply to one Start Event element. Understand which ProcessMaker Vocabularies apply to this Start Event element.
+One or more ProcessMaker Vocabularies must be created to your ProcessMaker instance before selecting a Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary). Multiple ProcessMaker Vocabularies can apply to one Start Event element.
+
+If no ProcessMaker Vocabularies are selected, ProcessMaker does not evaluate if Request data complies with a specific data structure when this BPMN element triggers.
 
 Follow these steps to select which ProcessMaker Vocabularies apply this Start Event element:
 
-
+1. Select the Start Event element from the Process model in which to select which ProcessMaker Vocabularies apply to this element. The **Configuration** setting section displays.
+2. Expand the **Vocabularies** setting section. The **Assigned** setting displays.
 
 ## Related Topics
 

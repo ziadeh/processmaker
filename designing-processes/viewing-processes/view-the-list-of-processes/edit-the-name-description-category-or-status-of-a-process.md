@@ -31,7 +31,7 @@ Follow these steps to configure a Process:
 3. Edit the following Process configuration as necessary:
    * In the **Name** field, edit the Process name. This is a required field.
    * In the **Description** field, edit the description of the Process. This is a required field.
-   * From the **Category** drop-down menu, select to which category to assign the Process. This is a required field. See [Process Categories]() for more information how this affects new [Requests](../../../using-processmaker/requests/what-is-a-request.md) for the Process.
+   * From the **Category** drop-down menu, select to which categories to assign the Process. This is a required field. See [What is a Process Category?](manage-process-categories/what-is-a-process-category.md) for more information how this affects new [Requests](../../../using-processmaker/requests/what-is-a-request.md) for the Process.
    * From the **Cancel Request** drop-down, assign which ProcessMaker user\(s\) or group\(s\) have permission to [cancel Requests](../../../using-processmaker/requests/delete-a-request.md) from this Process. If no users or groups are selected, no one can cancel a Request from this Process. Type into the **Cancel Request** field to filter ProcessMaker users and/or groups that display in that field's drop-down menu. To remove a ProcessMaker user or group that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
    * From the **Cancel Screen** drop-down menu, select a ProcessMaker Screen to display when a Request for this Process is canceled.
    * From the **Edit Data** drop-down menu, assign which ProcessMaker user\(s\) or group\(s\) have permission to [edit Request data](../../../using-processmaker/requests/request-details/summary-for-completed-requests.md#editable-request-data) from this Process. To remove a ProcessMaker user or group that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
@@ -73,12 +73,12 @@ Follow these steps to configure notifications for a Process:
    * **Request Completed:** Toggle the **Request Completed** setting to indicate whether requesters and/or Request participants are notified that a Request from this Process completed.
 5. Click **Save**.
 
-## Configure Which Vocabularies Are Available to a Process
+## Configure Which ProcessMaker Vocabularies Evaluate Request Data Compliance for a Process
 
 {% hint style="info" %}
 ### Package Required
 
-Your ProcessMaker environment must have the Vocabularies package to make this Process configuration. See [Vocabularies](../../../package-development-distribution/package-a-connector/vocabularies.md).
+Your ProcessMaker instance must have the Vocabularies package to make this Process configuration. See [Vocabularies](../../../package-development-distribution/package-a-connector/vocabularies.md).
 
 ### Permissions Required
 
@@ -90,7 +90,11 @@ Your user account or group membership must have the following permissions to con
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Configure to which ProcessMaker Vocabularies Process Owners in your organization have access. Process Owners use these ProcessMaker Vocabularies to enforce a uniform JSON scheme for this Process. The Vocabularies package must be installed in your ProcessMaker environment to make this configuration.
+Configure which ProcessMaker Vocabularies ensure Request data complies with a specific data structure. This is often mandatory for many types of business sectors including banking and healthcare. Ensure the quality and compliance of Request data. For example, during a Loan Application process, ensure that personal information has been included in the Request to that moment in that in-progress Request. The Vocabularies package must be installed in your ProcessMaker instance to make this configuration.
+
+One or more ProcessMaker Vocabularies must be created to your ProcessMaker instance before selecting a Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary). Multiple ProcessMaker Vocabularies can apply to a Process.
+
+If no ProcessMaker Vocabularies are selected, ProcessMaker does not evaluate if Request data complies with a specific data structure for this Process.
 
 Follow these steps to configure which ProcessMaker Vocabularies are available to a Process:
 
@@ -100,7 +104,7 @@ Follow these steps to configure which ProcessMaker Vocabularies are available to
 
    ![](../../../.gitbook/assets/vocabularies-tab-process-configuration-edit-processes.png)
 
-4. From the **Select process vocabularies** drop-down, select which ProcessMaker Vocabularies are available for this Process. If no ProcessMaker Vocabularies are selected, no JSON schema is enforced for this Process.
+4. From the **Select process vocabularies** drop-down, select which ProcessMaker Vocabularies are available for this Process.
 
    If no ProcessMaker Vocabularies are configured in your ProcessMaker environment, then the following message displays: **List is empty.** Create at least one ProcessMaker Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary).
 
