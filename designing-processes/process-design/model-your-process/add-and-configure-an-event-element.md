@@ -206,12 +206,12 @@ Follow these steps to select who can start a Request via a Web Entry URL via thi
 
    ![](../../../.gitbook/assets/web-entry-url-access-start-event-process-modeler-processes.png)
 
-## Assign ProcessMaker Vocabularies That Apply to This Element
+## Assign ProcessMaker Vocabularies That Validate Request Data from This Element
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
 
-Your ProcessMaker instance must have the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) installed to select which ProcessMaker Vocabularies apply to a Start Event element. Use the Vocabularies package to maintain uniform JSON schemas across all assets in your organization. These assets include [Processes](../../viewing-processes/what-is-a-process.md), [ProcessMaker Screens](../../design-forms/what-is-a-form.md), and [ProcessMaker Scripts](../../scripts/what-is-a-script.md).
+Your ProcessMaker instance must have the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) installed to assign which ProcessMaker Vocabularies validate Request data at a Start Event element. Use the Vocabularies package to maintain uniform JSON schemas across all assets in your organization. These assets include [Processes](../../viewing-processes/what-is-a-process.md), [ProcessMaker Screens](../../design-forms/what-is-a-form.md), and [ProcessMaker Scripts](../../scripts/what-is-a-script.md).
 
 A ProcessMaker Vocabulary is a JSON schema. The JSON schema describes the data objects, types, and structure that you want in both a machine and human readable format. Apply one or more ProcessMaker Vocabularies to your Processes and/or specific BPMN 2.0 elements in your Process models to ensure the JSON data model in Request data complies with the data structure outlined in the JSON schema that you need to meet regulatory specifications or ensure Request data contains required information.
 
@@ -229,15 +229,15 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 Assign [ProcessMaker Vocabularies](../../vocabularies-management/what-is-a-vocabulary.md) that validate Request data complies with a specific JSON schema. This is often mandatory for many types of business sectors including banking and healthcare. Ensure the quality and compliance of Request data. For example, during a Loan Application process, ensure that personal information has been included in the Request to that moment in that in-progress Request. The Vocabularies package must be installed in your ProcessMaker instance to make this configuration.
 
-Use a ProcessMaker Vocabulary on a Start Event element when using the Web Entry package. After the Request data is submitted from the Web Entry, ProcessMaker Vocabularies assigned to the Start Event element validates the Request data complies with the Vocabulary's JSON schema. See [What is a Vocabulary?](../../vocabularies-management/what-is-a-vocabulary.md) for more information.
+Use a ProcessMaker Vocabulary on a Start Event element when using the [Web Entry package](../../../package-development-distribution/package-a-connector/web-entry.md). After the Request data is submitted from the Web Entry, ProcessMaker Vocabularies assigned to the Start Event element validate the Request data complies with the Vocabulary's JSON schema. See [What is a Vocabulary?](../../vocabularies-management/what-is-a-vocabulary.md) for more information. See [Select Who Can Start a Request via a Web Entry](add-and-configure-an-event-element.md#select-who-can-start-a-request-via-a-web-entry) for information how to use the Web Entry package on a Start Event element.
 
 One or more ProcessMaker Vocabularies must be created to your ProcessMaker instance before assigning a Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary). Multiple ProcessMaker Vocabularies can be assigned to a Start Event element.
 
 If no ProcessMaker Vocabularies are assigned, ProcessMaker does not validate Request data complies with a specific JSON schema prior to continuing workflow for that Request.
 
-Follow these steps to assign ProcessMaker Vocabularies that validate Request data from this Start Event element:
+Follow these steps to assign ProcessMaker Vocabularies that validate Request data from a Start Event element:
 
-1. Select the Start Event element from the Process model in which to select which ProcessMaker Vocabularies apply to this element. The **Configuration** setting section displays.
+1. Select the Start Event element from the Process model in which to assign ProcessMaker Vocabularies that validate Request data prior to when this element completes. The **Configuration** setting section displays.
 2. Expand the **Vocabularies** setting section. The **Assigned** setting displays.
 3. Click the![](../../../.gitbook/assets/add-icon.png)icon to add a ProcessMaker Vocabulary. The **Assign Vocabulary** option displays. ![](../../../.gitbook/assets/assign-vocabulary-option-process-modeler-processes.png) 
 4. From the **Select Vocabulary** drop-down menu, select a ProcessMaker Vocabulary from which to validate Request data complies with its JSON schema.
@@ -250,8 +250,12 @@ Follow these steps to assign ProcessMaker Vocabularies that validate Request dat
 6. Repeat Steps 3 through 5 as necessary for each ProcessMaker Vocabulary required to validate Request data complies with its JSON schema.
 
 {% hint style="info" %}
-Click the Delete icon from the Vocabularies setting to remove a ProcessMaker Vocabulary from this element.
+Click the **Remove** icon![](../../../.gitbook/assets/delete-remove-icon.png)from the **Vocabularies** setting to remove a ProcessMaker Vocabulary from assignment to this element.
 {% endhint %}
+
+After one or more ProcessMaker Vocabularies are assigned to a Start Event element, the Vocabulary icon displays above that element.
+
+![Start Event element with an assigned ProcessMaker Vocabulary](../../../.gitbook/assets/start-event-vocabulary-process-modeler-processes.png)
 
 ## Related Topics
 
@@ -274,6 +278,8 @@ Click the Delete icon from the Vocabularies setting to remove a ProcessMaker Voc
 {% page-ref page="../../../package-development-distribution/package-a-connector/vocabularies.md" %}
 
 {% page-ref page="../../vocabularies-management/what-is-a-vocabulary.md" %}
+
+{% page-ref page="../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md" %}
 
 {% page-ref page="../../design-forms/screens-builder/types-for-screens.md" %}
 

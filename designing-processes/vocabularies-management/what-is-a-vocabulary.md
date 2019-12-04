@@ -45,9 +45,8 @@ Use ProcessMaker Vocabularies throughout your organization in the following ways
 * **Configure which elements within a Process use a ProcessMaker Vocabulary:** After [creating](../environment-variable-management/manage-your-environment-variables/create-a-new-environment-variable.md#create-a-new-processmaker-environment-variable) one or more ProcessMaker Vocabularies, apply them to specific types of BPMN 2.0 elements and/or configuration within a Process. See the following topics:
   * [Process configuration](../viewing-processes/view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md#configure-which-vocabularies-are-available-to-a-process)
   * Event elements
-    * Start Event element
-    * End Event element
-    * Intermediate Message Catch Event element
+    * [Start Event element](../process-design/model-your-process/add-and-configure-an-event-element.md#assign-processmaker-vocabularies-that-apply-to-this-element)
+    * [Intermediate Message Catch Event element](../process-design/model-your-process/add-and-configure-intermediate-message-catch-event-elements.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
   * Task elements
     * Task element
     * Script Task element

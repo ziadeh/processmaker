@@ -73,12 +73,12 @@ Follow these steps to configure notifications for a Process:
    * **Request Completed:** Toggle the **Request Completed** setting to indicate whether requesters and/or Request participants are notified that a Request from this Process completed.
 5. Click **Save**.
 
-## Assign ProcessMaker Vocabularies That Apply to a Process
+## Assign ProcessMaker Vocabularies That Validate Request Data for a Process
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
 
-Your ProcessMaker instance must have the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) installed to select which ProcessMaker Vocabularies apply to a Process. Use the Vocabularies package to maintain uniform JSON schemas across all assets in your organization. These assets include [Processes](../what-is-a-process.md), [ProcessMaker Screens](../../design-forms/what-is-a-form.md), and [ProcessMaker Scripts](../../scripts/what-is-a-script.md).
+Your ProcessMaker instance must have the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) installed to assign which ProcessMaker Vocabularies validate Request data for a Process. Use the Vocabularies package to maintain uniform JSON schemas across all assets in your organization. These assets include [Processes](../what-is-a-process.md), [ProcessMaker Screens](../../design-forms/what-is-a-form.md), and [ProcessMaker Scripts](../../scripts/what-is-a-script.md).
 
 A ProcessMaker Vocabulary is a JSON schema. The JSON schema describes the data objects, types, and structure that you want in both a machine and human readable format. Apply one or more ProcessMaker Vocabularies to your Processes and/or specific BPMN 2.0 elements in your Process models to ensure the JSON data model in Request data complies with the data structure outlined in the JSON schema that you need to meet regulatory specifications or ensure Request data contains required information.
 
