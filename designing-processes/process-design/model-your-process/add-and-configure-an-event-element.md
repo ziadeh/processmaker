@@ -53,6 +53,19 @@ Your ProcessMaker user account or group membership must have the following permi
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
+### Edit the Element Name
+
+An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
+
+Follow these steps to edit the name for a Start Event element:
+
+1. Select the Start Event element from the Process model in which to edit its name. The **Configuration** panel displays.
+2. Expand the **Configuration** panel if it is not presently expanded. The **Name** field displays.  
+
+   ![](../../../.gitbook/assets/start-event-configuration-name-process-modeler-processes.png)
+
+3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+
 ### Edit the Identifier Value
 
 Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
@@ -63,25 +76,12 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Start Event element:
 
-1. Select the Start Event element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
+1. Select the Start Event element from the Process model in which to edit its identifier value. Panels to configure a Start Event element display.
+2. Expand the **Advanced** panel if it is not presently expanded. The **Identifier** setting displays. This is a required field.  
 
    ![](../../../.gitbook/assets/start-event-configuration-identifier-name-process-modeler-processes.png)
 
-3. In the **Identifier** field, edit the Start Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
-
-### Edit the Element Name
-
-An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
-
-Follow these steps to edit the name for a Start Event element:
-
-1. Select the Start Event element from the Process model in which to edit its name. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
-
-   ![](../../../.gitbook/assets/start-event-configuration-name-process-modeler-processes.png)
-
-3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+3. In the **Identifier** setting, edit the Start Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Select the ProcessMaker User or Group That Can Start Requests
 
