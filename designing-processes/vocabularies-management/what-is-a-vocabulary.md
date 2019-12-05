@@ -48,10 +48,10 @@ Use ProcessMaker Vocabularies throughout your organization in the following ways
     * [Start Event element](../process-design/model-your-process/add-and-configure-an-event-element.md#assign-processmaker-vocabularies-that-apply-to-this-element)
     * [Intermediate Message Catch Event element](../process-design/model-your-process/add-and-configure-intermediate-message-catch-event-elements.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
   * Task elements
-    * Task element
-    * Script Task element
-    * Manual Task element
-  * Call Activity element
+    * [Task element](../process-design/model-your-process/add-and-configure-task-elements.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
+    * [Script Task element](../process-design/model-your-process/add-and-configure-script-task-elements.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
+    * [Manual Task element](../process-design/model-your-process/add-and-configure-manual-task-elements.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
+  * [Call Activity element](../process-design/model-your-process/add-and-configure-call-activity-elements.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
 
 ## Related Topics
 
