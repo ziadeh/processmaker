@@ -117,17 +117,17 @@ Follow these steps to set the timer controls for a Start Timer Event element:
 
    ![](../../../.gitbook/assets/start-timer-timing-control-process-modeler-processes.png)
 
-3. From the **Start date** field, use the date control to select which date to initially trigger the Start Timer Event element. If this field has not been previously set, the current date is the default.  
+3. From the **Start date** field, use the date control to select the date to initially trigger the Start Timer Event element. If this field has not been previously set, the current date is the default.  
 
    ![](../../../.gitbook/assets/start-timer-event-date-control-process-modeler-processes.png)
 
-4. Set at which periodical interval to trigger the Start Timer Event element again, thereby starting a new Request. Follow these guidelines:
+4. Set the periodic interval to trigger the Start Timer Event element again, thereby starting a new Request. Follow these guidelines:
    * From the **Repeat every** setting, select at how many intervals of a set time period to trigger the Start Timer Event element. **1** is the default setting. Then select one of the following time periods for that element to trigger:
      * Day
      * Week \(default setting\)
      * Month
      * Year
-   * Alternatively, select on which day\(s\) of the week in which to trigger the Start Timer Event element. Selected days display with a blue-colored circle around each.
+   * Alternatively, select from the **Repeat on** setting the day\(s\) of the week in which to trigger the Start Timer Event element. Selected days display with a blue-colored circle around each.
 5. Set when to end the timer control from the following options:
    * Select **Never** to never end the timer control. **Never** is the default setting.
    * Select **On** to select a specific date in which to end the timer control. If this field has not been previously set, the current date is the default.
