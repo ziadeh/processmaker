@@ -87,6 +87,8 @@ Follow these steps to edit the name for a Call Activity element:
 
 The Call Activity element calls an external Process when it triggers. The external Process is referred to as a "child" Process, while the calling Process is referred to as the "parent" Process. The child Process must in the same ProcessMaker instance as the parent Process and not [archived](../../viewing-processes/view-the-list-of-processes/remove-a-process.md).
 
+The child Process has its own [Request](../../../using-processmaker/requests/what-is-a-request.md). The Request for the parent Process waits until the child Process's Request completes before its workflow continues. When the child Process's Request completes, the parent Process's Request continues from the Call Activity element.
+
 Follow these steps to select the child Process the Call Activity element calls when it triggers:
 
 1. Select the Call Activity element from the Process model in which to select the called child Process. The **Configuration** setting section displays.

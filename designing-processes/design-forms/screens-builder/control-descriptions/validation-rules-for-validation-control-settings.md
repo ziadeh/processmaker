@@ -6,7 +6,11 @@ description: Use these rules to describe how to validate your ProcessMaker Scree
 
 ## Overview
 
-Use the following rules to validate your [ProcessMaker Screen controls](./). If a control that has a **Validation** setting does not contain any value or properly structured validation rule, that control automatically passes validation.
+Use validation rules to specify conditions under which that control displays to the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant. If a control has a Validation setting for which its conditions are not met, then that control remains hidden. Validation rules only apply to other controls on the same ProcessMaker Screen. For example, use a validation rule to specify that unless another control on that ProcessMaker Screen contains a value because it is a required control, then the [Submit](submit-button-control-settings.md) control remains hidden to prevent the Request participant from submitting the Screen.
+
+If a control that has a **Validation** setting does not contain any value or properly structured validation rule, that control automatically passes validation thereby remaining hidden.
+
+Use the following rules below to validate your [ProcessMaker Screen controls](./).
 
 {% hint style="info" %}
 ### Ensure Validation Fails for an Undefined Setting
