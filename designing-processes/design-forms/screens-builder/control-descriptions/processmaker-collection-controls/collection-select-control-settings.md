@@ -111,8 +111,8 @@ Below are settings for the Collection Select control in the **Configuration** pa
 
 * **Field Label:** Enter the text label that displays for this control. This setting has no default value.
 * **Help Text:** Enter text that provides additional guidance on this control's use. This setting has no default value. This setting has no default value.
-* **Collection:** Select from which ProcessMaker Collection to display its record\(s\) in the Collection Select control. If no ProcessMaker Collections exist, the **Collection** drop-down menu contains no options; create at least one ProcessMaker Collection before using a Collection Select control.
-* **Value:** Enter how records display in the Collection Select control. Follow these guidelines to format how record data displays:
+* **Collection:** Select from which ProcessMaker Collection to display its record\(s\) in the Collection Select control. If no ProcessMaker Collections exist, the **Collection** drop-down menu contains no options; [create](../../../../../collections/manage-collections/create-a-new-collection.md) at least one ProcessMaker Collection before using a Collection Select control.
+* **Value:** Enter how referenced records display in the Collection Select control. Follow these guidelines to format how record data displays:
   * **Reference record data from the Collection:** Use mustache syntax to reference record data from the specified ProcessMaker Collection. References to the record data are case sensitive. Precede each reference with `data.`. Example: `{{ data.FirstName }}`. Reference multiple record data in the **Value** setting if necessary. Example: `{{ data.FirstName }} {{ data.LastName }}` if the specified ProcessMaker Collection uses two controls to record the first name and last name in records.
 
     Follow these guidelines to determine which record data to reference from the specified ProcessMaker Collection:

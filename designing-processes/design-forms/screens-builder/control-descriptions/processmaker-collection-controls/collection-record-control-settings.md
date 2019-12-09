@@ -95,25 +95,8 @@ Click the control while in [Design](../../screens-builder-modes.md#design-mode) 
 
 Below are settings for the Collection Record control in the **Configuration** panel:
 
-* **Text Label:** Enter how the referenced record displays in this Collection Record control. Follow these guidelines to format how record data displays:
-  * **Reference record data from the Collection:** Use mustache syntax to reference record data from the specified ProcessMaker [Collection](../../../../../collections/what-is-a-collection.md). References to the record data are case sensitive. Precede each reference with `data.`. Example: `{{ data.FirstName }}`. Reference multiple record data in the **Text Label** setting if necessary. Example: `{{ data.FirstName }} {{ data.LastName }}` if the specified ProcessMaker Collection uses two controls to record the first name and last name in records.
-
-    Follow these guidelines to determine which record data to reference from the specified ProcessMaker Collection:
-
-    1. Determine which ProcessMaker [Screens](../../../what-is-a-form.md) the specified Collection uses to create, update, and/or view records. See [Configure a Collection](../../../../../collections/manage-collections/configure-a-collection.md#configure-a-processmaker-collection). Note that your user account or group membership must have ProcessMaker [Collection](../../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions to access any Collection.
-    2. Edit the appropriate ProcessMaker Screen from which to reference record data in the specified Collection.
-    3. Select the ProcessMaker Screen control from which you want to reference record data, then note the **Variable Name** setting value in the **Variable** panel. Use this value to reference that record data in the **Text Label** setting of this Collection Record control.
-
-  * **Use text to describe the referenced record data:** Enter text preceding and/or following the referenced record data to describe the data. Example: `Dr. {{ data.FirstName }} {{ data.LastName }}, MD`.
-* **Font Weight:** Select from the following options the weight of the font that displays the record data:
-  * **Normal:** Select **Normal** to display the normal font weight. This is the default option.
-  * **Bold:** Select **Bold** to display the bold font weight.
-* **Font Size:** Select from the following options the size of the font that displays the record data
-  * 0.5
-  * 1 \(default option\)
-  * 1.5
-  * 2
-* **Collection:** Select from which ProcessMaker Collection to display a record in the Collection Record control. If no ProcessMaker Collections exist, the **Collection** drop-down menu contains no options; create at least one ProcessMaker Collection before using a Collection Record control.
+* **Text Label:** Enter the text label that displays for this control. **Collection Record** is the default value.
+* **Collection:** Select from which ProcessMaker Collection to display its record\(s\) in the Collection Select control. If no ProcessMaker Collections exist, the **Collection** drop-down menu contains no options; [create](../../../../../collections/manage-collections/create-a-new-collection.md) at least one ProcessMaker Collection before using a Collection Record control.
 * **Record ID:** Enter the record ID for the record in the ProcessMaker Collection to display. Follow these guidelines:
   * Enter the record ID value. The record ID is a unique value to each record in a ProcessMaker Collection that is referenced in the **\#** column of a Collection. See [View Collections](../../../../../collections/manage-collections/view-collections.md).
   * Enter the **Variable Name** setting value for a variable that represents the record ID value. Example: `data.id`.
