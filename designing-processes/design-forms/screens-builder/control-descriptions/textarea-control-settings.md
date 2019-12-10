@@ -113,7 +113,7 @@ Below are settings for the Textarea control in the **Configuration** panel:
 * **Placeholder:** Enter the placeholder text that displays in this control when no value has been provided. This setting has no default value.
 * **Helper Text:** Enter text that provides additional guidance on this control's use. This setting has no default value.
 * **Rich Text:** Select the **Rich Text** checkbox to display the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to allow the Request participant can enter rich text. This option is not selected by default.
-* **Rows:** The number of rows to provide for input. **2** is the default value.
+* **Rows:** Enter the number of rows to provide for input. **2** is the default value.
 
 ### Design Panel Settings
 
