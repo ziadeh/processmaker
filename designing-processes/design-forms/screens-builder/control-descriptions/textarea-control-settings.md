@@ -8,15 +8,7 @@ description: >-
 
 ## Control Description
 
-The Textarea control allows the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant to insert more than three lines of text. Configure the Textarea control to accept one of the following data types:
-
-* **Text:** The control accepts alphanumeric characters.
-* **Integer:** The control accepts integers.
-* **Decimal:** The control accepts any number, both positive and negative.
-* **Datetime:** The control accepts a datetime, which is includes both date and time components.
-* **Date:** The control accepts a date.
-
-Though this control displays a vertical scroll bar if more than three lines are inserted, the input box can be expanded as necessary. To do this, click the lower right-hand corner of the input box of the Textarea control, hold, and then drag to enlarge or shrink the control size as necessary. Release when you have adjusted the Textarea control to your required size.
+The Textarea control allows the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant to insert more than three lines of text. Though this control displays a vertical scroll bar if more than three lines are inserted, the input box can be expanded as necessary. To do this, click the lower right-hand corner of the input box of the Textarea control, hold, and then drag to enlarge or shrink the control size as necessary. Release when you have adjusted the Textarea control to your required size.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -89,16 +81,6 @@ Below are settings for the Textarea control in the **Variable** panel:
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
-
-* **Data Type:** Select one of the following data type options this control accepts when the form user enters content into this control:
-
-  * **Text:** This control accepts alphanumeric characters.
-  * **Integer:** This control accepts integers.
-  * **Decimal:** This control accepts any number, both positive and negative.
-  * **Datetime:** This control accepts a datetime, which is includes both date and time components.
-  * **Date:** The control accepts a date.
-
-  This is a required setting. The following message displays below the control if the Request participant enters content that does not comply with this control's data type: **The format is invalid.**.
 
 * **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
 * **Read Only:** Select to indicate that this control cannot be edited. This option is not selected by default.
