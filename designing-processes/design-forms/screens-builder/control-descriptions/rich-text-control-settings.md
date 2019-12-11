@@ -71,7 +71,7 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Select control in the **Configuration** panel:
 
-* **Content:** Enter the text to display in the Rich Text control using HTML syntax. Alternatively, use the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to enter your text. Your text displays in the **Content** setting using HTML syntax. **Rich text editor** is the default value.
+* **Content:** Enter the text to display in the Rich Text control using HTML syntax and/or mustache syntax. Alternatively, use the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to enter your text. Your text displays in the **Content** setting using HTML syntax. **Rich text editor** is the default value. See this [control's description](rich-text-control-settings.md#control-description) for information how to use mustache syntax.
 
 ### Advanced Panel Settings
 

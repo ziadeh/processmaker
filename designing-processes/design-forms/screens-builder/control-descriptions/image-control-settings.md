@@ -78,8 +78,8 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Image control in the **Design** panel:
 
-* **Height:** Specify the width of the uploaded image in pixels. If the **Width** setting has no value, the Image control adjusts the uploaded image to the **Height** setting value.
-* **Width:** Specify the width of the uploaded image in pixels. If the **Height** setting has no value, the Image control adjusts the uploaded image to the **Width** setting value.
+* **Height:** Enter the height of the uploaded image in pixels. If the **Width** setting has no value, the Image control adjusts the uploaded image to the **Height** setting value.
+* **Width:** Enter the width of the uploaded image in pixels. If the **Height** setting has no value, the Image control adjusts the uploaded image to the **Width** setting value.
 
 ### Advanced Panel Settings
 

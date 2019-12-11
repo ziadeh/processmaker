@@ -69,7 +69,14 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the File Download control in the **Variable** panel:
 
-* **Field Name:** Enter the alphanumeric name associated with the downloaded file\(s\). This setting has no default value.
+* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
+
+  * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds with the File Download control's entered datetime with that Image control's **Variable Name** value. In the example below, `FileDownloadControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/date-control-preview-screens-builder-processes.png) 
+  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ FileDownloadControl }}`.
+  * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+
+  This is a required setting.
+
 * **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
 
 ### Configuration Panel Settings
