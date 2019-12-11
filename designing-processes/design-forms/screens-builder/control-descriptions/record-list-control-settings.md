@@ -198,11 +198,7 @@ Below are settings for the Record List control in the **Configuration** panel:
 
 #### Columns Panel Settings
 
-{% hint style="info" %}
-See Form-Type Screen Usage for an overview how to use the **Columns** panel settings
-{% endhint %}
-
-Follow these steps to configure the column header\(s\) that display the record list data and from which control\(s\) on the additional page of this ProcessMaker Screen to reference data components of each record for this control:
+Follow these steps to configure the column header\(s\) that display the record list data and from which control\(s\) on the additional page in this ProcessMaker Screen to reference data components of each record for this control:
 
 1. Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Columns** panel that is on the right-side of the Screens Builder canvas.
 2. Select one of the following options:
