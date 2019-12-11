@@ -27,7 +27,7 @@ When using the Select List control with checkboxes, the control functions simila
 
 ### Drop-Down Menu Functional Description
 
-When using the Select List control as the drop-down menu, the control functions similarly to a [Select](select-control-settings.md#control-description) control, except multiple options may be selected one at a time. Selected options have the following attributes:
+When using the Select List control as the drop-down menu, the control functions similarly to a [Select]() control, except multiple options may be selected one at a time. Selected options have the following attributes:
 
 * Each selected option displays in the control.
 * Each selected option displays in bold-style text in the drop-down menu. Furthermore, a red-colored highlight displays when mouse-hovering over a selected option, rather than the default green-colored highlight for deselected options.
@@ -236,10 +236,6 @@ Do you need to export this ProcessMaker Screen? Click the **Export Screen** butt
 {% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="line-input-control-settings.md" %}
-
-{% page-ref page="select-control-settings.md" %}
-
-{% page-ref page="radio-group-control-settings.md" %}
 
 {% page-ref page="checkbox-control-settings.md" %}
 

@@ -22,7 +22,7 @@ Specify the following when configuring a Collection Select control:
 * Use plain text preceding and following the referenced record data to provide context to the record data. For example, if referencing names from a ProcessMaker Collection, optionally include honorifics \(such as "Mr." or "Mrs."\) or professional titles \(such as "Dr." or "MD"\). Example: `Dr. {{ data.FirstName }} {{ data.LastName }}, MD`, when referencing a doctor's first name and last name, respectively.
 * Configure the Collection Select control to reference all the records in the specified Collection or use [ProcessMaker Query Language \(PMQL\)](../../../../../using-processmaker/search-processmaker-data-using-pmql.md) to limit particular records to display as the optional items based on those records that meet the PMQL filtering criteria.
 
-For example, suppose that you have a ProcessMaker Collection of doctors in a medical clinic. A new patient enters information into a ProcessMaker [Screen](../../../what-is-a-form.md) whether that patient has a gender preference for a doctor by selecting that preference from a [Select](../select-control-settings.md) control. Use the Collection Select control and PMQL syntax in the following ways:
+For example, suppose that you have a ProcessMaker Collection of doctors in a medical clinic. A new patient enters information into a ProcessMaker [Screen](../../../what-is-a-form.md) whether that patient has a gender preference for a doctor by selecting that preference from a [Select]() control. Use the Collection Select control and PMQL syntax in the following ways:
 
 * **No preference:** If the patient indicates no preference for the doctor's gender, then do not use PMQL to filter which records display. The Collection Select control displays all records from the ProcessMaker Collection \(all doctors in the clinic\).
 * **Female preference:** If the patient indicates a preference to see a female doctor, then use a PMQL expression to filter only female doctors in the clinic. Use the PMQL expression`gender = "female"` if your records use a **Key Name** value of `gender`, and its setting is `female` for all female doctors. The Collection Select control displays only female doctors as optional items.
@@ -161,10 +161,6 @@ Below are settings for the Collection Select control in the **Advanced** panel:
 {% page-ref page="../textarea-control-settings.md" %}
 
 {% page-ref page="../select-list-control-settings.md" %}
-
-{% page-ref page="../select-control-settings.md" %}
-
-{% page-ref page="../radio-group-control-settings.md" %}
 
 {% page-ref page="../checkbox-control-settings.md" %}
 

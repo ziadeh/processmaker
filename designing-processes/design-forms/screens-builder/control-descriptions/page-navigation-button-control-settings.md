@@ -128,10 +128,6 @@ Do you need to export this ProcessMaker Screen? Click the **Export Screen** butt
 
 {% page-ref page="select-list-control-settings.md" %}
 
-{% page-ref page="select-control-settings.md" %}
-
-{% page-ref page="radio-group-control-settings.md" %}
-
 {% page-ref page="checkbox-control-settings.md" %}
 
 {% page-ref page="date-picker-control-settings.md" %}

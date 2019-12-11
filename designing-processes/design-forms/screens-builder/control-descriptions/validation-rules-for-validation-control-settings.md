@@ -196,10 +196,6 @@ Validate that an attribute has a valid URL format.
 
 {% page-ref page="select-list-control-settings.md" %}
 
-{% page-ref page="select-control-settings.md" %}
-
-{% page-ref page="radio-group-control-settings.md" %}
-
 {% page-ref page="checkbox-control-settings.md" %}
 
 {% page-ref page="date-picker-control-settings.md" %}

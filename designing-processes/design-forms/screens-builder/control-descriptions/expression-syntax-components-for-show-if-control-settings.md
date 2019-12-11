@@ -98,10 +98,6 @@ If a ProcessMaker Screen control does not have an expression in its **Visibility
 
 {% page-ref page="select-list-control-settings.md" %}
 
-{% page-ref page="select-control-settings.md" %}
-
-{% page-ref page="radio-group-control-settings.md" %}
-
 {% page-ref page="checkbox-control-settings.md" %}
 
 {% page-ref page="date-picker-control-settings.md" %}
