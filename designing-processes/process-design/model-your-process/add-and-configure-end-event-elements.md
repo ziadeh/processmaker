@@ -56,41 +56,28 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The End Event element has the following panels that contain settings:
 
 * **Configuration** panel
-  * Edit the element name
+  * [Edit the element name](add-and-configure-end-event-elements.md#edit-the-element-name)
+  * [Select the ProcessMaker Screen that summarizes a completed Request](add-and-configure-end-event-elements.md#select-the-processmaker-screen-that-summarizes-a-completed-request)
 * **Advanced** panel
-  * Edit the element's identifier value
+  * [Edit the element's identifier value](add-and-configure-end-event-elements.md#edit-the-elements-identifier-value)
 
-### Edit the Element's Identifier Value
+### Configuration Panel Settings
 
-Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
-
-{% hint style="warning" %}
-All identifier values for all elements in the Process model must be unique.
-{% endhint %}
-
-Follow these steps to edit the identifier value for an End Event element:
-
-1. Select the End Event element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
-
-   ![](../../../.gitbook/assets/end-event-configuration-identifier-name-process-modeler-processes.png)
-
-3. In the **Identifier** field, edit the End Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
-
-### Edit the Element Name
+#### Edit the Element Name
 
 An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
 
 Follow these steps to edit the name for an End Event element:
 
-1. Select the End Event element from the Process model in which to edit its name. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the End Event element from the Process model in which to edit its name. Panels to configure this element display.
+3. Expand the **Configuration** setting section if it is not presently expanded. The **Name** setting displays.  
 
    ![](../../../.gitbook/assets/end-event-configuration-name-process-modeler-processes.png)
 
-3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
 
-### Select the ProcessMaker Screen That Summarizes a Completed Request
+#### Select the ProcessMaker Screen That Summarizes a Completed Request
 
 After a [Request](../../../using-processmaker/requests/what-is-a-request.md) completes when an End Event element triggers, a [ProcessMaker Screen](../../design-forms/what-is-a-form.md) can display a summary of the completed Request. If a Process model has multiple End Event elements, then each End Event element can reference a different ProcessMaker Screen to display a different summary.
 
@@ -100,12 +87,33 @@ When an End Event element is placed into a Process model, it is not configured t
 
 Follow these steps to select the ProcessMaker Screen that displays when an End Event element triggers:
 
-1. Select the End Event element from the Process model in which to select the ProcessMaker Screen that displays when that End Event element is triggered, thereby completing that Request. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Summary screen** displays.  
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the End Event element from the Process model in which to select the ProcessMaker Screen that displays when that End Event element is triggered, thereby completing that Request. Panels to configure this element display.
+3. Expand the **Configuration** setting section if it is not presently expanded. The **Summary screen** setting displays.  
 
    ![](../../../.gitbook/assets/summary-screen-end-event-process-modeler-processes.png)
 
-3. From the **Summary screen** drop-down menu, select the ProcessMaker Screen that has been designed to display Request summaries if that End Event element triggers. This drop-down menu displays only [Display](../../design-forms/screens-builder/types-for-screens.md#display) types to display a message to the Request participant. Note that another End Event element located elsewhere in the Process model, such as another Pool or Lane element, may reference a different ProcessMaker Screen to display Request summaries when it triggers.
+4. From the **Summary screen** drop-down menu, select the ProcessMaker Screen that has been designed to display Request summaries if that End Event element triggers. This drop-down menu displays only [Display](../../design-forms/screens-builder/types-for-screens.md#display)-type ProcessMaker Screens to display a message to the Request participant. Note that another End Event element located elsewhere in the Process model, such as another [Pool](process-modeling-element-descriptions.md#pool) or [Lane](process-modeling-element-descriptions.md#lane) element, may reference a different ProcessMaker Screen to display Request summaries when it triggers.
+
+### Advanced Panel Settings
+
+#### Edit the Element's Identifier Value
+
+Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
+
+{% hint style="warning" %}
+All identifier values for all elements in the Process model must be unique.
+{% endhint %}
+
+Follow these steps to edit the identifier value for an End Event element:
+
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the End Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** setting displays. This is a required setting.  
+
+   ![](../../../.gitbook/assets/end-event-configuration-identifier-name-process-modeler-processes.png)
+
+4. In the **Identifier** setting, edit the End Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 
