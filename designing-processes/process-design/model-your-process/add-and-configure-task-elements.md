@@ -42,7 +42,7 @@ Moving a Task element has the following limitations in regards to the following 
 * **Lane element:** If the Task element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Task element cannot be moved outside of the Pool element.
 {% endhint %}
 
-## Configure a Task Element
+## Settings
 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure a Task element unless your user account has the **Make this user a Super Admin** setting selected:
@@ -52,6 +52,13 @@ Your ProcessMaker user account or group membership must have the following permi
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
+
+The Task element has the following panels that contain settings:
+
+* **Configuration** panel
+  * Edit the element name
+* **Advanced** panel
+  * Edit the **Identifier** value
 
 ### Edit the Identifier Value
 

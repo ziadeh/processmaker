@@ -89,7 +89,7 @@ Follow these steps to set the Message Flow element between elements in separate 
 
      ![](../../../.gitbook/assets/message-flow-between-pool-elements-process-model-processes.png)
 
-## Configure a Message Flow Element
+## Settings
 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure a Message Flow element unless your user account has the **Make this user a Super Admin** setting selected:
@@ -99,6 +99,13 @@ Your ProcessMaker user account or group membership must have the following permi
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
+
+The Message Flow element has the following panels that contain settings:
+
+* **Configuration** panel
+  * Edit the element name
+* **Advanced** panel
+  * Edit the **Identifier** value
 
 ### Edit the Identifier Value
 

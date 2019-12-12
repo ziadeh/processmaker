@@ -42,7 +42,7 @@ Moving an End Event element has the following limitations in regards to the foll
 * **Lane element:** If the End Event element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the End Event element cannot be moved outside of the Pool element.
 {% endhint %}
 
-## Configure an End Event Element
+## Settings
 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure an End Event element unless your user account has the **Make this user a Super Admin** setting selected:
@@ -52,6 +52,13 @@ Your ProcessMaker user account or group membership must have the following permi
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
+
+The End Event element has the following panels that contain settings:
+
+* **Configuration** panel
+  * Edit the element name
+* **Advanced** panel
+  * Edit the **Identifier** value
 
 ### Edit the Identifier Value
 

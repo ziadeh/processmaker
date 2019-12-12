@@ -6,7 +6,11 @@ description: Welcome to ProcessMaker documentation. This is a good place to star
 
 ## Overview
 
-ProcessMaker is a next-generation business process application to easily design and implement BPMN 2.0 compliant business processes within a modern and extensible system.
+ProcessMaker is a next-generation intelligent business process management software \(iBPMs\) platform for the enterprise to easily design and implement BPMN 2.0 compliant business processes within a modern and extensible system.
+
+ProcessMaker is a low-code, intelligent BPM platform for enterprises that want to get to, and stay ahead of, digital transformation. ProcessMaker orchestrates both people, processes, and systems to build strong, future-proof companies to outlast the competition and become engines for innovation.
+
+Our latest release empowers business users and developers alike to use the most cutting-edge workflow automation tools to digitally transform any business for success. ProcessMaker builds on popular BPM and workflow features and contains elegant functionality in our most powerful platform yet.
 
 Our goal for ProcessMaker is to deliver simplicity, but to allow complexity. ProcessMaker is easy to use, and allows you to design customized processes and end-user experiences.
 

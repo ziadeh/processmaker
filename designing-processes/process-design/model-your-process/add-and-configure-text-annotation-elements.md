@@ -44,7 +44,7 @@ Moving a Text Annotation element has the following limitations in regards to the
 * **Lane element:** If the Text Annotation element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Text Annotation element cannot be moved outside of the Pool element.
 {% endhint %}
 
-## Configure a Text Annotation Element
+## Text Annotation Element Settings
 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure a Text Annotation element unless your user account has the **Make this user a Super Admin** setting selected:
@@ -54,6 +54,13 @@ Your ProcessMaker user account or group membership must have the following permi
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
+
+The Text Annotation element has the following panels that contain settings:
+
+* **Configuration** panel
+  * Edit the element name
+* **Advanced** panel
+  * Edit the **Identifier** value
 
 ### Edit the Identifier Value
 
@@ -118,7 +125,7 @@ Follow these steps to add an Association element to the Process model:
 
 7. Repeat steps 5 and 6 to reference another Process model element that the Text Annotation element describes as necessary.
 
-## Configure an Association Element
+## Association Element Settings
 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure an Association element unless your user account has the **Make this user a Super Admin** setting selected:
@@ -128,6 +135,13 @@ Your ProcessMaker user account or group membership must have the following permi
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
+
+The Association element has the following panels that contain settings:
+
+* **Configuration** panel
+  * Edit the element name
+* **Advanced** panel
+  * Edit the **Identifier** value
 
 ### Edit the Identifier Value
 

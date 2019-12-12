@@ -86,7 +86,7 @@ Moving an Actions By Email control has the following limitations in regards to t
 * **Lane element:** If the Actions By Email control is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Actions By Email control cannot be moved outside of the Pool element.
 {% endhint %}
 
-## Configure an Actions By Email Control
+## Settings
 
 {% hint style="info" %}
 ### ProcessMaker Package Required

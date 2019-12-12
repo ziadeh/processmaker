@@ -44,7 +44,7 @@ Moving an Intermediate Message Catch Event element has the following limitations
 * **Lane element:** If the Intermediate Message Catch Event element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Intermediate Message Catch Event element cannot be moved outside of the Pool element.
 {% endhint %}
 
-## Configure an Intermediate Message Catch Event Element
+## Settings
 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure an Intermediate Message Catch Event element unless your user account has the **Make this user a Super Admin** setting selected:
@@ -54,6 +54,13 @@ Your ProcessMaker user account or group membership must have the following permi
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
+
+The Intermediate Message Catch Event element has the following panels that contain settings:
+
+* **Configuration** panel
+  * Edit the element name
+* **Advanced** panel
+  * Edit the **Identifier** value
 
 ### Edit the Identifier Value
 

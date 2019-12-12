@@ -42,7 +42,7 @@ Moving a Start Event element has the following limitations in regards to the fol
 * **Lane element:** If the Start Event element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Start Event element cannot be moved outside of the Pool element.
 {% endhint %}
 
-## Configure a Start Event Element
+## Settings
 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure a Start Event element unless your user account has the **Make this user a Super Admin** setting selected:
@@ -53,20 +53,39 @@ Your ProcessMaker user account or group membership must have the following permi
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-### Edit the Element Name
+The Start Event element has the following panels that contain settings:
+
+* **Configuration** panel
+  * [Edit the element name](add-and-configure-an-event-element.md#edit-the-element-name)
+* **Advanced** panel
+  * [Edit the **Identifier** value](add-and-configure-an-event-element.md#edit-the-identifier-value)
+* **Start Permissions** panel
+  * [Select the ProcessMaker user that can start Requests](add-and-configure-an-event-element.md#select-the-processmaker-user-that-can-start-requests)
+  * [Select the ProcessMaker group that can start Requests](add-and-configure-an-event-element.md#select-the-processmaker-group-that-can-start-a-request)
+* **Vocabularies** panel \(available when the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) is installed\)
+  * [Assign ProcessMaker Vocabularies that validate Request data from this element](add-and-configure-an-event-element.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
+* **Web Entry** panel \(available when the [Web Entry package](../../../package-development-distribution/package-a-connector/web-entry.md) is installed\)
+  * [Select who can start a Request via a Web Entry](add-and-configure-an-event-element.md#select-who-can-start-a-request-via-a-web-entry)
+
+### Configuration Panel Settings
+
+#### Edit the Element Name
 
 An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
 
 Follow these steps to edit the name for a Start Event element:
 
-1. Select the Start Event element from the Process model in which to edit its name. The **Configuration** panel displays.
-2. Expand the **Configuration** panel if it is not presently expanded. The **Name** field displays.  
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Start Event element from the Process model in which to edit its name. The **Configuration** panel displays.
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** field displays.  
 
    ![](../../../.gitbook/assets/start-event-configuration-name-process-modeler-processes.png)
 
-3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+4. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
-### Edit the Identifier Value
+### Advanced Panel Settings
+
+#### Edit the Identifier Value
 
 Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
@@ -76,59 +95,55 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Start Event element:
 
-1. Select the Start Event element from the Process model in which to edit its identifier value. Panels to configure a Start Event element display.
-2. Expand the **Advanced** panel if it is not presently expanded. The **Identifier** setting displays. This is a required field.  
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Start Event element from the Process model in which to edit its identifier value. Panels to configure a Start Event element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Identifier** setting displays. This is a required field.  
 
    ![](../../../.gitbook/assets/start-event-configuration-identifier-name-process-modeler-processes.png)
 
-3. In the **Identifier** setting, edit the Start Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Identifier** setting, edit the Start Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
-## Select the ProcessMaker User or Group That Can Start Requests
+### Start Permissions Panel Settings
 
-{% hint style="info" %}
-Your ProcessMaker user account or group membership must have the following permissions to set which ProcessMaker user or group can start a Request for a Process unless your user account has the **Make this user a Super Admin** setting selected:
-
-* Processes: View Processes
-* Processes: Edit Processes
-
-See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
-{% endhint %}
-
-### Select the ProcessMaker User That Can Start a Request
+#### Select the ProcessMaker User That Can Start Requests
 
 When a Start Event element is placed into a Process model, it is not configured to indicate how a Request can start via that Start Event element. Therefore, it must be configured.
 
 Follow these steps to select which ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) can start a Request via this Start Event element:
 
-1. Select the Start Event element from the Process model in which to select the ProcessMaker user that may start a Request. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Start Permission** drop-down menu.  
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Start Event element from the Process model in which to select the ProcessMaker user that may start a Request. The **Configuration** setting section displays.
+3. Expand the **Start Permissions** panel if it is not presently expanded. The **Type** setting displays.  
 
    ![](../../../.gitbook/assets/start-permission-request-event-process-modeler-processes.png)
 
-3. From the **Start Permission** drop-down menu, select the **User** option. The **User** drop-down menu displays below the **Start Permission** drop-down menu.  
+4. From the **Type** drop-down menu, select the **User** option. The **User** drop-down menu displays below the **Start Permission** drop-down menu.  
 
    ![](../../../.gitbook/assets/start-permission-request-user-event-process-modeler-processes.png)
 
-4. From the **User** drop-down menu, select which ProcessMaker user can start a Request via the Start Event element. That ProcessMaker user may start a Request.
+5. From the **User** drop-down menu, select which ProcessMaker user can start a Request via the Start Event element. That ProcessMaker user may start a Request.
 
-### Select the ProcessMaker Group That Can Start a Request
+#### Select the ProcessMaker Group That Can Start a Request
 
 When a Start Event element is placed into a Process model, it is not configured to indicate how a Request can start via that Start Event element. Therefore, it must be configured.
 
 Follow these steps to select which ProcessMaker [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) members can start a Request via this Start Event element:
 
-1. Select the Start Event element from the Process model in which to select the ProcessMaker group that may start a Request. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Start Permission** drop-down menu.
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Start Event element from the Process model in which to select the ProcessMaker group that may start a Request. The **Configuration** setting section displays.
+3. Expand the **Start Permissions** panel if it is not presently expanded. The **Type** setting displays.
 
    ![](../../../.gitbook/assets/start-permission-request-event-process-modeler-processes.png)
 
-3. From the **Start Permission** drop-down menu, select the **Group** option. The **Group** drop-down menu displays below the **Start Permission** drop-down menu.  
+4. From the **Type** drop-down menu, select the **Group** option. The **Group** drop-down menu displays below the **Start Permission** drop-down menu.  
 
    ![](../../../.gitbook/assets/start-permission-request-group-event-process-modeler-processes.png)
 
-4. From the **Group** drop-down menu, select which ProcessMaker group can start a Request via the Start Event element. All members of that ProcessMaker group may start a Request.
+5. From the **Group** drop-down menu, select which ProcessMaker group can start a Request via the Start Event element. Any member of that ProcessMaker group may start a Request.
 
-## Select Who Can Start a Request via a Web Entry
+### Web Entry Panel Settings
+
+#### Select Who Can Start a Request via a Web Entry
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
@@ -136,15 +151,6 @@ Follow these steps to select which ProcessMaker [group](../../../processmaker-ad
 Your ProcessMaker instance must have the [Web Entry package](../../../package-development-distribution/package-a-connector/web-entry.md) installed to select who can start a Request via a Web entry. The Web Entry package allows anonymous or authenticated ProcessMaker users to start or participate in Requests via a published URL.
 
 The Web Entry package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Web Entry package can be installed in your ProcessMaker instance.
-
-### Permissions Required
-
-Your ProcessMaker user account or group membership must have the following permissions to set which ProcessMaker user or group can start a Request for a Process unless your user account has the **Make this user a Super Admin** setting selected:
-
-* Processes: View Processes
-* Processes: Edit Processes
-
-See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 When a Start Event element is placed into a Process model, Web Entry settings for that element are disabled. Therefore, even if the [Web Entry](../../../package-development-distribution/package-a-connector/web-entry.md) package is installed in your ProcessMaker instance, it must be configured for use.
@@ -206,7 +212,9 @@ Follow these steps to select who can start a Request via a Web Entry URL via thi
 
    ![](../../../.gitbook/assets/web-entry-url-access-start-event-process-modeler-processes.png)
 
-## Assign ProcessMaker Vocabularies That Validate Request Data from This Element
+### Vocabularies Panel Settings
+
+#### Assign ProcessMaker Vocabularies That Validate Request Data from This Element
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
@@ -216,15 +224,6 @@ Your ProcessMaker instance must have the [Vocabularies package](../../../package
 A ProcessMaker Vocabulary is a JSON schema. The JSON schema describes the data objects, types, and structure that you want in both a machine and human readable format. Apply one or more ProcessMaker Vocabularies to your Processes and/or specific BPMN 2.0 elements in your Process models to ensure the JSON data model in Request data complies with the data structure outlined in the JSON schema that you need to meet regulatory specifications or ensure Request data contains required information.
 
 The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
-
-### Permissions Required
-
-Your ProcessMaker user account or group membership must have the following permissions to set which ProcessMaker user or group can start a Request for a Process unless your user account has the **Make this user a Super Admin** setting selected:
-
-* Processes: View Processes
-* Processes: Edit Processes
-
-See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Assign [ProcessMaker Vocabularies](../../vocabularies-management/what-is-a-vocabulary.md) that validate Request data complies with a specific JSON schema. This is often mandatory for many types of business sectors including banking and healthcare. Ensure the quality and compliance of Request data. For example, during a Loan Application process, ensure that personal information has been included in the Request to that moment in that in-progress Request. The Vocabularies package must be installed in your ProcessMaker instance to make this configuration.

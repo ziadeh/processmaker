@@ -62,7 +62,7 @@ Moving a Send Email control has the following limitations in regards to the foll
 * **Lane element:** If the Send Email control is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Send Email control cannot be moved outside of the Pool element.
 {% endhint %}
 
-## Configure a Send Email Control
+## Settings
 
 {% hint style="info" %}
 ### ProcessMaker Package Required

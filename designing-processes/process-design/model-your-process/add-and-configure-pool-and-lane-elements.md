@@ -67,7 +67,7 @@ Follow these steps to resize a Pool element:
 
 3. Click one of the anchors on the Pool element![](../../../.gitbook/assets/pool-element-anchor-process-modeler-processes.png), hold your cursor, and then adjust the size of the Pool element on the Process model canvas. If the Pool element contains elements within it prior to resizing, the Pool element only resizes to contain all elements within it. Lane elements automatically adjust to the width of the Pool element, though [Lane elements can be resized](add-and-configure-pool-and-lane-elements.md#resize-a-lane-element) separately.
 
-## Configure a Pool Element
+## Pool Element Settings
 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure a Pool element unless your user account has the **Make this user a Super Admin** setting selected:
@@ -77,6 +77,13 @@ Your ProcessMaker user account or group membership must have the following permi
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
+
+The Pool element has the following panels that contain settings:
+
+* **Configuration** panel
+  * Edit the element name
+* **Advanced** panel
+  * Edit the **Identifier** value
 
 ### Edit the Identifier Value
 
@@ -157,7 +164,7 @@ Follow these steps to resize a Lane element:
 
 3. Click one of the anchors on the Lane element![](../../../.gitbook/assets/pool-element-anchor-process-modeler-processes.png), hold your cursor, and then adjust the size of the Lane element in the Pool element. If the Lane element contains elements within it prior to resizing, the Lane element only resizes to contain all elements within it. The Pool element automatically adjusts to the width of the resized Lane element so far as all elements contained within the Pool element remain contained in it. [Pool elements can be resized](add-and-configure-pool-and-lane-elements.md#resize-a-pool-element) separately.
 
-## Configure a Lane Element
+## Lane Element Settings
 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure a Lane element unless your user account has the **Make this user a Super Admin** setting selected:
@@ -167,6 +174,13 @@ Your ProcessMaker user account or group membership must have the following permi
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
+
+The Lane element has the following panels that contain settings:
+
+* **Configuration** panel
+  * Edit the element name
+* **Advanced** panel
+  * Edit the **Identifier** value
 
 ### Edit the Identifier Value
 

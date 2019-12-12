@@ -62,7 +62,7 @@ Follow these steps to set the Sequence Flow element from one connecting element 
 
    ![](../../../.gitbook/assets/sequence-flow-connecting-elements-process-modeler-processes.png)
 
-## Configure Sequence Flow Elements
+## Settings
 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure Sequence Flows in the Process model unless your user account has the **Make this user a Super Admin** setting selected:
@@ -78,6 +78,13 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 {% hint style="info" %}
 This section discusses how to configure any Sequence Flow element except from an Exclusive Gateway element. See [Configure an Outgoing Sequence Flow Element from an Exclusive Gateway or Inclusive Gateway Element](the-quick-toolbar.md#configure-an-outgoing-sequence-flow-element-from-an-exclusive-gateway-or-inclusive-gateway-element) if looking for information to configure those Sequence Flow elements.
 {% endhint %}
+
+The Sequence Flow element has the following panels that contain settings:
+
+* **Configuration** panel
+  * Edit the element name
+* **Advanced** panel
+  * Edit the **Identifier** value
 
 #### Edit the Identifier Value
 
