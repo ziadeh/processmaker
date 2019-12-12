@@ -58,9 +58,9 @@ The Call Activity element has the following panels that contain settings:
 * **Configuration** panel
   * Edit the element name
 * **Advanced** panel
-  * Edit the **Identifier** value
+  * Edit the element's identifier value
 
-### Edit the Identifier Value
+### Edit the Element's Identifier Value
 
 Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 

@@ -57,10 +57,10 @@ The Start Timer Event element has the following panels that contain settings:
 
 * **Configuration** panel
   * [Edit the element name](add-and-configure-start-timer-event-elements.md#edit-the-element-name)
-* **Timer Control** panel
-  * [Set the timer controls](add-and-configure-start-timer-event-elements.md#set-the-timer-controls)
+* **Timing Control** panel
+  * [Set the timing controls](add-and-configure-start-timer-event-elements.md#set-the-timing-controls)
 * **Advanced** panel
-  * [Edit the **Identifier** value](add-and-configure-start-timer-event-elements.md#edit-the-identifier-value)
+  * [Edit the element's identifier value](add-and-configure-start-timer-event-elements.md#edit-the-elements-identifier-value)
 
 ### Configuration Panel Settings
 
@@ -72,15 +72,15 @@ Follow these steps to edit the name for a Start Timer Event element:
 
 1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Start Timer Event element from the Process model in which to edit its name. The **Configuration** panel displays.
-3. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
+3. Expand the **Configuration** setting section if it is not presently expanded. The **Name** setting displays.  
 
    ![](../../../.gitbook/assets/start-timer-event-configuration-name-process-modeler-processes.png)
 
-4. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
 
 ### Timing Control Panel Settings
 
-#### Set the Timer Controls
+#### Set the Timing Controls
 
 When a Start Timer Event element is placed into a Process model, it has the following timing settings by default:
 
@@ -102,11 +102,11 @@ Follow these steps to set the timer controls for a Start Timer Event element:
 
 1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Start Timer Event element from the Process model in which to set its timer controls. Panels to configure a Start Timer Event element display.
-3. Expand the **Advanced** panel if it is not presently expanded. The **Start date** field displays.
+3. Expand the **Timing Control** panel if it is not presently expanded. The **Start date** setting displays.
 
    ![](../../../.gitbook/assets/start-timer-timing-control-process-modeler-processes.png)
 
-4. From the **Start date** field, use the date control to select the date to initially trigger the Start Timer Event element. If this field has not been previously set, the current date is the default.  
+4. From the **Start date** setting, use the date control to select the date to initially trigger the Start Timer Event element. If this setting has not been previously set, the current date is the default.  
 
    ![](../../../.gitbook/assets/start-timer-event-date-control-process-modeler-processes.png)
 
@@ -124,7 +124,7 @@ Follow these steps to set the timer controls for a Start Timer Event element:
 
 ### Advanced Panel Settings
 
-#### Edit the Identifier Value
+#### Edit the Element's Identifier Value
 
 Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
@@ -140,7 +140,7 @@ Follow these steps to edit the identifier value for a Start Timer Event element:
 
    ![](../../../.gitbook/assets/start-timer-event-configuration-identifier-name-process-modeler-processes.png)
 
-4. In the **Identifier** field, edit the Start Timer Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Identifier** setting, edit the Start Timer Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 

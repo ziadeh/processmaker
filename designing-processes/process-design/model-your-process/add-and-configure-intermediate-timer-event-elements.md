@@ -56,50 +56,31 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The Intermediate Timer Event element has the following panels that contain settings:
 
 * **Configuration** panel
-  * Edit the element name
+  * [Edit the element name](add-and-configure-intermediate-timer-event-elements.md#edit-the-element-name)
+* **Timing Control** panel
+  * [Set the timing controls](add-and-configure-intermediate-timer-event-elements.md#set-the-timing-controls)
 * **Advanced** panel
-  * Edit the **Identifier** value
+  * [Edit the element's identifier value](add-and-configure-intermediate-timer-event-elements.md#edit-the-elements-identifier-value)
 
-### Edit the Identifier Value
+### Configuration Panel Settings
 
-Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
-
-{% hint style="warning" %}
-All identifier values for all elements in the Process model must be unique.
-{% endhint %}
-
-Follow these steps to edit the identifier value for an Intermediate Timer Event element:
-
-1. Select the Intermediate Timer Event element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
-
-   ![](../../../.gitbook/assets/intermediate-timer-event-configuration-identifier-name-process-modeler-processes.png)
-
-3. In the **Identifier** field, edit the Intermediate Timer Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
-
-### Edit the Element Name
+#### Edit the Element Name
 
 An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
 
 Follow these steps to edit the name for an Intermediate Timer Event element:
 
-1. Select the Intermediate Timer Event element from the Process model in which to edit its name. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Intermediate Timer Event element from the Process model in which to edit its name. The **Configuration** setting section displays.
+3. Expand the **Configuration** setting section if it is not presently expanded. The **Name** setting displays.  
 
    ![](../../../.gitbook/assets/intermediate-timer-event-configuration-name-process-modeler-processes.png)
 
-3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
 
-## Set the Timer Controls
+### Timing Control Panel Settings
 
-{% hint style="info" %}
-Your ProcessMaker user account or group membership must have the following permissions to set the timer controls for an Intermediate Timer Event element unless your user account has the **Make this user a Super Admin** setting selected:
-
-* Processes: View Processes
-* Processes: Edit Processes
-
-See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
-{% endhint %}
+#### Set the Timing Controls
 
 When an Intermediate Timer Event element is placed into a Process model, it is set to a delay of one \(1\) hour. If these are not the timing control settings you want, the Intermediate Timer Event element must be configured. Set the timer controls for an Intermediate Timer Event element using one of the following methods:
 
@@ -108,12 +89,13 @@ When an Intermediate Timer Event element is placed into a Process model, it is s
 
 Follow these steps to set the timer controls for an Intermediate Timer Event element:
 
-1. Select the Intermediate Timer Event element from the Process model in which to set its timer controls. The **Timing Control** setting section displays.
-2. Expand the **Timing Control** setting section.  
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Intermediate Timer Event element from the Process model in which to set its timer controls. Panels to configure a Intermediate Timer Event element display.
+3. Expand the **Timing Control** setting section if it is not presently expanded. The **Type** setting displays.
 
    ![](../../../.gitbook/assets/intermediate-timer-timing-control-process-modeler-processes.png)
 
-3. Do one of the following to set the timer control:
+4. Do one of the following to set the timer control:
    * **Delay the timer:** From the **Type** drop-down menu, select the **Delay** option. **Delay** is the default setting. From the **Delay** setting, select at which interval of time to trigger the Intermediate Timer Event element. **1** is the default setting. Then select one of the following time periods for that element to trigger:
      * Minute
      * Hour \(default setting\)
@@ -126,6 +108,26 @@ Follow these steps to set the timer controls for an Intermediate Timer Event ele
      From the **Wait until specific date/time** field, use the date control to select the date and time to trigger the Intermediate Timer Event element. If this field has not been previously set, the current date is the default.  
 
      ![](../../../.gitbook/assets/intermediate-timer-event-date-control-process-modeler-processes.png)
+
+### Advanced Panel Settings
+
+#### Edit the Element's Identifier Value
+
+Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
+
+{% hint style="warning" %}
+All identifier values for all elements in the Process model must be unique.
+{% endhint %}
+
+Follow these steps to edit the identifier value for an Intermediate Timer Event element:
+
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Intermediate Timer Event element from the Process model in which to edit its identifier value. Panels to configure an Intermediate Timer Event element display.
+3. Expand the **Advanced** setting section if it is not presently expanded. The **Identifier** setting displays. This is a required field.  
+
+   ![](../../../.gitbook/assets/intermediate-timer-event-configuration-identifier-name-process-modeler-processes.png)
+
+4. In the **Identifier** setting, edit the Intermediate Timer Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 

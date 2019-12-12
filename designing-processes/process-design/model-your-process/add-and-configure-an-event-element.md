@@ -58,7 +58,7 @@ The Start Event element has the following panels that contain settings:
 * **Configuration** panel
   * [Edit the element name](add-and-configure-an-event-element.md#edit-the-element-name)
 * **Advanced** panel
-  * [Edit the **Identifier** value](add-and-configure-an-event-element.md#edit-the-identifier-value)
+  * [Edit the element's identifier value](add-and-configure-an-event-element.md#edit-the-elements-identifier-value)
 * **Start Permissions** panel
   * [Select the ProcessMaker user that can start Requests](add-and-configure-an-event-element.md#select-the-processmaker-user-that-can-start-requests)
   * [Select the ProcessMaker group that can start Requests](add-and-configure-an-event-element.md#select-the-processmaker-group-that-can-start-a-request)
@@ -77,15 +77,15 @@ Follow these steps to edit the name for a Start Event element:
 
 1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Start Event element from the Process model in which to edit its name. The **Configuration** panel displays.
-3. Expand the **Configuration** panel if it is not presently expanded. The **Name** field displays.  
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays.  
 
    ![](../../../.gitbook/assets/start-event-configuration-name-process-modeler-processes.png)
 
-4. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
 
 ### Advanced Panel Settings
 
-#### Edit the Identifier Value
+#### Edit the Element's Identifier Value
 
 Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
@@ -158,7 +158,7 @@ When a Start Event element is placed into a Process model, Web Entry settings fo
 Follow these steps to select who can start a Request via a Web Entry URL via this Start Event element:
 
 1. Select the Start Event element from the Process model in which to select who may start a Request via a Web Entry URL. The **Configuration** setting section displays.
-2. Expand the **Web Entry** setting section. The **Mode** drop-down menu displays.  
+2. Expand the **Web Entry** panel if it is not presently expanded. The **Web Entry** setting displays.  
 
    ![](../../../.gitbook/assets/web-entry-mode-start-event-process-modeler-processes.png)
 
@@ -241,7 +241,7 @@ One or more ProcessMaker Vocabularies must be created to your ProcessMaker insta
 Follow these steps to assign ProcessMaker Vocabularies that validate Request data from a Start Event element:
 
 1. Select the Start Event element from the Process model in which to assign ProcessMaker Vocabularies that validate Request data prior to when this element completes. The **Configuration** setting section displays.
-2. Expand the **Vocabularies** setting section. The **Assigned** setting displays.
+2. Expand the **Vocabularies** panel if it is not presently expanded. The **Assigned** setting displays.
 3. Click the![](../../../.gitbook/assets/add-icon.png)icon to add a ProcessMaker Vocabulary. The **Assign Vocabulary** option displays. ![](../../../.gitbook/assets/assign-vocabulary-option-process-modeler-processes.png) 
 4. From the **Select Vocabulary** drop-down menu, select a ProcessMaker Vocabulary from which to validate Request data complies with its JSON schema.
 
