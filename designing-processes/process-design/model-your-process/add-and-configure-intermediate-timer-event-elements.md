@@ -71,8 +71,8 @@ An element name is a human-readable reference for a Process element. Process Mod
 Follow these steps to edit the name for an Intermediate Timer Event element:
 
 1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Intermediate Timer Event element from the Process model in which to edit its name. The **Configuration** setting section displays.
-3. Expand the **Configuration** setting section if it is not presently expanded. The **Name** setting displays.  
+2. Select the Intermediate Timer Event element from the Process model in which to edit its name. Panels to configure this element display.
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays.  
 
    ![](../../../.gitbook/assets/intermediate-timer-event-configuration-name-process-modeler-processes.png)
 
@@ -90,8 +90,8 @@ When an Intermediate Timer Event element is placed into a Process model, it is s
 Follow these steps to set the timer controls for an Intermediate Timer Event element:
 
 1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Intermediate Timer Event element from the Process model in which to set its timer controls. Panels to configure a Intermediate Timer Event element display.
-3. Expand the **Timing Control** setting section if it is not presently expanded. The **Type** setting displays.
+2. Select the Intermediate Timer Event element from the Process model in which to set its timer controls. Panels to configure this element display.
+3. Expand the **Timing Control** panel if it is not presently expanded. The **Type** setting displays.
 
    ![](../../../.gitbook/assets/intermediate-timer-timing-control-process-modeler-processes.png)
 
@@ -122,8 +122,8 @@ All identifier values for all elements in the Process model must be unique.
 Follow these steps to edit the identifier value for an Intermediate Timer Event element:
 
 1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Intermediate Timer Event element from the Process model in which to edit its identifier value. Panels to configure an Intermediate Timer Event element display.
-3. Expand the **Advanced** setting section if it is not presently expanded. The **Identifier** setting displays. This is a required field.  
+2. Select the Intermediate Timer Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Identifier** setting displays. This is a required setting.  
 
    ![](../../../.gitbook/assets/intermediate-timer-event-configuration-identifier-name-process-modeler-processes.png)
 

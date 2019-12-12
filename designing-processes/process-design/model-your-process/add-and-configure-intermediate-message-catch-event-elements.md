@@ -58,41 +58,30 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The Intermediate Message Catch Event element has the following panels that contain settings:
 
 * **Configuration** panel
-  * Edit the element name
-* **Advanced** panel
-  * Edit the element's identifier value
+  * [Edit the element name](add-and-configure-intermediate-message-catch-event-elements.md#edit-the-element-name)
+  * [Configure how to trigger an Intermediate Message Catch Event element](add-and-configure-intermediate-message-catch-event-elements.md#configure-how-to-trigger-an-intermediate-message-catch-event-element)
+* **Advanced** panel \(available when the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) is installed\)
+  * [Edit the element's identifier value](add-and-configure-intermediate-message-catch-event-elements.md#edit-the-elements-identifier-value)
+* **Vocabularies** panel
+  * [Assign ProcessMaker Vocabularies that validate Request data from this element](add-and-configure-intermediate-message-catch-event-elements.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
 
-### Edit the Element's Identifier Value
+### Configuration Panel Settings
 
-Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
-
-{% hint style="warning" %}
-All identifier values for all elements in the Process model must be unique.
-{% endhint %}
-
-Follow these steps to edit the identifier value for an Intermediate Message Catch Event element:
-
-1. Select the Intermediate Message Catch Event element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
-
-   ![](../../../.gitbook/assets/identifier-intermediate-message-catch-event-process-modeler-processes.png)
-
-3. In the **Identifier** field, edit the End Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
-
-### Edit the Element Name
+#### Edit the Element Name
 
 An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
 
 Follow these steps to edit the name for an Intermediate Message Catch Event element:
 
-1. Select the Intermediate Message Catch Event element from the Process model in which to edit its name. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Intermediate Message Catch Event element from the Process model in which to edit its name. Panels to configure this element display.
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays.  
 
    ![](../../../.gitbook/assets/intermediate-message-catch-event-configuration-name-process-modeler-processes.png)
 
-3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
 
-### Configure How to Trigger an Intermediate Message Catch Event Element
+#### Configure How to Trigger an Intermediate Message Catch Event Element
 
 Follow these guidelines how to trigger an Intermediate Message Catch Event element:
 
@@ -106,30 +95,53 @@ Adding settings to the Intermediate Message Catch Event element restricts how th
 
 Follow these steps to configure how to trigger an Intermediate Message Catch Event element:
 
-1. Select the Intermediate Message Catch Event element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Message Event Identifier** field.  
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Intermediate Message Catch Event element from the Process model in which to configure how it is triggered. Panels to configure this element display.
+3. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Message Event Identifier** setting.  
 
    ![](../../../.gitbook/assets/data-name-intermediate-message-catch-event-proces-modeler-processes.png)
 
-3. In the **Message Event Identifier** field, enter the unique **Identifier** field value for the incoming Message Flow element that represents the external API call. When the incoming Message Flow element matching the **Identifier** field value triggers, then the Intermediate Message Catch Event element evaluates the other settings to determine if it triggers.
+4. In the **Message Event Identifier** setting, enter the unique **Identifier** setting value for the incoming Message Flow element that represents the external API call. When the incoming Message Flow element matching the **Identifier** setting value triggers, then the Intermediate Message Catch Event element evaluates the other settings to determine if it triggers.
 
-   To locate the **Identifier** field value for an incoming Message Flow element, follow these steps:
+   To locate the **Identifier** setting value for an incoming Message Flow element, follow these steps:
 
    1. Select the incoming Message Flow element connecting to the Intermediate Message Catch Event element.
-   2. Expand the **Configuration** section for that Message Flow element if it is not presently expanded.
-   3. Copy the value in the **Identifier** field. See [Set Message Flow Elements Between Separate Pool Elements](set-and-delete-message-flow-between-elements.md#edit-the-identifier-value).
-   4. Paste that value into the Intermediate Message Catch Event element's **Message Event Identifier** field.
+   2. Expand the **Advanced** panel for that Message Flow element if it is not presently expanded.
+   3. Copy the value in the **Identifier** setting. See [Set Message Flow Elements Between Separate Pool Elements](set-and-delete-message-flow-between-elements.md#edit-the-identifier-value).
+   4. Paste that value into the Intermediate Message Catch Event element's **Message Event Identifier** setting.
 
-4. In the **Data Name** field, enter the JSON object key in the Request's JSON data model that the Intermediate Message Catch Event element stores data from the external API call. If you do not provide a key, then the Intermediate Message Catch Event element passes data to the Request's JSON data model.
-5. From the **Allowed User** drop-down menu, select the ProcessMaker user whose authorization credentials are required to make the external API call to the Intermediate Message Catch Event element. Do not select a ProcessMaker user in the following circumstances:
+5. In the **Data Name** setting, enter the JSON object key in the Request's JSON data model that the Intermediate Message Catch Event element stores data from the external API call. If you do not provide a key, then the Intermediate Message Catch Event element passes data to the Request's JSON data model.
+6. From the **Allowed User** drop-down menu, select the ProcessMaker user whose authorization credentials are required to make the external API call to the Intermediate Message Catch Event element. Do not select a ProcessMaker user in the following circumstances:
    * There is no restriction whose ProcessMaker user's authorization credentials are associated with the API call.
    * You intend to select a ProcessMaker group from which any member's authorization credentials can be associated with the API call.
-6. From the **Allowed Group** drop-down menu, select the ProcessMaker group of which any member's authorization credentials can be used to make the external API call to the Intermediate Message Catch Event element. Do not select a ProcessMaker group in the following circumstances:
+7. From the **Allowed Group** drop-down menu, select the ProcessMaker group of which any member's authorization credentials can be used to make the external API call to the Intermediate Message Catch Event element. Do not select a ProcessMaker group in the following circumstances:
    * There is no restriction whose ProcessMaker user's authorization credentials are associated with the API call.
    * You intend to select a ProcessMaker user whose authorization credentials are required to make the API call.
-7. In the **Whitelist** field, enter the IP address or domain name from which the Intermediate Message Catch Event element is allowed to receive the external API call. Separate multiple items with commas. If no IP addresses or domains are specified, then any IP address or domain can potentially trigger the Intermediate Message Catch Event element.
+8. In the **Whitelist** setting, enter the IP address or domain name from which the Intermediate Message Catch Event element is allowed to receive the external API call. Separate multiple items with commas. If no IP addresses or domains are specified, then any IP address or domain can potentially trigger the Intermediate Message Catch Event element.
 
-## Assign ProcessMaker Vocabularies That Validate Request Data from This Element
+### Advanced Panel Settings
+
+#### Edit the Element's Identifier Value
+
+Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
+
+{% hint style="warning" %}
+All identifier values for all elements in the Process model must be unique.
+{% endhint %}
+
+Follow these steps to edit the identifier value for an Intermediate Message Catch Event element:
+
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Intermediate Message Catch Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Identifier** setting displays. This is a required setting.  
+
+   ![](../../../.gitbook/assets/identifier-intermediate-message-catch-event-process-modeler-processes.png)
+
+4. In the **Identifier** setting, edit the Intermediate Message Catch Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+
+### Vocabularies Panel Settings
+
+#### Assign ProcessMaker Vocabularies That Validate Request Data from This Element
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
@@ -139,15 +151,6 @@ Your ProcessMaker instance must have the [Vocabularies package](../../../package
 A ProcessMaker Vocabulary is a JSON schema. The JSON schema describes the data objects, types, and structure that you want in both a machine and human readable format. Apply one or more ProcessMaker Vocabularies to your Processes and/or specific BPMN 2.0 elements in your Process models to ensure the JSON data model in Request data complies with the data structure outlined in the JSON schema that you need to meet regulatory specifications or ensure Request data contains required information.
 
 The Vocabularies package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Vocabularies package can be installed in your ProcessMaker instance.
-
-### Permissions Required
-
-Your ProcessMaker user account or group membership must have the following permissions to set which ProcessMaker user or group can start a Request for a Process unless your user account has the **Make this user a Super Admin** setting selected:
-
-* Processes: View Processes
-* Processes: Edit Processes
-
-See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Assign [ProcessMaker Vocabularies](../../vocabularies-management/what-is-a-vocabulary.md) that validate Request data complies with a specific JSON schema. This is often mandatory for many types of business sectors including banking and healthcare. Ensure the quality and compliance of Request data. For example, during a Loan Application process, ensure that personal information has been included in the Request to that moment in that in-progress Request. The Vocabularies package must be installed in your ProcessMaker instance to make this configuration.
@@ -164,17 +167,18 @@ One or more ProcessMaker Vocabularies must be created to your ProcessMaker insta
 
 Follow these steps to assign ProcessMaker Vocabularies that validate Request data from an Intermediate Message Catch Event element:
 
-1. Select the Intermediate Message Catch Event element from the Process model in which to assign ProcessMaker Vocabularies that validate Request data prior to when this element completes. The **Configuration** setting section displays.
-2. Expand the **Vocabularies** setting section. The **Assigned** setting displays.
-3. Click the![](../../../.gitbook/assets/add-icon.png)icon to add a ProcessMaker Vocabulary. The **Assign Vocabulary** option displays. ![](../../../.gitbook/assets/assign-vocabulary-option-process-modeler-processes.png) 
-4. From the **Select Vocabulary** drop-down menu, select a ProcessMaker Vocabulary from which to validate Request data complies with its JSON schema.
+1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Intermediate Message Catch Event element from the Process model in which to assign ProcessMaker Vocabularies that validate Request data prior to when this element completes. Panels to configure this element display.
+3. Expand the **Vocabularies** panel if it is not presently expanded. The **Assigned** setting displays.
+4. Click the![](../../../.gitbook/assets/add-icon.png)icon to add a ProcessMaker Vocabulary. The **Assign Vocabulary** option displays. ![](../../../.gitbook/assets/assign-vocabulary-option-process-modeler-processes.png) 
+5. From the **Select Vocabulary** drop-down menu, select a ProcessMaker Vocabulary from which to validate Request data complies with its JSON schema.
 
    To remove a ProcessMaker Vocabulary that is currently selected, select the Vocabulary again or press `Enter` when the drop-down is visible.
 
    If no ProcessMaker Vocabularies are configured in your ProcessMaker instance, then the following message displays: **List is empty.** Create at least one ProcessMaker Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary).
 
-5. Click **Save**.
-6. Repeat Steps 3 through 5 as necessary for each ProcessMaker Vocabulary required to validate Request data complies with its JSON schema.
+6. Click **Save**.
+7. Repeat Steps 3 through 5 as necessary for each ProcessMaker Vocabulary required to validate Request data complies with its JSON schema.
 
 {% hint style="info" %}
 Click the **Remove** icon![](../../../.gitbook/assets/delete-remove-icon.png)from the **Vocabularies** setting to remove a ProcessMaker Vocabulary from assignment to this element.
