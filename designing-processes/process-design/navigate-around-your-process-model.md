@@ -35,8 +35,8 @@ Follow these steps to adjust the viewing size of your Process model:
 1. ​[View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
 3. Adjust the viewing percentage of the Process model following these guidelines:
-   * Click the![](../../.gitbook/assets/decrease-zoom-percentage-process-modeler-processes.png)button to decrease the viewing percentage, thereby zooming out from the Process Modeler canvas.
-   * Click the![](../../.gitbook/assets/increase-zoom-percentage-process-modeler-processes.png)button to increase the viewing percentage, thereby zooming into the Process Modeler canvas.
+   * Click the **Zoom Out**![](../../.gitbook/assets/decrease-zoom-percentage-process-modeler-processes.png)button to decrease the viewing percentage, thereby zooming out from the Process Modeler canvas.
+   * Click the **Zoom In**![](../../.gitbook/assets/increase-zoom-percentage-process-modeler-processes.png)button to increase the viewing percentage, thereby zooming into the Process Modeler canvas.
    * Click the **Reset** button to reset the Process Modeler canvas viewing percentage to 100%.
 4. [Manually navigate](navigate-around-your-process-model.md#navigate-around-your-process-model) around your Process model as necessary.
 
@@ -53,10 +53,10 @@ Following these steps to maximize the Process Modeler canvas view:
 
 1. ​[View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Click the **Maximize Canvas** icon![](../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png). The Process Modeler canvas maximizes while the Maximize Canvas icon is enabled.
+3. Click the **Hide Menus** button![](../../.gitbook/assets/hide-menus-button-process-modeler-processes.png). The Process Modeler canvas maximizes.
 
 {% hint style="info" %}
-To disable the **Maximize Canvas** icon when it is enabled, click it to show Process Modeler's default canvas view.
+Click the **Show Menus** button![](../../.gitbook/assets/show-menus-button-process-modeler-processes.png)to show Process Modeler's default canvas view.
 {% endhint %}
 
 ### Quick Navigation
@@ -67,8 +67,12 @@ Follow these steps to quickly navigate your Process model:
 
 1. ​[View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Click the **Quick Navigation** icon![](../../.gitbook/assets/quick-navigation-icon-process-modeler-processes.png). An overview of your entire Process model displays. ![](../../.gitbook/assets/quick-navigation-process-modeler-processes.png) 
-4. Click the location in your Process model that you want to view. The selected location displays and the overview of your Process model hides.
+3. Click the **Show Mini-Map** button![](../../.gitbook/assets/quick-navigation-icon-process-modeler-processes.png). An overview of your entire Process model displays. ![](../../.gitbook/assets/show-mini-map-button-process-modeler-processes.png) 
+4. Click the location in your Process model that you want to view. The selected location displays.
+
+{% hint style="info" %}
+Click the **Hide Mini-Map** button![](../../.gitbook/assets/hide-mini-map-button-process-modeler-processes.png)to hide the overview of your Process model.
+{% endhint %}
 
 ## Related Topics
 

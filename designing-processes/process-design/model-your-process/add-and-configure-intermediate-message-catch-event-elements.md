@@ -73,7 +73,7 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for an Intermediate Message Catch Event element:
 
-1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Intermediate Message Catch Event element from the Process model in which to edit its name. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays.  
 
@@ -95,7 +95,7 @@ Adding settings to the Intermediate Message Catch Event element restricts how th
 
 Follow these steps to configure how to trigger an Intermediate Message Catch Event element:
 
-1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Intermediate Message Catch Event element from the Process model in which to configure how it is triggered. Panels to configure this element display.
 3. Expand the **Configuration** setting section if it is not presently expanded, and then scroll to the **Message Event Identifier** setting.  
 
@@ -131,7 +131,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for an Intermediate Message Catch Event element:
 
-1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Intermediate Message Catch Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
 3. Expand the **Advanced** panel if it is not presently expanded. The **Identifier** setting displays. This is a required setting.  
 
@@ -167,7 +167,7 @@ One or more ProcessMaker Vocabularies must be created to your ProcessMaker insta
 
 Follow these steps to assign ProcessMaker Vocabularies that validate Request data from an Intermediate Message Catch Event element:
 
-1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Intermediate Message Catch Event element from the Process model in which to assign ProcessMaker Vocabularies that validate Request data prior to when this element completes. Panels to configure this element display.
 3. Expand the **Vocabularies** panel if it is not presently expanded. The **Assigned** setting displays.
 4. Click the![](../../../.gitbook/assets/add-icon.png)icon to add a ProcessMaker Vocabulary. The **Assign Vocabulary** option displays. ![](../../../.gitbook/assets/assign-vocabulary-option-process-modeler-processes.png) 

@@ -22,9 +22,9 @@ Follow these steps to create a new Process:
 
    ![](../../../.gitbook/assets/add-a-process-screen-processes.png)
 
-3. In the **Name** field, enter the name of the Process. This is a required field.
+3. In the **Name** field, enter the name of the Process. Process names must be unique regardless of whether the Process is active or [archived](remove-a-process.md). This is a required field.
 4. In the **Description** field, enter a description of the Process. This is a required field.
-5. From the **Category** drop-down, select a category to associate with the Process. This is a required field. See [What is a Process Category?](manage-process-categories/what-is-a-process-category.md) for more information.
+5. From the **Category** drop-down, select a [Process Category](manage-process-categories/what-is-a-process-category.md) to associate with the Process. This is a required field.
 6. Optionally, upload a third-party [BPMN 2.0 compliant](https://www.omg.org/spec/BPMN/2.0/About-BPMN/) BPMN file from which to use its Process model in ProcessMaker. Do not use this function to [import a ProcessMaker version 4](import-a-bpmn-compliant-process.md) `.json` file.
 
    To do so, follow these guidelines:

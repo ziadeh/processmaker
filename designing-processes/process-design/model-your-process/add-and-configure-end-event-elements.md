@@ -69,7 +69,7 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for an End Event element:
 
-1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the End Event element from the Process model in which to edit its name. Panels to configure this element display.
 3. Expand the **Configuration** setting section if it is not presently expanded. The **Name** setting displays.  
 
@@ -87,7 +87,7 @@ When an End Event element is placed into a Process model, it is not configured t
 
 Follow these steps to select the ProcessMaker Screen that displays when an End Event element triggers:
 
-1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the End Event element from the Process model in which to select the ProcessMaker Screen that displays when that End Event element is triggered, thereby completing that Request. Panels to configure this element display.
 3. Expand the **Configuration** setting section if it is not presently expanded. The **Summary screen** setting displays.  
 
@@ -107,7 +107,7 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for an End Event element:
 
-1. Ensure that the **Maximize Canvas** icon![](../../../.gitbook/assets/maximize-canvas-icon-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the End Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
 3. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** setting displays. This is a required setting.  
 

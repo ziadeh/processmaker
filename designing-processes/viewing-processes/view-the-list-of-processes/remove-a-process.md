@@ -8,7 +8,7 @@ description: Archive a Process that is no longer needed in your organization.
 
 An archived Process has the following attributes:
 
-* Archived Processes are disabled until they are [restored](restore-a-process.md#restore-a-process).
+* Archived Processes are disabled until they are [restored](restore-a-process.md#restore-a-process). Archived Processes are not deleted.
 * All archived Processes in the organization are accessible from the **Process Archive** page. See [View Archived Processes](remove-a-process.md#view-archived-processes).
 * A Process with in-progress Requests can be archived. In-progress Requests for a Process that is archived will complete.
 
@@ -35,7 +35,7 @@ Click the **Archived Processes** icon![](../../../.gitbook/assets/archived-proce
 The **Archived Processes** page displays the following information in tabular format about archived Processes:
 
 * **Name:** The **Name** column displays the Process name.
-* **Category:** The **Category** column displays in which Process Category the Process is assigned. See [Process Categories]().
+* **Category:** The **Category** column displays in which [Process Category](manage-process-categories/what-is-a-process-category.md) the Process is assigned.
 * **Owner:** The **Owner** column displays the Process Owner who maintains the Process. Hover your cursor over a user's avatar to view that person's full name.
 * **Modified:** The **Modified** column displays the date and time the Process was last modified. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 * **Created:** The **Created** column displays the date and time the Process was created. The time zone setting to display the time is according to the ProcessMaker server unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.

@@ -17,7 +17,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 The panel to the left of the Process Modeler canvas displays elements and controls that can be used in a Process model.
 
-![Panel that contains elements and controls in Process Modeler](../../../.gitbook/assets/bpmn-panel-process-modeler-processes.png)
+![Palette that contains elements and controls in Process Modeler](../../../.gitbook/assets/bpmn-panel-process-modeler-processes.png)
 
 {% hint style="info" %}
 See [Process Modeling Element Descriptions](process-modeling-element-descriptions.md).
