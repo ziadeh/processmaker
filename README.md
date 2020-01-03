@@ -12,5 +12,5 @@ View [documentation for ProcessMaker versions 2.x and 3.x](https://wiki.processm
 
 [Privacy Statement](https://www.processmaker.com/privacy-statement)
 
-© Copyright 2000-2019 ProcessMaker Inc. All rights reserved.
+© Copyright 2000-2020 ProcessMaker Inc. All rights reserved.
 
