@@ -16,7 +16,7 @@ See the ProcessMaker [Screens](../../../processmaker-administration/permission-d
 {% endhint %}
 
 {% hint style="warning" %}
-When a ProcessMaker Screen is deleted, Process models that use that ProcessMaker Screen in [Task elements](../../process-design/model-your-process/add-and-configure-task-elements.md#select-the-processmaker-screen-for-a-task-element) are not affected. However, that ProcessMaker Screen can no longer be added to other Process models.
+When a ProcessMaker Screen is deleted, Process models that use that ProcessMaker Screen in [Task elements](../../process-design/model-your-process/add-and-configure-task-elements.md#select-the-processmaker-screen-for-a-task-element) are not affected. However, that ProcessMaker Screen can no longer be referenced from other Process models.
 
 Deleting a ProcessMaker Screen from the **Screens** page cannot be undone.
 {% endhint %}

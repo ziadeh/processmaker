@@ -15,7 +15,17 @@ While writing a ProcessMaker Script, test it before you deploy it. ProcessMaker 
 
 During run-time, ProcessMaker Scripts run within isolated containers for greater security. After the ProcessMaker Script runs and returns output to the Request, the container that isolated and ran the script automatically removes itself.
 
-ProcessMaker supports Lua, PHP, and NodeJS programming languages in the open-source edition.
+ProcessMaker supports the following programming languages in the open-source edition:
+
+* PHP
+* Lua
+* NodeJS
+
+ProcessMaker Enterprise edition supports the following additional programming languages:
+
+* C\# \(provided from the [C\# package](../../package-development-distribution/package-a-connector/c-package.md)\)
+* Java \(provided from the [Java package](../../package-development-distribution/package-a-connector/java-package.md)\)
+* R \(provided from the [R package](../../package-development-distribution/package-a-connector/r-package.md)\)
 
 ## Related Topics
 
@@ -36,4 +46,12 @@ ProcessMaker supports Lua, PHP, and NodeJS programming languages in the open-sou
 {% page-ref page="manage-scripts/remove-a-script.md" %}
 
 {% page-ref page="scripts-editor.md" %}
+
+{% page-ref page="../../package-development-distribution/first-topic.md" %}
+
+{% page-ref page="../../package-development-distribution/package-a-connector/c-package.md" %}
+
+{% page-ref page="../../package-development-distribution/package-a-connector/java-package.md" %}
+
+{% page-ref page="../../package-development-distribution/package-a-connector/r-package.md" %}
 

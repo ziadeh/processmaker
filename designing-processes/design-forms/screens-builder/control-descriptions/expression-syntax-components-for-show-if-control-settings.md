@@ -10,9 +10,7 @@ description: >-
 
 Use the following expression syntax components to compose the expression that describes under which condition\(s\) a ProcessMaker Screen control displays.
 
-If an expression in a control evaluates as True, then that control displays in run-time during a [Request](../../../../using-processmaker/requests/what-is-a-request.md).
-
-If an expression in a control does not evaluate as True, then that control does not display in run-time during a Request.
+If an expression in a control evaluates as True, then that control displays during a [Request](../../../../using-processmaker/requests/what-is-a-request.md). If an expression in a control does not evaluate as True, then that control does not display during a Request.
 
 Spaces are allowed before and after expression components, such as [arithmetic](expression-syntax-components-for-show-if-control-settings.md#arithmetic-operations) and [comparison](expression-syntax-components-for-show-if-control-settings.md#comparison-operators) operators, to more easily read the expression.
 

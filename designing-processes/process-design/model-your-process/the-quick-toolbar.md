@@ -151,7 +151,7 @@ Follow these steps to set the condition under which an outgoing Sequence Flow el
 
 #### Expression Syntax Components
 
-Use the following expression syntax components to compose the expression that describes under which condition\(s\) an outgoing Sequence Flow element triggers. Reference the ProcessMaker Screen control's **Variable Name** setting value to represent the variable. Example: `FullNameInput == "Louis Canera"`.
+Use the following expression syntax components to compose the expression that describes under which condition\(s\) an outgoing Sequence Flow element triggers.
 
 Spaces are allowed before and after expression components, such as arithmetic and comparison operators, to more easily read the expression.
 

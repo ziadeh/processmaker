@@ -25,11 +25,14 @@ Follow these steps to add an End Event element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **End Event** element in the panel to the left of the Process Modeler canvas.
+3. Locate the **End Event** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **End Event** control's icon![](../../../.gitbook/assets/end-event-icon-process-modeler-processes.png).
 
    ![](../../../.gitbook/assets/end-event-bpmn-side-bar-process-modeler-processes.png)
 
-4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the End Event element cannot be placed outside of the Pool element.
+4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the End Event element cannot be placed outside of the Pool element.
+5. Do one of the following:
+   * Select the **End Event** option from the **Elements** drop-down menu. ![](../../../.gitbook/assets/end-event-selection-process-modeler-processes.png) 
+   * Click anywhere in the Process model. The End Event element selects by default.
 
 ![End Event element](../../../.gitbook/assets/end-event-process-modeler-processes.png)
 
@@ -69,9 +72,9 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for an End Event element:
 
-1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the End Event element from the Process model in which to edit its name. Panels to configure this element display.
-3. Expand the **Configuration** setting section if it is not presently expanded. The **Name** setting displays.  
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays.  
 
    ![](../../../.gitbook/assets/end-event-configuration-name-process-modeler-processes.png)
 
@@ -87,9 +90,9 @@ When an End Event element is placed into a Process model, it is not configured t
 
 Follow these steps to select the ProcessMaker Screen that displays when an End Event element triggers:
 
-1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the End Event element from the Process model in which to select the ProcessMaker Screen that displays when that End Event element is triggered, thereby completing that Request. Panels to configure this element display.
-3. Expand the **Configuration** setting section if it is not presently expanded. The **Summary screen** setting displays.  
+3. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Summary screen** setting.  
 
    ![](../../../.gitbook/assets/summary-screen-end-event-process-modeler-processes.png)
 
@@ -107,13 +110,13 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for an End Event element:
 
-1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the End Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
-3. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** setting displays. This is a required setting.  
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required setting.  
 
    ![](../../../.gitbook/assets/end-event-configuration-identifier-name-process-modeler-processes.png)
 
-4. In the **Identifier** setting, edit the End Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Node Identifier** setting, edit the End Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 

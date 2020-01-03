@@ -25,7 +25,7 @@ Use ProcessMaker Vocabularies to ensure Request data complies with a specific da
 A ProcessMaker Vocabulary is a JSON schema. The JSON schema describes the data objects, types, and structure that you want in both a machine and human readable format. Apply one or more ProcessMaker Vocabularies to your Processes and/or specific BPMN 2.0 elements in your Process models to ensure the JSON data model in Request data complies with the data structure outlined in the JSON schema that you need to meet regulatory specifications or ensure Request data contains required information.
 
 {% hint style="info" %}
-Need to learn how to develop JSON schemas? Start with [JSON Schema](https://json-schema.org/).
+Need to learn how to develop JSON schemas? Start with [JSON Schema](https://json-schema.org/). Need to learn how to convert valid JSON to a JSON schema? Use the [JSON Schema Tool](https://jsonschema.net), though do not use JSON intended for production on this free GitHub application. 
 {% endhint %}
 
 ### How Do ProcessMaker Vocabularies Work?

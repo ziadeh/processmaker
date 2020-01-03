@@ -25,11 +25,12 @@ Follow these steps to add a Start Timer Event element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Start Timer Event** element in the panel to the left of the Process Modeler canvas.  
+3. Locate the **Start Event** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Start Event** control's icon![](../../../.gitbook/assets/start-event-element-icon-process-modeler-processes.png).
 
-   ![](../../../.gitbook/assets/start-timer-event-bpmn-side-bar-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/start-event-bpmn-side-bar-process-modeler-processes.png)
 
-4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Start Timer Event element cannot be placed outside of the Pool element.
+4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Start Timer Event element cannot be placed outside of the Pool element.
+5. Select the **Start Timer Event** option from the **Elements** drop-down menu. The Start Timer Event element displays. ![](../../../.gitbook/assets/start-timer-event-selection-process-modeler-processes.png) 
 
 ![Start Timer Event element](../../../.gitbook/assets/start-timer-event-process-modeler-processes.png)
 
@@ -70,12 +71,9 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for a Start Timer Event element:
 
-1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Start Timer Event element from the Process model in which to edit its name. Panels to configure this element display.
-3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays.  
-
-   ![](../../../.gitbook/assets/start-timer-event-configuration-name-process-modeler-processes.png)
-
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../.gitbook/assets/start-timer-event-configuration-name-process-modeler-processes.png) 
 4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
 
 ### Timing Control Panel Settings
@@ -100,7 +98,7 @@ If these are not the timing control settings you want, the Start Timer Event ele
 
 Follow these steps to set the timer controls for a Start Timer Event element:
 
-1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Start Timer Event element from the Process model in which to set its timer controls. Panels to configure this element display.
 3. Expand the **Timing Control** panel if it is not presently expanded. The **Start date** setting displays.
 
@@ -134,13 +132,13 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Start Timer Event element:
 
-1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Start Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
-3. Expand the **Advanced** panel if it is not presently expanded. The **Identifier** setting displays. This is a required setting.
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Start Timer Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required setting.
 
    ![](../../../.gitbook/assets/start-timer-event-configuration-identifier-name-process-modeler-processes.png)
 
-4. In the **Identifier** setting, edit the Start Timer Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Node Identifier** setting, edit the Start Timer Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 

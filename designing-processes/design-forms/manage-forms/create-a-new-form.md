@@ -32,7 +32,7 @@ Follow these steps to create a new ProcessMaker Screen:
    This is a required field.
 
 5. Enter in the **Description** field a description for the ProcessMaker Screen. This is a required field.
-6. In the **Category** field, enter the name for the category to associate with the ProcessMaker Screen. In doing so, maintain consistent naming with similarly functional ProcessMaker Screens so that they may be more easily sorted from the [**Screens** page](view-all-forms.md#view-all-scripts). This is a required field.
+6. From the **Category** drop-down menu, select one or more [Screen Categories](manage-screen-categories/what-is-a-screen-category.md) to associate with this ProcessMaker Screen. In doing so, Screen Categories may be sorted from the [**Screens** page](view-all-forms.md#view-all-scripts). To remove a Screen Category that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible. This is a required field.
 7. Click **Save**. Screens Builder displays the new ProcessMaker Screen in [Design mode](../screens-builder/screens-builder-modes.md#editor-mode). See [Screens Builder](../screens-builder/).
 
 ## Related Topics

@@ -25,13 +25,13 @@ Follow these steps to add a Start Event element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Start Event** element in the palette to the left of the Process Modeler canvas.  
+3. Locate the **Start Event** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Start Event** control's icon![](../../../.gitbook/assets/start-event-element-icon-process-modeler-processes.png).
 
    ![](../../../.gitbook/assets/start-event-bpmn-side-bar-process-modeler-processes.png)
 
-4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Start Event element cannot be placed outside of the Pool element.
+4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Start Event element cannot be placed outside of the Pool element.
 5. Do one of the following:
-   * Select **Start Event** from the start-type BPMN elements. ![](../../../.gitbook/assets/start-event-selection-process-modeler-processes.png) 
+   * Select the **Start Event** option from the **Elements** drop-down menu. ![](../../../.gitbook/assets/start-event-selection-process-modeler-processes.png) 
    * Click anywhere in the Process model. The Start Event element selects by default.
 
 ![Start Event element](../../../.gitbook/assets/start-event-process-modeler-processes.png)
@@ -60,15 +60,15 @@ The Start Event element has the following panels that contain settings:
 
 * **Configuration** panel
   * [Edit the element name](add-and-configure-an-event-element.md#edit-the-element-name)
-* **Advanced** panel
-  * [Edit the element's identifier value](add-and-configure-an-event-element.md#edit-the-elements-identifier-value)
 * **Start Permissions** panel
-  * [Select the ProcessMaker user that can start Requests](add-and-configure-an-event-element.md#select-the-processmaker-user-that-can-start-requests)
-  * [Select the ProcessMaker group that can start Requests](add-and-configure-an-event-element.md#select-the-processmaker-group-that-can-start-a-request)
-* **Vocabularies** panel \(available when the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) is installed\)
-  * [Assign ProcessMaker Vocabularies that validate Request data from this element](add-and-configure-an-event-element.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
+  * [Select the ProcessMaker user that can start a Request](add-and-configure-an-event-element.md#select-the-processmaker-user-that-can-start-a-request)
+  * [Select the ProcessMaker group that can start a Request](add-and-configure-an-event-element.md#select-the-processmaker-group-that-can-start-a-request)
 * **Web Entry** panel \(available when the [Web Entry package](../../../package-development-distribution/package-a-connector/web-entry.md) is installed\)
   * [Select who can start a Request via a Web Entry](add-and-configure-an-event-element.md#select-who-can-start-a-request-via-a-web-entry)
+* **Vocabularies** panel \(available when the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) is installed\)
+  * [Assign ProcessMaker Vocabularies that validate Request data from this element](add-and-configure-an-event-element.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
+* **Advanced** panel
+  * [Edit the element's identifier value](add-and-configure-an-event-element.md#edit-the-elements-identifier-value)
 
 ### Configuration Panel Settings
 
@@ -78,7 +78,7 @@ An element name is a human-readable reference for a Process element. Process Mod
 
 Follow these steps to edit the name for a Start Event element:
 
-1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Start Event element from the Process model in which to edit its name. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays.  
 
@@ -86,35 +86,20 @@ Follow these steps to edit the name for a Start Event element:
 
 4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
 
-### Advanced Panel Settings
-
-#### Edit the Element's Identifier Value
-
-Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
-
-{% hint style="warning" %}
-All identifier values for all elements in the Process model must be unique.
-{% endhint %}
-
-Follow these steps to edit the identifier value for a Start Event element:
-
-1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Start Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
-3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required setting.  
-
-   ![](../../../.gitbook/assets/start-event-configuration-identifier-name-process-modeler-processes.png)
-
-4. In the **Node Identifier** setting, edit the Start Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
-
 ### Start Permissions Panel Settings
 
-#### Select the ProcessMaker User That Can Start Requests
+Select whether a [ProcessMaker user](../../../processmaker-administration/add-users/what-is-a-user.md) or any member of a [ProcessMaker group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) may start a [Request](../../../using-processmaker/requests/what-is-a-request.md):
+
+* [Select the ProcessMaker user that can start a Request](add-and-configure-an-event-element.md#select-the-processmaker-user-that-can-start-a-request)
+* [Select the ProcessMaker Group that can start a Request](add-and-configure-an-event-element.md#select-the-processmaker-group-that-can-start-a-request)
+
+#### Select the ProcessMaker User That Can Start a Request
 
 When a Start Event element is placed into a Process model, it is not configured to indicate how a Request can start via that Start Event element. Therefore, it must be configured.
 
 Follow these steps to select which ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) can start a Request via this Start Event element:
 
-1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Start Event element from the Process model in which to select the ProcessMaker user that may start a Request. Panels to configure this element display.
 3. Expand the **Start Permissions** panel if it is not presently expanded. The **Type** setting displays.  
 
@@ -132,7 +117,7 @@ When a Start Event element is placed into a Process model, it is not configured 
 
 Follow these steps to select which ProcessMaker [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) members can start a Request via this Start Event element:
 
-1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Start Event element from the Process model in which to select the ProcessMaker group that may start a Request. The **Configuration** setting section displays.
 3. Expand the **Start Permissions** panel if it is not presently expanded. The **Type** setting displays.
 
@@ -160,7 +145,7 @@ When a Start Event element is placed into a Process model, Web Entry settings fo
 
 Follow these steps to select who can start a Request via a Web Entry URL via this Start Event element:
 
-1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Start Event element from the Process model in which to select who may start a Request via a Web Entry URL. Panels to configure this element display.
 3. Expand the **Web Entry** panel if it is not presently expanded. The **Web Entry** setting displays.  
 
@@ -244,18 +229,16 @@ One or more ProcessMaker Vocabularies must be created to your ProcessMaker insta
 
 Follow these steps to assign ProcessMaker Vocabularies that validate Request data from a Start Event element:
 
-1. Ensure that the **Maximize Canvas** iconis not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Start Event element from the Process model in which to assign ProcessMaker Vocabularies that validate Request data prior to when this element completes. Panels to configure this element display.
 3. Expand the **Vocabularies** panel if it is not presently expanded. The **Assigned** setting displays.
 4. Click the![](../../../.gitbook/assets/add-icon.png)icon to add a ProcessMaker Vocabulary. The **Assign Vocabulary** option displays. ![](../../../.gitbook/assets/assign-vocabulary-option-process-modeler-processes.png) 
 5. From the **Select Vocabulary** drop-down menu, select a ProcessMaker Vocabulary from which to validate Request data complies with its JSON schema.
 
-   To remove a ProcessMaker Vocabulary that is currently selected, select the Vocabulary again or press `Enter` when the drop-down is visible.
-
    If no ProcessMaker Vocabularies are configured in your ProcessMaker instance, then the following message displays: **List is empty.** Create at least one ProcessMaker Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary).
 
 6. Click **Save**.
-7. Repeat Steps 3 through 5 as necessary for each ProcessMaker Vocabulary required to validate Request data complies with its JSON schema.
+7. Repeat Steps 3 through 6 as necessary for each ProcessMaker Vocabulary required to validate Request data complies with its JSON schema.
 
 {% hint style="info" %}
 Click the **Remove** icon![](../../../.gitbook/assets/delete-remove-icon.png)from the **Vocabularies** setting to remove a ProcessMaker Vocabulary from assignment to this element.
@@ -264,6 +247,26 @@ Click the **Remove** icon![](../../../.gitbook/assets/delete-remove-icon.png)fro
 After one or more ProcessMaker Vocabularies are assigned to a Start Event element, the Vocabulary icon displays above that element.
 
 ![Start Event element with an assigned ProcessMaker Vocabulary](../../../.gitbook/assets/start-event-vocabulary-process-modeler-processes.png)
+
+### Advanced Panel Settings
+
+#### Edit the Element's Identifier Value
+
+Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
+
+{% hint style="warning" %}
+All identifier values for all elements in the Process model must be unique.
+{% endhint %}
+
+Follow these steps to edit the identifier value for a Start Event element:
+
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Start Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required setting.  
+
+   ![](../../../.gitbook/assets/start-event-configuration-identifier-name-process-modeler-processes.png)
+
+4. In the **Node Identifier** setting, edit the Start Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 

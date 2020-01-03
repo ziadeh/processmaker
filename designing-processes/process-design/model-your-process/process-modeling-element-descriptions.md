@@ -91,19 +91,28 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 ### Intermediate Message Catch Event
 
-An Intermediate Message Catch Event element represents a delay in a Process until that element receives an external API call. This external API call is represented as an incoming [Message Flow](process-modeling-element-descriptions.md#message-flow) element from another [Pool](process-modeling-element-descriptions.md#pool) element. When the Intermediate Catch Event element receives the API call the element triggers, thereby resuming workflow for that Process's [Request](../../../using-processmaker/requests/what-is-a-request.md).
+An Intermediate Message Catch Event element represents a delay in a [Request](../../../using-processmaker/requests/what-is-a-request.md) until that element receives a message from either an Intermediate Message Throw Event element or a Message End Event element \(but not both\) located in a different [Pool](process-modeling-element-descriptions.md#pool) element than the Intermediate Message Catch Event element receiving the message. The purpose of the message transfer is to convey information between Requests running from the same Process model since each Pool element represents its own Request with its own distinct Request data. As part of this information transfer, workflow is affected in the Pool element's Request that contains the Intermediate Message Catch Event element.
 
-Use this element to specify attributes of an API call that are required to pass information to the Request and then resume its workflow.
+Use a [Message Flow](process-modeling-element-descriptions.md#message-flow) element to indicate messaging workflow between the triggering element and the Intermediate Message Catch Event element. Ensure that Intermediate Message Catch Event element and its triggering element are in different Pool elements. When configuring the Intermediate Message Catch Event element during Process modeling, select which message from the triggering element sends to the Intermediate Message Catch Event element.
 
-The Intermediate Message Catch Event element can receive the external API call using authorized credentials from any of the following:
+An Intermediate Message Catch Event element functions as follows during a Request:
 
-* A specified ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md)
-* Any member of a specified ProcessMaker [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md)
-* A whitelisted \(allowed\) IP address or domain
+* The Intermediate Message Throw Event element or Message End Event element triggers.
+* That triggering element sends its message to the Intermediate Message Catch Event element.
+* The Intermediate Message Catch Event triggers. Workflow resumes in that Request.
 
-In the left panel in Process Modeler, the Intermediate Message Catch Event element is labeled as "Intermediate Message Catch Event."
+Consider the following example how the Intermediate Message Catch Event element functions. This is an overly simple purchase request and order fulfillment Process model.
 
-![Intermediate Message Catch Event element in the left side panel in Process Modeler](../../../.gitbook/assets/intermediate-message-catch-event-bpmn-side-bar-process-modeler-processes.png)
+![Simple Process model example to demonstrate how an Intermediate Message Catch Event functions](../../../.gitbook/assets/intermediate-throw-catch-event-example.png)
+
+Instead of using a Message Start Event element in the "Purchase Fulfillment" Pool element to start that Request, use an Intermediate Message Catch Event element \(labeled "Catch from Order"\) after the Request has started.
+
+After the "Purchase Fulfillment" Request starts, the following occurs:
+
+* Workflow delays after the "Preparation" Task element.
+* When the Intermediate Message Throw Event element triggers from the "Purchase Order" Request \(labeled "Throw to Fulfillment"\), it sends its message to the Intermediate Message Catch Event element in the "Purchase Fulfillment" Request. Workflow continues in the "Purchase Order" Request to the End Event element.
+* In the "Purchase Fulfillment" Request, the Intermediate Message Catch Event element triggers and receives the Intermediate Message Throw Event element's message.
+* Workflow resumes in the "Purchase Fulfillment" Request.
 
 Below is an Intermediate Message Catch Event element when it has been placed into a Process model.
 
@@ -275,7 +284,7 @@ A Parallel Gateway element synchronizes [Request](../../../using-processmaker/re
 
 * **Converging workflow:** Converging workflow represents two or more incoming Sequence Flow elements to the Parallel Gateway element. All incoming Sequence Flow elements converging to the Parallel Gateway element must trigger before the Parallel Gateway element triggers, thereby synchronizing a Request's workflow. Use this coordinate workflow.  
 
-  ![](../../../.gitbook/assets/parallel-gateway-diverging.png)
+  ![](../../../.gitbook/assets/parallel-gateway-converging.png)
 
 * **Diverging workflow:** Diverging workflow represents two or more outgoing Sequence Flow elements from the Parallel Gateway element. When a Parallel Gateway triggers, all outgoing Sequence Flow elements from the gateway element trigger simultaneously without exception. Conditions cannot be placed on any outgoing Sequence Flow elements from the Parallel Gateway element. Use this when multiple workflow routes must occur simultaneously.  
 
@@ -334,6 +343,8 @@ BPMN 2.0 provides graphical representations to organize participants in a Proces
 ### Pool
 
 A Pool element represents an organization or entity involved in a Process model. The Pool element might represent a specific role \("Human Resources"\), entity \(such as a company\) or a general relationship \(such as a buyer, seller, or manufacturer\).
+
+Each Pool element represents its own Request, and therefore its own Request data. While a Process model can have multiple Pool elements, each Pool element represents its own Request with distinct Request data.
 
 In the left panel in Process Modeler, the Pool element is labeled as "Pool."
 

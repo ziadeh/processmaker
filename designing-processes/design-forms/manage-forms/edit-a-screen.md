@@ -25,6 +25,7 @@ Follow these steps to configure a ProcessMaker Screen:
 3. Edit the following information about the ProcessMaker Screen as necessary:
    * In the **Name** field, edit the name of the ProcessMaker Screen. This is a required field.
    * In the **Description** field, edit the description of the ProcessMaker Screen. This is a required field.
+   * From the **Category** drop-down menu, select one or more [Screen Categories](manage-screen-categories/what-is-a-screen-category.md) to associate with this ProcessMaker Screen. In doing so, Screen Categories may be sorted from the [**Screens** page](view-all-forms.md#view-all-scripts). To remove a Screen Category that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible. This is a required field.
 4. Click **Save**.
 
 ## Related Topics
