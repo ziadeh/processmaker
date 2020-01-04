@@ -8,7 +8,7 @@ ProcessMaker Open Source Edition is licensed under the [GNU Affero General Publi
 
 Note that ProcessMaker 4 user documentation may change without notice. Since ProcessMaker 4 is in **Beta 11**, product features may change without notice.
 
-View [documentation for ProcessMaker versions 2.x and 3.x](https://wiki.processmaker.com/). The latest production release is ProcessMaker version 3.4.2.
+View [documentation for ProcessMaker versions 2.x and 3.x](https://wiki.processmaker.com/). The latest production release is ProcessMaker version 3.4.4.
 
 [Privacy Statement](https://www.processmaker.com/privacy-statement)
 
