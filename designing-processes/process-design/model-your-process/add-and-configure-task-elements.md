@@ -89,7 +89,7 @@ Follow these steps to edit the name for a Task element:
 2. Select the Task element from the Process model in which to edit its name. The **Configuration** setting section displays.
 3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays.  
 
-   ![](../../../.gitbook/assets/task-configuration-name-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/task-configuration-name-process-modeler-processes%20%281%29.png)
 
 4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
 
@@ -686,11 +686,11 @@ Follow these steps to edit the identifier value for a Task element:
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Task element from the Process model in which to edit its identifier value. Panels to configure this element display.
-3. Expand the **Advanced** panel if it is not presently expanded. The **Identifier** setting displays. This is a required setting.  
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required setting.  
 
    ![](../../../.gitbook/assets/task-configuration-identifier-name-process-modeler-processes.png)
 
-4. In the **Identifier** setting, edit the Task element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Node Identifier** setting, edit the Task element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 

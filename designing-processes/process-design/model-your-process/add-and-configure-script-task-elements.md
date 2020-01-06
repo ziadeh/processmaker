@@ -25,11 +25,12 @@ Follow these steps to add a Script Task element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Script Task** element in the panel to the left of the Process Modeler canvas.
+3. Locate the **Task** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Task** control's icon![](../../../.gitbook/assets/task-icon-process-modeler-processes.png).
 
-   ![](../../../.gitbook/assets/script-task-bpmn-side-bar-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/task-bpmn-side-bar-process-modeler-processes.png)
 
-4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Script Task element cannot be placed outside of the Pool element.
+4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Task element cannot be placed outside of the Pool element.
+5. Select the **Script Task** option from the **Elements** drop-down menu. The Script Task element displays. ![](../../../.gitbook/assets/script-task-selection-process-modeler-processes.png) 
 
 ![Script Task element](../../../.gitbook/assets/script-task-process-modeler-processes.png)
 
@@ -56,28 +57,15 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The Script Task element has the following panels that contain settings:
 
 * **Configuration** panel
-  * Edit the element name
+  * [Edit the element name](add-and-configure-script-task-elements.md#edit-the-element-name)
+* **Vocabularies** panel \(available when the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) is installed\)
+  * [Assign ProcessMaker Vocabularies that validate Request data from this element](add-and-configure-script-task-elements.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
 * **Advanced** panel
-  * Edit the element's identifier value
+  * [Edit the element's identifier value](add-and-configure-script-task-elements.md#edit-the-elements-identifier-value)
 
-### Edit the Element's Identifier Value
+### Configuration Panel Settings
 
-Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
-
-{% hint style="warning" %}
-All identifier values for all elements in the Process model must be unique.
-{% endhint %}
-
-Follow these steps to edit the identifier value for a Script Task element:
-
-1. Select the Script Task element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
-
-   ![](../../../.gitbook/assets/script-task-configuration-identifier-name-process-modeler-processes.png)
-
-3. In the **Identifier** field, edit the Script Task element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
-
-### Edit the Element Name
+#### Edit the Element Name
 
 An element name is a human-readable reference for a process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
 
@@ -90,7 +78,7 @@ Follow these steps to edit the name for a Script Task element:
 
 3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
 
-### Select the ProcessMaker Script for a Script Task Element
+#### Select the ProcessMaker Script for a Script Task Element
 
 Since Script Task elements are designed to run a ProcessMaker Script, specify which ProcessMaker Script a selected Script Task element uses. A ProcessMaker Script must already exist before it can be selected for use in a Script Task element.
 
@@ -118,7 +106,7 @@ Follow these steps to select a ProcessMaker Script for a Script Task element:
 If no ProcessMaker Scripts exist, the **Script** drop-down menu contains no options. Ensure to select and configure a ProcessMaker Script for every Script Task element in the Process model before deploying your Process.
 {% endhint %}
 
-### Configure the ProcessMaker Script Selected for a Script Task Element
+#### Configure the ProcessMaker Script Selected for a Script Task Element
 
 After [selecting the ProcessMaker Script for the Script Task element](add-and-configure-script-task-elements.md#select-the-processmaker-script-for-a-script-task-element), optionally provide a JSON script that configures variable values for the selected ProcessMaker Script. Providing a JSON script from the Script Task is identical to providing JSON configuration script in the **Script Config JSON** panel in Scripts Editor for a ProcessMaker Script.
 
@@ -154,7 +142,9 @@ Follow these steps to enter or edit a JSON configuration script for a Script Tas
 You can enter your JSON configuration script directly into the **Script Configuration** option instead of using the **Script Config Editor**.
 {% endhint %}
 
-## Assign ProcessMaker Vocabularies That Validate Request Data from This Element
+### Vocabularies Panel Settings
+
+#### Assign ProcessMaker Vocabularies That Validate Request Data from This Element
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
@@ -206,6 +196,25 @@ Click the **Remove** icon![](../../../.gitbook/assets/delete-remove-icon.png)fro
 After one or more ProcessMaker Vocabularies are assigned to a Script Task element, the Vocabulary icon displays above that element.
 
 ![Script Task element with an assigned ProcessMaker Vocabulary](../../../.gitbook/assets/script-task-vocabulary-process-modeler-processes.png)
+
+### Advanced Panel Settings
+
+#### Edit the Element's Identifier Value
+
+Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
+
+{% hint style="warning" %}
+All identifier values for all elements in the Process model must be unique.
+{% endhint %}
+
+Follow these steps to edit the identifier value for a Script Task element:
+
+1. Select the Script Task element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
+2. Expand the **Configuration** setting section if it is not presently expanded. The **Node Identifier** field displays. This is a required field.  
+
+   ![](../../../.gitbook/assets/script-task-configuration-identifier-name-process-modeler-processes.png)
+
+3. In the **Node Identifier** field, edit the Script Task element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 

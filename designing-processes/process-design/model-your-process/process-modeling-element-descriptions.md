@@ -192,7 +192,7 @@ See [Add and Configure Script Task Elements](add-and-configure-script-task-eleme
 
 ### Manual Task
 
-A Manual Task element represents an activity a person performs in the physical environment as a [Request](../../../using-processmaker/requests/what-is-a-request.md) participant. A Manual Task element is different than a [Task](process-modeling-element-descriptions.md#task) element, in which a person performs an activity via ProcessMaker software. The activity the Manual Task element represents does not directly involve ProcessMaker, nor does it require any software application to complete.
+A Manual Task element represents an activity a person performs offline and/or in the physical environment such that ProcessMaker cannot monitor its activity. A Manual Task element is different than a [Task](process-modeling-element-descriptions.md#task) element, in which a person performs an activity via ProcessMaker. ProcessMaker relies on the Task assignee to acknowledge completion of that activity. An example of a Manual Task activity is moving physical merchandise in a warehouse: this activity occurs offline and is one which does not involve ProcessMaker interaction.
 
 In the left panel in Process Modeler, the Manual Task element is labeled as "Manual Task."
 
