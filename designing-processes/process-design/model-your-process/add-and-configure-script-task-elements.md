@@ -95,12 +95,13 @@ Ensure to select a ProcessMaker Script for each Script Task element in your Proc
 
 Follow these steps to select a ProcessMaker Script for a Script Task element:
 
-1. Select the Script Task element from the Process model in which to specify its ProcessMaker Script. Panels to configure this element display.
-2. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Script** setting.  
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Script Task element from the Process model in which to specify its ProcessMaker Script. Panels to configure this element display.
+3. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Script** setting.  
 
    ![](../../../.gitbook/assets/script-drop-down-script-task-process-modeler-processes.png)
 
-3. From the **Script** drop-down menu, select which ProcessMaker Script that Script Task element references. Note that another Script Task element located elsewhere in the Process model may reference a different ProcessMaker Script that runs a different script when it triggers.
+4. From the **Script** drop-down menu, select which ProcessMaker Script that Script Task element references. Note that another Script Task element located elsewhere in the Process model may reference a different ProcessMaker Script that runs a different script when it triggers.
 
 {% hint style="warning" %}
 If no ProcessMaker Scripts exist, the **Script** drop-down menu contains no options. Ensure to select and configure a ProcessMaker Script for every Script Task element in the Process model before deploying your Process.
@@ -125,18 +126,19 @@ The JSON script in the Script Task element overrides any JSON script entered in 
 
 Follow these steps to enter or edit a JSON configuration script for a Script Task element:
 
-1. Select the Script Task element from the Process model in which to specify its ProcessMaker Script. Panels to configure this element display.
-2. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Script Configuration** option.  
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Script Task element from the Process model in which to specify its ProcessMaker Script. Panels to configure this element display.
+3. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Script Configuration** option.  
 
    ![](../../../.gitbook/assets/script-configuration-script-task-process-modeler-processes.png)
 
-3. [Select the ProcessMaker Script this Script Task element runs](add-and-configure-script-task-elements.md#select-the-processmaker-script-to-run).
-4. Click the icon![](../../../.gitbook/assets/json-configuration-script-icon-script-task-element-process-modeler-processes.png)beside the **Script Configuration** option. The **Script Config Editor** displays.  
+4. [Select the ProcessMaker Script this Script Task element runs](add-and-configure-script-task-elements.md#select-the-processmaker-script-to-run).
+5. Click the icon![](../../../.gitbook/assets/json-configuration-script-icon-script-task-element-process-modeler-processes.png)beside the **Script Configuration** option. The **Script Config Editor** displays.  
 
    ![](../../../.gitbook/assets/script-config-editor-task-element-process-modeler-processses.png)
 
-5. Enter your JSON configuration script. Use the scroll panel to the right of the ProcessMaker Script to scroll to different sections of the Script if necessary. This is useful especially when you are editing a long ProcessMaker Script.
-6. Click **Close** or the **Close** icon![](../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The JSON configuration script is saved.
+6. Enter your JSON configuration script. Use the scroll panel to the right of the ProcessMaker Script to scroll to different sections of the Script if necessary. This is useful especially when you are editing a long ProcessMaker Script.
+7. Click **Close** or the **Close** icon![](../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The JSON configuration script is saved.
 
 {% hint style="info" %}
 You can enter your JSON configuration script directly into the **Script Configuration** option instead of using the **Script Config Editor**.
@@ -175,19 +177,20 @@ During an in-progress Request, if ProcessMaker evaluates that the Request data n
 
 If no ProcessMaker Vocabularies are assigned, ProcessMaker does not validate Request data complies with a specific JSON schema prior to continuing workflow for that Request.
 
-One or more ProcessMaker Vocabularies must be created to your ProcessMaker instance before assigning a Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary). Multiple ProcessMaker Vocabularies can be assigned to a Start Event element.
+One or more ProcessMaker Vocabularies must be created to your ProcessMaker instance before assigning a Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary). Multiple ProcessMaker Vocabularies can be assigned to a Script Task element.
 
 Follow these steps to assign ProcessMaker Vocabularies that validate Request data from a Script Task element:
 
-1. Select the Script Task element from the Process model in which to assign ProcessMaker Vocabularies that validate Request data prior to when this element completes. Panels to configure this element display.
-2. Expand the **Vocabularies** panel. The **Assigned** setting displays.
-3. Click the![](../../../.gitbook/assets/add-icon.png)icon to add a ProcessMaker Vocabulary. The **Assign Vocabulary** setting displays. ![](../../../.gitbook/assets/assign-vocabulary-option-process-modeler-processes.png) 
-4. From the **Select Vocabulary** drop-down menu, select a ProcessMaker Vocabulary from which to validate Request data complies with its JSON schema.
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Script Task element from the Process model in which to assign ProcessMaker Vocabularies that validate Request data prior to when this element completes. Panels to configure this element display.
+3. Expand the **Vocabularies** panel if it is not presently expanded. The **Assigned** setting displays.
+4. Click the![](../../../.gitbook/assets/add-icon.png)icon to add a ProcessMaker Vocabulary. The **Assign Vocabulary** setting displays. ![](../../../.gitbook/assets/assign-vocabulary-option-process-modeler-processes.png) 
+5. From the **Select Vocabulary** drop-down menu, select a ProcessMaker Vocabulary from which to validate Request data complies with its JSON schema.
 
    If no ProcessMaker Vocabularies are configured in your ProcessMaker instance, then the following message displays: **List is empty.** Create at least one ProcessMaker Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary).
 
-5. Click **Save**.
-6. Repeat Steps 3 through 6 as necessary for each ProcessMaker Vocabulary required to validate Request data complies with its JSON schema.
+6. Click **Save**.
+7. Repeat Steps 3 through 6 as necessary for each ProcessMaker Vocabulary required to validate Request data complies with its JSON schema.
 
 {% hint style="info" %}
 Click the **Remove** icon![](../../../.gitbook/assets/delete-remove-icon.png)from the **Vocabularies** setting to remove a ProcessMaker Vocabulary from assignment to this element.
@@ -209,12 +212,13 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Script Task element:
 
-1. Select the Script Task element from the Process model in which to edit its identifier value. Panels to configure this element display.
-2. Expand the **Configuration** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field.  
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Script Task element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field.  
 
    ![](../../../.gitbook/assets/script-task-configuration-identifier-name-process-modeler-processes.png)
 
-3. In the **Node Identifier** setting, edit the Script Task element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Node Identifier** setting, edit the Script Task element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 

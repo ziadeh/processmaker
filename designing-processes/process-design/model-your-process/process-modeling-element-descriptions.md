@@ -206,28 +206,28 @@ Below is a Manual Task element when it has been placed into a Process model.
 See [Add and Configure Manual Task Elements](add-and-configure-manual-task-elements.md).
 {% endhint %}
 
-## Call Activity
+## Sub Process
 
-A Call Activity element represents a call to an external Process that can be re-used by other Processes in the ProcessMaker instance. The external Process that is called is referred to as the "child" Process. Use the Call Activity element to call a child Process from the current Process, which is referred to as the "parent" Process.
+A Sub Process element represents a call to an external Process that can be re-used by other Processes in the ProcessMaker instance. The external Process that is called is referred to as the "child" Process. Use the Call Activity element to call a child Process from the current Process, which is referred to as the "parent" Process.
 
-The child Process that the Call Activity element calls from the parent Process's Request must be in the same ProcessMaker instance and not [archived](../../viewing-processes/view-the-list-of-processes/remove-a-process.md).
+The child Process that the Sub Process element calls from the parent Process's [Request](../../../using-processmaker/requests/what-is-a-request.md) must be in the same ProcessMaker instance and not [archived](../../viewing-processes/view-the-list-of-processes/remove-a-process.md).
 
-The child Process has its own [Request](../../../using-processmaker/requests/what-is-a-request.md). The Request for the parent Process waits until the child Process's Request completes before its workflow continues. When the child Process's Request completes, the parent Process's Request continues from the Call Activity element.
+The child Process has its own Request. The Request for the parent Process waits until the child Process's Request completes before its workflow continues. When the child Process's Request completes, the parent Process's Request continues from the Sub Process element.
 
 {% hint style="info" %}
-To prevent routing for the parent Process's Request from waiting until the child Process's Request completes, use a [Parallel Gateway](process-modeling-element-descriptions.md#parallel-gateway) element preceding the Call Activity element. Use a parallel outgoing [Sequence Flow](the-quick-toolbar.md) element from the Parallel Gateway element to continue routing the parent Process while the Call Activity element waits for the child Process's Request to complete.
+To prevent routing for the parent Process's Request from waiting until the child Process's Request completes, use a [Parallel Gateway](process-modeling-element-descriptions.md#parallel-gateway) element preceding the Sub Process element. Use a parallel outgoing [Sequence Flow](the-quick-toolbar.md) element from the Parallel Gateway element to continue routing the parent Process while the Sub Process element waits for the child Process's Request to complete.
 {% endhint %}
 
-In the left panel in Process Modeler, the Call Activity element is labeled as "Call Activity."
+In the left panel in Process Modeler, the Sub Process element is labeled as "Sub Process."
 
-![Call Activity element in the left side panel in Process Modeler](../../../.gitbook/assets/call-activity-bpmn-side-bar-process-modeler-processes.png)
+![Sub Process element in the left side panel in Process Modeler](../../../.gitbook/assets/call-activity-bpmn-side-bar-process-modeler-processes.png)
 
-Below is a Call Activity element when it has been placed into a Process model.
+Below is a Sub Process element when it has been placed into a Process model.
 
-![Call Activity element](../../../.gitbook/assets/call-activity-process-modeler-processes.png)
+![Sub Process element](../../../.gitbook/assets/call-activity-process-modeler-processes.png)
 
 {% hint style="info" %}
-See [Add and Configure Call Activity Elements](add-and-configure-call-activity-elements.md).
+See [Add and Configure Sub Process Elements](add-and-configure-sub-process-elements.md).
 {% endhint %}
 
 ## Gateways
@@ -481,7 +481,7 @@ See [Add and Configure Text Annotation and Association Elements](add-and-configu
 
 {% page-ref page="add-and-configure-manual-task-elements.md" %}
 
-{% page-ref page="add-and-configure-call-activity-elements.md" %}
+{% page-ref page="add-and-configure-sub-process-elements.md" %}
 
 {% page-ref page="add-and-configure-exclusive-gateway-elements.md" %}
 

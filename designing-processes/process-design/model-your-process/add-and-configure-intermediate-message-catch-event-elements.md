@@ -58,10 +58,10 @@ The Intermediate Message Catch Event element has the following panels that conta
 * **Configuration** panel
   * [Edit the element name](add-and-configure-intermediate-message-catch-event-elements.md#edit-the-element-name)
   * [Configure how to trigger an Intermediate Message Catch Event element](add-and-configure-intermediate-message-catch-event-elements.md#configure-how-to-trigger-an-intermediate-message-catch-event-element)
-* **Advanced** panel \(available when the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) is installed\)
-  * [Edit the element's identifier value](add-and-configure-intermediate-message-catch-event-elements.md#edit-the-elements-identifier-value)
 * **Vocabularies** panel
   * [Assign ProcessMaker Vocabularies that validate Request data from this element](add-and-configure-intermediate-message-catch-event-elements.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
+* **Advanced** panel \(available when the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) is installed\)
+  * [Edit the element's identifier value](add-and-configure-intermediate-message-catch-event-elements.md#edit-the-elements-identifier-value)
 
 ### Configuration Panel Settings
 
@@ -89,26 +89,6 @@ Follow these steps to configure how to trigger an Intermediate Message Catch Eve
 2. Select the Intermediate Message Catch Event element from the Process model in which to configure how it is triggered. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Listen For Message** setting. ![](../../../.gitbook/assets/listen-for-message-intermediate-message-catch-event-process-modeler-processes.png) 
 4. From the **Listen For Message** drop-down menu, select from which Intermediate Message Throw Event element or End Event element triggers the Intermediate Message Catch Event element.
-
-### Advanced Panel Settings
-
-#### Edit the Element's Identifier Value
-
-Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
-
-{% hint style="warning" %}
-All identifier values for all elements in the Process model must be unique.
-{% endhint %}
-
-Follow these steps to edit the identifier value for an Intermediate Message Catch Event element:
-
-1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Intermediate Message Catch Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
-3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required setting.  
-
-   ![](../../../.gitbook/assets/identifier-intermediate-message-catch-event-process-modeler-processes.png)
-
-4. In the **Node Identifier** setting, edit the Intermediate Message Catch Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ### Vocabularies Panel Settings
 
@@ -156,6 +136,26 @@ Click the **Remove** icon![](../../../.gitbook/assets/delete-remove-icon.png)fro
 After one or more ProcessMaker Vocabularies are assigned to an Intermediate Message Catch Event element, the Vocabulary icon displays above that element.
 
 ![Intermediate Message Catch Event element with an assigned ProcessMaker Vocabulary](../../../.gitbook/assets/intermediate-message-catch-event-vocabulary-process-modeler-processes.png)
+
+### Advanced Panel Settings
+
+#### Edit the Element's Identifier Value
+
+Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
+
+{% hint style="warning" %}
+All identifier values for all elements in the Process model must be unique.
+{% endhint %}
+
+Follow these steps to edit the identifier value for an Intermediate Message Catch Event element:
+
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Intermediate Message Catch Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required setting.  
+
+   ![](../../../.gitbook/assets/identifier-intermediate-message-catch-event-process-modeler-processes.png)
+
+4. In the **Node Identifier** setting, edit the Intermediate Message Catch Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 

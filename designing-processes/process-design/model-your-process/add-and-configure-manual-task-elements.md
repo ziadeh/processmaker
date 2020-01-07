@@ -57,27 +57,27 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The Manual Task element has the following panels that contain settings:
 
 * **Configuration** panel
-  * Edit the element name
-  * Select the ProcessMaker Screen for the manual Task
-  * Specify when the manual Task is due
-  * Display the next assigned Task to the Task assignee
+  * [Edit the element name](add-and-configure-manual-task-elements.md#edit-the-element-name)
+  * [Select the ProcessMaker Screen for the manual Task](add-and-configure-manual-task-elements.md#select-the-processmaker-screen-for-the-manual-task)
+  * [Specify when the manual Task is due](add-and-configure-manual-task-elements.md#specify-when-the-manual-task-is-due)
+  * [Display the next assigned Task to the Task assignee](add-and-configure-manual-task-elements.md#display-the-next-assigned-task-to-the-task-assignee)
 * **Assignment Rules** panel
-  * Select to whom to assign the Task
-  * Assign the Task using rules
+  * [Select to whom to assign the Task](add-and-configure-manual-task-elements.md#select-to-whom-to-assign-the-task)
+  * [Assign the Task using rules](add-and-configure-manual-task-elements.md#assign-the-task-using-rules)
 * **Notifications** panel
-  * Set Task notifications
+  * [Set Task notifications](add-and-configure-manual-task-elements.md#set-task-notifications)
 * **Email Notifications** panel \(available when the [Send Email](../../../package-development-distribution/package-a-connector/email.md) package is installed\)
-  * Overview
-  * Set the email notification's subject and body content
-  * Set recipients for this email notification
-  * Set when this email notification sends
-  * Edit an email notification
-  * Copy an email notification
-  * Delete an email notification
+  * [Overview](add-and-configure-manual-task-elements.md#overview)
+  * [Set the email notification's subject and body content](add-and-configure-manual-task-elements.md#set-the-email-notifications-subject-and-body-content)
+  * [Set recipients for this email notification](add-and-configure-manual-task-elements.md#set-recipients-for-this-email-notification)
+  * [Set when this email notification sends](add-and-configure-manual-task-elements.md#set-when-this-email-notification-sends)
+  * [Edit an email notification](add-and-configure-manual-task-elements.md#edit-an-email-notification)
+  * [Copy an email notification](add-and-configure-manual-task-elements.md#copy-an-email-notification)
+  * [Delete an email notification](add-and-configure-manual-task-elements.md#delete-an-email-notification)
 * **Vocabularies** panel \(available when the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) is installed\)
-  * Assign ProcessMaker Vocabularies that validate Request data from this element
+  * [Assign ProcessMaker Vocabularies that validate Request data from this element](add-and-configure-manual-task-elements.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
 * **Advanced** panel
-  * Edit the element's identifier value
+  * [Edit the element's identifier value](add-and-configure-manual-task-elements.md#edit-the-elements-identifier-value)
 
 ### Configuration Panel Settings
 
@@ -597,7 +597,7 @@ During an in-progress Request, if ProcessMaker evaluates that the Request data n
 
 If no ProcessMaker Vocabularies are assigned, ProcessMaker does not validate Request data complies with a specific JSON schema prior to continuing workflow for that Request.
 
-One or more ProcessMaker Vocabularies must be created to your ProcessMaker instance before assigning a Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary). Multiple ProcessMaker Vocabularies can be assigned to a Start Event element.
+One or more ProcessMaker Vocabularies must be created to your ProcessMaker instance before assigning a Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary). Multiple ProcessMaker Vocabularies can be assigned to a Manual Task element.
 
 Follow these steps to assign ProcessMaker Vocabularies that validate Request data from a Manual Task element:
 
@@ -634,7 +634,7 @@ Follow these steps to edit the identifier value for a Manual Task element:
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Manual Task element from the Process model in which to edit its identifier value. Panels to configure this element display.
-3. Expand the **Configuration** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field.  
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field.  
 
    ![](../../../.gitbook/assets/manual-task-configuration-identifier-name-process-modeler-processes.png)
 
