@@ -46,7 +46,7 @@ The following element types do not use Message Flow elements:
 * [End Event](process-modeling-element-descriptions.md#end-event)
 * [Script Task](process-modeling-element-descriptions.md#script-task)
 * [Manual Task](process-modeling-element-descriptions.md#manual-task)
-* [Call Activity](process-modeling-element-descriptions.md#call-activity)
+* [Sub Process](process-modeling-element-descriptions.md#sub-process)
 * [Exclusive Gateway](process-modeling-element-descriptions.md#exclusive-gateway)
 * [Inclusive Gateway](process-modeling-element-descriptions.md#inclusive-gateway)
 * [Parallel Gateway](process-modeling-element-descriptions.md#parallel-gateway)

@@ -138,7 +138,7 @@ Learn how to start a Request in ProcessMaker. This is a proof-of-concept video f
 {% endtab %}
 {% endtabs %}
 
-## How Do I Use Code in ProcessMaker Spark?
+## How Do I Use Code in ProcessMaker?
 
 {% tabs %}
 {% tab title="View" %}

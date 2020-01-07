@@ -57,26 +57,16 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The Sub Process element has the following panels that contain settings:
 
 * **Configuration** panel
-  * Edit the element name
+  * [Edit the element name](add-and-configure-sub-process-elements.md#edit-the-element-name)
+  * [Select the "child" Sub Process this element calls](add-and-configure-sub-process-elements.md#select-the-child-sub-process-this-element-calls)
+* **Vocabularies** panel
+  * [Assign ProcessMaker Vocabularies that validate Request data from this element](add-and-configure-sub-process-elements.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
 * **Advanced** panel
-  * Edit the element's identifier value
+  * [Edit the element's identifier value](add-and-configure-sub-process-elements.md#edit-the-elements-identifier-value)
 
-### Edit the Element's Identifier Value
+### Configuration Panel Settings
 
-Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
-
-{% hint style="warning" %}
-All identifier values for all elements in the Process model must be unique.
-{% endhint %}
-
-Follow these steps to edit the identifier value for a Sub Process element:
-
-1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Sub Process element from the Process model in which to edit its identifier value. Panels to configure this element display.
-3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field. ![](../../../.gitbook/assets/identifier-call-activity-process-modeler-processes.png)
-4. In the **Node Identifier** setting, edit the Sub Process element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
-
-### Edit the Element Name
+#### Edit the Element Name
 
 An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
 
@@ -87,11 +77,15 @@ Follow these steps to edit the name for a Sub Process element:
 3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../.gitbook/assets/call-activity-configuration-name-process-modeler-processes%20%281%29.png)
 4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
 
-### Select the Called Process
+#### Select the "Child" Sub Process This Element Calls
 
-The Sub Process element calls an external Process when it triggers. The external Process is referred to as a "child" Process, while the calling Process is referred to as the "parent" Process. The child Process must in the same ProcessMaker instance as the parent Process and not [archived](../../viewing-processes/view-the-list-of-processes/remove-a-process.md).
+The Sub Process element calls a Sub Process when it triggers. The Sub Process is referred to as a "child" Process, while the calling Process is referred to as the "parent" Process. The child Sub Process must in the same ProcessMaker instance as the parent Process and not [archived](../../viewing-processes/view-the-list-of-processes/remove-a-process.md).
 
-The child Process has its own [Request](../../../using-processmaker/requests/what-is-a-request.md). The Request for the parent Process waits until the child Process's Request completes before its workflow continues. When the child Process's Request completes, the parent Process's Request continues from the Sub Process element.
+The child Sub Process has its own [Request](../../../using-processmaker/requests/what-is-a-request.md). The Request for the parent Process waits until the child Sub Process's Request completes before its workflow continues. When the child Sub Process's Request completes, the parent Process's Request continues from the Sub Process element.
+
+{% hint style="info" %}
+To prevent routing for the parent Process's Request from waiting until the child Sub Process's Request completes, use a [Parallel Gateway](process-modeling-element-descriptions.md#parallel-gateway) element preceding the Sub Process element. Use a parallel outgoing [Sequence Flow](the-quick-toolbar.md) element from the Parallel Gateway element to continue routing the parent Process while the Sub Process element waits for the child Sub Process's Request to complete.
+{% endhint %}
 
 Follow these steps to select the child Process the Sub Process element calls when it triggers:
 
@@ -100,7 +94,9 @@ Follow these steps to select the child Process the Sub Process element calls whe
 3. Expand the **Configuration** panel if it is not presently expanded. The **Process** setting displays. ![](../../../.gitbook/assets/call-activity-configuration-process-modeler-processes.png)
 4. From the **Process** drop-down menu, select which Process the Sub Process element calls when it triggers.
 
-## Assign ProcessMaker Vocabularies That Validate Request Data from This Element
+### Vocabularies Panel Settings
+
+#### Assign ProcessMaker Vocabularies That Validate Request Data from This Element
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
@@ -153,6 +149,23 @@ Click the **Remove** icon![](../../../.gitbook/assets/delete-remove-icon.png)fro
 After one or more ProcessMaker Vocabularies are assigned to a Sub Process element, the Vocabulary icon displays above that element.
 
 ![Sub Process element with an assigned ProcessMaker Vocabulary](../../../.gitbook/assets/call-activity-vocabulary-process-modeler-processes.png)
+
+### Advanced Panel Settings
+
+#### Edit the Element's Identifier Value
+
+Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
+
+{% hint style="warning" %}
+All identifier values for all elements in the Process model must be unique.
+{% endhint %}
+
+Follow these steps to edit the identifier value for a Sub Process element:
+
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Sub Process element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field. ![](../../../.gitbook/assets/identifier-call-activity-process-modeler-processes.png)
+4. In the **Node Identifier** setting, edit the Sub Process element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 

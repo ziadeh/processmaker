@@ -208,14 +208,14 @@ See [Add and Configure Manual Task Elements](add-and-configure-manual-task-eleme
 
 ## Sub Process
 
-A Sub Process element represents a call to an external Process that can be re-used by other Processes in the ProcessMaker instance. The external Process that is called is referred to as the "child" Process. Use the Call Activity element to call a child Process from the current Process, which is referred to as the "parent" Process.
+A Sub Process element represents a call to a Sub Process that can be re-used by other Processes in the ProcessMaker instance. The Sub Process that the Sub Process element calls is referred to as the "child" Sub Process. Use the Sub Process element to call a child Sub Process from the current Process, which is referred to as the "parent" Process.
 
-The child Process that the Sub Process element calls from the parent Process's [Request](../../../using-processmaker/requests/what-is-a-request.md) must be in the same ProcessMaker instance and not [archived](../../viewing-processes/view-the-list-of-processes/remove-a-process.md).
+The child Sub Process that the Sub Process element calls from the parent Process's [Request](../../../using-processmaker/requests/what-is-a-request.md) must be in the same ProcessMaker instance and not [archived](../../viewing-processes/view-the-list-of-processes/remove-a-process.md).
 
-The child Process has its own Request. The Request for the parent Process waits until the child Process's Request completes before its workflow continues. When the child Process's Request completes, the parent Process's Request continues from the Sub Process element.
+The child Sub Process has its own Request. The Request for the parent Process waits until the child Sub Process's Request completes before its workflow continues. When the child Sub Process's Request completes, the parent Process's Request continues from the Sub Process element.
 
 {% hint style="info" %}
-To prevent routing for the parent Process's Request from waiting until the child Process's Request completes, use a [Parallel Gateway](process-modeling-element-descriptions.md#parallel-gateway) element preceding the Sub Process element. Use a parallel outgoing [Sequence Flow](the-quick-toolbar.md) element from the Parallel Gateway element to continue routing the parent Process while the Sub Process element waits for the child Process's Request to complete.
+To prevent routing for the parent Process's Request from waiting until the child Sub Process's Request completes, use a [Parallel Gateway](process-modeling-element-descriptions.md#parallel-gateway) element preceding the Sub Process element. Use a parallel outgoing [Sequence Flow](the-quick-toolbar.md) element from the Parallel Gateway element to continue routing the parent Process while the Sub Process element waits for the child Sub Process's Request to complete.
 {% endhint %}
 
 In the left panel in Process Modeler, the Sub Process element is labeled as "Sub Process."
