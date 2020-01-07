@@ -60,9 +60,22 @@ The Task element has the following panels that contain settings:
 
 * **Configuration** panel
   * [Edit the element name](add-and-configure-end-event-elements.md#edit-the-element-name)
-  * [Select the ProcessMaker Screen for a Task element](add-and-configure-task-elements.md#select-the-processmaker-screen-for-a-task-element)
+  * [Select the ProcessMaker Screen to do that Task](add-and-configure-task-elements.md#select-the-processmaker-screen-to-do-that-task)
   * [Specify when the Task is due](add-and-configure-task-elements.md#specify-when-the-task-is-due)
   * [Display the next assigned Task to the Task assignee](add-and-configure-task-elements.md#display-the-next-assigned-task-to-the-task-assignee)
+* **Assignment Rules** panel
+  * [Select to whom to assign the Task](add-and-configure-task-elements.md#select-to-whom-to-assign-the-task)
+  * [Assign the Task using rules](add-and-configure-task-elements.md#assign-the-task-using-rules)
+* **Notifications** panel
+  * [Set Task notifications](add-and-configure-task-elements.md#set-task-notifications)
+* **Email Notifications** panel
+  * [Overview](add-and-configure-task-elements.md#overview)
+  * [Set the email notification's subject and body content](add-and-configure-task-elements.md#set-the-email-notifications-subject-and-body-content)
+  * [Set recipients for this email notification](add-and-configure-task-elements.md#set-recipients-for-this-email-notification)
+  * [Set when this email notification sends](add-and-configure-task-elements.md#set-when-this-email-notification-sends)
+  * [Edit an email notification](add-and-configure-task-elements.md#edit-an-email-notification)
+  * [Copy an email notification](add-and-configure-task-elements.md#copy-an-email-notification)
+  * [Delete an email notification](add-and-configure-task-elements.md#delete-an-email-notification)
 * **Web Entry** panel \(available when the [Web Entry package](../../../package-development-distribution/package-a-connector/web-entry.md) is installed\)
   * [Select to whom to assign the Task via a Web Entry](add-and-configure-task-elements.md#select-to-whom-to-assign-the-task-via-a-web-entry)
 * **Vocabularies** panel \(available when the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) is installed\)
@@ -75,7 +88,7 @@ The Task element has the following panels that contain settings:
 The Task element has multiple settings in the **Configuration** panel:
 
 * [Edit the element name](add-and-configure-task-elements.md#edit-the-element-name)
-* [Select the ProcessMaker Screen for a Task element](add-and-configure-task-elements.md#select-the-processmaker-screen-for-a-task-element)
+* [Select the ProcessMaker Screen to do that Task](add-and-configure-task-elements.md#select-the-processmaker-screen-to-do-that-task)
 * [Specify when the Task is due](add-and-configure-task-elements.md#specify-when-the-task-is-due)
 * [Display the next assigned Task to the Task assignee](add-and-configure-task-elements.md#display-the-next-assigned-task-to-the-task-assignee)
 
@@ -86,14 +99,14 @@ An element name is a human-readable reference for a Process element. Process Mod
 Follow these steps to edit the name for a Task element:
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Task element from the Process model in which to edit its name. The **Configuration** setting section displays.
+2. Select the Task element from the Process model in which to edit its name. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays.  
 
    ![](../../../.gitbook/assets/task-configuration-name-process-modeler-processes%20%281%29.png)
 
 4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
 
-#### Select the ProcessMaker Screen for a Task Element
+#### Select the ProcessMaker Screen To Do That Task
 
 Since Task elements are designed to collect or display [Request](../../../using-processmaker/requests/what-is-a-request.md) information, specify which [ProcessMaker Screen](../../design-forms/what-is-a-form.md) a selected Task element uses. A ProcessMaker Screen must already exist before it can be selected for use in a Task element.
 
@@ -104,7 +117,7 @@ Ensure to select a ProcessMaker Screen for each Task element in your Process mod
 Follow these steps to select a ProcessMaker Screen for a Task element:
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Task element from the Process model in which to specify its ProcessMaker Screen. The **Configuration** setting section displays.
+2. Select the Task element from the Process model in which to specify its ProcessMaker Screen. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Screen For Input** setting. This is a required setting.  
 
    ![](../../../.gitbook/assets/screen-input-task-process-modeler-processes.png)
@@ -131,7 +144,7 @@ When a Task element is placed into a Process model, the default period of time f
 Follow these steps to specify when a Task element is due:
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Task element from the Process model in which to specify how many hours the task is due. The **Configuration** setting section displays.
+2. Select the Task element from the Process model in which to specify how many hours the task is due. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Due In** setting.  
 
    ![](../../../.gitbook/assets/due-task-process-modeler-processes.png)
@@ -155,7 +168,7 @@ The following message displays to the Task assignee after that Request participa
 Follow these steps to configure a Task element to display the next assigned Task to the Task assignee:
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Task element from the Process model in which to configure it to display the next assigned Task to the Task assignee. The **Configuration** setting section displays.
+2. Select the Task element from the Process model in which to configure it to display the next assigned Task to the Task assignee. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Display Next Assigned Task to Task Assignee** setting. ![](../../../.gitbook/assets/display-next-task-to-task-assignee-option-process-modeler-processes.png) 
 4. Select the **Display Next Assigned Task to Task Assignee** setting. The setting is changed.
 
@@ -218,7 +231,7 @@ Instead of [selecting to whom to assign a Task](add-and-configure-task-elements.
 * By User ID: Assign that Task to a ProcessMaker user based on a **Variable Name** value as entered into a [ProcessMaker Screen](../../design-forms/what-is-a-form.md) during a previous Task in that Request. For example, if a [Line Input control](../../design-forms/screens-builder/control-descriptions/line-input-control-settings.md) in a ProcessMaker Screen has the **Variable Name** value of `Name`, to contain a user's name, then use that value to thereby assign the Task to that ProcessMaker user.
 * **Self Service:** Assign that Task to allow any member in a specified ProcessMaker group to voluntarily self-assign any Task from a queue.
 
-The rule that determines the Task assignee uses an expression syntax described in [Expression Syntax Components](add-and-configure-task-elements.md#expression-syntax-components). Each rule can only have one expression, but by using logical operators multiple conditions can be specified in that expression. You may use multiple rules to better confine the condition\(s\) to whom to assign the Task.
+The rule that determines the Task assignee uses an expression syntax described in [Expression Syntax Components](add-and-configure-task-elements.md#expression-syntax-components). Each rule can only have one expression, but by using logical operators multiple conditions can be specified in that expression. You may use multiple rules to better confine the condition\(s\) to whom to assign the Task. You may use [Magic Variables](../../reference-global-variables-in-your-processmaker-assets.md) in your expression syntax.
 
 Follow these steps to select to whom to assign the Task that is referenced in a Task element using a rule:
 
@@ -261,6 +274,14 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
 #### Expression Syntax Components
 
 Use the following expression syntax components to compose the expression that describes to whom is assigned a Task referenced in a Task element.
+
+Spaces are allowed before and after expression components, such as arithmetic and comparison operators, to more easily read the expression.
+
+Combine expressions using logical operators. Example: `(not approved) or (cost > 500)`.
+
+{% hint style="info" %}
+[Magic Variables](../../reference-global-variables-in-your-processmaker-assets.md) can be used in when composing expressions.
+{% endhint %}
 
 **Literals**
 
@@ -463,6 +484,10 @@ Use the following expression syntax components to compose the expression that de
 Spaces are allowed before and after expression components, such as arithmetic and comparison operators, to more easily read the expression.
 
 Combine expressions using logical operators. Example: `(not approved) or (cost > 500)`.
+
+{% hint style="info" %}
+[Magic Variables](../../reference-global-variables-in-your-processmaker-assets.md) can be used in when composing expressions.
+{% endhint %}
 
 **Literals**
 

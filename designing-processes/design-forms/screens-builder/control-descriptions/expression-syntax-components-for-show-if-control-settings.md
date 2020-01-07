@@ -17,7 +17,13 @@ Spaces are allowed before and after expression components, such as [arithmetic](
 Combine expressions using [logical operators](expression-syntax-components-for-show-if-control-settings.md#logical-operators). Example: `(not approved) or (cost > 500)`.
 
 {% hint style="info" %}
+### First Rule for the Visibility Rule Setting
+
 If a ProcessMaker Screen control does not have an expression in its **Visibility Rule** setting, then that control displays by default.
+
+### Magic Variables
+
+[Magic Variables](../../../reference-global-variables-in-your-processmaker-assets.md) can be used in when composing expressions.
 {% endhint %}
 
 ### Literals

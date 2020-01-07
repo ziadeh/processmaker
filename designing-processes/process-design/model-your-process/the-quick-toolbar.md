@@ -123,7 +123,7 @@ Outgoing Sequence Flow elements from [Exclusive Gateway](process-modeling-elemen
 * [Identifier value](the-quick-toolbar.md#edit-the-identifier-value)
 * [Element name](the-quick-toolbar.md#edit-the-element-name)
 
-Outgoing Sequence Flow elements from Exclusive Gateway and Inclusive Gateway elements have an additional setting to indicate under which condition\(s\) a Sequence Flow element triggers to route a Request's workflow to its connecting element. If the condition\(s\) set for that Sequence Flow element are met, then that element triggers. ProcessMaker evaluates a Sequence Flow element's condition\(s\) to trigger by reviewing the Request's data to an expression that describes the condition\(s\). Specify this condition using an expression syntax described in [Expression Syntax Components](the-quick-toolbar.md#expression-syntax-components). Each Sequence Flow element can only have one expression, but by using logical operators multiple conditions can be specified in that expression.
+Outgoing Sequence Flow elements from Exclusive Gateway and Inclusive Gateway elements have an additional setting to indicate under which condition\(s\) a Sequence Flow element triggers to route a Request's workflow to its connecting element. If the condition\(s\) set for that Sequence Flow element are met, then that element triggers. ProcessMaker evaluates a Sequence Flow element's condition\(s\) to trigger by reviewing the Request's data to an expression that describes the condition\(s\). Specify this condition using an expression syntax described in [Expression Syntax Components](the-quick-toolbar.md#expression-syntax-components). Each Sequence Flow element can only have one expression, but by using logical operators multiple conditions can be specified in that expression. You may use [Magic Variables](../../reference-global-variables-in-your-processmaker-assets.md) in your expressions.
 
 ProcessMaker evaluates the condition\(s\) set for each outgoing Sequence Flow element from an Exclusive Gateway or Inclusive Gateway element using the following protocol:
 
@@ -156,6 +156,10 @@ Use the following expression syntax components to compose the expression that de
 Spaces are allowed before and after expression components, such as arithmetic and comparison operators, to more easily read the expression.
 
 Combine expressions using logical operators. Example: `(not approved) or (cost > 500)`.
+
+{% hint style="info" %}
+[Magic Variables](../../reference-global-variables-in-your-processmaker-assets.md) can be used in when composing expressions.
+{% endhint %}
 
 **Literals**
 
