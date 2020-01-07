@@ -66,7 +66,7 @@ The Manual Task element has the following panels that contain settings:
   * Assign the Task using rules
 * **Notifications** panel
   * Set Task notifications
-* **Email Notifications** panel
+* **Email Notifications** panel \(available when the [Send Email](../../../package-development-distribution/package-a-connector/email.md) package is installed\)
   * Overview
   * Set the email notification's subject and body content
   * Set recipients for this email notification

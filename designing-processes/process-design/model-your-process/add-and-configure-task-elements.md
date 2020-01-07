@@ -68,7 +68,7 @@ The Task element has the following panels that contain settings:
   * [Assign the Task using rules](add-and-configure-task-elements.md#assign-the-task-using-rules)
 * **Notifications** panel
   * [Set Task notifications](add-and-configure-task-elements.md#set-task-notifications)
-* **Email Notifications** panel
+* **Email Notifications** panel \(available when the [Send Email](../../../package-development-distribution/package-a-connector/email.md) package is installed\)
   * [Overview](add-and-configure-task-elements.md#overview)
   * [Set the email notification's subject and body content](add-and-configure-task-elements.md#set-the-email-notifications-subject-and-body-content)
   * [Set recipients for this email notification](add-and-configure-task-elements.md#set-recipients-for-this-email-notification)
