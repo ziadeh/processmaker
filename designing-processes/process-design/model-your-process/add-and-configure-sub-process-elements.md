@@ -87,12 +87,12 @@ The child Sub Process has its own [Request](../../../using-processmaker/requests
 To prevent routing for the parent Process's Request from waiting until the child Sub Process's Request completes, use a [Parallel Gateway](process-modeling-element-descriptions.md#parallel-gateway) element preceding the Sub Process element. Use a parallel outgoing [Sequence Flow](the-quick-toolbar.md) element from the Parallel Gateway element to continue routing the parent Process while the Sub Process element waits for the child Sub Process's Request to complete.
 {% endhint %}
 
-Follow these steps to select the child Process the Sub Process element calls when it triggers:
+Follow these steps to select the child Sub Process the Sub Process element calls when it triggers:
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Sub Process element from the Process model in which to edit its name. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded. The **Process** setting displays. ![](../../../.gitbook/assets/call-activity-configuration-process-modeler-processes.png)
-4. From the **Process** drop-down menu, select which Process the Sub Process element calls when it triggers.
+4. From the **Process** drop-down menu, select which child Sub Process the Sub Process element calls when it triggers.
 
 ### Vocabularies Panel Settings
 
@@ -119,7 +119,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 Assign [ProcessMaker Vocabularies](../../vocabularies-management/what-is-a-vocabulary.md) that validate Request data complies with a specific JSON schema. This is often mandatory for many types of business sectors including banking and healthcare. Ensure the quality and compliance of Request data. For example, during a Loan Application process, ensure that personal information has been included in the Request to that moment in that in-progress Request. The Vocabularies package must be installed in your ProcessMaker instance to make this configuration.
 
-Use a ProcessMaker Vocabulary on a Sub Process element to validate Request data complies with the Vocabulary's JSON schema after the workflow returns from the child Request to the parent Request, but prior to when the Request continues workflow for the parent Request. See [What is a Vocabulary?](../../vocabularies-management/what-is-a-vocabulary.md) for more information.
+Use a ProcessMaker Vocabulary on a Sub Process element to validate that Request data complies with the Vocabulary's JSON schema after routing returns from the child Sub Process's Request to the parent Process's Request, but prior to when the Request continues routing for the parent Request. See [What is a Vocabulary?](../../vocabularies-management/what-is-a-vocabulary.md) for more information.
 
 Each moment ProcessMaker evaluates workflow routing for an in-progress Request, ProcessMaker also evaluates the Request data's conformity to the ProcessMaker Vocabularies applied to the Process and/or a specific BPMN 2.0 element in the Process model. The Request's JSON data model must conform to the ProcessMaker Vocabulary's JSON schema.
 
