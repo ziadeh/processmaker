@@ -27,7 +27,7 @@ Follow these steps to add a Start Timer Event element to the Process model:
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
 3. Locate the **Start Event** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Start Event** control's icon![](../../../.gitbook/assets/start-event-element-icon-process-modeler-processes.png).
 
-   ![](../../../.gitbook/assets/start-event-bpmn-side-bar-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/start-event-control-process-modeler-processes.png)
 
 4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Start Timer Event element cannot be placed outside of the Pool element.
 5. Select the **Start Timer Event** option from the **Elements** drop-down menu. The Start Timer Event element displays. ![](../../../.gitbook/assets/start-timer-event-selection-process-modeler-processes.png) 

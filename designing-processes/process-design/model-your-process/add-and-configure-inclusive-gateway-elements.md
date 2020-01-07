@@ -25,11 +25,9 @@ Follow these steps to add an Inclusive Gateway element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Inclusive Gateway** element in the panel to the left of the Process Modeler canvas.
-
-   ![](../../../.gitbook/assets/bpmn-inclusive-gateway-process-modeler-processes.png)
-
-4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Inclusive Gateway element cannot be placed outside of the Pool element.
+3. Locate the **Gateway** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Gateway** control's icon![](../../../.gitbook/assets/gateway-icon-process-modeler-processes.png). ![](../../../.gitbook/assets/gateway-control-process-modeler-processes.png) 
+4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Exclusive Gateway element cannot be placed outside of the Pool element.
+5. Select the **Inclusive Gateway** option from the **Elements** drop-down menu. The Inclusive Gateway element displays. ![](../../../.gitbook/assets/inclusive-gateway-selection-process-modeler-processes.png) 
 
 ![Inclusive Gateway element](../../../.gitbook/assets/inclusive-gateway-element-process-modeler-processes.png)
 

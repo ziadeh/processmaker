@@ -25,10 +25,7 @@ Follow these steps to add a Task element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Task** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Task** control's icon![](../../../.gitbook/assets/task-icon-process-modeler-processes.png).
-
-   ![](../../../.gitbook/assets/task-bpmn-side-bar-process-modeler-processes.png)
-
+3. Locate the **Task** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Task** control's icon![](../../../.gitbook/assets/task-icon-process-modeler-processes.png). ![](../../../.gitbook/assets/task-control-process-modeler-processes.png) 
 4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Task element cannot be placed outside of the Pool element.
 5. Do one of the following:
    * Select the **Task** option from the **Elements** drop-down menu. ![](../../../.gitbook/assets/task-selection-process-modeler-processes.png) 

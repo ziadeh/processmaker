@@ -25,11 +25,11 @@ Follow these steps to add an Exclusive Gateway element to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Exclusive Gateway** element in the panel to the left of the Process Modeler canvas.
-
-   ![](../../../.gitbook/assets/bpmn-panel-exclusive-gateway-process-modeler-processes.png)
-
-4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Exclusive Gateway element cannot be placed outside of the Pool element.
+3. Locate the **Gateway** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Gateway** control's icon![](../../../.gitbook/assets/gateway-icon-process-modeler-processes.png). ![](../../../.gitbook/assets/gateway-control-process-modeler-processes.png) 
+4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Exclusive Gateway element cannot be placed outside of the Pool element.
+5. Do one of the following:
+   * Select the **Exclusive Gateway** option from the **Elements** drop-down menu. ![](../../../.gitbook/assets/exclusive-gateway-selection-process-modeler-processes.png) 
+   * Click anywhere in the Process model. The Exclusive Gateway element selects by default.
 
 ![Exclusive Gateway element](../../../.gitbook/assets/exclusive-gateway-process-modeler-processes.png)
 
@@ -62,11 +62,26 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The Exclusive Gateway element has the following panels that contain settings:
 
 * **Configuration** panel
-  * Edit the element name
+  * [Edit the element name](add-and-configure-exclusive-gateway-elements.md#edit-the-element-name)
 * **Advanced** panel
-  * Edit the element's identifier value
+  * [Edit the element's identifier value](add-and-configure-exclusive-gateway-elements.md#edit-the-elements-identifier-value)
 
-### Edit the Element's Identifier Value
+### Configuration Panel Settings
+
+#### Edit the Element Name
+
+An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
+
+Follow these steps to edit the name for an Exclusive Gateway element:
+
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Exclusive Gateway element from the Process model in which to edit its name. Panels to configure this element display.
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../.gitbook/assets/exclusive-gateway-configuration-name-process-modeler-processes.png)
+4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
+
+### Advanced Panel Settings
+
+#### Edit the Element's Identifier Value
 
 Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
@@ -76,25 +91,10 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for an Exclusive Gateway element:
 
-1. Select the Exclusive Gateway element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
-
-   ![](../../../.gitbook/assets/exclusive-gateway-configuration-identifier-name-process-modeler-processes.png)
-
-3. In the **Identifier** field, edit the Exclusive Gateway element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
-
-### Edit the Element Name
-
-An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
-
-Follow these steps to edit the name for an Exclusive Gateway element:
-
-1. Select the Exclusive Gateway element from the Process model in which to edit its name. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
-
-   ![](../../../.gitbook/assets/exclusive-gateway-configuration-name-process-modeler-processes.png)
-
-3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Exclusive Gateway element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field. ![](../../../.gitbook/assets/exclusive-gateway-configuration-identifier-name-process-modeler-processes.png)
+4. In the **Node Identifier** field, edit the Exclusive Gateway element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 

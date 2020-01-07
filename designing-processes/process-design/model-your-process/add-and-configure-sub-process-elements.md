@@ -27,10 +27,10 @@ Follow these steps to add a Sub Process element to the Process model:
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
 3. Locate the **Task** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Task** control's icon![](../../../.gitbook/assets/task-icon-process-modeler-processes.png).
 
-   ![](../../../.gitbook/assets/task-bpmn-side-bar-process-modeler-processes.png)
+   ![](../../../.gitbook/assets/task-control-process-modeler-processes.png)
 
-4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Task element cannot be placed outside of the Pool element.
-5. Select the **Sub Process** option from the **Elements** drop-down menu. The Sub Process element displays.
+4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Sub Process element cannot be placed outside of the Pool element.
+5. Select the **Sub Process** option from the **Elements** drop-down menu. The Sub Process element displays. ![](../../../.gitbook/assets/sub-process-selection-process-modeler-processes.png) 
 
 ![Sub Process element](../../../.gitbook/assets/call-activity-process-modeler-processes.png)
 
@@ -91,7 +91,7 @@ Follow these steps to select the child Sub Process the Sub Process element calls
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Sub Process element from the Process model in which to edit its name. Panels to configure this element display.
-3. Expand the **Configuration** panel if it is not presently expanded. The **Process** setting displays. ![](../../../.gitbook/assets/call-activity-configuration-process-modeler-processes.png)
+3. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Process** setting. ![](../../../.gitbook/assets/call-activity-configuration-process-modeler-processes.png)
 4. From the **Process** drop-down menu, select which child Sub Process the Sub Process element calls when it triggers.
 
 ### Vocabularies Panel Settings
