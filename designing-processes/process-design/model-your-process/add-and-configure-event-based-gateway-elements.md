@@ -54,11 +54,26 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The Event-Based Gateway element has the following panels that contain settings:
 
 * **Configuration** panel
-  * Edit the element name
+  * [Edit the element name](add-and-configure-event-based-gateway-elements.md#edit-the-element-name)
 * **Advanced** panel
-  * Edit the element's identifier value
+  * [Edit the element's identifier value](add-and-configure-event-based-gateway-elements.md#edit-the-elements-identifier-value)
 
-### Edit the Element's Identifier Value
+### Configuration Panel Settings
+
+#### Edit the Element Name
+
+An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
+
+Follow these steps to edit the name for an Event-Based Gateway element:
+
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Event-Based Gateway element from the Process model in which to edit its name. Panels to configure this element display.
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../.gitbook/assets/event-based-gateway-configuration-name-process-modeler-processes.png)
+4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
+
+### Advanced Panel Settings
+
+#### Edit the Element's Identifier Value
 
 Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
@@ -68,25 +83,10 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for an Event-Based Gateway element:
 
-1. Select the Event-Based Gateway element from the Process model in which to edit its identifier value. The **Configuration** setting section.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
-
-   ![](../../../.gitbook/assets/identifier-event-based-gateway-process-modeler-processes.png)
-
-3. In the **Identifier** field, edit the Event-Based Gateway element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
-
-### Edit the Element Name
-
-An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
-
-Follow these steps to edit the name for an Event-Based Gateway element:
-
-1. Select the Event-Based Gateway element from the Process model in which to edit its name. The **Configuration** setting section.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
-
-   ![](../../../.gitbook/assets/event-based-gateway-configuration-name-process-modeler-processes.png)
-
-3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Event-Based Gateway element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field. ![](../../../.gitbook/assets/identifier-event-based-gateway-process-modeler-processes.png)
+4. In the **Node Identifier** setting, edit the Event-Based Gateway element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 
