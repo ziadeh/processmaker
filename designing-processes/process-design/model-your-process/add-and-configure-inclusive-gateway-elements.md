@@ -60,11 +60,40 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The Inclusive Gateway element has the following panels that contain settings:
 
 * **Configuration** panel
-  * Edit the element name
+  * [Edit the element name](add-and-configure-inclusive-gateway-elements.md#edit-the-element-name)
+  * [Indicate workflow direction](add-and-configure-inclusive-gateway-elements.md#indicate-workflow-direction)
 * **Advanced** panel
-  * Edit the element's identifier value
+  * [Edit the element's identifier value](add-and-configure-inclusive-gateway-elements.md#edit-the-elements-identifier-value)
 
-### Edit the Element's Identifier Value
+### Configuration Panel Settings
+
+#### Edit the Element Name
+
+An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
+
+Follow these steps to edit the name for an Inclusive Gateway element:
+
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Inclusive Gateway element from the Process model in which to edit its name. Panels to configure this element display.
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../.gitbook/assets/inclusive-gateway-configuration-name-process-modeler-processes.png)
+4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
+
+#### Indicate Workflow Direction
+
+Indicate if the workflow direction for the Inclusive Gateway is converging or diverging:
+
+* **Converging workflow \(synchronize workflow\):** An Inclusive Gateway element may synchronize [Request](../../../using-processmaker/requests/what-is-a-request.md) workflow from two or more incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements to the Inclusive Gateway element. All incoming Sequence Flow elements converging to the Inclusive Gateway element must trigger before the Inclusive Gateway element triggers, thereby synchronizing a Request's workflow. Use this coordinate workflow. ![](../../../.gitbook/assets/converging-inclusive-gateway.png) 
+* **Diverging workflow \(evaluate routing conditions\):** An Inclusive Gateway element may also evaluate a Request's workflow routing conditions for a Process. These routing conditions are configured on each outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element from the Inclusive Gateway element. When a Request is in progress and the Inclusive Gateway element triggers, each of its outgoing Sequence Flow elements' conditions are evaluated to determine which Sequence Flow element\(s\) continue routing for that Request. Unlike the [Exclusive Gateway](process-modeling-element-descriptions.md#exclusive-gateway) element, multiple Sequence Flow elements can trigger from the Inclusive Gateway element, thereby causing multiple workflow routes simultaneously for the same Request that stem from that Inclusive Gateway element. Use an Inclusive Gateway element when you potentially want multiple workflow routes to occur simultaneously in that Request. Otherwise, consider using an Exclusive Gateway element to allow only one Sequence Flow element's condition\(s\) to continue workflow route for that Request. ![](../../../.gitbook/assets/diverging-inclusive-gateway.png) 
+
+One Inclusive Gateway element can only converge or diverge workflow, but not both. Use two Inclusive Gateway elements to both converge and diverge workflow.
+
+![Use two Inclusive Gateway elements for both converging and diverging workflow](../../../.gitbook/assets/converging-and-diverging-inclusive-gateway.png)
+
+
+
+### Advanced Panel Settings
+
+#### Edit the Element's Identifier Value
 
 Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
@@ -74,25 +103,10 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for an Inclusive Gateway element:
 
-1. Select the Inclusive Gateway element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
-
-   ![](../../../.gitbook/assets/inclusive-gateway-configuration-identifier-process-modeler-processes.png)
-
-3. In the **Identifier** field, edit the Inclusive Gateway element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
-
-### Edit the Element Name
-
-An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
-
-Follow these steps to edit the name for an Inclusive Gateway element:
-
-1. Select the Inclusive Gateway element from the Process model in which to edit its name. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
-
-   ![](../../../.gitbook/assets/inclusive-gateway-configuration-name-process-modeler-processes.png)
-
-3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Inclusive Gateway element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field. ![](../../../.gitbook/assets/inclusive-gateway-configuration-identifier-process-modeler-processes.png)
+4. In the **Node Identifier** field, edit the Inclusive Gateway element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 
