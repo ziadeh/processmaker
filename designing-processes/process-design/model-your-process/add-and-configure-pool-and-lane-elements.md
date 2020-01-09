@@ -78,11 +78,26 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The Pool element has the following panels that contain settings:
 
 * **Configuration** panel
-  * Edit the element name
+  * [Edit the element name](add-and-configure-pool-and-lane-elements.md#edit-the-element-name-1)
 * **Advanced** panel
-  * Edit the element's identifier value
+  * [Edit the element's identifier value](add-and-configure-pool-and-lane-elements.md#edit-the-elements-identifier-value-1)
 
-### Edit the Element's Identifier Value
+### Configuration Panel Settings
+
+#### Edit the Element Name
+
+An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
+
+Follow these steps to edit the name for a Pool element:
+
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Pool element from the Process model in which to edit its name. Panels to configure this element display.
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../.gitbook/assets/pool-configuration-name-process-modeler-processes.png)
+4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
+
+### Advanced Panel Settings
+
+#### Edit the Element's Identifier Value
 
 Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
@@ -92,25 +107,10 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Pool element:
 
-1. Select the Pool element from the Process model in which to edit its identifier value. The **Configuration** setting section.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
-
-   ![](../../../.gitbook/assets/pool-configuration-identifier-name-process-modeler-processes.png)
-
-3. In the **Identifier** field, edit the Pool element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
-
-### Edit the Element Name
-
-An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
-
-Follow these steps to edit the name for a Pool element:
-
-1. Select the Pool element from the Process model in which to edit its name. The **Configuration** setting section.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
-
-   ![](../../../.gitbook/assets/pool-configuration-name-process-modeler-processes.png)
-
-3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Pool element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field. ![](../../../.gitbook/assets/pool-configuration-identifier-name-process-modeler-processes.png)
+4. In the **Node Identifier** setting, edit the Pool element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Add a Lane Element to a Pool Element
 
@@ -133,13 +133,14 @@ Follow these steps to add a Lane element to a Pool element:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. Click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)for edit the selected Process model. Process Modeler displays.
-3. Click the Pool element from the Process model into which to add a Lane element. Icons to add a Lane to a Pool element display.  
+3. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+4. Click the Pool element from the Process model into which to add a Lane element. Icons to add a Lane to a Pool element display.  
 
    ![](../../../.gitbook/assets/pool-element-lane-message-anchor-icons-process-modeler-processes.png)
 
-4. Do one of the following:
-   * **Add a Lane element above existing Lane elements:** Click the![](../../../.gitbook/assets/pool-add-lane-above-process-modeler-processes.png)icon to add a Lane element above all existing Lane elements. If only the Pool element exists, two Lane elements display.
-   * **Add a Lane element below existing Lane elements:** Click the![](../../../.gitbook/assets/pool-add-lane-below-process-modeler-processes.png)icon to add a Lane element below all existing Lane elements. If only the Pool element exists, two Lane elements display.
+5. Do one of the following:
+   * **Add a Lane element above existing Lane elements:** Click the **Lane Above** icon![](../../../.gitbook/assets/lane-above-icon-pool-process-modeler-processes.png)to add a Lane element above all existing Lane elements. If only the Pool element exists, two Lane elements display.
+   * **Add a Lane element below existing Lane elements:** Click the **Lane Below** icon![](../../../.gitbook/assets/lane-below-icon-pool-process-modeler-processes.png)to add a Lane element below all existing Lane elements. If only the Pool element exists, two Lane elements display.
 
 ## Resize a Lane Element
 
@@ -175,11 +176,26 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The Lane element has the following panels that contain settings:
 
 * **Configuration** panel
-  * Edit the element name
+  * [Edit the element name](add-and-configure-pool-and-lane-elements.md#edit-the-element-name-1)
 * **Advanced** panel
-  * Edit the element's identifier value
+  * [Edit the element's identifier value](add-and-configure-pool-and-lane-elements.md#edit-the-elements-identifier-value-1)
 
-### Edit the Element's Identifier Value
+### Configuration Panel Settings
+
+#### Edit the Element Name
+
+An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
+
+Follow these steps to edit the name for a Lane element:
+
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Lane element from the Process model in which to edit its name. Panels to configure this element display.
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../.gitbook/assets/lane-configuration-name-process-modeler-processes.png)
+4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
+
+### Advanced Panel Settings
+
+#### Edit the Element's Identifier Value
 
 Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique.
 
@@ -189,25 +205,10 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Lane element:
 
-1. Select the Lane element from the Process model in which to edit its identifier value. The **Configuration** setting section.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
-
-   ![](../../../.gitbook/assets/lane-configuration-identifier-name-process-modeler-processes.png)
-
-3. In the **Identifier** field, edit the Lane element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
-
-### Edit the Element Name
-
-An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
-
-Follow these steps to edit the name for a Lane element:
-
-1. Select the Lane element from the Process model in which to edit its name. The **Configuration** setting section.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
-
-   ![](../../../.gitbook/assets/lane-configuration-name-process-modeler-processes.png)
-
-3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Lane element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field. ![](../../../.gitbook/assets/lane-configuration-identifier-name-process-modeler-processes.png)
+4. In the **Node Identifier** setting, edit the Lane element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 
