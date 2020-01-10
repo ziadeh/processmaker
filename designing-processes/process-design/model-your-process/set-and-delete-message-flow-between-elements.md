@@ -4,27 +4,17 @@ description: >-
   between elements in separate Pool elements.
 ---
 
-# Set Message Flow Elements to Indicate Messaging
+# Connect Message Flow Elements to Indicate Collaboration
 
 ## Overview
 
-In a Process model, Message Flow elements represent communication between an element in one Pool element with another element in a separate Pool element. Message Flow elements are not to be confused with [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements.
+In a Process model, Message Flow elements represent messaging between elements of \(or within\) one [Pool](process-modeling-element-descriptions.md#pool) element to elements of \(or within\) another Pool element. Message Flow elements cannot connect to Process model elements within the same Pool element. Message Flow elements are not to be confused with [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements.
+
+Use Message Flow elements to represent collaboration and data transfer from one Pool to another. Since each Pool element in a Process uses its own [Request](../../../using-processmaker/requests/what-is-a-request.md) and Request data, use Message Flow elements to exchange data and information between separate Pool elements and/or elements within those Pool elements.
 
 In Process Modeler, Flow indicators display when you click an element in the Process model. The dotted-line Flow indicator is for Message Flows \(highlighted below\).
 
 ![Message Flow indicator \(highlighted\) on a selected Process model element](../../../.gitbook/assets/message-flow-indicator-process-model-processes.png)
-
-### Types of Messaging
-
-The Message Flow element indicates the following types of messaging:
-
-* **Symbolic communication:** The Message Flow element does not indicate whether the communication is physical or digital. Use a [Text Annotation](process-modeling-element-descriptions.md#text-annotation) element to add information about the communication. Message Flow elements cannot connect to Process model elements within the same Pool element.
-
-![A Message Flow element \(dotted line\) between two elements in different Pool elements](../../../.gitbook/assets/message-flow-between-pool-elements-process-model-processes.png)
-
-* **External API call:** An [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) element receives an external API call. The Intermediate Message Catch Event element must be in a different Pool element than the source of the Message Flow element.
-
-![External API call to an Intermediate Message Catch Event element using a Message Flow element](../../../.gitbook/assets/message-flow-connecting-to-intermediate-message-catch-event.png)
 
 ### Incoming and Outgoing Message Flow
 
@@ -81,11 +71,11 @@ Follow these steps to set the Message Flow element between elements in separate 
 
 4. Click the **Message Flow** icon![](../../../.gitbook/assets/message-flow-icon-process-modeler-processes.png).
 5. Do one of the following:
-   * Click the second Pool element to which to establish communication between the two elements. Message flow indicates that communication is between an element in one Pool element to another Pool element.  
+   * Click the second Pool element to indicate collaboration and data transfer between the two elements.  
 
      ![](../../../.gitbook/assets/message-flow-to-pool-element-process-modeler-processes.png)
 
-   * Click an element inside the second Pool element to which to establish communication between the two elements. Message flow indicates that communication is between two elements in separate Pool elements.  
+   * Click an element inside the second Pool element to indicate collaboration and data transfer between the two elements.  
 
      ![](../../../.gitbook/assets/message-flow-between-pool-elements-process-model-processes.png)
 
@@ -103,11 +93,26 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The Message Flow element has the following panels that contain settings:
 
 * **Configuration** panel
-  * Edit the element name
+  * [Edit the element name](set-and-delete-message-flow-between-elements.md#edit-the-element-name)
 * **Advanced** panel
-  * Edit the element's identifier value
+  * [Edit the element's identifier value](set-and-delete-message-flow-between-elements.md#edit-the-elements-identifier-value)
 
-### Edit the Element's Identifier Value
+### Configuration Panel Settings
+
+#### Edit the Element Name
+
+An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
+
+Follow these steps to edit the name for a Message Flow element:
+
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Sequence Flow element from the Process model in which to edit its name. Panels to configure this element display.
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../.gitbook/assets/message-flow-configuration-name-process-modeler-processes.png)
+4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
+
+### Advanced Panel Settings
+
+#### Edit the Element's Identifier Value
 
 Process Modeler automatically assigns a unique value to each Process element added to a Process model. However, an element's identifier value can be changed if it is unique to all other elements in the Process model, including the Process model's identifier value.
 
@@ -117,25 +122,10 @@ All identifier values for all elements in the Process model must be unique.
 
 Follow these steps to edit the identifier value for a Message Flow element:
 
-1. Select the Message Flow element from the Process model in which to edit its identifier value. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Identifier** field displays. This is a required field.  
-
-   ![](../../../.gitbook/assets/message-flow-configuration-identifier-name-process-modeler-processes.png)
-
-3. In the **Identifier** field, edit the Message Flow element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
-
-### Edit the Element Name
-
-An element name is a human-readable reference for a Process element. Process Modeler automatically assigns the name of a Process element with its element type. However, an element's name can be changed.
-
-Follow these steps to edit the name for a Message Flow element:
-
-1. Select the Message Flow element from the Process model in which to edit its name. The **Configuration** setting section displays.
-2. Expand the **Configuration** setting section if it is not presently expanded. The **Name** field displays.  
-
-   ![](../../../.gitbook/assets/message-flow-configuration-name-process-modeler-processes.png)
-
-3. In the **Name** field, edit the selected element's name and then press **Enter**. The element's name is changed.
+1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Message Flow element from the Process model in which to edit its name. Panels to configure this element display.
+3. Expand the **Configuration** panel if it is not presently expanded. The **Node Identifier** setting displays. ![](../../../.gitbook/assets/message-flow-configuration-identifier-name-process-modeler-processes.png)
+4. In the **Node Identifier** setting, edit the Message Flow element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
 
 ## Related Topics
 
