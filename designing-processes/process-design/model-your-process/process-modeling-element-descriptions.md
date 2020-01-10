@@ -375,6 +375,59 @@ Below is a Pool element that contains three Lane elements when it has been place
 See [Add and Configure Pool and Lane Elements](add-and-configure-pool-and-lane-elements.md).
 {% endhint %}
 
+## Flow Indicators
+
+Flow indicators represent the order in which workflow routing and messaging occur in a Process model. ProcessMaker provides the following Process model elements that indicate workflow:
+
+* [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow)
+* [Message Flow](process-modeling-element-descriptions.md#message-flow)
+
+### Sequence Flow
+
+Sequence Flow elements connect Process model elements to represent the intended workflow routing in a Process model. Process workflow is the order in which elements trigger or activate in a Process model. Sequence Flow elements are not to be confused with [Message Flow](process-modeling-element-descriptions.md#message-flow) elements.
+
+As a best practice, indicate a consistent direction of Sequence Flow elements: either left to right or top to bottom, to make Process models easier to understand.
+
+In Process Modeler, Flow indicators display when you click an element in the Process model. The top Flow indicator is for Sequence Flows \(highlighted below\), represented with a solid line.
+
+![Sequence Flow indicator \(highlighted\) on a selected Process model element](../../../.gitbook/assets/sequence-flow-indicator-process-modeler-processes.png)
+
+{% hint style="info" %}
+[Text annotations](process-modeling-element-descriptions.md#text-annotation), [Pool](process-modeling-element-descriptions.md#pool), and [Lane](process-modeling-element-descriptions.md#lane) elements do not use Sequence Flow elements. Furthermore, Sequence Flow elements cannot connect between Process model elements that are in different Pool elements since Pool elements represent different organizations. However, use Message Flow elements to infer communication between elements in different Pool elements.
+
+Sequence Flow elements from Exclusive Gateway and Inclusive Gateway elements can be configured to specify under which condition\(s\) Request workflow routes through that Sequence Flow element. See [Set Sequence Flow Elements to Indicate Workflow Routing](the-quick-toolbar.md#configure-an-outgoing-sequence-flow-element-from-an-exclusive-gateway-or-inclusive-gateway-element).
+
+A Start Event or Start Timer Event element begins Request workflow for that Process. Therefore, these elements cannot have an incoming Sequence Flow elements.
+
+An End Event element terminates Request workflow for that Process. Therefore, an End Event element cannot have an outgoing Sequence Flow element.
+{% endhint %}
+
+The Sequence Flow element indicates in which order workflow routing occurs between two connected Process model elements. Below are two Process model elements connected in Process Modeler.
+
+![Process model elements connected by a Sequence Flow element infers the order of workflow](../../../.gitbook/assets/sequence-flow-connecting-elements-process-modeler-processes.png)
+
+{% hint style="info" %}
+See [Set and Delete Sequence Flow Between Elements](the-quick-toolbar.md).
+{% endhint %}
+
+### Message Flow
+
+In a Process model, Message Flow elements represent messages between elements in different Pool elements. Message Flow elements are not to be confused with [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements.
+
+In Process Modeler, Flow indicators display when you click an element in the Process model. The bottom Flow indicator is for Message Flows, represented with a dotted line \(highlighted below\).
+
+![Message Flow indicator \(highlighted\) on a selected Process element](../../../.gitbook/assets/message-flow-indicator-process-model-processes.png)
+
+These messages indicate indirect communication between separate Process participants. The Message Flow element does not indicate whether the message is physical or digital. Use a [Text Annotation](process-modeling-element-descriptions.md#text-annotation) element to add information about the type of communication.
+
+![A Message Flow element \(dotted line\) between two elements in different Pool elements](../../../.gitbook/assets/message-flow-between-pool-elements-process-model-processes.png)
+
+Message Flow elements cannot connect to Process model elements within the same Pool element.
+
+{% hint style="info" %}
+See [Set and Delete Message Flow Between Elements](set-and-delete-message-flow-between-elements.md).
+{% endhint %}
+
 ## Text Annotations and Associations
 
 Use [Text Annotation](process-modeling-element-descriptions.md#text-annotation) and [Association](process-modeling-element-descriptions.md#association) elements to add human-readable descriptions about the Process model.
@@ -407,59 +460,6 @@ Below is an Association element when it has been placed into a Process model.
 
 {% hint style="info" %}
 See [Add and Configure Text Annotation and Association Elements](add-and-configure-text-annotation-elements.md#add-an-association-element).
-{% endhint %}
-
-## Flow Indicators
-
-Flow indicators represent the order in which workflow routing and messaging occur in a Process model. ProcessMaker provides the following Process model elements that indicate workflow:
-
-* [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow)
-* [Message Flow](process-modeling-element-descriptions.md#message-flow)
-
-### Sequence Flow
-
-Sequence Flow elements connect Process model elements to represent the intended workflow routing in a Process model. Process workflow is the order in which elements trigger or activate in a Process model. Sequence Flow elements are not to be confused with [Message Flow](process-modeling-element-descriptions.md#message-flow) elements.
-
-As a best practice, indicate a consistent direction of Sequence Flow elements: either left to right or top to bottom, to make Process models easier to understand.
-
-In Process Modeler, Flow indicators display when you click an element in the Process model. The top Flow indicator is for Sequence Flows \(highlighted below\), represented with a solid line.
-
-![Sequence Flow indicator \(highlighted\) on a selected Process model element](../../../.gitbook/assets/sequence-flow-indicator-process-modeler-processes.png)
-
-{% hint style="info" %}
-[Text annotations](process-modeling-element-descriptions.md#text-annotation), [Pool](process-modeling-element-descriptions.md#pool), and [Lane](process-modeling-element-descriptions.md#lane) elements do not use Sequence Flow elements. Furthermore, Sequence Flow elements cannot connect between Process model elements that are in different Pool elements since Pool elements represent different organizations. However, use Message Flow elements to infer communication between elements in different Pool elements.
-
-Sequence Flow elements from Exclusive Gateway and Inclusive Gateway elements can be configured to specify under which condition\(s\) Request workflow routes through that Sequence Flow element. See [Connect Sequence Flow Elements to Indicate Workflow Routing](the-quick-toolbar.md).
-
-[Start Event](process-modeling-element-descriptions.md#start-event), [Start Timer Event](process-modeling-element-descriptions.md#start-timer-event) and Message Start Event elements begin Request workflow in Process design. Therefore, these elements cannot have incoming Sequence Flow elements.
-
-[End Event](process-modeling-element-descriptions.md#end-event), Message End Event, and Error End Event elements terminate Request workflow in Process design. Therefore, these elements cannot have outgoing Sequence Flow elements.
-{% endhint %}
-
-The Sequence Flow element indicates in which order workflow routing occurs between two connected Process model elements. Below are two Process model elements connected in Process Modeler.
-
-![Process model elements connected by a Sequence Flow element infers the order of workflow](../../../.gitbook/assets/sequence-flow-connecting-elements-process-modeler-processes.png)
-
-{% hint style="info" %}
-See [Set and Delete Sequence Flow Between Elements](the-quick-toolbar.md).
-{% endhint %}
-
-### Message Flow
-
-In a Process model, Message Flow elements represent messaging between elements of \(or within\) one [Pool](process-modeling-element-descriptions.md#pool) element to elements of \(or within\) another Pool element. Message Flow elements cannot connect to Process model elements within the same Pool element. Message Flow elements are not to be confused with [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) elements.
-
-Use Message Flow elements to represent collaboration and data transfer from one Pool to another. Since each Pool element in a Process uses its own [Request](../../../using-processmaker/requests/what-is-a-request.md) and Request data, use Message Flow elements to exchange data and information between separate Pool elements and/or elements within those Pool elements.
-
-In Process Modeler, Flow indicators display when you click an element in the Process model. The dotted-line Flow indicator is for Message Flows \(highlighted below\).
-
-![Message Flow indicator \(highlighted\) on a selected Process element](../../../.gitbook/assets/message-flow-indicator-process-model-processes.png)
-
-These messages indicate indirect communication between separate Process participants. The Message Flow element does not indicate whether the message is physical or digital. Use a [Text Annotation](process-modeling-element-descriptions.md#text-annotation) element to add information about the type of communication.
-
-![A Message Flow element \(dotted line\) between two elements in different Pool elements](../../../.gitbook/assets/message-flow-between-pool-elements-process-model-processes.png)
-
-{% hint style="info" %}
-See [Connect Message Flow Elements to Indicate Collaboration](set-and-delete-message-flow-between-elements.md).
 {% endhint %}
 
 ## Related Topics

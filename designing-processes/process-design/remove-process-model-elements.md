@@ -31,7 +31,7 @@ See the [Process](../../processmaker-administration/permission-descriptions-for-
 
 Follow these steps to delete any non-Pool element or a control from a Process model:
 
-1. Select the non-Pool element/control to delete. Available options display to the right of the selected element/control.  
+1. Select the non-Pool element/control to delete. Available options display above the selected element/control.  
 
    ![](../../.gitbook/assets/delete-element-process-modeler-processes.png)
 
@@ -54,7 +54,7 @@ Follow these steps to delete a Pool element from a Process model:
 
 Follow these steps to delete a Lane element from a Pool element:
 
-1. ​Select the Lane element in the Pool element to delete. Available options display to the right of the selected element.
+1. ​Select the Lane element in the Pool element to delete. Available options display above the selected element.
 2. Click the **Delete** icon![](../../.gitbook/assets/remove-icon.png). The Pool element is deleted. All non-Pool elements and controls that were within the deleted Lane element stay in their current positions within the Pool element.
 
 ## Related Topics
