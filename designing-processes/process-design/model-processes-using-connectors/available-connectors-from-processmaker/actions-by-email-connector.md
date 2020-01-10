@@ -70,7 +70,7 @@ See the [Process](../../../../processmaker-administration/permission-description
 
 Follow these steps to add an Actions By Email control to the Process model:
 
-1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
+1. [View your Processes](../../../viewing-processes/view-the-list-of-processes/view-your-processes.md#view-all-active-processes). The **Processes** page displays.
 2. [Create a new Process](../../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
 3. Locate the **Actions By Email** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Actions By Email** control's icon![](../../../../.gitbook/assets/actions-by-email-icon-process-modeler-processes.png). ![](../../../../.gitbook/assets/actions-by-email-control-bpmn-process-modeler-package-processes.png) 
 4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Actions By Email control cannot be placed outside of the Pool element.

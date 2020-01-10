@@ -44,7 +44,7 @@ The following element types do not use Message Flow elements:
 * [Text Annotation](process-modeling-element-descriptions.md#text-annotation)
 * [Association](process-modeling-element-descriptions.md#association)
 
-## Set the Message Flow Element Between Elements in Separate Pool Elements
+## Connect the Message Flow Element Between Elements in Separate Pool Elements
 
 {% hint style="info" %}
 ### Looking for Information about Sequence Flow Elements?
@@ -63,7 +63,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 Follow these steps to set the Message Flow element between elements in separate Pool elements:
 
-1. ​[View your Processes](../../viewing-processes/view-the-list-of-processes/view-your-processes.md#view-all-processes). The **Processes** page displays.
+1. ​[View your Processes](../../viewing-processes/view-the-list-of-processes/view-your-processes.md#view-all-active-processes). The **Processes** page displays.
 2. Click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays. Ensure that the Process model has at least two \(2\) Pool elements from which to establish Message Flow between them.
 3. From one Pool element, select the Process model element from which you want to establish communication via the Message Flow element. Available options display to the right of the selected element. Process model element types that do not support the Message Flow element do not have the Message Flow indicator as highlighted below.  
 

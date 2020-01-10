@@ -32,6 +32,7 @@ Use event-type elements to represent an event, milestone, or delay in the Proces
 
 * [Start Event](process-modeling-element-descriptions.md#start-event)
 * [Start Timer Event](process-modeling-element-descriptions.md#start-timer-event)
+* [Message Start Event](process-modeling-element-descriptions.md#message-start-event)
 * [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event)
 * [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event)
 * [End Event](process-modeling-element-descriptions.md#end-event)
@@ -45,13 +46,9 @@ Use a Start Event element to represent how a Request for that Process starts in 
 * The Request can be started by an authenticated ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) \(Jane Doe\) or any member of a specified [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) \(Accounting department\).
 * The Request can be started by either an anonymous or authenticated ProcessMaker user through a published URL. This allows a ProcessMaker Screen to be available on a public-facing Web site that starts the Request when that Screen is submitted. Note that this feature is only available if the Web Entry package is installed in your ProcessMaker instance. See [Web Entry](../../../package-development-distribution/package-a-connector/web-entry.md).
 
-In the left panel in Process Modeler, the Start Event element is labeled as "Start Event."
-
-![Start Event element in the left side panel in Process Modeler](../../../.gitbook/assets/start-event-bpmn-side-bar-process-modeler-processes.png)
-
 Below is a Start Event element when it has been placed into a Process model.
 
-![Start Event element](../../../.gitbook/assets/start-event-element-process-modeler-processes.png)
+![Start Event element](../../../.gitbook/assets/start-event-process-modeler-processes.png)
 
 {% hint style="info" %}
 See [Add and Configure Event Elements](add-and-configure-an-event-element.md#add-a-start-event-element).
@@ -61,29 +58,34 @@ See [Add and Configure Event Elements](add-and-configure-an-event-element.md#add
 
 A Start Timer Event element represents a time or periodic interval when a [Request](../../../using-processmaker/requests/what-is-a-request.md) starts for a Process. A Start Timer Event element begins the Process. Therefore, a Start Timer Event element cannot have an incoming [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element. A Process model can have multiple Start Timer Event elements. Use this element to indicate that a Request for that Process must begin at a specific date and time, such as on an employee’s employment anniversary to schedule a performance review.
 
-In the left panel in Process Modeler, the Start Timer Event element is labeled as "Start Timer Event."
-
-![Start Timer Event element in the left side panel in Process Modeler](../../../.gitbook/assets/start-timer-event-bpmn-side-bar-process-modeler-processes.png)
-
 Below is a Start Timer Event element when it has been placed into a Process model.
 
-![Start Timer Event element](../../../.gitbook/assets/start-timer-event-element-process-modeler-processes.png)
+![Start Timer Event element](../../../.gitbook/assets/start-timer-event-process-modeler-processes.png)
 
 {% hint style="info" %}
 See [Add and Configure Start Timer Event Elements](add-and-configure-start-timer-event-elements.md).
 {% endhint %}
 
+### Message Start Event
+
+A Message Start Event represents the start of a Process when this element receives a message originating from an Intermediate Message Throw element or Message End Event element in a separate [Pool](process-modeling-element-descriptions.md#pool) element. The message is represented by a [Message Flow](process-modeling-element-descriptions.md#message-flow) element that connects the element sending the message to the Message Start Event element.
+
+Use a Message Start Event element to start a [Request](../../../using-processmaker/requests/what-is-a-request.md) initiated from a Pool element in the same Process model, but in a separate Pool element from that sends the message.
+
+Follow these guidelines when using a Message Start Event element:
+
+* A Message Start Event element only receives messages from Intermediate Message Throw elements or Message End Event elements.
+* The element\(s\) sending the message to the Message Start Event element must be in a separate Pool element than the Pool element containing the Message Start Event element. Both Pool elements must be in the same Process model. If you intend to start a Request from an external Process, use the [Sub Process](process-modeling-element-descriptions.md#sub-process) element.
+
+
+
 ### Intermediate Timer Event
 
 An Intermediate Timer Event element represents a delay in a Process at a specific time. When the specified time occurs, the Intermediate Timer Event element triggers, thereby resuming workflow for that Process's [Request](../../../using-processmaker/requests/what-is-a-request.md). Use this element to cause a Request to wait until a specific time. For example, use this element to make a Process wait 30 days before checking if you receive an invoice from a customer after services are rendered.
 
-In the left panel in Process Modeler, the Intermediate Timer Event element is labeled as "Intermediate Timer Event."
-
-![Intermediate Timer Event element in the left side panel in Process Modeler](../../../.gitbook/assets/intermediate-timer-event-bpmn-side-bar-process-modeler-processes.png)
-
 Below is an Intermediate Timer Event element when it has been placed into a Process model.
 
-![Intermediate Timer Event element](../../../.gitbook/assets/intermediate-timer-event-element-process-modeler-processes.png)
+![Intermediate Timer Event element](../../../.gitbook/assets/intermediate-timer-event-process-modeler-processes.png)
 
 {% hint style="info" %}
 See [Add and Configure Intermediate Timer Event Elements](add-and-configure-intermediate-timer-event-elements.md).
@@ -116,7 +118,7 @@ After the "Purchase Fulfillment" Request starts, the following occurs:
 
 Below is an Intermediate Message Catch Event element when it has been placed into a Process model.
 
-![Intermediate Message Catch Event element](../../../.gitbook/assets/inetermediate-message-catch-event-process-modeler-processes.png)
+![Intermediate Message Catch Event element](../../../.gitbook/assets/intermediate-message-catch-event-process-modeler-processes.png)
 
 {% hint style="info" %}
 See [Add and Configure Intermediate Timer Event Elements](add-and-configure-intermediate-timer-event-elements.md).
@@ -126,13 +128,9 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 An End Event element represents the completion of a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process. Therefore, an End Event element cannot have an outgoing [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element. A Process model can have multiple End Event elements.
 
-In the left panel in Process Modeler, the End Event element is labeled as "End Event."
-
-![End Event element in the left side panel in Process Modeler](../../../.gitbook/assets/end-event-bpmn-side-bar-process-modeler-processes.png)
-
 Below is an End Event element when it has been placed into a Process model.
 
-![End Event element](../../../.gitbook/assets/end-event-element-process-modeler-processes.png)
+![End Event element](../../../.gitbook/assets/end-event-process-modeler-processes.png)
 
 {% hint style="info" %}
 See [Add and Configure Event Elements](add-and-configure-an-event-element.md#add-an-end-event-element).
@@ -157,10 +155,6 @@ A Task element represents an activity a person performs while participating in a
 
 People perform Task activities through ProcessMaker Screens as digital [forms](../../design-forms/screens-builder/types-for-screens.md#forms) and [displays](../../design-forms/screens-builder/types-for-screens.md#display). ProcessMaker Screens are designed in [Screens Builder](../../design-forms/screens-builder/).
 
-In the left panel in Process Modeler, the Task element is labeled as "Task."
-
-![Task element in the left side panel in Process Modeler](../../../.gitbook/assets/task-bpmn-side-bar-process-modeler-processes.png)
-
 Below is a Task element when it has been placed into a Process model.
 
 ![Task element](../../../.gitbook/assets/task-element-process-modeler-processes.png)
@@ -178,10 +172,6 @@ A Script Task element represents an activity performed by a [ProcessMaker Script
 
 ProcessMaker Scripts are designed in [Scripts Editor](../../scripts/scripts-editor.md). ProcessMaker Scripts are independent of Process models: any ProcessMaker Script can be reused in any Process model in your organization. This architecture allows Process Owners to focus on Process modeling in a no-code environment while ProcessMaker Developers develop reusable ProcessMaker Scripts. ProcessMaker Scripts can leverage ProcessMaker Screens variable values for in-progress Requests.
 
-In the left panel in Process Modeler, the Script Task element is labeled as "Script Task."
-
-![Script Task element in the left side panel in Process Modeler](../../../.gitbook/assets/script-task-bpmn-side-bar-process-modeler-processes.png)
-
 Below is a Script Task element when it has been placed into a Process model.
 
 ![Script Task element](../../../.gitbook/assets/script-task-element-process-modeler-processes.png)
@@ -194,10 +184,6 @@ See [Add and Configure Script Task Elements](add-and-configure-script-task-eleme
 
 A Manual Task element represents an activity a person performs offline and/or in the physical environment such that ProcessMaker cannot monitor its activity. A Manual Task element is different than a [Task](process-modeling-element-descriptions.md#task) element, in which a person performs an activity via ProcessMaker. ProcessMaker relies on the Task assignee to acknowledge completion of that activity. An example of a Manual Task activity is moving physical merchandise in a warehouse: this activity occurs offline and is one which does not involve ProcessMaker interaction.
 
-In the left panel in Process Modeler, the Manual Task element is labeled as "Manual Task."
-
-![Manual Task element in the left side panel in Process Modeler](../../../.gitbook/assets/manual-task-bpmn-side-bar-process-modeler-processes.png)
-
 Below is a Manual Task element when it has been placed into a Process model.
 
 ![Manual Task element](../../../.gitbook/assets/manual-task-element-process-modeler-processes.png)
@@ -208,7 +194,7 @@ See [Add and Configure Manual Task Elements](add-and-configure-manual-task-eleme
 
 ## Sub Process
 
-A Sub Process element represents a call to a Sub Process that can be re-used by other Processes in the ProcessMaker instance. The Sub Process that the Sub Process element calls is referred to as the "child" Sub Process. Use the Sub Process element to call a child Sub Process from the current Process, which is referred to as the "parent" Process.
+A Sub Process element represents a call to a Sub Process that can be re-used by other Processes in the ProcessMaker instance. The Sub Process that the Sub Process element calls is referred to as the "child" Sub Process and must be an external Process from the calling Process it \(referred to as the "parent" Process\).
 
 The child Sub Process that the Sub Process element calls from the parent Process's [Request](../../../using-processmaker/requests/what-is-a-request.md) must be in the same ProcessMaker instance and not [archived](../../viewing-processes/view-the-list-of-processes/remove-a-process.md).
 
@@ -217,10 +203,6 @@ The child Sub Process has its own Request. The Request for the parent Process wa
 {% hint style="info" %}
 To prevent routing for the parent Process's Request from waiting until the child Sub Process's Request completes, use a [Parallel Gateway](process-modeling-element-descriptions.md#parallel-gateway) element preceding the Sub Process element. Use a parallel outgoing [Sequence Flow](the-quick-toolbar.md) element from the Parallel Gateway element to continue routing the parent Process while the Sub Process element waits for the child Sub Process's Request to complete.
 {% endhint %}
-
-In the left panel in Process Modeler, the Sub Process element is labeled as "Sub Process."
-
-![Sub Process element in the left side panel in Process Modeler](../../../.gitbook/assets/call-activity-bpmn-side-bar-process-modeler-processes.png)
 
 Below is a Sub Process element when it has been placed into a Process model.
 
@@ -245,13 +227,9 @@ An Exclusive Gateway element represents an evaluation of a [Request's](../../../
 
 Use an Exclusive Gateway element when you want only one condition to pass. Otherwise, consider using an Inclusive Gateway element whereby any conditions that pass specified conditions allow workflow routing to continue.
 
-In the left panel in Process Modeler, the Exclusive Gateway element is labeled as "Exclusive Gateway."
-
-![Exclusive Gateway element in the left side panel in Process Modeler](../../../.gitbook/assets/bpmn-panel-exclusive-gateway-process-modeler-processes.png)
-
 Below is an Exclusive Gateway element when it has been placed into a Process model.
 
-![Exclusive Gateway element](../../../.gitbook/assets/exclusive-gateway-element-process-modeler-processes.png)
+![Exclusive Gateway element](../../../.gitbook/assets/exclusive-gateway-process-modeler-processes.png)
 
 {% hint style="info" %}
 See the following topics about Exclusive Gateway elements:
@@ -270,10 +248,6 @@ An Inclusive Gateway element functions in two different ways, but not at the sam
 One Inclusive Gateway element can only converge or diverge workflow, but not both. Use two Inclusive Gateway elements to both converge and diverge workflow.
 
 ![Use two Inclusive Gateway elements for both converging and diverging workflow](../../../.gitbook/assets/converging-and-diverging-inclusive-gateway.png)
-
-In the left panel in Process Modeler, the Inclusive Gateway element is labeled as "Inclusive Gateway."
-
-![Inclusive Gateway element in the left side panel in Process Modeler](../../../.gitbook/assets/bpmn-inclusive-gateway-process-modeler-processes.png)
 
 Below is an Inclusive Gateway element when it has been placed into a Process model.
 
@@ -299,13 +273,9 @@ One Parallel Gateway element can only converge or diverge workflow, but not both
 
 ![Use two Parallel Gateway elements for both converging and diverging parallel workflow](../../../.gitbook/assets/parallel-gateway-converging-and-diverging.png)
 
-In the left panel in Process Modeler, the Parallel Gateway element is labeled as "Parallel Gateway."
-
-![Parallel Gateway element in the left side panel in Process Modeler](../../../.gitbook/assets/parallel-gateway-bpmn-panel-process-modeler-processes.png)
-
 Below is a Parallel Gateway element when it has been placed into a Process model.
 
-![Parallel Gateway element](../../../.gitbook/assets/parallel-gateway-element-process-modeler-processes.png)
+![Parallel Gateway element](../../../.gitbook/assets/parallel-gateway-process-modeler-processes.png)
 
 {% hint style="info" %}
 See [Add and Configure Parallel Gateway Elements](add-and-configure-parallel-gateway-elements.md).
@@ -329,13 +299,9 @@ In this example, connect the following Process modeling elements from the Event-
 * **Intermediate Timer Event element:** The first connecting event from the Event-Based Gateway element is an Intermediate Timer Event element that is set to 24 hours. This event represents a 24-hour period in which presumably a notification has not arrived that the package shipped within that time period. If the timer set in the Intermediate Timer Event expires, then workflow routes to a [Manual Task](process-modeling-element-descriptions.md#manual-task) element in which its assignee telephones the shipping company.
 * **Intermediate Message Catch Event element:** The second connecting element is an Intermediate Message Catch Event element that represents a notification of the package’s shipment presumably before the timer set in the Intermediate Timer Event element expires. If the Intermediate Message Catch Event element triggers, then the notification was received before the 24-hour period expired. No further action is required.
 
-In the left panel in Process Modeler, the Event-Based Gateway element is labeled as "Event-Based Gateway."
-
-![Event-Based Gateway element in the left side panel in Process Modeler](../../../.gitbook/assets/bpmn-event-based-gateway-process-modeler-processes.png)
-
 Below is an Event-Based Gateway element when it has been placed into a Process model.
 
-![Event-Based Gateway element](../../../.gitbook/assets/event-based-gateway-process-modeler-processes.png)
+![Event-Based Gateway element](../../../.gitbook/assets/event-based-gateway-in-process-modeler-processes.png)
 
 {% hint style="info" %}
 See [Add and Configure Event-Based Gateway Elements](add-and-configure-event-based-gateway-elements.md).
@@ -350,10 +316,6 @@ BPMN 2.0 provides graphical representations to organize participants in a Proces
 A Pool element represents an organization or entity involved in a Process model. The Pool element might represent a specific role \("Human Resources"\), entity \(such as a company\) or a general relationship \(such as a buyer, seller, or manufacturer\).
 
 Each Pool element represents its own Request, and therefore its own Request data. While a Process model can have multiple Pool elements, each Pool element represents its own Request with distinct Request data.
-
-In the left panel in Process Modeler, the Pool element is labeled as "Pool."
-
-![Pool element in the left side panel in Process Modeler](../../../.gitbook/assets/bpmn-panel-pool-process-modeler-processes.png)
 
 Below is a Pool element when it has been placed into a Process model. "New Pool" is the name of the Pool element.
 
@@ -382,10 +344,6 @@ Use [Text Annotation](process-modeling-element-descriptions.md#text-annotation) 
 ### Text Annotation
 
 A Text Annotation element is human-readable text in a Process model that provides description about the Process. Text Annotation elements perform no functional role in Process Requests or workflow routing.
-
-In the left panel in Process Modeler, the Text Annotation element is labeled as "Text Annotation."
-
-![Text Annotation element in the Controls panel of Process Modeler](../../../.gitbook/assets/bpmn-panel-text-annotation-process-modeler-processes.png)
 
 Below is a Text Annotation element when it has been placed into a Process model.
 

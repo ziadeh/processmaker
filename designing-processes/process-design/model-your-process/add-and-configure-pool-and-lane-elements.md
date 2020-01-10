@@ -23,7 +23,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 Follow these steps to add a Pool element to the Process model:
 
-1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
+1. [View your Processes](../../viewing-processes/view-the-list-of-processes/view-your-processes.md#view-all-active-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
 3. Locate the **Pool** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Pool** control's icon![](../../../.gitbook/assets/pool-icon-process-modeler-processes.png). ![](../../../.gitbook/assets/pool-control-process-modeler-processes.png) 
 4. Drag the element into the Process model canvas where you want to place it. If non-Pool/[Lane](process-modeling-element-descriptions.md#lane) elements or [controls](../model-processes-using-connectors/what-is-a-connector.md) are in your Process model when you place the Pool element, those elements are automatically placed into the Pool element. A Pool element cannot be placed into another Pool element, though the most recently placed Pool element can overlap another such that only the recent Pool element and its contents is visible.
@@ -131,7 +131,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 Follow these steps to add a Lane element to a Pool element:
 
-1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
+1. [View your Processes](../../viewing-processes/view-the-list-of-processes/view-your-processes.md#view-all-active-processes). The **Processes** page displays.
 2. Click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)for edit the selected Process model. Process Modeler displays.
 3. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 4. Click the Pool element from the Process model into which to add a Lane element. Icons to add a Lane to a Pool element display.  
