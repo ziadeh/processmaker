@@ -77,7 +77,7 @@ Follow these steps to edit the name for an Intermediate Message Catch Event elem
 
    ![](../../../.gitbook/assets/intermediate-message-catch-event-configuration-name-process-modeler-processes.png)
 
-4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
+4. In the **Name** setting, edit the selected element's name and then press **Enter**.
 
 #### Configure How to Trigger an Intermediate Message Catch Event Element
 
@@ -155,7 +155,7 @@ Follow these steps to edit the identifier value for an Intermediate Message Catc
 
    ![](../../../.gitbook/assets/identifier-intermediate-message-catch-event-process-modeler-processes.png)
 
-4. In the **Node Identifier** setting, edit the Intermediate Message Catch Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Node Identifier** setting, edit the Intermediate Message Catch Event element's identifier to a unique value from all elements in the Process model and then press **Enter**.
 
 ## Related Topics
 

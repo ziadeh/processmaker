@@ -74,7 +74,7 @@ Follow these steps to edit the name for a Start Timer Event element:
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Start Timer Event element from the Process model in which to edit its name. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../.gitbook/assets/start-timer-event-configuration-name-process-modeler-processes.png) 
-4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
+4. In the **Name** setting, edit the selected element's name and then press **Enter**.
 
 ### Timing Control Panel Settings
 
@@ -138,7 +138,7 @@ Follow these steps to edit the identifier value for a Start Timer Event element:
 
    ![](../../../.gitbook/assets/start-timer-event-configuration-identifier-name-process-modeler-processes.png)
 
-4. In the **Node Identifier** setting, edit the Start Timer Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Node Identifier** setting, edit the Start Timer Event element's identifier to a unique value from all elements in the Process model and then press **Enter**.
 
 ## Related Topics
 

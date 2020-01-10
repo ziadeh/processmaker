@@ -70,7 +70,7 @@ Follow these steps to edit the annotation description for a Text Annotation elem
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Pool element from the Process model in which to edit its name. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded. The **Text to Show** setting displays. ![](../../../.gitbook/assets/text-to-show-annotation-process-modeler-processes.png)
-4. In the **Text to Show** setting, edit the selected Text Annotation element's text to display in the Process model and then press **Enter**. The text is changed.
+4. In the **Text to Show** setting, edit the selected Text Annotation element's text to display in the Process model and then press **Enter**.
 
 ### Advanced Panel Settings
 
@@ -87,7 +87,7 @@ Follow these steps to edit the identifier value for a Text Annotation element:
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Text Annotation element from the Process model in which to edit its identifier value. Panels to configure this element display.
 3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field. ![](../../../.gitbook/assets/text-annotation-configuration-identifier-name-process-modeler-processes.png)
-4. In the **Node Identifier** setting, edit the Text Annotation element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Node Identifier** setting, edit the Text Annotation element's identifier to a unique value from all elements in the Process model and then press **Enter**.
 
 ## Add an Association Element
 
@@ -157,7 +157,7 @@ Follow these steps to edit the identifier value for an Association element:
 
    ![](../../../.gitbook/assets/association-configuration-identifier-direction-process-modeler-processes.png)
 
-4. In the **Node Identifier** setting, edit the Text Annotation element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Node Identifier** setting, edit the Text Annotation element's identifier to a unique value from all elements in the Process model and then press **Enter**.
 
 #### Edit the Direction of the Text Annotation Element's Reference
 

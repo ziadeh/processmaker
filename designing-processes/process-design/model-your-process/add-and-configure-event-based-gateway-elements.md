@@ -69,7 +69,7 @@ Follow these steps to edit the name for an Event-Based Gateway element:
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Event-Based Gateway element from the Process model in which to edit its name. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../.gitbook/assets/event-based-gateway-configuration-name-process-modeler-processes.png)
-4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
+4. In the **Name** setting, edit the selected element's name and then press **Enter**.
 
 ### Advanced Panel Settings
 
@@ -86,7 +86,7 @@ Follow these steps to edit the identifier value for an Event-Based Gateway eleme
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Event-Based Gateway element from the Process model in which to edit its identifier value. Panels to configure this element display.
 3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field. ![](../../../.gitbook/assets/identifier-event-based-gateway-process-modeler-processes.png)
-4. In the **Node Identifier** setting, edit the Event-Based Gateway element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Node Identifier** setting, edit the Event-Based Gateway element's identifier to a unique value from all elements in the Process model and then press **Enter**.
 
 ## Related Topics
 

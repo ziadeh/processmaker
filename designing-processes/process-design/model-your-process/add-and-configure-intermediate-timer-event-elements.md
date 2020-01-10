@@ -76,7 +76,7 @@ Follow these steps to edit the name for an Intermediate Timer Event element:
 
    ![](../../../.gitbook/assets/intermediate-timer-event-configuration-name-process-modeler-processes.png)
 
-4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
+4. In the **Name** setting, edit the selected element's name and then press **Enter**.
 
 ### Timing Control Panel Settings
 
@@ -127,7 +127,7 @@ Follow these steps to edit the identifier value for an Intermediate Timer Event 
 
    ![](../../../.gitbook/assets/intermediate-timer-event-configuration-identifier-name-process-modeler-processes.png)
 
-4. In the **Node Identifier** setting, edit the Intermediate Timer Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Node Identifier** setting, edit the Intermediate Timer Event element's identifier to a unique value from all elements in the Process model and then press **Enter**.
 
 ## Related Topics
 

@@ -93,7 +93,7 @@ Follow these steps to edit the name for a Task element:
 
    ![](../../../.gitbook/assets/manual-task-configuration-name-process-modeler-processes.png)
 
-4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
+4. In the **Name** setting, edit the selected element's name and then press **Enter**.
 
 #### Select the ProcessMaker Screen for the Manual Task
 
@@ -129,7 +129,7 @@ Follow these steps to specify when a Manual Task element is due:
    ![](../../../.gitbook/assets/due-task-process-modeler-processes.png)
 
 4. In the **Due In** setting, enter the total number of hours the activity is due in one of the following ways:
-   * Enter the number in the **Due In** field and then press **Enter**. The number of hours is entered.
+   * Enter the number in the **Due In** field and then press **Enter**.
    * Hover your cursor over the **Due In** field, and then use the spin arrows to increase or decrease the total number of hours by one.
 
 #### Display the Next Assigned Task to the Task Assignee
@@ -149,7 +149,7 @@ Follow these steps to configure a Manual Task element to display the next assign
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Manual Task element from the Process model in which to configure it to display the next assigned Task to the Task assignee. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Display Next Assigned Task to Task Assignee** setting. ![](../../../.gitbook/assets/display-next-task-to-task-assignee-option-process-modeler-processes.png) 
-4. Select the **Display Next Assigned Task to Task Assignee** setting. The setting is changed.
+4. Select the **Display Next Assigned Task to Task Assignee** setting.
 
 ### Assignment Rules Panel Settings
 
@@ -562,7 +562,7 @@ Follow these steps to delete an email notification:
 2. Select the Manual Task element from the Process model in which to delete an email notification. Panels to configure this element display.
 3. Expand the **Email Notifications** panel if it is not presently expanded. Email notifications display below the **Notifications** setting.
 4. Click the **Delete** icon![](../../../.gitbook/assets/delete-email-notification-icon-task-process-modeler-processes.png)beside the email notification to delete. The following message displays to confirm deletion of this email notification: **Are you sure you want to delete this notification?** ![](../../../.gitbook/assets/delete-email-notification-confirmation-message-task-process-modeler-processes.png) 
-5. Click **Delete**. The email notification is deleted.
+5. Click **Delete**. The email notification deletes.
 
 ### Vocabularies Panel Settings
 
@@ -638,7 +638,7 @@ Follow these steps to edit the identifier value for a Manual Task element:
 
    ![](../../../.gitbook/assets/manual-task-configuration-identifier-name-process-modeler-processes.png)
 
-4. In the **Node Identifier** setting, edit the Task element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Node Identifier** setting, edit the Task element's identifier to a unique value from all elements in the Process model and then press **Enter**.
 
 ## Related Topics
 

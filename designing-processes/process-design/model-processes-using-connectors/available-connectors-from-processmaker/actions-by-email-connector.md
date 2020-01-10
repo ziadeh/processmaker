@@ -72,7 +72,7 @@ Follow these steps to add an Actions By Email control to the Process model:
 
 1. [View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
 2. [Create a new Process](../../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Actions By Email** control in the panel to the left of the Process Modeler canvas. ![](../../../../.gitbook/assets/actions-by-email-control-bpmn-process-modeler-package-processes.png) 
+3. Locate the **Actions By Email** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Actions By Email** control's icon![](../../../../.gitbook/assets/actions-by-email-icon-process-modeler-processes.png). ![](../../../../.gitbook/assets/actions-by-email-control-bpmn-process-modeler-package-processes.png) 
 4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Actions By Email control cannot be placed outside of the Pool element.
 
 ![Actions By Email control](../../../../.gitbook/assets/actions-by-email-control-process-modeler-package-processes.png)
@@ -105,12 +105,13 @@ See the [Process](../../../../processmaker-administration/permission-description
 
 Follow these steps to configure an Actions By Email control:
 
-1. Select the Actions By Email control from the Process model in which to configure its settings. The **Actions By Email** configuration settings display.  ![](../../../../.gitbook/assets/actions-by-email-configuration-process-modeler-package-processes.png) 
-2. In the **Email** field, enter the email address to which the Actions By Email control sends an email when this Actions By Email control triggers. You may use the value from a [ProcessMaker Screen](../../../design-forms/what-is-a-form.md)'s **Variable Name** setting as a variable in this field. For example, if your Process model references a ProcessMaker Screen that contains a [Lines Inputs control](../../../design-forms/screens-builder/control-descriptions/line-input-control-settings.md) with the **Variable Name** setting value of `EmailAddress` that the Request participant enters an email address, use mustache syntax `{{EmailAddress}}` to use that Line Inputs control's value in the **Email** field.
-3. In the **Name** field, enter the name of the email recipient. You may use the value from a ProcessMaker Screen's **Variable Name** setting as a variable in this field. For example, if your Process model references a ProcessMaker Screen that contains a Lines Inputs control with the **Variable Name** setting value of `FullName` that the Request participant enters an name, use mustache syntax `{{FullName}}` to use that Line Inputs control's value in the **Name** field.
-4. In the **Subject** field, enter the subject of the email the Actions By Email control sends. For example, enter the decision that the email recipient must make in this email.
-5. In the **Body** field, enter the body of the email the Actions By Email control sends. For example, enter the instructions regarding the decision that the email recipient must make in using the buttons in the email.
-6. In the **Options List** setting, enter the list of options available to the email recipient when making the decision. The options configured here display below the body of the email. Add options in the order they are to display from top to bottom in the email.  
+1. Ensure that the **Hide Menus** button![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Actions By Email control from the Process model in which to configure its settings. The **Actions By Email** configuration settings display.  ![](../../../../.gitbook/assets/actions-by-email-configuration-process-modeler-package-processes.png) 
+3. In the **Email** setting, enter the email address to which the Actions By Email control sends an email when this Actions By Email control triggers. You may use the value from a [ProcessMaker Screen](../../../design-forms/what-is-a-form.md)'s **Variable Name** setting as a variable in this field. For example, if your Process model references a ProcessMaker Screen that contains a [Lines Inputs control](../../../design-forms/screens-builder/control-descriptions/line-input-control-settings.md) with the **Variable Name** setting value of `EmailAddress` that the Request participant enters an email address, use mustache syntax `{{EmailAddress}}` to use that Line Inputs control's value in the **Email** field.
+4. In the **Name** setting, enter the name of the email recipient. You may use the value from a ProcessMaker Screen's **Variable Name** setting as a variable in this field. For example, if your Process model references a ProcessMaker Screen that contains a Lines Inputs control with the **Variable Name** setting value of `FullName` that the Request participant enters an name, use mustache syntax `{{FullName}}` to use that Line Inputs control's value in the **Name** field.
+5. In the **Subject** setting, enter the subject of the email the Actions By Email control sends. For example, enter the decision that the email recipient must make in this email.
+6. In the **Body** setting, enter the body of the email the Actions By Email control sends. For example, enter the instructions regarding the decision that the email recipient must make in using the buttons in the email.
+7. In the **Options List** setting, enter the list of options available to the email recipient when making the decision. The options configured here display below the body of the email. Add options in the order they are to display from top to bottom in the email.  
    ![](../../../../.gitbook/assets/actions-by-email-options-list-configuration-process-modeler-package-processes.png) 
 
    Each option has the following settings:
@@ -124,7 +125,7 @@ Follow these steps to configure an Actions By Email control:
    1. Click **Add Option** from below the **Options List** setting. The **Add New Option** screen displays.  ![](../../../../.gitbook/assets/add-new-option-screen-actions-by-email-coniguration-process-modeler-package-processes.png) 
    2. In the **Option Value** field, enter the **Value** option value \(as described above\).
    3. In the **Option Label** field, enter the **Content** option value \(as described above\).
-   4. Click **OK**. The option displays below the existing options in **Options List**.
+   4. Click **OK**.
 
 ## Related Topics
 

@@ -78,7 +78,7 @@ Follow these steps to edit the name for an End Event element:
 
    ![](../../../.gitbook/assets/end-event-configuration-name-process-modeler-processes.png)
 
-4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
+4. In the **Name** setting, edit the selected element's name and then press **Enter**.
 
 #### Select the ProcessMaker Screen That Summarizes a Completed Request
 
@@ -116,7 +116,7 @@ Follow these steps to edit the identifier value for an End Event element:
 
    ![](../../../.gitbook/assets/end-event-configuration-identifier-name-process-modeler-processes.png)
 
-4. In the **Node Identifier** setting, edit the End Event element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Node Identifier** setting, edit the End Event element's identifier to a unique value from all elements in the Process model and then press **Enter**.
 
 ## Related Topics
 

@@ -76,7 +76,7 @@ Follow these steps to edit the name for a Script Task element:
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Script Task element from the Process model in which to edit its name. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays.![](../../../.gitbook/assets/script-task-configuration-name-process-modeler-processes.png)
-4. In the **Name** setting, edit the selected element's name and then press **Enter**. The element's name is changed.
+4. In the **Name** setting, edit the selected element's name and then press **Enter**.
 
 #### Select the ProcessMaker Script to Run
 
@@ -101,7 +101,7 @@ Follow these steps to select a ProcessMaker Script for a Script Task element:
 
    ![](../../../.gitbook/assets/script-drop-down-script-task-process-modeler-processes.png)
 
-4. From the **Script** drop-down menu, select which ProcessMaker Script that Script Task element references. Note that another Script Task element located elsewhere in the Process model may reference a different ProcessMaker Script that runs a different script when it triggers.
+4. From the **Script** drop-down menu, select which ProcessMaker Script that Script Task element references.
 
 {% hint style="warning" %}
 If no ProcessMaker Scripts exist, the **Script** drop-down menu contains no options. Ensure to select and configure a ProcessMaker Script for every Script Task element in the Process model before deploying your Process.
@@ -138,7 +138,7 @@ Follow these steps to enter or edit a JSON configuration script for a Script Tas
    ![](../../../.gitbook/assets/script-config-editor-task-element-process-modeler-processses.png)
 
 6. Enter your JSON configuration script. Use the scroll panel to the right of the ProcessMaker Script to scroll to different sections of the Script if necessary. This is useful especially when you are editing a long ProcessMaker Script.
-7. Click **Close** or the **Close** icon![](../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The JSON configuration script is saved.
+7. Click **Close** or the **Close** icon![](../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png).
 
 {% hint style="info" %}
 You can enter your JSON configuration script directly into the **Script Configuration** option instead of using the **Script Config Editor**.
@@ -218,7 +218,7 @@ Follow these steps to edit the identifier value for a Script Task element:
 
    ![](../../../.gitbook/assets/script-task-configuration-identifier-name-process-modeler-processes.png)
 
-4. In the **Node Identifier** setting, edit the Script Task element's identifier to a unique value from all elements in the Process model and then press **Enter**. The element's identifier value is changed.
+4. In the **Node Identifier** setting, edit the Script Task element's identifier to a unique value from all elements in the Process model and then press **Enter**.
 
 ## Related Topics
 
