@@ -72,10 +72,17 @@ A Message Start Event element represents the start of a [Request](../../../using
 
 This message may originate from any of the following:
 
-* **Intermediate Message Throw Event element:** An Intermediate Message Throw Event sends a message to the Message Start Event. Use this functionality to start a different Process's Request while the Request that sends the message is in progress. If the Message Start Event element is in the same Process model as the Intermediate Message Throw Event element for which it listens for its message, these elements must be in separate [Pool](process-modeling-element-descriptions.md#pool) elements.
+* **Intermediate Message Throw Event element:** An Intermediate Message Throw Event sends a message to the Message Start Event. Use this functionality to start a different Process's Request while the Request that sends the message is in progress. If the Message Start Event element is in the same Process model as the Intermediate Message Throw Event element for which it listens for its message, these elements must be in separate [Pool](process-modeling-element-descriptions.md#pool) elements since each Pool element has its own Request.
 * **Message End Event element:** A Message End Event sends a message to the Message Start Event. Use this functionality to start a different Process's Request when the Request that sends the message completes. If the Message Start Event element is in the same Process model as the Message End Event element for which it listens for its message, these elements must be in separate Pool elements.
-* **ProcessMaker API:** Start a Request using the ProcessMaker API. To view the ProcessMaker API documentation in your ProcessMaker instance, see [Access ProcessMaker API Documentation](../../../processmaker-api-documentation/access-processmaker-api-documentation.md).
-* **Third-party service:** A third-party service such as a CRM may send a message to the Message Start Event to start a Request.
+* **Third-party service:** A third-party service such as a CRM may send a message via the ProcessMaker API to the Message Start Event, thereby starting a Request.
+
+Below is a Message Start Event element when it has been placed into a Process model.
+
+![Message Start Event](../../../.gitbook/assets/message-start-event-process-modeler-processes.png)
+
+{% hint style="info" %}
+See [Add and Configure Message Start Event Elements](add-and-configure-message-start-event-elements.md).
+{% endhint %}
 
 ### Intermediate Timer Event
 

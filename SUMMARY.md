@@ -166,6 +166,7 @@
     * [Filter Elements and Controls](designing-processes/process-design/model-your-process/filter-elements-in-the-bpmn-panel.md)
     * [Add and Configure Start Event Elements](designing-processes/process-design/model-your-process/add-and-configure-an-event-element.md)
     * [Add and Configure Start Timer Event Elements](designing-processes/process-design/model-your-process/add-and-configure-start-timer-event-elements.md)
+    * [Add and Configure Message Start Event Elements](designing-processes/process-design/model-your-process/add-and-configure-message-start-event-elements.md)
     * [Add and Configure Intermediate Timer Event Elements](designing-processes/process-design/model-your-process/add-and-configure-intermediate-timer-event-elements.md)
     * [Add and Configure Intermediate Message Catch Event Elements](designing-processes/process-design/model-your-process/add-and-configure-intermediate-message-catch-event-elements.md)
     * [Add and Configure End Event Elements](designing-processes/process-design/model-your-process/add-and-configure-end-event-elements.md)
