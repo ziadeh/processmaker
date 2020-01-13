@@ -18,6 +18,8 @@ When the Actions By Email connector triggers during an in-progress Request, Proc
 
 ![Example email the Actions By Email connector sends to an email recipient](../../../../.gitbook/assets/actions-by-email-package.png)
 
+While the Actions by Email connector can send the email to multiple email recipients, ProcessMaker registers only the first response.
+
 After the email recipient clicks a button to indicate the decision, the email client creates an email reply to be delivered to the ProcessMaker instance that used the Actions By Email connector. As indicated in the email reply, do not change anything below the automatically generated response because this response notifies the ProcessMaker instance of the email recipient's decision for Request routing.
 
 ![Automatically generated email reply the email recipient sends to the ProcessMaker instance](../../../../.gitbook/assets/actions-by-email-response-package-processes.png)
