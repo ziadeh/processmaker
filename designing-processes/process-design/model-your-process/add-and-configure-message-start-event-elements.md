@@ -77,14 +77,14 @@ Follow these steps to edit the name for a Message Start Event element:
 
 #### Select the Element from Which to Listen for a Message
 
-A Message Start Event element represents the start of a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process triggered from a message. The Message Start Event element listens for a message from a specified source. Only BPMN elements placed into the Process model that may send a message are available.
+A Message Start Event element represents the start of a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process triggered from a message. The Message Start Event element listens for a message from a specified source. In Process Modeler, only Intermediate Message Throw Event and Message End Event elements placed into the Process model are available. Select from which element to listen for a message based on the Intermediate Message Throw Event or Message End Event element's **Message Name** setting value.
 
-Follow these steps to select from which BPMN element from which to listen for a message to trigger the Message Start Event element:
+Follow these steps to select from which element to listen for a message to trigger the Message Start Event element:
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Message Start Event element from the Process model in which to select the Process model element from which to listen for a message. Panels to configure this element display.
 3. Expand the **Configuration** panel if it is not presently expanded and then locate the **Listen For Message** setting. ![](../../../.gitbook/assets/message-start-event-configuration-listen-process-modeler-processes.png) 
-4. From the **Listen For Message** drop-down menu, select from which BPMN element to listen for a message.
+4. From the **Listen For Message** drop-down menu, select from which element to listen for a message based on its **Message Name** setting value.
 
 ### Advanced Panel Settings
 
