@@ -57,10 +57,10 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The Start Timer Event element has the following panels that contain settings:
 
 * **Configuration** panel
-  * [Edit the element name](add-and-configure-start-timer-event-elements.md#edit-the-element-name)
+  * [Edit the element name](add-and-configure-message-start-event-elements.md#edit-the-element-name)
   * [Select the element from which to listen for a message](add-and-configure-message-start-event-elements.md#select-the-element-from-which-to-listen-for-a-message)
 * **Advanced** panel
-  * [Edit the element's identifier value](add-and-configure-start-timer-event-elements.md#edit-the-elements-identifier-value)
+  * [Edit the element's identifier value](add-and-configure-message-start-event-elements.md#edit-the-elements-identifier-value)
 
 ### Configuration Panel Settings
 
@@ -106,4 +106,14 @@ Follow these steps to edit the identifier value for a Message Start Event elemen
 ## Related Topics
 
 
+
+{% page-ref page="process-modeling-element-descriptions.md" %}
+
+{% page-ref page="../../viewing-processes/view-the-list-of-processes/view-your-processes.md" %}
+
+{% page-ref page="../../viewing-processes/view-the-list-of-processes/create-a-process.md" %}
+
+{% page-ref page="../../../using-processmaker/requests/what-is-a-request.md" %}
+
+{% page-ref page="../remove-process-model-elements.md" %}
 
