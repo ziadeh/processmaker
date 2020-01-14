@@ -169,6 +169,7 @@
     * [Add and Configure Message Start Event Elements](designing-processes/process-design/model-your-process/add-and-configure-message-start-event-elements.md)
     * [Add and Configure Intermediate Timer Event Elements](designing-processes/process-design/model-your-process/add-and-configure-intermediate-timer-event-elements.md)
     * [Add and Configure Intermediate Message Catch Event Elements](designing-processes/process-design/model-your-process/add-and-configure-intermediate-message-catch-event-elements.md)
+    * [Add and Configure Intermediate Message Throw Event Elements](designing-processes/process-design/model-your-process/add-and-configure-intermediate-message-throw-event-elements.md)
     * [Add and Configure End Event Elements](designing-processes/process-design/model-your-process/add-and-configure-end-event-elements.md)
     * [Add and Configure Task Elements](designing-processes/process-design/model-your-process/add-and-configure-task-elements.md)
     * [Add and Configure Manual Task Elements](designing-processes/process-design/model-your-process/add-and-configure-manual-task-elements.md)
