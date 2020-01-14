@@ -77,7 +77,7 @@ Follow these steps to edit the name for a Message Start Event element:
 
 #### Select the Element from Which to Listen for a Message
 
-A Message Start Event element represents the start of a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process triggered from a message. The Message Start Event element listens for a message from a specified source. In Process Modeler, only Intermediate Message Throw Event and Message End Event elements placed into the Process model are available. Select from which element to listen for a message based on the Intermediate Message Throw Event or Message End Event element's **Message Name** setting value.
+A Message Start Event element starts a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process when it triggers from a message. The Message Start Event element listens for a message from a specified source. In Process Modeler, only Intermediate Message Throw Event and Message End Event elements placed into the Process model are available. Select from which element to listen for a message based on the Intermediate Message Throw Event or Message End Event element's **Message Name** setting value.
 
 Follow these steps to select from which element to listen for a message to trigger the Message Start Event element:
 
