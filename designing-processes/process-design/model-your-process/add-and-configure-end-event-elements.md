@@ -1,5 +1,5 @@
 ---
-description: Add and configure Start Event elements in your Process model.
+description: Add and configure End Event elements in your Process model.
 ---
 
 # Add and Configure End Event Elements
