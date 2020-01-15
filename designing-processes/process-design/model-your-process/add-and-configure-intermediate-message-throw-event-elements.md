@@ -56,10 +56,10 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 The Intermediate Message Throw Event element has the following panels that contain settings:
 
 * **Configuration** panel
-  * [Edit the element name](add-and-configure-intermediate-message-catch-event-elements.md#edit-the-element-name)
+  * [Edit the element name](add-and-configure-intermediate-message-throw-event-elements.md#edit-the-element-name)
   * [Edit the message name](add-and-configure-intermediate-message-throw-event-elements.md#edit-the-message-name)
 * **Advanced** panel
-  * [Edit the element's identifier value](add-and-configure-intermediate-message-catch-event-elements.md#edit-the-elements-identifier-value)
+  * [Edit the element's identifier value](add-and-configure-intermediate-message-throw-event-elements.md#edit-the-elements-identifier-value)
 
 ### Configuration Panel Settings
 

@@ -186,19 +186,19 @@ See [Add and Configure End Event Elements](add-and-configure-end-event-elements.
 
 ### Message End Event
 
-A Message End Event element sends a message to a [Message Start Event](process-modeling-element-descriptions.md#message-start-event) or an [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-throw-event) element. The purpose of the message transfer is to convey data between Requests running from the same Process model since each [Pool](process-modeling-element-descriptions.md#pool) element represents its own Request with its own distinct Request data.
+A Message End Event element sends a message to a [Message Start Event](process-modeling-element-descriptions.md#message-start-event) or an [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-throw-event) element when the Request using the Message End Event element completes. The purpose of the message transfer is to convey data between Requests running from the same Process model since each [Pool](process-modeling-element-descriptions.md#pool) element represents its own Request with its own distinct Request data.
 
 A [Message Flow](process-modeling-element-descriptions.md#message-flow) element can connect from the Message End Event element to the element listening for its message.
 
 A Message End Event element functions as follows during a Request:
 
-* The Message End Event element triggers.
+* The Message End Event element triggers when the Request using it completes.
 * The Message End Event element sends its message. The message has a name which is a placeholder for the Request data it sends to the catching element.
 * If the message name matches that for which the catching element is listening, then that element triggers.
 
 Below is a Message End Event element when it has been placed into a Process model.
 
-![Message End Event element](../../../.gitbook/assets/message-end-event-process-modeler-processes.png)
+![Message End Event element](../../../.gitbook/assets/message-end-event-process-modeler-processes%20%281%29.png)
 
 {% hint style="info" %}
 See [Add and Configure Message End Event Elements](add-and-configure-message-end-event-elements.md).
