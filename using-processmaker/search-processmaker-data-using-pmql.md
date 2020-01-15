@@ -15,6 +15,7 @@ Use PMQL in the following ways:
 * **Requests:** Perform [advanced searches to find Request summaries](requests/search-for-a-request.md#advanced-search-for-a-request).
 * **Tasks:** Perform [advanced searches through your Tasks](task-management/search-for-a-task.md#advanced-search-for-a-task).
 * **ProcessMaker Collection records:** [Search through the records](../collections/manage-records-in-a-collection/search-for-a-record-in-a-collection.md#search-records-in-a-processmaker-collection) in a ProcessMaker Collection.
+* **ProcessMaker Scripts:** Include PMQL searches in a ProcessMaker Script such that the search occurs when the Script runs.
 
 PMQL is customized with particular syntax parameters to find ProcessMaker data unique to each of these ProcessMaker data. See the following sections regarding how to use PMQL:
 

@@ -57,7 +57,7 @@ The Intermediate Message Throw Event element has the following panels that conta
 
 * **Configuration** panel
   * [Edit the element name](add-and-configure-intermediate-message-catch-event-elements.md#edit-the-element-name)
-  * 
+  * [Edit the message name](add-and-configure-intermediate-message-throw-event-elements.md#edit-the-message-name)
 * **Advanced** panel
   * [Edit the element's identifier value](add-and-configure-intermediate-message-catch-event-elements.md#edit-the-elements-identifier-value)
 
@@ -74,16 +74,16 @@ Follow these steps to edit the name for an Intermediate Message Catch Event elem
 3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../.gitbook/assets/intermediate-message-throw-event-configuration-name-process-modeler-processes.png) 
 4. In the **Name** setting, edit the selected element's name and then press **Enter**.
 
-#### Configure How to Trigger an Intermediate Message Catch Event Element
+#### Edit the Message Name
 
-An Intermediate Message Catch Event element delays a [Request](../../../using-processmaker/requests/what-is-a-request.md) until that element receives a message from either an Intermediate Message Throw Event element or a Message End Event element \(but not both\) located in a different [Pool](process-modeling-element-descriptions.md#pool) element than the Intermediate Message Catch Event element receiving the message. After the Intermediate Message Catch Event element receives its message, that element triggers. In Process Modeler, only Intermediate Message Throw Event and Message End Event elements are available that are placed in a different Pool element within the Process model. Select from which element to listen for a message based on the Intermediate Message Throw Event or Message End Event element's **Message Name** setting value.
+The Intermediate Message Throw Event element uses a message name as a placeholder for the Request data that this element sends to a catching element. When a [Message Start Event](process-modeling-element-descriptions.md#message-start-event) element or an [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) element listens for a message, it references the Intermediate Message Throw Event element's message name.
 
-Follow these steps to configure how to trigger an Intermediate Message Catch Event element:
+Follow these steps to configure how to trigger an Intermediate Message Throw Event element:
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Intermediate Message Catch Event element from the Process model in which to configure how it is triggered. Panels to configure this element display.
-3. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Listen For Message** setting. ![](../../../.gitbook/assets/listen-for-message-intermediate-message-catch-event-process-modeler-processes.png) 
-4. From the **Listen For Message** drop-down menu, select from which Intermediate Message Throw Event element or End Event element triggers the Intermediate Message Catch Event element.
+2. Select the Intermediate Message Throw Event element from the Process model in which to configure its message name. Panels to configure this element display.
+3. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Message Name** setting. ![](../../../.gitbook/assets/intermediate-message-throw-event-configuration-message-name-process-modeler-processes.png)
+4. In the **Message Name** setting, edit the message name that a catching element references to listen for the Intermediate Message Throw Event's message.
 
 ### Advanced Panel Settings
 
@@ -95,17 +95,22 @@ Process Modeler automatically assigns a unique value to each Process element add
 All identifier values for all elements in the Process model must be unique.
 {% endhint %}
 
-Follow these steps to edit the identifier value for an Intermediate Message Catch Event element:
+Follow these steps to edit the identifier value for an Intermediate Message Throw Event element:
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Intermediate Message Catch Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
-3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required setting.  
-
-   ![](../../../.gitbook/assets/identifier-intermediate-message-catch-event-process-modeler-processes.png)
-
-4. In the **Node Identifier** setting, edit the Intermediate Message Catch Event element's identifier to a unique value from all elements in the Process model and then press **Enter**.
+2. Select the Intermediate Message Throw Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required setting. ![](../../../.gitbook/assets/intermediate-message-throw-event-configuration-identifier-process-modeler-processes.png) 
+4. In the **Node Identifier** setting, edit the Intermediate Message Throw Event element's identifier to a unique value from all elements in the Process model and then press **Enter**.
 
 ## Related Topics
 
+{% page-ref page="process-modeling-element-descriptions.md" %}
 
+{% page-ref page="../../viewing-processes/view-the-list-of-processes/view-your-processes.md" %}
+
+{% page-ref page="../../viewing-processes/view-the-list-of-processes/create-a-process.md" %}
+
+{% page-ref page="../remove-process-model-elements.md" %}
+
+{% page-ref page="set-and-delete-message-flow-between-elements.md" %}
 

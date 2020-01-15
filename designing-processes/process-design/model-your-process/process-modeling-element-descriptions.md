@@ -35,7 +35,9 @@ Use event-type elements to represent an event, milestone, or delay in the Proces
 * [Message Start Event](process-modeling-element-descriptions.md#message-start-event)
 * [Intermediate Timer Event](process-modeling-element-descriptions.md#intermediate-timer-event)
 * [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event)
+* [Intermediate Message Throw Event](process-modeling-element-descriptions.md#intermediate-message-throw-event)
 * [End Event](process-modeling-element-descriptions.md#end-event)
+* [Message End Event](process-modeling-element-descriptions.md#message-end-event)
 
 ### Start Event
 
@@ -77,6 +79,12 @@ This message may originate from any of the following:
 * **Message End Event element:** A [Message End Event](process-modeling-element-descriptions.md#message-end-event) element sends a message to the Message Start Event. Use this functionality to start a different Process's Request when the Request that sends the message completes. If the Message Start Event element is in the same Process model as the Message End Event element for which it listens for its message, these elements must be in separate Pool elements.
 * **Third-party service:** A third-party service such as a CRM may send a message via the [ProcessMaker API](../../../processmaker-api-documentation/access-processmaker-api-documentation.md) to the Message Start Event, thereby starting a Request.
 
+A Message Start Event element functions as follows during a Request:
+
+* The Intermediate Message Throw Event element or Message End Event element triggers.
+* That triggering element sends its message to the Message Start Event element.
+* The Message Start Event triggers, thereby starting that Request.
+
 Below is a Message Start Event element when it has been placed into a Process model.
 
 ![Message Start Event](../../../.gitbook/assets/message-start-event-process-modeler-processes.png)
@@ -99,15 +107,13 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 ### Intermediate Message Catch Event
 
-An Intermediate Message Catch Event element delays a [Request](../../../using-processmaker/requests/what-is-a-request.md) until that element receives a message.
+An Intermediate Message Catch Event element delays a [Request](../../../using-processmaker/requests/what-is-a-request.md) until that element receives a message. The purpose of the message transfer is to convey data between Requests running from the same Process model since each Pool element represents its own Request with its own distinct Request data. As part of this information transfer, workflow is affected in the Pool element's Request that contains the Intermediate Message Catch Event element.
 
 This message may originate from any of the following:
 
-* **Intermediate Message Throw Event element:** An [Intermediate Message Throw Event](process-modeling-element-descriptions.md#intermediate-message-throw-event) element sends a message to the Intermediate Message Catch Event. Use this functionality to resume workflow start a different Process's Request while the Request that sends the message is in progress. If the Message Start Event element is in the same Process model as the Intermediate Message Throw Event element for which it listens for its message, these elements must be in separate [Pool](process-modeling-element-descriptions.md#pool) elements since each Pool element has its own Request.
-* **Message End Event element:** A [Message End Event](process-modeling-element-descriptions.md#message-end-event) element sends a message to the Message Start Event. Use this functionality to start a different Process's Request when the Request that sends the message completes. If the Message Start Event element is in the same Process model as the Message End Event element for which it listens for its message, these elements must be in separate Pool elements.
-* **Third-party service:** A third-party service such as a CRM may send a message via the [ProcessMaker API](../../../processmaker-api-documentation/access-processmaker-api-documentation.md) to the Message Start Event, thereby starting a Request.
-
-from either an [Intermediate Message Throw Event](process-modeling-element-descriptions.md#intermediate-message-throw-event) element or a [Message End Event](process-modeling-element-descriptions.md#message-end-event) element \(but not both\) located in a different [Pool](process-modeling-element-descriptions.md#pool) element than the Intermediate Message Catch Event element receiving the message. After the Intermediate Message Catch Event element receives its message, that element triggers. The purpose of the message transfer is to convey data between Requests running from the same Process model since each Pool element represents its own Request with its own distinct Request data. As part of this information transfer, workflow is affected in the Pool element's Request that contains the Intermediate Message Catch Event element.
+* **Intermediate Message Throw Event element:** An [Intermediate Message Throw Event](process-modeling-element-descriptions.md#intermediate-message-throw-event) element sends a message to the Intermediate Message Catch Event. Use this functionality to resume workflow to the Process Request using the Intermediate Message Catch Event element from another Request. If the Intermediate Message Catch Event element is in the same Process model as the Intermediate Message Throw Event element for which it listens for its message, these elements must be in separate [Pool](process-modeling-element-descriptions.md#pool) elements since each Pool element has its own Request.
+* **Message End Event element:** A [Message End Event](process-modeling-element-descriptions.md#message-end-event) element sends a message to the Intermediate Message Catch Event. Use this functionality to resume  workflow to the Process Request using the Intermediate Message Catch Event element when the Request that sends the message completes. If the Intermediate Message Catch Event element is in the same Process model as the Message End Event element for which it listens for its message, these elements must be in separate Pool elements.
+* **Third-party service:** A third-party service such as a CRM may send a message via the [ProcessMaker API](../../../processmaker-api-documentation/access-processmaker-api-documentation.md) to the Intermediate Message Catch Event, thereby resuming workflow for that Request.
 
 A [Message Flow](process-modeling-element-descriptions.md#message-flow) element can connect from the element sending the message to the Intermediate Message Catch Event element. Ensure that Intermediate Message Catch Event element and its triggering element are in different Pool elements. When configuring the Intermediate Message Catch Event element during Process modeling, select which message from the triggering element sends to the Intermediate Message Catch Event element.
 
@@ -117,11 +123,11 @@ An Intermediate Message Catch Event element functions as follows during a Reques
 * That triggering element sends its message to the Intermediate Message Catch Event element.
 * The Intermediate Message Catch Event triggers. Workflow resumes in that Request.
 
-Consider the following example how the Intermediate Message Catch Event element functions. This is an overly simple purchase request and order fulfillment Process model.
+Consider the following example how the Intermediate Message Catch Event element functions. This example uses the Intermediate Message Throw Event element  in an overly simple purchase request and order fulfillment Process model.
 
 ![Simple Process model example to demonstrate how an Intermediate Message Catch Event functions](../../../.gitbook/assets/intermediate-throw-catch-event-example.png)
 
-Instead of using a [Message Start Event](process-modeling-element-descriptions.md#message-start-event) element in the "Purchase Fulfillment" Pool element to start that Request, use an Intermediate Message Catch Event element \(labeled "Catch from Order"\) after the Request has started.
+The Intermediate Message Catch Event element \(labeled "Catch from Order"\) is in the second Pool, "Purchase Fulfillment."
 
 After the "Purchase Fulfillment" Request starts, the following occurs:
 

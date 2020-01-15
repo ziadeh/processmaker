@@ -77,7 +77,7 @@ Follow these steps to edit the name for a Message Start Event element:
 
 #### Select the Element from Which to Listen for a Message
 
-A Message Start Event element starts a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process when it triggers from a message. The Message Start Event element listens for a message from a specified source. In Process Modeler, only [Intermediate Message Throw Event](process-modeling-element-descriptions.md#intermediate-message-throw-event) and Message End Event elements placed into the Process model are available. Select from which element to listen for a message based on the Intermediate Message Throw Event or Message End Event element's **Message Name** setting value.
+An Message Start Event element starts a [Request](../../../using-processmaker/requests/what-is-a-request.md) when that element receives a message from either an [Intermediate Message Throw Event](process-modeling-element-descriptions.md#intermediate-message-throw-event) element or a [Message End Event](process-modeling-element-descriptions.md#message-end-event) element \(but not both\) located in a different [Pool](process-modeling-element-descriptions.md#pool) element than the Message Start Event element receiving the message. After the Message Start Event element receives its message, that element triggers. Select from which element to listen for a message based on the Intermediate Message Throw Event or Message End Event element's **Message Name** setting value.
 
 Follow these steps to select from which element to listen for a message to trigger the Message Start Event element:
 
@@ -116,4 +116,6 @@ Follow these steps to edit the identifier value for a Message Start Event elemen
 {% page-ref page="../../../using-processmaker/requests/what-is-a-request.md" %}
 
 {% page-ref page="../remove-process-model-elements.md" %}
+
+{% page-ref page="set-and-delete-message-flow-between-elements.md" %}
 
