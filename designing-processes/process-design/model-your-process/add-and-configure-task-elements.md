@@ -119,7 +119,7 @@ Follow these steps to select a ProcessMaker Screen for a Task element:
 
    ![](../../../.gitbook/assets/screen-input-task-process-modeler-processes.png)
 
-4. From the **Screen For Input** drop-down menu, select which ProcessMaker Screen that Task element references. Only Email-type ProcessMaker Screens display from this drop-down menu.
+4. From the **Screen For Input** drop-down menu, select which ProcessMaker Screen that Task element references. Only Email-type ProcessMaker Screens display from this drop-down menu. After a ProcessMaker Screen is selected, the **Open Screen** link displays.
 5. Optionally, click the **Open Screen** link to view and/or edit your selected ProcessMaker Screen. Note that your ProcessMaker user account must have appropriate [Screen category](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions to view and/or edit the selected Screen.
 
 {% hint style="warning" %}

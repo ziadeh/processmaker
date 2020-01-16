@@ -38,6 +38,7 @@ Use event-type elements to represent an event, milestone, or delay in the Proces
 * [Intermediate Message Throw Event](process-modeling-element-descriptions.md#intermediate-message-throw-event)
 * [End Event](process-modeling-element-descriptions.md#end-event)
 * [Message End Event](process-modeling-element-descriptions.md#message-end-event)
+* [Error End Event](process-modeling-element-descriptions.md#error-end-event)
 
 ### Start Event
 
@@ -71,7 +72,7 @@ See [Add and Configure Start Timer Event Elements](add-and-configure-start-timer
 
 ### Message Start Event
 
-A Message Start Event element starts a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process when it triggers from a message. The Message Start Event element listens for a message from a specified source. The purpose of the message transfer is to convey data from one Pool element's Request data to another Pool element within the same Process model, thereby using the sent Request data to start a Request for the receiving Pool element; each Pool element represents its own Request with its own distinct Request data.
+A Message Start Event element starts a [Request](../../../using-processmaker/requests/what-is-a-request.md) for a Process when it triggers from a message. The Message Start Event element listens for a message from a specified source. The purpose of the message transfer is to send data from one Pool element's Request data to another Pool element within the same Process model, thereby using the sent Request data to start a Request for the receiving Pool element; each Pool element represents its own Request with its own distinct Request data.
 
 A [Message Flow](process-modeling-element-descriptions.md#message-flow) element can connect from the element sending the message to the Message Start Event element. A Process model can have multiple Message Start Event elements.
 
@@ -83,10 +84,10 @@ This message may originate from any of the following:
 
 A Message Start Event element functions as follows during a Request:
 
-* The Message Start Event element listens for a message based on that message's name. The message name is a placeholder for the message.
-* The Intermediate Message Throw Event element or Message End Event element triggers.
-* That triggering element sends its message containing Request data to the Message Start Event element.
-* If the message name matches that for which the Message Start Event element is listening, then that element triggers. The Request starts.
+1. The Message Start Event element listens for a message based on that message's name. The message name is a placeholder for the message.
+2. The Intermediate Message Throw Event element or Message End Event element triggers.
+3. That triggering element sends its message containing Request data to the Message Start Event element.
+4. If the message name matches that for which the Message Start Event element is listening, then that element triggers; the Request starts. Otherwise, the message is ignored.
 
 Below is a Message Start Event element when it has been placed into a Process model.
 
@@ -110,7 +111,7 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 ### Intermediate Message Catch Event
 
-An Intermediate Message Catch Event element delays a [Request](../../../using-processmaker/requests/what-is-a-request.md) until that element receives a message. The purpose of the message transfer is to convey data between Requests running from the same Process model since each Pool element represents its own Request with its own distinct Request data.
+An Intermediate Message Catch Event element delays a [Request](../../../using-processmaker/requests/what-is-a-request.md) until that element receives a message. The purpose of the message transfer is to send data between Requests running from the same Process model since each Pool element represents its own Request with its own distinct Request data.
 
 This message may originate from any of the following:
 
@@ -122,10 +123,10 @@ A [Message Flow](process-modeling-element-descriptions.md#message-flow) element 
 
 An Intermediate Message Catch Event element functions as follows during a Request:
 
-* Workflow in the Request using the Intermediate Message Catch Event element pauses when it reaches this event. The Intermediate Message Catch Event element listens for a message based on that message's name. The message name is a placeholder for the message.
-* The Intermediate Message Throw Event element or Message End Event element triggers.
-* That triggering element sends its message containing Request data to the Intermediate Message Catch Event element.
-* If the message name matches that for which the Intermediate Message Catch Event element is listening, then that element triggers. Workflow resumes in that Request.
+1. Workflow in the Request using the Intermediate Message Catch Event element pauses when it reaches this event. The Intermediate Message Catch Event element listens for a message based on that message's name. The message name is a placeholder for the message.
+2. The Intermediate Message Throw Event element or Message End Event element triggers.
+3. That triggering element sends its message containing Request data to the Intermediate Message Catch Event element.
+4. If the message name matches that for which the Intermediate Message Catch Event element is listening, then that element triggers; workflow resumes in that Request. Otherwise, the message is ignored.
 
 Consider the following example how the Intermediate Message Catch Event element functions. This example uses the Intermediate Message Throw Event element  in an overly simple purchase request and order fulfillment Process model.
 
@@ -135,10 +136,10 @@ The Intermediate Message Catch Event element \(labeled "Catch from Order"\) is i
 
 After the "Purchase Fulfillment" Request starts, the following occurs:
 
-* Workflow delays after the "Preparation" Task element.
-* When the Intermediate Message Throw Event element triggers from the "Purchase Order" Request \(labeled "Throw to Fulfillment"\), it sends its message to the Intermediate Message Catch Event element in the "Purchase Fulfillment" Request. Workflow continues in the "Purchase Order" Request to the End Event element.
-* In the "Purchase Fulfillment" Request, the Intermediate Message Catch Event element triggers and receives the Intermediate Message Throw Event element's message.
-* Workflow resumes in the "Purchase Fulfillment" Request.
+1. Workflow delays after the "Preparation" Task element.
+2. When the Intermediate Message Throw Event element triggers from the "Purchase Order" Request \(labeled "Throw to Fulfillment"\), it sends its message to the Intermediate Message Catch Event element in the "Purchase Fulfillment" Request. Workflow continues in the "Purchase Order" Request to the End Event element.
+3. In the "Purchase Fulfillment" Request, the Intermediate Message Catch Event element triggers and receives the Intermediate Message Throw Event element's message.
+4. Workflow resumes in the "Purchase Fulfillment" Request.
 
 Below is an Intermediate Message Catch Event element when it has been placed into a Process model.
 
@@ -150,15 +151,15 @@ See [Add and Configure Intermediate Timer Event Elements](add-and-configure-inte
 
 ### Intermediate Message Throw Event
 
-An Intermediate Message Throw Event element sends a message to a [Message Start Event](process-modeling-element-descriptions.md#message-start-event) or an [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-throw-event) element. The purpose of the message transfer is to convey data between Requests running from the same Process model since each [Pool](process-modeling-element-descriptions.md#pool) element represents its own Request with its own distinct Request data.
+An Intermediate Message Throw Event element sends a message to a [Message Start Event](process-modeling-element-descriptions.md#message-start-event) or an [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-throw-event) element. The purpose of the message transfer is to send data between Requests running from the same Process model since each [Pool](process-modeling-element-descriptions.md#pool) element represents its own Request with its own distinct Request data.
 
 A [Message Flow](process-modeling-element-descriptions.md#message-flow) element can connect from the Intermediate Message Throw Event element to the element listening for its message.
 
 An Intermediate Message Throw Event element functions as follows during a Request:
 
-* The Intermediate Message Throw Event element triggers.
-* The Intermediate Message Throw Event element sends its message. The message has a name which is a placeholder for the Request data it sends to the catching element.
-* If the message name matches that for which the catching element is listening, then that element triggers.
+1. The Intermediate Message Throw Event element triggers.
+2. The Intermediate Message Throw Event element sends its message. The message has a name which is a placeholder for the Request data it sends to the catching element.
+3. If the message name matches that for which the catching element is listening, then that element triggers. Otherwise, the message is ignored.
 
 {% hint style="info" %}
 See the [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) element description for a simple example how an Intermediate Message Throw Event element works.
@@ -186,7 +187,7 @@ See [Add and Configure End Event Elements](add-and-configure-end-event-elements.
 
 ### Message End Event
 
-A Message End Event element sends a message to a [Message Start Event](process-modeling-element-descriptions.md#message-start-event) or an [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-throw-event) element when the Request using the Message End Event element completes. The purpose of the message transfer is to convey data between Requests running from the same Process model since each [Pool](process-modeling-element-descriptions.md#pool) element represents its own Request with its own distinct Request data.
+A Message End Event element sends a message to a [Message Start Event](process-modeling-element-descriptions.md#message-start-event) or an [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-throw-event) element when the Request using the Message End Event element completes. The purpose of the message transfer is to send data between Requests running from the same Process model since each [Pool](process-modeling-element-descriptions.md#pool) element represents its own Request with its own distinct Request data.
 
 A [Message Flow](process-modeling-element-descriptions.md#message-flow) element can connect from the Message End Event element to the element listening for its message.
 
@@ -194,7 +195,7 @@ A Message End Event element functions as follows during a Request:
 
 * The Message End Event element triggers when the Request using it completes.
 * The Message End Event element sends its message. The message has a name which is a placeholder for the Request data it sends to the catching element.
-* If the message name matches that for which the catching element is listening, then that element triggers.
+* If the message name matches that for which the catching element is listening, then that element triggers. Otherwise, the message is ignored.
 
 Below is a Message End Event element when it has been placed into a Process model.
 
@@ -203,6 +204,25 @@ Below is a Message End Event element when it has been placed into a Process mode
 {% hint style="info" %}
 See [Add and Configure Message End Event Elements](add-and-configure-message-end-event-elements.md).
 {% endhint %}
+
+### Error End Event
+
+An Error End Event element sends an error before the Request to which it is used completes. The Error End Event element represents a business error, not a ProcessMaker technical error. A Boundary Error Event element must be associated with a [Task](process-modeling-element-descriptions.md#task) element, [Script Task](process-modeling-element-descriptions.md#script-task) element, and/or [Manual Task](process-modeling-element-descriptions.md#manual-task) element in a separate [Pool](process-modeling-element-descriptions.md#pool) element within the same Process model to receive the error. The purpose of sending the error is to provide an alternate business solution if the initial Request has a business error and to send data between Requests running from the same Process model since each Pool element represents its own Request with its own distinct Request data.
+
+An Error End Event element functions as follows during a Request:
+
+1. The Error End Event element triggers. The Request registers the error before the Request completes.
+2. One of the following occurs:
+   * **A Boundary Error Event element is in a separate Pool element:**
+     1. The Error End Event element sends the error to the Boundary Error Event element. The error has a name which is a placeholder for the Request data it sends to the Boundary Error Event element.
+     2. The status for the Request using the Error End Event element changes from In Progress to Error.
+     3. The Boundary Error Event element triggers from the separate Pool element. Workflow for that Request routes through this element.
+   * **A Boundary Error Event element is not in a separate Pool element:**
+     1. Since there is no Boundary Error Event element to receive the error from the separate Pool element, the error in the Error End Event element is ignored and that Request completes like an [End Event](process-modeling-element-descriptions.md#end-event) element.
+
+Below is an Error End Event element when it has been placed into a Process model.
+
+![Error End Event element](../../../.gitbook/assets/error-end-event-process-modeler-processes.png)
 
 ## Tasks
 
