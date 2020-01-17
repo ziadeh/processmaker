@@ -6,9 +6,9 @@ description: Add a control that displays HTML-formatted text.
 
 ## Control Description
 
-The Rich Text control displays HTML-formatted text. Use the What-You-See-Is-What-You-Get \(WYSIWYG\) editor to display a variety of text styles for the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant.
+The Rich Text control displays HTML-formatted text and images. Use the What-You-See-Is-What-You-Get \(WYSIWYG\) editor to display a variety of text styles for the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant. Reference an image to display in the Rich Text control using HTML syntax.
 
-Aside from rich text styles, the Rich Text control can display the following information regarding in-progress Requests:
+Aside from rich text styles and images, the Rich Text control can display the following information regarding in-progress Requests:
 
 * **Request data:** Display the value of another control in the same or different ProcessMaker [Screen](../../what-is-a-form.md) by referencing that control's **Variable Value** setting value using mustache syntax.
 
@@ -77,7 +77,7 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Select control in the **Configuration** panel:
 
-* **Content:** Enter the text to display in the Rich Text control using HTML syntax and/or mustache syntax. Alternatively, use the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to enter your text. Your text displays in the **Content** setting using HTML syntax. **Rich text editor** is the default value. See this [control's description](rich-text-control-settings.md#control-description) for information how to use mustache syntax.
+* **Content:** Enter the text and/or image to display in the Rich Text control using HTML syntax and/or mustache syntax. Alternatively, use the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to enter your text. Reference your image using HTML syntax. Your text and/or images display in the **Content** setting using HTML syntax. **Rich text editor** is the default value. See this [control's description](rich-text-control-settings.md#control-description) for information how to use mustache syntax.
 
 ### Advanced Panel Settings
 
