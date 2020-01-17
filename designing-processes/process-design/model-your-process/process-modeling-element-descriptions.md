@@ -207,22 +207,22 @@ See [Add and Configure Message End Event Elements](add-and-configure-message-end
 
 ### Error End Event
 
-An Error End Event element sends an error before the Request to which it is used completes. The Error End Event element represents a business error, not a ProcessMaker technical error. A Boundary Error Event element must be associated with a [Task](process-modeling-element-descriptions.md#task) element, [Script Task](process-modeling-element-descriptions.md#script-task) element, [Manual Task](process-modeling-element-descriptions.md#manual-task) element, or a [Sub Process](process-modeling-element-descriptions.md#sub-process) element in a separate [Pool](process-modeling-element-descriptions.md#pool) element within the same Process model to receive the error. The purpose of sending the error is to provide an alternate business solution if the initial Request has a business error and to send data between Requests running from the same Process model since each Pool element represents its own Request with its own distinct Request data.
+An Error End Event element records the error before the Request completes if an error occurs. The purpose of sending the error is to provide an alternate business solution if expected workflow routing experiences an error.
 
-An Error End Event element functions as follows during a Request:
+Use an Error End Event element in the following ways:
 
-1. The Error End Event element triggers. The Request registers the error before the Request completes.
-2. One of the following occurs:
-   * **A Boundary Error Event element is in a separate Pool element:**
-     1. The Error End Event element sends the error to the Boundary Error Event element. The error has a name which is a placeholder for the Request data it sends to the Boundary Error Event element.
-     2. The status for the Request using the Error End Event element changes from In Progress to Error.
-     3. The Boundary Error Event element triggers from the separate Pool element. Workflow for that Request routes through this element.
-   * **A Boundary Error Event element is not in a separate Pool element:**
-     1. Since there is no Boundary Error Event element to receive the error from the separate Pool element, the error in the Error End Event element is ignored and that Request completes like an [End Event](process-modeling-element-descriptions.md#end-event) element.
+* **In a Pool element:** If an Error End Event element records an error during a Request within a [Pool](process-modeling-element-descriptions.md#pool) element \(or the Process model does not use a Pool element\), that Request completes but shows the error in the [Completed Request summary](../../../using-processmaker/requests/request-details/summary-for-completed-requests.md). If a Process model contains more than one Pool element, the Error End Event element does not affect workflow for the Request\(s\) in the other Pool element\(s\).
+* **In a child Process called from a parent Process's Sub Process element:** If an Error End Event element records an error during a Request for a child Process called from a parent Process's [Sub Process](process-modeling-element-descriptions.md#sub-process) element, that error is sent to the Sub Process element when the child Process's Request completes. One of the following occurs:
+  * **The Sub Process element has an associated Boundary Error Event element:** Workflow in the parent Process's Request routes through the Boundary Error Event element. If the Boundary Error Event element is not configured to interrupt workflow, workflow also resumes as if the error had not occurred in the child Request. Use this Process design to handle errors from the child Request.
+  * **The Sub Process does not have an associated Boundary Error Event element:** Workflow resumes in the parent Process's Request as if the error had not occurred in the child Request.
 
 Below is an Error End Event element when it has been placed into a Process model.
 
 ![Error End Event element](../../../.gitbook/assets/error-end-event-process-modeler-processes.png)
+
+{% hint style="info" %}
+See [Add and Configure Error End Event Elements](add-and-configure-error-end-event-elements.md).
+{% endhint %}
 
 ## Tasks
 
