@@ -240,10 +240,12 @@ A Boundary Timer Event element represents that alternate workflow routing occurs
 
 Configure Boundary Timer Event elements with either interrupting or non-interrupting workflow:
 
-* **Interrupting workflow:** When workflow routes through the Boundary Timer Event element, workflow is interrupted and does not route through the intended workflow.
-* **Non-interrupting workflow:** Workflow routes both through the Boundary Timer Event element and the intended workflow, thereby creating parallel workflow in that Request.
+* **Interrupting workflow:** When workflow routes through the Boundary Timer Event element, workflow is interrupted and does not route through the intended workflow. ![](../../../.gitbook/assets/interrupting-boundary-event-processes.png) 
+* **Non-interrupting workflow:** Workflow routes both through the Boundary Timer Event element and the intended workflow, thereby creating parallel workflow in that Request. ![](../../../.gitbook/assets/non-interrupting-boundary-event-processes.png) 
 
 Below is a Boundary Timer Event element when it is associated with a Task element. A Boundary Timer Event may also be associated with a Script Task element, Manual Task element, or Sub Process element.
+
+![Boundary Timer Event element associated with a Task element](../../../.gitbook/assets/boundary-timer-event-process-modeler-processes.png)
 
 ### Boundary Error Event
 
