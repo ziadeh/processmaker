@@ -28,7 +28,7 @@ See the [Process](../../../processmaker-administration/permission-descriptions-f
 
 ## Events
 
-Use event-type elements to represent an event, milestone, or delay in the Process. ProcessMaker provides the following event type Process model elements:
+Use event-type elements to represent when a type of event occurs. These event types specify when a timer, message, or error occurs in the Process. ProcessMaker provides the following event-type Process model elements:
 
 * [Start Event](process-modeling-element-descriptions.md#start-event)
 * [Start Timer Event](process-modeling-element-descriptions.md#start-timer-event)
@@ -39,6 +39,12 @@ Use event-type elements to represent an event, milestone, or delay in the Proces
 * [End Event](process-modeling-element-descriptions.md#end-event)
 * [Message End Event](process-modeling-element-descriptions.md#message-end-event)
 * [Error End Event](process-modeling-element-descriptions.md#error-end-event)
+
+The following are event-type Process model elements that represent when alternative workflow routing occurs with [Task](process-modeling-element-descriptions.md#task) element, [Script Task](process-modeling-element-descriptions.md#script-task) element, [Manual Task](process-modeling-element-descriptions.md#manual-task) element, and/or [Sub Process](process-modeling-element-descriptions.md#sub-process) element in the Process. Use these event-type Process model elements to design business solutions when expected or nominal business workflow do not occur:
+
+* [Boundary Timer Event](process-modeling-element-descriptions.md#boundary-timer-event)
+* [Boundary Error Event](process-modeling-element-descriptions.md#boundary-error-event)
+* [Boundary Message Event](process-modeling-element-descriptions.md#boundary-message-event)
 
 ### Start Event
 
@@ -223,6 +229,29 @@ Below is an Error End Event element when it has been placed into a Process model
 {% hint style="info" %}
 See [Add and Configure Error End Event Elements](add-and-configure-error-end-event-elements.md).
 {% endhint %}
+
+### Boundary Timer Event
+
+A Boundary Timer Event element represents that alternate workflow routing occurs when a specified amount of time expires with a [Task](process-modeling-element-descriptions.md#task) element, [Script Task](process-modeling-element-descriptions.md#script-task) element, [Manual Task](process-modeling-element-descriptions.md#manual-task) element, or [Sub Process](process-modeling-element-descriptions.md#sub-process) element. Workflow routes through the Boundary Timer Event element when the specified time expires. Use a Boundary Timer Event element to design business solutions when intended and nominal workflow in your Process do not occur in an expected period of time. Consider these examples:
+
+* **Escalate Task problems:** When a Task assignee does not complete a Task when it is due, escalate to that assignee's manager to ensure project tasks are completed on schedule.
+*  **ProcessMaker Script fail-safe:** If a ProcessMaker Script does not complete in a period of time, route workflow to a system administrator to investigate why the Script provided no response.
+* **Escalate child sub-process problems:** If the Request for a child Sub Process does not complete in a required period of time, route workflow to a manager's Task in the parent Process's Request so that the child Request does not delay the parent Request.
+
+Configure Boundary Timer Event elements with either interrupting or non-interrupting workflow:
+
+* **Interrupting workflow:** When workflow routes through the Boundary Timer Event element, workflow is interrupted and does not route through the intended workflow.
+* **Non-interrupting workflow:** Workflow routes both through the Boundary Timer Event element and the intended workflow, thereby creating parallel workflow in that Request.
+
+Below is a Boundary Timer Event element when it is associated with a Task element. A Boundary Timer Event may also be associated with a Script Task element, Manual Task element, or Sub Process element.
+
+### Boundary Error Event
+
+
+
+### Boundary Message Event
+
+
 
 ## Tasks
 
