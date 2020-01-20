@@ -78,7 +78,7 @@ Follow these steps to edit the name for an Intermediate Message Catch Event elem
 
 The Intermediate Message Throw Event element uses a message name as a placeholder for the Request data that this element sends to a catching element. When a [Message Start Event](process-modeling-element-descriptions.md#message-start-event) element or an [Intermediate Message Catch Event](process-modeling-element-descriptions.md#intermediate-message-catch-event) element listens for a message, it references the Intermediate Message Throw Event element's message name.
 
-Follow these steps to configure how to trigger an Intermediate Message Throw Event element:
+Follow these steps to configure the message name for an Intermediate Message Throw Event element:
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Intermediate Message Throw Event element from the Process model in which to configure its message name. Panels to configure this element display.

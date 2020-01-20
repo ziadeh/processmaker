@@ -57,7 +57,7 @@ The Intermediate Message Catch Event element has the following panels that conta
 
 * **Configuration** panel
   * [Edit the element name](add-and-configure-intermediate-message-catch-event-elements.md#edit-the-element-name)
-  * [Configure how to trigger an Intermediate Message Catch Event element](add-and-configure-intermediate-message-catch-event-elements.md#configure-how-to-trigger-an-intermediate-message-catch-event-element)
+  * Configure how to trigger an Intermediate Message Catch Event element
 * **Vocabularies** panel \(available when the [Vocabularies package](../../../package-development-distribution/package-a-connector/vocabularies.md) is installed\)
   * [Assign ProcessMaker Vocabularies that validate Request data from this element](add-and-configure-intermediate-message-catch-event-elements.md#assign-processmaker-vocabularies-that-validate-request-data-from-this-element)
 * **Advanced** panel

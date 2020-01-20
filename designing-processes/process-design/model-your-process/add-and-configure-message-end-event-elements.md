@@ -7,7 +7,7 @@ description: Add and configure Message End Event elements in your Process model.
 ## Add a Message End Event Element
 
 {% hint style="info" %}
-### Don't Know What an End Event Is?
+### Don't Know What a Message End Event Is?
 
 See [Process Modeling Element Descriptions](process-modeling-element-descriptions.md) for a description of the [Message End Event](process-modeling-element-descriptions.md#message-end-event) element.
 
