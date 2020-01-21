@@ -6,7 +6,7 @@
 
 * [ProcessMaker Home](https://www.processmaker.com/)
 * [Download ProcessMaker Open-Source Edition](https://github.com/ProcessMaker/processmaker/releases)
-* [Contact Sales](mailto:sales@processmaker.com)
+* [Contact Sales](https://www.processmaker.com/contact/)
 * [Contact Support](mailto:support@processmaker.com)
 * [Provide Feedback](https://docs.google.com/forms/d/e/1FAIpQLScnYje8uTACYwp3VxdRoA26OFkbfFs6kuXofqY-QXXsG-h9xA/viewform)
 * [Privacy Statement](https://www.processmaker.com/privacy-statement)
