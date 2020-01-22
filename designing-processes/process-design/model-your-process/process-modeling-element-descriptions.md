@@ -232,18 +232,22 @@ See [Add and Configure Error End Event Elements](add-and-configure-error-end-eve
 
 ### Boundary Timer Event
 
-A Boundary Timer Event element represents that alternate workflow routing occurs when a specified amount of time expires with a [Task](process-modeling-element-descriptions.md#task) element, [Script Task](process-modeling-element-descriptions.md#script-task) element, [Manual Task](process-modeling-element-descriptions.md#manual-task) element, or [Sub Process](process-modeling-element-descriptions.md#sub-process) element. Workflow routes through the Boundary Timer Event element when the specified time expires. Use a Boundary Timer Event element to design business solutions when intended and nominal workflow in your Process do not occur in an expected period of time. Consider these examples:
+A Boundary Timer Event element represents alternate workflow routing when a specified amount of time expires with a [Task](process-modeling-element-descriptions.md#task) element, [Script Task](process-modeling-element-descriptions.md#script-task) element, [Manual Task](process-modeling-element-descriptions.md#manual-task) element, or [Sub Process](process-modeling-element-descriptions.md#sub-process) element. Workflow routes through the Boundary Timer Event element when the specified time expires. Use a Boundary Timer Event element to design business solutions when intended or best-case workflow in your Process does not occur in an expected period of time. Consider these examples:
 
 * **Escalate Task problems:** When a Task assignee does not complete a Task when it is due, escalate to that assignee's manager to ensure project tasks are completed on schedule.
-*  **ProcessMaker Script fail-safe:** If a ProcessMaker Script does not complete in a period of time, route workflow to a system administrator to investigate why the Script provided no response.
+* **ProcessMaker Script fail-safe:** If a ProcessMaker Script does not complete in a period of time, route workflow to a system administrator to investigate why the Script provided no response.
 * **Escalate child sub-process problems:** If the Request for a child Sub Process does not complete in a required period of time, route workflow to a manager's Task in the parent Process's Request so that the child Request does not delay the parent Request.
 
 Use a [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element to indicate workflow routing if the Boundary Timer Event element triggers: when the configured timer expires before the associated element completes.
 
+{% hint style="info" %}
+An element associated with a Boundary Timer Event may also associate with a [Boundary Error Event](process-modeling-element-descriptions.md#boundary-error-event) and/or a [Boundary Message Event](process-modeling-element-descriptions.md#boundary-message-event) in the same element.
+{% endhint %}
+
 Configure Boundary Timer Event elements with either interrupting or non-interrupting workflow:
 
-* **Interrupting workflow:** When workflow routes through the Boundary Timer Event element, workflow is interrupted and does not route through the best-case workflow. As highlighted in the example below, workflow routes through the Boundary Timer Event element if the Manual Task element does not complete within 30 minutes. ![](../../../.gitbook/assets/boundary-event-interrupting-processes%20%281%29.png) 
-* **Non-interrupting workflow:** Workflow routes both through the Boundary Timer Event element and the best-case workflow, thereby creating parallel workflow in that Request. As highlighted in the example below, workflow routes through the Boundary Timer Event element if the Manual Task element does not complete within 30 minutes; however, workflow also routes through the Manual Task element when that element completes. ![](../../../.gitbook/assets/boundary-event-non-interrupting-processes.png) 
+* **Interrupting workflow:** When workflow routes through the Boundary Timer Event element, workflow is interrupted and does not route through the best-case scenario. As highlighted in the example below, workflow routes through the Boundary Timer Event element if the Manual Task element does not complete within 30 minutes. ![](../../../.gitbook/assets/boundary-timer-event-interrupting-processes.png) 
+* **Non-interrupting workflow:** Workflow routes both through the Boundary Timer Event element and the best-case scenario, thereby creating parallel workflow in that Request. As highlighted in the example below, workflow routes through the Boundary Timer Event element if the Manual Task element does not complete within 30 minutes; however, workflow also routes through the best-case scenario when that element completes. ![](../../../.gitbook/assets/boundary-timer-event-non-interrupting-processes.png) 
 
 Below is a Boundary Timer Event element when it is associated with a Task element. A Boundary Timer Event may also be associated with a Script Task element, Manual Task element, or Sub Process element.
 
@@ -255,7 +259,29 @@ See [Add and Configure Boundary Timer Event Elements](add-and-configure-boundary
 
 ### Boundary Error Event
 
+A Boundary Error Event element represents alternate workflow routing when an error occurs with a [Task](process-modeling-element-descriptions.md#task) element, [Script Task](process-modeling-element-descriptions.md#script-task) element, [Manual Task](process-modeling-element-descriptions.md#manual-task) element, or [Sub Process](process-modeling-element-descriptions.md#sub-process) element. Workflow routes through the Boundary Error Event element when its associated element errors or, in the case with a Sub Process element, receives an error from its child Request. Use a Boundary Error Event element to design business solutions when intended or best-case workflow in your Process does not occur because of an error. Consider these examples:
 
+* **Technical error with a ProcessMaker Script:** If a running ProcessMaker Script returns an error, route workflow to a system administrator's Task to investigate why the Script failed.
+* **Escalate child sub-process problems:** If the [Error End Event](process-modeling-element-descriptions.md#error-end-event) element in a child Request captures a Request error, the Boundary Error Event element associated with the parent Request's Sub Process element receives the error, then routes workflow to a system administrator's Task in the parent Process's Request to investigate the issue in the child Request.
+
+Use a [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element to indicate workflow routing if the Boundary Error Event element triggers: when this element receives an error before the associated element completes.
+
+{% hint style="info" %}
+An element associated with a Boundary Error Event may also associate with a [Boundary Timer Event](process-modeling-element-descriptions.md#boundary-timer-event) and/or a [Boundary Message Event](process-modeling-element-descriptions.md#boundary-message-event) in the same element.
+{% endhint %}
+
+Configure Boundary Error Event elements with either interrupting or non-interrupting workflow:
+
+* **Interrupting workflow:** When workflow routes through the Boundary Error Event element, workflow is interrupted and does not route through the best-case scenario. As highlighted in the example below, workflow routes through the Boundary Error Event element if the Script Task receives an error. ![](../../../.gitbook/assets/boundary-error-event-interrupting.png)
+* **Non-interrupting workflow:** Workflow routes both through the Boundary Error Event element and the best-case scenario, thereby creating parallel workflow in that Request. As highlighted in the example below, workflow routes through the Boundary Error Event element if the Sub Process element receives an error from the child Request; however, after the child Request completes and workflow resumes in the parent Request, the Sub Process element completes and routes through the best-case scenario. ![](../../../.gitbook/assets/boundary-error-event-non-interrupting.png)
+
+Below is a Boundary Error Event element when it is associated with a Script Task element. A Boundary Error Event may also be associated with a Task element, Manual Task element, or Sub Process element.
+
+![Boundary Error Event element associated with a Script Task element](../../../.gitbook/assets/boundary-error-event-process-modeler-processes.png)
+
+{% hint style="info" %}
+See [Add and Configure Boundary Error Event Elements](add-and-configure-boundary-error-event-elements.md).
+{% endhint %}
 
 ### Boundary Message Event
 
