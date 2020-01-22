@@ -238,14 +238,20 @@ A Boundary Timer Event element represents that alternate workflow routing occurs
 *  **ProcessMaker Script fail-safe:** If a ProcessMaker Script does not complete in a period of time, route workflow to a system administrator to investigate why the Script provided no response.
 * **Escalate child sub-process problems:** If the Request for a child Sub Process does not complete in a required period of time, route workflow to a manager's Task in the parent Process's Request so that the child Request does not delay the parent Request.
 
+Use a [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element to indicate workflow routing if the Boundary Timer Event element triggers: when the configured timer expires before the associated element completes.
+
 Configure Boundary Timer Event elements with either interrupting or non-interrupting workflow:
 
-* **Interrupting workflow:** When workflow routes through the Boundary Timer Event element, workflow is interrupted and does not route through the best-case workflow \(as highlighted below\).
-* **Non-interrupting workflow:** Workflow routes both through the Boundary Timer Event element and the best-case workflow, thereby creating parallel workflow in that Request \(as highlighted below\).
+* **Interrupting workflow:** When workflow routes through the Boundary Timer Event element, workflow is interrupted and does not route through the best-case workflow. As highlighted in the example below, workflow routes through the Boundary Timer Event element if the Manual Task element does not complete within 30 minutes. ![](../../../.gitbook/assets/boundary-event-interrupting-processes%20%281%29.png) 
+* **Non-interrupting workflow:** Workflow routes both through the Boundary Timer Event element and the best-case workflow, thereby creating parallel workflow in that Request. As highlighted in the example below, workflow routes through the Boundary Timer Event element if the Manual Task element does not complete within 30 minutes; however, workflow also routes through the Manual Task element when that element completes. ![](../../../.gitbook/assets/boundary-event-non-interrupting-processes.png) 
 
 Below is a Boundary Timer Event element when it is associated with a Task element. A Boundary Timer Event may also be associated with a Script Task element, Manual Task element, or Sub Process element.
 
 ![Boundary Timer Event element associated with a Task element](../../../.gitbook/assets/boundary-timer-event-process-modeler-processes.png)
+
+{% hint style="info" %}
+See [Add and Configure Boundary Timer Event Elements](add-and-configure-boundary-timer-event-elements.md).
+{% endhint %}
 
 ### Boundary Error Event
 
