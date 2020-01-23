@@ -32,8 +32,8 @@ Follow these steps to add a Boundary Timer Event element to the Process model:
    * [Sub Process](add-and-configure-sub-process-elements.md#add-a-sub-process-element) element
 4. From the **Boundary Events** drop-down menu, select the **Boundary Timer Event** option. The Boundary Timer Event element displays on the top of its associating element. ![](../../../.gitbook/assets/boundary-timer-event-selection-process-modeler-processes.png) 
 5. Optionally, add the following Boundary Event element types in which to associate with the Task-type element:
-   * Boundary Error Event element
-   * Boundary Message Event element
+   * [Boundary Error Event](add-and-configure-boundary-error-event-elements.md#add-a-boundary-error-event-element) element
+   * [Boundary Message Event](add-and-configure-boundary-message-event-elements.md#add-a-boundary-message-event-element) element
 
 ![Boundary Timer Event element associated with a Task element](../../../.gitbook/assets/boundary-timer-event-process-modeler-processes.png)
 
@@ -70,7 +70,7 @@ Follow these steps to edit the name for a Boundary Timer Event element:
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Boundary Timer Event element from the Process model in which to edit its name. Panels to configure this element display.
-3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../.gitbook/assets/call-activity-configuration-name-process-modeler-processes%20%281%29.png)
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../.gitbook/assets/boundary-timer-event-configuration-name-process-modeler-processes.png) 
 4. In the **Name** setting, edit the selected element's name and then press **Enter**.
 
 #### Indicate to Interrupt the Best-Case Scenario Workflow
@@ -144,6 +144,4 @@ Follow these steps to edit the identifier value for a Boundary Timer Event eleme
 {% page-ref page="../../viewing-processes/view-the-list-of-processes/create-a-process.md" %}
 
 {% page-ref page="../remove-process-model-elements.md" %}
-
-
 

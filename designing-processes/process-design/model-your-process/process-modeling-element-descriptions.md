@@ -270,11 +270,6 @@ Use a [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) el
 An element associated with a Boundary Error Event may also associate with a [Boundary Timer Event](process-modeling-element-descriptions.md#boundary-timer-event) and/or a [Boundary Message Event](process-modeling-element-descriptions.md#boundary-message-event) in the same element.
 {% endhint %}
 
-Configure whether a Boundary Error Event element interrupts the best-case scenario workflow:
-
-* **Interrupting workflow:** When workflow routes through the Boundary Error Event element, workflow is interrupted and does not route through the best-case scenario. As highlighted in the example below, workflow routes through the Boundary Error Event element if the Script Task receives an error. ![](../../../.gitbook/assets/boundary-error-event-interrupting.png)
-* **Non-interrupting workflow:** Workflow routes both through the Boundary Error Event element and the best-case scenario, thereby creating parallel workflow in that Request. As highlighted in the example below, workflow routes through the Boundary Error Event element if the Sub Process element receives an error from the child Request; however, after the child Request completes and workflow resumes in the parent Request, the Sub Process element completes and routes through the best-case scenario. ![](../../../.gitbook/assets/boundary-error-event-non-interrupting.png)
-
 Below is a Boundary Error Event element when it is associated with a Script Task element. A Boundary Error Event may also be associated with a Task element, Manual Task element, or Sub Process element.
 
 ![Boundary Error Event element associated with a Script Task element](../../../.gitbook/assets/boundary-error-event-process-modeler-processes.png)
