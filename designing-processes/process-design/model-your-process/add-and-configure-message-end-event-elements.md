@@ -30,7 +30,7 @@ Follow these steps to add a Message End Event element to the Process model:
    ![](../../../.gitbook/assets/end-event-control-process-modeler-processes.png)
 
 4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Message End Event element cannot be placed outside of the Pool element.
-5. Select the **Message End Event** option from the **Elements** drop-down menu. The Message End Event element displays.  ![](../../../.gitbook/assets/message-end-event-selection-process-modeler-processes.png) 
+5. From the **Elements** drop-down menu, select the **Message End Event** option. The Message End Event element displays.  ![](../../../.gitbook/assets/message-end-event-selection-process-modeler-processes.png) 
 
 ![Message End Event element](../../../.gitbook/assets/message-end-event-process-modeler-processes.png)
 

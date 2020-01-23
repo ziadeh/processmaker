@@ -30,7 +30,7 @@ Follow these steps to add a Start Timer Event element to the Process model:
    ![](../../../.gitbook/assets/start-event-control-process-modeler-processes.png)
 
 4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Start Timer Event element cannot be placed outside of the Pool element.
-5. Select the **Start Timer Event** option from the **Elements** drop-down menu. The Start Timer Event element displays. ![](../../../.gitbook/assets/start-timer-event-selection-process-modeler-processes.png) 
+5. From the **Elements** drop-down menu, select the **Start Timer Event** option. The Start Timer Event element displays. ![](../../../.gitbook/assets/start-timer-event-selection-process-modeler-processes.png) 
 
 ![Start Timer Event element](../../../.gitbook/assets/start-timer-event-process-modeler-processes.png)
 
@@ -80,7 +80,7 @@ Follow these steps to edit the name for a Start Timer Event element:
 
 #### Set the Timing Controls
 
-When a Start Timer Event element is placed into a Process model, it has the following timing settings by default:
+When a Start Timer Event element is placed into a Process model, it has the following settings by default before it triggers:
 
 * The timing control is set to midnight of the current date.
 * The timing control is set to repeat weekly on the current day.
@@ -109,7 +109,7 @@ Follow these steps to set the timer controls for a Start Timer Event element:
    ![](../../../.gitbook/assets/start-timer-event-date-control-process-modeler-processes.png)
 
 5. Set the periodic interval to trigger the Start Timer Event element again, thereby starting a new Request. Follow these guidelines:
-   * From the **Repeat every** setting, select at how many intervals of a set time period to trigger the Start Timer Event element. **1** is the default setting. Then select one of the following time periods for that element to trigger:
+   * From the **Repeat every** setting, select at how many intervals of a set time period to trigger the Start Timer Event element. **1 week** is the default setting. Then select one of the following time periods for that element to trigger:
      * Day
      * Week \(default setting\)
      * Month

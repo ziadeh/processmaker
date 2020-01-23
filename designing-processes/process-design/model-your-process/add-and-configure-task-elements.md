@@ -28,7 +28,7 @@ Follow these steps to add a Task element to the Process model:
 3. Locate the **Task** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Task** control's icon![](../../../.gitbook/assets/task-icon-process-modeler-processes.png). ![](../../../.gitbook/assets/task-control-process-modeler-processes.png) 
 4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Task element cannot be placed outside of the Pool element.
 5. Do one of the following:
-   * Select the **Task** option from the **Elements** drop-down menu. ![](../../../.gitbook/assets/task-selection-process-modeler-processes.png) 
+   * From the **Elements** drop-down menu, select the **Task** option. ![](../../../.gitbook/assets/task-selection-process-modeler-processes.png) 
    * Click anywhere in the Process model. The Task element selects by default.
 
 ![Task element](../../../.gitbook/assets/task-element-process-modeler-processes.png)

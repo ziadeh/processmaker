@@ -30,7 +30,7 @@ Follow these steps to add an Error End Event element to the Process model:
    ![](../../../.gitbook/assets/end-event-control-process-modeler-processes.png)
 
 4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Error End Event element cannot be placed outside of the Pool element.
-5. Select the **Error End Event** option from the **Elements** drop-down menu. The Error End Event element displays. ![](../../../.gitbook/assets/error-end-event-selection-process-modeler-processes.png) 
+5. From the **Elements** drop-down menu, select the **Error End Event** option. The Error End Event element displays. ![](../../../.gitbook/assets/error-end-event-selection-process-modeler-processes.png) 
 
 ![Error End Event element](../../../.gitbook/assets/error-end-event-process-modeler-processes%20%281%29.png)
 

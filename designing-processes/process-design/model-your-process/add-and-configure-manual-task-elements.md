@@ -30,7 +30,7 @@ Follow these steps to add a Manual Task element to the Process model:
    ![](../../../.gitbook/assets/task-control-process-modeler-processes.png)
 
 4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Manual Task element cannot be placed outside of the Pool element.
-5. Select the **Manual Task** option from the **Elements** drop-down menu. The Manual Task element displays. ![](../../../.gitbook/assets/manual-task-selection-process-modeler-processes.png) 
+5. From the **Elements** drop-down menu, select the **Manual Task** option. The Manual Task element displays. ![](../../../.gitbook/assets/manual-task-selection-process-modeler-processes.png) 
 
 ![Manual Task element](../../../.gitbook/assets/manual-task-process-modeler-processes.png)
 

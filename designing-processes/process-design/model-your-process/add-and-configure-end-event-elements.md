@@ -31,7 +31,7 @@ Follow these steps to add an End Event element to the Process model:
 
 4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the End Event element cannot be placed outside of the Pool element.
 5. Do one of the following:
-   * Select the **End Event** option from the **Elements** drop-down menu. ![](../../../.gitbook/assets/end-event-selection-process-modeler-processes.png) 
+   * From the **Elements** drop-down menu, select the **End Event** option. ![](../../../.gitbook/assets/end-event-selection-process-modeler-processes.png) 
    * Click anywhere in the Process model. The End Event element selects by default.
 
 ![End Event element](../../../.gitbook/assets/end-event-process-modeler-processes.png)

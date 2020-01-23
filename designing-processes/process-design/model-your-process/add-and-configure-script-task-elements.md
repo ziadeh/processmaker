@@ -30,7 +30,7 @@ Follow these steps to add a Script Task element to the Process model:
    ![](../../../.gitbook/assets/task-control-process-modeler-processes.png)
 
 4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Script Task element cannot be placed outside of the Pool element.
-5. Select the **Script Task** option from the **Elements** drop-down menu. The Script Task element displays. ![](../../../.gitbook/assets/script-task-selection-process-modeler-processes.png) 
+5. From the **Elements** drop-down menu, select the **Script Task** option. The Script Task element displays. ![](../../../.gitbook/assets/script-task-selection-process-modeler-processes.png) 
 
 ![Script Task element](../../../.gitbook/assets/script-task-process-modeler-processes.png)
 

@@ -27,7 +27,7 @@ Follow these steps to add an Event-Based Gateway element to the Process model:
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
 3. Locate the **Gateway** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Gateway** control's icon![](../../../.gitbook/assets/gateway-icon-process-modeler-processes.png). ![](../../../.gitbook/assets/gateway-control-process-modeler-processes.png) 
 4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Event-Based Gateway element cannot be placed outside of the Pool element.
-5. Select the **Event Based Gateway** option from the **Elements** drop-down menu. The Event-Based Gateway element displays. ![](../../../.gitbook/assets/event-based-gateway-selection-process-modeler-processes.png) 
+5. From the **Elements** drop-down menu, select the **Event Based Gateway** option. The Event-Based Gateway element displays. ![](../../../.gitbook/assets/event-based-gateway-selection-process-modeler-processes.png) 
 
 ![Event-Based Gateway element](../../../.gitbook/assets/event-based-gateway-in-process-modeler-processes.png)
 
