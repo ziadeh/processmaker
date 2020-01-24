@@ -65,10 +65,9 @@ Learn about [ProcessMaker Collections](../collections/what-is-a-collection.md) a
 A ProcessMaker Developer extends out-of-the-box ProcessMaker functionality in the following ways:
 
 * Develop [ProcessMaker Scripts](../designing-processes/scripts/what-is-a-script.md) that Process Owners use in Processes.
-* Learn how to [manage scripts](../designing-processes/scripts/) and develop ProcessMaker Scripts in [Scripts Editor](../designing-processes/scripts/scripts-editor.md).
+* [Manage](../designing-processes/scripts/) and develop ProcessMaker Scripts in [Scripts Editor](../designing-processes/scripts/scripts-editor.md).
+* Design your own [advanced](../designing-processes/design-forms/screens-builder/types-for-screens.md#advanced) ProcessMaker Screens.
 * Learn how to [access the ProcessMaker API](../processmaker-api-documentation/access-processmaker-api-documentation.md).
-
-Refer to the [Script Management](../designing-processes/scripts/) section, especially the [Scripts Editor](../designing-processes/scripts/scripts-editor.md) topic.
 
 ### ProcessMaker User
 
