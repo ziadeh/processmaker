@@ -6,7 +6,7 @@ description: Understand the types of ProcessMaker Screens you can use in Screen 
 
 ## Overview
 
-ProcessMaker provides the following ProcessMaker Screen types. Note that not all of these ProcessMaker Screen types are available in the open-source edition.
+ProcessMaker provides the following ProcessMaker Screen types. Note that not all of these ProcessMaker Screen types are available in the ProcessMaker open-source edition.
 
 ### Form
 
@@ -42,8 +42,24 @@ Use the Email type to compose the email body for email messages to be used with 
 * [Record List](control-descriptions/record-list-control-settings.md)
 
 {% hint style="info" %}
-Do not use a ProcessMaker Screen type other than the Email type when using the Email connector. Otherwise, you will not be able to reference any ProcessMaker Screens from the Email control in Process Modeler to specify which Screen to use for the email body content.
+Do not use a ProcessMaker Screen type other than the Email type when using the [Send Email](../../process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) connector. Otherwise, you will not be able to reference any ProcessMaker Screens from the Email control in Process Modeler to specify which Screen to use for the email body content.
 {% endhint %}
+
+### Advanced
+
+{% hint style="info" %}
+The Advanced Screen [package](../../../package-development-distribution/first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Advanced Screen package can be installed in your ProcessMaker instance.
+{% endhint %}
+
+Use the Advanced Screen package to design your own advanced forms using HTML syntax and JavaScript.
+
+When the Advanced Screen package is installed in your ProcessMaker instance, create a new ProcessMaker Screen using the [Advanced](types-for-screens.md#advanced) Screen type. Screen Builder displays a template that contains a sample Advanced-type ProcessMaker Screen.
+
+![Advanced-type ProcessMaker Screen](../../../.gitbook/assets/advanced-screen-builder-processes.png)
+
+Use this template to study how to design your custom form. Click the **Preview** button to view your custom form in [Preview](screens-builder-modes.md#preview-mode) mode.
+
+![Preview of the Advanced Screen-type template](../../../.gitbook/assets/advanced-screen-preview-processes.png)
 
 ## Related Topics
 
@@ -51,5 +67,11 @@ Do not use a ProcessMaker Screen type other than the Email type when using the E
 
 {% page-ref page="control-descriptions/" %}
 
+{% page-ref page="screens-builder-modes.md" %}
+
 {% page-ref page="../../../package-development-distribution/package-a-connector/email.md" %}
+
+{% page-ref page="../../../package-development-distribution/package-a-connector/advanced-screen-package.md" %}
+
+{% page-ref page="../../../package-development-distribution/first-topic.md" %}
 

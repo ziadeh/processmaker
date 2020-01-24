@@ -20,7 +20,7 @@ The Get Started Guide is in development. Please visit this page often for update
 {% tab title="Start a New Request" %}
 ### How Do I Start a Request?
 
-Learn how to start a Request in ProcessMaker. This is a proof-of-concept video for style. This video was recorded in ProcessMaker Beta 7.
+Learn how to start a Request in ProcessMaker. This is a proof-of-concept video for style.
 
 {% embed url="https://youtu.be/Qrj6-qUVgU0" caption="Learn how to start a new Request in ProcessMaker." %}
 

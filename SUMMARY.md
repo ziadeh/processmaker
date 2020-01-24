@@ -272,6 +272,7 @@
 * [What is a Package?](package-development-distribution/first-topic.md)
 * [Available Packages from ProcessMaker](package-development-distribution/package-a-connector/README.md)
   * [Actions By Email Package](package-development-distribution/package-a-connector/actions-by-email-package.md)
+  * [Advanced Screen Package](package-development-distribution/package-a-connector/advanced-screen-package.md)
   * [C\# Package](package-development-distribution/package-a-connector/c-package.md)
   * [Collections Package](package-development-distribution/package-a-connector/collections.md)
   * [Java Package](package-development-distribution/package-a-connector/java-package.md)
