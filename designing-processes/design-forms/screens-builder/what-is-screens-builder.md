@@ -1,8 +1,8 @@
 ---
-description: Understand what Screens Builder is in ProcessMaker.
+description: Understand what Screen Builder is in ProcessMaker.
 ---
 
-# What is Screens Builder?
+# What is Screen Builder?
 
 ## Overview
 
@@ -16,9 +16,9 @@ Your ProcessMaker user account or group membership must have the following permi
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Use Screens Builder to design ProcessMaker Screens for your Processes. ProcessMaker Screens are independent of Processes: any ProcessMaker Screen can be used in any Process, even those that you did not design. ProcessMaker Screens can be [exported](../manage-forms/export-a-screen.md) and then shared with other Process Owners so they may [import](../manage-forms/import-a-screen.md) them for their Processes.
+Use Screen Builder to design ProcessMaker Screens for your Processes. ProcessMaker Screens are independent of Processes: any ProcessMaker Screen can be used in any Process, even those that you did not design. ProcessMaker Screens can be [exported](../manage-forms/export-a-screen.md) and then shared with other Process Owners so they may [import](../manage-forms/import-a-screen.md) them for their Processes.
 
-While Screens Builder has an easy-to-use drag-and-place design interface to edit and preview ProcessMaker Screens, ProcessMaker represents them as JSON data models. You can view the JSON data model while in [Preview mode](preview-a-screen.md).
+While Screen Builder has an easy-to-use drag-and-place design interface to edit and preview ProcessMaker Screens, ProcessMaker represents them as JSON data models. You can view the JSON data model while in [Preview mode](preview-a-screen.md).
 
 You can use different types of ProcessMaker Screens. See [Screen Types](types-for-screens.md).
 

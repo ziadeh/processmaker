@@ -29,9 +29,9 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
 1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
-3. Locate the **File Upload** icon![](../../../../.gitbook/assets/file-upload-control-screens-builder-processes.png)in the panel to the left of the Screens Builder canvas.
-4. Drag the **File Upload** icon into the Screens Builder canvas. Existing controls on the Screens Builder canvas adjust positioning based on where you drag the control.
-5. Place into the Screens Builder canvas where you want the control to display on the ProcessMaker Screen.  
+3. Locate the **File Upload** icon![](../../../../.gitbook/assets/file-upload-control-screens-builder-processes.png)in the panel to the left of the Screen Builder canvas.
+4. Drag the **File Upload** icon into the Screen Builder canvas. Existing controls on the Screen Builder canvas adjust positioning based on where you drag the control.
+5. Place into the Screen Builder canvas where you want the control to display on the ProcessMaker Screen.  
 
    ![](../../../../.gitbook/assets/file-upload-control-placed-screens-builder-processes.png)
 
@@ -68,14 +68,14 @@ The File Upload control has the following panels that contain settings:
 
 ### Variable Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the File Upload control in the **Variable** panel:
 
 * **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
 
   * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds with the File Upload control's entered datetime with that Image control's **Variable Name** value. In the example below, `FileUploadControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/date-control-preview-screens-builder-processes.png) 
-  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ FileUploadControl }}`.
+  * Reference this control's value in a different Screen Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ FileUploadControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
@@ -84,7 +84,7 @@ Below are settings for the File Upload control in the **Variable** panel:
 
 ### Configuration Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the File Upload control in the **Configuration** panel:
 
@@ -92,7 +92,7 @@ Below are settings for the File Upload control in the **Configuration** panel:
 
 ### Advanced Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the File Upload control in the **Advanced** panel:
 

@@ -2,9 +2,9 @@
 description: Follow best practices when designing ProcessMaker Screens.
 ---
 
-# Screens Builder Best Practices
+# Screen Builder Best Practices
 
-## Screens Builder Best Practices
+## Screen Builder Best Practices
 
 Follow these best practices when designing ProcessMaker Screens in your organization:
 

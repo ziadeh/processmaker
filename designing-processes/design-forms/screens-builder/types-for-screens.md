@@ -1,12 +1,12 @@
 ---
-description: Understand the types of ProcessMaker Screens you can use in Screens Builder.
+description: Understand the types of ProcessMaker Screens you can use in Screen Builder.
 ---
 
 # Screen Types
 
 ## Overview
 
-ProcessMaker provides the following ProcessMaker Screen types. Note that not all of these ProcessMaker Screen types are available in the open-source release.
+ProcessMaker provides the following ProcessMaker Screen types. Note that not all of these ProcessMaker Screen types are available in the open-source edition.
 
 ### Form
 
@@ -16,15 +16,16 @@ Use the Form type to design interactive and complex forms. Below are a few ways 
 * Approve the department budget.
 * Upload or download documents.
 
-All ProcessMaker Screen [controls](control-descriptions/) in Screens Builder are available for the Form type.
+All ProcessMaker Screen [controls](control-descriptions/) in Screen Builder are available for the Form type.
 
 ### Display
 
-Use the Display type to display information or allow [Request](../../../using-processmaker/requests/what-is-a-request.md) participants to download files. The Display type has limited functionality compared the Form type. The Display type provides the following controls in Screens Builder:
+Use the Display type to display information or allow [Request](../../../using-processmaker/requests/what-is-a-request.md) participants to download files. The Display type has limited functionality compared the Form type. The Display type provides the following controls in Screen Builder:
 
-* [Text](control-descriptions/textarea-control-settings.md)
-* [Table](control-descriptions/multi-column-button-control-settings.md)
+* [Rich Text](control-descriptions/rich-text-control-settings.md)
+* [Multicolumn / Table](control-descriptions/multi-column-button-control-settings.md)
 * [Record List](control-descriptions/record-list-control-settings.md)
+* [Image](control-descriptions/image-control-settings.md)
 * [File Download](control-descriptions/file-download-control-settings.md)
 
 ### Email
@@ -33,10 +34,11 @@ Use the Display type to display information or allow [Request](../../../using-pr
 The Email package must be installed in your ProcessMaker instance to use the Email type of ProcessMaker Screen. The Email package is not available in the ProcessMaker open-source edition. See [Email Package](../../../package-development-distribution/package-a-connector/email.md).
 {% endhint %}
 
-Use the Email type to compose the email body for email messages to be used with the Email connector. The Email type provides the following controls in Screens Builder:
+Use the Email type to compose the email body for email messages to be used with the Email connector. The Email type provides the following controls in Screen Builder:
 
-* [Text]()
-* [Table](control-descriptions/multi-column-button-control-settings.md)
+* [Rich Text](control-descriptions/rich-text-control-settings.md)
+* [Multicolumn / Table](control-descriptions/multi-column-button-control-settings.md)
+* [Image](control-descriptions/image-control-settings.md)
 * [Record List](control-descriptions/record-list-control-settings.md)
 
 {% hint style="info" %}

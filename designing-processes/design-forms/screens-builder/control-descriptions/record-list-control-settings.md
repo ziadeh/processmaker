@@ -88,9 +88,9 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
 1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
-3. Locate the **Record List** icon![](../../../../.gitbook/assets/record-list-control-screens-builder-processes.png)in the panel to the left of the Screens Builder canvas.
-4. Drag the **Record List** icon into the Screens Builder canvas. Existing controls on the Screens Builder canvas adjust positioning based on where you drag the control.
-5. Place into the Screens Builder canvas where you want the control to display on the ProcessMaker Screen.
+3. Locate the **Record List** icon![](../../../../.gitbook/assets/record-list-control-screens-builder-processes.png)in the panel to the left of the Screen Builder canvas.
+4. Drag the **Record List** icon into the Screen Builder canvas. Existing controls on the Screen Builder canvas adjust positioning based on where you drag the control.
+5. Place into the Screen Builder canvas where you want the control to display on the ProcessMaker Screen.
 
    ![](../../../../.gitbook/assets/record-list-control-placed-screens-builder-processes.png)
 
@@ -174,21 +174,21 @@ The Record List control has the following panels that contain settings for [Form
 
 #### Variable Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Variable** panel:
 
 * **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
 
   * Reference this control by its **Variable Name** setting's value.
-  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ RecordListControl }}`.
+  * Reference this control's value in a different Screen Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ RecordListControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
 
 #### Configuration Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Configuration** panel:
 
@@ -200,7 +200,7 @@ Below are settings for the Record List control in the **Configuration** panel:
 
 Follow these steps to configure the column header\(s\) that display the record list data and from which control\(s\) on the additional page in this ProcessMaker Screen to reference data components of each record for this control:
 
-1. Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Columns** panel that is on the right-side of the Screens Builder canvas.
+1. Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Columns** panel that is on the right-side of the Screen Builder canvas.
 2. Select one of the following options:
    * **Provide the column header\(s\) and referenced control\(s\) in the user interface:**
 
@@ -233,7 +233,7 @@ Follow these steps to configure the column header\(s\) that display the record l
 
 #### Design Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Design** panel:
 
@@ -242,7 +242,7 @@ Below are settings for the Record List control in the **Design** panel:
 
 #### Advanced Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Advanced** panel:
 
@@ -261,21 +261,21 @@ The Record List control has the following panels that contain settings for [Disp
 
 #### Variable Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Variable** panel:
 
 * **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
 
   * Reference this control by its **Variable Name** setting's value.
-  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ RecordListControl }}`.
+  * Reference this control's value in a different Screen Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ RecordListControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
 
 #### Configuration Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Configuration** panel:
 
@@ -295,7 +295,7 @@ Follow these steps before configuring columns in this Record List control:
 
 Follow these steps to configure the column header\(s\) that display the record list data:
 
-1. Click the control while in Design mode, and then click the **Columns** panel that is on the right-side of the Screens Builder canvas.
+1. Click the control while in Design mode, and then click the **Columns** panel that is on the right-side of the Screen Builder canvas.
 2. Select one of the following options:
    * **Provide the column header\(s\) and referenced control\(s\) in the user interface:**
 
@@ -328,7 +328,7 @@ Follow these steps to configure the column header\(s\) that display the record l
 
 #### Design Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Design** panel:
 
@@ -337,7 +337,7 @@ Below are settings for the Record List control in the **Design** panel:
 
 #### Advanced Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Advanced** panel:
 

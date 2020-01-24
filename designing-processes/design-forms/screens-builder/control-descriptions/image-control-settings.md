@@ -23,9 +23,9 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
 1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
-3. Locate the **Image** icon![](../../../../.gitbook/assets/image-control-screens-builder-processes.png)in the panel to the left of the Screens Builder canvas.
-4. Drag the **Image** icon into the Screens Builder canvas. Existing controls on the Screens Builder canvas adjust positioning based on where you drag the control.
-5. Place into the Screens Builder canvas where you want the control to display on the ProcessMaker Screen.  
+3. Locate the **Image** icon![](../../../../.gitbook/assets/image-control-screens-builder-processes.png)in the panel to the left of the Screen Builder canvas.
+4. Drag the **Image** icon into the Screen Builder canvas. Existing controls on the Screen Builder canvas adjust positioning based on where you drag the control.
+5. Place into the Screen Builder canvas where you want the control to display on the ProcessMaker Screen.  
 
    ![](../../../../.gitbook/assets/image-control-placed-screens-builder-processes.png)
 
@@ -63,7 +63,7 @@ The Image control has the following panels that contain settings:
 
 ### Configuration Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Image control in the **Configuration** panel:
 
@@ -74,7 +74,7 @@ Below are settings for the Image control in the **Configuration** panel:
 
 ### Design Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Image control in the **Design** panel:
 
@@ -83,7 +83,7 @@ Below are settings for the Image control in the **Design** panel:
 
 ### Advanced Panel Settings
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Image control in the **Advanced** panel:
 

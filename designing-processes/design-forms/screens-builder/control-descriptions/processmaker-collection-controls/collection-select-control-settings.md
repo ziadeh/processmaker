@@ -49,9 +49,9 @@ Follow these steps to add this control to the ProcessMaker Screen:
 
 1. [Create a new ProcessMaker Screen](../../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
-3. Locate the **Collection Select** icon![](../../../../../.gitbook/assets/collection-select-control-screens-builder-package-processes.png)in the panel to the left of the Screens Builder canvas.
-4. Drag the **Collection Select** icon into the Screens Builder canvas. Existing controls on the Screens Builder canvas adjust positioning based on where you drag the control.
-5. Place into the Screens Builder canvas where you want the control to display on the ProcessMaker Screen. ![](../../../../../.gitbook/assets/collection-select-control-placed-screens-builder-package-processes.png) 
+3. Locate the **Collection Select** icon![](../../../../../.gitbook/assets/collection-select-control-screens-builder-package-processes.png)in the panel to the left of the Screen Builder canvas.
+4. Drag the **Collection Select** icon into the Screen Builder canvas. Existing controls on the Screens Builder canvas adjust positioning based on where you drag the control.
+5. Place into the Screen Builder canvas where you want the control to display on the ProcessMaker Screen. ![](../../../../../.gitbook/assets/collection-select-control-placed-screens-builder-package-processes.png) 
 6. Configure the Collection Select control. See [Settings](collection-select-control-settings.md#settings).
 7. Validate that the control is configured correctly. See [Validate Your Screen](../../validate-your-screen.md#validate-a-processmaker-screen).
 
@@ -93,19 +93,19 @@ The Collection Select control has the following panels that contain settings:
 
 ### Variable Panel Settings
 
-Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Collection Select control in the **Variable** panel:
 
 * **Field Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Field Name** value in the following ways:
   * Reference this control by its **Field Name** setting's value. The **Data Preview** panel in [Preview mode](../../screens-builder-modes.md#preview-mode) corresponds the Collection Select control's textual content with that Collection Select control's **Field Name** value. In the example below, `CollectionSelectControl` is the **Field Name** setting's value. ![](../../../../../.gitbook/assets/collection-select-control-data-preview-screens-builder-package-processes.png) 
-  * Reference this control's value in a different Screens Builder control. To do so, use mustache syntax and reference this control's **Field Name** value in the target control. Example: `{{ CollectionSelectControl }}`.
+  * Reference this control's value in a different Screen Builder control. To do so, use mustache syntax and reference this control's **Field Name** value in the target control. Example: `{{ CollectionSelectControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](../expression-syntax-components-for-show-if-control-settings.md).
 * **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](../validation-rules-for-validation-control-settings.md).
 
 ### Configuration Panel Settings
 
-Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Collection Select control in the **Configuration** panel:
 
@@ -126,7 +126,7 @@ Below are settings for the Collection Select control in the **Configuration** pa
 
 ### Design Panel Settings
 
-Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Collection Select control in the **Design** panel:
 
@@ -135,7 +135,7 @@ Below are settings for the Collection Select control in the **Design** panel:
 
 ### Advanced Panel Settings
 
-Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screens Builder canvas.
+Click the control while in [Design](../../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Collection Select control in the **Advanced** panel:
 
