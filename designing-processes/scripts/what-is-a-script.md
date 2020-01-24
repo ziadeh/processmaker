@@ -19,7 +19,7 @@ ProcessMaker supports the following programming languages in the open-source edi
 
 * PHP
 * Lua
-* NodeJS
+* JavaScript
 
 ProcessMaker Enterprise edition supports the following additional programming languages:
 

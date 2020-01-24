@@ -31,7 +31,7 @@ Follow these steps to create a new ProcessMaker Script:
 
    * PHP
    * Lua
-   * Node
+   * JavaScript
    * C\# \(when the [C\# package](../../../package-development-distribution/package-a-connector/c-package.md) is installed to your ProcessMaker instance\)
    * Java \(when the [Java package](../../../package-development-distribution/package-a-connector/java-package.md) is installed to your ProcessMaker instance\)
    * R \(when the [R package](../../../package-development-distribution/package-a-connector/r-package.md) is installed to your ProcessMaker instance\)

@@ -34,14 +34,6 @@ Follow these steps to add a Sub Process element to the Process model:
 
 ![Sub Process element](../../../.gitbook/assets/call-activity-process-modeler-processes.png)
 
-{% hint style="info" %}
-After adding the Sub Process element, consider adding any of the following Boundary-type Process model elements to design business solutions when your best-case scenarios don't happen:
-
-* [Boundary Timer Event](add-and-configure-boundary-timer-event-elements.md#add-a-boundary-timer-event-element) element \([Don't know what that is?](process-modeling-element-descriptions.md#boundary-timer-event)\)
-* [Boundary Error Event](add-and-configure-boundary-error-event-elements.md#add-a-boundary-error-event-element) element \([Don't know what that is?](process-modeling-element-descriptions.md#boundary-error-event)\)
-* [Boundary Message Event](add-and-configure-boundary-message-event-elements.md#add-a-boundary-message-event-element) element \([Don't know what that is?](process-modeling-element-descriptions.md#boundary-message-event)\)
-{% endhint %}
-
 After the element is placed into the Process model, you may move it by dragging it to the new location.
 
 {% hint style="warning" %}
