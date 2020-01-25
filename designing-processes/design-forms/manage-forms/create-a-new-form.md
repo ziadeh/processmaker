@@ -25,10 +25,9 @@ Follow these steps to create a new ProcessMaker Screen:
 3. In the **Name** field, enter the name of the ProcessMaker Screen. This is a required field.
 4. From the **Type** drop-down menu, select one of the following ProcessMaker Screen types:
 
-   * **Form:** Use the Form type to design interactive and complex forms. See [Form](../screens-builder/types-for-screens.md#form) Screen-type.
-   * **Display:** Use the Display type to display information or allow [Request](../../../using-processmaker/requests/what-is-a-request.md) participants to download files. The Display type has limited functionality compared the Form type. See [Display](../screens-builder/types-for-screens.md#display) Screen-type.
-   * **Email:** Use the Email type to compose the email body for email messages to be used with the Send Email connector. Note that the Send Email connector must be installed in your ProcessMaker instance for this option to display. See [Send Email Connector](../../process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) and [Email](../screens-builder/types-for-screens.md#email) Screen-type.
-   * **Advanced:** Use the Advanced type to design your own advanced forms using HTML syntax and JavaScript. This is an ideal solution for highly technical designers to create their own form designs and functionality. See [Advanced Screen Package](../../../package-development-distribution/package-a-connector/advanced-screen-package.md) and [Advanced](../screens-builder/types-for-screens.md#advanced) Screen-type.
+   * **Form:** Use the Form type to design interactive and complex forms. See [Form](../screens-builder/types-for-screens.md#form).
+   * **Display:** Use the Display type to display information or allow [Request](../../../using-processmaker/requests/what-is-a-request.md) participants to download files. The Display type has limited functionality compared the Form type. See [Display](../screens-builder/types-for-screens.md#display).
+   * **Email:** Use the Email type to compose the email body for email messages to be used with the Send Email connector. Note that the Send Email connector must be installed in your ProcessMaker instance for this option to display. See [Send Email Connector](../../process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) and [Screen Types](../screens-builder/types-for-screens.md#email).
 
    This is a required field.
 

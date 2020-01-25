@@ -38,36 +38,32 @@ Refer to the **ProcessMaker Administration** section that includes the following
 * [Group Management](../processmaker-administration/assign-groups-to-users/)
 * [Permission Descriptions for Users and Groups](../processmaker-administration/permission-descriptions-for-users-and-groups.md)
 * [Client Authentication Management](../processmaker-administration/auth-client-management/)
-* [Customize the ProcessMaker User Interface](../processmaker-administration/customize-the-processmaker-user-interface.md)
 * [Queue Management](../processmaker-administration/queue-management/)
-* [Single Sign-On \(SSO\) to ProcessMaker Via SAML](../processmaker-administration/single-sign-on-to-processmaker-via-saml/)
-
-Learn about how to extend ProcessMaker functioning by adding [packages](../package-development-distribution/first-topic.md).
 
 ### Process Owner
 
-A Process Owner designs and maintains ProcessMaker [Processes](../designing-processes/viewing-processes/what-is-a-process.md) that both people use to make [Requests](../using-processmaker/requests/what-is-a-request.md).
+A Process Owner creates and maintains ProcessMaker [Processes](../designing-processes/viewing-processes/what-is-a-process.md) that both people use to make [Requests](../using-processmaker/requests/what-is-a-request.md).
 
 Refer to the **Manage and Model Processes** section that includes the following topics:
 
 * [Process Management](../designing-processes/viewing-processes/)
 * [Script Management](../designing-processes/scripts/)
 * [Screen Management](../designing-processes/design-forms/)
-* [Reference Magic Variables in ProcessMaker Assets](../designing-processes/reference-global-variables-in-your-processmaker-assets.md)
 * [Environment Variable Management](../designing-processes/environment-variable-management/)
 * [Process Modeling](../designing-processes/process-design/)
-* [Vocabularies Management](../designing-processes/vocabularies-management/)
-
-Learn about [ProcessMaker Collections](../collections/what-is-a-collection.md) and extending ProcessMaker functionality by adding [packages](../package-development-distribution/first-topic.md).
 
 ### ProcessMaker Developer
 
 A ProcessMaker Developer extends out-of-the-box ProcessMaker functionality in the following ways:
 
 * Develop [ProcessMaker Scripts](../designing-processes/scripts/what-is-a-script.md) that Process Owners use in Processes.
-* [Manage](../designing-processes/scripts/) and develop ProcessMaker Scripts in [Scripts Editor](../designing-processes/scripts/scripts-editor.md).
-* Design your own [advanced](../designing-processes/design-forms/screens-builder/types-for-screens.md#advanced) ProcessMaker Screens.
-* Learn how to [access the ProcessMaker API](../processmaker-api-documentation/access-processmaker-api-documentation.md).
+* Develop Connectors that perform custom functions, and then package those Connectors for distribution.
+
+Refer to the [Script Management](../designing-processes/scripts/) section, especially the [Scripts Editor](../designing-processes/scripts/scripts-editor.md) topic.
+
+Refer to the **Connector Development** section.
+
+Refer to the **Package Development and Distribution** section.
 
 ### ProcessMaker User
 
@@ -78,12 +74,9 @@ Refer to the **Using ProcessMaker** section that includes the following topics:
 * [Log On to ProcessMaker](../using-processmaker/log-in.md)
 * [Profile Settings](../using-processmaker/profile-settings.md)
 * [View ProcessMaker Version Information](../using-processmaker/application-version-details.md)
-* [Session Timeout Warning](../using-processmaker/session-timeout-warning.md)
 * [Log Out of ProcessMaker](../using-processmaker/log-out.md)
 * [Requests](../using-processmaker/requests/)
 * [Task Management](../using-processmaker/task-management/)
-* [Search ProcessMaker Data Using ProcessMaker Query Language \(PMQL\)](../using-processmaker/search-processmaker-data-using-pmql.md)
-* [Saved Searches](../using-processmaker/save-and-share-request-and-task-related-searches/)
 * [Notifications](../using-processmaker/notifications.md)
 * [Control How Tabular Information Displays](../using-processmaker/control-how-requests-display-in-a-tab.md)
 

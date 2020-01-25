@@ -1,5 +1,7 @@
 ---
-description: 'Display the ProcessMaker interface in French, German, or Spanish language.'
+description: >-
+  View translations of the ProcessMaker interface in French, German, or Spanish
+  language. Change the default English-language labels and messages.
 ---
 
 # Translation Package
