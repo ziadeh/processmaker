@@ -18,7 +18,7 @@ Your user account or group membership must have the following permissions to cre
 See the ProcessMaker [Scripts](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Use Scripts Editor to develop and test your ProcessMaker Scripts. Any ProcessMaker Script can be used in any Process in your organization. Scripts Editor supports Lua , PHP, and NodeJS programming languages in the ProcessMaker open-source edition.
+Use Scripts Editor to develop and test your ProcessMaker Scripts. Any ProcessMaker Script can be used in any Process in your organization. Scripts Editor supports PHP, Lua, and JavaScript programming languages in the ProcessMaker open-source edition.
 
 Scripts Editor evaluates a ProcessMaker Script securely and in isolation. This ensures that any malicious script that anyone in your organization might inadvertently introduce to ProcessMaker does not affect the ProcessMaker application or its environment.
 
@@ -87,7 +87,7 @@ Pass Request-related data into your ProcessMaker Script in the following ways:
 * **ProcessMaker Environment Variables:** The sensitive information that a [ProcessMaker Environment Variable](../environment-variable-management/what-is-an-environment-variable.md) represents can pass to a ProcessMaker Script when it runs. Usage depends on the programming language that the ProcessMaker Script uses. In the usage examples below, `ENV_VAR_NAME` represents the name of the ProcessMaker Environment Variable.
   * **PHP:** `getenv('ENV_VAR_NAME')`
   * **Lua:** `os.getenv("ENV_VAR_NAME")`
-  * **NodeJS:** `process.env['ENV_VAR_NAME']`
+  * **JavaScript:** `process.env['ENV_VAR_NAME']`
 
 ProcessMaker uses two global variables that can ProcessMaker Scripts can call. Variable usage depends on the programming language that the ProcessMaker Script uses. See [ProcessMaker Variable Syntax, Usage, and Examples](scripts-editor.md#processmaker-variable-syntax-usage-and-examples). Below is a description of these global variables:
 
@@ -185,7 +185,7 @@ return {foo=data.foo, config_var=config.some_key}
 {% endcode %}
 {% endtab %}
 
-{% tab title="NodeJS" %}
+{% tab title="JavaScript" %}
 ### data
 
 {% code title="Syntax and usage" %}

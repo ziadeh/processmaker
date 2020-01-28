@@ -242,6 +242,9 @@
 * [Single Sign-On \(SSO\) to ProcessMaker Via SAML](processmaker-administration/single-sign-on-to-processmaker-via-saml/README.md)
   * [What is Single Sign-On \(SSO\)?](processmaker-administration/single-sign-on-to-processmaker-via-saml/what-is-single-sign-on.md)
   * [Configure Single Sign-On \(SSO\) Via SAML](processmaker-administration/single-sign-on-to-processmaker-via-saml/view-the-saml-settings.md)
+* [User Interface Language Management](processmaker-administration/user-interface-language-management/README.md)
+  * [What is User Interface Language Management?](processmaker-administration/user-interface-language-management/what-is-user-interface-language-management.md)
+  * [View English-Language Labels and Messages from the ProcessMaker User Interface](processmaker-administration/user-interface-language-management/view-english-language-labels-and-messages-from-the-processmaker-user-interface.md)
 
 ## ProcessMaker Collections <a id="collections"></a>
 
@@ -280,7 +283,7 @@
   * [SAML Package](package-development-distribution/package-a-connector/saml-package.md)
   * [Saved Searches Package](package-development-distribution/package-a-connector/saved-searches-package.md)
   * [Send Email Package](package-development-distribution/package-a-connector/email.md)
-  * [Translation Package](package-development-distribution/package-a-connector/non-english-language-packages.md)
+  * [Translations Package](package-development-distribution/package-a-connector/non-english-language-packages.md)
   * [Vocabularies Package](package-development-distribution/package-a-connector/vocabularies.md)
   * [Web Entry Package](package-development-distribution/package-a-connector/web-entry.md)
 

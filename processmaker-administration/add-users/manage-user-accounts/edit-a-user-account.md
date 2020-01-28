@@ -48,13 +48,13 @@ Follow these steps to edit a ProcessMaker user account:
        * Y/m/d \(2017/12/31\)
        * Y/m/d H:i \(2017/12/31 23:30\)
      * From the **Time zone** drop-down menu, select the time zone in which to display times for this person.
-     * From the **Language** drop-down menu, select in which language to display ProcessMaker labels. Note that English-language is the default language and the only natural language provided for the ProcessMaker open-source edition. However, if the Translation [package](../../../package-development-distribution/first-topic.md) is installed to your ProcessMaker instance, you may change the ProcessMaker labels to French, German, or Spanish. Changing this profile setting only affects this ProcessMaker user account. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the [Translation package](../../../package-development-distribution/package-a-connector/non-english-language-packages.md) can be installed in your ProcessMaker instance.
+     * From the **Language** drop-down menu, select in which language to display ProcessMaker labels. Note that English-language is the default language and the only natural language provided for the ProcessMaker open-source edition. However, if the [Translations package](../../../package-development-distribution/package-a-connector/non-english-language-packages.md) is installed to your ProcessMaker instance, you may display the ProcessMaker user interface labels and messages to German-, Spanish-, or French-language. Changing this profile setting only affects this ProcessMaker user account. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Translations [package](../../../package-development-distribution/first-topic.md) can be installed in your ProcessMaker instance.
 
-       Optionally, select one of the following non-English languages if the Translation package is installed:
+       Optionally, select one of the following non-English languages if the Translations package is installed in your ProcessMaker instance:
 
-       * **French:** Select the **fr** option.
        * **German:** Select the **de** option.
        * **Spanish:** Select the **es** option.
+       * **French:** Select the **fr** option.
    * Select the avatar image to change the avatar for the ProcessMaker user account. If there is no avatar image, the initials for that person's full name display. When the avatar image is selected, the **Upload Avatar** screen displays to select a new avatar image. Click the **Browse** button to locate the new avatar image. After selecting the new image, click **Save** from the **Upload Avatar** screen.  
 
      ![](../../../.gitbook/assets/browse-avatar-edit-user-information-tab-admin.png)

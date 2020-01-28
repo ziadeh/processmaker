@@ -211,6 +211,14 @@ The **Task Assignments \(API\)** category contains the following permissions:
 * **Edit Task Assignments:** Updates a task assignment through an API request.
 * **Delete Task Assignments:** Deletes a specified task assignment through an API request.
 
+### Translations
+
+The **Translations** category contains the following permissions:
+
+* **Reset Translations:** 
+* **Edit Translations:** 
+* **View Translations:** 
+
 ### Users
 
 The **Users** category contains the following permissions:
