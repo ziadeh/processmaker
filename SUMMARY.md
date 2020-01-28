@@ -6,6 +6,7 @@
 
 * [ProcessMaker Home](https://www.processmaker.com/)
 * [Download ProcessMaker Open-Source Edition](https://github.com/ProcessMaker/processmaker/releases)
+* [ProcessMaker Open-Source Edition Installation Instructions](https://github.com/ProcessMaker/processmaker)
 * [Contact Sales](https://www.processmaker.com/contact/)
 * [Privacy Statement](https://www.processmaker.com/privacy-statement)
 
@@ -245,6 +246,7 @@
 * [User Interface Language Management](processmaker-administration/user-interface-language-management/README.md)
   * [What is User Interface Language Management?](processmaker-administration/user-interface-language-management/what-is-user-interface-language-management.md)
   * [View English-Language Labels and Messages from the ProcessMaker User Interface](processmaker-administration/user-interface-language-management/view-english-language-labels-and-messages-from-the-processmaker-user-interface.md)
+  * [Edit Text that Displays in the ProcessMaker User Interface](processmaker-administration/user-interface-language-management/edit-text-that-displays-in-the-processmaker-user-interface.md)
 
 ## ProcessMaker Collections <a id="collections"></a>
 
@@ -269,6 +271,7 @@
 
 * [On-Premises Server Requirements](install-processmaker/prerequisites.md)
 * [Download ProcessMaker Open-Source Edition for On-Premises Installation](install-processmaker/installation-guide.md)
+* [ProcessMaker Open-Source Edition Installation Instructions](https://github.com/ProcessMaker/processmaker)
 
 ## Packages <a id="package-development-distribution"></a>
 
