@@ -58,6 +58,10 @@ Follow these steps to search for specific labels or messages in the ProcessMaker
 
 {% page-ref page="what-is-user-interface-language-management.md" %}
 
+{% page-ref page="edit-text-that-displays-in-the-processmaker-user-interface.md" %}
+
+{% page-ref page="reset-all-processmaker-user-interface-labels-and-messages-to-their-defaults.md" %}
+
 {% page-ref page="../../package-development-distribution/package-a-connector/non-english-language-packages.md" %}
 
 {% page-ref page="../../package-development-distribution/first-topic.md" %}

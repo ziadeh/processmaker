@@ -39,6 +39,10 @@ Note that if you change the default English-language labels and messages in your
 
 {% page-ref page="view-english-language-labels-and-messages-from-the-processmaker-user-interface.md" %}
 
+{% page-ref page="edit-text-that-displays-in-the-processmaker-user-interface.md" %}
+
+{% page-ref page="reset-all-processmaker-user-interface-labels-and-messages-to-their-defaults.md" %}
+
 {% page-ref page="../../package-development-distribution/package-a-connector/non-english-language-packages.md" %}
 
 {% page-ref page="../../package-development-distribution/first-topic.md" %}

@@ -247,6 +247,7 @@
   * [What is User Interface Language Management?](processmaker-administration/user-interface-language-management/what-is-user-interface-language-management.md)
   * [View English-Language Labels and Messages from the ProcessMaker User Interface](processmaker-administration/user-interface-language-management/view-english-language-labels-and-messages-from-the-processmaker-user-interface.md)
   * [Edit Text that Displays in the ProcessMaker User Interface](processmaker-administration/user-interface-language-management/edit-text-that-displays-in-the-processmaker-user-interface.md)
+  * [Reset All ProcessMaker User Interface Labels and Messages to Their Defaults](processmaker-administration/user-interface-language-management/reset-all-processmaker-user-interface-labels-and-messages-to-their-defaults.md)
 
 ## ProcessMaker Collections <a id="collections"></a>
 
