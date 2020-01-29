@@ -36,8 +36,12 @@ Follow these steps to edit the text that displays in labels and messages through
 
    ![](../../.gitbook/assets/translations-edit-string-admin.png) 
 
-4. Edit any of the text as necessary. Note that if you change any of the original English-language text, you are responsible to change the other non-English language text to match and be accurate.
+4. Edit any of the text as necessary. Note that if you edit any of the original English-language text, you are responsible to change the other non-English language text to match and be accurate.
 5. Click **Save**.
+
+{% hint style="info" %}
+If necessary, you may [reset all ProcessMaker user interface labels and messages](reset-all-processmaker-user-interface-labels-and-messages-to-their-defaults.md#reset-all-processmaker-user-interface-labels-and-messages-to-their-defaults) for all ProcessMaker supported languages to their defaults.
+{% endhint %}
 
 ## Related Topics
 

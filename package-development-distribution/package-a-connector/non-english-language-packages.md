@@ -27,16 +27,16 @@ The Translations package displays each label and message in the ProcessMaker use
 If the Translations package is not installed in your ProcessMaker instance, ProcessMaker only displays the default English-language user interface labels and messages. Furthermore, the **Language** setting in ProcessMaker user profiles and user accounts is not available.
 {% endhint %}
 
-### Change Labels and Messages in Your ProcessMaker User Interface
+### Edit Labels and Messages in Your ProcessMaker User Interface
 
-Optionally, use the Translations package to change the labels and messages that display in your ProcessMaker instance. This may be useful for the following reasons:
+Optionally, use the Translations package to edit the labels and messages that display in your ProcessMaker instance. This may be useful for the following reasons:
 
 * **Replace ProcessMaker branding with our own:** Your organization uses specific branding and/or terminology that you want displayed throughout your ProcessMaker instance. In this regard, you are replacing ProcessMaker's branding with your own.
 * **ProcessMaker is white-labeled:** As a ProcessMaker partner using ProcessMaker for your client, your client may want you to white-label ProcessMaker: hide all ProcessMaker branding and terminology and replace it with theirs.
 
 When replacing ProcessMaker branding and/or white-labeling ProcessMaker, [customize the colors in the ProcessMaker user interface](../../processmaker-administration/customize-the-processmaker-user-interface.md) to show your organization's or client's color palette.
 
-Note that if you change the default English-language labels and messages in your ProcessMaker instance, you are responsible for ensuring that the non-English translations match your English-language revisions and are accurate.
+Note that if you edit the default English-language labels and messages in your ProcessMaker instance, you are responsible for ensuring that the non-English translations match your English-language revisions and are accurate.
 
 See the following topics regarding configuring the language setting in a ProcessMaker user profile:
 
