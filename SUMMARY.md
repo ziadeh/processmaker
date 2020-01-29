@@ -13,7 +13,7 @@
 ## Start Here
 
 * [How to Use This Document](start-here/how-to-use-this-document.md)
-* [Get Started Guide](start-here/getting-started-guide.md)
+* [Get Started with ProcessMaker](start-here/get-started-with-processmaker.md)
 
 ## Use ProcessMaker <a id="using-processmaker"></a>
 
