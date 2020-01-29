@@ -106,7 +106,7 @@ This section contains videos discussing Process development proof-of-concepts an
 
 {% tabs %}
 {% tab title="Analyze Documents in a \"Loan Application\" Process" %}
-See how ProcessMaker can integrate with third-party services Amazon Textract and UiPath so a loan application workflow can scan, analyze, and intelligently route a Request and provision a bot accordingly.
+See how ProcessMaker can integrate with third-party services Amazon Textract and UiPath Robotic Process Automation \(RPA\) so a loan application workflow can scan, analyze, and intelligently route a Request and provision a bot accordingly.
 
 * **Intended audience:** Process designers and business analysts
 * **Viewing time:** 11 minutes; contains narration
@@ -134,7 +134,7 @@ This section contains videos discussing ProcessMaker Screen design using Screen 
 See how to design interactive web-based forms, called ProcessMaker Screens, using Screen Builder.
 
 * **Intended audience:** Process designers, Web designers, graphic designers
-* **Viewing time:** 3 minutes; contains narration
+* **Viewing time:** 3 minutes; no narration
 
 {% embed url="https://vimeo.com/380782573" %}
 
@@ -147,7 +147,13 @@ See how to design interactive web-based forms, called ProcessMaker Screens, usin
 See how to design a Leave Request form using Screen Builder.
 
 * **Intended audience:** Process designers, Web designers, graphic designers
-* **Viewing time:** 3 minutes; contains narration
+* **Viewing time:** 3 minutes; no narration
+
+{% embed url="https://vimeo.com/380396796" %}
+
+### Related Topics
+
+{% page-ref page="../designing-processes/design-forms/screens-builder/what-is-screens-builder.md" %}
 {% endtab %}
 {% endtabs %}
 
