@@ -146,6 +146,7 @@
     * [Preview a Screen and Its JSON Data Model](designing-processes/design-forms/screens-builder/preview-a-screen.md)
     * [Manage Computed Properties](designing-processes/design-forms/screens-builder/manage-computed-properties.md)
     * [Add Custom CSS to a Screen](designing-processes/design-forms/screens-builder/add-custom-css-to-a-screen.md)
+    * [Manage Watchers](designing-processes/design-forms/screens-builder/manage-watchers.md)
     * [Save Your Screen](designing-processes/design-forms/screens-builder/save-a-screen.md)
     * [Screen Builder Best Practices](designing-processes/design-forms/screens-builder/best-practices.md)
 * [Reference Magic Variables in ProcessMaker Assets](designing-processes/reference-global-variables-in-your-processmaker-assets.md)

@@ -189,23 +189,17 @@ PMQL supports the following operators in and between search criterion:
 * Use `AND` operators between each set of search criterion to search using multiple criteria.
 * Use the `AND` operator between criterion to search for multiple specified criterion.
 * Use the `OR` operator between criterion to search for either specified criterion.
-* Use the LIKE operator
 
 Spaces are allowed between operators. Example: `data.last_name = "Canera"`.
 
 ### Wildcard Syntax
 
-Use the `like` operator, then include wildcards `%` or `_` within the quotation marks \(`"`\) of your search parameter.
+Use `%` as a wildcard character to substitute one or more characters in any PMQL-supported parameter that uses a string. Include the `%` character within the quotation marks \(`"`\) of the parameter. Examples:
 
-The `%` wildcard represents zero, one, or more characters. The `_` wildcard represents exactly one character.
-
-Examples:
-
-* `request like "P%"` finds Requests associated with all Processes that begin with `P`.
-* `status like "c%"` finds Requests with both Completed and Canceled statuses.
-* `data.last_name like "Ca%"` finds all values from Requests that begin with `Ca` in the `last_name` key name.
-* `data.last_name like "Ca___"` finds all values from Requests that begin with `Ca` and those that match three following characters in the `last_name` key name.
-* `task like "T%"` finds all Tasks that begin with `T`.
+* `request = "P%"` finds Requests associated with all Processes that begin with `P`
+* `status = "c%"` finds Requests with both Completed and Canceled statuses
+* `data.last_name = "C%"` finds all values that begin with `C` in the `last_name` key name
+* `task = "T%"` finds all Tasks that begin with `T`
 
 ## Related Topics
 
