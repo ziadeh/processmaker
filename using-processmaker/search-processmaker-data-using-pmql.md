@@ -197,7 +197,9 @@ Spaces are allowed between operators. Example: `data.last_name = "Canera"`.
 
 Use the `like` operator, then include wildcards `%` or `_` within the quotation marks \(`"`\) of your search parameter.
 
-The `%` wildcard represents zero, one, or more characters. The `_` wildcard represents exactly one character. Examples:
+The `%` wildcard represents zero, one, or more characters. The `_` wildcard represents exactly one character.
+
+Examples:
 
 * `request like "P%"` finds Requests associated with all Processes that begin with `P`.
 * `status like "c%"` finds Requests with both Completed and Canceled statuses.
