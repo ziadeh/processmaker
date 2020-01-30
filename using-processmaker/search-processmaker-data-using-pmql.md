@@ -198,7 +198,7 @@ Use `%` as a wildcard character to substitute one or more characters in any PMQL
 
 * `request = "P%"` finds Requests associated with all Processes that begin with `P`.
 * `status = "c%"` finds Requests with both Completed and Canceled statuses.
-* `data.last_name = "C%"` finds all values that begin with `C` in the `last_name` key name.
+* `data.last_name = "C%"` finds all values from Request data that begin with `C` in the `last_name` key name.
 * `task = "T%"` finds all Tasks that begin with `T`.
 
 ## Related Topics
