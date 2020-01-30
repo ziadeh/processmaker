@@ -194,12 +194,12 @@ Spaces are allowed between operators. Example: `data.last_name = "Canera"`.
 
 ### Wildcard Syntax
 
-Use `%` as a wildcard character to substitute one or more characters in any PMQL-supported parameter that uses a string. Include the `%` character within the quotation marks \(`"`\) of the parameter. Examples:
+Use `%` as a wildcard character to substitute one or more characters in any PMQL-supported parameter that uses a string. When doing so, use the `like` syntax and include the `%` character within the quotation marks \(`"`\) of the parameter. Examples:
 
-* `request = "P%"` finds Requests associated with all Processes that begin with `P`.
-* `status = "c%"` finds Requests with both Completed and Canceled statuses.
-* `data.last_name = "C%"` finds all values from Request data that begin with `C` in the `last_name` key name.
-* `task = "T%"` finds all Tasks that begin with `T`.
+* `request like "P%"` finds Requests associated with all Processes that begin with `P`.
+* `status like "c%"` finds Requests with both Completed and Canceled statuses.
+* `data.last_name like "C%"` finds all values from Request data that begin with `C` in the `last_name` key name.
+* `task like "T%"` finds all Tasks that begin with `T`.
 
 ## Related Topics
 
