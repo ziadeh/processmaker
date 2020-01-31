@@ -122,6 +122,7 @@
     * [What is Screen Builder?](designing-processes/design-forms/screens-builder/what-is-screens-builder.md)
     * [Screen Types](designing-processes/design-forms/screens-builder/types-for-screens.md)
     * [Screen Builder Modes](designing-processes/design-forms/screens-builder/screens-builder-modes.md)
+    * [My New Page](designing-processes/design-forms/screens-builder/my-new-page.md)
     * [Validate Your Screen](designing-processes/design-forms/screens-builder/validate-your-screen.md)
     * [Edit Your Screen](designing-processes/design-forms/screens-builder/control-descriptions/README.md)
       * [Controls from the ProcessMaker Collection Package](designing-processes/design-forms/screens-builder/control-descriptions/processmaker-collection-controls/README.md)
