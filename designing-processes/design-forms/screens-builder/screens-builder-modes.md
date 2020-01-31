@@ -4,7 +4,7 @@ description: Understand each of Screen Builder's modes.
 
 # Screen Builder Modes
 
-## Design Mode
+## Design Mode2
 
 Use Design mode to design your ProcessMaker Screen. Design mode is the default mode when a ProcessMaker Screen is created or edited. While in Design mode, use the **Design** setting section to configure [controls](control-descriptions/) that you place into your Screen Builder canvas.
 
@@ -49,6 +49,10 @@ Use the Custom CSS mode to add custom CSS styles to a ProcessMaker Screen.
 {% hint style="info" %}
 See [Add Custom CSS to a Screen](add-custom-css-to-a-screen.md).
 {% endhint %}
+
+## Watchers Mode
+
+
 
 ## Related Topics
 
