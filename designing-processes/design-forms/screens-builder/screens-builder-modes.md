@@ -50,10 +50,6 @@ Use the Custom CSS mode to add custom CSS styles to a ProcessMaker Screen.
 See [Add Custom CSS to a Screen](add-custom-css-to-a-screen.md).
 {% endhint %}
 
-## Watchers Mode
-
-
-
 ## Related Topics
 
 {% page-ref page="what-is-screens-builder.md" %}
