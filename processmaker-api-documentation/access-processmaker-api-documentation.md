@@ -4,6 +4,8 @@ description: Access ProcessMaker API documentation from your ProcessMaker instan
 
 # Access ProcessMaker API Documentation
 
+[ProcessMaker API documentation](https://staging-pm4.processmaker.net/api/documentation)
+
 ## Overview
 
 Despite the ProcessMaker user interface, ProcessMaker operates entirely from a REST API. ProcessMaker Administrators and developers may want to access the ProcessMaker API documentation to understand how to use endpoints or to consider how to extend ProcessMaker functionality for their own use cases.
