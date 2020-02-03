@@ -26,6 +26,7 @@
                             </template>
                         </multiselect>
                         <multiselect v-model="status"
+                                     v-if="! excludeStatus"
                                      :show-labels="false"
                                      @input="buildPmql"
                                      :loading="isLoading.status"
@@ -144,6 +145,7 @@
                             </template>
                         </multiselect>
                         <multiselect v-model="status"
+                                     v-if="! excludeStatus"
                                      :show-labels="false"
                                      @input="buildPmql"
                                      :loading="isLoading.status"
@@ -188,7 +190,7 @@
 
 <script>
 export default {
-  props: ["type", "paramProcess", "paramStatus", "paramRequester", "paramParticipants", "paramRequest", "paramName"],
+  props: ["type", "excludeStatus", "paramProcess", "paramStatus", "paramRequester", "paramParticipants", "paramRequest", "paramName"],
   data() {
     return {
         process: [],
