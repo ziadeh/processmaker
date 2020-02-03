@@ -158,6 +158,9 @@ Route::group(
     Route::put('comments/{comment}', 'CommentController@update')->name('comments.update')->middleware('can:edit-comments');
     Route::delete('comments/{comment}', 'CommentController@destroy')->name('comments.destroy')->middleware('can:delete-comments');
 
+    // Business Metrics
+    Route::get('metrics/tasks_per_day', 'MetricsController@showTasksPerDay')->name('metrics.tasks_per_day'); //Filtered in controller
+    Route::get('metrics/task_completion', 'MetricsController@showTaskCompletion')->name('metrics.task_completion'); //Filtered in controller
 
     //DataSources
     Route::get('data_sources', 'DataSourcesController@index')->name('data-sources.index')->middleware('can:view-data-sources');
