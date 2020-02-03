@@ -1,0 +1,181 @@
+$WorkSansFontPath: "../../fonts/Work_Sans" !default;
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 100;
+  font-style: normal;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-Thin.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-Thin.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-Thin.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-Thin.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 100;
+  font-style: normal;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-ThinItalic.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-ThinItalic.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-ThinItalic.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-ThinItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 200;
+  font-style: normal;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-ExtraLight.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-ExtraLight.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-ExtraLight.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-ExtraLight.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 200;
+  font-style: italic;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-ExtraLightItalic.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-ExtraLightItalic.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-ExtraLightItalic.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-ExtraLightItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 300;
+  font-style: normal;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-Light.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-Light.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-Light.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 300;
+  font-style: italic;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-LightItalic.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-LightItalic.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-LightItalic.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-LightItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-Regular.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-Regular.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-Regular.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 400;
+  font-style: italic;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-Italic.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-Italic.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-Italic.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 500;
+  font-style: normal;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-Medium.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-Medium.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-Medium.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 500;
+  font-style: italic;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-MediumItalic.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-MediumItalic.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-MediumItalic.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-MediumItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 600;
+  font-style: normal;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-SemiBold.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-SemiBold.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-SemiBold.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 600;
+  font-style: italic;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-SemiBoldItalic.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-SemiBoldItalic.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-SemiBoldItalic.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-SemiBoldItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 700;
+  font-style: normal;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-Bold.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-Bold.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-Bold.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 700;
+  font-style: italic;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-BoldItalic.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-BoldItalic.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-BoldItalic.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-BoldItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 800;
+  font-style: normal;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-ExtraBold.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-ExtraBold.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-ExtraBold.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-ExtraBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 800;
+  font-style: italic;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-ExtraBoldItalic.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-ExtraBoldItalic.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-ExtraBoldItalic.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-ExtraBoldItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 900;
+  font-style: normal;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-Black.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-Black.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-Black.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-Black.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-weight: 900;
+  font-style: italic;
+  src: url('#{$WorkSansFontPath}/WOFF2/WorkSans-BlackItalic.woff2') format('woff2'),
+       url('#{$WorkSansFontPath}/WOFF/WorkSans-BlackItalic.woff') format('woff'),
+       url('#{$WorkSansFontPath}/TTF/WorkSans-BlackItalic.ttf') format('truetype'),
+       url('#{$WorkSansFontPath}/OTF/WorkSans-BlackItalic.otf') format('opentype');
+}
