@@ -1,24 +1,27 @@
 <template>
-    <div class="mt-3">
-      <div class="card" v-for="event in process.startEvents" :key="event.id">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-10">
-              {{transformedName}}
-              <span v-if="process.startEvents.length > 1">: {{event.name}}</span>
-              <a href="#" @click="showRequestDetails">...</a>
-            </div>
-            <div class="col-2 text-right">
-              <a href="#" @click="newRequestLink(process, event)" class="btn btn-primary btn-sm">
-                <i class="fas fa-caret-square-right"></i> Start
-              </a>
+    <div>
+      <div :ref="'startEvent' + event.id" :class="{'process-card-loading': loading[event.id]}" class="process-card bg-success text-white rounded-md mt-3 py-2 pl-2" v-for="event in process.startEvents" :key="event.id">
+        <div class="d-flex">
+          <div class="process-name">
+            {{transformedName}}<span v-if="process.startEvents.length > 1">: {{event.name}}</span>
+            <div class="process-button process-button-info" :id="targetReference(process, event, 'info')" @click="showRequestDetails(event.id)">
+              <i class="fas fa-fw fa-info-circle"></i>
+              <b-tooltip :target="targetReference(process, event, 'info')" triggers="hover">
+                {{ $t('More Information') }}
+              </b-tooltip>
             </div>
           </div>
-          <div v-if="showdetail">
-            <hr>
-            <p class="card-text text-muted">{{process.description}}</p>
+          <div class="ml-auto process-buttons">
+            <div class="process-button process-button-start pr-2" :id="targetReference(process, event, 'start')" @click="newRequestLink(process, event)">
+              <i v-if="loading[event.id]" class="fas fa-lg fa-fw fa-cog fa-spin"></i>
+              <i v-else class="fas fa-2x fa-fw fa-caret-square-right"></i>
+              <b-tooltip :target="targetReference(process, event, 'start')" triggers="hover">
+                {{ $t('Start Request') }}
+              </b-tooltip>
+            </div>
           </div>
         </div>
+        <div class="process-description pr-2" v-if="showDetail[event.id]">{{ process.description }}</div>
       </div>
     </div>
 </template>
@@ -30,36 +33,40 @@ export default {
   props: ["name", "description", "filter", "id", "process"],
   data() {
     return {
-      disabled: false,
-      spin: 0,
       showtip: true,
-      showdetail: false
+      showDetail: {},
+      loading: {},
     };
   },
+  beforeMount() {
+    this.process.startEvents.forEach(event => {
+      this.$set(this.showDetail, event.id, false);
+      this.$set(this.loading, event.id, false);
+    });
+  },
   methods: {
+    targetReference(process, event, item) {
+      let uid = this._uid;
+      return `process-${item}-${process.id}-${event.id}-${uid}`;
+    },
     newRequestLink(process, event) {
-      if (this.disabled) {
+      if (this.loading[event.id]) {
         return;
       }
-      this.disabled = true;
       //Start a process
-      this.spin = process.id + "." + event.id;
+      this.$set(this.loading, event.id, true);
       let startEventId = event.id;
       window.ProcessMaker.apiClient
         .post("/process_events/" + this.process.id + "?event=" + startEventId)
         .then(response => {
-          this.spin = 0;
           var instance = response.data;
           window.location = "/requests/" + instance.id;
+          this.$set(this.loading, event.id, false);
         });
     },
     showRequestDetails: function(id) {
-      if (this.showdetail == false) {
-        this.showdetail = true;
-      } else {
-        this.showdetail = false;
-      }
-    }
+      this.$set(this.showDetail, id, !this.showDetail[id]);
+    },
   },
   computed: {
     transformedName() {
@@ -67,28 +74,39 @@ export default {
         return match;
       });
     },
-    truncatedDescription() {
-      if (!this.process.description) {
-        return '<span class="text-primary"></span>';
-      }
-      let result = "";
-      let container = this.$refs.description;
-      let wordArray = this.process.description.split(" ");
-      // Number of maximum characters we want for our description
-      let maxLength = 100;
-      let word = null;
-      while ((word = wordArray.shift())) {
-        if (result.length + word.length + 1 <= maxLength) {
-          result = result + " " + word;
-          continue;
-        } else {
-          break;
-        }
-      }
-      return result.replace(new RegExp(this.filter, "gi"), match => {
-        return '<span class="text-primary">' + match + "</span>";
-      });
-    }
   }
 };
 </script>
+
+<style lang="scss" scoped>
+  .process-card-loading {
+    opacity: .5;
+  }
+
+  .process-name {
+    font-weight: bold;
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  
+  .process-buttons {
+    min-width: 75px;
+    text-align: right;
+  }
+  
+  .process-button {
+    cursor: pointer;
+    display: inline-block;
+    opacity: .8;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  .process-description {
+    font-size: .85em;
+    padding-left: 5px;
+  }
+</style>
+
