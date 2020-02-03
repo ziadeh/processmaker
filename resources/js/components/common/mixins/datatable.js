@@ -107,13 +107,10 @@ export default {
                 loadingClass: "loading",
                 detailRowClass: "vuetable-detail-row",
                 handleIcon: "grey sidebar icon",
-                sortableIcon: "fas fa-sort",
-                ascendingIcon: "fas fa-sort-up",
-                descendingIcon: "fas fa-sort-down",
                 ascendingClass: "ascending",
                 descendingClass: "descending",
                 renderIcon(classes, options) {
-                    return `<i class="${classes.join(" ")}"></i>`;
+                    return `<div class="sort-icons"><i class="sort-default fas fa-sort"></i> <i class="sort-ascending fas fa-sort-up"></i> <i class="sort-descending fas fa-sort-down"></i></div>`;
                 }
             },
             noDataTemplate() { return "asdfas#####1111" }
