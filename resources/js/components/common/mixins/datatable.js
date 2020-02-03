@@ -24,11 +24,16 @@ export default {
     },
     methods: {
         // Handler to properly format date/time columns according to localized format
-        formatDate(value, format) {
+        formatDate(value, format, relative) {
             format = format || '';
             if (value) {
+              if (relative) {
+                return window.moment(value)
+                    .fromNow();
+              } else {
                 return window.moment(value)
                     .format(format);
+              }
             }
             return "n/a";
         },
