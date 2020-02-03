@@ -60,7 +60,6 @@ mix.extract([
   .copy("node_modules/snapsvg/dist/snap.svg.js", "public/js")
   .copy("resources/js/components/CustomActions.vue", "public/js")
   .copy("resources/js/components/DetailRow.vue", "public/js")
-  .copy("resources/fonts/Open_Sans/", "public/fonts")
   .copy("resources/js/components/FilterBar.vue", "public/js")
   .copy("resources/js/timeout.js", "public/js")
   // Copy files necessary for images for the designer/modeler to it's own img directory
