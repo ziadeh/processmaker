@@ -7,7 +7,7 @@
       :empty-desc="$t('You don\'t currently have any tasks assigned to you')"
       empty-icon="beach"
     />
-    <div v-show="!shouldShowLoader" class="card card-body table-card">
+    <div v-show="!shouldShowLoader" class="card card-body table-card" :class="wrapperClass">
       <vuetable
         :dataManager="dataManager"
         :sortOrder="sortOrder"
@@ -21,18 +21,18 @@
         ref="vuetable"
       >
         <template slot="ids" slot-scope="props">
-          <b-link @click="onAction('edit', props.rowData, props.rowIndex)">#{{props.rowData.id}}</b-link>
+          <b-link class="text-reset" :href="onAction('edit', props.rowData, props.rowIndex)"><span class="number-symbol">#</span>{{props.rowData.id}}</b-link>
         </template>
         <template slot="name" slot-scope="props">
-          <b-link
-            @click="onAction('edit', props.rowData, props.rowIndex)"
+          <b-link class="text-reset task-name"
+            :href="onAction('edit', props.rowData, props.rowIndex)"
           >{{props.rowData.element_name}}</b-link>
         </template>
 
         <template slot="requestName" slot-scope="props">
-          <b-link
-            @click="onAction('showRequestSummary', props.rowData, props.rowIndex)"
-          >#{{props.rowData.process_request.id}} {{props.rowData.process.name}}</b-link>
+          <b-link class="text-reset"
+            :href="onAction('showRequestSummary', props.rowData, props.rowIndex)"
+          ><span class="number-symbol">#</span>{{props.rowData.process_request.id}} {{props.rowData.process.name}}</b-link>
         </template>
 
         <template slot="status" slot-scope="props">
@@ -42,6 +42,28 @@
 
         <template slot="assignee" slot-scope="props">
           <avatar-image size="25" :input-data="props.rowData.user" hide-name="true" v-if="props.rowData.user"></avatar-image>
+        </template>
+
+        <template slot="createdDateRelative" slot-scope="props">
+          <span :id="'created-date-' + props.rowData.id">
+            {{formatDate(props.rowData.created_at, null, true)}}
+          </span>
+          <b-tooltip :target="'created-date-' + props.rowData.id" triggers="hover">
+            {{formatDate(props.rowData.created_at)}}
+          </b-tooltip>
+        </template>
+
+        <template slot="dueDateRelative" slot-scope="props">
+          <span :id="'due-date-' + props.rowData.id">
+            {{formatDate(props.rowData.due_at, null, true)}}
+          </span>
+          <b-tooltip :target="'due-date-' + props.rowData.id" triggers="hover">
+            {{formatDate(props.rowData.due_at)}}
+          </b-tooltip>
+        </template>
+
+        <template slot="createdDate" slot-scope="props">
+          <span>{{formatDate(props.rowData.created_at)}}</span>
         </template>
 
         <template slot="dueDate" slot-scope="props">
@@ -61,7 +83,7 @@
             <div class="popout">
               <b-btn
                 variant="link"
-                @click="onAction('edit', props.rowData, props.rowIndex)"
+                :href="onAction('edit', props.rowData, props.rowIndex)"
                 v-b-tooltip.hover
                 :title="$t('Open Task')"
               >
@@ -69,7 +91,7 @@
               </b-btn>
               <b-btn
                 variant="link"
-                @click="onAction('showRequestSummary', props.rowData, props.rowIndex)"
+                :href="onAction('showRequestSummary', props.rowData, props.rowIndex)"
                 v-b-tooltip.hover
                 :title="$t('Open Request')"
               >
@@ -82,7 +104,7 @@
       <pagination
         :single="$t('Task')"
         :plural="$t('Tasks')"
-        :perPageSelectEnabled="true"
+        :perPageSelectEnabled="perPageSelectEnabled"
         @changePerPage="changePerPage"
         @vuetable-pagination:change-page="onPageChange"
         ref="pagination"
@@ -102,11 +124,13 @@ Vue.component("avatar-image", AvatarImage);
 
 export default {
   mixins: [datatableMixin, dataLoadingMixin],
-  props: ["filter", "columns", "pmql"],
+  props: ["filter", "columns", "pmql", "wrapperClass", "itemsPerPage", "perPageSelect"],
   data() {
     return {
+      count: null,
       orderBy: "ID",
       order_direction: "DESC",
+      perPageSelectEnabled: true,
       status: "",
       sortOrder: [
         {
@@ -119,6 +143,12 @@ export default {
     };
   },
   mounted: function mounted() {
+    if (this.itemsPerPage) {
+      this.perPage = this.itemsPerPage;
+    }
+    if (this.perPageSelect === null) {
+      this.perPageSelectEnabled = this.perPageSelect;
+    }
     this.setupColumns();
     let params = new URL(document.location).searchParams;
     let successRouting = params.get("successfulRouting") === "true";
@@ -138,7 +168,11 @@ export default {
         switch (column.field) {
           case 'id':
             field.name = '__slot:ids';
-            field.title = '#';
+            break;
+          case 'summary':
+            field.name = '__slot:summary';
+            field.field = 'id';
+            field.sortField = 'id';
             break;
           case 'task':
             field.name = '__slot:name';
@@ -157,8 +191,21 @@ export default {
             field.name = '__slot:assignee';
             field.field = "user";
             break;
+          case 'created_at':
+            field.name = '__slot:createdDate';
+            break;
           case 'due_at':
             field.name = '__slot:dueDate';
+            break;
+          case 'created_at_relative':
+            field.name = '__slot:createdDateRelative';
+            field.field = 'created_at';
+            field.sortField = 'created_at';
+            break;
+          case 'due_at_relative':
+            field.name = '__slot:dueDateRelative';
+            field.field = 'due_at';
+            field.sortField = 'due_at';
             break;
           case 'completed_at':
             field.name = '__slot:completedDate';
@@ -247,12 +294,12 @@ export default {
     onAction(action, rowData, index) {
       if (action === "edit") {
         let link = "/tasks/" + rowData.id + "/edit";
-        window.location = link;
+        return link;
       }
 
       if (action === "showRequestSummary") {
         let link = "/requests/" + rowData.process_request.id;
-        window.location = link;
+        return link;
       }
     },
     statusColor(props) {
@@ -356,6 +403,10 @@ export default {
               )
               .then(response => {
                 this.data = this.transform(response.data);
+                if (this.count === null) {
+                  this.$emit('count', response.data.meta.total);
+                }
+                this.count = response.data.meta.total;
                 if (response.data.meta.in_overdue > 0) {
                   this.$emit("in-overdue", response.data.meta.in_overdue);
                 }
@@ -370,5 +421,22 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+  .task-id {
+    font-weight: normal;
+    opacity: .75;
+  }
+
+  .task-name {
+    font-weight: bold;
+  }
+  
+  .summary-secondary {
+    font-size: .85rem;
+    opacity: .7;
+    
+    i {
+      opacity: .5;
+    }
+  }
 </style>
