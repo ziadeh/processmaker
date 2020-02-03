@@ -1,7 +1,14 @@
 <div id="breadcrumbs" {{$attributes ?? ''}} class="d-print-none" v-cloak>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb border-top border-bottom">
-            <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
+            <li class="breadcrumb-item">
+                <a href="/">
+                    <i class="fas fa-home"></i>
+                    @if (isset($home) && $home)
+                        ProcessMaker 4
+                    @endif
+                </a>
+            </li>
             @foreach($routes as $title => $link)
                 @php
                     if (is_callable($link)) {
