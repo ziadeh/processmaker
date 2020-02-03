@@ -86,6 +86,8 @@ div.page{
 
 {% page-ref page="manage-computed-properties.md" %}
 
+{% page-ref page="manage-watchers.md" %}
+
 {% page-ref page="save-a-screen.md" %}
 
 {% page-ref page="best-practices.md" %}

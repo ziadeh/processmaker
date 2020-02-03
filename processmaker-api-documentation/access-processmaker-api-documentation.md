@@ -8,7 +8,7 @@ description: Access ProcessMaker API documentation from your ProcessMaker instan
 
 Despite the ProcessMaker user interface, ProcessMaker operates entirely from a REST API. ProcessMaker Administrators and developers may want to access the ProcessMaker API documentation to understand how to use endpoints or to consider how to extend ProcessMaker functionality for their own use cases.
 
-If you view the ProcessMaker API documentation while logged on to your ProcessMaker instance, you may also test API endpoints to see how they work. For example, view the [curl](https://github.com/curl/curl) or URL to run a ProcessMaker API endpoint, the possible responses and returned schema structure, and other technical information how to use that API endpoint. To test API endpoints, you must be logged on as an authenticated ProcessMaker user.
+If you view the ProcessMaker API documentation while logged on to your ProcessMaker instance, you may also test API endpoints to see how they work. For example, view the [curl](https://github.com/curl/curl) command or URL to run a ProcessMaker API endpoint, the possible responses and returned schema structure, and other technical information how to use that API endpoint. To test API endpoints, you must be logged on as an authenticated ProcessMaker user.
 
 You must have the following to test ProcessMaker API endpoints from the API documentation:
 
@@ -18,7 +18,7 @@ You must have the following to test ProcessMaker API endpoints from the API docu
 
 ## View the API Documentation
 
-If you want to view how robust ProcessMaker functionality is and read how to use each API endpoint, you may view the ProcessMaker API documentation. However, since you are not viewing this documentation as an authenticated ProcessMaker user, you cannot test API endpoints. See [Access ProcessMaker API Documentation](access-processmaker-api-documentation.md#test-api-endpoints-from-the-api-documentation) for that information.
+If you want to view how robust ProcessMaker functionality is and read how to use each API endpoint, you may view the ProcessMaker API documentation. However, since you are not viewing this documentation as an authenticated ProcessMaker user, you cannot test API endpoints. See [Test API Endpoints from the API Documentation](access-processmaker-api-documentation.md#test-api-endpoints-from-the-api-documentation) for that information.
 
 View this [ProcessMaker API documentation](https://staging-pm4.processmaker.net/api/documentation) without testing API endpoints.
 

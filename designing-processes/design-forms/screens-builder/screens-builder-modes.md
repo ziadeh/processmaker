@@ -34,7 +34,7 @@ Furthermore, test how the ProcessMaker Screen's controls you configured in Desig
 
 ## Computed Properties Mode
 
-Use Computed Properties mode to add Properties to a ProcessMaker Screen's JSON data model. A Property represents any value, mathematical calculation, or formula that computes a value. A Property's computation can be determined either through a mathematical formula or valid JavaScript, and may include values from [ProcessMaker Screen control](control-descriptions/) values during a Request. Likewise, a computed Property's value can be displayed in a ProcessMaker Screen control. Computed Properties can only be used within and only affect the ProcessMaker Screen in which the Property is defined.
+Use Computed Properties mode to add Properties to that ProcessMaker Screen. A Property is any value, mathematical calculation, or formula. A Property's computation can be determined either through a mathematical formula or valid JavaScript, and may include values from [ProcessMaker Screen control](control-descriptions/) values during that [Request](../../../using-processmaker/requests/what-is-a-request.md). Likewise, a computed Property's value can be displayed in a ProcessMaker Screen control during that Request. Computed Properties can only be used within and only affect the ProcessMaker Screen to which the Property is defined.
 
 ![Create Property values based on a computed calculation in Computed Properties mode](../../../.gitbook/assets/computed-properties-populated-screens-builder-processes.png)
 
@@ -52,7 +52,11 @@ See [Add Custom CSS to a Screen](add-custom-css-to-a-screen.md).
 
 ## Watchers Mode
 
+Use Watchers mode to add Watchers to that ProcessMaker Screen. During a [Request](../../../using-processmaker/requests/what-is-a-request.md) or while [previewing](screens-builder-modes.md#preview-mode) the ProcessMaker Screen, a Watcher monitors when the value of a control changes or receives a value, references a Data Source or [ProcessMaker Script](../../scripts/what-is-a-script.md) to perform an action using that control's value, and then outputs its result to another Screen control.
 
+{% hint style="info" %}
+See [Manage Watchers](manage-watchers.md).
+{% endhint %}
 
 ## Related Topics
 
@@ -62,8 +66,6 @@ See [Add Custom CSS to a Screen](add-custom-css-to-a-screen.md).
 
 {% page-ref page="preview-a-screen.md" %}
 
-{% page-ref page="manage-computed-properties.md" %}
-
 {% page-ref page="../../scripts/what-is-a-script.md" %}
 
 {% page-ref page="types-for-screens.md" %}
@@ -72,11 +74,13 @@ See [Add Custom CSS to a Screen](add-custom-css-to-a-screen.md).
 
 {% page-ref page="add-a-new-page-to-a-screen.md" %}
 
-{% page-ref page="preview-a-screen.md" %}
+{% page-ref page="screens-builder-modes.md" %}
 
 {% page-ref page="manage-computed-properties.md" %}
 
 {% page-ref page="add-custom-css-to-a-screen.md" %}
+
+{% page-ref page="manage-watchers.md" %}
 
 {% page-ref page="save-a-screen.md" %}
 

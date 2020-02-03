@@ -134,9 +134,9 @@ Follow these steps to delete a computed Property:
 
 {% page-ref page="add-a-new-page-to-a-screen.md" %}
 
-{% page-ref page="manage-computed-properties.md" %}
-
 {% page-ref page="add-custom-css-to-a-screen.md" %}
+
+{% page-ref page="manage-watchers.md" %}
 
 {% page-ref page="save-a-screen.md" %}
 

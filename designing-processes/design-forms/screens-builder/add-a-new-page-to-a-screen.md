@@ -100,6 +100,8 @@ Follow these steps to rename a page on a ProcessMaker Screen:
 
 {% page-ref page="add-custom-css-to-a-screen.md" %}
 
+{% page-ref page="manage-watchers.md" %}
+
 {% page-ref page="save-a-screen.md" %}
 
 {% page-ref page="best-practices.md" %}

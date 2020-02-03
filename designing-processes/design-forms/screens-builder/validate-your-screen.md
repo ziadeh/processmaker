@@ -50,8 +50,6 @@ Follow these steps to validate a ProcessMaker Screen:
 
 {% page-ref page="screens-builder-modes.md" %}
 
-{% page-ref page="validate-your-screen.md" %}
-
 {% page-ref page="control-descriptions/" %}
 
 {% page-ref page="preview-a-screen.md" %}
@@ -61,6 +59,8 @@ Follow these steps to validate a ProcessMaker Screen:
 {% page-ref page="manage-computed-properties.md" %}
 
 {% page-ref page="add-custom-css-to-a-screen.md" %}
+
+{% page-ref page="manage-watchers.md" %}
 
 {% page-ref page="save-a-screen.md" %}
 

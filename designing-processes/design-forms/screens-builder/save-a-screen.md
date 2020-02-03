@@ -48,5 +48,7 @@ Do you need to export this ProcessMaker Screen? Click the **Export Screen** butt
 
 {% page-ref page="add-custom-css-to-a-screen.md" %}
 
+{% page-ref page="manage-watchers.md" %}
+
 {% page-ref page="best-practices.md" %}
 
