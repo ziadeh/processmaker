@@ -65,6 +65,8 @@ Route::group(['middleware' => ['auth', 'sanitize', 'external.connection']], func
 
     Route::post('/keep-alive', 'Auth\LoginController@keepAlive')->name('keep-alive');
 
+    Route::get('home', 'HomeController@home')->name('home.home');
+
     Route::get('requests/search', 'RequestController@search')->name('requests.search');
     Route::get('requests/{type}', 'RequestController@index')
         ->where('type', 'all|in_progress|completed')

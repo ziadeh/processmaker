@@ -19,12 +19,8 @@ class GenerateMenus
     {
 
         Menu::make('topnav', function ($menu) {
-            $menu->group(['prefix' => 'requests'], function ($request_items) {
-                $request_items->add(__('Requests'), ['route' => 'requests.index'])->active('requests/*');
-            });
-            //@TODO change the index to the correct blade
-            $menu->group(['prefix' => 'tasks'], function ($request_items) {
-                $request_items->add(__('Tasks'), ['route' => 'tasks.index'])->active('tasks/*');
+            $menu->group(['prefix' => 'home'], function ($request_items) {
+                $request_items->add(__('Home'), ['route' => 'home.home'])->active('home/*');
             });
             if (\Auth::check() && \Auth::user()->canAny('view-processes|view-process-categories|view-scripts|view-screens|view-environment_variables')) {
                 $menu->group(['prefix' => 'processes'], function ($request_items) {
@@ -113,6 +109,21 @@ class GenerateMenus
                     'icon' => 'fa-clipboard',
                 ]);
             }
+        });
+        Menu::make('sidebar_home', function ($menu) {
+            $submenu = $menu->add(__('ProcessMaker'));
+            $submenu->add(__('Home'), [
+                'route' => 'home.home',
+                'icon' => 'fa-home',
+            ]);
+            $submenu->add(__('Tasks'), [
+                'route' => 'tasks.index',
+                'icon' => 'fa-list',
+            ]);
+            $submenu->add(__('Requests'), [
+                'route' => ['requests_by_type', ''],
+                'icon' => 'fa-clipboard-list',
+            ]);
         });
 
         Menu::make('sidebar_processes', function ($menu) {
