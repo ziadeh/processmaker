@@ -10,7 +10,7 @@
 
 
 @section('sidebar')
-    @include('layouts.sidebar', ['sidebar'=> Menu::get('sidebar_request')])
+    @include('layouts.sidebar', ['sidebar'=> Menu::get('sidebar_home')])
 @endsection
 
 @section('breadcrumbs')
