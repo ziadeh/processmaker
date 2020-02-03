@@ -78,6 +78,8 @@ mix.js("resources/js/app-layout.js", "public/js")
   .js("resources/js/admin/profile/edit.js", "public/js/admin/profile/edit.js")
   .js("resources/js/admin/cssOverride/edit.js", "public/js/admin/cssOverride/edit.js")
 
+  .js("resources/js/home/home.js", "public/js/home")
+
   .js("resources/js/processes/index.js", "public/js/processes")
   .js("resources/js/processes/edit.js", "public/js/processes")
   .js("resources/js/processes/archived.js", "public/js/processes")
