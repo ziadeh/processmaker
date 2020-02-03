@@ -187,11 +187,11 @@ export default {
       window.location.href = "/requests/" + data.id;
     },
     formatStatus(status) {
-      let color = "success",
+      let color = "info",
         label = "In Progress";
       switch (status) {
         case "DRAFT":
-          color = "danger";
+          color = "secondary";
           label = "Draft";
           break;
         case "CANCELED":
@@ -199,7 +199,7 @@ export default {
           label = "Canceled";
           break;
         case "COMPLETED":
-          color = "primary";
+          color = "success";
           label = "Completed";
           break;
         case "ERROR":

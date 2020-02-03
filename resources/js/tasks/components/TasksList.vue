@@ -258,11 +258,11 @@ export default {
     statusColor(props) {
       let status = props.status, isSelfService = props.is_self_service;
       if (status == 'ACTIVE' && isSelfService) {
-        return 'text-warning';
-      } else if (status == 'ACTIVE') {
-        return 'text-success';
-      } else if (status == 'CLOSED') {
         return 'text-primary';
+      } else if (status == 'ACTIVE') {
+        return 'text-info';
+      } else if (status == 'CLOSED') {
+        return 'text-success';
       } else {
         return 'text-secondary';
       }
