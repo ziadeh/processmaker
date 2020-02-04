@@ -67,7 +67,7 @@ Follow these guidelines to mock Request data coming into your ProcessMaker Scrip
 
 ### Enter Other JSON Data as Input to Your ProcessMaker Script
 
-Use the **Configuration** panel to include JSON configuration settings your ProcessMaker Script might access. For example, include the Client ID and Client Secret values in JSON format for OAuth 2.0 verification to a third-party service's API your ProcessMaker Script must access to access the API. By entering these values into the **Configuration** panel, you can verify during testing that these values are valid for the third-party service.
+Use the **Configuration** panel to include JSON configuration settings your ProcessMaker Script uses when it runs. For example, include the Client ID and Client Secret values in JSON format for OAuth 2.0 verification to a third-party service's API your ProcessMaker Script must access to access the API. By entering these values into the **Configuration** panel, you can verify during testing that these values are valid for the third-party service.
 
 ### Test Your ProcessMaker Script
 

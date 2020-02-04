@@ -1,5 +1,5 @@
 ---
-description: Watch our videos how to advanced ProcessMaker features.
+description: Watch our videos to quickly get started with ProcessMaker.
 ---
 
 # Get Started with ProcessMaker
