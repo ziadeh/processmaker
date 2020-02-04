@@ -69,6 +69,14 @@ Follow these guidelines to mock Request data coming into your ProcessMaker Scrip
 
 Use the **Configuration** panel to include JSON configuration settings your ProcessMaker Script uses when it runs. For example, include the Client ID and Client Secret values in JSON format for OAuth 2.0 verification to a third-party service's API your ProcessMaker Script must access to access the API. By entering these values into the **Configuration** panel, you can verify during testing that these values are valid for the third-party service.
 
+A ProcessMaker Script may access ProcessMaker Screen control values during a Request by referencing their **Variable Name** setting values using [mustache syntax](https://mustache.github.io/mustache.5.html). In the example below, `FullName` is the **Variable Name** setting value for a control to store a Request participant's full name:
+
+```text
+{
+    "Name": "{{ FullName }}"
+}
+```
+
 ### Test Your ProcessMaker Script
 
 Click the **Run** button to test your ProcessMaker Script. Scripts Editor evaluates any JSON data entered into the **Configuration** and **Sample Input** panels.

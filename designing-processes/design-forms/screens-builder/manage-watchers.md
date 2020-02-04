@@ -44,22 +44,25 @@ Follow these steps to add a Watcher to a ProcessMaker Screen:
 
 3. Click the **+Watcher** button. The **Watchers** screen displays. ![](../../../.gitbook/assets/watchers-configuration-screens-builder-processes.png) 
 4. In the **Watcher Name** setting, enter the name of the Watcher. This is a required setting.
-5. From the **Variable to Watch** drop-down menu, select which control, by its **Variable Name** setting value, the Watcher monitors for its value to change.
+5. From the **Variable to Watch** drop-down menu, select which ProcessMaker Screen control, by its **Variable Name** setting value, the Watcher monitors for its value to change.
 6. Select whether the Watcher acts upon a Data Connector or a ProcessMaker Script when the monitored control's value changes. Follow these guidelines:
    * **Data Source:**
      1. From the **Script Source** drop-down menu, select a Data Connector from the **Data Source** section upon which to act when the monitored control's value changes.
      2. 
    * **Script:**
      1. From the **Script Source** drop-down menu, select a ProcessMaker Script from the **Script** section to run when the monitored control's value changes.
-     2. Optionally, in the **Input Data** setting, enter a valid JSON object the Watcher passes to the ProcessMaker Script prior to running as input data for the Script.
+     2. Optionally, in the **Input Data** setting, enter a valid JSON object the Watcher passes to the ProcessMaker Script prior to running as input data for the Script. The ProcessMaker Script may access ProcessMaker Screen control values by referencing their **Variable Name** setting values in [mustache syntax](https://mustache.github.io/mustache.5.html). In the example below, `FullName` is the **Variable Name** setting value for a control to store a Request participant's full name:
+
+        `{`
+
+          `"Name": "{{ FullName }}"`
+
+        `}`
+
      3. Optionally, in the **Script Configuration** setting, include JSON configuration settings your ProcessMaker Script uses when it runs.
 7. In the **Output Variable** name setting, enter the control, by its **Variable Name** setting value, the Watcher outputs the value of its result.
 8. Select the **Run Synchronously** checkbox to perform the Watcher's action synchronously while the ProcessMaker Screen remains functional to the Screen user. If the **Run Synchronously** checkbox is not selected when the Watcher runs, the ProcessMaker Screen locks until the Watcher's action completes.
 9. Click **Save**.
-
-## View a Watcher's Details
-
-
 
 ## Edit a Watcher
 
