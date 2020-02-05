@@ -69,18 +69,19 @@ See the ProcessMaker [Screens](../../../processmaker-administration/permission-d
 Follow these steps to edit a computed Property:
 
 1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to add a computed Property. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode).
-2. [Open the **Computed Properties** screen.](manage-computed-properties.md#add-a-computed-property) The **Computer Properties** screen displays.![](../../../.gitbook/assets/computed-properties-screen-with-property-screens-builder-processes.png) 
+2. Click the **Calcs** button![](../../../.gitbook/assets/computed-properties-button-screens-builder-processes.png). The **Computer Properties** screen displays all computed Properties for this ProcessMaker Screen.  
+   ![](../../../.gitbook/assets/computed-properties-screen-with-property-screens-builder-processes.png) 
 
    The following information displays about each Property:
 
    * **Property name:** The **Property Name** column displays the name of each Property.
    * **Description:** The Description column displays the description of each Property.
 
-3. Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the computed Property to edit. The **Computed Properties** screen displays that Property's name, description, and how it is computed.  
+3. Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png)for the computed Property to edit. The **Computed Properties** screen displays that Property's name, description, and how it is computed.  
 
    ![](../../../.gitbook/assets/computed-property-screen-edit-screens-builder-processes.png)
 
-4. Edit the following information about the Property as necessary:
+4. Edit the following settings about the Property as necessary:
    * In the **Property Name** setting, enter the name of the Property. This Property name displays both in the **Computer Properties** screen and in the JSON data model when previewing the ProcessMaker Screen. This is a required setting.
    * In the **Description** setting, enter the description of the Property. This is a required field.
    * Above the **Formula** setting, select one of the following ways to compute the Property:
@@ -105,8 +106,8 @@ See the ProcessMaker [Screens](../../../processmaker-administration/permission-d
 Follow these steps to delete a computed Property:
 
 1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to delete a computed Property. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode).
-2. [Open the **Computed Properties** screen.](manage-computed-properties.md#add-a-computed-property)
-3. Click the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png). The Property is deleted, and the following message displays: **Property deleted**.
+2. Click the **Calcs** button![](../../../.gitbook/assets/computed-properties-button-screens-builder-processes.png). The **Computer Properties** screen displays all computed Properties for this ProcessMaker Screen. ![](../../../.gitbook/assets/computed-properties-screen-with-property-screens-builder-processes.png)
+3. Click the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png) for the computed Property to delete. The Property is deleted, and the following message displays: **Property deleted**.
 
 ## Related Topics
 
