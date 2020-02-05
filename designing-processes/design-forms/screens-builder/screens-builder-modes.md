@@ -52,7 +52,7 @@ See [Add Custom CSS to a Screen](add-custom-css-to-a-screen.md).
 
 ## Watchers Mode
 
-Use Watchers mode to add Watchers to that ProcessMaker Screen. During a [Request](../../../using-processmaker/requests/what-is-a-request.md) or while [previewing](screens-builder-modes.md#preview-mode) the ProcessMaker Screen, a Watcher monitors when the value of a control changes or receives a value, references a Data Source or [ProcessMaker Script](../../scripts/what-is-a-script.md) to perform an action using that control's value, and then outputs its result to another Screen control.
+Use Watchers mode to add Watchers to that ProcessMaker Screen. During a [Request](../../../using-processmaker/requests/what-is-a-request.md) or while [previewing](screens-builder-modes.md#preview-mode) the ProcessMaker Screen, a Watcher monitors when the value of a control in that Screen changes or receives a value, acts upon a Data Connector or runs a [ProcessMaker Script](../../scripts/what-is-a-script.md) using that control's value, and then outputs its result to another Screen control.
 
 ![ProcessMaker Script runs when student ID is entered, then returns student name, in Watchers mode](../../../.gitbook/assets/watchers-screen-screens-builder-processes.png)
 
