@@ -45,13 +45,22 @@ Follow these steps to add a Watcher to a ProcessMaker Screen:
 3. Click the **+Watcher** button. The **Watchers** screen displays. ![](../../../.gitbook/assets/watchers-configuration-screens-builder-processes.png) 
 4. In the **Watcher Name** setting, enter the name of the Watcher. This is a required setting.
 5. From the **Variable to Watch** drop-down menu, select which ProcessMaker Screen control, by its **Variable Name** setting value, the Watcher monitors for its value to change.
-6. Select whether the Watcher acts upon a Data Connector or a ProcessMaker Script when the monitored control's value changes. Follow these guidelines:
-   * **Data Source:**
-     1. From the **Script Source** drop-down menu, select a Data Connector from the **Data Source** section upon which to act when the monitored control's value changes.
-     2. 
+6. From the **Source** setting, select whether the Watcher acts upon a Data Connector or runs a ProcessMaker Script when the monitored control's value changes. Follow these guidelines:
+   * **Data Connector:**
+     1. From the **Source** drop-down menu, select a Data Connector from the **Data Connector** section upon which to act when the monitored control's value changes. The **Endpoint** setting displays below the **Source** drop-down menu.
+     2. From the **Endpoint** drop-down menu, select which endpoint to act upon in the selected Data Connector. These endpoints are configured from the Data Connector itself. Depending on the Data Connector selected from the **Data Connector** section of the **Source** drop-down menu, these endpoints may reference API endpoints, ProcessMaker Collection records, or other data source endpoints.
+     3. Optionally, in the **Input Data** setting, enter a valid JSON object the Watcher passes to the Data Connector prior to acting upon the selected endpoint. The Data Connector may reference ProcessMaker Screen control values by referencing their **Variable Name** setting values when placed within [mustache syntax](https://mustache.github.io/mustache.5.html). In the example below, `FullName` is the **Variable Name** setting value for a control to store a Request participant's full name:
+
+        `{`
+
+          `"Name": "{{ FullName }}"`
+
+        `}`
+
+     4. 
    * **Script:**
-     1. From the **Script Source** drop-down menu, select a ProcessMaker Script from the **Script** section to run when the monitored control's value changes.
-     2. Optionally, in the **Input Data** setting, enter a valid JSON object the Watcher passes to the ProcessMaker Script prior to running as input data for the Script. The ProcessMaker Script may access ProcessMaker Screen control values by referencing their **Variable Name** setting values in [mustache syntax](https://mustache.github.io/mustache.5.html). In the example below, `FullName` is the **Variable Name** setting value for a control to store a Request participant's full name:
+     1. From the **Source** drop-down menu, select a ProcessMaker Script from the **Script** section to run when the monitored control's value changes.
+     2. Optionally, in the **Input Data** setting, enter a valid JSON object the Watcher passes to the ProcessMaker Script prior to running as input data for the Script. The ProcessMaker Script may reference ProcessMaker Screen control values by referencing their **Variable Name** setting values when placed within [mustache syntax](https://mustache.github.io/mustache.5.html). In the example below, `FullName` is the **Variable Name** setting value for a control to store a Request participant's full name:
 
         `{`
 
