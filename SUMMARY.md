@@ -144,7 +144,7 @@
       * [Expression Syntax Components for "Visibility Rule" Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/expression-syntax-components-for-show-if-control-settings.md)
     * [Add, Delete or Rename a Page](designing-processes/design-forms/screens-builder/add-a-new-page-to-a-screen.md)
     * [Preview a Screen and Its JSON Data Model](designing-processes/design-forms/screens-builder/preview-a-screen.md)
-    * [Manage Computed Properties](designing-processes/design-forms/screens-builder/manage-computed-properties/README.md)
+    * [Manage Computed Properties](designing-processes/design-forms/screens-builder/manage-computed-properties.md)
       * [What is a Computed Property?](designing-processes/design-forms/screens-builder/manage-computed-properties/what-is-a-computed-property.md)
       * [View Computed Properties for a Screen](designing-processes/design-forms/screens-builder/manage-computed-properties/view-computed-properties-for-a-screen.md)
       * [Add a Computed Property for a Screen](designing-processes/design-forms/screens-builder/manage-computed-properties/add-a-computed-property-to-a-screen.md)

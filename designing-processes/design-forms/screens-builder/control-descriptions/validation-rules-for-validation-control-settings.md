@@ -26,79 +26,79 @@ Use the pipe character \(`|`\) between rules to combine them into one **Validati
 
 ### **accepted**
 
-The control under validation must be `yes`, `on`, `1` or true. This is useful for validating "Terms of Service" acceptance.
+The field under validation must be `yes`, `on`, `1` or true. This is useful for validating "Terms of Service" acceptance.
 
 ### **after:date**
 
-The control under validation must be after the given date.
+The field under validation must be after the given date.
 
 ### **after\_or\_equal:date**
 
-The control under validation must be after or equal to the given control.
+The field under validation must be after or equal to the given field.
 
 ### **alpha**
 
-The control under validation must be entirely alphabetic characters.
+The field under validation must be entirely alphabetic characters.
 
 ### **alpha\_dash**
 
-The control under validation may have alphanumeric characters as well as dashes and underscores.
+The field under validation may have alphanumeric characters as well as dashes and underscores.
 
 ### **alpha\_num**
 
-The control under validation must contain entirely alphanumeric characters.
+The field under validation must contain entirely alphanumeric characters.
 
 ### **array**
 
-The control under validation must be an array.
+The field under validation must be an array.
 
 ### **before:date**
 
-The control under validation must be before the given date.
+The field under validation must be before the given date.
 
 ### **before\_or\_equal:date**
 
-The control under validation must be before or equal to the given date.
+The field under validation must be before or equal to the given date.
 
 ### **between:min,max**
 
-The control under validation must have a size between the given `min` and `max`. [Strings](validation-rules-for-validation-control-settings.md#string), [numerics](validation-rules-for-validation-control-settings.md#numeric), and files are evaluated in the same fashion as the size rule.
+The field under validation must have a size between the given `min` and `max`. [Strings](validation-rules-for-validation-control-settings.md#string), [numerics](validation-rules-for-validation-control-settings.md#numeric), and files are evaluated in the same fashion as the size rule.
 
 ### **Boolean**
 
-The control under validation must be a Boolean value of the form `true`, `false`, `0`, `1`, `'true'`, `'false'`, `'0'`, `'1'`,
+The field under validation must be a Boolean value of the form `true`, `false`, `0`, `1`, `'true'`, `'false'`, `'0'`, `'1'`,
 
 ### **confirmed**
 
-The control under validation must have a matching control of `foo_confirmation`. For example, if the control under validation is password, a matching `password_confirmation` control must be present in the input.
+The field under validation must have a matching field of `foo_confirmation`. For example, if the field under validation is password, a matching `password_confirmation` field must be present in the input.
 
 ### **date**
 
-The control under validation must be a valid date format which is acceptable by JavaScript's `Date` object.
+The field under validation must be a valid date format which is acceptable by Javascript's `Date` object.
 
 ### **digits:value**
 
-The control under validation must be numeric and must have an exact length of value.
+The field under validation must be numeric and must have an exact length of value.
 
 ### **different:attribute**
 
-The given control must be different than the control under validation.
+The given field must be different than the field under validation.
 
 ### **email**
 
-The control under validation must be formatted as an email address.
+The field under validation must be formatted as an email address.
 
 ### **hex**
 
-The control under validation should be a hexadecimal format. Useful in combination with other rules, like `hex|size:6` for hex color code validation.
+The field under validation should be a hexadecimal format. Useful in combination with other rules, like `hex|size:6` for hex color code validation.
 
 ### **in:foo,bar,...**
 
-The control under validation must be included in the given list of values. The control can be an array or string.
+The field under validation must be included in the given list of values. The field can be an array or string.
 
 ### **integer**
 
-The control under validation must have an integer value.
+The field under validation must have an integer value.
 
 ### **max:value**
 
@@ -118,7 +118,7 @@ Minimum checks are inclusive.
 
 ### **not\_in:foo,bar,...**
 
-The control under validation must not be included in the given list of values.
+The field under validation must not be included in the given list of values.
 
 ### **numeric**
 
@@ -126,11 +126,11 @@ Validate that an attribute is numeric. The string representation of a number pas
 
 ### **present**
 
-The control under validation must be present in the input data but can be empty.
+The field under validation must be present in the input data but can be empty.
 
 ### **regex:pattern**
 
-The control under validation must match the given regular expression.
+The field under validation must match the given regular expression.
 
 ### **required**
 
@@ -138,39 +138,39 @@ Checks if the length of the String representation of the value complies with the
 
 #### **required\_if:anotherfield,value**
 
-The control under validation must be present and not empty if the `anotherfield` control is equal to any value.
+The field under validation must be present and not empty if the `anotherfield` field is equal to any value.
 
 #### **required\_unless:anotherfield,value**
 
-The control under validation must be present and not empty unless the `anotherfield` control is equal to any value.
+The field under validation must be present and not empty unless the `anotherfield` field is equal to any value.
 
 #### **required\_with:foo,bar,...**
 
-The control under validation must be present and not empty only if any of the other specified controls are present.
+The field under validation must be present and not empty only if any of the other specified fields are present.
 
 #### **required\_with\_all:foo,bar,...**
 
-The control under validation must be present and not empty only if all of the other specified control are present.
+The field under validation must be present and not empty only if all of the other specified fields are present.
 
 #### **required\_without:foo,bar,...**
 
-The control under validation must be present and not empty only when any of the other specified control are not present.
+The field under validation must be present and not empty only when any of the other specified fields are not present.
 
 #### **required\_without\_all:foo,bar,...**
 
-The control under validation must be present and not empty only when all of the other specified controls are not present.
+The field under validation must be present and not empty only when all of the other specified fields are not present.
 
 ### **same:attribute**
 
-The given control must match the control under validation.
+The given field must match the field under validation.
 
 ### **size:value**
 
-The control under validation must have a size matching the given value. For string data, value corresponds to the number of characters. For numeric data, value corresponds to a given integer value.
+The field under validation must have a size matching the given value. For string data, value corresponds to the number of characters. For numeric data, value corresponds to a given integer value.
 
 ### **string**
 
-The control under validation must be a string.
+The field under validation must be a string.
 
 ### **url**
 

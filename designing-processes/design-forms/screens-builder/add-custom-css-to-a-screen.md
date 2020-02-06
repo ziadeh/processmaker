@@ -84,7 +84,7 @@ div.page{
 
 {% page-ref page="preview-a-screen.md" %}
 
-{% page-ref page="manage-computed-properties/" %}
+{% page-ref page="manage-computed-properties.md" %}
 
 {% page-ref page="manage-watchers.md" %}
 
