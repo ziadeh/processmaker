@@ -34,7 +34,7 @@ Follow these best practices when designing ProcessMaker Screens in your organiza
 
 {% page-ref page="preview-a-screen.md" %}
 
-{% page-ref page="manage-computed-properties.md" %}
+{% page-ref page="manage-computed-properties/" %}
 
 {% page-ref page="add-custom-css-to-a-screen.md" %}
 

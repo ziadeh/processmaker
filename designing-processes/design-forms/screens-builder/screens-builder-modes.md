@@ -39,7 +39,7 @@ Use Computed Properties mode to add Properties to that ProcessMaker Screen. A Pr
 ![Create Property values based on a computed calculation in Computed Properties mode](../../../.gitbook/assets/computed-properties-populated-screens-builder-processes.png)
 
 {% hint style="info" %}
-See [Manage Computed Properties](manage-computed-properties.md).
+See [Manage Computed Properties](manage-computed-properties/).
 {% endhint %}
 
 ## Custom CSS Mode
@@ -78,7 +78,7 @@ See [Manage Watchers](manage-watchers.md).
 
 {% page-ref page="screens-builder-modes.md" %}
 
-{% page-ref page="manage-computed-properties.md" %}
+{% page-ref page="manage-computed-properties/" %}
 
 {% page-ref page="add-custom-css-to-a-screen.md" %}
 
