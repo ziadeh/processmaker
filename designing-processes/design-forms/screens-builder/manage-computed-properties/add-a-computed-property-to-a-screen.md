@@ -2,12 +2,12 @@
 description: Add a computed Property to a ProcessMaker Screen.
 ---
 
-# Add a Computed Property to a Screen
+# Add a Computed Property for a Screen
 
 ## Add a Computed Property
 
 {% hint style="info" %}
-Your ProcessMaker user account or group membership must have the following permissions to add a computed Property to a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
+Your ProcessMaker user account or group membership must have the following permissions to add a computed Property for a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Edit Screens
@@ -15,17 +15,12 @@ Your ProcessMaker user account or group membership must have the following permi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to add a computed Property to a ProcessMaker Screen:
+Follow these steps to add a computed Property for a ProcessMaker Screen:
 
 1. [Open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to add a computed Property. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
-2. Click the **Calcs** button![](../../../../.gitbook/assets/computed-properties-button-screens-builder-processes.png). The **Computed Properties** screen displays all Properties configured for this ProcessMaker Screen. If no Properties have been configured for this ProcessMaker Screen, **No Data Available** displays.  
+2. [View the computed Properties for that ProcessMaker Screen](view-computed-properties-for-a-screen.md#view-the-computed-properties-for-a-processmaker-screen). The **Computed Properties** screen displays all Properties configured for this ProcessMaker Screen. If no Properties have been configured for this ProcessMaker Screen, **No Data Available** displays.  
 
    ![](../../../../.gitbook/assets/computed-properties-screen-screens-builder-processes.png)
-
-   The following information displays about each Property:
-
-   * **Property name:** The **Property Name** column displays the name of the Property.
-   * **Description:** The Description column displays the description of the Property.
 
 3. Click the **+Property** button. The **Computed Properties** screen displays settings to configure a Property.  
 
@@ -47,5 +42,31 @@ Follow these steps to add a computed Property to a ProcessMaker Screen:
 
 {% page-ref page="what-is-a-computed-property.md" %}
 
+{% page-ref page="view-computed-properties-for-a-screen.md" %}
 
+{% page-ref page="edit-a-computed-property-for-a-screen.md" %}
+
+{% page-ref page="delete-a-computed-property-from-a-screen.md" %}
+
+{% page-ref page="../what-is-screens-builder.md" %}
+
+{% page-ref page="../screens-builder-modes.md" %}
+
+{% page-ref page="../control-descriptions/" %}
+
+{% page-ref page="../../manage-forms/view-all-forms.md" %}
+
+{% page-ref page="../types-for-screens.md" %}
+
+{% page-ref page="../validate-your-screen.md" %}
+
+{% page-ref page="../add-a-new-page-to-a-screen.md" %}
+
+{% page-ref page="../add-custom-css-to-a-screen.md" %}
+
+{% page-ref page="../manage-watchers.md" %}
+
+{% page-ref page="../save-a-screen.md" %}
+
+{% page-ref page="../best-practices.md" %}
 

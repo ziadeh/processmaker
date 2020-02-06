@@ -160,6 +160,10 @@ Your ProcessMaker user account or group membership must have the following permi
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
+{% hint style="warning" %}
+Deleting a Watcher from a ProcessMaker Screen cannot be undone.
+{% endhint %}
+
 Follow these steps to edit a Watcher in a ProcessMaker Screen:
 
 1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to edit a Watcher. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode).

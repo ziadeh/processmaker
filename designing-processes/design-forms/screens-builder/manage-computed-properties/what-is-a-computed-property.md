@@ -14,9 +14,19 @@ Below are a few uses for computed Properties that can be calculated mathematical
 * Calculate the final cost of a purchase based on a sales tax. Example: $`60` \(item cost\) x `.075` \(sales tax\)
 * Calculate the minimum credit card payment. Example: $`1000` \(amount owed\) x `.03` \(interest rate\)
 
-Computed Properties display as the second key-value pair in the ProcessMaker Screen's JSON data model from the [**Data Preview** section of the **Inspector** panel when previewing the Screen](../preview-a-screen.md).
+Computed Properties display as the second key-value pair of the ProcessMaker Screen's JSON data model from the [**Data Preview** panel](../preview-a-screen.md#preview-json-data-models-in-a-processmaker-screen) when previewing that Screen.
 
 ## Related Topics
+
+{% page-ref page="../what-is-screens-builder.md" %}
+
+{% page-ref page="view-computed-properties-for-a-screen.md" %}
+
+{% page-ref page="add-a-computed-property-to-a-screen.md" %}
+
+{% page-ref page="edit-a-computed-property-for-a-screen.md" %}
+
+{% page-ref page="delete-a-computed-property-from-a-screen.md" %}
 
 {% page-ref page="../what-is-screens-builder.md" %}
 
