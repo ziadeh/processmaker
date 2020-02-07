@@ -34,6 +34,10 @@ Follow these steps to edit a computed Property for a ProcessMaker Screen:
    * In the **Formula** setting, edit the computed Property. This is a required setting.
 5. Click **Save**.
 
+{% hint style="info" %}
+Ensure to [save your ProcessMaker Screen](../save-a-screen.md#save-a-processmaker-screen). The computer Property is not edited until you save it. Doing so will save your work if that your [session expires](../../../../using-processmaker/session-timeout-warning.md#session-timeout-warning).
+{% endhint %}
+
 ## Related Topics
 
 {% page-ref page="what-is-a-computed-property.md" %}
@@ -60,7 +64,7 @@ Follow these steps to edit a computed Property for a ProcessMaker Screen:
 
 {% page-ref page="../add-custom-css-to-a-screen.md" %}
 
-{% page-ref page="../manage-watchers.md" %}
+{% page-ref page="../manage-watchers/" %}
 
 {% page-ref page="../save-a-screen.md" %}
 

@@ -1,5 +1,5 @@
 ---
-description: Understand how to use computed Properties in ProcessMaker Screens.
+description: Understand how to use computed Properties in your ProcessMaker Screens.
 ---
 
 # What is a Computed Property?
@@ -52,7 +52,7 @@ Computed Properties display as the second key-value pair of the ProcessMaker Scr
 
 {% page-ref page="../add-custom-css-to-a-screen.md" %}
 
-{% page-ref page="../manage-watchers.md" %}
+{% page-ref page="../manage-watchers/" %}
 
 {% page-ref page="../save-a-screen.md" %}
 

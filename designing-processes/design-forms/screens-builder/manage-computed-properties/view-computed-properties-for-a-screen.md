@@ -18,9 +18,9 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 Follow these steps to view the computed Properties for a ProcessMaker Screen:
 
 1. [Open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to view its computed Properties. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
-2. Click the **Calcs** button![](../../../../.gitbook/assets/computed-properties-button-screens-builder-processes.png). The **Computed Properties** screen displays all Properties configured for this ProcessMaker Screen. If no Properties have been configured for this ProcessMaker Screen, **No Data Available** displays.
+2. Click the **Calcs** button![](../../../../.gitbook/assets/computed-properties-button-screens-builder-processes.png). The ProcessMaker Screen is in [Computed Properties](../screens-builder-modes.md#computed-properties-mode) mode. The **Computed Properties** screen displays all Properties configured for this ProcessMaker Screen. If no Properties have been configured for this ProcessMaker Screen, **No Data Available** displays.
 
-![Computed Properties screen](../../../../.gitbook/assets/computed-properties-populated-screens-builder-processes.png)
+![Computed Properties screen in Computed Properties mode](../../../../.gitbook/assets/computed-properties-populated-screens-builder-processes.png)
 
 The following information displays about each Property:
 
@@ -55,7 +55,7 @@ The following information displays about each Property:
 
 {% page-ref page="../add-custom-css-to-a-screen.md" %}
 
-{% page-ref page="../manage-watchers.md" %}
+{% page-ref page="../manage-watchers/" %}
 
 {% page-ref page="../save-a-screen.md" %}
 

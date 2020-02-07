@@ -36,6 +36,10 @@ Follow these steps to add a computed Property for a ProcessMaker Screen:
 7. In the **Formula** setting, enter the mathematical calculation/JavaScript that computes the Property. This is a required setting.
 8. Click **Save**. The Property displays in the **Computed Properties** screen. The following message displays: **Property Saved**.
 
+{% hint style="info" %}
+Ensure to [save your ProcessMaker Screen](../save-a-screen.md#save-a-processmaker-screen). The computer Property is not added to your ProcessMaker Screen until you save it. Doing so will save your work if that your [session expires](../../../../using-processmaker/session-timeout-warning.md#session-timeout-warning).
+{% endhint %}
+
 ![Computed Properties screen with a new Property](../../../../.gitbook/assets/computed-properties-screen-with-property-screens-builder-processes.png)
 
 ## Related Topics
@@ -64,7 +68,7 @@ Follow these steps to add a computed Property for a ProcessMaker Screen:
 
 {% page-ref page="../add-custom-css-to-a-screen.md" %}
 
-{% page-ref page="../manage-watchers.md" %}
+{% page-ref page="../manage-watchers/" %}
 
 {% page-ref page="../save-a-screen.md" %}
 
