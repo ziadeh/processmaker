@@ -7,27 +7,24 @@ description: Edit a Watcher for a ProcessMaker Screen.
 ## Edit a Watcher for a ProcessMaker Screen
 
 {% hint style="info" %}
+### Permissions Required
+
 Your ProcessMaker user account or group membership must have the following permissions to edit a Watcher in a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Edit Screens
 
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+
+### Topic Updated
+
+This topic has been updated for the ProcessMaker 4.0.1 release.
 {% endhint %}
 
 Follow these steps to edit a Watcher in a ProcessMaker Screen:
 
 1. [Open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to edit a Watcher. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
-2. Click the **Watchers** button![](../../../../.gitbook/assets/watchers-button-screens-builder-processes.png). The **Watchers** screen displays all Watchers configured for this ProcessMaker Screen.  
-   ![](../../../../.gitbook/assets/watchers-screen-screens-builder-processes.png) 
-
-   The following information displays about each Watcher:
-
-   * **Name:** The **Name** column displays the name of the Watcher.
-   * **Watching:** The **Watching** column displays the **Variable Name** setting value for the control that the Watcher monitors for value changes.
-   * **Variable:** The **Variable** column displays the **Variable Name** setting for the control that the Watcher posts its output value after that Watcher performs its action.
-   * **Script:** The **Script** column displays the name of the Data Source or ProcessMaker Script that the Watcher acts upon to determine its output value.
-
+2. Click the **Watchers** button![](../../../../.gitbook/assets/watchers-button-screens-builder-processes.png). The **Watchers** screen displays all Watchers configured for this ProcessMaker Screen. ![](../../../../.gitbook/assets/watchers-screen-screens-builder-processes.png)
 3. Click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)for the Watch to edit. The **Watchers** screen displays that Watcher's settings. ![](../../../../.gitbook/assets/watchers-configuration-screens-builder-processes.png) 
 4. Edit the following settings about the Watcher as necessary:
    * In the **Watcher Name** setting, edit the name of the Watcher. This is a required setting.

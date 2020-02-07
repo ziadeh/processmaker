@@ -7,12 +7,18 @@ description: View the Watchers for a ProcessMaker Screen.
 ## View Watchers for a ProcessMaker Screen
 
 {% hint style="info" %}
+### Permissions Required
+
 Your ProcessMaker user account or group membership must have the following permissions to view Watchers for a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Edit Screens
 
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+
+### Topic Updated
+
+This topic has been updated for the ProcessMaker 4.0.1 release.
 {% endhint %}
 
 Follow these steps to view Watchers for a ProcessMaker Screen:
@@ -25,9 +31,9 @@ Follow these steps to view Watchers for a ProcessMaker Screen:
 The following information displays about each Watcher:
 
 * **Name:** The **Name** column displays the name of the Watcher.
-* **Watching:** The **Watching** column displays the **Variable Name** setting value for the control that the Watcher monitors for value changes.
-* **Variable:** The **Variable** column displays the **Variable Name** setting for the control that the Watcher posts its output value after that Watcher performs its action.
-* **Script:** The **Script** column displays the name of the Data Source or ProcessMaker Script that the Watcher acts upon to determine its output value.
+* **Watching Variable:** The **Watching Variable** column displays the **Variable Name** setting value for the control that the Watcher monitors for value changes.
+* **Output Variable:** The **Output Variable** column displays the **Variable Name** setting for the control that the Watcher posts its output value after that Watcher performs its action.
+* **Source:** The **Source** column displays the name of the Data Source or ProcessMaker Script that the Watcher acts upon to determine its output value.
 
 ## Related Topics
 
