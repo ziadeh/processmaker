@@ -52,7 +52,7 @@ Follow these guidelines to preview a ProcessMaker Screen and how JSON data model
 ![Data Preview section of the Inspector panel displaying a JSON data model in Preview mode](../../../.gitbook/assets/data-preview-panel-screen-builder-processes.png)
 
 {% hint style="info" %}
-Computed properties also display in the **Data Preview** section as part of the JSON data model. See [Manage Computed Properties](manage-computed-properties/).
+Computed properties also display in the **Data Preview** section as part of the JSON data model. See [Manage Computed Properties](manage-computed-properties.md).
 {% endhint %}
 
 ## Related Topics
@@ -73,11 +73,11 @@ Computed properties also display in the **Data Preview** section as part of the 
 
 {% page-ref page="add-a-new-page-to-a-screen.md" %}
 
-{% page-ref page="manage-computed-properties/" %}
+{% page-ref page="manage-computed-properties.md" %}
 
 {% page-ref page="add-custom-css-to-a-screen.md" %}
 
-{% page-ref page="manage-watchers/" %}
+{% page-ref page="manage-watchers.md" %}
 
 {% page-ref page="save-a-screen.md" %}
 

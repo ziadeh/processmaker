@@ -44,10 +44,6 @@ Your user account or group membership must have the following permissions to del
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-{% hint style="warning" %}
-Deleting a page from a ProcessMaker Screen cannot be undone.
-{% endhint %}
-
 Follow these steps to delete a page from a ProcessMaker Screen:
 
 1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to delete a page. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode).
@@ -100,11 +96,11 @@ Follow these steps to rename a page on a ProcessMaker Screen:
 
 {% page-ref page="preview-a-screen.md" %}
 
-{% page-ref page="manage-computed-properties/" %}
+{% page-ref page="manage-computed-properties.md" %}
 
 {% page-ref page="add-custom-css-to-a-screen.md" %}
 
-{% page-ref page="manage-watchers/" %}
+{% page-ref page="manage-watchers.md" %}
 
 {% page-ref page="save-a-screen.md" %}
 
