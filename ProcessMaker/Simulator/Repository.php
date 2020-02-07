@@ -69,10 +69,22 @@ class Repository implements RepositoryInterface
 
     public function persistInstanceCreated(ExecutionInstanceInterface $instance)
     {
+        $instance->setProperty('status', 'ACTIVE');
+        $instance->setProperty('trace', new Collection());
+    }
+
+    private function traceExecution(TokenInterface $token, $type, $element)
+    {
+        $token->getInstance()->addProperty('trace', [
+            'id' => $element->getId(),
+            'type' => $type,
+            'name' => $element->getName(),
+        ]);
     }
 
     public function persistInstanceCompleted(ExecutionInstanceInterface $instance)
     {
+        $instance->setProperty('status', 'COMPLETED');
     }
 
     public function persistInstanceCollaboration(ExecutionInstanceInterface $target, ParticipantInterface $targetParticipant, ExecutionInstanceInterface $source, ParticipantInterface $sourceParticipant)
@@ -85,6 +97,7 @@ class Repository implements RepositoryInterface
 
     public function persistActivityActivated(ActivityInterface $activity, TokenInterface $token)
     {
+        $this->traceExecution($token, 'task', $activity);
     }
 
     public function persistActivityException(ActivityInterface $activity, TokenInterface $token)
@@ -113,6 +126,7 @@ class Repository implements RepositoryInterface
 
     public function persistGatewayTokenArrives(GatewayInterface $exclusiveGateway, TokenInterface $token)
     {
+        $this->traceExecution($token, 'gateway', $exclusiveGateway);
     }
 
     public function persistGatewayTokenConsumed(GatewayInterface $exclusiveGateway, TokenInterface $token)
@@ -125,6 +139,7 @@ class Repository implements RepositoryInterface
 
     public function persistCatchEventTokenArrives(CatchEventInterface $intermediateCatchEvent, TokenInterface $token)
     {
+        $this->traceExecution($token, 'event', $intermediateCatchEvent);
     }
 
     public function persistCatchEventTokenConsumed(CatchEventInterface $intermediateCatchEvent, TokenInterface $token)
@@ -137,6 +152,7 @@ class Repository implements RepositoryInterface
 
     public function persistCatchEventMessageArrives(CatchEventInterface $intermediateCatchEvent, TokenInterface $token)
     {
+        $this->traceExecution($token, 'event', $intermediateCatchEvent);
     }
 
     public function persistCatchEventMessageConsumed(CatchEventInterface $intermediateCatchEvent, TokenInterface $token)
@@ -145,9 +161,13 @@ class Repository implements RepositoryInterface
 
     public function persistStartEventTriggered(StartEventInterface $startEvent, CollectionInterface $tokens)
     {
+        foreach ($tokens as $token) {
+            $this->traceExecution($token, 'event', $startEvent);
+        }
     }
 
     public function persistEventBasedGatewayActivated(EventBasedGatewayInterface $eventBasedGateway, TokenInterface $passedToken, CollectionInterface $consumedTokens)
     {
+        $this->traceExecution($passedToken, 'gateway', $eventBasedGateway);
     }
 }

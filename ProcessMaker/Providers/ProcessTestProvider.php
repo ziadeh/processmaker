@@ -14,6 +14,7 @@ use ProcessMaker\Nayra\Storage\BpmnDocument;
 use ProcessMaker\Simulator\Dispatcher;
 use ProcessMaker\Simulator\JobManager;
 use ProcessMaker\Simulator\Repository;
+use ProcessMaker\Simulator\Simulator;
 
 class ProcessTestProvider extends ServiceProvider
 {
@@ -129,6 +130,10 @@ class ProcessTestProvider extends ServiceProvider
                 ]
             );
             return $bpmnRepository;
+        });
+        $this->app->bind('workflow.simulator', function () {
+            $bpmnRepository = app('workflow.test');
+            return new Simulator($bpmnRepository);
         });
     }
 }

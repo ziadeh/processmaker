@@ -2,6 +2,7 @@
 
 namespace ProcessMaker\Http\Controllers\Api;
 
+use Exception;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -902,6 +903,16 @@ class ProcessController extends Controller
         //Trigger the start event
         $processRequest = WorkflowManager::triggerStartEvent($process, $event, $data);
         return new ProcessRequests($processRequest);
+    }
+
+    public function simulate(Request $request)
+    {
+        try {
+            $simulator = app('workflow.simulator');
+            return response()->json($simulator->run($request->input('bpmn')));
+        } catch (Exception $exception) {
+            return abort(422, $exception->getMessage());
+        }
     }
 
     /**
