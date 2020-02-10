@@ -13,6 +13,10 @@ Your ProcessMaker user account or group membership must have the following permi
 * Screens: Edit Screens
 
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+
+### Topic Update
+
+This topic has been updated for the ProcessMaker 4.0.1 release.
 {% endhint %}
 
 {% hint style="warning" %}
