@@ -1,6 +1,6 @@
 ---
 description: >-
-  Maintain uniform JSON schemas for all ProcessMaker assets in your
+  Learn how to maintain uniform JSON schemas for all ProcessMaker assets in your
   organization.
 ---
 

@@ -29,11 +29,11 @@ Follow these steps to edit a Watcher in a ProcessMaker Screen:
 4. Edit the following settings about the Watcher as necessary:
    * In the **Watcher Name** setting, edit the name of the Watcher. This is a required setting.
    * From the **Variable to Watch** drop-down menu, select which ProcessMaker Screen control by its **Variable Name** setting value the Watcher monitors for its value to change.
-   * From the **Source** setting, select whether the Watcher acts upon a Data Connector or runs a ProcessMaker Script when the monitored control's value changes. Follow these guidelines:
-     * **Data Connector:**
-       1. From the **Source** drop-down menu, select a Data Connector from the **Data Connector** section upon which to act when the monitored control's value changes. The **Endpoint** setting displays below the **Source** drop-down menu.
-       2. From the **Endpoint** drop-down menu, select which endpoint to act upon in the selected Data Connector. These endpoints are configured from the Data Connector itself. Depending on the Data Connector selected from the **Data Connector** section of the **Source** drop-down menu, these endpoints may reference API endpoints, ProcessMaker Collection records, or other data source endpoints.
-       3. Optionally, in the **Input Data** setting, enter a valid JSON object the Watcher passes to the Data Connector prior to acting upon the selected endpoint. The Data Connector may reference ProcessMaker Screen control values by referencing their **Variable Name** setting values when placed within [mustache syntax](https://mustache.github.io/mustache.5.html). In the example below, `FullName` is the **Variable Name** setting value for a control to store a Request participant's full name:
+   * From the **Source** setting, select whether the Watcher acts upon a [ProcessMaker Data Connector](../../../data-connector-management/what-is-a-data-connector.md) or runs a [ProcessMaker Script](../../../scripts/what-is-a-script.md) when the monitored control's value changes. Follow these guidelines:
+     * **ProcessMaker Data Connector:**
+       1. From the **Source** drop-down menu, select a ProcessMaker Data Connector from the **Data Connector** section upon which to act when the monitored control's value changes. The **Endpoint** setting displays below the **Source** drop-down menu.
+       2. From the **Endpoint** drop-down menu, select which endpoint to act upon in the selected ProcessMaker Data Connector. These endpoints are configured from the ProcessMaker Data Connector itself. Depending on the ProcessMaker Data Connector selected from the **Data Connector** section of the **Source** drop-down menu, these endpoints may reference API endpoints or ProcessMaker Collection records.
+       3. Optionally, in the **Input Data** setting, enter a valid JSON object the Watcher passes to the ProcessMaker Data Connector prior to acting upon the selected endpoint. The ProcessMaker Data Connector may reference ProcessMaker Screen control values by referencing their **Variable Name** setting values when placed within [mustache syntax](https://mustache.github.io/mustache.5.html). In the example below, `FullName` is the **Variable Name** setting value for a control to store a Request participant's full name:
 
           `{`
 
@@ -41,15 +41,15 @@ Follow these steps to edit a Watcher in a ProcessMaker Screen:
 
           `}`
 
-       4. In the **Form Data** section, specify JSON object key-value pairs that map data from the Data Connector to the JSON data array you will specify in the **Output Variable Name** setting below.
+       4. In the **Form Data** section, specify JSON object key-value pairs that map data from the ProcessMaker Data Connector to the JSON data array you will specify in the **Output Variable Name** setting below.
 
-          Follow these guidelines to add a JSON data object to map data from the Data Connector:
+          Follow these guidelines to add a JSON data object to map data from the ProcessMaker Data Connector:
 
           1. From the **Form Data** section, click the **+Data** button. A new row displays settings to add a new JSON data object's key name and value. ![](../../../../.gitbook/assets/key-value-form-data-watcher-configuration-screens-builder-processes.png) 
           2. In the **key** setting, enter the key name for that JSON data object.
           3. In the **value** setting, enter the value for that JSON data object.
           4. Optionally, to delete the JSON data object, click its **Delete** icon![](../../../../.gitbook/assets/delete-record-record-list-control-screens-builder-processes.png).
-          5. Repeat these guidelines as necessary for each JSON data object necessary to map to data from the Data Connector.
+          5. Repeat these guidelines as necessary for each JSON data object necessary to map to data from the ProcessMaker Data Connector.
 
        5. In the **Output Variable Name** setting, enter the control by its **Variable Name** setting that the Watcher outputs the value of its result. When this Watcher triggers during a Request, the **Output Variable Name** setting value becomes a JSON data array in the Request data that contains the mapped JSON data objects specified in the **Form Data** section.
      * **ProcessMaker Script:**
