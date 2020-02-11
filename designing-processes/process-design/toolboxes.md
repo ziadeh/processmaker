@@ -19,6 +19,10 @@ Process Modeler displays the **Save** icon![](../../.gitbook/assets/save-icon-pr
 
 ![Save button \(highlighted\) located beside the Process name](../../.gitbook/assets/top-bar-process-modeler-processes.png)
 
+{% hint style="info" %}
+Process models that are saved in which there are in-progress Requests, those Requests continue workflow from the Process model prior to that model being saved.
+{% endhint %}
+
 Follow these steps to save your Process model:
 
 1. ​[View your Processes](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/~/drafts/-LRhVZm0ddxDcGGdN5ZN/primary/designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes#view-all-processes). The **Processes** page displays.
