@@ -13,7 +13,7 @@ While writing a ProcessMaker Script, test it before you deploy it. ProcessMaker 
 * Use the JSON data model that you can [preview from your ProcessMaker Screens](../design-forms/screens-builder/preview-a-screen.md) to ensure that variables designed from a ProcessMaker Screen function as intended in your ProcessMaker Script.
 * [Incorporate other JSON-formatted data](scripts-editor.md#enter-other-json-data-as-input-to-your-processmaker-script), such as API keys, to ensure your ProcessMaker Script uses them correctly during your testing.
 
-During run-time, ProcessMaker Scripts run within isolated containers for greater security. After the ProcessMaker Script runs and returns output to the Request, the container that isolated and ran the script automatically removes itself.
+During run-time, ProcessMaker Scripts run within isolated containers for greater security: Scripts never have access to your organizational IT structure. After the ProcessMaker Script runs and returns output to the Request, the container that isolated and ran the script automatically removes itself.
 
 ProcessMaker supports the following programming languages in the open-source edition:
 

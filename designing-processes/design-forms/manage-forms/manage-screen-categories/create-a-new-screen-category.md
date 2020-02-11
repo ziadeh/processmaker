@@ -21,7 +21,7 @@ Follow these steps to create a new [Screen Category](what-is-a-screen-category.m
 
 1. [View your Screen Categories](view-screen-categories.md#view-screen-categories).
 2. Click the **+Category** button. The **Create Screen Category** screen displays. ![](../../../../.gitbook/assets/create-screen-category-screen-processes.png) 
-3. In the **Category Name** field, enter the name of the new Screen Category. The Screen Category name must be unique from all other Screen Category names in your organization and can only use apostrophe characters \(`'`\) and spaces. This is a required field.
+3. In the **Category Name** field, enter the name of the new Screen Category. The Screen Category name must be unique from all other Screen Category names in your organization. This is a required field.
 4. From the **Status** drop-down menu, select one of the following options for the Screen Category's status:
 
    * **Active:** Active Screen Categories can have ProcessMaker Screens assigned to them.
