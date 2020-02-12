@@ -85,12 +85,12 @@ The [Collections package](../package-development-distribution/package-a-connecto
 
 The **Collections** category contains the following permissions:
 
-* **View Collections:** View the table of ProcessMaker Collections on the **Collections** page. See .
-* **Create Categories:** Create a ProcessMaker Collection from the **Collections** page. Selecting this permission also selects the **Edit Collections** permission. See .
-* **Edit Collections:** Edit a ProcessMaker Collection from the **Collections** page. See .
-* **Delete Collections:** Delete a ProcessMaker Collection from the **Collections** page. See .
-* **Import Collections:** Import a ProcessMaker Collection from the **Collections** page. See .
-* Export Collections: Export a ProcessMaker Collections from the Collections page. See .
+* **View Collections:** View the table of ProcessMaker Collections on the **Collections** page. See [View Collections](../collections/manage-collections/view-collections.md#view-all-collections).
+* **Create Collections:** Create a ProcessMaker Collection from the **Collections** page. Selecting this permission also selects the **Edit Collections** permission. See [Create a New Collection](../collections/manage-collections/create-a-new-collection.md).
+* **Edit Collections:** Edit a ProcessMaker Collection from the **Collections** page. See [Edit a Collection Record](../collections/manage-records-in-a-collection/edit-a-collection-record.md#edit-a-processmaker-collection-record).
+* **Delete Collections:** Delete a ProcessMaker Collection from the **Collections** page. See [Delete a Collection](../collections/manage-collections/delete-a-collection.md#delete-a-processmaker-collection).
+* **Import Collections:** Import a ProcessMaker Collection from the **Collections** page. See [Import a Collection](../collections/manage-collections/import-a-collection.md).
+* **Export Collections:** Export a ProcessMaker Collections from the **Collections** page. See [Export a Collection](../collections/manage-collections/export-a-collection.md).
 
 {% hint style="info" %}
 Select the **View Collections** permission to use any of the other permissions in this category.
@@ -100,10 +100,10 @@ Select the **View Collections** permission to use any of the other permissions i
 
 The **Comments** category contains the following permissions:
 
-* **View Comments:** View comments on a Request information page. See ~~LINK~~.
-* **Create Comments:** Create a comment from a Request information page. Selecting this permission also selects the **Edit Comments** permission. See ~~LINK~~.
-* **Edit Comments:** Edit a comment from a Request information page. See ~~LINK~~.
-* **Delete Comments:** Delete a comment from a Request information page. See ~~LINK~~.
+* **View Comments:** View comments on a Request information page.
+* **Create Comments:** Create a comment from a Request information page. Selecting this permission also selects the **Edit Comments** permission.
+* **Edit Comments:** Edit a comment from a Request information page.
+* **Delete Comments:** Delete a comment from a Request information page.
 
 {% hint style="info" %}
 Select the **View Comments** permission to use any of the other permissions in this category.
