@@ -106,7 +106,11 @@ Follow these steps to configure how ProcessMaker groups have access to your Coll
 
 {% page-ref page="create-a-new-collection.md" %}
 
+{% page-ref page="import-a-collection.md" %}
+
 {% page-ref page="search-for-a-collection.md" %}
+
+{% page-ref page="export-a-collection.md" %}
 
 {% page-ref page="delete-a-collection.md" %}
 

@@ -24,7 +24,7 @@ Follow these steps to create a new ProcessMaker Script:
 
    ![](../../../.gitbook/assets/add-a-script-screen-processes.png)
 
-3. In the **Name** field, enter the name of the ProcessMaker Script. ProcessMaker Script names must be unique and can only use alphanumeric characters and spaces. This is a required field.
+3. In the **Name** field, enter the name of the ProcessMaker Script. ProcessMaker Script names must be unique in your organization and can only use apostrophe characters \(`'`\) and spaces. This is a required field.
 4. In the **Description** field, enter the description of the ProcessMaker Script. This is a required field.
 5. From the **Category** drop-down menu, select one or more Script Categories to associate with this ProcessMaker Script. In doing so, [Script Categories](manage-script-categories/what-is-a-script-category.md) may be sorted from the [**Scripts** page](view-all-scripts.md#view-all-processmaker-scripts). To remove a Script Category that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible. This is a required field.
 6. From the **Language** drop-down menu, select one of the following programming languages in which the ProcessMaker Script is written:

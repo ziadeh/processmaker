@@ -75,7 +75,11 @@ If no ProcessMaker Collections exist, or you do not have permission to view any,
 
 {% page-ref page="create-a-new-collection.md" %}
 
+{% page-ref page="import-a-collection.md" %}
+
 {% page-ref page="configure-a-collection.md" %}
+
+{% page-ref page="export-a-collection.md" %}
 
 {% page-ref page="search-for-a-collection.md" %}
 

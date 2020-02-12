@@ -52,9 +52,13 @@ Follow these steps to create a ProcessMaker Collection:
 
 {% page-ref page="view-collections.md" %}
 
+{% page-ref page="import-a-collection.md" %}
+
 {% page-ref page="configure-a-collection.md" %}
 
 {% page-ref page="search-for-a-collection.md" %}
+
+{% page-ref page="export-a-collection.md" %}
 
 {% page-ref page="delete-a-collection.md" %}
 

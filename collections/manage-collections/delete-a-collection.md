@@ -32,7 +32,7 @@ Deleting a ProcessMaker Collection from the **Collections** page cannot be undon
 Follow these steps to delete a ProcessMaker Collection:
 
 1. [View your ProcessMaker Collections](view-collections.md#view-all-collections). The **Collections** page displays.
-2. Click the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png)for your ProcessMaker Collection. The **Caution** screen displays to confirm the deletion of the ProcessMaker Collection. ![](../../.gitbook/assets/caution-delete-collection-package.png) 
+2. Click the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png)for your ProcessMaker Collection to delete. The **Caution** screen displays to confirm the deletion of the ProcessMaker Collection. ![](../../.gitbook/assets/caution-delete-collection-package.png) 
 3. Click **Confirm**.
 
 ## Related Topics
@@ -43,7 +43,11 @@ Follow these steps to delete a ProcessMaker Collection:
 
 {% page-ref page="create-a-new-collection.md" %}
 
+{% page-ref page="import-a-collection.md" %}
+
 {% page-ref page="configure-a-collection.md" %}
+
+{% page-ref page="export-a-collection.md" %}
 
 {% page-ref page="search-for-a-collection.md" %}
 

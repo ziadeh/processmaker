@@ -41,7 +41,11 @@ If there are no search results, the following message displays: **No Data Availa
 
 {% page-ref page="create-a-new-collection.md" %}
 
+{% page-ref page="import-a-collection.md" %}
+
 {% page-ref page="configure-a-collection.md" %}
+
+{% page-ref page="export-a-collection.md" %}
 
 {% page-ref page="delete-a-collection.md" %}
 

@@ -8,7 +8,7 @@ ProcessMaker Open Source Edition is licensed under the [GNU Affero General Publi
 
 ProcessMaker user documentation may change without notice.
 
-**Current production version:** ProcessMaker 4.0.0, released January 24, 2020.
+**Current production version:** ProcessMaker 4.0.1, released February 10, 2020.
 
 View [documentation for ProcessMaker versions 2.x and 3.x](https://wiki.processmaker.com/). The current production release is ProcessMaker version 3.4.7.
 
