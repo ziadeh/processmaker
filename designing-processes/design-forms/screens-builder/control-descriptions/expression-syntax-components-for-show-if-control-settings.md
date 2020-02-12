@@ -52,19 +52,6 @@ If a ProcessMaker Screen control does not have an expression in its **Visibility
 | and | `and` |
 | or | `or` |
 
-{% hint style="info" %}
-Consider the following example common for [Select List](select-list-control-settings.md#control-description) controls configured to allow multiple selections. Suppose a Select List control with a **Variable Name** setting of `SelectListControl` has the following options:
-
-* Beatty
-* Fred
-* Nancy
-* Tom
-
-To configure another control in that ProcessMaker Screen to remain hidden if the `Fred` option is not among the selections, use the following expression in the **Visibility Rule** setting for the control that is to remain hidden:
-
-`not("Fred" in SelectListControl)`
-{% endhint %}
-
 ### Comparison Operators
 
 | Component | Syntax |

@@ -85,10 +85,12 @@ The [Collections package](../package-development-distribution/package-a-connecto
 
 The **Collections** category contains the following permissions:
 
-* **View Collections:** View the table of Collections on the **Collections** page. See ~~LINK~~.
-* **Create Categories:** Create a Collection from the **Collections** page. Selecting this permission also selects the **Edit Collections** permission. See ~~LINK~~.
-* **Edit Collections:** Edit a Collection from the **Collections** page. See ~~LINK~~.
-* **Delete Collections:** Delete a Collection from the **Collections** page. See ~~LINK~~.
+* **View Collections:** View the table of ProcessMaker Collections on the **Collections** page. See .
+* **Create Categories:** Create a ProcessMaker Collection from the **Collections** page. Selecting this permission also selects the **Edit Collections** permission. See .
+* **Edit Collections:** Edit a ProcessMaker Collection from the **Collections** page. See .
+* **Delete Collections:** Delete a ProcessMaker Collection from the **Collections** page. See .
+* **Import Collections:** Import a ProcessMaker Collection from the **Collections** page. See .
+* Export Collections: Export a ProcessMaker Collections from the Collections page. See .
 
 {% hint style="info" %}
 Select the **View Collections** permission to use any of the other permissions in this category.

@@ -122,8 +122,7 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 From the **Data Source** panel, select one of the following methods to specify options that display in the Select List control:
 
 * [Provide options](select-list-control-settings.md#provide-options): For each option, enter a unique value that represents the option, and then enter the text that displays as the option. After your options are configured, sort the order in which they are to display in this control. Alternatively, provide options in this control in JSON format.
-* [Request data](select-list-control-settings.md#reference-request-data): Reference data from the in-progress Request as options in this control. This data object must be part of the Request's JSON data model. During the in-progress Request, the Select List control references a specified data array and object in the Request's JSON data model to display its values as options in that control. The order that data objects are in the Request's JSON data model determines the order these options display in the control; options cannot be manually reordered.
-* [Data Connector](select-list-control-settings.md#reference-a-data-connector): Reference the data from a Data Connector's endpoint as options in this control. These endpoints a Data Connector references may be API endpoints, ProcessMaker Collection records, or other data source endpoints. During the in-progress Request, when the Select List control references data from the Data Connector, the control maps the Data Connector data to a specified JSON data array, variable or key name, and data object to become part of that Request's data. Data maps to the JSON data array in the same order it is retrieved from the Data Connector. Optionally, use a PMQL expression to limit which data to use as options based on the PMQL expression's criteria. The order that data objects return from the Data Connector determines the order these options display in the control; options cannot be manually reordered.
+* [Reference a data object](select-list-control-settings.md#reference-a-data-object): Reference data from a data object that displays in this control as its options. This data object must be part of the JSON schema for a Process or a BPMN element in the Process, such as derived from a [ProcessMaker Vocabulary](../../../vocabularies-management/what-is-a-vocabulary.md). Specify the data name, value, and content from the data object. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data objects present in the data object determines the order these options display in the control; options cannot be manually reordered.
 
 #### Provide Options
 
@@ -144,7 +143,7 @@ Follow these steps to provide options that display in this control:
      6. Click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon to delete that option if necessary.
      7. Drag the![](../../../../.gitbook/assets/sort-icon-data-source-screens-builder-processes.png)icon for an option up or down to sort the order the options display in this control if necessary.
      8. Repeat Steps 1 through 7 until all options are configured for this control.
-     9. Select the **Allow multiple selections** option to allow multiple selections from this control. Otherwise, only one option can be selected.
+     9. Click the **Allow multiple selections** option to allow the form user to select more than one option.
      10. From the **Render Options As** drop-down menu, select one of the following options:
          * **Dropdown/Multiselect:** Select the **Dropdown/Multiselect** option to display the control as a drop-down menu.
          * **Radio/Checkbox Group:** Select the **Radio/Checkbox Group** option to display the control as a group of checkboxes.
@@ -165,56 +164,38 @@ Follow these steps to provide options that display in this control:
      3. Enter your control options in the order they are to display in this control using JSON format. Use the scroll panel to the right of the JSON to scroll to different sections of the JSON if necessary. This is useful especially when you are editing a long JSON.
      4. Click **Close** or the **Close** icon![](../../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The control options are saved.
 
-#### Reference Request Data
+#### Reference a Data Object
 
-Follow these steps to reference data from the in-progress Request as options in this control:
-
-1. Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Data Source** panel that is on the right-side of the Screen Builder canvas.
-2. From the **Data Source** drop-down menu, select **Request Data**. ![](../../../../.gitbook/assets/request-data-select-list-screens-builder-processes.png) 
-3. Select the **Allow multiple selections** option to allow multiple selections from this control. Otherwise, only one option can be selected.
-4. From the **Render Options As** drop-down menu, select one of the following options:
-   * **Dropdown/Multiselect:** Select the **Dropdown/Multiselect** option to display the control as a drop-down menu.
-   * **Radio/Checkbox Group:** Select the **Radio/Checkbox Group** option to display the control as a group of checkboxes.
-5. In the **Element Name** setting, enter the name of the JSON data array within the Request data from which to reference its objects as options that display in this control. **response** is the default value.
-6. In the **Value** setting, enter the key name within the JSON data array specified in the **Element Name** setting to reference its objects as options that display in this control. **value** is the default value.
-7. In the **Content** setting, enter the data object name that display as options in this control. **content** is the default value.
-
-#### Reference a Data Connector
-
-Follow these steps to reference data from a Data Connector as options in this control:
+Follow these steps to reference data from a data object that displays in this control as its options:
 
 1. Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Data Source** panel that is on the right-side of the Screen Builder canvas.
-2. From the **Data Source** drop-down menu, select **Data Connector**. ![](../../../../.gitbook/assets/data-source-object-options-screens-builder-processes.png) 
-3. Select the **Allow multiple selections** option to allow multiple selections from this control. Otherwise, only one option can be selected.
-4. From the **Render Options As** drop-down menu, select one of the following options:
-   * **Dropdown/Multiselect:** Select the **Dropdown/Multiselect** option to display the control as a drop-down menu.
-   * **Radio/Checkbox Group:** Select the **Radio/Checkbox Group** option to display the control as a group of checkboxes.
-5. From the **Data Source Name** drop-down menu, select from which Data Connector to reference as a data source.
-6. From the **Endpoint** drop-down menu, select which endpoint to reference from the selected Data Connector. These endpoints are configured from the Data Connector itself. Depending on the Data Connector selected from the **Data Connector Name** drop-down menu, these endpoints may reference API endpoints, ProcessMaker Collection records, or other data source endpoints.
-7. In the **Element Name** setting, enter the name of the JSON data array to which to map the data from the selected Data Connector. This JSON data array and its content becomes part of that Request's data. **response** is the default value.
-8. In the **Value** setting, enter the key name within the JSON data array specified in the **Element Name** setting to map data from the selected Data Connector. **value** is the default value.
-9. In the **Content** setting, enter the data object name to map the options that display in this control from the Data Connector data. **content** is the default value.
-10. In the **PMQL** field, optionally enter a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md#overview) expression to filter which data in the JSON data array to display as options in this control based on which objects in that array meet the PMQL expression's criteria.
+2. From the **Data Source** drop-down menu, select **Data Object**. ![](../../../../.gitbook/assets/data-source-object-options-screens-builder-processes.png) 
+3. In the **Data Name** field, enter the name of the data object that contains the data from which to display as options in this control. Ensure that this data object meets the following criteria:
+   * The data object is part of the JSON schema for a Process or a BPMN element in the Process, such as derived from a [ProcessMaker Vocabulary](../../../vocabularies-management/what-is-a-vocabulary.md).
+   * The data object is an array from which its objects are in the order that they are to display as options in this control.
+4. In the **Value** field, enter the name of the variable or key name value in the data object to contain the option\(s\) the form user selects. **value** is the default value.
+5. In the **Content** field, enter the name of the variable or key name value in the data object that contains the options to display in this control. **content** is the default value.
+6. In the **PMQL** field, optionally enter a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md#overview) expression to filter which data in the data object to display as options in this control based on which objects in the array meet the PMQL expression's criteria.
 
 Consider the following example of doctors who work in a clinic. 
 
 ```javascript
 doctors = {
-    {id: 1, name: 'Adam Ardin', gender: 'male'},
-    {id: 2, name: 'Amanda Creek', gender: 'female'},
-    {id: 3, name: 'Lucy Morales', gender: 'female'},
-    {id: 4, name: 'Mindy Smith', gender: 'female'},
-    {id: 5, name: 'Toby Tomlinson', gender: 'male'}
+{id: 1, name: 'Adam Ardin', gender: 'male'},
+{id: 2, name: 'Amanda Creek', gender: 'female'},
+{id: 3, name: 'Lucy Morales', gender: 'female'},
+{id: 4, name: 'Mindy Smith', gender: 'female'},
+{id: 5, name: 'Toby Tomlinson', gender: 'male'}
 }
 ```
 
-Use the following settings to reference this data array as options for this control:
+Use the following settings to reference this data object as options for this control:
 
-* **Element Name:** `doctors`
+* **Data Name:** `doctors`
 * **Value:** `id`
 * **Content:** `name`
 
-Suppose that a new patient at the clinic indicates that she wants to see a female doctor. To filter doctors from this JSON data array who are female in the clinic so that only those objects display as options in a Select List control, use the following PMQL expression in the **PMQL** setting of that control:
+Suppose that a new patient at the clinic indicates that she wants to see a female doctor. To filter doctors who are female in the clinic so that they display as options in this control, use the following PMQL expression:
 
 `gender = "female"`
 
