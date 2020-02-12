@@ -46,11 +46,11 @@ Below are a few examples of these controls:
 
 {% page-ref page="preview-a-screen.md" %}
 
-{% page-ref page="manage-computed-properties.md" %}
+{% page-ref page="manage-computed-properties/" %}
 
 {% page-ref page="add-custom-css-to-a-screen.md" %}
 
-{% page-ref page="manage-watchers.md" %}
+{% page-ref page="manage-watchers/" %}
 
 {% page-ref page="save-a-screen.md" %}
 
