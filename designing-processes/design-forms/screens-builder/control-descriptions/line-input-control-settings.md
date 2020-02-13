@@ -83,7 +83,7 @@ Below are settings for the Line Input control in the **Variable** panel:
 * **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
 
   * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Line Input control's textual content with that Line Input control's **Variable Name** value. In the example below, `LineInputControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/line-inputs-preview-screens-builder-processes.png) 
-  * Reference this control's value in a different Screen Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ LineInputControl }}`.
+  * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ LineInputControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.

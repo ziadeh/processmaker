@@ -268,7 +268,7 @@ Below are settings for the Record List control in the **Variable** panel:
 * **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
 
   * Reference this control by its **Variable Name** setting's value.
-  * Reference this control's value in a different Screen Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ RecordListControl }}`.
+  * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ RecordListControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.

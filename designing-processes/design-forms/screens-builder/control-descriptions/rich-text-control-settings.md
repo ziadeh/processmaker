@@ -10,14 +10,14 @@ The Rich Text control displays HTML-formatted text and images. Use the What-You-
 
 Aside from rich text styles and images, the Rich Text control can display the following information regarding in-progress Requests:
 
-* **Request data:** Display the value of another control in the same or different ProcessMaker [Screen](../../what-is-a-form.md) by referencing that control's **Variable Value** setting value using mustache syntax.
+* **Request data:** Display the value of another control in the same or different ProcessMaker [Screen](../../what-is-a-form.md) by referencing that control's **Variable Value** setting value using [mustache syntax](https://mustache.github.io/mustache.5.html).
 
   Consider the following example. If you have a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting of `FullName` into which Request participants enter their full name in a different ProcessMaker Screen used in the same Request, enter `{{ FullName }}` within the Rich Text control to reference the value of that Line Input control. The `{{` and `}}` represent [mustache syntax](https://mustache.github.io/mustache.5.html). During the Request, the Rich Text control references the Request data to locate the value of `FullName`, then displays its value in the Rich text control. This the following is required to reference the value of another control in the same or different ProcessMaker Screen during a Request:
 
-  * **Use mustache syntax:** Encapsulate the Request data in brackets `{{` and `}}`. Spaces surrounding the Request data reference is allowed.
+  * **Use** [**mustache syntax**](https://mustache.github.io/mustache.5.html)**:** Encapsulate the Request data in brackets `{{` and `}}`. Spaces surrounding the Request data reference is allowed.
   * **Reference the ProcessMaker Screen control's Variable Name setting value:** Reference the ProcessMaker Screen control from which you want to reference its value by including its **Variable Name** setting.
 
-* **Magic Variable values:** Display the value of a [Magic Variable](../../../reference-global-variables-in-your-processmaker-assets.md) by referencing the Magic Variable using mustache syntax. Example: `{{ _user.fullname }}`.
+* **Magic Variable values:** Display the value of a [Magic Variable](../../../reference-global-variables-in-your-processmaker-assets.md) by referencing the Magic Variable using [mustache syntax](https://mustache.github.io/mustache.5.html). Example: `{{ _user.fullname }}`.
 
 ## Add the Control to a ProcessMaker Screen
 
@@ -77,7 +77,7 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Select control in the **Configuration** panel:
 
-* **Content:** Enter the text and/or image to display in the Rich Text control using HTML syntax and/or mustache syntax. Alternatively, use the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to enter your text. Reference your image using HTML syntax. Your text and/or images display in the **Content** setting using HTML syntax. **Rich text editor** is the default value. See this [control's description](rich-text-control-settings.md#control-description) for information how to use mustache syntax.
+* **Content:** Enter the text and/or image to display in the Rich Text control using HTML syntax and/or [mustache syntax](https://mustache.github.io/mustache.5.html). Alternatively, use the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to enter your text. Reference your image using HTML syntax. Your text and/or images display in the **Content** setting using HTML syntax. **Rich text editor** is the default value. See this [control's description](rich-text-control-settings.md#control-description) for information how to use [mustache syntax](https://mustache.github.io/mustache.5.html).
 
 ### Advanced Panel Settings
 
@@ -91,7 +91,7 @@ Below are settings for the Select control in the **Advanced** panel:
 {% hint style="info" %}
 Below are some ways to render [Request](../../../../using-processmaker/requests/what-is-a-request.md) data to display as text in a Rich Text control:
 
-* Use mustache syntax to reference the Request data. Ensure to precede the Request data reference with `data.`. Example: `Customer First Name: {{ data.CustomerName }}`
+* Use [mustache syntax](https://mustache.github.io/mustache.5.html) to reference the Request data. Ensure to precede the Request data reference with `data.`. Example: `Customer First Name: {{ data.CustomerName }}`
 * Include your own HTML syntax in the Rich Text control along with Request data references. Example: `Customer First Name: <strong>{{ data.CustomerName }}</strong>`
 
 See the [Rich Text control's description](rich-text-control-settings.md#control-description) for a detailed example.
