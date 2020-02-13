@@ -72,7 +72,7 @@ Below are settings for the File Download control in the **Variable** panel:
 * **Variable Name:** Enter the **Variable Name** setting value from a [File Upload](file-upload-control-settings.md) control to reference the file uploaded through that control within a different ProcessMaker Screen; during a Request, a file is attached to a different ProcessMaker Screen via a File Upload control. Use the **Variable Name** value in the following other ways:
 
   * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds with the File Download control's entered datetime with that Image control's **Variable Name** value. In the example below, `FileUploadControl` is the **Variable Name** setting's value.
-  * Reference this control's value in a different Screen Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ FileUploadControl }}`.
+  * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ FileUploadControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
   This is a required setting.
