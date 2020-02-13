@@ -26,7 +26,7 @@ Follow these steps to view Watchers for a ProcessMaker Screen:
 1. [Open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to view its Watchers. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. Click the **Watchers** button![](../../../../.gitbook/assets/watchers-button-screens-builder-processes.png). The ProcessMaker Screen is in [Watchers](../screens-builder-modes.md#watchers-mode) mode. The **Watchers** screen displays all Watchers configured for this ProcessMaker Screen.
 
-![Watchers screen in Watchers mode](../../../../.gitbook/assets/watchers-screen-screens-builder-processes.png)
+![Watchers screen in Watcher mode](../../../../.gitbook/assets/watchers-screen-screens-builder-processes.png)
 
 The following information displays about each Watcher:
 
