@@ -99,7 +99,7 @@ Below are settings for the Collection Select control in the **Variable** panel:
 
 * **Field Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Field Name** value in the following ways:
   * Reference this control by its **Field Name** setting's value. The **Data Preview** panel in [Preview mode](../../screens-builder-modes.md#preview-mode) corresponds the Collection Select control's textual content with that Collection Select control's **Field Name** value. In the example below, `CollectionSelectControl` is the **Field Name** setting's value. ![](../../../../../.gitbook/assets/collection-select-control-data-preview-screens-builder-package-processes.png) 
-  * Reference this control's value in a different Screen Builder control. To do so, use mustache syntax and reference this control's **Field Name** value in the target control. Example: `{{ CollectionSelectControl }}`.
+  * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Field Name** value in the target control. Example: `{{ CollectionSelectControl }}`.
   * Reference this value in [**Visibility Rule** setting expressions](../expression-syntax-components-for-show-if-control-settings.md).
 * **Validation:** Enter the validation rules the form user must comply with to properly enter a valid value into this field. This setting has no default value. See [Validation Rules for "Validation" Control Settings](../validation-rules-for-validation-control-settings.md).
 
@@ -113,7 +113,7 @@ Below are settings for the Collection Select control in the **Configuration** pa
 * **Help Text:** Enter text that provides additional guidance on this control's use. This setting has no default value. This setting has no default value.
 * **Collection:** Select from which ProcessMaker Collection to display its record\(s\) in the Collection Select control. If no ProcessMaker Collections exist, the **Collection** drop-down menu contains no options; [create](../../../../../collections/manage-collections/create-a-new-collection.md) at least one ProcessMaker Collection before using a Collection Select control.
 * **Value:** Enter how referenced records display in the Collection Select control. Follow these guidelines to format how record data displays:
-  * **Reference record data from the Collection:** Use mustache syntax to reference record data from the specified ProcessMaker Collection. References to the record data are case sensitive. Precede each reference with `data.`. Example: `{{ data.FirstName }}`. Reference multiple record data in the **Value** setting if necessary. Example: `{{ data.FirstName }} {{ data.LastName }}` if the specified ProcessMaker Collection uses two controls to record the first name and last name in records.
+  * **Reference record data from the Collection:** Use [mustache syntax](https://mustache.github.io/mustache.5.html) to reference record data from the specified ProcessMaker Collection. References to the record data are case sensitive. Precede each reference with `data.`. Example: `{{ data.FirstName }}`. Reference multiple record data in the **Value** setting if necessary. Example: `{{ data.FirstName }} {{ data.LastName }}` if the specified ProcessMaker Collection uses two controls to record the first name and last name in records.
 
     Follow these guidelines to determine which record data to reference from the specified ProcessMaker Collection:
 
