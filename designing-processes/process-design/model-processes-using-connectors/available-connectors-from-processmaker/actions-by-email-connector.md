@@ -140,62 +140,6 @@ Follow these steps to configure an Actions By Email control:
       * **Light:** Displays a button with a white-colored background with black-colored text.
    5. Click **Add**.
 
-   Each option is added to the **Options** setting list that have the following:
-
-   * **Button text:** The button label displayed to the email. 
-   * **Edit:** Click the edit icon![](../../../../.gitbook/assets/actions-by-email-options-list-edit-button-process-modeler-package-processes.png)to edit the option.
-   * **Trash:** Click the trash icon![](../../../../.gitbook/assets/actions-by-email-options-list-trash-button-process-modeler-package-processes.png)to remove the option.
-
-   ![](../../../../.gitbook/assets/actions-by-email-options-list-process-modeler-package-processes.png) 
-
-9. Ensure that the **Hide Menus** button![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-10. Select the Actions By Email control from the Process model in which to configure its settings. The **Actions By Email** configuration settings display.  ![](../../../../.gitbook/assets/actions-by-email-configuration-process-modeler-package-processes.png) 
-11. In the **Email** setting, enter the email address to which the Actions By Email control sends an email when this Actions By Email control triggers. You may use the value from a [ProcessMaker Screen](../../../design-forms/what-is-a-form.md)'s **Variable Name** setting as a variable in this field. For example, if your Process model references a ProcessMaker Screen that contains a [Lines Inputs control](../../../design-forms/screens-builder/control-descriptions/line-input-control-settings.md) with the **Variable Name** setting value of `EmailAddress` that the Request participant enters an email address, use mustache syntax `{{EmailAddress}}` to use that Line Inputs control's value in the **Email** field. Email addresses may be referenced from Request data or entered into the **Email** setting by using commas \(`,`\) between email addresses. You may also use mustache syntax to reference [Magic Variables](../../../reference-global-variables-in-your-processmaker-assets.md).
-12. In the **Name** setting, enter the name of the email recipient. You may use the value from a ProcessMaker Screen's **Variable Name** setting as a variable in this field. For example, if your Process model references a ProcessMaker Screen that contains a Lines Inputs control with the **Variable Name** setting value of `FullName` that the Request participant enters an name, use mustache syntax `{{FullName}}` to use that Line Inputs control's value in the **Name** field. Email recipients may be referenced from Request data or entered into the **Name** setting by using commas \(`,`\) between email addresses. If entering multiple email recipients, ensure to list them in the corresponding order as you have listed them in the **Email** setting, so that each email recipient views her or his name in the received email.
-13. In the **Subject** setting, enter the subject of the email the Actions By Email control sends. For example, enter the decision that the email recipient must make in this email.
-14. In the **Body** setting, enter the body of the email the Actions By Email control sends. For example, enter the instructions regarding the decision that the email recipient must make in using the buttons in the email.
-15. In the **Email body** setting, enter the body text of the email. You may include mustache syntax within the **Email body** setting to reference Request data or Magic Variables.
-16. In the **Key name** setting, enter the name of the key that stores the Actions By Email control response within the JSON data model of the Request.
-17. In the **Options** setting, enter the list of options available to the email recipient when making the decision. The options configured here display below the body of the email. Add options in the order they are to display from top to bottom in the email.  
-    ![](../../../../.gitbook/assets/actions-by-email-options-list-configuration-process-modeler-package-processes.png) 
-
-    Each option has the following settings:
-
-    * **Value:** **Value** is the internal data name for the option that only the Process Owner views at design time.
-    * **Content:** **Content** is the button label displayed to the email. 
-    * **Actions:** Click the **Remove**![](../../../../.gitbook/assets/options-list-delete-option-icon-screens-builder-processes.png)icon to remove the option.
-
-    Follow these steps to add an option: 
-
-    1. Click **Add Option** from below the **Options List** setting. The **Add New Option** screen displays.  ![](../../../../.gitbook/assets/add-new-option-screen-actions-by-email-coniguration-process-modeler-package-processes.png) 
-    2. In the **Option Value** field, enter the **Value** option value \(as described above\).
-    3. In the **Option Label** field, enter the **Content** option value \(as described above\).
-    4. Click **OK**.
-
-18. Ensure that the **Hide Menus** button![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-19. Select the Actions By Email control from the Process model in which to configure its settings. The **Actions By Email** configuration settings display.  ![](../../../../.gitbook/assets/actions-by-email-configuration-process-modeler-package-processes.png) 
-20. In the **Email** setting, enter the email address to which the Actions By Email control sends an email when this Actions By Email control triggers. You may use the value from a [ProcessMaker Screen](../../../design-forms/what-is-a-form.md)'s **Variable Name** setting as a variable in this field. For example, if your Process model references a ProcessMaker Screen that contains a [Lines Inputs control](../../../design-forms/screens-builder/control-descriptions/line-input-control-settings.md) with the **Variable Name** setting value of `EmailAddress` that the Request participant enters an email address, use [mustache syntax](https://mustache.github.io/mustache.5.html) `{{EmailAddress}}` to use that Line Inputs control's value in the **Email** field. Email addresses may be referenced from Request data or entered into the **Email** setting by using commas \(`,`\) between email addresses. You may also use [mustache syntax](https://mustache.github.io/mustache.5.html) to reference [Magic Variables](../../../reference-global-variables-in-your-processmaker-assets.md).
-21. In the **Name** setting, enter the name of the email recipient. You may use the value from a ProcessMaker Screen's **Variable Name** setting as a variable in this field. For example, if your Process model references a ProcessMaker Screen that contains a Lines Inputs control with the **Variable Name** setting value of `FullName` that the Request participant enters an name, use [mustache syntax](https://mustache.github.io/mustache.5.html) `{{FullName}}` to use that Line Inputs control's value in the **Name** field. Email recipients may be referenced from Request data or entered into the **Name** setting by using commas \(`,`\) between email addresses. If entering multiple email recipients, ensure to list them in the corresponding order as you have listed them in the **Email** setting, so that each email recipient views her or his name in the received email.
-22. In the **Subject** setting, enter the subject of the email the Actions By Email control sends. For example, enter the decision that the email recipient must make in this email.
-23. In the **Body** setting, enter the body of the email the Actions By Email control sends. For example, enter the instructions regarding the decision that the email recipient must make in using the buttons in the email.
-24. In the **Email body** setting, enter the body text of the email. You may include [mustache syntax](https://mustache.github.io/mustache.5.html) within the **Email body** setting to reference Request data or Magic Variables.
-25. In the **Key name** setting, enter the name of the key that stores the Actions By Email control response within the JSON data model of the Request.
-26. In the **Options** setting, enter the list of options available to the email recipient when making the decision. The options configured here display below the body of the email. Add options in the order they are to display from top to bottom in the email.  
-    ![](../../../../.gitbook/assets/actions-by-email-options-list-configuration-process-modeler-package-processes.png) 
-
-    Each option has the following settings:
-
-    * **Value:** **Value** is the internal data name for the option that only the Process Owner views at design time.
-    * **Content:** **Content** is the button label displayed to the email. 
-    * **Actions:** Click the **Remove**![](../../../../.gitbook/assets/options-list-delete-option-icon-screens-builder-processes.png)icon to remove the option.
-
-    Follow these steps to add an option: 
-
-    1. Click **Add Option** from below the **Options List** setting. The **Add New Option** screen displays.  ![](../../../../.gitbook/assets/add-new-option-screen-actions-by-email-coniguration-process-modeler-package-processes.png) 
-    2. In the **Option Value** field, enter the **Value** option value \(as described above\).
-    3. In the **Option Label** field, enter the **Content** option value \(as described above\).
-    4. Click **OK**.
-
 ## Related Topics
 
 {% page-ref page="../../../../package-development-distribution/package-a-connector/actions-by-email-package.md" %}
