@@ -92,6 +92,7 @@ Route::group(
     Route::delete('processes/{process}', 'ProcessController@destroy')->name('processes.destroy')->middleware('can:archive-processes');
     Route::put('processes/{processId}/restore', 'ProcessController@restore')->name('processes.restore')->middleware('can:archive-processes');
     Route::post('process_events/{process}', 'ProcessController@triggerStartEvent')->name('process_events.trigger')->middleware('can:start,process');
+    Route::post('processes/simulate', 'ProcessController@simulate')->name('processes.simulate')->middleware('can:view-processes');
 
     // List of Processes that the user can start
     Route::get('start_processes', 'ProcessController@startProcesses')->name('processes.start'); //Filtered in controller

@@ -2,6 +2,7 @@
 
 namespace ProcessMaker\Simulator;
 
+use DOMElement;
 use ProcessMaker\Nayra\Contracts\Bpmn\ActivityInterface;
 use ProcessMaker\Nayra\Contracts\Bpmn\ProcessInterface;
 use ProcessMaker\Nayra\Contracts\Bpmn\StartEventInterface;
@@ -63,6 +64,50 @@ class Simulator
                 }
             }
         }
+        $simulation = $this->checkUnreachableElements($simulation);
+        return $simulation;
+    }
+
+    /**
+     * Check unreachable elements
+     *
+     * @param array $simulation
+     *
+     * @return array
+     */
+    private function checkUnreachableElements($simulation)
+    {
+        $unreachable = [];
+        $processes = $this->bpmnRepository->getElementsByTagNameNS(BpmnDocument::BPMN_MODEL, 'process');
+        foreach ($processes as $process) {
+            foreach ($process->childNodes as $node) {
+                if ($node instanceof DOMElement && $node->localName !== 'sequenceFlow') {
+                    $id = $node->getAttribute('id');
+                    $inSimulation = array_filter($simulation, function ($sim) use ($id) {
+                        foreach ($sim['path'] as $token) {
+                            if ($token['id'] === $id) {
+                                return true;
+                            }
+                        }
+                        return false;
+                    });
+                    if (!$inSimulation) {
+                        $unreachable[] = [
+                            'id' => $id,
+                            'name' => $node->getAttribute('name'),
+                            'type' => $node->localName,
+                            'status' => 'UNREACHABLE',
+                        ];
+                    }
+                }
+            }
+        }
+        if ($unreachable) {
+            $simulation[] = [
+                'path' => $unreachable,
+                'status' => 'UNREACHABLE',
+            ];
+        }
         return $simulation;
     }
 
@@ -111,11 +156,19 @@ class Simulator
         $start->start($instance);
         $this->engine->runToNextState();
         $tokens = $instance->getTokens();
+        $tasks = [];
         while ($tokens->count()) {
             foreach ($instance->getTokens() as $token) {
                 $element = $token->getOwnerElement();
                 $status = $token->getStatus();
                 if ($element instanceof ActivityInterface && $status === ActivityInterface::TOKEN_STATE_ACTIVE) {
+                    if (in_array($element->getId(), $tasks)) {
+                        return [
+                            'status' => 'LOOP',
+                            'path' => $instance->getProperty('trace')->toArray(),
+                        ];
+                    }
+                    $tasks[] = $element->getId();
                     $element->complete($token);
                     $this->engine->runToNextState();
                     break;

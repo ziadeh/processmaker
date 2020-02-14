@@ -79,6 +79,7 @@ class Repository implements RepositoryInterface
             'id' => $element->getId(),
             'type' => $type,
             'name' => $element->getName(),
+            'status' => 'PASSED',
         ]);
     }
 
@@ -114,6 +115,7 @@ class Repository implements RepositoryInterface
 
     public function persistThrowEventTokenArrives(ThrowEventInterface $event, TokenInterface $token)
     {
+        $this->traceExecution($token, 'event', $event);
     }
 
     public function persistThrowEventTokenConsumed(ThrowEventInterface $endEvent, TokenInterface $token)

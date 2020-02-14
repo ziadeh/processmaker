@@ -4,6 +4,7 @@
       <b-card-body class="overflow-hidden position-relative p-0 vh-100" data-test="body-container">
         <modeler
           ref="modeler"
+          :simulation="simulation"
           @validate="validationErrors = $event"
           @warnings="warnings = $event"
           @saveBpmn="saveBpmn"
@@ -14,6 +15,8 @@
         ref="validationStatus"
         :validation-errors="validationErrors"
         :warnings="warnings"
+        :simulation="simulation"
+        @check-simulation="checkSimulation"
       />
     </b-card>
   </b-container>
@@ -30,12 +33,26 @@ export default {
   },
   data() {
     return {
+      simulation: {
+        selected: null,
+        paths: []
+      },
       process: window.ProcessMaker.modeler.process,
       validationErrors: {},
       warnings: [],
     };
   },
   methods: {
+    checkSimulation() {
+      window.ProcessMaker.apiClient.post('processes/simulate', {
+        bpmn: this.$refs.modeler.currentXML,
+      }).then((response) => {
+        this.simulation = {
+          selected: null,
+          paths: response.data
+        };
+      });
+    },
     updateBpmnValidations() {
       const statusBar = this.$refs.validationStatus;
       const warnings = this.warnings;
