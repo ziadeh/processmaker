@@ -79,6 +79,8 @@ Ensure to [save your ProcessMaker Screen](../save-a-screen.md#save-a-processmake
 
 {% page-ref page="add-a-watcher-to-a-screen.md" %}
 
+{% page-ref page="search-for-a-watcher.md" %}
+
 {% page-ref page="delete-a-watcher-from-a-screen.md" %}
 
 {% page-ref page="../what-is-screens-builder.md" %}

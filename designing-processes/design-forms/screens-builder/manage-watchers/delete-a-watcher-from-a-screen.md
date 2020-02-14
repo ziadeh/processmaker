@@ -37,6 +37,8 @@ Follow these steps to delete a Watcher from a ProcessMaker Screen:
 
 {% page-ref page="add-a-watcher-to-a-screen.md" %}
 
+{% page-ref page="search-for-a-watcher.md" %}
+
 {% page-ref page="edit-a-watcher-for-a-screen.md" %}
 
 {% page-ref page="../what-is-screens-builder.md" %}
