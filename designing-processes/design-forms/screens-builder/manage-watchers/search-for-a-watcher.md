@@ -22,7 +22,6 @@ Follow these steps to search for a Watcher in a ProcessMaker Screen:
    * **Name:** Filter by the Watcher name that displays in the **Name** column.
    * **Watching Variable:** Filter by the control in that ProcessMaker Screen from which the Watcher monitors for a change in its value by searching for that control's **Variable Name** value that displays in the **Watching Variable** column.
    * **Output Variable:** Filter by the control in that ProcessMaker Screen to which the Watcher outputs its action a control by searching for that control's **Variable Name** value that displays in the **Output Variable** column.
-   * **Source:** Filter by the name of the [ProcessMaker Data Connector](../../../data-connector-management/what-is-a-data-connector.md) or [ProcessMaker Script](../../../scripts/what-is-a-script.md) from which the Watcher acts upon that displays in the **Source** column.
 
 As you enter text into the **Search** field, Watchers display that match your entered text.
 
