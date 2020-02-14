@@ -7,7 +7,7 @@ description: Design your own advanced forms using HTML syntax and JavaScript.
 ## Overview
 
 {% hint style="info" %}
-The Advanced Screen [package](../first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Advanced Screen package can be installed in your ProcessMaker instance.
+The Advanced Screen [package](../first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Advanced Screen package can be installed in your ProcessMaker instance.
 {% endhint %}
 
 Use the Advanced Screen package to design your own advanced forms using HTML syntax and JavaScript. This is an ideal solution for highly technical designers to create their own form designs and functionality.
