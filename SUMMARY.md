@@ -155,6 +155,7 @@
       * [What is a Watcher?](designing-processes/design-forms/screens-builder/manage-watchers/what-is-a-watcher.md)
       * [View Watchers for a Screen](designing-processes/design-forms/screens-builder/manage-watchers/view-watchers-for-a-screen.md)
       * [Add a Watcher to a Screen](designing-processes/design-forms/screens-builder/manage-watchers/add-a-watcher-to-a-screen.md)
+      * [Search for a Watcher](designing-processes/design-forms/screens-builder/manage-watchers/search-for-a-watcher.md)
       * [Edit a Watcher for a Screen](designing-processes/design-forms/screens-builder/manage-watchers/edit-a-watcher-for-a-screen.md)
       * [Delete a Watcher from a Screen](designing-processes/design-forms/screens-builder/manage-watchers/delete-a-watcher-from-a-screen.md)
     * [Save Your Screen](designing-processes/design-forms/screens-builder/save-a-screen.md)
