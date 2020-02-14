@@ -109,10 +109,10 @@ This section outlines how to use ProcessMaker variables in programming languages
 {% code title="Example Request data in a sample JSON data model" %}
 ```text
 {
-"Submit": null,
-"VendorName": "My Company",
-"ContractNumber": "5551231234",
-"name": "Louis"
+    "Submit": null,
+    "VendorName": "My Company",
+    "ContractNumber": "5551231234",
+    "name": "Louis"
 }
 ```
 {% endcode %}
