@@ -9,7 +9,7 @@ description: >-
 ## Overview
 
 {% hint style="info" %}
-The Web Entry [package](../first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Web Entry package can be installed in your ProcessMaker instance.
+The Web Entry [package](../first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Web Entry package can be installed in your ProcessMaker instance.
 {% endhint %}
 
 Allow anonymous or authenticated ProcessMaker users to start or participate in [Requests](../../using-processmaker/requests/what-is-a-request.md) via a published URL.

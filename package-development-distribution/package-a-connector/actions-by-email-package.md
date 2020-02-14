@@ -7,7 +7,7 @@ description: Request participants can make decisions via email with the click of
 ## Overview
 
 {% hint style="info" %}
-The Actions By Email [package](../first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Actions By Email package can be installed in your ProcessMaker instance.
+The Actions By Email [package](../first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Actions By Email package can be installed in your ProcessMaker instance.
 {% endhint %}
 
 Use the Actions By Email package to send emails automatically during your Processes' [Requests](../../using-processmaker/requests/what-is-a-request.md).

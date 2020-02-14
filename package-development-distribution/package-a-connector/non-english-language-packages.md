@@ -10,7 +10,7 @@ description: >-
 ## Overview
 
 {% hint style="info" %}
-The Translations [package](../first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Translations package can be installed in your ProcessMaker instance.
+The Translations [package](../first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Translations package can be installed in your ProcessMaker instance.
 {% endhint %}
 
 ### Display English- and Non-English Language Labels in the ProcessMaker User Interface

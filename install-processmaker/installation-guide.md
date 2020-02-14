@@ -5,7 +5,7 @@ description: Ready to get started? Download the open-source ProcessMaker edition
 # Download ProcessMaker Open-Source Edition for On-Premises Installation
 
 {% hint style="info" %}
-The open-source ProcessMaker edition does not have commercial ProcessMaker Support. For commercial and enterprise support, please contact ProcessMaker Sales at [sales@ProcessMaker.com](mailto:sales@processmaker.com) and provide contact information.
+The open-source ProcessMaker edition does not have commercial ProcessMaker Support. For commercial and enterprise support, please contact [ProcessMaker Sales](https://www.processmaker.com/contact/) at sales@ProcessMaker.com and provide contact information.
 
 ProcessMaker has a robust open-source community. Visit the [ProcessMaker Forum](https://forum.processmaker.com/) to ask any technical questions you may have about the open-source ProcessMaker edition.
 {% endhint %}
