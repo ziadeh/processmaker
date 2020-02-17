@@ -5,6 +5,7 @@ namespace ProcessMaker\Providers;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use ProcessMaker\BpmnEngine;
 use ProcessMaker\Contracts\TimerExpressionInterface;
+use ProcessMaker\Nayra\Bpmn\Models\EventDefinitionBus;
 use ProcessMaker\Nayra\Contracts\Bpmn\EventDefinitionInterface;
 use ProcessMaker\Nayra\Contracts\Bpmn\FlowNodeInterface;
 use ProcessMaker\Nayra\Contracts\Bpmn\FormalExpressionInterface;
@@ -43,6 +44,7 @@ class ProcessTestProvider extends ServiceProvider
             $engine = empty($params['engine']) ? new BpmnEngine($repository, $eventBus) : $params['engine'];
 
             $engine->setJobManager(new JobManager());
+            $engine->setEventDefinitionBus(new EventDefinitionBus);
 
             //Initialize BpmnDocument repository (REQUIRES $engine $factory)
             $bpmnRepository = new BpmnDocument();

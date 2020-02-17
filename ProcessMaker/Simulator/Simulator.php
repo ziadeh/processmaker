@@ -50,14 +50,25 @@ class Simulator
     public function run($bpmn)
     {
         $this->bpmnRepository->loadXML($bpmn);
+        $engine = $this->bpmnRepository->getEngine();
         $totalPaths = $this->calculatePaths();
 
-        $simulation = [];
+        $collaborations = $this->bpmnRepository->getElementsByTagNameNS(BpmnDocument::BPMN_MODEL, 'collaboration');
         $processes = $this->bpmnRepository->getElementsByTagNameNS(BpmnDocument::BPMN_MODEL, 'process');
+        foreach ($collaborations as $collaboration) {
+            $engine->loadCollaboration($collaboration->getBpmnElementInstance());
+        }
+        foreach ($processes as $process) {
+            $engine->loadProcess($process->getBpmnElementInstance());
+        }
+        $simulation = [];
         foreach ($processes as $process) {
             $startEvents = $process->getElementsByTagNameNS(BpmnDocument::BPMN_MODEL, 'startEvent');
             foreach ($startEvents as $startEvent) {
                 $start = $startEvent->getBpmnElementInstance();
+                if ($start->getEventDefinitions()->count()) {
+                    continue;
+                }
                 for ($seed = 0; $seed < $totalPaths; $seed++) {
                     $result = $this->runSimulation($process->getBpmnElementInstance(), $start, $seed);
                     in_array($result, $simulation, false) ?: $simulation[] = $result;
@@ -152,33 +163,46 @@ class Simulator
             $data[$variable] = boolval(($seed >> $i) & 1);
         }
         $dataStore->setData($data);
+        $this->engine->closeExecutionInstances();
+        $processes = $this->bpmnRepository->getElementsByTagNameNS(BpmnDocument::BPMN_MODEL, 'process');
         $instance = $this->engine->createExecutionInstance($process, $dataStore);
         $start->start($instance);
         $this->engine->runToNextState();
-        $tokens = $instance->getTokens();
         $tasks = [];
-        while ($tokens->count()) {
-            foreach ($instance->getTokens() as $token) {
-                $element = $token->getOwnerElement();
-                $status = $token->getStatus();
-                if ($element instanceof ActivityInterface && $status === ActivityInterface::TOKEN_STATE_ACTIVE) {
-                    if (in_array($element->getId(), $tasks)) {
-                        return [
-                            'status' => 'LOOP',
-                            'path' => $instance->getProperty('trace')->toArray(),
-                        ];
+        do {
+            $changed = false;
+            foreach ($processes as $process) {
+                foreach ($process->getBpmnElementInstance()->getInstances() as $instance) {
+                    foreach ($instance->getTokens() as $token) {
+                        $element = $token->getOwnerElement();
+                        $status = $token->getStatus();
+                        if ($element instanceof ActivityInterface && $status === ActivityInterface::TOKEN_STATE_ACTIVE) {
+                            $changed = true;
+                            if (in_array($element->getId(), $tasks)) {
+                                return [
+                                    'status' => 'LOOP',
+                                    'path' => $instance->getProperty('trace')->toArray(),
+                                ];
+                            }
+                            $tasks[] = $element->getId();
+                            $element->complete($token);
+                            $this->engine->runToNextState(10);
+                            break;
+                        }
                     }
-                    $tasks[] = $element->getId();
-                    $element->complete($token);
-                    $this->engine->runToNextState();
-                    break;
                 }
             }
-            $tokens = $instance->getTokens();
+        } while ($changed);
+        $path = [];
+        foreach ($processes as $process) {
+            foreach($process->getBpmnElementInstance()->getInstances() as $instance) {
+                $newPath = $instance->getProperty('trace')->toArray();
+                array_push($path, ...$newPath);
+            }
         }
         return [
             'status' => $instance->getProperty('status'),
-            'path' => $instance->getProperty('trace')->toArray(),
+            'path' => $path,
         ];
     }
 }
