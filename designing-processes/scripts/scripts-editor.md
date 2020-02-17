@@ -92,13 +92,7 @@ Pass Request-related data into your ProcessMaker Script in the following ways:
   ![JSON data model in a Completed Request, as viewed from the &quot;Data&quot; tab](../../.gitbook/assets/data-tab-completed-request-information-requests.png)
 
 * **ProcessMaker Magic Variables:** ProcessMaker uses a set of Magic Variables that become part of the JSON data model for all Requests. ProcessMaker uses these Magic Variables to store ProcessMaker user, Process, and Request related data for all Requests. During an in-progress Request, these ProcessMaker Magic Variables are updated. All ProcessMaker Magic Variables are preceded by an underscore \(`_`\) character in the JSON data model. See [Reference Magic Variables in ProcessMaker Assets](../reference-global-variables-in-your-processmaker-assets.md).
-* **ProcessMaker Environment Variables:** The sensitive information that a [ProcessMaker Environment Variable](../environment-variable-management/what-is-an-environment-variable.md) represents can pass to a ProcessMaker Script when it runs. Usage depends on the programming language that the ProcessMaker Script uses. In the usage examples below, `ENV_VAR_NAME` represents the name of the ProcessMaker Environment Variable.
-  * **PHP:** `getenv('ENV_VAR_NAME')`
-  * **Lua:** `os.getenv("ENV_VAR_NAME")`
-  * **JavaScript:** `process.env['ENV_VAR_NAME']`
-  * **C\#:**  \(requires the [C\# package](../../package-development-distribution/package-a-connector/c-package.md)\)
-  * **Java:** `System.getenv(ENV_VAR_NAME)` \(requires the [Java package](../../package-development-distribution/package-a-connector/java-package.md)\)
-  * **R:** `envVar <- Sys.getenv("ENV_VAR_NAME")` \(requires the [R package](../../package-development-distribution/package-a-connector/r-package.md)\)
+* **ProcessMaker Environment Variables:** The sensitive information that a [ProcessMaker Environment Variable](../environment-variable-management/what-is-an-environment-variable.md) represents can pass to a ProcessMaker Script when it runs. Usage depends on the programming language that the ProcessMaker Script uses. In the usage examples below, `ENV_VAR_NAME` represents the name of the ProcessMaker Environment Variable. See [ProcessMaker Variable Syntax, Usage, and Examples](scripts-editor.md#processmaker-variable-syntax-usage-and-examples).
 
 ProcessMaker uses two global variables that can ProcessMaker Scripts can call. Variable usage depends on the programming language that the ProcessMaker Script uses. See [ProcessMaker Variable Syntax, Usage, and Examples](scripts-editor.md#processmaker-variable-syntax-usage-and-examples). Below is a description of these global variables:
 
@@ -107,158 +101,119 @@ ProcessMaker uses two global variables that can ProcessMaker Scripts can call. V
 
 ### ProcessMaker Variable Syntax, Usage, and Examples
 
-This section outlines how to use ProcessMaker variables in programming languages that ProcessMaker supports. In the examples provided, refer to the following sample JSON data model that represents example Request data:
-
-{% code title="Example Request data in a sample JSON data model" %}
-```text
-{
-    "Submit": null,
-    "VendorName": "My Company",
-    "ContractNumber": "5551231234",
-    "name": "Louis"
-}
-```
-{% endcode %}
-
 Refer to the tabs below how to use ProcessMaker variables in supported programming languages.
 
 {% tabs %}
 {% tab title="PHP" %}
+Below is a sample ProcessMaker Script that uses PHP. Refer to the comments denoted with `//` that describe how the sample functions:
+
+* How to get a ProcessMaker Environment Variable.
+* How to get a value from the configuration object.
+* How to get a value from a data object.
+
 You may also use ProcessMaker's [PHP SDK](https://github.com/ProcessMaker/sdk-php) to design custom applications.
 
-### data
-
-`data` represents the in-progress Request data from which the ProcessMaker Script references when that Script runs.
-
-**Syntax**
-
 ```text
-$data
+<?php
+​
+$output = [];
+​
+// Get a ProcessMaker Environment Variable, in this case TEST_VAR.
+$output['envVar'] = getenv('TEST_VAR');
+​
+// Get a value from the config object.
+// In this example, 'test' in the JSON config: {"test":"test config value"}
+$output['configTest'] = $config["test"];
+​
+// Get a value from the data object.
+// In this example, the user_id for the _request.
+$output['requestUserId'] = $data['_request']['user_id'];
+​
+// Get the email address for user id 1 using the API/SDK.
+// Use the global `$api_config` to set credentials automatically.
+$usersApi = new ProcessMaker\Client\Api\UsersApi(null, $api_config);
+$user = $usersApi->getUserById("1");
+$output['userEmail'] = $user->getEmail();
+​
+return $output;
 ```
-
-**Usage**
-
-```text
-return $data[key]
-```
-
-### config
-
-`config` represents the JSON-formatted configuration settings as configured in the **Configuration** panel. The ProcessMaker Script references these configuration settings when it runs. See [Enter Other JSON Data as Input to Your ProcessMaker Script](scripts-editor.md#enter-other-json-data-as-input-to-your-processmaker-script).
-
-**Syntax**
-
-```text
-$config
-```
-
-### Output
-
-Reference any ProcessMaker variable to output the result from the ProcessMaker Script. See [Pass Request Data Into Your ProcessMaker Script](scripts-editor.md#pass-request-data-into-your-processmaker-script). In the example below, `output` is the ProcessMaker variable to which a ProcessMaker Script outputs its result.
-
-{% code title="Output based on example Request data" %}
-```text
-{
-  "output": "Louis"
-}
-```
-{% endcode %}
 {% endtab %}
 
 {% tab title="Lua" %}
+Below is a sample ProcessMaker Script that uses Lua. Refer to the comments denoted with `--` that describe how the sample functions:
+
+* How to get a ProcessMaker Environment Variable.
+* How to get a value from the configuration object.
+* How to get a value from a data object.
+
 You may also use ProcessMaker's [Lua SDK](https://github.com/ProcessMaker/sdk-lua) to design custom applications.
 
-### data
-
-{% code title="Syntax and usage" %}
-```lua
-return {data, global variable set to}
-```
-{% endcode %}
-
-### config
-
-{% code title="Syntax and usage" %}
 ```text
-config, global variable set to: {"some_key": "baz"}
+-- Get a ProcessMaker Environment Variable, in this example TEST_VAR.
+local envVar = os.getenv("TEST_VAR")
+        
+-- Get a value from the config object.
+-- In this example, 'test' in the JSON config: {"test":"test config value"}
+local configTest = config["test"]
+​
+-- Get a value from the data object.
+-- In this example, the user_id for the _request.
+local requestUserId = data["_request"]["user_id"]
+​
+-- Get the email address for user id 1 using the API/SDK.
+-- Use client.make to get a pre-configured api client.
+-- See https://github.com/ProcessMaker/sdk-lua/tree/master/pmsdk/api for available clients.
+local users_api = client.make('users_api')
+local user = users_api:get_user_by_id("1")
+local userEmail = user.email
+​
+return {envVar=envVar, configTest=configTest, requestUserId=requestUserId, userEmail=userEmail}
 ```
-{% endcode %}
-
-### Example
-
-{% code title="Example for data and config variables" %}
-```lua
-return {foo=data.foo, config_var=config.some_key}
-```
-{% endcode %}
-
-### Output
-
-{% code title="Output based on example Request data" %}
-```text
-{
-  "output": {
-    "foo": "bar",
-    "config_var": "baz"
-  }
-}
-```
-{% endcode %}
 {% endtab %}
 
 {% tab title="JavaScript" %}
+Below is a sample ProcessMaker Script that uses JavaScript. Refer to the comments denoted with `//` that describe how the sample functions:
+
+* How to get a ProcessMaker Environment Variable.
+* How to get a value from the configuration object.
+* How to get a value from a data object.
+
 You may also use ProcessMaker's [JavaScript SDK](https://github.com/ProcessMaker/sdk-node) to design custom applications.
 
-### data
-
-{% code title="Syntax and usage" %}
 ```text
-data, global variable set to: {"foo":"bar"}
-```
-{% endcode %}
-
-### config
-
-{% code title="Syntax and usage" %}
-```text
-config, global variable set to: {"some_key": "baz"}
-```
-{% endcode %}
-
-### Examples
-
-{% code title="Example 1" %}
-```javascript
-return { 'foo': data['foo'], 'config_var': config['some_key'] };
-```
-{% endcode %}
-
-{% code title="Example 2" %}
-```javascript
-return { 'foo': data.foo, 'config_var': config.some_key };
-```
-{% endcode %}
-
-{% code title="Example in a promise" %}
-```javascript
+// A ProcessMaker Script written in JavaScript should return a Promise that
+// resolves with the output data. You can also return a basic object.
+// For example `return {"key":"value"}`
 return new Promise((resolve, reject) => {
-  resolve({'foo': data.foo, 'config_var': config.some_key});
-})
+​
+    // Get a ProcessMaker Environment Variable, in this example TEST_VAR.
+    const envVar = process.env['TEST_VAR'];
+​
+    // Get a value from the config object.
+    // In this example, 'test' in the JSON config: {"test":"test config value"}
+    const configTest = config['test'];
+​
+    // Get a value from the data object.
+    // In this case the user_id for the _request.
+    const requestUserId = data["_request"]["user_id"];
+    
+    // Get the email address for user id 1 using the API/SDK.
+    // Use the global `api` object to get a pre-configured client.
+    let usersApi = new api.UsersApi();
+    usersApi.getUserById("1", (error, user) => {
+​
+        const userEmail = user.email;
+​
+        resolve({
+            'envVar' : envVar,
+            'configTest' : configTest,
+            'requestUserId' : requestUserId,
+            'userEmail' : userEmail
+        });
+    });
+   
+});
 ```
-{% endcode %}
-
-### Output
-
-{% code title="Output based on example Request data" %}
-```text
-{
-  "output": {
-    "foo": "bar",
-    "config_var": "baz"
-  }
-}
-```
-{% endcode %}
 {% endtab %}
 
 {% tab title="C\#" %}
@@ -368,7 +323,6 @@ public class Script implements BaseScript {
         }
     }
 }
-
 ```
 {% endtab %}
 
