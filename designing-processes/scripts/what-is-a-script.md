@@ -8,6 +8,8 @@ description: Understand what a Script does in ProcessMaker.
 
 In ProcessMaker, Scripts allow Process Owners and ProcessMaker Developers to write self-contained programmatic actions that can be called from any Process at run-time. The same ProcessMaker Script can be deployed in any Process model. In other words, "write once, use anywhere."
 
+Scripts Editor evaluates a ProcessMaker Script securely and in isolation. This ensures that any malicious script that anyone in your organization might inadvertently introduce to ProcessMaker does not affect the ProcessMaker application or its environment.
+
 While writing a ProcessMaker Script, test it before you deploy it. ProcessMaker Scripts are tested within the authoring environment to ensure they function as intended. While testing, do the following:
 
 * Use the JSON data model that you can [preview from your ProcessMaker Screens](../design-forms/screens-builder/preview-a-screen.md) to ensure that variables designed from a ProcessMaker Screen function as intended in your ProcessMaker Script.
@@ -15,17 +17,17 @@ While writing a ProcessMaker Script, test it before you deploy it. ProcessMaker 
 
 During run-time, ProcessMaker Scripts run within isolated containers for greater security: Scripts never have access to your organizational IT structure. After the ProcessMaker Script runs and returns output to the Request, the container that isolated and ran the script automatically removes itself.
 
-ProcessMaker supports the following programming languages in the open-source edition:
+ProcessMaker supports the following programming languages and their corresponding software development kits \(SDKs\) in the open-source edition:
 
-* PHP
-* Lua
-* JavaScript
+* PHP and [SDK](https://github.com/ProcessMaker/sdk-php)
+* Lua and [SDK](https://github.com/ProcessMaker/sdk-lua)
+* JavaScript and [SDK](https://github.com/ProcessMaker/sdk-node)
 
-ProcessMaker Enterprise edition supports the following additional programming languages:
+ProcessMaker Enterprise edition supports the following additional programming languages and their corresponding SDKs:
 
-* C\# \(provided from the [C\# package](../../package-development-distribution/package-a-connector/c-package.md)\)
-* Java \(provided from the [Java package](../../package-development-distribution/package-a-connector/java-package.md)\)
-* R \(provided from the [R package](../../package-development-distribution/package-a-connector/r-package.md)\)
+* C\# and [SDK](https://github.com/ProcessMaker/docker-executor-csharp) \(requires the [C\# package](../../package-development-distribution/package-a-connector/c-package.md)\)
+* Java and [SDK](https://github.com/ProcessMaker/sdk-java) \(requires the [Java package](../../package-development-distribution/package-a-connector/java-package.md)\)
+* R \(requires the [R package](../../package-development-distribution/package-a-connector/r-package.md)\)
 
 ## Related Topics
 
