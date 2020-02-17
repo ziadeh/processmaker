@@ -46,10 +46,6 @@ Follow these steps to create a ProcessMaker Collection:
 7. From the **Edit Screen** drop-down menu, select the ProcessMaker Screen from which to edit or update records in this Collection. This can be the same or a different ProcessMaker Screen as selected from the **Create Screen** drop-down menu. This is a required field.
 8. Click **Save**. The ProcessMaker Collection displays an empty list of records for that Collection so you may create your first record. See [Create a Collection Record](../manage-records-in-a-collection/create-a-collection-record.md). Furthermore, the Collection icon![](../../.gitbook/assets/collection-icon-package.png)displays access to the ProcessMaker Collection from the left sidebar of the **Collections** page. See [View Records in a Collection](../manage-records-in-a-collection/view-all-records-in-a-collection.md#view-all-records-in-a-collection).
 
-{% hint style="info" %}
-The ProcessMaker Collection also creates a [Data Connector](../../designing-processes/data-connector-management/what-is-a-data-connector.md) that uses the ProcessMaker Collection name so that Collection records can be acted upon from ProcessMaker assets. See [Endpoints for ProcessMaker Collections](../../designing-processes/data-connector-management/what-is-a-data-connector.md#endpoints-for-processmaker-collections).
-{% endhint %}
-
 ## Related Topics
 
 {% page-ref page="../what-is-a-collection.md" %}
