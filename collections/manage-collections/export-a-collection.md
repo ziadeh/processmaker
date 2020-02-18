@@ -18,6 +18,12 @@ The exported ProcessMaker Collection has the `.json` file extension.
 ## Export a ProcessMaker Screen
 
 {% hint style="info" %}
+### ProcessMaker Package Required
+
+The [Collections package](../../package-development-distribution/package-a-connector/collections.md) must be installed in your ProcessMaker instance. The Collections package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Collections package can be installed in your ProcessMaker instance.
+
+### Permissions Required
+
 Your ProcessMaker user account or group membership must have the following permissions to export a ProcessMaker Collection unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Collections: View Collections

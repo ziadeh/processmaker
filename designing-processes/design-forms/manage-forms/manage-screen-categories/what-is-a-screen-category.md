@@ -18,11 +18,12 @@ Screen Categories can be in active or inactive status. Following is a descriptio
 * **Inactive:** Inactive Screen Categories cannot have ProcessMaker Screens assigned to them.
 
 {% hint style="info" %}
-ProcessMaker has three Category types for different types of assets. Each Category type is distinct from the others and can only be used for its type of ProcessMaker asset. Following is a description of each Category type:
+ProcessMaker has multiple Category types for different types of assets. Each Category type is distinct from the others and can only be used for its type of ProcessMaker asset. Following is a description of each Category type:
 
 * [Process Categories](../../../viewing-processes/view-the-list-of-processes/manage-process-categories/what-is-a-process-category.md): Organize your ProcessMaker [Processes](../../../viewing-processes/what-is-a-process.md).
 * [Script Categories](../../../scripts/manage-scripts/manage-script-categories/what-is-a-script-category.md): Organize your ProcessMaker [Scripts](../../../scripts/what-is-a-script.md).
 * Screen Categories: Organize your ProcessMaker [Screens](../../what-is-a-form.md).
+* [Data Connector Categories](../../../data-connector-management/manage-data-connectors/manage-data-connector-categories/): Organize your ProcessMaker [Data Connectors](../../../data-connector-management/what-is-a-data-connector.md).
 {% endhint %}
 
 ## Related Topics

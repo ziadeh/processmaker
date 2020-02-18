@@ -22,11 +22,12 @@ Process Categories can be in active or inactive status. Following is a descripti
 * **Inactive:** Inactive Process Categories cannot have Processes assigned to them. Furthermore, Processes assigned to an inactive Category no longer display in the [**New Request** screen](../../../../using-processmaker/requests/make-a-request.md#start-a-request) even though such Processes may be active.
 
 {% hint style="info" %}
-ProcessMaker has three Category types for different types of assets. Each Category type is distinct from the others and can only be used for its type of ProcessMaker asset. Following is a description of each Category type:
+ProcessMaker has multiple Category types for different types of assets. Each Category type is distinct from the others and can only be used for its type of ProcessMaker asset. Following is a description of each Category type:
 
 * Process Categories: Organize your ProcessMaker [Processes](../../what-is-a-process.md).
 * [Script Categories](../../../scripts/manage-scripts/manage-script-categories/): Organize your ProcessMaker [Scripts](../../../scripts/what-is-a-script.md).
 * [Screen Categories](../../../design-forms/manage-forms/manage-screen-categories/): Organize your ProcessMaker [Screens](../../../design-forms/what-is-a-form.md).
+* [Data Connector Categories](../../../data-connector-management/manage-data-connectors/manage-data-connector-categories/): Organize your ProcessMaker [Data Connectors](../../../data-connector-management/what-is-a-data-connector.md).
 {% endhint %}
 
 ## Related Topics
