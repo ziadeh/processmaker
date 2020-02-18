@@ -18,6 +18,8 @@ Screen Categories can be in active or inactive status. Following is a descriptio
 * **Inactive:** Inactive Screen Categories cannot have ProcessMaker Screens assigned to them.
 
 {% hint style="info" %}
+### ProcessMaker Package Required
+
 ProcessMaker has multiple Category types for different types of assets. Each Category type is distinct from the others and can only be used for its type of ProcessMaker asset. Following is a description of each Category type:
 
 * [Process Categories](../../../viewing-processes/view-the-list-of-processes/manage-process-categories/what-is-a-process-category.md): Organize your ProcessMaker [Processes](../../../viewing-processes/what-is-a-process.md).
