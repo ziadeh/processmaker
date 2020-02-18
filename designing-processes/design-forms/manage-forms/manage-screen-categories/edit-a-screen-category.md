@@ -7,13 +7,14 @@ description: Edit the name and/or status of a Screen Category.
 ## Edit a Screen Category
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit a Screen Category:
+Your user account or group membership must have the following permissions to edit a Screen Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Categories: View Categories
-* Categories: Create Categories
-* Categories: Edit Categories
+* Screens: Create Screen Categories
+* Screens: Edit Screen Categories
+* Screens: View Screen Categories
+* Screens: View Screens
 
-See the [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to edit a [Screen Category](what-is-a-screen-category.md):

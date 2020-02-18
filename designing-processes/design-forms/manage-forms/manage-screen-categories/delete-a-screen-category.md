@@ -7,12 +7,14 @@ description: Delete a Screen Category when it is no longer needed.
 ## Delete a Screen Category
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to delete a Screen Category:
+Your user account or group membership must have the following permissions to delete a Screen Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Categories: View Categories
-* Categories: Delete Categories
+* Screens: Create Screen Categories
+* Screens: Delete Screen Categories
+* Screens: View Screen Categories
+* Screens: View Screens
 
-See the [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 {% hint style="warning" %}

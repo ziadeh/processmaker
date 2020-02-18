@@ -7,13 +7,14 @@ description: Edit the name and/or status of a Process Category.
 ## Edit a Process Category
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit a Process Category:
+Your user account or group membership must have the following permissions to edit a Process Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Categories: View Categories
-* Categories: Create Categories
-* Categories: Edit Categories
+* Processes: Create Process Categories
+* Processes: Edit Process Categories
+* Processes: View Process Categories
+* Processes: View Processes
 
-See the Process [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Processes](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to edit a [Process Category](what-is-a-process-category.md):

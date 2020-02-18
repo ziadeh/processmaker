@@ -9,12 +9,13 @@ description: >-
 ## Create a New Process Category
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to create a new Process Category:
+Your user account or group membership must have the following permissions to create a new Process Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Categories: View Categories
-* Categories: Create Categories
+* Processes: Create Process Categories
+* Processes: View Process Categories
+* Processes: View Processes
 
-See the Process [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Processes](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to create a new [Process Category](what-is-a-process-category.md):

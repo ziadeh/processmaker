@@ -7,12 +7,14 @@ description: Delete a Process Category when it is no longer needed.
 ## Delete a Process Category
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to delete a Process Category:
+Your user account or group membership must have the following permissions to delete a Process Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Categories: View Categories
-* Categories: Delete Categories
+* Processes: Create Process Categories
+* Processes: Delete Process Categories
+* Processes: View Process Categories
+* Processes: View Processes
 
-See the Process [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Processes](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 {% hint style="warning" %}

@@ -11,6 +11,8 @@ description: >-
 Use Data Connector Categories to organize your ProcessMaker [Data Connectors](../../what-is-a-data-connector.md). Organizing your ProcessMaker Data Connectors into Categories makes it easier to search for a Data Connector based on its assigned Category. Assign multiple Data Connector Categories to a ProcessMaker Data Connector if necessary. For example, assign a ProcessMaker Data Connector named "Database Call" to the "Database Scripts" and "Data Management" Data Connector Categories.
 
 {% hint style="info" %}
+### ProcessMaker Package Required
+
 Data Connector Categories are available only when the [Data Connector package](../../../../package-development-distribution/package-a-connector/data-connector-package.md) must be installed in your ProcessMaker instance. The Data Connector package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Collections package can be installed in your ProcessMaker instance.
 {% endhint %}
 

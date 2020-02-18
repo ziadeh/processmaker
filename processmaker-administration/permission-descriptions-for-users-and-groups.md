@@ -109,6 +109,16 @@ The **Comments** category contains the following permissions:
 Select the **View Comments** permission to use any of the other permissions in this category.
 {% endhint %}
 
+### Data Connectors
+
+The **Data Connectors** category contains the following permissions:
+
+
+
+{% hint style="info" %}
+Select the **View Data Connectors** permission to use any of the other permissions in this category.
+{% endhint %}
+
 ### Environment Variables
 
 The **Environment Variables** category contains the following permissions:

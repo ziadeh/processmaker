@@ -7,9 +7,12 @@ description: View the Process Categories in your organization.
 ## View Process Categories
 
 {% hint style="info" %}
-Your ProcessMaker user account or group membership must have the "Categories: View Categories" permission to view the list of Process Categories unless your user account has the **Make this user a Super Admin** setting selected.
+Your ProcessMaker user account or group membership must have the following permissions to view Process Categories unless your user account has the **Make this user a Super Admin** setting selected:
 
-See the Process [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
+* Processes: View Process Categories
+* Processes: View Processes
+
+See the [Processes](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to view [Process Categories](what-is-a-process-category.md):

@@ -7,9 +7,12 @@ description: View the Screen Categories in your organization.
 ## View Screen Categories
 
 {% hint style="info" %}
-Your ProcessMaker user account or group membership must have the "Categories: View Categories" permission to view the list of Screen Categories unless your user account has the **Make this user a Super Admin** setting selected.
+Your ProcessMaker user account or group membership must have the following permissions to view Screen Categories unless your user account has the **Make this user a Super Admin** setting selected:
 
-See the [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
+* Screens: View Screen Categories
+* Screens: View Screens
+
+See the [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to view [Screen Categories](what-is-a-screen-category.md):

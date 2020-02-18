@@ -7,13 +7,14 @@ description: Edit the name and/or status of a Script Category.
 ## Edit a Script Category
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to edit a Script Category:
+Your user account or group membership must have the following permissions to edit a Script Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Categories: View Categories
-* Categories: Create Categories
-* Categories: Edit Categories
+* Scripts: Create Script Categories
+* Scripts: Edit Script Categories
+* Scripts: View Script Categories
+* Scripts: View Scripts
 
-See the [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Scripts](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to edit a [Script Category](what-is-a-script-category.md):

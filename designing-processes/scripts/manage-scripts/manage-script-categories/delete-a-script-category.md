@@ -7,12 +7,14 @@ description: Delete a Script Category when it is no longer needed.
 ## Delete a Script Category
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to delete a Script Category:
+Your user account or group membership must have the following permissions to delete a Script Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Categories: View Categories
-* Categories: Delete Categories
+* Scripts: Create Script Categories
+* Scripts: Delete Script Categories
+* Scripts: View Script Categories
+* Scripts: View Scripts
 
-See the [Categories](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#categories) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Scripts](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 {% hint style="warning" %}
