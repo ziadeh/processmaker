@@ -22,7 +22,7 @@ Follow these steps to search for a Process:
    * **Category:** Filter by the Process [Category]() name that displays in the **Category** column.
    * **Owner:** Filter by the Process Owner's full name that displays in the **Owner** column.
 
-As you enter text into the **Search** field, Processes display that match your entered text.
+As you enter text into the **Search** setting, Processes display that match your entered text.
 
 {% hint style="info" %}
 ### No Search Results?
