@@ -310,6 +310,7 @@
   * [Advanced Screen Package](package-development-distribution/package-a-connector/advanced-screen-package.md)
   * [C\# Package](package-development-distribution/package-a-connector/c-package.md)
   * [Collections Package](package-development-distribution/package-a-connector/collections.md)
+  * [Data Connector Package](package-development-distribution/package-a-connector/data-connector-package.md)
   * [Java Package](package-development-distribution/package-a-connector/java-package.md)
   * [R Package](package-development-distribution/package-a-connector/r-package.md)
   * [SAML Package](package-development-distribution/package-a-connector/saml-package.md)
