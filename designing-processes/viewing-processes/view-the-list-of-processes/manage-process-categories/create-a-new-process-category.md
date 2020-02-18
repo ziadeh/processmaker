@@ -25,13 +25,13 @@ Follow these steps to create a new [Process Category](what-is-a-process-category
 
    ![](../../../../.gitbook/assets/create-new-process-category-screen-processes.png)
 
-3. In the **Category Name** field, enter the name of the new Process Category. The Process Category name must be unique from all other Process Category names in your organization and can only use apostrophe characters \(`'`\) and spaces. This is a required field.
+3. In the **Category Name** setting, enter the name of the new Process Category. The Process Category name must be unique from all other Process Category names in your organization and can only use apostrophe characters \(`'`\) and spaces. This is a required setting.
 4. From the **Status** drop-down menu, select one of the following options for the Process Category's status:
 
    * **Active:** Select **Active** to allow Processes to be assigned to this Process Category. This is the default option.
    * **Inactive:** Select **Inactive** to create this Process Category but not be available to assign Processes to it. Inactive Process Categories cannot have Processes assigned to them. Furthermore, Processes assigned to an inactive Category no longer display in the **New Request** screen even though such Processes may be active.
 
-   This is a required field.
+   This is a required setting.
 
 5. Click **Save**.
 
