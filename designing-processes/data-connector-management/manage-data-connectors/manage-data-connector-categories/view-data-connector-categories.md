@@ -4,7 +4,7 @@ description: View the Data Connector Categories in your organization.
 
 # View Data Connector Categories
 
-
+## View Data Connector Categories
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
@@ -20,4 +20,8 @@ Your ProcessMaker user account or group membership must have the following permi
 
 See the [Data Connectors](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#data-connectors) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
+
+## Related Topics
+
+
 

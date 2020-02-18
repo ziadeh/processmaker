@@ -6,7 +6,7 @@ description: >-
 
 # Create a New Data Connector Category
 
-
+## Create a New Data Connector Category
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
@@ -23,4 +23,8 @@ Your user account or group membership must have the following permissions to cre
 
 See the [Data Connectors](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#data-connectors) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
+
+## Related Topics
+
+
 
