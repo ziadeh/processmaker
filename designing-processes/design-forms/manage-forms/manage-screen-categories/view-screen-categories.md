@@ -22,7 +22,7 @@ Follow these steps to view [Screen Categories](what-is-a-screen-category.md):
 3. Click the **Screens** icon![](../../../../.gitbook/assets/screens-icon-processes.png) from the left sidebar. The **Screens** tab displays all ProcessMaker Screens in the **Screens** page.
 4. Click the **Categories** tab. The Screen Categories display.
 
-![&quot;Categories&quot; tab in the &quot;Screens&quot; page displays Categories by which to organize ProcessMaker Screens](../../../../.gitbook/assets/screen-categories-tab-processes.png)
+![&quot;Categories&quot; tab in the &quot;Screens&quot; page](../../../../.gitbook/assets/screen-categories-tab-processes.png)
 
 The **Categories** tab displays the following information in tabular format about Screen Categories:
 

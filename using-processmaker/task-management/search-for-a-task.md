@@ -16,16 +16,16 @@ Do [basic](../requests/search-for-a-request.md#basic-search-for-a-request) or [a
 Follow these steps to do a basic search for a Task:
 
 1. View one of the **Tasks** pages described in the [Overview](../requests/search-for-a-request.md#overview) of this topic.
-2. Ensure that the basic search fields are displaying on the **Tasks** page you are viewing.  
+2. Ensure that the basic search settings are displaying on the **Tasks** page you are viewing.  
 
    ![](../../.gitbook/assets/basic-task-search-tasks.png)
 
    If not, then click the **Basic Search** button![](../../.gitbook/assets/basic-search-button.gif).
 
 3. Use Request data to search for Tasks based on the following criteria:
-   * **Request:** From the **Request** field, select one or more Processes associated with a Request as part of the search criteria. Type into the **Request** field to filter Processes associated with Requests that display in that field's drop-down menu. To remove a Process that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or click `Enter` when the drop-down is visible.
-   * **Task:** From the **Task** field, select one or more Task names as part of the search criteria. Type into the **Task** field to filter Tasks that display in that field's drop-down menu. To remove a Task that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or click `Enter` when the drop-down is visible.
-   * **Status:** From the **Status** field, select one or more Task statuses as part of the search criteria. Type into the **Status** field to filter statuses that display in that field's drop-down menu. To remove a status that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or click `Enter` when the drop-down is visible.
+   * **Request:** From the **Request** setting, select one or more Processes associated with a Request as part of the search criteria. Type into the **Request** setting to filter Processes associated with Requests that display in that setting's drop-down menu. To remove a Process that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or click `Enter` when the drop-down is visible.
+   * **Task:** From the **Task** setting, select one or more Task names as part of the search criteria. Type into the **Task** setting to filter Tasks that display in that setting's drop-down menu. To remove a Task that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or click `Enter` when the drop-down is visible.
+   * **Status:** From the **Status** setting, select one or more Task statuses as part of the search criteria. Type into the **Status** setting to filter statuses that display in that setting's drop-down menu. To remove a status that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or click `Enter` when the drop-down is visible.
 
      Search using one or more of the following Request statuses:
 
@@ -62,19 +62,19 @@ Use the ProcessMaker Query Language \(PMQL\) to compose an advanced search for T
 Follow these guidelines to do an advanced search for a Task using PMQL:
 
 1. View one of the **Tasks** pages described in the [Overview](search-for-a-task.md#overview) of this topic.
-2. Ensure that the advanced search field is displaying on the **Tasks** page you are viewing.  
+2. Ensure that the advanced search setting is displaying on the **Tasks** page you are viewing.  
 
    ![](../../.gitbook/assets/advanced-task-search-tasks.png)
 
    If not, then click the **Advanced Search** button![](../../.gitbook/assets/advanced-search-button.png).
 
-3. In the **PMQL** field, enter your PMQL parameters that compose your advanced search. See [PMQL Syntax for Tasks](../search-processmaker-data-using-pmql.md#pmql-syntax-for-tasks).
+3. In the **PMQL** setting, enter your PMQL parameters that compose your advanced search. See [PMQL Syntax for Tasks](../search-processmaker-data-using-pmql.md#pmql-syntax-for-tasks).
 
    Below is an example of a valid advanced Task search:
 
    `(request = "Tax Return Process" OR request = "Modify Document Process") AND (task = "Customer Documents" OR task = "Loan Request") AND (status = "In Progress" OR status = "Completed") AND (data.last_name = "Canera") AND (updated_at < NOW -2 day)`
 
-4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Tasks based on your entered criteria. If there is no search criteria in the **PMQL** field when the **Search** button is clicked, the following message displays: **Search query is empty. Please add search attributes or PMQL before saving.**
+4. Click the **Search** button![](../../.gitbook/assets/request-task-search-button.png)to search for Tasks based on your entered criteria. If there is no search criteria in the **PMQL** setting when the **Search** button is clicked, the following message displays: **Search query is empty. Please add search attributes or PMQL before saving.**
 5. Optionally, if the [Save Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is installed in your ProcessMaker instance, save and share the Task search by clicking the **Save Search** button![](../../.gitbook/assets/save-search-button-requests-tasks.png). See [Save and Share Request- and Task-Related Searches](../save-and-share-request-and-task-related-searches/).
 
 {% hint style="info" %}

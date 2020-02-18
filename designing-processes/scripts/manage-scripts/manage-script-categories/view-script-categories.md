@@ -22,7 +22,7 @@ Follow these steps to view [Script Categories](what-is-a-script-category.md):
 3. Click the **Scripts** icon![](../../../../.gitbook/assets/scripts-icon-processes.png) from the left sidebar. The **Scripts** tab displays all ProcessMaker Scripts in the **Scripts** page.
 4. Click the **Categories** tab. The Script Categories display.
 
-![&quot;Categories&quot; tab in the &quot;Scripts&quot; page displays Categories by which to organize ProcessMaker Scripts](../../../../.gitbook/assets/scripts-category-page-processes.png)
+![&quot;Categories&quot; tab in the &quot;Scripts&quot; page](../../../../.gitbook/assets/scripts-category-page-processes.png)
 
 The **Categories** tab displays the following information in tabular format about Script Categories:
 

@@ -83,7 +83,7 @@ To view a [Task and its summary](../../task-management/view-a-task-summary.md#su
 
 ### Search for a Saved Search's Search Result
 
-Use the [Search](search-for-a-saved-searchs-search-result.md) field to filter the Saved Search's search results that display.
+Use the [Search](search-for-a-saved-searchs-search-result.md) setting to filter the Saved Search's search results that display.
 
 ### No Search Results from the Saved Search?
 

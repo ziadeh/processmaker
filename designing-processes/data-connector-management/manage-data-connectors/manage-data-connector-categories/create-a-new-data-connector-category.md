@@ -24,7 +24,20 @@ Your user account or group membership must have the following permissions to cre
 See the [Data Connectors](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#data-connectors) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
+Follow these steps to create a new [Data Connector Category](../../what-is-a-data-connector.md):
+
+1. View your [Data Connector Categories](view-data-connector-categories.md#view-data-connector-categories).
+2. Click the **+Category** button. The **Create Category** screen displays. ![](../../../../.gitbook/assets/create-category-data-connector-package.png) 
+3. 
 ## Related Topics
 
+{% page-ref page="what-is-a-data-connector-category.md" %}
 
+{% page-ref page="view-data-connector-categories.md" %}
+
+{% page-ref page="edit-a-data-connector-category.md" %}
+
+{% page-ref page="delete-a-data-connector-category.md" %}
+
+{% page-ref page="../../what-is-a-data-connector.md" %}
 
