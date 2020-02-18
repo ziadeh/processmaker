@@ -32,5 +32,13 @@ ProcessMaker has multiple Category types for different types of assets. Each Cat
 
 ## Related Topics
 
+{% page-ref page="view-data-connector-categories.md" %}
 
+{% page-ref page="create-a-new-data-connector-category.md" %}
+
+{% page-ref page="edit-a-data-connector-category.md" %}
+
+{% page-ref page="delete-a-data-connector-category.md" %}
+
+{% page-ref page="../../what-is-a-data-connector.md" %}
 
