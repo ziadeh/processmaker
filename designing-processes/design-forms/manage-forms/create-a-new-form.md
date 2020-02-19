@@ -22,7 +22,7 @@ Follow these steps to create a new ProcessMaker Screen:
 
    ![](../../../.gitbook/assets/create-new-screen-screen-processes.png)
 
-3. In the **Name** field, enter the name of the ProcessMaker Screen. ProcessMaker Screen names must be unique in your organization and can only use apostrophe characters \(`'`\) and spaces. This is a required field.
+3. In the **Name** setting, enter the name of the ProcessMaker Screen. ProcessMaker Screen names must be unique in your organization and can only use apostrophe characters \(`'`\) and spaces. This is a required setting.
 4. From the **Type** drop-down menu, select one of the following ProcessMaker Screen types:
 
    * **Form:** Use the Form type to design interactive and complex forms. See [Form](../screens-builder/types-for-screens.md#form) Screen-type.
@@ -30,10 +30,10 @@ Follow these steps to create a new ProcessMaker Screen:
    * **Email:** Use the Email type to compose the email body for email messages to be used with the Send Email connector. Note that the Send Email connector must be installed in your ProcessMaker instance for this option to display. See [Send Email Connector](../../process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) and [Email](../screens-builder/types-for-screens.md#email) Screen-type.
    * **Advanced:** Use the Advanced type to design your own advanced forms using HTML syntax and JavaScript. This is an ideal solution for highly technical designers to create their own form designs and functionality. See [Advanced Screen Package](../../../package-development-distribution/package-a-connector/advanced-screen-package.md) and [Advanced](../screens-builder/types-for-screens.md#advanced) Screen-type.
 
-   This is a required field.
+   This is a required setting.
 
-5. Enter in the **Description** field a description for the ProcessMaker Screen. This is a required field.
-6. From the **Category** drop-down menu, select one or more [Screen Categories](manage-screen-categories/what-is-a-screen-category.md) to associate with this ProcessMaker Screen. In doing so, Screen Categories may be sorted from the [**Screens** page](view-all-forms.md#view-all-scripts). To remove a Screen Category that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible. This is a required field.
+5. Enter in the **Description** setting a description for the ProcessMaker Screen. This is a required setting.
+6. From the **Category** drop-down menu, select one or more [Screen Categories](manage-screen-categories/what-is-a-screen-category.md) to associate with this ProcessMaker Screen. In doing so, Screen Categories may be sorted from the [**Screens** page](view-all-forms.md#view-all-scripts). To remove a Screen Category that is currently selected, click the![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible. This is a required setting.
 7. Click **Save**. Screens Builder displays the new ProcessMaker Screen in [Design mode](../screens-builder/screens-builder-modes.md#editor-mode). See [Screens Builder](../screens-builder/).
 
 ## Related Topics

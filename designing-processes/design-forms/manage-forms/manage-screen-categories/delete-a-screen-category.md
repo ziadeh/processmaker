@@ -20,7 +20,7 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 {% hint style="warning" %}
 To delete a Screen Category, no ProcessMaker Screens can be assigned to it. If any ProcessMaker Screens are assigned to the Screen Category, its **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png)does not display. [Reassign those ProcessMaker Screens to another Screen Category](../edit-a-screen.md#configure-a-processmaker-screen).
 
-Furthermore, deleting a Screen Category cannot be undone.
+Deleting a Screen Category cannot be undone.
 {% endhint %}
 
 Follow these steps to delete a [Screen Category](what-is-a-screen-category.md):

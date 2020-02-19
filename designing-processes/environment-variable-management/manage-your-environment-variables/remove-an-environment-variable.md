@@ -26,7 +26,7 @@ Deleting a ProcessMaker Environment Variable from the **Environment Variables** 
 Follow these steps to delete a ProcessMaker Environment Variable:
 
 1. [View your ProcessMaker Environment Variables.](view-all-environment-variables.md) The **Environment Variables** page displays.
-2. Click the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png)for your ProcessMaker Environment Variable. The **Caution** screen displays to confirm the deletion of the ProcessMaker Environment Variable.
+2. Click the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png)for the ProcessMaker Environment Variable to delete. The **Caution** screen displays to confirm the deletion of the ProcessMaker Environment Variable.
 
    ![](../../../.gitbook/assets/caution-environment-variable-removal-screen-processes.png)
 

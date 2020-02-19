@@ -24,9 +24,9 @@ Follow these steps to create a new ProcessMaker Script:
 
    ![](../../../.gitbook/assets/add-a-script-screen-processes.png)
 
-3. In the **Name** field, enter the name of the ProcessMaker Script. ProcessMaker Script names must be unique in your organization and can only use apostrophe characters \(`'`\) and spaces. This is a required field.
-4. In the **Description** field, enter the description of the ProcessMaker Script. This is a required field.
-5. From the **Category** drop-down menu, select one or more Script Categories to associate with this ProcessMaker Script. In doing so, [Script Categories](manage-script-categories/what-is-a-script-category.md) may be sorted from the [**Scripts** page](view-all-scripts.md#view-all-processmaker-scripts). To remove a Script Category that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible. This is a required field.
+3. In the **Name** setting, enter the name of the ProcessMaker Script. ProcessMaker Script names must be unique in your organization and can only use apostrophe characters \(`'`\) and spaces. This is a required setting.
+4. In the **Description** setting, enter the description of the ProcessMaker Script. This is a required setting.
+5. From the **Category** drop-down menu, select one or more Script Categories to associate with this ProcessMaker Script. In doing so, [Script Categories](manage-script-categories/what-is-a-script-category.md) may be sorted from the [**Scripts** page](view-all-scripts.md#view-all-processmaker-scripts). To remove a Script Category that is currently selected, click the![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible. This is a required setting.
 6. From the **Language** drop-down menu, select one of the following programming languages in which the ProcessMaker Script is written:
 
    * PHP
@@ -36,10 +36,10 @@ Follow these steps to create a new ProcessMaker Script:
    * Java \(when the [Java package](../../../package-development-distribution/package-a-connector/java-package.md) is installed to your ProcessMaker instance\)
    * R \(when the [R package](../../../package-development-distribution/package-a-connector/r-package.md) is installed to your ProcessMaker instance\)
 
-   This is a required field.
+   This is a required setting.
 
-7. From the **Run script as** drop-down menu, select which ProcessMaker user's API client token to use with the ProcessMaker REST API. Ensure that the selected ProcessMaker user's account has the appropriate API [permissions](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md) to access the ProcessMaker REST API. This is a required field.
-8. In the **Timeout** field, use the slider control or enter how many seconds the ProcessMaker Script is allowed to run before it times out. Use `0` to indicate that the ProcessMaker Script never times out. The default timeout is **60** seconds. This field requires an integer.
+7. From the **Run script as** drop-down menu, select which ProcessMaker user's API client token to use with the ProcessMaker REST API. Ensure that the selected ProcessMaker user's account has the appropriate API [permissions](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md) to access the ProcessMaker REST API. This is a required setting.
+8. In the **Timeout** setting, use the slider control or enter how many seconds the ProcessMaker Script is allowed to run before it times out. Use `0` to indicate that the ProcessMaker Script never times out. The default timeout is **60** seconds. This setting requires an integer.
 9. Click **Save**. Scripts Editor displays so you can develop your ProcessMaker Script. See [Scripts Editor](../scripts-editor.md).
 
 ## Related Topics

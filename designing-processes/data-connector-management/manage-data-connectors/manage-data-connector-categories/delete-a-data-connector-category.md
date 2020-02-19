@@ -15,7 +15,6 @@ The [Data Connector package](../../../../package-development-distribution/packag
 
 Your user account or group membership must have the following permissions to delete a Data Connector Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Data Connectors: Create Data Connector Categories
 * Data Connectors: Delete Data Connector Categories
 * Data Connectors: View Data Connector Categories
 * Data Connectors: View Data Connectors
@@ -26,7 +25,7 @@ See the ProcessMaker [Data Connectors](../../../../processmaker-administration/p
 {% hint style="warning" %}
 To delete a Data Connector Category, no ProcessMaker Data Connectors can be assigned to it. If any ProcessMaker Data Connectors are assigned to the Data Connector Category, its **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png)does not display. [Reassign those ProcessMaker Data Connectors to another Data Connector Category](../../edit-a-data-connector.md#edit-details-for-a-processmaker-data-connector).
 
-Furthermore, deleting a Data Connector Category cannot be undone.
+Deleting a Data Connector Category cannot be undone.
 {% endhint %}
 
 Follow these steps to delete a [Data Connector Category](../../what-is-a-data-connector.md):

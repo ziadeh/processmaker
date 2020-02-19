@@ -18,14 +18,14 @@ See the ProcessMaker [Environment Variable](../../../processmaker-administration
 Follow these steps to edit a ProcessMaker Environment Variable:
 
 1. [View your ProcessMaker Environment Variables.](view-all-environment-variables.md) The **Environment Variables** page displays.
-2. Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png) for the ProcessMaker Environment Variable to edit. The **Edit** page displays.  
+2. Click the **Edit** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png) for the ProcessMaker Environment Variable to edit. The **Edit** page displays.  
 
    ![](../../../.gitbook/assets/edit-environment-variable-page-processes.png)
 
 3. Edit the following information about the ProcessMaker Environment Variable as necessary:
-   * In the **Name** field, edit the name of the ProcessMaker Environment Variable. The ProcessMaker Environment Variable name can only contain letters, numbers, and dashes. This is a required field.
-   * In the **Description** field, enter the description of the ProcessMaker Environment Variable. This is a required field.
-   * Optionally, in the **Value** field, edit or enter the ProcessMaker Environment Variable value. Entering or editing a value is optional since ProcessMaker Environment Variables are secure, abstract proxies for sensitive information you assign to contain a value that can be determined during an in-progress Request.
+   * In the **Name** setting, edit the name of the ProcessMaker Environment Variable. The ProcessMaker Environment Variable name can only contain letters, numbers, and dashes. This is a required setting.
+   * In the **Description** setting, enter the description of the ProcessMaker Environment Variable. This is a required setting.
+   * Optionally, in the **Value** setting, edit or enter the ProcessMaker Environment Variable value. Entering or editing a value is optional since ProcessMaker Environment Variables are secure, abstract proxies for sensitive information you assign to contain a value that can be determined during an in-progress Request.
 4. Click **Save**.
 
 ## Related Topics

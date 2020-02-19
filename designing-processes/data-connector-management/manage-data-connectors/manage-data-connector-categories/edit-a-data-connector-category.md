@@ -15,7 +15,6 @@ The [Data Connector package](../../../../package-development-distribution/packag
 
 Your user account or group membership must have the following permissions to edit a Data Connector Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Data Connectors: Create Data Connector Categories
 * Data Connectors: Edit Data Connector Categories
 * Data Connectors: View Data Connector Categories
 * Data Connectors: View Data Connectors

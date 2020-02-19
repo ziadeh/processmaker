@@ -20,7 +20,7 @@ See the ProcessMaker [Scripts](../../../../processmaker-administration/permissio
 {% hint style="warning" %}
 To delete a Script Category, no ProcessMaker Scripts can be assigned to it. If any ProcessMaker Scripts are assigned to the Script Category, its **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png)does not display. [Reassign those ProcessMaker Scripts to another Script Category](../edit-script-configuration.md#configure-a-processmaker-script).
 
-Furthermore, deleting a Script Category cannot be undone.
+Deleting a Script Category cannot be undone.
 {% endhint %}
 
 Follow these steps to delete a [Script Category](what-is-a-script-category.md):

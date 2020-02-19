@@ -32,7 +32,7 @@ The **Environment Variables** page displays the following information in tabular
 {% hint style="info" %}
 ### Search for a ProcessMaker Environment Variable
 
-Use the [Search](../../scripts/manage-scripts/search-for-a-script.md#search-for-a-processmaker-script) field to filter ProcessMaker Environment Variables that display.
+Use the [Search](../../scripts/manage-scripts/search-for-a-script.md#search-for-a-processmaker-script) setting to filter ProcessMaker Environment Variables that display.
 
 ### Create an Environment Variable
 
@@ -40,11 +40,11 @@ Click the **+Environment Variable** button. See [Create a New Environment Variab
 
 ### Edit a ProcessMaker Environment Variable
 
-Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png). See [Edit an Environment Variable](edit-an-environmental-variable.md#edit-a-processmaker-environment-variable).
+Click the **Edit** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png). See [Edit an Environment Variable](edit-an-environmental-variable.md#edit-a-processmaker-environment-variable).
 
 ### Delete a ProcessMaker Environment Variable
 
-Click the **Remove** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png). See [Delete an Environment Variable](remove-an-environment-variable.md#remove-a-processmaker-environment-variable).
+Click the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png). See [Delete an Environment Variable](remove-an-environment-variable.md#remove-a-processmaker-environment-variable).
 
 ### No ProcessMaker Environment Variables?
 
