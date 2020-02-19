@@ -114,7 +114,7 @@ Follow these steps to set the timer controls for a Boundary Timer Event element:
 
      ![](../../../.gitbook/assets/intermediate-timer-timing-control-wait-process-modeler-processes.png)
 
-     From the **Wait until specific date/time** field, use the date control to select the date and time to route workflow through the Boundary Timer Event element unless its associative element completes. If this field has not been previously set, the current date is the default.  
+     From the **Wait until specific date/time** setting, use the date control to select the date and time to route workflow through the Boundary Timer Event element unless its associative element completes. If this setting has not been previously set, the current date is the default.  
 
      ![](../../../.gitbook/assets/intermediate-timer-event-date-control-process-modeler-processes.png)
 
@@ -132,7 +132,7 @@ Follow these steps to edit the identifier value for a Boundary Timer Event eleme
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Boundary Timer Event element from the Process model in which to edit its identifier value. Panels to configure this element display.
-3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field. ![](../../../.gitbook/assets/boundary-timer-event-configuration-identifier-process-modeler-processes.png) 
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required setting. ![](../../../.gitbook/assets/boundary-timer-event-configuration-identifier-process-modeler-processes.png) 
 4. In the **Node Identifier** setting, edit the Boundary Timer Event element's identifier to a unique value from all elements in the Process model and then press **Enter**.
 
 ## Related Topics

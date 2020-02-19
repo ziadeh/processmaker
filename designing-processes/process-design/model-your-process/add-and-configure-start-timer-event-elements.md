@@ -117,8 +117,8 @@ Follow these steps to set the timer controls for a Start Timer Event element:
    * Alternatively, select from the **Repeat on** setting the day\(s\) of the week in which to trigger the Start Timer Event element. Selected days display with a blue-colored circle around each.
 6. Set when to end the timer control from the following options:
    * Select **Never** to never end the timer control. **Never** is the default setting.
-   * Select **On** to select a specific date in which to end the timer control. If this field has not been previously set, the current date is the default.
-   * Select **After** and then enter how many occurrences to end the timer control after the Start Timer Event element has triggered that may times. If this field has not been previously set, **1** is the default setting.
+   * Select **On** to select a specific date in which to end the timer control. If this setting has not been previously set, the current date is the default.
+   * Select **After** and then enter how many occurrences to end the timer control after the Start Timer Event element has triggered that may times. If this setting has not been previously set, **1** is the default setting.
 
 ### Advanced Panel Settings
 

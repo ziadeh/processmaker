@@ -41,9 +41,9 @@ The **Categories** tab displays the following information in tabular format abou
 * **Created:** The **Created** column displays the date and time the Data Connector Category was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
-### No Screen Categories? <a id="no-processes"></a>
+### No Data Connector Categories? <a id="no-processes"></a>
 
-If no Screen Categories exist, the following message displays: **No Results**.
+If no Data Connector Categories exist, the following message displays: **No Results**.
 
 ### Display Information the Way You Want It <a id="display-information-the-way-you-want-it"></a>
 

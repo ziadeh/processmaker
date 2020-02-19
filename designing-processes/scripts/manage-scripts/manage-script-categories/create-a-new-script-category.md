@@ -22,13 +22,13 @@ Follow these steps to create a new [Script Category](what-is-a-script-category.m
 
 1. [View your Script Categories](view-script-categories.md#view-script-categories).
 2. Click the **+Category** button. The **Create Script Category** screen displays. ![](../../../../.gitbook/assets/create-script-category-screen-processes.png) 
-3. In the **Category Name** field, enter the name of the new Script Category. The Script Category name must be unique from all other Script Category names in your organization and can only use apostrophe characters \(`'`\) and spaces. This is a required field.
+3. In the **Category Name** setting, enter the name of the new Script Category. The Script Category name must be unique from all other Script Category names in your organization and can only use apostrophe characters \(`'`\) and spaces. This is a required setting.
 4. From the **Status** drop-down menu, select one of the following options for the Script Category's status:
 
    * **Active:** Active Script Categories can have ProcessMaker Scripts assigned to them.
    * **Inactive:** Inactive Script Categories cannot have ProcessMaker Scripts assigned to them.
 
-   This is a required field.
+   This is a required setting.
 
 5. Click **Save**.
 
