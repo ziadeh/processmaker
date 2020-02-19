@@ -26,7 +26,7 @@ The **Scripts** tab displays the following information in tabular format about P
 
 * **Name:** The **Name** column displays the name of the ProcessMaker Script. Click the name to edit the ProcessMaker Script in [Scripts Editor](../scripts-editor.md).
 * **Description:** The **Description** column displays the description of the ProcessMaker Script. See [Edit Script Configuration](edit-script-configuration.md#edit-configuration-information-about-a-processmaker-script) for more information.
-* **Category:** The **Category** column displays to which Script Category the ProcessMaker Script is assigned.
+* **Category:** The **Category** column displays to which [Script Category](manage-script-categories/what-is-a-script-category.md) the ProcessMaker Script is assigned.
 * **Language:** The **Language** column displays the programming language with which the ProcessMaker Script was written.
 * **Modified:** The **Modified** column displays the date and time the ProcessMaker Script was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 * **Created:** The **Created** column displays the date and time the ProcessMaker Script was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
@@ -34,7 +34,7 @@ The **Scripts** tab displays the following information in tabular format about P
 {% hint style="info" %}
 ### Search for a ProcessMaker Script
 
-Use the [Search](search-for-a-script.md#search-for-a-processmaker-script) field to filter ProcessMaker Scripts that display.
+Use the [Search](search-for-a-script.md#search-for-a-processmaker-script) setting to filter ProcessMaker Scripts that display.
 
 ### Create a ProcessMaker Script
 

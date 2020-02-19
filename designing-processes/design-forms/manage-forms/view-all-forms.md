@@ -26,7 +26,7 @@ The **Screens** page displays the following information in tabular format about 
 
 * **Name:** The **Name** column displays the name of the ProcessMaker Screen. Click the name to edit the ProcessMaker Screen in [Screens Builder](../screens-builder/).
 * **Description:** The **Description** column displays the description of the ProcessMaker Screen. See [Edit Script Configuration](../../scripts/manage-scripts/edit-script-configuration.md#edit-configuration-information-about-a-processmaker-script) for more information.
-* **Category:** The **Category** column displays to which Screen Category the ProcessMaker Screen is assigned.
+* **Category:** The **Category** column displays to which [Screen Category](manage-screen-categories/what-is-a-screen-category.md) the ProcessMaker Screen is assigned.
 * **Type:** The **Type** column displays which type the ProcessMaker Screen is. See [Screen Types](../screens-builder/types-for-screens.md).
 * **Modified:** The **Modified** column displays the date and time the ProcessMaker Screen was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 * **Created:** The **Created** column displays the date and time the ProcessMaker Screen was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
@@ -34,7 +34,7 @@ The **Screens** page displays the following information in tabular format about 
 {% hint style="info" %}
 ### Search for a ProcessMaker Screen
 
-Use the [Search](search-for-a-screen.md#search-for-a-processmaker-screen) field to filter ProcessMaker Screens that display.
+Use the [Search](search-for-a-screen.md#search-for-a-processmaker-screen) setting to filter ProcessMaker Screens that display.
 
 ### Create a ProcessMaker Screen
 

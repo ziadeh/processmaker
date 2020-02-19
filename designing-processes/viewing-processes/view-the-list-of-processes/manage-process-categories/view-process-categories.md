@@ -12,7 +12,7 @@ Your ProcessMaker user account or group membership must have the following permi
 * Processes: View Process Categories
 * Processes: View Processes
 
-See the [Processes](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
+See the ProcessMaker [Processes](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to view [Process Categories](what-is-a-process-category.md):
@@ -25,9 +25,9 @@ Follow these steps to view [Process Categories](what-is-a-process-category.md):
 
 The **Categories** tab displays the following information in tabular format about Process Categories:
 
-* **Name:** The **Name** column displays the name of the Process Category.
+* **Name:** The **Name** column displays the name of the Process Category. The Process Category named **Uncategorized** is the default Category.
 * **Status:** The **Status** column displays the status of the Process Category. Below is a description of each status:
-  * **Active:** An active Process Category can have Processes assigned to it.
+  * **Active:** An active Process Category can have Processes assigned to it. The Process Category named **Uncatagorized** is active by default.
   * **Inactive:** An inactive Process Category can no longer be selected when [assigning a Process to a Category](../create-a-process.md#create-a-new-process). Furthermore, Processes assigned to an inactive Category no longer display in the [**New Request** screen](../../../../using-processmaker/requests/make-a-request.md#start-a-request) even though such Processes may be active.
 * **Processes:** The **\# Processes** column displays how many Processes in your organization have been assigned to that Process Category.
 * **Modified:** The **Modified** column displays the date and time the Process Category was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
@@ -37,6 +37,10 @@ The **Categories** tab displays the following information in tabular format abou
 ### No Process Categories? <a id="no-processes"></a>
 
 If no Process Categories exist, the following message displays: **No Results**.
+
+### Search Process Categories
+
+Use the **Search** setting to filter Process Categories by their names.
 
 ### Display Information the Way You Want It <a id="display-information-the-way-you-want-it"></a>
 

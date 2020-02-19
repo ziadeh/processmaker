@@ -12,7 +12,7 @@ Your ProcessMaker user account or group membership must have the following permi
 * Script: View Script Categories
 * Script: View Scripts
 
-See the [Scripts](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
+See the ProcessMaker [Scripts](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to view [Script Categories](what-is-a-script-category.md):
@@ -26,9 +26,9 @@ Follow these steps to view [Script Categories](what-is-a-script-category.md):
 
 The **Categories** tab displays the following information in tabular format about Script Categories:
 
-* **Name:** The **Name** column displays the name of the Script Category.
+* **Name:** The **Name** column displays the name of the Script Category. The Script Category named **Uncategorized** is the default Category.
 * **Status:** The **Status** column displays the status of the Script Category. Below is a description of each status:
-  * **Active:** Active Script Categories can have ProcessMaker Scripts assigned to them.
+  * **Active:** Active Script Categories can have ProcessMaker Scripts assigned to them. The Script Category named **Uncatagorized** is active by default.
   * **Inactive:** Inactive Script Categories cannot have ProcessMaker Scripts assigned to them.
 * **Scripts:** The **\# Scripts** column displays how many ProcessMaker Scripts in your organization have been assigned to that Script Category.
 * **Modified:** The **Modified** column displays the date and time the Script Category was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
@@ -38,6 +38,10 @@ The **Categories** tab displays the following information in tabular format abou
 ### No Script Categories? <a id="no-processes"></a>
 
 If no Script Categories exist, the following message displays: **No Results**.
+
+### Search Script Categories
+
+Use the **Search** setting to filter Script Categories by their names.
 
 ### Display Information the Way You Want It <a id="display-information-the-way-you-want-it"></a>
 

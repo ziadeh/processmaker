@@ -18,7 +18,7 @@ Your ProcessMaker user account or group membership must have the following permi
 * Processes: View Processes
 * Processes: Edit Processes
 
-See the [Processes](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
+See the ProcessMaker [Processes](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to configure a Process:
@@ -29,10 +29,10 @@ Follow these steps to configure a Process:
    ![](../../../.gitbook/assets/edit-process-page-processes.png)
 
 3. Edit the following Process configuration as necessary:
-   * In the **Name** field, edit the Process name. This is a required field.
-   * In the **Description** field, edit the description of the Process. This is a required field.
-   * From the **Category** drop-down menu, select to which categories to assign this Process. In doing so, Process Categories may be sorted from the [**Processes** page](view-your-processes.md#view-all-active-processes). To remove a Process Category that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible. This is a required field. See [What is a Process Category?](manage-process-categories/what-is-a-process-category.md) for more information how this affects new [Requests](../../../using-processmaker/requests/what-is-a-request.md) for this Process.
-   * From the **Cancel Request** drop-down, assign which ProcessMaker user\(s\) or group\(s\) have permission to [cancel Requests](../../../using-processmaker/requests/delete-a-request.md) from this Process. If no users or groups are selected, no one can cancel a Request from this Process. Type into the **Cancel Request** field to filter ProcessMaker users and/or groups that display in that field's drop-down menu. To remove a ProcessMaker user or group that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
+   * In the **Name** setting, edit the Process name. This is a required setting.
+   * In the **Description** setting, edit the description of the Process. This is a required setting.
+   * From the **Category** drop-down menu, select to which categories to assign this Process. In doing so, Process Categories may be sorted from the [**Processes** page](view-your-processes.md#view-all-active-processes). To remove a Process Category that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible. This is a required setting. See [What is a Process Category?](manage-process-categories/what-is-a-process-category.md) for more information how this affects new [Requests](../../../using-processmaker/requests/what-is-a-request.md) for this Process.
+   * From the **Cancel Request** drop-down, assign which ProcessMaker user\(s\) or group\(s\) have permission to [cancel Requests](../../../using-processmaker/requests/delete-a-request.md) from this Process. If no users or groups are selected, no one can cancel a Request from this Process. Type into the **Cancel Request** setting to filter ProcessMaker users and/or groups that display in that setting's drop-down menu. To remove a ProcessMaker user or group that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
    * From the **Cancel Screen** drop-down menu, select a ProcessMaker Screen to display when a Request for this Process is canceled.
    * From the **Edit Data** drop-down menu, assign which ProcessMaker user\(s\) or group\(s\) have permission to [edit Request data](../../../using-processmaker/requests/request-details/summary-for-completed-requests.md#editable-request-data) from this Process. To remove a ProcessMaker user or group that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
 4. Click **Save**.
@@ -116,7 +116,7 @@ Follow these steps to assign ProcessMaker Vocabularies that validate Request dat
 
    If no ProcessMaker Vocabularies are configured in your ProcessMaker instance, then the following message displays: **List is empty.** Create at least one ProcessMaker Vocabulary. See [Create a New Vocabulary](../../vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md#create-a-new-processmaker-vocabulary).
 
-   Type into the **Select process vocabularies** field to filter ProcessMaker Vocabularies that display in that field's drop-down menu. To remove a ProcessMaker Vocabulary that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press **Enter** when the drop-down is visible.
+   Type into the **Select process vocabularies** setting to filter ProcessMaker Vocabularies that display in that setting's drop-down menu. To remove a ProcessMaker Vocabulary that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press **Enter** when the drop-down is visible.
 
 5. Click **Save**.
 

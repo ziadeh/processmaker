@@ -14,7 +14,7 @@ Your user account or group membership must have the following permissions to del
 * Scripts: View Script Categories
 * Scripts: View Scripts
 
-See the [Scripts](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
+See the ProcessMaker [Scripts](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -26,7 +26,7 @@ Furthermore, deleting a Script Category cannot be undone.
 Follow these steps to delete a [Script Category](what-is-a-script-category.md):
 
 1. [View your Script Categories](view-script-categories.md#view-script-categories).
-2. Select the **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png). A message displays to confirm deletion of the Script Category. ![](../../../../.gitbook/assets/caution-delete-script-category-processes.png) 
+2. Select the **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png)for the Script Category to delete. A message displays to confirm deletion of the Script Category. ![](../../../../.gitbook/assets/caution-delete-script-category-processes.png) 
 3. Click **Confirm**. The following message displays: **The category was deleted.**
 
 ## Related Topics

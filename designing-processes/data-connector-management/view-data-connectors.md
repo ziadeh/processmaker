@@ -26,20 +26,20 @@ Follow these steps to view all ProcessMaker Data Connectors in your organization
 2. Click the **Designer** option from the top menu. The **Processes** page displays.
 3. Click the **Data Connectors** icon![](../../.gitbook/assets/data-connectors-icon-package.png)from the left sidebar. The **Data Connectors** tab displays all ProcessMaker Data Connectors in the **Data Connectors** page.
 
-
+![&quot;Data Connectors&quot; tab displays all ProcessMaker Data Connectors in your organization](../../.gitbook/assets/view-data-connectors-package.png)
 
 The **Data Connectors** page displays the following information in tabular format about ProcessMaker Data Connectors:
 
-* **Name:** The **Name** column displays the name of the ProcessMaker Screen. Click the name to edit the ProcessMaker Screen in [Screens Builder](../design-forms/screens-builder/).
-* **Description:** The **Description** column displays the description of the ProcessMaker Screen. See [Edit Script Configuration](../scripts/manage-scripts/edit-script-configuration.md#edit-configuration-information-about-a-processmaker-script) for more information.
-* **Category:** The **Category** column displays to which Screen Category the ProcessMaker Screen is assigned.
-* **Modified:** The **Modified** column displays the date and time the ProcessMaker Screen was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Created:** The **Created** column displays the date and time the ProcessMaker Screen was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Name:** The **Name** column displays the name of the ProcessMaker Data Connector. If a [ProcessMaker Collection](../../collections/what-is-a-collection.md) is created, the automatically created Data Connector that connects to that Collection has the same name as that Collection.
+* **Description:** The **Description** column displays the description of the ProcessMaker Data Connector. See [Edit Details for a ProcessMaker Data Connector](edit-a-data-connector.md#edit-details-for-a-processmaker-data-connector) for more information.
+* **Category:** The **Category** column displays to which [Data Connector Category](manage-data-connectors/manage-data-connector-categories/what-is-a-data-connector-category.md) the ProcessMaker Data Connector is assigned. If a ProcessMaker Collection is created, the automatically created Data Connector that connects to that Collection is assigned to the **Generated** Category by default.
+* **Modified:** The **Modified** column displays the date and time the ProcessMaker Data Connector was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the ProcessMaker Data Connector was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
-### Search for a ProcessMaker Screen
+### Search for a ProcessMaker Data Connector
 
-Use the [Search](../design-forms/manage-forms/search-for-a-screen.md#search-for-a-processmaker-screen) field to filter ProcessMaker Screens that display.
+Use the [Search](search-for-a-data-connector.md) setting to filter ProcessMaker Data Connectors that display.
 
 ### Create a ProcessMaker Screen
 

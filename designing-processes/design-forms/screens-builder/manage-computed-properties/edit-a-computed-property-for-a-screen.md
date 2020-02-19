@@ -25,7 +25,7 @@ Follow these steps to edit a computed Property for a ProcessMaker Screen:
 
 4. Edit the following settings about the Property as necessary:
    * In the **Property Name** setting, enter the name of the Property. This Property name displays both in the **Computer Properties** screen and in the JSON data model when previewing the ProcessMaker Screen. This is a required setting.
-   * In the **Description** setting, enter the description of the Property. This is a required field.
+   * In the **Description** setting, enter the description of the Property. This is a required setting.
    * Above the **Formula** setting, select one of the following ways to compute the Property:
      * **Mathematical calculation:** Click the **Formula** icon![](../../../../.gitbook/assets/formula-icon-computed-property-screens-builder-processes.png)to enter the value, mathematical calculation, or formula that computes the Property. The **Formula** icon is selected by default.
      * **JavaScript:** Click the **JavaScript** icon![](../../../../.gitbook/assets/javascript-icon-computed-property-screens-builder-processes.png)to compute the Property using valid JavaScript. By computing the Property using JavaScript, you can reference the values for ProcessMaker Screen controls and ProcessMaker [Magic Variables](../../../reference-global-variables-in-your-processmaker-assets.md). Ensure to use valid JavaScript to compute the Property by using a `return` statement to return the result of an expression \(the value\). Furthermore, ensure to use `this.` preceding the ProcessMaker Screen/Magic Variable reference. Example: `return this.FullName`. Follow these guidelines for each:

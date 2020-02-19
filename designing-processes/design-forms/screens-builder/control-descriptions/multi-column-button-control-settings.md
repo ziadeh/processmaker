@@ -83,7 +83,7 @@ Below are settings for the Multicolumn / Table control in the **Configuration** 
 
      ![](../../../../.gitbook/assets/add-column-multi-control-screens-builder-processes.png)
 
-  2. In the **Column Width** field, enter the width of the column \(as described above\).
+  2. In the **Column Width** setting, enter the width of the column \(as described above\).
   3. Click **OK**. The column displays below the existing columns in **Column Width**.
 
 ### Design Panel Settings

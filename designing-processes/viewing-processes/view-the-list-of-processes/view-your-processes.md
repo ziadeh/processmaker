@@ -13,7 +13,7 @@ ProcessMaker displays all active [Processes](../what-is-a-process.md) in one tab
 
 Your ProcessMaker user account or group membership must have the "Processes: View Processes" permission to view the list of Processes unless your user account has the **Make this user a Super Admin** setting selected.
 
-See the [Processes](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
+See the ProcessMaker [Processes](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 
 ### Looking for Inactive Processes?
 
@@ -42,7 +42,7 @@ The **Processes** tab displays the following information in tabular format about
 {% hint style="info" %}
 ### Search for a Process
 
-Use the [Search](../../../using-processmaker/requests/search-for-a-request.md) field to filter Processes that display.
+Use the [Search](../../../using-processmaker/requests/search-for-a-request.md) setting to filter Processes that display.
 
 ### Create a Process
 

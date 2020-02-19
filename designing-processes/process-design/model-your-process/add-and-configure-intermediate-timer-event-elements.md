@@ -105,7 +105,7 @@ Follow these steps to set the timer controls for an Intermediate Timer Event ele
 
      ![](../../../.gitbook/assets/intermediate-timer-timing-control-wait-process-modeler-processes.png)
 
-     From the **Wait until specific date/time** field, use the date control to select the date and time to trigger the Intermediate Timer Event element. If this field has not been previously set, the current date is the default.  
+     From the **Wait until specific date/time** setting, use the date control to select the date and time to trigger the Intermediate Timer Event element. If this setting has not been previously set, the current date is the default.  
 
      ![](../../../.gitbook/assets/intermediate-timer-event-date-control-process-modeler-processes.png)
 
