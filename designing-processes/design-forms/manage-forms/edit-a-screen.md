@@ -7,12 +7,18 @@ description: Edit general information about a ProcessMaker Screen.
 ## Configure a ProcessMaker Screen
 
 {% hint style="info" %}
-Your ProcesMaker user account or group membership must have the following permissions to configure a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
+### Permissions Required
+
+Your ProcessMaker user account or group membership must have the following permissions to configure a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: View Screens
 * Screens: Edit Screens
 
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+
+### Edit Your ProcessMaker Screen
+
+Click the **Edit** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)or click the ProcessMaker Screen name. See [Screens Builder](../screens-builder/) for topics.
 {% endhint %}
 
 Follow these steps to configure a ProcessMaker Screen:

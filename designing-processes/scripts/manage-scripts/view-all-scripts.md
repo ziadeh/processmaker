@@ -42,7 +42,7 @@ Click the **+Script** button. See [Create a New Script](create-a-new-script.md#c
 
 ### Edit a ProcessMaker Script
 
-Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png). See [Edit a Script](edit-a-script.md).
+Click the **Edit** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png). See [Edit a Script](edit-a-script.md).
 
 ### Configure a ProcessMaker Script
 
@@ -54,7 +54,7 @@ Click the **Copy** icon![](../../../.gitbook/assets/duplicate-script-processes.p
 
 ### Delete a ProcessMaker Script
 
-Click the **Remove** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png). See [Delete a Script](remove-a-script.md#delete-a-processmaker-script).
+Click the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png). See [Delete a Script](remove-a-script.md#delete-a-processmaker-script).
 
 ### No ProcessMaker Scripts?
 

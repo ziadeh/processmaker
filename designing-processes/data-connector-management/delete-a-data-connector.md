@@ -6,3 +6,7 @@ description: >-
 
 # Delete a Data Connector
 
+## Delete a ProcessMaker Data Connector
+
+
+

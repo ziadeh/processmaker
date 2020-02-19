@@ -41,37 +41,21 @@ The **Data Connectors** page displays the following information in tabular forma
 
 Use the [Search](search-for-a-data-connector.md) setting to filter ProcessMaker Data Connectors that display.
 
-### Create a ProcessMaker Screen
+### Create a ProcessMaker Data Connector
 
-Click the **+Screen** button. See [Create a New Script](../scripts/manage-scripts/create-a-new-script.md#create-a-new-processmaker-script).
+Click the **+Data Connector** button. See [Create a New Data Connector](create-a-new-data-connector.md#create-a-new-processmaker-data-connector).
 
-### Import a ProcessMaker Screen
+### Edit a ProcessMaker Data Connector
 
-Click the **Import** button. See [Import a Screen](../design-forms/manage-forms/import-a-screen.md).
-
-### Edit a ProcessMaker Screen
-
-Click the **Open Editor** icon![](../../.gitbook/assets/edit-icon.png). See [Screens Builder](../design-forms/screens-builder/) for topics.
-
-### Configure a ProcessMaker Screen
-
-Click the **Configure** icon![](../../.gitbook/assets/configure-process-icon-processes-page-processes.png). See [Edit Screen Configuration](../design-forms/manage-forms/edit-a-screen.md#edit-configuration-information-about-a-processmaker-screen).
-
-### Duplicate a ProcessMaker Screen
-
-Click the **Duplicate** icon![](../../.gitbook/assets/duplicate-script-processes.png). See [Duplicate a Screen](../design-forms/manage-forms/duplicate-a-screen.md#duplicate-a-processmaker-screen).
-
-### Export a ProcessMaker Screen
-
-Click the **Export** icon![](../../.gitbook/assets/export-process-icon-processes.png). See [Export a Screen](../design-forms/manage-forms/export-a-screen.md).
+Click the **Edit** icon![](../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png). See [Edit a Data Connector](manage-data-connectors/manage-data-connector-categories/edit-a-data-connector-category.md#edit-a-data-connector-category).
 
 ### Delete a ProcessMaker Screen
 
-Click the **Remove** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png). See [Delete a Screen](../design-forms/manage-forms/remove-a-screen.md#delete-a-processmaker-screen).
+Click the **Delete** icon![](../../.gitbook/assets/trash-icon-process-modeler-processes.png). See [Delete a Data Connector](delete-a-data-connector.md).
 
-### No ProcessMaker Screens?
+### No ProcessMaker Data Connectors?
 
-If no ProcessMaker Screens exist, the following message displays: **No Data Available**.
+If no ProcessMaker Connectors exist, the following message displays: **No Data Available**.
 
 ### Display Information the Way You Want It
 

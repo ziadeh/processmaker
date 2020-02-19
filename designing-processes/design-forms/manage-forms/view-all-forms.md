@@ -46,7 +46,7 @@ Click the **Import** button. See [Import a Screen](import-a-screen.md).
 
 ### Edit a ProcessMaker Screen
 
-Click the **Open Editor** icon![](../../../.gitbook/assets/edit-icon.png). See [Screens Builder](../screens-builder/) for topics.
+Click the **Edit** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)or click the ProcessMaker Screen name. See [Screens Builder](../screens-builder/) for topics.
 
 ### Configure a ProcessMaker Screen
 
@@ -62,7 +62,7 @@ Click the **Export** icon![](../../../.gitbook/assets/export-process-icon-proces
 
 ### Delete a ProcessMaker Screen
 
-Click the **Remove** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png). See [Delete a Screen](remove-a-screen.md#delete-a-processmaker-screen).
+Click the **Delete** icon![](../../../.gitbook/assets/trash-icon-process-modeler-processes.png). See [Delete a Screen](remove-a-screen.md#delete-a-processmaker-screen).
 
 ### No ProcessMaker Screens?
 
