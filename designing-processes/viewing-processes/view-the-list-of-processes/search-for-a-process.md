@@ -11,18 +11,18 @@ Use the **Search** function to filter all Processes from the **Processes** page 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the "Processes: List" permission to search for Processes unless your user account has the **Make this user a Super Admin** setting selected.
 
-See the ProcessMaker [Processes](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Processes](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to search for a Process:
 
 1. [View your active Processes.](./#view-your-processes) The **Processes** tab displays.
-2. Enter in the **Search** setting the text to filter Processes using any of the following criteria:
+2. Enter in the **Search** field the text to filter Processes using any of the following criteria:
    * **Name:** Filter by the Process name that displays in the **Name** column.
    * **Category:** Filter by the Process [Category]() name that displays in the **Category** column.
    * **Owner:** Filter by the Process Owner's full name that displays in the **Owner** column.
 
-As you enter text into the **Search** setting, Processes display that match your entered text.
+As you enter text into the **Search** field, Processes display that match your entered text.
 
 {% hint style="info" %}
 ### No Search Results?

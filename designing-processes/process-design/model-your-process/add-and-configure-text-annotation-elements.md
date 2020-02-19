@@ -86,7 +86,7 @@ Follow these steps to edit the identifier value for a Text Annotation element:
 
 1. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
 2. Select the Text Annotation element from the Process model in which to edit its identifier value. Panels to configure this element display.
-3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required setting. ![](../../../.gitbook/assets/text-annotation-configuration-identifier-name-process-modeler-processes.png)
+3. Expand the **Advanced** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field. ![](../../../.gitbook/assets/text-annotation-configuration-identifier-name-process-modeler-processes.png)
 4. In the **Node Identifier** setting, edit the Text Annotation element's identifier to a unique value from all elements in the Process model and then press **Enter**.
 
 ## Add an Association Element
@@ -153,7 +153,7 @@ Follow these steps to edit the identifier value for an Association element:
 
 1. Select the Association element from the Text Annotation element in which to edit its identifier value. The **Configuration** panel displays.
 2. Ensure that the **Hide Menus** button![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-3. Expand the **Configuration** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required setting.  
+3. Expand the **Configuration** panel if it is not presently expanded. The **Node Identifier** setting displays. This is a required field.  
 
    ![](../../../.gitbook/assets/association-configuration-identifier-direction-process-modeler-processes.png)
 

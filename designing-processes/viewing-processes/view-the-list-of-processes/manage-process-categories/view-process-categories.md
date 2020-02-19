@@ -12,7 +12,7 @@ Your ProcessMaker user account or group membership must have the following permi
 * Processes: View Process Categories
 * Processes: View Processes
 
-See the ProcessMaker [Processes](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Processes](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to view [Process Categories](what-is-a-process-category.md):

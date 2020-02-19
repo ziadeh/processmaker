@@ -88,7 +88,7 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the File Upload control in the **Configuration** panel:
 
-* **Label:** Enter the text label text that displays. **New File Upload** is the default value.
+* **Label:** Enter the field label text that displays. **New File Upload** is the default value.
 
 ### Advanced Panel Settings
 

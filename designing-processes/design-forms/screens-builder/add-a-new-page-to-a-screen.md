@@ -26,7 +26,7 @@ Follow these steps to add a new page to a ProcessMaker Screen:
 
    ![](../../../.gitbook/assets/add-new-page-screen-screens-editor-processes.png)
 
-3. In the **Page Name** setting, enter the name of the new page.
+3. In the **Page Name** field, enter the name of the new page.
 4. Click **Save**. The new page displays in the drop-down menu of pages for that ProcessMaker Screen.
 
 Access each page from the drop-down menu of pages for that ProcessMaker Screen.
@@ -79,7 +79,7 @@ Follow these steps to rename a page on a ProcessMaker Screen:
 
    ![](../../../.gitbook/assets/edit-page-title-screen-screens-builder-processes.png)
 
-4. Edit in the **Page Name** setting the name of the page.
+4. Edit in the **Page Name** field the name of the page.
 5. Click **Save**.
 
 ## Related Topics

@@ -18,7 +18,7 @@ Your ProcessMaker user account or group membership must have the following permi
 * Data Connectors: View Data Connector Categories
 * Data Connectors: View Data Connectors
 
-See the ProcessMaker [Data Connectors](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#data-connectors) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Data Connectors](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#data-connectors) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to view [Data Connector Categories](what-is-a-data-connector-category.md):
@@ -41,9 +41,9 @@ The **Categories** tab displays the following information in tabular format abou
 * **Created:** The **Created** column displays the date and time the Data Connector Category was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
-### No Data Connector Categories? <a id="no-processes"></a>
+### No Screen Categories? <a id="no-processes"></a>
 
-If no Data Connector Categories exist, the following message displays: **No Results**.
+If no Screen Categories exist, the following message displays: **No Results**.
 
 ### Display Information the Way You Want It <a id="display-information-the-way-you-want-it"></a>
 

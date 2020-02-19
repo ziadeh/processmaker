@@ -47,7 +47,7 @@ Follow these guidelines to preview a ProcessMaker Screen and how JSON data model
 
    ![](../../../.gitbook/assets/screen-validation-indicator-screens-builder-processes.png)
 
-4. Enter values into the controls as if you were using the ProcessMaker Screen in a Request. In the **Data Preview** section of the **Inspector** panel, the JSON data model displays the key-value pairs. The key's values are those you enter in the ProcessMaker Screen preview.
+4. Enter values into the control fields as if you were using the ProcessMaker Screen in a Request. In the **Data Preview** section of the **Inspector** panel, the JSON data model displays the key-value pairs. The key's values are those you enter in the ProcessMaker Screen preview.
 
 ![Data Preview section of the Inspector panel displaying a JSON data model in Preview mode](../../../.gitbook/assets/data-preview-panel-screen-builder-processes.png)
 

@@ -6,7 +6,7 @@ description: View the ProcessMaker Data Connectors in your organization.
 
 ## View All ProcessMaker Data Connectors <a id="view-all-scripts"></a>
 
-ProcessMaker displays all Data Connectors in one location when the Data Connector package is installed to your ProcessMaker instance. This makes it easy to manage ProcessMaker Screens.
+ProcessMaker displays all Data Connectors in one location. This makes it easy to manage ProcessMaker Screens.
 
 {% hint style="info" %}
 ### ProcessMaker Package Required

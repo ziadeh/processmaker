@@ -137,8 +137,8 @@ Follow these steps to specify when a Manual Task element is due:
    ![](../../../.gitbook/assets/due-task-process-modeler-processes.png)
 
 4. In the **Due In** setting, enter the total number of hours the activity is due in one of the following ways:
-   * Enter the number in the **Due In** setting and then press **Enter**.
-   * Hover your cursor over the **Due In** setting, and then use the spin arrows to increase or decrease the total number of hours by one.
+   * Enter the number in the **Due In** field and then press **Enter**.
+   * Hover your cursor over the **Due In** field, and then use the spin arrows to increase or decrease the total number of hours by one.
 
 #### Display the Next Assigned Task to the Task Assignee
 
@@ -235,14 +235,14 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
 
 5. In the **Expression** setting, enter or edit the expression that determines that Task element's Task assignee using the syntax components described in [Expression Syntax Components](add-and-configure-manual-task-elements.md#expression-syntax-components), and then press **Enter**.
 6. From the **Select the Task Assignee** drop-down menu, select that Task's assignee from the following options:
-   * **Requester:** Select the **Requester** option to assign that Task element's Task to the requester if the expression in the **Expression** setting evaluates as True.
-   * **User:** Select the **User** option to assign that Task element's Task to a ProcessMaker user if the expression in the **Expression** setting evaluates as True. When this option is selected, the **Assigned User** drop-down menu displays below the **Select the Task assignee** drop-down menu.
+   * **Requester:** Select the **Requester** option to assign that Task element's Task to the requester if the expression in the **Expression** field evaluates as True.
+   * **User:** Select the **User** option to assign that Task element's Task to a ProcessMaker user if the expression in the **Expression** field evaluates as True. When this option is selected, the **Assigned User** drop-down menu displays below the **Select the Task assignee** drop-down menu.
 
      ![](../../../.gitbook/assets/rule-expression-user-assignment-assignee-task-process-modeler-processes.png)
 
      From the **Assigned User** drop-down menu, select which ProcessMaker user to assign that Task.
 
-   * **Group:** Select the **Group** option to assign that Task element's Task to a ProcessMaker group if the expression in the **Expression** setting evaluates as True. When this option is selected, the **Assigned Group** drop-down menu displays below the **Select the Task assignee** drop-down menu.
+   * **Group:** Select the **Group** option to assign that Task element's Task to a ProcessMaker group if the expression in the **Expression** field evaluates as True. When this option is selected, the **Assigned Group** drop-down menu displays below the **Select the Task assignee** drop-down menu.
 
      ![](../../../.gitbook/assets/rule-expression-group-assignment-assignee-task-process-modeler-processes.png)
 
@@ -380,7 +380,7 @@ The following may be email Task notification recipients:
 * ProcessMaker [users](../../../processmaker-administration/add-users/what-is-a-user.md) and/or [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md) members.
 * Specific email addresses for individuals who are not ProcessMaker users in your ProcessMaker instance.
 
-The email body for the Task notification may be plain text or referenced from a [Email](../../design-forms/screens-builder/types-for-screens.md#email)-type ProcessMaker Screen. If referencing the email body from a Display-type [ProcessMaker Screen](../../design-forms/what-is-a-form.md), you may use the value from a Screen's **Variable Name** setting as a variable in this setting. For example, if your Process model references a ProcessMaker Screen that contains a [Line Input control](../../design-forms/screens-builder/control-descriptions/line-input-control-settings.md) with the **Variable Name** setting value of `EmailAddress` into which the Request participant enters an email address, use [mustache syntax](https://mustache.github.io/mustache.5.html) `{{EmailAddress}}` to use that Line Input control's value in the ProcessMaker Screen.
+The email body for the Task notification may be plain text or referenced from a [Email](../../design-forms/screens-builder/types-for-screens.md#email)-type ProcessMaker Screen. If referencing the email body from a Display-type [ProcessMaker Screen](../../design-forms/what-is-a-form.md), you may use the value from a Screen's **Variable Name** setting as a variable in this field. For example, if your Process model references a ProcessMaker Screen that contains a [Line Input control](../../design-forms/screens-builder/control-descriptions/line-input-control-settings.md) with the **Variable Name** setting value of `EmailAddress` into which the Request participant enters an email address, use [mustache syntax](https://mustache.github.io/mustache.5.html) `{{EmailAddress}}` to use that Line Input control's value in the ProcessMaker Screen.
 
 Set when email Task notifications are sent to email recipients:
 
@@ -415,7 +415,7 @@ Follow these steps to set the email Task notification's subject and body content
      Select the **Plain Text** option to enter plain text to display as the email body. This is the default option. Follow these steps:
 
      1. From the **Body** setting, ensure that the **Plain Text** option is selected. ![](../../../.gitbook/assets/plain-text-email-notification-task-process-modeler-processes.png) 
-     2. In the setting below the **Plain Text** option, revise the default text if necessary that displays as the email body. By default, ProcessMaker displays the current Task element's [**Name** setting](add-and-configure-manual-task-elements.md#edit-the-element-name) as part of the **Plain Text** option.
+     2. In the field below the **Plain Text** option, revise the default text if necessary that displays as the email body. By default, ProcessMaker displays the current Task element's [**Name** setting](add-and-configure-manual-task-elements.md#edit-the-element-name) as part of the **Plain Text** option.
 
    * **Display Screen:**
 
@@ -437,8 +437,8 @@ Use the **Recipients** setting to set which ProcessMaker users, groups, and/or n
 1. [Set this email notification's subject and body content](add-and-configure-manual-task-elements.md#set-the-email-notifications-subject-and-body-content).
 2. From the **Recipients** setting, select which ProcessMaker users and/or groups to send this email notification. To remove an email recipient that is currently selected, click the ![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible. ![](../../../.gitbook/assets/recipient-email-notification-task-process-modeler-processes.png) 
 3. Optionally, specify email addresses for individuals who are not ProcessMaker users in your ProcessMaker instance. Follow these steps:
-   1. Select the **Add additional emails** option. The **enter email** setting displays. ![](../../../.gitbook/assets/add-additional-emails-email-notification-task-process-modeler-processes.png) 
-   2. In the **enter email** setting, enter the email address for the non-ProcessMaker user to receive this email notification.
+   1. Select the **Add additional emails** option. The **enter email** field displays. ![](../../../.gitbook/assets/add-additional-emails-email-notification-task-process-modeler-processes.png) 
+   2. In the **enter email** field, enter the email address for the non-ProcessMaker user to receive this email notification.
    3. Click the **Add** icon![](../../../.gitbook/assets/add-icon.png). The non-ProcessMaker user's email address is added.
    4. Click the **Delete** icon![](../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)to delete the non-ProcessMaker user's email address if necessary.
    5. Repeat Steps 2 through 4 as necessary for each non-ProcessMaker user's email address to receive this email notification.
@@ -458,7 +458,7 @@ Use the **Send At** or **Expression** settings to set when this email notificati
    * **After this Task triggers or completes:** From the **Send At** setting, select one of the following options:
      * **Task Start:** Select the **Task Start** option to send this email notification when this Manual Task triggers. This is the default option.
      * **Task Completion:** Select the **Task Completion** option to send this email notification when this Manual Task completes \(when the Task assignee submits the ProcessMaker Screen associated with this manual Task\). ![](../../../.gitbook/assets/send-at-email-notification-task-process-modeler-processes.png) 
-   * **Conditionally when a Request data object or Magic Variable meets a specific setting or condition:** In the **Expression** setting, enter the expression to conditionally send the email notification when a Request data object or [Magic Variable](../../reference-global-variables-in-your-processmaker-assets.md) meets a specific setting or condition, and then press **Enter**. Specify this condition using an expression syntax described in [Expression Syntax Components](add-and-configure-manual-task-elements.md#expression-syntax-components-1). Use logical operators to specify multiple conditions in that expression if necessary. If the **Expression** setting does not contain a value, then the **Send At** setting determines when to send email notifications for this Task. ![](../../../.gitbook/assets/expression-email-notification-task-process-modeler-processes.png) 
+   * **Conditionally when a Request data object or Magic Variable meets a specific setting or condition:** In the **Expression** field, enter the expression to conditionally send the email notification when a Request data object or [Magic Variable](../../reference-global-variables-in-your-processmaker-assets.md) meets a specific setting or condition, and then press **Enter**. Specify this condition using an expression syntax described in [Expression Syntax Components](add-and-configure-manual-task-elements.md#expression-syntax-components-1). Use logical operators to specify multiple conditions in that expression if necessary. If the **Expression** field does not contain a value, then the **Send At** setting determines when to send email notifications for this Task. ![](../../../.gitbook/assets/expression-email-notification-task-process-modeler-processes.png) 
 4. Click **Close**. This email notification is saved and displays below the **Notifications** setting using the **Subject** setting as the email notification label. Optionally do any of the following with this email notification:
    * [Edit this email notification](add-and-configure-manual-task-elements.md#edit-an-email-notification)
    * [Copy this email notification](add-and-configure-manual-task-elements.md#copy-an-email-notification)

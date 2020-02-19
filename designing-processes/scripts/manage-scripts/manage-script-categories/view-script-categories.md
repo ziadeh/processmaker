@@ -12,7 +12,7 @@ Your ProcessMaker user account or group membership must have the following permi
 * Script: View Script Categories
 * Script: View Scripts
 
-See the ProcessMaker [Scripts](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
+See the [Scripts](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to view [Script Categories](what-is-a-script-category.md):
