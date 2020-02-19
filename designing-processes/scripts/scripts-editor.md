@@ -55,7 +55,7 @@ Follow these guidelines to mock Request data coming into your ProcessMaker Scrip
 
 1. [Open the ProcessMaker Screen](../design-forms/manage-forms/edit-a-screen.md) in which to view its JSON data model.
 2. Enter [Preview mode](../design-forms/screens-builder/preview-a-screen.md) on the ProcessMaker Screen page to view its JSON data model. Click the **Preview** button from Screen Builder's top menu to enter Preview mode.
-3. Enter values into the control fields as if you were using the ProcessMaker Screen in a Request. In the **Data Preview** panel, the JSON data model displays the key-value pairs in each object element. The keys' values are those you enter in the ProcessMaker Screen preview. Understand what the key names are. Each key is derived from a ProcessMaker Screen control's **Variable Name** value. Use these key names as variables in your ProcessMaker Script.
+3. Enter values into the control settings as if you were using the ProcessMaker Screen in a Request. In the **Data Preview** panel, the JSON data model displays the key-value pairs in each object element. The keys' values are those you enter in the ProcessMaker Screen preview. Understand what the key names are. Each key is derived from a ProcessMaker Screen control's **Variable Name** value. Use these key names as variables in your ProcessMaker Script.
 
    The JSON data model within a ProcessMaker Screen becomes the variables in any [Task element](../process-design/model-your-process/add-and-configure-task-elements.md#select-the-processmaker-screen-for-a-task-element) of a Process model that uses that Screen. Use these variables to capture what Request participants enter into a ProcessMaker Screen as input data to a ProcessMaker Script.
 

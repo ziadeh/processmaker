@@ -20,7 +20,7 @@ See the [Screens](../../../../processmaker-administration/permission-description
 Follow these steps to edit a [Screen Category](what-is-a-screen-category.md):
 
 1. [View your Screen Categories](view-screen-categories.md#view-screen-categories).
-2. Select the **Edit** icon![](../../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png). The **Edit Screen Category** page displays. ![](../../../../.gitbook/assets/edit-screen-category-screen-processes.png) 
+2. Select the **Edit** icon![](../../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png) for the Screen Category to edit. The **Edit Screen Category** page displays. ![](../../../../.gitbook/assets/edit-screen-category-screen-processes.png) 
 3. Edit the following information about the Screen Category as necessary:
    * In the **Category Name** setting, edit the name of the Screen Category if necessary. The Screen Category name must be unique from all other Screen Category names in your organization. This is a required field.
    * From the **Status** drop-down menu, change the status of the Screen Category, if necessary, from the following options:

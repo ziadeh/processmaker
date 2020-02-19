@@ -137,8 +137,8 @@ Follow these steps to provide options that display in this control:
      Follow these guidelines:
 
      1. Click the icon![](../../../../.gitbook/assets/create-option-icon-screens-builder-processes.png)beside the **Options** list label. The **Add Option** screen displays. ![](../../../../.gitbook/assets/data-source-options-screens-builder-processes.png) 
-     2. In the **Value** field, enter a value to represent the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
-     3. In the **Content** field, enter the option that displays in this control.
+     2. In the **Value** setting, enter a value to represent the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
+     3. In the **Content** setting, enter the option that displays in this control.
      4. Click **Save**. The option displays below the **Options** list label. ![](../../../../.gitbook/assets/options-list-screens-builder-processes.png) 
      5. If necessary, click the![](../../../../.gitbook/assets/configure-icon-data-source-screens-builder-processes.png)icon for an option to change its settings, then click the **Update** button. ![](../../../../.gitbook/assets/data-source-options-update-screens-builders-processes.png) 
      6. Click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon to delete that option if necessary.
@@ -194,7 +194,7 @@ Follow these steps to reference data from a Data Connector as options in this co
 7. In the **Element Name** setting, enter the name of the JSON data array to which to map the data from the selected Data Connector. This JSON data array and its content becomes part of that Request's data. **response** is the default value.
 8. In the **Value** setting, enter the key name within the JSON data array specified in the **Element Name** setting to map data from the selected Data Connector. **value** is the default value.
 9. In the **Content** setting, enter the data object name to map the options that display in this control from the Data Connector data. **content** is the default value.
-10. In the **PMQL** field, optionally enter a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md#overview) expression to filter which data in the JSON data array to display as options in this control based on which objects in that array meet the PMQL expression's criteria.
+10. In the **PMQL** setting, optionally enter a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md#overview) expression to filter which data in the JSON data array to display as options in this control based on which objects in that array meet the PMQL expression's criteria.
 
 Consider the following example of doctors who work in a clinic. 
 

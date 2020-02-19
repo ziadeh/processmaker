@@ -26,7 +26,7 @@ Furthermore, deleting a Process Category cannot be undone.
 Follow these steps to delete a [Process Category](what-is-a-process-category.md):
 
 1. [View your Process Categories](view-process-categories.md#view-process-categories).
-2. Select the **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png). A message displays to confirm deletion of the Process Category.  
+2. Select the **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png)for the Process Category to delete. A message displays to confirm deletion of the Process Category.  
 
    ![](../../../../.gitbook/assets/remove-process-category-screen-processes.png)
 

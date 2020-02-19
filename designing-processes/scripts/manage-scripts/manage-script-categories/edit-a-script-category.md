@@ -20,7 +20,7 @@ See the [Scripts](../../../../processmaker-administration/permission-description
 Follow these steps to edit a [Script Category](what-is-a-script-category.md):
 
 1. [View your Script Categories](view-script-categories.md#view-script-categories).
-2. Select the **Edit** icon![](../../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png). The **Edit Script Category** page displays. ![](../../../../.gitbook/assets/edit-script-category-screen-processes.png) 
+2. Select the **Edit** icon![](../../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)for the Script Category to edit. The **Edit Script Category** page displays. ![](../../../../.gitbook/assets/edit-script-category-screen-processes.png) 
 3. Edit the following information about the Script Category as necessary:
    * In the **Category Name** setting, edit the name of the Script Category if necessary. The Script Category name must be unique from all other Script Category names in your organization. This is a required setting.
    * From the **Status** drop-down menu, change the status of the Script Category, if necessary, from the following options:

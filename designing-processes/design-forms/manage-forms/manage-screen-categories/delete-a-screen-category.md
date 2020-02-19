@@ -26,7 +26,7 @@ Furthermore, deleting a Screen Category cannot be undone.
 Follow these steps to delete a [Screen Category](what-is-a-screen-category.md):
 
 1. [View your Screen Categories](view-screen-categories.md#view-screen-categories).
-2. Select the **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png). A message displays to confirm deletion of the Screen Category. ![](../../../../.gitbook/assets/caution-delete-screen-category-processes.png) 
+2. Select the **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png)for the Screen Category to delete. A message displays to confirm deletion of the Screen Category. ![](../../../../.gitbook/assets/caution-delete-screen-category-processes.png) 
 3. Click **Confirm**. The following message displays: **The category was deleted.**
 
 ## Related Topics
