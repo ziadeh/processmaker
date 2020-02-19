@@ -101,7 +101,6 @@ return [
         ProcessMaker\Providers\WorkflowServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        ProcessMaker\Providers\ProcessTestProvider::class,
 
     ],
 
