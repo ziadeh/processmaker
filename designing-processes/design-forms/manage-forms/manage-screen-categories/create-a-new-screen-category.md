@@ -15,7 +15,7 @@ Your user account or group membership must have the following permissions to cre
 * Screens: View Screen Categories
 * Screens: View Screens
 
-See the [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to create a new [Screen Category](what-is-a-screen-category.md):

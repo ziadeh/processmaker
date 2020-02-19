@@ -15,7 +15,7 @@ Your user account or group membership must have the following permissions to cre
 * Scripts: View Script Categories
 * Scripts: View Scripts
 
-See the [Scripts](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
+See the ProcessMaker [Scripts](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to create a new [Script Category](what-is-a-script-category.md):

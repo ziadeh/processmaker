@@ -18,7 +18,7 @@ Follow these steps to view all ProcessMaker Screens in your organization:
 
 1. ​[Log on](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/using-processmaker/log-in#log-in) to ProcessMaker.
 2. Click the **Designer** option from the top menu. The **Processes** page displays.
-3. Click the **Screens** icon![](../../../.gitbook/assets/screens-icon-processes.png) from the left sidebar. The **Screens** tab displays all ProcessMaker Screens in the **Screens** page.
+3. Click the **Screens** icon![](../../../.gitbook/assets/screens-icon-processes.png)from the left sidebar. The **Screens** tab displays all ProcessMaker Screens in the **Screens** page.
 
 ![&quot;Screens&quot; page displays all ProcessMaker Screens in your organization](../../../.gitbook/assets/screens-page-processes.png)
 

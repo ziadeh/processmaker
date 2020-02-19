@@ -14,7 +14,7 @@ Your user account or group membership must have the following permissions to del
 * Screens: View Screen Categories
 * Screens: View Screens
 
-See the [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 {% hint style="warning" %}

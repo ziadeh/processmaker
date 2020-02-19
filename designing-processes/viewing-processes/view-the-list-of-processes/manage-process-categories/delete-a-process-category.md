@@ -14,7 +14,7 @@ Your user account or group membership must have the following permissions to del
 * Processes: View Process Categories
 * Processes: View Processes
 
-See the [Processes](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
+See the ProcessMaker [Processes](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 {% hint style="warning" %}

@@ -20,7 +20,7 @@ Your user account or group membership must have the following permissions to del
 * Data Connectors: View Data Connector Categories
 * Data Connectors: View Data Connectors
 
-See the [Data Connectors](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#data-connectors) permissions or ask your ProcessMaker Administrator for assistance.
+See the ProcessMaker [Data Connectors](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#data-connectors) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 {% hint style="warning" %}

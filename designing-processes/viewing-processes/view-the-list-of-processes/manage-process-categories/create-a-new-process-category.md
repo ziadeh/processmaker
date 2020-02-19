@@ -15,7 +15,7 @@ Your user account or group membership must have the following permissions to cre
 * Processes: View Process Categories
 * Processes: View Processes
 
-See the [Processes](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
+See the ProcessMaker [Processes](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 Follow these steps to create a new [Process Category](what-is-a-process-category.md):
