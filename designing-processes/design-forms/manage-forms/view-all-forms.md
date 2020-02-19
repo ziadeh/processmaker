@@ -18,7 +18,7 @@ Follow these steps to view all ProcessMaker Screens in your organization:
 
 1. ​[Log on](https://processmaker.gitbook.io/processmaker-4-community/-LPblkrcFWowWJ6HZdhC/using-processmaker/log-in#log-in) to ProcessMaker.
 2. Click the **Designer** option from the top menu. The **Processes** page displays.
-3. Click the **Screens** icon![](../../../.gitbook/assets/screens-icon-processes.png) from the left sidebar. The **Screens** tab displays all ProcessMaker Screens in the **Screens** page.
+3. Click the **Screens** icon![](../../../.gitbook/assets/screens-icon-processes.png)from the left sidebar. The **Screens** tab displays all ProcessMaker Screens in the **Screens** page.
 
 ![&quot;Screens&quot; page displays all ProcessMaker Screens in your organization](../../../.gitbook/assets/screens-page-processes.png)
 
@@ -38,7 +38,7 @@ Use the [Search](search-for-a-screen.md#search-for-a-processmaker-screen) field 
 
 ### Create a ProcessMaker Screen
 
-Click the **+Screen** button. See [Create a New Script](../../scripts/manage-scripts/create-a-new-script.md#create-a-new-processmaker-script).
+Click the **+Screen** button. See [Create a New Screen](create-a-new-form.md#create-a-new-processmaker-screen).
 
 ### Import a ProcessMaker Screen
 

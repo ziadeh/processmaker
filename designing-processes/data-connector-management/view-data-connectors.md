@@ -28,12 +28,11 @@ Follow these steps to view all ProcessMaker Data Connectors in your organization
 
 
 
-The **Screens** page displays the following information in tabular format about ProcessMaker Screens:
+The **Data Connectors** page displays the following information in tabular format about ProcessMaker Data Connectors:
 
 * **Name:** The **Name** column displays the name of the ProcessMaker Screen. Click the name to edit the ProcessMaker Screen in [Screens Builder](../design-forms/screens-builder/).
 * **Description:** The **Description** column displays the description of the ProcessMaker Screen. See [Edit Script Configuration](../scripts/manage-scripts/edit-script-configuration.md#edit-configuration-information-about-a-processmaker-script) for more information.
 * **Category:** The **Category** column displays to which Screen Category the ProcessMaker Screen is assigned.
-* **Type:** The **Type** column displays which type the ProcessMaker Screen is. See [Screen Types](../design-forms/screens-builder/types-for-screens.md).
 * **Modified:** The **Modified** column displays the date and time the ProcessMaker Screen was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 * **Created:** The **Created** column displays the date and time the ProcessMaker Screen was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
