@@ -247,10 +247,10 @@ For more information about ProcesMaker REST API, see [Access ProcessMaker API Do
 
 The **Translations** category contains the following permissions:
 
-* **Delete Translations:** Delete a Translation String from the **Translations** page.
-* **Edit Translations:** Edit a Translation String from the **Translations** page. See [Edit Text that Displays in the ProcessMaker User Interface](https://processmaker.gitbook.io/processmaker/processmaker-administration/user-interface-language-management/edit-text-that-displays-in-the-processmaker-user-interface).
-* **Reset Translations:** Reset all Translation Strings to default on the **Translations** page. See [Reset All ProcessMaker User Interface Labels and Messages to Their Defaults](https://processmaker.gitbook.io/processmaker/processmaker-administration/user-interface-language-management/reset-all-processmaker-user-interface-labels-and-messages-to-their-defaults).
-* **View Translations:** View the table of Translation Strings on the **Translations** page. See [View English-Language Labels and Messages from the ProcessMaker User Interface](https://processmaker.gitbook.io/processmaker/processmaker-administration/user-interface-language-management/view-english-language-labels-and-messages-from-the-processmaker-user-interface).
+* **Delete Translations:** Delete a text label or message from the **Translations** page.
+* **Edit Translations:** Edit a text label or message from the **Translations** page. See [Edit Text that Displays in the ProcessMaker User Interface](https://processmaker.gitbook.io/processmaker/processmaker-administration/user-interface-language-management/edit-text-that-displays-in-the-processmaker-user-interface).
+* **Reset Translations:** Reset all text labels and messages to default on the **Translations** page. See [Reset All ProcessMaker User Interface Labels and Messages to Their Defaults](https://processmaker.gitbook.io/processmaker/processmaker-administration/user-interface-language-management/reset-all-processmaker-user-interface-labels-and-messages-to-their-defaults).
+* **View Translations:** View the table of text labels and messages on the **Translations** page. See [View English-Language Labels and Messages from the ProcessMaker User Interface](https://processmaker.gitbook.io/processmaker/processmaker-administration/user-interface-language-management/view-english-language-labels-and-messages-from-the-processmaker-user-interface).
 
 {% hint style="info" %}
 Select the **View Translations** permission to use any of the other permissions in this category.
