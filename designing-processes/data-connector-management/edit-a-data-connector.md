@@ -29,7 +29,7 @@ Follow these steps to edit the details for a ProcessMaker Data Connector:
    * In the **Name** setting, edit the name of the ProcessMaker Data Connector. ProcessMaker Data Connector names must be unique in your organization and can only use apostrophe characters \(`'`\) and spaces. This is a required setting.
    * In the **Description** setting, edit the description of the ProcessMaker Data Connector.
    * From the **Category** drop-down menu, select one or more Data Connector Categories to associate with this ProcessMaker Data Connector. In doing so, [Data Connector Categories](manage-data-connectors/manage-data-connector-categories/what-is-a-data-connector-category.md) may be sorted from the [**Data Connectors**](view-data-connectors.md#view-all-scripts) page. To remove a Data Connector Category that is currently selected, click the![](../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible. This is a required setting.
-4. Click **Save**. The following message displays: **The Data Connector was created**.
+4. Click **Save**. The following message displays: **The Data Connector was saved**.
 
 ## Edit Authorization
 
