@@ -177,7 +177,7 @@ Follow these steps to select who can start a Request via a Web Entry URL via thi
         ![](../../../.gitbook/assets/web-entry-authenticated-mode-group-start-event-process-modeler-processes.png)
 
      2. From the **Group** drop-down menu, select which ProcessMaker group may start a Request via the Web Entry's URL. Any member of that ProcessMaker group may start a Request via the Web Entry's URL.
-5. From the **Screen Associated** drop-down menu, select the [ProcessMaker Screen](../../design-forms/what-is-a-form.md) that displays when the Web Entry URL is accessed. This drop-down menu displays only [Form](../../design-forms/screens-builder/types-for-screens.md#form) types so the Requester can interact with information in the ProcessMaker Screen. This is a required setting.  
+5. From the **Screen Associated** drop-down menu, select the [ProcessMaker Screen](../../design-forms/what-is-a-form.md) that displays when the Web Entry URL is accessed. This drop-down menu displays only [Form](../../design-forms/screens-builder/types-for-screens.md#form) types so the Requester can interact with information in the ProcessMaker Screen. This is a required field.  
 
    ![](../../../.gitbook/assets/web-entry-screen-associated-start-event-process-modeler-processes.png)
 
@@ -186,7 +186,7 @@ Follow these steps to select who can start a Request via a Web Entry URL via thi
 
      ![](../../../.gitbook/assets/web-entry-completed-action-screen-start-event-process-modeler-processes.png)
 
-     After the **Screen** option is selected, the **Screen For Completed** drop-down menu displays below the **Completed Action** drop-down menu. From the **Screen For Completed** drop-down menu, select the ProcessMaker Screen that displays after the Requester submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu. This drop-down menu displays only [Display](../../design-forms/screens-builder/types-for-screens.md#display) types to display a message to the Requester. This is a required setting.  
+     After the **Screen** option is selected, the **Screen For Completed** drop-down menu displays below the **Completed Action** drop-down menu. From the **Screen For Completed** drop-down menu, select the ProcessMaker Screen that displays after the Requester submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu. This drop-down menu displays only [Display](../../design-forms/screens-builder/types-for-screens.md#display) types to display a message to the Requester. This is a required field.  
 
      ![](../../../.gitbook/assets/web-entry-screen-completed-start-event-process-modeler-processes.png)
 
@@ -194,7 +194,7 @@ Follow these steps to select who can start a Request via a Web Entry URL via thi
 
      ![](../../../.gitbook/assets/web-entry-completed-action-url-start-event-process-modeler-processes.png)
 
-     After the **Url** option is selected, the **Url to redirect to** setting displays below the **Completed Action** drop-down menu. In the **Url to redirect to** setting, enter the URL to redirect the Requester after the Requester submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu, and then press **Enter**. This is a required setting.  
+     After the **Url** option is selected, the **Url to redirect to** field displays below the **Completed Action** drop-down menu. In the **Url to redirect to** field, enter the URL to redirect the Requester after the Requester submits the ProcessMaker Screen selected from the **Screen Associated** drop-down menu, and then press **Enter**. This is a required field.  
 
      ![](../../../.gitbook/assets/web-entry-url-start-event-process-modeler-processes.png)
 7. The **Web Entry URL** displays the Web Entry URL from which the Requester accesses the ProcessMaker Screen selected from the **Screen Associated** drop-down menu. The **Web Entry URL** value cannot be changed. The Web Entry package generates this URL using the following structure: _`ProcessMaker instance domain`_`/webentry/`_`Web Entry numerical instance`_`/`_`Identifier Value of this Start Event element`_. If necessary, click the **Copy to clipboard** link to copy the **Web Entry URL** value so that it is available in your clipboard.  

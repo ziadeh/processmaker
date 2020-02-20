@@ -17,11 +17,9 @@ The Line Input control is a text field that the [Request](../../../../using-proc
 * **Text:** The control only accepts alphanumeric characters.
 * **Integer:** The control only accepts integers. 
 * **Currency:** The control only accepts a currency value.
-* **Percentage:** The control only accepts a percentage value.
-* **Decimal:** The control only accepts any number, both positive and negative.
-* **Datetime:** The control only accepts a datetime, which is includes both date and time components.
-* **Date:** The control only accepts a date.
-* **Password:** The control accepts a password. Entered text is hidden.
+* **Decimal:** The control accepts any number, both positive and negative.
+* **Datetime:** The control accepts a datetime, which is includes both date and time components.
+* **Date:** The control accepts a date.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -104,21 +102,15 @@ Below are settings for the Line Input control in the **Variable** panel:
 * **Label:** Edit the default label that displays for this control if necessary.
 * **Data Type:** Select one of the following data type options this control accepts when the form user enters content into this control:
 
-  * **Text:** The control only accepts alphanumeric characters. **Text** is the default setting.
-  * **Integer:** The control only accepts integers. 
-  * **Currency:** The control only accepts a currency value.
-  * **Percentage:** The control only accepts a percentage value.
-  * **Decimal:** The control only accepts any number, both positive and negative.
-  * **Datetime:** The control only accepts a datetime, which is includes both date and time components.
-  * **Date:** The control only accepts a date.
-  * **Password:** The control accepts a password. Entered text is hidden.
+  * **Text:** This control accepts alphanumeric characters.
+  * **Integer:** This control accepts integers.
+  * **Decimal:** This control accepts any number, both positive and negative.
+  * **Datetime:** This control accepts a datetime, which is includes both date and time components.
+  * **Date:** The control accepts a date.
 
   This is a required setting. The following message displays below the control if the Request participant enters content that does not comply with this control's data type: **The format is invalid.**.
 
-* **Validation Rules:** Enter the validation rule\(s\) the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. If there are no configured validation rules the following message displays: **No validation rule\(s\)**. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
-
-  Follow these steps to add a validation rule:
-
+* **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
 * **Read Only:** Select to indicate that this control cannot be edited. This option is not selected by default.
 
 ### Configuration Panel Settings

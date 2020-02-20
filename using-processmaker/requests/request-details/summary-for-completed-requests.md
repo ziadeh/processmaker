@@ -49,10 +49,10 @@ The **Data** tab displays the data from a completed Request in JSON format. The 
 Follow these steps to edit and save the completed Request data from those values that were submitted in the Request:
 
 1. View the **Data** tab. Note that the **Data** tab does not display until the Request is completed.
-2. From the editable JSON setting, change the values that were submitted during the Request to those that you want.
+2. From the editable JSON field, change the values that were submitted during the Request to those that you want.
 3. Click **Save**. The following message displays when the Request values are changed: **Request data successfully updated**.
 
-Below the editable JSON setting, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
+Below the editable JSON field, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
 
 ## Completed Tasks Summary
 
