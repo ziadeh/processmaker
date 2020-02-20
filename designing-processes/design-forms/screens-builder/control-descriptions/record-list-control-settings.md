@@ -9,7 +9,7 @@ description: >-
 ## Control Description <a id="control-description"></a>
 
 {% hint style="info" %}
-Do not confuse the Record List control with the ProcessMaker [Collections controls](processmaker-collection-controls/) that are part of the ProcessMaker [Collections package](../../../../package-development-distribution/package-a-connector/collections.md). ProcessMaker Collections use records in a different context. See [What is a Collection?](../../../../collections/what-is-a-collection.md).
+Do not confuse the Record List control with the ProcessMaker [Collections controls]() that are part of the ProcessMaker [Collections package](../../../../package-development-distribution/package-a-connector/collections.md). ProcessMaker Collections use records in a different context. See [What is a Collection?](../../../../collections/what-is-a-collection.md).
 {% endhint %}
 
 The Record List control functions differently in [Form](../types-for-screens.md#form)- and [Display](../types-for-screens.md#display)-type ProcessMaker [Screens](../../what-is-a-form.md):
@@ -361,10 +361,6 @@ Do you need to export this ProcessMaker Screen? Click the **Export Screen** butt
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="processmaker-collection-controls/collection-select-control-settings.md" %}
-
-{% page-ref page="processmaker-collection-controls/collection-record-control-settings.md" %}
 
 {% page-ref page="rich-text-control-settings.md" %}
 

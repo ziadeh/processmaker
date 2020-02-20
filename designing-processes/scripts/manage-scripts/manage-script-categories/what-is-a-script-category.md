@@ -23,7 +23,7 @@ ProcessMaker has multiple Category types for different types of assets. Each Cat
 * [Process Categories](../../../viewing-processes/view-the-list-of-processes/manage-process-categories/what-is-a-process-category.md): Organize your ProcessMaker [Processes](../../../viewing-processes/what-is-a-process.md).
 * Script Categories: Organize your ProcessMaker [Scripts](../../what-is-a-script.md).
 * [Screen Categories](../../../design-forms/manage-forms/manage-screen-categories/): Organize your ProcessMaker [Screens](../../../design-forms/what-is-a-form.md).
-* [Data Connector Categories](../../../data-connector-management/manage-data-connectors/manage-data-connector-categories/): Organize your ProcessMaker [Data Connectors](../../../data-connector-management/what-is-a-data-connector.md).
+* [Data Connector Categories](../../../data-connector-management/manage-data-connectors/manage-data-connector-categories/): Organize your ProcessMaker [Data Connectors](../../../data-connector-management/what-is-a-data-connector.md) \(if the [Data Connector package](../../../../package-development-distribution/package-a-connector/data-connector-package.md) is installed in your ProcessMaker instance\).
 {% endhint %}
 
 ## Related Topics

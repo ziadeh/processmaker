@@ -8,10 +8,15 @@ description: >-
 
 ## Control Description
 
+{% hint style="info" %}
+This topic is updated for ProcessMaker version 4.0.1. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder-1).
+{% endhint %}
+
 The Line Input control is a text field that the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can enter information. Configure the Line Input control to accept one of the following data types:
 
-* **Text:** The control accepts alphanumeric characters.
-* **Integer:** The control accepts integers.
+* **Text:** The control only accepts alphanumeric characters.
+* **Integer:** The control only accepts integers. 
+* **Currency:** The control only accepts a currency value.
 * **Decimal:** The control accepts any number, both positive and negative.
 * **Datetime:** The control accepts a datetime, which is includes both date and time components.
 * **Date:** The control accepts a date.
@@ -150,10 +155,6 @@ Do you need to export this ProcessMaker Screen? Click the **Export Screen** butt
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="processmaker-collection-controls/collection-select-control-settings.md" %}
-
-{% page-ref page="processmaker-collection-controls/collection-record-control-settings.md" %}
 
 {% page-ref page="rich-text-control-settings.md" %}
 

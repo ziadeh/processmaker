@@ -184,10 +184,6 @@ Validate that an attribute has a valid URL format.
 
 {% page-ref page="./" %}
 
-{% page-ref page="processmaker-collection-controls/collection-select-control-settings.md" %}
-
-{% page-ref page="processmaker-collection-controls/collection-record-control-settings.md" %}
-
 {% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="line-input-control-settings.md" %}

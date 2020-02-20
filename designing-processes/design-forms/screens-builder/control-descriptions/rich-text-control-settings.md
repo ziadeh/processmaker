@@ -12,12 +12,12 @@ Aside from rich text styles and images, the Rich Text control can display the fo
 
 * **Request data:** Display the value of another control in the same or different ProcessMaker [Screen](../../what-is-a-form.md) by referencing that control's **Variable Value** setting value using [mustache syntax](https://mustache.github.io/mustache.5.html).
 
-  Consider the following example. If you have a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting of `FullName` into which Request participants enter their full name in a different ProcessMaker Screen used in the same Request, enter `{{ FullName }}` within the Rich Text control to reference the value of that Line Input control. The `{{` and `}}` represent [mustache syntax](https://mustache.github.io/mustache.5.html). During the Request, the Rich Text control references the Request data to locate the value of `FullName`, then displays its value in the Rich text control. This the following is required to reference the value of another control in the same or different ProcessMaker Screen during a Request:
+  Consider the following example. If you have a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting of `FullName` into which Request participants enter their full name in a different ProcessMaker Screen used in the same Request, enter `{{ FullName }}` within the Rich Text control to reference the value of that Line Input control. The `{{` and `}}` represent mustache syntax. During the Request, the Rich Text control references the Request data to locate the value of `FullName`, then displays its value in the Rich text control. This the following is required to reference the value of another control in the same or different ProcessMaker Screen during a Request:
 
-  * **Use** [**mustache syntax**](https://mustache.github.io/mustache.5.html)**:** Encapsulate the Request data in brackets `{{` and `}}`. Spaces surrounding the Request data reference is allowed.
+  * **Use mustache syntax:** Encapsulate the Request data in brackets `{{` and `}}`. Spaces surrounding the Request data reference is allowed.
   * **Reference the ProcessMaker Screen control's Variable Name setting value:** Reference the ProcessMaker Screen control from which you want to reference its value by including its **Variable Name** setting.
 
-* **Magic Variable values:** Display the value of a [Magic Variable](../../../reference-global-variables-in-your-processmaker-assets.md) by referencing the Magic Variable using [mustache syntax](https://mustache.github.io/mustache.5.html). Example: `{{ _user.fullname }}`.
+* **Magic Variable values:** Display the value of a [Magic Variable](../../../reference-global-variables-in-your-processmaker-assets.md) by referencing the Magic Variable using mustache syntax. Example: `{{ _user.fullname }}`.
 
 ## Add the Control to a ProcessMaker Screen
 
@@ -58,18 +58,12 @@ Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-s
 ## Settings
 
 {% hint style="info" %}
-### Permissions Required
-
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
 
 * Screens: View Screens
 * Screens: Edit Screens
 
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
-
-### Topic Update
-
-This topic is updated for ProcessMaker version 4.0.1. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder-1).
 {% endhint %}
 
 The Rich Text control has the following panels that contain settings:
@@ -83,7 +77,7 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Select control in the **Configuration** panel:
 
-* **Content:** Enter the text and/or image to display in the Rich Text control using HTML syntax and/or [mustache syntax](https://mustache.github.io/mustache.5.html). Alternatively, use the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to enter your text. Reference your image using HTML syntax. Your text and/or images display in the **Content** setting using HTML syntax. **Rich text editor** is the default value. See this [control's description](rich-text-control-settings.md#control-description) for information how to use [mustache syntax](https://mustache.github.io/mustache.5.html).
+* **Content:** Enter the text and/or image to display in the Rich Text control using HTML syntax and/or [mustache syntax](https://mustache.github.io/mustache.5.html). Alternatively, use the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to enter your text. Reference your image using HTML syntax. Your text and/or images display in the **Content** setting using HTML syntax. **Rich text editor** is the default value. See this [control's description](rich-text-control-settings.md#control-description) for information how to use mustache syntax.
 
 ### Advanced Panel Settings
 
@@ -114,10 +108,6 @@ Do you need to export this ProcessMaker Screen? Click the **Export Screen** butt
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="processmaker-collection-controls/collection-select-control-settings.md" %}
-
-{% page-ref page="processmaker-collection-controls/collection-record-control-settings.md" %}
 
 {% page-ref page="line-input-control-settings.md" %}
 

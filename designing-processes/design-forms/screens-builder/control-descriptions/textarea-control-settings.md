@@ -133,10 +133,6 @@ Do you need to export this ProcessMaker Screen? Click the **Export Screen** butt
 
 {% page-ref page="./" %}
 
-{% page-ref page="processmaker-collection-controls/collection-select-control-settings.md" %}
-
-{% page-ref page="processmaker-collection-controls/collection-record-control-settings.md" %}
-
 {% page-ref page="rich-text-control-settings.md" %}
 
 {% page-ref page="line-input-control-settings.md" %}

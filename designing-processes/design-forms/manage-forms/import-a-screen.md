@@ -9,7 +9,7 @@ description: Import a ProcessMaker Screen that has previously been exported.
 Import a ProcessMaker Screen that has been [exported](export-a-screen.md) from the same [ProcessMaker version](../../../using-processmaker/application-version-details.md#view-processmaker-version-information). The imported ProcessMaker Screen contains the [configured controls](../screens-builder/control-descriptions/) from the exported Screen. Exported ProcessMaker Screens have the `.json` file extension. The imported ProcessMaker Screen can then be referenced in Processes.
 
 {% hint style="info" %}
-If your ProcessMaker Screen contains either of the [Collections controls](../screens-builder/control-descriptions/processmaker-collection-controls/) that are part of the ProcessMaker [Collections package](../../../package-development-distribution/package-a-connector/collections.md), a ProcessMaker instance that does not have the Collections package can import a validated Screen but Collections controls do not import. The ProcessMaker Collections controls on a Screen only import successfully if the ProcessMaker Collections package is installed in that ProcessMaker instance.
+If your ProcessMaker Screen contains either of the [Collections controls]() that are part of the ProcessMaker [Collections package](../../../package-development-distribution/package-a-connector/collections.md), a ProcessMaker instance that does not have the Collections package can import a validated Screen but Collections controls do not import. The ProcessMaker Collections controls on a Screen only import successfully if the ProcessMaker Collections package is installed in that ProcessMaker instance.
 {% endhint %}
 
 ## Import a ProcessMaker Screen
