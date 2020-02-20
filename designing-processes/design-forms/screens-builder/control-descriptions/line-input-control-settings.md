@@ -59,12 +59,18 @@ Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-s
 ## Settings
 
 {% hint style="info" %}
+### Permissions Required
+
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
 
 * Screens: View Screens
 * Screens: Edit Screens
 
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+
+### Topic Update
+
+This topic is updated for ProcessMaker version 4.0.1. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder-1).
 {% endhint %}
 
 The Line Input control has the following panels that contain settings:
@@ -80,7 +86,7 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Line Input control in the **Variable** panel:
 
-* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
+* **Variable Name:** Edit the default variable name for this control if necessary. Ensure that the control's name is unique name from other controls in this ProcessMaker Screen and contains at least one letter. Use the **Variable Name** value in the following ways:
 
   * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Line Input control's textual content with that Line Input control's **Variable Name** value. In the example below, `LineInputControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/line-inputs-preview-screens-builder-processes.png) 
   * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ LineInputControl }}`.
@@ -88,6 +94,7 @@ Below are settings for the Line Input control in the **Variable** panel:
 
   This is a required setting.
 
+* **Label:** Edit the default label that displays for this control if necessary.
 * **Data Type:** Select one of the following data type options this control accepts when the form user enters content into this control:
 
   * **Text:** This control accepts alphanumeric characters.

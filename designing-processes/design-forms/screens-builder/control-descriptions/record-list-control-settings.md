@@ -149,12 +149,18 @@ Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-s
 ## Settings <a id="inspector-settings"></a>
 
 {% hint style="info" %}
+### Permissions Required
+
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
 
 * Screens: View Screens
 * Screens: Edit Screens
 
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+
+### Topic Update
+
+This topic is updated for ProcessMaker version 4.0.1. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder-1).
 {% endhint %}
 
 The Record List control configures differently in [Form](../types-for-screens.md#form)- and [Display](../types-for-screens.md#display)-type ProcessMaker [Screens](../../what-is-a-form.md):

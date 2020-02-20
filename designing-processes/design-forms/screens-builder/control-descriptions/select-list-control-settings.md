@@ -13,7 +13,7 @@ The Select List control provides either a checkbox- or multi-select drop-down me
 Set options that display in this control in one of the following ways:
 
 * **Provide each option:** For each option, enter a unique value that represents the option, and then enter the text that displays as the option. After your options are configured, sort the order in which they are to display in the control. Alternatively, provide options in the control in JSON format.
-* **Reference a data source in the JSON data model:** Reference data from a data object that displays in this control as its options. This data object must be part of the JSON schema for a Process or a BPMN element in the Process, such as derived from a [ProcessMaker Vocabulary](../../../vocabularies-management/what-is-a-vocabulary.md). Specify the data name, value, and content from the data object. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data objects present in the data object determines the order these options display in the control; options cannot be manually reordered.
+* **Reference a data source in the JSON data model:** Reference data from a [ProcessMaker Data Connector](../../../data-connector-management/what-is-a-data-connector.md) that displays in this control as its options. ~~This data object must be part of the JSON schema for a Process or a BPMN element in the Process, such as derived from a~~ [~~ProcessMaker Vocabulary~~](../../../vocabularies-management/what-is-a-vocabulary.md)~~.~~ Specify the data name, value, and content from the Data Connector. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data objects present in the data object determines the order these options display in the control; options cannot be manually reordered.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -77,12 +77,18 @@ Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-s
 ## Settings <a id="inspector-settings"></a>
 
 {% hint style="info" %}
+### Permissions Required
+
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
 
 * Screens: View Screens
 * Screens: Edit Screens
 
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+
+### Topic Update
+
+This topic is updated for ProcessMaker version 4.0.1. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder-1).
 {% endhint %}
 
 The Select List control has the following panels that contain settings:

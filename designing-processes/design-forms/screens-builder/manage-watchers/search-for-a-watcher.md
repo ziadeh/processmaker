@@ -9,9 +9,15 @@ description: Filter all Watchers in a ProcessMaker Screen to find that one you n
 Use the **Search** function to filter all Watchers from the **Watchers** screen. All Watchers in the **Watchers** screen may be used in the ProcessMaker Screen from which the **Watchers** screen displays.
 
 {% hint style="info" %}
+### Permissions Required
+
 Your ProcessMaker user account or group membership must have the "Screens: View Screens" permission to search for Watchers in a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected.
 
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+
+### Topic Update
+
+This topic is updated for ProcessMaker version 4.0.1. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder-1).
 {% endhint %}
 
 Follow these steps to search for a Watcher in a ProcessMaker Screen:

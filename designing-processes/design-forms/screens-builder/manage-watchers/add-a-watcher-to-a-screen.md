@@ -18,7 +18,7 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 ### Topic Update
 
-This topic has been updated for the ProcessMaker 4.0.1 release.
+This topic is updated for ProcessMaker version 4.0.1. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder-1).
 {% endhint %}
 
 Follow these steps to add a Watcher to a ProcessMaker Screen:

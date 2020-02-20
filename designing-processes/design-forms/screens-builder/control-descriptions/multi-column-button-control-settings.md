@@ -58,7 +58,7 @@ The Multicolumn / Table control has the following panels that contain settings:
 
 * \*\*\*\*[**Configuration** panel](multi-column-button-control-settings.md#configuration-panel-settings)
 * \*\*\*\*[**Design** panel](multi-column-button-control-settings.md#design-panel-settings)
-* **Advanced** panel
+* \*\*\*\*[**Advanced** panel](multi-column-button-control-settings.md#advanced-panel-settings)
 
 ### Configuration Panel Settings
 
