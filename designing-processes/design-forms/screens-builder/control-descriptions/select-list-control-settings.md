@@ -187,7 +187,7 @@ Follow these steps to reference data from the in-progress Request as options in 
 
 #### Reference a Data Connector
 
-Follow these steps to reference data from a Data Connector as options in this control:
+Follow these steps to reference data from a [ProcessMaker Data Connector](../../../data-connector-management/what-is-a-data-connector.md) as options in this control:
 
 1. Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Data Source** panel that is on the right-side of the Screen Builder canvas.
 2. From the **Data Source** drop-down menu, select **Data Connector**. ![](../../../../.gitbook/assets/data-source-object-options-screens-builder-processes.png) 
