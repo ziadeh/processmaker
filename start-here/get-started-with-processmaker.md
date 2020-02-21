@@ -159,7 +159,72 @@ See how to design a Leave Request form using [Screen Builder](../designing-proce
 
 {% page-ref page="../designing-processes/design-forms/screens-builder/what-is-screens-builder.md" %}
 {% endtab %}
+
+{% tab title="Populate a Record List from a Collection" %}
+See how to populate a [Record List](../designing-processes/design-forms/screens-builder/control-descriptions/record-list-control-settings.md) control from records in a [ProcessMaker Collection](../collections/what-is-a-collection.md).
+
+* **Intended audience:** Process designers, Web designers, graphic designers, software developers, coding engineers
+* **Viewing time:** 10 minutes; contains narration
+
+{% embed url="https://vimeo.com/392377797" %}
+
+### Related Topics
+
+{% page-ref page="../designing-processes/design-forms/what-is-a-form.md" %}
+
+{% page-ref page="../designing-processes/design-forms/screens-builder/control-descriptions/record-list-control-settings.md" %}
+
+{% page-ref page="../collections/what-is-a-collection.md" %}
+{% endtab %}
+
+{% tab title="Populate a Select List from a Data Connector" %}
+See how to populate a [Select List](../designing-processes/design-forms/screens-builder/control-descriptions/select-list-control-settings.md) control from records in a [ProcessMaker Data Connector](../designing-processes/data-connector-management/what-is-a-data-connector.md).
+
+* **Intended audience:** Process designers, Web designers, graphic designers, software developers, coding engineers
+* **Viewing time:** 3 minutes; contains narration
+
+{% embed url="https://vimeo.com/392379310" %}
+
+### Related Topics
+
+{% page-ref page="../designing-processes/design-forms/what-is-a-form.md" %}
+
+{% page-ref page="../designing-processes/design-forms/screens-builder/control-descriptions/select-list-control-settings.md" %}
+
+{% page-ref page="../designing-processes/data-connector-management/what-is-a-data-connector.md" %}
+{% endtab %}
+
+{% tab title="Using Watchers" %}
+See how to use [Watchers](../designing-processes/design-forms/screens-builder/manage-watchers/what-is-a-watcher.md) in [Screen Builder](../designing-processes/design-forms/screens-builder/what-is-screens-builder.md) to monitor when a [ProcessMaker Screen](../designing-processes/design-forms/what-is-a-form.md) control changes value, then perform an action with a [ProcessMaker Script](../designing-processes/scripts/what-is-a-script.md) or [ProcessMaker Data Connector](../designing-processes/data-connector-management/what-is-a-data-connector.md).
+
+* **Intended audience:** Process designers, Web designers, graphic designers, software developers, coding engineers
+* **Viewing time:** 10 minutes to watch two videos; contains narration
+
+{% embed url="https://vimeo.com/392379936" %}
+
+{% embed url="https://vimeo.com/392380129" %}
+
+### Related Topics
+
+{% page-ref page="../designing-processes/design-forms/screens-builder/manage-watchers/what-is-a-watcher.md" %}
+
+{% page-ref page="../designing-processes/design-forms/what-is-a-form.md" %}
+
+{% page-ref page="../designing-processes/design-forms/screens-builder/what-is-screens-builder.md" %}
+
+{% page-ref page="../designing-processes/scripts/what-is-a-script.md" %}
+
+{% page-ref page="../designing-processes/data-connector-management/what-is-a-data-connector.md" %}
+{% endtab %}
 {% endtabs %}
+
+
+
+
+
+
+
+
 
 ## Use the ProcessMaker API and SDKs
 
