@@ -102,7 +102,7 @@ See how easy it is to start a Request for a "Purchase" Process.
 {% endtab %}
 {% endtabs %}
 
-## Process Development
+## Develop Processes
 
 This section contains videos discussing Process development proof-of-concepts and ideas how to use ProcessMaker.
 
@@ -127,7 +127,7 @@ See how ProcessMaker can integrate with third-party services Amazon Textract and
 {% endtab %}
 {% endtabs %}
 
-## Screen Design
+## Design ProcessMaker Screens
 
 This section contains videos discussing ProcessMaker Screen design using Screen Builder.
 
@@ -156,6 +156,33 @@ See how to design a Leave Request form using Screen Builder.
 ### Related Topics
 
 {% page-ref page="../designing-processes/design-forms/screens-builder/what-is-screens-builder.md" %}
+{% endtab %}
+{% endtabs %}
+
+## Use the ProcessMaker API
+
+This section contains videos how to use the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation). Every function that you may do in ProcessMaker's elegant and well-designed user interface makes a REST API call. Since every ProcessMaker function is supported in the ProcessMaker API, ProcessMaker can be white-labeled to run behind the scenes from other SaaS applications. Learn how you can use the ProcessMaker API.
+
+{% tabs %}
+{% tab title="Start a Request Via the API" %}
+Start a ProcessMaker Request using the ProcessMaker RestFUL API.
+
+* **Intended audience:** Developer and coding engineers
+* **Viewing time:** 2 minutes; contains narration
+
+{% embed url="https://vimeo.com/392378523" %}
+
+### Related Topics
+
+{% page-ref page="../using-processmaker/requests/what-is-a-request.md" %}
+
+{% page-ref page="../processmaker-api-documentation/access-processmaker-api-documentation.md" %}
+
+{% page-ref page="../processmaker-administration/user-interface-language-management/what-is-user-interface-language-management.md" %}
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
 {% endtab %}
 {% endtabs %}
 
