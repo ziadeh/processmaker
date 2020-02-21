@@ -10,14 +10,17 @@ The Rich Text control displays HTML-formatted text and images. Use the What-You-
 
 Aside from rich text styles and images, the Rich Text control can display the following information regarding in-progress Requests:
 
-* **Request data:** Display the value of another control in the same or different ProcessMaker [Screen](../../what-is-a-form.md) by referencing that control's **Variable Value** setting value using [mustache syntax](https://mustache.github.io/mustache.5.html).
+* **Request data:** Display the value of another control in the same or different [ProcessMaker Screen](../../what-is-a-form.md) by referencing that control's **Variable Value** setting value using [mustache syntax](https://mustache.github.io/mustache.5.html): encapsulate the **Variable Name** setting value between  `{{` and `}}` that represent mustache syntax. In doing so, you are referencing Request data. Spaces surrounding the Request data reference are allowed. During the Request, the Rich Text control references the Request data to locate that control's value to display it in the Rich Text control.
 
-  Consider the following example. If you have a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting of `FullName` into which Request participants enter their full name in a different ProcessMaker Screen used in the same Request, enter `{{ FullName }}` within the Rich Text control to reference the value of that Line Input control. The `{{` and `}}` represent mustache syntax. During the Request, the Rich Text control references the Request data to locate the value of `FullName`, then displays its value in the Rich text control. This the following is required to reference the value of another control in the same or different ProcessMaker Screen during a Request:
+  Consider the following example. If you have a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting of `FullName` into which Request participants enter their full name in a different ProcessMaker Screen used in the same Request, enter `{{ data.FullName }}` within the Rich Text control to reference the value of that Line Input control. The `{{` and `}}` represent mustache syntax. The `data.` prefix indicates to reference Request data. If the referenced control is on the same ProcessMaker Screen as the referencing Rich Text control, then do not use the `data.` prefix.
 
-  * **Use mustache syntax:** Encapsulate the Request data in brackets `{{` and `}}`. Spaces surrounding the Request data reference is allowed.
-  * **Reference the ProcessMaker Screen control's Variable Name setting value:** Reference the ProcessMaker Screen control from which you want to reference its value by including its **Variable Name** setting.
+  Include your own HTML syntax in the Rich Text control along with Request data references. Example: `Full Name: <strong>{{ data.FullName }}</strong>`
 
-* **Magic Variable values:** Display the value of a [Magic Variable](../../../reference-global-variables-in-your-processmaker-assets.md) by referencing the Magic Variable using mustache syntax. Example: `{{ _user.fullname }}`.
+* **Magic Variable values:** Display the value of a [Magic Variable](../../../reference-global-variables-in-your-processmaker-assets.md) by referencing the Magic Variable using mustache syntax. Example: `{{ _user.fullname }}`. Spaces surrounding the Magic Variable reference are allowed.
+
+{% hint style="info" %}
+Do you need to export this ProcessMaker Screen? Click the **Export Screen** button![](../../../../.gitbook/assets/export-screen-button-screens-builder-processes.png). See [Export a Screen](../../manage-forms/export-a-screen.md#overview) for more information.
+{% endhint %}
 
 ## Add the Control to a ProcessMaker Screen
 
@@ -75,9 +78,13 @@ The Rich Text control has the following panels that contain settings:
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
-Below are settings for the Select control in the **Configuration** panel:
+Below is the setting for the Select control in the **Configuration** panel:
 
-* **Content:** Enter the text and/or image to display in the Rich Text control using HTML syntax and/or [mustache syntax](https://mustache.github.io/mustache.5.html). Alternatively, use the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to enter your text. Reference your image using HTML syntax. Your text and/or images display in the **Content** setting using HTML syntax. **Rich text editor** is the default value. See this [control's description](rich-text-control-settings.md#control-description) for information how to use mustache syntax.
+* [Content](rich-text-control-settings.md#content)
+
+#### Content
+
+Enter the text and/or image to display in the Rich Text control using HTML syntax and/or [mustache syntax](https://mustache.github.io/mustache.5.html). Alternatively, use the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to enter your text. Reference your image using HTML syntax. Your text and/or images display in the **Content** setting using HTML syntax. **Rich text editor** is the default value. See this [control's description](rich-text-control-settings.md#control-description) for information how to use mustache syntax.
 
 ### Advanced Panel Settings
 
@@ -85,21 +92,16 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Select control in the **Advanced** panel:
 
-* **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+* [Visibility Rule](rich-text-control-settings.md#visibility-rule)
+* [CSS Selector Name](rich-text-control-settings.md#css-selector-name)
 
-{% hint style="info" %}
-Below are some ways to render [Request](../../../../using-processmaker/requests/what-is-a-request.md) data to display as text in a Rich Text control:
+#### Visibility Rule
 
-* Use [mustache syntax](https://mustache.github.io/mustache.5.html) to reference the Request data. Ensure to precede the Request data reference with `data.`. Example: `Customer First Name: {{ data.CustomerName }}`
-* Include your own HTML syntax in the Rich Text control along with Request data references. Example: `Customer First Name: <strong>{{ data.CustomerName }}</strong>`
+Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
 
-See the [Rich Text control's description](rich-text-control-settings.md#control-description) for a detailed example.
-{% endhint %}
+#### CSS Selector Name
 
-{% hint style="info" %}
-Do you need to export this ProcessMaker Screen? Click the **Export Screen** button![](../../../../.gitbook/assets/export-screen-button-screens-builder-processes.png). See [Export a Screen](../../manage-forms/export-a-screen.md#overview) for more information.
-{% endhint %}
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics
 
