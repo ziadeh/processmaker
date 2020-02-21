@@ -16,7 +16,7 @@ This section contains marketing videos for your eye-candy pleasure.
 
 {% tabs %}
 {% tab title="Create a Process" %}
-See how easy it is to create a Process in ProcessMaker.
+See how easy it is to create a [Process](../designing-processes/viewing-processes/what-is-a-process.md) in ProcessMaker.
 
 * **Intended audience:** General and new users
 * **Viewing time:** 1 minute; no narration
@@ -31,7 +31,7 @@ See how easy it is to create a Process in ProcessMaker.
 {% endtab %}
 
 {% tab title="\"Leave of Absence\" Request" %}
-See how easy it is to start a Request for a "Leave of Absence" Process.
+See how easy it is to start a [Request](../using-processmaker/requests/what-is-a-request.md) for a "Leave of Absence" Process.
 
 * **Intended audience:** General and new users
 * **Viewing time:** 5 minutes to watch the four-part video series; no narration
@@ -44,8 +44,6 @@ See how easy it is to start a Request for a "Leave of Absence" Process.
 
 {% embed url="https://vimeo.com/386035168" %}
 
-{% file src="../.gitbook/assets/test.zip" caption="Want to try this Process? Download this file. Read the \"Read Me\" file." %}
-
 ### Related Topics
 
 {% page-ref page="../using-processmaker/requests/what-is-a-request.md" %}
@@ -56,7 +54,7 @@ See how easy it is to start a Request for a "Leave of Absence" Process.
 {% endtab %}
 
 {% tab title="\"Expense Report\" Request" %}
-See how easy it is to start a Request for a "Expense Report" Process.
+See how easy it is to start a [Request](../using-processmaker/requests/what-is-a-request.md) for a "Expense Report" Process.
 
 * **Intended audience:** General or new users
 * **Viewing time:** 3 minutes to watch the three-part video series; no narration
@@ -77,7 +75,7 @@ See how easy it is to start a Request for a "Expense Report" Process.
 {% endtab %}
 
 {% tab title="\"Purchase\" Request" %}
-See how easy it is to start a Request for a "Purchase" Process.
+See how easy it is to start a [Request](../using-processmaker/requests/what-is-a-request.md) for a "Purchase" Process.
 
 * **Intended audience:** General and new users
 * **Viewing time:** 5 minutes to watch the five-part video series; no narration
@@ -108,7 +106,7 @@ This section contains videos discussing Process development proof-of-concepts an
 
 {% tabs %}
 {% tab title="Analyze Documents in a \"Loan Application\" Process" %}
-See how ProcessMaker can integrate with third-party services Amazon Textract and UiPath Robotic Process Automation \(RPA\) so a loan application workflow can scan, analyze, and intelligently route a Request and provision a bot accordingly.
+See how ProcessMaker can integrate with third-party services Amazon Textract and UiPath Robotic Process Automation \(RPA\) so a loan application workflow can scan, analyze, and intelligently route a [Request](../using-processmaker/requests/what-is-a-request.md) and provision a bot accordingly.
 
 * **Intended audience:** Process designers and business analysts
 * **Viewing time:** 11 minutes; contains narration
@@ -116,6 +114,8 @@ See how ProcessMaker can integrate with third-party services Amazon Textract and
 {% embed url="https://vimeo.com/383574552" %}
 
 ### Related Topics
+
+{% page-ref page="../using-processmaker/requests/what-is-a-request.md" %}
 
 {% page-ref page="../designing-processes/process-design/what-is-process-modeling.md" %}
 
@@ -129,11 +129,11 @@ See how ProcessMaker can integrate with third-party services Amazon Textract and
 
 ## Design ProcessMaker Screens
 
-This section contains videos discussing ProcessMaker Screen design using Screen Builder.
+This section contains videos discussing [ProcessMaker Screen](../designing-processes/design-forms/what-is-a-form.md) design using [Screen Builder](../designing-processes/design-forms/screens-builder/what-is-screens-builder.md).
 
 {% tabs %}
 {% tab title="Using Screen Builder" %}
-See how to design interactive web-based forms, called ProcessMaker Screens, using Screen Builder.
+See how to design interactive web-based forms, called [ProcessMaker Screens](../designing-processes/design-forms/what-is-a-form.md), using [Screen Builder](../designing-processes/design-forms/screens-builder/what-is-screens-builder.md).
 
 * **Intended audience:** Process designers, Web designers, graphic designers
 * **Viewing time:** 3 minutes; no narration
@@ -142,11 +142,13 @@ See how to design interactive web-based forms, called ProcessMaker Screens, usin
 
 ### Related Topics
 
+{% page-ref page="../designing-processes/design-forms/what-is-a-form.md" %}
+
 {% page-ref page="../designing-processes/design-forms/screens-builder/what-is-screens-builder.md" %}
 {% endtab %}
 
 {% tab title="Create a Leave Request Form" %}
-See how to design a Leave Request form using Screen Builder.
+See how to design a Leave Request form using [Screen Builder](../designing-processes/design-forms/screens-builder/what-is-screens-builder.md).
 
 * **Intended audience:** Process designers, Web designers, graphic designers
 * **Viewing time:** 3 minutes; no narration
@@ -159,15 +161,15 @@ See how to design a Leave Request form using Screen Builder.
 {% endtab %}
 {% endtabs %}
 
-## Use the ProcessMaker API
+## Use the ProcessMaker API and SDKs
 
-This section contains videos how to use the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation). Every function that you may do in ProcessMaker's elegant and well-designed user interface makes a REST API call. Since every ProcessMaker function is supported in the ProcessMaker API, ProcessMaker can be white-labeled to run behind the scenes from other SaaS applications. Learn how you can use the ProcessMaker API.
+This section contains videos how to use the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation) and ProcessMaker's SDKs. Every function that you may do in ProcessMaker's elegant and well-designed user interface makes an API call. Since every ProcessMaker function is supported in the ProcessMaker API, ProcessMaker can be [white-labeled](../processmaker-administration/user-interface-language-management/what-is-user-interface-language-management.md) to run behind the scenes from other SaaS applications. Learn how you can use the ProcessMaker API.
 
 {% tabs %}
 {% tab title="Start a Request Via the API" %}
-Start a ProcessMaker Request using the ProcessMaker RestFUL API.
+Start a ProcessMaker [Request](../using-processmaker/requests/what-is-a-request.md) using the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation).
 
-* **Intended audience:** Developer and coding engineers
+* **Intended audience:** Software developers and coding engineers
 * **Viewing time:** 2 minutes; contains narration
 
 {% embed url="https://vimeo.com/392378523" %}
@@ -177,12 +179,19 @@ Start a ProcessMaker Request using the ProcessMaker RestFUL API.
 {% page-ref page="../using-processmaker/requests/what-is-a-request.md" %}
 
 {% page-ref page="../processmaker-api-documentation/access-processmaker-api-documentation.md" %}
-
-{% page-ref page="../processmaker-administration/user-interface-language-management/what-is-user-interface-language-management.md" %}
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="Use the PHP SDK in a Script" %}
+Interact with the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation) from inside of a ProcessMaker Script.
 
+* **Intended audience:** Software developers and coding engineers
+* **Viewing time:** 2 minutes; contains narration
+
+{% embed url="https://vimeo.com/392379630" %}
+
+{% page-ref page="../designing-processes/scripts/what-is-a-script.md" %}
+
+{% page-ref page="../processmaker-api-documentation/access-processmaker-api-documentation.md" %}
 {% endtab %}
 {% endtabs %}
 
