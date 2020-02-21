@@ -218,14 +218,6 @@ See how to use [Watchers](../designing-processes/design-forms/screens-builder/ma
 {% endtab %}
 {% endtabs %}
 
-
-
-
-
-
-
-
-
 ## Use the ProcessMaker API and SDKs
 
 This section contains videos how to use the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation) and ProcessMaker's Software Development Kits \(SDKs\). Every function that you may do in ProcessMaker's elegant and well-designed user interface makes an API call. Since every ProcessMaker function is supported in the ProcessMaker API, ProcessMaker can be [white-labeled](../processmaker-administration/user-interface-language-management/what-is-user-interface-language-management.md) to run behind the scenes from other SaaS applications. Learn how you can use the ProcessMaker API.
