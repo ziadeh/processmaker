@@ -56,7 +56,7 @@ See how easy it is to start a [Request](../using-processmaker/requests/what-is-a
 {% tab title="\"Expense Report\" Request" %}
 See how easy it is to start a [Request](../using-processmaker/requests/what-is-a-request.md) for a "Expense Report" Process.
 
-* **Intended audience:** General or new users
+* **Intended audience:** General and new users
 * **Viewing time:** 3 minutes to watch the three-part video series; no narration
 
 {% embed url="https://vimeo.com/386035782" %}
@@ -122,10 +122,23 @@ See how ProcessMaker can integrate with third-party services Amazon Textract and
 {% page-ref page="../designing-processes/design-forms/screens-builder/what-is-screens-builder.md" %}
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="Call Third-Party APIs with Data Connectors" %}
+See how [ProcessMaker Data Connectors](../designing-processes/data-connector-management/what-is-a-data-connector.md) call third-party Application Program Interfaces \(APIs\), and then use that data in [Processes](../designing-processes/viewing-processes/what-is-a-process.md).
 
+* **Intended audience:** Process designers, business analysts, software developers, coding engineers
+* **Viewing time:** 9 minutes; contains narration
+
+{% embed url="https://vimeo.com/393099655" %}
+
+### Related Topics
+
+{% page-ref page="../designing-processes/data-connector-management/what-is-a-data-connector.md" %}
+
+{% page-ref page="../designing-processes/viewing-processes/what-is-a-process.md" %}
 {% endtab %}
 {% endtabs %}
+
+
 
 ## Design ProcessMaker Screens
 
@@ -220,7 +233,7 @@ See how to use [Watchers](../designing-processes/design-forms/screens-builder/ma
 
 ## Use the ProcessMaker API and SDKs
 
-This section contains videos how to use the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation) and ProcessMaker's Software Development Kits \(SDKs\). Every function that you may do in ProcessMaker's elegant and well-designed user interface makes an API call. Since every ProcessMaker function is supported in the ProcessMaker API, ProcessMaker can be [white-labeled](../processmaker-administration/user-interface-language-management/what-is-user-interface-language-management.md) to run behind the scenes from other SaaS applications. Learn how you can use the ProcessMaker API.
+This section contains videos how to use the [ProcessMaker RestFUL Application Program Interface \(API\)](https://staging-pm4.processmaker.net/api/documentation) and ProcessMaker's Software Development Kits \(SDKs\). Every function that you may do in ProcessMaker's elegant and well-designed user interface makes an API call. Since every ProcessMaker function is supported in the ProcessMaker API, ProcessMaker can be [white-labeled](../processmaker-administration/user-interface-language-management/what-is-user-interface-language-management.md) to run behind the scenes from other SaaS applications. Learn how you can use the ProcessMaker API.
 
 {% tabs %}
 {% tab title="Start a Request Via the API" %}
@@ -255,18 +268,28 @@ Use the [PHP SDK](https://github.com/ProcessMaker/sdk-php) with the [ProcessMake
 Make calls against the ProcessMaker database using the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation).
 
 * **Intended audience:** Software developers and coding engineers
-* **Viewing time:** 2 minutes; contains narration
+* **Viewing time:** 6 minutes; contains narration
+
+{% embed url="https://vimeo.com/393099810" %}
 
 {% page-ref page="../processmaker-api-documentation/access-processmaker-api-documentation.md" %}
 {% endtab %}
 
 {% tab title="Use the JavaScript SDK" %}
-Use the [JavaScript SDK](https://github.com/ProcessMaker/sdk-node) with the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation) from inside of a ProcessMaker Script.
+Use the [JavaScript SDK](https://github.com/ProcessMaker/sdk-node) with the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation) from inside of a [ProcessMaker Script](../designing-processes/scripts/what-is-a-script.md).
 
 * **Intended audience:** Software developers and coding engineers
-* **Viewing time:**  minutes; contains narration
+* **Viewing time:** 4 minutes; contains narration
+
+{% embed url="https://vimeo.com/393099824" %}
+
+{% page-ref page="../designing-processes/scripts/what-is-a-script.md" %}
 
 {% page-ref page="../processmaker-api-documentation/access-processmaker-api-documentation.md" %}
 {% endtab %}
 {% endtabs %}
+
+
+
+
 
