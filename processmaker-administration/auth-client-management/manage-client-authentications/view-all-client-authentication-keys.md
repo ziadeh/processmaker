@@ -6,7 +6,7 @@ description: View the authenticated clients in your organization.
 
 ## View All Authenticated Clients <a id="view-all-scripts"></a>
 
-ProcessMaker displays all authenticated clients in one table that ProcessMaker Administrators throughout your organization have created. This makes it easy to manage authenticated clients to allow these ProcessMaker users to access the ProcessMaker's REST API. The most recently created authenticated clients display at the top of the table.
+ProcessMaker displays all authenticated clients in one table that ProcessMaker Administrators throughout your organization have created. This makes it easy to manage authenticated clients to allow these ProcessMaker users to access the [ProcessMaker's RESTful API](https://staging-pm4.processmaker.net/api/documentation). The most recently created authenticated clients display at the top of the table.
 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the "Auth Clients: View Auth Clients" permission to view the list of authenticated clients unless your user account has the **Make this user a Super Admin** setting selected.
@@ -20,9 +20,9 @@ Follow these steps to view all authenticated clients:
 2. Click the **Admin** option from the top menu. The **Users** page displays.
 3. Click the **Auth Clients** icon![](../../../.gitbook/assets/auth-client-icon-admin.png). The **Auth Clients** page displays all client authentication keys. 
 
-![&quot;Auth Clients&quot; page displays all authenticated clients that can access the ProcessMaker&apos;s REST API](../../../.gitbook/assets/auth-client-page-admin.png)
+![&quot;Auth Clients&quot; page displays all authenticated clients that can access the ProcessMaker&apos;s RESTful API](../../../.gitbook/assets/auth-client-page-admin.png)
 
-The **Auth Clients** page displays the following information in tabular format about authenticated clients that can access the ProcessMaker's REST API:
+The **Auth Clients** page displays the following information in tabular format about authenticated clients that can access the ProcessMaker's RESTful API:
 
 * **Client ID:** The **Client ID** column displays the Client ID for the authenticated client. ProcessMaker automatically generates the Client ID value when the client authentication is created and represents a sequential number of how many total authenticated clients have been created to that time.
 * **Name:** The **Name** column displays to whom the client authentication applies. See [Create a New Client Authentication Key](create-a-new-client-authentication-key.md).

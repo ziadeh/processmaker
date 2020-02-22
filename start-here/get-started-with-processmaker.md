@@ -233,11 +233,11 @@ See how to use [Watchers](../designing-processes/design-forms/screens-builder/ma
 
 ## Use the ProcessMaker API and SDKs
 
-This section contains videos how to use the [ProcessMaker RestFUL Application Program Interface \(API\)](https://staging-pm4.processmaker.net/api/documentation) and ProcessMaker's Software Development Kits \(SDKs\). Every function that you may do in ProcessMaker's elegant and well-designed user interface makes an API call. Since every ProcessMaker function is supported in the ProcessMaker API, ProcessMaker can be [white-labeled](../processmaker-administration/user-interface-language-management/what-is-user-interface-language-management.md) to run behind the scenes from other SaaS applications. Learn how you can use the ProcessMaker API.
+This section contains videos how to use the [ProcessMaker RESTful Application Program Interface \(API\)](https://staging-pm4.processmaker.net/api/documentation) and ProcessMaker's Software Development Kits \(SDKs\). Every function that you may do in ProcessMaker's elegant and well-designed user interface makes an API call. Since every ProcessMaker function is supported in the ProcessMaker API, ProcessMaker can be [white-labeled](../processmaker-administration/user-interface-language-management/what-is-user-interface-language-management.md) to run behind the scenes from other SaaS applications. Learn how you can use the ProcessMaker API.
 
 {% tabs %}
 {% tab title="Start a Request Via the API" %}
-Start a ProcessMaker [Request](../using-processmaker/requests/what-is-a-request.md) using the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation).
+Start a ProcessMaker [Request](../using-processmaker/requests/what-is-a-request.md) using the [ProcessMaker RESTful API](https://staging-pm4.processmaker.net/api/documentation).
 
 * **Intended audience:** Software developers and coding engineers
 * **Viewing time:** 2 minutes; contains narration
@@ -252,7 +252,7 @@ Start a ProcessMaker [Request](../using-processmaker/requests/what-is-a-request.
 {% endtab %}
 
 {% tab title="Use the PHP SDK" %}
-Use the [PHP SDK](https://github.com/ProcessMaker/sdk-php) with the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation) from inside of a ProcessMaker Script.
+Use the [PHP SDK](https://github.com/ProcessMaker/sdk-php) with the [ProcessMaker RESTful API](https://staging-pm4.processmaker.net/api/documentation) from inside of a ProcessMaker Script.
 
 * **Intended audience:** Software developers and coding engineers
 * **Viewing time:** 2 minutes; contains narration
@@ -265,7 +265,7 @@ Use the [PHP SDK](https://github.com/ProcessMaker/sdk-php) with the [ProcessMake
 {% endtab %}
 
 {% tab title="Access the Database Via the API" %}
-Make calls against the ProcessMaker database using the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation).
+Make calls against the ProcessMaker database using the [ProcessMaker RESTful API](https://staging-pm4.processmaker.net/api/documentation).
 
 * **Intended audience:** Software developers and coding engineers
 * **Viewing time:** 6 minutes; contains narration
@@ -276,7 +276,7 @@ Make calls against the ProcessMaker database using the [ProcessMaker RestFUL API
 {% endtab %}
 
 {% tab title="Use the JavaScript SDK" %}
-Use the [JavaScript SDK](https://github.com/ProcessMaker/sdk-node) with the [ProcessMaker RestFUL API](https://staging-pm4.processmaker.net/api/documentation) from inside of a [ProcessMaker Script](../designing-processes/scripts/what-is-a-script.md).
+Use the [JavaScript SDK](https://github.com/ProcessMaker/sdk-node) with the [ProcessMaker RESTful API](https://staging-pm4.processmaker.net/api/documentation) from inside of a [ProcessMaker Script](../designing-processes/scripts/what-is-a-script.md).
 
 * **Intended audience:** Software developers and coding engineers
 * **Viewing time:** 4 minutes; contains narration

@@ -7,6 +7,7 @@
 * [ProcessMaker Home](https://www.processmaker.com/)
 * [Download ProcessMaker Open-Source Edition](https://github.com/ProcessMaker/processmaker/releases)
 * [ProcessMaker Open-Source Edition Installation Instructions](https://github.com/ProcessMaker/processmaker)
+* [View ProcessMaker RESTful API Documentation](https://staging-pm4.processmaker.net/api/documentation)
 * [Contact Sales](https://www.processmaker.com/contact/)
 * [Privacy Statement](https://www.processmaker.com/privacy-statement)
 
@@ -319,7 +320,7 @@
 
 ## ProcessMaker API Documentation
 
-* [Access ProcessMaker API Documentation](processmaker-api-documentation/access-processmaker-api-documentation.md)
+* [Access ProcessMaker RESTful API Documentation](processmaker-api-documentation/access-processmaker-api-documentation.md)
 
 ## Script Central <a id="script-central-1"></a>
 
