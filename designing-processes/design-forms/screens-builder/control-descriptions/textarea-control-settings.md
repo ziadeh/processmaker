@@ -80,16 +80,52 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Textarea control in the **Variable** panel:
 
-* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
+* [Variable Name](textarea-control-settings.md#variable-name)
+* [Label](textarea-control-settings.md#label)
+* [Validation Rules](textarea-control-settings.md#validation-rules)
+* [Read Only](textarea-control-settings.md#read-only)
 
-  * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Textarea control's textual content with that Textarea control's **Variable Name** value. In the example below, `TextareaControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/textarea-preview-screens-builder-processes.png) 
-  * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ TextareaControl }}`.
-  * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+#### Variable Name
 
-  This is a required setting.
+**Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
 
-* **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
-* **Read Only:** Select to indicate that this control cannot be edited. This option is not selected by default.
+* Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Textarea control's textual content with that Textarea control's **Variable Name** value. In the example below, `TextareaControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/textarea-preview-screens-builder-processes.png) 
+* Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ TextareaControl }}`.
+* Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+
+This is a required setting.
+
+#### Label
+
+Edit the default label that displays for this control if necessary. This is a required setting.
+
+#### Validation Rules
+
+Enter the validation rule\(s\) the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. If there are no configured validation rules the following message displays: **No validation rule\(s\)**. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+
+Follow these steps to add a validation rule to this control:
+
+1. Access the [**Variable** panel for this control](textarea-control-settings.md#variable-panel-settings), and then locate the **Validation Rules** setting.
+2. Click the **Add Rule** button. The **Select** drop-down menu displays.
+3. Select the rule that this control validates against.
+4. Click **Save**. Parameters for the selected rule display. Parameter settings display which ones are required to properly configure the rule.
+5. Enter the parameter settings that this control uses to validate against.
+
+Follow these steps to edit a validation rule for this control:
+
+1. Access the [**Variable** panel for this control](textarea-control-settings.md#variable-panel-settings), and then locate the **Validation Rules** setting.
+2. Click the **Edit** icon![](../../../../.gitbook/assets/edit-email-notification-icon-task-process-modeler-processes.png)for the validation rule to edit. The parameter settings for that validation rule displays.
+3. Edit the parameter settings that this control uses to validate against.
+
+Follow these steps to delete a validation rule for this control:
+
+1. Access the [**Variable** panel for this control](textarea-control-settings.md#variable-panel-settings), and then locate the **Validation Rules** setting.
+2. Click the **Delete** icon![](../../../../.gitbook/assets/delete-email-notification-icon-task-process-modeler-processes.png)for the validation rule to delete. A message displays to confirm deletion of the validation rule.
+3. Click **Delete**.
+
+#### Read Only
+
+Select to indicate that this control cannot be edited. This option is not selected by default.
 
 ### Configuration Panel Settings
 
@@ -97,11 +133,26 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Textarea control in the **Configuration** panel:
 
-* **Label:** Enter the text label that displays for this control. **New TextArea** is the default value.
-* **Placeholder:** Enter the placeholder text that displays in this control when no value has been provided. This setting has no default value.
-* **Helper Text:** Enter text that provides additional guidance on this control's use. This setting has no default value.
-* **Rich Text:** Select the **Rich Text** checkbox to display the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to allow the Request participant can enter rich text. This option is not selected by default.
-* **Rows:** Enter the number of rows to provide for input. **2** is the default value.
+* [Placeholder Text](textarea-control-settings.md#placeholder-text)
+* [Helper Text](textarea-control-settings.md#helper-text)
+* [Rich Text](textarea-control-settings.md#rich-text)
+* [Rows](textarea-control-settings.md#rows)
+
+#### Placeholder Text
+
+Enter the placeholder text that displays in this control when no value has been provided. This setting has no default value.
+
+#### Helper Text
+
+Enter text that provides additional guidance on this control's use. This setting has no default value.
+
+#### Rich Text
+
+Select the **Rich Text** checkbox to display the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to allow the Request participant can enter rich text. This option is not selected by default.
+
+#### Rows
+
+Enter the number of rows to provide for input. **2** is the default value.
 
 ### Design Panel Settings
 
@@ -109,8 +160,16 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Textarea control in the **Design** panel:
 
-* **Text Color:** Select to specify the text color that displays in this control.
-* **Background Color:** Select to specify the background color of this control.
+* [Text Color](textarea-control-settings.md#text-color)
+* [Background Color](textarea-control-settings.md#background-color)
+
+#### Text Color
+
+Select the text color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
+
+#### Background Color
+
+Select the background color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
 
 ### Advanced Panel Settings
 
@@ -118,12 +177,21 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Textarea control in the **Advanced** panel:
 
-* **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+* [Default Value](textarea-control-settings.md#default-value)
+* [Visibility Rule](textarea-control-settings.md#visibility-rule)
+* [CSS Selector Name](textarea-control-settings.md#css-selector-name)
 
-{% hint style="info" %}
-Do you need to export this ProcessMaker Screen? Click the **Export Screen** button![](../../../../.gitbook/assets/export-screen-button-screens-builder-processes.png). See [Export a Screen](../../manage-forms/export-a-screen.md#overview) for more information.
-{% endhint %}
+#### Default Value
+
+Enter the default value this control displays. If the **Default Value** setting has no value, then this control does not display a value when the ProcessMaker Screen displays. When the ProcessMaker Screen submits, the Request uses this control's default value unless the Request participant changed it.
+
+#### Visibility Rule
+
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+
+#### CSS Selector Name
+
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics <a id="related-topics"></a>
 
