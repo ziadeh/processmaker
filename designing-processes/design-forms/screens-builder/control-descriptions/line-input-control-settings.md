@@ -17,9 +17,11 @@ The Line Input control is a text field that the [Request](../../../../using-proc
 * **Text:** The control only accepts alphanumeric characters.
 * **Integer:** The control only accepts integers. 
 * **Currency:** The control only accepts a currency value.
-* **Decimal:** The control accepts any number, both positive and negative.
-* **Datetime:** The control accepts a datetime, which is includes both date and time components.
-* **Date:** The control accepts a date.
+* **Percentage:** The control only accepts a percentage value.
+* **Decimal:** The control only accepts any number, both positive and negative.
+* **Datetime:** The control only accepts a datetime, which is includes both date and time components.
+* **Date:** The control only accepts a date.
+* **Password:** The control accepts a password. Entered text is hidden.
 
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
@@ -91,6 +93,60 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Line Input control in the **Variable** panel:
 
+* Variable Name
+* Label
+* Data Type
+* Validation Rules
+* Read Only
+
+#### Variable Name
+
+Edit the default variable name for this control if necessary. Ensure that the control's name is unique name from other controls in this ProcessMaker Screen and contains at least one letter. Use the **Variable Name** value in the following ways:
+
+* Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Line Input control's textual content with that Line Input control's **Variable Name** value. In the example below, `LineInputControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/line-inputs-preview-screens-builder-processes.png) 
+* Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ LineInputControl }}`.
+* Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+
+This is a required setting.
+
+#### Label
+
+Edit the default label that displays for this control if necessary. This is a required setting.
+
+#### Data Type
+
+Select one of the following data type options this control accepts when the form user enters content into this control:
+
+* **Text:** The control only accepts alphanumeric characters. **Text** is the default setting.
+* **Integer:** The control only accepts integers. 
+* **Currency:** The control only accepts a currency value.
+* **Percentage:** The control only accepts a percentage value.
+* **Decimal:** The control only accepts any number, both positive and negative.
+* **Datetime:** The control only accepts a datetime, which is includes both date and time components.
+* **Date:** The control only accepts a date.
+* **Password:** The control accepts a password. Entered text is hidden.
+
+This is a required setting.
+
+The following message displays below the control if the Request participant enters content that does not comply with this control's data type: **The format is invalid.**.
+
+#### Validation Rules
+
+Enter the validation rule\(s\) the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. If there are no configured validation rules the following message displays: **No validation rule\(s\)**. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+
+Follow these steps to add a validation rule to this control:
+
+1. Click the **Add Rule** button. The **Select** drop-down menu displays.
+2. Select the rule that this control validates against.
+3. Click **Save**. Parameters for the selected rule display. Parameter settings display which ones are required to properly configure the rule.
+4. Enter the parameter settings that this control uses to validate against.
+
+#### Read Only
+
+Select to indicate that this control cannot be edited. This option is not selected by default.
+
+Below are settings for the Line Input control in the **Variable** panel:
+
 * **Variable Name:** Edit the default variable name for this control if necessary. Ensure that the control's name is unique name from other controls in this ProcessMaker Screen and contains at least one letter. Use the **Variable Name** value in the following ways:
 
   * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Line Input control's textual content with that Line Input control's **Variable Name** value. In the example below, `LineInputControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/line-inputs-preview-screens-builder-processes.png) 
@@ -102,15 +158,21 @@ Below are settings for the Line Input control in the **Variable** panel:
 * **Label:** Edit the default label that displays for this control if necessary.
 * **Data Type:** Select one of the following data type options this control accepts when the form user enters content into this control:
 
-  * **Text:** This control accepts alphanumeric characters.
-  * **Integer:** This control accepts integers.
-  * **Decimal:** This control accepts any number, both positive and negative.
-  * **Datetime:** This control accepts a datetime, which is includes both date and time components.
-  * **Date:** The control accepts a date.
+  * **Text:** The control only accepts alphanumeric characters. **Text** is the default setting.
+  * **Integer:** The control only accepts integers. 
+  * **Currency:** The control only accepts a currency value.
+  * **Percentage:** The control only accepts a percentage value.
+  * **Decimal:** The control only accepts any number, both positive and negative.
+  * **Datetime:** The control only accepts a datetime, which is includes both date and time components.
+  * **Date:** The control only accepts a date.
+  * **Password:** The control accepts a password. Entered text is hidden.
 
   This is a required setting. The following message displays below the control if the Request participant enters content that does not comply with this control's data type: **The format is invalid.**.
 
-* **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+* **Validation Rules:** Enter the validation rule\(s\) the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. If there are no configured validation rules the following message displays: **No validation rule\(s\)**. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+
+  Follow these steps to add a validation rule:
+
 * **Read Only:** Select to indicate that this control cannot be edited. This option is not selected by default.
 
 ### Configuration Panel Settings
