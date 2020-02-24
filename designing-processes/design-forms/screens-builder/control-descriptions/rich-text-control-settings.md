@@ -78,7 +78,7 @@ The Rich Text control has the following panels that contain settings:
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
-Below is the setting for the Rich Text control in the **Configuration** panel:
+Below is the setting for the Select control in the **Configuration** panel:
 
 * [Content](rich-text-control-settings.md#content)
 
@@ -90,7 +90,7 @@ Enter the text and/or image to display in the Rich Text control using HTML synta
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screen Builder canvas.
 
-Below are settings for the Rich Text control in the **Advanced** panel:
+Below are settings for the Select control in the **Advanced** panel:
 
 * [Visibility Rule](rich-text-control-settings.md#visibility-rule)
 * [CSS Selector Name](rich-text-control-settings.md#css-selector-name)

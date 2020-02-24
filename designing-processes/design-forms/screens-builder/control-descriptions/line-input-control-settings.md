@@ -93,11 +93,11 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Line Input control in the **Variable** panel:
 
-* Variable Name
-* Label
-* Data Type
-* Validation Rules
-* Read Only
+* [Variable Name](line-input-control-settings.md#variable-name)
+* [Label](line-input-control-settings.md#label)
+* [Data Type](line-input-control-settings.md#data-type)
+* [Validation Rules](line-input-control-settings.md#validation-rules)
+* [Read Only](line-input-control-settings.md#read-only)
 
 #### Variable Name
 
