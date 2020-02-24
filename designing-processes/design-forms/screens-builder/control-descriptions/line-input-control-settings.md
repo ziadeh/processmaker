@@ -136,44 +136,27 @@ Enter the validation rule\(s\) the Request participant must comply with to prope
 
 Follow these steps to add a validation rule to this control:
 
-1. Click the **Add Rule** button. The **Select** drop-down menu displays.
-2. Select the rule that this control validates against.
-3. Click **Save**. Parameters for the selected rule display. Parameter settings display which ones are required to properly configure the rule.
-4. Enter the parameter settings that this control uses to validate against.
+1. Access the [**Variable** panel for this control](line-input-control-settings.md#variable-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Validation Rules** setting.
+2. Click the **Add Rule** button. The **Select** drop-down menu displays.
+3. Select the rule that this control validates against.
+4. Click **Save**. Parameters for the selected rule display. Parameter settings display which ones are required to properly configure the rule.
+5. Enter the parameter settings that this control uses to validate against.
+
+Follow these steps to edit a validation rule for this control:
+
+1. Access the [**Variable** panel for this control](line-input-control-settings.md#variable-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Validation Rules** setting.
+2. Click the **Edit** icon![](../../../../.gitbook/assets/edit-email-notification-icon-task-process-modeler-processes.png)for the validation rule to edit. The parameter settings for that validation rule displays.
+3. Edit the parameter settings that this control uses to validate against.
+
+Follow these steps to delete a validation rule for this control:
+
+1. Access the [**Variable** panel for this control](line-input-control-settings.md#variable-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Validation Rules** setting.
+2. Click the **Delete** icon![](../../../../.gitbook/assets/delete-email-notification-icon-task-process-modeler-processes.png)for the validation rule to delete. A message displays to confirm deletion of the validation rule.
+3. Click **Delete**.
 
 #### Read Only
 
 Select to indicate that this control cannot be edited. This option is not selected by default.
-
-Below are settings for the Line Input control in the **Variable** panel:
-
-* **Variable Name:** Edit the default variable name for this control if necessary. Ensure that the control's name is unique name from other controls in this ProcessMaker Screen and contains at least one letter. Use the **Variable Name** value in the following ways:
-
-  * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Line Input control's textual content with that Line Input control's **Variable Name** value. In the example below, `LineInputControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/line-inputs-preview-screens-builder-processes.png) 
-  * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ LineInputControl }}`.
-  * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
-
-  This is a required setting.
-
-* **Label:** Edit the default label that displays for this control if necessary.
-* **Data Type:** Select one of the following data type options this control accepts when the form user enters content into this control:
-
-  * **Text:** The control only accepts alphanumeric characters. **Text** is the default setting.
-  * **Integer:** The control only accepts integers. 
-  * **Currency:** The control only accepts a currency value.
-  * **Percentage:** The control only accepts a percentage value.
-  * **Decimal:** The control only accepts any number, both positive and negative.
-  * **Datetime:** The control only accepts a datetime, which is includes both date and time components.
-  * **Date:** The control only accepts a date.
-  * **Password:** The control accepts a password. Entered text is hidden.
-
-  This is a required setting. The following message displays below the control if the Request participant enters content that does not comply with this control's data type: **The format is invalid.**.
-
-* **Validation Rules:** Enter the validation rule\(s\) the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. If there are no configured validation rules the following message displays: **No validation rule\(s\)**. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
-
-  Follow these steps to add a validation rule:
-
-* **Read Only:** Select to indicate that this control cannot be edited. This option is not selected by default.
 
 ### Configuration Panel Settings
 
@@ -181,12 +164,16 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Line Input control in the **Configuration** panel:
 
-* **Label:** Enter the text label that displays for this control. **New Input** is the default value.
-* **Type:** Select one of the following type options how this control displays entered content:
-  * **Text:** This control displays the entered characters. This is the default setting.
-  * **Password:** This control hides the entered characters as is customary when entering a password.
-* **Placeholder Text:** Enter the placeholder text that displays in this control when no value has been provided. This setting has no default value.
-* **Helper Text:** Enter text that provides additional guidance on this control's use. This setting has no default value.
+* [Placeholder Text](line-input-control-settings.md#placeholder-text)
+* [Helper Text](line-input-control-settings.md#helper-text)
+
+#### Placeholder Text
+
+Enter the placeholder text that displays in this control when no value has been provided. This setting has no default value.
+
+#### Helper Text
+
+Enter text that provides additional guidance on this control's use. This setting has no default value.
 
 ### Design Panel Settings
 
@@ -194,21 +181,38 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Line Input control in the **Design** panel:
 
-* **Text Color:** Select to specify the text color that displays in this control.
-* **Background Color:** Select to specify the background color of this control.
+* [Text Color](line-input-control-settings.md#text-color)
+* [Background Color](line-input-control-settings.md#background-color)
+
+#### Text Color
+
+Select the text color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
+
+#### Background Color
+
+Select the background color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
 
 ### Advanced Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screen Builder canvas.
 
-Below are settings for the Select List control in the **Advanced** panel:
+Below are settings for the Line Input control in the **Advanced** panel:
 
-* **Visibility Rule:** Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+* [Default Value](line-input-control-settings.md#default-value)
+* [Visibility Rule](line-input-control-settings.md#visibility-rule)
+* [CSS Selector Name](line-input-control-settings.md#css-selector-name)
 
-{% hint style="info" %}
-Do you need to export this ProcessMaker Screen? Click the **Export Screen** button![](../../../../.gitbook/assets/export-screen-button-screens-builder-processes.png). See [Export a Screen](../../manage-forms/export-a-screen.md#overview) for more information.
-{% endhint %}
+#### Default Value
+
+Enter the default value this control displays. If the **Default Value** setting has no value, then this control does not display a value when the ProcessMaker Screen displays. When the ProcessMaker Screen submits, the Request uses this control's default value unless the Request participant changed it.
+
+#### Visibility Rule
+
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+
+#### CSS Selector Name
+
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics
 
