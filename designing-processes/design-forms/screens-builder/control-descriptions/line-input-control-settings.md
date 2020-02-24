@@ -136,10 +136,23 @@ Enter the validation rule\(s\) the Request participant must comply with to prope
 
 Follow these steps to add a validation rule to this control:
 
-1. Click the **Add Rule** button. The **Select** drop-down menu displays.
-2. Select the rule that this control validates against.
-3. Click **Save**. Parameters for the selected rule display. Parameter settings display which ones are required to properly configure the rule.
-4. Enter the parameter settings that this control uses to validate against.
+1. Access the [**Variable** panel for this control](line-input-control-settings.md#variable-panel-settings), and then locate the **Validation Rules** setting.
+2. Click the **Add Rule** button. The **Select** drop-down menu displays.
+3. Select the rule that this control validates against.
+4. Click **Save**. Parameters for the selected rule display. Parameter settings display which ones are required to properly configure the rule.
+5. Enter the parameter settings that this control uses to validate against.
+
+Follow these steps to edit a validation rule for this control:
+
+1. Access the [**Variable** panel for this control](line-input-control-settings.md#variable-panel-settings), and then locate the **Validation Rules** setting.
+2. Click the **Edit** icon![](../../../../.gitbook/assets/edit-email-notification-icon-task-process-modeler-processes.png)for the validation rule to edit. The parameter settings for that validation rule displays.
+3. Edit the parameter settings that this control uses to validate against.
+
+Follow these steps to delete a validation rule for this control:
+
+1. Access the [**Variable** panel for this control](line-input-control-settings.md#variable-panel-settings), and then locate the **Validation Rules** setting.
+2. Click the **Delete** icon![](../../../../.gitbook/assets/delete-email-notification-icon-task-process-modeler-processes.png)for the validation rule to delete. A message displays to confirm deletion of the validation rule.
+3. Click **Delete**.
 
 #### Read Only
 
