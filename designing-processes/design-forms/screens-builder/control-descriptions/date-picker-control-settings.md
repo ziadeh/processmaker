@@ -85,7 +85,12 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Date Picker control in the **Variable** panel:
 
-* 
+* [Variable Name](date-picker-control-settings.md#variable-name)
+* [Label](date-picker-control-settings.md#label)
+* [Data Type](date-picker-control-settings.md#data-type)
+* [Validation Rules](date-picker-control-settings.md#validation-rules)
+* [Read Only](date-picker-control-settings.md#read-only)
+
 #### Variable Name
 
 Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. Use the **Variable Name** setting value in the following ways:
@@ -98,27 +103,44 @@ This is a required setting.
 
 #### Label
 
+Edit the default label that displays for this control if necessary. **New Date Picker** is the default value.
 
+#### Data Type
 
+Select one of the following data type options this control accepts when the Request participant enters content into this control:
 
+* **Datetime:** This control accepts a datetime, which is includes both date and time components.
+* **Date:** The control accepts a date.
 
-* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
+This is a required setting.
 
-  * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds with the Date Picker control's entered datetime with that Date Picker control's **Variable Name** value. In the example below, `DatePickerControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/date-control-preview-screens-builder-processes.png) 
-  * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ DatePickerControl }}`.
-  * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+#### Validation Rules
 
-  This is a required setting.
+Enter the validation rule\(s\) the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. If there are no configured validation rules the following message displays: **No validation rule\(s\)**. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
 
-* **Data Type:** Select one of the following data type options this control accepts when the form user enters content into this control:
+Follow these steps to add a validation rule to this control:
 
-  * **Datetime:** This control accepts a datetime, which is includes both date and time components.
-  * **Date:** The control accepts a date.
+1. Access the [**Variable** panel for this control](select-list-control-settings.md#variable-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Validation Rules** setting.
+2. Click the **Add Rule** button. The **Select** drop-down menu displays.
+3. Select the rule that this control validates against.
+4. Click **Save**. Parameters for the selected rule display. Parameter settings display which ones are required to properly configure the rule.
+5. Enter the parameter settings that this control uses to validate against.
 
-  This is a required setting.
+Follow these steps to edit a validation rule for this control:
 
-* **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
-* **Read Only:** Select to indicate that this control cannot be edited. This option is not selected by default.
+1. Access the [**Variable** panel for this control](select-list-control-settings.md#variable-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Validation Rules** setting.
+2. Click the **Edit** icon![](../../../../.gitbook/assets/edit-email-notification-icon-task-process-modeler-processes.png)for the validation rule to edit. The parameter settings for that validation rule displays.
+3. Edit the parameter settings that this control uses to validate against.
+
+Follow these steps to delete a validation rule for this control:
+
+1. Access the [**Variable** panel for this control](select-list-control-settings.md#variable-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Validation Rules** setting.
+2. Click the **Delete** icon![](../../../../.gitbook/assets/delete-email-notification-icon-task-process-modeler-processes.png)for the validation rule to delete. A message displays to confirm deletion of the validation rule.
+3. Click **Delete**.
+
+#### Read Only
+
+Select to indicate that this control cannot be edited. This option is not selected by default.
 
 ### Configuration Panel Settings
 

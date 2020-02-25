@@ -121,7 +121,7 @@ This is a required setting.
 
 #### Label
 
-Edit the default label that displays for this control if necessary. This is a required setting.
+Edit the default label that displays for this control if necessary. **New Select List** is the default value.
 
 #### Validation Rules
 

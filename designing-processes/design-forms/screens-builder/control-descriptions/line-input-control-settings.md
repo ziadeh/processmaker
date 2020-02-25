@@ -111,11 +111,11 @@ This is a required setting.
 
 #### Label
 
-Edit the default label that displays for this control if necessary. This is a required setting.
+Edit the default label that displays for this control if necessary. **New Input** is the default value.
 
 #### Data Type
 
-Select one of the following data type options this control accepts when the form user enters content into this control:
+Select one of the following data type options this control accepts when the Request participant enters content into this control:
 
 * **Text:** The control only accepts alphanumeric characters. **Text** is the default setting.
 * **Integer:** The control only accepts integers. 

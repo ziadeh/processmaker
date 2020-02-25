@@ -100,7 +100,7 @@ This is a required setting.
 
 #### Label
 
-Enter the text label that displays for this control. **New Checkbox** is the default value.
+Edit the default label that displays for this control if necessary. **New Checkbox** is the default value.
 
 #### Validation Rules
 
