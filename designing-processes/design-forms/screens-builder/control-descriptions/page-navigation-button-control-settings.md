@@ -76,6 +76,12 @@ The Navigation Button control has the following panels that contain settings:
 
 ### Variable Panel Settings
 
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screen Builder canvas.
+
+Below is the setting for the Navigation Button control in the **Variable** panel:
+
+
+
 ### Configuration Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
