@@ -182,41 +182,45 @@ See the following procedures how to provide options for a Select List control.
 
 {% tabs %}
 {% tab title="Provide Options Using the ProcessMaker Interface" %}
-### Add an Option
+### Add an Option to This Select List Control
 
 Follow these steps to add an option that displays in this control using the ProcessMaker interface:
 
 1. Access the [**Data Source** panel for this control](select-list-control-settings.md#data-source-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Data Source** setting.
 2. From the **Data Source** drop-down menu, select **Provide Values**. This is the default setting.
-3. Click the icon![](../../../../.gitbook/assets/create-option-icon-screens-builder-processes.png)beside the **Options** list label. The **Add Option** screen displays. ![](../../../../.gitbook/assets/data-source-options-screens-builder-processes.png) 
-4. In the **Value** setting, enter a value to represent the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
-5. In the **Content** setting, enter the option that displays in this control.
-6. Click **Save**. The option displays below the **Options** list label. ![](../../../../.gitbook/assets/options-list-screens-builder-processes.png) 
+3. Ensure that the **Options** list label displays. If the **JSON Data** option displays, click the **Edit as Option List** option.
+4. Click the icon![](../../../../.gitbook/assets/create-option-icon-screens-builder-processes.png)beside the **Options** list label. The **Add Option** screen displays. ![](../../../../.gitbook/assets/data-source-options-screens-builder-processes.png) 
+5. In the **Value** setting, enter a value to represent the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
+6. In the **Content** setting, enter the option that displays in this control.
+7. Click **Save**. The option displays below the **Options** list label. ![](../../../../.gitbook/assets/options-list-screens-builder-processes.png) 
 
-### Edit an Option
+### Edit an Option for This Select List Control
 
 Follow these steps to edit an option that displays in this control using the ProcessMaker interface:
 
 1. Access the [**Data Source** panel for this control](select-list-control-settings.md#data-source-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then ensure that the **Data Source** setting uses the **Provide Values** option.
-2. Click the![](../../../../.gitbook/assets/configure-icon-data-source-screens-builder-processes.png)icon for an option to edit its settings. The **Edit Option** screen displays.
-3. In the **Value** setting, edit the value to represent the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
-4. In the **Content** setting, edit the option that displays in this control.
-5. Click **Update**. The edited option displays below the **Options** list label.
+2. Ensure that the **Options** list label displays.
+3. Click the![](../../../../.gitbook/assets/configure-icon-data-source-screens-builder-processes.png)icon for an option to edit its settings. The **Edit Option** screen displays.
+4. In the **Value** setting, edit the value to represent the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen as necessary. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
+5. In the **Content** setting, edit the option that displays in this control as necessary.
+6. Click **Update**. The edited option displays below the **Options** list label.
 
-### Delete an Option
+### Delete an Option from This Select List Control
 
 Follow these steps to delete an option from in this control using the ProcessMaker interface:
 
 1. Access the [**Data Source** panel for this control](select-list-control-settings.md#data-source-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then ensure that the **Data Source** setting uses the **Provide Values** option.
-2. Click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon for the option to be deleted from this control. A message displays to confirm deletion of the validation rule.
-3. Click **Delete**.
+2. Ensure that the **Options** list label displays.
+3. Click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon for the option to be deleted from this control. A message displays to confirm deletion of the option.
+4. Click **Delete**.
 
 ### Sort the Order of the Options
 
 Follow these steps to sort the order of the options that display in this control using the ProcessMaker interface:
 
 1. Access the [**Data Source** panel for this control](select-list-control-settings.md#data-source-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then ensure that the **Data Source** setting uses the **Provide Values** option.
-2. Drag the![](../../../../.gitbook/assets/sort-icon-data-source-screens-builder-processes.png)icon for each option up or down to sort the order they display in this control as necessary.
+2. Ensure that the **Options** list label displays.
+3. Drag the![](../../../../.gitbook/assets/sort-icon-data-source-screens-builder-processes.png)icon for each option up or down to sort the order they display in this control as necessary.
 
 ### Set to Allow Multiple Selections and How Options Display
 
@@ -230,13 +234,13 @@ Follow these steps to set whether multiple selections can be selected from this 
 {% endtab %}
 
 {% tab title="Provide Options Using a JSON Schema" %}
-### Provide Options Using a JSON Schema
+### Provide Options Using a JSON Schema to This Select List Control
 
 Follow these steps to provide options that display in this control using a JSON schema:
 
 1. Access the [**Data Source** panel for this control](select-list-control-settings.md#data-source-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Data Source** setting.
 2. From the **Data Source** drop-down menu, select **Provide Values**. This is the default setting.
-3. Click the **Edit as JSON** option below the **Options** list label.  
+3. Click the **Edit as JSON** option below the **Options** list label. If the **JSON Data** setting displays, skip this step.  
    ![](../../../../.gitbook/assets/edit-as-json-screens-builder-processes.png) 
 
    The **JSON Data** setting displays. If a valid JSON schema has been configured previously, the **JSON Data** setting displays the JSON. Otherwise the setting is empty.

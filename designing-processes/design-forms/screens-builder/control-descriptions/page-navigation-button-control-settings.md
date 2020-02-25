@@ -76,31 +76,49 @@ The Navigation Button control has the following panels that contain settings:
 
 ### Variable Panel Settings
 
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screen Builder canvas.
+
+Below is the setting for the Navigation Button control in the **Variable** panel:
+
+* [Button Label](page-navigation-button-control-settings.md#button-label)
+
+#### Button Label
+
+Enter the text label that displays for this control. **Page Navigation** is the default value.
+
 ### Configuration Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
-Below are settings for the Navigation Button control in the **Configuration** panel:
+Below is the setting for the Navigation Button control in the **Configuration** panel:
 
-* **Destination Screen:** Select the destination page to which to navigate in a multi-page ProcessMaker Screen.
-* **Button Label:** Enter the text label that displays for this control. **Page Navigation** is the default value.
+* [Destination Screen](page-navigation-button-control-settings.md#destination-screen)
+
+#### Destination Screen
+
+Select the destination page to which to navigate in a multi-page [ProcessMaker Screen](../../what-is-a-form.md).
 
 ### Design Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screen Builder canvas.
 
-Below are settings for the Navigation Button control in the **Design** panel:
+Below is the setting for the Navigation Button control in the **Design** panel:
 
-* **Button Variant Style:** Select the style for the Page Navigation Button control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
-  * **Primary:** Blue-colored background with white-colored **Button Label** text. This is the default option.
-  * **Secondary:** Gray-colored background with white-colored **Button Label** text.
-  * **Success:** Green-colored background with white-colored **Button Label** text.
-  * **Danger:** Red-colored background with white-colored **Button Label** text.
-  * **Warning:** Yellow-colored background with black-colored **Button Label** text.
-  * **Info:** Teal-colored background with white-colored **Button Label** text.
-  * **Light:** White-colored background with black-colored **Button Label** text.
-  * **Dark:** Black-colored background with white-colored **Button Label** text.
-  * **Link:** White-colored background with blue-colored **Button Label** text.
+* [Button Variant Style](page-navigation-button-control-settings.md#button-variant-style)
+
+#### Button Variant Style
+
+Select the style for the Page Navigation Button control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
+
+* **Primary:** Blue-colored background with white-colored **Button Label** text. This is the default option.
+* **Secondary:** Gray-colored background with white-colored **Button Label** text.
+* **Success:** Green-colored background with white-colored **Button Label** text.
+* **Danger:** Red-colored background with white-colored **Button Label** text.
+* **Warning:** Yellow-colored background with black-colored **Button Label** text.
+* **Info:** Teal-colored background with white-colored **Button Label** text.
+* **Light:** White-colored background with black-colored **Button Label** text.
+* **Dark:** Black-colored background with white-colored **Button Label** text.
+* **Link:** White-colored background with blue-colored **Button Label** text.
 
 ### Advanced Panel Settings
 
@@ -108,12 +126,16 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Navigation Button control in the **Advanced** panel:
 
-* **Visibility Rule:** Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+* [Visibility Rule](page-navigation-button-control-settings.md#visibility-rule)
+* [CSS Selector Name](page-navigation-button-control-settings.md#css-selector-name)
 
-{% hint style="info" %}
-Do you need to export this ProcessMaker Screen? Click the **Export Screen** button![](../../../../.gitbook/assets/export-screen-button-screens-builder-processes.png). See [Export a Screen](../../manage-forms/export-a-screen.md#overview) for more information.
-{% endhint %}
+#### Visibility Rule
+
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+
+#### CSS Selector Name
+
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics <a id="related-topics"></a>
 

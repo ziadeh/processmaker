@@ -8,10 +8,6 @@ description: >-
 
 ## Control Description <a id="control-description"></a>
 
-{% hint style="info" %}
-Do not confuse the Record List control with the ProcessMaker [Collections controls]() that are part of the ProcessMaker [Collections package](../../../../package-development-distribution/package-a-connector/collections.md). ProcessMaker Collections use records in a different context. See [What is a Collection?](../../../../collections/what-is-a-collection.md).
-{% endhint %}
-
 The Record List control functions differently in [Form](../types-for-screens.md#form)- and [Display](../types-for-screens.md#display)-type ProcessMaker [Screens](../../what-is-a-form.md):
 
 * [Form-Type Screen Usage](record-list-control-settings.md#form-type-screen-usage)
@@ -146,7 +142,7 @@ Deleting a control also deletes configuration for that control. If you add anoth
 
 Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
 
-## Settings <a id="inspector-settings"></a>
+## Form-Type Screen Settings <a id="inspector-settings"></a>
 
 {% hint style="info" %}
 ### Permissions Required
@@ -163,14 +159,7 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 This topic is updated for ProcessMaker version 4.0.1. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder-1).
 {% endhint %}
 
-The Record List control configures differently in [Form](../types-for-screens.md#form)- and [Display](../types-for-screens.md#display)-type ProcessMaker [Screens](../../what-is-a-form.md):
-
-* [Form-Type Screen Settings](record-list-control-settings.md#form-type-screen-settings)
-* [Display-Type Screen Settings](record-list-control-settings.md#display-type-screen-settings)
-
-### Form-Type Screen Settings
-
-The Record List control has the following panels that contain settings for [Form](../types-for-screens.md#form)-type ProcessMaker Screens:
+The Record List control has the following panels that contain settings for [Form](../types-for-screens.md#form)-type [ProcessMaker Screens](../../what-is-a-form.md):
 
 * \*\*\*\*[**Variable** panel](record-list-control-settings.md#variable-panel-settings)
 * \*\*\*\*[**Configuration** panel](record-list-control-settings.md#configuration-panel-settings)
@@ -178,86 +167,151 @@ The Record List control has the following panels that contain settings for [Form
 * \*\*\*\*[**Design** panel](record-list-control-settings.md#design-panel-settings)
 * \*\*\*\*[**Advanced** panel](record-list-control-settings.md#advanced-panel-settings)
 
-#### Variable Panel Settings
+### Variable Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Variable** panel:
 
-* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
+* [Variable Name](record-list-control-settings.md#variable-name)
+* [List Label](record-list-control-settings.md#list-label)
 
-  * Reference this control by its **Variable Name** setting's value.
-  * Reference this control's value in a different Screen Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ RecordListControl }}`.
-  * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+#### Variable Name
 
-  This is a required setting.
+Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. Use the **Variable Name** setting value in the following ways:
 
-#### Configuration Panel Settings
+* Reference this control by its **Variable Name** setting's value.
+* Reference this control's value in a different Screen Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ RecordListControl }}`.
+* Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+
+This is a required setting.
+
+#### List Label
+
+Edit the default label that displays for this control if necessary. **New Record List** is the default value.
+
+### Configuration Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Configuration** panel:
 
-* **List Label:** Enter the text label that displays for this control. **New Record List** is the default value.
-* **Editable?:** Select to indicate that records in the list can be edited or deleted with the **Edit** ![](../../../../.gitbook/assets/edit-record-record-list-control-screens-builder-processes.png) and **Delete** ![](../../../../.gitbook/assets/delete-record-record-list-control-screens-builder-processes.png) icons, respectively. Otherwise, deselect to indicate that after each record is added to the record list, it cannot be changed. Note that after the Task is submitted, the record list cannot be changed. This setting is not selected by default.
-* **Record Form:** Select from which ProcessMaker Screen page to reference the controls that receive data components for each record. The page with these controls that receive the data components cannot be on the same page as the Record List control. The following message displays if no additional pages exist in this ProcessMaker Screen from which to reference other controls: **No Data Available.**
+* [Editable?](record-list-control-settings.md#editable)
+* [Record Form](record-list-control-settings.md#record-form)
 
-#### Columns Panel Settings
+#### Editable?
 
-Follow these steps to configure the column header\(s\) that display the record list data and from which control\(s\) on the additional page in this ProcessMaker Screen to reference data components of each record for this control:
+Select to indicate that records in the list can be edited or deleted with the **Edit** ![](../../../../.gitbook/assets/edit-record-record-list-control-screens-builder-processes.png) and **Delete** ![](../../../../.gitbook/assets/delete-record-record-list-control-screens-builder-processes.png) icons, respectively. Otherwise, deselect to indicate that after each record is added to the record list, it cannot be changed. Note that after the [Task](../../../../using-processmaker/task-management/what-is-a-task.md) is submitted, the record list cannot be changed. This setting is not selected by default.
 
-1. Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Columns** panel that is on the right-side of the Screen Builder canvas.
-2. Select one of the following options:
-   * **Provide the column header\(s\) and referenced control\(s\) in the user interface:**
+#### Record Form
 
-     Follow these guidelines:
+Select from which ProcessMaker Screen page to reference the controls that receive data components for each record. The page with these controls that receive the data components cannot be on the same page as the Record List control. The following message displays if no additional pages exist in this ProcessMaker Screen from which to reference other controls: **No Data Available.**
 
-     1. Click the icon![](../../../../.gitbook/assets/create-option-icon-screens-builder-processes.png)beside the **Column** label. The **Add Column** screen displays. ![](../../../../.gitbook/assets/record-list-control-add-column-screens-builder-processes.png) 
-     2. In the **Column Header** setting, enter the column header label that displays in the record list. This column header represents a data component for each record in the record list.
-     3. In the **Value** setting, enter the **Variable Name** setting value for the control on the second page of this ProcessMaker Screen that receives a data component for each record that corresponds with this column header. For example, use a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting value of `LineInputFirstName` to receive each person's first name for each record in the list, and then associate that `LineInputFirstName` value with a column header labeled `First Name`.
-     4. Click **Save**. The column header displays below the **Column** label. ![](../../../../.gitbook/assets/record-list-control-added-column-screens-builder-processes.png) 
-     5. If necessary, click the![](../../../../.gitbook/assets/configure-icon-data-source-screens-builder-processes.png)icon for a column header to change its settings, then click the **Update** button. ![](../../../../.gitbook/assets/record-list-control-update-column-screens-builder-processes.png) 
-     6. Click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon to delete that column header and its associated control reference if necessary. Doing so displays a confirmation message to delete the column header and its associated control reference. Click **Delete**, if necessary. ![](../../../../.gitbook/assets/record-list-control-delete-column-screens-builder-processes.png) 
-     7. Drag the![](../../../../.gitbook/assets/sort-icon-data-source-screens-builder-processes.png)icon for a column header up or down to sort the order the column headers display in the record list, if necessary.
-     8. Repeat Steps 1 through 7 until all column headers and their respective control references are configured for this control.
+### Columns Panel Settings
 
-   * **Provide options in JSON format:**
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Columns** panel that is on the right-side of the Screen Builder canvas.
 
-     Follow these guidelines:
+See the following procedures how to configure the column header\(s\) that display the record list data and from which control\(s\) on the additional page in this [ProcessMaker Screen](../../what-is-a-form.md) to reference data components of each record for this control.
 
-     1. Click the **Edit as JSON** option.  
-        ![](../../../../.gitbook/assets/edit-as-json-screens-builder-processes.png)
+{% tabs %}
+{% tab title="Configure Columns Using the ProcessMaker Interface" %}
+### Add a Column to This Record List Control
 
-        The **JSON Data** setting displays. If a valid JSON schema has been configured previously, the **JSON Data** setting displays the JSON. Otherwise the setting is empty.
+Follow these steps to add a column to this control using the ProcessMaker interface:
 
-        1. Click the icon![](../../../../.gitbook/assets/json-configuration-script-icon-script-task-element-process-modeler-processes.png)beside the **JSON Data** option. The **Script Config Editor** displays.  
+1. Access the **Columns** panel for this control while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Column** setting.
+2. Ensure that the **Column** list label displays. If the **JSON Data** option displays, click the **Edit as Option List** option.
+3. Click the icon![](../../../../.gitbook/assets/create-option-icon-screens-builder-processes.png)beside the **Column** label. The **Add Column** screen displays. ![](../../../../.gitbook/assets/record-list-control-add-column-screens-builder-processes.png) 
+4. In the **Column Header** setting, enter the column header label that displays in the record list. This column header represents a data component for each record in the record list.
+5. In the **Value** setting, enter the **Variable Name** setting value for the control on the second page of this ProcessMaker Screen that receives a data component for each record that corresponds with this column header. For example, use a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting value of `LineInputFirstName` to receive each person's first name for each record in the list, and then associate that `LineInputFirstName` value with a column header labeled `First Name`.
+6. Click **Save**. The column header displays in the **Column** list label. ![](../../../../.gitbook/assets/record-list-control-added-column-screens-builder-processes.png)
 
-           ![](../../../../.gitbook/assets/script-config-editor-task-element-process-modeler-processses.png)
+### Edit a Column Configuration in This Record List control
 
-        2. Enter your column headers and their respective control references in the order they are to display in the record list using JSON format. Use the scroll panel to the right of the JSON to scroll to different sections of the JSON if necessary. This is useful especially when you are editing a long JSON.
-        3. Click **Close** or the **Close** icon![](../../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The column headers and their respective control references are saved.
+Follow these steps to add a column to this control using the ProcessMaker interface:
 
-#### Design Panel Settings
+1. Access the **Columns** panel for this control while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Column** setting.
+2. Ensure that the **Column** list label displays. If the **JSON Data** option displays, click the **Edit as Option List** option.
+3. Click the![](../../../../.gitbook/assets/configure-icon-data-source-screens-builder-processes.png)icon for a column to change its settings.
+4. In the **Column Header** setting, edit the column header label that displays in the record list as necessary. This column header represents a data component for each record in the record list.
+5. In the **Value** setting, edit the **Variable Name** setting value for the control on the second page of this ProcessMaker Screen that receives a data component for each record that corresponds with this column header as necessary. For example, use a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting value of `LineInputFirstName` to receive each person's first name for each record in the list, and then associate that `LineInputFirstName` value with a column header labeled `First Name`.
+6. Click **Update**. The edited column displays below the **Column** list label.
+
+### Delete a Column from This Record List Control
+
+Follow these steps to delete a column from in this control using the ProcessMaker interface:
+
+1. Access the [**Columns** panel](record-list-control-settings.md#columns-panel-settings) for this control while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Column** setting.
+2. Ensure that the **Column** list label displays. If the **JSON Data** option displays, click the **Edit as Option List** option.
+3. Click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon for the column to be deleted from this control. A message displays to confirm deletion of the option.
+4. Click **Delete**.
+
+### Sort the Order of the Options
+
+Follow these steps to sort the order of the columns that display in this control using the ProcessMaker interface:
+
+1. Access the [**Columns** panel](record-list-control-settings.md#columns-panel-settings) for this control while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Column** setting.
+2. Ensure that the **Column** list label displays. If the **JSON Data** option displays, click the **Edit as Option List** option.
+3. Drag the![](../../../../.gitbook/assets/sort-icon-data-source-screens-builder-processes.png)icon for each column up or down to sort the order they display in this control as necessary.
+{% endtab %}
+
+{% tab title="Configure Columns Using a JSON Schema" %}
+### Add Columns to This Record List Control Using a JSON Schema
+
+Follow these steps to add a column to this control using a JSON schema:
+
+1. Access the **Columns** panel for this control while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Column** setting.
+2. Click the **Edit as JSON** option below the **Options** list label. If the **JSON Data** setting displays, skip this step.  
+   ![](../../../../.gitbook/assets/edit-as-json-screens-builder-processes.png) 
+
+   The **JSON Data** setting displays. If a valid JSON schema has been configured previously, the **JSON Data** setting displays the JSON. Otherwise the setting is empty.
+
+3. Click the icon![](../../../../.gitbook/assets/json-configuration-script-icon-script-task-element-process-modeler-processes.png)beside the **JSON Data** option. The **Script Config Editor** displays.  
+
+   ![](../../../../.gitbook/assets/script-config-editor-task-element-process-modeler-processses.png)
+
+   1. Enter your control columns in the order they are to display in this control using JSON format. Use the scroll panel to the right of the JSON to scroll to different sections of the JSON if necessary. This is useful especially when you are editing a long JSON.
+   2. Click **Close** or the **Close** icon![](../../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The control columns are saved.
+{% endtab %}
+{% endtabs %}
+
+### Design Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Design** panel:
 
-* **Text Color:** Select to specify the text color that displays in this control.
-* **Background Color:** Select to specify the background color of this control.
+* [Text Color](record-list-control-settings.md#text-color)
+* [Background Color](record-list-control-settings.md#background-color)
 
-#### Advanced Panel Settings
+#### Text Color
+
+Select the text color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
+
+#### Background Color
+
+Select the background color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
+
+### Advanced Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Advanced** panel:
 
-* **Visibility Rule:** Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+* [Visibility Rule](record-list-control-settings.md#visibility-rule)
+* [CSS Selector Name](record-list-control-settings.md#css-selector-name)
 
-### Display-Type Screen Settings
+#### Visibility Rule
 
-The Record List control has the following panels that contain settings for [Display](../types-for-screens.md#display)-type ProcessMaker Screens:
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+
+#### CSS Selector Name
+
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+
+## Display-Type Screen Settings
+
+The Record List control has the following panels that contain settings for [Display](../types-for-screens.md#display)-type [ProcessMaker Screens](../../what-is-a-form.md):
 
 * \*\*\*\*[**Variable** panel](record-list-control-settings.md#variable-panel-settings-1)
 * \*\*\*\*[**Configuration** panel](record-list-control-settings.md#configuration-panel-settings-1)
@@ -265,33 +319,32 @@ The Record List control has the following panels that contain settings for [Disp
 * \*\*\*\*[**Design** panel](record-list-control-settings.md#design-panel-settings-1)
 * \*\*\*\*[**Advanced** panel](record-list-control-settings.md#advanced-panel-settings-1)
 
-#### Variable Panel Settings
+### Variable Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Variable** panel:
 
-* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
+* [Variable Name](record-list-control-settings.md#variable-name-1)
+* [List Label](record-list-control-settings.md#list-label-1)
 
-  * Reference this control by its **Variable Name** setting's value.
-  * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ RecordListControl }}`.
-  * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+#### Variable Name
 
-  This is a required setting.
+Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. Use the **Variable Name** setting value in the following ways:
 
-#### Configuration Panel Settings
+* Reference this control by its **Variable Name** setting's value.
+* Reference this control's value in a different Screen Builder control. To do so, use mustache syntax and reference this control's **Variable Name** value in the target control. Example: `{{ RecordListControl }}`.
+* Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
+This is a required setting.
 
-Below are settings for the Record List control in the **Configuration** panel:
+#### List Label
 
-* **List Label:** Enter the text label that displays for this control. **New Record List** is the default value.
+Edit the default label that displays for this control if necessary. **New Record List** is the default value.
 
-#### Columns Panel Settings
+### Columns Panel Settings
 
 {% hint style="info" %}
-See [Display-Type Screen Usage](record-list-control-settings.md#display-type-screen-usage) for an overview how to use the **Columns** panel settings.
-
 Follow these steps before configuring columns in this Record List control:
 
 1. Save setting configurations in this Record List control if necessary.
@@ -299,60 +352,105 @@ Follow these steps before configuring columns in this Record List control:
 3. Locate each control that corresponds with each specified column header. Each of these controls received a record data component when the record list was recorded in a Request. Make note of each control's **Variable Name** setting value, as you must provide this same value when configuring each column header in this Record List control.
 {% endhint %}
 
-Follow these steps to configure the column header\(s\) that display the record list data:
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Columns** panel that is on the right-side of the Screen Builder canvas.
 
-1. Click the control while in Design mode, and then click the **Columns** panel that is on the right-side of the Screen Builder canvas.
-2. Select one of the following options:
-   * **Provide the column header\(s\) and referenced control\(s\) in the user interface:**
+See the following procedures how to configure the column header\(s\) that display the record list data and from which control\(s\) on the additional page in this [ProcessMaker Screen](../../what-is-a-form.md) to reference data components of each record for this control.
 
-     Follow these guidelines:
+{% tabs %}
+{% tab title="Configure Columns Using the ProcessMaker Interface" %}
+### Add a Column to This Record List Control
 
-     1. Click the icon![](../../../../.gitbook/assets/create-option-icon-screens-builder-processes.png)beside the **Column** label. The **Add Column** screen displays. ![](../../../../.gitbook/assets/record-list-control-add-column-screens-builder-processes.png) 
-     2. In the **Column Header** setting, enter the column header label that displays in the record list. This column header represents a data component for each record in the record list.
-     3. In the **Value** setting, enter the **Variable Name** setting value for the control on the ProcessMaker Screen that received a data component that corresponds with this column header. For example, if a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting value of `LineInputFirstName` received each person's first name for each record in the list, then associate that `LineInputFirstName` value with a column header labeled `First Name`.
-     4. Click **Save**. The column header displays below the **Column** label. ![](../../../../.gitbook/assets/record-list-control-added-column-screens-builder-processes.png) 
-     5. If necessary, click the![](../../../../.gitbook/assets/configure-icon-data-source-screens-builder-processes.png)icon for a column header to change its settings, then click the **Update** button. ![](../../../../.gitbook/assets/record-list-control-update-column-screens-builder-processes.png) 
-     6. Click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon to delete that column header and its associated control reference if necessary. Doing so displays a confirmation message to delete the column header and its associated control reference. Click **Delete**, if necessary. ![](../../../../.gitbook/assets/record-list-control-delete-column-screens-builder-processes.png) 
-     7. Drag the![](../../../../.gitbook/assets/sort-icon-data-source-screens-builder-processes.png)icon for a column header up or down to sort the order the column headers display in the record list, if necessary.
-     8. Repeat Steps 1 through 7 until all column headers and their respective control references are configured for this control.
+Follow these steps to add a column to this control using the ProcessMaker interface:
 
-   * **Provide options in JSON format:**
+1. Access the **Columns** panel for this control while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Column** setting.
+2. Ensure that the **Column** list label displays. If the **JSON Data** option displays, click the **Edit as Option List** option.
+3. Click the icon![](../../../../.gitbook/assets/create-option-icon-screens-builder-processes.png)beside the **Column** label. The **Add Column** screen displays. ![](../../../../.gitbook/assets/record-list-control-add-column-screens-builder-processes.png) 
+4. In the **Column Header** setting, enter the column header label that displays in the record list. This column header represents a data component for each record in the record list.
+5. In the **Value** setting, enter the **Variable Name** setting value for the control on the second page of this ProcessMaker Screen that receives a data component for each record that corresponds with this column header. For example, use a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting value of `LineInputFirstName` to receive each person's first name for each record in the list, and then associate that `LineInputFirstName` value with a column header labeled `First Name`.
+6. Click **Save**. The column header displays in the **Column** list label. ![](../../../../.gitbook/assets/record-list-control-added-column-screens-builder-processes.png)
 
-     Follow these guidelines:
+### Edit a Column Configuration in This Record List control
 
-     1. Click the **Edit as JSON** option.  
-        ![](../../../../.gitbook/assets/edit-as-json-screens-builder-processes.png)
+Follow these steps to add a column to this control using the ProcessMaker interface:
 
-        The **JSON Data** setting displays. If a valid JSON schema has been configured previously, the **JSON Data** setting displays the JSON. Otherwise the setting is empty.
+1. Access the **Columns** panel for this control while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Column** setting.
+2. Ensure that the **Column** list label displays. If the **JSON Data** option displays, click the **Edit as Option List** option.
+3. Click the![](../../../../.gitbook/assets/configure-icon-data-source-screens-builder-processes.png)icon for a column to change its settings.
+4. In the **Column Header** setting, edit the column header label that displays in the record list as necessary. This column header represents a data component for each record in the record list.
+5. In the **Value** setting, edit the **Variable Name** setting value for the control on the second page of this ProcessMaker Screen that receives a data component for each record that corresponds with this column header as necessary. For example, use a [Line Input](line-input-control-settings.md) control with a **Variable Name** setting value of `LineInputFirstName` to receive each person's first name for each record in the list, and then associate that `LineInputFirstName` value with a column header labeled `First Name`.
+6. Click **Update**. The edited column displays below the **Column** list label.
 
-        1. Click the icon![](../../../../.gitbook/assets/json-configuration-script-icon-script-task-element-process-modeler-processes.png)beside the **JSON Data** option. The **Script Config Editor** displays.  
+### Delete a Column from This Record List Control
 
-           ![](../../../../.gitbook/assets/script-config-editor-task-element-process-modeler-processses.png)
+Follow these steps to delete a column from in this control using the ProcessMaker interface:
 
-        2. Enter your column headers and their respective control references in the order they are to display in the record list using JSON format. Use the scroll panel to the right of the JSON to scroll to different sections of the JSON if necessary. This is useful especially when you are editing a long JSON.
-        3. Click **Close** or the **Close** icon![](../../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The column headers and their respective control references are saved.
+1. Access the [**Columns** panel](record-list-control-settings.md#columns-panel-settings) for this control while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Column** setting.
+2. Ensure that the **Column** list label displays. If the **JSON Data** option displays, click the **Edit as Option List** option.
+3. Click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon for the column to be deleted from this control. A message displays to confirm deletion of the option.
+4. Click **Delete**.
 
-#### Design Panel Settings
+### Sort the Order of the Options
+
+Follow these steps to sort the order of the columns that display in this control using the ProcessMaker interface:
+
+1. Access the [**Columns** panel](record-list-control-settings.md#columns-panel-settings) for this control while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Column** setting.
+2. Ensure that the **Column** list label displays. If the **JSON Data** option displays, click the **Edit as Option List** option.
+3. Drag the![](../../../../.gitbook/assets/sort-icon-data-source-screens-builder-processes.png)icon for each column up or down to sort the order they display in this control as necessary.
+{% endtab %}
+
+{% tab title="Configure Columns Using a JSON Schema" %}
+### Add Columns to This Record List Control Using a JSON Schema
+
+Follow these steps to add a column to this control using a JSON schema:
+
+1. Access the **Columns** panel for this control while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Column** setting.
+2. Click the **Edit as JSON** option below the **Options** list label. If the **JSON Data** setting displays, skip this step.  
+   ![](../../../../.gitbook/assets/edit-as-json-screens-builder-processes.png) 
+
+   The **JSON Data** setting displays. If a valid JSON schema has been configured previously, the **JSON Data** setting displays the JSON. Otherwise the setting is empty.
+
+3. Click the icon![](../../../../.gitbook/assets/json-configuration-script-icon-script-task-element-process-modeler-processes.png)beside the **JSON Data** option. The **Script Config Editor** displays.  
+
+   ![](../../../../.gitbook/assets/script-config-editor-task-element-process-modeler-processses.png)
+
+   1. Enter your control columns in the order they are to display in this control using JSON format. Use the scroll panel to the right of the JSON to scroll to different sections of the JSON if necessary. This is useful especially when you are editing a long JSON.
+   2. Click **Close** or the **Close** icon![](../../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The control columns are saved.
+{% endtab %}
+{% endtabs %}
+
+### Design Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Design** panel:
 
-* **Text Color:** Select to specify the text color that displays in this control.
-* **Background Color:** Select to specify the background color of this control.
+* [Text Color](record-list-control-settings.md#text-color-1)
+* [Background Color](record-list-control-settings.md#background-color-1)
 
-#### Advanced Panel Settings
+#### Text Color
+
+Select the text color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
+
+#### Background Color
+
+Select the background color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
+
+### Advanced Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screen Builder canvas.
 
 Below are settings for the Record List control in the **Advanced** panel:
 
-* **Visibility Rule:** Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+* [Visibility Rule](record-list-control-settings.md#visibility-rule-1)
+* [CSS Selector Name](record-list-control-settings.md#css-selector-name-1)
 
-{% hint style="info" %}
-Do you need to export this ProcessMaker Screen? Click the **Export Screen** button![](../../../../.gitbook/assets/export-screen-button-screens-builder-processes.png). See [Export a Screen](../../manage-forms/export-a-screen.md#overview) for more information.
-{% endhint %}
+#### Visibility Rule
+
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+
+#### CSS Selector Name
+
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics <a id="related-topics"></a>
 

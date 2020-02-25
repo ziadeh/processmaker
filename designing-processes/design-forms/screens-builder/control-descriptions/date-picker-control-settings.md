@@ -148,9 +148,16 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Date Picker control in the **Configuration** panel:
 
-* **Label:** Enter the text label that displays for this control. **New Date Picker** is the default value.
-* **Placeholder Text:** Enter the placeholder text that displays in this control when no value has been provided. This setting has no default value.
-* **Helper Text:** Enter text that provides additional guidance on this control's use. This setting has no default value.
+* [Placeholder Text](date-picker-control-settings.md#placeholder-text)
+* [Helper Text](date-picker-control-settings.md#helper-text)
+
+#### Placeholder Text
+
+Enter the placeholder text that displays in this control when no value has been provided. This setting has no default value.
+
+#### Helper Text
+
+Enter text that provides additional guidance on this control's use. This setting has no default value.
 
 ### Design Panel Settings
 
@@ -158,8 +165,16 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Date Picker control in the **Design** panel:
 
-* **Text Color:** Select to specify the text color that displays in this control.
-* **Background Color:** Select to specify the background color of this control.
+* [Text Color](date-picker-control-settings.md#text-color)
+* [Background Color](date-picker-control-settings.md#background-color)
+
+#### Text Color
+
+Select the text color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
+
+#### Background Color
+
+Select the background color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
 
 ### Advanced Panel Settings
 
@@ -167,12 +182,21 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Date Picker control in the **Advanced** panel:
 
-* **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+* [Default Value](date-picker-control-settings.md#default-value)
+* [Visibility Rule](date-picker-control-settings.md#visibility-rule)
+* [CSS Selector Name](date-picker-control-settings.md#css-selector-name)
 
-{% hint style="info" %}
-Do you need to export this ProcessMaker Screen? Click the **Export Screen** button![](../../../../.gitbook/assets/export-screen-button-screens-builder-processes.png). See [Export a Screen](../../manage-forms/export-a-screen.md#overview) for more information.
-{% endhint %}
+#### Default Value
+
+Enter the default value this control displays. If the **Default Value** setting has no value, then this control does not display a value when the ProcessMaker Screen displays. When the ProcessMaker Screen submits, the Request uses this control's default value unless the Request participant changed it.
+
+#### Visibility Rule
+
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+
+#### CSS Selector Name
+
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics <a id="related-topics"></a>
 

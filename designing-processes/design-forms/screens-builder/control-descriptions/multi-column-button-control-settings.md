@@ -64,27 +64,31 @@ The Multicolumn / Table control has the following panels that contain settings:
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
-Below are settings for the Multicolumn / Table control in the **Configuration** panel:
+Below is the setting for the Multicolumn / Table control in the **Configuration** panel:
 
-* **Column Width:** Specify the column width for each column in the control. Add each column and its width specification in the order they are to display from left to right in the control. Specify the width of each column in `colspan` [HTML attribute](https://www.w3schools.com/tags/att_colspan.asp) settings. The total of all `colspan` attribute settings must be divisible by 12. The control contains two columns of six \(6\) `colspan` HTML attribute setting each by default.
+* [Column Width](multi-column-button-control-settings.md#column-width)
 
-  Use the **Show in Json Format** toggle to display these settings in JSON.  
-  ![](../../../../.gitbook/assets/column-width-colspan-multi-control-screens-builder-processes.png) 
+#### Column Width
 
-  Each option has the following settings:
+Specify the column width for each column in the control. Add each column and its width specification in the order they are to display from left to right in the control. Specify the width of each column in `colspan` [HTML attribute](https://www.w3schools.com/tags/att_colspan.asp) settings. The total of all `colspan` attribute settings must be divisible by 12. The control contains two columns of six \(6\) `colspan` HTML attribute setting each by default.
 
-  * **Column:** **Column** is the internal designation for the column that only the form designer views at design time.
-  * **Colspan:** **Colspan** is the width of the column in `colspan` HTML attribute settings.
-  * **Remove:** Click the Remove![](../../../../.gitbook/assets/options-list-delete-option-icon-screens-builder-processes.png)icon to remove the column.
+Use the **Show in Json Format** toggle to display these settings in JSON.  
+![](../../../../.gitbook/assets/column-width-colspan-multi-control-screens-builder-processes.png) 
 
-  Follow these steps to add a column and specify its width: 
+Each option has the following settings:
 
-  1. Click **Add Column** from below the **Column Width** setting. The **Add New Column** screen displays.   
+* **Column:** **Column** is the internal designation for the column that only the form designer views at design time.
+* **Colspan:** **Colspan** is the width of the column in `colspan` HTML attribute settings.
+* **Remove:** Click the Remove![](../../../../.gitbook/assets/options-list-delete-option-icon-screens-builder-processes.png)icon to remove the column.
 
-     ![](../../../../.gitbook/assets/add-column-multi-control-screens-builder-processes.png)
+Follow these steps to add a column and specify its width: 
 
-  2. In the **Column Width** setting, enter the width of the column \(as described above\).
-  3. Click **OK**. The column displays below the existing columns in **Column Width**.
+1. Click **Add Column** from below the **Column Width** setting. The **Add New Column** screen displays.   
+
+   ![](../../../../.gitbook/assets/add-column-multi-control-screens-builder-processes.png)
+
+2. In the **Column Width** setting, enter the width of the column \(as described above\).
+3. Click **OK**. The column displays below the existing columns in **Column Width**.
 
 ### Design Panel Settings
 
@@ -92,8 +96,16 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Multicolumn / Table control in the **Design** panel:
 
-* **Text Color:** Select to specify the text color that displays in this control.
-* **Background Color:** Select to specify the background color of this control.
+* [Text Color](multi-column-button-control-settings.md#text-color)
+* [Background Color](multi-column-button-control-settings.md#background-color)
+
+#### Text Color
+
+Select the text color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
+
+#### Background Color
+
+Select the background color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
 
 ### Advanced Panel Settings
 
@@ -101,12 +113,16 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Multicolumn / Table control in the **Advanced** panel:
 
-* **Visibility Rule:** Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+* [Visibility Rule](multi-column-button-control-settings.md#visibility-rule)
+* [CSS Selector Name](multi-column-button-control-settings.md#css-selector-name)
 
-{% hint style="info" %}
-Do you need to export this ProcessMaker Screen? Click the **Export Screen** button![](../../../../.gitbook/assets/export-screen-button-screens-builder-processes.png). See [Export a Screen](../../manage-forms/export-a-screen.md#overview) for more information.
-{% endhint %}
+#### Visibility Rule
+
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+
+#### CSS Selector Name
+
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics <a id="related-topics"></a>
 
