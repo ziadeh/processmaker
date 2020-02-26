@@ -67,7 +67,7 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 This topic is updated for ProcessMaker version 4.0.1. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder-1).
 {% endhint %}
 
-The Navigation Button control has the following panels that contain settings:
+The Page Navigation control has the following panels that contain settings:
 
 * \*\*\*\*[**Variable** panel](page-navigation-button-control-settings.md#variable-panel-settings)
 * \*\*\*\*[**Configuration** panel](page-navigation-button-control-settings.md#configuration-panel-settings)
@@ -78,7 +78,7 @@ The Navigation Button control has the following panels that contain settings:
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screen Builder canvas.
 
-Below is the setting for the Navigation Button control in the **Variable** panel:
+Below is the setting for the Page Navigation control in the **Variable** panel:
 
 * [Button Label](page-navigation-button-control-settings.md#button-label)
 
@@ -90,7 +90,7 @@ Enter the text label that displays for this control. **Page Navigation** is the 
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
-Below is the setting for the Navigation Button control in the **Configuration** panel:
+Below is the setting for the Page Navigation control in the **Configuration** panel:
 
 * [Destination Screen](page-navigation-button-control-settings.md#destination-screen)
 
@@ -102,13 +102,13 @@ Select the destination page to which to navigate in a multi-page [ProcessMaker S
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screen Builder canvas.
 
-Below is the setting for the Navigation Button control in the **Design** panel:
+Below is the setting for the Page Navigation control in the **Design** panel:
 
 * [Button Variant Style](page-navigation-button-control-settings.md#button-variant-style)
 
 #### Button Variant Style
 
-Select the style for the Page Navigation Button control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
+Select the style for the Page Navigation control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
 
 * **Primary:** Blue-colored background with white-colored **Button Label** text. This is the default option.
 * **Secondary:** Gray-colored background with white-colored **Button Label** text.
@@ -124,7 +124,7 @@ Select the style for the Page Navigation Button control. The style changes the c
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screen Builder canvas.
 
-Below are settings for the Navigation Button control in the **Advanced** panel:
+Below are settings for the Page Navigation control in the **Advanced** panel:
 
 * [Visibility Rule](page-navigation-button-control-settings.md#visibility-rule)
 * [CSS Selector Name](page-navigation-button-control-settings.md#css-selector-name)

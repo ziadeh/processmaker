@@ -78,38 +78,49 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Submit Button control in the **Variable** panel:
 
-* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
-  * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Submit Button control's **Variable Name** value. In the example below, `SubmitButtonControl` is the **Variable Name** setting's value when the button is clicked. ![](../../../../.gitbook/assets/submit-preview-screens-builder-processes.png) 
-  * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ SubmitButtonControl }}`.
-  * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+* [Variable Name](submit-button-control-settings.md#variable-name)
+* [Label](submit-button-control-settings.md#label)
+* [Value](submit-button-control-settings.md#value)
 
-    This is a required setting.
-* **Value:** Enter any alphanumeric value that represents data when the Request participant selects the Submit Button control. This value can be evaluated in a [**Visibility Rule** setting expression](expression-syntax-components-for-show-if-control-settings.md) or in a [Sequence Flow element's conditions to trigger](../../../process-design/model-your-process/the-quick-toolbar.md#configure-an-outgoing-sequence-flow-element-from-an-exclusive-gateway-or-inclusive-gateway-element).
+#### Variable Name
 
-### Configuration Panel Settings
+Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. Use the **Variable Name** setting value in the following ways:
 
-Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
+* Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Submit Button control's **Variable Name** value. In the example below, `SubmitButtonControl` is the **Variable Name** setting's value when the button is clicked. ![](../../../../.gitbook/assets/submit-preview-screens-builder-processes.png) 
+* Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ SubmitButtonControl }}`.
+* Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
-Below are settings for the Submit Button control in the **Configuration** panel:
+This is a required setting.
 
-* **Label:** Enter the text label that displays for this control. **New Submit** is the default value.
+#### Label
+
+Edit the default label that displays for this control if necessary. **New Submit** is the default value.
+
+#### Value
+
+Enter any alphanumeric value that represents data when the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant selects the Submit Button control. This value can be evaluated in a [**Visibility Rule** setting expression](expression-syntax-components-for-show-if-control-settings.md) or in a [Sequence Flow element's condition\(s\) to trigger](../../../process-design/model-your-process/the-quick-toolbar.md#configure-an-outgoing-sequence-flow-element-from-an-exclusive-gateway-or-inclusive-gateway-element).
 
 ### Design Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screen Builder canvas.
 
-Below are settings for the Submit Button control in the **Design** panel:
+Below is the setting for the Submit Button control in the **Design** panel:
 
-* **Button Variant Style:** Select the style for the Submit control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
-  * **Primary:** Blue-colored background with white-colored **Label** text. This is the default option.
-  * **Secondary:** Gray-colored background with white-colored **Label** text.
-  * **Success:** Green-colored background with white-colored **Label** text.
-  * **Danger:** Red-colored background with white-colored **Label** text.
-  * **Warning:** Yellow-colored background with black-colored **Label** text.
-  * **Info:** Teal-colored background with white-colored **Label** text.
-  * **Light:** White-colored background with black-colored **Label** text.
-  * **Dark:** Black-colored background with white-colored **Label** text.
-  * **Link:** White-colored background with blue-colored **Label** text.
+* [Button Variant Style](submit-button-control-settings.md#button-variant-style)
+
+#### Button Variant Style
+
+Select the style for the Submit Button control. The style changes the control's appearance but otherwise has no functional difference. Select from the following options:
+
+* **Primary:** Blue-colored background with white-colored **Label** text. This is the default option.
+* **Secondary:** Gray-colored background with white-colored **Label** text.
+* **Success:** Green-colored background with white-colored **Label** text.
+* **Danger:** Red-colored background with white-colored **Label** text.
+* **Warning:** Yellow-colored background with black-colored **Label** text.
+* **Info:** Teal-colored background with white-colored **Label** text.
+* **Light:** White-colored background with black-colored **Label** text.
+* **Dark:** Black-colored background with white-colored **Label** text.
+* **Link:** White-colored background with blue-colored **Label** text.
 
 ### Advanced Panel Settings
 
@@ -117,12 +128,16 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Submit Button control in the **Advanced** panel:
 
-* **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+* [Visibility Rule](submit-button-control-settings.md#visibility-rule)
+* [CSS Selector Name](submit-button-control-settings.md#css-selector-name)
 
-{% hint style="info" %}
-Do you need to export this ProcessMaker Screen? Click the **Export Screen** button![](../../../../.gitbook/assets/export-screen-button-screens-builder-processes.png). See [Export a Screen](../../manage-forms/export-a-screen.md#overview) for more information.
-{% endhint %}
+#### Visibility Rule
+
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+
+#### CSS Selector Name
+
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics <a id="related-topics"></a>
 

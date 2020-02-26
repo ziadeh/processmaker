@@ -73,10 +73,26 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Image control in the **Configuration** panel:
 
-* **Name:** Enter the alphanumeric name that identifies the image in the ProcessMaker Screen.
-* **Upload Image:** Click the **Upload** button to browse for the PNG, GIF, or JPG file type image to upload to the Image control.
-* **Preview:** This setting displays a preview of the uploaded image.
-* **Helper Text:** Enter text that provides additional guidance on this control's use. This setting has no default value.
+* [Name](image-control-settings.md#name)
+* [Upload](image-control-settings.md#upload)
+* [Preview](image-control-settings.md#preview)
+* [Helper Text](image-control-settings.md#helper-text)
+
+#### Name
+
+Enter the alphanumeric name that identifies the image in this [ProcessMaker Screen](../../what-is-a-form.md).
+
+#### Upload
+
+Click the **Upload** button to browse for the PNG, GIF, or JPG file type image to upload to the Image control.
+
+#### Preview
+
+Preview the uploaded image.
+
+#### Helper Text
+
+Enter text that provides additional guidance on this control's use. This setting has no default value.
 
 ### Design Panel Settings
 
@@ -84,8 +100,16 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Image control in the **Design** panel:
 
-* **Height:** Enter the height of the uploaded image in pixels. If the **Width** setting has no value, the Image control adjusts the uploaded image to the **Height** setting value.
-* **Width:** Enter the width of the uploaded image in pixels. If the **Height** setting has no value, the Image control adjusts the uploaded image to the **Width** setting value.
+* [Height](image-control-settings.md#height)
+* [Width](image-control-settings.md#width)
+
+#### Height
+
+Enter the height of the uploaded image in pixels. If the [**Width**](image-control-settings.md#width) setting has no value, the Image control adjusts the uploaded image to the **Height** setting value.
+
+#### Width
+
+Enter the width of the uploaded image in pixels. If the [**Height**](image-control-settings.md#height) setting has no value, the Image control adjusts the uploaded image to the **Width** setting value.
 
 ### Advanced Panel Settings
 
@@ -93,12 +117,16 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Image control in the **Advanced** panel:
 
-* **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+* [Visibility Rule](image-control-settings.md#visibility-rule)
+* [CSS Selector Name](image-control-settings.md#css-selector-name)
 
-{% hint style="info" %}
-Do you need to export this ProcessMaker Screen? Click the **Export Screen** button![](../../../../.gitbook/assets/export-screen-button-screens-builder-processes.png). See [Export a Screen](../../manage-forms/export-a-screen.md#overview) for more information.
-{% endhint %}
+#### Visibility Rule
+
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+
+#### CSS Selector Name
+
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics <a id="related-topics"></a>
 

@@ -78,23 +78,34 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the File Upload control in the **Variable** panel:
 
-* **Variable Name:** Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
+* [Variable Name](file-upload-control-settings.md#variable-name)
+* [Label](file-upload-control-settings.md#label)
 
-  * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds with the File Upload control's entered datetime with that Image control's **Variable Name** value. In the example below, `FileUploadControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/date-control-preview-screens-builder-processes.png) 
-  * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ FileUploadControl }}`.
-  * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+#### Variable Name
 
-  This is a required setting.
+Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. Use the **Variable Name** setting value in the following ways:
 
-* **Validation Rules:** Enter the validation rules the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+* Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds with the File Upload control's entered datetime with that Image control's **Variable Name** value. In the example below, `FileUploadControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/date-control-preview-screens-builder-processes.png) 
+* Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ FileUploadControl }}`.
+* Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+
+This is a required setting.
+
+#### Label
+
+Edit the default label that displays for this control if necessary. **New File Upload** is the default value.
 
 ### Configuration Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
-Below are settings for the File Upload control in the **Configuration** panel:
+Below is the setting for the File Upload control in the **Configuration** panel:
 
-* **Label:** Enter the text label text that displays. **New File Upload** is the default value.
+* [File Accepted](file-upload-control-settings.md#file-accepted)
+
+#### File Accepted
+
+Enter the file type\(s\) this control accepts to upload by referencing its [MIME type](https://en.wikipedia.org/wiki/Media_type#Common_examples). Separate multiple file types with commas \(`,`\). One space after each comma is acceptable. Example: `application/msword, image/gif, image/jpeg, application/pdf, application/vnd.ms-powerpoint, application/vnd.ms-excel, text/plain`
 
 ### Advanced Panel Settings
 
@@ -102,12 +113,16 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the File Upload control in the **Advanced** panel:
 
-* **Visibility Rule:** Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
-* **CSS Selector Name:** Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+* [Visibility Rule](file-upload-control-settings.md#visibility-rule)
+* [CSS Selector Name](file-upload-control-settings.md#css-selector-name)
 
-{% hint style="info" %}
-Do you need to export this ProcessMaker Screen? Click the **Export Screen** button![](../../../../.gitbook/assets/export-screen-button-screens-builder-processes.png). See [Export a Screen](../../manage-forms/export-a-screen.md#overview) for more information.
-{% endhint %}
+#### Visibility Rule
+
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+
+#### CSS Selector Name
+
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
 
 ## Related Topics <a id="related-topics"></a>
 
