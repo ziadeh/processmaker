@@ -89,6 +89,19 @@ To configure another control in that ProcessMaker Screen to remain hidden if the
 | contains | `in` |
 | does not contain | `not in` |
 
+{% hint style="info" %}
+Consider the following example common for [Select List](select-list-control-settings.md#control-description) controls configured to allow multiple selections. Suppose a Select List control with a **Variable Name** setting of `SelectListControl` has the following options:
+
+* Beatty
+* Fred
+* Nancy
+* Tom
+
+To configure another control in that ProcessMaker Screen to remain hidden if the `Fred` option is not among the selections, use the following expression in the **Visibility Rule** setting for the control that is to remain hidden:
+
+`not("Fred" in SelectListControl)`
+{% endhint %}
+
 ### Range
 
 | Component | Syntax | Example |
@@ -102,10 +115,6 @@ To configure another control in that ProcessMaker Screen to remain hidden if the
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
-
-{% page-ref page="processmaker-collection-controls/collection-select-control-settings.md" %}
-
-{% page-ref page="processmaker-collection-controls/collection-record-control-settings.md" %}
 
 {% page-ref page="rich-text-control-settings.md" %}
 

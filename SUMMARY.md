@@ -133,6 +133,7 @@
       * [Date Picker Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/date-picker-control-settings.md)
       * [Page Navigation Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/page-navigation-button-control-settings.md)
       * [Multicolumn / Table Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/multi-column-button-control-settings.md)
+      * [Loop Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/loop-control-settings.md)
       * [Record List Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/record-list-control-settings.md)
       * [Image Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/image-control-settings.md)
       * [Submit Button Control Settings](designing-processes/design-forms/screens-builder/control-descriptions/submit-button-control-settings.md)

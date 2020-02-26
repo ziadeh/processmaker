@@ -99,7 +99,7 @@ Need to search for a notification? See [Search for a Notification](notifications
 
 Search for any notification displaying in the **Unread Notifications** or **All Notifications** pages.
 
-To search for a notification, select the **Search** field and then enter text to filter notifications using any of the following criteria:
+To search for a notification, select the **Search** setting and then enter text to filter notifications using any of the following criteria:
 
 * **User:** Search for the user associated with the notification.
 * **Subject:** Search by the subject of the notification.
