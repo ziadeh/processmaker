@@ -190,7 +190,7 @@ Follow these steps to add an option that displays in this control using the Proc
 2. From the **Data Source** drop-down menu, select **Provide Values**. This is the default setting.
 3. Ensure that the **Options** list label displays. If the **JSON Data** option displays, click the **Edit as Option List** option.
 4. Click the icon![](../../../../.gitbook/assets/create-option-icon-screens-builder-processes.png)beside the **Options** list label. The **Add Option** screen displays. ![](../../../../.gitbook/assets/data-source-options-screens-builder-processes.png) 
-5. In the **Value** setting, enter a value to represent the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
+5. In the **Value** setting, enter a value to represent the option in the [Request](../../../../using-processmaker/requests/what-is-a-request.md) data. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
 6. In the **Content** setting, enter the option that displays in this control.
 7. Click **Save**. The option displays below the **Options** list label. ![](../../../../.gitbook/assets/options-list-screens-builder-processes.png) 
 
