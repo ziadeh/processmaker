@@ -105,9 +105,13 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below are settings for the Select List control in the **Variable** panel:
 
+* [Variable Name](select-list-control-settings.md#variable-name)
+* [Label](select-list-control-settings.md#label)
+* [Validation Rules](select-list-control-settings.md#validation-rules)
+
 #### Variable Name
 
-Enter a unique name containing at least one letter that represents this control's value. Use the **Variable Name** value in the following ways:
+Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. Use the **Variable Name** setting value in the following ways:
 
 * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the option\(s\) the Request participant selects in the Select List control with that Select List control's **Variable Name** value. The **Variable Name** setting contains the selected option\(s\) as an array. In the example below, `SelectListControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/select-list-control-variable-name-preview-screens-builder-processes.png) 
 * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ SelectListControl }}`.
@@ -117,7 +121,7 @@ This is a required setting.
 
 #### Label
 
-Edit the default label that displays for this control if necessary. This is a required setting.
+Edit the default label that displays for this control if necessary. **New Select List** is the default value.
 
 #### Validation Rules
 
@@ -166,9 +170,11 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 From the **Data Source** panel, select one of the following methods to specify options that display in the Select List control:
 
-* [Provide options](select-list-control-settings.md#provide-options): For each option, enter a unique value that represents the option, and then enter the text that displays as the option. After your options are configured, sort the order in which they are to display in this control. Alternatively, provide options in this control in JSON format.
+* [Provide options](select-list-control-settings.md#provide-options): Enter a unique value that represents each option, and then enter the text that displays as the option. After your options are configured, sort the order in which they are to display in this control. Alternatively, provide options in this control in JSON format.
 * [Request data](select-list-control-settings.md#reference-request-data): Reference data from the in-progress Request as options in this control. This data object must be part of the Request's JSON data model. During the in-progress Request, the Select List control references a specified data array and object in the Request's JSON data model to display its values as options in that control. The order that data objects are in the Request's JSON data model determines the order these options display in the control; options cannot be manually reordered.
-* [Data Connector](select-list-control-settings.md#reference-a-data-connector): Reference the data from a ProcessMaker Data Connector's [Endpoint](../../../data-connector-management/what-is-a-data-connector.md#what-is-an-endpoint) as options in this control. These Endpoints a [ProcessMaker Data Connector](../../../data-connector-management/what-is-a-data-connector.md) references may be API endpoints, ProcessMaker Collection records, or other data source endpoints. During the in-progress Request, when the Select List control references data from the ProcessMaker Data Connector, the control maps the ProcessMaker Data Connector data to a specified JSON data array, variable or key name, or data object to become part of that Request's data. Data maps to the JSON data array in the same order it is retrieved from the ProcessMaker Data Connector. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data objects return from the ProcessMaker Data Connector determines the order these options display in the control; options cannot be manually reordered.
+* [ProcessMaker Data Connector](select-list-control-settings.md#reference-a-data-connector): Reference the data from a ProcessMaker Data Connector's [Endpoint](../../../data-connector-management/what-is-a-data-connector.md#what-is-an-endpoint) as options in this control. Note that the [ProcessMaker Data Connector](../../../../package-development-distribution/package-a-connector/data-connector-package.md) package must be installed to your ProcessMaker instance for this option to be available.
+
+  These Endpoints a [ProcessMaker Data Connector](../../../data-connector-management/what-is-a-data-connector.md) references may be API endpoints, ProcessMaker Collection records, or other data source endpoints. During the in-progress Request, when the Select List control references data from the ProcessMaker Data Connector, the control maps the ProcessMaker Data Connector data to a specified JSON data array, variable or key name, or data object to become part of that Request's data. Data maps to the JSON data array in the same order it is retrieved from the ProcessMaker Data Connector. Optionally, use a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md) expression to limit which data to use as options based on the PMQL expression's criteria. The order that data objects return from the ProcessMaker Data Connector determines the order these options display in the control; options cannot be manually reordered.
 
 #### Provide Options
 
@@ -176,49 +182,65 @@ See the following procedures how to provide options for a Select List control.
 
 {% tabs %}
 {% tab title="Provide Options Using the ProcessMaker Interface" %}
-### Add an Option
+### Add an Option to This Select List Control
 
 Follow these steps to add an option that displays in this control using the ProcessMaker interface:
 
 1. Access the [**Data Source** panel for this control](select-list-control-settings.md#data-source-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Data Source** setting.
 2. From the **Data Source** drop-down menu, select **Provide Values**. This is the default setting.
-3. Click the icon![](../../../../.gitbook/assets/create-option-icon-screens-builder-processes.png)beside the **Options** list label. The **Add Option** screen displays. ![](../../../../.gitbook/assets/data-source-options-screens-builder-processes.png) 
-4. In the **Value** setting, enter a value to represent the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
-5. In the **Content** setting, enter the option that displays in this control.
-6. Click **Save**. The option displays below the **Options** list label. ![](../../../../.gitbook/assets/options-list-screens-builder-processes.png) 
+3. Ensure that the **Options** list label displays. If the **JSON Data** option displays, click the **Edit as Option List** option.
+4. Click the icon![](../../../../.gitbook/assets/create-option-icon-screens-builder-processes.png)beside the **Options** list label. The **Add Option** screen displays. ![](../../../../.gitbook/assets/data-source-options-screens-builder-processes.png) 
+5. In the **Value** setting, enter a value to represent the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
+6. In the **Content** setting, enter the option that displays in this control.
+7. Click **Save**. The option displays below the **Options** list label. ![](../../../../.gitbook/assets/options-list-screens-builder-processes.png) 
 
-### Edit an Option
+### Edit an Option for This Select List Control
 
 Follow these steps to edit an option that displays in this control using the ProcessMaker interface:
 
 1. Access the [**Data Source** panel for this control](select-list-control-settings.md#data-source-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then ensure that the **Data Source** setting uses the **Provide Values** option.
-2. Click the![](../../../../.gitbook/assets/configure-icon-data-source-screens-builder-processes.png)icon for an option to edit its settings. The **Edit Option** screen displays.
-3. In the **Value** setting, edit the value to represent the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
-4. In the **Content** setting, edit the option that displays in this control.
-5. Click **Update**. The edited option displays below the **Options** list label.
+2. Ensure that the **Options** list label displays.
+3. Click the![](../../../../.gitbook/assets/configure-icon-data-source-screens-builder-processes.png)icon for an option to edit its settings. The **Edit Option** screen displays.
+4. In the **Value** setting, edit the value to represent the option in the JSON data model during in-progress Requests for Processes that use this ProcessMaker Screen as necessary. This value must be unique from other values in this control. If the value is not unique to other **Value** settings in this control, the following message displays: **An item with the same key already exists**.
+5. In the **Content** setting, edit the option that displays in this control as necessary.
+6. Click **Update**. The edited option displays below the **Options** list label.
 
-### Delete an Option
+### Delete an Option from This Select List Control
 
 Follow these steps to delete an option from in this control using the ProcessMaker interface:
 
 1. Access the [**Data Source** panel for this control](select-list-control-settings.md#data-source-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then ensure that the **Data Source** setting uses the **Provide Values** option.
-2. Click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon for the option to be deleted from this control. A message displays to confirm deletion of the validation rule.
-3. Click **Delete**.
+2. Ensure that the **Options** list label displays.
+3. Click the![](../../../../.gitbook/assets/delete-icon-data-source-screens-builder-processes.png)icon for the option to be deleted from this control. A message displays to confirm deletion of the option.
+4. Click **Delete**.
 
 ### Sort the Order of the Options
 
 Follow these steps to sort the order of the options that display in this control using the ProcessMaker interface:
 
 1. Access the [**Data Source** panel for this control](select-list-control-settings.md#data-source-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then ensure that the **Data Source** setting uses the **Provide Values** option.
-2. Drag the![](../../../../.gitbook/assets/sort-icon-data-source-screens-builder-processes.png)icon for each option up or down to sort the order they display in this control as necessary.
+2. Ensure that the **Options** list label displays.
+3. Drag the![](../../../../.gitbook/assets/sort-icon-data-source-screens-builder-processes.png)icon for each option up or down to sort the order they display in this control as necessary.
+
+### Set to Allow Multiple Selections and How Options Display
+
+Follow these steps to set whether multiple selections can be selected from this control and how the options display:
+
+1. Access the [**Data Source** panel for this control](select-list-control-settings.md#data-source-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then ensure that the **Data Source** setting uses the **Provide Values** option.
+2. Click the **Allow multiple selections** setting to allow multiple options be selected from this control. Otherwise, only one option can be selected.
+3. From the **Render Options As** drop-down menu, select one of the following options:
+   * **Dropdown/Multiselect:** Select the **Dropdown/Multiselect** option to display the control as a drop-down menu.
+   * **Radio/Checkbox Group:** Select the **Radio/Checkbox Group** option to display the control as a group of checkboxes.
 {% endtab %}
 
 {% tab title="Provide Options Using a JSON Schema" %}
+### Provide Options Using a JSON Schema to This Select List Control
+
 Follow these steps to provide options that display in this control using a JSON schema:
 
 1. Access the [**Data Source** panel for this control](select-list-control-settings.md#data-source-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Data Source** setting.
 2. From the **Data Source** drop-down menu, select **Provide Values**. This is the default setting.
-3. Click the **Edit as JSON** option below the **Options** list label.  
+3. Click the **Edit as JSON** option below the **Options** list label. If the **JSON Data** setting displays, skip this step.  
    ![](../../../../.gitbook/assets/edit-as-json-screens-builder-processes.png) 
 
    The **JSON Data** setting displays. If a valid JSON schema has been configured previously, the **JSON Data** setting displays the JSON. Otherwise the setting is empty.
@@ -229,13 +251,13 @@ Follow these steps to provide options that display in this control using a JSON 
 
 5. Enter your control options in the order they are to display in this control using JSON format. Use the scroll panel to the right of the JSON to scroll to different sections of the JSON if necessary. This is useful especially when you are editing a long JSON.
 6. Click **Close** or the **Close** icon![](../../../../.gitbook/assets/close-script-config-editor-script-task-element-process-modeler-processes.png). The control options are saved.
-{% endtab %}
 
-{% tab title="Set How Options Display" %}
+### Set to Allow Multiple Selections and How Options Display
+
 Follow these steps to set whether multiple selections can be selected from this control and how the options display:
 
 1. Access the [**Data Source** panel for this control](select-list-control-settings.md#data-source-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then ensure that the **Data Source** setting uses the **Provide Values** option.
-2. Click the **Allow multiple selections** setting to allow multiple options be selected from this control. If this setting is not enabled, only one option can be selected.
+2. Click the **Allow multiple selections** setting to allow multiple options be selected from this control. Otherwise, only one option can be selected.
 3. From the **Render Options As** drop-down menu, select one of the following options:
    * **Dropdown/Multiselect:** Select the **Dropdown/Multiselect** option to display the control as a drop-down menu.
    * **Radio/Checkbox Group:** Select the **Radio/Checkbox Group** option to display the control as a group of checkboxes.
@@ -252,11 +274,11 @@ Follow these steps to reference data from the in-progress Request as options in 
 4. From the **Render Options As** drop-down menu, select one of the following options:
    * **Dropdown/Multiselect:** Select the **Dropdown/Multiselect** option to display the control as a drop-down menu.
    * **Radio/Checkbox Group:** Select the **Radio/Checkbox Group** option to display the control as a group of checkboxes.
-5. In the **Element Name** setting, enter the name of the JSON data array within the Request data from which to reference its objects as options that display in this control. **response** is the default value.
-6. In the **Value** setting, enter the key name within the JSON data array specified in the **Element Name** setting to reference its objects as options that display in this control. **value** is the default value.
-7. In the **Content** setting, enter the data object name that display as options in this control. **content** is the default value.
+5. In the **Element Name** setting, enter the name of the JSON data array within the Request data from which to reference its objects as options that display in this control. Use JSON dot notation as necessary. **response** is the default value. Example: `data.response`
+6. In the **Value** setting, enter the JSON key name from within the JSON data array selected from the  **Element Name** setting to reference its objects as options that display in this control. Use JSON dot notation as necessary. **value** is the default value. Example: `data.response.value`
+7. In the **Content** setting, enter the JSON object name that corresponds with the JSON key name selected from the **Value** setting's JSON key name to display its content as options in this control. Use JSON dot notation as necessary. **content** is the default value. Example: `data.response.value.content`
 
-#### Reference a Data Connector
+#### Reference a ProcessMaker Data Connector
 
 Follow these steps to reference data from a [ProcessMaker Data Connector](../../../data-connector-management/what-is-a-data-connector.md) as options in this control:
 
@@ -268,9 +290,9 @@ Follow these steps to reference data from a [ProcessMaker Data Connector](../../
    * **Radio/Checkbox Group:** Select the **Radio/Checkbox Group** option to display the control as a group of checkboxes.
 5. From the **Data Source Name** drop-down menu, select from which ProcessMaker Data Connector to reference as a data source.
 6. From the **Endpoint** drop-down menu, select which [Endpoint](../../../data-connector-management/what-is-a-data-connector.md#what-is-an-endpoint) to reference from the selected ProcessMaker Data Connector. These Endpoints are configured from the ProcessMaker Data Connector itself. Depending on the ProcessMaker Data Connector selected from the **Data Connector Name** drop-down menu, these Endpoints may reference API endpoints, ProcessMaker Collection records, or other data source endpoints.
-7. In the **Element Name** setting, enter the name of the JSON data array to which to map the data from the selected Data Connector. This JSON data array and its content becomes part of that Request's data. **response** is the default value.
-8. In the **Value** setting, enter the key name within the JSON data array specified in the **Element Name** setting to map data from the selected Data Connector. **value** is the default value.
-9. In the **Content** setting, enter the data object name to map the options that display in this control from the Data Connector data. **content** is the default value.
+7. In the **Element Name** setting, enter the name of the JSON data array within the selected ProcessMaker Data Connector from which to reference its objects as options that display in this control. This JSON data array and its content becomes part of that Request's data. Use JSON dot notation as necessary. **response** is the default value.
+8. In the **Value** setting, enter the JSON key name from within the JSON data array selected from the  **Element Name** setting to reference its objects as options that display in this control. Use JSON dot notation as necessary. **value** is the default value.
+9. In the **Content** setting, enter the JSON object name that corresponds with the JSON key name selected from the **Value** setting's JSON key name to display its content as options in this control. Use JSON dot notation as necessary. **content** is the default value.
 10. In the **PMQL** setting, optionally enter a [PMQL](../../../../using-processmaker/search-processmaker-data-using-pmql.md#overview) expression to filter which data in the JSON data array to display as options in this control based on which objects in that array meet the PMQL expression's criteria.
 
 Consider the following example of doctors who work in a clinic. 
