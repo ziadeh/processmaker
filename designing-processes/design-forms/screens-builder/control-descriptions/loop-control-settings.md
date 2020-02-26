@@ -95,10 +95,58 @@ This topic is new for ProcessMaker version 4.0.1. See the [Release Notes](https:
 
 The Loop control has the following panels that contain settings:
 
-* \*\*\*\*[**Variable** panel](page-navigation-button-control-settings.md#variable-panel-settings)
-* \*\*\*\*[**Configuration** panel](page-navigation-button-control-settings.md#configuration-panel-settings)
-* \*\*\*\*[**Design** panel](page-navigation-button-control-settings.md#design-panel-settings)
-* \*\*\*\*[**Advanced** panel](page-navigation-button-control-settings.md#advanced-panel-settings)
+* \*\*\*\*[**Variable** panel](loop-control-settings.md#variable-panel-settings)
+* \*\*\*\*[**Configuration** panel](loop-control-settings.md#configuration-panel-settings)
+* \*\*\*\*[**Advanced** panel](loop-control-settings.md#advanced-panel-settings)
+
+### Variable Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Variable** panel that is on the right-side of the Screen Builder canvas.
+
+Below is the setting for the Loop control in the **Variable** panel:
+
+* [Variable Name](loop-control-settings.md#variable-name)
+
+#### Variable Name
+
+Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. Use the **Variable Name** setting value in the following ways:
+
+* Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds with the Loop control's **Variable Name** value. In the example below, `LoopControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/loop-control-data-preview-screens-builder-processes.png) 
+* Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ LoopControl }}`.
+* Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
+
+This is a required setting.
+
+### Configuration Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
+
+Below is the setting for the Loop control in the **Configuration** panel:
+
+* [Default Number Of Times](loop-control-settings.md#default-number-of-times)
+
+#### Default Number Of Times
+
+Enter the number of times to repeat the control\(s\) that the Loop control contains. **2** is the default value.
+
+### Advanced Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Advanced** panel that is on the right-side of the Screen Builder canvas.
+
+Below are settings for the Loop control in the **Advanced** panel:
+
+* [Visibility Rule](loop-control-settings.md#visibility-rule)
+* [CSS Selector Name](loop-control-settings.md#css-selector-name)
+
+#### Visibility Rule
+
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+
+#### CSS Selector Name
+
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+
+## Related Topics
 
 
 
