@@ -74,7 +74,7 @@ The **Collections** category contains the following permissions:
 
 * **Create Collections:** Create a ProcessMaker Collection from the **Collections** page. Selecting this permission also selects the **Edit Collections** permission. See [Create a New Collection](../collections/manage-collections/create-a-new-collection.md).
 * **Delete Collections:** Delete a ProcessMaker Collection from the **Collections** page. See [Delete a Collection](../collections/manage-collections/delete-a-collection.md#delete-a-processmaker-collection).
-* **Edit Collections:** Edit a ProcessMaker Collection from the **Collections** page. See [Edit a Collection Record](../collections/manage-records-in-a-collection/edit-a-collection-record.md#edit-a-processmaker-collection-record).
+* **Edit Collections:** Edit a ProcessMaker Collection from the **Collections** page. See [Configure a Collection](https://processmaker.gitbook.io/processmaker/collections/manage-collections/configure-a-collection#configure-basic-settings).
 * **Export Collections:** Export a ProcessMaker Collections from the **Collections** page. See [Export a Collection](../collections/manage-collections/export-a-collection.md).
 * **Import Collections:** Import a ProcessMaker Collection from the **Collections** page. See [Import a Collection](../collections/manage-collections/import-a-collection.md).
 * **View Collections:** View the table of ProcessMaker Collections on the **Collections** page. See [View Collections](../collections/manage-collections/view-collections.md#view-all-collections).

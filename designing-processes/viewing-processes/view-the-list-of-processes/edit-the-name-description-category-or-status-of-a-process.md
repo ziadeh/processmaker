@@ -15,8 +15,8 @@ Process configuration is different than Process model editing. See [Model Your P
 
 Your ProcessMaker user account or group membership must have the following permissions to configure a Process unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the ProcessMaker [Processes](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -43,8 +43,8 @@ Follow these steps to configure a Process:
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to configure a Process's notifications:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -89,8 +89,8 @@ The Vocabularies package is not available in the ProcessMaker open-source editio
 
 Your user account or group membership must have the following permissions to configure a Process's available Vocabularies:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

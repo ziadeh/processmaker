@@ -9,7 +9,6 @@ description: Edit the name and/or status of a Process Category.
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to edit a Process Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: Create Process Categories
 * Processes: Edit Process Categories
 * Processes: View Process Categories
 * Processes: View Processes

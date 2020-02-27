@@ -9,8 +9,8 @@ description: Edit the configuration for a ProcessMaker Script.
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure a ProcessMaker Script unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Scripts: View Scripts
 * Scripts: Edit Scripts
+* Scripts: View Scripts
 
 See the ProcessMaker [Scripts](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

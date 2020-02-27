@@ -9,8 +9,8 @@ description: Delete a ProcessMaker Script from being used in any Process.
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to delete a ProcessMaker Script:
 
-* Scripts: View Scripts
 * Scripts: Delete Scripts
+* Scripts: View Scripts
 
 See the ProcessMaker [Scripts](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#scripts) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

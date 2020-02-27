@@ -9,8 +9,8 @@ description: Create a new authenticated client that can access the ProcessMaker 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to create an authenticated client unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Auth Clients: View Auth Clients
 * Auth Clients: Create Auth Clients
+* Auth Clients: View Auth Clients
 
 See the [Auth Clients](../../permission-descriptions-for-users-and-groups.md#auth-clients) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

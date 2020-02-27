@@ -55,8 +55,8 @@ If no archived Processes exist, the following message displays: **No Data Availa
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to archive a Process:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

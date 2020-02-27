@@ -10,10 +10,6 @@ Export a ProcessMaker Screen to your local computer. The exported ProcessMaker S
 
 An exported ProcessMaker Screen contains all the [controls](../screens-builder/control-descriptions/) as the original at the time the original Screen was exported.
 
-{% hint style="info" %}
-If your ProcessMaker Screen contains either of the [Collections controls]() that are part of the ProcessMaker [Collections package](../../../package-development-distribution/package-a-connector/collections.md), a ProcessMaker instance that does not have the Collections package can import a validated ProcessMaker Screen but Collections controls do not import. The ProcessMaker Collections controls on a Screen only import successfully if the ProcessMaker Collections package is installed in that ProcessMaker instance.
-{% endhint %}
-
 The exported ProcessMaker Screen has the `.json` file extension.
 
 ## Export a ProcessMaker Screen
@@ -21,8 +17,8 @@ The exported ProcessMaker Screen has the `.json` file extension.
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to export a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Screens: View Screens
 * Screens: Export Screens
+* Screens: View Screens
 
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

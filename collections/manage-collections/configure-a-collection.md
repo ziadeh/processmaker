@@ -9,14 +9,14 @@ description: Edit the configuration for a ProcessMaker Collection.
 {% hint style="info" %}
 ### ProcessMaker Package Required
 
-The [Collections package](../../package-development-distribution/package-a-connector/collections.md) must be installed in your ProcessMaker instance. The [Collections](../what-is-a-collection.md) package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Collections package can be installed in your ProcessMaker instance.
+The [Collections package](../../package-development-distribution/package-a-connector/collections.md) must be installed in your ProcessMaker instance. The [Collections](../what-is-a-collection.md) package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Collections package can be installed in your ProcessMaker instance.
 
 ### Permissions Required
 
 Your ProcessMaker user account or group membership must have the following permissions to configure a ProcessMaker Collection unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Collections: View Collections
 * Collections: Edit Collections
+* Collections: View Collections
 
 These permissions are different than [record permissions](configure-a-collection.md#configure-record-level-permissions-for-users) in a ProcessMaker Collection that allow you to view or edit records in that Collection.
 

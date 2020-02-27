@@ -40,9 +40,9 @@ Below the table, the history of the Request displays all Request actions. See [R
 ## Editable Request Data
 
 {% hint style="info" %}
-Your user account or group membership must have the [**Requests: Edit Request Data** permission](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to edit Request data.
+Your user account or group membership must have the "Requests: Edit Request Data" permission to edit Request data unless your user account has the **Make this user a Super Admin** setting selected.
 
-See the [Request permissions](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) or ask your ProcessMaker Administrator for assistance.
+See the [Request](https://processmaker.gitbook.io/processmaker/processmaker-administration/permission-descriptions-for-users-and-groups#requests) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 The **Data** tab displays the data from a completed Request in JSON format. The **Data** column only displays when that Request is completed.

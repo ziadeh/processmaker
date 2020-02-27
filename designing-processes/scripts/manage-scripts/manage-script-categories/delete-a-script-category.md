@@ -9,7 +9,6 @@ description: Delete a Script Category when it is no longer needed.
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to delete a Script Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Scripts: Create Script Categories
 * Scripts: Delete Script Categories
 * Scripts: View Script Categories
 * Scripts: View Scripts

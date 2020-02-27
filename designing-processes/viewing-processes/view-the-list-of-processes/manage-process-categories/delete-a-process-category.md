@@ -9,7 +9,6 @@ description: Delete a Process Category when it is no longer needed.
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to delete a Process Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: Create Process Categories
 * Processes: Delete Process Categories
 * Processes: View Process Categories
 * Processes: View Processes

@@ -9,7 +9,6 @@ description: Edit the name and/or status of a Script Category.
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to edit a Script Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Scripts: Create Script Categories
 * Scripts: Edit Script Categories
 * Scripts: View Script Categories
 * Scripts: View Scripts

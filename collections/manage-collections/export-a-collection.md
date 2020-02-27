@@ -26,8 +26,8 @@ The [Collections package](../../package-development-distribution/package-a-conne
 
 Your ProcessMaker user account or group membership must have the following permissions to export a ProcessMaker Collection unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Collections: View Collections
 * Collections: Export Collections
+* Collections: View Collections
 
 See the ProcessMaker [Collections](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

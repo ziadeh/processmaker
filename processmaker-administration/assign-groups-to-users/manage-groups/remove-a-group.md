@@ -9,8 +9,8 @@ description: Delete a ProcessMaker group.
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to delete a ProcessMaker group unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Groups: View Groups
 * Groups: Delete Groups
+* Groups: View Groups
 
 See the [Groups](../../permission-descriptions-for-users-and-groups.md#groups) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

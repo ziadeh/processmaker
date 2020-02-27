@@ -9,7 +9,6 @@ description: Delete a Screen Category when it is no longer needed.
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to delete a Screen Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Screens: Create Screen Categories
 * Screens: Delete Screen Categories
 * Screens: View Screen Categories
 * Screens: View Screens

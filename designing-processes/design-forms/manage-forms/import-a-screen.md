@@ -17,8 +17,8 @@ If your ProcessMaker Screen contains either of the [Collections controls]() that
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to import a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Screens: View Screens
 * Screens: Import Screens
+* Screens: View Screens
 
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

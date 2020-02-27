@@ -15,8 +15,8 @@ The [Collections package](../../package-development-distribution/package-a-conne
 
 Your ProcessMaker user account or group membership must have the following permissions to create a ProcessMaker Collection unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Collections: View Collections
 * Collections: Delete Collections
+* Collections: View Collections
 
 These permissions are different than [record permissions](configure-a-collection.md#configure-record-permissions-for-processmaker-users) in a ProcessMaker Collection that allow you to view or delete records in that Collection.
 

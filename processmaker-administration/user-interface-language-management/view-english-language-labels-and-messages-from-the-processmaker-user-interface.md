@@ -11,7 +11,7 @@ description: >-
 {% hint style="info" %}
 ### ProcessMaker Package Required
 
-To view the English-language labels and messages from the ProcessMaker user interface, the [Translations package](../../package-development-distribution/package-a-connector/non-english-language-packages.md) must be installed in your ProcessMaker instance. The Translations package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Translations package can be installed in your ProcessMaker instance.
+To view the English-language labels and messages from the ProcessMaker user interface, the [Translations package](../../package-development-distribution/package-a-connector/non-english-language-packages.md) must be installed in your ProcessMaker instance. The Translations package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Translations package can be installed in your ProcessMaker instance.
 
 ### Permissions Required
 

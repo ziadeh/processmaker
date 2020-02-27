@@ -31,9 +31,9 @@ The assigned Task displays in the **Form** tab. The **Form** tab displays by def
 ### Editable Task Data
 
 {% hint style="info" %}
-Your user account or group membership must have the "Requests: Edit Task Data" permission to edit Task data.
+Your user account or group membership must have the "Requests: Edit Task Data" permission to edit Task data unless your user account has the **Make this user a Super Admin** setting selected.
 
-See the [Request permissions](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) or ask your ProcessMaker Administrator for assistance.
+See the [Request](https://processmaker.gitbook.io/processmaker/processmaker-administration/permission-descriptions-for-users-and-groups#requests) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
 The **Data** tab displays in JSON format the data a previous participant of this Request entered. Values in the **Data** tab can be changed from those entered by the previous Request participant.

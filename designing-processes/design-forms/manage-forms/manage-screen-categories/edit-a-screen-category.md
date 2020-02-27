@@ -9,7 +9,6 @@ description: Edit the name and/or status of a Screen Category.
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to edit a Screen Category unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Screens: Create Screen Categories
 * Screens: Edit Screen Categories
 * Screens: View Screen Categories
 * Screens: View Screens

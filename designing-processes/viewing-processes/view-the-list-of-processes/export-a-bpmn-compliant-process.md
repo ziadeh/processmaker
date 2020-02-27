@@ -27,8 +27,8 @@ An exported Process has the `.json` file extension.
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to export a Process unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Export Processes
+* Processes: View Processes
 
 See the ProcessMaker [Processes](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

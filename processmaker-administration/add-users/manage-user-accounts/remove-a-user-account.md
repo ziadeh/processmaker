@@ -9,8 +9,8 @@ description: Delete a ProcessMaker user account.
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to delete a ProcessMaker user account unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Users: View Users
 * Users: Delete Users
+* Users: View Users
 
 See the [Users](../../permission-descriptions-for-users-and-groups.md#users) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
