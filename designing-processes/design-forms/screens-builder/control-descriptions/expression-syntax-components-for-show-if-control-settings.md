@@ -112,6 +112,8 @@ To configure another control in that ProcessMaker Screen to remain hidden if the
 
 {% page-ref page="../types-for-screens.md" %}
 
+{% page-ref page="../screens-builder-modes.md" %}
+
 {% page-ref page="../validate-your-screen.md" %}
 
 {% page-ref page="./" %}
@@ -132,11 +134,15 @@ To configure another control in that ProcessMaker Screen to remain hidden if the
 
 {% page-ref page="multi-column-button-control-settings.md" %}
 
+{% page-ref page="loop-control-settings.md" %}
+
 {% page-ref page="record-list-control-settings.md" %}
 
 {% page-ref page="image-control-settings.md" %}
 
 {% page-ref page="submit-button-control-settings.md" %}
+
+{% page-ref page="nested-screen-control-settings.md" %}
 
 {% page-ref page="file-upload-control-settings.md" %}
 

@@ -71,7 +71,10 @@ Below is a Loop control in [Preview mode](../screens-builder-modes.md#preview-mo
 ## Delete the Control from a ProcessMaker Screen
 
 {% hint style="warning" %}
-Deleting a control also deletes configuration for that control. If you add another control, it will have default settings.
+Consider the following when deleting a configured Loop control:
+
+* Deleting a Loop control also deletes the controls placed into it.
+* Deleting a control also deletes configuration for that control. If you add another control, it will have default settings.
 {% endhint %}
 
 Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
@@ -148,5 +151,41 @@ Enter the value to represent this control in custom CSS syntax when in [Custom C
 
 ## Related Topics
 
+{% page-ref page="../types-for-screens.md" %}
 
+{% page-ref page="../screens-builder-modes.md" %}
+
+{% page-ref page="../validate-your-screen.md" %}
+
+{% page-ref page="rich-text-control-settings.md" %}
+
+{% page-ref page="line-input-control-settings.md" %}
+
+{% page-ref page="textarea-control-settings.md" %}
+
+{% page-ref page="select-list-control-settings.md" %}
+
+{% page-ref page="checkbox-control-settings.md" %}
+
+{% page-ref page="date-picker-control-settings.md" %}
+
+{% page-ref page="page-navigation-button-control-settings.md" %}
+
+{% page-ref page="multi-column-button-control-settings.md" %}
+
+{% page-ref page="record-list-control-settings.md" %}
+
+{% page-ref page="image-control-settings.md" %}
+
+{% page-ref page="submit-button-control-settings.md" %}
+
+{% page-ref page="nested-screen-control-settings.md" %}
+
+{% page-ref page="file-upload-control-settings.md" %}
+
+{% page-ref page="file-download-control-settings.md" %}
+
+{% page-ref page="validation-rules-for-validation-control-settings.md" %}
+
+{% page-ref page="expression-syntax-components-for-show-if-control-settings.md" %}
 

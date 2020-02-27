@@ -202,7 +202,7 @@ Enter the value to represent this control in custom CSS syntax when in [Custom C
 
 {% page-ref page="../types-for-screens.md" %}
 
-{% page-ref page="../validate-your-screen.md" %}
+{% page-ref page="../screens-builder-modes.md" %}
 
 {% page-ref page="../validate-your-screen.md" %}
 
@@ -222,11 +222,15 @@ Enter the value to represent this control in custom CSS syntax when in [Custom C
 
 {% page-ref page="multi-column-button-control-settings.md" %}
 
+{% page-ref page="loop-control-settings.md" %}
+
 {% page-ref page="record-list-control-settings.md" %}
 
 {% page-ref page="image-control-settings.md" %}
 
 {% page-ref page="submit-button-control-settings.md" %}
+
+{% page-ref page="nested-screen-control-settings.md" %}
 
 {% page-ref page="file-upload-control-settings.md" %}
 
