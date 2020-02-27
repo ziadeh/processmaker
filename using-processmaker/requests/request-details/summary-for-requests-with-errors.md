@@ -36,8 +36,6 @@ Below the table, the history of the Request displays all Request actions to the 
 
 The **Tasks** tab displays the summary for all assigned Tasks to Request participants to the time the error occurred.
 
-~~NEED SCREEN SHOT OF TASK TAB WITH AN ERROR~~
-
 The **Tasks** tab displays the following summary in tabular format about assigned Tasks to Request participants to the time the error occurred:
 
 * **Task:** The **Task** column displays the name of each Task to be completed for the selected Request for all Request participants. If a Task is assigned to you, a hyperlink displays in the Task name.

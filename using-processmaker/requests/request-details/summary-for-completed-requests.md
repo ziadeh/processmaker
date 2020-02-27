@@ -19,14 +19,17 @@ Follow these steps to view a summary for a completed [Request](../what-is-a-requ
 
 ## Values in the Request
 
-The **Summary** tab displays the summary of information entered into the completed Request via ProcessMaker [Screens](../../../designing-processes/design-forms/what-is-a-form.md).
+The **Summary** tab displays the summary of information entered into the completed Request via [ProcessMaker Screens](../../../designing-processes/design-forms/what-is-a-form.md). The **Summary** tab may display values in the Request in the following ways:
+
+* By default, completed Request data displays in JSON format key-value pairs in tabular format that represent ProcessMaker Screen control data.
+* Configure a [Display](../../../designing-processes/design-forms/screens-builder/types-for-screens.md#display)-type ProcessMaker Screen that summarizes specific information from the completed Request. See [Configure a Process](../../../designing-processes/viewing-processes/view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md#configure-a-process).
 
 ![&quot;Summary&quot; tab in a completed Request&apos;s summary](../../../.gitbook/assets/summary-tab-request-information-request.png)
 
-The **Summary** tab displays the JSON-formatted key/value pairs in tabular format that represent ProcessMaker [Screen](../../../designing-processes/design-forms/what-is-a-form.md) control data. Information is displayed:
+When the **Summary** tab displays the JSON-formatted key-value pairs from the completed Request data, the following information displays:
 
-* **Key:** The **Key** column displays the JSON key name that represents the ProcessMaker Screen control name the Request participant entered data. For example, a [Rich Text](../../../designing-processes/design-forms/screens-builder/control-descriptions/rich-text-control-settings.md#control-description) control to enter your company's name could have a [**Variable Name**](../../../designing-processes/design-forms/screens-builder/control-descriptions/rich-text-control-settings.md#configuration-panel-settings) setting value of `companyName` which would display in the **Key** column here.
-* **Value:** The **Value** column displays that key's value as entered by a person manually interacting with a form. For example, a Text control to enter your name could have the value `John Doe` which would display in the **Value** column here.
+* **Key:** The **Key** column displays the JSON key name that represents the ProcessMaker Screen control name the Request participant entered data. For example, use a [Rich Text](../../../designing-processes/design-forms/screens-builder/control-descriptions/rich-text-control-settings.md#control-description) control to enter your company's name that has a [**Variable Name**](../../../designing-processes/design-forms/screens-builder/control-descriptions/rich-text-control-settings.md#configuration-panel-settings) setting value of `companyName` which would display in the **Key** column here.
+* **Value:** The **Value** column displays that key's value as entered by a person manually interacting with a form. For example, use a Rich Text control to enter your name could have the value `John Doe` which would display in the **Value** column here.
 
 Below the table, the history of the Request displays all Request actions. See [Request History](summary-for-completed-requests.md#request-history).
 
