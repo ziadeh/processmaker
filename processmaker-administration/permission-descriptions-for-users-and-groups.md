@@ -288,77 +288,7 @@ Select the **View Vocabularies** permission to use any of the other permissions 
 
 ## Related Topics
 
-{% page-ref page="../using-processmaker/requests/what-is-a-request.md" %}
+{% page-ref page="add-users/" %}
 
-{% page-ref page="../using-processmaker/requests/view-all-requests.md" %}
-
-{% page-ref page="../using-processmaker/requests/request-details/" %}
-
-{% page-ref page="../designing-processes/scripts/manage-scripts/view-all-scripts.md" %}
-
-{% page-ref page="../using-processmaker/task-management/view-a-task-summary.md" %}
-
-{% page-ref page="../designing-processes/scripts/manage-scripts/create-a-new-script.md" %}
-
-{% page-ref page="../designing-processes/scripts/manage-scripts/edit-script-configuration.md" %}
-
-{% page-ref page="../designing-processes/scripts/manage-scripts/edit-a-script.md" %}
-
-{% page-ref page="../designing-processes/scripts/manage-scripts/remove-a-script.md" %}
-
-{% page-ref page="../designing-processes/design-forms/manage-forms/view-all-forms.md" %}
-
-{% page-ref page="../designing-processes/design-forms/manage-forms/create-a-new-form.md" %}
-
-{% page-ref page="../designing-processes/design-forms/manage-forms/edit-a-screen.md" %}
-
-{% page-ref page="../designing-processes/design-forms/screens-builder/control-descriptions/" %}
-
-{% page-ref page="../designing-processes/design-forms/manage-forms/remove-a-screen.md" %}
-
-{% page-ref page="../designing-processes/environment-variable-management/manage-your-environment-variables/view-all-environment-variables.md" %}
-
-{% page-ref page="../designing-processes/environment-variable-management/manage-your-environment-variables/create-a-new-environment-variable.md" %}
-
-{% page-ref page="../designing-processes/environment-variable-management/manage-your-environment-variables/edit-an-environmental-variable.md" %}
-
-{% page-ref page="../designing-processes/environment-variable-management/manage-your-environment-variables/remove-an-environment-variable.md" %}
-
-{% page-ref page="add-users/manage-user-accounts/view-all-users.md" %}
-
-{% page-ref page="add-users/manage-user-accounts/create-a-user-account.md" %}
-
-{% page-ref page="add-users/manage-user-accounts/edit-a-user-account.md" %}
-
-{% page-ref page="add-users/manage-user-accounts/remove-a-user-account.md" %}
-
-{% page-ref page="assign-groups-to-users/manage-groups/view-all-groups.md" %}
-
-{% page-ref page="assign-groups-to-users/manage-groups/create-a-group.md" %}
-
-{% page-ref page="assign-groups-to-users/manage-groups/edit-a-group.md" %}
-
-{% page-ref page="assign-groups-to-users/manage-groups/remove-a-group.md" %}
-
-{% page-ref page="../designing-processes/viewing-processes/view-the-list-of-processes/view-your-processes.md" %}
-
-{% page-ref page="../designing-processes/viewing-processes/view-the-list-of-processes/create-a-process.md" %}
-
-{% page-ref page="../designing-processes/viewing-processes/view-the-list-of-processes/edit-the-name-description-category-or-status-of-a-process.md" %}
-
-{% page-ref page="../designing-processes/viewing-processes/view-the-list-of-processes/import-a-bpmn-compliant-process.md" %}
-
-{% page-ref page="../designing-processes/viewing-processes/view-the-list-of-processes/export-a-bpmn-compliant-process.md" %}
-
-{% page-ref page="auth-client-management/manage-client-authentications/view-all-client-authentication-keys.md" %}
-
-{% page-ref page="../designing-processes/vocabularies-management/what-is-a-vocabulary.md" %}
-
-{% page-ref page="../designing-processes/vocabularies-management/manage-your-vocabularies/view-all-vocabularies.md" %}
-
-{% page-ref page="../designing-processes/vocabularies-management/manage-your-vocabularies/create-a-new-vocabulary.md" %}
-
-{% page-ref page="../designing-processes/vocabularies-management/manage-your-vocabularies/edit-a-vocabulary.md" %}
-
-{% page-ref page="../designing-processes/vocabularies-management/manage-your-vocabularies/delete-a-vocabulary.md" %}
+{% page-ref page="assign-groups-to-users/" %}
 
