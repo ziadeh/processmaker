@@ -12,10 +12,10 @@ description: >-
 {% hint style="info" %}
 ### New Topic
 
-This topic is new for ProcessMaker version 4.0.1. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder-1).
+This topic is new for ProcessMaker version 4.0.1. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder).
 {% endhint %}
 
-The Loop control contains one or more [ProcessMaker Screen](../../what-is-a-form.md) controls that during a [Request](../../../../using-processmaker/requests/what-is-a-request.md) loop a set number of times, thereby allowing the Request participant to enter multiple items, each of which require multiple pieces of information.
+Use the Loop control to contain one or more [ProcessMaker Screen](../../what-is-a-form.md) controls to duplicate the contained set of controls a specified number of times, thereby minimizing the design work to duplicate that set of controls in a Screen. Use the Loop control when the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant must enter multiple instances of the same set of information, each of which contain multiple components.
 
 For example, use a Loop control when a university registrar's office must enter the following information for each new university student enrolling to the university:
 
@@ -52,7 +52,7 @@ Follow these steps to add this control to the ProcessMaker Screen:
 2. View the ProcessMaker Screen page to which to add the control.
 3. Locate the **Loop** icon![](../../../../.gitbook/assets/loop-control-screens-builder-processes.png)in the panel to the left of the Screen Builder canvas.
 4. Drag the **Loop** icon into the Screen Builder canvas. Existing controls on the Screens Builder canvas adjust positioning based on where you drag the control.
-5. Place into the Screen Builder canvas where you want the control to display on the ProcessMaker Screen. ![](../../../../.gitbook/assets/loop-control-placed-screens-builder-processes.png) 
+5. Place into the Screen Builder canvas where you want the control to display on the ProcessMaker Screen. Ensure that the control's placement accounts for the set of controls you intend to this control to contain. ![](../../../../.gitbook/assets/loop-control-placed-screens-builder-processes.png) 
 6. Configure the Loop control. See [Settings](page-navigation-button-control-settings.md#inspector-settings).
 7. Drag and place the ProcessMaker Screen control\(s\) into the Loop control that you intend the Request participant to enter information each time the Loop control repeats. As a best practice, do not do the following:
 
