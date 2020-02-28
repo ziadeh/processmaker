@@ -225,6 +225,7 @@
     * [What is a Connector?](designing-processes/process-design/model-processes-using-connectors/what-is-a-connector.md)
     * [Available Connectors from ProcessMaker](designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/README.md)
       * [Actions By Email Connector](designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md)
+      * [Data Connector Connector](designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/data-connector-connector.md)
       * [Send Email Connector](designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md)
   * [Delete Process Model Elements or Controls](designing-processes/process-design/remove-process-model-elements.md)
   * [Undo and Redo Changes in the Process Model](designing-processes/process-design/undo-and-redo-changes.md)

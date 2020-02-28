@@ -1,5 +1,5 @@
 ---
-description: Add the Send Email connector to send emails during Requests for a Process.
+description: Automatically send emails during Requests for a Process.
 ---
 
 # Send Email Connector
