@@ -13,8 +13,8 @@ Each page has its own name. Multiple pages in the same ProcessMaker Screen can h
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to add a new page to a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Screens: View Screens
 * Screens: Edit Screens
+* Screens: View Screens
 
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -38,8 +38,8 @@ Access each page from the drop-down menu of pages for that ProcessMaker Screen.
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to delete a new page to a ProcessMaker Screen:
 
-* Screens: View Screens
 * Screens: Edit Screens
+* Screens: View Screens
 
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -62,8 +62,8 @@ Follow these steps to delete a page from a ProcessMaker Screen:
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to rename a new page to a ProcessMaker Screen:
 
-* Screens: View Screens
 * Screens: Edit Screens
+* Screens: View Screens
 
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

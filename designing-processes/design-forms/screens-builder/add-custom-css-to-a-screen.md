@@ -13,8 +13,8 @@ Use the Custom CSS mode to add custom CSS styles to a ProcessMaker Screen. Proce
 
 Your ProcessMaker user account or group membership must have the following permissions to add custom CSS to a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Screens: View Screens
 * Screens: Edit Screens
+* Screens: View Screens
 
 See the ProcessMaker [Screens](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 

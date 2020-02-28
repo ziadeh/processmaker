@@ -17,8 +17,8 @@ This control is not available for [Display](../types-for-screens.md#display)-typ
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to add a control to a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Screens: View Screens
 * Screens: Edit Screens
+* Screens: View Screens
 
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -55,8 +55,8 @@ Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-s
 
 Your user account or group membership must have the following permissions to edit a ProcessMaker Screen control:
 
-* Screens: View Screens
 * Screens: Edit Screens
+* Screens: View Screens
 
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 

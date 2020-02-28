@@ -9,8 +9,8 @@ description: Delete a computed Property from a ProcessMaker Screen.
 {% hint style="info" %}
 Your user account or group membership must have the following permissions to delete a computed Property from a ProcessMaker Screen:
 
-* Screens: View Screens
 * Screens: Edit Screens
+* Screens: View Screens
 
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
