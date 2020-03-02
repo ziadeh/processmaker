@@ -60,7 +60,7 @@ To ensure that Requests do not remain indefinitely active on an Exclusive Gatewa
 {% hint style="info" %}
 ### ProcessMaker Package Required
 
-The [Actions By Email](../../../../package-development-distribution/package-a-connector/actions-by-email-package.md) package is required. The Actions By Email package installs the Actions By Email connector, which is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Actions By Email connector can be installed in your ProcessMaker instance.
+The [Actions By Email package](../../../../package-development-distribution/package-a-connector/actions-by-email-package.md) is required. The Actions By Email [package](../../../../package-development-distribution/first-topic.md) installs the Actions By Email connector, which is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Actions By Email connector can be installed in your ProcessMaker instance.
 
 ### Permissions Required
 
@@ -76,11 +76,11 @@ Follow these steps to add an Actions By Email control to the Process model:
 
 1. [View your Processes](../../../viewing-processes/view-the-list-of-processes/view-your-processes.md#view-all-active-processes). The **Processes** page displays.
 2. [Create a new Process](../../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Send Email** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the [**Hide Menus** button](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view)![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Actions By Email** control's icon![](../../../../.gitbook/assets/actions-by-email-icon-process-modeler-processes.png).
+3. Locate the **Actions By Email** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the [**Hide Menus** button](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view)![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Actions By Email** control's icon![](../../../../.gitbook/assets/actions-by-email-icon-process-modeler-processes.png).
 
    ![](../../../../.gitbook/assets/actions-by-email-control-bpmn-process-modeler-package-processes.png) 
 
-4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Actions By Email control do not allow be placed outside of the Pool element.
+4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Actions By Email control cannot be placed outside of the Pool element.
 
 ![Actions By Email control](../../../../.gitbook/assets/actions-by-email-control-process-modeler-package-processes.png)
 
@@ -90,7 +90,7 @@ After the Actions By Email control is placed into the Process model, you may mov
 Moving an Actions By Email control has the following limitations in regards to the following Process model elements:
 
 * **Pool element:** If the Actions By Email control is inside of a [Pool](../../model-your-process/process-modeling-element-descriptions.md#pool) element, it cannot be moved outside of the Pool element. If you attempt to do so, Process Modeler places the Actions By Email control inside the Pool element closest to where you attempted to move it.
-* **Lane element:** If the Actions By Email control is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Process Modeler do not allow the Actions By Email control move outside of the Pool element.
+* **Lane element:** If the Actions By Email control is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Actions By Email control cannot be moved outside of the Pool element.
 {% endhint %}
 
 ## Settings
@@ -98,7 +98,7 @@ Moving an Actions By Email control has the following limitations in regards to t
 {% hint style="info" %}
 ### ProcessMaker Package Required
 
-The Actions By Email package is required. The Actions By Email package installs the Actions By Email connector, which is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Actions By Email connector can be installed in your ProcessMaker instance.
+The [Actions By Email package](../../../../package-development-distribution/package-a-connector/actions-by-email-package.md) is required. The Actions By Email [package](../../../../package-development-distribution/first-topic.md) installs the Actions By Email connector, which is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Actions By Email connector can be installed in your ProcessMaker instance.
 
 ### Permissions Required
 

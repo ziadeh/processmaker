@@ -32,7 +32,7 @@ The email recipient's name and email address can be specified in one of the foll
 {% hint style="info" %}
 ### ProcessMaker Package Required
 
-The [Send Email package](../../../../package-development-distribution/package-a-connector/email.md) is required. The Send Email package installs the Send Email connector, which is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Send Email connector can be installed in your ProcessMaker instance.
+The [Send Email package](../../../../package-development-distribution/package-a-connector/email.md) is required. The Send Email [package](../../../../package-development-distribution/first-topic.md) installs the Send Email connector, which is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Send Email connector can be installed in your ProcessMaker instance.
 
 ### Permissions Required
 
@@ -67,7 +67,7 @@ Moving a Send Email control has the following limitations in regards to the foll
 {% hint style="info" %}
 ### ProcessMaker Package Required
 
-The [Send Email package](../../../../package-development-distribution/package-a-connector/email.md) is required. The Send Email package installs the Send Email connector, which is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Send Email connector can be installed in your ProcessMaker instance.
+The [Send Email package](../../../../package-development-distribution/package-a-connector/email.md) is required. The Send Email [package](../../../../package-development-distribution/first-topic.md) installs the Send Email connector, which is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Send Email connector can be installed in your ProcessMaker instance.
 
 ### Permissions Required
 
