@@ -8,7 +8,10 @@ description: >-
 
 ## Overview
 
-The Data Connector connector is part of the [Data Connector package](../../../../package-development-distribution/package-a-connector/data-connector-package.md). Use the Data Connector connector in your Process models to access both ProcessMaker Collection records and third-party data sources, then make workflow routing decisions based on that data.
+The [Data Connector](../../../data-connector-management/what-is-a-data-connector.md) connector is part of the [Data Connector package](../../../../package-development-distribution/package-a-connector/data-connector-package.md). Use the Data Connector connector in your Process models in the following ways:
+
+* **Access ProcessMaker Collections:** From your Process model, access any [ProcessMaker Collection](../../../../collections/what-is-a-collection.md) in your ProcessMaker instance, including viewing, creating, updating, and/or delete records in a selected Collection. Every ProcessMaker Collection provides [Endpoints](../../../data-connector-management/what-is-a-data-connector.md#what-is-an-endpoint) to access that Collection. See [Endpoints for ProcessMaker Collections](../../../data-connector-management/what-is-a-data-connector.md#endpoints-for-processmaker-collections). Use the Data Connector connector to access a ProcessMaker Collection, then incorporate record information from that Collection into your Process for every [Request](../../../../using-processmaker/requests/what-is-a-request.md). By incorporating information into the Request data, you can make business decisions using it.
+* **Access third-party data sources:** Similarly to ProcessMaker Collections, call data from a third-party data source such as an Application Program Interfaces \(API\). Reference data from that API, then incorporate it into your Process's Request data.
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
