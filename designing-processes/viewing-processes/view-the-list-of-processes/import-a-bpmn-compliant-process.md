@@ -35,7 +35,7 @@ See the ProcessMaker [Processes](../../../processmaker-administration/permission
 Follow these steps to import a validated ProcessMaker version 4 Process:
 
 1. [View your active Processes.](./#view-your-processes) The **Processes** tab displays.
-2. Click the **Import** button. The following message displays: **You are about to import a Process. User assignments and sensitive environment variables will not be imported.**  
+2. Click the **Import** button. The following message displays: **You are about to import a Process. After importing, you can reassign users and groups to your process.**
 
    ![](../../../.gitbook/assets/import-process-message-processes.png)
 
@@ -68,7 +68,7 @@ Follow these steps to import a validated ProcessMaker version 4 Process:
    * **Assign which ProcessMaker user\(s\) and/or group\(s\) can edit Request data**
 
      Assign which ProcessMaker user\(s\) or group\(s\) have permission to [edit Request data](../../../using-processmaker/requests/request-details/summary-for-completed-requests.md#editable-request-data) from this Process. By editing Request data, these users and group members can adjust the data that Request participants have submitted during a Request. If no users or groups are selected, no one can edit Request data from this Process. Type into the **Assign Edit Data** field to filter ProcessMaker users and/or groups that display in that field's drop-down menu. To remove a ProcessMaker user or group that is currently selected, click the![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
-6. Click **Save**. The **Processes** page displays the imported Process with the same name as the original ProcessMaker Process except with a number "2" suffix.  
+6. Click **Save**. The **Processes** page displays the imported Process. If the process already exist with the same name, it is renamed with a number "2" suffix.  
 
    ![](../../../.gitbook/assets/imported-process-with-name-of-source-process-processes.png)
 

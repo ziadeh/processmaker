@@ -15,8 +15,8 @@ See [Process Modeling Element Descriptions](process-modeling-element-description
 
 Your ProcessMaker user account or group membership must have the following permissions to add a Pool element to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -49,8 +49,8 @@ If you accidentally delete a Pool element with other elements you want to keep, 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to resize a Pool element to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -69,8 +69,8 @@ Follow these steps to resize a Pool element:
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure a Pool element unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -123,8 +123,8 @@ See [Process Modeling Element Descriptions](process-modeling-element-description
 
 Your ProcessMaker user account or group membership must have the following permissions to add a Lane element to a Pool element unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -147,8 +147,8 @@ Follow these steps to add a Lane element to a Pool element:
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to resize a Lane element to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -167,8 +167,8 @@ Follow these steps to resize a Lane element:
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure a Lane element unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

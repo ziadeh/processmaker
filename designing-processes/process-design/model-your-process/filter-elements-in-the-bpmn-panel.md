@@ -9,8 +9,8 @@ description: Filter which elements and controls display for use in the Process m
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to filter elements and controls in the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

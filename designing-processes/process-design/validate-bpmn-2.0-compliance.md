@@ -19,8 +19,8 @@ Before you deploy your Process model to production, ensure that it is BPMN 2.0 c
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to validate the Process model is BPMN 2.0 compliant unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

@@ -15,8 +15,8 @@ See [Process Modeling Element Descriptions](process-modeling-element-description
 
 Your ProcessMaker user account or group membership must have the following permissions to add a Boundary Timer Event element to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -44,8 +44,8 @@ After the element is placed into the Task-type element, you may drag the Boundar
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure a Boundary Timer Event element unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

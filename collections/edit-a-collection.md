@@ -27,15 +27,15 @@ The [Collections package](../package-development-distribution/package-a-connecto
 
 Your ProcessMaker user account or group membership must have the following permissions to view configuration settings for a ProcessMaker Collection unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Collections: View Collections
 * Collections: Create Collections
+* Collections: View Collections
 
 These permissions are different than record-level permissions in a ProcessMaker Collection that allow you to view or create records in that Collection.
 
 Furthermore, your ProcessMaker user account or group membership must have the following permissions to edit a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Screens: View Screens
 * Screens: Edit Screens
+* Screens: View Screens
 
 See the ProcessMaker [Collections](../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections)  and [Screens](../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

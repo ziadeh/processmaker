@@ -9,8 +9,8 @@ description: 'Everyone makes mistakes, and sometimes wish they can redo them.'
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to undo changes in the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -31,8 +31,8 @@ Follow these steps to use the **Undo** button in Process Modeler:
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to redo changes in the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}

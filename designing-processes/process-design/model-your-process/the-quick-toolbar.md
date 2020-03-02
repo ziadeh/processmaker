@@ -43,8 +43,8 @@ See [Set and Delete Message Flow Between Elements](set-and-delete-message-flow-b
 
 Your ProcessMaker user account or group membership must have the following permissions to set Sequence Flow elements in the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
@@ -67,8 +67,8 @@ Follow these steps to set the Sequence Flow element from one connecting element 
 {% hint style="info" %}
 Your ProcessMaker user account or group membership must have the following permissions to configure Sequence Flows in the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
-* Processes: View Processes
 * Processes: Edit Processes
+* Processes: View Processes
 
 See the [Process](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
