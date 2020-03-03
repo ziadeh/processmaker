@@ -141,7 +141,23 @@ The Data Connector control has the following setting in the **Data Mapping** pan
 
 #### Map Data from the Data Source to the Request's JSON Data Model
 
+After [configuring which ProcessMaker Data Connector and Endpoint the Data Connector control uses](data-connector-connector.md#configuration-panel-settings) to interact with the data source, specify how data from that data source integrates with [Request](../../../../using-processmaker/requests/what-is-a-request.md) data. After data integrates from the data source into the JSON data model for each Request started from your Process, make business decisions based on that data and reference it from [ProcessMaker Screens](../../../design-forms/what-is-a-form.md), [ProcessMaker Scripts](../../../scripts/what-is-a-script.md), and [ProcessMaker Collections](../../../../collections/what-is-a-collection.md).
 
+The procedure to integrate the data source's data to the Request JSON data model is called mapping: specify the JSON object\(s\) in the JSON data model to store the data source's data. Each JSON object contains a key name which references the JSON object, and the value for that key. If the JSON object already exists in a Request's JSON data model, then the Data Connector control overwrites the existing JSON object value with that from the data source. If the JSON object\(s\) to map the data source data does not exist, then the Data Connector control adds the JSON data object\(s\) to that Request's JSON data model.
+
+Follow these steps to specify the Request JSON data object\(s\) to which to map the data source's data:
+
+1. Ensure that the **Hide Menus** button![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the Data Connector control from the Process model to map the data source's data to the Request JSON object\(s\). Panels to configure this element display.
+3. Expand the **Data Mapping** panel if it is not presently expanded. The **Form Data** setting displays. ![](../../../../.gitbook/assets/data-connector-form-data-mapping-package-processes.png) 
+4. Click the **+Data** button to add a JSON object to which to map data from the data source. Settings display below the **key** and **value** columns to add the JSON key name and its value, respectively, for the JSON object. ![](../../../../.gitbook/assets/data-connector-form-data-mapping-key-value-package-processes.png) 
+5. In the **key** setting, enter the key name for the JSON object.
+6. In the **value** setting, enter the value for the JSON object.
+7. Repeat Steps 4 through 6 for each JSON object required to store data from the data object.
+
+{% hint style="info" %}
+Click the **Delete** icon![](../../../../.gitbook/assets/delete-record-record-list-control-screens-builder-processes.png)to delete a JSON object from the **Form Data** setting.
+{% endhint %}
 
 ## Related Topics
 
