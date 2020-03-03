@@ -171,6 +171,7 @@
     * [Delete an Environment Variable](designing-processes/environment-variable-management/manage-your-environment-variables/remove-an-environment-variable.md)
 * [Data Connector Management](designing-processes/data-connector-management/README.md)
   * [What is a Data Connector?](designing-processes/data-connector-management/what-is-a-data-connector.md)
+  * [What is an Endpoint?](designing-processes/data-connector-management/what-is-an-endpoint.md)
   * [Manage Data Connectors](designing-processes/data-connector-management/manage-data-connectors/README.md)
     * [Manage Data Connector Categories](designing-processes/data-connector-management/manage-data-connectors/manage-data-connector-categories/README.md)
       * [What is a Data Connector Category?](designing-processes/data-connector-management/manage-data-connectors/manage-data-connector-categories/what-is-a-data-connector-category.md)
