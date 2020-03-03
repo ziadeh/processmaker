@@ -9,7 +9,7 @@ description: >-
 
 ## Overview
 
-In ProcessMaker, a Data Connector connects your ProcessMaker assets to a data source. Data sources may include [ProcessMaker Collections](../../collections/what-is-a-collection.md) and third-party data sources such as Application Program Interfaces \(APIs\). After a ProcessMaker Data Connector is created, ProcessMaker designers can reference the data source via the ProcessMaker Data Connector from within their ProcessMaker assets. Each ProcessMaker Data Connector is configured with which data source that Data Connector interacts, making it easy for ProcessMaker designers to interact with technical data sources such as APIs.
+In ProcessMaker, a Data Connector connects your ProcessMaker assets to a data source. Data sources may include [ProcessMaker Collections](../../collections/what-is-a-collection.md) and third-party data sources such as Application Program Interfaces \(APIs\). After a ProcessMaker Data Connector is created, ProcessMaker designers can reference the data source via the ProcessMaker Data Connector from within their ProcessMaker assets. Each ProcessMaker Data Connector is configured with which data source that Data Connector interacts, making it easy for ProcessMaker designers to interact with technical data sources such as APIs. Incorporating data from external data sources helps you make business decisions from information outside of your ProcessMaker instance.
 
  Below are a few ways to use ProcessMaker Data Connectors:
 

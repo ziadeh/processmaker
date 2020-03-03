@@ -8,10 +8,12 @@ description: >-
 
 ## Overview
 
-The [Data Connector](../../../data-connector-management/what-is-a-data-connector.md) connector is part of the [Data Connector package](../../../../package-development-distribution/package-a-connector/data-connector-package.md). Use the Data Connector connector in your Process models in the following ways:
+The [Data Connector](../../../data-connector-management/what-is-a-data-connector.md) connector is part of the [Data Connector package](../../../../package-development-distribution/package-a-connector/data-connector-package.md). From the Data Connector connector, select a [ProcessMaker Data Connector](../../../data-connector-management/what-is-a-data-connector.md) from which to interact with a data source.
 
-* **Access ProcessMaker Collections:** From your [Process model](../../what-is-process-modeling.md), access any [ProcessMaker Collection](../../../../collections/what-is-a-collection.md) in your ProcessMaker instance, including viewing, creating, updating, and/or delete records in a selected Collection. Every ProcessMaker Collection provides [Endpoints](../../../data-connector-management/what-is-an-endpoint.md) to access that Collection. See [Endpoints for ProcessMaker Collections](../../../data-connector-management/what-is-a-data-connector.md#endpoints-for-processmaker-collections). Use the Data Connector connector to access a ProcessMaker Collection, then incorporate record information from that Collection into your Process for every [Request](../../../../using-processmaker/requests/what-is-a-request.md). By incorporating information into the Request data, you can make business decisions using it.
-* **Access third-party data sources:** Similarly to ProcessMaker Collections, call data from a third-party data source such as an Application Program Interfaces \(API\). Reference data from that API, then incorporate it into your Process's Request data.
+Use the Data Connector connector in your Process models in the following ways:
+
+* **Access ProcessMaker Collections:** From your [Process model](../../what-is-process-modeling.md), interact with any [ProcessMaker Collection](../../../../collections/what-is-a-collection.md) in your ProcessMaker instance, including viewing, creating, updating, and/or delete records in a selected Collection. By default, each ProcessMaker Collection has a corresponding Data Connector when it is created. Incorporate ProcessMaker Collection record data into your Process model so you can make business decisions using it. Likewise, automatically change records in a ProcessMaker Collection during a [Request](../../../../using-processmaker/requests/what-is-a-request.md) when workflow routing conditions are met.
+* **Access third-party data sources:** Similarly to ProcessMaker Collections, interact with third-party data sources such as Application Program Interfaces \(APIs\). Reference data from that API, then incorporate it into your Process's Request data. Incorporating data from external data sources helps you make business decisions from information outside of your ProcessMaker instance.
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
@@ -86,7 +88,7 @@ The Data Connector control has multiple settings in the **Configuration** panel:
 
 * [Edit the control name](data-connector-connector.md#edit-the-control-name)
 * [Select the ProcessMaker Data Connector](data-connector-connector.md#select-the-processmaker-data-connector)
-* [Select the EndPoint to call from the ProcessMaker Data Connector](data-connector-connector.md#select-the-endpoint-to-call-from-the-processmaker-data-connector)
+* [Select the EndPoint the Data Connector control uses to interact with the data source](data-connector-connector.md#select-the-endpoint-the-data-connector-control-uses-to-interact-with-the-data-source)
 
 #### Edit the Control Name
 
@@ -111,23 +113,26 @@ Follow these steps to select the ProcessMaker Data Connector to reference from a
 2. Select the Data Connector control from the Process model in which to specify the ProcessMaker Data Connector to reference. Panels to configure this control display.
 3. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Data Connector** setting. ![](../../../../.gitbook/assets/data-connector-configuration-data-connector-process-modeler-processes.png) 
 4. From the **Data Connector** drop-down menu, select which ProcessMaker Data Connector the Data Connector control references.
-5. Select which Endpoint the ProcessMaker Data Connector uses to interact with the data source.
+5. [Select which Endpoint the ProcessMaker Data Connector uses to interact with the data source](data-connector-connector.md#select-the-endpoint-to-call-from-the-processmaker-data-connector).
 
 {% hint style="info" %}
 Ensure to [select which Endpoint to call from the selected ProcessMaker Data Connector](data-connector-connector.md#select-the-endpoint-to-call-from-the-processmaker-data-connector) to properly configure the Data Connector control.
 {% endhint %}
 
-#### Select the EndPoint to Call from the ProcessMaker Data Connector
+#### Select the EndPoint the Data Connector Control Uses to Interact with the Data Source
 
-Each [ProcessMaker Data Connector](../../../data-connector-management/what-is-a-data-connector.md) contains at least one [Endpoint](../../../data-connector-management/what-is-an-endpoint.md). These Endpoints are configured from the ProcessMaker Data Connector itself. These Endpoints may reference Application Program Interface \(API\) endpoints, ProcessMaker Collection records, or other data source endpoints. ProcessMaker Data Connectors created from Collections use a default set of Endpoints. See [Endpoints for ProcessMaker Collections](../../../data-connector-management/what-is-an-endpoint.md#endpoints-for-processmaker-collections).
+Each [ProcessMaker Data Connector](../../../data-connector-management/what-is-a-data-connector.md) contains at least one [Endpoint](../../../data-connector-management/what-is-an-endpoint.md). These Endpoints are configured from the ProcessMaker Data Connector itself. An Endpoint is an action the ProcessMaker Data Connector uses to interact with the data source. These Endpoints may interact with [ProcessMaker Collection](../../../../collections/what-is-a-collection.md) records, Application Program Interfaces \(APIs\), or other data source types. The Data Connector control uses an Endpoint to interact with the data source. After a ProcessMaker Data Connector has been selected from the [**Data Connector** setting](data-connector-connector.md#select-the-processmaker-data-connector), select the Endpoint from that ProcessMaker Data Connector the Data Connector uses to interact with the data source.
 
-Follow these steps to select the Endpoint to call from the selected ProcessMaker Data Connector:
+ProcessMaker Data Connectors created from Collections use a default set of Endpoints. See [Endpoints for ProcessMaker Collections](../../../data-connector-management/what-is-an-endpoint.md#endpoints-for-processmaker-collections).
+
+Follow these steps to select which Endpoint the Data Connector control uses:
 
 1. Ensure that the **Hide Menus** button![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Data Connector control from the Process model in which to specify the Endpoint to call. Panels to configure this control display.
-3. Ensure that a ProcessMaker Data Connector is selected from the **Data Connector** setting. If not, see [Select the ProcessMaker Data Connector](data-connector-connector.md#select-the-processmaker-data-connector).
-4. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Endpoint** setting. ![](../../../../.gitbook/assets/data-connector-configuration-endpoint-process-modeler-processes.png) 
-5. From the **Endpoint** drop-down menu, select which Endpoint the Data Connector control calls.
+2. Select the Data Connector control from the Process model in which to select the Endpoint the ProcessMaker Data Connector uses. Panels to configure this control display.
+3. Expand the **Configuration** panel if it is not presently expanded.
+4. Ensure that a ProcessMaker Data Connector is selected from the **Data Connector** setting. If not, see [Select the ProcessMaker Data Connector](data-connector-connector.md#select-the-processmaker-data-connector).
+5. Locate the **Endpoint** setting. ![](../../../../.gitbook/assets/data-connector-configuration-endpoint-process-modeler-processes.png) 
+6. From the **Endpoint** drop-down menu, select which Endpoint the ProcessMaker Data Connector uses.
 
 ### Data Mapping Panel Settings
 

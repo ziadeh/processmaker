@@ -13,7 +13,7 @@ description: >-
 The Data Connector [package](../first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Data Connector package can be installed in your ProcessMaker instance.
 {% endhint %}
 
-Use the Data Connector package to connect your ProcessMaker assets, such as [ProcessMaker Screens](../../designing-processes/design-forms/what-is-a-form.md), [ProcessMaker Scripts](../../designing-processes/scripts/what-is-a-script.md), and [ProcessMaker Collections](../../collections/what-is-a-collection.md) to and from third-party data sources such as Application Program Interfaces \(APIs\). After a ProcessMaker Data Connector is created, ProcessMaker designers can reference the data source via the ProcessMaker Data Connector from within their ProcessMaker assets.
+Use the Data Connector package to connect your ProcessMaker assets, such as [ProcessMaker Screens](../../designing-processes/design-forms/what-is-a-form.md), [ProcessMaker Scripts](../../designing-processes/scripts/what-is-a-script.md), and [ProcessMaker Collections](../../collections/what-is-a-collection.md) to and from third-party data sources such as Application Program Interfaces \(APIs\). After a ProcessMaker Data Connector is created, ProcessMaker designers can reference the data source via the ProcessMaker Data Connector from within their ProcessMaker assets. Incorporating data from external data sources such as APIs helps you make business decisions from information outside of your ProcessMaker instance.
 
  Below are a few ways to use ProcessMaker Data Connectors:
 

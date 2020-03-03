@@ -8,7 +8,7 @@ description: >-
 
 ## What is an Endpoint?
 
-A ProcessMaker Data Connector uses Endpoints to interact with the data source to which it is configured. In this context, an Endpoint refers to any interaction the ProcessMaker Data Connector makes with the data source. Similar to Application Program Interface \(API\) endpoints or resources, Endpoints in a ProcessMaker Data Connector call the data source to interact with it, such as to get, create, update, or delete data from the data source. [ProcessMaker Collections](../../collections/what-is-a-collection.md) also have Endpoints with which a ProcessMaker Data Connector interacts with records in that Collection.
+A ProcessMaker Data Connector uses Endpoints to interact with the data source to which it is configured. In this context, an Endpoint is an action the ProcessMaker Data Connector uses to interact with the data source. Similar to Application Program Interface \(API\) endpoints or resources, Endpoints in a ProcessMaker Data Connector call the data source to interact with it, such as to get, create, update, or delete data from the data source. [ProcessMaker Collections](../../collections/what-is-a-collection.md) also have Endpoints with which a ProcessMaker Data Connector interacts with records in that Collection.
 
 ## Endpoints for ProcessMaker Collections
 
