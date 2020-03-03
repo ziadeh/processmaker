@@ -61,7 +61,7 @@ Moving a Data Connector control has the following limitations in regards to the 
 {% hint style="info" %}
 ### ProcessMaker Package Required
 
-The [Data Connector package](../../../../package-development-distribution/package-a-connector/data-connector-package.md) is required. The Actions By Email [package](../../../../package-development-distribution/first-topic.md) installs the Actions By Email connector, which is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Actions By Email connector can be installed in your ProcessMaker instance.
+The [Data Connector package](../../../../package-development-distribution/package-a-connector/data-connector-package.md) is required. The Data Connector [package](../../../../package-development-distribution/first-topic.md) installs the Data Connector connector, which is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Data Connector connector can be installed in your ProcessMaker instance.
 
 ### Permissions Required
 
