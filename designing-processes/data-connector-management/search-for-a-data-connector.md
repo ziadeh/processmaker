@@ -36,5 +36,13 @@ If there are no search results, the following message displays: **No Results**.
 
 ## Related Topics
 
+{% page-ref page="manage-data-connectors/manage-data-connector-categories/" %}
 
+{% page-ref page="view-data-connectors.md" %}
+
+{% page-ref page="create-a-new-data-connector.md" %}
+
+{% page-ref page="edit-a-data-connector.md" %}
+
+{% page-ref page="delete-a-data-connector.md" %}
 

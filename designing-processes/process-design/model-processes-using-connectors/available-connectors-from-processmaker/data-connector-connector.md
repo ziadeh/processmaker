@@ -161,5 +161,17 @@ Click the **Delete** icon![](../../../../.gitbook/assets/delete-record-record-li
 
 ## Related Topics
 
+{% page-ref page="../../../../package-development-distribution/package-a-connector/data-connector-package.md" %}
 
+{% page-ref page="../what-is-a-connector.md" %}
+
+{% page-ref page="../../../data-connector-management/what-is-a-data-connector.md" %}
+
+{% page-ref page="../../../../collections/what-is-a-collection.md" %}
+
+{% page-ref page="../../../design-forms/what-is-a-form.md" %}
+
+{% page-ref page="../../../scripts/what-is-a-script.md" %}
+
+{% page-ref page="../../../../package-development-distribution/first-topic.md" %}
 
