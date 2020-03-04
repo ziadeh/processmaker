@@ -25,11 +25,14 @@ Follow these steps to add a Boundary Error Event element to the Process model:
 
 1. [View your Processes](../../viewing-processes/view-the-list-of-processes/view-your-processes.md#view-all-active-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Add one of the following Process model elements to your Process model in which to associate with the Boundary Error Event element:
+3. Add one of the following Process model elements or [connectors](../model-processes-using-connectors/what-is-a-connector.md) to your Process model in which to associate with the Boundary Error Event element:
    * [Task](add-and-configure-task-elements.md#add-a-task-element) element
    * [Script Task](add-and-configure-script-task-elements.md#add-a-script-task-element) element
    * [Manual Task](add-and-configure-manual-task-elements.md#add-a-manual-task-element) element
    * [Sub Process](add-and-configure-sub-process-elements.md#add-a-sub-process-element) element
+   * [Actions By Email](../model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector \(requires the ProcessMaker [Actions By Email package](../../../package-development-distribution/package-a-connector/actions-by-email-package.md)\)
+   * [Data Connector](../model-processes-using-connectors/available-connectors-from-processmaker/data-connector-connector.md) connector \(requires the ProcessMaker [Data Connector package](../../../package-development-distribution/package-a-connector/data-connector-package.md)\)
+   * [Send Email](../model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) connector \(requires the ProcessMaker [Send Email package](../../../package-development-distribution/package-a-connector/email.md)\)
 4. From the **Boundary Events** drop-down menu, select the **Boundary Error Event** option. The Boundary Error Event element displays on the top of its associating element. ![](../../../.gitbook/assets/boundary-error-event-selection-process-modeler-processes.png) 
 5. Optionally, add the following Boundary Event element types in which to associate with the Task-type element:
    * [Boundary Timer Event](add-and-configure-boundary-timer-event-elements.md#add-a-boundary-timer-event-element) element
@@ -37,7 +40,7 @@ Follow these steps to add a Boundary Error Event element to the Process model:
 
 ![Boundary Error Event element associated with a Script Task element](../../../.gitbook/assets/boundary-error-event-process-modeler-processes.png)
 
-After the element is placed into the Task-type element, you may drag the Boundary Error Event to an adjacent side of its associating element. Since Process Modeler displays element names at the bottom of elements, the Boundary Error Event element displays best at the bottom of its associating element.
+After placing the Boundary Error Event element, you may drag it to an adjacent side of its associating element. Since Process Modeler displays element names at the bottom of elements, the Boundary Error Event element displays best at the bottom of its associating element.
 
 ## Settings
 

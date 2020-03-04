@@ -25,15 +25,17 @@ Follow these steps to add a Boundary Message Event element to the Process model:
 
 1. [View your Processes](../../viewing-processes/view-the-list-of-processes/view-your-processes.md#view-all-active-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Add a [Sub Process](process-modeling-element-descriptions.md#sub-process) element to your Process model in which to associate with the Boundary Message Event element.
+3. Add the following Process model element or [connector](../model-processes-using-connectors/what-is-a-connector.md) to your Process model in which to associate with the Boundary Error Event element:
+   * [Sub Process](add-and-configure-sub-process-elements.md#add-a-sub-process-element) element
+   * [Actions By Email](../model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector \(requires the ProcessMaker [Actions By Email package](../../../package-development-distribution/package-a-connector/actions-by-email-package.md)\)
 4. From the **Boundary Events** drop-down menu, select the **Boundary Message Event** option. The Boundary Message Event element displays on the top of its associating element. ![](../../../.gitbook/assets/boundary-message-event-selection-process-modeler-processes.png) 
-5. Optionally, add the following Boundary Event element types in which to associate with the Sub Process element:
+5. Optionally, add the following Boundary Event element types to the associating element/connector:
    * [Boundary Timer Event](add-and-configure-boundary-error-event-elements.md#add-a-boundary-error-event-element) element
    * [Boundary Error Event](add-and-configure-boundary-error-event-elements.md#add-a-boundary-error-event-element) element
 
 ![Boundary Message Event element associated with a Sub Process element](../../../.gitbook/assets/boundary-message-event-process-modeler-processes.png)
 
-After the element is placed into the Task-type element, you may drag the Boundary Message Event to an adjacent side of its associating element. Since Process Modeler displays element names at the bottom of elements, the Boundary Message Event element displays best at the bottom of its associating element.
+After placing the Boundary Message Event element, you may drag it to an adjacent side of its associating element. Since Process Modeler displays element names at the bottom of elements, the Boundary Message Event element displays best at the bottom of its associating element.
 
 ## Settings
 

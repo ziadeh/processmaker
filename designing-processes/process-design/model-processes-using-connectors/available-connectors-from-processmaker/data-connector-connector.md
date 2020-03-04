@@ -47,6 +47,13 @@ Follow these steps to add a Data Connector control to the Process model:
 
 ![Data Connector control](../../../../.gitbook/assets/data-connector-control-placed-process-modeler-package-processes.png)
 
+{% hint style="info" %}
+After adding the Data Connector control, consider adding either of the following Boundary-type Process model elements to design business solutions when your best-case scenarios don't happen:
+
+* [Boundary Timer Event](../../model-your-process/add-and-configure-boundary-timer-event-elements.md#add-a-boundary-timer-event-element) element \([Don't know what that is?](../../model-your-process/process-modeling-element-descriptions.md#boundary-timer-event)\)
+* [Boundary Error Event](../../model-your-process/add-and-configure-boundary-error-event-elements.md#add-a-boundary-error-event-element) element \([Don't know what that is?](../../model-your-process/process-modeling-element-descriptions.md#boundary-error-event)\)
+{% endhint %}
+
 After the Data Connector control is placed into the Process model, you may move it by dragging it to the new location.
 
 {% hint style="warning" %}

@@ -84,6 +84,14 @@ Follow these steps to add an Actions By Email control to the Process model:
 
 ![Actions By Email control](../../../../.gitbook/assets/actions-by-email-control-process-modeler-package-processes.png)
 
+{% hint style="info" %}
+After adding the Actions By Email control, consider adding the following Boundary-type Process model elements to design business solutions when your best-case scenarios don't happen:
+
+* [Boundary Timer Event](../../model-your-process/add-and-configure-boundary-timer-event-elements.md#add-a-boundary-timer-event-element) element \([Don't know what that is?](../../model-your-process/process-modeling-element-descriptions.md#boundary-timer-event)\)
+* [Boundary Error Event](../../model-your-process/add-and-configure-boundary-error-event-elements.md#add-a-boundary-error-event-element) element \([Don't know what that is?](../../model-your-process/process-modeling-element-descriptions.md#boundary-error-event)\)
+* [Boundary Message Event](../../model-your-process/add-and-configure-boundary-message-event-elements.md#add-a-boundary-message-event-element) element \([Don't know what that is?](../../model-your-process/process-modeling-element-descriptions.md#boundary-message-event)\)
+{% endhint %}
+
 After the Actions By Email control is placed into the Process model, you may move it by dragging it to the new location.
 
 {% hint style="warning" %}

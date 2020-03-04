@@ -232,7 +232,17 @@ See [Add and Configure Error End Event Elements](add-and-configure-error-end-eve
 
 ### Boundary Timer Event
 
-A Boundary Timer Event element represents alternate workflow routing when a specified amount of time expires with a [Task](process-modeling-element-descriptions.md#task) element, [Script Task](process-modeling-element-descriptions.md#script-task) element, [Manual Task](process-modeling-element-descriptions.md#manual-task) element, or [Sub Process](process-modeling-element-descriptions.md#sub-process) element. Workflow routes through the Boundary Timer Event element when the specified time expires. Use a Boundary Timer Event element to design business solutions when intended or best-case workflow in your Process does not occur in an expected period of time. Consider these examples:
+A Boundary Timer Event element represents alternate workflow routing when a specified amount of time expires with any of the following elements and [connectors](../model-processes-using-connectors/what-is-a-connector.md):
+
+* [Task](add-and-configure-task-elements.md#add-a-task-element) element
+* [Script Task](add-and-configure-script-task-elements.md#add-a-script-task-element) element
+* [Manual Task](add-and-configure-manual-task-elements.md#add-a-manual-task-element) element
+* [Sub Process](add-and-configure-sub-process-elements.md#add-a-sub-process-element) element
+* [Actions By Email](../model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector \(requires the ProcessMaker [Actions By Email package](../../../package-development-distribution/package-a-connector/actions-by-email-package.md)\)
+* [Data Connector](../model-processes-using-connectors/available-connectors-from-processmaker/data-connector-connector.md) connector \(requires the ProcessMaker [Data Connector package](../../../package-development-distribution/package-a-connector/data-connector-package.md)\)
+* [Send Email](../model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) connector \(requires the ProcessMaker [Send Email package](../../../package-development-distribution/package-a-connector/email.md)\)
+
+Workflow routes through the Boundary Timer Event element when the specified time expires. Use a Boundary Timer Event element to design business solutions when intended or best-case workflow in your Process does not occur in an expected period of time. Consider these examples:
 
 * **Escalate Task problems:** When a Task assignee does not complete a Task when it is due, escalate to that assignee's manager to ensure project tasks are completed on schedule.
 * **ProcessMaker Script fail-safe:** If a ProcessMaker Script does not complete in a period of time, route workflow to a system administrator to investigate why the Script provided no response.
@@ -259,7 +269,17 @@ See [Add and Configure Boundary Timer Event Elements](add-and-configure-boundary
 
 ### Boundary Error Event
 
-A Boundary Error Event element represents alternate workflow routing when an error occurs with a [Task](process-modeling-element-descriptions.md#task) element, [Script Task](process-modeling-element-descriptions.md#script-task) element, [Manual Task](process-modeling-element-descriptions.md#manual-task) element, or [Sub Process](process-modeling-element-descriptions.md#sub-process) element. Workflow routes through the Boundary Error Event element when its associated element errors or, in the case with a Sub Process element, receives an error from its child Request. Use a Boundary Error Event element to design business solutions when intended or best-case workflow in your Process does not occur because of an error. Consider these examples:
+A Boundary Error Event element represents alternate workflow routing when an error occurs with any of the following elements and [connectors](../model-processes-using-connectors/what-is-a-connector.md):
+
+* [Task](add-and-configure-task-elements.md#add-a-task-element) element
+* [Script Task](add-and-configure-script-task-elements.md#add-a-script-task-element) element
+* [Manual Task](add-and-configure-manual-task-elements.md#add-a-manual-task-element) element
+* [Sub Process](add-and-configure-sub-process-elements.md#add-a-sub-process-element) element
+* [Actions By Email](../model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector \(requires the ProcessMaker [Actions By Email package](../../../package-development-distribution/package-a-connector/actions-by-email-package.md)\)
+* [Data Connector](../model-processes-using-connectors/available-connectors-from-processmaker/data-connector-connector.md) connector \(requires the ProcessMaker [Data Connector package](../../../package-development-distribution/package-a-connector/data-connector-package.md)\)
+* [Send Email](../model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) connector \(requires the ProcessMaker [Send Email package](../../../package-development-distribution/package-a-connector/email.md)\)
+
+Workflow routes through the Boundary Error Event element when its associated element errors or, in the case with a Sub Process element, receives an error from its child Request. Use a Boundary Error Event element to design business solutions when intended or best-case workflow in your Process does not occur because of an error. Consider these examples:
 
 * **Technical error with a ProcessMaker Script:** If a running ProcessMaker Script returns an error, route workflow to a system administrator's Task to investigate why the Script failed.
 * **Escalate child sub-process problems:** If the [Error End Event](process-modeling-element-descriptions.md#error-end-event) element in a child Request captures a Request error, the Boundary Error Event element associated with the parent Request's Sub Process element receives the error, then routes workflow to a system administrator's Task in the parent Process's Request to investigate the issue in the child Request.
@@ -280,7 +300,12 @@ See [Add and Configure Boundary Error Event Elements](add-and-configure-boundary
 
 ### Boundary Message Event
 
-A Boundary Message Event element represents alternate workflow routing from a [Sub Process](process-modeling-element-descriptions.md#sub-process) element when that Boundary Message Event element receives a message from an [Intermediate Message Throw Event](process-modeling-element-descriptions.md#intermediate-message-throw-event) element or a [Message End Event](process-modeling-element-descriptions.md#message-end-event) element in the child Request. Use a Boundary Message Event element to design business solutions for different outcomes in the child Request.
+A Boundary Message Event element represents alternate workflow routing from the following element or connector when that Boundary Message Event element receives a message:
+
+* [Sub Process](add-and-configure-sub-process-elements.md#add-a-sub-process-element) element
+* [Actions By Email](../model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector \(requires the ProcessMaker [Actions By Email package](../../../package-development-distribution/package-a-connector/actions-by-email-package.md)\)
+
+ Use a Boundary Message Event element to design business solutions for different outcomes in the child Request.
 
 Use a [Sequence Flow](process-modeling-element-descriptions.md#sequence-flow) element to indicate workflow routing if the Boundary Message Event element triggers: when this element receives a message from the child Request.
 
