@@ -30,9 +30,9 @@ Follow these steps to add a Boundary Timer Event element to the Process model:
    * [Script Task](add-and-configure-script-task-elements.md#add-a-script-task-element) element
    * [Manual Task](add-and-configure-manual-task-elements.md#add-a-manual-task-element) element
    * [Sub Process](add-and-configure-sub-process-elements.md#add-a-sub-process-element) element
-   * [Actions By Email](../model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector \(requires the ProcessMaker [Actions By Email package](../../../package-development-distribution/package-a-connector/actions-by-email-package.md)\)
-   * [Data Connector](../model-processes-using-connectors/available-connectors-from-processmaker/data-connector-connector.md) connector \(requires the ProcessMaker [Data Connector package](../../../package-development-distribution/package-a-connector/data-connector-package.md)\)
-   * [Send Email](../model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) connector \(requires the ProcessMaker [Send Email package](../../../package-development-distribution/package-a-connector/email.md)\)
+   * [Actions By Email](../model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector \(requires the [Actions By Email package](../../../package-development-distribution/package-a-connector/actions-by-email-package.md)\)
+   * [Data Connector](../model-processes-using-connectors/available-connectors-from-processmaker/data-connector-connector.md) connector \(requires the [Data Connector package](../../../package-development-distribution/package-a-connector/data-connector-package.md)\)
+   * [Send Email](../model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) connector \(requires the [Send Email package](../../../package-development-distribution/package-a-connector/email.md)\)
 4. From the **Boundary Events** drop-down menu, select the **Boundary Timer Event** option. The Boundary Timer Event element displays on the top of its associating element. ![](../../../.gitbook/assets/boundary-timer-event-selection-process-modeler-processes.png) 
 5. Optionally, add the following Boundary Event element types in which to associate with the Task-type element:
    * [Boundary Error Event](add-and-configure-boundary-error-event-elements.md#add-a-boundary-error-event-element) element

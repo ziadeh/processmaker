@@ -238,9 +238,9 @@ A Boundary Timer Event element represents alternate workflow routing when a spec
 * [Script Task](add-and-configure-script-task-elements.md#add-a-script-task-element) element
 * [Manual Task](add-and-configure-manual-task-elements.md#add-a-manual-task-element) element
 * [Sub Process](add-and-configure-sub-process-elements.md#add-a-sub-process-element) element
-* [Actions By Email](../model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector \(requires the ProcessMaker [Actions By Email package](../../../package-development-distribution/package-a-connector/actions-by-email-package.md)\)
-* [Data Connector](../model-processes-using-connectors/available-connectors-from-processmaker/data-connector-connector.md) connector \(requires the ProcessMaker [Data Connector package](../../../package-development-distribution/package-a-connector/data-connector-package.md)\)
-* [Send Email](../model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) connector \(requires the ProcessMaker [Send Email package](../../../package-development-distribution/package-a-connector/email.md)\)
+* [Actions By Email](../model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector \(requires the [Actions By Email package](../../../package-development-distribution/package-a-connector/actions-by-email-package.md)\)
+* [Data Connector](../model-processes-using-connectors/available-connectors-from-processmaker/data-connector-connector.md) connector \(requires the [Data Connector package](../../../package-development-distribution/package-a-connector/data-connector-package.md)\)
+* [Send Email](../model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) connector \(requires the [Send Email package](../../../package-development-distribution/package-a-connector/email.md)\)
 
 Workflow routes through the Boundary Timer Event element when the specified time expires. Use a Boundary Timer Event element to design business solutions when intended or best-case workflow in your Process does not occur in an expected period of time. Consider these examples:
 
@@ -275,9 +275,9 @@ A Boundary Error Event element represents alternate workflow routing when an err
 * [Script Task](add-and-configure-script-task-elements.md#add-a-script-task-element) element
 * [Manual Task](add-and-configure-manual-task-elements.md#add-a-manual-task-element) element
 * [Sub Process](add-and-configure-sub-process-elements.md#add-a-sub-process-element) element
-* [Actions By Email](../model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector \(requires the ProcessMaker [Actions By Email package](../../../package-development-distribution/package-a-connector/actions-by-email-package.md)\)
-* [Data Connector](../model-processes-using-connectors/available-connectors-from-processmaker/data-connector-connector.md) connector \(requires the ProcessMaker [Data Connector package](../../../package-development-distribution/package-a-connector/data-connector-package.md)\)
-* [Send Email](../model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) connector \(requires the ProcessMaker [Send Email package](../../../package-development-distribution/package-a-connector/email.md)\)
+* [Actions By Email](../model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector \(requires the [Actions By Email package](../../../package-development-distribution/package-a-connector/actions-by-email-package.md)\)
+* [Data Connector](../model-processes-using-connectors/available-connectors-from-processmaker/data-connector-connector.md) connector \(requires the [Data Connector package](../../../package-development-distribution/package-a-connector/data-connector-package.md)\)
+* [Send Email](../model-processes-using-connectors/available-connectors-from-processmaker/email-connector.md) connector \(requires the [Send Email package](../../../package-development-distribution/package-a-connector/email.md)\)
 
 Workflow routes through the Boundary Error Event element when its associated element errors or, in the case with a Sub Process element, receives an error from its child Request. Use a Boundary Error Event element to design business solutions when intended or best-case workflow in your Process does not occur because of an error. Consider these examples:
 
@@ -303,7 +303,7 @@ See [Add and Configure Boundary Error Event Elements](add-and-configure-boundary
 A Boundary Message Event element represents alternate workflow routing from the following element or connector when that Boundary Message Event element receives a message:
 
 * [Sub Process](add-and-configure-sub-process-elements.md#add-a-sub-process-element) element
-* [Actions By Email](../model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector \(requires the ProcessMaker [Actions By Email package](../../../package-development-distribution/package-a-connector/actions-by-email-package.md)\)
+* [Actions By Email](../model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector \(requires the [Actions By Email package](../../../package-development-distribution/package-a-connector/actions-by-email-package.md)\)
 
  Use a Boundary Message Event element to design business solutions for different outcomes in the child Request.
 
