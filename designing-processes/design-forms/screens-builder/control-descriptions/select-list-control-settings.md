@@ -298,13 +298,13 @@ Follow these steps to reference data from a [ProcessMaker Data Connector](../../
 Consider the following example of doctors who work in a clinic. 
 
 ```javascript
-doctors = {
+doctors = [
     {id: 1, name: 'Adam Ardin', gender: 'male'},
     {id: 2, name: 'Amanda Creek', gender: 'female'},
     {id: 3, name: 'Lucy Morales', gender: 'female'},
     {id: 4, name: 'Mindy Smith', gender: 'female'},
     {id: 5, name: 'Toby Tomlinson', gender: 'male'}
-}
+]
 ```
 
 Use the following settings to reference this data array as options for this control:
