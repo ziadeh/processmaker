@@ -16,6 +16,8 @@ Follow these steps to access your profile settings:
 
    The **Profile** page displays. See [Change Your Profile Settings](profile-settings.md#change-your-profile-settings).  
 
+![Profile page](../.gitbook/assets/profile-page.png)
+
 ## Change Your Profile Settings
 
 {% hint style="info" %}
