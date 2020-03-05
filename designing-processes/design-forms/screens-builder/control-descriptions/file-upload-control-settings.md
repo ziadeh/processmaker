@@ -10,6 +10,8 @@ description: >-
 
 The File Upload control adds an area in the ProcessMaker [Screen](../../what-is-a-form.md) to which the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant can upload one file from a local computer or accessible network location. The Request participant can drag and place the file on the control or select a button from which to locate the file for upload. The uploaded file can be referenced in a later step in a Request.
 
+When a file is uploaded to a ProcessMaker Screen during an in-progress Request, then submitted, that file can be downloaded from the [**Files** tab in that Request's summary](../../../../using-processmaker/requests/request-details/summary-for-in-progress-requests.md#files-associated-with-the-request). The file remains available from that Request's summary regardless of that Request's status.
+
 {% hint style="info" %}
 This control is not available for [Display](../types-for-screens.md#display)-type ProcessMaker Screens. See [Screen Types](../types-for-screens.md).
 {% endhint %}
