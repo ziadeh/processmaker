@@ -91,7 +91,7 @@ The Data Connector connector has the following panels that contain settings:
 
 ### Configuration Panel Settings
 
-The Data Connector connector has multiple settings in the **Configuration** panel:
+The Data Connector connector has the following settings in the **Configuration** panel:
 
 * [Edit the connector name](data-connector-connector.md#edit-the-control-name)
 * [Select the ProcessMaker Data Connector](data-connector-connector.md#select-the-processmaker-data-connector)
@@ -104,7 +104,7 @@ A connector name is a human-readable reference for a Process model control. Proc
 Follow these steps to edit the name for a Data Connector connector:
 
 1. Ensure that the **Hide Menus** button![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Data Connector connector from the Process model in which to edit its name. Panels to configure this element display.
+2. Select the Data Connector connector from the Process model in which to edit its name. Panels to configure this connector display.
 3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../../.gitbook/assets/data-connector-configuration-name-process-modeler-processes.png) 
 4. In the **Name** setting, edit the selected connector's name and then press **Enter**.
 
@@ -155,7 +155,7 @@ The procedure to integrate the data source's data to the Request JSON data model
 Follow these steps to specify the Request JSON data object\(s\) to which to map the data source's data:
 
 1. Ensure that the **Hide Menus** button![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Data Connector connector from the Process model to map the data source's data to the Request JSON object\(s\). Panels to configure this element display.
+2. Select the Data Connector connector from the Process model to map the data source's data to the Request JSON object\(s\). Panels to configure this connector display.
 3. Expand the **Data Mapping** panel if it is not presently expanded. The **Form Data** setting displays. ![](../../../../.gitbook/assets/data-connector-form-data-mapping-package-processes.png) 
 4. Click the **+Data** button to add a JSON object to which to map data from the data source. Settings display below the **key** and **value** columns to add the JSON key name and its value, respectively, for the JSON object. ![](../../../../.gitbook/assets/data-connector-form-data-mapping-key-value-package-processes.png) 
 5. In the **key** setting, enter the key name for the JSON object.

@@ -38,7 +38,7 @@ Follow these steps to add a PDF Generator connector to the Process model:
 3. Locate the **PDF Generator** connector in the **Elements and Connectors** palette that is to the left of the Process Modeler canvas. If the [**Hide Menus** button](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view)![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Elements and Connectors** palette displays the **PDF Generator** connector's icon![](../../../../.gitbook/assets/pdf-generator-icon-process-modeler-package-processes.png). ![](../../../../.gitbook/assets/pdf-generator-control-package-process-modeler-processes.png) 
 4. Drag the connector into the Process model canvas where you want to place it. If a Pool element is in your Process model, the PDF Generator connector cannot be placed outside of the Pool element.
 
-![Actions By Email connector](../../../../.gitbook/assets/actions-by-email-control-process-modeler-package-processes.png)
+![PDF Generator connector](../../../../.gitbook/assets/pdf-generator-placed-process-modeler-package-processes.png)
 
 {% hint style="info" %}
 After adding the PDF Generator connector, consider adding the following Boundary-type Process model elements to design business solutions when your best-case scenarios don't happen:
@@ -73,12 +73,37 @@ Your ProcessMaker user account or group membership must have the following permi
 See the [Process](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
+The PDF Generator connector has the following panels that contain settings:
+
+* **Configuration** panel
+  * [Edit the connector name](pdf-generator-connector.md#edit-the-connector-name)
+  * [Select the ProcessMaker Screen from which to generate a PDF](pdf-generator-connector.md#select-the-processmaker-screen-from-which-to-generate-a-pdf)
+
+### Configuration Panel Settings
+
+#### Edit the Connector Name
+
 Follow these steps to configure a PDF Generator connector:
 
 1. Ensure that the **Hide Menus** button![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the PDF Generator connector from the Process model in which to configure its settings. The **Configuration** panel displays.
+2. Select the PDF Generator connector from the Process model in which to configure its settings. Panels to configure this connector display.
+3. Expand the **Configuration** panel if it is not presently expanded. The **Name** setting displays. ![](../../../../.gitbook/assets/pdf-generator-configuration-name-process-modeler-package-processes.png) 
+4. In the **Name** setting, edit the selected connector's name and then press **Enter**.
+
+#### Select the ProcessMaker Screen from Which to Generate a PDF
+
+Follow these steps to select from which [Display](../../../design-forms/screens-builder/types-for-screens.md#display)-type [ProcessMaker Screen](../../../design-forms/what-is-a-form.md) to generate a PDF:
+
+1. Ensure that the **Hide Menus** button![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
+2. Select the PDF Generator connector from the Process model in which to configure its settings. Panels to configure this connector display.
+3. Expand the **Configuration** panel if it is not presently expanded, and then locate the **Select a Display Screen** setting. ![](../../../../.gitbook/assets/pdf-generator-configuration-select-display-screen-process-modeler-package-processes.png) 
+4. From the **Select a Display Screen** drop-down menu, select which ProcessMaker Screen to generate a PDF. Only Display-type ProcessMaker Screens display from this setting.
 
 ## Related Topics
 
+{% page-ref page="../../../../package-development-distribution/package-a-connector/pdf-generator-package.md" %}
 
+{% page-ref page="../what-is-a-connector.md" %}
+
+{% page-ref page="../../../../package-development-distribution/first-topic.md" %}
 
