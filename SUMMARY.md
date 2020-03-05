@@ -20,7 +20,7 @@
 
 * [Log On to ProcessMaker](using-processmaker/log-in.md)
 * [Profile Settings](using-processmaker/profile-settings.md)
-* [View Product Documentation](using-processmaker/view-product-documentation.md)
+* [View ProcessMaker Product Documentation](using-processmaker/view-product-documentation.md)
 * [View ProcessMaker Version Information](using-processmaker/application-version-details.md)
 * [Session Timeout Warning](using-processmaker/session-timeout-warning.md)
 * [Log Out of ProcessMaker](using-processmaker/log-out.md)
