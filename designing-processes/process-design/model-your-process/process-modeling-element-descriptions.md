@@ -618,8 +618,6 @@ See [Connect Message Flow Elements to Indicate Collaboration](set-and-delete-mes
 
 {% page-ref page="edit-the-process-model-information.md" %}
 
-{% page-ref page="filter-elements-in-the-bpmn-panel.md" %}
-
 {% page-ref page="add-and-configure-an-event-element.md" %}
 
 {% page-ref page="add-and-configure-start-timer-event-elements.md" %}

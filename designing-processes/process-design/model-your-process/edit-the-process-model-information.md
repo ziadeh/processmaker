@@ -52,8 +52,6 @@ Follow these steps to edit the Process model name:
 
 {% page-ref page="process-modeling-element-descriptions.md" %}
 
-{% page-ref page="filter-elements-in-the-bpmn-panel.md" %}
-
 {% page-ref page="add-and-configure-an-event-element.md" %}
 
 {% page-ref page="add-and-configure-start-timer-event-elements.md" %}

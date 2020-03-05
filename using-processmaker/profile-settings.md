@@ -9,7 +9,8 @@ description: Personalize your ProcessMaker profile.
 Follow these steps to access your profile settings:
 
 1. [Log on](log-in.md#log-in) to ProcessMaker.
-2. Click your user avatar, and then select **Profile**.  
+2. Click your user avatar. Your user name displays in the **Edit Profile** option.
+3. Select **Edit Profile**.
 
    ![](../.gitbook/assets/profile-option.png)
 
@@ -86,9 +87,11 @@ Hover your cursor over a user's avatar to view that person's full name.
 
 ## Related Topics
 
+{% page-ref page="view-product-documentation.md" %}
+
 {% page-ref page="application-version-details.md" %}
 
-{% page-ref page="log-out.md" %}
+{% page-ref page="session-timeout-warning.md" %}
 
-{% page-ref page="../processmaker-administration/add-users/manage-user-accounts/create-a-user-account.md" %}
+{% page-ref page="log-out.md" %}
 

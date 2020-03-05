@@ -25,11 +25,11 @@ Follow these steps to add a Message Start Event element to the Process model:
 
 1. [View your Processes](../../viewing-processes/view-the-list-of-processes/view-your-processes.md#view-all-active-processes). The **Processes** page displays.
 2. [Create a new Process](../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Start Event** control in the **Elements and Connectors** palette that is to the left of the Process Modeler canvas. If the [**Hide Menus** button](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view)![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Elements and Connectors** palette displays the **Start Event** control's icon![](../../../.gitbook/assets/start-event-element-icon-process-modeler-processes.png).
+3. Locate the **Start Event** element in the **Elements and Connectors** palette that is to the left of the Process Modeler canvas. If the [**Hide Menus** button](../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view)![](../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Elements and Connectors** palette displays the **Start Event** element's icon![](../../../.gitbook/assets/start-event-element-icon-process-modeler-processes.png).
 
    ![](../../../.gitbook/assets/start-event-control-process-modeler-processes.png)
 
-4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Start Timer Event element cannot be placed outside of the Pool element.
+4. Drag the element into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Start Timer Event element cannot be placed outside of the Pool element.
 5. From the **Elements** drop-down menu, select the **Message Start Event** option. The Message Start Event element displays. ![](../../../.gitbook/assets/message-start-event-selection-process-modeler-processes.png) 
 
 ![Message Start Event element](../../../.gitbook/assets/message-start-event-process-modeler-processes%20%281%29.png)
@@ -39,7 +39,7 @@ After the element is placed into the Process model, you may move it by dragging 
 {% hint style="warning" %}
 Moving a Message Start Event element has the following limitations in regards to the following Process model elements:
 
-* **Pool element:** If the Message Start Event element is inside of a [Pool](process-modeling-element-descriptions.md#pool) element, it cannot be moved outside of the Pool element. If you attempt to do so, Process Modeler places the Message Start Event element inside the Pool element closest to where you attempted to move it.
+* **Pool element:** If the Message Start Event element is inside of a [Pool](process-modeling-element-descriptions.md#pool) element, it cannot be moved outside of the Pool element. If you attempt to do so, Process Modeler places the Message Start Event element inside the Pool element closest to where you attempt to move it.
 * **Lane element:** If the Message Start Event element is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Message Start Event element cannot be moved outside of the Pool element.
 {% endhint %}
 

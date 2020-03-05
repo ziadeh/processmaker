@@ -6,15 +6,21 @@ description: Log out of ProcessMaker.
 
 ## Log Out of ProcessMaker
 
-Click your user avatar and then select **Log Out**.
+Follow these steps to log out of ProcessMaker:
 
-![Log Out option to log out of ProcessMaker](../.gitbook/assets/log-out-option.png)
+1. Click your user avatar. Your first name displays in the **Edit Profile** option.
+2. Select **Log Out**.  
+   ![](../.gitbook/assets/log-out-option.png) 
 
-You are logged out of ProcessMaker.
+   You are logged out of ProcessMaker.
 
 ## Related Topics
 
 {% page-ref page="profile-settings.md" %}
 
+{% page-ref page="view-product-documentation.md" %}
+
 {% page-ref page="application-version-details.md" %}
+
+{% page-ref page="session-timeout-warning.md" %}
 

@@ -22,7 +22,7 @@ Follow these steps to view ProcessMaker and [package](../package-development-dis
 The **About ProcessMaker** page displays the following information:
 
 * ProcessMaker version
-* Links to [report an issue](https://docs.google.com/forms/d/e/1FAIpQLScnYje8uTACYwp3VxdRoA26OFkbfFs6kuXofqY-QXXsG-h9xA/viewform), [view the **processmaker** GitHub repository](https://github.com/ProcessMaker/bpm), and [read the user documentation](https://processmaker.gitbook.io/processmaker/)
+* Links to [report an issue](https://github.com/ProcessMaker/processmaker/issues/new), [view the **processmaker** GitHub repository](https://github.com/ProcessMaker/bpm), and [read the user documentation](https://processmaker.gitbook.io/processmaker/)
 * Name, description, and version for each package installed to your ProcessMaker instance
 
 {% hint style="info" %}
@@ -32,6 +32,10 @@ See [Available Packages from ProcessMaker](../package-development-distribution/p
 ## Related Topics
 
 {% page-ref page="profile-settings.md" %}
+
+{% page-ref page="view-product-documentation.md" %}
+
+{% page-ref page="session-timeout-warning.md" %}
 
 {% page-ref page="log-out.md" %}
 

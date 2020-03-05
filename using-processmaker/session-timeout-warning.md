@@ -26,6 +26,8 @@ Click the **Stay Connected** button to renew your session before the timer indic
 
 {% page-ref page="log-in.md" %}
 
+{% page-ref page="view-product-documentation.md" %}
+
 {% page-ref page="task-management/what-is-a-task.md" %}
 
 {% page-ref page="../designing-processes/process-design/what-is-process-modeling.md" %}

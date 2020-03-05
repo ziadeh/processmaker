@@ -30,10 +30,10 @@ After the email recipient sends the reply email, ProcessMaker receives the respo
 The comment in the email reply above the indicated line is not preserved when the email reply is sent. This comment displays only for the benefit of the email recipient prior to sending the email reply.
 {% endhint %}
 
-The Actions By Email connector adds the **Actions By Email** control below the BPMN 2.0 elements in the panel to the left of the Process Modeler canvas. See the following sections in this topic:
+The Actions By Email connector adds the **Actions By Email** connector below the BPMN 2.0 elements in the panel to the left of the Process Modeler canvas. See the following sections in this topic:
 
-* [Add an Actions By Email Control to the Process Model](actions-by-email-connector.md#add-an-actions-by-email-control-to-the-process-model)
-* [Configure an Actions By Email Control](actions-by-email-connector.md#configure-an-actions-by-email-control)
+* [Add an Actions By Email Connector to the Process Model](actions-by-email-connector.md#add-an-actions-by-email-control-to-the-process-model)
+* [Configure an Actions By Email Connector](actions-by-email-connector.md#configure-an-actions-by-email-control)
 
 The email recipient's name, email address, subject, and/or email body can be specified in one of the following ways when configuring the Actions By Email connector:
 
@@ -55,7 +55,7 @@ To ensure that Requests do not remain indefinitely active on an Exclusive Gatewa
 * If an [Intermediate Message Catch Event](../../model-your-process/process-modeling-element-descriptions.md#intermediate-message-catch-event) element triggers instead of the Intermediate Timer Event element, the email recipient sent the response within the allotted time period.
 {% endhint %}
 
-## Add an Actions by Email Control to the Process Model
+## Add an Actions by Email Connector to the Process Model
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
@@ -64,7 +64,7 @@ The [Actions By Email package](../../../../package-development-distribution/pack
 
 ### Permissions Required
 
-Your ProcessMaker user account or group membership must have the following permissions to add an Actions By Email control to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
+Your ProcessMaker user account or group membership must have the following permissions to add an Actions By Email connector to the Process model unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: Edit Processes
 * Processes: View Processes
@@ -72,33 +72,33 @@ Your ProcessMaker user account or group membership must have the following permi
 See the [Process](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to add an Actions By Email control to the Process model:
+Follow these steps to add an Actions By Email connector to the Process model:
 
 1. [View your Processes](../../../viewing-processes/view-the-list-of-processes/view-your-processes.md#view-all-active-processes). The **Processes** page displays.
 2. [Create a new Process](../../../viewing-processes/view-the-list-of-processes/create-a-process.md) or click the **Open Modeler** icon![](../../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Process model. Process Modeler displays.
-3. Locate the **Actions By Email** control in the **Controls** palette that is to the left of the Process Modeler canvas. If the [**Hide Menus** button](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view)![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Controls** palette displays the **Actions By Email** control's icon![](../../../../.gitbook/assets/actions-by-email-icon-process-modeler-processes.png).
+3. Locate the **Actions By Email** connector in the **Elements and Connectors** palette that is to the left of the Process Modeler canvas. If the [**Hide Menus** button](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view)![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is enabled, the **Elements and Connectors** palette displays the **Actions By Email** connector's icon![](../../../../.gitbook/assets/actions-by-email-icon-process-modeler-processes.png).
 
    ![](../../../../.gitbook/assets/actions-by-email-control-bpmn-process-modeler-package-processes.png) 
 
-4. Drag the control into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Actions By Email control cannot be placed outside of the Pool element.
+4. Drag the connector into the Process model canvas where you want to place it. If a Pool element is in your Process model, the Actions By Email connector cannot be placed outside of the Pool element.
 
-![Actions By Email control](../../../../.gitbook/assets/actions-by-email-control-process-modeler-package-processes.png)
+![Actions By Email connector](../../../../.gitbook/assets/actions-by-email-control-process-modeler-package-processes.png)
 
 {% hint style="info" %}
-After adding the Actions By Email control, consider adding the following Boundary-type Process model elements to design business solutions when your best-case scenarios don't happen:
+After adding the Actions By Email connector, consider adding the following Boundary-type Process model elements to design business solutions when your best-case scenarios don't happen:
 
 * [Boundary Timer Event](../../model-your-process/add-and-configure-boundary-timer-event-elements.md#add-a-boundary-timer-event-element) element \([Don't know what that is?](../../model-your-process/process-modeling-element-descriptions.md#boundary-timer-event)\)
 * [Boundary Error Event](../../model-your-process/add-and-configure-boundary-error-event-elements.md#add-a-boundary-error-event-element) element \([Don't know what that is?](../../model-your-process/process-modeling-element-descriptions.md#boundary-error-event)\)
 * [Boundary Message Event](../../model-your-process/add-and-configure-boundary-message-event-elements.md#add-a-boundary-message-event-element) element \([Don't know what that is?](../../model-your-process/process-modeling-element-descriptions.md#boundary-message-event)\)
 {% endhint %}
 
-After the Actions By Email control is placed into the Process model, you may move it by dragging it to the new location.
+After the Actions By Email connector is placed into the Process model, you may move it by dragging it to the new location.
 
 {% hint style="warning" %}
-Moving an Actions By Email control has the following limitations in regards to the following Process model elements:
+Moving an Actions By Email connector has the following limitations in regards to the following Process model elements:
 
-* **Pool element:** If the Actions By Email control is inside of a [Pool](../../model-your-process/process-modeling-element-descriptions.md#pool) element, it cannot be moved outside of the Pool element. If you attempt to do so, Process Modeler places the Actions By Email control inside the Pool element closest to where you attempted to move it.
-* **Lane element:** If the Actions By Email control is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Actions By Email control cannot be moved outside of the Pool element.
+* **Pool element:** If the Actions By Email connector is inside of a [Pool](../../model-your-process/process-modeling-element-descriptions.md#pool) element, it cannot be moved outside of the Pool element. If you attempt to do so, Process Modeler places the Actions By Email connector inside the Pool element closest to where you attempt to move it.
+* **Lane element:** If the Actions By Email connector is inside of a Lane element, it can be moved to another Lane element in the same Pool element. However, the Actions By Email connector cannot be moved outside of the Pool element.
 {% endhint %}
 
 ## Settings
@@ -110,7 +110,7 @@ The [Actions By Email package](../../../../package-development-distribution/pack
 
 ### Permissions Required
 
-Your ProcessMaker user account or group membership must have the following permissions to configure an Actions By Email control unless your user account has the **Make this user a Super Admin** setting selected:
+Your ProcessMaker user account or group membership must have the following permissions to configure an Actions By Email connector unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Processes: Edit Processes
 * Processes: View Processes
@@ -118,17 +118,17 @@ Your ProcessMaker user account or group membership must have the following permi
 See the [Process](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#processes) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to configure an Actions By Email control:
+Follow these steps to configure an Actions By Email connector:
 
 1. Ensure that the **Hide Menus** button![](../../../../.gitbook/assets/hide-menus-button-process-modeler-processes.png)is not enabled. See [Maximize the Process Modeler Canvas View](../../navigate-around-your-process-model.md#maximize-the-process-modeler-canvas-view).
-2. Select the Actions By Email control from the Process model in which to configure its settings. The **Actions By Email** configuration settings display.  ![](../../../../.gitbook/assets/actions-by-email-configuration-process-modeler-package-processes.png) 
-3. In the **Email** setting, enter the email address to which the Actions By Email control sends an email when this Actions By Email control triggers. You may use the value from a [ProcessMaker Screen](../../../design-forms/what-is-a-form.md)'s **Variable Name** setting as a variable in this setting. For example, if your Process model references a ProcessMaker Screen that contains a [Lines Inputs control](../../../design-forms/screens-builder/control-descriptions/line-input-control-settings.md) with the **Variable Name** setting value of `EmailAddress` that the Request participant enters an email address, use mustache syntax `{{EmailAddress}}` to use that Line Inputs control's value in the **Email** setting. Email addresses may be referenced from Request data or entered into the **Email** setting by using commas \(`,`\) between email addresses. You may also use mustache syntax to reference [Magic Variables](../../../reference-global-variables-in-your-processmaker-assets.md).
+2. Select the Actions By Email connector from the Process model in which to configure its settings. The **Actions By Email** configuration settings display.  ![](../../../../.gitbook/assets/actions-by-email-configuration-process-modeler-package-processes.png) 
+3. In the **Email** setting, enter the email address to which the Actions By Email connector sends an email when this Actions By Email control triggers. You may use the value from a [ProcessMaker Screen](../../../design-forms/what-is-a-form.md)'s **Variable Name** setting as a variable in this setting. For example, if your Process model references a ProcessMaker Screen that contains a [Lines Inputs control](../../../design-forms/screens-builder/control-descriptions/line-input-control-settings.md) with the **Variable Name** setting value of `EmailAddress` that the Request participant enters an email address, use mustache syntax `{{EmailAddress}}` to use that Line Inputs control's value in the **Email** setting. Email addresses may be referenced from Request data or entered into the **Email** setting by using commas \(`,`\) between email addresses. You may also use mustache syntax to reference [Magic Variables](../../../reference-global-variables-in-your-processmaker-assets.md).
 4. In the **Name** setting, enter the name of the email recipient. You may use the value from a ProcessMaker Screen's **Variable Name** setting as a variable in this setting. For example, if your Process model references a ProcessMaker Screen that contains a Lines Inputs control with the **Variable Name** setting value of `FullName` that the Request participant enters an name, use mustache syntax `{{FullName}}` to use that Line Inputs control's value in the **Name** setting. Email recipients may be referenced from Request data or entered into the **Name** setting by using commas \(`,`\) between email addresses. If entering multiple email recipients, ensure to list them in the corresponding order as you have listed them in the **Email** setting, so that each email recipient views her or his name in the received email.
-5. In the **Subject** setting, enter the subject of the email the Actions By Email control sends. For example, enter the decision that the email recipient must make in this email.
+5. In the **Subject** setting, enter the subject of the email the Actions By Email connector sends. For example, enter the decision that the email recipient must make in this email.
 6. From the **Body** setting, select one of the following options:
    * **Text:** From the **Body** drop-down menu, select the **Text** option to enter the email body text. The **Email body** setting displays. In the **Email body** setting, enter the email body text.
    * **Screen:** From the **Body** drop-down menu, select the **Screen** option to use a ProcessMaker Screen to display the email body. The **Email body** setting displays. From the **Email body** drop-down menu, select the [Display](../../../design-forms/screens-builder/types-for-screens.md#display)-type ProcessMaker Screen to display the email body.
-7. In the **Key name** setting, enter the name of the key that stores the Actions By Email control response within the JSON data model of the Request.
+7. In the **Key name** setting, enter the name of the key that stores the Actions By Email connector response within the JSON data model of the Request.
 8. In the **Options** setting, enter the list of options available to the email recipient when making the decision. The options configured here display below the body of the email. Add options in the order they are to display from top to bottom in the email.  
    ![](../../../../.gitbook/assets/actions-by-email-options-list-configuration-process-modeler-package-processes.png) 
 
