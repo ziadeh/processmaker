@@ -84,7 +84,10 @@ If the selected Request is not completed, the following message displays: **No D
 
 ## Files Associated with the Request
 
-The **Files** tab displays the summary of all files associated with the completed Request. The **Files** tab only displays if at least one file was uploaded to the Request. The name of each file is linked to the file so you can download that file to your local computer or network location.
+The **Files** tab displays the summary of all files associated with the Request to that time. The **Files** tab only displays in that Request summary if one of the following occurs:
+
+* At least one file has been uploaded to that Request.
+* A [PDF Generator connector](../../../designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/pdf-generator-connector.md) in that Request has automatically generated a PDF of a [Display](../../../designing-processes/design-forms/screens-builder/types-for-screens.md)-type [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md). Note that to use the PDF Generator connector, the [PDF Generator package](../../../package-development-distribution/package-a-connector/pdf-generator-package.md) must be installed in your ProcessMaker instance. The PDF Generator [package](../../../package-development-distribution/first-topic.md) is not available in the ProcessMaker open-source edition.
 
 ![&quot;Files&quot; tab for an in-progress Request&apos;s summary](../../../.gitbook/assets/files-tab-request-summary-requests.png)
 
@@ -171,4 +174,6 @@ The following information displays about each event in the Request history:
 {% page-ref page="summary-for-requests-with-errors.md" %}
 
 {% page-ref page="../../../designing-processes/design-forms/what-is-a-form.md" %}
+
+{% page-ref page="../../../package-development-distribution/package-a-connector/pdf-generator-package.md" %}
 
