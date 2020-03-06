@@ -31,8 +31,8 @@ The **Categories** tab displays the following information in tabular format abou
   * **Active:** Active Screen Categories can have ProcessMaker Screens assigned to them. The Screen Category named **Uncatagorized** is active by default.
   * **Inactive:** Inactive Screen Categories cannot have ProcessMaker Screens assigned to them.
 * **Screens:** The **\# Screens** column displays how many ProcessMaker Screens in your organization have been assigned to that Screen Category.
-* **Modified:** The **Modified** column displays the date and time the Screen Category was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Created:** The **Created** column displays the date and time the Screen Category was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Modified:** The **Modified** column displays the date and time the Screen Category was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-processmaker-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the Screen Category was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-processmaker-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### No Screen Categories? <a id="no-processes"></a>

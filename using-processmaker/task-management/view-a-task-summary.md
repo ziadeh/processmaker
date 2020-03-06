@@ -62,7 +62,7 @@ The following summary displays about an assigned Task:
 
 * **Due:** The **Due** field displays the date and time the assigned Task is due.
 * **Assigned To:** The **Assigned To** field displays the avatar and full name of the person assigned the Task.
-* **Assigned:** The date and time the Task was assigned displays below the **Assigned To** field. The **Reassign** button displays if the Task can be reassigned. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Assigned:** The date and time the Task was assigned displays below the **Assigned To** field. The **Reassign** button displays if the Task can be reassigned. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-processmaker-settings) **Time zone** setting is specified.
 * **Request:** The **Request** field displays the Process name associated with the Request preceded by its numerical iteration. Click the Process name to [view the Request summary](../requests/request-details/).
 * **Requested By:** The **Requested By** field displays the avatar and full name of the person who started the Request. Hover your cursor over a user's avatar to view that person's full name.
 
@@ -103,7 +103,7 @@ The following summary displays about a completed Task:
 
 * **Completed on:** The **Completed on** field displays the date and time the Task was completed.
 * **Assigned To:** The **Assigned To** field displays the avatar and full name of the person assigned the Task.
-* **Assigned:** The date and time the Task was assigned displays below the **Assigned To** field. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Assigned:** The date and time the Task was assigned displays below the **Assigned To** field. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-processmaker-settings) **Time zone** setting is specified.
 * **Request:** The **Request** field displays the Process name associated with the Request preceded by its numerical iteration. Click the Process name to [view the Request summary](../requests/request-details/).
 * **Requested By:** The **Requested By** field displays the avatar and full name of the person who started the Request. Hover your cursor over a user's avatar to view that person's full name.
 

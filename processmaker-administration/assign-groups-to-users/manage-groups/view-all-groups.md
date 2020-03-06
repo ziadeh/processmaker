@@ -30,8 +30,8 @@ The **Groups** page displays the following information in tabular format about P
   * **Active:** An Active ProcessMaker group is one to which ProcessMaker user accounts can be assigned as members.
   * **Inactive:** An Inactive ProcessMaker group is one to which ProcessMaker user accounts cannot be assigned. When a ProcessMaker group becomes inactive, ProcessMaker user accounts that were members of that group are no longer members.
 * **\#Users:** The **\# Users** column displays how many ProcessMaker users are members of the ProcessMaker group.
-* **Modified:** The **Modified** column displays the date and time the ProcessMaker group was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Created:** The **Created** column displays the date and time the ProcessMaker group was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Modified:** The **Modified** column displays the date and time the ProcessMaker group was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-processmaker-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the ProcessMaker group was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../using-processmaker/profile-settings.md#change-your-processmaker-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### Search for a ProcessMaker Group

@@ -36,8 +36,8 @@ The **Collections** page displays the following information in tabular format ab
 * **\# Records:** The **\# Records** column displays how many records are in each ProcessMaker Collection.
 * **Modified By:** The **Modified By** column displays the ProcessMaker user who last modified the Collection. Hover your cursor over the user's avatar to view that person's full name.
 * **Created By:** The **Created By** column displays the ProcessMaker user who created the Collection. Hover your cursor over the user's avatar to view that person's full name.
-* **Modified:** The **Modified** column displays the date and time the ProcessMaker Collection was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Created:** The **Created** column displays the date and time the ProcessMaker Collection was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Modified:** The **Modified** column displays the date and time the ProcessMaker Collection was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-processmaker-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the ProcessMaker Collection was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../using-processmaker/profile-settings.md#change-your-processmaker-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### Search for a ProcessMaker Collection

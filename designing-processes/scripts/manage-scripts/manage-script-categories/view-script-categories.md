@@ -31,8 +31,8 @@ The **Categories** tab displays the following information in tabular format abou
   * **Active:** Active Script Categories can have ProcessMaker Scripts assigned to them. The Script Category named **Uncatagorized** is active by default.
   * **Inactive:** Inactive Script Categories cannot have ProcessMaker Scripts assigned to them.
 * **Scripts:** The **\# Scripts** column displays how many ProcessMaker Scripts in your organization have been assigned to that Script Category.
-* **Modified:** The **Modified** column displays the date and time the Script Category was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
-* **Created:** The **Created** column displays the date and time the Script Category was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Modified:** The **Modified** column displays the date and time the Script Category was last modified. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-processmaker-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays the date and time the Script Category was created. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../../../../using-processmaker/profile-settings.md#change-your-processmaker-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 ### No Script Categories? <a id="no-processes"></a>

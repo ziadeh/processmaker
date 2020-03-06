@@ -30,7 +30,7 @@ Notifications remain visible until you do one of the following:
 A notification may contain the following information:
 
 * **Task name:** The name of the assigned Task displays as a hyperlink to that Task.
-* **Task assignment date:** To the right of the Task name displays the date and time in which the notification was sent to you. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Task assignment date:** To the right of the Task name displays the date and time in which the notification was sent to you. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](profile-settings.md#change-your-processmaker-settings) **Time zone** setting is specified.
 * **Request name:** Below the assigned Task displays the name of the Request associated with that Task.
 * **Requester:** Below the Request name is the full name of the person who started the Request.
 * **Request completed:** If you are a Request participant when a Request completes, a notification displays **Request completed:** followed by the name of the completed Request.
@@ -61,7 +61,7 @@ The **Unread Notifications** page displays the following information in tabular 
 * **Subject:** The **Subject** column displays the subject of the notification. If the subject pertains to an assigned Task, the subject includes the following:
   * The name of the Task displays in blue-colored text. Select the Task name to open the Task.
   * The name of the Request associated with the Task displays in parentheses.
-* **Created:** The **Created** column displays when the notification was sent to you. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays when the notification was sent to you. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](profile-settings.md#change-your-processmaker-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 Need to search for a notification? See [Search for a Notification](notifications.md#search-for-a-notification).
@@ -89,7 +89,7 @@ The **All Notifications** page displays the following information in tabular for
     * **Canceled Request:** The Canceled Request icon![](../.gitbook/assets/notification-action-cancel-request-icon-requests.png)indicates that the notification is associated with a canceled Request.
   * **Task name:** The name of the Task displays in blue-colored text. Select the Task name to open the Task.
   * **Request name:** The name of the Request associated with the Task displays in parentheses.
-* **Created:** The **Created** column displays when the notification was sent to you. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
+* **Created:** The **Created** column displays when the notification was sent to you. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](profile-settings.md#change-your-processmaker-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
 Need to search for a notification? See [Search for a Notification](notifications.md#search-for-a-notification).
