@@ -42,7 +42,9 @@ Follow these steps to import a validated ProcessMaker version 4 Process:
 3. Click **Browse** to locate the ProcessMaker version 4 Process to import. ProcessMaker version 4 Processes have the `.json` file extension.
 4. Click **Import**. The **Import Process** screen displays the following:
 
-   * **Status:** The **Status** section displays an overview of which Process components imported successfully.
+   * **Status:** The **Status** section displays an overview of which Process components imported successfully. If the imported Process contains [package](https://processmaker.gitbook.io/processmaker/package-development-distribution/first-topic) features that are not available in the ProcessMaker instance, one of the following occurs:
+     * **Packages are installed in your ProcessMaker instance:** The **Status** section indicates which package features are installed in your ProcessMaker instance.
+     * **Packages are not installed in your ProcessMaker instance:** The **Status** section indicates which package features are not installed in your ProcessMaker instance.
    * **Configuration:** Use the **Configuration** section to assign whom in your organization can participate in your imported Process to make the Process functional.
 
    Below is an example of an imported Process. 
@@ -50,25 +52,25 @@ Follow these steps to import a validated ProcessMaker version 4 Process:
    ![](../../../.gitbook/assets/import-process-screen-processes.png)
 
 5. From the **Configuration** section, assign whom in your organization can participate in your imported Process. Follow these guidelines:
-   * **Assign each** [**Start Event**](../../process-design/model-your-process/process-modeling-element-descriptions.md#start-event) **element to the ProcessMaker user\(s\) and/or group\(s\)**
+   * **Assign each** [**Start Event**](../../process-design/model-your-process/process-modeling-element-descriptions.md#start-event) **element to the ProcessMaker user and/or group**
 
-     Assign which ProcessMaker user\(s\) and/or group\(s\) can start a Request of your imported Process. Type into the **Assign Start Event** field to filter ProcessMaker users and/or groups that display in that field's drop-down menu. To remove a ProcessMaker user or group that is currently selected, click the![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
+     Assign which ProcessMaker user and/or group can start a Request of your imported Process. Type into the **Assign Start Event** setting to filter ProcessMaker users and/or groups that display in that setting's drop-down menu.
 
-   * **Assign each** [**Task**](../../process-design/model-your-process/process-modeling-element-descriptions.md#task) **element to the ProcessMaker user and/or groups**
+   * **Assign each** [**Task-type**](https://processmaker.gitbook.io/processmaker/designing-processes/process-design/model-your-process/process-modeling-element-descriptions#tasks) **element to the ProcessMaker user and/or group**
 
-     Assign which ProcessMaker user and/or group is to do each Task in the Process. In doing so, optionally use either of the following special assignments:
+     Assign which ProcessMaker user and/or group is to do each Task-type in the Process. In doing so, optionally use either of the following special assignments:
 
-     * **Requester:** Use the **Requester** special assignment option to assign that Task to the ProcessMaker user who started the Request.
-     * **Previous Task Assignee:** Use the **Previous Task Assignee** option to assign that Task to the ProcessMaker user who did the previous Task in the Process.
+     * **Requester:** Use the **Requester** special assignment option to assign that Task-type to the ProcessMaker user who started the Request.
+     * **Previous Task Assignee:** Use the **Previous Task Assignee** option to assign that Task-type to the ProcessMaker user who did the previous Task-type in the Process.
 
-   * **Assign which ProcessMaker user\(s\) and/or group\(s\) can cancel Requests**
+   * **Assign which ProcessMaker user and/or group can cancel Requests**
 
-     Assign which ProcessMaker user\(s\) and/or group\(s\) can [cancel Requests](../../../using-processmaker/requests/delete-a-request.md) for your imported Process. If no users or groups are selected, no one can cancel a Request from this Process. Type into the **Assign Cancel Request** field to filter ProcessMaker users and/or groups that display in that field's drop-down menu. To remove a ProcessMaker user or group that is currently selected, click the![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
+     Assign which ProcessMaker user and/or group can [cancel Requests](../../../using-processmaker/requests/delete-a-request.md) for your imported Process. If no user or group are selected, no one can cancel a Request from this Process. Type into the **Assign Cancel Request** setting to filter ProcessMaker users and/or groups that display in that setting's drop-down menu.
 
-   * **Assign which ProcessMaker user\(s\) and/or group\(s\) can edit Request data**
+   * **Assign which ProcessMaker user and/or group can edit Request data**
 
-     Assign which ProcessMaker user\(s\) or group\(s\) have permission to [edit Request data](../../../using-processmaker/requests/request-details/summary-for-completed-requests.md#editable-request-data) from this Process. By editing Request data, these users and group members can adjust the data that Request participants have submitted during a Request. If no users or groups are selected, no one can edit Request data from this Process. Type into the **Assign Edit Data** field to filter ProcessMaker users and/or groups that display in that field's drop-down menu. To remove a ProcessMaker user or group that is currently selected, click the![](../../../.gitbook/assets/remove-group-user-admin.png)icon for that selection or press `Enter` when the drop-down is visible.
-6. Click **Save**. The **Processes** page displays the imported Process. If the process already exist with the same name, it is renamed with a number "2" suffix.  
+     Assign which ProcessMaker user or group have permission to [edit Request data](../../../using-processmaker/requests/request-details/summary-for-completed-requests.md#editable-request-data) from this Process. By editing Request data, these users and group members can adjust the data that Request participants have submitted during a Request. If no user or group are selected, no one can edit Request data from this Process. Type into the **Assign Edit Data** setting to filter ProcessMaker users and/or groups that display in that setting's drop-down menu.
+6. Click **Save**. The **Processes** page displays the imported Process. If the process already exists with the same name, it is renamed with a number "2" suffix.  
 
    ![](../../../.gitbook/assets/imported-process-with-name-of-source-process-processes.png)
 
