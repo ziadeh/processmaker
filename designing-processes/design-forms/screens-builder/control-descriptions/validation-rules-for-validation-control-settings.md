@@ -2,13 +2,13 @@
 description: Use these rules to describe how to validate your ProcessMaker Screen controls.
 ---
 
-# Validation Rules for "Validation" Control Settings
+# Validation Rules for "Validation Rules" Control Settings
 
 ## Overview
 
 Use validation rules in a control to constitute what is a valid value entered for that control.
 
-If a control that has a **Validation** setting does not contain any value or properly structured validation rule, that control automatically passes validation.
+If a control that has a **Validation Rules** setting but does not contain any value or properly structured validation rule, that control automatically passes validation.
 
 Use the following rules below to validate your [ProcessMaker Screen controls](./).
 
@@ -22,7 +22,7 @@ If you want a validation to fail for undefined or `''`, use the [required](valid
 Use the pipe character \(`|`\) between rules to combine them into one **Validation** setting. Example: `required|unique:posts|max:255`
 {% endhint %}
 
-## Validation Rules
+## Validation Rule Settings
 
 ### **accepted**
 
