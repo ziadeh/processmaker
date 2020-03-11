@@ -69,7 +69,15 @@ Follow these steps to import a validated ProcessMaker version 4 Process:
 
    * **Assign which ProcessMaker user and/or group can edit Request data**
 
-     Assign which ProcessMaker user or group have permission to [edit Request data](../../../using-processmaker/requests/request-details/summary-for-completed-requests.md#editable-request-data) from this Process. By editing Request data, these users and group members can adjust the data that Request participants have submitted during a Request. If no user or group are selected, no one can edit Request data from this Process. Type into the **Assign Edit Data** setting to filter ProcessMaker users and/or groups that display in that setting's drop-down menu.
+     Assign which ProcessMaker user or group has permission to [edit Request data](../../../using-processmaker/requests/request-details/summary-for-completed-requests.md#editable-request-data) from this Process. By editing Request data, these users and group members can adjust the data that Request participants have submitted during a Request. If no user or group are selected, no one can edit Request data from this Process. Type into the **Assign Edit Data** setting to filter ProcessMaker users and/or groups that display in that setting's drop-down menu.
+
+   * **Assign which ProcessMaker user can run Scripts**
+
+     Assign the ProcessMaker user whose credentials are used to [run the Script](https://processmaker.gitbook.io/processmaker/designing-processes/scripts/manage-scripts/edit-script-configuration). Type into the **Run script** setting to filter ProcessMaker users that display in that setting's drop-down menu.
+
+   * **Assign which Process can call an activity**
+
+     Assign which process will be assigned to a [Sub Process](https://processmaker.gitbook.io/processmaker/designing-processes/process-design/model-your-process/add-and-configure-sub-process-elements#configuration-panel-settings) or an [Action by Email](https://processmaker.gitbook.io/processmaker/designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector) element. Type into the **Assign Call Activity** setting to filter Processes that display in that setting's drop-down menu. The Actions by Email [package](../../../package-development-distribution/first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Actions by Email package can be installed in your ProcessMaker instance.
 6. Click **Save**. The **Processes** page displays the imported Process. If the process already exists with the same name, it is renamed with a number "2" suffix.  
 
    ![](../../../.gitbook/assets/imported-process-with-name-of-source-process-processes.png)
