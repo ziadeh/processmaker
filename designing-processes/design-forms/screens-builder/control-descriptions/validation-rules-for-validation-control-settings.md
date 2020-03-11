@@ -24,6 +24,44 @@ Use the pipe character \(`|`\) between rules to combine them into one **Validati
 
 ## Validation Rule Settings
 
+### Accepted
+
+Use the `Accepted` validation rule to indicate acknowledgement of the control. This is useful to validate "Terms of Service" acceptance.
+
+Follow these steps to configure the parameter\(s\) for an `Accepted` validation rule:
+
+1. From the **Select** drop-down menu in the **Validation Rules** setting, select **Accepted**. The `Accepted` validation rule has no parameters.
+
+### Alpha
+
+Use the `Alpha` validation rule to indicate that the value entered into the control must be contain only alphabetic characters.
+
+Follow these steps to configure the parameter\(s\) for an `Alpha` validation rule:
+
+1. From the **Select** drop-down menu in the **Validation Rules** setting, select **Alpha**. The `Alpha` validation rule has no parameters.
+
+### Alpha-Numeric
+
+Use the `Alpha-Numeric` validation rule to indicate that the value entered into the control must contain only alphanumeric characters.
+
+Follow these steps to configure the parameter\(s\) for an `Alpha-Numeric` validation rule:
+
+1. From the **Select** drop-down menu in the **Validation Rules** setting, select **Alpha-Numeric**. The `Alpha-Numeric` validation rule has no parameters.
+
+### Between Min & Max
+
+Use the `Between Min & Max` validation rule to indicate that the value entered into the control must be equal to or between a minimum value and a maximum value. The `Between Min & Max` validation rule applies to the following:
+
+* length of strings
+* value of numbers
+* file sizes
+
+Follow these steps to configure the parameter\(s\) for a `Between Min & Max` validation rule:
+
+1. From the **Select** drop-down menu in the **Validation Rules** setting, select **Between Min & Max**. The **Min** and **Max** parameter settings display. ![](../../../../.gitbook/assets/between-min-max-validation-screens-builder-processes.png) 
+2. In the **Min** parameter setting, enter the numeric value that this control's value must be equal to or no lower than. This is a required setting.
+3. In the **Max** parameter setting, enter the numeric value that this control's value must be equal to or no greater than. This is a required setting.
+
 ### **accepted**
 
 The control under validation must be `yes`, `on`, `1` or true. This is useful for validating "Terms of Service" acceptance.

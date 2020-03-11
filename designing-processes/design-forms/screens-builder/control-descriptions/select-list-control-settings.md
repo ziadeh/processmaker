@@ -133,13 +133,13 @@ Follow these steps to add a validation rule to this control:
 2. Click the **Add Rule** button. The **Select** drop-down menu displays.
 3. Select the rule that this control validates against.
 4. Click **Save**. Parameters for the selected rule display. Parameter settings display which ones are required to properly configure the rule.
-5. Enter the parameter settings that this control uses to validate against.
+5. Enter the parameter settings that this control uses to validate against. See [Validation Rules for "Validation Rules" Control Settings](validation-rules-for-validation-control-settings.md).
 
 Follow these steps to edit a validation rule for this control:
 
 1. Access the [**Variable** panel for this control](select-list-control-settings.md#variable-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Validation Rules** setting.
-2. Click the **Edit** icon![](../../../../.gitbook/assets/edit-email-notification-icon-task-process-modeler-processes.png)for the validation rule to edit. The parameter settings for that validation rule displays.
-3. Edit the parameter settings that this control uses to validate against.
+2. Click the **Edit** icon![](../../../../.gitbook/assets/edit-email-notification-icon-task-process-modeler-processes.png)for the validation rule to edit if that rule can be edited. Validation rules that do not have parameters cannot be edited. The parameter settings for that validation rule displays.
+3. Edit the parameter settings that this control uses to validate against. See [Validation Rules for "Validation Rules" Control Settings](validation-rules-for-validation-control-settings.md).
 
 Follow these steps to delete a validation rule for this control:
 
