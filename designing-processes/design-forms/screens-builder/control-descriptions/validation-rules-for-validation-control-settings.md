@@ -10,57 +10,151 @@ Use validation rules in a control to constitute what is a valid value entered fo
 
 If a control that has a **Validation Rules** setting but does not contain any value or properly structured validation rule, that control automatically passes validation.
 
-Use the following rules below to validate your [ProcessMaker Screen controls](./).
+### Controls That Provide Validation
+
+The following Screen Builder controls use the validation rules:
+
+* [Line Input](line-input-control-settings.md) control
+* [Textarea](textarea-control-settings.md) control
+* [Select List](select-list-control-settings.md) control
+* [Checkbox](checkbox-control-settings.md) control
+* [Date Picker](date-picker-control-settings.md) control
+
+### Create a Validation Rule
+
+Follow these steps to add a validation rule to a Screen Builder control that provides validation:
+
+1. Access the **Variable** panel for the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Validation Rules** setting.
+2. Click the **Add Rule** button. The **Select** drop-down menu displays. ![](../../../../.gitbook/assets/add-validation-rule-select-screens-builder-processes.png) 
+3. Select the rule that this control validates against.
+4. Click **Save**. Parameters for the selected rule display. Parameter settings display which ones are required to properly configure the rule.
+5. Enter the parameter settings that this control uses to validate against. See [Validation Rule Settings](validation-rules-for-validation-control-settings.md#validation-rule-settings), and then locate the validation rule for its parameters.
 
 {% hint style="info" %}
 ### Ensure Validation Fails for an Undefined Setting
 
 If you want a validation to fail for undefined or `''`, use the [required](validation-rules-for-validation-control-settings.md#required) rule.
-
-### Combine Multiple Validation Rules into One Expression
-
-Use the pipe character \(`|`\) between rules to combine them into one **Validation** setting. Example: `required|unique:posts|max:255`
 {% endhint %}
 
 ## Validation Rule Settings
 
 ### Accepted
 
-Use the `Accepted` validation rule to indicate acknowledgement of the control. This is useful to validate "Terms of Service" acceptance.
+Use the `Accepted` validation rule to validate acknowledgement of that control. This is useful to validate "Terms of Service" acceptance.
 
 Follow these steps to configure the parameter\(s\) for an `Accepted` validation rule:
 
-1. From the **Select** drop-down menu in the **Validation Rules** setting, select **Accepted**. The `Accepted` validation rule has no parameters.
+1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
+2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Accepted**. The `Accepted` validation rule has no parameters.
 
 ### Alpha
 
-Use the `Alpha` validation rule to indicate that the value entered into the control must be contain only alphabetic characters.
+Use the `Alpha` validation rule to validate that the value entered into that control must be contain only alphabetic characters.
 
 Follow these steps to configure the parameter\(s\) for an `Alpha` validation rule:
 
-1. From the **Select** drop-down menu in the **Validation Rules** setting, select **Alpha**. The `Alpha` validation rule has no parameters.
+1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
+2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Alpha**. The `Alpha` validation rule has no parameters.
 
 ### Alpha-Numeric
 
-Use the `Alpha-Numeric` validation rule to indicate that the value entered into the control must contain only alphanumeric characters.
+Use the `Alpha-Numeric` validation rule to validate that the value entered into that control must contain only alphanumeric characters.
 
 Follow these steps to configure the parameter\(s\) for an `Alpha-Numeric` validation rule:
 
-1. From the **Select** drop-down menu in the **Validation Rules** setting, select **Alpha-Numeric**. The `Alpha-Numeric` validation rule has no parameters.
+1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
+2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Alpha-Numeric**. The `Alpha-Numeric` validation rule has no parameters.
 
 ### Between Min & Max
 
-Use the `Between Min & Max` validation rule to indicate that the value entered into the control must be equal to or between a minimum value and a maximum value. The `Between Min & Max` validation rule applies to the following:
+Use the `Between Min & Max` validation rule to validate that the value entered into that control must be equal to or between a minimum value and a maximum value.
 
-* length of strings
-* value of numbers
+The `Between Min & Max` validation rule evaluates the following:
+
+* the number of characters in a string
+* positive and negative integers
 * file sizes
+
+The `Between Min & Max` validation rule does not evaluate calendar dates, such as when an entered value in that control is between two dates.
 
 Follow these steps to configure the parameter\(s\) for a `Between Min & Max` validation rule:
 
-1. From the **Select** drop-down menu in the **Validation Rules** setting, select **Between Min & Max**. The **Min** and **Max** parameter settings display. ![](../../../../.gitbook/assets/between-min-max-validation-screens-builder-processes.png) 
-2. In the **Min** parameter setting, enter the numeric value that this control's value must be equal to or no lower than. This is a required setting.
-3. In the **Max** parameter setting, enter the numeric value that this control's value must be equal to or no greater than. This is a required setting.
+1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
+2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Between Min & Max**. The **Min** and **Max** parameter settings display. ![](../../../../.gitbook/assets/between-min-max-validation-screens-builder-processes.png) 
+3. In the **Min** parameter setting, enter the numeric value that this control's value must be equal to or no lower than. This is a required setting.
+4. In the **Max** parameter setting, enter the numeric value that this control's value must be equal to or no greater than. This is a required setting.
+
+### Email
+
+Use the `Email` validation rule to validate that the value entered into that control is formatted as an email address.
+
+Follow these steps to configure the parameter\(s\) for an `Email` validation rule:
+
+1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
+2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Email**. The `EMail` validation rule has no parameters.
+
+### In
+
+Use the `In` validation rule to validate that the value entered into that control is included in the given parameter setting. The control's entered value may be within an array or a string. See [Examples](validation-rules-for-validation-control-settings.md#examples).
+
+Follow these steps to configure the parameter\(s\) for an `In` validation rule:
+
+1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
+2. From the **Select** drop-down menu in the **Validation Rules** setting, select **In**. The **Values** parameter setting displays. ![](../../../../.gitbook/assets/in-values-validation-screens-builder-processes.png) 
+3. In the **Values** parameter setting, enter the value to evaluate if it is within the control's entered value. This is a required setting.
+
+#### Examples
+
+{% tabs %}
+{% tab title="Entered value under evaluation is within an array" %}
+The following JSON Request data represents the JSON array for a Select List control under validation.
+
+```javascript
+doctors = [
+    {id: 1, name: 'Adam Ardin', gender: 'male'},
+    {id: 2, name: 'Amanda Creek', gender: 'female'},
+    {id: 3, name: 'Lucy Morales', gender: 'female'},
+    {id: 4, name: 'Mindy Smith', gender: 'female'},
+    {id: 5, name: 'Toby Tomlinson', gender: 'male'}
+]
+```
+
+The Select List control contains the following settings:
+
+* This control is configured to return the value of the property `name`.
+* This control has an `In` validation rule to evaluate if `Mindy Smith` is included in that control's entered value.
+
+If the Request participant selects the **Mindy Smith** option from that Select List control, that control passes validation.
+{% endtab %}
+
+{% tab title="Entered value under evaluation is within a string" %}
+A Textarea control under validation contains the following text entered by the Request participant.
+
+```text
+My name is Louis Canera.
+```
+
+If the Textarea control with an `In` validation rule evaluates that `Canera` is included in that control's  entered value, that control passes validation.
+{% endtab %}
+{% endtabs %}
+
+### Max Length
+
+Use the `Max Length` validation rule to validate that the value entered into that control is equal to or no longer than a maximum value.
+
+The `Max Length` validation rule evaluates the following:
+
+* a maximum number of characters in a string
+* a maximum positive or negative integer value
+* a maximum file size
+
+The `Max Length` validation rule does not evaluate calendar dates, such as when an entered value in that control is no later than a particular date.
+
+Follow these steps to configure the parameter\(s\) for a `Max Length` validation rule:
+
+1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
+2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Max Length**. The **Max Input** parameter setting displays. ![](../../../../.gitbook/assets/max-length-input-validation-screens-builder-processes.png) 
+3. In the **Max Input** parameter setting, enter the numeric value that this control's value must be equal to or no greater than. This is a required setting.
 
 ### **accepted**
 
