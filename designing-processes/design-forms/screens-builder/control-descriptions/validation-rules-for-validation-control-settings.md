@@ -72,7 +72,7 @@ Use the `Between Min & Max` validation rule to validate that the value entered i
 The `Between Min & Max` validation rule evaluates the following:
 
 * the number of characters in a string
-* positive and negative integers
+* integers
 * file sizes
 
 The `Between Min & Max` validation rule does not evaluate calendar dates, such as when an entered value in that control is between two dates.
@@ -95,19 +95,19 @@ Follow these steps to configure the parameter\(s\) for an `Email` validation rul
 
 ### In
 
-Use the `In` validation rule to validate that the value entered into that control is included in the given parameter setting. The control's entered value may be within an array or a string. See [Examples](validation-rules-for-validation-control-settings.md#examples).
+Use the `In` validation rule to validate that the value entered into that control is included in the given parameter setting. The control's scope of evaluation may be within an array or a string. See [Examples](validation-rules-for-validation-control-settings.md#examples).
 
 Follow these steps to configure the parameter\(s\) for an `In` validation rule:
 
 1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
 2. From the **Select** drop-down menu in the **Validation Rules** setting, select **In**. The **Values** parameter setting displays. ![](../../../../.gitbook/assets/in-values-validation-screens-builder-processes.png) 
-3. In the **Values** parameter setting, enter the value to evaluate if it is within the control's entered value. This is a required setting.
+3. In the **Values** parameter setting, enter the value to evaluate if it is within the control's selected or entered value. This is a required setting.
 
 #### Examples
 
 {% tabs %}
 {% tab title="Entered value under evaluation is within an array" %}
-The following JSON Request data represents the JSON array for a Select List control under validation.
+The following JSON Request data represents the JSON array for a Select List control under evaluation.
 
 ```javascript
 doctors = [
@@ -122,19 +122,19 @@ doctors = [
 The Select List control contains the following settings:
 
 * This control is configured to return the value of the property `name`.
-* This control has an `In` validation rule to evaluate if `Mindy Smith` is included in that control's entered value.
+* This control has an `In` validation rule to evaluate if `Mindy Smith` is included in that control's selection.
 
-If the Request participant selects the **Mindy Smith** option from that Select List control, that control passes validation.
+If the Request participant selects the **Mindy Smith** option from that Select List control, then that control passes validation.
 {% endtab %}
 
 {% tab title="Entered value under evaluation is within a string" %}
-A Textarea control under validation contains the following text entered by the Request participant.
+A Textarea control under evaluation contains the following text entered by the Request participant.
 
 ```text
 My name is Louis Canera.
 ```
 
-If the Textarea control with an `In` validation rule evaluates that `Canera` is included in that control's  entered value, that control passes validation.
+If the Textarea control with an `In` validation rule evaluates that `Canera` is included in that control's entered value, that control passes validation.
 {% endtab %}
 {% endtabs %}
 
@@ -145,7 +145,7 @@ Use the `Max Length` validation rule to validate that the value entered into tha
 The `Max Length` validation rule evaluates the following:
 
 * a maximum number of characters in a string
-* a maximum positive or negative integer value
+* a maximum integer value
 * a maximum file size
 
 The `Max Length` validation rule does not evaluate calendar dates, such as when an entered value in that control is no later than a particular date.
@@ -155,6 +155,86 @@ Follow these steps to configure the parameter\(s\) for a `Max Length` validation
 1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
 2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Max Length**. The **Max Input** parameter setting displays. ![](../../../../.gitbook/assets/max-length-input-validation-screens-builder-processes.png) 
 3. In the **Max Input** parameter setting, enter the numeric value that this control's value must be equal to or no greater than. This is a required setting.
+
+### Min Length
+
+Use the `Min Length` validation rule to validate that the value entered into that control is equal to or no less than a minimum value.
+
+The `Min Length` validation rule evaluates the following:
+
+* a minimum number of characters in a string
+* a minimum integer value
+* a maximum file size
+
+The `Min Length` validation rule does not evaluate calendar dates, such as when an entered value in that control is no earlier than a particular date.
+
+Follow these steps to configure the parameter\(s\) for a `Min Length` validation rule:
+
+1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
+2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Min Length**. The **Min Input** parameter setting displays. ![](../../../../.gitbook/assets/min-length-input-validation-screens-builder-processes.png) 
+3. In the **Min Input** parameter setting, enter the numeric value that this control's value must be equal to or no less than. This is a required setting.
+
+### Not In
+
+Use the `Not In` validation rule to validate that the value entered into that control is not included in the given parameter setting. The control's scope of evaluation may be within an array or a string. See [Examples](validation-rules-for-validation-control-settings.md#examples-1).
+
+Follow these steps to configure the parameter\(s\) for a `Not In` validation rule:
+
+1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
+2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Not In**. The **Values** parameter setting displays. ![](../../../../.gitbook/assets/not-in-values-validation-screens-builder-processes.png) 
+3. In the **Values** parameter setting, enter the value to evaluate if it is not within the control's selected or entered value. This is a required setting.
+
+#### Examples
+
+{% tabs %}
+{% tab title="Entered value under evaluation is within an array" %}
+The following JSON Request data represents the JSON array for a Select List control under evaluation.
+
+```javascript
+doctors = [
+    {id: 1, name: 'Adam Ardin', gender: 'male'},
+    {id: 2, name: 'Amanda Creek', gender: 'female'},
+    {id: 3, name: 'Lucy Morales', gender: 'female'},
+    {id: 4, name: 'Mindy Smith', gender: 'female'},
+    {id: 5, name: 'Toby Tomlinson', gender: 'male'}
+]
+```
+
+The Select List control contains the following settings:
+
+* This control is configured to return the value of the property `name`.
+* This control is configured to allow multiple selections.
+* This control has a `Not In` validation rule to evaluate if `Mindy Smith` is not included in that control's selection.
+
+If the Request participant selects multiple options from that Select List control, but the **Mindy Smith** option is not among them, then that control passes validation.
+{% endtab %}
+
+{% tab title="Entered value under evaluation is within a string" %}
+A Textarea control under evaluation contains the following text entered by the Request participant.
+
+```text
+My name is Louis Canera.
+```
+
+If the Textarea control with a `Not In` validation rule evaluates that `Mindy` is not included in that control's entered value, that control passes validation.
+{% endtab %}
+{% endtabs %}
+
+### Required
+
+Use the `Required` validation rule to validate that that control has a value and is not empty.
+
+A control fails the `Required` validation rule in the following circumstances:
+
+* The value is `null`.
+* The value is an empty string that contains no characters.
+* The value is an empty JSON array or empty JSON object.
+* The value is an uploaded file with no path.
+
+Follow these steps to configure the parameter\(s\) for a `Required` validation rule:
+
+1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
+2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Required**. The `Required` validation rule has no parameters.
 
 ### **accepted**
 
