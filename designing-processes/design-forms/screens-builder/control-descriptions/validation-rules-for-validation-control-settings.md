@@ -266,7 +266,7 @@ In a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) wh
 
 Follow these steps to implement this example:
 
-1. [Add a Checkbox control to your ProcessMaker Screen](checkbox-control-settings.md#add-the-control-to-a-processmaker-screen), and then [configure its settings](checkbox-control-settings.md#inspector-settings). Make note of its **Variable Name** setting value to set for that control.
+1. [Add a Checkbox control to your ProcessMaker Screen](checkbox-control-settings.md#add-the-control-to-a-processmaker-screen), and then [configure its settings](checkbox-control-settings.md#inspector-settings). Make note of its **Variable Name** setting value you set for that control.
 2. [Add a Textarea control](textarea-control-settings.md#add-the-control-to-a-processmaker-screen) to the same ProcessMaker Screen page, and then [configure its settings](textarea-control-settings.md#inspector-settings).
 3. Add a `Required If` [validation rule](textarea-control-settings.md#validation-rules) to the Textarea control.
 4. In the **Variable Name** setting of the `Required If` validation rule, enter the **Variable Name** setting value for the Checkbox control.
