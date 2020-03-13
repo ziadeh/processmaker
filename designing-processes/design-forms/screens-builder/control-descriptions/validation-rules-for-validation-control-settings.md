@@ -121,7 +121,7 @@ doctors = [
 
 The Select List control contains the following settings:
 
-* This control is configured to return the value of the property `name`.
+* This control is configured to return the value of the property `name`. Therefore, the doctors' names display as options in the Select List control.
 * This control has an `In` validation rule to evaluate if `Mindy Smith` is included in that control's selection.
 
 If the Request participant selects the **Mindy Smith** option from that Select List control, then that control passes validation.
@@ -202,7 +202,7 @@ doctors = [
 
 The Select List control contains the following settings:
 
-* This control is configured to return the value of the property `name`.
+* This control is configured to return the value of the property `name`. Therefore, the doctors' names display as options in the Select List control.
 * This control is configured to allow multiple selections.
 * This control has a `Not In` validation rule to evaluate if `Mindy Smith` is not included in that control's selection.
 
@@ -258,11 +258,11 @@ Follow these steps to configure the parameter\(s\) for a `Required If` validatio
 
 {% tabs %}
 {% tab title="First Tab" %}
-
+In a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) where a [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information for a job application, if that Task assignee selects from a [Select List](select-list-control-settings.md) control in which country that person lives. If the Task assignee selects the option **United States**, then another Select List control becomes required to select from which US state that person lives. See this [list of countries and their country codes](https://gist.github.com/Keeguon/2310008) and [list of US states](https://gist.github.com/mshafrir/2646763) in JSON format to use in this example.
 {% endtab %}
 
 {% tab title="Textarea control becomes required when a Checkbox control is selected" %}
-In a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) where a [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant is entering information for a job application, if that Task assignee selects a [Checkbox](checkbox-control-settings.md) control labeled **Have you been convicted of a felony in the past 10 years?**, a [Textarea](textarea-control-settings.md) control labeled **Describe your felony conviction.** becomes required.
+In a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) where a [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information for a job application, if that Task assignee selects a [Checkbox](checkbox-control-settings.md) control labeled **Have you been convicted of a felony in the past 10 years?**, a [Textarea](textarea-control-settings.md) control labeled **Describe your felony conviction.** becomes required.
 
 Follow these steps to implement this example:
 
