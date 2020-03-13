@@ -40,7 +40,7 @@ If you want a validation to fail for undefined or `''`, use the [required](valid
 
 ### Accepted
 
-Use the `Accepted` validation rule to validate acknowledgement of that control. This is useful to validate "Terms of Service" acceptance.
+Use the `Accepted` validation rule to validate acknowledgement of this control. This is useful to validate "Terms of Service" acceptance.
 
 Follow these steps to configure the parameter\(s\) for an `Accepted` validation rule:
 
@@ -49,7 +49,7 @@ Follow these steps to configure the parameter\(s\) for an `Accepted` validation 
 
 ### Alpha
 
-Use the `Alpha` validation rule to validate that the value entered into that control must be contain only alphabetic characters.
+Use the `Alpha` validation rule to validate that the value entered into this control must be contain only alphabetic characters.
 
 Follow these steps to configure the parameter\(s\) for an `Alpha` validation rule:
 
@@ -58,7 +58,7 @@ Follow these steps to configure the parameter\(s\) for an `Alpha` validation rul
 
 ### Alpha-Numeric
 
-Use the `Alpha-Numeric` validation rule to validate that the value entered into that control must contain only alphanumeric characters.
+Use the `Alpha-Numeric` validation rule to validate that the value entered into this control must contain only alphanumeric characters.
 
 Follow these steps to configure the parameter\(s\) for an `Alpha-Numeric` validation rule:
 
@@ -67,7 +67,7 @@ Follow these steps to configure the parameter\(s\) for an `Alpha-Numeric` valida
 
 ### Between Min & Max
 
-Use the `Between Min & Max` validation rule to validate that the value entered into that control must be equal to or between a minimum value and a maximum value.
+Use the `Between Min & Max` validation rule to validate that the value entered into this control must be equal to or between a minimum value and a maximum value.
 
 The `Between Min & Max` validation rule evaluates the following:
 
@@ -86,7 +86,7 @@ Follow these steps to configure the parameter\(s\) for a `Between Min & Max` val
 
 ### Email
 
-Use the `Email` validation rule to validate that the value entered into that control is formatted as an email address.
+Use the `Email` validation rule to validate that the value entered into this control is formatted as an email address.
 
 Follow these steps to configure the parameter\(s\) for an `Email` validation rule:
 
@@ -95,7 +95,7 @@ Follow these steps to configure the parameter\(s\) for an `Email` validation rul
 
 ### In
 
-Use the `In` validation rule to validate that the value entered into that control is included in the given parameter setting. The control's scope of evaluation may be within an array or a string. See [Examples](validation-rules-for-validation-control-settings.md#examples).
+Use the `In` validation rule to validate that the value entered into this control is included in the given parameter setting. The control's scope of evaluation may be within an array or a string. See [Examples](validation-rules-for-validation-control-settings.md#examples).
 
 Follow these steps to configure the parameter\(s\) for an `In` validation rule:
 
@@ -107,7 +107,7 @@ Follow these steps to configure the parameter\(s\) for an `In` validation rule:
 
 {% tabs %}
 {% tab title="Entered value under evaluation is within an array" %}
-The following JSON Request data represents the JSON array for a Select List control under evaluation.
+The following JSON Request data represents the JSON array for a [Select List](select-list-control-settings.md) control under evaluation.
 
 ```javascript
 doctors = [
@@ -128,7 +128,7 @@ If the Request participant selects the **Mindy Smith** option from that Select L
 {% endtab %}
 
 {% tab title="Entered value under evaluation is within a string" %}
-A Textarea control under evaluation contains the following text entered by the Request participant.
+A [Textarea](textarea-control-settings.md) control under evaluation contains the following text entered by the Request participant.
 
 ```text
 My name is Louis Canera.
@@ -140,7 +140,7 @@ If the Textarea control with an `In` validation rule evaluates that `Canera` is 
 
 ### Max Length
 
-Use the `Max Length` validation rule to validate that the value entered into that control is equal to or no longer than a maximum value.
+Use the `Max Length` validation rule to validate that the value entered into this control is equal to or no longer than a maximum value.
 
 The `Max Length` validation rule evaluates the following:
 
@@ -158,7 +158,7 @@ Follow these steps to configure the parameter\(s\) for a `Max Length` validation
 
 ### Min Length
 
-Use the `Min Length` validation rule to validate that the value entered into that control is equal to or no less than a minimum value.
+Use the `Min Length` validation rule to validate that the value entered into this control is equal to or no less than a minimum value.
 
 The `Min Length` validation rule evaluates the following:
 
@@ -176,7 +176,7 @@ Follow these steps to configure the parameter\(s\) for a `Min Length` validation
 
 ### Not In
 
-Use the `Not In` validation rule to validate that the value entered into that control is not included in the given parameter setting. The control's scope of evaluation may be within an array or a string. See [Examples](validation-rules-for-validation-control-settings.md#examples-1).
+Use the `Not In` validation rule to validate that the value entered into this control is not included in the given parameter setting. The control's scope of evaluation may be within an array or a string. See [Examples](validation-rules-for-validation-control-settings.md#examples-1).
 
 Follow these steps to configure the parameter\(s\) for a `Not In` validation rule:
 
@@ -188,7 +188,7 @@ Follow these steps to configure the parameter\(s\) for a `Not In` validation rul
 
 {% tabs %}
 {% tab title="Entered value under evaluation is within an array" %}
-The following JSON Request data represents the JSON array for a Select List control under evaluation.
+The following JSON Request data represents the JSON array for a [Select List](select-list-control-settings.md) control under evaluation.
 
 ```javascript
 doctors = [
@@ -210,7 +210,7 @@ If the Request participant selects multiple options from that Select List contro
 {% endtab %}
 
 {% tab title="Entered value under evaluation is within a string" %}
-A Textarea control under evaluation contains the following text entered by the Request participant.
+A [Textarea](textarea-control-settings.md) control under evaluation contains the following text entered by the Request participant.
 
 ```text
 My name is Louis Canera.
@@ -222,9 +222,9 @@ If the Textarea control with a `Not In` validation rule evaluates that `Mindy` i
 
 ### Required
 
-Use the `Required` validation rule to validate that that control has a value and is not empty.
+Use the `Required` validation rule to validate that this control has a value and is not empty.
 
-A control fails the `Required` validation rule in the following circumstances:
+A control constitutes as having no value in the following circumstances:
 
 * The value is `null`.
 * The value is an empty string that contains no characters.
@@ -235,6 +235,44 @@ Follow these steps to configure the parameter\(s\) for a `Required` validation r
 
 1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
 2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Required**. The `Required` validation rule has no parameters.
+
+### Required If
+
+Use the `Required If` validation rule to validate that this control has a value and is not empty if another control in that [ProcessMaker Screen](../../what-is-a-form.md) contains a specific value. See [Examples](validation-rules-for-validation-control-settings.md#examples-2).
+
+A control constitutes as having no value in the following circumstances:
+
+* The value is `null`.
+* The value is an empty string that contains no characters.
+* The value is an empty JSON array or empty JSON object.
+* The value is an uploaded file with no path.
+
+Follow these steps to configure the parameter\(s\) for a `Required If` validation rule:
+
+1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
+2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Required If**. The **Variable Name** and **Variable Value** parameter settings display. ![](../../../../.gitbook/assets/required-if-variable-validation-screens-builder-processes.png) 
+3. In the **Variable Name** parameter setting, enter the **Variable Name** setting value to monitor for its value. This is a required setting.
+4. In the **Variable Value** parameter setting, enter the value that must be entered into that control to make this control required. This is a required setting.
+
+#### Examples
+
+{% tabs %}
+{% tab title="First Tab" %}
+
+{% endtab %}
+
+{% tab title="Textarea control becomes required when a Checkbox control is selected" %}
+In a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) where a [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant is entering information for a job application, if that Task assignee selects a [Checkbox](checkbox-control-settings.md) control labeled **Have you been convicted of a felony in the past 10 years?**, a [Textarea](textarea-control-settings.md) control labeled **Describe your felony conviction.** becomes required.
+
+Follow these steps to implement this example:
+
+1. [Add a Checkbox control to your ProcessMaker Screen](checkbox-control-settings.md#add-the-control-to-a-processmaker-screen), and then [configure its settings](checkbox-control-settings.md#inspector-settings). Make note of its **Variable Name** setting value to set for that control.
+2. [Add a Textarea control](textarea-control-settings.md#add-the-control-to-a-processmaker-screen) to the same ProcessMaker Screen page, and then [configure its settings](textarea-control-settings.md#inspector-settings).
+3. Add a `Required If` [validation rule](textarea-control-settings.md#validation-rules) to the Textarea control.
+4. In the **Variable Name** setting of the `Required If` validation rule, enter the **Variable Name** setting value for the Checkbox control.
+5. In the **Variable Value** setting of the `Required If` validation rule, enter `true`.
+{% endtab %}
+{% endtabs %}
 
 ### **accepted**
 
