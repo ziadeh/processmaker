@@ -278,9 +278,14 @@ Follow these steps to implement this example:
    3. Copy this file's JSON data.
    4. Paste it into the **JSON Data** setting.
 3. Add a second Select List control to the same ProcessMaker Screen page, and then configure its settings. This control displays the list of US states and territories as its options.
-4. Add a `Required If` [validation rule](textarea-control-settings.md#validation-rules) to the second Select List control that displays the list of US states and territories.
-5. In the **Variable Name** setting of the `Required If` validation rule, enter the **Variable Name** setting value for the first Select List control that displays the list of countries as its options.
-6. In the **Variable Value** setting of the `Required If` validation rule, enter `232`, which is the `value` property value that corresponds with the `content` property value `United States`.
+4. [Provide the options for this Select List control](select-list-control-settings.md#provide-options). In doing so, edit options as JSON:
+   1. Download the file below **US States for Select List Control "Required If" Validation Example**.
+   2. Copy this file's JSON data.
+   3. Paste it into the **JSON Data** setting.
+5. Add a `Required If` [validation rule](textarea-control-settings.md#validation-rules) to the second Select List control that displays the list of US states and territories.
+6. In the **Variable Name** setting of the `Required If` validation rule, enter the **Variable Name** setting value for the first Select List control that displays the list of countries as its options.
+7. In the **Variable Value** setting of the `Required If` validation rule, enter `232`, which is the `value` property value that corresponds with the `content` property value `United States`.
+8. [Add a Submit Button control](submit-button-control-settings.md#add-the-control-to-a-processmaker-screen) to the same ProcessMaker Screen page, and then [configure its settings](submit-button-control-settings.md#inspector-settings).
 
 {% file src="../../../../.gitbook/assets/countries.json" caption="Countries for Select List Control \"Required If\" Validation Example" %}
 
@@ -297,6 +302,7 @@ Follow these steps to implement this example:
 3. Add a `Required If` [validation rule](textarea-control-settings.md#validation-rules) to the Textarea control.
 4. In the **Variable Name** setting of the `Required If` validation rule, enter the **Variable Name** setting value for the Checkbox control.
 5. In the **Variable Value** setting of the `Required If` validation rule, enter `true`.
+6. [Add a Submit Button control](submit-button-control-settings.md#add-the-control-to-a-processmaker-screen) to the same ProcessMaker Screen page, and then [configure its settings](submit-button-control-settings.md#inspector-settings).
 {% endtab %}
 {% endtabs %}
 
