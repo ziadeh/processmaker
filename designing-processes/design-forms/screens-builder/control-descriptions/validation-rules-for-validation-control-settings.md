@@ -257,11 +257,37 @@ Follow these steps to configure the parameter\(s\) for a `Required If` validatio
 #### Examples
 
 {% tabs %}
-{% tab title="First Tab" %}
-In a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) where a [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information for a job application, if that Task assignee selects from a [Select List](select-list-control-settings.md) control in which country that person lives. If the Task assignee selects the option **United States**, then another Select List control becomes required to select from which US state that person lives. See this [list of countries and their country codes](https://gist.github.com/Keeguon/2310008) and [list of US states](https://gist.github.com/mshafrir/2646763) in JSON format to use in this example.
+{% tab title="Select List control depends on another\'s value" %}
+In a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) where a [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information for a job application, if that Task assignee selects from a [Select List](select-list-control-settings.md) control in which country that person lives. If the Task assignee selects the option **United States**, then another Select List control becomes required to select from which US state that person lives.
+
+This example demonstrates depending controls: one control depends on another to be required. This example may also be implemented to show a control depending on the value of another.
+
+See the following `.json` files below for this example:
+
+* **List of countries in JSON format:** Countries for Select List Control "Required If" Validation Example
+* **List of US states and territories in JSON format:** US States for Select List Control "Required If" Validation Example
+
+Follow these steps to implement this example:
+
+1. Add a [Select List control to your ProcessMaker Screen](select-list-control-settings.md#add-the-control-to-a-processmaker-screen), and then [configure its settings](select-list-control-settings.md#inspector-settings). Make note of its **Variable Name** setting value you set for that control. This control displays the list of countries as its options.
+2. [Provide the options for this Select List control](select-list-control-settings.md#provide-options). In doing so, edit options as JSON:
+   1. Download the file below **Countries for Select List Control "Required If" Validation Example**.
+   2. Review the JSON data. Notice that each JSON object contains the following:
+      * **content:** A property called `content` represents the label for each option \(in this example, a country name\). The label for each Select List option may contain any string as long as it is in the `content` property of each JSON object.
+      * **value:** A property called `value` that contains a numeric value that corresponds with each label option. The `value` property may contain any string as long as it is in the `value` property of each JSON object. Notice that the JSON object that contains the `content` property value of `United States` has a value property of `232`.
+   3. Copy this file's JSON data.
+   4. Paste it into the **JSON Data** setting.
+3. Add a second Select List control to the same ProcessMaker Screen page, and then configure its settings. This control displays the list of US states and territories as its options.
+4. Add a `Required If` [validation rule](textarea-control-settings.md#validation-rules) to the second Select List control that displays the list of US states and territories.
+5. In the **Variable Name** setting of the `Required If` validation rule, enter the **Variable Name** setting value for the first Select List control that displays the list of countries as its options.
+6. In the **Variable Value** setting of the `Required If` validation rule, enter `232`, which is the `value` property value that corresponds with the `content` property value `United States`.
+
+{% file src="../../../../.gitbook/assets/countries.json" caption="Countries for Select List Control \"Required If\" Validation Example" %}
+
+{% file src="../../../../.gitbook/assets/states.json" caption="US States for Select List Control \"Required If\" Validation Example" %}
 {% endtab %}
 
-{% tab title="Textarea control becomes required when a Checkbox control is selected" %}
+{% tab title="Textarea control required when a Checkbox control is selected" %}
 In a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) where a [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information for a job application, if that Task assignee selects a [Checkbox](checkbox-control-settings.md) control labeled **Have you been convicted of a felony in the past 10 years?**, a [Textarea](textarea-control-settings.md) control labeled **Describe your felony conviction.** becomes required.
 
 Follow these steps to implement this example:
