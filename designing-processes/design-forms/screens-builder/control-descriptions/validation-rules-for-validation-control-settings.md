@@ -260,7 +260,7 @@ Follow these steps to configure the parameter\(s\) for a `Required If` validatio
 {% tab title="Select List control depends on another\'s value" %}
 In a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) where a [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information for a job application, if that Task assignee selects from a [Select List](select-list-control-settings.md) control in which country that person lives. If the Task assignee selects the option **United States**, then another Select List control becomes required to select from which US state that person lives.
 
-This example demonstrates depending controls: one control depends on another to be required. This example may also be implemented to show a control depending on the value of another.
+This example demonstrates depending controls: one control depends on another to be required. This example also demonstrates how a control depends on the specific value of another.
 
 See the following `.json` files below for this example:
 
@@ -292,17 +292,30 @@ Follow these steps to implement this example:
 {% file src="../../../../.gitbook/assets/states.json" caption="US States for Select List Control \"Required If\" Validation Example" %}
 {% endtab %}
 
-{% tab title="Textarea control required when a Checkbox control is selected" %}
-In a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) where a [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information for a job application, if that Task assignee selects a [Checkbox](checkbox-control-settings.md) control labeled **Have you been convicted of a felony in the past 10 years?**, a [Textarea](textarea-control-settings.md) control labeled **Describe your felony conviction.** becomes required.
+{% tab title="Textarea control required when a Select List option is selected" %}
+In a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) where a [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information for a job application, if that Task assignee selects the **Yes** option from a [Select List](select-list-control-settings.md) control labeled **Have you been convicted of a felony within the past 10 years?**, a [Textarea](textarea-control-settings.md) control labeled **Describe your felony conviction.** becomes required. The Task assignee cannot submit the form without describing the felony conviction\(s\).
+
+This example demonstrates depending controls: one control depends on another to be required. This example also demonstrates how a control depends on the specific value of another.
 
 Follow these steps to implement this example:
 
-1. [Add a Checkbox control to your ProcessMaker Screen](checkbox-control-settings.md#add-the-control-to-a-processmaker-screen), and then [configure its settings](checkbox-control-settings.md#inspector-settings). Make note of its **Variable Name** setting value you set for that control.
-2. [Add a Textarea control](textarea-control-settings.md#add-the-control-to-a-processmaker-screen) to the same ProcessMaker Screen page, and then [configure its settings](textarea-control-settings.md#inspector-settings).
-3. Add a `Required If` [validation rule](textarea-control-settings.md#validation-rules) to the Textarea control.
-4. In the **Variable Name** setting of the `Required If` validation rule, enter the **Variable Name** setting value for the Checkbox control.
-5. In the **Variable Value** setting of the `Required If` validation rule, enter `true`.
-6. [Add a Submit Button control](submit-button-control-settings.md#add-the-control-to-a-processmaker-screen) to the same ProcessMaker Screen page, and then [configure its settings](submit-button-control-settings.md#inspector-settings).
+1. Add a [Select List control to your ProcessMaker Screen](select-list-control-settings.md#add-the-control-to-a-processmaker-screen), and then [configure its settings](checkbox-control-settings.md#inspector-settings). Make note of its **Variable Name** setting value you set for that control.
+2. [Provide the options for this Select List control](select-list-control-settings.md#provide-options). In doing so, provide the following values:
+
+   * **No:**
+     * **Value:** 0
+     * **Content:** No, I do not have a felony conviction within the past 10 years.
+   * **Yes:**
+     * **Value:** 1
+     * **Content:** Yes, I have a felony conviction within the past 10 years.
+
+   The **Value** settings represent the values the Textarea control evaluates to determine if that control is required; these settings may contain any value, not necessarily Boolean values. The **Content** settings represent the label for each option.
+
+3. [Add a Textarea control](textarea-control-settings.md#add-the-control-to-a-processmaker-screen) to the same ProcessMaker Screen page, and then [configure its settings](textarea-control-settings.md#inspector-settings).
+4. Add a `Required If` [validation rule](textarea-control-settings.md#validation-rules) to the Textarea control.
+5. In the **Variable Name** setting of the `Required If` validation rule, enter the **Variable Name** setting value for the Select List control.
+6. In the **Variable Value** setting of the `Required If` validation rule, enter `1`.
+7. [Add a Submit Button control](submit-button-control-settings.md#add-the-control-to-a-processmaker-screen) to the same ProcessMaker Screen page, and then [configure its settings](submit-button-control-settings.md#inspector-settings).
 {% endtab %}
 {% endtabs %}
 
