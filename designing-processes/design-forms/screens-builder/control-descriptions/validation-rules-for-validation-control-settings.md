@@ -95,7 +95,7 @@ Follow these steps to configure the parameter\(s\) for an `Email` validation rul
 
 ### In
 
-Use the `In` validation rule to validate that the value entered into this control is included in the given parameter setting. The control's scope of evaluation may be within an array or a string. See [Examples](validation-rules-for-validation-control-settings.md#examples).
+Use the `In` validation rule to validate that the value entered into this control is included in the given parameter setting. The control's scope of evaluation may be within an array or a string. See [`In` Validation Rule Examples](validation-rules-for-validation-control-settings.md#in-validation-rule-examples).
 
 Follow these steps to configure the parameter\(s\) for an `In` validation rule:
 
@@ -103,7 +103,7 @@ Follow these steps to configure the parameter\(s\) for an `In` validation rule:
 2. From the **Select** drop-down menu in the **Validation Rules** setting, select **In**. The **Values** parameter setting displays. ![](../../../../.gitbook/assets/in-values-validation-screens-builder-processes.png) 
 3. In the **Values** parameter setting, enter the value to evaluate if it is within the control's selected or entered value. This is a required setting.
 
-#### Examples
+#### `In` Validation Rule Examples
 
 {% tabs %}
 {% tab title="Entered value under evaluation is within an array" %}
@@ -176,7 +176,7 @@ Follow these steps to configure the parameter\(s\) for a `Min Length` validation
 
 ### Not In
 
-Use the `Not In` validation rule to validate that the value entered into this control is not included in the given parameter setting. The control's scope of evaluation may be within an array or a string. See [Examples](validation-rules-for-validation-control-settings.md#examples-1).
+Use the `Not In` validation rule to validate that the value entered into this control is not included in the given parameter setting. The control's scope of evaluation may be within an array or a string. See [`Not In` Validation Rule Examples](validation-rules-for-validation-control-settings.md#not-in-validation-rule-examples).
 
 Follow these steps to configure the parameter\(s\) for a `Not In` validation rule:
 
@@ -184,7 +184,7 @@ Follow these steps to configure the parameter\(s\) for a `Not In` validation rul
 2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Not In**. The **Values** parameter setting displays. ![](../../../../.gitbook/assets/not-in-values-validation-screens-builder-processes.png) 
 3. In the **Values** parameter setting, enter the value to evaluate if it is not within the control's selected or entered value. This is a required setting.
 
-#### Examples
+#### `Not In` Validation Rule Examples
 
 {% tabs %}
 {% tab title="Entered value under evaluation is within an array" %}
@@ -238,7 +238,7 @@ Follow these steps to configure the parameter\(s\) for a `Required` validation r
 
 ### Required If
 
-Use the `Required If` validation rule to validate that this control has a value and is not empty if another control in that [ProcessMaker Screen](../../what-is-a-form.md) contains a specific value. See [Examples](validation-rules-for-validation-control-settings.md#examples-2).
+Use the `Required If` validation rule to validate that this control has a value and is not empty if another control in that [ProcessMaker Screen](../../what-is-a-form.md) contains a specific value. See [`Required If` Validation Rule Examples](validation-rules-for-validation-control-settings.md#required-if).
 
 A control constitutes as having no value in the following circumstances:
 
@@ -254,7 +254,7 @@ Follow these steps to configure the parameter\(s\) for a `Required If` validatio
 3. In the **Variable Name** parameter setting, enter the **Variable Name** setting value to monitor for its value. This is a required setting.
 4. In the **Variable Value** parameter setting, enter the value that must be entered into that control to make this control required. This is a required setting.
 
-#### Examples
+#### `Required If` Validation Rule Examples
 
 {% tabs %}
 {% tab title="Select List control depends on another\'s value" %}
