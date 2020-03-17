@@ -238,7 +238,9 @@ Follow these steps to configure the parameter\(s\) for a `Required` validation r
 
 ### Required If
 
-Use the `Required If` validation rule to validate that this control has a value and is not empty if another control in that [ProcessMaker Screen](../../what-is-a-form.md) contains a specific value. See [`Required If` Validation Rule Examples](validation-rules-for-validation-control-settings.md#required-if).
+Use the `Required If` validation rule to validate that this control has a value and is not empty if another control in that [ProcessMaker Screen](../../what-is-a-form.md) page contains a specific value. If the control being monitored contains a specific value, then the control under evaluation is required. See [`Required If` Validation Rule Examples](validation-rules-for-validation-control-settings.md#required-if).
+
+The `Required If` validation rule is the inverse of the [`Required Unless` rule](validation-rules-for-validation-control-settings.md#required-unless).
 
 A control constitutes as having no value in the following circumstances:
 
@@ -258,7 +260,7 @@ Follow these steps to configure the parameter\(s\) for a `Required If` validatio
 
 {% tabs %}
 {% tab title="Select List control depends on another\'s value" %}
-In a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) where a [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information for a job application, if that Task assignee selects from a [Select List](select-list-control-settings.md) control in which country that person lives. If the Task assignee selects the option **United States**, then another Select List control becomes required to select from which US state that person lives.
+A [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information into a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) for a job application. If that Task assignee selects from a [Select List](select-list-control-settings.md) control in which country that person lives. If the Task assignee selects the option **United States** \(US\), then another Select List control becomes required to select from which US state that person lives.
 
 This example demonstrates depending controls: one control depends on another to be required. This example also demonstrates how a control depends on the specific value of another.
 
@@ -274,10 +276,10 @@ Follow these steps to implement this example:
    1. Download the file below **Countries for Select List Control "Required If" Validation Example**.
    2. Review the JSON data. Notice that each JSON object contains the following:
       * **content:** A property called `content` represents the label for each option \(in this example, a country name\). The label for each Select List option may contain any string as long as it is in the `content` property of each JSON object.
-      * **value:** A property called `value` that contains a numeric value that corresponds with each label option. The `value` property may contain any string as long as it is in the `value` property of each JSON object. Notice that the JSON object that contains the `content` property value of `United States` has a value property of `232`.
+      * **value:** A property called `value` that contains a numeric value that corresponds with each label option. The `value` property may contain any string as long as it is in the `value` property of each JSON object. Notice that the JSON object that contains the `content` property value of `United States` has a value property of `232`.  In this example, if the option corresponding with the `232` value is selected, then the second Select List control is required.
    3. Copy this file's JSON data.
    4. Paste it into the **JSON Data** setting.
-3. Add a second Select List control to the same ProcessMaker Screen page, and then configure its settings. This control displays the list of US states and territories as its options.
+3. Add a second Select List control to the same ProcessMaker Screen page, and then configure its settings. This control displays the list of US states and territories as its options, and represents the required control if a specific setting in the first Select List control contains a specific value.
 4. [Provide the options for this Select List control](select-list-control-settings.md#provide-options). In doing so, edit options as JSON:
    1. Download the file below **US States for Select List Control "Required If" Validation Example**.
    2. Copy this file's JSON data.
@@ -293,7 +295,7 @@ Follow these steps to implement this example:
 {% endtab %}
 
 {% tab title="Textarea control required when a Select List option is selected" %}
-In a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) where a [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information for a job application, if that Task assignee selects the **Yes** option from a [Select List](select-list-control-settings.md) control labeled **Have you been convicted of a felony within the past 10 years?**, a [Textarea](textarea-control-settings.md) control labeled **Describe your felony conviction.** becomes required. The Task assignee cannot submit the form without describing the felony conviction\(s\).
+A [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information into a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) for a job application. If that Task assignee selects the **Yes** option from a [Select List](select-list-control-settings.md) control labeled **Have you been convicted of a felony within the past 10 years?**, a [Textarea](textarea-control-settings.md) control labeled **Describe your felony conviction.** becomes required. The Task assignee cannot submit the form without describing the felony conviction\(s\).
 
 This example demonstrates depending controls: one control depends on another to be required. This example also demonstrates how a control depends on the specific value of another.
 
@@ -309,7 +311,7 @@ Follow these steps to implement this example:
      * **Value:** 1
      * **Content:** Yes, I have a felony conviction within the past 10 years.
 
-   The **Value** settings represent the values the Textarea control evaluates to determine if that control is required; these settings may contain any value, not necessarily Boolean values. The **Content** settings represent the label for each option.
+   The **Value** settings represent the values the Textarea control evaluates to determine if that control is required; these settings may contain any value, not necessarily Boolean values. The **Content** settings represent the label for each option. In this example, if the option corresponding with the `1` value is selected, then the Textarea control is required.
 
 3. [Add a Textarea control](textarea-control-settings.md#add-the-control-to-a-processmaker-screen) to the same ProcessMaker Screen page, and then [configure its settings](textarea-control-settings.md#inspector-settings).
 4. Add a `Required If` [validation rule](textarea-control-settings.md#validation-rules) to the Textarea control.
@@ -318,6 +320,100 @@ Follow these steps to implement this example:
 7. [Add a Submit Button control](submit-button-control-settings.md#add-the-control-to-a-processmaker-screen) to the same ProcessMaker Screen page, and then [configure its settings](submit-button-control-settings.md#inspector-settings).
 {% endtab %}
 {% endtabs %}
+
+### Required Unless
+
+Use the `Required Unless` validation rule to validate that this control has a value and is not empty unless another control in that [ProcessMaker Screen](../../what-is-a-form.md) page contains a specific value. If the control being monitored for its value has a specific value, then the control under evaluation is not required. See [Required Unless Validation Rule Examples](validation-rules-for-validation-control-settings.md#required-unless-validation-rule-examples).
+
+The `Required Unless` validation rule is the inverse of the [`Required If` rule](validation-rules-for-validation-control-settings.md#required-if).
+
+A control constitutes as having no value in the following circumstances:
+
+* The value is `null`.
+* The value is an empty string that contains no characters.
+* The value is an empty JSON array or empty JSON object.
+* The value is an uploaded file with no path.
+
+Follow these steps to configure the parameter\(s\) for a `Required Unless` validation rule:
+
+1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
+2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Required Unless**. The **Variable Name** and **Variable Value** parameter settings display. ![](../../../../.gitbook/assets/required-unless-variable-validation-screens-builder-processes.png) 
+3. In the **Variable Name** parameter setting, enter the **Variable Name** setting value to monitor for its value. This is a required setting.
+4. In the **Variable Value** parameter setting, enter the value that must be entered into that control to exempt this control from being required. This is a required setting.
+
+#### `Required Unless` Validation Rule Examples
+
+{% tabs %}
+{% tab title="Control depends on a Select List option: Example 1" %}
+A [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information for a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) regarding United States \(US\) federal taxes. If that Task assignee selects from a [Select List](select-list-control-settings.md) control that person lives in California, then that person is exempt from a federal tax credit. If the Task assignee selects the option **California**, then a [Line Input](line-input-control-settings.md) control becomes required to enter tax information. If any other option is selected, then the Line Input control is not required.
+
+This example demonstrates depending controls: one control depends on another to be required. This example also demonstrates how a control depends on the specific value of another.
+
+See the following `.json` file below for this example: **US States for Select List Control "Required Unless" Validation Example**.
+
+Follow these steps to implement this example:
+
+1. Add a [Select List control to your ProcessMaker Screen](select-list-control-settings.md#add-the-control-to-a-processmaker-screen), and then [configure its settings](select-list-control-settings.md#inspector-settings). Make note of its **Variable Name** setting value you set for that control. This control displays the list of US states and territories as its options.
+2. [Provide the options for this Select List control](select-list-control-settings.md#provide-options). In doing so, edit options as JSON:
+   1. Download the file below **US States for Select List Control "Required Unless" Validation Example**.
+   2. Review the JSON data. Notice that each JSON object contains the following:
+      * **content:** A property called `content` represents the label for each option \(in this example, a US state or territory\). The label for each Select List option may contain any string as long as it is in the `content` property of each JSON object.
+      * **value:** A property called `value` that contains a numeric value that corresponds with each label option. The `value` property may contain any string as long as it is in the `value` property of each JSON object. Notice that the JSON object that contains the `content` property value of `California` has a value property of `6`. In this example, if the option corresponding with the `6` value is selected, then the Line Input control is not required.
+   3. Copy this file's JSON data.
+   4. Paste it into the **JSON Data** setting.
+3. Add a Line Input control to the same ProcessMaker Screen page, and then configure its settings. The Request participant enters into this control required information unless a specific setting in the Select List control contains a specific value.
+4. Add a `Required Unless` [validation rule](line-input-control-settings.md#validation-rules) to the Line Input control control.
+5. In the **Variable Name** setting of the `Required Unless` validation rule, enter the **Variable Name** setting value for the Select List control that displays the list of US states and territories as its options.
+6. In the **Variable Value** setting of the `Required Unless` validation rule, enter `6`, which is the `value` property value that corresponds with the `content` property value `California`.
+7. [Add a Submit Button control](submit-button-control-settings.md#add-the-control-to-a-processmaker-screen) to the same ProcessMaker Screen page, and then [configure its settings](submit-button-control-settings.md#inspector-settings).
+
+{% file src="../../../../.gitbook/assets/states.json" caption="US States for Select List Control \"Required Unless\" Validation Example" %}
+{% endtab %}
+
+{% tab title="Control depends on a Select List option: Example 2" %}
+A [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant enters information for a [Task](../../../../using-processmaker/task-management/what-is-a-task.md) that solicits viewer feedback for a streaming video. The organization soliciting viewer feedback is particularly interested in viewer feedback for a particular demographic: if that viewer indicates that she or he is in a specific age group, then that person does is not required to provide feedback on a particular question.
+
+If that Task assignee selects from a [Select List](select-list-control-settings.md) control the option **65 years old or older**, then a [Textarea](textarea-control-settings.md) control is not required. If any other option is selected, then the Textarea control is required.
+
+This example demonstrates depending controls: one control depends on another to be required. This example also demonstrates how a control depends on the specific value of another.
+
+Follow these steps to implement this example:
+
+1. Add a [Select List control to your ProcessMaker Screen](select-list-control-settings.md#add-the-control-to-a-processmaker-screen), and then [configure its settings](checkbox-control-settings.md#inspector-settings). Make note of its **Variable Name** setting value you set for that control.
+2. [Provide the options for this Select List control](select-list-control-settings.md#provide-options). In doing so, provide the following values that represent demographic age groups:
+
+   * **Option 1:**
+     * **Value:** 1
+     * **Content:** 18 years old or younger
+   * **Option 2:**
+     * **Value:** 2
+     * **Content:** 19 to 35 years old
+   * **Option 3:**
+     * **Value:** 3
+     * **Content:** 36 to 64 years old
+   * **Option 4:**
+     * **Value:** 4
+     * **Content:** 65 years old or older
+
+   The **Value** settings represent the values the Textarea control evaluates to determine if that control is required; these settings may contain any value, not necessarily Boolean values. The **Content** settings represent the label for each option. In this example, if the option corresponding with the `4` value is selected, then the Textarea control is not required.
+
+3. [Add a Textarea control](textarea-control-settings.md#add-the-control-to-a-processmaker-screen) to the same ProcessMaker Screen page, and then [configure its settings](textarea-control-settings.md#inspector-settings).
+4. Add a `Required Unless` [validation rule](textarea-control-settings.md#validation-rules) to the Textarea control.
+5. In the **Variable Name** setting of the `Required Unless` validation rule, enter the **Variable Name** setting value for the Select List control.
+6. In the **Variable Value** setting of the `Required Unless` validation rule, enter `4`.
+7. [Add a Submit Button control](submit-button-control-settings.md#add-the-control-to-a-processmaker-screen) to the same ProcessMaker Screen page, and then [configure its settings](submit-button-control-settings.md#inspector-settings).
+{% endtab %}
+{% endtabs %}
+
+### Same
+
+Use the `Same` validation rule to validate that the value entered into this control matches the value of a specified control.
+
+Follow these steps to configure the parameter\(s\) for a `Same` validation rule:
+
+1. [Create a validation rule for the control](validation-rules-for-validation-control-settings.md#create-a-validation-rule).
+2. From the **Select** drop-down menu in the **Validation Rules** setting, select **Same**. The **Values** parameter setting displays. ![](../../../../.gitbook/assets/same-variable-validation-screens-builder-processes.png) 
+3. In the **Variable Name** parameter setting, enter the **Variable Name** setting value to evaluate if the control under evaluation matches its value. This is a required setting.
 
 ### **accepted**
 
