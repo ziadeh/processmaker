@@ -1,0 +1,249 @@
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+[2020-02-11 11:52:56][32] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 11:52:56][32] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 11:52:56][32] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 11:52:56][32] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 11:52:56][31] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 11:52:56][31] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 11:52:56][31] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 11:52:56][31] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 11:52:56][33] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 11:52:56][33] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 11:52:56][33] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 11:52:56][33] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:01:36][3] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:01:36][3] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:01:36][2] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:01:36][2] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:01:36][1] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:01:36][1] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:01:36][3] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:01:37][3] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:01:36][2] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:01:37][2] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:01:36][1] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:01:36][1] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:06:55][3] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:06:55][2] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:06:55][1] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:06:55][1] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:06:55][2] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:06:55][3] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:06:55][3] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:06:55][3] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:06:55][1] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:06:55][1] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:06:55][2] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:06:55][2] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:08:07][4] Processing: ProcessMaker\Jobs\TestScript
+[2020-02-11 12:08:08][4] Processed:  ProcessMaker\Jobs\TestScript
+[2020-02-11 12:08:08][5] Processing: Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-11 12:08:08][5] Processed:  Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-11 12:09:35][1] Processing: ProcessMaker\Jobs\TestScript
+[2020-02-11 12:09:35][1] Processed:  ProcessMaker\Jobs\TestScript
+[2020-02-11 12:09:35][2] Processing: Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-11 12:09:35][2] Processed:  Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-11 12:10:11][4] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:10:11][4] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:10:11][3] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:10:11][4] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:10:11][5] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:10:11][3] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:10:11][3] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:10:11][5] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:10:11][5] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:10:11][4] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:10:11][3] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:10:11][5] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:19:30][1] Processing: ProcessMaker\Jobs\TestScript
+[2020-02-11 12:19:30][1] Processed:  ProcessMaker\Jobs\TestScript
+[2020-02-11 12:19:30][2] Processing: Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-11 12:19:30][2] Processed:  Illuminate\Notifications\Events\BroadcastNotificationCreated
+Horizon started successfully.
+[2020-02-11 12:22:44][1] Processing: ProcessMaker\Jobs\TestScript
+[2020-02-11 12:22:44][1] Processed:  ProcessMaker\Jobs\TestScript
+[2020-02-11 12:22:44][2] Processing: Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-11 12:22:44][2] Processed:  Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-11 12:23:47][5] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:23:47][3] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:23:47][4] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:23:47][3] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:23:47][4] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:23:47][5] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:23:47][4] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:23:47][5] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:23:47][5] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:23:47][3] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:23:47][3] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:23:47][4] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:31:15][1] Processing: ProcessMaker\Jobs\TestScript
+[2020-02-11 12:31:15][1] Processed:  ProcessMaker\Jobs\TestScript
+[2020-02-11 12:31:15][2] Processing: Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-11 12:31:15][2] Processed:  Illuminate\Notifications\Events\BroadcastNotificationCreated
+Horizon started successfully.
+[2020-02-11 12:36:57][1] Processing: ProcessMaker\Jobs\TestScript
+[2020-02-11 12:36:57][1] Processed:  ProcessMaker\Jobs\TestScript
+[2020-02-11 12:36:57][2] Processing: Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-11 12:36:57][2] Processed:  Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-11 12:39:18][3] Processing: ProcessMaker\Jobs\RunScriptTask
+[2020-02-11 12:39:18][] Processing: ProcessMaker\Events\ProcessUpdated
+[2020-02-11 12:39:18][] Processed:  ProcessMaker\Events\ProcessUpdated
+[2020-02-11 12:39:18][3] Processed:  ProcessMaker\Jobs\RunScriptTask
+Horizon started successfully.
+[2020-02-11 12:42:07][4] Processing: ProcessMaker\Jobs\RunScriptTask
+[2020-02-11 12:42:07][] Processing: ProcessMaker\Events\ProcessUpdated
+[2020-02-11 12:42:07][] Processed:  ProcessMaker\Events\ProcessUpdated
+[2020-02-11 12:42:07][4] Processed:  ProcessMaker\Jobs\RunScriptTask
+Horizon started successfully.
+[2020-02-11 12:56:24][5] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:56:24][6] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:56:24][7] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:56:24][7] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:56:24][6] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:56:24][7] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:56:24][6] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:56:24][6] Failed:     ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:56:24][7] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:56:24][5] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:56:24][5] Processing: ProcessMaker\Jobs\CompileSass
+[2020-02-11 12:56:24][5] Failed:     ProcessMaker\Jobs\CompileSass
+Horizon started successfully.
+[2020-02-12 11:33:42][8] Processing: ProcessMaker\Jobs\RunScriptTask
+[2020-02-12 11:33:45][8] Processing: ProcessMaker\Jobs\RunScriptTask
+[2020-02-12 11:33:45][8] Processing: ProcessMaker\Jobs\RunScriptTask
+[2020-02-12 11:33:45][8] Failed:     ProcessMaker\Jobs\RunScriptTask
+Horizon started successfully.
+Horizon started successfully.
+[2020-02-14 13:09:00][151] Processing: ProcessMaker\Jobs\TestScript
+[2020-02-14 13:09:06][151] Processed:  ProcessMaker\Jobs\TestScript
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+[2020-02-18 12:17:22][196] Processing: ProcessMaker\Jobs\TestScript
+[2020-02-18 12:17:28][196] Processed:  ProcessMaker\Jobs\TestScript
+[2020-02-18 12:17:28][197] Processing: Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-18 12:17:28][197] Processed:  Illuminate\Notifications\Events\BroadcastNotificationCreated
+Horizon started successfully.
+[2020-02-18 12:19:40][198] Processing: ProcessMaker\Jobs\TestScript
+[2020-02-18 12:19:44][198] Processed:  ProcessMaker\Jobs\TestScript
+[2020-02-18 12:19:44][199] Processing: Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-18 12:19:44][199] Processed:  Illuminate\Notifications\Events\BroadcastNotificationCreated
+Horizon started successfully.
+[2020-02-18 12:27:28][200] Processing: ProcessMaker\Jobs\TestScript
+[2020-02-18 12:27:32][200] Processed:  ProcessMaker\Jobs\TestScript
+[2020-02-18 12:27:32][201] Processing: Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-18 12:27:32][201] Processed:  Illuminate\Notifications\Events\BroadcastNotificationCreated
+Horizon started successfully.
+[2020-02-18 12:32:57][202] Processing: ProcessMaker\Jobs\TestScript
+[2020-02-18 12:33:01][202] Processed:  ProcessMaker\Jobs\TestScript
+[2020-02-18 12:33:01][203] Processing: Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-18 12:33:01][203] Processed:  Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-18 12:33:57][204] Processing: ProcessMaker\Jobs\TestScript
+[2020-02-18 12:34:01][204] Processed:  ProcessMaker\Jobs\TestScript
+[2020-02-18 12:34:01][205] Processing: Illuminate\Notifications\Events\BroadcastNotificationCreated
+[2020-02-18 12:34:01][205] Processed:  Illuminate\Notifications\Events\BroadcastNotificationCreated
+
+   UnexpectedValueException  : The stream or file "/opt/github/processmaker/storage/logs/processmaker-2020-02-21.log" could not be opened: failed to open stream: Permission denied
+
+  at /opt/github/processmaker/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:108
+    104|             }
+    105|             restore_error_handler();
+    106|             if (!is_resource($this->stream)) {
+    107|                 $this->stream = null;
+  > 108|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    109|             }
+    110|         }
+    111| 
+    112|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /opt/github/processmaker/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /opt/github/processmaker/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+
+   UnexpectedValueException  : The stream or file "/opt/github/processmaker/storage/logs/processmaker-2020-02-21.log" could not be opened: failed to open stream: Permission denied
+
+  at /opt/github/processmaker/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:108
+    104|             }
+    105|             restore_error_handler();
+    106|             if (!is_resource($this->stream)) {
+    107|                 $this->stream = null;
+  > 108|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    109|             }
+    110|         }
+    111| 
+    112|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /opt/github/processmaker/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /opt/github/processmaker/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+
+   UnexpectedValueException  : The stream or file "/opt/github/processmaker/storage/logs/processmaker-2020-02-21.log" could not be opened: failed to open stream: Permission denied
+
+  at /opt/github/processmaker/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:108
+    104|             }
+    105|             restore_error_handler();
+    106|             if (!is_resource($this->stream)) {
+    107|                 $this->stream = null;
+  > 108|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    109|             }
+    110|         }
+    111| 
+    112|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /opt/github/processmaker/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /opt/github/processmaker/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+
+   UnexpectedValueException  : The stream or file "/opt/github/processmaker/storage/logs/processmaker-2020-02-21.log" could not be opened: failed to open stream: Permission denied
+
+  at /opt/github/processmaker/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:108
+    104|             }
+    105|             restore_error_handler();
+    106|             if (!is_resource($this->stream)) {
+    107|                 $this->stream = null;
+  > 108|                 throw new \UnexpectedValueException(sprintf('The stream or file "%s" could not be opened: '.$this->errorMessage, $this->url));
+    109|             }
+    110|         }
+    111| 
+    112|         if ($this->useLocking) {
+
+  Exception trace:
+
+  1   Monolog\Handler\StreamHandler::write()
+      /opt/github/processmaker/vendor/monolog/monolog/src/Monolog/Handler/RotatingFileHandler.php:119
+
+  2   Monolog\Handler\RotatingFileHandler::write()
+      /opt/github/processmaker/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php:39
+
+  Please use the argument -v to see more details.
+
+In StreamHandler.php line 108:
+                                                                               
+  The stream or file "/opt/github/processmaker/storage/logs/processmaker-2020  
+  -02-21.log" could not be opened: failed to open stream: Permission denied    
+                                                                               
+

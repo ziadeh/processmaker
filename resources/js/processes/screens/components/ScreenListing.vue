@@ -76,6 +76,11 @@
               >
                 <i class="fas fa-trash-alt fa-lg fa-fw"></i>
               </b-btn>
+
+              <template v-for="(item, index) in buttons">
+                <component :is="item.type" :options="item.options" :key="index"></component>
+              </template>
+
             </div>
           </div>
         </template>
@@ -140,6 +145,7 @@ export default {
   data() {
     return {
       orderBy: "title",
+      buttons: {},
       dupScreen: {
         title: "",
         type: "",

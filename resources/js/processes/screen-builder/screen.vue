@@ -1,195 +1,265 @@
 <template>
-  <div class="h-100">
-    <b-card no-body class="h-100 bg-white border-top-0" id="app">
-      <!-- Card Header -->
-      <b-card-header>
-        <b-row>
-          <b-col>
-            <b-button-group size="sm">
-              <b-button :variant="displayBuilder? 'secondary' : 'outline-secondary'" @click="mode = 'editor'" class="text-capitalize">
-                <i class="fas fa-drafting-compass pr-1"></i>{{ $t('Design') }}
-              </b-button>
-              <b-button :variant="!displayBuilder? 'secondary' : 'outline-secondary'" @click="mode = 'preview'" class="text-capitalize">
-                <i class="fas fa-cogs pr-1"></i>{{ $t('Preview') }}
-              </b-button>
-            </b-button-group>
-          </b-col>
+    <div class="h-100">
+        <b-card no-body class="h-100 bg-white border-top-0" id="app">
 
-          <b-col class="text-right" v-if="displayBuilder && !displayPreview">
-            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-secondary text-capitalize" :title="$t('Calculated Properties')" @click="openComputedProperties">
-                <i class="fas fa-flask"></i>
-                {{ $t('Calcs') }}
-              </button>
-              <button type="button" class="btn btn-secondary text-capitalize" :title="$t('Custom CSS')" @click="openCustomCSS">
-                <i class="fab fa-css3"></i>
-                {{ $t('CSS') }}
-              </button>
-              <button type="button" class="btn btn-secondary mr-2 text-capitalize" :title="$t('Watchers')" @click="openWatchersPopup">
-                <i class="fas fa-mask"></i>
-                {{ $t('Watchers') }}
-              </button>
-            </div>
+            <!--Card Menu-->
+            <menu-screen ref="menuScreen" :options="optionsMenu"></menu-screen>
 
-            <button v-if="permission.includes('export-screens')" type="button" :title="$t('Export Screen')" @click="beforeExportScreen" class="btn btn-secondary btn-sm ml-1"><i class="fas fa-file-export"></i></button>
-            <button @click="saveScreen(false)" type="button" class="btn btn-secondary btn-sm ml-1"><i class="fas fa-save"></i></button>
-          </b-col>
+            <!-- Card Body -->
+            <b-card-body class="overflow-auto p-0 h-100" id="screen-builder-container">
+                <!-- Vue-form-builder -->
+                <vue-form-builder
+                    class="m-0"
+                    :validationErrors="validationErrors"
+                    :initialConfig="screen.config"
+                    :title="screen.title"
+                    :class="displayBuilder ? 'd-flex' : 'd-none'"
+                    :screenType="type"
+                    ref="builder"
+                    @change="updateConfig"
+                    :screen="screen"
+                />
 
-        </b-row>
-      </b-card-header>
+                <!-- Preview -->
+                <b-row class="h-100 m-0" id="preview" v-show="displayPreview">
+                    <b-col class="overflow-auto h-100">
+                        <vue-form-renderer ref="renderer"
+                                           v-model="previewData"
+                                           class="p-3"
+                                           @submit="previewSubmit"
+                                           @update="onUpdate"
+                                           :mode="mode"
+                                           :config="config"
+                                           :computed="computed"
+                                           :custom-css="customCSS"
+                                           :watchers="watchers"
+                                           v-on:css-errors="cssErrors = $event"
+                                           :mock-magic-variables="mockMagicVariables"
+                        />
+                    </b-col>
 
-      <!-- Card Body -->
-      <b-card-body class="overflow-auto p-0 h-100" id="screen-builder-container">
-        <!-- Vue-form-builder -->
-        <vue-form-builder
-          class="m-0"
-          :validationErrors="validationErrors"
-          :initialConfig="screen.config"
-          :title="screen.title"
-          :class="displayBuilder ? 'd-flex' : 'd-none'"
-          :screenType="type"
-          ref="builder"
-          @change="updateConfig"
-          :screen="screen"
-        />
+                    <b-col class="overflow-hidden h-100 preview-inspector p-0">
+                        <b-card no-body class="p-0 h-100 rounded-0 border-top-0 border-right-0 border-bottom-0">
+                            <b-card-body class="p-0 overflow-auto">
+                                <b-button variant="outline"
+                                          class="text-left card-header d-flex align-items-center w-100 shadow-none text-capitalize"
+                                          @click="showDataInput = !showDataInput">
+                                    <i class="fas fa-file-import mr-2"></i>
+                                    {{ $t("Data Input") }}
+                                    <i class="fas ml-auto"
+                                       :class="showDataInput ? 'fa-angle-right' : 'fa-angle-down'"></i>
+                                </b-button>
 
-        <!-- Preview -->
-        <b-row class="h-100 m-0" id="preview" v-show="displayPreview">
-          <b-col class="overflow-auto h-100">
-            <vue-form-renderer ref="renderer"
-              v-model="previewData"
-              class="p-3"
-              @submit="previewSubmit"
-              @update="onUpdate"
-              :mode="mode"
-              :config="config"
-              :computed="computed"
-              :custom-css="customCSS"
-              :watchers="watchers"
-              v-on:css-errors="cssErrors = $event"
-              :mock-magic-variables="mockMagicVariables"
-            />
-          </b-col>
+                                <b-collapse v-model="showDataInput" id="showDataInput">
+                                    <monaco-editor :options="monacoOptions" class="data-collapse" v-model="previewInput"
+                                                   language="json"/>
 
-          <b-col class="overflow-hidden h-100 preview-inspector p-0">
-            <b-card no-body class="p-0 h-100 rounded-0 border-top-0 border-right-0 border-bottom-0">
-              <b-card-body class="p-0 overflow-auto">
-                <b-button variant="outline"
-                  class="text-left card-header d-flex align-items-center w-100 shadow-none text-capitalize"
-                  @click="showDataInput = !showDataInput">
-                  <i class="fas fa-file-import mr-2"></i>
-                    {{ $t('Data Input') }}
-                  <i class="fas ml-auto" :class="showDataInput ? 'fa-angle-right' : 'fa-angle-down'"></i>
-                </b-button>
+                                    <div v-if="!previewInputValid" class="pl-3">
+                                        <i class="fas text-danger fa-times-circle mr-1"></i>
+                                        <small class="text-muted text-capitalize">
+                                            {{ $t("Invalid JSON Data Object") }}
+                                        </small>
+                                    </div>
+                                </b-collapse>
 
-                <b-collapse v-model="showDataInput" id="showDataInput">
-                  <monaco-editor :options="monacoOptions" class="data-collapse" v-model="previewInput" language="json"/>
+                                <b-button variant="outline"
+                                          class="text-left card-header d-flex align-items-center w-100 shadow-none text-capitalize"
+                                          data-toggle="collapse"
+                                          @click="showDataPreview = !showDataPreview">
+                                    <i class="fas fa-file-code mr-2"></i>
+                                    {{ $t("Data Preview") }}
+                                    <i class="fas ml-auto"
+                                       :class="showDataPreview ? 'fa-angle-right' : 'fa-angle-down'"></i>
+                                </b-button>
 
-                  <div v-if="!previewInputValid" class="pl-3">
-                      <i class="fas text-danger fa-times-circle mr-1"></i>
-                      <small class="text-muted text-capitalize">
-                        {{ $t('Invalid JSON Data Object') }}
-                      </small>
-                  </div>
-                </b-collapse>
+                                <b-collapse v-model="showDataPreview" id="showDataPreview" class="mt-2">
+                                    <vue-json-pretty :data="previewData" class="p-2 data-collapse"></vue-json-pretty>
+                                </b-collapse>
+                            </b-card-body>
+                        </b-card>
+                    </b-col>
+                </b-row>
+            </b-card-body>
 
-                <b-button variant="outline"
-                  class="text-left card-header d-flex align-items-center w-100 shadow-none text-capitalize"
-                  data-toggle="collapse"
-                  @click="showDataPreview = !showDataPreview">
-                  <i class="fas fa-file-code mr-2"></i>
-                    {{ $t('Data Preview') }}
-                  <i class="fas ml-auto" :class="showDataPreview ? 'fa-angle-right' : 'fa-angle-down'"></i>
-                </b-button>
+            <!-- Card Footer -->
+            <b-card-footer class="d-flex d-flex justify-content-end align-items-center">
+                <b-form-checkbox v-model="toggleValidation" name="check-button" switch>
+                    {{ $t("Screen Validation") }}
+                </b-form-checkbox>
 
-                <b-collapse v-model="showDataPreview" id="showDataPreview" class="mt-2">
-                  <vue-json-pretty :data="previewData" class="p-2 data-collapse"></vue-json-pretty>
-                </b-collapse>
-              </b-card-body>
-            </b-card>
-          </b-col>
-        </b-row>
-      </b-card-body>
-
-      <!-- Card Footer -->
-      <b-card-footer class="d-flex d-flex justify-content-end align-items-center">
-        <b-form-checkbox v-model="toggleValidation" name="check-button" switch>
-          {{ $t('Screen Validation') }}
-        </b-form-checkbox>
-
-        <div class="ml-3" @click="showValidationErrors = !showValidationErrors">
-          <button type="button" class="btn btn-sm text-capitalize">
-            <i class="fas fa-angle-double-up"></i>
-            {{ $t('Open Console') }}
-            <span v-if="allErrors === 0" class="badge badge-success">
+                <div class="ml-3" @click="showValidationErrors = !showValidationErrors">
+                    <button type="button" class="btn btn-sm text-capitalize">
+                        <i class="fas fa-angle-double-up"></i>
+                        {{ $t("Open Console") }}
+                        <span v-if="allErrors === 0" class="badge badge-success">
               <i class="fas fa-check-circle "></i>
               {{ $t(allErrors) }}
             </span>
 
-            <span v-else class="badge badge-danger">
+                        <span v-else class="badge badge-danger">
               <i class="fas fa-times-circle "></i>
               {{ $t(allErrors) }}
             </span>
-          </button>
-        </div>
+                    </button>
+                </div>
 
-        <div v-if="showValidationErrors" class="validation-panel position-absolute border-top border-left overflow-auto" :class="{'d-block':showValidationErrors && validationErrors.length}">
-            <b-button variant="link" class="validation__message d-flex align-items-center p-3 text-capitalize"
-                      v-for="(validation,index) in validationErrors"
-                      :key="index"
-                      @click="focusInspector(validation)">
-              <i class="fas fa-times-circle text-danger d-block mr-3"></i>
-              <span class="ml-2 text-dark font-weight-bold text-left">
+                <div v-if="showValidationErrors"
+                     class="validation-panel position-absolute border-top border-left overflow-auto"
+                     :class="{'d-block':showValidationErrors && validationErrors.length}">
+                    <b-button variant="link" class="validation__message d-flex align-items-center p-3 text-capitalize"
+                              v-for="(validation,index) in validationErrors"
+                              :key="index"
+                              @click="focusInspector(validation)">
+                        <i class="fas fa-times-circle text-danger d-block mr-3"></i>
+                        <span class="ml-2 text-dark font-weight-bold text-left">
                 {{ validation.item && validation.item.component }}
                 <span class="d-block font-weight-normal">{{ validation.message }}</span>
               </span>
-            </b-button>
-            <span v-if="!allErrors" class="d-flex justify-content-center align-items-center h-100 text-capitalize">{{ $t('No Errors') }}</span>
-        </div>
-      </b-card-footer>
-    </b-card>
-    <!-- Modals -->
-    <computed-properties v-model="computed" ref="computedProperties"></computed-properties>
-    <custom-CSS v-model="customCSS" ref="customCSS" :cssErrors="cssErrors"/>
-    <watchers-popup v-model="watchers" ref="watchersPopup"/>
-  </div>
+                    </b-button>
+                    <span v-if="!allErrors"
+                          class="d-flex justify-content-center align-items-center h-100 text-capitalize">{{ $t("No Errors") }}</span>
+                </div>
+            </b-card-footer>
+        </b-card>
+        <!-- Modals -->
+        <computed-properties v-model="computed" ref="computedProperties"></computed-properties>
+        <custom-CSS v-model="customCSS" ref="customCSS" :cssErrors="cssErrors"/>
+        <watchers-popup v-model="watchers" ref="watchersPopup"/>
+    </div>
 </template>
 
 <script>
   import {VueFormBuilder, VueFormRenderer} from "@processmaker/screen-builder";
-  import WatchersPopup from '@processmaker/screen-builder/src/components/watchers-popup.vue';
+  import WatchersPopup from "@processmaker/screen-builder/src/components/watchers-popup.vue";
   import ComputedProperties from "@processmaker/screen-builder/src/components/computed-properties";
   import CustomCSS from "@processmaker/screen-builder/src/components/custom-css";
   import "@processmaker/screen-builder/dist/vue-form-builder.css";
   import "@processmaker/vue-form-elements/dist/vue-form-elements.css";
-  import VueJsonPretty from 'vue-json-pretty';
+  import VueJsonPretty from "vue-json-pretty";
   import MonacoEditor from "vue-monaco";
-  import mockMagicVariables from './mockMagicVariables';
+  import mockMagicVariables from "./mockMagicVariables";
+  import MenuScreen from "../../components/menu";
 
   // Bring in our initial set of controls
   import globalProperties from "@processmaker/screen-builder/src/global-properties";
   import _ from "lodash";
 
-import Validator from "validatorjs";
-import formTypes from "./formTypes";
+  import Validator from "validatorjs";
+  import formTypes from "./formTypes";
 
   // To include another language in the Validator with variable processmaker
   if (window.ProcessMaker && window.ProcessMaker.user && window.ProcessMaker.user.lang) {
     Validator.useLang(window.ProcessMaker.user.lang);
   }
 
-  Validator.register('attr-value', value => {
+  Validator.register("attr-value", value => {
     return value.match(/^[a-zA-Z0-9-_]+$/);
-  }, 'Must be letters, numbers, underscores or dashes');
+  }, "Must be letters, numbers, underscores or dashes");
 
   export default {
-    props: ["process", "screen", 'permission'],
-    data() {
+    props: ["process", "screen", "permission"],
+    data () {
       const defaultConfig = [{
-        name: "Default",
+        name: this.$t("Default"),
         computed: [],
-        items: []
+        items: [],
       }];
+
+      const options = [
+        {
+          id: "group_design",
+          type: "group",
+          section: "left",
+          items: [
+            {
+              id: "button_design",
+              type: "button",
+              title: this.$t("Design Screen"),
+              name: this.$t("Design"),
+              variant: "secondary",
+              icon: "fas fa-drafting-compass pr-1",
+              action: () => {
+                ProcessMaker.EventBus.$emit("change_mode", "editor");
+              }
+            },
+            {
+              id: "button_preview",
+              type: "button",
+              title: this.$t("Preview Screen"),
+              name: this.$t("Preview"),
+              variant: "outline-secondary",
+              icon: "fas fa-cogs pr-1",
+              action: () => {
+                ProcessMaker.EventBus.$emit("change_mode", "preview");
+              }
+            }
+          ]
+        },
+        {
+          id: "group_properties",
+          type: "group",
+          section: "right",
+          items: [
+            {
+              id: "button_calcs",
+              type: "button",
+              title: this.$t("Calculated Properties"),
+              name: this.$t("Calcs"),
+              variant: "secondary",
+              icon: "fas fa-flask",
+              action: () => {
+                ProcessMaker.EventBus.$emit("open-computed-properties");
+              }
+            },
+            {
+              id: "button_custom_css",
+              type: "button",
+              title: this.$t("Custom CSS"),
+              name: this.$t("CSS"),
+              variant: "secondary",
+              icon: "fab fa-css3",
+              action: () => {
+                ProcessMaker.EventBus.$emit("open-custom-css");
+              }
+            },
+            {
+              id: "button_watchers",
+              type: "button",
+              title: this.$t("Watchers"),
+              name: this.$t("Watchers"),
+              variant: "secondary",
+              icon: "fas fa-mask",
+              action: () => {
+                ProcessMaker.EventBus.$emit("open-form-watchers");
+              }
+            }
+          ]
+        },
+        {
+          id: "button_export",
+          section: "right",
+          type: "button",
+          title: this.$t("Export Screen"),
+          name: "",
+          variant: "secondary",
+          icon: "fas fa-file-export",
+          action: () => {
+            ProcessMaker.EventBus.$emit("export-screen");
+          }
+        },
+        {
+          id: "button_save",
+          section: "right",
+          type: "button",
+          title: this.$t("Save Screen"),
+          name: "",
+          variant: "secondary",
+          icon: "fas fa-save",
+          action: () => {
+            ProcessMaker.EventBus.$emit("save-screen", false);
+          }
+        }
+      ];
 
       return {
         watchers_config: {
@@ -206,20 +276,21 @@ import formTypes from "./formTypes";
         watchers: [],
         config: this.screen.config || defaultConfig,
         previewData: {},
-        previewInput: '{}',
+        previewInput: "{}",
         customCSS: "",
-        cssErrors: '',
+        cssErrors: "",
         showValidationErrors: false,
         toggleValidation: true,
         showDataPreview: true,
         showDataInput: true,
         monacoOptions: {
           automaticLayout: true,
-          lineNumbers: 'off',
+          lineNumbers: "off",
           minimap: false,
         },
         mockMagicVariables,
         validationWarnings: [],
+        optionsMenu: options,
       };
     },
     components: {
@@ -229,46 +300,47 @@ import formTypes from "./formTypes";
       ComputedProperties,
       CustomCSS,
       WatchersPopup,
-      MonacoEditor
+      MonacoEditor,
+      MenuScreen,
     },
     watch: {
-      mode(mode) {
-        if (mode === 'preview') {
+      mode (mode) {
+        if (mode === "preview") {
           this.previewData = this.previewInput ? JSON.parse(this.previewInput) : null;
         }
       },
-      config() {
+      config () {
         // Reset the preview data with clean object to start
-        this.previewData = {}
+        this.previewData = {};
       },
-      previewInput() {
+      previewInput () {
         if (this.previewInputValid) {
           // Copy data over
-          this.previewData = JSON.parse(this.previewInput)
+          this.previewData = JSON.parse(this.previewInput);
         } else {
-          this.previewData = {}
+          this.previewData = {};
         }
       }
     },
     computed: {
-      previewInputValid() {
+      previewInputValid () {
         try {
-          JSON.parse(this.previewInput)
-          return true
+          JSON.parse(this.previewInput);
+          return true;
         } catch (err) {
-          return false
+          return false;
         }
       },
-      displayBuilder() {
-        return this.mode === 'editor';
+      displayBuilder () {
+        return this.mode === "editor";
       },
-      displayPreview() {
-        return this.mode === 'preview';
+      displayPreview () {
+        return this.mode === "preview";
       },
-      allErrors() {
+      allErrors () {
         return this.validationErrors.length;
       },
-      validationErrors() {
+      validationErrors () {
         if (!this.toggleValidation) {
           return [];
         }
@@ -287,7 +359,7 @@ import formTypes from "./formTypes";
         return validationErrors;
       },
     },
-    mounted() {
+    mounted () {
       // Call our init lifecycle event
       ProcessMaker.EventBus.$emit("screen-builder-init", this);
       this.computed = this.screen.computed ? this.screen.computed : [];
@@ -296,12 +368,48 @@ import formTypes from "./formTypes";
       this.updatePreview(new Object());
       this.previewInput = "{}";
       ProcessMaker.EventBus.$emit("screen-builder-start", this);
+      ProcessMaker.EventBus.$on("change_mode", (value) => {
+        if (value === "editor") {
+          this.$refs.menuScreen.changeItem("button_design", { "variant": "secondary"});
+          this.$refs.menuScreen.changeItem("button_preview", { "variant": "outline-secondary"});
+          this.$refs.menuScreen.changeItem("group_properties", { "hide": false});
+          this.$refs.menuScreen.changeItem("button_export", { "hide": false});
+          this.$refs.menuScreen.changeItem("button_save", { "hide": false});
+        }
+        if (value === "preview") {
+          this.$refs.menuScreen.changeItem("button_design", { "variant": "outline-secondary"});
+          this.$refs.menuScreen.changeItem("button_preview", { "variant": "secondary"});
+          this.$refs.menuScreen.changeItem("group_properties", { "hide": true});
+          this.$refs.menuScreen.changeItem("button_export", { "hide": true});
+          this.$refs.menuScreen.changeItem("button_save", { "hide": true});
+        }
+        this.setMode(value);
+      });
+
+      ProcessMaker.EventBus.$on('open-computed-properties',  () => {
+        this.openComputedProperties();
+      });
+      ProcessMaker.EventBus.$on('open-custom-css',  () => {
+        this.openCustomCSS();
+      });
+      ProcessMaker.EventBus.$on('open-form-watchers',  () => {
+        this.openWatchersPopup();
+      });
+      ProcessMaker.EventBus.$on('export-screen',  () => {
+        this.beforeExportScreen();
+      });
+      ProcessMaker.EventBus.$on('save-screen',  (value, resolve, reject) => {
+        this.saveScreen(value, resolve, reject);
+      });
     },
     methods: {
-      onUpdate(data) {
-        ProcessMaker.EventBus.$emit('form-data-updated', data);
+      setMode (value) {
+        this.mode = value;
       },
-      getValidationErrorsForItems(items, page) {
+      onUpdate (data) {
+        ProcessMaker.EventBus.$emit("form-data-updated", data);
+      },
+      getValidationErrorsForItems (items, page) {
         const validationErrors = [];
 
         if (!Array.isArray(items)) {
@@ -328,29 +436,30 @@ import formTypes from "./formTypes";
 
           // Validation will not run until you call passes/fails on it
           if (!validator.passes()) {
-            Object.keys(validator.errors.errors).forEach(field => {
-              validator.errors.errors[field].forEach(error => {
-                validationErrors.push({
-                  message: error,
-                  page,
-                  item,
+            Object.keys(validator.errors.errors)
+              .forEach(field => {
+                validator.errors.errors[field].forEach(error => {
+                  validationErrors.push({
+                    message: error,
+                    page,
+                    item,
+                  });
                 });
               });
-            });
           }
         });
 
         return validationErrors;
       },
-      containsSubmitButton() {
+      containsSubmitButton () {
         return this.config.some(config => {
           return this.itemsContainSubmitButton(config.items);
         });
       },
-      isSubmitButton(item) {
-        return item.component === 'FormButton' && item.config.event === 'submit';
+      isSubmitButton (item) {
+        return item.component === "FormButton" && item.config.event === "submit";
       },
-      itemsContainSubmitButton(items) {
+      itemsContainSubmitButton (items) {
         if (!Array.isArray(items)) {
           items = [items];
         }
@@ -360,71 +469,71 @@ import formTypes from "./formTypes";
             : this.isSubmitButton(item);
         });
       },
-      beforeExportScreen() {
+      beforeExportScreen () {
         this.saveScreen(true);
       },
-      focusInspector(validate) {
+      focusInspector (validate) {
         if (!validate.item || !validate.page) {
           return;
         }
 
         this.$refs.builder.focusInspector(validate);
       },
-      openWatchersPopup() {
+      openWatchersPopup () {
         this.$refs.watchersPopup.show();
       },
-      openComputedProperties() {
+      openComputedProperties () {
         this.$refs.computedProperties.show();
       },
-      openCustomCSS() {
+      openCustomCSS () {
         this.$refs.customCSS.show();
       },
-      updateConfig(newConfig) {
-        this.config = newConfig
+      updateConfig (newConfig) {
+        this.config = newConfig;
         this.refreshSession();
         ProcessMaker.EventBus.$emit("new-changes");
       },
-      updatePreview(data) {
-        this.previewData = data
+      updatePreview (data) {
+        this.previewData = data;
       },
-      previewSubmit() {
-        alert("Preview Form was Submitted")
+      previewSubmit () {
+        alert("Preview Form was Submitted");
       },
-      addControl(control, rendererComponent, rendererBinding, builderComponent, builderBinding) {
+      addControl (control, rendererComponent, rendererBinding, builderComponent, builderBinding) {
         // Add it to the renderer
         this.$refs.renderer.$options.components[rendererBinding] = rendererComponent;
         // Add it to the form builder
-        this.$refs.builder.addControl(control, builderComponent, builderBinding)
+        this.$refs.builder.addControl(control, builderComponent, builderBinding);
       },
-      refreshSession: _.throttle(function() {
+      refreshSession: _.throttle(function () {
         ProcessMaker.apiClient({
-            method: 'POST',
-            url: '/keep-alive',
-            baseURL: '/',
-          })
+          method: "POST",
+          url: "/keep-alive",
+          baseURL: "/",
+        });
       }, 60000),
-      onClose() {
+      onClose () {
         window.location.href = "/designer/screens";
       },
-      beforeExportScreen() {
+      beforeExportScreen () {
         this.saveScreen(true);
       },
-      exportScreen() {
-        ProcessMaker.apiClient.post('screens/' + this.screen.id + '/export')
+      exportScreen () {
+        ProcessMaker.apiClient.post("screens/" + this.screen.id + "/export")
           .then(response => {
             window.open(response.data.url);
-            ProcessMaker.alert(this.$t('The screen was exported.'), 'success');
+            ProcessMaker.alert(this.$t("The screen was exported."), "success");
           })
           .catch(error => {
-            ProcessMaker.alert(error.response.data.error, 'danger');
+            ProcessMaker.alert(error.response.data.error, "danger");
           });
       },
-      saveScreen(exportScreen) {
+      saveScreen (exportScreen, resolve, reject) {
         if (this.allErrors !== 0) {
           ProcessMaker.alert(this.$t("This screen has validation errors."), "danger");
         } else {
           if (this.validationWarnings.length > 0) {
-            this.validationWarnings.forEach(warning => ProcessMaker.alert(warning, 'warning'));
+            this.validationWarnings.forEach(warning => ProcessMaker.alert(warning, "warning"));
           }
           ProcessMaker.apiClient
             .put("screens/" + this.screen.id, {
@@ -442,6 +551,14 @@ import formTypes from "./formTypes";
               }
               ProcessMaker.alert(this.$t("Successfully saved"), "success");
               ProcessMaker.EventBus.$emit("save-changes");
+              if (typeof resolve === "function") {
+                resolve(response);
+              }
+            })
+            .catch((err) => {
+              if (typeof reject === "function") {
+                reject(err);
+              }
             });
         }
       }

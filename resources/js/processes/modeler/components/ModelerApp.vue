@@ -5,7 +5,7 @@
         <modeler
           ref="modeler"
           :owner="self"
-          :decorations="decorations" 
+          :decorations="decorations"
           @validate="validationErrors = $event"
           @warnings="warnings = $event"
           @saveBpmn="saveBpmn"
@@ -90,7 +90,8 @@ export default {
       });
       return notifications;
     },
-    saveBpmn() {
+    saveBpmn(resolve, reject) {
+      console.log('modeler app save bpmn');
       this.$refs.modeler.toXML((err, xml) => {
         if(err) {
           ProcessMaker.alert("There was an error saving: " + err, 'danger');
@@ -113,24 +114,35 @@ export default {
             if (response.data.warnings && response.data.warnings.length > 0) {
               this.$refs.validationStatus.autoValidate = true;
             }
+            if (typeof resolve === "function") {
+              resolve(response);
+            }
           })
           .catch((err) => {
             const message = err.response.data.message;
             const errors = err.response.data.errors;
             ProcessMaker.alert(message, 'danger');
+            if (typeof reject === "function") {
+              reject(err);
+            }
           })
         }
       });
     }
   },
   mounted() {
+    // Call our init lifecycle event
+    ProcessMaker.EventBus.$emit("modeler-init", this);
+
     ProcessMaker.$modeler = this.$refs.modeler;
 
     window.ProcessMaker.EventBus.$on('modeler-save', () => {
+      console.log('modeler save event modeler-save');
       this.saveBpmn();
     });
 
     window.ProcessMaker.EventBus.$on('modeler-change', () => {
+      console.log('modeler save event modeler-change');
       this.refreshSession();
       window.ProcessMaker.EventBus.$emit('new-changes');
     });
