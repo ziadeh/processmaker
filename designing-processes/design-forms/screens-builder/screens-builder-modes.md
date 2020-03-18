@@ -32,14 +32,14 @@ Furthermore, test how the ProcessMaker Screen's controls you configured in Desig
  See [Preview a Screen and Its JSON Data Model](preview-a-screen.md).
 {% endhint %}
 
-## Computed Properties Mode
+## Calculated Properties Mode
 
-Use Computed Properties mode to add Properties to that ProcessMaker Screen. A Property is any value, mathematical calculation, or formula. A Property's computation can be determined either through a mathematical formula or valid JavaScript, and may include values from [ProcessMaker Screen control](control-descriptions/) values during that [Request](../../../using-processmaker/requests/what-is-a-request.md). Likewise, a computed Property's value can be displayed in a ProcessMaker Screen control during that Request. Computed Properties can only be used within and only affect the ProcessMaker Screen to which the Property is defined.
+Use Calculated Properties mode to add Calculated Properties to that ProcessMaker Screen. A Calculated Property is any value, mathematical calculation, or formula. A Calculated Property's determines its value either through a mathematical formula or valid JavaScript, and may include values from [ProcessMaker Screen control](control-descriptions/) values and [Magic Variables](../../reference-global-variables-in-your-processmaker-assets.md) during that [Request](../../../using-processmaker/requests/what-is-a-request.md). Likewise, a Calculated Property's value can display in a ProcessMaker Screen control during that Request. Calculated Properties can only be used within and only affect the ProcessMaker Screen to which the Calculated Property is defined.
 
-![Create Property values based on a computed calculation in Computed Properties mode](../../../.gitbook/assets/computed-properties-populated-screens-builder-processes.png)
+![Configure the Calculated Properties for a ProcessMaker Screen in Calculated Properties mode](../../../.gitbook/assets/computed-properties-populated-screens-builder-processes.png)
 
 {% hint style="info" %}
-See [Manage Computed Properties](manage-computed-properties/).
+See [Manage Calculated Properties](manage-computed-properties/).
 {% endhint %}
 
 ## Custom CSS Mode
