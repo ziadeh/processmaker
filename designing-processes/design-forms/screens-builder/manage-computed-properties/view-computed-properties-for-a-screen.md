@@ -1,13 +1,13 @@
 ---
-description: View the computed Properties for a ProcessMaker Screen.
+description: View the Calculated Properties for a ProcessMaker Screen.
 ---
 
-# View Computed Properties for a Screen
+# View Calculated Properties for a Screen
 
-## View the Computed Properties for a ProcessMaker Screen
+## View the Calculated Properties for a ProcessMaker Screen
 
 {% hint style="info" %}
-Your ProcessMaker user account or group membership must have the following permissions to view the computed Properties for a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
+Your ProcessMaker user account or group membership must have the following permissions to view the Calculated Properties for a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: Edit Screens
 * Screens: View Screens
@@ -15,17 +15,17 @@ Your ProcessMaker user account or group membership must have the following permi
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to view the computed Properties for a ProcessMaker Screen:
+Follow these steps to view the Calculated Properties for a ProcessMaker Screen:
 
-1. [Open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to view its computed Properties. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
-2. Click the **Calcs** button![](../../../../.gitbook/assets/computed-properties-button-screens-builder-processes.png). The ProcessMaker Screen is in [Computed Properties](../screens-builder-modes.md#computed-properties-mode) mode. The **Computed Properties** screen displays all Properties configured for this ProcessMaker Screen. If no Properties have been configured for this ProcessMaker Screen, **No Data Available** displays.
+1. [Open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to view its Calculated Properties. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
+2. Click the **Calcs** button![](../../../../.gitbook/assets/computed-properties-button-screens-builder-processes.png). The ProcessMaker Screen is in [Calculated Properties](../screens-builder-modes.md#computed-properties-mode) mode. The **Calculated Properties** screen displays all Calculated Properties configured for this ProcessMaker Screen. If no Calculated Properties have been configured for this ProcessMaker Screen, **No Data Available** displays.
 
-![Computed Properties screen in Computed Properties mode](../../../../.gitbook/assets/computed-properties-populated-screens-builder-processes.png)
+![Calculated Properties screen in Calculated Properties mode](../../../../.gitbook/assets/computed-properties-populated-screens-builder-processes.png)
 
-The following information displays about each Property:
+The following information displays about each Calculated Property:
 
-* **Property name:** The **Property Name** column displays the name of the Property.
-* **Description:** The **Description** column displays the description of the Property.
+* **Property name:** The **Property Name** column displays the name of the Calculated Property.
+* **Description:** The **Description** column displays the description of the Calculated Property.
 
 ## Related Topics
 

@@ -1,8 +1,8 @@
 ---
 description: >-
-  Manage computed Properties that perform calculations in your ProcessMaker
+  Manage Calculated Properties that perform calculations in your ProcessMaker
   Screens.
 ---
 
-# Manage Computed Properties
+# Manage Calculated Properties
 

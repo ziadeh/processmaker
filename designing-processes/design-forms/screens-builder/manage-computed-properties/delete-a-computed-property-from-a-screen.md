@@ -1,13 +1,13 @@
 ---
-description: Delete a computed Property from a ProcessMaker Screen.
+description: Delete a Calculated Property from a ProcessMaker Screen.
 ---
 
-# Delete a Computed Property from a Screen
+# Delete a Calculated Property from a Screen
 
-## Delete a Computed Property
+## Delete a Calculated Property
 
 {% hint style="info" %}
-Your user account or group membership must have the following permissions to delete a computed Property from a ProcessMaker Screen:
+Your user account or group membership must have the following permissions to delete a Calculated Property from a ProcessMaker Screen:
 
 * Screens: Edit Screens
 * Screens: View Screens
@@ -16,14 +16,14 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 {% endhint %}
 
 {% hint style="warning" %}
-Deleting a computed Property from a ProcessMaker Screen cannot be undone.
+Deleting a Calculated Property from a ProcessMaker Screen cannot be undone.
 {% endhint %}
 
-Follow these steps to delete a computed Property from a ProcessMaker Screen:
+Follow these steps to delete a Calculated Property from a ProcessMaker Screen:
 
-1. [Open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to delete a computed Property. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
-2. Click the **Calcs** button![](../../../../.gitbook/assets/computed-properties-button-screens-builder-processes.png). The **Computer Properties** screen displays all computed Properties for this ProcessMaker Screen. ![](../../../../.gitbook/assets/computed-properties-screen-with-property-screens-builder-processes.png)
-3. Click the **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png) for the computed Property to delete. The Property is deleted, and the following message displays: **Property deleted**.
+1. [Open](../../manage-forms/view-all-forms.md) the ProcessMaker Screen in which to delete a Calculated Property. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
+2. Click the **Calcs** button![](../../../../.gitbook/assets/computed-properties-button-screens-builder-processes.png). The **Calculated Properties** screen displays all Calculated Properties for this ProcessMaker Screen. ![](../../../../.gitbook/assets/computed-properties-screen-with-property-screens-builder-processes.png)
+3. Click the **Delete** icon![](../../../../.gitbook/assets/trash-icon-process-modeler-processes.png) for the Calculated Property to delete. The Calculated Property is deleted, and the following message displays: **Property deleted**.
 
 ## Related Topics
 

@@ -1,14 +1,14 @@
 ---
-description: Understand how to use computed Properties in your ProcessMaker Screens.
+description: Understand how to use Calculated Properties in your ProcessMaker Screens.
 ---
 
-# What is a Computed Property?
+# What is a Calculated Property?
 
 ## Overview
 
-Use Computed Properties mode to add Properties to a [ProcessMaker Screen](../../what-is-a-form.md) that perform specified calculations and formulas based on data entered into that Screen and/or in conjunction with [Request](../../../../using-processmaker/requests/what-is-a-request.md) data. A Property represents any value, mathematical calculation, or formula that calculates a value. A Property's computation can be determined either through a mathematical formula or valid JavaScript, and may include [ProcessMaker Screen control](../control-descriptions/) values during a Request. Likewise, a computed Property's value can be displayed in a ProcessMaker Screen control. Computed Properties can only be used within and only affect the ProcessMaker Screen to which the Property is added.
+Use Calculated Properties mode to add Calculated Properties to a [ProcessMaker Screen](../../what-is-a-form.md) that perform specified calculations and formulas based on data entered into that Screen and/or in conjunction with [Request](../../../../using-processmaker/requests/what-is-a-request.md) data. A Calculated Property represents any value, mathematical calculation, or formula that calculates a value. A Calculated Property's computation can be determined either through a mathematical formula or valid JavaScript, and may include [ProcessMaker Screen control](../control-descriptions/) values during a Request. Likewise, a Calculated Property's value can be displayed in a ProcessMaker Screen control. Calculated Properties can only be used within and only affect the ProcessMaker Screen to which the Calculated Property is added.
 
-Below are a few uses for computed Properties that can be calculated mathematically or through JavaScript:
+Below are a few uses for Calculated Properties that can be calculated mathematically or through JavaScript:
 
 * Perform simple mathematics. Example: `1+1`
 * Calculate the final cost of a purchase based on a sales tax. Example: $`60` \(item cost\) x `.075` \(sales tax\)
@@ -18,7 +18,7 @@ Reference the ProcessMaker Screen control values for a Property using their **Va
 
 `units * price`
 
-Computed Properties display as the second key-value pair of the ProcessMaker Screen's JSON data model from the [**Data Preview** panel](../preview-a-screen.md#preview-json-data-models-in-a-processmaker-screen) when previewing that Screen.
+Calculated Properties display as the second key-value pair of the ProcessMaker Screen's JSON data model from the [**Data Preview** panel](../preview-a-screen.md#preview-json-data-models-in-a-processmaker-screen) when previewing that Screen.
 
 ## Related Topics
 
