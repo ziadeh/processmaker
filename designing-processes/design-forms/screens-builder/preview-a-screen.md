@@ -43,16 +43,16 @@ Follow these guidelines to preview a ProcessMaker Screen and how JSON data model
 
 1. [Open](../manage-forms/view-all-forms.md) the ProcessMaker Screen. The ProcessMaker Screen is in [Design mode](screens-builder-modes.md#editor-mode).
 2. Click the **Preview** button.
-3. Optionally, in the **Data Input** section of the **Inspector** panel, enter a JSON data model. This JSON data model may come from a Process's Request data or another ProcessMaker Screen. As you enter a JSON data model, the **Screen Validation** indicator displays if your JSON schema has any errors that prevents validation.  
+3. Optionally, in the **Data Input** section of the **Inspector** panel, enter a JSON data model. This JSON data model may come from a Process's [Request](../../../using-processmaker/requests/what-is-a-request.md) data or another ProcessMaker Screen. As you enter a JSON data model, the **Screen Validation** indicator displays if your JSON schema has any errors that prevents validation.  
 
    ![](../../../.gitbook/assets/screen-validation-indicator-screens-builder-processes.png)
 
-4. Enter values into the controls as if you were using the ProcessMaker Screen in a Request. In the **Data Preview** section of the **Inspector** panel, the JSON data model displays the key-value pairs. The key's values are those you enter in the ProcessMaker Screen preview.
+4. Enter values into the controls as if you were using the ProcessMaker Screen in a Request. The **Data Preview** panel displays the JSON data model using the preview data you enter.
 
-![Data Preview section of the Inspector panel displaying a JSON data model in Preview mode](../../../.gitbook/assets/data-preview-panel-screen-builder-processes.png)
+![Data Preview panel displays a JSON data model in Preview mode](../../../.gitbook/assets/data-preview-panel-screen-builder-processes.png)
 
 {% hint style="info" %}
-Computed properties also display in the **Data Preview** section as part of the JSON data model. See [Manage Computed Properties](manage-computed-properties/).
+Calculated properties also display in the **Data Preview** panel as part of the JSON data model. See [Manage Calculated Properties](manage-computed-properties/).
 {% endhint %}
 
 ## Related Topics
