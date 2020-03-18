@@ -159,6 +159,7 @@
       * [Search for a Watcher](designing-processes/design-forms/screens-builder/manage-watchers/search-for-a-watcher.md)
       * [Edit a Watcher for a Screen](designing-processes/design-forms/screens-builder/manage-watchers/edit-a-watcher-for-a-screen.md)
       * [Delete a Watcher from a Screen](designing-processes/design-forms/screens-builder/manage-watchers/delete-a-watcher-from-a-screen.md)
+    * [How to Use the Undo and Redo Buttons in Screen Builder](designing-processes/design-forms/screens-builder/how-to-use-the-undo-and-redo-buttons-in-screen-builder.md)
     * [Save Your Screen](designing-processes/design-forms/screens-builder/save-a-screen.md)
     * [Screen Builder Best Practices](designing-processes/design-forms/screens-builder/best-practices.md)
 * [Reference Magic Variables in ProcessMaker Assets](designing-processes/reference-global-variables-in-your-processmaker-assets.md)
