@@ -7,12 +7,18 @@ description: Add a Calculated Property to a ProcessMaker Screen.
 ## Add a Calculated Property
 
 {% hint style="info" %}
+### Permissions Required
+
 Your ProcessMaker user account or group membership must have the following permissions to add a Calculated Property for a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
 
 * Screens: Edit Screens
 * Screens: View Screens
 
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+
+### Topic Update
+
+This topic is updated for ProcessMaker version 4.0.3. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.3-release-notes#screen-builder-1).
 {% endhint %}
 
 Follow these steps to add a Calculated Property for a ProcessMaker Screen:
