@@ -23,7 +23,7 @@ Follow these steps to edit a ProcessMaker Environment Variable:
    ![](../../../.gitbook/assets/edit-environment-variable-page-processes.png)
 
 3. Edit the following information about the ProcessMaker Environment Variable as necessary:
-   * In the **Name** setting, edit the name of the ProcessMaker Environment Variable. The ProcessMaker Environment Variable name can only contain letters, numbers, and dashes. This is a required setting.
+   * In the **Name** setting, edit the name of the ProcessMaker Environment Variable. The ProcessMaker Environment Variable name can only contain letters, numbers, and hyphens \(`-`\). This is a required setting.
    * In the **Description** setting, enter the description of the ProcessMaker Environment Variable. This is a required setting.
    * Optionally, in the **Value** setting, edit or enter the ProcessMaker Environment Variable value. Entering or editing a value is optional since ProcessMaker Environment Variables are secure, abstract proxies for sensitive information you assign to contain a value that can be determined during an in-progress Request.
 4. Click **Save**.
