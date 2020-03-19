@@ -18,14 +18,15 @@ Use the Nested Screen control to nest a separate [ProcessMaker Screen](../../wha
 
 The ProcessMaker Screen containing the Nested Screen control is the parent Screen. The ProcessMaker Screen that is nested is the child Screen.
 
-Information that is entered into a child ProcessMaker Screen displays in [Request summaries](../../../../using-processmaker/requests/request-details/) that use the parent Screen.
+During an in-progress Requests, both Request and [Magic Variable](../../../reference-global-variables-in-your-processmaker-assets.md) data pass to a child Screen when it displays within the parent Screen. Furthermore, information that is entered into a child ProcessMaker Screen displays in [Request summaries](../../../../using-processmaker/requests/request-details/) that use the parent Screen.
 
 A nested ProcessMaker Screen has the following attributes that vary from how it may have been designed:
 
 * **CSS takes precedent:** Any CSS designed in [Custom CSS mode](../screens-builder-modes.md#custom-css-mode) in the parent ProcessMaker Screen takes precedent over any CSS designed in the child \(nested\) Screens. The Request participant experiences one design experience without a variety of design styles.
 * **Submit Button control in nested ProcessMaker Screens is hidden:** During in-progress Requests, the [Submit Button](submit-button-control-settings.md) control is hidden in child ProcessMaker Screens so that the Request participant uses the parent Screen's Submit Button control to submit the Task.
+* **Two ProcessMaker Screens cannot reference each other indefinitely:** A child ProcessMaker Screen that has already displayed within a parent ProcessMaker Screen cannot display again. This prevents an infinite loop whereby two ProcessMaker Screens using Nested Screen controls reference each other indefinitely.
 
-Any ProcessMaker Screen [type](../types-for-screens.md) may be selected for nesting into a Nested Screen control. However, only [Form](../types-for-screens.md#form)- and [Display](../types-for-screens.md#display)-type ProcessMaker Screens preview in either [Design](../screens-builder-modes.md#design-mode) or [Preview](../screens-builder-modes.md#preview-mode) modes.
+Any ProcessMaker Screen [type](../types-for-screens.md) may be selected for nesting into a Nested Screen control, including multi-page Screens. However, only [Form](../types-for-screens.md#form)- and [Display](../types-for-screens.md#display)-type ProcessMaker Screens preview in either [Design](../screens-builder-modes.md#design-mode) or [Preview](../screens-builder-modes.md#preview-mode) modes.
 
 ProcessMaker Screen designers can easily build a Screen by placing modular components into one Screen. For example, in a ProcessMaker Screen designed for a purchase request, use Nested Screen controls as placeholders for the following components that are designed in separate Screens. Each of these ProcessMaker Screens are nested into its own Nested Screen control.
 
