@@ -4,10 +4,12 @@ namespace ProcessMaker\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use ProcessMaker\Traits\HasCategories;
+use ProcessMaker\Traits\SerializeToIso8601;
 
 class ScreenVersion extends Model
 {
-    use HasCategories;
+    use HasCategories,
+        SerializeToIso8601;
 
     const categoryClass = ScreenCategory::class;
 

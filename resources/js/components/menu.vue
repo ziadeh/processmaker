@@ -23,8 +23,8 @@
 
             </b-col>
 
-            <b-col class="text-right">
-
+            <b-col class="text-right" v-if="displayRight">
+                <template v-for="(item, index) in section.right">
                     <b-button-group v-if="isVisible(item, 'group')" size="sm" :key="index">
                         <b-button v-for="(button, indexButton) in item.items" :variant="button.variant || 'secondary'"
                                   class="text-capitalize" :title="button.title" :key="indexButton"
@@ -55,11 +55,15 @@
       return {
         changeItems: {},
         newItems:[],
+        sectionRight: true,
         items:[],
       };
     },
     watch: {},
     computed: {
+      displayRight () {
+        return this.sectionRight;
+      },
       section () {
         let response = {};
         response.left = [];

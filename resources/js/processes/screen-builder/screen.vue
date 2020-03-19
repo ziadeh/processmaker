@@ -372,16 +372,12 @@
         if (value === "editor") {
           this.$refs.menuScreen.changeItem("button_design", { "variant": "secondary"});
           this.$refs.menuScreen.changeItem("button_preview", { "variant": "outline-secondary"});
-          this.$refs.menuScreen.changeItem("group_properties", { "hide": false});
-          this.$refs.menuScreen.changeItem("button_export", { "hide": false});
-          this.$refs.menuScreen.changeItem("button_save", { "hide": false});
+          this.$refs.menuScreen.sectionRight = true;
         }
         if (value === "preview") {
           this.$refs.menuScreen.changeItem("button_design", { "variant": "outline-secondary"});
           this.$refs.menuScreen.changeItem("button_preview", { "variant": "secondary"});
-          this.$refs.menuScreen.changeItem("group_properties", { "hide": true});
-          this.$refs.menuScreen.changeItem("button_export", { "hide": true});
-          this.$refs.menuScreen.changeItem("button_save", { "hide": true});
+          this.$refs.menuScreen.sectionRight = false;
         }
         this.setMode(value);
       });
