@@ -16,7 +16,14 @@ This topic is new for ProcessMaker version 4.0.1. See the [Release Notes](https:
 
 Use the Nested Screen control to nest a separate [ProcessMaker Screen](../../what-is-a-form.md) into that control. In doing so, the separate ProcessMaker Screen embeds into the Nested Screen control. The Nested Screen control is a placeholder for the embedded ProcessMaker Screen such that the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant experiences the nested Screen as designed. The nested ProcessMaker Screen must be in the same ProcessMaker instance as that using the Nested Screen control. When the [Task](../../../../using-processmaker/task-management/what-is-a-task.md) loads the ProcessMaker Screen using a Nested Screen control, the Nested Screen loads the latest version of the referenced Screen.
 
-Any CSS in the ProcessMaker Screen as designed in [Custom CSS mode](../screens-builder-modes.md#custom-css-mode) takes precedent over any CSS designed in nested Screens so that the Request participant has a unified visual experience that does not have a variety of design styles.
+The ProcessMaker Screen containing the Nested Screen control is the parent Screen. The ProcessMaker Screen that is nested is the child Screen.
+
+Information that is entered into a child ProcessMaker Screen displays in [Request summaries](../../../../using-processmaker/requests/request-details/) that use the parent Screen.
+
+A nested ProcessMaker Screen has the following attributes that vary from how it may have been designed:
+
+* **CSS takes precedent:** Any CSS designed in [Custom CSS mode](../screens-builder-modes.md#custom-css-mode) in the parent ProcessMaker Screen takes precedent over any CSS designed in the child \(nested\) Screens. The Request participant experiences one design experience without a variety of design styles.
+* **Submit Button control in nested ProcessMaker Screens is hidden:** During in-progress Requests, the [Submit Button](submit-button-control-settings.md) control is hidden in child ProcessMaker Screens so that the Request participant uses the parent Screen's Submit Button control to submit the Task.
 
 Any ProcessMaker Screen [type](../types-for-screens.md) may be selected for nesting into a Nested Screen control. However, only [Form](../types-for-screens.md#form)- and [Display](../types-for-screens.md#display)-type ProcessMaker Screens preview in either [Design](../screens-builder-modes.md#design-mode) or [Preview](../screens-builder-modes.md#preview-mode) modes.
 
@@ -44,7 +51,7 @@ See the ProcessMaker [Screens](../../../../processmaker-administration/permissio
 
 Follow these steps to add this control to the ProcessMaker Screen:
 
-1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected Screen. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
+1. [Create a new ProcessMaker Screen](../../manage-forms/create-a-new-form.md) or click the **Edit** icon![](../../../../.gitbook/assets/edit-icon.png)to edit the selected parent Screen to which to add the Nested Screen control. The ProcessMaker Screen is in [Design mode](../screens-builder-modes.md#editor-mode).
 2. View the ProcessMaker Screen page to which to add the control.
 3. Locate the **Nested Screen** icon![](../../../../.gitbook/assets/nested-screen-control-screens-builder-processes.png)in the panel to the left of the Screen Builder canvas.
 4. Drag the **Nested Screen** icon into the Screen Builder canvas. Existing controls on the Screens Builder canvas adjust positioning based on where you drag the control.
@@ -95,17 +102,11 @@ Click the control while in [Design](../screens-builder-modes.md#design-mode) mod
 
 Below is the setting for the Nested Screen control in the **Variable** panel:
 
-* [Variable Name](nested-screen-control-settings.md#variable-name)
+* [Screen](nested-screen-control-settings.md#screen)
 
-#### Variable Name
+#### Screen
 
-Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. Use the **Variable Name** setting value in the following ways:
-
-* Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Submit Button control's **Variable Name** value. In the example below, `NestedScreenControl` is the **Variable Name** setting's value when the button is clicked. ![](../../../../.gitbook/assets/nested-screen-control-data-preview-screens-builder-processes.png) 
-* Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ NestedScreenControl }}`.
-* Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
-
-This is a required setting.
+Select which ProcessMaker Screen to nest into this control. The nested ProcessMaker Screen becomes the child Screen to the parent Screen that uses the Nested Screen control. Any ProcessMaker Screen [type](../types-for-screens.md) may be selected for nesting into a Nested Screen control. However, only [Form](../types-for-screens.md#form)- and [Display](../types-for-screens.md#display)-type ProcessMaker Screens preview in either [Design](../screens-builder-modes.md#design-mode) or [Preview](../screens-builder-modes.md#preview-mode) modes.
 
 ### Advanced Panel Settings
 
