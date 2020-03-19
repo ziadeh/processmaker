@@ -24,7 +24,7 @@ A nested ProcessMaker Screen has the following attributes that vary from how it 
 
 * **CSS takes precedent:** Any CSS designed in [Custom CSS mode](../screens-builder-modes.md#custom-css-mode) in the parent ProcessMaker Screen takes precedent over any CSS designed in the child \(nested\) Screens. The Request participant experiences one design experience without a variety of design styles.
 * **Submit Button control in nested ProcessMaker Screens is hidden:** During in-progress Requests, the [Submit Button](submit-button-control-settings.md) control is hidden in child ProcessMaker Screens so that the Request participant uses the parent Screen's Submit Button control to submit the Task.
-* **Two ProcessMaker Screens cannot reference each other indefinitely:** A child ProcessMaker Screen that has already displayed within a parent ProcessMaker Screen cannot display again. This prevents an infinite loop whereby two ProcessMaker Screens using Nested Screen controls reference each other indefinitely.
+* **Two ProcessMaker Screens cannot reference each other indefinitely:** A child ProcessMaker Screen that has already displayed within a parent ProcessMaker Screen cannot display again in the same Request. This prevents an infinite loop whereby two ProcessMaker Screens using Nested Screen controls reference each other indefinitely.
 
 Any ProcessMaker Screen [type](../types-for-screens.md) may be selected for nesting into a Nested Screen control, including multi-page Screens. However, only [Form](../types-for-screens.md#form)- and [Display](../types-for-screens.md#display)-type ProcessMaker Screens preview in either [Design](../screens-builder-modes.md#design-mode) or [Preview](../screens-builder-modes.md#preview-mode) modes.
 
