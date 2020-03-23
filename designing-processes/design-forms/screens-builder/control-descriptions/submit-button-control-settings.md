@@ -153,6 +153,21 @@ Edit the default label that displays for this control if necessary. **New Submit
 
 Enter any alphanumeric value that represents data when the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant selects the Submit Button control. This value can be evaluated in a [**Visibility Rule** setting expression](expression-syntax-components-for-show-if-control-settings.md) or in a [Sequence Flow element's condition\(s\) to trigger](../../../process-design/model-your-process/the-quick-toolbar.md#configure-an-outgoing-sequence-flow-element-from-an-exclusive-gateway-or-inclusive-gateway-element).
 
+### Configuration Panel Settings
+
+Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
+
+Below is the setting for the Submit Button control in the **Configuration** panel:
+
+* [Type Button](submit-button-control-settings.md#type-button)
+
+#### Type Button
+
+Select from the following options how the Submit Button control functions when the control is clicked:
+
+* **Submit:** Submits the [ProcessMaker Screen](../../what-is-a-form.md) whilst setting this control's value as specified from the [**Value** setting](submit-button-control-settings.md#value).
+* **Do Not Submit, Set Value:** Sets this control's value as specified from the **Value** setting, but does not submit the ProcessMaker Screen.
+
 ### Design Panel Settings
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Design** panel that is on the right-side of the Screen Builder canvas.
