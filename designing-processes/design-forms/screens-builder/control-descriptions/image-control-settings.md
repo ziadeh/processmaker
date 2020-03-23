@@ -36,13 +36,62 @@ Below is an Image control in [Preview mode](../screens-builder-modes.md#preview-
 
 ![Image control in Preview mode](../../../../.gitbook/assets/image-control-preview-screens-builder-processes.png)
 
+## Move the Control on the Page
+
+{% hint style="info" %}
+Your ProcessMaker user account or group membership must have the following permissions to move a control in a ProcessMaker Screen page unless your user account has the **Make this user a Super Admin** setting selected:
+
+* Screens: Edit Screens
+* Screens: View Screens
+
+See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+{% endhint %}
+
+After [adding a control to a ProcessMaker Screen page](image-control-settings.md#add-the-control-to-a-processmaker-screen), you may move it to another location on that page such that it is above or below other controls placed on that page. A control cannot be moved to another [ProcessMaker Screen](../../what-is-a-form.md) page.
+
+Follow these steps to move a control to another location on that ProcessMaker Screen page:
+
+1. Place your cursor anywhere on the control not displaying the **Duplicate Control**![](../../../../.gitbook/assets/copy-duplicate-control-icon-screen-builder-processes.png)or **Delete Control**![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)buttons.
+2. Hold your cursor, then drag the control above or below other controls on that ProcessMaker Screen page. Screen Builder previews where the control would display on the page based on how you position the control above or below other controls. If the control cannot be placed in a location because your cursor is above an existing control or too far to the left or right of the page, the![](../../../../.gitbook/assets/movement-not-allowed-icon-screen-builder-processes.png)icon displays in the preview.
+3. Place the control at the location on the page you want it. The other control\(s\) on the page automatically adjust position.
+
+## Copy the Control with its Settings
+
+{% hint style="info" %}
+Your ProcessMaker user account or group membership must have the following permissions to copy a control in a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
+
+* Screens: Edit Screens
+* Screens: View Screens
+
+See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+{% endhint %}
+
+Copying a control also copies the current settings of that control. The copied control displays below other controls placed on that [ProcessMaker Screen](../../what-is-a-form.md) page.
+
+Follow these steps to copy a control:
+
+1. Select the control to be copied.
+2. Click the **Duplicate Control** button![](../../../../.gitbook/assets/copy-duplicate-control-icon-screen-builder-processes.png). The control copies with its current settings, and then displays below other controls placed on that page.
+
 ## Delete the Control from a ProcessMaker Screen
+
+{% hint style="info" %}
+Your ProcessMaker user account or group membership must have the following permissions to delete a control from a ProcessMaker Screen unless your user account has the **Make this user a Super Admin** setting selected:
+
+* Screens: Edit Screens
+* Screens: View Screens
+
+See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
+{% endhint %}
 
 {% hint style="warning" %}
 Deleting a control also deletes configuration for that control. If you add another control, it will have default settings.
 {% endhint %}
 
-Click the **Delete** icon![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png)for the control to delete it.
+Follow these steps to delete a control from a [ProcessMaker Screen](../../what-is-a-form.md) page:
+
+1. Select the control to be deleted.
+2. Click the **Delete** button![](../../../../.gitbook/assets/delete-screen-control-screens-builder-processes.png). The control deletes. Other controls on that ProcessMaker Screen page adjust their locations automatically.
 
 ## Settings
 
@@ -123,6 +172,10 @@ Below are settings for the Image control in the **Advanced** panel:
 #### Visibility Rule
 
 Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+
+{% hint style="info" %}
+To make this control hidden until another control contains a value, enter the **Variable Name** setting value of that control to this control's **Visibility Rule** setting.
+{% endhint %}
 
 #### CSS Selector Name
 
