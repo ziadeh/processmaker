@@ -133,7 +133,8 @@ Below is the setting for the Page Navigation control in the **Variable** panel:
 
 #### Button Label
 
-Enter the text label that displays for this control. **Page Navigation** is the default value.
+Enter the text label that displays for this control. **Page Navigation** is the default value.  
+![](../../../../.gitbook/assets/page-navigation-control-button-label-screen-builder-processes.png) 
 
 ### Configuration Panel Settings
 
@@ -145,7 +146,8 @@ Below is the setting for the Page Navigation control in the **Configuration** pa
 
 #### Destination Screen
 
-Select the destination page to which to navigate in a multi-page [ProcessMaker Screen](../../what-is-a-form.md).
+Select the destination page to which to navigate in a multi-page [ProcessMaker Screen](../../what-is-a-form.md).  
+![](../../../../.gitbook/assets/page-navigation-control-destination-screen-builder-processes.png) 
 
 ### Design Panel Settings
 
@@ -167,7 +169,7 @@ Select the style for the Page Navigation control. The style changes the control'
 * **Info:** Teal-colored background with white-colored **Button Label** text.
 * **Light:** White-colored background with black-colored **Button Label** text.
 * **Dark:** Black-colored background with white-colored **Button Label** text.
-* **Link:** White-colored background with blue-colored **Button Label** text.
+* **Link:** White-colored background with blue-colored **Button Label** text. ![](../../../../.gitbook/assets/page-navigation-control-button-variant-screen-builder-processes.png) 
 
 ### Advanced Panel Settings
 
@@ -180,7 +182,8 @@ Below are settings for the Page Navigation control in the **Advanced** panel:
 
 #### Visibility Rule
 
-Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.  
+![](../../../../.gitbook/assets/visibility-rule-screen-builder-processes.png) 
 
 {% hint style="info" %}
 To make this control hidden until another control contains a value, enter the **Variable Name** setting value of that control to this control's **Visibility Rule** setting.
@@ -188,7 +191,8 @@ To make this control hidden until another control contains a value, enter the **
 
 #### CSS Selector Name
 
-Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.  
+![](../../../../.gitbook/assets/css-selector-name-screen-builder-processes.png) 
 
 ## Related Topics <a id="related-topics"></a>
 

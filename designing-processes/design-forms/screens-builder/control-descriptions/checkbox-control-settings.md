@@ -141,7 +141,10 @@ Below are settings for the Checkbox control in the **Variable** panel:
 
 #### Variable Name
 
-Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. Use the **Variable Name** setting value in the following ways:
+Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. This is a required setting.  
+![](../../../../.gitbook/assets/checkbox-control-variable-name-screen-builder-processes.png) 
+
+Use the **Variable Name** setting value in the following ways:
 
 * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) represents the state of the Checkbox control using its **Variable Name** value in the Request's JSON data model in the following ways:
   * **The Checkbox control is selected:** The key's value is `true` \(shown below\).
@@ -149,20 +152,20 @@ Edit the default **Variable Name** setting value for this control if necessary. 
 * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ CheckboxControl }}`.
 * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
-This is a required setting.
-
 #### Label
 
-Edit the default label that displays for this control if necessary. **New Checkbox** is the default value.
+Edit the default label that displays for this control if necessary. **New Checkbox** is the default value.  
+![](../../../../.gitbook/assets/checkbox-control-label-screen-builder-processes.png) 
 
 #### Validation Rules
 
-Enter the validation rule\(s\) the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. If there are no configured validation rules the following message displays: **No validation rule\(s\)**. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).
+Enter the validation rule\(s\) the Request participant must comply with to properly enter a valid value into this control. This setting has no default value. If there are no configured validation rules the following message displays: **No validation rule\(s\)**. See [Validation Rules for "Validation" Control Settings](validation-rules-for-validation-control-settings.md).  
+![](../../../../.gitbook/assets/validation-rules-screen-builder-processes.png) 
 
 Follow these steps to add a validation rule to this control:
 
 1. Access the [**Variable** panel for this control](select-list-control-settings.md#variable-panel-settings) while in [Design](../screens-builder-modes.md#design-mode) mode, and then locate the **Validation Rules** setting.
-2. Click the **Add Rule** button. The **Select** drop-down menu displays.
+2. Click the **Add Rule** button. The **Select** drop-down menu displays. ![](../../../../.gitbook/assets/validation-rules-select-screen-builder-processes.png) 
 3. Select the rule that this control validates against.
 4. Click **Save**. Parameters for the selected rule display. Parameter settings display which ones are required to properly configure the rule.
 5. Enter the parameter settings that this control uses to validate against. See [Validation Rule Settings](validation-rules-for-validation-control-settings.md#validation-rule-settings), and then locate the validation rule for its parameters.
@@ -181,11 +184,13 @@ Follow these steps to delete a validation rule for this control:
 
 #### Checked by Default
 
-Select to indicate that this control is selected by default such that its key's value is `true`. This option is not selected by default.
+Select to indicate that this control is selected by default such that its key's value is `true`. This option is not selected by default.  
+![](../../../../.gitbook/assets/checkbox-control-checked-by-default-screen-builder-processes.png) 
 
 #### Read Only
 
-Select to indicate that this control cannot be edited. This option is not selected by default.
+Select to indicate that this control cannot be edited. This option is not selected by default.  
+![](../../../../.gitbook/assets/checkbox-control-read-only-screen-builder-processes.png) 
 
 ### Configuration Panel Settings
 
@@ -197,7 +202,8 @@ Below is the setting for the Checkbox control in the **Configuration** panel:
 
 #### Helper Text
 
-Enter text that provides additional guidance on this control's use. This setting has no default value.
+Enter text that provides additional guidance on this control's use. This setting has no default value.  
+![](../../../../.gitbook/assets/helper-text-screen-builder-processes.png) 
 
 ### Design Panel Settings
 
@@ -211,15 +217,18 @@ Below are settings for the Checkbox control in the **Design** panel:
 
 #### Text Color
 
-Select the text color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
+Select the text color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.  
+![](../../../../.gitbook/assets/text-color-screen-builder-processes.png) 
 
 #### Background Color
 
-Select the background color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
+Select the background color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.  
+![](../../../../.gitbook/assets/background-color-screen-builder-processes.png) 
 
 #### Toggle Style
 
-Select to display a toggle key control instead of a checkbox control for each checkbox option.
+Select to display a toggle key control instead of a checkbox control for each checkbox option.  
+![](../../../../.gitbook/assets/checkbox-control-toggle-style-screen-builder-processes.png) 
 
 ### Advanced Panel Settings
 
@@ -232,7 +241,8 @@ Below are settings for the Checkbox control in the **Advanced** panel:
 
 #### Visibility Rule
 
-Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.  
+![](../../../../.gitbook/assets/visibility-rule-screen-builder-processes.png) 
 
 {% hint style="info" %}
 To make this control hidden until another control contains a value, enter the **Variable Name** setting value of that control to this control's **Visibility Rule** setting.
@@ -240,7 +250,8 @@ To make this control hidden until another control contains a value, enter the **
 
 #### CSS Selector Name
 
-Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.  
+![](../../../../.gitbook/assets/css-selector-name-screen-builder-processes.png) 
 
 ## Related Topics <a id="related-topics"></a>
 

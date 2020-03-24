@@ -152,11 +152,13 @@ Below are settings for the Multicolumn / Table control in the **Design** panel:
 
 #### Text Color
 
-Select the text color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
+Select the text color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.  
+![](../../../../.gitbook/assets/text-color-screen-builder-processes.png) 
 
 #### Background Color
 
-Select the background color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.
+Select the background color that displays for this control. Optionally, click the **Clear Color Selection** option to remove the selected color.  
+![](../../../../.gitbook/assets/background-color-screen-builder-processes.png) 
 
 ### Advanced Panel Settings
 
@@ -169,7 +171,8 @@ Below are settings for the Multicolumn / Table control in the **Advanced** panel
 
 #### Visibility Rule
 
-Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.  
+![](../../../../.gitbook/assets/visibility-rule-screen-builder-processes.png) 
 
 {% hint style="info" %}
 To make this control hidden until another control contains a value, enter the **Variable Name** setting value of that control to this control's **Visibility Rule** setting.
@@ -177,7 +180,8 @@ To make this control hidden until another control contains a value, enter the **
 
 #### CSS Selector Name
 
-Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.  
+![](../../../../.gitbook/assets/css-selector-name-screen-builder-processes.png) 
 
 ## Related Topics <a id="related-topics"></a>
 
