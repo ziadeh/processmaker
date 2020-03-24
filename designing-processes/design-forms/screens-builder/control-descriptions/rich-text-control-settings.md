@@ -133,7 +133,11 @@ Below is the setting for the Rich Text control in the **Configuration** panel:
 
 #### Content
 
-Enter the text and/or image to display in the Rich Text control using HTML syntax and/or [mustache syntax](https://mustache.github.io/mustache.5.html). Alternatively, use the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to enter your text. Reference your image using HTML syntax. Your text and/or images display in the **Content** setting using HTML syntax. **Rich text editor** is the default value. See this [control's description](rich-text-control-settings.md#control-description) for information how to use mustache syntax.
+Enter the text and/or image to display in the Rich Text control using HTML syntax and/or [mustache syntax](https://mustache.github.io/mustache.5.html). **Rich text editor** is the default value. See this [control's description](rich-text-control-settings.md#control-description) for information how to use mustache syntax.  
+![](../../../../.gitbook/assets/content-rich-text-control-screen-builder-processes.png) 
+
+Alternatively, use the What-You-See-Is-What-You-Get \(WYSIWYG\) rich text editor to enter your text. Reference images in your content using HTML syntax. Your text and/or images display in the **Content** setting using HTML syntax.  
+![](../../../../.gitbook/assets/rich-text-control-screen-builder-processes.png) 
 
 ### Advanced Panel Settings
 
@@ -146,7 +150,8 @@ Below are settings for the Rich Text control in the **Advanced** panel:
 
 #### Visibility Rule
 
-Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+Enter an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.  
+![](../../../../.gitbook/assets/visibility-rule-screen-builder-processes.png) 
 
 {% hint style="info" %}
 To make this control hidden until another control contains a value, enter the **Variable Name** setting value of that control to this control's **Visibility Rule** setting.
@@ -154,7 +159,8 @@ To make this control hidden until another control contains a value, enter the **
 
 #### CSS Selector Name
 
-Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.  
+![](../../../../.gitbook/assets/css-selector-name-screen-builder-processes.png) 
 
 ## Related Topics
 

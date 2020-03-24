@@ -154,17 +154,19 @@ Below are settings for the Line Input control in the **Variable** panel:
 
 #### Variable Name
 
-Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. Use the **Variable Name** setting value in the following ways:
+Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. This is a required setting.  
+![](../../../../.gitbook/assets/line-input-control-variable-name-screen-builder-processes.png) 
+
+Use the **Variable Name** setting value in the following ways:
 
 * Reference this control by its **Variable Name** setting's value. The **Data Preview** panel in [Preview mode](../screens-builder-modes.md#preview-mode) corresponds the Line Input control's textual content with that Line Input control's **Variable Name** value. In the example below, `LineInputControl` is the **Variable Name** setting's value. ![](../../../../.gitbook/assets/line-inputs-preview-screens-builder-processes.png) 
 * Reference this control's value in a different Screen Builder control. To do so, use [mustache syntax](https://mustache.github.io/mustache.5.html) and reference this control's **Variable Name** value in the target control. Example: `{{ LineInputControl }}`.
 * Reference this value in [**Visibility Rule** setting expressions](expression-syntax-components-for-show-if-control-settings.md).
 
-This is a required setting.
-
 #### Label
 
-Edit the default label that displays for this control if necessary. **New Input** is the default value.
+Edit the default label that displays for this control if necessary. **New Input** is the default value.  
+![](../../../../.gitbook/assets/line-input-control-label-screen-builder-processes.png) 
 
 #### Data Type
 
@@ -179,7 +181,8 @@ Select one of the following data type options this control accepts when the Requ
 * **Date:** The control only accepts a date.
 * **Password:** The control accepts a password. Entered text is hidden.
 
-This is a required setting.
+This is a required setting.  
+![](../../../../.gitbook/assets/line-input-control-data-type-screen-builder-processes.png) 
 
 The following message displays below the control if the Request participant enters content that does not comply with this control's data type: **The format is invalid.**.
 

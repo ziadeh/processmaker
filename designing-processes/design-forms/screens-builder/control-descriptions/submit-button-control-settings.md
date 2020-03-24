@@ -155,6 +155,10 @@ Enter any alphanumeric value that represents data when the [Request](../../../..
 
 ### Configuration Panel Settings
 
+{% hint style="info" %}
+This topic is updated for ProcessMaker version 4.0.3. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.3-release-notes#screen-builder).
+{% endhint %}
+
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
 Below is the setting for the Submit Button control in the **Configuration** panel:
