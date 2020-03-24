@@ -144,9 +144,9 @@ Your user account or group membership must have the following permissions to edi
 
 See the ProcessMaker [Screens](../../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#screens) permissions or ask your ProcessMaker Administrator for assistance.
 
-### New Topic
+### Topic Update
 
-This topic is new for ProcessMaker version 4.0.1. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder-1).
+This topic is updated for ProcessMaker version 4.0.3 \(see the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.3-release-notes#screen-builder)\) since this control was introduced in ProcessMaker version 4.0.1 \(see the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder)\).
 {% endhint %}
 
 The Loop control has the following panels that contain settings:
@@ -177,13 +177,22 @@ Use the **Variable Name** setting value in the following ways:
 
 Click the control while in [Design](../screens-builder-modes.md#design-mode) mode, and then click the **Configuration** panel that is on the right-side of the Screen Builder canvas.
 
-Below is the setting for the Loop control in the **Configuration** panel:
+Below are settings for the Loop control in the **Configuration** panel:
 
-* [Default Number Of Times](loop-control-settings.md#default-number-of-times)
+* [Default Loop Count](loop-control-settings.md#default-loop-count)
+* [Allow Additional Loops](loop-control-settings.md#allow-additional-loops)
 
-#### Default Number Of Times
+#### Default Loop Count
 
-Enter the number of times to repeat the control\(s\) that the Loop control contains. **2** is the default value.
+Enter the number of times to repeat the control\(s\) that the Loop control contains. **3** is the default value.  
+![](../../../../.gitbook/assets/loop-control-default-loop-count-screen-builder-processes.png) 
+
+#### Allow Additional Loops
+
+Select to allow additional loops during in-progress [Requests](../../../../using-processmaker/requests/what-is-a-request.md) if necessary.  
+![](../../../../.gitbook/assets/loop-control-allow-additional-loops-screen-builder-processes.png) 
+
+If this setting is selected, then the **Add Loop** icon![](../../../../.gitbook/assets/add-loop-icon.png)displays below the looped container of controls that allows the Request participant to add a new loop for the [Task](../../../../using-processmaker/task-management/what-is-a-task.md).
 
 ### Advanced Panel Settings
 
@@ -196,7 +205,8 @@ Below are settings for the Loop control in the **Advanced** panel:
 
 #### Visibility Rule
 
-Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.  
+![](../../../../.gitbook/assets/visibility-rule-screen-builder-processes.png) 
 
 {% hint style="info" %}
 To make this control hidden until another control contains a value, enter the **Variable Name** setting value of that control to this control's **Visibility Rule** setting.
@@ -204,7 +214,8 @@ To make this control hidden until another control contains a value, enter the **
 
 #### CSS Selector Name
 
-Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.  
+![](../../../../.gitbook/assets/css-selector-name-screen-builder-processes.png) 
 
 ## Related Topics
 

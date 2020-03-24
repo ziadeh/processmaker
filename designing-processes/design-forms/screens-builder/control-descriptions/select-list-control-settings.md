@@ -410,6 +410,12 @@ Below are settings for the Select List in the **Advanced** panel:
 
 #### Default Value
 
+{% hint style="info" %}
+### Topic Update
+
+This topic is updated for ProcessMaker version 4.0.1. See the [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.1-release-notes#screen-builder).
+{% endhint %}
+
 Enter the default value this control displays. If the **Default Value** setting has no value, then this control does not display a value when the ProcessMaker Screen displays. When the ProcessMaker Screen submits, the Request uses this control's default value unless the Request participant changed it.  
 ![](../../../../.gitbook/assets/select-list-control-default-value-screen-builder-processes.png) 
 
