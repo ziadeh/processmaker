@@ -156,7 +156,8 @@ Below is the setting for the Nested Screen control in the **Variable** panel:
 
 #### Screen
 
-Select which ProcessMaker Screen to nest into this control. The nested ProcessMaker Screen becomes the child Screen to the parent Screen that uses the Nested Screen control. Any ProcessMaker Screen [type](../types-for-screens.md) may be selected for nesting into a Nested Screen control. However, only [Form](../types-for-screens.md#form)- and [Display](../types-for-screens.md#display)-type ProcessMaker Screens preview in either [Design](../screens-builder-modes.md#design-mode) or [Preview](../screens-builder-modes.md#preview-mode) modes.
+Select which ProcessMaker Screen to nest into this control. The nested ProcessMaker Screen becomes the child Screen to the parent Screen that uses the Nested Screen control. Any ProcessMaker Screen [type](../types-for-screens.md) may be selected for nesting into a Nested Screen control. However, only [Form](../types-for-screens.md#form)- and [Display](../types-for-screens.md#display)-type ProcessMaker Screens preview in either [Design](../screens-builder-modes.md#design-mode) or [Preview](../screens-builder-modes.md#preview-mode) modes.  
+![](../../../../.gitbook/assets/nested-screen-control-screen-builder-processes.png) 
 
 ### Advanced Panel Settings
 
@@ -169,7 +170,8 @@ Below are settings for the Nested Screen control in the **Advanced** panel:
 
 #### Visibility Rule
 
-Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.  
+![](../../../../.gitbook/assets/visibility-rule-screen-builder-processes.png) 
 
 {% hint style="info" %}
 To make this control hidden until another control contains a value, enter the **Variable Name** setting value of that control to this control's **Visibility Rule** setting.
@@ -177,7 +179,8 @@ To make this control hidden until another control contains a value, enter the **
 
 #### CSS Selector Name
 
-Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.  
+![](../../../../.gitbook/assets/css-selector-name-screen-builder-processes.png) 
 
 ## Related Topics
 

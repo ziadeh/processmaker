@@ -137,7 +137,8 @@ Below are settings for the Submit Button control in the **Variable** panel:
 
 #### Variable Name
 
-Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. This is a required setting.
+Edit the default **Variable Name** setting value for this control if necessary. The **Variable Name** setting value represents data in this control during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). Ensure that the **Variable Name** setting value is a unique name from other controls in this [ProcessMaker Screen](../../what-is-a-form.md) and contains at least one letter. This is a required setting.  
+![](../../../../.gitbook/assets/submit-button-control-variable-name-screen-builder-processes.png) 
 
 Use the **Variable Name** setting value in the following ways:
 
@@ -147,11 +148,13 @@ Use the **Variable Name** setting value in the following ways:
 
 #### Label
 
-Edit the default label that displays for this control if necessary. **New Submit** is the default value.
+Edit the default label that displays for this control if necessary. **New Submit** is the default value.  
+![](../../../../.gitbook/assets/submit-button-control-label-screen-builder-processes.png) 
 
 #### Value
 
-Enter any alphanumeric value that represents data when the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant selects the Submit Button control. This value can be evaluated in a [**Visibility Rule** setting expression](expression-syntax-components-for-show-if-control-settings.md) or in a [Sequence Flow element's condition\(s\) to trigger](../../../process-design/model-your-process/the-quick-toolbar.md#configure-an-outgoing-sequence-flow-element-from-an-exclusive-gateway-or-inclusive-gateway-element).
+Enter any alphanumeric value that represents data when the [Request](../../../../using-processmaker/requests/what-is-a-request.md) participant selects the Submit Button control. This value can be evaluated in a [**Visibility Rule** setting expression](expression-syntax-components-for-show-if-control-settings.md) or in a [Sequence Flow element's condition\(s\) to trigger](../../../process-design/model-your-process/the-quick-toolbar.md#configure-an-outgoing-sequence-flow-element-from-an-exclusive-gateway-or-inclusive-gateway-element).  
+![](../../../../.gitbook/assets/submit-button-control-value-screen-builder-processes.png) 
 
 ### Configuration Panel Settings
 
@@ -169,8 +172,8 @@ Below is the setting for the Submit Button control in the **Configuration** pane
 
 Select from the following options how the Submit Button control functions when the control is clicked:
 
-* **Submit:** Submits the [ProcessMaker Screen](../../what-is-a-form.md) whilst setting this control's value as specified from the [**Value** setting](submit-button-control-settings.md#value).
-* **Do Not Submit, Set Value:** Sets this control's value as specified from the **Value** setting, but does not submit the ProcessMaker Screen.
+* **Submit:** Submits the [ProcessMaker Screen](../../what-is-a-form.md) whilst setting this control's value as specified from the [**Value** setting](submit-button-control-settings.md#value). This is the default setting.
+* **Do Not Submit, Set Value:** Sets this control's value as specified from the **Value** setting, but does not submit the ProcessMaker Screen. ![](../../../../.gitbook/assets/submit-button-control-type-button-screen-builder-processes.png) 
 
 ### Design Panel Settings
 
@@ -192,7 +195,7 @@ Select the style for the Submit Button control. The style changes the control's 
 * **Info:** Teal-colored background with white-colored **Label** text.
 * **Light:** White-colored background with black-colored **Label** text.
 * **Dark:** Black-colored background with white-colored **Label** text.
-* **Link:** White-colored background with blue-colored **Label** text.
+* **Link:** White-colored background with blue-colored **Label** text. ![](../../../../.gitbook/assets/submit-button-control-button-variant-style-screen-builder-processes.png) 
 
 ### Advanced Panel Settings
 
@@ -205,7 +208,8 @@ Below are settings for the Submit Button control in the **Advanced** panel:
 
 #### Visibility Rule
 
-Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.
+Specify an expression that indicates the condition\(s\) under which this control displays. See [Expression Syntax Components for "Visibility Rule" Control Settings](expression-syntax-components-for-show-if-control-settings.md#expression-syntax-components-for-show-if-control-settings). If this setting does not have an expression, then this control displays by default.  
+![](../../../../.gitbook/assets/visibility-rule-screen-builder-processes.png) 
 
 {% hint style="info" %}
 To make this control hidden until another control contains a value, enter the **Variable Name** setting value of that control to this control's **Visibility Rule** setting.
@@ -213,7 +217,8 @@ To make this control hidden until another control contains a value, enter the **
 
 #### CSS Selector Name
 
-Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.
+Enter the value to represent this control in custom CSS syntax when in [Custom CSS](../add-custom-css-to-a-screen.md#add-custom-css-to-a-processmaker-screen) mode. As a best practice, use the same **CSS Selector Name** value on different controls of the same type to apply the same custom CSS style to all those controls.  
+![](../../../../.gitbook/assets/css-selector-name-screen-builder-processes.png) 
 
 ## Related Topics <a id="related-topics"></a>
 
