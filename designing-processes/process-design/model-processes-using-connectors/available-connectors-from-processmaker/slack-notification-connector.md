@@ -22,3 +22,11 @@ Before using the Slack Notification connector in your Process models, your Proce
 * [Verify requests from Slack](https://api.slack.com/authentication/verifying-requests-from-slack).
 {% endhint %}
 
+## Related Topics
+
+{% page-ref page="../../../../package-development-distribution/package-a-connector/slack-notification-package.md" %}
+
+{% page-ref page="../what-is-a-connector.md" %}
+
+{% page-ref page="../../../../package-development-distribution/first-topic.md" %}
+
