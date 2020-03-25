@@ -10,7 +10,7 @@ description: Request participants can make decisions via email with the click of
 The Actions By Email [package](../first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the Actions By Email package can be installed in your ProcessMaker instance.
 {% endhint %}
 
-Use the Actions By Email package to send emails automatically during your Processes' [Requests](../../using-processmaker/requests/what-is-a-request.md).
+Use the Actions By Email package to send emails automatically during your Processes' [Requests](../../using-processmaker/requests/what-is-a-request.md). During a Request, email recipients can make business decisions directly in the email by clicking on a button to indicate that decision. The email response returns to your ProcessMaker instance to acknowledge the decision, then routes workflow for that Request. While an email may be sent to multiple recipients, only the first response is acknowledged to affect workflow in that Request.
 
 The Actions By Email package has the [Actions By Email](../../designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/actions-by-email-connector.md) connector that integrates into Process Modeler. Use the Actions By Email connector as you would BPMN elements: drag and place the Actions By Email connector into your Process model, configure its settings, and then add its [incoming and outgoing Sequence Flow elements](../../designing-processes/process-design/model-your-process/the-quick-toolbar.md).
 

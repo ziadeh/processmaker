@@ -6,7 +6,7 @@ description: Automatically send emails during Requests for a Process.
 
 ## Overview
 
-The Send Email [connector](../what-is-a-connector.md) is part of the [Email package](../../../../package-development-distribution/package-a-connector/email.md) that allows ProcessMaker to send emails during [Requests](../../../../using-processmaker/requests/what-is-a-request.md) that use a Send Email connector in a Process model. When you add a Send Email control to a Process model and then reference a [ProcessMaker Screen](../../../design-forms/screens-builder/types-for-screens.md#email) for email body content, the Send Email connector can email a specified email address when that Send Email connector triggers in a Request's workflow. The Send Email connector supports sending an email to only one email recipient.
+The Send Email [connector](../what-is-a-connector.md) is part of the [Email package](../../../../package-development-distribution/package-a-connector/email.md). When you add the Send Email connector to your Process model and then reference a ProcessMaker Screen for email body content, ProcessMaker can send emails during [Requests](../../../../using-processmaker/requests/what-is-a-request.md). The Send Email connector can email a specified email address when that Send Email connector triggers in a Request's workflow. The Send Email connector supports sending an email to only one email recipient.
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
