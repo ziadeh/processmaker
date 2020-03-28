@@ -79,6 +79,28 @@ trait MakeHttpRequests
             }
         }
 
+        $this->httpRequestFiles = [];
+        if (isset($endpoint['files']) && count($endpoint['files']) > 0) {
+            $mediaItems = [];
+            foreach ($this->files() as $mediaItem) {
+                $dataName = $mediaItem->getCustomProperty('data_name', null);
+                if ($dataName) {
+                    $mediaItems[$dataName] = $mediaItem;
+                }
+            }
+        
+            foreach($endpoint['files'] as $dataKeyName) {
+                if (isset($mediaItems[$dataKeyName])) {
+                    $mediaItem = $mediaItems[$dataKeyName];
+                    $this->httpRequestFiles[] = [
+                        'name' => $mediaItem->name,
+                        'filename' => $mediaItem->file_name,
+                        'contents' => fopen($mediaItem->getPath(), 'r')
+                    ];
+                }
+            }
+        }
+
         $body = $mustache->render($endpoint['body'], $data);
         $bodyType = $mustache->render($endpoint['body_type'], $data);
         $request = [$method, $url, $headers, $body, $bodyType];
@@ -229,10 +251,27 @@ trait MakeHttpRequests
     {
         $client = new Client(['verify' => $this->verifySsl]);
         $options = [];
-        if ($bodyType === 'form-data') {
+        $hasFiles = count($this->httpRequestFiles) > 0;
+        if ($bodyType === 'form-data' || $hasFiles) {
             $options['form_params'] = json_decode($body, true);
         }
-        $request = new Request($method, $url, $headers, $body);
+        if ($hasFiles) {
+            // Convert each form_param to a 'part' in the multipart
+            foreach ($options['form_params'] as $key => $value) {
+                $this->httpRequestFiles[] = [
+                    'name' => $key,
+                    'contents' => is_array($value) ? http_build_query($value) : $value,
+                ];
+            }
+
+            unset($options['form_params']);
+            $options['multipart'] = $this->httpRequestFiles;
+
+            $request = new Request($method, $url, $headers);
+        } else {
+            $request = new Request($method, $url, $headers, $body);
+        }
+
         return $client->send($request, $options);
     }
 }
