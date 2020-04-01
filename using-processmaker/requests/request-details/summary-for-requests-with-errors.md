@@ -97,6 +97,8 @@ The **Files** tab displays the summary of all files associated with the Request 
 * At least one file has been uploaded to that Request.
 * A [PDF Generator connector](../../../designing-processes/process-design/model-processes-using-connectors/available-connectors-from-processmaker/pdf-generator-connector.md) in that Request has automatically generated a PDF of a [Display](../../../designing-processes/design-forms/screens-builder/types-for-screens.md)-type [ProcessMaker Screen](../../../designing-processes/design-forms/what-is-a-form.md). Note that to use the PDF Generator connector, the [PDF Generator package](../../../package-development-distribution/package-a-connector/pdf-generator-package.md) must be installed in your ProcessMaker instance. The PDF Generator [package](../../../package-development-distribution/first-topic.md) is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](https://www.processmaker.com/contact/) or ask your ProcessMaker sales representative how the PDF Generator package can be installed in your ProcessMaker instance.
 
+![&quot;Files&quot; tab for a Request error](../../../.gitbook/assets/files-tab-error-request-summary.png)
+
 The **Files** tab displays the following summary in tabular format about the files associated with the Request:
 
 * **File Name:** The **File Name** column displays the name of each file associated with the selected Request. Click the file name to download it to your local computer or network location. 
@@ -109,7 +111,7 @@ Below the table, the history of the Request displays all Request actions to the 
 
 The **Forms** tab displays the ProcessMaker [Screen](../../../designing-processes/design-forms/what-is-a-form.md) associated with each Task that each Request participant submitted in the time the Request error occurred. For example, if a Request participant entered information into a ProcessMaker Screen, all Request participants can view the Request data that the Task assignee entered.
 
-![&quot;Forms&quot; tab for a Request error](../../../.gitbook/assets/forms-tab-error-request-summary.png)
+![](../../../.gitbook/assets/forms-tab-error-request-summary%20%281%29.png)
 
 The **Forms** tab displays the following summary in tabular format about submitted ProcessMaker Screens by Request participants to that time in the Request:
 
