@@ -143,7 +143,7 @@ If the selected Request has no ProcessMaker Screens with submitted Request data,
 
 Each Request that has an error displays a summary of the Request to the time of the error.
 
-![Request participant summary for a Request in which an error occurred](../../../.gitbook/assets/error-request-information-requests.png)
+![](../../../.gitbook/assets/error-request-information-requests.png)
 
 The following summary displays about a Request in which an error occurred:
 

@@ -20,7 +20,7 @@ Follow these steps to view a summary for a canceled [Request](../what-is-a-reque
 
 The **Summary** tab displays the summary of information entered into the Request to the time of its cancellation. Request participants manually enter information into ProcessMaker [Screens](../../../designing-processes/design-forms/what-is-a-form.md).
 
-![&quot;Summary&quot; tab in a canceled Request&apos;s summary](../../../.gitbook/assets/summary-tab-canceled-request-information-requests.png)
+![](../../../.gitbook/assets/summary-tab-canceled-request-information-requests%20%281%29.png)
 
 The **Summary** tab displays the JSON-formatted key/value pairs in tabular format that represent ProcessMaker Screen control data. Information is displayed:
 
