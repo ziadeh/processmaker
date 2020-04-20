@@ -42,11 +42,19 @@ The **Redo** button can be used to redo any revision undone by the **Undo** butt
 Follow these steps to use the **Redo** button in Screen Builder:
 
 1. ​[View Screens](https://app.gitbook.com/@processmaker/s/processmaker/~/drafts/-M2FWRZXiL0J3dKqaOvg/designing-processes/design-forms/manage-forms/view-all-forms). The **Screens** page displays.
-2. [Create a new Screen](https://app.gitbook.com/@processmaker/s/processmaker/~/drafts/-M2FWRZXiL0J3dKqaOvg/designing-processes/design-forms/manage-forms/create-a-new-form) or click the **Edit Screen** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Screen. Screen Builder displays. The **Redo** button is disabled.
+2. [Create a new Screen](https://app.gitbook.com/@processmaker/s/processmaker/~/drafts/-M2FWRZXiL0J3dKqaOvg/designing-processes/design-forms/manage-forms/create-a-new-form) or click the **Edit Screen** icon![](../../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)to edit the selected Screen. Screen Builder displays. The **Redo** button is disabled. [What is Screen Builder?](what-is-screens-builder.md)
 3. Make a change in the ProcessMaker Screen or any of its controls' settings, and then click the **Undo** button as necessary. The **Redo** button enables.
 4. Click the **Redo** button to redo any revision undone by the **Undo** button up to the current state.
 
 ## Related Topics
+
+{% page-ref page="what-is-screens-builder.md" %}
+
+{% page-ref page="types-for-screens.md" %}
+
+{% page-ref page="screens-builder-modes.md" %}
+
+{% page-ref page="validate-your-screen.md" %}
 
 
 
