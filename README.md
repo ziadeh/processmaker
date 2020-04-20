@@ -10,7 +10,7 @@ ProcessMaker user documentation and Release Notes may change without notice.
 
 **Current production version:** ProcessMaker 4.0.3, released March 13, 2020. See [Release Notes](https://processmaker.gitbook.io/processmaker-release-notes/processmaker-4.0.x/processmaker-4.0.3-release-notes).
 
-View [documentation for ProcessMaker versions 2.x and 3.x](https://wiki.processmaker.com/). The current production release is ProcessMaker version 3.4.9.
+View [documentation for ProcessMaker versions 2.x and 3.x](https://wiki.processmaker.com/). The current production release is ProcessMaker version 3.4.10.
 
 [Privacy Statement](https://www.processmaker.com/privacy-statement)
 
