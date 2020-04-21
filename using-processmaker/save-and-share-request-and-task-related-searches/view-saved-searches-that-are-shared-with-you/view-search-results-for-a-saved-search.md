@@ -4,12 +4,12 @@ description: View a Saved Search's results.
 
 # View Results for a Saved Search
 
-## View Search Results
+## Overview
 
 {% hint style="info" %}
-### ProcessMaker Package Required
+### ProcessMaker Packages Required
 
-To view search results for a [Saved Search](../what-is-a-saved-search.md), the [Saved Searches package](../../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed in your ProcessMaker instance. The Saved Searches package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Saved Searches package can be installed in your ProcessMaker instance.
+To view search results for a [Saved Search](../what-is-a-saved-search.md), the [Saved Searches package](../../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed in your ProcessMaker instance. Likewise, to create or share Saved Searches for records in a ProcessMaker Collection, the Collections package must also be installed. Neither of these packages are available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how these packages can be installed in your ProcessMaker instance.
 {% endhint %}
 
 Regardless of whether you [created](../create-and-share-a-saved-search.md) a Saved Search or if it has been shared with you, you may view the search results based on the [ProcessMaker Query Language \(PMQL\)](../../search-processmaker-data-using-pmql.md) parameters configured in the Saved Search.
@@ -18,7 +18,7 @@ An image represents each Saved Search on the left sidebar, but only display on p
 
 * [Request](../../requests/what-is-a-request.md)-related Saved Searches are accessed from **Requests** pages
 * [Task](../../task-management/what-is-a-task.md)-related Saved Searches are accessed from **Tasks** pages
-* Saved Searches for ProcessMaker Collection records are accessed from the **Collections** page
+* Saved Searches for ProcessMaker Collection records are accessed from the [**Collections** page](../../../collections/manage-collections/view-collections.md#view-all-collections)
 
 {% hint style="info" %}
 ### Don't Know What a ProcessMaker Collection Is?
@@ -26,7 +26,16 @@ An image represents each Saved Search on the left sidebar, but only display on p
 See [What is a Collection?](../../../collections/what-is-a-collection.md).
 {% endhint %}
 
-Follow these steps to view the results for a Saved Search:
+Columns that display in the results for a Saved Search can be customized by the ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) that created the Saved Search. See the following topics:
+
+* [Create and Share a Saved Search](../create-and-share-a-saved-search.md)
+* [Configure a Saved Search](../manage-your-saved-searches/configure-a-saved-search.md)
+
+If a Saved Search has been shared with you, you may not change the type of information that displays in its results.
+
+### View Request Results from a Saved Search
+
+Follow these steps to view Request results from a Saved Search:
 
 1. Locate the image that represents the Saved Search from the left sidebar associated with its type. 
    * **Requests:** Access Request-related Saved Searches from the following **Requests** pages:
@@ -53,32 +62,20 @@ Click the **Started By Me** icon![](../../../.gitbook/assets/started-by-me-icon-
 
 Below are results for a Request-related Saved Search.
 
-![Results for a Request-related Saved Search](../../../.gitbook/assets/saved-search-request-results-package.png)
+![Results for a Request-related Saved Search](../../../.gitbook/assets/request-saved-search-package.png)
+
+### View Task Results from a Saved Search
 
 Below are results for a Task-related Saved Search.
 
-![Search results for a Task-related Saved Search](../../../.gitbook/assets/saved-search-task-results-package.png)
+![Search results for a Task-related Saved Search](../../../.gitbook/assets/task-saved-search-package.png)
 
-Columns that display in the results for a Saved Search can be customized by the ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) that created the Saved Search. See the following topics:
+Below are results for a Saved Search against records in a ProcessMaker Collection.
 
-* [Create and Share a Saved Search](../create-and-share-a-saved-search.md)
-* [Configure a Saved Search](../manage-your-saved-searches/configure-a-saved-search.md)
-
-If a Saved Search has been shared with you, you may not change the type of information that displays in its results.
-
-Save Search results display in tabular format. See the following topics for information about Request- and Task-related information displays in ProcessMaker:
-
-* **Requests** pages:
-  * **My Requests** page. See [View Your Requests That You Started](../../requests/view-started-requests.md#view-your-requests).
-  * **In Progress** page. See [View Requests That Are In Progress](../../requests/view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
-  * **Completed** page. See [View Completed Requests](../../requests/view-completed-requests.md#view-completed-requests-in-which-you-participated).
-  * **All Requests** page. See [View All Requests](../../requests/view-all-requests.md#view-all-requests-in-your-organization). \(Note that your ProcessMaker user account must have the [**Requests: View All Requests** permission](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** page.\)
-* **Tasks** pages:
-  * **To Do** page. See [View Tasks You Need to Do](../../task-management/view-tasks-you-need-to-do.md).
-  * **Completed** page. See [View Completed Tasks](../../task-management/view-completed-tasks.md).
+![Search results against ProcessMaker Collection records](../../../.gitbook/assets/collections-saved-search-package.png)
 
 {% hint style="info" %}
-### View the Request Summary from Search Results
+### View a Request Summary from Search Results
 
 To [view a Request summary](../../requests/request-details/) from search results, do one of the following:
 
@@ -91,6 +88,12 @@ To view a [Task and its summary](../../task-management/view-a-task-summary.md#su
 
 * From the **Task** column, click the Task name that you want to view.
 * Click the **Open Task** icon![](../../../.gitbook/assets/open-request-icon-requests.png)for the Task name that you want to view.
+
+### View a ProcessMaker Collection Record from Search Results
+
+To view a ProcessMaker Collection record from search results, do one of the following:
+
+* Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png)for the record you want to edit.
 
 ### Search for a Saved Search's Search Result
 
