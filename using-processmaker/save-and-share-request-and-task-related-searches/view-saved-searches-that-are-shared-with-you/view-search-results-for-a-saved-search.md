@@ -70,6 +70,8 @@ Below are results for a Task-related Saved Search.
 
 ![Search results for a Task-related Saved Search](../../../.gitbook/assets/task-saved-search-package.png)
 
+### View ProcessMaker Collection Record Results from a Saved Search
+
 Below are results for a Saved Search against records in a ProcessMaker Collection.
 
 ![Search results against ProcessMaker Collection records](../../../.gitbook/assets/collections-saved-search-package.png)
