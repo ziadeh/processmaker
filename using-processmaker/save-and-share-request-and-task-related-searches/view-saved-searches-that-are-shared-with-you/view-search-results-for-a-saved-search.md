@@ -12,27 +12,38 @@ description: View a Saved Search's results.
 To view search results for a [Saved Search](../what-is-a-saved-search.md), the [Saved Searches package](../../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed in your ProcessMaker instance. The Saved Searches package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Saved Searches package can be installed in your ProcessMaker instance.
 {% endhint %}
 
-Regardless of whether you [created](../create-and-share-a-saved-search.md) a Saved Search or if it has been shared with you, you may view the search results based on the ProcessMaker Query Language \(PMQL\) parameters configured in the Saved Search.
+Regardless of whether you [created](../create-and-share-a-saved-search.md) a Saved Search or if it has been shared with you, you may view the search results based on the [ProcessMaker Query Language \(PMQL\)](../../search-processmaker-data-using-pmql.md) parameters configured in the Saved Search.
 
-Saved Searches are organized by type: Request-related Saved Searches are accessed from **Requests** pages, while Task-related Saved Searches are accessed from **Tasks** pages. Furthermore, Saved Searches are represented by an image on the left sidebar, but only display on pages associated with its type.
+An image represents each Saved Search on the left sidebar, but only display on pages associated with its type. Saved Searches are organized by type:
+
+* [Request](../../requests/what-is-a-request.md)-related Saved Searches are accessed from **Requests** pages
+* [Task](../../task-management/what-is-a-task.md)-related Saved Searches are accessed from **Tasks** pages
+* Saved Searches for ProcessMaker Collection records are accessed from the **Collections** page
+
+{% hint style="info" %}
+### Don't Know What a ProcessMaker Collection Is?
+
+See [What is a Collection?](../../../collections/what-is-a-collection.md).
+{% endhint %}
 
 Follow these steps to view the results for a Saved Search:
 
 1. Locate the image that represents the Saved Search from the left sidebar associated with its type. 
-   * Access Request-related Saved Searches from the following **Requests** pages:
+   * **Requests:** Access Request-related Saved Searches from the following **Requests** pages:
      * **My Requests** page. See [View Your Requests That You Started](../../requests/view-started-requests.md#view-your-requests).
      * **In Progress** page. See [View Requests That Are In Progress](../../requests/view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
      * **Completed** page. See [View Completed Requests](../../requests/view-completed-requests.md#view-completed-requests-in-which-you-participated).
      * **All Requests** page. See [View All Requests](../../requests/view-all-requests.md#view-all-requests-in-your-organization). \(Note that your ProcessMaker user account must have the [**Requests: View All Requests** permission](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** page.\)
-   * Access Task-related Saved Searches from the following **Tasks** pages:
+   * **Tasks:** Access Task-related Saved Searches from the following **Tasks** pages:
      * **To Do** page. See [View Tasks You Need to Do](../../task-management/view-tasks-you-need-to-do.md).
      * **Completed** page. See [View Completed Tasks](../../task-management/view-completed-tasks.md).
-2. Click the icon that represents the Saved Search. The results for that Saved Search display.
+   * **ProcessMaker Collections:** Access Saved Searches related to ProcessMaker Collection records from the Collection page. \(Note that the ProcessMaker Collections package must be installed to your ProcessMaker instance. Your ProcessMaker user account or group membership must have the "Collections: View Collections" permission to view the list of ProcessMaker Collections unless your user account has the **Make this user a Super Admin** setting selected. See the ProcessMaker [Collections](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance. Lastly, your ProcessMaker user account or group membership must have the **View** [record permission](../../../collections/manage-collections/configure-a-collection.md#configure-record-permissions-for-processmaker-users) from a Collection's configuration to view that Collection's records. See [Configure a Collection](../../../collections/manage-collections/configure-a-collection.md#configure-a-processmaker-collection) or ask the manager of that ProcessMaker Collection for assistance.\)
+2. Click the image that represents the Saved Search. The results for that Saved Search display.
 
 {% hint style="info" %}
 ### Quickly View How Many Items Are in Your Saved Searches
 
-Click the ProcessMaker logo in the left sidebar to expand the sidebar. View at a glance how many items are in **Requests**/**Tasks** pages, as well as Saved Searches for that type.  
+Click the ProcessMaker logo in the left sidebar to expand the sidebar. View at a glance how many items are in **Requests**/**Tasks/Collections** pages, as well as Saved Searches for that type.  
 ![](../../../.gitbook/assets/expanded-sidebar-processmaker-logo-saved-search-package.png) 
 
 ### View a Saved Search for Requests That You Started
@@ -55,7 +66,7 @@ Columns that display in the results for a Saved Search can be customized by the 
 
 If a Saved Search has been shared with you, you may not change the type of information that displays in its results.
 
-Save Search results display in tabular format. See the following topics for information about  Request- and Task-related information displays in ProcessMaker:
+Save Search results display in tabular format. See the following topics for information about Request- and Task-related information displays in ProcessMaker:
 
 * **Requests** pages:
   * **My Requests** page. See [View Your Requests That You Started](../../requests/view-started-requests.md#view-your-requests).
