@@ -33,7 +33,7 @@ Columns that display in the results for a Saved Search can be customized by the 
 
 If a Saved Search has been shared with you, you may not change the type of information that displays in its results.
 
-### View Request Results from a Saved Search
+## View Request Results from a Saved Search
 
 Follow these steps to view Request results from a Saved Search:
 
@@ -64,13 +64,13 @@ Below are results for a Request-related Saved Search.
 
 ![Results for a Request-related Saved Search](../../../.gitbook/assets/request-saved-search-package.png)
 
-### View Task Results from a Saved Search
+## View Task Results from a Saved Search
 
 Below are results for a Task-related Saved Search.
 
 ![Search results for a Task-related Saved Search](../../../.gitbook/assets/task-saved-search-package.png)
 
-### View ProcessMaker Collection Record Results from a Saved Search
+## View ProcessMaker Collection Record Results from a Saved Search
 
 Below are results for a Saved Search against records in a ProcessMaker Collection.
 
