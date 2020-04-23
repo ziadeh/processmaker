@@ -14,14 +14,16 @@ Follow these steps to view in-progress Requests in which you are participating:
 2. Do one of the following:
    * Click the **Requests** option from the top menu if the **Requests** page is not currently displayed. The **My Requests** page displays.
    * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
-3. Click the **In Progress** tab or click the **In Progress** icon![](../../.gitbook/assets/in-progress-icon-request.png)from the left sidebar. The **Requests In Progress** page displays.
+3. Click the **In Progress** tab or click the **In Progress** icon![](../../.gitbook/assets/in-progress-icon-request.png)from the left sidebar. The **In Progress** page displays.
 
 {% hint style="info" %}
 ### Quickly View All Requests By Status
 
-Click the ProcessMaker logo in the left sidebar to expand the sidebar. View at a glance how many Requests by status you have. Note that if you have the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) installed in your ProcessMaker instance, you can also view how many items are in your [Saved Searches](../save-and-share-request-and-task-related-searches/what-is-a-saved-search.md) for that type.  
-![](../../.gitbook/assets/expanded-sidebar-processmaker-logo-saved-search-package.png) 
+Click the ProcessMaker logo in the left sidebar to expand the sidebar. View at a glance how many Requests by status you have. Note that if the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) installed in your ProcessMaker instance, you can also view how many items are in your [Saved Searches](../save-and-share-request-and-task-related-searches/what-is-a-saved-search.md) pertaining to Requests.  
+![](../../.gitbook/assets/requests-sidebar-saved-searches-package.png) 
 {% endhint %}
+
+Below is an example of the **In Progress** page that displays in-progress Requests. The Saved Search package is not installed in this example, so this page displays in the ProcessMaker open-source edition.
 
 ![&quot;Requests In Progress&quot; page displays in-progress Requests in which you are participating](../../.gitbook/assets/in-progress-request.png)
 

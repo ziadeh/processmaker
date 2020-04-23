@@ -6,24 +6,26 @@ description: View all your completed Tasks.
 
 ## View Completed Tasks
 
-The Completed Tasks page displays all your completed Tasks.
+The **Completed** Tasks page displays all your completed Tasks.
 
 Follow these steps to view all your completed Tasks:
 
 1. Ensure that you are [logged on](../log-in.md#log-in) to ProcessMaker.
-2. Click the **Tasks** option from the top menu. The **Completed Tasks** page displays.
+2. Click the **Tasks** option from the top menu. The **Completed** page displays.
 3. Click the **Completed** icon ![](../../.gitbook/assets/completed-icon-request%20%281%29.png)in the left sidebar. All your completed Tasks display.
 
 {% hint style="info" %}
 ### Quickly View All Your Assigned and Completed Tasks
 
-Click the ProcessMaker logo in the left sidebar to expand the sidebar. View at a glance how many Tasks you need to do and have completed. Note that if you have the Saved Searches package installed in your ProcessMaker instance, you can also view how many items are in your Saved Searches for that type.  
-![](../../.gitbook/assets/expanded-sidebar-processmaker-logo-tasks.png) 
+Click the ProcessMaker logo in the left sidebar to expand that sidebar. View at a glance how many Tasks you need to do, have completed, and can self-assign. Note that if the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) installed in your ProcessMaker instance, you can also view how many items are in your Saved Searches pertaining to Tasks.  
+![](../../.gitbook/assets/tasks-sidebar-saved-searches-package.png) 
 {% endhint %}
+
+Below is an example of the **Completed** Task page that displays your completed Tasks. The Saved Search package is not installed in this example, so this page displays in the ProcessMaker open-source edition.
 
 ![&quot;Completed Tasks&quot; page displays Tasks you have completed](../../.gitbook/assets/completed-tasks-tasks.png)
 
-The **Completed Tasks** page displays the following information in tabular format about all your completed  Tasks:
+The **Completed** Task page displays the following information in tabular format about all your completed Tasks:
 
 * **Task:** The **Task** column displays the name of the completed Task. If you click the Task name, the Task title displays with the following message: **Task Completed** along with [information about the completed Task](view-completed-tasks.md#view-information-about-a-completed-task).
 * **Status:** The **Status** column displays the status of the Task. Since all Tasks in the **Completed** page are Tasks you have  completed, all Tasks display with the Completed status, represented by the![](../../.gitbook/assets/completed-status-icon-requests.png)icon.

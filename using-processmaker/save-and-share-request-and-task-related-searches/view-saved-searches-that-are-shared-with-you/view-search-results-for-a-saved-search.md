@@ -9,22 +9,16 @@ description: View a Saved Search's results.
 {% hint style="info" %}
 ### ProcessMaker Packages Required
 
-To view search results for a [Saved Search](../what-is-a-saved-search.md), the [Saved Searches package](../../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed in your ProcessMaker instance. Likewise, to create or share Saved Searches for records in a ProcessMaker Collection, the Collections package must also be installed. Neither of these packages are available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how these packages can be installed in your ProcessMaker instance.
+To view search results for a [Saved Search](../what-is-a-saved-search.md), the [Saved Searches package](../../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed in your ProcessMaker instance. Likewise, to create, share, or view Saved Searches for records in a ProcessMaker Collection, the Collections package must also be installed. Neither of these packages are available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how these packages can be installed in your ProcessMaker instance.
 {% endhint %}
 
 Regardless of whether you [created](../create-and-share-a-saved-search.md) a Saved Search or if it has been shared with you, you may view the search results based on the [ProcessMaker Query Language \(PMQL\)](../../search-processmaker-data-using-pmql.md) parameters configured in the Saved Search.
 
 An image represents each Saved Search on the left sidebar, but only display on pages associated with its type. Saved Searches are organized by type:
 
-* [Request](../../requests/what-is-a-request.md)-related Saved Searches are accessed from **Requests** pages
-* [Task](../../task-management/what-is-a-task.md)-related Saved Searches are accessed from **Tasks** pages
-* Saved Searches for ProcessMaker Collection records are accessed from the [**Collections** page](../../../collections/manage-collections/view-collections.md#view-all-collections)
-
-{% hint style="info" %}
-### Don't Know What a ProcessMaker Collection Is?
-
-See [What is a Collection?](../../../collections/what-is-a-collection.md).
-{% endhint %}
+* [Request](../../requests/what-is-a-request.md)-related Saved Searches are accessed from **Requests** pages.
+* [Task](../../task-management/what-is-a-task.md)-related Saved Searches are accessed from **Tasks** pages.
+* Saved Searches for [ProcessMaker Collection](../../../collections/what-is-a-collection.md) records are accessed from the [**Collections** page](../../../collections/manage-collections/view-collections.md#view-all-collections). \(Your ProcessMaker user account or group membership must have the "Collections: View Collections" permission to view the list of ProcessMaker Collections unless your user account has the **Make this user a Super Admin** setting selected. See the ProcessMaker [Collections](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance. Lastly, your ProcessMaker user account or group membership must have the **View** [record permission](../../../collections/manage-collections/configure-a-collection.md#configure-record-permissions-for-processmaker-users) from a Collection's configuration to view that Collection's records. See [Configure a Collection](../../../collections/manage-collections/configure-a-collection.md#configure-a-processmaker-collection) or ask the manager of that ProcessMaker Collection for assistance.\)
 
 Columns that display in the results for a Saved Search can be customized by the ProcessMaker [user](../../../processmaker-administration/add-users/what-is-a-user.md) that created the Saved Search. See the following topics:
 
@@ -34,30 +28,43 @@ Columns that display in the results for a Saved Search can be customized by the 
 If a Saved Search has been shared with you, you may not change the type of information that displays in its results.
 
 {% hint style="info" %}
-To quickly view how many items pertain to each Saved Search that either you have created or have been shared with you, click the ProcessMaker logo in the left sidebar to expand that sidebar. View at a glance how many items pertain to each Saved Search as well as Saved Searches for that type.  
-![](../../../.gitbook/assets/expanded-sidebar-processmaker-logo-saved-search-package.png) 
+To quickly view how many search results pertain to each Saved Search that either you have created or have been shared with you, click the ProcessMaker logo in the left sidebar to expand that sidebar. View at a glance how many items pertain to each Saved Search as well as Saved Searches for that type.  
+![](../../../.gitbook/assets/requests-sidebar-saved-searches-package.png) 
 {% endhint %}
 
 ## View Request Results from a Saved Search
 
-Saved Searches that pertain to Requests display on any of the following **Requests** pages:
+{% hint style="info" %}
+### ProcessMaker Package Required
+
+To view results for a [Saved Search](../what-is-a-saved-search.md), the [Saved Searches package](../../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed in your ProcessMaker instance. The Saved Searches package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Saved Searches package can be installed in your ProcessMaker instance.
+{% endhint %}
+
+Saved Searches that pertain to Requests display on the following **Requests** pages:
 
 * **My Requests** page. See [View Your Requests That You Started](../../requests/view-started-requests.md#view-your-requests).
 * **In Progress** page. See [View Requests That Are In Progress](../../requests/view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
 * **Completed** page. See [View Completed Requests](../../requests/view-completed-requests.md#view-completed-requests-in-which-you-participated).
 * **All Requests** page. See [View All Requests](../../requests/view-all-requests.md#view-all-requests-in-your-organization). \(Note that your ProcessMaker user account must have the [**Requests: View All Requests** permission](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** page.\)
 
-Follow these steps to view Request results from a Saved Search:
+An image represents each Saved Search on the left sidebar. Saved Search icons display below the icons to access the default **Requests** pages.
 
-1. Go to a Request related page. 
-   * **Tasks:** Access Task-related Saved Searches from the following **Tasks** pages:
-     * **To Do** page. See [View Tasks You Need to Do](../../task-management/view-tasks-you-need-to-do.md).
-     * **Completed** page. See [View Completed Tasks](../../task-management/view-completed-tasks.md).
-   * **ProcessMaker Collections:** Access Saved Searches related to ProcessMaker Collection records from the Collection page. \(Note that the ProcessMaker Collections package must be installed to your ProcessMaker instance. Your ProcessMaker user account or group membership must have the "Collections: View Collections" permission to view the list of ProcessMaker Collections unless your user account has the **Make this user a Super Admin** setting selected. See the ProcessMaker [Collections](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance. Lastly, your ProcessMaker user account or group membership must have the **View** [record permission](../../../collections/manage-collections/configure-a-collection.md#configure-record-permissions-for-processmaker-users) from a Collection's configuration to view that Collection's records. See [Configure a Collection](../../../collections/manage-collections/configure-a-collection.md#configure-a-processmaker-collection) or ask the manager of that ProcessMaker Collection for assistance.\)
+Follow these steps to view results from a Saved Search pertaining to Requests:
+
+1. Go to a Request-related page.
 2. Click the image that represents the Saved Search. The results for that Saved Search display.
 
 {% hint style="info" %}
-Click the **Started By Me** icon![](../../../.gitbook/assets/started-by-me-icon-requests.png)to view a Saved Search for Requests that you started. Note that the [Saved Searches package](../../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed to display this Saved Search. Otherwise, clicking the **Started By Me** icon displays the [**My Requests**](../../requests/view-started-requests.md) page.
+### Analyze Request-Related Information Based on Saved Search Results
+
+Aside from viewing [Request summaries](../../requests/request-details/), visually analyze Request information.
+
+### View a Request Summary from Search Results
+
+To [view a Request summary](../../requests/request-details/) from search results, do one of the following:
+
+* From the **\#** column, click the Request number associated with the Process displaying in the **Name** column to view its summary. This number represents the sequential occurrence of that Process.
+* Click the **Open Request** icon![](../../../.gitbook/assets/open-request-icon-requests.png)for the Request to view its summary.
 {% endhint %}
 
 Below are results for a Request-related Saved Search.
@@ -66,7 +73,37 @@ Below are results for a Request-related Saved Search.
 
 ## View Task Results from a Saved Search
 
-Saved Searches that pertain to Requests display on any of the following **Requests** pages:
+{% hint style="info" %}
+### ProcessMaker Package Required
+
+To view results for a [Saved Search](../what-is-a-saved-search.md), the [Saved Searches package](../../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed in your ProcessMaker instance. The Saved Searches package is not available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how the Saved Searches package can be installed in your ProcessMaker instance.
+{% endhint %}
+
+Saved Searches that pertain to Tasks display on the following **Tasks** pages:
+
+* **To Do** page. See [View Tasks You Need to Do](../../task-management/view-tasks-you-need-to-do.md).
+* **Completed** page. See [View Completed Tasks](../../task-management/view-completed-tasks.md).
+* **Self Service** page.
+
+An image represents each Saved Search on the left sidebar. Saved Search icons display below the icons to access the default **Tasks** pages.
+
+Follow these steps to view results from a Saved Search pertaining to Tasks:
+
+1. Go to a Task-related page.
+2. Click the image that represents the Saved Search. The results for that Saved Search display.
+
+{% hint style="info" %}
+### Analyze Task-Related Information Based on Saved Search Results
+
+Aside from viewing Tasks, visually analyze Task information.
+
+### View a Task Summary from Search Results
+
+To view a [Task and its summary](../../task-management/view-a-task-summary.md#summary-for-an-assigned-task) from search results, do one of the following:
+
+* From the **Task** column, click the Task name that you want to view.
+* Click the **Open Task** icon![](../../../.gitbook/assets/open-request-icon-requests.png)for the Task name that you want to view.
+{% endhint %}
 
 Below are results for a Task-related Saved Search.
 
@@ -74,9 +111,34 @@ Below are results for a Task-related Saved Search.
 
 ## View ProcessMaker Collection Record Results from a Saved Search
 
-Below are results for a Saved Search against records in a ProcessMaker Collection.
+{% hint style="info" %}
+### ProcessMaker Packages Required
 
-![Search results against ProcessMaker Collection records](../../../.gitbook/assets/collections-saved-search-package.png)
+To view search results for a [Saved Search](../what-is-a-saved-search.md), the [Saved Searches package](../../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed in your ProcessMaker instance. Likewise, to create, share, or view Saved Searches for records in a ProcessMaker Collection, the Collections package must also be installed. Neither of these packages are available in the ProcessMaker open-source edition. Contact [ProcessMaker Sales](mailto:sales@processmaker.com) or ask your ProcessMaker sales representative how these packages can be installed in your ProcessMaker instance.
+
+### Permissions Required
+
+Your ProcessMaker user account or group membership must have the "Collections: View Collections" permission to view the list of ProcessMaker Collections unless your user account has the **Make this user a Super Admin** setting selected. See the ProcessMaker [Collections](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#collections) permissions or ask your ProcessMaker Administrator for assistance.
+
+Furthermore, your ProcessMaker user account or group membership must have the **View** [record permission](../../../collections/manage-collections/configure-a-collection.md#configure-record-permissions-for-processmaker-users) from a Collection's configuration to view that Collection's records. See [Configure a Collection](../../../collections/manage-collections/configure-a-collection.md#configure-a-processmaker-collection) or ask the manager of that ProcessMaker Collection for assistance.
+{% endhint %}
+
+Saved Searches that pertain to records in a ProcessMaker Collection display on the **Collections** page. An image represents each Saved Search on the left sidebar. Saved Search icons display above the icons to access ProcessMaker Collections.
+
+Follow these steps to view results from a Saved Search pertaining to records in a ProcessMaker Collection:
+
+1. Click the **Collections** option from the top menu. The **Collections** page displays the ProcessMaker Collections that you are allowed to view.
+2. Click the image that represents the Saved Search. The results for that Saved Search display.
+
+{% hint style="info" %}
+### View a ProcessMaker Collection Record from Search Results
+
+To view a ProcessMaker Collection record from search results, click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png)for the record you want to edit.
+{% endhint %}
+
+Below are results for a Saved Search related to records in a ProcessMaker Collection.
+
+![Search results related to ProcessMaker Collection records](../../../.gitbook/assets/collections-saved-search-package.png)
 
 {% hint style="info" %}
 ### View a Request Summary from Search Results
@@ -95,9 +157,7 @@ To view a [Task and its summary](../../task-management/view-a-task-summary.md#su
 
 ### View a ProcessMaker Collection Record from Search Results
 
-To view a ProcessMaker Collection record from search results, do one of the following:
-
-* Click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png)for the record you want to edit.
+To view a ProcessMaker Collection record from search results, click the **Edit** icon![](../../../.gitbook/assets/edit-icon.png)for the record you want to edit.
 
 ### Search for a Saved Search's Search Result
 

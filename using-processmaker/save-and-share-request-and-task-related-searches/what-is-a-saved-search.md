@@ -30,7 +30,7 @@ Click the **Edit Saved Searches** icon![](../../.gitbook/assets/configure-proces
 
 An icon represents each Saved Search that the ProcessMaker user selects when [creating the Saved Search](create-and-share-a-saved-search.md). Saved Searches display above the **My Saved Searches** icon![](../../.gitbook/assets/save-search-icon-package-requests-tasks.png). Click the logo at the top of the left sidebar on any of the **Requests**, **Tasks**, or **Collections** pages to view search results for each Saved Search.
 
-![](../../.gitbook/assets/expanded-sidebar-processmaker-logo-saved-search-package.png)
+![](../../.gitbook/assets/requests-sidebar-saved-searches-package.png)
 
 ## Related Topics
 

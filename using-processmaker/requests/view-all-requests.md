@@ -25,9 +25,11 @@ Follow these steps to view all Requests in your organization:
 {% hint style="info" %}
 ### Quickly View All Requests By Status
 
-Click the ProcessMaker logo in the left sidebar to expand the sidebar. View at a glance how many Requests by status you have. Note that if you have the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) installed in your ProcessMaker instance, you can also view how many items are in your [Saved Searches](../save-and-share-request-and-task-related-searches/what-is-a-saved-search.md) for that type.  
-![](../../.gitbook/assets/expanded-sidebar-processmaker-logo-saved-search-package.png) 
+Click the ProcessMaker logo in the left sidebar to expand that sidebar. View at a glance how many Requests by status you have. Note that if the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) installed in your ProcessMaker instance, you can also view how many items are in your [Saved Searches](../save-and-share-request-and-task-related-searches/what-is-a-saved-search.md) pertaining to Requests.  
+![](../../.gitbook/assets/requests-sidebar-saved-searches-package.png) 
 {% endhint %}
+
+Below is an example of the **All Requests** page that displays all Requests in that ProcessMaker instance. The Saved Search package is not installed in this example, so this page displays in the ProcessMaker open-source edition.
 
 ![&quot;All Requests&quot; page displays all Requests in your organization](../../.gitbook/assets/all-requests-request.png)
 
