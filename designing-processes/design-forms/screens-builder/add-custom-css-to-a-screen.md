@@ -94,5 +94,3 @@ div.page{
 
 {% page-ref page="best-practices.md" %}
 
-
-

@@ -88,11 +88,11 @@ Follow these steps to rename a page on a ProcessMaker Screen:
 
 {% page-ref page="types-for-screens.md" %}
 
+{% page-ref page="screens-builder-modes.md" %}
+
 {% page-ref page="../manage-forms/create-a-new-form.md" %}
 
 {% page-ref page="../manage-forms/view-all-forms.md" %}
-
-{% page-ref page="screens-builder-modes.md" %}
 
 {% page-ref page="validate-your-screen.md" %}
 

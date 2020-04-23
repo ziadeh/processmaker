@@ -59,17 +59,15 @@ Calculated properties also display in the **Data Preview** panel as part of the 
 
 {% page-ref page="what-is-screens-builder.md" %}
 
-{% page-ref page="validate-your-screen.md" %}
+{% page-ref page="types-for-screens.md" %}
 
 {% page-ref page="screens-builder-modes.md" %}
 
+{% page-ref page="validate-your-screen.md" %}
+
 {% page-ref page="control-descriptions/" %}
 
-{% page-ref page="../../scripts/scripts-editor.md" %}
-
 {% page-ref page="../manage-forms/view-all-forms.md" %}
-
-{% page-ref page="types-for-screens.md" %}
 
 {% page-ref page="add-a-new-page-to-a-screen.md" %}
 
@@ -89,7 +87,7 @@ Calculated properties also display in the **Data Preview** panel as part of the 
 
 {% page-ref page="../../../using-processmaker/requests/what-is-a-request.md" %}
 
+{% page-ref page="../../scripts/scripts-editor.md" %}
+
 {% page-ref page="../../scripts/what-is-a-script.md" %}
-
-
 

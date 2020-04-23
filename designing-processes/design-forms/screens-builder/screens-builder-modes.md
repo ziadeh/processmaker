@@ -64,19 +64,17 @@ See [Manage Watchers](manage-watchers/).
 
 {% page-ref page="what-is-screens-builder.md" %}
 
-{% page-ref page="control-descriptions/" %}
-
-{% page-ref page="preview-a-screen.md" %}
-
-{% page-ref page="../../scripts/what-is-a-script.md" %}
-
 {% page-ref page="types-for-screens.md" %}
+
+{% page-ref page="screens-builder-modes.md" %}
 
 {% page-ref page="validate-your-screen.md" %}
 
+{% page-ref page="control-descriptions/" %}
+
 {% page-ref page="add-a-new-page-to-a-screen.md" %}
 
-{% page-ref page="screens-builder-modes.md" %}
+{% page-ref page="preview-a-screen.md" %}
 
 {% page-ref page="manage-computed-properties/" %}
 
@@ -93,6 +91,4 @@ See [Manage Watchers](manage-watchers/).
 {% page-ref page="../../scripts/what-is-a-script.md" %}
 
 {% page-ref page="../../viewing-processes/what-is-a-process.md" %}
-
-
 

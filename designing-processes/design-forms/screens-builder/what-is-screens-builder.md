@@ -60,5 +60,3 @@ Below are a few examples of these controls:
 
 {% page-ref page="best-practices.md" %}
 
-
-

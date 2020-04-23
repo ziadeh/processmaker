@@ -52,9 +52,9 @@ Follow these steps to validate a ProcessMaker Screen:
 
 {% page-ref page="control-descriptions/" %}
 
-{% page-ref page="preview-a-screen.md" %}
-
 {% page-ref page="add-a-new-page-to-a-screen.md" %}
+
+{% page-ref page="preview-a-screen.md" %}
 
 {% page-ref page="manage-computed-properties/" %}
 

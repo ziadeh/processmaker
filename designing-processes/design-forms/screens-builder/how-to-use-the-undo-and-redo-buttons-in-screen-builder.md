@@ -54,19 +54,11 @@ Follow these steps to use the **Redo** button in Screen Builder:
 
 {% page-ref page="types-for-screens.md" %}
 
-{% page-ref page="types-for-screens.md" %}
-
 {% page-ref page="screens-builder-modes.md" %}
-
-{% page-ref page="screens-builder-modes.md" %}
-
-{% page-ref page="validate-your-screen.md" %}
 
 {% page-ref page="validate-your-screen.md" %}
 
 {% page-ref page="control-descriptions/" %}
-
-
 
 {% page-ref page="add-a-new-page-to-a-screen.md" %}
 
@@ -78,13 +70,7 @@ Follow these steps to use the **Redo** button in Screen Builder:
 
 {% page-ref page="manage-watchers/" %}
 
-{% page-ref page="how-to-use-the-undo-and-redo-buttons-in-screen-builder.md" %}
-
 {% page-ref page="save-a-screen.md" %}
 
 {% page-ref page="best-practices.md" %}
-
-
-
-
 
