@@ -33,16 +33,23 @@ Columns that display in the results for a Saved Search can be customized by the 
 
 If a Saved Search has been shared with you, you may not change the type of information that displays in its results.
 
+{% hint style="info" %}
+To quickly view how many items pertain to each Saved Search that either you have created or have been shared with you, click the ProcessMaker logo in the left sidebar to expand that sidebar. View at a glance how many items pertain to each Saved Search as well as Saved Searches for that type.  
+![](../../../.gitbook/assets/expanded-sidebar-processmaker-logo-saved-search-package.png) 
+{% endhint %}
+
 ## View Request Results from a Saved Search
+
+Saved Searches that pertain to Requests display on any of the following **Requests** pages:
+
+* **My Requests** page. See [View Your Requests That You Started](../../requests/view-started-requests.md#view-your-requests).
+* **In Progress** page. See [View Requests That Are In Progress](../../requests/view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
+* **Completed** page. See [View Completed Requests](../../requests/view-completed-requests.md#view-completed-requests-in-which-you-participated).
+* **All Requests** page. See [View All Requests](../../requests/view-all-requests.md#view-all-requests-in-your-organization). \(Note that your ProcessMaker user account must have the [**Requests: View All Requests** permission](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** page.\)
 
 Follow these steps to view Request results from a Saved Search:
 
-1. Locate the image that represents the Saved Search from the left sidebar associated with its type. 
-   * **Requests:** Access Request-related Saved Searches from the following **Requests** pages:
-     * **My Requests** page. See [View Your Requests That You Started](../../requests/view-started-requests.md#view-your-requests).
-     * **In Progress** page. See [View Requests That Are In Progress](../../requests/view-in-progress-requests.md#view-in-progress-requests-in-which-you-are-participating).
-     * **Completed** page. See [View Completed Requests](../../requests/view-completed-requests.md#view-completed-requests-in-which-you-participated).
-     * **All Requests** page. See [View All Requests](../../requests/view-all-requests.md#view-all-requests-in-your-organization). \(Note that your ProcessMaker user account must have the [**Requests: View All Requests** permission](../../../processmaker-administration/permission-descriptions-for-users-and-groups.md#requests) to view the **All Requests** page.\)
+1. Go to a Request related page. 
    * **Tasks:** Access Task-related Saved Searches from the following **Tasks** pages:
      * **To Do** page. See [View Tasks You Need to Do](../../task-management/view-tasks-you-need-to-do.md).
      * **Completed** page. See [View Completed Tasks](../../task-management/view-completed-tasks.md).
@@ -50,13 +57,6 @@ Follow these steps to view Request results from a Saved Search:
 2. Click the image that represents the Saved Search. The results for that Saved Search display.
 
 {% hint style="info" %}
-### Quickly View How Many Items Are in Your Saved Searches
-
-Click the ProcessMaker logo in the left sidebar to expand the sidebar. View at a glance how many items are in **Requests**/**Tasks/Collections** pages, as well as Saved Searches for that type.  
-![](../../../.gitbook/assets/expanded-sidebar-processmaker-logo-saved-search-package.png) 
-
-### View a Saved Search for Requests That You Started
-
 Click the **Started By Me** icon![](../../../.gitbook/assets/started-by-me-icon-requests.png)to view a Saved Search for Requests that you started. Note that the [Saved Searches package](../../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed to display this Saved Search. Otherwise, clicking the **Started By Me** icon displays the [**My Requests**](../../requests/view-started-requests.md) page.
 {% endhint %}
 
@@ -65,6 +65,8 @@ Below are results for a Request-related Saved Search.
 ![Results for a Request-related Saved Search](../../../.gitbook/assets/request-saved-search-package.png)
 
 ## View Task Results from a Saved Search
+
+Saved Searches that pertain to Requests display on any of the following **Requests** pages:
 
 Below are results for a Task-related Saved Search.
 
