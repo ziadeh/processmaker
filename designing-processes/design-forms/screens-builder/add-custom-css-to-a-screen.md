@@ -88,7 +88,11 @@ div.page{
 
 {% page-ref page="manage-watchers/" %}
 
+{% page-ref page="how-to-use-the-undo-and-redo-buttons-in-screen-builder.md" %}
+
 {% page-ref page="save-a-screen.md" %}
 
 {% page-ref page="best-practices.md" %}
+
+
 

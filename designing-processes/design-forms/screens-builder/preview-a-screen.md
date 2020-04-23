@@ -79,6 +79,8 @@ Calculated properties also display in the **Data Preview** panel as part of the 
 
 {% page-ref page="manage-watchers/" %}
 
+{% page-ref page="how-to-use-the-undo-and-redo-buttons-in-screen-builder.md" %}
+
 {% page-ref page="save-a-screen.md" %}
 
 {% page-ref page="best-practices.md" %}
@@ -88,4 +90,6 @@ Calculated properties also display in the **Data Preview** panel as part of the 
 {% page-ref page="../../../using-processmaker/requests/what-is-a-request.md" %}
 
 {% page-ref page="../../scripts/what-is-a-script.md" %}
+
+
 
