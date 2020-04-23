@@ -15,18 +15,7 @@ Follow these steps to view the Requests that you started:
    * Click the **Requests** option from the top menu if the **Requests** page is not currently displayed. The **My Requests** page displays.
    * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
 
-{% hint style="info" %}
-### Analyze Information Related to Requests That You Started
-
-Click the **Started By Me** icon![](../../.gitbook/assets/started-by-me-icon-requests.png) to analyze information related to your Requests you started. From this page you may view [Request summaries](request-details/) or create charts to more easily visually analyze data from Requests that you started. Note that the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) must be installed to display this Saved Search. Otherwise, clicking the **Started By Me** icon displays the [**My Requests**](view-started-requests.md) page, where Request information cannot be viewed as charts for easy analysis. ![](../../.gitbook/assets/started-by-me-page-saved-search-package.png) 
-
-### Quickly View All Requests By Status
-
-Click the ProcessMaker logo in the left sidebar to expand the sidebar. View at a glance how many Requests by status you have. Note that if you have the Saved Searches package installed in your ProcessMaker instance, you can also view how many items are in your Saved Searches pertaining to Requests.  
-![](../../.gitbook/assets/requests-sidebar-saved-searches-package.png) 
-{% endhint %}
-
-Below is an example of the **My Requests** page that displays Requests the logged on user has started. The Saved Search package is not installed in this example, so this page displays in the ProcessMaker open-source edition.
+Below is an example of the **My Requests** page that displays Requests the logged on user has started. The [Saved Search package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is not installed in this example, so this page displays in the ProcessMaker open-source edition.
 
 ![&quot;My Requests&quot; page displays Requests that you started](../../.gitbook/assets/started-by-me-request.png)
 

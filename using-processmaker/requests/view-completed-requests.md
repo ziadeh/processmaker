@@ -16,14 +16,7 @@ Follow these steps to view completed Requests in which you participated:
    * Click the Home breadcrumb icon![](../../.gitbook/assets/home-breadcrumb-icon.png)if the **Requests** page is not currently displayed. The **My Requests** page displays.
 3. Click the **Completed** tab or click the **Completed** icon![](../../.gitbook/assets/completed-icon-request.png)from the left sidebar. The **Completed** page displays.
 
-{% hint style="info" %}
-### Quickly View All Requests By Status
-
-Click the ProcessMaker logo in the left sidebar to expand that sidebar. View at a glance how many Requests by status you have. Note that if the [Saved Searches package](../../package-development-distribution/package-a-connector/saved-searches-package.md) installed in your ProcessMaker instance, you can also view how many items are in your [Saved Searches](../save-and-share-request-and-task-related-searches/what-is-a-saved-search.md) pertaining to Requests.  
-![](../../.gitbook/assets/requests-sidebar-saved-searches-package.png) 
-{% endhint %}
-
-Below is an example of the **Completed** page that displays completed Requests. The Saved Search package is not installed in this example, so this page displays in the ProcessMaker open-source edition.
+Below is an example of the **Completed** page that displays completed Requests. The [Saved Search package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is not installed in this example, so this page displays in the ProcessMaker open-source edition.
 
 ![&quot;Completed Requests&quot; page displays completed Requests in which you participated](../../.gitbook/assets/completed-request.png)
 
