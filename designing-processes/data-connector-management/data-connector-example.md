@@ -15,7 +15,7 @@ Note that after creating this ProcessMaker Data Connector, it may be used for an
 
 This example contains the following parts:
 
-* **Create the ProcessMaker Data Connector:** Create the ProcessMaker Data Connector that calls the API containing the list of universities. This is a public API that has been made available for demonstration purposes, so it does not require host authentication. The list of universities is in JSON. Though the host provides the domains, names, and countries of origin for each university in its list,  this example references only the university name. [The host provides public information about this API.](https://github.com/Hipo/university-domains-list-api) See [Create the ProcessMaker Data Connector](data-connector-example.md#create-the-processmaker-data-connector).
+* **Create the ProcessMaker Data Connector:** Create the ProcessMaker Data Connector that calls the API containing the list of universities. This is a public API that has been made available for demonstration purposes, so it does not require host authentication. The list of universities is in a JSON object. Though the host provides the domains, names, and countries of origin for each university in its list,  this example references only the university name. [The host provides public information about this API.](https://github.com/Hipo/university-domains-list-api) See [Create the ProcessMaker Data Connector](data-connector-example.md#create-the-processmaker-data-connector).
 * **Configure the Select List control:** After the ProcessMaker Data Connector is created, create a ProcessMaker Screen that contains a configure a Select List control. Configure the Select List control to use this ProcessMaker Data Connector as its data source to get the list of universities as the Select List control's options. See [Configure the Select List Control](data-connector-example.md#configure-the-select-list-control).
 * **Create the Process model:** Create the Process model to include a Form Task element that references the ProcessMaker Screen containing the Select List control. See [Create the Process Model](data-connector-example.md#create-the-process-model).
 
@@ -45,7 +45,34 @@ Follow these steps to create the ProcessMaker Data Connector as [described in th
 16. From the **Method** drop-down menu, select the **GET** option. The GET method reads data.
 17. In the **URL** setting, enter the following URL for this example: `http://universities.hipolabs.com/search?`. This URL is truncated from the host's [documented example](https://github.com/Hipo/university-domains-list-api) how to search its public API. ![](../../.gitbook/assets/endpoint-settings-data-connector-example-package.png) 
 18. Click the **Test** icon![](../../.gitbook/assets/test-endpoint-icon-data-connector-package.png)to verify that the Endpoint functions as intended. If configured correctly, the **Test** screen displays the Endpoint response. ![](../../.gitbook/assets/test-screen-data-connector-example-package.png) 
-19. Click **Close** to close the **Test** screen, and then click **Save** to save the Endpoint. The ProcessMaker Data Connector is configured for this example.
+19. Notice which element in each JSON object within the Endpoint response contains the name of the University. Look at the first JSON object in the array that is the list of universities:  
+    `{` 
+
+        `"domains": [` 
+
+            `"marywood.edu"` 
+
+        `],` 
+
+        `"country": "United States",` 
+
+        `"web_pages": [` 
+
+            `"`[`http://www.marywood.edu`](http://www.marywood.edu)`"` 
+
+        `],` 
+
+        `"name": "Marywood University",` 
+
+        `"state-province": null,` 
+
+        `"alpha_two_code": "PA"` 
+
+    `},`
+
+    The `name` element contains the name of each university in this JSON object. Make note of the element's name containing relevant data from a data source, as the ProcessMaker asset requires this when configuring how to use the ProcessMaker Data Connector's Endpoint response. In this example, the ProcessMaker Screen containing the Select List control is the ProcessMaker asset.
+
+20. Click **Close** to close the **Test** screen, and then click **Save** to save the Endpoint. The ProcessMaker Data Connector is configured for this example.
 
 ## Configure the Select List Control
 
@@ -55,10 +82,22 @@ Follow these steps to configure the Select List control as [described in this ex
 2. Most settings for the Select List control are outside the scope of this example. The default settings can be used for require settings, and optional settings do not need to be configured.
 3. Expand the **Data Source** panel. ![](../../.gitbook/assets/select-list-data-source-connector-example.png) 
 4. From the **Data Source** drop-down menu, select the **Data Connector** option. Settings in the **Data Source** panel display to configure which ProcessMaker Data Connector and Endpoint this control uses as its data source.
-5. 6. [Add a Submit Button control to the ProcessMaker Screen page](../design-forms/screens-builder/control-descriptions/submit-button-control-settings.md#add-the-control-to-a-processmaker-screen) so that the Screen can be submitted.
-7. [Save the ProcessMaker Screen](../design-forms/screens-builder/save-a-screen.md#save-a-processmaker-screen).
+5. In the **Existing Request Data Variable** setting, keep the default `response` value. This setting represents the name of the JSON object that contains the response from the ProcessMaker Data Connector's Endpoint. In this example, `response` will contain the JSON array of universities.
+6. From the **Type of Value Returned** drop-down menu, select the **Single Value** option because this example requires only one element value from the JSON response.
+7. From the **Data Connector** drop-down menu, select the ProcessMaker Data Connector the Select List control uses to access the data source. For this example, select **Get List of Major Universities in the World**.
+8. From the **End Point** drop-down menu, select which Endpoint in the selected ProcessMaker Data Connector to access the data source. For this example, select **list universities**.
+9. In the **Value** setting, enter the JSON element name that contains the value to use as the Select List option in each JSON object of the Endpoint response. In this example, enter `name` because the `name` JSON element contains the name of each university in each JSON object.
+10. In the **Content** setting enter `name` for the same reason as above.
+11. [Add a Submit Button control to the ProcessMaker Screen page](../design-forms/screens-builder/control-descriptions/submit-button-control-settings.md#add-the-control-to-a-processmaker-screen) so that the Screen can be submitted.
+12. [Save the ProcessMaker Screen](../design-forms/screens-builder/save-a-screen.md#save-a-processmaker-screen). The Select List control is configured for this example.
 
 ## Create the Process Model
+
+Follow these steps to create the Process model as [described in this example](data-connector-example.md#overview):
+
+
+
+## Related Topics
 
 
 
