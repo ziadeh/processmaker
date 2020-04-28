@@ -1,38 +1,41 @@
 ---
-description: View all your completed Tasks.
+description: View Tasks that you can self-service yourself to completion.
 ---
 
-# View Completed Tasks
+# Self-Assign Tasks to Yourself from a Queue
 
-## View Completed Tasks
+## View Self-Service Tasks That You Can Assign to Yourself
 
-The **Completed** Tasks page displays all your completed Tasks.
+In some business environments it is beneficial to assign yourself Tasks. For example, a team of Support agents that answer customer questions for a product or service can provide faster customer service by self-assigning Tasks from a queue: the next available Support agent views the queue of self-service Tasks, and then assigns one to himself. After self-assigning a Task, that Task is no longer in the queue of self-assignable Tasks; the self-assignee must complete that Task to completion or reassign that Task to another ProcessMaker [user](../../processmaker-administration/add-users/what-is-a-user.md) if option is available for that Task.
 
-Follow these steps to view all your completed Tasks:
+Both [Tasks](../../designing-processes/process-design/model-your-process/add-and-configure-task-elements.md#select-to-whom-to-assign-the-task) and [Manual Tasks](../../designing-processes/process-design/model-your-process/add-and-configure-manual-task-elements.md#select-to-whom-to-assign-the-task) can be configured for self-service.
+
+Follow these steps to view the queue of self-service Tasks from which to assign to yourself:
 
 1. Ensure that you are [logged on](../log-in.md#log-in) to ProcessMaker.
 2. Click the **Tasks** option from the top menu. The **To Do Tasks** page displays.
-3. Click the **Completed** icon![](../../.gitbook/assets/completed-icon-request%20%281%29.png)in the left sidebar. All your completed Tasks display.
+3. Click the **Self Service** icon![](../../.gitbook/assets/completed-icon-request%20%281%29.png)in the left sidebar. The queue of self-service Tasks displays.
+4. Click the **Claim Task** button to self-assign this Task. This Task moves from the **Self Service** page to your **To Do Tasks** page, and its status changes to In Progress.
 
-Below is an example of the **Completed** Task page that displays your completed Tasks. The [Saved Search package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is not installed in this example, so this page displays in the ProcessMaker open-source edition.
+Below is an example of the **Self Service** Task page that displays queued Tasks from which you can assign to yourself. The [Saved Search package](../../package-development-distribution/package-a-connector/saved-searches-package.md) is not installed in this example, so this page displays in the ProcessMaker open-source edition.
 
-![&quot;Completed&quot; Task page displays Tasks you have completed](../../.gitbook/assets/completed-tasks-page.png)
+![&quot;Self Service&quot; Task page displays Tasks that you can assign to yourself](../../.gitbook/assets/self-service-task-page-tasks.png)
 
-The **Completed** Task page displays the following information in tabular format about all your completed Tasks:
+The **Self Service** Task page displays the following information in tabular format about all your completed Tasks:
 
-* **Task:** The **Task** column displays the name of the completed Task. If you click the Task name, the Task title displays with the following message: **Task Completed** along with [information about the completed Task](view-completed-tasks.md#view-information-about-a-completed-task).
-* **Status:** The **Status** column displays the status of the Task. Since all Tasks in the **Completed** page are Tasks you have completed, all Tasks display with the Completed status, represented by the![](../../.gitbook/assets/completed-status-icon-requests.png)icon.
+* **Task:** The **Task** column displays the name of the Task. Click the Task name, and then click the **Claim Task** button to self-assign that Task.
+* **Status:** The **Status** column displays the status of the Task. Since all Tasks in the **Self Service** page are Tasks that may be self-assigned, all Tasks display with the Self Service status, represented by the ![](../../.gitbook/assets/self-service-icon-tasks.png) icon.
 * **Request:** The **Request** column displays the name of the Process associated with the Request. Click the Process name to [view the Request summary](../requests/request-details/).
-* **Assignee:** The **Assignee** column displays the avatar for the username to whom the Task was assigned. Hover your cursor over a user's avatar to view that person's full name.
+* **Assignee:** The **Assignee** column in other Task-related pages displays the ProcessMaker user assigned a Task. Since all Tasks in the Self Service page are Tasks that have not been self-assigned, the **Assignee** column displays no information.
 * **Due:** The **Due** column displays the date you completed was due. If **n/a** displays, then no due date was set to the Task. The time zone setting to display the time is according to the ProcessMaker instance unless your [user profile's](../profile-settings.md#change-your-profile-settings) **Time zone** setting is specified.
 
 {% hint style="info" %}
-### View a Completed Task and Its Summary
+### Self-Assign a Task to View Its Summary
 
-To view a [completed Task and its summary](view-a-task-summary.md#summary-for-a-completed-task), do one of the following:
+To view a [Task and its summary](view-a-task-summary.md#summary-for-an-assigned-task), do one of the following:
 
-* From the **Task** column, click the Task name that you want to view.
-* Click the **Open Task** icon![](../../.gitbook/assets/open-request-icon-requests.png)for the Task name that you want to view.
+* From the **Task** column, click the Task name that you want to view, and then click the **Claim Task** button.
+* Click the **Open Task** icon![](../../.gitbook/assets/open-request-icon-requests.png)for the Task name that you want to view, and then click the **Claim Task** button.
 
 ### View a Request Summary Associated with a Task
 
@@ -68,9 +71,9 @@ If you have Tasks in the **To Do** Tasks page, a message displays above your com
 
 Click the **To Do** icon![](../../.gitbook/assets/to-do-icon-tasks.png) in the left sidebar to view which of your assigned Tasks are overdue.
 
-### No Completed Tasks?
+### No Self Service Tasks?
 
-If you have not completed any Tasks, the following message displays: **You don't currently have any tasks assigned to you**.
+If there are no self service Tasks assigned to your ProcessMaker group, the following message displays: **No Results**.
 
 ### Display Information the Way You Want It
 
@@ -83,7 +86,7 @@ If you have not completed any Tasks, the following message displays: **You don't
 
 {% page-ref page="view-tasks-you-need-to-do.md" %}
 
-{% page-ref page="self-assign-tasks-to-yourself-from-a-queue.md" %}
+{% page-ref page="view-completed-tasks.md" %}
 
 {% page-ref page="search-for-a-task.md" %}
 

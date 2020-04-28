@@ -123,7 +123,13 @@ Specify when a Manual Task element is due from when that activity is assigned to
 The Task due date displays for each [pending assigned Task](../../../using-processmaker/requests/view-completed-requests.md#view-completed-requests-in-which-you-are-a-participant). After the specified time has expired for a manual task, an overdue indicator displays for that task to the assigned task recipient.
 
 {% hint style="info" %}
-Specify due time for a Manual Task element in total number of hours. This includes hours not normally associated with business hours, including overnight hours, weekends, and holidays.
+### Total Number of Hours Includes All Hours
+
+Specify due time for a Task element in total number of hours. This includes hours not normally associated with business hours, including overnight hours, weekends, and holidays.
+
+### Self Service Tasks Can Become Overdue Without a Task Assignee
+
+A [Self Service](add-and-configure-task-elements.md#select-to-whom-to-assign-the-task) Task can become overdue even though no members of a ProcessMaker group have self-assigned that Task: the number of hours that Task is due begins as soon as that Task element triggers. Therefore, if configuring a Self Service Task, consider that the Task does not immediately have a Task assignee to do that Task.
 {% endhint %}
 
 Follow these steps to specify when a Manual Task element is due:
@@ -172,7 +178,7 @@ Instead of [assign the Task's assignee using one or more rules](add-and-configur
 * **Group:** Assign that Task to any member of a specified ProcessMaker [group](../../../processmaker-administration/assign-groups-to-users/what-is-a-group.md). When a Task is assigned to a ProcessMaker group, round robin assignment rules determine which group member is the assignee without manually assigning the Task.
 * **Previous Task assignee:** Assign that Task to the previous Task assignee in that Request's workflow.
 * **By User ID:** Assign that Task to a ProcessMaker user based on a **Variable Name** value as entered into a [ProcessMaker Screen](../../design-forms/what-is-a-form.md) during a previous Task in that Request. For example, if a [Line Input control](../../design-forms/screens-builder/control-descriptions/line-input-control-settings.md) in a ProcessMaker Screen has the **Variable Name** value of `Name`, to contain a user's name, then use that value to thereby assign the Task to that ProcessMaker user.
-* **Self Service:** Assign that Task to allow any member in a specified ProcessMaker group to voluntarily self-assign any Task from a queue.
+* **Self Service:** Assign that Task to allow any member in a specified ProcessMaker group to self-assign any Task from a queue. When this Task element triggers, this Task displays in the [**Self Service** Task page](../../../using-processmaker/task-management/self-assign-tasks-to-yourself-from-a-queue.md#view-self-service-tasks-that-you-can-assign-to-yourself) for all members of that ProcessMaker group.
 
 Follow these steps to select to whom to assign the Task that is referenced in a Manual Task element:
 
@@ -203,7 +209,7 @@ Follow these steps to select to whom to assign the Task that is referenced in a 
 
    * **Self Service:** Select **Self Service** to allow any member in a specified ProcessMaker group to voluntarily self-assign any Task from a queue. When this option is selected, the **Assigned Group** drop-down menu displays below the **Task Assignment** drop-down menu.
 
-     From the **Assigned Group** drop-down menu, select the group from which any of its members can self-assign Tasks from a queue.
+     From the **Assigned Group** drop-down menu, select the group from which any of its members can self-assign Tasks from a queue. When this Task element triggers, this Task displays in the [**Self Service** Task page](../../../using-processmaker/task-management/self-assign-tasks-to-yourself-from-a-queue.md#view-self-service-tasks-that-you-can-assign-to-yourself) for all members of that ProcessMaker group.
 5. Enable the **Lock task assignment to user** option to assign this Task to the same Task assignee if workflow in the Request returns to this Manual Task. If the initial Task assignee was a member of a ProcessMaker group, the Task is reassigned to the same ProcessMaker group member. This option is useful if the initial Task assignee in the Request might need to provide clarification regarding information that Request participant initially submitted in that Task.
 6. Enable the **Allow Reassignment** option to allow the Task assignee to reassign the Task if necessary. If the **Allow Reassignment** option is enabled, the **Reassign** button displays in the Task summary to allow that Task assignee to reassign that Task. See [View a Task Summary](../../../using-processmaker/task-management/view-a-task-summary.md#summary).
 

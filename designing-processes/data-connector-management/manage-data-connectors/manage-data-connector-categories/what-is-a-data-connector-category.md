@@ -8,7 +8,7 @@ description: >-
 
 ## Overview
 
-Use Data Connector Categories to organize your ProcessMaker [Data Connectors](../../what-is-a-data-connector.md). Organizing your ProcessMaker Data Connectors into Categories makes it easier to search for a Data Connector based on its assigned Category. Assign multiple Data Connector Categories to a ProcessMaker Data Connector if necessary. For example, assign a ProcessMaker Data Connector that connects to an e-retailer's API to the "Third-Party APIs" and "E-Retailers" Data Connector Categories.
+Use Data Connector Categories to organize your [ProcessMaker Data Connectors](../../what-is-a-data-connector.md). Organizing your ProcessMaker Data Connectors into Categories makes it easier to search for a Data Connector based on its assigned Category. Assign multiple Data Connector Categories to a ProcessMaker Data Connector if necessary. For example, assign a ProcessMaker Data Connector that connects to an e-retailer's API to the "Third-Party APIs" and "E-Retailers" Data Connector Categories.
 
 {% hint style="info" %}
 ### ProcessMaker Package Required

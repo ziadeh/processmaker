@@ -21,6 +21,8 @@ For example, each of the following are Tasks that you might use for a purchase p
 
 {% page-ref page="view-completed-tasks.md" %}
 
+{% page-ref page="self-assign-tasks-to-yourself-from-a-queue.md" %}
+
 {% page-ref page="search-for-a-task.md" %}
 
 {% page-ref page="view-a-task-summary.md" %}
