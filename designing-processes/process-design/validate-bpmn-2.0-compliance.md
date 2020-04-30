@@ -32,12 +32,15 @@ Follow these steps to validate your Process model is BPMN 2.0 compliant:
 3. Enable the **Auto validate** toggle key so that Process Modeler automatically validates your Process model as you work.
 4. Design your Process model. Process Modeler indicates any BPMN 2.0 compliance issues as you design. The following indicators may occur:
    * **No errors found:** If no errors are found, the following text displays to the left of the **Auto validate** toggle key: **BPMN VALID**. The green check mark displays. Your Process model is BPMN 2.0 compliant.
+
+     ![](../../.gitbook/assets/bpmn-valid-process-modeler-processes.png) 
+
    * **Errors are found:** If errors are found, a drop-down menu displays to the left of the **Auto validate** toggle key with the following text: **BPMN ISSUES**. The amount of errors displays.  
      ![](../../.gitbook/assets/bpmn-with-problems-process-modeler-processes.png) 
 
      After clicking the **BPMN ISSUES** drop-down menu, the Process Modeler displays how any errors to the right of the **Auto validate** toggle key. Each error icon displays![](../../.gitbook/assets/validate-bpmn-problems-errors-process-modeler-processes.png)with a summary of the error. Below is an example.
 
-     ![](../../.gitbook/assets/selection_011.png)
+     ![](../../.gitbook/assets/bpmn-errors-summary-process-modeler-processes.png)
 
      Furthermore, Process model elements that are associated with errors display a red-colored highlight. However, the red-colored highlight does not display if your Process model is missing required elements, such as a [Start Event](model-your-process/process-modeling-element-descriptions.md#start-event) or [End Event](model-your-process/process-modeling-element-descriptions.md#end-event) element.
 
