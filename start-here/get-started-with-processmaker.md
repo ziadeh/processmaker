@@ -132,6 +132,10 @@ See how [ProcessMaker Data Connectors](../designing-processes/data-connector-man
 
 {% embed url="https://vimeo.com/393099655" %}
 
+### Example 2
+
+This example demonstrates how a Select List control in a ProcessMaker Screen can display the names of major universities around the world as its options in a drop-down menu. The options in this Select List control come from a ProcessMaker Data Connector that calls a third-party Application Program Interface \(API\) when the ProcessMaker Screen containing the Select List control opens.
+
 {% embed url="https://vimeo.com/414002969" %}
 
 ### Related Topics
@@ -193,6 +197,8 @@ See how to populate a [Record List](../designing-processes/design-forms/screens-
 {% endtab %}
 
 {% tab title="Populate a Select List from a Data Connector" %}
+### Example 1
+
 See how to populate a [Select List](../designing-processes/design-forms/screens-builder/control-descriptions/select-list-control-settings.md) control from records in a [ProcessMaker Data Connector](../designing-processes/data-connector-management/what-is-a-data-connector.md).
 
 * **Intended audience:** Process designers, Web designers, graphic designers, software developers, coding engineers
