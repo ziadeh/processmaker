@@ -13,13 +13,9 @@ This example demonstrates how a Select List control in a ProcessMaker Screen can
 
 Note that after creating this ProcessMaker Data Connector, it may be used for any ProcessMaker asset in your ProcessMaker instance that can use a Data Connector. It is not limited to being used with a Select List control.
 
-### Video Example
-
 Click the video below to watch a demonstration of this example.
 
 {% embed url="https://vimeo.com/414002969" %}
-
-### Written Example
 
 This example contains the following procedures in this order:
 
