@@ -67,7 +67,6 @@ Follow these steps to configure basic authentication settings using your Process
 2. Verify that this ProcessMaker Data Connector authenticates using SSL certification. If the **Enable SSL certificate verification** toggle key is enabled, the ProcessMaker Data Connector connects to the data source using HTTPS protocol for a secure connection. The **Enable SSL certificate verification** toggle key is enabled by default.
 3. In the **User** setting, verify the ProcessMaker user account's username that used to authenticate with the data source displays. By default the **User** setting displays the ProcessMaker user account that created the ProcessMaker Data Connector.
 4. In the **Password** setting, edit the ProcessMaker user account password to authenticate with the data source if the ProcessMaker user that created the ProcessMaker Data Connector will not be used to authenticate with the data source. The **Password** setting hides the password for the ProcessMaker user account that created the ProcessMaker Data Connector.
-5. Click **Test** to verify that the ProcessMaker user account credentials are correct.
 
 ### Edit Bearer Token Settings
 
