@@ -37,7 +37,11 @@ Follow these steps to delete a ProcessMaker Data Connector:
 
 ## Related Topics
 
-{% page-ref page="manage-data-connectors/manage-data-connector-categories/" %}
+{% page-ref page="what-is-a-data-connector.md" %}
+
+{% page-ref page="what-is-an-endpoint.md" %}
+
+{% page-ref page="manage-data-connectors/" %}
 
 {% page-ref page="view-data-connectors.md" %}
 
@@ -46,4 +50,6 @@ Follow these steps to delete a ProcessMaker Data Connector:
 {% page-ref page="search-for-a-data-connector.md" %}
 
 {% page-ref page="edit-a-data-connector.md" %}
+
+{% page-ref page="data-connector-example.md" %}
 

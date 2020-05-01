@@ -36,7 +36,11 @@ If there are no search results, the following message displays: **No Results**.
 
 ## Related Topics
 
-{% page-ref page="manage-data-connectors/manage-data-connector-categories/" %}
+{% page-ref page="what-is-a-data-connector.md" %}
+
+{% page-ref page="what-is-an-endpoint.md" %}
+
+{% page-ref page="manage-data-connectors/" %}
 
 {% page-ref page="view-data-connectors.md" %}
 
@@ -45,4 +49,6 @@ If there are no search results, the following message displays: **No Results**.
 {% page-ref page="edit-a-data-connector.md" %}
 
 {% page-ref page="delete-a-data-connector.md" %}
+
+{% page-ref page="data-connector-example.md" %}
 

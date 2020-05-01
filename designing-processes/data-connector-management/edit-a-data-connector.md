@@ -55,9 +55,26 @@ Follow these steps to edit the details for a ProcessMaker Data Connector:
 3. Click the **Authorization** tab.
 4. From the **Method** drop-down menu, select how the Data Connector authenticates with the data source:
    * **No Auth:** Select the **No Auth** option to not send authorization details when connecting to the data source. Note that there is no security using this option.
-   * **Basic Auth:** Select the **Basic Auth** option to send a verified username and password when connecting to the data source. Configure these authorization credentials after the ProcessMaker Data Connector is created.
-   * **Bearer Token:** Select the **Bearer Token** option to send an access token when connecting to the data source. Get the access token after the ProcessMaker Data Connector is created. ProcessMaker Data Connectors that connect to ProcessMaker Collections use Bearer Token authorization method.
-   * **Auth 2.0 Password:** Select the **Auth 2.0 Password** option to use Password grant type as part of the OAuth 2.0 authentication protocol to connect to the data source. In doing so, first get an access token from the data source owner, and then use that token to authenticate future connections directly to that data source. Configure the OAuth 2.0 authentication credentials after the ProcessMaker Data Connector is created.
+   * **Basic Auth:** Select the **Basic Auth** option to send your ProcessMaker username and password as authentication when connecting to the data source. See [Edit Basic Auth Settings](edit-a-data-connector.md#edit-basic-auth-authorization).
+   * **Bearer Token:** Select the **Bearer Token** option to send an access token when connecting to the data source as authentication. The access token is an opaque string that represents the authorization that allows the ProcessMaker Data Connector to access the third-party data source. ProcessMaker Data Connectors that connect to ProcessMaker Collections use Bearer Token authorization method. See [Edit Bearer Token Settings](edit-a-data-connector.md#edit-bearer-token-authorization).
+   * **Auth 2.0 Password:** Select the **Auth 2.0 Password** option to use Password grant type as part of the OAuth 2.0 authentication protocol to connect to the data source. In doing so, first get an access token from the data source owner, and then use that token to authenticate future connections directly to that data source. See [Edit Auth 2.0 Password Settings](edit-a-data-connector.md#edit-auth-2-0-password-authorization).
+
+### Edit Basic Auth Settings
+
+Follow these steps to configure basic authentication settings using your ProcessMaker user account credentials from the [**Authorization** tab](edit-a-data-connector.md#edit-authorization):
+
+1. 
+### Edit Bearer Token Settings
+
+Follow these steps to configure bearer token settings from the [**Authorization** tab](edit-a-data-connector.md#edit-authorization):
+
+
+
+### Edit Auth 2.0 Password Settings
+
+Follow these steps to configure Auth 2.0 password settings from the [**Authorization** tab](edit-a-data-connector.md#edit-authorization):
+
+
 
 ## Endpoints
 
@@ -78,7 +95,11 @@ See the ProcessMaker [Data Connectors](../../processmaker-administration/permiss
 
 ## Related Topics
 
-{% page-ref page="manage-data-connectors/manage-data-connector-categories/" %}
+{% page-ref page="what-is-a-data-connector.md" %}
+
+{% page-ref page="what-is-an-endpoint.md" %}
+
+{% page-ref page="manage-data-connectors/" %}
 
 {% page-ref page="view-data-connectors.md" %}
 
@@ -87,4 +108,6 @@ See the ProcessMaker [Data Connectors](../../processmaker-administration/permiss
 {% page-ref page="search-for-a-data-connector.md" %}
 
 {% page-ref page="delete-a-data-connector.md" %}
+
+{% page-ref page="data-connector-example.md" %}
 

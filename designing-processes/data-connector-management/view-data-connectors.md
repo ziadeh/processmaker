@@ -64,7 +64,11 @@ If no ProcessMaker Connectors exist, the following message displays: **No Data A
 
 ## Related Topics
 
-{% page-ref page="manage-data-connectors/manage-data-connector-categories/" %}
+{% page-ref page="what-is-a-data-connector.md" %}
+
+{% page-ref page="what-is-an-endpoint.md" %}
+
+{% page-ref page="manage-data-connectors/" %}
 
 {% page-ref page="create-a-new-data-connector.md" %}
 
@@ -73,4 +77,6 @@ If no ProcessMaker Connectors exist, the following message displays: **No Data A
 {% page-ref page="edit-a-data-connector.md" %}
 
 {% page-ref page="delete-a-data-connector.md" %}
+
+{% page-ref page="data-connector-example.md" %}
 
