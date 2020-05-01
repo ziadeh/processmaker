@@ -123,6 +123,8 @@ See how ProcessMaker can integrate with third-party services Amazon Textract and
 {% endtab %}
 
 {% tab title="Call Third-Party APIs with Data Connectors" %}
+### Example 1
+
 See how [ProcessMaker Data Connectors](../designing-processes/data-connector-management/what-is-a-data-connector.md) call third-party Application Program Interfaces \(APIs\), and then use that data in [Processes](../designing-processes/viewing-processes/what-is-a-process.md).
 
 * **Intended audience:** Process designers, business analysts, software developers, coding engineers
@@ -130,15 +132,15 @@ See how [ProcessMaker Data Connectors](../designing-processes/data-connector-man
 
 {% embed url="https://vimeo.com/393099655" %}
 
+{% embed url="https://vimeo.com/414002969" %}
+
 ### Related Topics
 
 {% page-ref page="../designing-processes/data-connector-management/what-is-a-data-connector.md" %}
 
-{% page-ref page="../designing-processes/viewing-processes/what-is-a-process.md" %}
+{% page-ref page="../designing-processes/data-connector-management/data-connector-example.md" %}
 {% endtab %}
 {% endtabs %}
-
-
 
 ## Design ProcessMaker Screens
 

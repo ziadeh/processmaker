@@ -63,17 +63,30 @@ Follow these steps to edit the details for a ProcessMaker Data Connector:
 
 Follow these steps to configure basic authentication settings using your ProcessMaker user account credentials after selecting the **Basic Auth** option from the [**Authorization** tab](edit-a-data-connector.md#edit-authorization):
 
-1. Verify that this ProcessMaker Data Connector will use basic authentication to authenticate with the data source. ![](../../.gitbook/assets/authorization-tab-basic-auth-data-connector-package.png) 
+1. Verify that this ProcessMaker Data Connector uses basic authentication to authenticate with the data source. ![](../../.gitbook/assets/authorization-tab-basic-auth-data-connector-package.png) 
 2. Verify that this ProcessMaker Data Connector authenticates using SSL certification. If the **Enable SSL certificate verification** toggle key is enabled, the ProcessMaker Data Connector connects to the data source using HTTPS protocol for a secure connection. The **Enable SSL certificate verification** toggle key is enabled by default.
-3. In the **User** option, verify that the ProcessMaker user account's username that will be used to authenticate with the data source displays. By default the **User** option displays the ProcessMaker user account that created the ProcessMaker Data Connector.
-4. In the **Password** option, edit the ProcessMaker user account password to authenticate with the data source if the ProcessMaker user that created the ProcessMaker Data Connector will not be used to authenticate with the data source. The **Password** option hides the password for the ProcessMaker user account that created the ProcessMaker Data Connector.
+3. In the **User** setting, verify the ProcessMaker user account's username that used to authenticate with the data source displays. By default the **User** setting displays the ProcessMaker user account that created the ProcessMaker Data Connector.
+4. In the **Password** setting, edit the ProcessMaker user account password to authenticate with the data source if the ProcessMaker user that created the ProcessMaker Data Connector will not be used to authenticate with the data source. The **Password** setting hides the password for the ProcessMaker user account that created the ProcessMaker Data Connector.
 5. Click **Test** to verify that the ProcessMaker user account credentials are correct.
 
 ### Edit Bearer Token Settings
 
 Follow these steps to configure bearer token settings after selecting the **Bearer Token** option from the [**Authorization** tab](edit-a-data-connector.md#edit-authorization):
 
+1. Verify that this ProcessMaker Data Connector uses a bearer token to authenticate with the data source.  
+   ![](../../.gitbook/assets/authorization-tab-bearer-token-data-connector-package.png) 
 
+   If an access token has already been entered into this ProcessMaker Data Connector, it displays in the **Token** setting.
+
+2. Verify that this ProcessMaker Data Connector authenticates using SSL certification. If the **Enable SSL certificate verification** toggle key is enabled, the ProcessMaker Data Connector connects to the data source using HTTPS protocol for a secure connection. The **Enable SSL certificate verification** toggle key is enabled by default.
+3. If this ProcessMaker Data Connector requires a new access token, follow these steps:
+   1. Click the **Get Access Token** button. The **Request token** screen displays. ![](../../.gitbook/assets/authorization-tab-bearer-token-request-data-connector-package.png) 
+   2. In the **URL Token** setting, enter the URL to request the access token from the data source host to which the ProcessMaker Data Connector sends for authentication.
+   3. In the **User** setting, verify the ProcessMaker user account's username that used to authenticate with the data source displays. By default the **User** setting displays the ProcessMaker user account that created the ProcessMaker Data Connector.
+   4. In the **Password** setting, edit the ProcessMaker user account password to authenticate with the data source if the ProcessMaker user that created the ProcessMaker Data Connector will not be used to authenticate with the data source. The **Password** setting hides the password for the ProcessMaker user account that created the ProcessMaker Data Connector.
+   5. Click the **Get Access Token** button. If the URL entered in the **URL Token** setting is correct for that data source host, then the access token displays below the **Password** setting.
+   6. Copy the access token, and then click **Close** to return to the **Authorization** tab.
+4. In the **Token** setting, paste the access token.
 
 ### Edit Auth 2.0 Password Settings
 
