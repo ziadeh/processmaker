@@ -143,6 +143,8 @@ This example demonstrates how a Select List control in a ProcessMaker Screen can
 {% page-ref page="../designing-processes/data-connector-management/what-is-a-data-connector.md" %}
 
 {% page-ref page="../designing-processes/data-connector-management/data-connector-example.md" %}
+
+{% page-ref page="../designing-processes/design-forms/screens-builder/control-descriptions/select-list-control-settings.md" %}
 {% endtab %}
 {% endtabs %}
 
