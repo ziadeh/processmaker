@@ -35,22 +35,21 @@ Follow these steps to create the ProcessMaker Data Connector as [described in th
 5. Click the **+Data Connector** button. The **Create Data Connector** screen displays. ![](../../.gitbook/assets/create-data-connector-screen-package.png) 
 6. In the **Name** setting, enter a name of the ProcessMaker Data Connector. This example uses the name `Get List of Major Universities in the World`.
 7. In the **Description** setting, enter a description of this ProcessMaker Data Connector.
-8. From the **Authentication Type** drop-down menu, select the **Basic Auth** option. This example uses this option because the host does not require authentication from their publicly accessible API. This option uses your ProcessMaker user account credentials you configure later in this procedure.
+8. From the **Authentication Type** drop-down menu, select the **No Auth** option. This example uses this option because the host does not require authentication from their publicly accessible API.
 9. From the **Category** drop-down menu, select the ProcessMaker Data Connector Category to assign this Data Connector.
 
    This example uses the following settings.  
    ![](../../.gitbook/assets/create-data-connector-example-package.png) 
 
-10. Click **Save**.
-11. Click the **Authorization** tab. ![](../../.gitbook/assets/authorization-tab-data-connector-example-package.png) 
-12. In the **User** setting, enter your ProcessMaker username. ProcessMaker uses these credentials to authenticate your ProcessMaker user account.
-13. Click the **Endpoints** tab, and then click the **+Endpoint** button. The Endpoint settings display. ![](../../.gitbook/assets/endpoints-tab-data-connector-example-package.png) 
-14. In the **Purpose** setting, optionally edit the purpose for this Endpoint. The value the **Purpose** setting contains displays from the ProcessMaker asset when configuring the data source from that ProcessMaker asset. In this example, this setting value displays from the Select List control to select this Endpoint to get the list of universities. Therefore, provide a concise but relevant purpose for this Endpoint so other ProcessMaker designers understand its function. This example uses `list universities` for this setting.
-15. In the **Description** setting, enter a description of this Endpoint. This example uses the following description: `This Endpoint gets a JSON list of worldwide universities.`.
-16. From the **Method** drop-down menu, select the **GET** option. The GET method reads data.
-17. In the **URL** setting, enter the following URL for this example: `http://universities.hipolabs.com/search?`. This URL is truncated from the host's [documented example](https://github.com/Hipo/university-domains-list-api) how to search its public API. ![](../../.gitbook/assets/endpoint-settings-data-connector-example-package.png) 
-18. Click the **Test** icon![](../../.gitbook/assets/test-endpoint-icon-data-connector-package.png)to verify that the Endpoint functions as intended. If configured correctly, the **Test** screen displays the Endpoint response. ![](../../.gitbook/assets/test-screen-data-connector-example-package.png) 
-19. Notice which element in each JSON object within the Endpoint response contains the name of the university. Look at the first JSON object in the array that is the list of universities:  
+10. Click **Save**. The **Details** tab displays to edit the settings for this ProcessMaker Data Connector.
+11. Click the **Endpoints** tab. This example requires no changes to the **Authorization** tab.
+12. Click the **+Endpoint** button. The Endpoint settings display. ![](../../.gitbook/assets/endpoints-tab-data-connector-example-package.png) 
+13. In the **Purpose** setting, optionally edit the purpose for this Endpoint. The value the **Purpose** setting contains displays from the ProcessMaker asset when configuring the data source from that ProcessMaker asset. In this example, this setting value displays from the Select List control to select this Endpoint to get the list of universities. Therefore, provide a concise but relevant purpose for this Endpoint so other ProcessMaker designers understand its function. This example uses `list universities` for this setting.
+14. In the **Description** setting, enter a description of this Endpoint. This example uses the following description: `This Endpoint gets a JSON list of worldwide universities.`.
+15. From the **Method** drop-down menu, select the **GET** option. The GET method reads data.
+16. In the **URL** setting, enter the following URL for this example: `http://universities.hipolabs.com/search?`. This URL is truncated from the host's [documented example](https://github.com/Hipo/university-domains-list-api) how to search its public API. ![](../../.gitbook/assets/endpoint-settings-data-connector-example-package.png) 
+17. Click the **Test** icon![](../../.gitbook/assets/test-endpoint-icon-data-connector-package.png)to verify that the Endpoint functions as intended. If configured correctly, the **Test** screen displays the Endpoint response. ![](../../.gitbook/assets/test-screen-data-connector-example-package.png) 
+18. Notice which element in each JSON object within the Endpoint response contains the name of the university. Look at the first JSON object in the array that is the list of universities:  
     `{` 
 
         `"domains": [` 
@@ -77,7 +76,7 @@ Follow these steps to create the ProcessMaker Data Connector as [described in th
 
     The `name` element contains the name of each university in this JSON object. Make note of the element's name that contains relevant data from a data source, as the ProcessMaker asset requires this element name when configuring which data that asset requires from the ProcessMaker Data Connector's Endpoint response. In this example, the ProcessMaker Screen containing the Select List control is the ProcessMaker asset.
 
-20. Click **Close** to close the **Test** screen, and then click **Save** to save the Endpoint. The ProcessMaker Data Connector is configured for this example.
+19. Click **Close** to close the **Test** screen, and then click **Save** to save the Endpoint. The ProcessMaker Data Connector is configured for this example.
 
 ## Configure the Select List Control
 
