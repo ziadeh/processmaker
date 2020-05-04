@@ -58,6 +58,7 @@ Follow these steps to edit the details for a ProcessMaker Data Connector:
    * **Basic Auth:** Select the **Basic Auth** option to send only username and password credentials as authentication when connecting to the data source. See [Edit Basic Auth Settings](edit-a-data-connector.md#edit-basic-auth-authorization).
    * **Bearer Token:** Select the **Bearer Token** option to send an access token when connecting to the data source as authentication. The access token is an opaque string that represents the authorization that allows the ProcessMaker Data Connector to access the third-party data source. ProcessMaker Data Connectors that connect to ProcessMaker Collections use Bearer Token authorization method. See [Edit Bearer Token Settings](edit-a-data-connector.md#edit-bearer-token-authorization).
    * **Auth 2.0 Password:** Select the **Auth 2.0 Password** option to use Password grant type as part of the OAuth 2.0 authentication protocol to connect to the data source. In doing so, first register this ProcessMaker Data Connector with the data source host. After registering, that host provides the redirect URI, Client ID, and Client Secret for this ProcessMaker Data Connector. See [Edit Auth 2.0 Password Settings](edit-a-data-connector.md#edit-auth-2-0-password-authorization).
+5. If no other changes are necessary, click **Save**. The following message displays: **The Data Connector was saved**.
 
 ### Edit Basic Auth Settings
 
@@ -67,6 +68,7 @@ Follow these steps to configure basic authentication settings after selecting th
 2. Verify that this ProcessMaker Data Connector authenticates using SSL certification. If the **Enable SSL certificate verification** toggle key is enabled, the ProcessMaker Data Connector connects to the data source host using HTTPS protocol for a secure connection. The **Enable SSL certificate verification** toggle key is enabled by default.
 3. In the **User** setting, enter or edit the username that authenticates with the data source host.
 4. In the **Password** setting, enter or edit the password that authenticates with the data source host.
+5. If no other changes are necessary, click **Save**. The following message displays: **The Data Connector was saved**.
 
 ### Edit Bearer Token Settings
 
@@ -86,6 +88,7 @@ Follow these steps to configure bearer token settings after selecting the **Bear
    5. Click the **Get Access Token** button. If the URL entered in the **URL Token** setting is correct for that data source host, then the access token displays below the **Password** setting.
    6. Copy the access token, and then click **Close** to return to the **Authorization** tab.
 4. In the **Token** setting, paste the access token.
+5. If no other changes are necessary, click **Save**. The following message displays: **The Data Connector was saved**.
 
 ### Edit Auth 2.0 Password Settings
 
@@ -98,8 +101,9 @@ Follow these steps to configure Auth 2.0 password settings after selecting the *
 5. In the **Client Secret** setting, enter the Client Secret the data source host provides after you register this ProcessMaker Data Connector with that host.
 6. In the **User** setting, enter or edit the username that authenticates with the data source host.
 7. In the **Password** setting, enter or edit the password that authenticates with the data source host.
+8. If no other changes are necessary, click **Save**. The following message displays: **The Data Connector was saved**.
 
-## Endpoints
+## Add an Endpoint to a ProcessMaker Data Connector
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
@@ -132,7 +136,33 @@ Follow these steps to add an Endpoint to a ProcessMaker Data Connector:
      * **Create:** The PUT method may create a resource in the data source.
    * **PATCH:** The PATCH method partially modifies an existing resource.
    * **DELETE:** The DELETE method removes an existing resource from the data source.
-8. In the **URL** setting, enter the URL and any required/option parameters to interact with that data source's resource. To understand any required or optional parameters for a third-party data source's resource, consult that data source's documentation.
+8. In the **URL** setting, enter the URL and any required/option parameters to interact with that data source's resource. If configuring this Endpoint to interact with the ProcessMaker API, consult its [documentation](https://staging-pm4.processmaker.net/api/documentation) to understand any parameters for the resource to which this Endpoint interacts. To understand any required or optional parameters for a third-party data source's resource, consult that data source's documentation.
+9. Optionally, add Request headers to this Endpoint. The Request header\(s\) are sent to the data source's resource when this Endpoint interacts with that resource. See [Add Endpoint Request Headers](edit-a-data-connector.md#add-endpoint-request-headers).
+10. Optionally, add a Request body to this Endpoint. The Request body is sent to the data source's resource when this Endpoint interacts with that resource. See [Add an Endpoint Request Body](edit-a-data-connector.md#add-an-endpoint-request-body).
+11. Optionally, add sample Request data that is sent to the data source's resource when this Endpoint interacts with that resource. See [Add Endpoint Sample Request Data](edit-a-data-connector.md#add-endpoint-sample-request-data).
+12. Click **Save**. The following message displays: The **Data Connector was saved**.
+
+### Add Endpoint Request Headers
+
+Follow these steps add a Request header to a ProcessMaker Data Connector's Endpoint:
+
+1. [View the Endpoint\(s\)](edit-a-data-connector.md#endpoints) for the ProcessMaker Data Connector to which to add a Request header.
+2. 
+### Add an Endpoint Request Body
+
+Follow these steps add a Request body to a ProcessMaker Data Connector's Endpoint:
+
+1. [View the Endpoint\(s\)](edit-a-data-connector.md#endpoints) for the ProcessMaker Data Connector to which to add a Request body.
+2. 
+### Add Endpoint Sample Request Data
+
+Follow these steps add sample Request data to a ProcessMaker Data Connector's Endpoint:
+
+1. [View the Endpoint\(s\)](edit-a-data-connector.md#endpoints) for the ProcessMaker Data Connector to which to add sample Request data.
+2. 
+## View an Endpoint in a ProcessMaker Data Connector
+
+
 
 ## Related Topics
 
