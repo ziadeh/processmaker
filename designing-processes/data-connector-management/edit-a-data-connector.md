@@ -103,7 +103,7 @@ Follow these steps to configure Auth 2.0 password settings after selecting the *
 7. In the **Password** setting, enter or edit the password that authenticates with the data source host.
 8. If no other changes are necessary, click **Save**. The following message displays: **The Data Connector was saved**.
 
-## Add an Endpoint to a ProcessMaker Data Connector
+## Endpoints
 
 {% hint style="info" %}
 ### ProcessMaker Package Required
@@ -119,6 +119,8 @@ Your user account or group membership must have the following permissions to edi
 
 See the ProcessMaker [Data Connectors](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#data-connectors) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
+
+### Add an Endpoint to a ProcessMaker Data Connector
 
 Follow these steps to add an Endpoint to a ProcessMaker Data Connector:
 
@@ -142,25 +144,33 @@ Follow these steps to add an Endpoint to a ProcessMaker Data Connector:
 11. Optionally, add sample Request data that is sent to the data source's resource when this Endpoint interacts with that resource. See [Add Endpoint Sample Request Data](edit-a-data-connector.md#add-endpoint-sample-request-data).
 12. Click **Save**. The following message displays: The **Data Connector was saved**.
 
-### Add Endpoint Request Headers
+#### Add Endpoint Request Headers
 
 Follow these steps add a Request header to a ProcessMaker Data Connector's Endpoint:
 
 1. [View the Endpoint\(s\)](edit-a-data-connector.md#endpoints) for the ProcessMaker Data Connector to which to add a Request header.
 2. 
-### Add an Endpoint Request Body
+#### Add an Endpoint Request Body
 
 Follow these steps add a Request body to a ProcessMaker Data Connector's Endpoint:
 
 1. [View the Endpoint\(s\)](edit-a-data-connector.md#endpoints) for the ProcessMaker Data Connector to which to add a Request body.
 2. 
-### Add Endpoint Sample Request Data
+#### Add Endpoint Sample Request Data
 
 Follow these steps add sample Request data to a ProcessMaker Data Connector's Endpoint:
 
 1. [View the Endpoint\(s\)](edit-a-data-connector.md#endpoints) for the ProcessMaker Data Connector to which to add sample Request data.
 2. 
-## View an Endpoint in a ProcessMaker Data Connector
+### View an Endpoint in a ProcessMaker Data Connector
+
+
+
+### Test an Endpoint in a ProcessMaker Data Connector
+
+
+
+### Delete an Endpoint from a ProcessMaker Data Connector
 
 
 
