@@ -146,31 +146,33 @@ Follow these steps to add an Endpoint to a ProcessMaker Data Connector:
 
 #### Add Endpoint Request Headers
 
-A request header is not be confused with a ProcessMaker Request. An API request header is part of the ProcessMaker Data Connector Endpoint's interaction with a data source's resource that contains metadata regarding that interaction. A request header is included when an Endpoint makes a request to \(contacts\) the data source resource; likewise, that resource includes a response header that is included when that resource responds to that request. Headers are used to provide information to both the ProcessMaker Data Connector and the data source. Headers can be used for many purposes, including authentication and providing information about the body content of the request/response.
+A request header is not be confused with a ProcessMaker [Request](../../using-processmaker/requests/what-is-a-request.md). An API request header is part of the ProcessMaker Data Connector Endpoint's interaction with a data source's resource that contains metadata regarding that interaction. A request header is included when an Endpoint makes a request to \(contacts\) the data source resource; likewise, the resource includes a response header that is included when that resource responds to that request. Headers are used to provide information to both the ProcessMaker Data Connector and the data source. Headers can be used for many purposes, including authentication and providing information about the body content of the request/response.
 
-Headers are JSON key-value pairs that are separated by a colon. For example, the header below shows a header that tells the server to expect JSON content using the `Content-Type` header option.
+Headers are key-value pairs that are separated by a colon \(`:`\). For example, the header below tells the data source to expect JSON content using the `Content-Type` header option.
 
 ```text
 "Content-Type: application/json"
 ```
 
+{% hint style="info" %}
 See this [list of header options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers).
+{% endhint %}
 
 Follow these steps add a request header to a ProcessMaker Data Connector's Endpoint:
 
-1. [View the Endpoint\(s\)](edit-a-data-connector.md#endpoints) for the ProcessMaker Data Connector to which to add a Request header.
+1. [Add](edit-a-data-connector.md#add-an-endpoint-to-a-processmaker-data-connector) or [view](edit-a-data-connector.md#view-an-endpoint-in-a-processmaker-data-connector) the Endpoint for the ProcessMaker Data Connector to which to add a request header.
 2. 
 #### Add an Endpoint Request Body
 
 Follow these steps add a request body to a ProcessMaker Data Connector's Endpoint:
 
-1. [View the Endpoint\(s\)](edit-a-data-connector.md#endpoints) for the ProcessMaker Data Connector to which to add a Request body.
+1. [Add](edit-a-data-connector.md#add-an-endpoint-to-a-processmaker-data-connector) or [view](edit-a-data-connector.md#view-an-endpoint-in-a-processmaker-data-connector) the Endpoint for the ProcessMaker Data Connector to which to add a request body.
 2. 
 #### Add Endpoint Sample Request Data
 
 Follow these steps add sample Request data to a ProcessMaker Data Connector's Endpoint:
 
-1. [View the Endpoint\(s\)](edit-a-data-connector.md#endpoints) for the ProcessMaker Data Connector to which to add sample Request data.
+1. [Add](edit-a-data-connector.md#add-an-endpoint-to-a-processmaker-data-connector) or [view](edit-a-data-connector.md#view-an-endpoint-in-a-processmaker-data-connector) the Endpoint\(s\) for the ProcessMaker Data Connector to which to add sample Request data.
 2. 
 ### View an Endpoint in a ProcessMaker Data Connector
 
