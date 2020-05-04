@@ -35,7 +35,7 @@ Follow these steps to create the ProcessMaker Data Connector as [described in th
 5. Click the **+Data Connector** button. The **Create Data Connector** screen displays. ![](../../.gitbook/assets/create-data-connector-screen-package.png) 
 6. In the **Name** setting, enter a name of the ProcessMaker Data Connector. This example uses the name `Get List of Major Universities in the World`.
 7. In the **Description** setting, enter a description of this ProcessMaker Data Connector.
-8. From the **Authentication Type** drop-down menu, select the **No Auth** option. This example uses this option because the host does not require authentication from their publicly accessible API.
+8. From the **Authentication Type** drop-down menu, select the **No Auth** option. This example uses this option because the host does not require authentication from their publicly accessible API. Note that the video of this example uses **Basic Auth**, which is not necessary for this example since the data source is publicly accessible.
 9. From the **Category** drop-down menu, select the ProcessMaker Data Connector Category to assign this Data Connector.
 
    This example uses the following settings.  

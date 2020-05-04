@@ -21,7 +21,7 @@ Your user account or group membership must have the following permissions to edi
 See the ProcessMaker [Data Connectors](../../processmaker-administration/permission-descriptions-for-users-and-groups.md#data-connectors) permissions or ask your ProcessMaker Administrator for assistance.
 {% endhint %}
 
-Follow these steps to edit the details for a ProcessMaker Data Connector:
+Follow these steps to edit the details for a [ProcessMaker Data Connector](what-is-a-data-connector.md):
 
 1. [View your ProcessMaker Data Connectors](view-data-connectors.md#view-all-scripts). The **Data Connectors** page displays.
 2. Click the **Edit** icon![](../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)for the ProcessMaker Data Connector to edit. The **Details** tab displays.
@@ -122,9 +122,18 @@ Follow these steps to add an Endpoint to a ProcessMaker Data Connector:
 2. Click the **Edit** icon![](../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)for the ProcessMaker Data Connector to edit. The **Details** tab displays.
 3. Click the **Endpoints** tab. The **Endpoints** tab displays Endpoints configured for this ProcessMaker Data Connector. ![](../../.gitbook/assets/endpoints-tab-data-connector-package.png) 
 4. Click the **+Endpoint** button. The Endpoint settings display. ![](../../.gitbook/assets/endpoints-tab-settings-data-connector-package.png) 
-5. In the **Purpose** setting, optionally edit the purpose for this Endpoint. The value the **Purpose** setting contains displays from the ProcessMaker asset when configuring the data source from that ProcessMaker asset. In this example, this setting value displays from the Select List control to select this Endpoint to get the list of universities. Therefore, provide a concise but relevant purpose for this Endpoint so other ProcessMaker designers understand its function.
+5. In the **Purpose** setting, optionally edit the purpose for this Endpoint and how it interacts with that data source's [resource](what-is-an-endpoint.md#what-is-a-resource). The value the **Purpose** setting contains displays from the ProcessMaker asset when configuring the data source from that ProcessMaker asset. For example, if a ProcessMaker designer configures a [Select List](../design-forms/screens-builder/control-descriptions/select-list-control-settings.md) control to use this Data Connector, this Endpoint would display the Endpoint's purpose entered into this setting. Therefore, provide a concise but relevant purpose for this Endpoint so other ProcessMaker designers understand its function. **List** is the default purpose for a new Endpoint.
 6. In the **Description** setting, enter a description of this Endpoint.
-7. 
+7. From the **Method** drop-down menu, select the [method](what-is-an-endpoint.md#what-is-a-method) how this Endpoint interacts with the data source from one of the following options:
+   * **GET:** The GET method retrieves a resource from the data source.
+   * **POST:** The POST method creates a resource in the data source.
+   * **PUT:** The PUT method does one of the following:
+     * **Update:** The PUT method may update data an existing resource in the data source.
+     * **Create:** The PUT method may create a resource in the data source.
+   * **PATCH:** The PATCH method partially modifies an existing resource.
+   * **DELETE:** The DELETE method removes an existing resource from the data source.
+8. In the **URL** setting, enter the URL and any required/option parameters to interact with that data source's resource. To understand any required or optional parameters for a third-party data source's resource, consult that data source's documentation.
+
 ## Related Topics
 
 {% page-ref page="what-is-a-data-connector.md" %}
