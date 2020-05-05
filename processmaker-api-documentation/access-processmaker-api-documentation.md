@@ -37,7 +37,15 @@ Follow these steps to test ProcessMaker RESTful API endpoints from the [API docu
 5. Click the **Try it out** button, and then enter parameters documented for that API endpoint into their appropriate fields.
 6. Click **Execute**.
 
+## Make API Calls with the ProcessMaker Data Connector package
+
+If your ProcessMaker instance has the ProcessMaker [Data Connector package](../package-development-distribution/package-a-connector/data-connector-package.md) installed, you may use a ProcessMaker Data Connector to make requests \(calls\) with the ProcessMaker API associated with your ProcessMaker instance. See [Manage Data Connectors](../designing-processes/data-connector-management/manage-data-connectors/).
+
 ## Related Topics
+
+{% page-ref page="../designing-processes/data-connector-management/manage-data-connectors/" %}
+
+{% page-ref page="../package-development-distribution/package-a-connector/data-connector-package.md" %}
 
 {% page-ref page="../using-processmaker/log-in.md" %}
 
