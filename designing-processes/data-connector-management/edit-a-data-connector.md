@@ -183,10 +183,16 @@ Follow these steps add sample Request data to a ProcessMaker Data Connector's En
 
 1. [Add](edit-a-data-connector.md#add-an-endpoint-to-a-processmaker-data-connector) or [view](edit-a-data-connector.md#view-an-endpoint-in-a-processmaker-data-connector) the Endpoint\(s\) for the ProcessMaker Data Connector to which to add sample Request data.
 2. 
-### View an Endpoint in a ProcessMaker Data Connector
+### View or Edit an Endpoint in a ProcessMaker Data Connector
 
+Follow these steps to view or edit a ProcessMaker Data Connector's Endpoint:
 
-
+1. [View your ProcessMaker Data Connectors](view-data-connectors.md#view-all-scripts). The **Data Connectors** page displays.
+2. Click the **Edit** icon![](../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)for the ProcessMaker Data Connector to edit. The **Details** tab displays.
+3. Click the **Endpoints** tab. The **Endpoints** tab displays Endpoints configured for this ProcessMaker Data Connector. ![](../../.gitbook/assets/endpoints-tab-with-endpoint-collapsed-data-connector-package.png) 
+4. Click the **Details** icon![](../../.gitbook/assets/endpoint-details-icon-data-connector-package.png). The Endpoint configuration settings display. ![](../../.gitbook/assets/endpoints-tab-with-endpoint-data-connector-package.png) 
+5. Edit the following Endpoint's settings if necessary:
+6. 
 ### Test an Endpoint in a ProcessMaker Data Connector
 
 
