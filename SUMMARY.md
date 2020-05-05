@@ -68,6 +68,12 @@
 * [Notifications](using-processmaker/notifications.md)
 * [Control How Tabular Information Displays](using-processmaker/control-how-requests-display-in-a-tab.md)
 
+## JSON: The Foundation of Request Data
+
+* [What Is Request Data?](json-the-foundation-of-request-data/what-is-request-data.md)
+* [What is a Request Variable?](json-the-foundation-of-request-data/what-is-a-request-variable.md)
+* [What is JSON?](json-the-foundation-of-request-data/what-is-json.md)
+
 ## Manage and Model Processes <a id="designing-processes"></a>
 
 * [Process Management](designing-processes/viewing-processes/README.md)
