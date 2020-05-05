@@ -148,7 +148,7 @@ Follow these steps to add an Endpoint to a ProcessMaker Data Connector:
 
 A request header is not be confused with a ProcessMaker [Request](../../using-processmaker/requests/what-is-a-request.md). An API request header is part of the ProcessMaker Data Connector Endpoint's interaction with a data source's resource that contains metadata regarding that interaction. A request header is included when an Endpoint makes a request to \(contacts\) the data source resource; likewise, the resource includes a response header that is included when that resource responds to that request. Headers are used to provide information to both the ProcessMaker Data Connector and the data source. Headers can be used for many purposes, including authentication and providing information about the body content of the request/response.
 
-Headers are key-value pairs that are separated by a colon \(`:`\). For example, the header below tells the data source to expect JSON content using the `Content-Type` header option.
+Headers are key-value pairs that are separated by a colon \(`:`\). For example, the `Content-Type` request header option below indicates to the data source to expect the Endpoint's content to be JSON.
 
 ```text
 "Content-Type: application/json"
