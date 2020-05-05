@@ -155,7 +155,7 @@ Headers are key-value pairs that are separated by a colon \(`:`\). For example, 
 ```
 
 {% hint style="info" %}
-See this [list of header options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers).
+See this [list of header options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) that may be used in an Endpoint's request header.
 {% endhint %}
 
 Follow these steps add a request header to a ProcessMaker Data Connector's Endpoint:
