@@ -165,18 +165,18 @@ See this [list of header options](https://developer.mozilla.org/en-US/docs/Web/H
 Follow these steps add a request header to a ProcessMaker Data Connector's Endpoint:
 
 1. [Add](edit-a-data-connector.md#add-an-endpoint-to-a-processmaker-data-connector) or [view](edit-a-data-connector.md#view-an-endpoint-in-a-processmaker-data-connector) the Endpoint for the ProcessMaker Data Connector to which to add a request header.
-2. 
-#### Add an Endpoint Request Body
-
-Follow these steps add a request body to a ProcessMaker Data Connector's Endpoint:
-
-1. [Add](edit-a-data-connector.md#add-an-endpoint-to-a-processmaker-data-connector) or [view](edit-a-data-connector.md#view-an-endpoint-in-a-processmaker-data-connector) the Endpoint for the ProcessMaker Data Connector to which to add a request body.
 2. Expand the **Request Headers** panel. ![](../../.gitbook/assets/endpoints-tab-header-data-connector-package.png) 
 3. Click the **+Header** button. The request header settings display. ![](../../.gitbook/assets/endpoints-tab-header-settings-data-connector-package.png) 
 4. In the **Key** setting, enter the key for the header request option.
 5. In the **Value** setting, enter the value for that key.
 6. In the **Description** setting, enter a description for this header request option.
 
+#### Add an Endpoint Request Body
+
+Follow these steps add a request body to a ProcessMaker Data Connector's Endpoint:
+
+1. [Add](edit-a-data-connector.md#add-an-endpoint-to-a-processmaker-data-connector) or [view](edit-a-data-connector.md#view-an-endpoint-in-a-processmaker-data-connector) the Endpoint for the ProcessMaker Data Connector to which to add a request body.
+2. 
 #### Add Endpoint Sample Request Data
 
 Follow these steps add sample Request data to a ProcessMaker Data Connector's Endpoint:
