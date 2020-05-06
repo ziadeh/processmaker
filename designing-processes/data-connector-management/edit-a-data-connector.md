@@ -208,16 +208,35 @@ Follow these steps to view or edit a ProcessMaker Data Connector's Endpoint:
 1. [View your ProcessMaker Data Connectors](view-data-connectors.md#view-all-scripts). The **Data Connectors** page displays.
 2. Click the **Edit** icon![](../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)for the ProcessMaker Data Connector to edit. The **Details** tab displays.
 3. Click the **Endpoints** tab. The **Endpoints** tab displays Endpoints configured for this ProcessMaker Data Connector. ![](../../.gitbook/assets/endpoints-tab-with-endpoint-collapsed-data-connector-package.png) 
-4. Click the **Details** icon![](../../.gitbook/assets/endpoint-details-icon-data-connector-package.png). The Endpoint configuration settings display. ![](../../.gitbook/assets/endpoints-tab-with-endpoint-data-connector-package.png) 
+4. Click the **Details** icon![](../../.gitbook/assets/endpoint-details-icon-data-connector-package.png) for the Endpoint to view or edit. The Endpoint configuration settings display. ![](../../.gitbook/assets/endpoints-tab-with-endpoint-data-connector-package.png) 
 5. Edit the Endpoint's settings if necessary. See [Add an Endpoint to a ProcessMaker Data Connector](edit-a-data-connector.md#add-an-endpoint-to-a-processmaker-data-connector).
 
 ### Test an Endpoint in a ProcessMaker Data Connector
 
+After [adding an Endpoint to a ProcessMaker Data Connector](edit-a-data-connector.md#add-an-endpoint-to-a-processmaker-data-connector), test it to determine if the Endpoint successfully makes a request to the data source resource.
 
+Follow these steps to test a ProcessMaker Data Connector's Endpoint:
+
+1. [View your ProcessMaker Data Connectors](view-data-connectors.md#view-all-scripts). The **Data Connectors** page displays.
+2. Click the **Edit** icon![](../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)for the ProcessMaker Data Connector to test. The **Details** tab displays.
+3. Click the **Endpoints** tab. The **Endpoints** tab displays Endpoints configured for this ProcessMaker Data Connector. ![](../../.gitbook/assets/endpoints-tab-with-endpoint-collapsed-data-connector-package.png) 
+4. Click the **Test** icon![](../../.gitbook/assets/endpoint-test-icon-data-connector-package.png) for the Endpoint to test. The **Test** screen displays while the Endpoint makes its request to the data source resource.  
+   ![](../../.gitbook/assets/endpoint-test-screen-data-connector-package.png) 
+
+   If the Endpoint successfully interacts with the data source resource, the resource's response displays.  
+   ![](../../.gitbook/assets/test-screen-data-connector-example-package.png) 
+
+5. Click **Close** to close the **Test** screen.
 
 ### Delete an Endpoint from a ProcessMaker Data Connector
 
+Follow these steps to delete a ProcessMaker Data Connector's Endpoint:
 
+1. [View your ProcessMaker Data Connectors](view-data-connectors.md#view-all-scripts). The **Data Connectors** page displays.
+2. Click the **Edit** icon![](../../.gitbook/assets/open-modeler-edit-icon-processes-page-processes.png)for the ProcessMaker Data Connector to delete. The **Details** tab displays.
+3. Click the **Endpoints** tab. The **Endpoints** tab displays Endpoints configured for this ProcessMaker Data Connector. ![](../../.gitbook/assets/endpoints-tab-with-endpoint-collapsed-data-connector-package.png) 
+4. Click the **Remove** icon![](../../.gitbook/assets/remove-icon.png)for the Endpoint to delete. A message displays to confirm deletion of the Endpoint. ![](../../.gitbook/assets/caution-delete-endpoint-data-connector-package.png) 
+5. Click **Confirm**.
 
 ## Related Topics
 
