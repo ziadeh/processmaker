@@ -162,6 +162,8 @@ Headers are key-value pairs that are separated by a colon \(`:`\). For example, 
 See this [list of header options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) that may be used in an Endpoint's request header.
 {% endhint %}
 
+Each header option added to an Endpoint are included in the request header when the Endpoint makes its request to the data source.
+
 Follow these steps add a request header to a ProcessMaker Data Connector's Endpoint:
 
 1. [Add](edit-a-data-connector.md#add-an-endpoint-to-a-processmaker-data-connector) or [view](edit-a-data-connector.md#view-an-endpoint-in-a-processmaker-data-connector) the Endpoint for the ProcessMaker Data Connector to which to add a request header.
@@ -182,13 +184,23 @@ Request bodies are not required for Endpoints that use the GET method since the 
 Follow these steps add a request body to a ProcessMaker Data Connector's Endpoint:
 
 1. [Add](edit-a-data-connector.md#add-an-endpoint-to-a-processmaker-data-connector) or [view](edit-a-data-connector.md#view-an-endpoint-in-a-processmaker-data-connector) the Endpoint for the ProcessMaker Data Connector to which to add a request body.
-2. 
+2. Expand the **Request Body** panel. ![](../../.gitbook/assets/endpoints-tab-body-data-connector-package.png) 
+3. In the **Request Body** panel, enter the request body to send when this Endpoint makes its request to the data source.
+
 #### Add Endpoint Sample Request Data
+
+An Endpoint may send sample ProcessMaker Request data when that Endpoint makes it request to the ProcessMaker API so that the ProcessMaker API resource may process that Request data prior to its response.
+
+{% hint style="info" %}
+Do not send ProcessMaker Request data to data source other than the ProcessMaker API. A third-party data source cannot recognize the Request data.
+{% endhint %}
 
 Follow these steps add sample Request data to a ProcessMaker Data Connector's Endpoint:
 
 1. [Add](edit-a-data-connector.md#add-an-endpoint-to-a-processmaker-data-connector) or [view](edit-a-data-connector.md#view-an-endpoint-in-a-processmaker-data-connector) the Endpoint\(s\) for the ProcessMaker Data Connector to which to add sample Request data.
-2. 
+2. Expand the **Sample Data** panel.
+3. In the **Sample Data** panel, enter the sample ProcessMaker Request data to send when this Endpoint makes its request to the data source.
+
 ### View or Edit an Endpoint in a ProcessMaker Data Connector
 
 Follow these steps to view or edit a ProcessMaker Data Connector's Endpoint:
