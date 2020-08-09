@@ -1,4 +1,7 @@
 <?php
+ 
+Route::POST('api/login', 'ProcessMaker\Http\Controllers\Api\LoginUser@login');
+
 Route::group(
     [
         'middleware' => ['auth:api', 'setlocale', 'bindings', 'sanitize'],
@@ -7,7 +10,14 @@ Route::group(
         'as' => 'api.',
     ], function() {
 
+
     // Users
+    Route::apiResource('intranet/projects', 'IntranetProjectController');
+    Route::apiResource('intranet/proctypes', 'ProcTypeController');
+    Route::apiResource('intranet/procmethods', 'ProcMethodController');
+    Route::get('intranet/getprojects', 'IntranetProjectController@getprojects');
+    Route::get('intranet/project/{projectId}/budgetlines', 'IntranetProjectController@budgetLines');
+    Route::post('intranet/project/{projectId}/procurements', 'IntranetProjectController@saveProcurement');
     Route::get('users', 'UserController@index')->name('users.index')->middleware('can:view-users');
     Route::get('users/{user}', 'UserController@show')->name('users.show'); //Permissions handled in the controller
     Route::get('deleted_users', 'UserController@deletedUsers')->name('users.deletedUsers')->middleware('can:view-users'); 

@@ -53,7 +53,9 @@ class PermissionCheck
     public function handle($request, Closure $next)
     {
         $this->auth->authenticate();
-
+	if ($request->getMethod() === "OPTIONS") {
+            return response('');
+        }
         return $next($request);
     }
 
